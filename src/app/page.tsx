@@ -1,65 +1,115 @@
-import Image from "next/image";
+import { fetchPerformances } from '@/lib/interpark';
+import PerformanceList from '@/components/PerformanceList';
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+import kovoData from '@/data/kovo.json';
+import kblData from '@/data/kbl.json';
+
+// Helper to check if performance is effectively expired (End Date < Today)
+function isPerformanceActive(dateStr: string, today: Date): boolean {
+    if (!dateStr) return false;
+
+    try {
+        let targetDate: Date | null = null;
+
+        // Type 1: Range "YYYY.MM.DD ~ YYYY.MM.DD"
+        if (dateStr.includes('~')) {
+            const parts = dateStr.split('~');
+            const endStr = parts[1].trim(); // "2025.12.31"
+            // Replace dots with dashes for parsing if needed, or simple parse
+            // YYYY.MM.DD is standard enough for new Date() in many envs but safely:
+            const [y, m, d] = endStr.split('.').map(Number);
+            targetDate = new Date(y, m - 1, d);
+            targetDate.setHours(23, 59, 59, 999); // End of that day
+        }
+        // Type 2: Single "YYYY-MM-DD HH:mm" (KOVO style)
+        else if (dateStr.includes('-') && dateStr.includes(':')) {
+            // "2025-12-10 19:00"
+            const [datePart] = dateStr.split(' ');
+            const [y, m, d] = datePart.split('-').map(Number);
+            targetDate = new Date(y, m - 1, d);
+            targetDate.setHours(23, 59, 59, 999); // End of that day (keep active if it's today)
+        }
+        // Fallback for other single dates if any? 
+        else {
+            // Try generic parse
+            targetDate = new Date(dateStr);
+        }
+
+        if (!targetDate || isNaN(targetDate.getTime())) return true; // Keep if unparseable
+
+        // Check if targetDate is strictly before today (start of today)
+        // actually user said: "if today date has passed" -> if EndDate < Today (Date only comparison)
+
+        // Let's normalize "today" to start of day for strict comparison?
+        // Or generic: if TargetDate (End of Day) < Now -> Expired.
+
+        // If Today is Dec 10, Now is Dec 10 10:00.
+        // Event Dec 9 (End Dec 9 23:59) < Now -> Expired. 
+        // Event Dec 10 (End Dec 10 23:59) > Now -> Active.
+
+        return targetDate.getTime() >= today.getTime();
+
+    } catch (e) {
+        return true; // Fail safe
+    }
+}
+
+// This function runs at build time on the server (or revalidation)
+async function getPerformances() {
+    const [seoul, gyeonggi, incheon] = await Promise.all([
+        fetchPerformances('seoul'),
+        fetchPerformances('gyeonggi'),
+        fetchPerformances('incheon'),
+    ]);
+
+    // Format KOVO data to match Performance interface if specific fields missing/need adjustment?
+    // It already matches since we used the interface in the scraper script.
+    // However, JSON import might be typed as any or inferred.
+    const volleyball = kovoData as unknown as any[];
+    const basketball = kblData as unknown as any[];
+
+    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball];
+
+    // Filter expired
+    // We use a fixed "now" for static build. 
+    // In a real ISR/SSR scenario this would be request time, but for SSG it's build time.
+    // If the user wants it to effectively update, they need to rebuild daily or use ISR.
+    // We'll calculate 'today' relative to build time.
+    const now = new Date();
+    // Reset to start of today? User said "if today has passed", usually implies "Yesterday is gone".
+    // If today is Dec 10, Dec 9 is gone. Dec 10 is active.
+    // So distinct comparison: EndDate < Today(00:00:00).
+    // Wait, my `targetDate` is set to 23:59:59.
+    // So if I compare Target(Dec 9 23:59) < Now(Dec 10 09:00), it expires. Correct.
+    // If Target(Dec 10 23:59) > Now(Dec 10 09:00), it stays. Correct.
+
+    // Strict filter for Sports (Volleyball/Basketball): Must be in 'seoul', 'gyeonggi', 'incheon'
+    // Also exclude generic '예매하기' venue name which indicates a parsing error or placeholder
+    const validRegions = ['seoul', 'gyeonggi', 'incheon'];
+
+    return allPerformances.filter(p => {
+        // 1. Expiration Check
+        if (!isPerformanceActive(p.date, now)) return false;
+
+        // 2. Sports Venue/Region Check
+        // If it's KOVO or KBL (based on ID prefix or generally just apply to all "etc" regions?)
+        // The problem is Interpark data might use 'etc' if we had such logic, but Interpark fetcher usually returns specific regions.
+        // Let's rely on p.region for now.
+        if (p.region === 'etc') return false;
+
+        // 3. Bad Data Check
+        if (p.venue === '예매하기') return false;
+
+        return true;
+    });
+}
+
+export default async function Home() {
+    const performances = await getPerformances();
+
+    return (
+        <main className="min-h-screen bg-gray-900 pb-20">
+            <PerformanceList initialPerformances={performances} />
+        </main>
+    );
 }

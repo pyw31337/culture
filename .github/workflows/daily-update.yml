@@ -1,0 +1,53 @@
+name: Daily Data Update
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # 00:00 KST (15:00 UTC)
+  workflow_dispatch:
+  push:
+    branches:
+      - main # Manual trigger
+
+permissions:
+  contents: write # Needed to push changes
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Scrapers
+        run: |
+          npx tsx scripts/scrape-kovo.ts
+          npx tsx scripts/scrape-kbl.ts
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add src/data/*.json
+          # Only commit if there are changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update sports data" && git push)
+
+      - name: Build Website
+        run: npm run build
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./html/culture/ # Based on user URL http://pyw31337.dothome.co.kr/culture/

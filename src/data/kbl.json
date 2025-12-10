@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kbl_20251210_한국가스공사_삼성",
+    "title": "[농구] 한국가스공사 vs 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-10 19:00",
+    "venue": "대구체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251211_DB_SK",
+    "title": "[농구] DB vs SK",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-11 19:00",
+    "venue": "원주DB프로미아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251212_KT_정관장",
+    "title": "[농구] KT vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-12 19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251213_SK_LG",
+    "title": "[농구] SK vs LG",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-13 14:00",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251213_한국가스공사_DB",
+    "title": "[농구] 한국가스공사 vs DB",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-13 14:00",
+    "venue": "대구체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251213_현대모비스_삼성",
+    "title": "[농구] 현대모비스 vs 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-13 16:30",
+    "venue": "울산동천체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251214_소노_LG",
+    "title": "[농구] 소노 vs LG",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-14 14:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251214_KCC_정관장",
+    "title": "[농구] KCC vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-14 14:00",
+    "venue": "부산사직체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251214_KT_SK",
+    "title": "[농구] KT vs SK",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-14 16:30",
+    "venue": "수원 KT 소닉붐 아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  }
+]
