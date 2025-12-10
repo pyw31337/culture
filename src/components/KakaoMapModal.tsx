@@ -41,6 +41,16 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
+
+                // CRITICAL FIX: Force layout update after slight delay to ensure container size is calculated
+                setTimeout(() => {
+                    map.relayout();
+                    map.setCenter(options.center);
+                }, 100);
+                setTimeout(() => {
+                    map.relayout();
+                    map.setCenter(options.center);
+                }, 500); // Second check for safety
                 overlaysRef.current = {}; // Reset overlays
 
                 const venueGroups = performances.reduce((acc, perf) => {
