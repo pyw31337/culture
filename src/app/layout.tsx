@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     icon: '/culture/favicon.png',
     apple: '/culture/icon.png',
   },
+  appleWebApp: {
+    title: 'Culture Flow',
+    statusBarStyle: 'black-translucent',
+  },
+  manifest: '/culture/manifest.json',
 };
 
 export default function RootLayout({
