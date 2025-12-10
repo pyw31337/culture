@@ -407,11 +407,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
                     {/* Left ALigned Title */}
                     <div className="text-center md:text-left">
-                        <Link href="/">
+                        <div onClick={() => {
+                            // Reset Logic
+                            setSearchText('');
+                            setSelectedRegion('all');
+                            setSelectedDistrict('all');
+                            setSelectedVenue('all');
+                            setSelectedGenre('all');
+                            setUserLocation(null);
+                            setSearchLocation(null);
+                            setSearchResults([]);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}>
                             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-1 cursor-pointer hover:opacity-80 transition-opacity">
                                 Culture Flow
                             </h1>
-                        </Link>
+                        </div>
                         <p className="text-gray-400 text-xs sm:text-sm">
                             서울 · 경기 · 인천 통합 공연 검색 ({lastUpdated})
 
@@ -771,11 +782,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         <div className="text-sm text-gray-400">
                                             <div className="flex items-center gap-1.5 mb-1">
                                                 <MapPin className="w-3.5 h-3.5 text-gray-500" />
-                                                <span className="line-clamp-1">{perf.venue}</span>
+                                                <button
+                                                    onClick={() => {
+                                                        const v = venues[perf.venue];
+                                                        if (v?.lat && v?.lng) {
+                                                            setSearchLocation({
+                                                                lat: v.lat,
+                                                                lng: v.lng,
+                                                                name: perf.venue
+                                                            });
+                                                            setViewMode('map');
+                                                        } else {
+                                                            alert("해당 공연장의 위치 정보가 없습니다.");
+                                                        }
+                                                    }}
+                                                    className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
+                                                >
+                                                    {perf.venue}
+                                                </button>
                                             </div>
-                                            {venueInfo?.address && venueInfo.address !== '정보 없음' && (
-                                                <p className="text-xs text-gray-500 pl-5 line-clamp-1">{venueInfo.address}</p>
-                                            )}
+                                            {/* Address hidden per request */}
                                         </div>
 
                                         <a
@@ -851,7 +877,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 viewMode === 'map' && (
                     <KakaoMapModal
                         performances={filteredPerformances} // Pass filtered!
-                        centerLocation={searchLocation}
+                        centerLocation={searchLocation}      // Pass search/focused location
                         onClose={() => setViewMode('list')}
                     />
                 )

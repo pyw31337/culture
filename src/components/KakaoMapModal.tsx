@@ -21,8 +21,6 @@ interface KakaoMapModalProps {
     centerLocation?: { lat: number; lng: number; name: string } | null;
 }
 
-// Removed local GENRE_COLORS
-
 export default function KakaoMapModal({ performances, onClose, centerLocation }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
@@ -36,8 +34,10 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                 if (!mapRef.current) return;
 
                 const options = {
-                    center: new window.kakao.maps.LatLng(37.5665, 126.9780), // Default Seoul
-                    level: 9
+                    center: centerLocation
+                        ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
+                        : new window.kakao.maps.LatLng(37.5665, 126.9780), // Default Seoul or Center
+                    level: centerLocation ? 5 : 9 // Closer zoom if centered
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
