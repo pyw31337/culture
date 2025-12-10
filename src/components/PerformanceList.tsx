@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useMemo, useEffect } from 'react';
 import { Performance } from '@/types';
 import { Search, MapPin, Calendar, ExternalLink, Filter, X, RotateCw, Crosshair, Navigation, ChevronDown, ChevronUp, LayoutGrid, CalendarDays, Map as MapIcon } from 'lucide-react';
@@ -406,9 +407,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
                     {/* Left ALigned Title */}
                     <div className="text-center md:text-left">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-1">
-                            Culture Flow
-                        </h1>
+                        <Link href="/">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-1 cursor-pointer hover:opacity-80 transition-opacity">
+                                Culture Flow
+                            </h1>
+                        </Link>
                         <p className="text-gray-400 text-xs sm:text-sm">
                             서울 · 경기 · 인천 통합 공연 검색 ({lastUpdated})
 
@@ -770,7 +773,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 <MapPin className="w-3.5 h-3.5 text-gray-500" />
                                                 <span className="line-clamp-1">{perf.venue}</span>
                                             </div>
-                                            {venueInfo?.address && (
+                                            {venueInfo?.address && venueInfo.address !== '정보 없음' && (
                                                 <p className="text-xs text-gray-500 pl-5 line-clamp-1">{venueInfo.address}</p>
                                             )}
                                         </div>

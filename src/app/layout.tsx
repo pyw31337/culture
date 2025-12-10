@@ -21,13 +21,17 @@ export const metadata: Metadata = {
     description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
     images: [
       {
-        url: "/culture/images/og_image.jpg",
-        width: 800,
+        url: "/culture/images/og-image.jpg",
+        width: 1200,
         height: 600,
         alt: "Culture Flow Preview",
       },
     ],
     type: "website",
+  },
+  icons: {
+    icon: '/culture/favicon.png',
+    apple: '/culture/icon.png',
   },
 };
 
