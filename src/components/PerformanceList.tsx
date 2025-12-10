@@ -55,6 +55,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [debouncedSearchText, setDebouncedSearchText] = useState(''); // Debounced value
     const [searchLocation, setSearchLocation] = useState<{ lat: number, lng: number, name: string } | null>(null);
     const [isSearching, setIsSearching] = useState(false);
+    const [searchResults, setSearchResults] = useState<any[]>([]); // New: Store multiple results
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);   // New: Dropdown visibility
 
     // Mobile Filter Toggle State
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -85,6 +87,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         // Reset location search when user types (revert to text filter)
         if (searchLocation) {
             setSearchLocation(null);
+            setSearchResults([]); // specific clear
+        }
+        // Close dropdown if text is cleared
+        if (!val) {
+            setIsDropdownOpen(false);
+            setSearchResults([]);
         }
     };
 
@@ -92,43 +100,72 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const handleSearch = async () => {
         if (!searchText.trim()) {
             setSearchLocation(null);
+            setIsDropdownOpen(false);
             return;
         }
 
         setIsSearching(true);
         setSearchLocation(null); // Reset previous location
+        setSearchResults([]);    // Reset previous results
+        setIsDropdownOpen(false);
+
+        const candidates: any[] = [];
 
         // 1. Try to find in existing Venues first (Exact Match)
-        const matchedVenueKey = Object.keys(venues).find(k => k.includes(searchText));
-        if (matchedVenueKey && venues[matchedVenueKey].lat) {
-            setSearchLocation({
-                lat: venues[matchedVenueKey].lat!,
-                lng: venues[matchedVenueKey].lng!,
-                name: matchedVenueKey
-            });
-            setIsSearching(false);
-            return;
-        }
+        // Fuzzy match venue keys
+        const matchedVenueKeys = Object.keys(venues).filter(k => k.includes(searchText));
+        matchedVenueKeys.forEach(k => {
+            if (venues[k].lat && venues[k].lng) {
+                candidates.push({
+                    name: k,
+                    lat: venues[k].lat,
+                    lng: venues[k].lng,
+                    address: venues[k].address,
+                    type: 'venue'
+                });
+            }
+        });
 
         // 2. Geocode via Nominatim
         try {
             const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchText)}`);
             const data = await res.json();
             if (data && data.length > 0) {
-                setSearchLocation({
-                    lat: parseFloat(data[0].lat),
-                    lng: parseFloat(data[0].lon),
-                    name: searchText
+                data.forEach((item: any) => {
+                    // Dedup: Don't add if already in candidates by name or very close coords?
+                    // For now just add.
+                    candidates.push({
+                        name: item.display_name.split(',')[0], // Simplify name?
+                        lat: parseFloat(item.lat),
+                        lng: parseFloat(item.lon),
+                        address: item.display_name,
+                        type: 'location'
+                    });
                 });
-            } else {
-                // No location found.
-                // We just stay in text filter mode (which is already active via searchText).
             }
         } catch (e) {
             console.error("Geocoding failed", e);
         } finally {
             setIsSearching(false);
+
+            if (candidates.length > 0) {
+                setSearchResults(candidates);
+                setIsDropdownOpen(true);
+            } else {
+                // No location found.
+                // We just stay in text filter mode.
+            }
         }
+    };
+
+    const handleSelectResult = (candidate: any) => {
+        setSearchLocation({
+            lat: candidate.lat,
+            lng: candidate.lng,
+            name: candidate.name
+        });
+        setSearchText(candidate.name); // Update input to selected name? User might want to refine.
+        setIsDropdownOpen(false);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -451,42 +488,83 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
 
                             {/* Search & Radius */}
-                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full xl:w-auto">
-                                {/* Radius Selector */}
-                                {activeLocation && (
-                                    <select
-                                        value={radius}
-                                        onChange={(e) => setRadius(Number(e.target.value))}
-                                        className="bg-gray-800 border border-gray-700 text-green-400 text-sm font-bold rounded-lg p-2.5 w-full sm:w-auto"
-                                    >
-                                        {RADIUS_OPTIONS.map(r => (
-                                            <option key={r.value} value={r.value}>{r.label}</option>
-                                        ))}
-                                    </select>
-                                )}
+                            {/* Search & Radius - UI Enhancements */}
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center">
 
-                                {/* Search Input */}
-                                <div className="relative flex-grow sm:w-80 flex gap-2">
-                                    <div className="relative flex-grow">
-                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                            <Search className="h-4 w-4 text-gray-500" />
-                                        </div>
-                                        <input
-                                            type="text"
-                                            className="block w-full pl-10 pr-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                            placeholder="공연명/장소 검색"
-                                            value={searchText}
-                                            onChange={handleSearchTextChange}
-                                            onKeyDown={handleKeyDown}
-                                        />
+                                {/* Search Pill Container */}
+                                <div className={clsx(
+                                    "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 w-full sm:w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                                    activeLocation ? "pl-1" : "pl-4"
+                                )}>
+
+                                    {/* Radius Selector (Animated / Conditional) - Left Side */}
+                                    <div className={clsx(
+                                        "overflow-hidden transition-all duration-300 flex items-center",
+                                        activeLocation ? "w-24 opacity-100 mr-2" : "w-0 opacity-0"
+                                    )}>
+                                        {activeLocation && (
+                                            <select
+                                                value={radius}
+                                                onChange={(e) => setRadius(Number(e.target.value))}
+                                                className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-2"
+                                            >
+                                                {RADIUS_OPTIONS.map(r => (
+                                                    <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
+                                                ))}
+                                            </select>
+                                        )}
                                     </div>
+
+                                    {/* Vertical Divider (Only if Active Location) */}
+                                    {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
+
+                                    {/* Search Input */}
+                                    <input
+                                        type="text"
+                                        className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3"
+                                        placeholder="공연명/장소 검색"
+                                        value={searchText}
+                                        onChange={handleSearchTextChange}
+                                        onKeyDown={handleKeyDown}
+                                    />
+
+                                    {/* Search Button (Circle) - Right Side */}
                                     <button
                                         onClick={handleSearch}
                                         disabled={isSearching}
-                                        className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-sm whitespace-nowrap disabled:opacity-50 transition-colors"
+                                        className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
                                     >
-                                        {isSearching ? '...' : '확인'}
+                                        {isSearching ? (
+                                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                        ) : (
+                                            <Search className="w-4 h-4" />
+                                        )}
                                     </button>
+
+                                    {/* Dropdown Results */}
+                                    {isDropdownOpen && searchResults.length > 0 && (
+                                        <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
+                                            <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
+                                                검색 결과 ({searchResults.length})
+                                            </div>
+                                            {searchResults.map((result, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={() => handleSelectResult(result)}
+                                                    className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
+                                                >
+                                                    <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
+                                                        <MapPin className="w-4 h-4" />
+                                                    </div>
+                                                    <div>
+                                                        <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
+                                                        <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
+                                                    </div>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+
                                 </div>
                             </div>
                         </div>
@@ -549,9 +627,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     setUserLocation(null);
                                     setSearchLocation(null);
                                     setSearchText('');
+                                    setSearchResults([]);
+                                    setIsDropdownOpen(false);
                                     setRadius(10);
                                 }}
-                                className="bg-gray-800 text-gray-400 hover:text-white px-3 py-1 rounded text-sm border border-gray-700 whitespace-nowrap"
+                                className="bg-gray-800 text-gray-400 hover:text-white px-3 py-1 rounded-full text-sm border border-gray-700 whitespace-nowrap hover:bg-gray-700 transition"
                             >
                                 위치 초기화
                             </button>
