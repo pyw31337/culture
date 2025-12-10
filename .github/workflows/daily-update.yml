@@ -24,8 +24,15 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
       - name: Install dependencies
-        run: npm ci
+        run: |
+          export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+          npm ci
 
       - name: Install System Dependencies (Puppeteer)
         run: |
@@ -33,6 +40,8 @@ jobs:
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
 
       - name: Run Scrapers
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
           npx tsx scripts/scrape-kovo.ts
           npx tsx scripts/scrape-kbl.ts
