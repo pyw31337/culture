@@ -107,9 +107,29 @@ async function getPerformances() {
 export default async function Home() {
     const performances = await getPerformances();
 
+    // Generate current time in KST (Korean Standard Time)
+    const now = new Date();
+    // Timezone offset for KST is UTC+9. 
+    // However, build environment might be UTC. 
+    // Reliable way:
+    const formatter = new Intl.DateTimeFormat('ko-KR', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false // 24-hour format
+    });
+
+    // Format: 2024. 12. 10. 13:45 (Intl default style)
+    // User probably wants cleaner YYYY.MM.DD HH:mm style or similar.
+    // Intl output is usually "2024. 12. 10. 13:45"
+    const lastUpdated = formatter.format(now);
+
     return (
         <main className="min-h-screen bg-gray-900 pb-20">
-            <PerformanceList initialPerformances={performances} />
+            <PerformanceList initialPerformances={performances} lastUpdated={lastUpdated} />
         </main>
     );
 }

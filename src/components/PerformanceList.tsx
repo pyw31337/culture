@@ -21,6 +21,7 @@ const venues = venueData as Record<string, Venue>;
 
 interface PerformanceListProps {
     initialPerformances: Performance[];
+    lastUpdated: string;
 }
 
 
@@ -43,7 +44,7 @@ function deg2rad(deg: number) {
     return deg * (Math.PI / 180)
 }
 
-export default function PerformanceList({ initialPerformances }: PerformanceListProps) {
+export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
@@ -303,7 +304,9 @@ export default function PerformanceList({ initialPerformances }: PerformanceList
                             Culture Flow
                         </h1>
                         <p className="text-gray-400 text-xs sm:text-sm">
-                            서울 · 경기 · 인천 통합 공연 검색 (v2.5)
+                            서울 · 경기 · 인천 통합 공연 검색 ({lastUpdated})
+
+
                         </p>
                     </div>
 
