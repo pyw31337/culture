@@ -356,7 +356,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Mobile Toggle Header - Only visible when Sticky */}
                     <div
                         className={clsx(
-                            "flex sm:hidden items-center justify-between cursor-pointer py-1",
+                            "flex xl:hidden items-center justify-between cursor-pointer py-1",
                             !isSticky && "hidden" // Hide when not sticky (fully expanded mode)
                         )}
                         onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
@@ -378,8 +378,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         //   - If NOT sticky: Always visible ('block')
                         //   - If sticky: Hidden unless toggled ('isMobileFilterOpen ? block : hidden')
                         (!isSticky || isMobileFilterOpen) ? 'block' : 'hidden',
-                        isSticky && 'mt-3 sm:mt-0', // Add margin only when sticky header is present
-                        'sm:block space-y-3 sm:space-y-4'
+                        isSticky && 'mt-3 xl:mt-0', // Add margin only when sticky header is present
+                        'xl:block space-y-3 sm:space-y-4'
                     )}>
 
                         {/* Top Group: Filters & Search */}
