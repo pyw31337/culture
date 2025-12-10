@@ -37,8 +37,8 @@ async function scrapeKbl() {
 
     // Dump content
     const content = await page.evaluate(() => document.body.innerText);
-    fs.writeFileSync(OUTPUT_PATH, content);
-    console.log(`Saved text content to ${OUTPUT_PATH}`);
+    // fs.writeFileSync(OUTPUT_PATH, content); // Removed debug write
+    // console.log(`Saved text content to ${OUTPUT_PATH}`);
 
     const lines = (content as string).split('\n').map(l => l.trim()).filter(l => l);
     const performances: any[] = []; // Use explicit type if possible, or matches Performance interface
