@@ -558,7 +558,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                             {/* Search & Radius */}
                             {/* Search & Radius - UI Enhancements */}
-                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center">
+                            <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center">
 
                                 {/* Search Pill Container */}
                                 <div className={clsx(
@@ -720,24 +720,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </p>
                     </div>
 
-                    {/* Reset Controls */}
-                    {activeLocation && (
-                        <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                            <button
-                                onClick={() => {
-                                    setUserLocation(null);
-                                    setSearchLocation(null);
-                                    setSearchText('');
-                                    setSearchResults([]);
-                                    setIsDropdownOpen(false);
-                                    setRadius(10);
-                                }}
-                                className="bg-gray-800 text-gray-400 hover:text-white px-3 py-1 rounded-full text-sm border border-gray-700 whitespace-nowrap hover:bg-gray-700 transition"
-                            >
-                                위치 초기화
-                            </button>
-                        </div>
-                    )}
                 </div>
 
                 {/* List View (Grid) */}
@@ -838,34 +820,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             </div>
 
             {/* Scroll to Top Button */}
-            {showScrollTop && (
-                <button
-                    onClick={scrollToTop}
-                    className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
-                    aria-label="Scroll to top"
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                    </svg>
-                </button>
-            )}
+            {
+                showScrollTop && (
+                    <button
+                        onClick={scrollToTop}
+                        className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+                        aria-label="Scroll to top"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                    </button>
+                )
+            }
 
             {/* Render View Modals */}
-            {viewMode === 'calendar' && (
-                <CalendarModal
-                    performances={filteredPerformances} // Pass filtered!
-                    onClose={() => setViewMode('list')}
-                />
-            )}
+            {
+                viewMode === 'calendar' && (
+                    <CalendarModal
+                        performances={filteredPerformances} // Pass filtered!
+                        onClose={() => setViewMode('list')}
+                    />
+                )
+            }
 
-            {viewMode === 'map' && (
-                <KakaoMapModal
-                    performances={filteredPerformances} // Pass filtered!
-                    centerLocation={searchLocation}
-                    onClose={() => setViewMode('list')}
-                />
-            )}
+            {
+                viewMode === 'map' && (
+                    <KakaoMapModal
+                        performances={filteredPerformances} // Pass filtered!
+                        centerLocation={searchLocation}
+                        onClose={() => setViewMode('list')}
+                    />
+                )
+            }
 
-        </div>
+        </div >
     );
 }
