@@ -13,11 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pyw31337.github.io"),
+  metadataBase: new URL("http://pyw31337.dothome.co.kr"),
   title: "Culture Flow 서울 · 경기 · 인천 통합 공연 검색",
   description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
   openGraph: {
-    title: "Culture Flow 서울 · 경기 · 인천 통합 공연 검색",
+    title: "Culture Flow",
+    siteName: "Culture Flow",
+    url: "http://pyw31337.dothome.co.kr/culture/",
     description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
     images: [
       {
