@@ -9,10 +9,16 @@ const KBL_POSTER = '/culture/images/kbl_poster.png';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl_debug.txt');
 
 async function scrapeKbl() {
-    console.log('Launching browser...');
+    console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'],
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        ],
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 

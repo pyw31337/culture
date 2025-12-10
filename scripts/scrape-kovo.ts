@@ -25,10 +25,15 @@ const VOLLEYBALL_POSTER = '/culture/images/volleyball_poster.png';
 // Static poster defined above.
 
 async function scrapeKovo() {
-    console.log('Launching browser...');
+    console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage', // Critical for CI envs with limited shared memory
+            '--disable-gpu'            // Standard CI stability flag
+        ],
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 
