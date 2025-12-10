@@ -111,8 +111,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
         const candidates: any[] = [];
 
-        // 1. Try to find in existing Venues first (Exact Match)
-        // Fuzzy match venue keys
+        // 1. Try to find in existing Venues first (Exact Match / High Priority)
         const matchedVenueKeys = Object.keys(venues).filter(k => k.includes(searchText));
         matchedVenueKeys.forEach(k => {
             if (venues[k].lat && venues[k].lng) {
@@ -126,36 +125,43 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             }
         });
 
-        // 2. Geocode via Nominatim
-        try {
-            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchText)}`);
-            const data = await res.json();
-            if (data && data.length > 0) {
+        // 2. Kakao Places Search
+        if (!window.kakao || !window.kakao.maps || !window.kakao.maps.services) {
+            console.error("Kakao Maps SDK not loaded");
+            setIsSearching(false);
+            if (candidates.length > 0) {
+                setSearchResults(candidates);
+                setIsDropdownOpen(true);
+            }
+            return;
+        }
+
+        const ps = new window.kakao.maps.services.Places();
+
+        ps.keywordSearch(searchText, (data: any[], status: any) => {
+            if (status === window.kakao.maps.services.Status.OK) {
                 data.forEach((item: any) => {
-                    // Dedup: Don't add if already in candidates by name or very close coords?
-                    // For now just add.
+                    // Kakao returns 'y' (lat), 'x' (lng) as strings
+                    // Dedup: Simple check against existing candidates?
                     candidates.push({
-                        name: item.display_name.split(',')[0], // Simplify name?
-                        lat: parseFloat(item.lat),
-                        lng: parseFloat(item.lon),
-                        address: item.display_name,
-                        type: 'location'
+                        name: item.place_name,
+                        lat: parseFloat(item.y),
+                        lng: parseFloat(item.x),
+                        address: item.road_address_name || item.address_name,
+                        type: 'location',
+                        category: item.category_name // Optional: use for filtering if needed
                     });
                 });
             }
-        } catch (e) {
-            console.error("Geocoding failed", e);
-        } finally {
-            setIsSearching(false);
 
+            setIsSearching(false);
             if (candidates.length > 0) {
                 setSearchResults(candidates);
                 setIsDropdownOpen(true);
             } else {
-                // No location found.
-                // We just stay in text filter mode.
+                // No results
             }
-        }
+        });
     };
 
     const handleSelectResult = (candidate: any) => {
