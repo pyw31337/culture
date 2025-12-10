@@ -57,6 +57,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isSearching, setIsSearching] = useState(false);
     const [searchResults, setSearchResults] = useState<any[]>([]); // New: Store multiple results
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);   // New: Dropdown visibility
+    const [isSdkLoaded, setIsSdkLoaded] = useState(false);         // New: Track SDK Load Status
 
     // Mobile Filter Toggle State
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -79,6 +80,49 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }, 300);
         return () => clearTimeout(timer);
     }, [searchText]);
+
+    // Load Kakao Maps SDK for Search
+    useEffect(() => {
+        const scriptId = 'kakao-map-script';
+
+        // internal handler
+        const handleLoad = () => {
+            window.kakao.maps.load(() => {
+                setIsSdkLoaded(true);
+            });
+        };
+
+        if (document.getElementById(scriptId)) {
+            // Script already exists. Check if loaded.
+            if (window.kakao && window.kakao.maps && window.kakao.maps.services) {
+                setIsSdkLoaded(true);
+            } else {
+                // Exist but might be loading? Add listener? 
+                // It's safer to just assume it will load or is loaded.
+                // We can manually trigger check or attach onload.
+                const existingScript = document.getElementById(scriptId) as HTMLScriptElement;
+                existingScript.addEventListener('load', handleLoad);
+                // Fallback check
+                setTimeout(() => {
+                    if (window.kakao && window.kakao.maps) setIsSdkLoaded(true);
+                }, 1000);
+            }
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services`;
+        script.async = true;
+
+        script.onload = handleLoad;
+
+        document.head.appendChild(script);
+
+        return () => {
+            // Cleanup listeners if strict, but script serves whole app.
+        };
+    }, []);
 
     // Handle Input Change (Real-time Text Filter)
     const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -126,21 +170,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         });
 
         // 2. Kakao Places Search
-        // Ensure SDK is loaded
-        if (!window.kakao || !window.kakao.maps) {
-            console.error("Kakao Maps SDK not found on window");
-            // Retry mechanism? Or just alert user?
-            // Since we load it on mount, it should be there.
-            // If not, maybe it's still loading.
-            setIsSearching(false);
+        // Check SDK status
+        if (!isSdkLoaded || !window.kakao || !window.kakao.maps) {
+            console.warn("Kakao SDK not ready yet. Retrying in 500ms...");
+            // Simple Retry once?
+            setTimeout(() => handleSearch(), 500);
             return;
         }
 
         window.kakao.maps.load(() => {
             if (!window.kakao.maps.services) {
-                console.error("Kakao Maps Services library not loaded");
+                console.error("Kakao Maps Services library failed to load.");
+                alert("지도 검색 기능을 불러오는데 실패했습니다. (새로고침 권장)");
                 setIsSearching(false);
-                // If only internal candidates exist, show them
                 if (candidates.length > 0) {
                     setSearchResults(candidates);
                     setIsDropdownOpen(true);
@@ -165,15 +207,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         });
                     });
                 } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
-                    // No result
+                    // Normal behavior, just no results
                 } else if (status === window.kakao.maps.services.Status.ERROR) {
-                    console.error("Kakao Search Error", status);
+                    console.error("Kakao Search API Error", status);
+                    alert("검색 중 오류가 발생했습니다. (API 설정 또는 도메인 확인 필요)");
                 }
-
-                // Merge with internal candidates (deduplicated)
-                // We already have internal candidates in `candidates` array (from closure above? NO, wait.)
-                // I need to be careful with `const candidates` defined above.
-                // It's defined outside this callback.
 
                 const finalResults = [...candidates, ...results];
 
@@ -183,7 +221,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     setIsDropdownOpen(true);
                 } else {
                     setSearchResults([]);
-                    // Optional: Show "No results" toast
+                    // Optional: Toast "No results found"
                 }
             });
         });
