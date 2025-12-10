@@ -119,13 +119,23 @@ export default async function Home() {
         day: '2-digit',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false // 24-hour format
+        weekday: 'short',
+        hour12: false
     });
 
-    // Format: 2024. 12. 10. 13:45 (Intl default style)
-    // User probably wants cleaner YYYY.MM.DD HH:mm style or similar.
-    // Intl output is usually "2024. 12. 10. 13:45"
-    const lastUpdated = formatter.format(now);
+    // Default format might be "2024. 12. 10. (수) 13:45" or similar depending on Node version.
+    // Let's customize it to ensure exact format: YYYY. MM. DD. (Day) HH:mm 기준
+    const parts = formatter.formatToParts(now);
+    const getPart = (type: string) => parts.find(p => p.type === type)?.value;
+
+    const year = getPart('year');
+    const month = getPart('month');
+    const day = getPart('day');
+    const weekday = getPart('weekday'); // "수"
+    const hour = getPart('hour');
+    const minute = getPart('minute');
+
+    const lastUpdated = `${year}. ${month}. ${day}. (${weekday}) ${hour}:${minute} 기준`;
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20">
