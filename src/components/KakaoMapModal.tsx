@@ -29,19 +29,9 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
     const overlaysRef = useRef<Record<string, any>>({});
 
     useEffect(() => {
-        // Check if script already exists
-        if (document.getElementById('kakao-map-script')) {
-            // Already loaded or loading
-            return;
-        }
+        const scriptId = 'kakao-map-script';
 
-        // Load Kakao Maps SDK
-        const script = document.createElement('script');
-        script.id = 'kakao-map-script';
-        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services`;
-        script.async = true;
-
-        script.onload = () => {
+        const initializeMap = () => {
             window.kakao.maps.load(() => {
                 if (!mapRef.current) return;
 
@@ -114,9 +104,6 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
 
                     const primaryGenre = perfs[0].genre;
                     const color = GENRE_STYLES[primaryGenre]?.hex || '#9ca3af';
-
-                    // Parse HEX to RGB for background opacity
-                    // Simple fix: just use the hex color
 
                     // Custom Overlay Content
                     const content = document.createElement('div');
@@ -225,20 +212,43 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                 });
 
                 if (hasMarkers) {
-                    if (searchLocationRef.current) {
-                        // Ensure bounds include search location with padding if needed, but extend() does that.
-                    }
                     map.setBounds(bounds);
                 }
             });
         };
 
-        const searchLocationRef = { current: centerLocation }; // Keep ref for unique markers if needed, but useEffect depends on [performances, centerLocation]
+        // Check if script already exists and is loaded
+        if (document.getElementById(scriptId)) {
+            if (window.kakao && window.kakao.maps) {
+                // Already valid
+                initializeMap();
+            } else {
+                // Exists but maybe loading. Attach listener if possible, or poll?
+                // Since PerformanceList loads it, we can assume it will be ready soon.
+                // Let's attach an interval or just re-attach load listener to the existing script?
+                // Actually, if it's already in DOM, 'load' event might have passed.
+                // Polling is safest fallback.
+                const checkInterval = setInterval(() => {
+                    if (window.kakao && window.kakao.maps) {
+                        clearInterval(checkInterval);
+                        initializeMap();
+                    }
+                }, 100);
+                setTimeout(() => clearInterval(checkInterval), 5000); // 5s timeout
+            }
+            return;
+        }
 
+        // Script doesn't exist (unlikely if PerformanceList loads it, but for safety)
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services`;
+        script.async = true;
+        script.onload = initializeMap;
         document.head.appendChild(script);
 
         return () => {
-            // document.head.removeChild(script);
+            // Cleanup
         };
     }, [performances, centerLocation]);
 
