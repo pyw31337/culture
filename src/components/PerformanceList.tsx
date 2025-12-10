@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Performance } from '@/types';
-import { Search, MapPin, Calendar, ExternalLink, Filter, X, Crosshair, Navigation, ChevronDown, ChevronUp, LayoutGrid, CalendarDays, Map as MapIcon } from 'lucide-react';
+import { Search, MapPin, Calendar, ExternalLink, Filter, X, RotateCw, Crosshair, Navigation, ChevronDown, ChevronUp, LayoutGrid, CalendarDays, Map as MapIcon } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -597,6 +597,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         onKeyDown={handleKeyDown}
                                     />
 
+                                    {/* Clear Text 'X' Button */}
+                                    {searchText && (
+                                        <button
+                                            onClick={() => {
+                                                setSearchText('');
+                                                setIsDropdownOpen(false);
+                                                setSearchResults([]);
+                                            }}
+                                            className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
+                                        >
+                                            <X className="w-4 h-4" />
+                                        </button>
+                                    )}
+
                                     {/* Search Button (Circle) - Right Side */}
                                     <button
                                         onClick={handleSearch}
@@ -635,6 +649,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     )}
 
                                 </div>
+
+                                {/* Reset Location Button (Separate Circle) */}
+                                {(activeLocation || searchText) && (
+                                    <button
+                                        onClick={() => {
+                                            setUserLocation(null);
+                                            setSearchLocation(null);
+                                            setSearchText('');
+                                            setSearchResults([]);
+                                            setIsDropdownOpen(false);
+                                            setRadius(10);
+                                        }}
+                                        className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
+                                        title="위치 초기화"
+                                    >
+                                        <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                                    </button>
+                                )}
                             </div>
                         </div>
 
