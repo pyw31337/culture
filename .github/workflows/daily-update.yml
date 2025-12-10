@@ -25,6 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Chrome
+        id: setup-chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
