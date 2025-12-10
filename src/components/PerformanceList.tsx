@@ -558,24 +558,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                             {/* Search & Radius */}
                             {/* Search & Radius - UI Enhancements */}
-                            <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center">
+                            <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
 
                                 {/* Search Pill Container */}
                                 <div className={clsx(
-                                    "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 w-full sm:w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                                    "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 sm:flex-none sm:w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
                                     activeLocation ? "pl-1" : "pl-4"
                                 )}>
 
                                     {/* Radius Selector (Animated / Conditional) - Left Side */}
                                     <div className={clsx(
-                                        "overflow-hidden transition-all duration-300 flex items-center",
-                                        activeLocation ? "w-24 opacity-100 mr-2" : "w-0 opacity-0"
+                                        "overflow-hidden transition-all duration-300 flex items-center shrink-0",
+                                        activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
                                     )}>
                                         {activeLocation && (
                                             <select
                                                 value={radius}
                                                 onChange={(e) => setRadius(Number(e.target.value))}
-                                                className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-2"
+                                                className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
                                             >
                                                 {RADIUS_OPTIONS.map(r => (
                                                     <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
@@ -590,7 +590,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     {/* Search Input */}
                                     <input
                                         type="text"
-                                        className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3"
+                                        className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
                                         placeholder="공연명/장소 검색"
                                         value={searchText}
                                         onChange={handleSearchTextChange}
