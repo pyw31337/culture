@@ -29,8 +29,15 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
     const overlaysRef = useRef<Record<string, any>>({});
 
     useEffect(() => {
+        // Check if script already exists
+        if (document.getElementById('kakao-map-script')) {
+            // Already loaded or loading
+            return;
+        }
+
         // Load Kakao Maps SDK
         const script = document.createElement('script');
+        script.id = 'kakao-map-script';
         script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services`;
         script.async = true;
 

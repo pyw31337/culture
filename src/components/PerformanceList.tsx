@@ -126,41 +126,66 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         });
 
         // 2. Kakao Places Search
-        if (!window.kakao || !window.kakao.maps || !window.kakao.maps.services) {
-            console.error("Kakao Maps SDK not loaded");
+        // Ensure SDK is loaded
+        if (!window.kakao || !window.kakao.maps) {
+            console.error("Kakao Maps SDK not found on window");
+            // Retry mechanism? Or just alert user?
+            // Since we load it on mount, it should be there.
+            // If not, maybe it's still loading.
             setIsSearching(false);
-            if (candidates.length > 0) {
-                setSearchResults(candidates);
-                setIsDropdownOpen(true);
-            }
             return;
         }
 
-        const ps = new window.kakao.maps.services.Places();
+        window.kakao.maps.load(() => {
+            if (!window.kakao.maps.services) {
+                console.error("Kakao Maps Services library not loaded");
+                setIsSearching(false);
+                // If only internal candidates exist, show them
+                if (candidates.length > 0) {
+                    setSearchResults(candidates);
+                    setIsDropdownOpen(true);
+                }
+                return;
+            }
 
-        ps.keywordSearch(searchText, (data: any[], status: any) => {
-            if (status === window.kakao.maps.services.Status.OK) {
-                data.forEach((item: any) => {
-                    // Kakao returns 'y' (lat), 'x' (lng) as strings
-                    // Dedup: Simple check against existing candidates?
-                    candidates.push({
-                        name: item.place_name,
-                        lat: parseFloat(item.y),
-                        lng: parseFloat(item.x),
-                        address: item.road_address_name || item.address_name,
-                        type: 'location',
-                        category: item.category_name // Optional: use for filtering if needed
+            const ps = new window.kakao.maps.services.Places();
+
+            ps.keywordSearch(searchText, (data: any[], status: any) => {
+                const results: any[] = [];
+
+                if (status === window.kakao.maps.services.Status.OK) {
+                    data.forEach((item: any) => {
+                        results.push({
+                            name: item.place_name,
+                            lat: parseFloat(item.y),
+                            lng: parseFloat(item.x),
+                            address: item.road_address_name || item.address_name,
+                            type: 'location',
+                            category: item.category_name
+                        });
                     });
-                });
-            }
+                } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
+                    // No result
+                } else if (status === window.kakao.maps.services.Status.ERROR) {
+                    console.error("Kakao Search Error", status);
+                }
 
-            setIsSearching(false);
-            if (candidates.length > 0) {
-                setSearchResults(candidates);
-                setIsDropdownOpen(true);
-            } else {
-                // No results
-            }
+                // Merge with internal candidates (deduplicated)
+                // We already have internal candidates in `candidates` array (from closure above? NO, wait.)
+                // I need to be careful with `const candidates` defined above.
+                // It's defined outside this callback.
+
+                const finalResults = [...candidates, ...results];
+
+                setIsSearching(false);
+                if (finalResults.length > 0) {
+                    setSearchResults(finalResults);
+                    setIsDropdownOpen(true);
+                } else {
+                    setSearchResults([]);
+                    // Optional: Show "No results" toast
+                }
+            });
         });
     };
 
