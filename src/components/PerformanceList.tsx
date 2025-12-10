@@ -680,6 +680,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {viewMode === 'map' && (
                 <KakaoMapModal
                     performances={filteredPerformances} // Pass filtered!
+                    centerLocation={searchLocation}
                     onClose={() => setViewMode('list')}
                 />
             )}
