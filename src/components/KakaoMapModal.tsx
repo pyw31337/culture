@@ -221,9 +221,10 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                     };
                 });
 
-                if (hasMarkers) {
-                    map.setBounds(bounds);
-                }
+                // Removed setBounds to prevent auto-zoom to country level
+                // if (hasMarkers) {
+                //     map.setBounds(bounds);
+                // }
             });
         };
 
