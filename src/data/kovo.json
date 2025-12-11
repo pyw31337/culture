@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251211_SAMSUNG BLUEFANGS_HYUNDAI CAPITAL",
-    "title": "[배구] SAMSUNG BLUEFANGS vs HYUNDAI CAPITAL",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-11 19:00",
-    "venue": "대전 충무체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251206_KOREA EXPRESSWAY_HEUNGKUK PINKSPIDERS",
-    "title": "[배구] KOREA EXPRESSWAY vs HEUNGKUK PINKSPIDERS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-06 11:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251211_KOREA EXPRESSWAY_HEUNGKUK PINKSPIDERS",
-    "title": "[배구] KOREA EXPRESSWAY vs HEUNGKUK PINKSPIDERS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-11 19:00",
-    "venue": "김천실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251206_PEPPER SAVINGS BANK_JUNG KWAN JANG",
-    "title": "[배구] PEPPER SAVINGS BANK vs JUNG KWAN JANG",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-06 11:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251212_PEPPER SAVINGS BANK_JUNG KWAN JANG",
     "title": "[배구] PEPPER SAVINGS BANK vs JUNG KWAN JANG",
     "image": "/culture/images/volleyball_poster.png",
