@@ -100,6 +100,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
+    const [isFilterExpanded, setIsFilterExpanded] = useState(true); // Toggle Detailed Search
 
     // Infinite Scroll State
     const [visibleCount, setVisibleCount] = useState(24);
@@ -678,220 +679,247 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
 
             {/* Sticky Container */}
-            <div className={clsx(
-                "sticky top-0 z-50 transition-all duration-300 bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2",
-                // Simplified UI: Always show full content, just use sticky style
-            )}>
-                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <div
+                className={clsx(
+                    "sticky top-0 z-50 transition-all duration-300 bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2",
+                    !isFilterExpanded && "cursor-pointer hover:bg-[#152030]"
+                )}
+                onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
+            >
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
 
-                    {/* Top Group: Filters & Search */}
-                    <div className={clsx(
-                        "flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center transition-all duration-500 overflow-hidden",
-                        "max-h-[500px] opacity-100"
-                    )}>
-
-                        {/* Filter Controls (Venue, Region, District) */}
-                        <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
-
-                            {/* Venue Select */}
-                            <div className="relative shrink-0 w-full sm:w-auto">
-                                <select
-                                    value={selectedVenue}
-                                    onChange={(e) => setSelectedVenue(e.target.value)}
-                                    className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
-                                >
-                                    <option value="all">전체 공연장</option>
-                                    {availableVenues.map(v => (
-                                        <option key={v} value={v}>{v}</option>
-                                    ))}
-                                </select>
-                                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </div>
+                    {/* Collapsed View: 1 Line */}
+                    {!isFilterExpanded && (
+                        <div className="flex items-center justify-between h-10">
+                            <div className="flex items-center gap-2 text-gray-400 text-sm">
+                                <Search className="w-4 h-4" />
+                                <span>상세 검색 (지역, 장르, 공연장 등)</span>
+                                {activeLocation && <span className="text-green-400 text-xs ml-2">● 위치 필터 적용중</span>}
                             </div>
-
-                            {/* Region Buttons Filter Group */}
-                            <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
-                                {REGIONS.map(r => (
-                                    <button
-                                        key={r.id}
-                                        onClick={() => {
-                                            setSelectedRegion(r.id);
-                                            setSelectedDistrict('all');
-                                            setSelectedVenue('all');
-                                        }}
-                                        className={clsx(
-                                            'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
-                                            selectedRegion === r.id
-                                                ? 'bg-blue-600 text-white shadow-md'
-                                                : 'text-gray-400 hover:text-white hover:bg-gray-700'
-                                        )}
-                                    >
-                                        {r.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* District Select */}
-                            {selectedRegion !== 'all' && (
-                                <div className="relative w-full sm:w-auto">
-                                    <select
-                                        value={selectedDistrict}
-                                        onChange={(e) => {
-                                            setSelectedDistrict(e.target.value);
-                                            setSelectedVenue('all'); // Reset venue when district changes
-                                        }}
-                                        className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
-                                    >
-                                        <option value="all">전체 지역</option>
-                                        {districts.map(d => (
-                                            <option key={d} value={d}>{d}</option>
-                                        ))}
-                                    </select>
-                                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                    </div>
-                                </div>
-                            )}
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsFilterExpanded(true);
+                                }}
+                                className="p-1 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700"
+                            >
+                                <ChevronDown className="w-5 h-5" />
+                            </button>
                         </div>
+                    )}
 
+                    {/* Expanded View: 2 Lines (Original Content) */}
+                    <div className={clsx(
+                        "transition-all duration-300 overflow-hidden",
+                        isFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    )}>
+                        <div className="flex flex-col gap-3">
+                            {/* Row 1: Filters & Search */}
+                            <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
 
-                        {/* Search & Radius */}
-                        {/* Search & Radius - UI Enhancements */}
-                        <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
+                                {/* Filter Controls (Venue, Region, District) */}
+                                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
-                            <div className={clsx(
-                                "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
-                                activeLocation ? "pl-1" : "pl-4"
-                            )}>
-
-                                {/* Radius Selector (Animated / Conditional) - Left Side */}
-                                <div className={clsx(
-                                    "overflow-hidden transition-all duration-300 flex items-center shrink-0",
-                                    activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
-                                )}>
-                                    {activeLocation && (
+                                    {/* Venue Select */}
+                                    <div className="relative shrink-0 w-full sm:w-auto">
                                         <select
-                                            value={radius}
-                                            onChange={(e) => setRadius(Number(e.target.value))}
-                                            className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+                                            value={selectedVenue}
+                                            onChange={(e) => setSelectedVenue(e.target.value)}
+                                            className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
                                         >
-                                            {RADIUS_OPTIONS.map(r => (
-                                                <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
+                                            <option value="all">전체 공연장</option>
+                                            {availableVenues.map(v => (
+                                                <option key={v} value={v}>{v}</option>
                                             ))}
                                         </select>
-                                    )}
-                                </div>
-
-                                {/* Vertical Divider (Only if Active Location) */}
-                                {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
-
-                                {/* Search Input */}
-                                <input
-                                    type="text"
-                                    className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
-                                    placeholder="공연명/장소 검색"
-                                    value={searchText}
-                                    onChange={handleSearchTextChange}
-                                    onKeyDown={handleKeyDown}
-                                />
-
-                                {/* Clear Text 'X' Button */}
-                                {searchText && (
-                                    <button
-                                        onClick={() => {
-                                            setSearchText('');
-                                            setIsDropdownOpen(false);
-                                            setSearchResults([]);
-                                        }}
-                                        className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
-                                    >
-                                        <X className="w-4 h-4" />
-                                    </button>
-                                )}
-
-                                {/* Search Button (Circle) - Right Side */}
-                                <button
-                                    onClick={handleSearch}
-                                    disabled={isSearching}
-                                    className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
-                                >
-                                    {isSearching ? (
-                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                    ) : (
-                                        <Search className="w-4 h-4" />
-                                    )}
-                                </button>
-
-                                {/* Dropdown Results */}
-                                {isDropdownOpen && searchResults.length > 0 && (
-                                    <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
-                                        <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
-                                            검색 결과 ({searchResults.length})
+                                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                         </div>
-                                        {searchResults.map((result, idx) => (
+                                    </div>
+
+                                    {/* Region Buttons Filter Group */}
+                                    <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
+                                        {REGIONS.map(r => (
                                             <button
-                                                key={idx}
-                                                onClick={() => handleSelectResult(result)}
-                                                className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
+                                                key={r.id}
+                                                onClick={() => {
+                                                    setSelectedRegion(r.id);
+                                                    setSelectedDistrict('all');
+                                                    setSelectedVenue('all');
+                                                }}
+                                                className={clsx(
+                                                    'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
+                                                    selectedRegion === r.id
+                                                        ? 'bg-blue-600 text-white shadow-md'
+                                                        : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                                )}
                                             >
-                                                <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
-                                                    <MapPin className="w-4 h-4" />
-                                                </div>
-                                                <div>
-                                                    <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
-                                                    <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
-                                                </div>
+                                                {r.label}
                                             </button>
                                         ))}
                                     </div>
-                                )}
 
+                                    {/* District Select */}
+                                    {selectedRegion !== 'all' && (
+                                        <div className="relative w-full sm:w-auto">
+                                            <select
+                                                value={selectedDistrict}
+                                                onChange={(e) => {
+                                                    setSelectedDistrict(e.target.value);
+                                                    setSelectedVenue('all'); // Reset venue when district changes
+                                                }}
+                                                className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                            >
+                                                <option value="all">전체 지역</option>
+                                                {districts.map(d => (
+                                                    <option key={d} value={d}>{d}</option>
+                                                ))}
+                                            </select>
+                                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
+
+                                {/* Search & Radius */}
+                                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
+
+                                    <div className={clsx(
+                                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                                        activeLocation ? "pl-1" : "pl-4"
+                                    )}>
+
+                                        {/* Radius Selector */}
+                                        <div className={clsx(
+                                            "overflow-hidden transition-all duration-300 flex items-center shrink-0",
+                                            activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
+                                        )}>
+                                            {activeLocation && (
+                                                <select
+                                                    value={radius}
+                                                    onChange={(e) => setRadius(Number(e.target.value))}
+                                                    className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+                                                >
+                                                    {RADIUS_OPTIONS.map(r => (
+                                                        <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
+                                                    ))}
+                                                </select>
+                                            )}
+                                        </div>
+
+                                        {/* Divider */}
+                                        {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
+
+                                        {/* Search Input */}
+                                        <input
+                                            type="text"
+                                            className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
+                                            placeholder="공연명/장소 검색"
+                                            value={searchText}
+                                            onChange={handleSearchTextChange}
+                                            onKeyDown={handleKeyDown}
+                                        />
+
+                                        {/* Clear Button */}
+                                        {searchText && (
+                                            <button
+                                                onClick={() => {
+                                                    setSearchText('');
+                                                    setIsDropdownOpen(false);
+                                                }}
+                                                className="absolute right-12 text-gray-500 hover:text-white p-1"
+                                            >
+                                                <X className="w-4 h-4" />
+                                            </button>
+                                        )}
+
+                                        {/* Search Button */}
+                                        <button
+                                            onClick={handleSearch}
+                                            className="p-2.5 m-0.5 bg-blue-600 rounded-full hover:bg-blue-500 transition-colors shrink-0"
+                                        >
+                                            {isSearching ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Search className="w-4 h-4 text-white" />}
+                                        </button>
+
+                                        {/* Dropdown */}
+                                        {isDropdownOpen && searchResults.length > 0 && (
+                                            <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-80 overflow-y-auto">
+                                                {searchResults.map((result, idx) => (
+                                                    <div
+                                                        key={`search-${idx}`}
+                                                        onClick={() => handleSelectResult(result)}
+                                                        className="px-4 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-3 border-b border-gray-700/50 last:border-0"
+                                                    >
+                                                        <div className="bg-gray-900 p-2 rounded-full shrink-0">
+                                                            {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-green-400" />}
+                                                        </div>
+                                                        <div className="flex-1 min-w-0">
+                                                            <div className="text-white text-sm font-bold truncate">{result.name}</div>
+                                                            {result.address && <div className="text-gray-400 text-xs truncate">{result.address}</div>}
+                                                        </div>
+                                                        {result.category && <span className="text-xs text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded">{result.category}</span>}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Location Reset Button */}
+                                    {activeLocation && (
+                                        <button
+                                            onClick={() => {
+                                                setUserLocation(null);
+                                                setSearchLocation(null);
+                                                setSearchText('');
+                                                setSearchResults([]);
+                                                setIsDropdownOpen(false);
+                                                setRadius(10);
+                                            }}
+                                            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
+                                            title="위치 초기화"
+                                        >
+                                            <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                                        </button>
+                                    )}
+                                </div>
                             </div>
 
-                            {/* Reset Location Button (Separate Circle) */}
-                            {(activeLocation || searchText) && (
+                            {/* Row 2: Genre List & Toggle Button */}
+                            <div className="flex items-center gap-2">
+                                <div className="flex-1 flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                                    {GENRES.map(g => (
+                                        <button
+                                            key={g.id}
+                                            onClick={() => setSelectedGenre(g.id)}
+                                            className={clsx(
+                                                'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
+                                                selectedGenre === g.id
+                                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
+                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                                            )}
+                                        >
+                                            {g.label}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className="w-[1px] h-6 bg-gray-700 mx-1 hidden sm:block"></div>
+                                {/* Collapse Toggle Button */}
                                 <button
-                                    onClick={() => {
-                                        setUserLocation(null);
-                                        setSearchLocation(null);
-                                        setSearchText('');
-                                        setSearchResults([]);
-                                        setIsDropdownOpen(false);
-                                        setRadius(10);
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsFilterExpanded(false);
                                     }}
-                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
-                                    title="위치 초기화"
+                                    className="p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 shrink-0"
+                                    title="검색창 접기"
                                 >
-                                    <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                                    <ChevronUp className="w-5 h-5" />
                                 </button>
-                            )}
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Genre Filter Row & Toggle Button Container */}
-                    <div className={clsx(
-                        "flex items-center gap-2 transition-all duration-300 max-h-20 opacity-100"
-                    )}>
-                        {/* Genre List - Scrollable */}
-                        <div className="flex-1 flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                            {GENRES.map(g => (
-                                <button
-                                    key={g.id}
-                                    onClick={() => setSelectedGenre(g.id)}
-                                    className={clsx(
-                                        'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
-                                        selectedGenre === g.id
-                                            ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
-                                            : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
-                                    )}
-                                >
-                                    {g.label}
-                                </button>
-                            ))}
-                        </div>
-
-
                     </div>
                 </div>
             </div>
