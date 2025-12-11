@@ -102,6 +102,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
     const [isFilterExpanded, setIsFilterExpanded] = useState(true); // Toggle Detailed Search
 
+    // Auto-collapse when sticky, Auto-expand when top
+    useEffect(() => {
+        if (isSticky) {
+            setIsFilterExpanded(false);
+        } else {
+            setIsFilterExpanded(true);
+        }
+    }, [isSticky]);
+
     // Infinite Scroll State
     const [visibleCount, setVisibleCount] = useState(24);
 
