@@ -36,8 +36,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                 const options = {
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
-                        : new window.kakao.maps.LatLng(37.5665, 126.9780), // Default Seoul or Center
-                    level: centerLocation ? 5 : 9 // Closer zoom if centered
+                        : new window.kakao.maps.LatLng(37.554648, 126.972559), // Default: Seoul Station
+                    level: centerLocation ? 5 : 7 // Default level 7 (approx 500m scale)
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
