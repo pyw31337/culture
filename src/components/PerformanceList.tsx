@@ -382,7 +382,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // View Mode State
     const [viewMode, setViewMode] = useState<'list' | 'calendar' | 'map'>('list');
-    const [isSdkLoaded, setIsSdkLoaded] = useState(false);
+
 
     // Keyword Notification System
     const [keywords, setKeywords] = useState<string[]>([]);
