@@ -871,8 +871,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     {/* Genre Filter Row & Toggle Button Container */}
                     <div className={clsx(
-                        "flex items-center gap-2 transition-all duration-300",
-                        (isSticky && !isFilterExpanded) ? "max-h-0 opacity-0 mt-0" : "max-h-20 opacity-100"
+                        "flex items-center gap-2 transition-all duration-300 max-h-20 opacity-100"
                     )}>
                         {/* Genre List - Scrollable */}
                         <div className="flex-1 flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
