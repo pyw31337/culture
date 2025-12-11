@@ -692,9 +692,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Sticky Container */}
             <div className={clsx(
-                "sticky top-0 z-40 transition-all duration-300",
+                "sticky top-[1px] z-40 transition-all duration-300",
                 isSticky
-                    ? (isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-9 flex items-center justify-center")
+                    ? (isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-10 flex items-center justify-center")
                     : "bg-transparent py-4"
             )}>
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
@@ -932,7 +932,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     e.stopPropagation();
                                     setIsFilterExpanded(!isFilterExpanded);
                                 }}
-                                className="shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
+                                className="relative z-10 shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
                                 title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
                             >
                                 {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
