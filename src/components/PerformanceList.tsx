@@ -623,10 +623,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Sticky Sentinel */}
-            < div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
+            <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
 
             {/* Sticky Filter Container - Glassmorphism */}
-            < div
+            <div
                 className={
                     clsx(
                         "sticky top-0 z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md",
@@ -999,7 +999,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div >
 
                 {/* List View (Grid) */}
-                < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
+                <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
                 }>
                     {visiblePerformances.map((perf) => {
                         const venueInfo = venues[perf.venue];
@@ -1084,92 +1084,80 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
                         );
                     })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
-                                    >
-                    예매하기
-                </a>
-            </div>
-        </div >
-        </div >
-    );
-})
+                </div>
+
+                {/* Sentinel for Infinite Scroll - Only in List Mode */}
+                {
+                    viewMode === 'list' && visibleCount < filteredPerformances.length && (
+                        <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
+                            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+                        </div>
+                    )
+                }
+
+                {/* Empty State */}
+                {
+                    filteredPerformances.length === 0 && (
+                        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
+                            <Navigation className="w-12 h-12 mb-4 opacity-20" />
+                            <p>
+                                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                                    ? '현재 경기 일정이 없습니다.'
+                                    : '조건에 맞는 공연이 없습니다.'}
+                            </p>
+                            <button onClick={() => {
+                                setSelectedRegion('all');
+                                setSelectedDistrict('all');
+                                setSelectedGenre('all');
+                                setSearchText('');
+                                setUserLocation(null);
+                            }} className="mt-4 text-blue-400 hover:underline">
+                                필터 초기화
+                            </button>
+                        </div>
+                    )
+                }
+            </div >
+
+            {/* Scroll to Top Button */}
+            {
+                showScrollTop && (
+                    <button
+                        onClick={scrollToTop}
+                        className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+                        aria-label="Scroll to top"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                    </button>
+                )
             }
-        </div >
 
-    {/* Sentinel for Infinite Scroll - Only in List Mode */ }
-{
-    viewMode === 'list' && visibleCount < filteredPerformances.length && (
-        <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
-            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-    )
-}
-
-{/* Empty State */ }
-{
-    filteredPerformances.length === 0 && (
-        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
-            <Navigation className="w-12 h-12 mb-4 opacity-20" />
-            <p>
-                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                    ? '현재 경기 일정이 없습니다.'
-                    : '조건에 맞는 공연이 없습니다.'}
-            </p>
-            <button onClick={() => {
-                setSelectedRegion('all');
-                setSelectedDistrict('all');
-                setSelectedGenre('all');
-                setSearchText('');
-                setUserLocation(null);
-            }} className="mt-4 text-blue-400 hover:underline">
-                필터 초기화
-            </button>
-        </div>
-    )
-}
-    </div >
-
-    {/* Scroll to Top Button */ }
-{
-    showScrollTop && (
-        <button
-            onClick={scrollToTop}
-            className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
-            aria-label="Scroll to top"
-        >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-        </button>
-    )
-}
-
-{/* Render View Modals */ }
-{
-    viewMode === 'calendar' && (
-        <CalendarModal
-            performances={filteredPerformances} // Pass filtered!
-            onClose={() => setViewMode('list')}
-        />
-    )
-}
-
-{
-    viewMode === 'map' && (
-        <KakaoMapModal
-            performances={filteredPerformances} // Pass filtered!
-            centerLocation={
-                searchLocation ||
-                (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
-                    ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
-                    : null)
+            {/* Render View Modals */}
+            {
+                viewMode === 'calendar' && (
+                    <CalendarModal
+                        performances={filteredPerformances} // Pass filtered!
+                        onClose={() => setViewMode('list')}
+                    />
+                )
             }
-            onClose={() => setViewMode('list')}
-        />
-    )
-}
+
+            {
+                viewMode === 'map' && (
+                    <KakaoMapModal
+                        performances={filteredPerformances} // Pass filtered!
+                        centerLocation={
+                            searchLocation ||
+                            (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
+                                ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
+                                : null)
+                        }
+                        onClose={() => setViewMode('list')}
+                    />
+                )
+            }
 
         </div >
     );
