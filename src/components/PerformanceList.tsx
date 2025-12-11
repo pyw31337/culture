@@ -1076,7 +1076,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 viewMode === 'map' && (
                     <KakaoMapModal
                         performances={filteredPerformances} // Pass filtered!
-                        centerLocation={searchLocation}      // Pass search/focused location
+                        centerLocation={
+                            searchLocation ||
+                            (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
+                                ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
+                                : null)
+                        }
                         onClose={() => setViewMode('list')}
                     />
                 )
