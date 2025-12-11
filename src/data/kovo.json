@@ -1028,5 +1028,25 @@
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
     "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260104_SAMSUNG BLUEFANGS_KEPCO",
+    "title": "[배구] SAMSUNG BLUEFANGS vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-04 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260110_SAMSUNG BLUEFANGS_KEPCO",
+    "title": "[배구] SAMSUNG BLUEFANGS vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-10 14:00",
+    "venue": "대전 충무체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
   }
 ]
