@@ -422,43 +422,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         setKeywords(keywords.filter(key => key !== k));
     };
 
-    // Keyword Notification System
-    const [keywords, setKeywords] = useState<string[]>([]);
-    const [showKeywordInput, setShowKeywordInput] = useState(false);
-    const [newKeyword, setNewKeyword] = useState('');
 
-    useEffect(() => {
-        const saved = localStorage.getItem('culture_keywords');
-        if (saved) {
-            try {
-                setKeywords(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse keywords", e);
-            }
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem('culture_keywords', JSON.stringify(keywords));
-    }, [keywords]);
-
-    const addKeyword = () => {
-        if (!newKeyword.trim()) return;
-        if (keywords.length >= 5) {
-            alert("키워드는 최대 5개까지 설정 가능합니다.");
-            return;
-        }
-        if (keywords.includes(newKeyword.trim())) {
-            alert("이미 등록된 키워드입니다.");
-            return;
-        }
-        setKeywords([...keywords, newKeyword.trim()]);
-        setNewKeyword('');
-    };
-
-    const removeKeyword = (k: string) => {
-        setKeywords(keywords.filter(key => key !== k));
-    };
 
     // Main Filter Logic (Updated to return both matched and others)
     const { keywordMatches, otherPerformances } = useMemo(() => {
