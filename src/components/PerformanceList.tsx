@@ -619,7 +619,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                             {keywordMatches.map((performance) => (
                                 <div key={`keyword-${performance.id}`}
-                                    className="group bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50"
+                                    className="group bg-gradient-to-br from-gray-900 to-gray-800/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-yellow-400"
                                 >
                                     {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
                                     {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
