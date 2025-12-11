@@ -615,7 +615,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 }}
                                             >
                                                 <Image
-                                                    src={performance.posterUrl || "/api/placeholder/400/300"}
+                                                    src={performance.image || "/api/placeholder/400/300"}
                                                     alt={performance.title}
                                                     fill
                                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
