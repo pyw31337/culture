@@ -936,7 +936,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             </div>
                                             <div className="flex justify-between items-end border-t border-black/10 pt-2">
                                                 <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
-                                                    {performance.genre}
+                                                    {GENRES.find(g => g.id === performance.genre)?.label || performance.genre}
                                                 </span>
                                                 <span className="text-gray-900 text-xs font-medium">{performance.date}</span>
                                             </div>
