@@ -484,7 +484,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Header Optimized for Small Screens & View Tabs */}
             <div className="relative bg-black border-b border-gray-800">
-                <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
                     {/* Left ALigned Title */}
                     <div className="text-center md:text-left">
                         <div onClick={() => {
@@ -565,7 +565,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 "bg-gray-800 border-b border-gray-700 transition-all duration-300 overflow-hidden",
                 showKeywordInput ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
             )}>
-                <div className="max-w-7xl mx-auto p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <div className="flex items-center gap-2 flex-1 w-full sm:w-auto">
                         <span className="text-yellow-400 font-bold shrink-0">⭐ 키워드 알림:</span>
                         <input
@@ -623,7 +623,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )}
                 onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
             >
-                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+                <div className="w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
 
                     {/* Collapsed View: 1 Line */}
                     {!isFilterExpanded && (
