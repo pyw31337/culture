@@ -98,10 +98,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         setKeywords(keywords.filter(key => key !== k));
     };
 
-    // Mobile Filter Toggle State
-    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-    // Mobile Filter Toggle State
-    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
 
     // Infinite Scroll State
