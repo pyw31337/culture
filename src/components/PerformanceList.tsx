@@ -694,16 +694,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className={clsx(
                 "sticky top-0 z-40 transition-all duration-300",
                 isSticky
-                    ? (isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-1")
+                    ? (isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-9 flex items-center justify-center")
                     : "bg-transparent py-4"
             )}>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
                     {/* Collapsed Sticky Header (Only visible when sticky & collapsed) */}
                     {isSticky && !isFilterExpanded && (
                         <div
                             onClick={() => setIsFilterExpanded(true)}
-                            className="flex items-center justify-between cursor-pointer"
+                            className="w-full flex items-center justify-between cursor-pointer"
                         >
                             <span className="font-bold text-gray-200 flex items-center gap-2">
                                 <Search className="w-4 h-4 text-blue-500" />
@@ -927,7 +927,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         {/* Toggle Expansion Button - Right Aligned */}
                         {(!isSticky || isFilterExpanded) && (
                             <button
-                                onClick={() => setIsFilterExpanded(!isFilterExpanded)}
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsFilterExpanded(!isFilterExpanded);
+                                }}
                                 className="shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
                                 title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
                             >
