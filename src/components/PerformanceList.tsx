@@ -543,10 +543,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
                             {activeLocation
-                                ? (searchLocation?.name || '내 위치 (GPS)')
-                                : (selectedRegion !== 'all'
-                                    ? (REGIONS.find(r => r.id === selectedRegion)?.label + (selectedDistrict !== 'all' ? ` ${selectedDistrict}` : ''))
-                                    : '전체 지역')}
+                                ? (searchLocation ? searchLocation.name : '내 위치 (GPS)')
+                                : (
+                                    selectedRegion !== 'all'
+                                        ? `${REGIONS.find(r => r.id === selectedRegion)?.label || ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim()
+                                        : '전체 지역'
+                                )
+                            }
                         </span>
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15]">
@@ -630,54 +633,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Keyword Input Section (Collapsible) */}
-            <div className={clsx(
-                "bg-gray-800 border-b border-gray-700 transition-all duration-300 overflow-hidden",
-                showKeywordInput ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-            )}>
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="flex items-center gap-2 flex-1 w-full sm:w-auto">
-                        <span className="text-yellow-400 font-bold shrink-0">⭐ 키워드 알림:</span>
-                        <input
-                            type="text"
-                            value={newKeyword}
-                            onChange={(e) => setNewKeyword(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.nativeEvent.isComposing) return;
-                                if (e.key === 'Enter') addKeyword();
-                            }}
-                            placeholder="관심 키워드 (예: 만원, 무료)"
-                            className="bg-gray-700 border border-gray-600 text-white text-sm rounded px-3 py-1.5 focus:outline-none focus:border-yellow-400 w-full sm:w-64"
-                        />
-                        <button
-                            onClick={addKeyword}
-                            className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-sm whitespace-nowrap"
-                        >
-                            추가
-                        </button>
-                    </div>
-
-                    {/* Active Keywords Chips */}
-                    <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-                        {keywords.map(k => (
-                            <div key={k} className="flex items-center bg-gray-700 border border-yellow-500/30 text-yellow-100 px-2 py-1 rounded text-sm">
-                                <span>{k}</span>
-                                <button onClick={() => removeKeyword(k)} className="ml-2 text-yellow-500 hover:text-white">
-                                    <X className="w-3 h-3" />
-                                </button>
-                            </div>
-                        ))}
-                        {keywords.length === 0 && <span className="text-gray-500 text-xs">등록된 키워드가 없습니다.</span>}
-                        {keywords.length > 0 && (
-                            <button
-                                onClick={() => setKeywords([])}
-                                className="text-xs text-gray-500 hover:text-red-400 underline ml-2"
-                            >
-                                전체 삭제
-                            </button>
-                        )}
-                    </div>
-                </div>
-            </div>
+            {/* Removed Separated Keyword Section - Moved to Sticky Filter */}
 
 
 
@@ -737,7 +693,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
                             </div>
 
-                            {/* Sticky Search Bar - Only visible when sticky and collapsed */}
+                            {/* Keyword Toggle + Sticky Search - Collapsed View */}
                             <div
                                 className={clsx(
                                     "transition-all duration-300 transform origin-right flex items-center gap-2",
@@ -745,6 +701,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 )}
                                 onClick={(e) => e.stopPropagation()}
                             >
+                                {/* Keyword Button (Collapsed) */}
+                                <button
+                                    onClick={() => setShowKeywordInput(!showKeywordInput)}
+                                    className="p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
+                                >
+                                    <Star className="w-3 h-3 fill-current" />
+                                    <span>관심키워드</span>
+                                </button>
+
+                                {/* Quick Search Bar */}
                                 <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100">
                                     <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
                                         <Search className="w-4 h-4 text-white mr-2" />
@@ -764,6 +730,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setIsFilterExpanded(true);
+                                        setShowKeywordInput(false); // Close keywords when expanding if preferred, or keep open
                                     }}
                                     className="flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-2"
                                 >
@@ -847,60 +814,60 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     )}
                                 </div>
 
-                                {/* Search & Radius (Expanded) */}
-                                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
-                                    <div className={clsx(
-                                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
-                                        activeLocation ? "pl-1" : "pl-4"
-                                    )}>
+                                {/* Replaced Search Bar with Keyword Button in Expanded Mode */}
+                                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center justify-end">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setShowKeywordInput(!showKeywordInput);
+                                        }}
+                                        className="flex items-center gap-2 px-4 py-3 bg-yellow-500/10 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black rounded-full transition-all font-bold group"
+                                    >
+                                        <Star className="w-5 h-5 fill-current" />
+                                        <span className="hidden sm:inline">관심 키워드 설정</span>
+                                        <span className="sm:hidden">키워드</span>
+                                        {keywords.length > 0 && (
+                                            <span className="ml-1 bg-yellow-500 text-black group-hover:bg-black group-hover:text-yellow-500 text-xs px-2 py-0.5 rounded-full">
+                                                {keywords.length}
+                                            </span>
+                                        )}
+                                    </button>
+                                </div>
+                            </div>
 
-                                        {/* Radius Selector */}
-                                        <div className={clsx(
-                                            "overflow-hidden transition-all duration-300 flex items-center shrink-0",
-                                            activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
-                                        )}>
-                                            {activeLocation && (
-                                                <select
-                                                    value={radius}
-                                                    onChange={(e) => setRadius(Number(e.target.value))}
-                                                    className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
-                                                >
-                                                    {RADIUS_OPTIONS.map(r => (
-                                                        <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
-                                                    ))}
-                                                </select>
-                                            )}
-                                        </div>
-
-                                        {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
-
+                            {/* Improved Keyword Input Toggle - Integrated in Sticky Filter */}
+                            <div className={clsx(
+                                "transition-all duration-300 overflow-hidden bg-black/40 rounded-lg",
+                                showKeywordInput ? "max-h-60 opacity-100 border border-yellow-500/30 mb-2" : "max-h-0 opacity-0"
+                            )} onClick={(e) => e.stopPropagation()}>
+                                <div className="p-4 flex flex-col gap-3">
+                                    <div className="flex flex-col sm:flex-row items-center gap-3">
                                         <input
                                             type="text"
-                                            className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
-                                            placeholder="공연명/장소 검색"
-                                            value={searchText}
-                                            onChange={handleSearchTextChange}
-                                            onKeyDown={handleKeyDown}
+                                            value={newKeyword}
+                                            onChange={(e) => setNewKeyword(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if (e.nativeEvent.isComposing) return;
+                                                if (e.key === 'Enter') addKeyword();
+                                            }}
+                                            placeholder="관심 키워드 입력 (최대 5개)"
+                                            className="bg-gray-900 border border-gray-700 text-white text-sm rounded-md px-3 py-2 w-full sm:w-auto flex-1 focus:border-yellow-500 focus:outline-none"
                                         />
-
-                                        {searchText && (
-                                            <button
-                                                onClick={() => {
-                                                    setSearchText('');
-                                                    setIsDropdownOpen(false);
-                                                }}
-                                                className="absolute right-12 text-gray-500 hover:text-white p-1"
-                                            >
-                                                <X className="w-4 h-4" />
-                                            </button>
-                                        )}
-
                                         <button
-                                            onClick={handleSearch}
-                                            className="p-2.5 m-0.5 bg-blue-600 rounded-full hover:bg-blue-500 transition-colors shrink-0"
+                                            onClick={addKeyword}
+                                            className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-4 py-2 rounded-md text-sm whitespace-nowrap w-full sm:w-auto"
                                         >
-                                            {isSearching ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Search className="w-4 h-4 text-white" />}
+                                            추가하기
                                         </button>
+                                    </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {keywords.map(k => (
+                                            <div key={k} className="flex items-center bg-gray-900 border border-yellow-500/30 text-yellow-400 px-3 py-1.5 rounded-full text-sm font-medium">
+                                                <span>{k}</span>
+                                                <button onClick={() => removeKeyword(k)} className="ml-2 hover:text-white"><X className="w-3 h-3" /></button>
+                                            </div>
+                                        ))}
+                                        {keywords.length === 0 && <span className="text-gray-500 text-sm">등록된 키워드가 없습니다.</span>}
                                     </div>
                                 </div>
                             </div>
