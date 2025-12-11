@@ -900,10 +900,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         </div>
 
         {/* Main Content */ }
-    < div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8" >
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
         {/* Results Info */}
-        < div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2" >
+        <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
             <div className="w-full sm:w-auto">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
                     {activeLocation ? (
