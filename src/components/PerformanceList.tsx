@@ -767,7 +767,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
 
                                 {/* Region Buttons Filter Group */}
-                                <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
+                                <div className="flex bg-white/5 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10">
                                     {REGIONS.map(r => (
                                         <button
                                             key={r.id}
@@ -777,10 +777,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setSelectedVenue('all');
                                             }}
                                             className={clsx(
-                                                'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
+                                                'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
                                                 selectedRegion === r.id
-                                                    ? 'bg-blue-600 text-white shadow-md'
-                                                    : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                                    ? 'bg-white text-black font-bold shadow-lg'
+                                                    : 'text-gray-400 hover:text-white hover:bg-white/10'
                                             )}
                                         >
                                             {r.label}
@@ -1075,161 +1075,175 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         {/* List View (Grid) */}
         < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
         }>
-            {
-                visiblePerformances.map((perf) => {
-                    const venueInfo = venues[perf.venue];
-                    return (
-                        <div key={`${perf.id}-${perf.region}`} className="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 flex flex-col h-full relative">
-                            {/* Image */}
-                            <div className="relative aspect-[3/4] bg-gray-900 overflow-hidden">
-                                {perf.image ? (
-                                    <img
-                                        src={perf.image}
-                                        alt={perf.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        loading="lazy"
-                                    />
-                                ) : (
-                                    <div className="flex items-center justify-center h-full text-gray-600">No Image</div>
-                                )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+            {visiblePerformances.map((perf) => {
+                const venueInfo = venues[perf.venue];
 
-                                <div className="absolute top-2 right-2">
-                                    <span className={clsx(
-                                        "px-2 py-1 rounded text-[10px] font-bold uppercase backdrop-blur-md border border-white/10 text-white",
-                                        GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/80',
-                                        "opacity-90"
-                                    )}>
-                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                    </span>
-                                </div>
+                // Calculate distance if activeLocation exists for display
+                let distLabel = null;
+                if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
+                    const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
+                    distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
+                }
+
+                return (
+                    <div key={`${perf.id}-${perf.region}`} className="group relative aspect-[2/3] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-white/30 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2">
+                        {/* Image Layer */}
+                        {perf.image ? (
+                            <Image
+                                src={perf.image}
+                                alt={perf.title}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                loading="lazy"
+                            />
+                        ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                        )}
+
+                        {/* Distance Badge (Top Right) */}
+                        {distLabel && (
+                            <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                {distLabel}
+                            </div>
+                        )}
+
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 md:via-black/20" />
+
+                        {/* Content Layer (Bottom) */}
+                        <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 md:translate-y-4">
+
+                            {/* Tags/Badges */}
+                            <div className="flex flex-wrap gap-2 mb-2">
+                                <span className={clsx(
+                                    "px-2 py-1 rounded-[4px] text-[10px] font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
+                                    GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
+                                )}>
+                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                </span>
+                                {/* Date Badge */}
+                                <span className="px-2 py-1 rounded-[4px] text-[10px] bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                    <Calendar className="w-3 h-3" /> {perf.date}
+                                </span>
                             </div>
 
-                            {/* Details */}
-                            <div className="p-4 flex flex-col flex-grow">
-                                <div className="mb-2">
-                                    <span className="inline-flex items-center gap-1 text-blue-400 text-xs font-bold mb-1">
-                                        <Calendar className="w-3 h-3" /> {perf.date}
-                                    </span>
-                                    <h3 className="text-lg font-bold text-gray-100 line-clamp-2 leading-tight min-h-[3rem]" title={perf.title}>
-                                        {perf.title}
-                                    </h3>
-                                </div>
+                            <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link">
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                    {perf.title}
+                                </h3>
+                            </a>
 
-                                <div className="mt-auto space-y-3">
-                                    <div className="text-sm text-gray-400">
-                                        <div className="flex items-center gap-1.5 mb-1">
-                                            <MapPin className="w-3.5 h-3.5 text-gray-500" />
-                                            <button
-                                                onClick={() => {
-                                                    const v = venues[perf.venue];
-                                                    if (v?.lat && v?.lng) {
-                                                        setSearchLocation({
-                                                            lat: v.lat,
-                                                            lng: v.lng,
-                                                            name: perf.venue
-                                                        });
-                                                        setViewMode('map');
-                                                    } else {
-                                                        alert("해당 공연장의 위치 정보가 없습니다.");
-                                                    }
-                                                }}
-                                                className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
-                                            >
-                                                {perf.venue}
-                                            </button>
-                                        </div>
-                                        {/* Address hidden per request */}
-                                    </div>
-
-                                    <a
-                                        href={perf.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
-                                    >
-                                        예매하기
-                                    </a>
-                                </div>
+                            <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (venueInfo?.lat && venueInfo?.lng) {
+                                            setSearchLocation({
+                                                lat: venueInfo.lat,
+                                                lng: venueInfo.lng,
+                                                name: perf.venue
+                                            });
+                                            setViewMode('map');
+                                            scrollToTop();
+                                        }
+                                    }}
+                                    className="hover:text-[#a78bfa] hover:underline truncate"
+                                >
+                                    {perf.venue}
+                                </button>
                             </div>
                         </div>
+                    </div>
+                );
+            })}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
+                                    >
+            예매하기
+        </a>
+    </div>
+                            </div >
+                        </div >
                     );
-                })
+})
             }
         </div >
 
-        {/* Sentinel for Infinite Scroll - Only in List Mode */}
-        {
-            viewMode === 'list' && visibleCount < filteredPerformances.length && (
-                <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
-                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-                </div>
-            )
-        }
+    {/* Sentinel for Infinite Scroll - Only in List Mode */ }
+{
+    viewMode === 'list' && visibleCount < filteredPerformances.length && (
+        <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
+            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+        </div>
+    )
+}
 
-        {/* Empty State */}
-        {
-            filteredPerformances.length === 0 && (
-                <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
-                    <Navigation className="w-12 h-12 mb-4 opacity-20" />
-                    <p>
-                        {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                            ? '현재 경기 일정이 없습니다.'
-                            : '조건에 맞는 공연이 없습니다.'}
-                    </p>
-                    <button onClick={() => {
-                        setSelectedRegion('all');
-                        setSelectedDistrict('all');
-                        setSelectedGenre('all');
-                        setSearchText('');
-                        setUserLocation(null);
-                    }} className="mt-4 text-blue-400 hover:underline">
-                        필터 초기화
-                    </button>
-                </div>
-            )
-        }
+{/* Empty State */ }
+{
+    filteredPerformances.length === 0 && (
+        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
+            <Navigation className="w-12 h-12 mb-4 opacity-20" />
+            <p>
+                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                    ? '현재 경기 일정이 없습니다.'
+                    : '조건에 맞는 공연이 없습니다.'}
+            </p>
+            <button onClick={() => {
+                setSelectedRegion('all');
+                setSelectedDistrict('all');
+                setSelectedGenre('all');
+                setSearchText('');
+                setUserLocation(null);
+            }} className="mt-4 text-blue-400 hover:underline">
+                필터 초기화
+            </button>
+        </div>
+    )
+}
     </div >
 
     {/* Scroll to Top Button */ }
-    {
-        showScrollTop && (
-            <button
-                onClick={scrollToTop}
-                className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
-                aria-label="Scroll to top"
-            >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-            </button>
-        )
-    }
+{
+    showScrollTop && (
+        <button
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+            aria-label="Scroll to top"
+        >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    )
+}
 
-    {/* Render View Modals */ }
-    {
-        viewMode === 'calendar' && (
-            <CalendarModal
-                performances={filteredPerformances} // Pass filtered!
-                onClose={() => setViewMode('list')}
-            />
-        )
-    }
+{/* Render View Modals */ }
+{
+    viewMode === 'calendar' && (
+        <CalendarModal
+            performances={filteredPerformances} // Pass filtered!
+            onClose={() => setViewMode('list')}
+        />
+    )
+}
 
-    {
-        viewMode === 'map' && (
-            <KakaoMapModal
-                performances={filteredPerformances} // Pass filtered!
-                centerLocation={
-                    searchLocation ||
-                    (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
-                        ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
-                        : null)
-                }
-                onClose={() => setViewMode('list')}
-            />
-        )
-    }
+{
+    viewMode === 'map' && (
+        <KakaoMapModal
+            performances={filteredPerformances} // Pass filtered!
+            centerLocation={
+                searchLocation ||
+                (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
+                    ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
+                    : null)
+            }
+            onClose={() => setViewMode('list')}
+        />
+    )
+}
 
         </div >
     );
