@@ -944,6 +944,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </div>
                                 ))}
                             </div>
+                        )}
                     </div>
                 )
             }
