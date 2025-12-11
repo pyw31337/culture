@@ -97,8 +97,11 @@ async function getPerformances() {
         // Let's rely on p.region for now.
         if (p.region === 'etc') return false;
 
-        // 3. Bad Data Check
+        // 3. Bad Data / Blocklist Check
         if (p.venue === '예매하기') return false;
+
+        const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
+        if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
 
         return true;
     });
