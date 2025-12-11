@@ -692,15 +692,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Sticky Container */}
             <div className={clsx(
-                "sticky top-[1px] z-40 transition-all duration-300",
+                "sticky top-0 z-50 transition-all duration-300",
                 isSticky
                     ? (isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-10 flex items-center justify-center")
-                    : "bg-transparent py-4"
+                    : (!isFilterExpanded ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-10 flex items-center justify-center" : "bg-transparent py-4")
             )}>
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
-                    {/* Collapsed Sticky Header (Only visible when sticky & collapsed) */}
-                    {isSticky && !isFilterExpanded && (
+                    {/* Collapsed Sticky Header (Visible whenever collapsed) */}
+                    {!isFilterExpanded && (
                         <div
                             onClick={() => setIsFilterExpanded(true)}
                             className="w-full flex items-center justify-between cursor-pointer"
@@ -716,10 +716,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
                     )}
 
-                    {/* Top Group: Filters & Search (Hidden when sticky & collapsed) */}
+                    {/* Top Group: Filters & Search (Hidden when collapsed) */}
                     <div className={clsx(
                         "flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center transition-all duration-500 overflow-hidden",
-                        (isSticky && !isFilterExpanded) ? "max-h-0 opacity-0" : "max-h-[500px] opacity-100"
+                        !isFilterExpanded ? "max-h-0 opacity-0" : "max-h-[500px] opacity-100"
                     )}>
 
                         {/* Filter Controls (Venue, Region, District) */}
@@ -925,19 +925,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
 
                         {/* Toggle Expansion Button - Right Aligned */}
-                        {(!isSticky || isFilterExpanded) && (
-                            <button
-                                type="button"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsFilterExpanded(!isFilterExpanded);
-                                }}
-                                className="relative z-10 shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
-                                title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
-                            >
-                                {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                            </button>
-                        )}
+                        {/* Always visible if content is populated, controls expansion state */}
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsFilterExpanded(!isFilterExpanded);
+                            }}
+                            className="relative z-10 shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
+                            title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
+                        >
+                            {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                        </button>
                     </div>
                 </div>
             </div>
