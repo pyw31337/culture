@@ -482,15 +482,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     return (
         <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden">
             {/* 🌌 Aurora Background */}
-            <div className="aurora-container">
+            <div className="aurora-container !z-0 opacity-80">
                 <div className="aurora-blob blob-1"></div>
                 <div className="aurora-blob blob-2"></div>
                 <div className="aurora-blob blob-3"></div>
             </div>
-            <div className="noise-texture"></div>
+            <div className="noise-texture z-0 mix-blend-overlay opacity-20"></div>
 
             {/* Header: Logo & Last Updated */}
-            <header className="fixed top-0 left-0 right-0 z-50 py-3 px-4 border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300">
+            <header className="relative z-50 py-3 px-4 border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
@@ -507,12 +507,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             setIsFilterExpanded(true);
                         }}
                     >
-                        <div className="relative w-8 h-8 md:w-10 md:h-10 transition-transform group-hover:scale-110 duration-300">
+                        <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
                             <Image
                                 src="/images/ticket_icon.png"
                                 alt="Culture Flow Icon"
                                 fill
-                                className="object-contain"
+                                className="object-cover"
                             />
                         </div>
                         <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors">
@@ -529,22 +529,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
 
                         <div className="hidden md:flex gap-2">
-                            <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-4 h-4" /></button>
-                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-4 h-4" /></button>
-                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")} title="지도 보기"><MapIcon className="w-4 h-4" /></button>
+                            <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-5 h-5" /></button>
+                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
+                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
                         </div>
                     </div>
                 </div>
             </header>
 
-            {/* SPACER for Fixed Header */}
-            <div className="h-[80px] md:h-[100px]"></div>
-
             {/* Hero Section */}
-            <div className="relative z-10 max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between items-end gap-8">
+            <div className="relative z-50 max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between items-end gap-8">
                 <div>
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
-                        <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">{activeLocation ? (searchLocation?.name || '내 위치 (GPS)') : '전체 지역'}</span>
+                        <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
+                            {activeLocation
+                                ? (searchLocation?.name || '내 위치 (GPS)')
+                                : (selectedRegion !== 'all'
+                                    ? (REGIONS.find(r => r.id === selectedRegion)?.label + (selectedDistrict !== 'all' ? ` ${selectedDistrict}` : ''))
+                                    : '전체 지역')}
+                        </span>
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15]">
                         특별한 오늘, 당신을 위한<br />
@@ -558,11 +561,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative">
                             {/* Radius Select for Hero */}
                             {activeLocation && (
-                                <div className="border-r border-gray-700 pr-2 mr-2 ml-3">
+                                <div className="border-r border-gray-700 pr-0 mr-2 ml-3 relative flex items-center">
+                                    <div className="pointer-events-none absolute right-2 flex flex-col items-center justify-center opacity-70">
+                                        <ChevronUp className="w-2 h-2 text-gray-400" />
+                                        <ChevronDown className="w-2 h-2 text-gray-400" />
+                                    </div>
                                     <select
                                         value={radius}
                                         onChange={(e) => setRadius(Number(e.target.value))}
-                                        className="bg-transparent text-green-400 text-sm font-bold focus:outline-none cursor-pointer appearance-none"
+                                        className="bg-transparent text-green-400 text-sm font-bold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
                                     >
                                         {RADIUS_OPTIONS.map(r => (
                                             <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
@@ -675,14 +682,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Sticky Sentinel */}
-            <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
+            <div ref={sentinelRef} className="absolute top-0 h-1 w-full pointer-events-none" />
 
             {/* Sticky Filter Container - Glassmorphism */}
             <div
                 className={
                     clsx(
-                        "sticky top-[73px] md:top-[80px] z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md",
-                        isSticky ? "bg-black/80 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
+                        "sticky top-0 z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md",
+                        isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
                     )
                 }
             >
@@ -1017,35 +1024,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Main Content */}
-            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Results Info */}
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
                     <div className="w-full sm:w-auto">
-                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
-                            {activeLocation ? (
-                                <>
-                                    <MapPin className="text-green-500 w-5 h-5" />
-                                    <span className="truncate max-w-[200px] sm:max-w-md">
-                                        {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
-                                    </span>
-                                    <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
-                                </>
-                            ) : (
-                                <>
-                                    <span>추천 공연</span>
-                                    <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
-                                </>
-                            )}
-                        </h2>
-                        <p className="text-gray-400 text-xs sm:text-sm">
-                            {activeLocation
-                                ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
-                                : `조건에 맞는 공연을 찾았습니다.`}
-                        </p>
+                        <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
+                            <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                                {activeLocation ? (
+                                    <>
+                                        <MapPin className="text-green-500 w-5 h-5" />
+                                        <span className="truncate max-w-[150px] sm:max-w-xs">
+                                            {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
+                                        </span>
+                                        <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>추천 공연</span>
+                                        <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
+                                    </>
+                                )}
+                            </h2>
+                            <p className="text-gray-400 text-xs sm:text-sm font-medium pb-[3px]">
+                                {activeLocation
+                                    ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
+                                    : `조건에 맞는 공연을 찾았습니다.`}
+                            </p>
+                        </div>
                     </div>
-
-                </div >
+                </div>
 
                 {/* List View (Grid) */}
                 <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
@@ -1084,7 +1091,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 )}
 
                                 {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 md:via-black/20" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
 
                                 {/* Content Layer (Bottom) */}
                                 <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 md:translate-y-4">
@@ -1104,7 +1111,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </div>
 
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link">
-                                        <h3 className="text-xl md:text-2xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                        <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                             {perf.title}
                                         </h3>
                                     </a>
