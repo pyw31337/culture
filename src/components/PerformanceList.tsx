@@ -675,203 +675,205 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            {/* Top Group: Filters & Search */}
-            <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-4">
+                {/* Top Group: Filters & Search */}
+                <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
 
-                {/* Filter Controls (Venue, Region, District) */}
-                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
+                    {/* Filter Controls (Venue, Region, District) */}
+                    <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
-                    {/* Venue Select */}
-                    <div className="relative shrink-0 w-full sm:w-auto">
-                        <select
-                            value={selectedVenue}
-                            onChange={(e) => setSelectedVenue(e.target.value)}
-                            className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
-                        >
-                            <option value="all">전체 공연장</option>
-                            {availableVenues.map(v => (
-                                <option key={v} value={v}>{v}</option>
-                            ))}
-                        </select>
-                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                    </div>
-
-                    {/* Region Buttons Filter Group */}
-                    <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
-                        {REGIONS.map(r => (
-                            <button
-                                key={r.id}
-                                onClick={() => {
-                                    setSelectedRegion(r.id);
-                                    setSelectedDistrict('all');
-                                    setSelectedVenue('all');
-                                }}
-                                className={clsx(
-                                    'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
-                                    selectedRegion === r.id
-                                        ? 'bg-blue-600 text-white shadow-md'
-                                        : 'text-gray-400 hover:text-white hover:bg-gray-700'
-                                )}
-                            >
-                                {r.label}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* District Select */}
-                    {selectedRegion !== 'all' && (
-                        <div className="relative w-full sm:w-auto">
+                        {/* Venue Select */}
+                        <div className="relative shrink-0 w-full sm:w-auto">
                             <select
-                                value={selectedDistrict}
-                                onChange={(e) => {
-                                    setSelectedDistrict(e.target.value);
-                                    setSelectedVenue('all'); // Reset venue when district changes
-                                }}
-                                className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                value={selectedVenue}
+                                onChange={(e) => setSelectedVenue(e.target.value)}
+                                className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
                             >
-                                <option value="all">전체 지역</option>
-                                {districts.map(d => (
-                                    <option key={d} value={d}>{d}</option>
+                                <option value="all">전체 공연장</option>
+                                {availableVenues.map(v => (
+                                    <option key={v} value={v}>{v}</option>
                                 ))}
                             </select>
                             <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                 <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                             </div>
                         </div>
-                    )}
-                </div>
 
-                {/* Search & Radius */}
-                {/* Search & Radius - UI Enhancements */}
-                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
-
-                    <div className={clsx(
-                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
-                        activeLocation ? "pl-1" : "pl-4"
-                    )}>
-
-                        {/* Radius Selector (Animated / Conditional) - Left Side */}
-                        <div className={clsx(
-                            "overflow-hidden transition-all duration-300 flex items-center shrink-0",
-                            activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
-                        )}>
-                            {activeLocation && (
-                                <select
-                                    value={radius}
-                                    onChange={(e) => setRadius(Number(e.target.value))}
-                                    className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+                        {/* Region Buttons Filter Group */}
+                        <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
+                            {REGIONS.map(r => (
+                                <button
+                                    key={r.id}
+                                    onClick={() => {
+                                        setSelectedRegion(r.id);
+                                        setSelectedDistrict('all');
+                                        setSelectedVenue('all');
+                                    }}
+                                    className={clsx(
+                                        'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
+                                        selectedRegion === r.id
+                                            ? 'bg-blue-600 text-white shadow-md'
+                                            : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                    )}
                                 >
-                                    {RADIUS_OPTIONS.map(r => (
-                                        <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
-                                    ))}
-                                </select>
-                            )}
+                                    {r.label}
+                                </button>
+                            ))}
                         </div>
 
-                        {/* Vertical Divider (Only if Active Location) */}
-                        {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
-
-                        {/* Search Input */}
-                        <input
-                            type="text"
-                            className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
-                            placeholder="공연명/장소 검색"
-                            value={searchText}
-                            onChange={handleSearchTextChange}
-                            onKeyDown={handleKeyDown}
-                        />
-
-                        {/* Clear Text 'X' Button */}
-                        {searchText && (
-                            <button
-                                onClick={() => {
-                                    setSearchText('');
-                                    setIsDropdownOpen(false);
-                                    setSearchResults([]);
-                                }}
-                                className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
-                            >
-                                <X className="w-4 h-4" />
-                            </button>
-                        )}
-
-                        {/* Search Button (Circle) - Right Side */}
-                        <button
-                            onClick={handleSearch}
-                            disabled={isSearching}
-                            className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
-                        >
-                            {isSearching ? (
-                                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                            ) : (
-                                <Search className="w-4 h-4" />
-                            )}
-                        </button>
-
-                        {/* Dropdown Results */}
-                        {isDropdownOpen && searchResults.length > 0 && (
-                            <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
-                                <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
-                                    검색 결과 ({searchResults.length})
+                        {/* District Select */}
+                        {selectedRegion !== 'all' && (
+                            <div className="relative w-full sm:w-auto">
+                                <select
+                                    value={selectedDistrict}
+                                    onChange={(e) => {
+                                        setSelectedDistrict(e.target.value);
+                                        setSelectedVenue('all'); // Reset venue when district changes
+                                    }}
+                                    className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                >
+                                    <option value="all">전체 지역</option>
+                                    {districts.map(d => (
+                                        <option key={d} value={d}>{d}</option>
+                                    ))}
+                                </select>
+                                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
-                                {searchResults.map((result, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => handleSelectResult(result)}
-                                        className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
-                                    >
-                                        <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
-                                            <MapPin className="w-4 h-4" />
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
-                                            <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
-                                        </div>
-                                    </button>
-                                ))}
                             </div>
                         )}
-
                     </div>
 
-                    {/* Reset Location Button (Separate Circle) */}
-                    {(activeLocation || searchText) && (
-                        <button
-                            onClick={() => {
-                                setUserLocation(null);
-                                setSearchLocation(null);
-                                setSearchText('');
-                                setSearchResults([]);
-                                setIsDropdownOpen(false);
-                                setRadius(10);
-                            }}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
-                            title="위치 초기화"
-                        >
-                            <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
-                        </button>
-                    )}
-                </div>
-            </div>
+                    {/* Search & Radius */}
+                    {/* Search & Radius - UI Enhancements */}
+                    <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
 
-            {/* Genre Filter Row - Horizontal Scroll on Mobile */}
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                {GENRES.map(g => (
-                    <button
-                        key={g.id}
-                        onClick={() => setSelectedGenre(g.id)}
-                        className={clsx(
-                            'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
-                            selectedGenre === g.id
-                                ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
-                                : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                        <div className={clsx(
+                            "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                            activeLocation ? "pl-1" : "pl-4"
+                        )}>
+
+                            {/* Radius Selector (Animated / Conditional) - Left Side */}
+                            <div className={clsx(
+                                "overflow-hidden transition-all duration-300 flex items-center shrink-0",
+                                activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
+                            )}>
+                                {activeLocation && (
+                                    <select
+                                        value={radius}
+                                        onChange={(e) => setRadius(Number(e.target.value))}
+                                        className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+                                    >
+                                        {RADIUS_OPTIONS.map(r => (
+                                            <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
+                                        ))}
+                                    </select>
+                                )}
+                            </div>
+
+                            {/* Vertical Divider (Only if Active Location) */}
+                            {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
+
+                            {/* Search Input */}
+                            <input
+                                type="text"
+                                className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
+                                placeholder="공연명/장소 검색"
+                                value={searchText}
+                                onChange={handleSearchTextChange}
+                                onKeyDown={handleKeyDown}
+                            />
+
+                            {/* Clear Text 'X' Button */}
+                            {searchText && (
+                                <button
+                                    onClick={() => {
+                                        setSearchText('');
+                                        setIsDropdownOpen(false);
+                                        setSearchResults([]);
+                                    }}
+                                    className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
+                                >
+                                    <X className="w-4 h-4" />
+                                </button>
+                            )}
+
+                            {/* Search Button (Circle) - Right Side */}
+                            <button
+                                onClick={handleSearch}
+                                disabled={isSearching}
+                                className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
+                            >
+                                {isSearching ? (
+                                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                ) : (
+                                    <Search className="w-4 h-4" />
+                                )}
+                            </button>
+
+                            {/* Dropdown Results */}
+                            {isDropdownOpen && searchResults.length > 0 && (
+                                <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
+                                    <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
+                                        검색 결과 ({searchResults.length})
+                                    </div>
+                                    {searchResults.map((result, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => handleSelectResult(result)}
+                                            className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
+                                        >
+                                            <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
+                                                <MapPin className="w-4 h-4" />
+                                            </div>
+                                            <div>
+                                                <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
+                                                <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                        </div>
+
+                        {/* Reset Location Button (Separate Circle) */}
+                        {(activeLocation || searchText) && (
+                            <button
+                                onClick={() => {
+                                    setUserLocation(null);
+                                    setSearchLocation(null);
+                                    setSearchText('');
+                                    setSearchResults([]);
+                                    setIsDropdownOpen(false);
+                                    setRadius(10);
+                                }}
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
+                                title="위치 초기화"
+                            >
+                                <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                            </button>
                         )}
-                    >
-                        {g.label}
-                    </button>
-                ))}
+                    </div>
+                </div>
+
+                {/* Genre Filter Row - Horizontal Scroll on Mobile */}
+                <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                    {GENRES.map(g => (
+                        <button
+                            key={g.id}
+                            onClick={() => setSelectedGenre(g.id)}
+                            className={clsx(
+                                'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
+                                selectedGenre === g.id
+                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
+                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                            )}
+                        >
+                            {g.label}
+                        </button>
+                    ))}
+                </div>
             </div>
 
 
