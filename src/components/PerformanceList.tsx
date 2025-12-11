@@ -558,7 +558,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             type="text"
                             value={newKeyword}
                             onChange={(e) => setNewKeyword(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && addKeyword()}
+                            onKeyDown={(e) => {
+                                if (e.nativeEvent.isComposing) return;
+                                if (e.key === 'Enter') addKeyword();
+                            }}
                             placeholder="관심 키워드 (예: 만원, 무료)"
                             className="bg-gray-700 border border-gray-600 text-white text-sm rounded px-3 py-1.5 focus:outline-none focus:border-yellow-400 w-full sm:w-64"
                         />
@@ -581,6 +584,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
                         ))}
                         {keywords.length === 0 && <span className="text-gray-500 text-xs">등록된 키워드가 없습니다.</span>}
+                        {keywords.length > 0 && (
+                            <button
+                                onClick={() => setKeywords([])}
+                                className="text-xs text-gray-500 hover:text-red-400 underline ml-2"
+                            >
+                                전체 삭제
+                            </button>
+                        )}
                     </div>
                 </div>
             </div >
@@ -736,9 +747,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 {/* Search & Radius - UI Enhancements */}
                 <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
 
-                    {/* Search Pill Container */}
                     <div className={clsx(
-                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 sm:flex-none sm:w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
                         activeLocation ? "pl-1" : "pl-4"
                     )}>
 
