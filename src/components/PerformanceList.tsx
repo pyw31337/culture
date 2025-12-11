@@ -102,6 +102,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
     const [isFilterExpanded, setIsFilterExpanded] = useState(true); // Toggle Detailed Search
 
+    // New: Keyword Section Toggle
+    const [isKeywordsExpanded, setIsKeywordsExpanded] = useState(true);
+
     // Auto-collapse when sticky, Auto-expand when top
     useEffect(() => {
         if (isSticky) {
@@ -607,82 +610,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
             </div >
 
-            {/* Keyword Matches Section (Only in List View) */}
-            {
-                viewMode === 'list' && keywordMatches.length > 0 && (
-                    <div className="max-w-7xl mx-auto px-4 mt-6 mb-8">
-                        <h3 className="text-xl font-bold text-yellow-500 mb-4 flex items-center gap-2 pl-2 border-l-4 border-yellow-500">
-                            <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
-                            관심 키워드 알림
-                            <span className="text-sm font-normal text-gray-400 ml-2">설정하신 키워드가 포함된 공연입니다.</span>
-                        </h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                            {keywordMatches.map((performance) => (
-                                <div key={`keyword-${performance.id}`}
-                                    className="group bg-gradient-to-br from-gray-900 to-gray-800/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-yellow-400"
-                                >
-                                    {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
-                                    {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
-                                    {/* Actually I can just map them using the same structure as below list */}
-                                    <div className="relative aspect-[3/4] overflow-hidden">
-                                        <div
-                                            className="cursor-pointer w-full h-full"
-                                            onClick={() => {
-                                                const v = venues[performance.venue];
-                                                if (v) {
-                                                    setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                    setViewMode('map');
-                                                }
-                                            }}
-                                        >
-                                            <Image
-                                                src={performance.image || "/api/placeholder/400/300"}
-                                                alt={performance.title}
-                                                fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-                                            {/* Keyword Badge */}
-                                            <div className="absolute top-2 left-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1">
-                                                <Star className="w-3 h-3 fill-black" />
-                                                알림
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="p-4">
-                                        <h3 className="font-bold text-lg text-white mb-1 line-clamp-1 group-hover:text-yellow-400 transition-colors">
-                                            {performance.title}
-                                        </h3>
-                                        {/* Venue Link */}
-                                        <div
-                                            onClick={() => {
-                                                const v = venues[performance.venue];
-                                                if (v) {
-                                                    setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                    setViewMode('map');
-                                                } else {
-                                                    // No coord, just update text?
-                                                }
-                                            }}
-                                            className="text-gray-400 text-sm flex items-center gap-1 mb-2 hover:text-blue-400 cursor-pointer w-max"
-                                        >
-                                            <MapPin className="w-3 h-3" />
-                                            {performance.venue}
-                                        </div>
-                                        <div className="flex justify-between items-end">
-                                            <span className="text-gray-500 text-xs font-medium bg-gray-900 px-2 py-1 rounded">
-                                                {performance.genre}
-                                            </span>
-                                            <span className="text-gray-400 text-xs">{performance.date}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )
-            }
+
 
             {/* Sticky Sentinel */}
             <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
@@ -932,6 +860,93 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
                 </div>
             </div>
+
+            {/* Keyword Matches Section (Only in List View) */}
+            {
+                viewMode === 'list' && keywordMatches.length > 0 && (
+                    <div className="max-w-7xl mx-auto px-4 mt-6 mb-8">
+                        <div
+                            className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
+                            onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
+                        >
+                            <h3 className="text-xl font-bold text-yellow-500 flex items-center gap-2">
+                                <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                                관심 키워드 알림
+                                <span className="text-white">({keywordMatches.length})</span>
+                                <span className="text-sm font-normal text-gray-400 ml-2 hidden sm:inline">설정하신 키워드가 포함된 공연입니다.</span>
+                            </h3>
+                            <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
+                                {isKeywordsExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
+                            </button>
+                        </div>
+                        {isKeywordsExpanded && (
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                                {keywordMatches.map((performance) => (
+                                    <div key={`keyword-${performance.id}`}
+                                        className="group bg-gradient-to-br from-gray-900 to-gray-800/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-yellow-400"
+                                    >
+                                        {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
+                                        {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
+                                        {/* Actually I can just map them using the same structure as below list */}
+                                        <div className="relative aspect-[3/4] overflow-hidden">
+                                            <div
+                                                className="cursor-pointer w-full h-full"
+                                                onClick={() => {
+                                                    const v = venues[performance.venue];
+                                                    if (v) {
+                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
+                                                        setViewMode('map');
+                                                    }
+                                                }}
+                                            >
+                                                <Image
+                                                    src={performance.image || "/api/placeholder/400/300"}
+                                                    alt={performance.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                                                {/* Keyword Badge */}
+                                                <div className="absolute top-2 left-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1">
+                                                    <Star className="w-3 h-3 fill-black" />
+                                                    알림
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="p-4">
+                                            <h3 className="font-bold text-lg text-white mb-1 line-clamp-1 group-hover:text-yellow-400 transition-colors">
+                                                {performance.title}
+                                            </h3>
+                                            {/* Venue Link */}
+                                            <div
+                                                onClick={() => {
+                                                    const v = venues[performance.venue];
+                                                    if (v) {
+                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
+                                                        setViewMode('map');
+                                                    } else {
+                                                        // No coord, just update text?
+                                                    }
+                                                }}
+                                                className="text-gray-400 text-sm flex items-center gap-1 mb-2 hover:text-blue-400 cursor-pointer w-max"
+                                            >
+                                                <MapPin className="w-3 h-3" />
+                                                {performance.venue}
+                                            </div>
+                                            <div className="flex justify-between items-end">
+                                                <span className="text-gray-500 text-xs font-medium bg-gray-900 px-2 py-1 rounded">
+                                                    {performance.genre}
+                                                </span>
+                                                <span className="text-gray-400 text-xs">{performance.date}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                    </div>
+                )
+            }
 
 
             {/* Main Content */}
