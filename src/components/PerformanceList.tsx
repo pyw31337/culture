@@ -449,8 +449,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Scroll to Top Logic
     const [showScrollTop, setShowScrollTop] = useState(false);
 
-    // Scroll to Top Logic
-    const [showScrollTop, setShowScrollTop] = useState(false);
+
 
     // Auto-collapse when sticky
     useEffect(() => {
@@ -785,7 +784,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
                             )}
                         </div>
-                    )}
+
 
                         {/* Search & Radius */}
                         {/* Search & Radius - UI Enhancements */}
