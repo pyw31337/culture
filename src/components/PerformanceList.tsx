@@ -100,7 +100,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Mobile Filter Toggle State
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-    const [isFilterExpanded, setIsFilterExpanded] = useState(true); // New: Filter Collapse State
+    // Mobile Filter Toggle State
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
 
     // Infinite Scroll State
@@ -451,20 +452,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
 
-    // Auto-collapse when sticky (Only trigger when entering sticky state)
-    useEffect(() => {
-        if (isSticky) {
-            setIsFilterExpanded(false);
-        } else {
-            // Optional: Auto-expand when returning to top? 
-            // User expectation: "Original state is expanded". 
-            // If I scroll back up, it should probably be expanded or stay as is.
-            // Let's auto-expand for "reset" feel, or keep manual. 
-            // Given "Initial access -> expanded", "Scroll -> collapse", it implies top should be expanded.
-            setIsFilterExpanded(true);
-        }
-    }, [isSticky]);
-
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 300) {
@@ -695,34 +682,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Sticky Container */}
             <div className={clsx(
-                "sticky top-0 z-50 transition-all duration-300",
-                isSticky
-                    ? (isFilterExpanded ? "bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-10 flex items-center justify-center")
-                    : (!isFilterExpanded ? "bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 h-10 flex items-center justify-center" : "bg-transparent py-4")
+                "sticky top-0 z-50 transition-all duration-300 bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2",
+                // Simplified UI: Always show full content, just use sticky style
             )}>
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
-                    {/* Collapsed Sticky Header (Visible whenever collapsed) */}
-                    {!isFilterExpanded && (
-                        <div
-                            onClick={() => setIsFilterExpanded(true)}
-                            className="w-full flex items-center justify-between cursor-pointer"
-                        >
-                            <span className="font-bold text-gray-200 flex items-center gap-2">
-                                <Search className="w-4 h-4 text-blue-500" />
-                                상세 검색
-                            </span>
-                            <div className="flex items-center gap-2 text-gray-400">
-                                {searchText && <span className="text-sm bg-gray-800 px-2 py-0.5 rounded-full text-blue-300 mx-2">"{searchText}"</span>}
-                                <ChevronDown className="w-5 h-5 animate-pulse" />
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Top Group: Filters & Search (Hidden when collapsed) */}
+                    {/* Top Group: Filters & Search */}
                     <div className={clsx(
                         "flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center transition-all duration-500 overflow-hidden",
-                        !isFilterExpanded ? "max-h-0 opacity-0" : "max-h-[500px] opacity-100"
+                        "max-h-[500px] opacity-100"
                     )}>
 
                         {/* Filter Controls (Venue, Region, District) */}
