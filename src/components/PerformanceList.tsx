@@ -872,7 +872,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             <h3 className="text-xl font-bold text-yellow-500 flex items-center gap-2">
                                 <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
                                 관심 키워드 알림
-                                <span className="text-white">({keywordMatches.length})</span>
+                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({keywordMatches.length})</span>
                                 <span className="text-sm font-normal text-gray-400 ml-2 hidden sm:inline">설정하신 키워드가 포함된 공연입니다.</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
@@ -880,10 +880,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                                 {keywordMatches.map((performance) => (
                                     <div key={`keyword-${performance.id}`}
-                                        className="group bg-gradient-to-br from-gray-900 to-gray-800/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-yellow-400"
+                                        className="group bg-yellow-500 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-white/50"
                                     >
                                         {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
                                         {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
@@ -906,16 +906,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                                                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
                                                 {/* Keyword Badge */}
-                                                <div className="absolute top-2 left-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1">
-                                                    <Star className="w-3 h-3 fill-black" />
+                                                <div className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30">
+                                                    <Star className="w-3 h-3 fill-yellow-500" />
                                                     알림
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="p-4">
-                                            <h3 className="font-bold text-lg text-white mb-1 line-clamp-1 group-hover:text-yellow-400 transition-colors">
+                                        <div className="p-4 bg-yellow-400">
+                                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
                                                 {performance.title}
                                             </h3>
                                             {/* Venue Link */}
@@ -929,16 +929,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         // No coord, just update text?
                                                     }
                                                 }}
-                                                className="text-gray-400 text-sm flex items-center gap-1 mb-2 hover:text-blue-400 cursor-pointer w-max"
+                                                className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
                                             >
-                                                <MapPin className="w-3 h-3" />
+                                                <MapPin className="w-3 h-3 text-gray-700" />
                                                 {performance.venue}
                                             </div>
-                                            <div className="flex justify-between items-end">
-                                                <span className="text-gray-500 text-xs font-medium bg-gray-900 px-2 py-1 rounded">
+                                            <div className="flex justify-between items-end border-t border-black/10 pt-2">
+                                                <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
                                                     {performance.genre}
                                                 </span>
-                                                <span className="text-gray-400 text-xs">{performance.date}</span>
+                                                <span className="text-gray-900 text-xs font-medium">{performance.date}</span>
                                             </div>
                                         </div>
                                     </div>
