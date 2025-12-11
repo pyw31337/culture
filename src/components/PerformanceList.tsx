@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect } from 'react';
 import { Performance } from '@/types';
-import { MapPin, CalendarDays, Search, Map as MapIcon, RotateCw, Filter, ChevronUp, ChevronDown, LayoutGrid, Star, X } from 'lucide-react';
+import { MapPin, CalendarDays, Search, Map as MapIcon, RotateCw, Filter, ChevronUp, ChevronDown, LayoutGrid, Star, X, Calendar } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
