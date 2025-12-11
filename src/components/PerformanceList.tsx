@@ -897,194 +897,192 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </button>
                 ))}
             </div>
-        </div >
-                </div >
-            </div >
+        </div>
 
         {/* Main Content */ }
-        < div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8" >
+    < div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8" >
 
-            {/* Results Info */ }
-            < div className = "flex flex-col sm:flex-row justify-between items-end mb-6 gap-2" >
-                <div className="w-full sm:w-auto">
-                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
-                        {activeLocation ? (
-                            <>
-                                <MapPin className="text-green-500 w-5 h-5" />
-                                <span className="truncate max-w-[200px] sm:max-w-md">
-                                    {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
-                                </span>
-                                <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
-                            </>
-                        ) : (
-                            <>
-                                <span>추천 공연</span>
-                                <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
-                            </>
-                        )}
-                    </h2>
-                    <p className="text-gray-400 text-xs sm:text-sm">
-                        {activeLocation
-                            ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
-                            : `조건에 맞는 공연을 찾았습니다.`}
-                    </p>
-                </div>
-
-                </div >
-
-        {/* List View (Grid) */ }
-        < div className = { clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
-}>
-{
-    visiblePerformances.map((perf) => {
-        const venueInfo = venues[perf.venue];
-        return (
-            <div key={`${perf.id}-${perf.region}`} className="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 flex flex-col h-full relative">
-                {/* Image */}
-                <div className="relative aspect-[3/4] bg-gray-900 overflow-hidden">
-                    {perf.image ? (
-                        <img
-                            src={perf.image}
-                            alt={perf.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                        />
+        {/* Results Info */}
+        < div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2" >
+            <div className="w-full sm:w-auto">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
+                    {activeLocation ? (
+                        <>
+                            <MapPin className="text-green-500 w-5 h-5" />
+                            <span className="truncate max-w-[200px] sm:max-w-md">
+                                {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
+                            </span>
+                            <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
+                        </>
                     ) : (
-                        <div className="flex items-center justify-center h-full text-gray-600">No Image</div>
+                        <>
+                            <span>추천 공연</span>
+                            <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
+                        </>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-
-                    <div className="absolute top-2 right-2">
-                        <span className={clsx(
-                            "px-2 py-1 rounded text-[10px] font-bold uppercase backdrop-blur-md border border-white/10 text-white",
-                            GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/80',
-                            "opacity-90"
-                        )}>
-                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                        </span>
-                    </div>
-                </div>
-
-                {/* Details */}
-                <div className="p-4 flex flex-col flex-grow">
-                    <div className="mb-2">
-                        <span className="inline-flex items-center gap-1 text-blue-400 text-xs font-bold mb-1">
-                            <Calendar className="w-3 h-3" /> {perf.date}
-                        </span>
-                        <h3 className="text-lg font-bold text-gray-100 line-clamp-2 leading-tight min-h-[3rem]" title={perf.title}>
-                            {perf.title}
-                        </h3>
-                    </div>
-
-                    <div className="mt-auto space-y-3">
-                        <div className="text-sm text-gray-400">
-                            <div className="flex items-center gap-1.5 mb-1">
-                                <MapPin className="w-3.5 h-3.5 text-gray-500" />
-                                <button
-                                    onClick={() => {
-                                        const v = venues[perf.venue];
-                                        if (v?.lat && v?.lng) {
-                                            setSearchLocation({
-                                                lat: v.lat,
-                                                lng: v.lng,
-                                                name: perf.venue
-                                            });
-                                            setViewMode('map');
-                                        } else {
-                                            alert("해당 공연장의 위치 정보가 없습니다.");
-                                        }
-                                    }}
-                                    className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
-                                >
-                                    {perf.venue}
-                                </button>
-                            </div>
-                            {/* Address hidden per request */}
-                        </div>
-
-                        <a
-                            href={perf.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
-                        >
-                            예매하기
-                        </a>
-                    </div>
-                </div>
+                </h2>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                    {activeLocation
+                        ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
+                        : `조건에 맞는 공연을 찾았습니다.`}
+                </p>
             </div>
-        );
-    })
-}
-                </div >
 
-    {/* Sentinel for Infinite Scroll - Only in List Mode */ }
-{
-    viewMode === 'list' && visibleCount < filteredPerformances.length && (
-        <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
-            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-    )
-}
+        </div >
 
-{/* Empty State */ }
-{
-    filteredPerformances.length === 0 && (
-        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
-            <Navigation className="w-12 h-12 mb-4 opacity-20" />
-            <p>
-                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                    ? '현재 경기 일정이 없습니다.'
-                    : '조건에 맞는 공연이 없습니다.'}
-            </p>
-            <button onClick={() => {
-                setSelectedRegion('all');
-                setSelectedDistrict('all');
-                setSelectedGenre('all');
-                setSearchText('');
-                setUserLocation(null);
-            }} className="mt-4 text-blue-400 hover:underline">
-                필터 초기화
-            </button>
-        </div>
-    )
-}
-            </div >
+        {/* List View (Grid) */}
+        < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
+        }>
+            {
+                visiblePerformances.map((perf) => {
+                    const venueInfo = venues[perf.venue];
+                    return (
+                        <div key={`${perf.id}-${perf.region}`} className="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 flex flex-col h-full relative">
+                            {/* Image */}
+                            <div className="relative aspect-[3/4] bg-gray-900 overflow-hidden">
+                                {perf.image ? (
+                                    <img
+                                        src={perf.image}
+                                        alt={perf.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="flex items-center justify-center h-full text-gray-600">No Image</div>
+                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+
+                                <div className="absolute top-2 right-2">
+                                    <span className={clsx(
+                                        "px-2 py-1 rounded text-[10px] font-bold uppercase backdrop-blur-md border border-white/10 text-white",
+                                        GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/80',
+                                        "opacity-90"
+                                    )}>
+                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Details */}
+                            <div className="p-4 flex flex-col flex-grow">
+                                <div className="mb-2">
+                                    <span className="inline-flex items-center gap-1 text-blue-400 text-xs font-bold mb-1">
+                                        <Calendar className="w-3 h-3" /> {perf.date}
+                                    </span>
+                                    <h3 className="text-lg font-bold text-gray-100 line-clamp-2 leading-tight min-h-[3rem]" title={perf.title}>
+                                        {perf.title}
+                                    </h3>
+                                </div>
+
+                                <div className="mt-auto space-y-3">
+                                    <div className="text-sm text-gray-400">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <MapPin className="w-3.5 h-3.5 text-gray-500" />
+                                            <button
+                                                onClick={() => {
+                                                    const v = venues[perf.venue];
+                                                    if (v?.lat && v?.lng) {
+                                                        setSearchLocation({
+                                                            lat: v.lat,
+                                                            lng: v.lng,
+                                                            name: perf.venue
+                                                        });
+                                                        setViewMode('map');
+                                                    } else {
+                                                        alert("해당 공연장의 위치 정보가 없습니다.");
+                                                    }
+                                                }}
+                                                className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
+                                            >
+                                                {perf.venue}
+                                            </button>
+                                        </div>
+                                        {/* Address hidden per request */}
+                                    </div>
+
+                                    <a
+                                        href={perf.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
+                                    >
+                                        예매하기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div >
+
+        {/* Sentinel for Infinite Scroll - Only in List Mode */}
+        {
+            viewMode === 'list' && visibleCount < filteredPerformances.length && (
+                <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+                </div>
+            )
+        }
+
+        {/* Empty State */}
+        {
+            filteredPerformances.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
+                    <Navigation className="w-12 h-12 mb-4 opacity-20" />
+                    <p>
+                        {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                            ? '현재 경기 일정이 없습니다.'
+                            : '조건에 맞는 공연이 없습니다.'}
+                    </p>
+                    <button onClick={() => {
+                        setSelectedRegion('all');
+                        setSelectedDistrict('all');
+                        setSelectedGenre('all');
+                        setSearchText('');
+                        setUserLocation(null);
+                    }} className="mt-4 text-blue-400 hover:underline">
+                        필터 초기화
+                    </button>
+                </div>
+            )
+        }
+    </div >
 
     {/* Scroll to Top Button */ }
-{
-    showScrollTop && (
-        <button
-            onClick={scrollToTop}
-            className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
-            aria-label="Scroll to top"
-        >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-        </button>
-    )
-}
+    {
+        showScrollTop && (
+            <button
+                onClick={scrollToTop}
+                className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+                aria-label="Scroll to top"
+            >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+            </button>
+        )
+    }
 
-{/* Render View Modals */ }
-{
-    viewMode === 'calendar' && (
-        <CalendarModal
-            performances={filteredPerformances} // Pass filtered!
-            onClose={() => setViewMode('list')}
-        />
-    )
-}
+    {/* Render View Modals */ }
+    {
+        viewMode === 'calendar' && (
+            <CalendarModal
+                performances={filteredPerformances} // Pass filtered!
+                onClose={() => setViewMode('list')}
+            />
+        )
+    }
 
-{
-    viewMode === 'map' && (
-        <KakaoMapModal
-            performances={filteredPerformances} // Pass filtered!
-            centerLocation={searchLocation}      // Pass search/focused location
-            onClose={() => setViewMode('list')}
-        />
-    )
-}
+    {
+        viewMode === 'map' && (
+            <KakaoMapModal
+                performances={filteredPerformances} // Pass filtered!
+                centerLocation={searchLocation}      // Pass search/focused location
+                onClose={() => setViewMode('list')}
+            />
+        )
+    }
 
         </div >
     );
