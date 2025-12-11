@@ -864,7 +864,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* Keyword Matches Section (Only in List View) */}
             {
                 viewMode === 'list' && keywordMatches.length > 0 && (
-                    <div className="max-w-7xl mx-auto px-4 mt-6 mb-8">
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
                             onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
@@ -880,7 +880,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
                                 {keywordMatches.map((performance) => (
                                     <div key={`keyword-${performance.id}`}
                                         className="group bg-yellow-500 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-white/50"
@@ -951,7 +951,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Main Content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
                 {/* Results Info */}
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
@@ -982,7 +982,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div >
 
                 {/* List View (Grid) */}
-                < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
+                < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
                 }>
                     {
                         visiblePerformances.map((perf) => {

@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@layer base {
+
+  *,
+  :after,
+  :before,
+  ::backdrop {
+    box-sizing: initial;
+    border: 0 solid;
+    margin: 0;
+    padding: 0
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
