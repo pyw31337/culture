@@ -1048,5 +1048,25 @@
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
     "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260105_KOREA EXPRESSWAY_GS CALTEX",
+    "title": "[배구] KOREA EXPRESSWAY vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-05 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260110_KOREA EXPRESSWAY_GS CALTEX",
+    "title": "[배구] KOREA EXPRESSWAY vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-10 16:00",
+    "venue": "김천실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
   }
 ]
