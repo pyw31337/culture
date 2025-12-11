@@ -449,6 +449,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Scroll to Top Logic
     const [showScrollTop, setShowScrollTop] = useState(false);
 
+    // Scroll to Top Logic
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
+    // Auto-collapse when sticky
+    useEffect(() => {
+        if (isSticky) {
+            setIsFilterExpanded(false);
+        } else {
+            setIsFilterExpanded(true);
+        }
+    }, [isSticky]);
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 300) {
@@ -676,12 +688,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-4">
-                {/* Top Group: Filters & Search */}
-                <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
+            {/* Sticky Sentinel */}
+            <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
 
-                    {/* Filter Controls (Venue, Region, District) */}
-                    {isFilterExpanded && (
+            {/* Sticky Container */}
+            <div className={clsx(
+                "sticky top-0 z-40 transition-all duration-300",
+                isSticky ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2" : "bg-transparent py-4"
+            )}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+
+                    {/* Collapsed Sticky Header (Only visible when sticky & collapsed) */}
+                    {isSticky && !isFilterExpanded && (
+                        <div
+                            onClick={() => setIsFilterExpanded(true)}
+                            className="flex items-center justify-between cursor-pointer"
+                        >
+                            <span className="font-bold text-gray-200 flex items-center gap-2">
+                                <Search className="w-4 h-4 text-blue-500" />
+                                상세 검색
+                            </span>
+                            <div className="flex items-center gap-2 text-gray-400">
+                                {searchText && <span className="text-sm bg-gray-800 px-2 py-0.5 rounded-full text-blue-300 mx-2">"{searchText}"</span>}
+                                <ChevronDown className="w-5 h-5 animate-pulse" />
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Top Group: Filters & Search (Hidden when sticky & collapsed) */}
+                    <div className={clsx(
+                        "flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center transition-all duration-500 overflow-hidden",
+                        (isSticky && !isFilterExpanded) ? "max-h-0 opacity-0" : "max-h-[500px] opacity-100"
+                    )}>
+
+                        {/* Filter Controls (Venue, Region, District) */}
                         <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
                             {/* Venue Select */}
@@ -747,122 +787,124 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
                     )}
 
-                    {/* Search & Radius */}
-                    {/* Search & Radius - UI Enhancements */}
-                    <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
+                        {/* Search & Radius */}
+                        {/* Search & Radius - UI Enhancements */}
+                        <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
 
-                        <div className={clsx(
-                            "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
-                            activeLocation ? "pl-1" : "pl-4"
-                        )}>
-
-                            {/* Radius Selector (Animated / Conditional) - Left Side */}
                             <div className={clsx(
-                                "overflow-hidden transition-all duration-300 flex items-center shrink-0",
-                                activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
+                                "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                                activeLocation ? "pl-1" : "pl-4"
                             )}>
-                                {activeLocation && (
-                                    <select
-                                        value={radius}
-                                        onChange={(e) => setRadius(Number(e.target.value))}
-                                        className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+
+                                {/* Radius Selector (Animated / Conditional) - Left Side */}
+                                <div className={clsx(
+                                    "overflow-hidden transition-all duration-300 flex items-center shrink-0",
+                                    activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
+                                )}>
+                                    {activeLocation && (
+                                        <select
+                                            value={radius}
+                                            onChange={(e) => setRadius(Number(e.target.value))}
+                                            className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
+                                        >
+                                            {RADIUS_OPTIONS.map(r => (
+                                                <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
+                                            ))}
+                                        </select>
+                                    )}
+                                </div>
+
+                                {/* Vertical Divider (Only if Active Location) */}
+                                {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
+
+                                {/* Search Input */}
+                                <input
+                                    type="text"
+                                    className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
+                                    placeholder="공연명/장소 검색"
+                                    value={searchText}
+                                    onChange={handleSearchTextChange}
+                                    onKeyDown={handleKeyDown}
+                                />
+
+                                {/* Clear Text 'X' Button */}
+                                {searchText && (
+                                    <button
+                                        onClick={() => {
+                                            setSearchText('');
+                                            setIsDropdownOpen(false);
+                                            setSearchResults([]);
+                                        }}
+                                        className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
                                     >
-                                        {RADIUS_OPTIONS.map(r => (
-                                            <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
-                                        ))}
-                                    </select>
+                                        <X className="w-4 h-4" />
+                                    </button>
                                 )}
+
+                                {/* Search Button (Circle) - Right Side */}
+                                <button
+                                    onClick={handleSearch}
+                                    disabled={isSearching}
+                                    className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
+                                >
+                                    {isSearching ? (
+                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                    ) : (
+                                        <Search className="w-4 h-4" />
+                                    )}
+                                </button>
+
+                                {/* Dropdown Results */}
+                                {isDropdownOpen && searchResults.length > 0 && (
+                                    <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
+                                        <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
+                                            검색 결과 ({searchResults.length})
+                                        </div>
+                                        {searchResults.map((result, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => handleSelectResult(result)}
+                                                className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
+                                            >
+                                                <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
+                                                    <MapPin className="w-4 h-4" />
+                                                </div>
+                                                <div>
+                                                    <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
+                                                    <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
+                                                </div>
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+
                             </div>
 
-                            {/* Vertical Divider (Only if Active Location) */}
-                            {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
-
-                            {/* Search Input */}
-                            <input
-                                type="text"
-                                className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
-                                placeholder="공연명/장소 검색"
-                                value={searchText}
-                                onChange={handleSearchTextChange}
-                                onKeyDown={handleKeyDown}
-                            />
-
-                            {/* Clear Text 'X' Button */}
-                            {searchText && (
+                            {/* Reset Location Button (Separate Circle) */}
+                            {(activeLocation || searchText) && (
                                 <button
                                     onClick={() => {
+                                        setUserLocation(null);
+                                        setSearchLocation(null);
                                         setSearchText('');
-                                        setIsDropdownOpen(false);
                                         setSearchResults([]);
+                                        setIsDropdownOpen(false);
+                                        setRadius(10);
                                     }}
-                                    className="p-1 mr-1 text-gray-500 hover:text-gray-300 rounded-full hover:bg-gray-700 transition-colors"
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
+                                    title="위치 초기화"
                                 >
-                                    <X className="w-4 h-4" />
+                                    <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
                                 </button>
                             )}
-
-                            {/* Search Button (Circle) - Right Side */}
-                            <button
-                                onClick={handleSearch}
-                                disabled={isSearching}
-                                className="m-1 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-lg shrink-0"
-                            >
-                                {isSearching ? (
-                                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                ) : (
-                                    <Search className="w-4 h-4" />
-                                )}
-                            </button>
-
-                            {/* Dropdown Results */}
-                            {isDropdownOpen && searchResults.length > 0 && (
-                                <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-[300px] overflow-y-auto custom-scrollbar">
-                                    <div className="p-2 text-xs font-bold text-gray-500 border-b border-gray-700 bg-gray-800 sticky top-0">
-                                        검색 결과 ({searchResults.length})
-                                    </div>
-                                    {searchResults.map((result, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => handleSelectResult(result)}
-                                            className="w-full text-left p-3 hover:bg-gray-700 transition-colors border-b border-gray-700/50 last:border-0 flex items-start gap-3 group"
-                                        >
-                                            <div className="mt-1 p-1.5 rounded-full bg-gray-700 group-hover:bg-blue-600/20 text-gray-400 group-hover:text-blue-400 transition-colors">
-                                                <MapPin className="w-4 h-4" />
-                                            </div>
-                                            <div>
-                                                <div className="font-bold text-sm text-gray-200 group-hover:text-white">{result.name}</div>
-                                                <div className="text-xs text-gray-400 line-clamp-1">{result.address}</div>
-                                            </div>
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-
                         </div>
-
-                        {/* Reset Location Button (Separate Circle) */}
-                        {(activeLocation || searchText) && (
-                            <button
-                                onClick={() => {
-                                    setUserLocation(null);
-                                    setSearchLocation(null);
-                                    setSearchText('');
-                                    setSearchResults([]);
-                                    setIsDropdownOpen(false);
-                                    setRadius(10);
-                                }}
-                                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
-                                title="위치 초기화"
-                            >
-                                <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
-                            </button>
-                        )}
                     </div>
-                </div>
 
-                {/* Genre Filter Row - Horizontal Scroll on Mobile */}
-                {isFilterExpanded && (
-                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                    {/* Genre Filter Row - Horizontal Scroll on Mobile */}
+                    <div className={clsx(
+                        "flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 transition-all duration-300",
+                        (isSticky && !isFilterExpanded) ? "max-h-0 opacity-0 mt-0" : "max-h-20 opacity-100"
+                    )}>
                         {GENRES.map(g => (
                             <button
                                 key={g.id}
@@ -878,17 +920,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         ))}
                     </div>
-                )}
 
-                {/* Toggle Expansion Button */}
-                <div className="flex justify-center -mt-2">
-                    <button
-                        onClick={() => setIsFilterExpanded(!isFilterExpanded)}
-                        className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1 shadow-sm transition-colors"
-                        title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
-                    >
-                        {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                    </button>
+                    {/* Toggle Expansion Button (Only show if NOT sticky collapsed, or if expanded) */}
+                    {(!isSticky || isFilterExpanded) && (
+                        <div className="flex justify-center -mt-2">
+                            <button
+                                onClick={() => setIsFilterExpanded(!isFilterExpanded)}
+                                className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1 shadow-sm transition-colors"
+                                title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
+                            >
+                                {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
 
