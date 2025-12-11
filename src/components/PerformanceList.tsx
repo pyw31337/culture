@@ -425,39 +425,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
     // Main Filter Logic (Updated to return both matched and others)
-    const { keywordMatches, otherPerformances } = useMemo(() => {
-        let result = initialPerformances;
 
-        // 1. Filter by Search Text
-        if (debouncedSearchText) {
-            result = result.filter(p => p.title.includes(debouncedSearchText) || p.venue.includes(debouncedSearchText));
-        }
-
-        // 2. Filter by Radius (Location)
-        if (activeLocation && userLocation) { // Search mode
-            // (Logic same as before, simplified for diff)
-            result = result.filter(p => {
-                const venueInfo = venues[p.venue];
-                if (!venueInfo?.lat || !venueInfo?.lng) return false;
-                const distance = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
-                return distance <= selectedRadius;
-            });
-        } else if (activeLocation && !userLocation) { // Clicked venue mode (0km)
-            // (Logic matches exact venue usually, or tiny radius)
-            // Existing logic was fine, just keeping context.
-            // Actually, verify if I need to copy the *entire* filter block or just wrap it.
-            // The original code calculated `filteredPerformances`. I need to intercept it.
-        }
-
-        // ... (Re-implementing the existing filter chain is risky in a replace_content. 
-        // BETTER STRATEGY: access `filteredPerformances` result from the existing code (if I can see it) 
-        // OR inject splitting logic AFTER the existing filtering.)
-
-        // Let's assume I will inject the splitting logic *after* the existing `const filteredPerformances = useMemo(...)` block.
-        // So this chunks just adds the state. I will use a separate chunk for the splitting.
-
-        return { keywordMatches: [], otherPerformances: [] }; // Placeholder for this chunk context
-    }, [initialPerformances, debouncedSearchText, activeLocation, selectedRadius, userLocation, selectedGenre, selectedRegion, selectedDistrict, venues]); // Dependencies?
 
     // WAIT: I cannot redefine `useMemo` easily if I don't see the full block.
     // I will just add the STATE here. And use a separate chunks for the logic splitting.
