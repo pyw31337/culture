@@ -480,665 +480,756 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     return (
-        <div className="min-h-screen bg-black text-gray-100 font-sans pb-20 relative">
+        <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden">
+            {/* 🌌 Aurora Background */}
+            <div className="aurora-container">
+                <div className="aurora-blob blob-1"></div>
+                <div className="aurora-blob blob-2"></div>
+                <div className="aurora-blob blob-3"></div>
+            </div>
+            <div className="noise-texture"></div>
 
-            {/* Header Optimized for Small Screens & View Tabs */}
-            <div className="relative bg-black border-b border-gray-800">
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                    {/* Left ALigned Title */}
-                    <div className="text-center md:text-left">
-                        <div onClick={() => {
-                            // Reset Logic
-                            setSearchText('');
-                            setSelectedRegion('all');
-                            setSelectedDistrict('all');
-                            setSelectedVenue('all');
-                            setSelectedGenre('all');
-                            setUserLocation(null);
-                            setSearchLocation(null);
-                            setSearchResults([]);
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-1 cursor-pointer hover:opacity-80 transition-opacity">
-                                Culture Flow
-                            </h1>
+            {/* Header: Logo & Last Updated */}
+            <header className="relative z-20 flex flex-col md:flex-row justify-between items-center py-5 px-6 md:px-8 border-b border-white/5 bg-black/10 backdrop-blur-sm">
+                <div className="flex items-center gap-3">
+                    <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
+                        <Star className="w-6 h-6 text-[#a78bfa] fill-[#a78bfa]" />
+                        Culture Flow
+                    </h1>
+                    <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
+                        서울 · 경기 · 인천 통합 공연 검색
+                    </span>
+                </div>
+                <div className="text-xs text-gray-500 mt-2 md:mt-0 font-mono bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                    Last Update : {lastUpdated}
+                </div>
+                {/* View Toggles (Moved to header for access?) User didn't specify, but existing had them. keeping them nearby or in sticky? 
+                    User snippet has Nav Chips in content. I'll leave View Buttons in Header for now or move to sticky. 
+                    Let's keep them in Header right side for utility.
+                */}
+                <div className="hidden md:flex gap-2 ml-4">
+                    <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")}><LayoutGrid className="w-4 h-4" /></button>
+                    <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")}><CalendarDays className="w-4 h-4" /></button>
+                    <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")}><MapIcon className="w-4 h-4" /></button>
+                </div>
+            </header>
+
+            {/* Hero Section */}
+            <div className="relative z-10 max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 flex flex-col lg:flex-row justify-between items-end gap-8">
+                <div>
+                    <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
+                        <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">{activeLocation ? (searchLocation?.name || '내 위치 (GPS)') : '전체 지역'}</span>
+                    </p>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15]">
+                        오늘 밤, 당신을 위한<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6]">Spotlight</span>는 어디일까요?
+                    </h2>
+                </div>
+
+                {/* Hero Search Bar */}
+                <div className="w-full lg:w-auto relative group z-10">
+                    <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
+                        <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative">
+                            <input
+                                type="text"
+                                value={searchText}
+                                onChange={handleSearchTextChange}
+                                onKeyDown={handleKeyDown}
+                                className="bg-transparent border-none text-white text-lg font-bold px-6 py-3 w-full lg:w-[400px] focus:outline-none placeholder-gray-600"
+                                placeholder="공연명, 장소, 지역 검색..."
+                            />
+                            <button onClick={handleSearch} className="p-3.5 bg-gradient-to-r from-[#a78bfa] to-[#f472b6] rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all">
+                                <Search className="w-6 h-6 font-bold" />
+                            </button>
                         </div>
-                        <p className="text-gray-400 text-xs sm:text-sm">
-                            서울 · 경기 · 인천 통합 공연 검색 ({lastUpdated})
-
-
-                        </p>
                     </div>
 
-                    {/* View Toggles & Keyword Toggle */}
-                    <div className="flex gap-2 shrink-0 w-full sm:w-auto justify-end">
-                        <button
-                            onClick={() => setShowKeywordInput(!showKeywordInput)}
-                            className={clsx(
-                                "p-2 rounded-md transition-all flex items-center gap-2 mr-2",
-                                showKeywordInput ? "bg-yellow-500 text-black shadow font-bold" : "text-gray-400 hover:text-yellow-400"
-                            )}
-                            title="키워드 알림 설정"
-                        >
-                            <Star className={clsx("w-5 h-5", showKeywordInput && "fill-black")} />
-                            <span className="hidden sm:inline text-xs">알림</span>
-                        </button>
-
-                        <div className="w-px h-6 bg-gray-700 mx-1 self-center" />
-
-                        <button
-                            onClick={() => setViewMode('list')}
-                            className={clsx(
-                                "p-2 rounded-md transition-all flex items-center gap-2",
-                                viewMode === 'list' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
-                            )}
-                            title="목록 보기"
-                        >
-                            <LayoutGrid className="w-5 h-5" />
-                        </button>
-                        <button
-                            onClick={() => setViewMode('calendar')}
-                            className={clsx(
-                                "p-2 rounded-md transition-all flex items-center gap-2",
-                                viewMode === 'calendar' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
-                            )}
-                            title="달력 보기"
-                        >
-                            <CalendarDays className="w-5 h-5" />
-                        </button>
-                        <button
-                            onClick={() => setViewMode('map')}
-                            className={clsx(
-                                "p-2 rounded-md transition-all flex items-center gap-2",
-                                viewMode === 'map' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
-                            )}
-                            title="지도 보기"
-                        >
-                            <MapIcon className="w-5 h-5" />
-                        </button>
-                    </div>
+                    {/* Search Results Dropdown (Attached to Hero Input) */}
+                    {isDropdownOpen && searchResults.length > 0 && !isSticky && (
+                        <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-80 overflow-y-auto">
+                            {searchResults.map((result, idx) => (
+                                <div
+                                    key={`search-hero-${idx}`}
+                                    onClick={() => handleSelectResult(result)}
+                                    className="px-5 py-4 hover:bg-white/10 cursor-pointer flex items-center gap-4 border-b border-white/5 last:border-0 transition-colors"
+                                >
+                                    <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
+                                        {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="text-white text-base font-bold truncate">{result.name}</div>
+                                        {result.address && <div className="text-gray-400 text-sm truncate">{result.address}</div>}
+                                    </div>
+                                    {result.category && <span className="text-xs text-[#a78bfa] bg-[#a78bfa]/10 px-2.5 py-1 rounded-full">{result.category}</span>}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Keyword Input Section (Collapsible) */}
-            <div className={clsx(
-                "bg-gray-800 border-b border-gray-700 transition-all duration-300 overflow-hidden",
-                showKeywordInput ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-            )}>
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div className="flex items-center gap-2 flex-1 w-full sm:w-auto">
-                        <span className="text-yellow-400 font-bold shrink-0">⭐ 키워드 알림:</span>
-                        <input
-                            type="text"
-                            value={newKeyword}
-                            onChange={(e) => setNewKeyword(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.nativeEvent.isComposing) return;
-                                if (e.key === 'Enter') addKeyword();
-                            }}
-                            placeholder="관심 키워드 (예: 만원, 무료)"
-                            className="bg-gray-700 border border-gray-600 text-white text-sm rounded px-3 py-1.5 focus:outline-none focus:border-yellow-400 w-full sm:w-64"
-                        />
-                        <button
-                            onClick={addKeyword}
-                            className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-sm whitespace-nowrap"
-                        >
-                            추가
-                        </button>
-                    </div>
-
-                    {/* Active Keywords Chips */}
-                    <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-                        {keywords.map(k => (
-                            <div key={k} className="flex items-center bg-gray-700 border border-yellow-500/30 text-yellow-100 px-2 py-1 rounded text-sm">
-                                <span>{k}</span>
-                                <button onClick={() => removeKeyword(k)} className="ml-2 text-yellow-500 hover:text-white">
-                                    <X className="w-3 h-3" />
-                                </button>
-                            </div>
-                        ))}
-                        {keywords.length === 0 && <span className="text-gray-500 text-xs">등록된 키워드가 없습니다.</span>}
-                        {keywords.length > 0 && (
-                            <button
-                                onClick={() => setKeywords([])}
-                                className="text-xs text-gray-500 hover:text-red-400 underline ml-2"
-                            >
-                                전체 삭제
-                            </button>
-                        )}
-                    </div>
+            {/* Left ALigned Title */}
+            <div className="text-center md:text-left">
+                <div onClick={() => {
+                    // Reset Logic
+                    setSearchText('');
+                    setSelectedRegion('all');
+                    setSelectedDistrict('all');
+                    setSelectedVenue('all');
+                    setSelectedGenre('all');
+                    setUserLocation(null);
+                    setSearchLocation(null);
+                    setSearchResults([]);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-1 cursor-pointer hover:opacity-80 transition-opacity">
+                        Culture Flow
+                    </h1>
                 </div>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                    서울 · 경기 · 인천 통합 공연 검색 ({lastUpdated})
+
+
+                </p>
+            </div>
+
+            {/* View Toggles & Keyword Toggle */}
+            <div className="flex gap-2 shrink-0 w-full sm:w-auto justify-end">
+                <button
+                    onClick={() => setShowKeywordInput(!showKeywordInput)}
+                    className={clsx(
+                        "p-2 rounded-md transition-all flex items-center gap-2 mr-2",
+                        showKeywordInput ? "bg-yellow-500 text-black shadow font-bold" : "text-gray-400 hover:text-yellow-400"
+                    )}
+                    title="키워드 알림 설정"
+                >
+                    <Star className={clsx("w-5 h-5", showKeywordInput && "fill-black")} />
+                    <span className="hidden sm:inline text-xs">알림</span>
+                </button>
+
+                <div className="w-px h-6 bg-gray-700 mx-1 self-center" />
+
+                <button
+                    onClick={() => setViewMode('list')}
+                    className={clsx(
+                        "p-2 rounded-md transition-all flex items-center gap-2",
+                        viewMode === 'list' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
+                    )}
+                    title="목록 보기"
+                >
+                    <LayoutGrid className="w-5 h-5" />
+                </button>
+                <button
+                    onClick={() => setViewMode('calendar')}
+                    className={clsx(
+                        "p-2 rounded-md transition-all flex items-center gap-2",
+                        viewMode === 'calendar' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
+                    )}
+                    title="달력 보기"
+                >
+                    <CalendarDays className="w-5 h-5" />
+                </button>
+                <button
+                    onClick={() => setViewMode('map')}
+                    className={clsx(
+                        "p-2 rounded-md transition-all flex items-center gap-2",
+                        viewMode === 'map' ? "bg-gray-700 text-white shadow" : "text-gray-400 hover:text-white"
+                    )}
+                    title="지도 보기"
+                >
+                    <MapIcon className="w-5 h-5" />
+                </button>
+            </div>
+        </div>
+            </div >
+
+        {/* Keyword Input Section (Collapsible) */ }
+        < div className = {
+            clsx(
+                "bg-gray-800 border-b border-gray-700 transition-all duration-300 overflow-hidden",
+                showKeywordInput? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+            )
+        } >
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex items-center gap-2 flex-1 w-full sm:w-auto">
+                    <span className="text-yellow-400 font-bold shrink-0">⭐ 키워드 알림:</span>
+                    <input
+                        type="text"
+                        value={newKeyword}
+                        onChange={(e) => setNewKeyword(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.nativeEvent.isComposing) return;
+                            if (e.key === 'Enter') addKeyword();
+                        }}
+                        placeholder="관심 키워드 (예: 만원, 무료)"
+                        className="bg-gray-700 border border-gray-600 text-white text-sm rounded px-3 py-1.5 focus:outline-none focus:border-yellow-400 w-full sm:w-64"
+                    />
+                    <button
+                        onClick={addKeyword}
+                        className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-sm whitespace-nowrap"
+                    >
+                        추가
+                    </button>
+                </div>
+
+                {/* Active Keywords Chips */}
+                <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                    {keywords.map(k => (
+                        <div key={k} className="flex items-center bg-gray-700 border border-yellow-500/30 text-yellow-100 px-2 py-1 rounded text-sm">
+                            <span>{k}</span>
+                            <button onClick={() => removeKeyword(k)} className="ml-2 text-yellow-500 hover:text-white">
+                                <X className="w-3 h-3" />
+                            </button>
+                        </div>
+                    ))}
+                    {keywords.length === 0 && <span className="text-gray-500 text-xs">등록된 키워드가 없습니다.</span>}
+                    {keywords.length > 0 && (
+                        <button
+                            onClick={() => setKeywords([])}
+                            className="text-xs text-gray-500 hover:text-red-400 underline ml-2"
+                        >
+                            전체 삭제
+                        </button>
+                    )}
+                </div>
+            </div>
             </div >
 
 
 
-            {/* Sticky Sentinel */}
-            <div ref={sentinelRef} className="absolute top-[80px] h-1 w-full pointer-events-none" />
+        {/* Sticky Sentinel */ }
+        < div ref = { sentinelRef } className = "absolute top-[80px] h-1 w-full pointer-events-none" />
 
-            {/* Sticky Container */}
-            <div
-                className={clsx(
-                    "sticky top-0 z-50 transition-all duration-300 bg-[#101828]/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-2",
-                    !isFilterExpanded && "cursor-pointer hover:bg-[#152030]"
+            {/* Sticky Filter Container - Glassmorphism */ }
+            < div
+    className = {
+        clsx(
+                    "sticky top-0 z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md",
+            isSticky? "bg-black/80 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
+        )
+    }
+        >
+        <div className="w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+            !isFilterExpanded && "cursor-pointer hover:bg-[#152030]"
                 )}
-                onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
+            onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
             >
-                <div className="w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+            <div className="w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
 
-                    {/* Collapsed View: 1 Line */}
-                    {!isFilterExpanded && (
-                        <div className="flex items-center justify-between h-10 w-full relative">
-                            <div className="flex items-center gap-2 text-gray-400 text-sm h-full">
-                                <Search className="w-4 h-4" />
-                                <span className="pt-[1px]">상세 검색 (지역, 장르, 공연장 등)</span>
-                                {activeLocation && <span className="text-green-400 text-xs ml-2 pt-[1px]">● 위치 필터 적용중</span>}
-                            </div>
-                            <button
-                                type="button"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsFilterExpanded(true);
-                                }}
-                                className="flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
-                            >
-                                <ChevronDown className="w-5 h-5" />
-                            </button>
+                {/* Collapsed View: 1 Line */}
+                {!isFilterExpanded && (
+                    <div className="flex items-center justify-between h-10 w-full relative">
+                        <div className="flex items-center gap-2 text-gray-400 text-sm h-full">
+                            <Search className="w-4 h-4" />
+                            <span className="pt-[1px]">상세 검색 (지역, 장르, 공연장 등)</span>
+                            {activeLocation && <span className="text-green-400 text-xs ml-2 pt-[1px]">● 위치 필터 적용중</span>}
                         </div>
-                    )}
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsFilterExpanded(true);
+                            }}
+                            className="flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
+                        >
+                            <ChevronDown className="w-5 h-5" />
+                        </button>
+                    </div>
+                )}
 
-                    {/* Expanded View: 2 Lines (Original Content) */}
-                    <div className={clsx(
-                        "transition-all duration-300 overflow-hidden",
-                        isFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                    )}>
-                        <div className="flex flex-col gap-3">
-                            {/* Row 1: Filters & Search */}
-                            <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
+                {/* Expanded View: 2 Lines (Original Content) */}
+                <div className={clsx(
+                    "transition-all duration-300 overflow-hidden",
+                    isFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                )}>
+                    <div className="flex flex-col gap-3">
+                        {/* Row 1: Filters & Search */}
+                        <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
 
-                                {/* Filter Controls (Venue, Region, District) */}
-                                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
+                            {/* Filter Controls (Venue, Region, District) */}
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
-                                    {/* Venue Select */}
-                                    <div className="relative shrink-0 w-full sm:w-auto">
-                                        <select
-                                            value={selectedVenue}
-                                            onChange={(e) => setSelectedVenue(e.target.value)}
-                                            className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                {/* Venue Select */}
+                                <div className="relative shrink-0 w-full sm:w-auto">
+                                    <select
+                                        value={selectedVenue}
+                                        onChange={(e) => setSelectedVenue(e.target.value)}
+                                        className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                    >
+                                        <option value="all">전체 공연장</option>
+                                        {availableVenues.map(v => (
+                                            <option key={v} value={v}>{v}</option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+
+                                {/* Region Buttons Filter Group */}
+                                <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
+                                    {REGIONS.map(r => (
+                                        <button
+                                            key={r.id}
+                                            onClick={() => {
+                                                setSelectedRegion(r.id);
+                                                setSelectedDistrict('all');
+                                                setSelectedVenue('all');
+                                            }}
+                                            className={clsx(
+                                                'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
+                                                selectedRegion === r.id
+                                                    ? 'bg-blue-600 text-white shadow-md'
+                                                    : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                            )}
                                         >
-                                            <option value="all">전체 공연장</option>
-                                            {availableVenues.map(v => (
-                                                <option key={v} value={v}>{v}</option>
+                                            {r.label}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {/* District Select */}
+                                {selectedRegion !== 'all' && (
+                                    <div className="relative w-full sm:w-auto">
+                                        <select
+                                            value={selectedDistrict}
+                                            onChange={(e) => {
+                                                setSelectedDistrict(e.target.value);
+                                                setSelectedVenue('all'); // Reset venue when district changes
+                                            }}
+                                            className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                        >
+                                            <option value="all">전체 지역</option>
+                                            {districts.map(d => (
+                                                <option key={d} value={d}>{d}</option>
                                             ))}
                                         </select>
                                         <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                             <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                         </div>
                                     </div>
+                                )}
+                            </div>
 
-                                    {/* Region Buttons Filter Group */}
-                                    <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
-                                        {REGIONS.map(r => (
-                                            <button
-                                                key={r.id}
-                                                onClick={() => {
-                                                    setSelectedRegion(r.id);
-                                                    setSelectedDistrict('all');
-                                                    setSelectedVenue('all');
-                                                }}
-                                                className={clsx(
-                                                    'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
-                                                    selectedRegion === r.id
-                                                        ? 'bg-blue-600 text-white shadow-md'
-                                                        : 'text-gray-400 hover:text-white hover:bg-gray-700'
-                                                )}
-                                            >
-                                                {r.label}
-                                            </button>
-                                        ))}
-                                    </div>
 
-                                    {/* District Select */}
-                                    {selectedRegion !== 'all' && (
-                                        <div className="relative w-full sm:w-auto">
+                            {/* Search & Radius */}
+                            <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
+
+                                <div className={clsx(
+                                    "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
+                                    activeLocation ? "pl-1" : "pl-4"
+                                )}>
+
+                                    {/* Radius Selector */}
+                                    <div className={clsx(
+                                        "overflow-hidden transition-all duration-300 flex items-center shrink-0",
+                                        activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
+                                    )}>
+                                        {activeLocation && (
                                             <select
-                                                value={selectedDistrict}
-                                                onChange={(e) => {
-                                                    setSelectedDistrict(e.target.value);
-                                                    setSelectedVenue('all'); // Reset venue when district changes
-                                                }}
-                                                className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                                value={radius}
+                                                onChange={(e) => setRadius(Number(e.target.value))}
+                                                className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
                                             >
-                                                <option value="all">전체 지역</option>
-                                                {districts.map(d => (
-                                                    <option key={d} value={d}>{d}</option>
+                                                {RADIUS_OPTIONS.map(r => (
+                                                    <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
                                                 ))}
                                             </select>
-                                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-
-
-                                {/* Search & Radius */}
-                                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center max-w-full">
-
-                                    <div className={clsx(
-                                        "relative flex items-center bg-gray-800 border border-gray-700 rounded-full transition-all duration-300 flex-1 min-w-0 w-full sm:w-auto sm:max-w-[500px] shadow-sm hover:shadow-md hover:border-gray-500",
-                                        activeLocation ? "pl-1" : "pl-4"
-                                    )}>
-
-                                        {/* Radius Selector */}
-                                        <div className={clsx(
-                                            "overflow-hidden transition-all duration-300 flex items-center shrink-0",
-                                            activeLocation ? "w-16 sm:w-24 opacity-100 mr-1 sm:mr-2" : "w-0 opacity-0"
-                                        )}>
-                                            {activeLocation && (
-                                                <select
-                                                    value={radius}
-                                                    onChange={(e) => setRadius(Number(e.target.value))}
-                                                    className="bg-transparent text-green-400 text-xs font-bold w-full h-full focus:outline-none cursor-pointer py-2 pl-1 sm:pl-2 appearance-none"
-                                                >
-                                                    {RADIUS_OPTIONS.map(r => (
-                                                        <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
-                                                    ))}
-                                                </select>
-                                            )}
-                                        </div>
-
-                                        {/* Divider */}
-                                        {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
-
-                                        {/* Search Input */}
-                                        <input
-                                            type="text"
-                                            className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
-                                            placeholder="공연명/장소 검색"
-                                            value={searchText}
-                                            onChange={handleSearchTextChange}
-                                            onKeyDown={handleKeyDown}
-                                        />
-
-                                        {/* Clear Button */}
-                                        {searchText && (
-                                            <button
-                                                onClick={() => {
-                                                    setSearchText('');
-                                                    setIsDropdownOpen(false);
-                                                }}
-                                                className="absolute right-12 text-gray-500 hover:text-white p-1"
-                                            >
-                                                <X className="w-4 h-4" />
-                                            </button>
-                                        )}
-
-                                        {/* Search Button */}
-                                        <button
-                                            onClick={handleSearch}
-                                            className="p-2.5 m-0.5 bg-blue-600 rounded-full hover:bg-blue-500 transition-colors shrink-0"
-                                        >
-                                            {isSearching ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Search className="w-4 h-4 text-white" />}
-                                        </button>
-
-                                        {/* Dropdown */}
-                                        {isDropdownOpen && searchResults.length > 0 && (
-                                            <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-80 overflow-y-auto">
-                                                {searchResults.map((result, idx) => (
-                                                    <div
-                                                        key={`search-${idx}`}
-                                                        onClick={() => handleSelectResult(result)}
-                                                        className="px-4 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-3 border-b border-gray-700/50 last:border-0"
-                                                    >
-                                                        <div className="bg-gray-900 p-2 rounded-full shrink-0">
-                                                            {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-green-400" />}
-                                                        </div>
-                                                        <div className="flex-1 min-w-0">
-                                                            <div className="text-white text-sm font-bold truncate">{result.name}</div>
-                                                            {result.address && <div className="text-gray-400 text-xs truncate">{result.address}</div>}
-                                                        </div>
-                                                        {result.category && <span className="text-xs text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded">{result.category}</span>}
-                                                    </div>
-                                                ))}
-                                            </div>
                                         )}
                                     </div>
 
-                                    {/* Location Reset Button */}
-                                    {activeLocation && (
+                                    {/* Divider */}
+                                    {activeLocation && <div className="w-[1px] h-6 bg-gray-600 mr-2"></div>}
+
+                                    {/* Search Input */}
+                                    <input
+                                        type="text"
+                                        className="flex-grow bg-transparent text-sm text-gray-200 placeholder-gray-500 focus:outline-none py-3 min-w-0"
+                                        placeholder="공연명/장소 검색"
+                                        value={searchText}
+                                        onChange={handleSearchTextChange}
+                                        onKeyDown={handleKeyDown}
+                                    />
+
+                                    {/* Clear Button */}
+                                    {searchText && (
                                         <button
                                             onClick={() => {
-                                                setUserLocation(null);
-                                                setSearchLocation(null);
                                                 setSearchText('');
-                                                setSearchResults([]);
                                                 setIsDropdownOpen(false);
-                                                setRadius(10);
                                             }}
-                                            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
-                                            title="위치 초기화"
+                                            className="absolute right-12 text-gray-500 hover:text-white p-1"
                                         >
-                                            <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                                            <X className="w-4 h-4" />
                                         </button>
                                     )}
-                                </div>
-                            </div>
 
-                            {/* Row 2: Genre List & Toggle Button */}
-                            <div className="flex items-center gap-2">
-                                <div className="flex-1 flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                                    {GENRES.map(g => (
-                                        <button
-                                            key={g.id}
-                                            onClick={() => setSelectedGenre(g.id)}
-                                            className={clsx(
-                                                'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
-                                                selectedGenre === g.id
-                                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
-                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
-                                            )}
-                                        >
-                                            {g.label}
-                                        </button>
-                                    ))}
+                                    {/* Search Button */}
+                                    <button
+                                        onClick={handleSearch}
+                                        className="p-2.5 m-0.5 bg-blue-600 rounded-full hover:bg-blue-500 transition-colors shrink-0"
+                                    >
+                                        {isSearching ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Search className="w-4 h-4 text-white" />}
+                                    </button>
+
+                                    {/* Dropdown */}
+                                    {isDropdownOpen && searchResults.length > 0 && (
+                                        <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl z-50 overflow-hidden max-h-80 overflow-y-auto">
+                                            {searchResults.map((result, idx) => (
+                                                <div
+                                                    key={`search-${idx}`}
+                                                    onClick={() => handleSelectResult(result)}
+                                                    className="px-4 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-3 border-b border-gray-700/50 last:border-0"
+                                                >
+                                                    <div className="bg-gray-900 p-2 rounded-full shrink-0">
+                                                        {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-green-400" />}
+                                                    </div>
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="text-white text-sm font-bold truncate">{result.name}</div>
+                                                        {result.address && <div className="text-gray-400 text-xs truncate">{result.address}</div>}
+                                                    </div>
+                                                    {result.category && <span className="text-xs text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded">{result.category}</span>}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
-                                <div className="w-[1px] h-6 bg-gray-700 mx-1 hidden sm:block"></div>
-                                {/* Collapse Toggle Button */}
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setIsFilterExpanded(false);
-                                    }}
-                                    className="p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 shrink-0"
-                                    title="검색창 접기"
-                                >
-                                    <ChevronUp className="w-5 h-5" />
-                                </button>
+
+                                {/* Location Reset Button */}
+                                {activeLocation && (
+                                    <button
+                                        onClick={() => {
+                                            setUserLocation(null);
+                                            setSearchLocation(null);
+                                            setSearchText('');
+                                            setSearchResults([]);
+                                            setIsDropdownOpen(false);
+                                            setRadius(10);
+                                        }}
+                                        className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 shadow-sm transition-all shrink-0 group"
+                                        title="위치 초기화"
+                                    >
+                                        <RotateCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                                    </button>
+                                )}
                             </div>
+                        </div>
+
+                        {/* Row 2: Genre List & Toggle Button */}
+                        <div className="flex items-center gap-2">
+                            <div className="flex-1 flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                                {GENRES.map(g => (
+                                    <button
+                                        key={g.id}
+                                        onClick={() => setSelectedGenre(g.id)}
+                                        className={clsx(
+                                            'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
+                                            selectedGenre === g.id
+                                                ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
+                                                : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                                        )}
+                                    >
+                                        {g.label}
+                                    </button>
+                                ))}
+                            </div>
+                            <div className="w-[1px] h-6 bg-gray-700 mx-1 hidden sm:block"></div>
+                            {/* Collapse Toggle Button */}
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsFilterExpanded(false);
+                                }}
+                                className="p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 shrink-0"
+                                title="검색창 접기"
+                            >
+                                <ChevronUp className="w-5 h-5" />
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            {/* Keyword Matches Section (Only in List View) */}
-            {
-                viewMode === 'list' && keywordMatches.length > 0 && (
-                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8">
-                        <div
-                            className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
-                            onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
-                        >
-                            <h3 className="text-xl font-bold text-yellow-500 flex items-center gap-2">
-                                <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
-                                관심 키워드 알림
-                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({keywordMatches.length})</span>
-                                <span className="text-sm font-normal text-gray-400 ml-2 hidden sm:inline">설정하신 키워드가 포함된 공연입니다.</span>
-                            </h3>
-                            <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
-                                {isKeywordsExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
-                            </button>
-                        </div>
-                        {isKeywordsExpanded && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
-                                {keywordMatches.map((performance) => (
-                                    <div key={`keyword-${performance.id}`}
-                                        className="group bg-yellow-500 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-white/50"
+    {/* Keyword Matches Section (Only in List View) */ }
+    {
+        viewMode === 'list' && keywordMatches.length > 0 && (
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8">
+                <div
+                    className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
+                    onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
+                >
+                    <h3 className="text-xl font-bold text-yellow-500 flex items-center gap-2">
+                        <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                        관심 키워드 알림
+                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({keywordMatches.length})</span>
+                        <span className="text-sm font-normal text-gray-400 ml-2 hidden sm:inline">설정하신 키워드가 포함된 공연입니다.</span>
+                    </h3>
+                    <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
+                        {isKeywordsExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
+                    </button>
+                </div>
+                {isKeywordsExpanded && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                        {keywordMatches.map((performance) => (
+                            <div key={`keyword-${performance.id}`}
+                                className="group bg-yellow-500 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-white/50"
+                            >
+                                {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
+                                {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
+                                {/* Actually I can just map them using the same structure as below list */}
+                                <div className="relative aspect-[3/4] overflow-hidden">
+                                    <div
+                                        className="cursor-pointer w-full h-full"
+                                        onClick={() => {
+                                            const v = venues[performance.venue];
+                                            if (v) {
+                                                setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
+                                                setViewMode('map');
+                                            }
+                                        }}
                                     >
-                                        {/* Simplified Card Render for keywords - Duplicated purely for hoisting visual */}
-                                        {/* Ideally refactor Card into component but strict modify rules make duplicated inline safer for now if small */}
-                                        {/* Actually I can just map them using the same structure as below list */}
-                                        <div className="relative aspect-[3/4] overflow-hidden">
-                                            <div
-                                                className="cursor-pointer w-full h-full"
-                                                onClick={() => {
-                                                    const v = venues[performance.venue];
-                                                    if (v) {
-                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                        setViewMode('map');
-                                                    }
-                                                }}
-                                            >
-                                                <Image
-                                                    src={performance.image || "/api/placeholder/400/300"}
-                                                    alt={performance.title}
-                                                    fill
-                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
-                                                {/* Keyword Badge */}
-                                                <div className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30">
-                                                    <Star className="w-3 h-3 fill-yellow-500" />
-                                                    알림
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 bg-yellow-400">
-                                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
-                                                {performance.title}
-                                            </h3>
-                                            {/* Venue Link */}
-                                            <div
-                                                onClick={() => {
-                                                    const v = venues[performance.venue];
-                                                    if (v) {
-                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                        setViewMode('map');
-                                                    } else {
-                                                        // No coord, just update text?
-                                                    }
-                                                }}
-                                                className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
-                                            >
-                                                <MapPin className="w-3 h-3 text-gray-700" />
-                                                {performance.venue}
-                                            </div>
-                                            <div className="flex justify-between items-end border-t border-black/10 pt-2">
-                                                <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
-                                                    {GENRES.find(g => g.id === performance.genre)?.label || performance.genre}
-                                                </span>
-                                                <span className="text-gray-900 text-xs font-medium">{performance.date}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                )
-            }
-
-
-            {/* Main Content */}
-            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-
-                {/* Results Info */}
-                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
-                    <div className="w-full sm:w-auto">
-                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
-                            {activeLocation ? (
-                                <>
-                                    <MapPin className="text-green-500 w-5 h-5" />
-                                    <span className="truncate max-w-[200px] sm:max-w-md">
-                                        {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
-                                    </span>
-                                    <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
-                                </>
-                            ) : (
-                                <>
-                                    <span>추천 공연</span>
-                                    <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
-                                </>
-                            )}
-                        </h2>
-                        <p className="text-gray-400 text-xs sm:text-sm">
-                            {activeLocation
-                                ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
-                                : `조건에 맞는 공연을 찾았습니다.`}
-                        </p>
-                    </div>
-
-                </div >
-
-                {/* List View (Grid) */}
-                < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
-                }>
-                    {
-                        visiblePerformances.map((perf) => {
-                            const venueInfo = venues[perf.venue];
-                            return (
-                                <div key={`${perf.id}-${perf.region}`} className="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 flex flex-col h-full relative">
-                                    {/* Image */}
-                                    <div className="relative aspect-[3/4] bg-gray-900 overflow-hidden">
-                                        {perf.image ? (
-                                            <img
-                                                src={perf.image}
-                                                alt={perf.title}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                                loading="lazy"
-                                            />
-                                        ) : (
-                                            <div className="flex items-center justify-center h-full text-gray-600">No Image</div>
-                                        )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-
-                                        <div className="absolute top-2 right-2">
-                                            <span className={clsx(
-                                                "px-2 py-1 rounded text-[10px] font-bold uppercase backdrop-blur-md border border-white/10 text-white",
-                                                GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/80',
-                                                "opacity-90"
-                                            )}>
-                                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {/* Details */}
-                                    <div className="p-4 flex flex-col flex-grow">
-                                        <div className="mb-2">
-                                            <span className="inline-flex items-center gap-1 text-blue-400 text-xs font-bold mb-1">
-                                                <Calendar className="w-3 h-3" /> {perf.date}
-                                            </span>
-                                            <h3 className="text-lg font-bold text-gray-100 line-clamp-2 leading-tight min-h-[3rem]" title={perf.title}>
-                                                {perf.title}
-                                            </h3>
-                                        </div>
-
-                                        <div className="mt-auto space-y-3">
-                                            <div className="text-sm text-gray-400">
-                                                <div className="flex items-center gap-1.5 mb-1">
-                                                    <MapPin className="w-3.5 h-3.5 text-gray-500" />
-                                                    <button
-                                                        onClick={() => {
-                                                            const v = venues[perf.venue];
-                                                            if (v?.lat && v?.lng) {
-                                                                setSearchLocation({
-                                                                    lat: v.lat,
-                                                                    lng: v.lng,
-                                                                    name: perf.venue
-                                                                });
-                                                                setViewMode('map');
-                                                            } else {
-                                                                alert("해당 공연장의 위치 정보가 없습니다.");
-                                                            }
-                                                        }}
-                                                        className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
-                                                    >
-                                                        {perf.venue}
-                                                    </button>
-                                                </div>
-                                                {/* Address hidden per request */}
-                                            </div>
-
-                                            <a
-                                                href={perf.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
-                                            >
-                                                예매하기
-                                            </a>
+                                        <Image
+                                            src={performance.image || "/api/placeholder/400/300"}
+                                            alt={performance.title}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+                                        {/* Keyword Badge */}
+                                        <div className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30">
+                                            <Star className="w-3 h-3 fill-yellow-500" />
+                                            알림
                                         </div>
                                     </div>
                                 </div>
-                            );
-                        })
-                    }
-                </div >
+                                <div className="p-4 bg-yellow-400">
+                                    <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
+                                        {performance.title}
+                                    </h3>
+                                    {/* Venue Link */}
+                                    <div
+                                        onClick={() => {
+                                            const v = venues[performance.venue];
+                                            if (v) {
+                                                setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
+                                                setViewMode('map');
+                                            } else {
+                                                // No coord, just update text?
+                                            }
+                                        }}
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                    >
+                                        <MapPin className="w-3 h-3 text-gray-700" />
+                                        {performance.venue}
+                                    </div>
+                                    <div className="flex justify-between items-end border-t border-black/10 pt-2">
+                                        <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
+                                            {GENRES.find(g => g.id === performance.genre)?.label || performance.genre}
+                                        </span>
+                                        <span className="text-gray-900 text-xs font-medium">{performance.date}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        )
+    }
 
-                {/* Sentinel for Infinite Scroll - Only in List Mode */}
-                {
-                    viewMode === 'list' && visibleCount < filteredPerformances.length && (
-                        <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
-                            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-                        </div>
-                    )
-                }
 
-                {/* Empty State */}
-                {
-                    filteredPerformances.length === 0 && (
-                        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
-                            <Navigation className="w-12 h-12 mb-4 opacity-20" />
-                            <p>
-                                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                                    ? '현재 경기 일정이 없습니다.'
-                                    : '조건에 맞는 공연이 없습니다.'}
-                            </p>
-                            <button onClick={() => {
-                                setSelectedRegion('all');
-                                setSelectedDistrict('all');
-                                setSelectedGenre('all');
-                                setSearchText('');
-                                setUserLocation(null);
-                            }} className="mt-4 text-blue-400 hover:underline">
-                                필터 초기화
-                            </button>
-                        </div>
-                    )
-                }
-            </div >
+    {/* Main Content */ }
+    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
-            {/* Scroll to Top Button */}
+        {/* Results Info */}
+        <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
+            <div className="w-full sm:w-auto">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 flex items-center gap-2">
+                    {activeLocation ? (
+                        <>
+                            <MapPin className="text-green-500 w-5 h-5" />
+                            <span className="truncate max-w-[200px] sm:max-w-md">
+                                {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
+                            </span>
+                            <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
+                        </>
+                    ) : (
+                        <>
+                            <span>추천 공연</span>
+                            <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
+                        </>
+                    )}
+                </h2>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                    {activeLocation
+                        ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
+                        : `조건에 맞는 공연을 찾았습니다.`}
+                </p>
+            </div>
+
+        </div >
+
+        {/* List View (Grid) */}
+        < div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
+        }>
             {
-                showScrollTop && (
-                    <button
-                        onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
-                        aria-label="Scroll to top"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                        </svg>
+                visiblePerformances.map((perf) => {
+                    const venueInfo = venues[perf.venue];
+                    return (
+                        <div key={`${perf.id}-${perf.region}`} className="group bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 flex flex-col h-full relative">
+                            {/* Image */}
+                            <div className="relative aspect-[3/4] bg-gray-900 overflow-hidden">
+                                {perf.image ? (
+                                    <img
+                                        src={perf.image}
+                                        alt={perf.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="flex items-center justify-center h-full text-gray-600">No Image</div>
+                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+
+                                <div className="absolute top-2 right-2">
+                                    <span className={clsx(
+                                        "px-2 py-1 rounded text-[10px] font-bold uppercase backdrop-blur-md border border-white/10 text-white",
+                                        GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/80',
+                                        "opacity-90"
+                                    )}>
+                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Details */}
+                            <div className="p-4 flex flex-col flex-grow">
+                                <div className="mb-2">
+                                    <span className="inline-flex items-center gap-1 text-blue-400 text-xs font-bold mb-1">
+                                        <Calendar className="w-3 h-3" /> {perf.date}
+                                    </span>
+                                    <h3 className="text-lg font-bold text-gray-100 line-clamp-2 leading-tight min-h-[3rem]" title={perf.title}>
+                                        {perf.title}
+                                    </h3>
+                                </div>
+
+                                <div className="mt-auto space-y-3">
+                                    <div className="text-sm text-gray-400">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <MapPin className="w-3.5 h-3.5 text-gray-500" />
+                                            <button
+                                                onClick={() => {
+                                                    const v = venues[perf.venue];
+                                                    if (v?.lat && v?.lng) {
+                                                        setSearchLocation({
+                                                            lat: v.lat,
+                                                            lng: v.lng,
+                                                            name: perf.venue
+                                                        });
+                                                        setViewMode('map');
+                                                    } else {
+                                                        alert("해당 공연장의 위치 정보가 없습니다.");
+                                                    }
+                                                }}
+                                                className="line-clamp-1 hover:text-blue-400 hover:underline text-left"
+                                            >
+                                                {perf.venue}
+                                            </button>
+                                        </div>
+                                        {/* Address hidden per request */}
+                                    </div>
+
+                                    <a
+                                        href={perf.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full text-center py-2 rounded-lg bg-gray-700 hover:bg-blue-600 text-gray-300 hover:text-white text-sm font-bold transition-colors"
+                                    >
+                                        예매하기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div >
+
+        {/* Sentinel for Infinite Scroll - Only in List Mode */}
+        {
+            viewMode === 'list' && visibleCount < filteredPerformances.length && (
+                <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+                </div>
+            )
+        }
+
+        {/* Empty State */}
+        {
+            filteredPerformances.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
+                    <Navigation className="w-12 h-12 mb-4 opacity-20" />
+                    <p>
+                        {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                            ? '현재 경기 일정이 없습니다.'
+                            : '조건에 맞는 공연이 없습니다.'}
+                    </p>
+                    <button onClick={() => {
+                        setSelectedRegion('all');
+                        setSelectedDistrict('all');
+                        setSelectedGenre('all');
+                        setSearchText('');
+                        setUserLocation(null);
+                    }} className="mt-4 text-blue-400 hover:underline">
+                        필터 초기화
                     </button>
-                )
-            }
+                </div>
+            )
+        }
+    </div >
 
-            {/* Render View Modals */}
-            {
-                viewMode === 'calendar' && (
-                    <CalendarModal
-                        performances={filteredPerformances} // Pass filtered!
-                        onClose={() => setViewMode('list')}
-                    />
-                )
-            }
+    {/* Scroll to Top Button */ }
+    {
+        showScrollTop && (
+            <button
+                onClick={scrollToTop}
+                className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+                aria-label="Scroll to top"
+            >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+            </button>
+        )
+    }
 
-            {
-                viewMode === 'map' && (
-                    <KakaoMapModal
-                        performances={filteredPerformances} // Pass filtered!
-                        centerLocation={
-                            searchLocation ||
-                            (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
-                                ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
-                                : null)
-                        }
-                        onClose={() => setViewMode('list')}
-                    />
-                )
-            }
+    {/* Render View Modals */ }
+    {
+        viewMode === 'calendar' && (
+            <CalendarModal
+                performances={filteredPerformances} // Pass filtered!
+                onClose={() => setViewMode('list')}
+            />
+        )
+    }
+
+    {
+        viewMode === 'map' && (
+            <KakaoMapModal
+                performances={filteredPerformances} // Pass filtered!
+                centerLocation={
+                    searchLocation ||
+                    (selectedVenue !== 'all' && venues[selectedVenue]?.lat && venues[selectedVenue]?.lng
+                        ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
+                        : null)
+                }
+                onClose={() => setViewMode('list')}
+            />
+        )
+    }
 
         </div >
     );
