@@ -690,11 +690,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     {/* Collapsed View: 1 Line */}
                     {!isFilterExpanded && (
-                        <div className="flex items-center justify-between h-10">
-                            <div className="flex items-center gap-2 text-gray-400 text-sm">
+                        <div className="flex items-center justify-between h-10 w-full relative">
+                            <div className="flex items-center gap-2 text-gray-400 text-sm h-full">
                                 <Search className="w-4 h-4" />
-                                <span>상세 검색 (지역, 장르, 공연장 등)</span>
-                                {activeLocation && <span className="text-green-400 text-xs ml-2">● 위치 필터 적용중</span>}
+                                <span className="pt-[1px]">상세 검색 (지역, 장르, 공연장 등)</span>
+                                {activeLocation && <span className="text-green-400 text-xs ml-2 pt-[1px]">● 위치 필터 적용중</span>}
                             </div>
                             <button
                                 type="button"
@@ -702,7 +702,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     e.stopPropagation();
                                     setIsFilterExpanded(true);
                                 }}
-                                className="p-1 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700"
+                                className="flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
                             >
                                 <ChevronDown className="w-5 h-5" />
                             </button>
