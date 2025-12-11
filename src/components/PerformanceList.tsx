@@ -100,6 +100,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Mobile Filter Toggle State
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [isFilterExpanded, setIsFilterExpanded] = useState(true); // New: Filter Collapse State
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
 
     // Infinite Scroll State
@@ -680,69 +681,71 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className="flex flex-col xl:flex-row gap-3 sm:gap-4 justify-between items-start xl:items-center">
 
                     {/* Filter Controls (Venue, Region, District) */}
-                    <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
+                    {isFilterExpanded && (
+                        <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
-                        {/* Venue Select */}
-                        <div className="relative shrink-0 w-full sm:w-auto">
-                            <select
-                                value={selectedVenue}
-                                onChange={(e) => setSelectedVenue(e.target.value)}
-                                className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
-                            >
-                                <option value="all">전체 공연장</option>
-                                {availableVenues.map(v => (
-                                    <option key={v} value={v}>{v}</option>
-                                ))}
-                            </select>
-                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-
-                        {/* Region Buttons Filter Group */}
-                        <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
-                            {REGIONS.map(r => (
-                                <button
-                                    key={r.id}
-                                    onClick={() => {
-                                        setSelectedRegion(r.id);
-                                        setSelectedDistrict('all');
-                                        setSelectedVenue('all');
-                                    }}
-                                    className={clsx(
-                                        'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
-                                        selectedRegion === r.id
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'text-gray-400 hover:text-white hover:bg-gray-700'
-                                    )}
-                                >
-                                    {r.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* District Select */}
-                        {selectedRegion !== 'all' && (
-                            <div className="relative w-full sm:w-auto">
+                            {/* Venue Select */}
+                            <div className="relative shrink-0 w-full sm:w-auto">
                                 <select
-                                    value={selectedDistrict}
-                                    onChange={(e) => {
-                                        setSelectedDistrict(e.target.value);
-                                        setSelectedVenue('all'); // Reset venue when district changes
-                                    }}
-                                    className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                    value={selectedVenue}
+                                    onChange={(e) => setSelectedVenue(e.target.value)}
+                                    className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
                                 >
-                                    <option value="all">전체 지역</option>
-                                    {districts.map(d => (
-                                        <option key={d} value={d}>{d}</option>
+                                    <option value="all">전체 공연장</option>
+                                    {availableVenues.map(v => (
+                                        <option key={v} value={v}>{v}</option>
                                     ))}
                                 </select>
                                 <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                     <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </div>
                             </div>
-                        )}
-                    </div>
+
+                            {/* Region Buttons Filter Group */}
+                            <div className="flex bg-gray-800 rounded-lg p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start">
+                                {REGIONS.map(r => (
+                                    <button
+                                        key={r.id}
+                                        onClick={() => {
+                                            setSelectedRegion(r.id);
+                                            setSelectedDistrict('all');
+                                            setSelectedVenue('all');
+                                        }}
+                                        className={clsx(
+                                            'flex-1 sm:flex-none px-3 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap text-center',
+                                            selectedRegion === r.id
+                                                ? 'bg-blue-600 text-white shadow-md'
+                                                : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                        )}
+                                    >
+                                        {r.label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* District Select */}
+                            {selectedRegion !== 'all' && (
+                                <div className="relative w-full sm:w-auto">
+                                    <select
+                                        value={selectedDistrict}
+                                        onChange={(e) => {
+                                            setSelectedDistrict(e.target.value);
+                                            setSelectedVenue('all'); // Reset venue when district changes
+                                        }}
+                                        className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                    >
+                                        <option value="all">전체 지역</option>
+                                        {districts.map(d => (
+                                            <option key={d} value={d}>{d}</option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )}
 
                     {/* Search & Radius */}
                     {/* Search & Radius - UI Enhancements */}
@@ -858,21 +861,34 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
 
                 {/* Genre Filter Row - Horizontal Scroll on Mobile */}
-                <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                    {GENRES.map(g => (
-                        <button
-                            key={g.id}
-                            onClick={() => setSelectedGenre(g.id)}
-                            className={clsx(
-                                'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
-                                selectedGenre === g.id
-                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
-                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
-                            )}
-                        >
-                            {g.label}
-                        </button>
-                    ))}
+                {isFilterExpanded && (
+                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                        {GENRES.map(g => (
+                            <button
+                                key={g.id}
+                                onClick={() => setSelectedGenre(g.id)}
+                                className={clsx(
+                                    'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
+                                    selectedGenre === g.id
+                                        ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
+                                        : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                                )}
+                            >
+                                {g.label}
+                            </button>
+                        ))}
+                    </div>
+                )}
+
+                {/* Toggle Expansion Button */}
+                <div className="flex justify-center -mt-2">
+                    <button
+                        onClick={() => setIsFilterExpanded(!isFilterExpanded)}
+                        className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1 shadow-sm transition-colors"
+                        title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
+                    >
+                        {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </button>
                 </div>
             </div>
 
