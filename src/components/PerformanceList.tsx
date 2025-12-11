@@ -891,19 +891,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             ))}
                         </div>
 
-                        {/* Toggle Expansion Button - Right Aligned */}
-                        {/* Always visible if content is populated, controls expansion state */}
-                        <button
-                            type="button"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setIsFilterExpanded(!isFilterExpanded);
-                            }}
-                            className="relative z-10 shrink-0 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-400 hover:text-white rounded-full p-1.5 shadow-sm transition-colors"
-                            title={isFilterExpanded ? "검색창 접기" : "검색창 펼치기"}
-                        >
-                            {isFilterExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                        </button>
+
                     </div>
                 </div>
             </div>
