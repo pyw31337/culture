@@ -1073,22 +1073,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 )}
 
                                 {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                                 {/* Content Layer (Bottom) */}
-                                <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 md:translate-y-4">
+                                <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 md:translate-y-4 z-20">
 
                                     {/* Tags/Badges */}
                                     <div className="flex flex-wrap gap-2 mb-2">
                                         <span className={clsx(
-                                            "px-2 py-1 rounded-[4px] text-[10px] font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
+                                            "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
                                             GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
                                         )}>
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
                                         {/* Date Badge */}
-                                        <span className="px-2 py-1 rounded-[4px] text-[10px] bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
-                                            <Calendar className="w-3 h-3" /> {perf.date}
+                                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                            <Calendar className="w-3.5 h-3.5" /> {perf.date}
                                         </span>
                                     </div>
 
