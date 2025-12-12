@@ -118,11 +118,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Fake Loading State for UX
     const [isFiltering, setIsFiltering] = useState(false);
 
-    useEffect(() => {
-        setIsFiltering(true);
-        const timer = setTimeout(() => setIsFiltering(false), 600);
-        return () => clearTimeout(timer);
-    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, activeLocation]);
+
 
 
     // Radius (User Location or Search Location)
@@ -131,6 +127,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Consolidated "Center" for radius calculation (User Loc OR Search Loc)
     const activeLocation = searchLocation || userLocation;
+
+    useEffect(() => {
+        setIsFiltering(true);
+        const timer = setTimeout(() => setIsFiltering(false), 600);
+        return () => clearTimeout(timer);
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, activeLocation]);
 
     // Debounce Effect
     useEffect(() => {
