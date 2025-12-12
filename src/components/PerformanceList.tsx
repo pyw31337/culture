@@ -492,16 +492,28 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 
     // Sticky Sentinel Observer
-    const sentinelRef = useMemo(() => {
-        return (node: HTMLDivElement | null) => {
-            if (!node) return;
-            const observer = new IntersectionObserver(([entry]) => {
-                // If sentinel is NOT visible and bounding box is above, it means we scrolled past it
-                setIsSticky(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-            }, { threshold: 0 });
-            observer.observe(node);
-            return () => observer.disconnect();
-        }
+    // Sticky Logic with getBoundingClientRect + Scroll Listener (More Robust)
+    const stickyHeaderRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!stickyHeaderRef.current) return;
+            const rect = stickyHeaderRef.current.getBoundingClientRect();
+            // If the element's top is <= 0 (or very close), it is "stuck" or we have scrolled past its start.
+            // Since it's sticky top-0, it stays at 0. But we allow a small buffer for subpixel rendering.
+            const isStuck = rect.top <= 1;
+
+            setIsSticky(prev => {
+                if (prev !== isStuck) return isStuck;
+                return prev;
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        // Initial check
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     // Scroll to Top Logic
@@ -710,10 +722,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Sticky Sentinel - Fixed: Removed absolute to be in flow */}
-            <div ref={sentinelRef} className="h-[1px] w-full pointer-events-none" />
+            {/* Sticky Ref is now on the container itself */}
+
 
             {/* Sticky Filter Container - Glassmorphism */}
             <div
+                ref={stickyHeaderRef}
                 className={
                     clsx(
                         "sticky top-0 z-50 transition-all duration-300 ease-in-out border-b backdrop-blur-md w-full",
