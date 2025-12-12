@@ -528,7 +528,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 priority
                             />
                         </div>
-                        <h1 className="text-[2.5rem] max-[390px]:text-[1.2rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
+                        <h1 className="text-[1.5rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
@@ -567,10 +567,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         특별한 오늘, 당신을 위한<br />
                         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal mx-2 py-1">Spotlight</span>는 어디일까요?
                     </h2>
+                    {/* Mobile: 2 lines (400px~640px) -> 4 lines (<400px) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
-                        특별한 오늘,<br />
+                        특별한 오늘,<br className="hidden max-[400px]:block" />
                         당신을 위한<br />
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는<br className="hidden max-[400px]:block" />
                         어디일까요?
                     </h2>
                     <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
