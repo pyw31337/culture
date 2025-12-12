@@ -517,7 +517,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 priority
                             />
                         </div>
-                        <h1 className="text-[2.5rem] max-[390px]:text-[3.2rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
+                        <h1 className="text-[2.5rem] max-[390px]:text-[1.2rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
