@@ -487,8 +487,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 
             {/* Header: Logo & Last Updated */}
+            {/* Header: Logo Only */}
             <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex justify-between items-center gap-4">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
                         onClick={() => {
@@ -506,7 +507,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
                             <Image
-                                src="images/ticket_icon.png"
+                                src="/images/ticket_icon.png"
                                 alt="Culture Flow Icon"
                                 fill
                                 className="object-cover"
@@ -523,10 +524,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="text-xs text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full border border-white/5">
-                            Last Update : {lastUpdated}
-                        </div>
-
+                        {/* View Mode Toggles */}
                         <div className="hidden md:flex gap-2">
                             <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
@@ -537,8 +535,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             </header>
 
             {/* Hero Section */}
-            <div className="relative z-50 max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between items-end gap-8">
-                <div>
+            <div className="relative z-50 max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8">
+                <div className="text-left">
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
                             {activeLocation
@@ -553,9 +551,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter">
                         특별한 오늘, 당신을 위한<br />
-                        특별한 오늘, 당신을 위한<br />
                         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal mx-2 py-1">Spotlight</span>는 어디일까요?
                     </h2>
+                    <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
+                        [{lastUpdated} 기준]
+                    </div>
                 </div>
 
                 {/* Hero Search Bar */}
@@ -671,14 +671,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
                 >
 
-                    {/* Collapsed View */}
+                    {/* Collapsed View Redesigned */}
                     {!isFilterExpanded && (
-                        <div className="flex items-center justify-between h-10 w-full relative">
-                            <div className="flex items-center gap-4 text-gray-400 text-sm h-full flex-1">
-                                <Filter className="w-4 h-4 text-[#a78bfa]" />
-
-                                {/* Active Filter Summary */}
-                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+                        <div className="flex flex-col gap-2 w-full relative">
+                            {/* Row 1: Filter Summary Text */}
+                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full">
+                                <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
+                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap">
                                     {selectedGenre !== 'all' && (
                                         <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-bold border border-[#a78bfa]/30">
                                             {GENRES.find(g => g.id === selectedGenre)?.label}
@@ -707,33 +706,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
                             </div>
 
-                            {/* Keyword Toggle + Sticky Search - Collapsed View */}
-                            <div
-                                className={clsx(
-                                    "transition-all duration-300 transform origin-right flex items-center gap-2",
-                                    isSticky ? "opacity-100 scale-100 w-auto" : "opacity-0 scale-95 w-0 overflow-hidden"
-                                )}
-                                onClick={(e) => e.stopPropagation()}
-                            >
+                            {/* Row 2: [Star] [Search] [Toggle] */}
+                            <div className="flex items-center gap-2 w-full overflow-x-auto scrollbar-hide pb-1 md:pb-0">
                                 {/* Keyword Button (Collapsed) */}
                                 <button
-                                    onClick={() => setShowKeywordInput(!showKeywordInput)}
-                                    className="p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowKeywordInput(!showKeywordInput);
+                                    }}
+                                    className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
                                 >
                                     <Star className="w-3 h-3 fill-current" />
                                     <span>관심키워드</span>
                                 </button>
 
                                 {/* Quick Search Bar */}
-                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100">
+                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 max-w-sm min-w-[200px]">
                                     <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
                                         <Search className="w-4 h-4 text-white mr-2" />
                                         <input
                                             type="text"
                                             value={searchText}
+                                            onClick={(e) => e.stopPropagation()}
                                             onChange={handleSearchTextChange}
                                             onKeyDown={handleKeyDown}
-                                            className="bg-transparent border-none text-white text-sm font-bold w-32 md:w-48 focus:outline-none placeholder-gray-500"
+                                            className="bg-transparent border-none text-white text-sm font-bold w-full focus:outline-none placeholder-gray-500"
                                             placeholder="빠른 검색..."
                                         />
                                     </div>
@@ -744,11 +741,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setIsFilterExpanded(true);
-                                        setShowKeywordInput(false); // Close keywords when expanding if preferred, or keep open
+                                        setShowKeywordInput(false);
                                     }}
-                                    className="flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-2"
+                                    className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto md:ml-2"
                                 >
-                                    <ChevronDown className="w-5 h-5" />
+                                    <ChevronDown className="w-4 h-4" />
                                 </button>
                             </div>
                         </div>
@@ -1028,7 +1025,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             <p className="text-gray-400 text-xs sm:text-sm font-medium pb-[3px]">
                                 {activeLocation
                                     ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
-                                    : `조건에 맞는 공연을 찾았습니다.`}
+                                    : null}
                             </p>
                         </div>
                     </div>
