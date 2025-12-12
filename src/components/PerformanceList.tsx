@@ -855,23 +855,32 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             e.stopPropagation();
                                             setShowKeywordInput(!showKeywordInput);
                                         }}
-                                        className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all group"
+                                        className={clsx(
+                                            "flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group",
+                                            showKeywordInput
+                                                ? "bg-yellow-500 text-black border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]"
+                                                : "border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black"
+                                        )}
                                     >
-                                        <Star className="w-4 h-4 fill-current" />
+                                        <Star className={clsx("w-4 h-4", showKeywordInput ? "fill-black" : "fill-current")} />
                                         <span>키워드</span>
                                         {keywords.length > 0 && (
-                                            <span className="ml-1 bg-yellow-500 text-black group-hover:bg-black group-hover:text-yellow-500 text-xs px-1.5 py-0.5 rounded-full">
+                                            <span className={clsx(
+                                                "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
+                                                showKeywordInput ? "bg-black text-yellow-500" : "bg-yellow-500 text-black group-hover:bg-black group-hover:text-yellow-500"
+                                            )}>
                                                 {keywords.length}
                                             </span>
                                         )}
                                     </button>
                                 </div>
+
                             </div>
 
                             {/* Improved Keyword Input Toggle - Integrated in Sticky Filter */}
                             <div className={clsx(
-                                "transition-all duration-300 overflow-hidden bg-black/40 rounded-lg",
-                                showKeywordInput ? "max-h-60 opacity-100 border border-yellow-500/30 mb-2" : "max-h-0 opacity-0"
+                                "transition-all duration-300 overflow-hidden backdrop-blur-md bg-black/20",
+                                showKeywordInput ? "max-h-60 opacity-100 border-b border-white/5 mb-2" : "max-h-0 opacity-0"
                             )} onClick={(e) => e.stopPropagation()}>
                                 <div className="p-4 flex flex-col gap-3">
                                     <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -1081,7 +1090,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 showScrollTop && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all z-50 animate-bounce"
+                        className="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce"
                         aria-label="Scroll to top"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1197,7 +1206,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="perspective-1000 cursor-pointer group h-full"
+            className="perspective-1000 cursor-pointer group h-full relative hover:z-[100]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
@@ -1317,7 +1326,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </span>
                                 {/* Date Badge */}
                                 <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
-                                    <Calendar className="w-3.5 h-3.5" /> {perf.date}
+                                    <Calendar className="w-3.5 h-3.5" />
+                                    {(() => {
+                                        const parts = perf.date.split('~').map((s: string) => s.trim());
+                                        return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
+                                    })()}
                                 </span>
                             </div>
 
