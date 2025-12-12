@@ -485,8 +485,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
             <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-            {/* Right-side Gradient Blob */}
-            <div className="fixed top-0 right-0 w-[800px] h-[800px] bg-radial-gradient from-[#a78bfa]/20 via-[#f472b6]/10 to-transparent blur-[120px] rounded-full pointer-events-none z-[-5] translate-x-1/3 -translate-y-1/4" style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.3) 0%, rgba(244,114,182,0.15) 40%, transparent 70%)' }}></div>
+            {/* Right-side Gradient Blob (Obsidian Style) */}
+            <div className="fixed top-[-20%] right-[-10%] w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] bg-radial-gradient from-[#7c3aed]/40 via-[#db2777]/20 to-transparent blur-[120px] rounded-full pointer-events-none z-[-5] opacity-80 mix-blend-screen"
+                style={{
+                    background: 'radial-gradient(circle at center, rgba(124, 58, 237, 0.4) 0%, rgba(219, 39, 119, 0.25) 30%, rgba(219, 39, 119, 0.1) 60%, transparent 80%)'
+                }}
+            ></div>
             {/* Header: Logo & Last Updated */}
             {/* Header: Logo Only */}
             <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
