@@ -493,15 +493,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Sticky Sentinel Observer
     // Sticky Logic with getBoundingClientRect + Scroll Listener (More Robust)
-    const stickyHeaderRef = useRef<HTMLDivElement>(null);
+    // Sticky Sentinel Logic with Scroll Listener (Robust)
+    const sentinelRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (!stickyHeaderRef.current) return;
-            const rect = stickyHeaderRef.current.getBoundingClientRect();
-            // If the element's top is <= 0 (or very close), it is "stuck" or we have scrolled past its start.
-            // Since it's sticky top-0, it stays at 0. But we allow a small buffer for subpixel rendering.
-            const isStuck = rect.top <= 1;
+            if (!sentinelRef.current) return;
+            // Native sticky behavior kicks in when sticky element hits top.
+            // But we want to detect when it hits top.
+            // The sentinel is placed immediately ABOVE the sticky element.
+            // If sentinel is scrolled out of view (top <= 0), we are sticky.
+            const rect = sentinelRef.current.getBoundingClientRect();
+
+            // Use 0 as threshold. If sentinel top <= 0, it means the sticky element (next sib)
+            // is effectively at the viewport top.
+            const isStuck = rect.top <= 0;
 
             setIsSticky(prev => {
                 if (prev !== isStuck) return isStuck;
@@ -510,8 +516,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        // Initial check
-        handleScroll();
+        handleScroll(); // Check initial
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -539,7 +544,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     return (
-        <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative">
+        <div
+            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
+            style={{ overflowAnchor: 'none' }} // Prevent scroll anchoring from causing layout loops
+        >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
@@ -721,13 +729,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
 
-            {/* Sticky Sentinel - Fixed: Removed absolute to be in flow */}
-            {/* Sticky Ref is now on the container itself */}
-
+            {/* Sticky Sentinel - Fixed: Placed immediately above sticky header */}
+            <div ref={sentinelRef} className="h-[1px] w-full pointer-events-none absolute" style={{ marginTop: '-1px' }} />
 
             {/* Sticky Filter Container - Glassmorphism */}
             <div
-                ref={stickyHeaderRef}
                 className={
                     clsx(
                         "sticky top-0 z-50 transition-all duration-300 ease-in-out border-b backdrop-blur-md w-full",
