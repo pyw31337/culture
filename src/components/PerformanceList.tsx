@@ -482,11 +482,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     return (
         <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden">
             {/* 🌌 Aurora Background */}
-            <div className="aurora-container !z-[-10] opacity-80 fixed inset-0 pointer-events-none">
-                <div className="aurora-blob blob-1"></div>
-                <div className="aurora-blob blob-2"></div>
-                <div className="aurora-blob blob-3"></div>
-            </div>
+            {/* 🌌 Aurora Background Removed as per request */}
+            {/* <div className="aurora-container ..."></div> */}
             <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 
             {/* Header: Logo & Last Updated */}
@@ -556,7 +553,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter">
                         특별한 오늘, 당신을 위한<br />
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6] tracking-normal mx-2">Spotlight</span>는 어디일까요?
+                        특별한 오늘, 당신을 위한<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal mx-2 py-1">Spotlight</span>는 어디일까요?
                     </h2>
                 </div>
 
@@ -1036,13 +1034,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
                 </div>
 
-                {/* List View (Grid) */}
                 <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
                 }>
                     {visiblePerformances.map((perf) => {
                         const venueInfo = venues[perf.venue];
-
-                        // Calculate distance if activeLocation exists for display
                         let distLabel = null;
                         if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
                             const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
@@ -1050,76 +1045,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         }
 
                         return (
-                            <div key={`${perf.id}-${perf.region}`} className="group relative aspect-[2/3] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-white/30 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2">
-                                {/* Image Layer */}
-                                {perf.image ? (
-                                    <Image
-                                        src={perf.image}
-                                        alt={perf.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                                        loading="lazy"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
-                                )}
-
-                                {/* Distance Badge (Top Right) */}
-                                {distLabel && (
-                                    <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                                        {distLabel}
-                                    </div>
-                                )}
-
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-                                {/* Content Layer (Bottom) */}
-                                <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 md:translate-y-4 z-20">
-
-                                    {/* Tags/Badges */}
-                                    <div className="flex flex-wrap gap-2 mb-2">
-                                        <span className={clsx(
-                                            "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
-                                            GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
-                                        )}>
-                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                        </span>
-                                        {/* Date Badge */}
-                                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
-                                            <Calendar className="w-3.5 h-3.5" /> {perf.date}
-                                        </span>
-                                    </div>
-
-                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link">
-                                        <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                            {perf.title}
-                                        </h3>
-                                    </a>
-
-                                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                if (venueInfo?.lat && venueInfo?.lng) {
-                                                    setSearchLocation({
-                                                        lat: venueInfo.lat,
-                                                        lng: venueInfo.lng,
-                                                        name: perf.venue
-                                                    });
-                                                    setViewMode('map');
-                                                    scrollToTop();
-                                                }
-                                            }}
-                                            className="hover:text-[#a78bfa] hover:underline truncate"
-                                        >
-                                            {perf.venue}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            <PerformanceCard
+                                key={`${perf.id}-${perf.region}`}
+                                perf={perf}
+                                distLabel={distLabel}
+                                venueInfo={venueInfo}
+                                onLocationClick={(loc) => {
+                                    setSearchLocation(loc);
+                                    setViewMode('map');
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                            />
                         );
                     })}
                 </div>
