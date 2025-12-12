@@ -761,7 +761,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
 
                             {/* Row 2: [Star] [Search] [Toggle] */}
-                            <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-x-auto scrollbar-hide pb-1 lg:pb-0">
+                            <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-hidden flex-nowrap shrink-0">
+                                {/* Like Button (Collapsed) */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsFilterExpanded(true);
+                                        // Optional: Toggle like section? User just wants to open
+                                    }}
+                                    className="shrink-0 p-1 px-2 rounded-full border border-pink-500/50 bg-pink-500/10 text-pink-500 text-xs font-bold hover:bg-pink-500 hover:text-black flex items-center gap-1 transition-all"
+                                >
+                                    <Heart className="w-3 h-3 fill-current" />
+                                    <span className="hidden sm:inline">좋아요</span>
+                                </button>
+
                                 {/* Keyword Button (Collapsed) */}
                                 <button
                                     onClick={(e) => {
@@ -773,21 +786,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
                                 >
                                     <Star className="w-3 h-3 fill-current" />
-                                    <span>키워드</span>
+                                    <span className="hidden sm:inline">키워드</span>
                                 </button>
 
-                                {/* Quick Search Bar */}
-                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[100px] lg:w-56">
+                                {/* Quick Search Bar - Reduced visual weight for mobile fit */}
+                                <div className="p-[1px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[60px] lg:w-56 shrink">
                                     <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
-                                        <Search className="w-4 h-4 text-white mr-2" />
+                                        <Search className="w-3.5 h-3.5 text-white sm:mr-2" />
                                         <input
                                             type="text"
                                             value={searchText}
                                             onClick={(e) => e.stopPropagation()}
                                             onChange={handleSearchTextChange}
                                             onKeyDown={handleKeyDown}
-                                            className="bg-transparent border-none text-white text-sm font-bold w-full focus:outline-none placeholder-gray-500"
-                                            placeholder="빠른 검색..."
+                                            className="bg-transparent border-none text-white text-xs sm:text-sm font-bold w-full focus:outline-none placeholder-gray-500 min-w-0"
+                                            placeholder="검색..."
                                         />
                                     </div>
                                 </div>
@@ -882,7 +895,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
 
                                 {/* Replaced Search Bar with Keyword Button in Expanded Mode */}
-                                <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center justify-end">
+                                <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center justify-end">
                                     {/* Like Button */}
                                     <button
                                         onClick={(e) => {
@@ -890,7 +903,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             setShowLikes(!showLikes);
                                         }}
                                         className={clsx(
-                                            "flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group",
+                                            "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
                                             showLikes
                                                 ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
                                                 : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300"
@@ -914,7 +927,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             setShowKeywordInput(!showKeywordInput);
                                         }}
                                         className={clsx(
-                                            "flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group",
+                                            "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
                                             showKeywordInput
                                                 ? "bg-yellow-500 text-black border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]"
                                                 : "border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black"
@@ -932,6 +945,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         )}
                                     </button>
                                 </div>
+
 
                             </div>
 
@@ -1039,8 +1053,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     }}
                                     isLiked={true}
                                     onToggleLike={(e) => toggleLike(performance.id, e)}
-                                    variant="default" // Use default variant but with liked status
+                                    variant="pink" // Modified: "Like" styled variant
                                 />
+
                             ))}
                         </div>
                     </div>
@@ -1193,12 +1208,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 showScrollTop && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce"
+                        className="fixed bottom-6 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce group"
+                        style={{
+                            backgroundImage: 'linear-gradient(#000, #000), linear-gradient(to right, #a78bfa, #f472b6)',
+                            backgroundClip: 'padding-box, border-box'
+                        }}
                         aria-label="Scroll to top"
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                        </svg>
+                        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6]">
+                            <svg className="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                            </svg>
+                        </div>
                     </button>
                 )
             }
@@ -1260,7 +1281,8 @@ function SkeletonCard() {
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+
 
     const cardRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null); // Kept for consistency if needed, though unused in Yellow
@@ -1320,10 +1342,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     "relative overflow-hidden transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-2xl h-full",
                     variant === 'yellow'
                         ? "bg-yellow-500 rounded-xl ring-1 ring-yellow-500/50 hover:ring-white/50 flex flex-col"
-                        : "aspect-[2/3] bg-gray-900 rounded-2xl border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                        : variant === 'pink'
+                            ? "bg-pink-500 rounded-xl ring-1 ring-pink-500/50 hover:ring-white/50 flex flex-col"
+                            : "aspect-[2/3] bg-gray-900 rounded-2xl border border-white/10 group-hover:shadow-[#a78bfa]/20"
                 )}
                 style={{ transformStyle: 'preserve-3d' }}
             >
+
                 {/* Like Button (Heart) */}
                 <button
                     onClick={onToggleLike}
@@ -1342,9 +1367,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                 {/* Neon Stroke Effect (Border Gradient) */}
 
-                {variant !== 'yellow' && (
+                {variant !== 'yellow' && variant !== 'pink' && (
                     <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                 )}
+
                 {/* Glare Effect */}
                 <div
                     ref={glareRef}
@@ -1352,10 +1378,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     style={{ left: '-25%', top: '-25%' }}
                 />
 
-                {/* --- VARIANT: YELLOW (Keyword Interest) --- */}
-                {variant === 'yellow' ? (
+                {/* --- VARIANT: YELLOW/PINK (Keyword/Like Interest) --- */}
+                {variant === 'yellow' || variant === 'pink' ? (
                     <>
                         {/* Image Section (Top, Aspect 3/4) */}
+
                         <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                             <div className="absolute inset-0 z-0">
                                 <Image
@@ -1370,19 +1397,23 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             </div>
                             {/* Badge */}
                             <div
-                                className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30"
+                                className={clsx(
+                                    "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                    variant === 'yellow' ? "bg-black/80 text-yellow-500 border-yellow-500/30" : "bg-black/80 text-pink-500 border-pink-500/30"
+                                )}
                                 style={{ transform: 'translateZ(20px)' }}
                             >
-                                <Star className="w-3 h-3 fill-yellow-500" />
-                                알림
+                                {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : <Heart className="w-3 h-3 fill-pink-500" />}
+                                {variant === 'yellow' ? '알림' : '좋아요'}
                             </div>
                         </div>
 
-                        {/* Content Section (Bottom, Yellow) */}
-                        <div className="p-4 bg-yellow-400 flex flex-col flex-1 transform-style-3d" style={{ transform: 'translateZ(10px)' }}>
+                        {/* Content Section (Bottom, Yellow/Pink) */}
+                        <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
                             <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
                                 {perf.title}
                             </h3>
+
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
