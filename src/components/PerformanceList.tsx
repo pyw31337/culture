@@ -480,7 +480,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     return (
-        <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden">
+        <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative">
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
@@ -517,7 +517,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 priority
                             />
                         </div>
-                        <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors">
+                        <h1 className="text-[1.7rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
@@ -732,7 +732,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </button>
 
                                 {/* Quick Search Bar */}
-                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[150px] lg:w-56">
+                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[100px] lg:w-56">
                                     <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
                                         <Search className="w-4 h-4 text-white mr-2" />
                                         <input
