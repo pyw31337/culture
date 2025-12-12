@@ -6,7 +6,7 @@
   :after,
   :before,
   ::backdrop {
-    box-sizing: initial;
+    box-sizing: border-box;
     border: 0 solid;
     margin: 0;
     padding: 0
