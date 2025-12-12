@@ -482,12 +482,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     return (
         <div className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden">
             {/* 🌌 Aurora Background */}
-            <div className="aurora-container !z-0 opacity-80">
+            <div className="aurora-container !z-[-10] opacity-80 fixed inset-0 pointer-events-none">
                 <div className="aurora-blob blob-1"></div>
                 <div className="aurora-blob blob-2"></div>
                 <div className="aurora-blob blob-3"></div>
             </div>
-            <div className="noise-texture z-0 mix-blend-overlay opacity-20"></div>
+            <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 
             {/* Header: Logo & Last Updated */}
             <header className="relative z-50 py-3 px-4 border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300">
@@ -513,6 +513,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 alt="Culture Flow Icon"
                                 fill
                                 className="object-cover"
+                                sizes="40px"
+                                priority
                             />
                         </div>
                         <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors">
@@ -593,7 +595,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             {/* Reset Button */}
                             {searchText && (
                                 <button
-                                    onClick={() => { setSearchText(''); setIsDropdownOpen(false); }}
+                                    onClick={() => {
+                                        setSearchText('');
+                                        setIsDropdownOpen(false);
+                                        setSearchLocation(null); // Reset location when cleared
+                                    }}
                                     className="p-2 text-gray-500 hover:text-white"
                                 >
                                     <X className="w-5 h-5" />
@@ -607,24 +613,34 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
 
                     {/* Search Results Dropdown (Attached to Hero Input) */}
-                    {isDropdownOpen && searchResults.length > 0 && !isSticky && (
-                        <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-80 overflow-y-auto">
-                            {searchResults.map((result, idx) => (
-                                <div
-                                    key={`search-hero-${idx}`}
-                                    onClick={() => handleSelectResult(result)}
-                                    className="px-5 py-4 hover:bg-white/10 cursor-pointer flex items-center gap-4 border-b border-white/5 last:border-0 transition-colors bg-[#1a1a1a]"
-                                >
-                                    <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
-                                        {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                    {isDropdownOpen && searchResults.length > 0 && (
+                        <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
+                            {searchResults.map((result, idx) => {
+                                // Address Parsing: Only Region + Gu (e.g., 서울 영등포구)
+                                const addressParts = result.address ? result.address.split(' ') : [];
+                                const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
+
+                                return (
+                                    <div
+                                        key={`search-hero-${idx}`}
+                                        onClick={() => handleSelectResult(result)}
+                                        className="px-5 py-4 hover:bg-white/10 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors bg-[#1a1a1a]"
+                                    >
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
+                                                {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                                            </div>
+                                            <div className="text-white text-base font-bold truncate">
+                                                {result.name}
+                                            </div>
+                                        </div>
+
+                                        <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
+                                            {shortAddress}
+                                        </div>
                                     </div>
-                                    <div className="flex-1 min-w-0">
-                                        <div className="text-white text-base font-bold truncate">{result.name}</div>
-                                        {result.address && <div className="text-gray-400 text-sm truncate">{result.address}</div>}
-                                    </div>
-                                    {result.category && <span className="text-xs text-[#a78bfa] bg-[#a78bfa]/10 px-2.5 py-1 rounded-full">{result.category}</span>}
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     )}
                 </div>
@@ -996,7 +1012,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
-                            <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                            <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 flex items-center gap-2">
                                 {activeLocation ? (
                                     <>
                                         <MapPin className="text-green-500 w-5 h-5" />
@@ -1008,7 +1024,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 ) : (
                                     <>
                                         <span>추천 공연</span>
-                                        <span className="text-base sm:text-xl text-gray-500 font-normal ml-2">({filteredPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({filteredPerformances.length})</span>
                                     </>
                                 )}
                             </h2>
