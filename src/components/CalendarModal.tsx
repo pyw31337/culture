@@ -60,7 +60,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
     return (
         <>
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
                 <div className="bg-gray-900 w-full max-w-6xl h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-800">
                     {/* Header */}
                     <div className="flex items-center justify-between p-6 border-b border-gray-800">
