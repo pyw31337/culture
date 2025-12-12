@@ -1028,5 +1028,25 @@
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
     "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260105_WOORICARD_KB STARS",
+    "title": "[배구] WOORICARD vs KB STARS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-05 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260111_WOORICARD_KB STARS",
+    "title": "[배구] WOORICARD vs KB STARS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-11 14:00",
+    "venue": "장충체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "seoul",
+    "genre": "volleyball"
   }
 ]
