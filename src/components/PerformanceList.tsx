@@ -1,4 +1,6 @@
 'use client';
+// UI Deployment Trigger: 2025-12-12
+
 
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
