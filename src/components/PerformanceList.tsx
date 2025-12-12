@@ -117,6 +117,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Infinite Scroll State
     // Fake Loading State for UX
     const [isFiltering, setIsFiltering] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(24);
 
 
 
