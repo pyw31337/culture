@@ -484,9 +484,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
-            <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
+            <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
             {/* Right-side Gradient Blob (Obsidian Style) */}
-            <div className="fixed top-[-20%] right-[-10%] w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] bg-radial-gradient from-[#7c3aed]/40 via-[#db2777]/20 to-transparent blur-[120px] rounded-full pointer-events-none z-[-5] opacity-80 mix-blend-screen"
+            <div className="fixed top-[-20%] right-[-10%] w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] bg-radial-gradient from-[#7c3aed]/40 via-[#db2777]/20 to-transparent blur-[120px] rounded-full pointer-events-none z-0 opacity-80 mix-blend-screen"
                 style={{
                     background: 'radial-gradient(circle at center, rgba(124, 58, 237, 0.4) 0%, rgba(219, 39, 119, 0.25) 30%, rgba(219, 39, 119, 0.1) 60%, transparent 80%)'
                 }}
@@ -935,7 +935,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* Keyword Matches Section (Only in List View) */}
             {
                 viewMode === 'list' && keywordMatches.length > 0 && (
-                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8">
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
                             onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
@@ -973,7 +973,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Main Content */}
-            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Results Info */}
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-16 gap-2">
                     <div className="w-full sm:w-auto">
