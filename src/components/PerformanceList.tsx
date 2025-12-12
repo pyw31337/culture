@@ -550,12 +550,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             }
                         </span>
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter">
+                    {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block">
                         특별한 오늘, 당신을 위한<br />
                         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal mx-2 py-1">Spotlight</span>는 어디일까요?
                     </h2>
+                    <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
+                        특별한 오늘,<br />
+                        당신을 위한<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는<br />
+                        어디일까요?
+                    </h2>
                     <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
-                        [{lastUpdated} 기준]
+                        {lastUpdated} 기준
                     </div>
                 </div>
 
@@ -676,9 +683,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {!isFilterExpanded && (
                         <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
                             {/* Row 1: Filter Summary Text */}
-                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full lg:w-auto flex-1 overflow-hidden">
+                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full lg:w-auto flex-1 overflow-hidden min-w-0">
                                 <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
-                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right">
+                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right min-w-0">
                                     {selectedGenre !== 'all' && (
                                         <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-bold border border-[#a78bfa]/30">
                                             {GENRES.find(g => g.id === selectedGenre)?.label}
@@ -713,12 +720,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        setShowKeywordInput(!showKeywordInput);
+                                        // Open filter and focus keyword input
+                                        setIsFilterExpanded(true);
+                                        setShowKeywordInput(true);
                                     }}
                                     className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
                                 >
                                     <Star className="w-3 h-3 fill-current" />
-                                    <span>관심키워드</span>
+                                    <span>키워드</span>
                                 </button>
 
                                 {/* Quick Search Bar */}
@@ -949,6 +958,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             setViewMode('map');
                                             window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }}
+                                        variant="yellow"
                                     />
                                 ))}
                             </div>
@@ -1095,9 +1105,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' }) {
     const cardRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null); // Kept for consistency if needed, though unused in Yellow
     const glareRef = useRef<HTMLDivElement>(null);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -1108,13 +1118,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick }: { perf
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        // Max rotation 10 deg
-        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
         const rotateY = ((x - centerX) / centerX) * 10;
 
-        cardRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`; // Slight scale on hover
+        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
 
-        // Glare movement
         glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
     };
@@ -1127,97 +1135,153 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick }: { perf
 
     return (
         <div
-            className="perspective-1000 cursor-pointer group"
+            className="perspective-1000 cursor-pointer group h-full"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
             <div
                 ref={cardRef}
-                className="relative aspect-[2/3] bg-gray-900 rounded-2xl overflow-hidden border border-white/10 transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-2xl group-hover:shadow-[#a78bfa]/20"
+                className={clsx(
+                    "relative overflow-hidden transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-2xl h-full",
+                    variant === 'yellow'
+                        ? "bg-yellow-500 rounded-xl ring-1 ring-yellow-500/50 hover:ring-white/50 flex flex-col"
+                        : "aspect-[2/3] bg-gray-900 rounded-2xl border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                )}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 {/* Glare Effect */}
                 <div
                     ref={glareRef}
-                    className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-300 z-30 mix-blend-overlay"
-                    style={{
-                        background: 'linear-gradient(125deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0) 100%)',
-                        transform: 'translateX(-100%)' // Initial
-                    }}
+                    className="absolute inset-0 w-[150%] h-[150%] bg-radial-gradient from-white/20 to-transparent opacity-0 pointer-events-none z-50 mix-blend-overlay transition-opacity duration-300"
+                    style={{ left: '-25%', top: '-25%' }}
                 />
 
-                {/* Image Layer */}
-                {perf.image ? (
-                    <Image
-                        src={perf.image}
-                        alt={perf.title}
-                        fill
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
-                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                        loading="lazy"
-                    />
+                {/* --- VARIANT: YELLOW (Keyword Interest) --- */}
+                {variant === 'yellow' ? (
+                    <>
+                        {/* Image Section (Top, Aspect 3/4) */}
+                        <div className="relative aspect-[3/4] overflow-hidden shrink-0">
+                            <div className="absolute inset-0 z-0">
+                                <Image
+                                    src={perf.image || "/api/placeholder/400/300"}
+                                    alt={perf.title}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+                            </div>
+                            {/* Badge */}
+                            <div
+                                className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30"
+                                style={{ transform: 'translateZ(20px)' }}
+                            >
+                                <Star className="w-3 h-3 fill-yellow-500" />
+                                알림
+                            </div>
+                        </div>
+
+                        {/* Content Section (Bottom, Yellow) */}
+                        <div className="p-4 bg-yellow-400 flex flex-col flex-1 transform-style-3d" style={{ transform: 'translateZ(10px)' }}>
+                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
+                                {perf.title}
+                            </h3>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                }}
+                                className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                            >
+                                <MapPin className="w-3 h-3 text-gray-700" />
+                                {perf.venue}
+                            </button>
+                            <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
+                                <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
+                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                </span>
+                                <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                            </div>
+                        </div>
+                    </>
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
-                )}
+                    /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
+                    <>
+                        {/* Image Layer */}
+                        {perf.image ? (
+                            <Image
+                                src={perf.image}
+                                alt={perf.title}
+                                fill
+                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                loading="lazy"
+                            />
+                        ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                        )}
 
-                {/* Distance Badge (Top Right) */}
-                {distLabel && (
-                    <div
-                        className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
-                        style={{ transform: 'translateZ(20px)' }}
-                    >
-                        {distLabel}
-                    </div>
-                )}
+                        {/* Distance Badge (Top Right) */}
+                        {distLabel && (
+                            <div
+                                className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
+                                style={{ transform: 'translateZ(20px)' }}
+                            >
+                                {distLabel}
+                            </div>
+                        )}
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
 
-                {/* Content Layer (Bottom) - Fixed Position (No translate-y animation) */}
-                <div
-                    className="absolute inset-x-0 bottom-0 p-5 z-20"
-                    style={{ transform: 'translateZ(30px)' }} // 3D Depth
-                >
-
-                    {/* Tags/Badges */}
-                    <div className="flex flex-wrap gap-2 mb-2">
-                        <span className={clsx(
-                            "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
-                            GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
-                        )}>
-                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                        </span>
-                        {/* Date Badge */}
-                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
-                            <Calendar className="w-3.5 h-3.5" /> {perf.date}
-                        </span>
-                    </div>
-
-                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                        <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                            {perf.title}
-                        </h3>
-                    </a>
-
-                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                if (venueInfo?.lat && venueInfo?.lng) {
-                                    onLocationClick({
-                                        lat: venueInfo.lat,
-                                        lng: venueInfo.lng,
-                                        name: perf.venue
-                                    });
-                                }
-                            }}
-                            className="hover:text-[#a78bfa] hover:underline truncate"
+                        {/* Content Layer (Bottom) - Fixed Position */}
+                        <div
+                            className="absolute inset-x-0 bottom-0 p-5 z-20"
+                            style={{ transform: 'translateZ(30px)' }} // 3D Depth
                         >
-                            {perf.venue}
-                        </button>
-                    </div>
-                </div>
+
+                            {/* Tags/Badges */}
+                            <div className="flex flex-wrap gap-2 mb-2">
+                                <span className={clsx(
+                                    "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
+                                    GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
+                                )}>
+                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                </span>
+                                {/* Date Badge */}
+                                <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                    <Calendar className="w-3.5 h-3.5" /> {perf.date}
+                                </span>
+                            </div>
+
+                            <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                                <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                    {perf.title}
+                                </h3>
+                            </a>
+
+                            <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (venueInfo?.lat && venueInfo?.lng) {
+                                            onLocationClick({
+                                                lat: venueInfo.lat,
+                                                lng: venueInfo.lng,
+                                                name: perf.venue
+                                            });
+                                        }
+                                    }}
+                                    className="hover:text-[#a78bfa] hover:underline truncate"
+                                >
+                                    {perf.venue}
+                                </button>
+                            </div>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );
