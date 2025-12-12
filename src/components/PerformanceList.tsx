@@ -490,7 +490,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 
             {/* Header: Logo & Last Updated */}
-            <header className="relative z-50 py-3 px-4 border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300">
+            <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
@@ -509,7 +509,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
                             <Image
-                                src="/images/ticket_icon.png"
+                                src="images/ticket_icon.png"
                                 alt="Culture Flow Icon"
                                 fill
                                 className="object-cover"
@@ -837,13 +837,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             e.stopPropagation();
                                             setShowKeywordInput(!showKeywordInput);
                                         }}
-                                        className="flex items-center gap-2 px-4 py-3 bg-yellow-500/10 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black rounded-full transition-all font-bold group"
+                                        className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all group"
                                     >
-                                        <Star className="w-5 h-5 fill-current" />
-                                        <span className="hidden sm:inline">관심 키워드 설정</span>
-                                        <span className="sm:hidden">키워드</span>
+                                        <Star className="w-4 h-4 fill-current" />
+                                        <span>키워드</span>
                                         {keywords.length > 0 && (
-                                            <span className="ml-1 bg-yellow-500 text-black group-hover:bg-black group-hover:text-yellow-500 text-xs px-2 py-0.5 rounded-full">
+                                            <span className="ml-1 bg-yellow-500 text-black group-hover:bg-black group-hover:text-yellow-500 text-xs px-1.5 py-0.5 rounded-full">
                                                 {keywords.length}
                                             </span>
                                         )}
@@ -1009,7 +1008,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* Main Content */}
             <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Results Info */}
-                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-2">
+                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-16 gap-2">
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 flex items-center gap-2">
