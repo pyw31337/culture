@@ -115,7 +115,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     }, [isSticky]);
 
     // Infinite Scroll State
-    const [visibleCount, setVisibleCount] = useState(24);
+    // Fake Loading State for UX
+    const [isFiltering, setIsFiltering] = useState(false);
+
+    useEffect(() => {
+        setIsFiltering(true);
+        const timer = setTimeout(() => setIsFiltering(false), 600);
+        return () => clearTimeout(timer);
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, activeLocation]);
+
 
     // Radius (User Location or Search Location)
     const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
@@ -1002,28 +1010,33 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
                 }>
-                    {visiblePerformances.map((perf) => {
-                        const venueInfo = venues[perf.venue];
-                        let distLabel = null;
-                        if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
-                            const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
-                            distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
-                        }
+                    {isFiltering ? (
+                        // Render Skeletons during Filter/Load
+                        [...Array(8)].map((_, i) => <SkeletonCard key={`skeleton-${i}`} />)
+                    ) : (
+                        visiblePerformances.map((perf) => {
+                            const venueInfo = venues[perf.venue];
+                            let distLabel = null;
+                            if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
+                                const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
+                                distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
+                            }
 
-                        return (
-                            <PerformanceCard
-                                key={`${perf.id}-${perf.region}`}
-                                perf={perf}
-                                distLabel={distLabel}
-                                venueInfo={venueInfo}
-                                onLocationClick={(loc) => {
-                                    setSearchLocation(loc);
-                                    setViewMode('map');
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }}
-                            />
-                        );
-                    })}
+                            return (
+                                <PerformanceCard
+                                    key={`${perf.id}-${perf.region}`}
+                                    perf={perf}
+                                    distLabel={distLabel}
+                                    venueInfo={venueInfo}
+                                    onLocationClick={(loc) => {
+                                        setSearchLocation(loc);
+                                        setViewMode('map');
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                />
+                            );
+                        })
+                    )}
                 </div>
 
                 {/* Sentinel for Infinite Scroll - Only in List Mode */}
@@ -1104,6 +1117,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 }
 
 // ---------------------------
+// 💀 Skeleton Loading Component
+// ---------------------------
+function SkeletonCard() {
+    return (
+        <div className="aspect-[2/3] bg-gray-900/50 rounded-2xl overflow-hidden relative isolate">
+            {/* Shimmer Effect */}
+            <div className="absolute inset-0 z-10 -translate-x-full animate-[shimmer_1.5s_infinite] bg-linear-to-r from-transparent via-white/10 to-transparent" />
+
+            {/* Image Placeholder */}
+            <div className="h-full w-full bg-gray-800/50" />
+
+            {/* Content Placeholder */}
+            <div className="absolute bottom-0 inset-x-0 p-5 space-y-3 z-20">
+                <div className="flex gap-2">
+                    <div className="h-5 w-12 bg-gray-700/50 rounded-full" />
+                    <div className="h-5 w-20 bg-gray-700/50 rounded-full" />
+                </div>
+                <div className="h-7 w-3/4 bg-gray-700/50 rounded-md" />
+                <div className="h-4 w-1/2 bg-gray-700/50 rounded-md" />
+            </div>
+        </div>
+    );
+}
+
+// ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' }) {
@@ -1134,6 +1172,25 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         glareRef.current.style.opacity = '0';
     };
 
+    // Mobile Gyroscope Tilt
+    useEffect(() => {
+        const handleOrientation = (event: DeviceOrientationEvent) => {
+            if (!cardRef.current || window.innerWidth > 768) return; // Mobile only
+
+            const { beta, gamma } = event; // beta: front-back, gamma: left-right
+            if (beta === null || gamma === null) return;
+
+            // Constrain tilt
+            const tiltX = Math.min(Math.max(beta - 45, -15), 15); // Assume holding at 45deg
+            const tiltY = Math.min(Math.max(gamma, -15), 15);
+
+            cardRef.current.style.transform = `perspective(1000px) rotateX(${-tiltX}deg) rotateY(${tiltY}deg)`;
+        };
+
+        window.addEventListener('deviceorientation', handleOrientation);
+        return () => window.removeEventListener('deviceorientation', handleOrientation);
+    }, []);
+
     return (
         <div
             className="perspective-1000 cursor-pointer group h-full"
@@ -1147,6 +1204,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     variant === 'yellow'
                         ? "bg-yellow-500 rounded-xl ring-1 ring-yellow-500/50 hover:ring-white/50 flex flex-col"
                         : "aspect-[2/3] bg-gray-900 rounded-2xl border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                )}
+            >
+                {/* Neon Stroke Effect (Border Gradient) */}
+                {variant !== 'yellow' && (
+                    <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                 )}
                 style={{ transformStyle: 'preserve-3d' }}
             >
@@ -1245,8 +1307,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             {/* Tags/Badges */}
                             <div className="flex flex-wrap gap-2 mb-2">
                                 <span className={clsx(
-                                    "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
-                                    GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
+                                    "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                    GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
                                 )}>
                                     {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                 </span>
@@ -1257,7 +1319,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             </div>
 
                             <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                                <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                     {perf.title}
                                 </h3>
                             </a>
