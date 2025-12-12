@@ -636,7 +636,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
 
                 {/* Hero Search Bar */}
-                <div className="w-full lg:w-auto relative group z-30">
+                <div className="w-full lg:w-auto relative group z-[60]">
                     <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
                         <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative">
                             {/* Radius Select for Hero */}
@@ -1214,20 +1214,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             }
 
                             return (
-                                <PerformanceCard
-                                    key={`${perf.id}-${perf.region}`}
-                                    perf={perf}
-                                    distLabel={distLabel}
-                                    venueInfo={venueInfo}
-                                    onLocationClick={(loc) => {
-                                        setSearchLocation(loc);
-                                        setViewMode('map');
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    }}
-                                    isLiked={likedIds.includes(perf.id)}
-                                    onToggleLike={(e) => toggleLike(perf.id, e)}
-                                />
-
+                                <div key={`${perf.id}-${perf.region}`} className="animate-scale-in">
+                                    <PerformanceCard
+                                        key={`${perf.id}-${perf.region}`}
+                                        perf={perf}
+                                        distLabel={distLabel}
+                                        venueInfo={venueInfo}
+                                        onLocationClick={(loc) => {
+                                            setSearchLocation(loc);
+                                            setViewMode('map');
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
+                                        isLiked={likedIds.includes(perf.id)}
+                                        onToggleLike={(e) => toggleLike(perf.id, e)}
+                                    />
+                                </div>
                             );
                         })
                     )}
@@ -1278,7 +1279,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         }}
                         aria-label="Scroll to top"
                     >
-                        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6]">
+                        <div className="text-white">
                             <svg className="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                             </svg>
@@ -1398,7 +1399,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             className="perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ '--flow-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
         >
+            {/* Moving Border Light Effect */}
+            <div className={clsx("border-flow-container", (variant === 'yellow' || variant === 'pink') ? "rounded-xl" : "rounded-2xl")} />
             <div
                 ref={cardRef}
                 className={clsx(

@@ -49,6 +49,7 @@ body {
 }
 
 /* Text Gradient Animation */
+
 @keyframes shine {
   0% {
     background-position: 200% center;
@@ -57,6 +58,48 @@ body {
   100% {
     background-position: -200% center;
   }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border-flow-container {
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 80deg, var(--flow-color) 100deg, transparent 120deg);
+  animation: rotate-border 4s linear infinite;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.group:hover .border-flow-container {
+  opacity: 1;
 }
 
 .animate-shine {
