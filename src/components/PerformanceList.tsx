@@ -677,7 +677,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full max-w-7xl 2xl:max-w-[1800px] mx-auto rounded-b-xl max-w-[100vw]",
+                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full max-w-7xl 2xl:max-w-[1800px] mx-auto rounded-b-xl",
                         isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
                     )
                 }
