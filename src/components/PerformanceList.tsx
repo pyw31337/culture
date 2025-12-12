@@ -1136,3 +1136,134 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         </div >
     );
 }
+
+// ---------------------------
+// 🌟 3D Tilt Card Component
+// ---------------------------
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void }) {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current || !glareRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Max rotation 10 deg
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        cardRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`; // Slight scale on hover
+
+        // Glare movement
+        glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
+        glareRef.current.style.opacity = '1';
+    };
+
+    const handleMouseLeave = () => {
+        if (!cardRef.current || !glareRef.current) return;
+        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+        glareRef.current.style.opacity = '0';
+    };
+
+    return (
+        <div
+            className="perspective-1000 cursor-pointer group"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
+            <div
+                ref={cardRef}
+                className="relative aspect-[2/3] bg-gray-900 rounded-2xl overflow-hidden border border-white/10 transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-2xl group-hover:shadow-[#a78bfa]/20"
+                style={{ transformStyle: 'preserve-3d' }}
+            >
+                {/* Glare Effect */}
+                <div
+                    ref={glareRef}
+                    className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-300 z-30 mix-blend-overlay"
+                    style={{
+                        background: 'linear-gradient(125deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0) 100%)',
+                        transform: 'translateX(-100%)' // Initial
+                    }}
+                />
+
+                {/* Image Layer */}
+                {perf.image ? (
+                    <Image
+                        src={perf.image}
+                        alt={perf.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                        loading="lazy"
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                )}
+
+                {/* Distance Badge (Top Right) */}
+                {distLabel && (
+                    <div
+                        className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
+                        style={{ transform: 'translateZ(20px)' }}
+                    >
+                        {distLabel}
+                    </div>
+                )}
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+
+                {/* Content Layer (Bottom) - Fixed Position (No translate-y animation) */}
+                <div
+                    className="absolute inset-x-0 bottom-0 p-5 z-20"
+                    style={{ transform: 'translateZ(30px)' }} // 3D Depth
+                >
+
+                    {/* Tags/Badges */}
+                    <div className="flex flex-wrap gap-2 mb-2">
+                        <span className={clsx(
+                            "px-2 py-1 rounded-[4px] text-xs font-bold backdrop-blur-md border border-white/20 text-white shadow-sm",
+                            GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600/50'
+                        )}>
+                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                        </span>
+                        {/* Date Badge */}
+                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                            <Calendar className="w-3.5 h-3.5" /> {perf.date}
+                        </span>
+                    </div>
+
+                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-1 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                            {perf.title}
+                        </h3>
+                    </a>
+
+                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (venueInfo?.lat && venueInfo?.lng) {
+                                    onLocationClick({
+                                        lat: venueInfo.lat,
+                                        lng: venueInfo.lng,
+                                        name: perf.venue
+                                    });
+                                }
+                            }}
+                            className="hover:text-[#a78bfa] hover:underline truncate"
+                        >
+                            {perf.venue}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
