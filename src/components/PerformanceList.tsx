@@ -554,9 +554,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             }
                         </span>
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15]">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter">
                         특별한 오늘, 당신을 위한<br />
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6]">Spotlight</span>는 어디일까요?
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] to-[#f472b6] tracking-normal mx-2">Spotlight</span>는 어디일까요?
                     </h2>
                 </div>
 
