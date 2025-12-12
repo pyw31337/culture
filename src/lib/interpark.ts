@@ -111,6 +111,11 @@ export async function fetchPerformances(regionName: string = 'seoul'): Promise<P
             .replace('_p_s.jpg', '_p.gif');
         }
 
+        // Force HTTPS if not already
+        if (image && image.startsWith('http://')) {
+          image = image.replace('http://', 'https://');
+        }
+
         // ID
         const idMatch = link.match(/GoodsCode=(\d+)/);
         const id = idMatch ? idMatch[1] : `unknown-${Math.random().toString(36).substr(2, 9)}`;
