@@ -1177,7 +1177,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
             {/* Main Content */}
-            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
                 {/* Results Info */}
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-16 gap-2">
                     <div className="w-full sm:w-auto">
@@ -1233,9 +1233,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <motion.div
                                         key={`${perf.id}-${perf.region}`}
                                         layout
-                                        initial={{ opacity: 0, scale: 0, boxShadow: "0 5px 10px 5px rgba(0,0,0,.25)" }}
-                                        animate={{ opacity: 1, scale: 1, boxShadow: "0 0 10px 0 rgba(0,0,0,.25)" }}
-                                        exit={{ opacity: 0, scale: 0, boxShadow: "0 5px 10px 5px rgba(0,0,0,.25)", transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] } }}
+                                        className="h-full w-full"
+                                        initial={{ opacity: 0, scale: 0, boxShadow: "0px 5px 10px 5px rgba(0,0,0,0.25)" }}
+                                        animate={{ opacity: 1, scale: 1, boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.25)" }}
+                                        exit={{ opacity: 0, scale: 0, boxShadow: "0px 5px 10px 5px rgba(0,0,0,0.25)", transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] } }}
                                         transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
                                     >
                                         <PerformanceCard
