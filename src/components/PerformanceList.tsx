@@ -1401,10 +1401,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             className="perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ '--flow-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
         >
-            {/* Moving Border Light Effect */}
-            <div className={clsx("border-flow-container", (variant === 'yellow' || variant === 'pink') ? "rounded-xl" : "rounded-2xl")} />
+            {/* New Animated Shine Border */}
+            <div className="shine-border-mask">
+                <div
+                    className="shine-border-glow"
+                    style={{ '--shine-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
+                />
+            </div>
+
             <div
                 ref={cardRef}
                 className={clsx(

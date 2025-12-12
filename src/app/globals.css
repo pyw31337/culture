@@ -76,29 +76,45 @@ body {
   animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes rotate-border {
+/* Textured Shine Border */
+@keyframes rotateShine {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-.border-flow-container {
+.shine-border-mask {
   position: absolute;
-  inset: -2px;
-  pointer-events: none;
-  background: conic-gradient(from 0deg, transparent 0deg, transparent 80deg, var(--flow-color) 100deg, transparent 120deg);
-  animation: rotate-border 4s linear infinite;
+  inset: 0;
   border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: -1;
+  padding: 1.5px;
+  /* Border Thickness */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) border-box;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.group:hover .border-flow-container {
+.shine-border-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  /* Large enough to cover */
+  padding-bottom: 300%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--shine-color) 10%, transparent 20%);
+  transform: translate(-50%, -50%);
+  animation: rotateShine 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show glow on hover */
+.group:hover .shine-border-glow {
   opacity: 1;
 }
 
