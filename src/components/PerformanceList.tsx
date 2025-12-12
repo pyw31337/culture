@@ -485,7 +485,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
             <div className="noise-texture !z-[-10] mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-
+            {/* Right-side Gradient Blob */}
+            <div className="fixed top-0 right-0 w-[800px] h-[800px] bg-radial-gradient from-[#a78bfa]/20 via-[#f472b6]/10 to-transparent blur-[120px] rounded-full pointer-events-none z-[-5] translate-x-1/3 -translate-y-1/4" style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.3) 0%, rgba(244,114,182,0.15) 40%, transparent 70%)' }}></div>
             {/* Header: Logo & Last Updated */}
             {/* Header: Logo Only */}
             <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
@@ -507,7 +508,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
                             <Image
-                                src="/images/ticket_icon.png"
+                                src="images/ticket_icon.png"
                                 alt="Culture Flow Icon"
                                 fill
                                 className="object-cover"
@@ -671,13 +672,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
                 >
 
-                    {/* Collapsed View Redesigned */}
+                    {/* Collapsed View Redesigned - Recursive Layout */}
                     {!isFilterExpanded && (
-                        <div className="flex flex-col gap-2 w-full relative">
+                        <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
                             {/* Row 1: Filter Summary Text */}
-                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full">
+                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full lg:w-auto flex-1 overflow-hidden">
                                 <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
-                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap">
+                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right">
                                     {selectedGenre !== 'all' && (
                                         <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-bold border border-[#a78bfa]/30">
                                             {GENRES.find(g => g.id === selectedGenre)?.label}
@@ -707,7 +708,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
 
                             {/* Row 2: [Star] [Search] [Toggle] */}
-                            <div className="flex items-center gap-2 w-full overflow-x-auto scrollbar-hide pb-1 md:pb-0">
+                            <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-x-auto scrollbar-hide pb-1 lg:pb-0">
                                 {/* Keyword Button (Collapsed) */}
                                 <button
                                     onClick={(e) => {
@@ -721,7 +722,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </button>
 
                                 {/* Quick Search Bar */}
-                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 max-w-sm min-w-[200px]">
+                                <div className="p-[2px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[150px] lg:w-56">
                                     <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
                                         <Search className="w-4 h-4 text-white mr-2" />
                                         <input
@@ -743,7 +744,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         setIsFilterExpanded(true);
                                         setShowKeywordInput(false);
                                     }}
-                                    className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto md:ml-2"
+                                    className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto lg:ml-2"
                                 >
                                     <ChevronDown className="w-4 h-4" />
                                 </button>
@@ -926,11 +927,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
                             onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
                         >
-                            <h3 className="text-xl font-bold text-yellow-500 flex items-center gap-2">
-                                <Star className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                            <h3 className="text-xl font-bold text-yellow-500 flex items-center">
+                                <Star className="w-6 h-6 fill-yellow-500 text-yellow-500 mr-2" />
                                 관심 키워드 알림
-                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({keywordMatches.length})</span>
-                                <span className="text-sm font-normal text-gray-400 ml-2 hidden sm:inline">설정하신 키워드가 포함된 공연입니다.</span>
+                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({keywordMatches.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
                                 {isKeywordsExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
@@ -938,60 +938,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
                         {isKeywordsExpanded && (
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
-                                {keywordMatches.map((performance) => (
-                                    <div key={`keyword-${performance.id}`}
-                                        className="group bg-yellow-500 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-yellow-500/50 hover:ring-white/50"
-                                    >
-                                        <div className="relative aspect-[3/4] overflow-hidden">
-                                            <div
-                                                className="cursor-pointer w-full h-full"
-                                                onClick={() => {
-                                                    const v = venues[performance.venue];
-                                                    if (v) {
-                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                        setViewMode('map');
-                                                    }
-                                                }}
-                                            >
-                                                <Image
-                                                    src={performance.image || "/api/placeholder/400/300"}
-                                                    alt={performance.title}
-                                                    fill
-                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
-                                                <div className="absolute top-2 left-2 bg-black/80 text-yellow-500 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border border-yellow-500/30">
-                                                    <Star className="w-3 h-3 fill-yellow-500" />
-                                                    알림
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="p-4 bg-yellow-400">
-                                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
-                                                {performance.title}
-                                            </h3>
-                                            <div
-                                                onClick={() => {
-                                                    const v = venues[performance.venue];
-                                                    if (v) {
-                                                        setSearchLocation({ lat: v.lat || 0, lng: v.lng || 0, name: performance.venue });
-                                                        setViewMode('map');
-                                                    }
-                                                }}
-                                                className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
-                                            >
-                                                <MapPin className="w-3 h-3 text-gray-700" />
-                                                {performance.venue}
-                                            </div>
-                                            <div className="flex justify-between items-end border-t border-black/10 pt-2">
-                                                <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
-                                                    {GENRES.find(g => g.id === performance.genre)?.label || performance.genre}
-                                                </span>
-                                                <span className="text-gray-900 text-xs font-medium">{performance.date}</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                {keywordMatches.map((performance, idx) => (
+                                    <PerformanceCard
+                                        key={`keyword-${performance.id}`}
+                                        perf={performance}
+                                        distLabel={null}
+                                        venueInfo={venues[performance.venue] || null}
+                                        onLocationClick={(loc) => {
+                                            setSearchLocation(loc);
+                                            setViewMode('map');
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
+                                    />
                                 ))}
                             </div>
                         )}
