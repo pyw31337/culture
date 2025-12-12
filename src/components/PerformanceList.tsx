@@ -517,7 +517,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 priority
                             />
                         </div>
-                        <h1 className="text-[2.5rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
+                        <h1 className="text-[2.5rem] max-[390px]:text-[3.2rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
@@ -667,7 +667,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full max-w-7xl 2xl:max-w-[1800px] mx-auto rounded-b-xl",
+                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full max-w-7xl 2xl:max-w-[1800px] mx-auto rounded-b-xl max-w-[100vw]",
                         isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
                     )
                 }
