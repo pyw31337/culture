@@ -58,6 +58,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isSearching, setIsSearching] = useState(false);
     const [searchResults, setSearchResults] = useState<any[]>([]); // New: Store multiple results
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);   // New: Dropdown visibility
+    const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero'); // New: Track active input
     const [isSdkLoaded, setIsSdkLoaded] = useState(false);         // New: Track SDK Load Status
 
     // Keyword Notification System
@@ -228,6 +229,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             setSearchLocation(null);
             setSearchResults([]); // specific clear
         }
+        // Open dropdown if text exists
+        if (val) setIsDropdownOpen(true);
         // Close dropdown if text is cleared
         if (!val) {
             setIsDropdownOpen(false);
@@ -638,6 +641,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             <input
                                 type="text"
                                 value={searchText}
+                                onFocus={() => setActiveSearchSource('hero')}
                                 onChange={handleSearchTextChange}
                                 onKeyDown={handleKeyDown}
                                 className="bg-transparent border-none text-white text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600"
@@ -665,7 +669,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
 
                     {/* Search Results Dropdown (Attached to Hero Input) */}
-                    {isDropdownOpen && searchResults.length > 0 && (
+                    {isDropdownOpen && activeSearchSource === 'hero' && searchResults.length > 0 && (
                         <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
                             {searchResults.map((result, idx) => {
                                 // Address Parsing: Only Region + Gu (e.g., 서울 영등포구)
@@ -705,15 +709,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
 
-            {/* Sticky Sentinel */}
-            <div ref={sentinelRef} className="absolute top-0 h-1 w-full pointer-events-none" />
+            {/* Sticky Sentinel - Fixed: Removed absolute to be in flow */}
+            <div ref={sentinelRef} className="h-[1px] w-full pointer-events-none" />
 
             {/* Sticky Filter Container - Glassmorphism */}
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full",
-                        isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
+                        "sticky top-0 z-50 transition-all duration-300 ease-in-out border-b backdrop-blur-md w-full",
+                        isSticky
+                            ? "bg-[rgba(0,0,0,0.6)] py-2 shadow-2xl border-[rgba(255,255,255,0.2)]"
+                            : "bg-transparent py-4 border-transparent border-white/5"
                     )
                 }
             >
@@ -800,12 +806,46 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             type="text"
                                             value={searchText}
                                             onClick={(e) => e.stopPropagation()}
+                                            onFocus={() => setActiveSearchSource('sticky')}
                                             onChange={handleSearchTextChange}
                                             onKeyDown={handleKeyDown}
                                             className="bg-transparent border-none text-white text-xs sm:text-sm font-bold w-full focus:outline-none placeholder-gray-500 min-w-0"
                                             placeholder="검색..."
                                         />
                                     </div>
+
+                                    {/* Dropdown for Sticky Header */}
+                                    {isDropdownOpen && activeSearchSource === 'sticky' && searchResults.length > 0 && (
+                                        <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-2xl z-[150] overflow-hidden max-h-60 overflow-y-auto">
+                                            {searchResults.map((result, idx) => {
+                                                const addressParts = result.address ? result.address.split(' ') : [];
+                                                const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
+
+                                                return (
+                                                    <div
+                                                        key={`search-sticky-${idx}`}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleSelectResult(result);
+                                                        }}
+                                                        className="px-4 py-3 hover:bg-white/10 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors bg-[#1a1a1a]"
+                                                    >
+                                                        <div className="flex items-center gap-2 min-w-0">
+                                                            <div className="bg-black/50 p-1.5 rounded-full shrink-0 border border-white/10">
+                                                                {result.type === 'video' ? <Star className="w-3 h-3 text-yellow-500" /> : <MapPin className="w-3 h-3 text-[#a78bfa]" />}
+                                                            </div>
+                                                            <div className="text-white text-sm font-bold truncate">
+                                                                {result.name}
+                                                            </div>
+                                                        </div>
+                                                        <div className="text-gray-400 text-xs whitespace-nowrap shrink-0">
+                                                            {shortAddress}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    )}
                                 </div>
 
                                 <button
@@ -1335,14 +1375,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="perspective-1000 cursor-pointer group h-full relative hover:z-[100]"
+            className="perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
             <div
                 ref={cardRef}
                 className={clsx(
-                    "relative overflow-hidden transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-2xl h-full",
+                    "relative overflow-hidden transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,1)] h-full",
                     variant === 'yellow'
                         ? "bg-yellow-500 rounded-xl ring-1 ring-yellow-500/50 hover:ring-white/50 flex flex-col"
                         : variant === 'pink'
