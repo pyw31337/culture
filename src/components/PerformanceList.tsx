@@ -54,6 +54,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
     const [selectedGenre, setSelectedGenre] = useState<string>('all');
 
+    // Debug Data Availability
+    useEffect(() => {
+        console.log(`[PerformanceList] Initial Count: ${initialPerformances.length}, Last Updated: ${lastUpdated}`);
+    }, [initialPerformances, lastUpdated]);
+
     // Search State
     const [searchText, setSearchText] = useState('');
     const [debouncedSearchText, setDebouncedSearchText] = useState(''); // Debounced value
@@ -1228,10 +1233,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <motion.div
                                         key={`${perf.id}-${perf.region}`}
                                         layout
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
-                                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                                        initial={{ opacity: 0, scale: 0, boxShadow: "0 5px 10px 5px rgba(0,0,0,.25)" }}
+                                        animate={{ opacity: 1, scale: 1, boxShadow: "0 0 10px 0 rgba(0,0,0,.25)" }}
+                                        exit={{ opacity: 0, scale: 0, boxShadow: "0 5px 10px 5px rgba(0,0,0,.25)", transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] } }}
+                                        transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
                                     >
                                         <PerformanceCard
                                             perf={perf}
