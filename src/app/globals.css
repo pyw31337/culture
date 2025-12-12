@@ -97,6 +97,8 @@ body {
   mask-composite: exclude;
   pointer-events: none;
   z-index: 10;
+  overflow: hidden;
+  /* Fix: Clip the large glow element to prevent x-scroll */
 }
 
 .shine-border-glow {
