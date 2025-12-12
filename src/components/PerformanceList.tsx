@@ -712,18 +712,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full max-w-7xl 2xl:max-w-[1800px] mx-auto rounded-b-xl",
+                        "sticky top-0 z-50 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md w-full",
                         isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
                     )
                 }
             >
+
                 <div
                     className={clsx(
-                        "w-full px-4 sm:px-6 lg:px-8 space-y-2 transition-colors duration-300 rounded-lg",
+                        "w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2 transition-colors duration-300 rounded-lg",
                         !isFilterExpanded && "cursor-pointer hover:bg-white/5 py-1"
                     )}
                     onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
                 >
+
 
                     {/* Collapsed View Redesigned - Recursive Layout */}
                     {!isFilterExpanded && (
@@ -733,31 +735,32 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
                                 <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right min-w-0">
                                     {selectedGenre !== 'all' && (
-                                        <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-bold border border-[#a78bfa]/30">
+                                        <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-extrabold border border-[#a78bfa]/30">
                                             {GENRES.find(g => g.id === selectedGenre)?.label}
                                         </span>
                                     )}
                                     {selectedRegion !== 'all' && (
-                                        <span className="text-white bg-blue-500/20 px-2 py-0.5 rounded text-xs font-bold border border-blue-500/30">
+                                        <span className="text-white bg-blue-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-blue-500/30">
                                             {REGIONS.find(r => r.id === selectedRegion)?.label}
                                             {selectedDistrict !== 'all' && ` ${selectedDistrict}`}
                                         </span>
                                     )}
                                     {selectedVenue !== 'all' && (
-                                        <span className="text-white bg-green-500/20 px-2 py-0.5 rounded text-xs font-bold border border-green-500/30">
+                                        <span className="text-white bg-green-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-green-500/30">
                                             {selectedVenue}
                                         </span>
                                     )}
                                     {activeLocation && (
-                                        <span className="text-green-400 text-xs font-bold flex items-center gap-1">
+                                        <span className="text-green-400 text-xs font-extrabold flex items-center gap-1">
                                             <MapPin className="w-3 h-3" />
                                             {radius}km 반경
                                         </span>
                                     )}
                                     {selectedGenre === 'all' && selectedRegion === 'all' && selectedVenue === 'all' && !activeLocation && (
-                                        <span className="text-gray-500">모든 공연 보기 (필터 미적용)</span>
+                                        <span className="text-gray-500 font-extrabold">모든 공연 보기 (필터 미적용)</span>
                                     )}
                                 </div>
+
                             </div>
 
                             {/* Row 2: [Star] [Search] [Toggle] */}
