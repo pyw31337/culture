@@ -1048,5 +1048,25 @@
     "link": "https://kovo.co.kr/tickets/single",
     "region": "seoul",
     "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260106_INDUSTRIAL BANK OF KOREA_HYUNDAI E&C",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HYUNDAI E&C",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-06 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260111_INDUSTRIAL BANK OF KOREA_HYUNDAI E&C",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HYUNDAI E&C",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-11 16:00",
+    "venue": "화성종합경기타운 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
   }
 ]
