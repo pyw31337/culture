@@ -11,6 +11,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
 import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Venue {
     name: string;
@@ -1201,39 +1202,54 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
                 </div>
 
-                <div className={clsx("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6", viewMode !== 'list' && "hidden")
-                }>
-                    {isFiltering ? (
-                        // Render Skeletons during Filter/Load
-                        [...Array(8)].map((_, i) => <SkeletonCard key={`skeleton-${i}`} />)
-                    ) : (
-                        visiblePerformances.map((perf) => {
-                            const venueInfo = venues[perf.venue];
-                            let distLabel = null;
-                            if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
-                                const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
-                                distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
-                            }
+                <div className={clsx(
+                    "grid gap-6",
+                    viewMode === 'list'
+                        ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5" // List Mode: Multi-column
+                        : viewMode === 'map'
+                            ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" // Map Mode (Bottom sheet style)
+                            : "grid-cols-1" // Calendar Mode (Not grid)
+                )}>
+                    <AnimatePresence mode="popLayout">
+                        {isFiltering ? (
+                            Array.from({ length: 8 }).map((_, i) => (
+                                <SkeletonCard key={i} />
+                            ))
+                        ) : (
+                            visiblePerformances.map((perf) => {
+                                const venueInfo = venues[perf.venue];
+                                let distLabel = null;
+                                if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
+                                    const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
+                                    distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
+                                }
 
-                            return (
-                                <div key={`${perf.id}-${perf.region}`} className="animate-scale-in">
-                                    <PerformanceCard
+                                return (
+                                    <motion.div
                                         key={`${perf.id}-${perf.region}`}
-                                        perf={perf}
-                                        distLabel={distLabel}
-                                        venueInfo={venueInfo}
-                                        onLocationClick={(loc) => {
-                                            setSearchLocation(loc);
-                                            setViewMode('map');
-                                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                                        }}
-                                        isLiked={likedIds.includes(perf.id)}
-                                        onToggleLike={(e) => toggleLike(perf.id, e)}
-                                    />
-                                </div>
-                            );
-                        })
-                    )}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                                    >
+                                        <PerformanceCard
+                                            perf={perf}
+                                            distLabel={distLabel}
+                                            venueInfo={venueInfo}
+                                            onLocationClick={(loc) => {
+                                                setSearchLocation(loc);
+                                                setViewMode('map');
+                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                            }}
+                                            isLiked={likedIds.includes(perf.id)}
+                                            onToggleLike={(e) => toggleLike(perf.id, e)}
+                                        />
+                                    </motion.div>
+                                );
+                            })
+                        )}
+                    </AnimatePresence>
                 </div>
 
                 {/* Sentinel for Infinite Scroll - Only in List Mode */}
