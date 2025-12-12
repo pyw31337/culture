@@ -77,7 +77,8 @@ body {
 }
 
 /* Textured Shine Border */
-@keyframes rotateShine {
+/* Gold Shimmer Effect (CodePen) */
+@keyframes gold-shimmer-rotate {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -87,37 +88,44 @@ body {
   }
 }
 
-.shine-border-mask {
-  position: absolute;
-  inset: 0;
+.gold-shimmer-wrapper {
+  position: relative;
+  overflow: hidden;
   border-radius: inherit;
+  /* Inherit border-radius from parent */
+  height: 100%;
+  width: 100%;
   padding: 1.5px;
   /* Border Thickness */
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) border-box;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 10;
-  overflow: hidden;
-  /* Fix: Clip the large glow element to prevent x-scroll */
 }
 
-.shine-border-glow {
+.gold-shimmer-border {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 300%;
-  /* Large enough to cover */
   padding-bottom: 300%;
-  background: conic-gradient(from 0deg, transparent 0%, var(--shine-color) 10%, transparent 20%);
+  background: conic-gradient(from 0deg, transparent 0%, var(--shimmer-color, gold) 5%, transparent 20%);
   transform: translate(-50%, -50%);
-  animation: rotateShine 4s linear infinite;
+  animation: gold-shimmer-rotate 4s linear infinite;
+  z-index: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-/* Show glow on hover */
-.group:hover .shine-border-glow {
+.group:hover .gold-shimmer-border {
   opacity: 1;
+}
+
+.gold-shimmer-main {
+  position: relative;
+  z-index: 10;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  background: inherit;
+  /* Should match card bg or be transparent if card handles it */
 }
 
 .animate-shine {
