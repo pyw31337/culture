@@ -138,7 +138,7 @@ export default async function Home() {
     const hour = getPart('hour');
     const minute = getPart('minute');
 
-    const lastUpdated = `${year}. ${month}. ${day}. (${weekday}) ${hour}:${minute} 기준`;
+    const lastUpdated = `${year}.${month}.${day}. (${weekday}) ${hour}:${minute}`;
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20">

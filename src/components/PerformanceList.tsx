@@ -485,15 +485,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* 🌌 Aurora Background Removed as per request */}
             {/* <div className="aurora-container ..."></div> */}
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-            {/* Right-side Gradient Blob (Obsidian Style) */}
-            <div className="fixed top-[-20%] right-[-10%] w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] bg-radial-gradient from-[#7c3aed]/40 via-[#db2777]/20 to-transparent blur-[120px] rounded-full pointer-events-none z-0 opacity-80 mix-blend-screen"
-                style={{
-                    background: 'radial-gradient(circle at center, rgba(124, 58, 237, 0.4) 0%, rgba(219, 39, 119, 0.25) 30%, rgba(219, 39, 119, 0.1) 60%, transparent 80%)'
-                }}
-            ></div>
+            {/* Right-side Gradient Blobs (Neon & Saturated) */}
+            <div className="fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#7c3aed] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 mix-blend-screen animate-pulse-slow"></div>
+            <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 mix-blend-screen animate-pulse-slow delay-1000"></div>
             {/* Header: Logo & Last Updated */}
             {/* Header: Logo Only */}
-            <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
+            <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300 mix-blend-luminosity">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex justify-between items-center gap-4">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
@@ -530,7 +527,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     <div className="flex items-center gap-4">
                         {/* View Mode Toggles */}
-                        <div className="hidden md:flex gap-2">
+                        <div className="flex gap-2 mix-blend-luminosity">
                             <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
@@ -670,7 +667,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md",
+                        "sticky top-0 z-40 transition-all duration-500 ease-in-out border-b border-white/5 backdrop-blur-md mix-blend-luminosity",
                         isSticky ? "bg-black/90 py-2 shadow-2xl" : "bg-transparent py-4 border-transparent"
                     )
                 }
@@ -807,8 +804,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 className={clsx(
                                                     'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
                                                     selectedRegion === r.id
-                                                        ? 'bg-white text-black font-bold shadow-lg'
-                                                        : 'text-gray-400 hover:text-white hover:bg-white/10'
+                                                        ? 'bg-white text-black font-bold shadow-lg mix-blend-lighten'
+                                                        : 'text-gray-400 hover:text-white hover:bg-white/10 mix-blend-lighten'
                                                 )}
                                             >
                                                 {r.label}
@@ -906,8 +903,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             className={clsx(
                                                 'px-4 py-1.5 rounded-full text-xs font-bold border transition-all whitespace-nowrap shrink-0',
                                                 selectedGenre === g.id
-                                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md')
-                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500'
+                                                    ? clsx(GENRE_STYLES[g.id]?.twActivebg || 'bg-blue-600', GENRE_STYLES[g.id]?.twBorder || 'border-blue-500', 'text-white shadow-md mix-blend-lighten')
+                                                    : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-500 mix-blend-lighten'
                                             )}
                                         >
                                             {g.label}
@@ -1156,7 +1153,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 {/* Glare Effect */}
                 <div
                     ref={glareRef}
-                    className="absolute inset-0 w-[150%] h-[150%] bg-radial-gradient from-white/20 to-transparent opacity-0 pointer-events-none z-50 mix-blend-overlay transition-opacity duration-300"
+                    className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
                     style={{ left: '-25%', top: '-25%' }}
                 />
 
