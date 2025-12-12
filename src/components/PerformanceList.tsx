@@ -1205,13 +1205,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         ? "bg-yellow-500 rounded-xl ring-1 ring-yellow-500/50 hover:ring-white/50 flex flex-col"
                         : "aspect-[2/3] bg-gray-900 rounded-2xl border border-white/10 group-hover:shadow-[#a78bfa]/20"
                 )}
+                style={{ transformStyle: 'preserve-3d' }}
             >
                 {/* Neon Stroke Effect (Border Gradient) */}
                 {variant !== 'yellow' && (
                     <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                 )}
-                style={{ transformStyle: 'preserve-3d' }}
-            >
                 {/* Glare Effect */}
                 <div
                     ref={glareRef}
