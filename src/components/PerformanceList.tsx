@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, CalendarDays, Search, Map as MapIcon, RotateCw, Filter, ChevronUp, ChevronDown, LayoutGrid, Star, X, Calendar, Navigation } from 'lucide-react';
+import { MapPin, CalendarDays, Search, Map as MapIcon, RotateCw, Filter, ChevronUp, ChevronDown, LayoutGrid, Star, X, Calendar, Navigation, Heart } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -97,6 +97,39 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const removeKeyword = (k: string) => {
         setKeywords(keywords.filter(key => key !== k));
     };
+
+    // Like System State
+    const [likedIds, setLikedIds] = useState<string[]>([]);
+    const [showLikes, setShowLikes] = useState(true);
+
+    // Load Likes from LocalStorage
+    useEffect(() => {
+        const savedLikes = localStorage.getItem('culture_likes');
+        if (savedLikes) {
+            try {
+                setLikedIds(JSON.parse(savedLikes));
+            } catch (e) {
+                console.error("Failed to parse likes", e);
+            }
+        }
+    }, []);
+
+    // Save Likes to LocalStorage
+    useEffect(() => {
+        localStorage.setItem('culture_likes', JSON.stringify(likedIds));
+    }, [likedIds]);
+
+    const toggleLike = (id: string, e?: React.MouseEvent) => {
+        e?.stopPropagation();
+        setLikedIds(prev =>
+            prev.includes(id) ? prev.filter(lid => lid !== id) : [...prev, id]
+        );
+    };
+
+    const likedPerformances = useMemo(() => {
+        return initialPerformances.filter(p => likedIds.includes(p.id));
+    }, [initialPerformances, likedIds]);
+
 
 
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
@@ -850,6 +883,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                                 {/* Replaced Search Bar with Keyword Button in Expanded Mode */}
                                 <div className="flex flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center justify-end">
+                                    {/* Like Button */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setShowLikes(!showLikes);
+                                        }}
+                                        className={clsx(
+                                            "flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group",
+                                            showLikes
+                                                ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
+                                                : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300"
+                                        )}
+                                    >
+                                        <Heart className={clsx("w-4 h-4", showLikes ? "fill-pink-500" : "fill-none")} />
+                                        <span>좋아요</span>
+                                        {likedIds.length > 0 && (
+                                            <span className={clsx(
+                                                "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
+                                                showLikes ? "bg-pink-500 text-black" : "bg-gray-700 text-gray-400"
+                                            )}>
+                                                {likedIds.length}
+                                            </span>
+                                        )}
+                                    </button>
+
                                     <button
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -950,6 +1008,45 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
             </div>
 
+            {/* Liked Performances Section (Above Keywords) */}
+            {
+                viewMode === 'list' && showLikes && likedPerformances.length > 0 && (
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
+                        <div
+                            className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
+                            onClick={() => setShowLikes(!showLikes)}
+                        >
+                            <h3 className="text-xl font-bold text-pink-500 flex items-center">
+                                <Heart className="w-6 h-6 fill-pink-500 text-pink-500 mr-2" />
+                                좋아요한 공연
+                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({likedPerformances.length})</span>
+                            </h3>
+                            <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
+                                <ChevronUp className="w-6 h-6" />
+                            </button>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                            {likedPerformances.map((performance) => (
+                                <PerformanceCard
+                                    key={`liked-${performance.id}`}
+                                    perf={performance}
+                                    distLabel={null}
+                                    venueInfo={venues[performance.venue] || null}
+                                    onLocationClick={(loc) => {
+                                        setSearchLocation(loc);
+                                        setViewMode('map');
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    isLiked={true}
+                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                    variant="default" // Use default variant but with liked status
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )
+            }
+
             {/* Keyword Matches Section (Only in List View) */}
             {
                 viewMode === 'list' && keywordMatches.length > 0 && (
@@ -980,8 +1077,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             setViewMode('map');
                                             window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }}
+                                        isLiked={likedIds.includes(performance.id)}
+                                        onToggleLike={(e) => toggleLike(performance.id, e)}
                                         variant="yellow"
                                     />
+
                                 ))}
                             </div>
                         )}
@@ -1046,7 +1146,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         setViewMode('map');
                                         window.scrollTo({ top: 0, behavior: 'smooth' });
                                     }}
+                                    isLiked={likedIds.includes(perf.id)}
+                                    onToggleLike={(e) => toggleLike(perf.id, e)}
                                 />
+
                             );
                         })
                     )}
@@ -1157,7 +1260,8 @@ function SkeletonCard() {
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+
     const cardRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null); // Kept for consistency if needed, though unused in Yellow
     const glareRef = useRef<HTMLDivElement>(null);
@@ -1220,7 +1324,24 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 )}
                 style={{ transformStyle: 'preserve-3d' }}
             >
+                {/* Like Button (Heart) */}
+                <button
+                    onClick={onToggleLike}
+                    className="absolute top-3 right-3 z-50 p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
+                    style={{ transform: 'translateZ(50px)' }}
+                >
+                    <Heart
+                        className={clsx(
+                            "w-6 h-6 transition-all duration-300",
+                            isLiked
+                                ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
+                                : "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110"
+                        )}
+                    />
+                </button>
+
                 {/* Neon Stroke Effect (Border Gradient) */}
+
                 {variant !== 'yellow' && (
                     <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                 )}
