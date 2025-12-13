@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251213_KEPCO_KB STARS",
-    "title": "[배구] KEPCO vs KB STARS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-13 14:00",
-    "venue": "수원 실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251208_GS CALTEX_HYUNDAI E&C",
-    "title": "[배구] GS CALTEX vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-08 11:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251213_GS CALTEX_HYUNDAI E&C",
-    "title": "[배구] GS CALTEX vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-13 16:00",
-    "venue": "장충체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "seoul",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251208_SAMSUNG BLUEFANGS_WOORICARD",
-    "title": "[배구] SAMSUNG BLUEFANGS vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-08 15:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251214_SAMSUNG BLUEFANGS_WOORICARD",
     "title": "[배구] SAMSUNG BLUEFANGS vs WOORICARD",
     "image": "/culture/images/volleyball_poster.png",
