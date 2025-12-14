@@ -1111,23 +1111,32 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
-                            {likedPerformances.map((performance) => (
-                                <PerformanceCard
-                                    key={`liked-${performance.id}`}
-                                    perf={performance}
-                                    distLabel={null}
-                                    venueInfo={venues[performance.venue] || null}
-                                    onLocationClick={(loc) => {
-                                        setSearchLocation(loc);
-                                        setViewMode('map');
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    }}
-                                    isLiked={true}
-                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                    variant="pink" // Modified: "Like" styled variant
-                                />
-
-                            ))}
+                            <AnimatePresence mode="popLayout">
+                                {likedPerformances.map((performance, index) => (
+                                    <motion.div
+                                        key={`liked-${performance.id}`}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                                    >
+                                        <PerformanceCard
+                                            perf={performance}
+                                            distLabel={null}
+                                            venueInfo={venues[performance.venue] || null}
+                                            onLocationClick={(loc) => {
+                                                setSearchLocation(loc);
+                                                setViewMode('map');
+                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                            }}
+                                            isLiked={true}
+                                            onToggleLike={(e) => toggleLike(performance.id, e)}
+                                            variant="pink"
+                                        />
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
                         </div>
                     </div>
                 )
@@ -1143,7 +1152,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         >
                             <h3 className="text-xl font-bold text-yellow-500 flex items-center">
                                 <Star className="w-6 h-6 fill-yellow-500 text-yellow-500 mr-2" />
-                                관심 키워드 알림
+                                키워드 공연
                                 <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({keywordMatches.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
@@ -1152,23 +1161,32 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </div>
                         {isKeywordsExpanded && (
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
-                                {keywordMatches.map((performance, idx) => (
-                                    <PerformanceCard
-                                        key={`keyword-${performance.id}`}
-                                        perf={performance}
-                                        distLabel={null}
-                                        venueInfo={venues[performance.venue] || null}
-                                        onLocationClick={(loc) => {
-                                            setSearchLocation(loc);
-                                            setViewMode('map');
-                                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                                        }}
-                                        isLiked={likedIds.includes(performance.id)}
-                                        onToggleLike={(e) => toggleLike(performance.id, e)}
-                                        variant="yellow"
-                                    />
-
-                                ))}
+                                <AnimatePresence mode="popLayout">
+                                    {keywordMatches.map((performance, idx) => (
+                                        <motion.div
+                                            key={`keyword-${performance.id}`}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                            transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                        >
+                                            <PerformanceCard
+                                                perf={performance}
+                                                distLabel={null}
+                                                venueInfo={venues[performance.venue] || null}
+                                                onLocationClick={(loc) => {
+                                                    setSearchLocation(loc);
+                                                    setViewMode('map');
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
+                                                isLiked={likedIds.includes(performance.id)}
+                                                onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                variant="yellow"
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
                             </div>
                         )}
                     </div>
@@ -1221,7 +1239,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 <SkeletonCard key={i} />
                             ))
                         ) : (
-                            visiblePerformances.map((perf) => {
+                            visiblePerformances.map((perf, index) => {
                                 const venueInfo = venues[perf.venue];
                                 let distLabel = null;
                                 if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
@@ -1234,10 +1252,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         key={`${perf.id}-${perf.region}`}
                                         layout
                                         className="h-full w-full"
-                                        initial={{ opacity: 0, scale: 0, boxShadow: "0px 5px 10px 5px rgba(0,0,0,0.25)" }}
-                                        animate={{ opacity: 1, scale: 1, boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.25)" }}
-                                        exit={{ opacity: 0, scale: 0, boxShadow: "0px 5px 10px 5px rgba(0,0,0,0.25)", transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] } }}
-                                        transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                        transition={{ duration: 0.4, delay: index * 0.05 }}
                                     >
                                         <PerformanceCard
                                             perf={perf}
