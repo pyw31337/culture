@@ -815,15 +815,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             {/* Row 2: [Star] [Search] [Toggle] */}
                             <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-hidden flex-nowrap shrink-0">
                                 {/* Like Button (Collapsed) */}
+                                {/* Like Button (Collapsed) */}
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        setIsFilterExpanded(true);
-                                        // Optional: Toggle like section? User just wants to open
+                                        if (likedIds.length > 0) {
+                                            setIsFilterExpanded(true);
+                                            // Toggle logic if needed, or just open
+                                        }
                                     }}
-                                    className="shrink-0 p-1 px-2 rounded-full border border-pink-500/50 bg-pink-500/10 text-pink-500 text-xs font-bold hover:bg-pink-500 hover:text-black flex items-center gap-1 transition-all"
+                                    disabled={likedIds.length === 0}
+                                    className={clsx(
+                                        "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
+                                        likedIds.length > 0
+                                            ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer"
+                                            : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
+                                    )}
                                 >
-                                    <Heart className="w-3 h-3 fill-current" />
+                                    <Heart className={clsx("w-3 h-3", likedIds.length > 0 ? "fill-current" : "text-gray-600")} />
                                     <span className="hidden sm:inline">좋아요</span>
                                 </button>
 
@@ -986,16 +995,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <button
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            setShowLikes(!showLikes);
+                                            if (likedIds.length > 0) {
+                                                setShowLikes(!showLikes);
+                                            }
                                         }}
+                                        disabled={likedIds.length === 0}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
-                                            showLikes
-                                                ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
-                                                : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300"
+                                            likedIds.length > 0
+                                                ? (showLikes
+                                                    ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
+                                                    : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
+                                                : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <Heart className={clsx("w-4 h-4", showLikes ? "fill-pink-500" : "fill-none")} />
+                                        <Heart className={clsx("w-4 h-4", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
                                         <span>좋아요</span>
                                         {likedIds.length > 0 && (
                                             <span className={clsx(
