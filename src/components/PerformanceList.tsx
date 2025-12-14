@@ -565,7 +565,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 mix-blend-screen animate-pulse-slow delay-1000"></div>
             {/* Header: Logo & Last Updated */}
             {/* Header */}
-            <header className="sticky top-0 z-[100] bg-gray-900/80 backdrop-blur-md border-b border-gray-700 mix-blend-lighten">
+            <header className="relative z-[100] bg-gray-900/80 backdrop-blur-md border-b border-gray-700 mix-blend-lighten">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
@@ -743,7 +743,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div
                 className={
                     clsx(
-                        "sticky top-0 z-50 transition-all duration-300 ease-in-out border-b backdrop-blur-md w-full",
+                        "sticky top-0 z-[110] transition-all duration-300 ease-in-out border-b backdrop-blur-md w-full",
                         isSticky
                             ? "bg-[rgba(0,0,0,0.6)] py-2 shadow-2xl border-[rgba(255,255,255,0.2)]"
                             : "bg-transparent py-4 border-transparent border-white/5"
