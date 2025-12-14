@@ -483,6 +483,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }
     }, []);
 
+    // 🚀 Image Preloading Logic
+    useEffect(() => {
+        const nextBatch = filteredPerformances.slice(visibleCount, visibleCount + 24);
+        nextBatch.forEach((perf) => {
+            if (perf.image) {
+                const img = new Image();
+                img.src = perf.image;
+            }
+        });
+    }, [visibleCount, filteredPerformances]);
+
     const visiblePerformances = filteredPerformances.slice(0, visibleCount);
 
     // View Mode State
