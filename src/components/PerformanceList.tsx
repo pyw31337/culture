@@ -564,9 +564,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#7c3aed] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 mix-blend-screen animate-pulse-slow"></div>
             <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 mix-blend-screen animate-pulse-slow delay-1000"></div>
             {/* Header: Logo & Last Updated */}
-            {/* Header: Logo Only */}
-            <header className="relative z-50 py-3 px-4 border-b border-gray-700 bg-transparent transition-all duration-300">
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto flex justify-between items-center gap-4">
+            {/* Header */}
+            <header className="sticky top-0 z-[100] bg-gray-900/80 backdrop-blur-md border-b border-gray-700 mix-blend-lighten">
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
                         onClick={() => {
@@ -1441,7 +1441,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,1)] h-full",
+                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full",
                         variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
                     )
                 }
