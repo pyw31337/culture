@@ -488,7 +488,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         const nextBatch = filteredPerformances.slice(visibleCount, visibleCount + 24);
         nextBatch.forEach((perf) => {
             if (perf.image) {
-                const img = new Image();
+                const img = new window.Image();
                 img.src = perf.image;
             }
         });
