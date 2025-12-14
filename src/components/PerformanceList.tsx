@@ -477,7 +477,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 if (entries[0].isIntersecting) {
                     setVisibleCount(prev => prev + 24);
                 }
-            }, { threshold: 0.1 });
+            }, { threshold: 0.1, rootMargin: '2000px' });
             observer.observe(node);
             return () => observer.disconnect();
         }
