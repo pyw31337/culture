@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, CalendarDays, Search, Map as MapIcon, RotateCw, Filter, ChevronUp, ChevronDown, LayoutGrid, Star, X, Calendar, Navigation, Heart } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -624,6 +624,23 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 )
                             }
                         </span>
+
+                        {/* Reset Location Button */}
+                        {(activeLocation || selectedRegion !== 'all') && (
+                            <button
+                                onClick={() => {
+                                    setSelectedRegion('all');
+                                    setSelectedDistrict('all');
+                                    setSelectedVenue('all');
+                                    setUserLocation(null);
+                                    setSearchLocation(null);
+                                }}
+                                className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/reload"
+                                title="전체 지역으로 초기화"
+                            >
+                                <RotateCcw className="w-3.5 h-3.5 group-hover/reload:-rotate-180 transition-transform duration-500" />
+                            </button>
+                        )}
                     </p>
                     {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block">
