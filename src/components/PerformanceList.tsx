@@ -1250,7 +1250,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 return (
                                     <motion.div
                                         key={`${perf.id}-${perf.region}`}
-                                        layout
                                         className="h-full w-full"
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         animate={{ opacity: 1, scale: 1 }}
