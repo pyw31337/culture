@@ -151,7 +151,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
             {/* Day Detail Modal */}
             {selectedDate && (
-                <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
+                <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
                     <div
                         className="bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-700 overflow-hidden"
                         onClick={e => e.stopPropagation()}
