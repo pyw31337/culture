@@ -95,7 +95,7 @@ async function getPerformances() {
         // If it's KOVO or KBL (based on ID prefix or generally just apply to all "etc" regions?)
         // The problem is Interpark data might use 'etc' if we had such logic, but Interpark fetcher usually returns specific regions.
         // Let's rely on p.region for now.
-        if (p.region === 'etc') return false;
+        // if (p.region === 'etc') return false; // Allow 'etc' for now as Sports data often has it
 
         // 3. Bad Data / Blocklist Check
         if (p.venue === '예매하기') return false;
