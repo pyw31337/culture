@@ -1429,7 +1429,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={clsx(
                     "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,1)] h-full",
-                    variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl"
+                    variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
                 )}
                 style={{ transformStyle: 'preserve-3d' }}
             >
