@@ -1429,207 +1429,208 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     };
 
     return (
-        className = "perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
-            onMouseMove = { handleMouseMove }
-    onMouseLeave = { handleMouseLeave }
-    onTouchStart = { handleTouchStart }
-    onTouchEnd = { handleTouchEnd }
-        >
-        {/* New Gold Shimmer Wrapper Structure */ }
-        < div
-    ref = { cardRef }
-    className = {
-        clsx(
-                    "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,1)] h-full",
-            variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
-                )
-}
-style = {{ transformStyle: 'preserve-3d' }}
-            >
-    <div className="gold-shimmer-wrapper">
         <div
-            className="gold-shimmer-border"
-            style={{ '--shimmer-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
-        />
-
-        <div className={clsx(
-            "gold-shimmer-main flex flex-col overflow-hidden",
-            variant === 'yellow'
-                ? "bg-yellow-500 ring-1 ring-yellow-500/50 hover:ring-white/50"
-                : variant === 'pink'
-                    ? "bg-pink-500 ring-1 ring-pink-500/50 hover:ring-white/50"
-                    : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
-        )}>
-
-
-            {/* Like Button (Heart) */}
-            <button
-                onClick={onToggleLike}
-                className="absolute top-3 right-3 z-50 p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
-                style={{ transform: 'translateZ(50px)' }}
+            className="perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+        >
+            {/* New Gold Shimmer Wrapper Structure */}
+            < div
+                ref={cardRef}
+                className={
+                    clsx(
+                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,1)] h-full",
+                        variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
+                    )
+                }
+                style={{ transformStyle: 'preserve-3d' }}
             >
-                <Heart
-                    className={clsx(
-                        "w-6 h-6 transition-all duration-300",
-                        isLiked
-                            ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                            : "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110"
-                    )}
-                />
-            </button>
-
-            {/* Neon Stroke Effect (Border Gradient) */}
-
-            {variant !== 'yellow' && variant !== 'pink' && (
-                <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
-            )}
-
-            {/* Glare Effect */}
-            <div
-                ref={glareRef}
-                className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
-                style={{ left: '-25%', top: '-25%' }}
-            />
-
-            {/* --- VARIANT: YELLOW/PINK (Keyword/Like Interest) --- */}
-            {variant === 'yellow' || variant === 'pink' ? (
-                <>
-                    {/* Image Section (Top, Aspect 3/4) */}
-
-                    <div className="relative aspect-[3/4] overflow-hidden shrink-0">
-                        <div className="absolute inset-0 z-0">
-                            <Image
-                                src={perf.image || "/api/placeholder/400/300"}
-                                alt={perf.title}
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
-                        </div>
-                        {/* Badge */}
-                        <div
-                            className={clsx(
-                                "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
-                                variant === 'yellow' ? "bg-black/80 text-yellow-500 border-yellow-500/30" : "bg-black/80 text-pink-500 border-pink-500/30"
-                            )}
-                            style={{ transform: 'translateZ(20px)' }}
-                        >
-                            {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : <Heart className="w-3 h-3 fill-pink-500" />}
-                            {variant === 'yellow' ? '알림' : '좋아요'}
-                        </div>
-                    </div>
-
-                    {/* Content Section (Bottom, Yellow/Pink) */}
-                    <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
-                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
-                                {perf.title}
-                            </h3>
-                        </a>
-
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                            }}
-                            className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
-                        >
-                            <MapPin className="w-3 h-3 text-gray-700" />
-                            {perf.venue}
-                        </button>
-                        <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
-                            <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
-                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                            </span>
-                            <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
-                        </div>
-                    </div>
-                </>
-            ) : (
-                /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
-                <>
-                    {/* Image Layer */}
-                    {perf.image ? (
-                        <Image
-                            src={perf.image}
-                            alt={perf.title}
-                            fill
-                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
-                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                            loading="lazy"
-                        />
-                    ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
-                    )}
-
-                    {/* Distance Badge (Top Right) */}
-                    {distLabel && (
-                        <div
-                            className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
-                            style={{ transform: 'translateZ(20px)' }}
-                        >
-                            {distLabel}
-                        </div>
-                    )}
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
-
-                    {/* Content Layer (Bottom) - Fixed Position */}
+                <div className="gold-shimmer-wrapper">
                     <div
-                        className="absolute inset-x-0 bottom-0 p-5 z-20"
-                        style={{ transform: 'translateZ(30px)' }} // 3D Depth
-                    >
+                        className="gold-shimmer-border"
+                        style={{ '--shimmer-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
+                    />
 
-                        {/* Tags/Badges */}
-                        <div className="flex flex-wrap gap-2 mb-2">
-                            <span className={clsx(
-                                "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
-                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
-                            )}>
-                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                            </span>
-                            {/* Date Badge */}
-                            <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
-                                <Calendar className="w-3.5 h-3.5" />
-                                {(() => {
-                                    const parts = perf.date.split('~').map((s: string) => s.trim());
-                                    return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
-                                })()}
-                            </span>
-                        </div>
+                    <div className={clsx(
+                        "gold-shimmer-main flex flex-col overflow-hidden",
+                        variant === 'yellow'
+                            ? "bg-yellow-500 ring-1 ring-yellow-500/50 hover:ring-white/50"
+                            : variant === 'pink'
+                                ? "bg-pink-500 ring-1 ring-pink-500/50 hover:ring-white/50"
+                                : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                    )}>
 
-                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                {perf.title}
-                            </h3>
-                        </a>
 
-                        <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                            <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (venueInfo?.lat && venueInfo?.lng) {
-                                        onLocationClick({
-                                            lat: venueInfo.lat,
-                                            lng: venueInfo.lng,
-                                            name: perf.venue
-                                        });
-                                    }
-                                }}
-                                className="hover:text-[#a78bfa] hover:underline truncate"
-                            >
-                                {perf.venue}
-                            </button>
-                        </div>
+                        {/* Like Button (Heart) */}
+                        <button
+                            onClick={onToggleLike}
+                            className="absolute top-3 right-3 z-50 p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
+                            style={{ transform: 'translateZ(50px)' }}
+                        >
+                            <Heart
+                                className={clsx(
+                                    "w-6 h-6 transition-all duration-300",
+                                    isLiked
+                                        ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
+                                        : "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110"
+                                )}
+                            />
+                        </button>
+
+                        {/* Neon Stroke Effect (Border Gradient) */}
+
+                        {variant !== 'yellow' && variant !== 'pink' && (
+                            <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
+                        )}
+
+                        {/* Glare Effect */}
+                        <div
+                            ref={glareRef}
+                            className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
+                            style={{ left: '-25%', top: '-25%' }}
+                        />
+
+                        {/* --- VARIANT: YELLOW/PINK (Keyword/Like Interest) --- */}
+                        {variant === 'yellow' || variant === 'pink' ? (
+                            <>
+                                {/* Image Section (Top, Aspect 3/4) */}
+
+                                <div className="relative aspect-[3/4] overflow-hidden shrink-0">
+                                    <div className="absolute inset-0 z-0">
+                                        <Image
+                                            src={perf.image || "/api/placeholder/400/300"}
+                                            alt={perf.title}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                            loading="lazy"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+                                    </div>
+                                    {/* Badge */}
+                                    <div
+                                        className={clsx(
+                                            "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                            variant === 'yellow' ? "bg-black/80 text-yellow-500 border-yellow-500/30" : "bg-black/80 text-pink-500 border-pink-500/30"
+                                        )}
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : <Heart className="w-3 h-3 fill-pink-500" />}
+                                        {variant === 'yellow' ? '알림' : '좋아요'}
+                                    </div>
+                                </div>
+
+                                {/* Content Section (Bottom, Yellow/Pink) */}
+                                <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                                        <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
+                                            {perf.title}
+                                        </h3>
+                                    </a>
+
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                        }}
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                    >
+                                        <MapPin className="w-3 h-3 text-gray-700" />
+                                        {perf.venue}
+                                    </button>
+                                    <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
+                                        <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </span>
+                                        <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
+                            <>
+                                {/* Image Layer */}
+                                {perf.image ? (
+                                    <Image
+                                        src={perf.image}
+                                        alt={perf.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                                )}
+
+                                {/* Distance Badge (Top Right) */}
+                                {distLabel && (
+                                    <div
+                                        className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        {distLabel}
+                                    </div>
+                                )}
+
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+
+                                {/* Content Layer (Bottom) - Fixed Position */}
+                                <div
+                                    className="absolute inset-x-0 bottom-0 p-5 z-20"
+                                    style={{ transform: 'translateZ(30px)' }} // 3D Depth
+                                >
+
+                                    {/* Tags/Badges */}
+                                    <div className="flex flex-wrap gap-2 mb-2">
+                                        <span className={clsx(
+                                            "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                            GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                        )}>
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </span>
+                                        {/* Date Badge */}
+                                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                            <Calendar className="w-3.5 h-3.5" />
+                                            {(() => {
+                                                const parts = perf.date.split('~').map((s: string) => s.trim());
+                                                return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
+                                            })()}
+                                        </span>
+                                    </div>
+
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                                        <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                            {perf.title}
+                                        </h3>
+                                    </a>
+
+                                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (venueInfo?.lat && venueInfo?.lng) {
+                                                    onLocationClick({
+                                                        lat: venueInfo.lat,
+                                                        lng: venueInfo.lng,
+                                                        name: perf.venue
+                                                    });
+                                                }
+                                            }}
+                                            className="hover:text-[#a78bfa] hover:underline truncate"
+                                        >
+                                            {perf.venue}
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </div>
-                </>
-            )}
-        </div>
-    </div>
+                </div>
             </div >
         </div >
     );
