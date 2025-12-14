@@ -554,7 +554,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     return (
         <div
             className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
-            style={{ overflowAnchor: 'none' }} // Prevent scroll anchoring from causing layout loops
         >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
@@ -1524,7 +1523,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {/* Content Section (Bottom, Yellow/Pink) */}
                                 <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
-                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
                                             {perf.title}
                                         </h3>
@@ -1602,7 +1601,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </span>
                                     </div>
 
-                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                             {perf.title}
                                         </h3>
