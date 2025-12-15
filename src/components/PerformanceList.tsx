@@ -658,21 +658,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div className="flex items-center gap-4">
                         {/* View Mode Toggles */}
                         <div className="flex gap-2 mix-blend-luminosity bg-black/20 p-1 rounded-full border border-white/5 backdrop-blur-sm">
+                            {/* Combined Grid/List Toggle */}
                             <button
-                                onClick={() => { setViewMode('list'); setLayoutMode('grid'); }}
-                                className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors relative group", viewMode === 'list' && layoutMode === 'grid' ? "bg-white/20 text-[#a78bfa] shadow-inner" : "text-gray-400")}
-                                title="썸네일 보기"
+                                onClick={() => {
+                                    if (viewMode !== 'list') {
+                                        setViewMode('list');
+                                    } else {
+                                        setLayoutMode(prev => prev === 'grid' ? 'list' : 'grid');
+                                    }
+                                }}
+                                className={clsx(
+                                    "p-2 rounded-full hover:bg-white/10 transition-colors relative group",
+                                    viewMode === 'list' && "bg-white/20 text-[#a78bfa] shadow-inner"
+                                )}
+                                title={layoutMode === 'grid' ? "리스트 보기로 전환" : "썸네일 보기로 전환"}
                             >
-                                <LayoutGrid className="w-5 h-5" />
-                                {viewMode === 'list' && layoutMode === 'grid' && <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#a78bfa]"></span>}
-                            </button>
-                            <button
-                                onClick={() => { setViewMode('list'); setLayoutMode('list'); }}
-                                className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors relative group", viewMode === 'list' && layoutMode === 'list' ? "bg-white/20 text-[#a78bfa] shadow-inner" : "text-gray-400")}
-                                title="리스트 보기"
-                            >
-                                <List className="w-5 h-5" />
-                                {viewMode === 'list' && layoutMode === 'list' && <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#a78bfa]"></span>}
+                                {viewMode === 'list' && layoutMode === 'list' ? (
+                                    <LayoutGrid className="w-5 h-5" />
+                                ) : (
+                                    <List className="w-5 h-5" />
+                                )}
                             </button>
 
                             <div className="w-[1px] h-5 bg-white/10 mx-1 self-center" />
@@ -1276,7 +1281,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isFavoriteVenuesExpanded && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                            <div className={clsx(
+                                "grid gap-4 sm:gap-6",
+                                layoutMode === 'grid'
+                                    ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
+                                    : "grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+                            )}>
                                 <AnimatePresence mode="popLayout">
                                     {favoriteVenuePerformances.map((performance, index) => (
                                         <motion.div
@@ -1287,19 +1297,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                                             transition={{ duration: 0.3, delay: index * 0.05 }}
                                         >
-                                            <PerformanceCard
-                                                perf={performance}
-                                                distLabel={null}
-                                                venueInfo={venues[performance.venue] || null}
-                                                onLocationClick={(loc) => {
-                                                    setSearchLocation(loc);
-                                                    setViewMode('map');
-                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                }}
-                                                isLiked={likedIds.includes(performance.id)}
-                                                onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                variant="emerald"
-                                            />
+                                            {layoutMode === 'grid' ? (
+                                                <PerformanceCard
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(performance.id)}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="emerald"
+                                                />
+                                            ) : (
+                                                <PerformanceListItem
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(performance.id)}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="emerald"
+                                                />
+                                            )}
                                         </motion.div>
                                     ))}
                                 </AnimatePresence>
@@ -1379,7 +1405,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isLikesExpanded && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                            <div className={clsx(
+                                "grid gap-4 sm:gap-6",
+                                layoutMode === 'grid'
+                                    ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
+                                    : "grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+                            )}>
 
                                 <AnimatePresence mode="popLayout">
                                     {likedPerformances.map((performance, index) => (
@@ -1391,19 +1422,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                                             transition={{ duration: 0.3, delay: index * 0.05 }}
                                         >
-                                            <PerformanceCard
-                                                perf={performance}
-                                                distLabel={null}
-                                                venueInfo={venues[performance.venue] || null}
-                                                onLocationClick={(loc) => {
-                                                    setSearchLocation(loc);
-                                                    setViewMode('map');
-                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                }}
-                                                isLiked={true}
-                                                onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                variant="pink"
-                                            />
+                                            {layoutMode === 'grid' ? (
+                                                <PerformanceCard
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={true}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="pink"
+                                                />
+                                            ) : (
+                                                <PerformanceListItem
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={true}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="pink"
+                                                />
+                                            )}
                                         </motion.div>
                                     ))}
                                 </AnimatePresence>
@@ -1431,7 +1478,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                            <div className={clsx(
+                                "grid gap-4 sm:gap-6",
+                                layoutMode === 'grid'
+                                    ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
+                                    : "grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+                            )}>
                                 <AnimatePresence mode="popLayout">
                                     {keywordMatches.map((performance, idx) => (
                                         <motion.div
@@ -1442,19 +1494,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                                             transition={{ duration: 0.3, delay: idx * 0.05 }}
                                         >
-                                            <PerformanceCard
-                                                perf={performance}
-                                                distLabel={null}
-                                                venueInfo={venues[performance.venue] || null}
-                                                onLocationClick={(loc) => {
-                                                    setSearchLocation(loc);
-                                                    setViewMode('map');
-                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                }}
-                                                isLiked={likedIds.includes(performance.id)}
-                                                onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                variant="yellow"
-                                            />
+                                            {layoutMode === 'grid' ? (
+                                                <PerformanceCard
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(performance.id)}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="yellow"
+                                                />
+                                            ) : (
+                                                <PerformanceListItem
+                                                    perf={performance}
+                                                    distLabel={null}
+                                                    venueInfo={venues[performance.venue] || null}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(performance.id)}
+                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    variant="yellow"
+                                                />
+                                            )}
                                         </motion.div>
                                     ))}
                                 </AnimatePresence>
@@ -1515,7 +1583,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     "w-full transition-all duration-300",
                                     layoutMode === 'grid'
                                         ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6"
-                                        : "flex flex-col gap-3 max-w-5xl mx-auto"
+                                        : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
                                 )}>
                                     {filteredPerformances.length > 0 && (
                                         filteredPerformances.slice(0, visibleCount).map((perf, index) => {
@@ -1698,21 +1766,33 @@ function SkeletonCard() {
 }
 
 // ---------------------------
-// 📋 List View Item Component
+// 📋 List View Item Component (Updated)
 // ---------------------------
-function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald' }) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
 
+    // Determine border/shadow color based on variant
+    const variantStyle = variant === 'emerald'
+        ? "border-emerald-500/30 hover:border-emerald-500/60 hover:shadow-[0_0_15px_-5px_rgba(16,185,129,0.3)]"
+        : variant === 'pink'
+            ? "border-pink-500/30 hover:border-pink-500/60 hover:shadow-[0_0_15px_-5px_rgba(236,72,153,0.3)]"
+            : variant === 'yellow'
+                ? "border-yellow-500/30 hover:border-yellow-500/60 hover:shadow-[0_0_15px_-5px_rgba(234,179,8,0.3)]"
+                : "border-white/5 hover:border-white/20 hover:shadow-xl";
+
     return (
-        <div className="group relative z-10 bg-[#0a0a0a] border border-white/5 hover:border-white/20 rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1 hover:shadow-xl">
+        <div className={clsx(
+            "group relative z-10 bg-[#0a0a0a] border rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1",
+            variantStyle
+        )}>
             {/* Image (Left) */}
-            <div className="relative w-28 sm:w-40 shrink-0 aspect-[4/5] sm:aspect-[4/3] overflow-hidden">
+            <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
                 <Image
                     src={perf.image || "/api/placeholder/400/300"}
                     alt={perf.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 640px) 112px, 160px"
+                    sizes="(max-width: 640px) 128px, 192px"
                     loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -1723,41 +1803,53 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         {distLabel}
                     </div>
                 )}
+
+                {/* Like Button (Moved to Image) */}
+                <button
+                    onClick={onToggleLike}
+                    className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
+                >
+                    <Heart
+                        className={clsx(
+                            "w-4 h-4 transition-all duration-300",
+                            isLiked
+                                ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
+                                : "text-gray-300 hover:text-pink-400 hover:scale-110"
+                        )}
+                    />
+                </button>
             </div>
 
             {/* Content (Right) */}
-            <div className="flex-1 p-3 sm:p-4 flex flex-col justify-between relative min-w-0">
+            <div className="flex-1 p-3 sm:p-5 flex flex-col justify-between relative min-w-0">
 
                 {/* Header: Badges & Title */}
-                <div>
-                    <div className="flex flex-wrap gap-2 mb-1.5 items-center">
+                <div className="flex flex-col gap-1">
+                    <div className="flex flex-wrap gap-2 mb-1 items-center">
                         <span className={clsx(
-                            "px-2 py-0.5 rounded text-[10px] font-bold border",
+                            "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border",
                             genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                         )}>
                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                         </span>
 
-                        {/* Region/District */}
-                        <span className="text-[10px] text-gray-400 border border-white/5 px-1.5 py-0.5 rounded bg-white/5">
-                            {perf.region} {perf.district}
-                        </span>
+                        {/* Removed Region/District Badge as requested */}
 
                         {/* Date - Condensed */}
-                        <span className="text-[10px] text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
+                        <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
                             <Calendar className="w-3 h-3" />
                             {perf.date.split('~')[0].trim()}
                         </span>
                     </div>
 
                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                        <h3 className="text-base sm:text-lg font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
+                        <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
                             {perf.title}
                         </h3>
                     </a>
 
-                    <div className="flex items-center gap-1 text-xs text-gray-400 mt-1">
-                        <MapPin className="w-3 h-3 text-[#a78bfa]" />
+                    <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
+                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -1776,33 +1868,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         {/* Optional extra info */}
                     </div>
 
-                    {/* Interaction Buttons */}
+                    {/* Interaction Buttons - Moved Heart to Image, Removed Booking */}
                     <div className="flex items-center gap-2">
-                        {/* Like Button */}
-                        <button
-                            onClick={onToggleLike}
-                            className={clsx(
-                                "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all border",
-                                isLiked
-                                    ? "bg-pink-500/10 border-pink-500/50 text-pink-500 hover:bg-pink-500 hover:text-white"
-                                    : "bg-gray-800/50 border-gray-700 text-gray-400 hover:border-gray-500 hover:text-white"
-                            )}
-                        >
-                            <Heart className={clsx("w-3.5 h-3.5", isLiked && "fill-current")} />
-                            <span className="hidden xs:inline">{isLiked ? '찜됨' : '찜하기'}</span>
-                        </button>
-
-                        {/* View Details Button */}
-                        <a
-                            href={perf.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={e => e.stopPropagation()}
-                            className="bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white px-3 py-1.5 rounded-full text-xs font-bold transition-colors border border-white/10 hover:border-white/30 flex items-center gap-1"
-                        >
-                            예매
-                            <Share2 className="w-3 h-3" />
-                        </a>
+                        {/* Only keeping View Details if needed? User asked to remove 'Booking/Reservation' button which was the 'Share2' button previously labeled '예매' */}
+                        {/* User said 'Remove Booking button'. */}
+                        {/* Removed Heart, Removed Booking. Is there anything left? */}
+                        {/* If nothing left, we can remove this row or keep it for future. */}
+                        {/* I will remove the entire action row IF empty, but maybe I should keep it for spacing? */}
+                        {/* Let's keep the date here? No, date is up top. */}
                     </div>
                 </div>
             </div>
