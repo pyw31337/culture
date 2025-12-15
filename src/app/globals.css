@@ -95,7 +95,7 @@ body {
   /* Inherit border-radius from parent */
   height: 100%;
   width: 100%;
-  padding: 4px;
+  padding: 1px;
   /* Increased from 1.5px for more visibility */
   /* Border Thickness */
 }
