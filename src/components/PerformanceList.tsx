@@ -835,7 +835,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
 
                 {/* Hero Search Bar */}
-                <div className="w-full lg:w-auto relative group z-[60]">
+                <div className={clsx("w-full lg:w-auto relative group", isDropdownOpen && activeSearchSource === 'hero' ? "z-[120]" : "z-[60]")}>
                     <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
                         <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative mix-blend-hard-light">
                             {/* Radius Select for Hero */}
