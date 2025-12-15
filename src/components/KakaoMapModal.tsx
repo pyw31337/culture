@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
+import { getOptimizedUrl } from '@/lib/utils';
 
 interface Venue {
     name: string;
@@ -27,6 +28,7 @@ interface KakaoMapModalProps {
 export default function KakaoMapModal({ performances, onClose, centerLocation, favoriteVenues, onToggleFavorite }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
+    const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
     const overlaysRef = useRef<Record<string, any>>({});
 
     useEffect(() => {
@@ -40,7 +42,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
                         : new window.kakao.maps.LatLng(37.554648, 126.972559), // Default: Seoul Station
-                    level: centerLocation ? 5 : 7 // Default level 7 (approx 500m scale)
+                    level: centerLocation ? 4 : 6 // Level 4 (100m) for specific venue, Level 6 (250m) for region view
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
@@ -172,7 +174,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         // Image
                         if (p.image) {
                             const img = document.createElement('img');
-                            img.src = p.image;
+                            // Optimize image size for small thumbnail (approx 40px width => req 80px for retina)
+                            img.src = getOptimizedUrl(p.image, 80);
                             img.className = 'w-10 h-14 object-cover rounded bg-gray-100 shrink-0';
                             item.appendChild(img);
                         }
@@ -215,11 +218,15 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
 
                     // Toggle Popup
                     content.onclick = () => {
-                        // Close others? For now let's just toggle this one
-                        if (popupOverlay.getMap()) {
-                            popupOverlay.setMap(null);
+                        const isOpen = popupOverlay.getMap();
+                        // Close all
+                        Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
+
+                        if (isOpen) {
+                            setSelectedVenue(null);
                         } else {
                             popupOverlay.setMap(map);
+                            setSelectedVenue(venueName);
                         }
                     };
                 });
@@ -325,25 +332,37 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">
                             {uniqueVenues.map((v: any) => {
                                 const isFavorite = favoriteVenues.includes(v.venueName);
+                                const isSelected = selectedVenue === v.venueName;
                                 return (
                                     <button
                                         key={v.venueName}
                                         onClick={() => {
                                             if (mapInstance && v.lat && v.lng) {
-                                                const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                mapInstance.panTo(moveLatLon);
+                                                if (isSelected) {
+                                                    // Close
+                                                    const overlay = overlaysRef.current[v.venueName];
+                                                    if (overlay) overlay.setMap(null);
+                                                    setSelectedVenue(null);
+                                                } else {
+                                                    // Open
+                                                    const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                    mapInstance.panTo(moveLatLon);
 
-                                                // Open Overlay
-                                                const overlay = overlaysRef.current[v.venueName];
-                                                if (overlay) {
                                                     Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
-                                                    overlay.setMap(mapInstance);
+                                                    const overlay = overlaysRef.current[v.venueName];
+                                                    if (overlay) overlay.setMap(mapInstance);
+                                                    setSelectedVenue(v.venueName);
                                                 }
                                             }
                                         }}
-                                        className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl border text-left flex flex-col gap-1 transition ${isFavorite
-                                            ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
-                                            : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
+                                        className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300
+                                            ${isSelected
+                                                ? 'ring-4 ring-blue-500 scale-[1.02] z-10'
+                                                : 'border hover:scale-[1.01]'
+                                            }
+                                            ${isFavorite
+                                                ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
+                                                : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
                                             }`}
                                     >
                                         <div className="flex justify-between items-start w-full">

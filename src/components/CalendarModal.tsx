@@ -166,7 +166,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     >
                         <div className="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800">
                             <h3 className="text-lg font-bold text-white">
-                                {format(selectedDate, 'yyyy년 M월 d일', { locale: ko })}
+                                {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
                             </h3>
                             <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-700 rounded-full text-gray-400 hover:text-white">
                                 <X className="w-5 h-5" />
