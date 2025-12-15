@@ -47,6 +47,7 @@ jobs:
         run: |
           npx tsx scripts/scrape-kovo.ts
           npx tsx scripts/scrape-kbl.ts
+          npx tsx scripts/scrape-festival.ts
 
       - name: Commit and Push changes
         run: |

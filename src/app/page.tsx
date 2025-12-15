@@ -4,6 +4,14 @@ import PerformanceList from '@/components/PerformanceList';
 import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
 
+// Festival data - will be empty array if file doesn't exist yet
+let festivalData: any[] = [];
+try {
+    festivalData = require('@/data/festivals.json');
+} catch (e) {
+    console.log('No festivals.json found, using empty array');
+}
+
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -67,8 +75,9 @@ async function getPerformances() {
     // However, JSON import might be typed as any or inferred.
     const volleyball = kovoData as unknown as any[];
     const basketball = kblData as unknown as any[];
+    const festivals = festivalData as unknown as any[];
 
-    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball];
+    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals];
 
     // Filter expired
     // We use a fixed "now" for static build. 
