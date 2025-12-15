@@ -53,6 +53,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
     const [selectedGenre, setSelectedGenre] = useState<string>('all');
+    const [isLikesExpanded, setIsLikesExpanded] = useState(true);
 
     // Debug Data Availability
     useEffect(() => {
@@ -606,7 +607,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
-                            서울 · 경기 · 인천 통합 공연 검색
+                            서울 · 경기 · 인천 통합 문화 검색
                         </span>
                     </div>
 
@@ -1139,7 +1140,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
-                            onClick={() => setShowLikes(!showLikes)}
+                            onClick={() => setIsLikesExpanded(!isLikesExpanded)}
                         >
                             <h3 className="text-xl font-bold text-pink-500 flex items-center">
                                 <Heart className="w-6 h-6 fill-pink-500 text-pink-500 mr-2" />
@@ -1147,37 +1148,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({likedPerformances.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
-                                <ChevronUp className="w-6 h-6" />
+                                {isLikesExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
                             </button>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
-                            <AnimatePresence mode="popLayout">
-                                {likedPerformances.map((performance, index) => (
-                                    <motion.div
-                                        key={`liked-${performance.id}`}
-                                        layout
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                                    >
-                                        <PerformanceCard
-                                            perf={performance}
-                                            distLabel={null}
-                                            venueInfo={venues[performance.venue] || null}
-                                            onLocationClick={(loc) => {
-                                                setSearchLocation(loc);
-                                                setViewMode('map');
-                                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                            }}
-                                            isLiked={true}
-                                            onToggleLike={(e) => toggleLike(performance.id, e)}
-                                            variant="pink"
-                                        />
-                                    </motion.div>
-                                ))}
-                            </AnimatePresence>
-                        </div>
+                        {isLikesExpanded && (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+
+                                <AnimatePresence mode="popLayout">
+                                    {likedPerformances.map((performance, index) => (
+                                        <motion.div
+                                            key={`liked-${performance.id}`}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                                        >
+                                            <PerformanceCard
+                                                perf={performance}
+                                                distLabel={null}
+                                                venueInfo={venues[performance.venue] || null}
+                                                onLocationClick={(loc) => {
+                                                    setSearchLocation(loc);
+                                                    setViewMode('map');
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
+                                                isLiked={true}
+                                                onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                variant="pink"
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                            </div>
+                        )}
                     </div>
                 )
             }
