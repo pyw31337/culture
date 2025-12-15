@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -13,6 +13,7 @@ import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
 import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
+import LZString from 'lz-string';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
@@ -150,6 +151,68 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
+    const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
+
+    // Share URL Generation
+    const generateShareUrl = () => {
+        const shareData = {
+            l: likedIds,      // liked performance IDs
+            v: favoriteVenues, // favorite venue names
+            k: keywords        // keywords
+        };
+        const compressed = LZString.compressToEncodedURIComponent(JSON.stringify(shareData));
+        const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
+        return `${baseUrl}#s=${compressed}`;
+    };
+
+    const copyShareUrl = async () => {
+        const url = generateShareUrl();
+        try {
+            await navigator.clipboard.writeText(url);
+            setShareUrlCopied(true);
+            setTimeout(() => setShareUrlCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy URL:', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = url;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setShareUrlCopied(true);
+            setTimeout(() => setShareUrlCopied(false), 2000);
+        }
+    };
+
+    // Load shared data from URL on mount
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const hash = window.location.hash;
+        if (hash.startsWith('#s=')) {
+            try {
+                const compressed = hash.substring(3);
+                const decompressed = LZString.decompressFromEncodedURIComponent(compressed);
+                if (decompressed) {
+                    const shareData = JSON.parse(decompressed);
+                    if (shareData.l && Array.isArray(shareData.l)) {
+                        setLikedIds(shareData.l);
+                    }
+                    if (shareData.v && Array.isArray(shareData.v)) {
+                        setFavoriteVenues(shareData.v);
+                    }
+                    if (shareData.k && Array.isArray(shareData.k)) {
+                        setKeywords(shareData.k);
+                    }
+                    // Clear the hash after loading
+                    window.history.replaceState(null, '', window.location.pathname);
+                    console.log('[Share] Loaded shared data:', shareData);
+                }
+            } catch (e) {
+                console.error('Failed to parse shared URL:', e);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         const savedVenues = localStorage.getItem('culture_favorite_venues');
@@ -1170,6 +1233,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 {keywords.length}
                                             </span>
                                         )}
+                                    </button>
+
+                                    {/* Share Button */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            copyShareUrl();
+                                        }}
+                                        disabled={likedIds.length === 0 && favoriteVenues.length === 0 && keywords.length === 0}
+                                        className={clsx(
+                                            "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
+                                            (likedIds.length > 0 || favoriteVenues.length > 0 || keywords.length > 0)
+                                                ? (shareUrlCopied
+                                                    ? "bg-green-500 border-green-500 text-black"
+                                                    : "border-[#a78bfa]/50 text-[#a78bfa] hover:bg-[#a78bfa] hover:text-black")
+                                                : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
+                                        )}
+                                        title="내 설정 공유하기"
+                                    >
+                                        {shareUrlCopied ? (
+                                            <Check className="w-4 h-4" />
+                                        ) : (
+                                            <Link2 className="w-4 h-4" />
+                                        )}
+                                        <span>{shareUrlCopied ? '복사됨!' : '공유'}</span>
                                     </button>
                                 </div>
 
