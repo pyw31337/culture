@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw, List } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -533,7 +533,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // View Mode State
     const [viewMode, setViewMode] = useState<'list' | 'calendar' | 'map'>('list');
-    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Toggles thumbnails (grid) vs list row
 
 
 
@@ -657,13 +656,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div className="flex items-center gap-4">
                         {/* View Mode Toggles */}
                         <div className="flex gap-2 mix-blend-luminosity">
-                            <button
-                                onClick={() => setLayoutMode(prev => prev === 'grid' ? 'list' : 'grid')}
-                                className={clsx("p-2 rounded-full hover:bg-white/10", layoutMode === 'list' && "bg-white/20")}
-                                title={layoutMode === 'grid' ? "리스트 보기" : "썸네일 보기"}
-                            >
-                                {layoutMode === 'grid' ? <List className="w-5 h-5" /> : <LayoutGrid className="w-5 h-5" />}
-                            </button>
+                            <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
                         </div>
@@ -721,7 +714,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 {/* Hero Search Bar */}
                 <div className="w-full lg:w-auto relative group z-[60]">
-                    <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
+                    <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
                         <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative mix-blend-hard-light">
                             {/* Radius Select for Hero */}
                             {activeLocation && (
@@ -1096,7 +1089,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                showFavoriteVenues ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
+                                                isFavoriteVenuesExpanded ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {favoriteVenues.length}
                                             </span>
@@ -1252,7 +1245,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isFavoriteVenuesExpanded && (
-                            <div className={clsx("grid gap-4 sm:gap-6", layoutMode === 'list' ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5")}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
                                 <AnimatePresence mode="popLayout">
                                     {favoriteVenuePerformances.map((performance, index) => (
                                         <motion.div
@@ -1275,7 +1268,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 isLiked={likedIds.includes(performance.id)}
                                                 onToggleLike={(e) => toggleLike(performance.id, e)}
                                                 variant="emerald"
-                                                layout={layoutMode}
                                             />
                                         </motion.div>
                                     ))}
@@ -1304,7 +1296,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isLikesExpanded && (
-                            <div className={clsx("grid gap-4 sm:gap-6", layoutMode === 'list' ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5")}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
 
                                 <AnimatePresence mode="popLayout">
                                     {likedPerformances.map((performance, index) => (
@@ -1328,7 +1320,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 isLiked={true}
                                                 onToggleLike={(e) => toggleLike(performance.id, e)}
                                                 variant="pink"
-                                                layout={layoutMode}
                                             />
                                         </motion.div>
                                     ))}
@@ -1357,7 +1348,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className={clsx("grid gap-4 sm:gap-6", layoutMode === 'list' ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5")}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
                                 <AnimatePresence mode="popLayout">
                                     {keywordMatches.map((performance, idx) => (
                                         <motion.div
@@ -1380,7 +1371,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 isLiked={likedIds.includes(performance.id)}
                                                 onToggleLike={(e) => toggleLike(performance.id, e)}
                                                 variant="yellow"
-                                                layout={layoutMode}
                                             />
                                         </motion.div>
                                     ))}
@@ -1426,7 +1416,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className={clsx(
                     "grid gap-6",
                     viewMode === 'list'
-                        ? (layoutMode === 'list' ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5") // List Mode: Multi-column
+                        ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5" // List Mode: Multi-column
                         : viewMode === 'map'
                             ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" // Map Mode (Bottom sheet style)
                             : "grid-cols-1" // Calendar Mode (Not grid)
@@ -1465,7 +1455,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             }}
                                             isLiked={likedIds.includes(perf.id)}
                                             onToggleLike={(e) => toggleLike(perf.id, e)}
-                                            layout={layoutMode}
                                         />
                                     </motion.div>
                                 );
@@ -1587,10 +1576,7 @@ function SkeletonCard() {
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-// ---------------------------
-// 🌟 3D Tilt Card Component
-// ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, layout = 'grid' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, layout?: 'grid' | 'list' }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
 
 
     const cardRef = useRef<HTMLDivElement>(null);
@@ -1646,11 +1632,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)]",
-                        // Container Shape Logic
-                        layout === 'list'
-                            ? "h-[200px] w-full rounded-2xl"
-                            : (variant === 'yellow' || variant === 'pink' || variant === 'emerald' ? "rounded-xl h-full" : "rounded-2xl aspect-[2/3] h-full")
+                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full",
+                        variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : variant === 'emerald' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
                     )
                 }
                 style={{ transformStyle: 'preserve-3d' }}
@@ -1662,8 +1645,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     />
 
                     <div className={clsx(
-                        "gold-shimmer-main overflow-hidden",
-                        layout === 'list' ? "flex flex-row h-full" : "flex flex-col h-full",
+                        "gold-shimmer-main flex flex-col overflow-hidden",
                         variant === 'yellow'
                             ? "bg-yellow-500 ring-1 ring-yellow-500/50 hover:ring-white/50"
                             : variant === 'pink'
@@ -1685,14 +1667,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     "w-6 h-6 transition-all duration-300",
                                     isLiked
                                         ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                                        : (variant === 'default' && layout === 'grid' ? "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110" : "text-white/70 hover:text-white hover:fill-white/20 hover:scale-110")
+                                        : "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110"
                                 )}
                             />
                         </button>
 
                         {/* Neon Stroke Effect (Border Gradient) */}
 
-                        {variant === 'default' && (
+                        {variant !== 'yellow' && variant !== 'pink' && (
                             <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                         )}
 
@@ -1703,129 +1685,150 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             style={{ left: '-25%', top: '-25%' }}
                         />
 
-                        {/* --- CONTENT LOGIC --- */}
-                        {/* 
-                            We unify the structure partially.
-                            If Layout == List: Image (Left) + Content (Right).
-                            If Layout == Grid: Image (Top/Full) + Content (Bottom/Overlay).
-                         */}
+                        {/* --- VARIANT: YELLOW/PINK/EMERALD (Interest) --- */}
+                        {variant === 'yellow' || variant === 'pink' || variant === 'emerald' ? (
+                            <>
+                                {/* Image Section (Top, Aspect 3/4) */}
 
-                        {/* Image Section */}
-                        <div className={clsx(
-                            "relative overflow-hidden shrink-0",
-                            layout === 'list'
-                                ? "w-[140px] sm:w-[160px] h-full"
-                                : (variant === 'default' ? "absolute inset-0 z-0 h-full w-full" : "aspect-[3/4] w-full")
-                        )}>
-                            <div className="absolute inset-0 z-0 h-full w-full">
-                                <Image
-                                    src={perf.image || "/api/placeholder/400/300"}
-                                    alt={perf.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                    loading="lazy"
-                                />
-                                {variant !== 'default' && (
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
-                                )}
-                                {variant === 'default' && layout === 'list' && (
-                                    <div className="absolute inset-0 bg-black/10" />
-                                )}
-                                {variant === 'default' && layout === 'grid' && (
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-                                )}
-                            </div>
-
-                            {/* Badges (Interest Variants) */}
-                            {(variant === 'yellow' || variant === 'pink' || variant === 'emerald') && (
-                                <div
-                                    className={clsx(
-                                        "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
-                                        variant === 'yellow'
-                                            ? "bg-black/80 text-yellow-500 border-yellow-500/30"
-                                            : variant === 'pink'
-                                                ? "bg-black/80 text-pink-500 border-pink-500/30"
-                                                : "bg-black/80 text-emerald-500 border-emerald-500/30"
-                                    )}
-                                    style={{ transform: 'translateZ(20px)' }}
-                                >
-                                    {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
-                                    {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
+                                <div className="relative aspect-[3/4] overflow-hidden shrink-0">
+                                    <div className="absolute inset-0 z-0">
+                                        <Image
+                                            src={perf.image || "/api/placeholder/400/300"}
+                                            alt={perf.title}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                            loading="lazy"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+                                    </div>
+                                    {/* Badge */}
+                                    <div
+                                        className={clsx(
+                                            "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                            variant === 'yellow'
+                                                ? "bg-black/80 text-yellow-500 border-yellow-500/30"
+                                                : variant === 'pink'
+                                                    ? "bg-black/80 text-pink-500 border-pink-500/30"
+                                                    : "bg-black/80 text-emerald-500 border-emerald-500/30"
+                                        )}
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
+                                        {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
+                                    </div>
                                 </div>
-                            )}
-                        </div>
 
-                        {/* Content Section */}
-                        {/* 
-                            List View: Content fills remaining space.
-                            Grid View (Default): Overlay at bottom.
-                            Grid View (Interest): Below image.
-                        */}
-                        <div className={clsx(
-                            "flex flex-col transform-style-3d relative z-20",
-                            layout === 'list'
-                                ? "flex-1 p-4 justify-between"
-                                : (variant === 'default' ? "absolute inset-x-0 bottom-0 p-5" : "p-4 flex-1 bg-inherit")
-                        )} style={{ transform: 'translateZ(30px)' }}>
+                                {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
+                                <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
+                                        <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
+                                            {perf.title}
+                                        </h3>
+                                    </a>
 
-                            {/* Top Content (Tags Area) */}
-                            <div className="mb-auto">
-                                <div className="flex flex-wrap gap-2 mb-2">
-                                    <span className={clsx(
-                                        "px-2 py-0.5 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
-                                        variant === 'default'
-                                            ? (GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
-                                            : "bg-black text-white"
-                                    )}>
-                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                    </span>
-                                    {layout === 'list' && (
-                                        <span className="text-gray-900 bg-white/50 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1">
-                                            {perf.date}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                        }}
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                    >
+                                        <MapPin className="w-3 h-3 text-gray-700" />
+                                        {perf.venue}
+                                    </button>
+                                    <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
+                                        <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
-                                    )}
+                                        <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            {/* Main Title Area */}
-                            <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
-                                <h3 className={clsx(
-                                    "font-[800] tracking-tighter mb-1 leading-tight line-clamp-2 transition-colors",
-                                    layout === 'list' ? (variant === 'default' ? "text-xl text-white group-hover/link:text-[#a78bfa]" : "text-xl text-black group-hover:opacity-80") :
-                                        (variant === 'default' ? "text-xl md:text-2xl text-white group-hover/link:text-[#a78bfa] drop-shadow-lg" : "text-lg text-black group-hover:opacity-80")
-                                )}>
-                                    {perf.title}
-                                </h3>
-                            </a>
-
-                            {/* Bottom Info Area */}
-                            <div className={clsx("mt-2", layout === 'list' ? "flex items-center justify-between" : (variant === 'default' ? "" : "border-t border-black/10 pt-2 flex justify-between items-end"))}>
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                    }}
-                                    className={clsx(
-                                        "text-sm flex items-center gap-1 hover:underline truncate max-w-[70%]",
-                                        layout === 'list'
-                                            ? (variant === 'default' ? "text-gray-300 hover:text-[#a78bfa]" : "text-gray-800 hover:text-black font-medium")
-                                            : (variant === 'default' ? "text-gray-300 hover:text-[#a78bfa]" : "text-gray-800 hover:text-black font-medium")
-                                    )}
-                                >
-                                    <MapPin className={clsx("w-3.5 h-3.5", variant === 'default' ? "text-[#a78bfa]" : "text-gray-700")} />
-                                    {perf.venue}
-                                </button>
-                                {layout === 'grid' && variant !== 'default' && (
-                                    <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                            </>
+                        ) : (
+                            /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
+                            <>
+                                {/* Image Layer */}
+                                {perf.image ? (
+                                    <Image
+                                        src={perf.image}
+                                        alt={perf.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
                                 )}
-                            </div>
-                        </div>
 
+                                {/* Distance Badge (Top Right) */}
+                                {distLabel && (
+                                    <div
+                                        className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        {distLabel}
+                                    </div>
+                                )}
+
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+
+                                {/* Content Layer (Bottom) - Fixed Position */}
+                                <div
+                                    className="absolute inset-x-0 bottom-0 p-5 z-20"
+                                    style={{ transform: 'translateZ(30px)' }} // 3D Depth
+                                >
+
+                                    {/* Tags/Badges */}
+                                    <div className="flex flex-wrap gap-2 mb-2">
+                                        <span className={clsx(
+                                            "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                            GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                        )}>
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </span>
+                                        {/* Date Badge */}
+                                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                            <Calendar className="w-3.5 h-3.5" />
+                                            {(() => {
+                                                const parts = perf.date.split('~').map((s: string) => s.trim());
+                                                return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
+                                            })()}
+                                        </span>
+                                    </div>
+
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
+                                        <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                            {perf.title}
+                                        </h3>
+                                    </a>
+
+                                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (venueInfo?.lat && venueInfo?.lng) {
+                                                    onLocationClick({
+                                                        lat: venueInfo.lat,
+                                                        lng: venueInfo.lng,
+                                                        name: perf.venue
+                                                    });
+                                                }
+                                            }}
+                                            className="hover:text-[#a78bfa] hover:underline truncate"
+                                        >
+                                            {perf.venue}
+                                        </button>
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
-
