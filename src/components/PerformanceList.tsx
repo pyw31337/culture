@@ -1766,116 +1766,170 @@ function SkeletonCard() {
 }
 
 // ---------------------------
-// 📋 List View Item Component (Updated)
+// 📋 List View Item Component (Updated with Tilt/Shadow)
 // ---------------------------
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald' }) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
+    const cardRef = useRef<HTMLDivElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
 
-    // Determine border/shadow/bg color based on variant
-    const variantStyle = variant === 'emerald'
-        ? "bg-emerald-950/20 border-emerald-500/30 hover:border-emerald-500/60 hover:shadow-[0_0_15px_-5px_rgba(16,185,129,0.3)]"
+    // Tilt handlers (same as PerformanceCard)
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current || !glareRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5; // Less tilt for horizontal card
+        const rotateY = ((x - centerX) / centerX) * 5;
+        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+        glareRef.current.style.transform = `translateX(${(x - centerX) / 3}px) translateY(${(y - centerY) / 3}px)`;
+        glareRef.current.style.opacity = '1';
+    };
+
+    const handleMouseLeave = () => {
+        if (!cardRef.current || !glareRef.current) return;
+        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+        glareRef.current.style.opacity = '0';
+    };
+
+    const handleTouchStart = () => {
+        if (!cardRef.current) return;
+        cardRef.current.style.transform = `perspective(1000px) rotateX(3deg) scale3d(0.99, 0.99, 0.99)`;
+    };
+
+    const handleTouchEnd = () => {
+        if (!cardRef.current) return;
+        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+    };
+
+    // Variant styles for outer card border/shadow
+    const outerVariantStyle = variant === 'emerald'
+        ? "border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
         : variant === 'pink'
-            ? "bg-pink-950/20 border-pink-500/30 hover:border-pink-500/60 hover:shadow-[0_0_15px_-5px_rgba(236,72,153,0.3)]"
+            ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
             : variant === 'yellow'
-                ? "bg-yellow-950/20 border-yellow-500/30 hover:border-yellow-500/60 hover:shadow-[0_0_15px_-5px_rgba(234,179,8,0.3)]"
-                : "bg-[#0a0a0a] border-white/5 hover:border-white/20 hover:shadow-xl";
+                ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
+                : "border-white/5 hover:border-white/20 shadow-xl hover:shadow-2xl";
+
+    // Content background for colored variants
+    const contentBgStyle = variant === 'emerald'
+        ? "bg-emerald-950/40"
+        : variant === 'pink'
+            ? "bg-pink-950/40"
+            : variant === 'yellow'
+                ? "bg-yellow-950/40"
+                : ""; // Default: transparent (no bg class)
 
     return (
-        <div className={clsx(
-            "group relative z-10 border rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1",
-            variantStyle
-        )}>
-            {/* Image (Left) */}
-            <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
-                <Image
-                    src={perf.image || "/api/placeholder/400/300"}
-                    alt={perf.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 640px) 128px, 192px"
-                    loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-
-                {/* Distance Badge on Image */}
-                {distLabel && (
-                    <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md">
-                        {distLabel}
-                    </div>
+        <div
+            className="perspective-1000 cursor-pointer group relative hover:z-[9999]"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+        >
+            <div
+                ref={cardRef}
+                className={clsx(
+                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border",
+                    outerVariantStyle
                 )}
+                style={{ transformStyle: 'preserve-3d' }}
+            >
+                {/* Glare Effect */}
+                <div
+                    ref={glareRef}
+                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200"
+                    style={{
+                        background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 60%)',
+                        mixBlendMode: 'overlay',
+                    }}
+                />
 
-                {/* Like Button (Moved to Image) */}
-                <button
-                    onClick={onToggleLike}
-                    className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
-                >
-                    <Heart
-                        className={clsx(
-                            "w-4 h-4 transition-all duration-300",
-                            isLiked
-                                ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                                : "text-gray-300 hover:text-pink-400 hover:scale-110"
-                        )}
+                {/* Image (Left) */}
+                <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
+                    <Image
+                        src={perf.image || "/api/placeholder/400/300"}
+                        alt={perf.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 640px) 128px, 192px"
+                        loading="lazy"
                     />
-                </button>
-            </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
-            {/* Content (Right) */}
-            <div className="flex-1 p-3 sm:p-5 flex flex-col justify-between relative min-w-0">
+                    {/* Distance Badge on Image */}
+                    {distLabel && (
+                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md">
+                            {distLabel}
+                        </div>
+                    )}
 
-                {/* Header: Badges & Title */}
-                <div className="flex flex-col gap-1">
-                    <div className="flex flex-wrap gap-2 mb-1 items-center">
-                        <span className={clsx(
-                            "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border",
-                            genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
-                        )}>
-                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                        </span>
-
-                        {/* Removed Region/District Badge as requested */}
-
-                        {/* Date - Condensed */}
-                        <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
-                            <Calendar className="w-3 h-3" />
-                            {perf.date.split('~')[0].trim()}
-                        </span>
-                    </div>
-
-                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                        <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
-                            {perf.title}
-                        </h3>
-                    </a>
-
-                    <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
-                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                            }}
-                            className="hover:text-white hover:underline truncate"
-                        >
-                            {perf.venue}
-                        </button>
-                    </div>
+                    {/* Like Button (on Image) */}
+                    <button
+                        onClick={onToggleLike}
+                        className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
+                    >
+                        <Heart
+                            className={clsx(
+                                "w-4 h-4 transition-all duration-300",
+                                isLiked
+                                    ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
+                                    : "text-gray-300 hover:text-pink-400 hover:scale-110"
+                            )}
+                        />
+                    </button>
                 </div>
 
-                {/* Actions (Bottom Right Absolute or Flex) */}
-                <div className="mt-2 flex items-end justify-between border-t border-white/5 pt-2">
-                    <div className="flex gap-2">
-                        {/* Optional extra info */}
+                {/* Content (Right) - Apply variant background here */}
+                <div className={clsx(
+                    "flex-1 p-3 sm:p-5 flex flex-col justify-between relative min-w-0",
+                    contentBgStyle
+                )}>
+
+                    {/* Header: Badges & Title */}
+                    <div className="flex flex-col gap-1">
+                        <div className="flex flex-wrap gap-2 mb-1 items-center">
+                            <span className={clsx(
+                                "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border",
+                                genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
+                            )}>
+                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                            </span>
+
+                            {/* Date - Condensed */}
+                            <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
+                                <Calendar className="w-3 h-3" />
+                                {perf.date.split('~')[0].trim()}
+                            </span>
+                        </div>
+
+                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                            <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
+                                {perf.title}
+                            </h3>
+                        </a>
+
+                        <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
+                            <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                }}
+                                className="hover:text-white hover:underline truncate"
+                            >
+                                {perf.venue}
+                            </button>
+                        </div>
                     </div>
 
-                    {/* Interaction Buttons - Moved Heart to Image, Removed Booking */}
-                    <div className="flex items-center gap-2">
-                        {/* Only keeping View Details if needed? User asked to remove 'Booking/Reservation' button which was the 'Share2' button previously labeled '예매' */}
-                        {/* User said 'Remove Booking button'. */}
-                        {/* Removed Heart, Removed Booking. Is there anything left? */}
-                        {/* If nothing left, we can remove this row or keep it for future. */}
-                        {/* I will remove the entire action row IF empty, but maybe I should keep it for spacing? */}
-                        {/* Let's keep the date here? No, date is up top. */}
+                    {/* Actions Footer (kept for spacing/future use) */}
+                    <div className="mt-2 flex items-end justify-between border-t border-white/5 pt-2">
+                        <div className="flex gap-2" />
+                        <div className="flex items-center gap-2" />
                     </div>
                 </div>
             </div>
