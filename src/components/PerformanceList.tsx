@@ -184,12 +184,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // New: Keyword Section Toggle
     const [isKeywordsExpanded, setIsKeywordsExpanded] = useState(true);
 
-    // Auto-collapse logic: Collapse when sticky (top reached), Expand when not sticky (scrolled up)
+    // Auto-collapse logic: Collapse when sticky (top reached)
     useEffect(() => {
         if (isSticky) {
             setIsFilterExpanded(false);
-        } else {
-            setIsFilterExpanded(true);
         }
     }, [isSticky]);
 
@@ -669,7 +667,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 }}
                                 className={clsx(
                                     "p-2 rounded-full hover:bg-white/10 transition-colors relative group",
-                                    viewMode === 'list' && "bg-white/20 text-[#a78bfa] shadow-inner"
+                                    viewMode === 'list' ? "bg-white/20 text-white shadow-inner" : "text-gray-400"
                                 )}
                                 title={layoutMode === 'grid' ? "리스트 보기로 전환" : "썸네일 보기로 전환"}
                             >
@@ -680,8 +678,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 )}
                             </button>
 
-                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'calendar' ? "bg-white/20 text-blue-400" : "text-gray-400")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
-                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'map' ? "bg-white/20 text-green-400" : "text-gray-400")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
+                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'calendar' ? "bg-white/20 text-white" : "text-gray-400")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
+                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'map' ? "bg-white/20 text-white" : "text-gray-400")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
                         </div>
                     </div>
                 </div>
@@ -918,19 +916,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (likedIds.length > 0) {
-                                            setIsFilterExpanded(true);
-                                            // Toggle logic if needed, or just open
+                                            setShowLikes(!showLikes);
                                         }
                                     }}
                                     disabled={likedIds.length === 0}
                                     className={clsx(
                                         "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
                                         likedIds.length > 0
-                                            ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer"
+                                            ? (showLikes
+                                                ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(236,72,153,0.3)]"
+                                                : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
                                             : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
                                     )}
                                 >
-                                    <Heart className={clsx("w-3 h-3", likedIds.length > 0 ? "fill-current" : "text-gray-600")} />
+                                    <Heart className={clsx("w-3 h-3", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
                                     <span className="hidden sm:inline">좋아요</span>
                                 </button>
 
@@ -1906,7 +1905,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
-                                {perf.title}
+                                {perf.title.trim()}
                             </h3>
                         </a>
 
@@ -2079,7 +2078,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
-                                            {perf.title}
+                                            {perf.title.trim()}
                                         </h3>
                                     </a>
 
@@ -2157,7 +2156,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                            {perf.title}
+                                            {perf.title.trim()}
                                         </h3>
                                     </a>
 
