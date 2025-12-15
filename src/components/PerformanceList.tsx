@@ -558,13 +558,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             // If sentinel is scrolled out of view (top <= 0), we are sticky.
             const rect = sentinelRef.current.getBoundingClientRect();
 
-            // Use 0 as threshold. If sentinel top <= 0, it means the sticky element (next sib)
-            // is effectively at the viewport top.
-            const isStuck = rect.top <= 0;
+            // Improved Logic with Hysteresis
+            // Prevent flickering by requiring a buffer to switch states.
+            const currentTop = rect.top;
 
             setIsSticky(prev => {
-                if (prev !== isStuck) return isStuck;
-                return prev;
+                if (prev) {
+                    // Currently Sticky (Collapsed).
+                    // Only expand if we scroll back UP significantly (e.g., reach the top).
+                    // Using 0 ensures we are really back at the anchor before expanding.
+                    return currentTop <= 0;
+                } else {
+                    // Currently Not Sticky (Expanded).
+                    // Only collapse if we scroll DOWN past a threshold (e.g., -20px).
+                    // This prevents jitter at the precise boundary.
+                    return currentTop <= -20;
+                }
             });
         };
 
