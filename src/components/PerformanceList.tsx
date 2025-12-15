@@ -85,6 +85,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);   // New: Dropdown visibility
     const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero'); // New: Track active input
     const [isSdkLoaded, setIsSdkLoaded] = useState(false);         // New: Track SDK Load Status
+    const [highlightedIndex, setHighlightedIndex] = useState(-1);  // New: Keyboard Navigation
 
     // Keyword Notification System
     const [keywords, setKeywords] = useState<string[]>([]);
@@ -373,8 +374,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             setSearchLocation(null);
             setSearchResults([]); // specific clear
         }
-        // Open dropdown if text exists
         if (val) setIsDropdownOpen(true);
+        setHighlightedIndex(-1); // Reset highlight on typing
         // Close dropdown if text is cleared
         if (!val) {
             setIsDropdownOpen(false);
@@ -467,6 +468,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 }
             });
         });
+
+        // Auto-collapse special sections on search
+        setIsLikesExpanded(false);
+        setIsFavoriteVenuesExpanded(false);
     };
 
     const handleSelectResult = (candidate: any) => {
@@ -477,10 +482,36 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         });
         setSearchText(candidate.name); // Update input to selected name? User might want to refine.
         setIsDropdownOpen(false);
+        setHighlightedIndex(-1);
+
+        // Auto-collapse special sections
+        setIsLikesExpanded(false);
+        setIsFavoriteVenuesExpanded(false);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') handleSearch();
+        if (e.nativeEvent.isComposing) return; // Ignore IME composition
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (isDropdownOpen && searchResults.length > 0) {
+                setHighlightedIndex(prev => (prev + 1) % searchResults.length);
+            }
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (isDropdownOpen && searchResults.length > 0) {
+                setHighlightedIndex(prev => (prev - 1 + searchResults.length) % searchResults.length);
+            }
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (isDropdownOpen && highlightedIndex >= 0 && searchResults[highlightedIndex]) {
+                handleSelectResult(searchResults[highlightedIndex]);
+            } else {
+                handleSearch();
+            }
+        } else if (e.key === 'Escape') {
+            setIsDropdownOpen(false);
+        }
     };
 
     // Extract districts for the selected region
@@ -902,7 +933,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <div
                                         key={`search-hero-${idx}`}
                                         onClick={() => handleSelectResult(result)}
-                                        className="px-5 py-4 hover:bg-white/10 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors bg-[#1a1a1a]"
+                                        className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                            }`}
                                     >
                                         <div className="flex items-center gap-3 min-w-0">
                                             <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
@@ -1081,7 +1113,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                             e.stopPropagation();
                                                             handleSelectResult(result);
                                                         }}
-                                                        className="px-4 py-3 hover:bg-white/10 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors bg-[#1a1a1a]"
+                                                        className={`px-4 py-3 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                                            }`}
                                                     >
                                                         <div className="flex items-center gap-2 min-w-0">
                                                             <div className="bg-black/50 p-1.5 rounded-full shrink-0 border border-white/10">
@@ -1683,11 +1716,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </>
                                 )}
                             </h2>
-                            <p className="text-gray-400 text-xs sm:text-sm font-medium pb-[3px]">
-                                {activeLocation
-                                    ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
-                                    : null}
-                            </p>
+                            <div className="flex items-center gap-2 pb-[3px]">
+                                <p className="text-gray-400 text-xs sm:text-sm font-medium">
+                                    {activeLocation
+                                        ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
+                                        : null}
+                                </p>
+                                {activeLocation && (
+                                    <button
+                                        onClick={() => {
+                                            setViewMode('map');
+                                            // Optional: center map if needed, but 'activeLocation' usually drives map center anyway
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
+                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1"
+                                    >
+                                        <MapIcon className="w-3 h-3 text-[#a78bfa]" />
+                                        <span className="hidden sm:inline text-gray-200">지도보기</span>
+                                    </button>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
