@@ -858,7 +858,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                             {/* Row 2: [Star] [Search] [Toggle] */}
                             <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-hidden flex-nowrap shrink-0">
-                                {/* Like Button (Collapsed) */}
+                                {/* Venue Button (Collapsed) */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (favoriteVenues.length > 0) {
+                                            setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded);
+                                            // Optional: If user wants to see the filter toggle state visually in expanded view, we could expand.
+                                            // But user asked to toggle Exposure/Non-exposure of list.
+                                            // So just toggling state is correct.
+                                        }
+                                    }}
+                                    disabled={favoriteVenues.length === 0}
+                                    className={clsx(
+                                        "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
+                                        favoriteVenues.length > 0
+                                            ? (isFavoriteVenuesExpanded
+                                                ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                                                : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
+                                            : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
+                                    )}
+                                >
+                                    <BuildingStadium className={clsx("w-3 h-3", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                    <span className="hidden sm:inline">공연장</span>
+                                </button>
+
                                 {/* Like Button (Collapsed) */}
                                 <button
                                     onClick={(e) => {
