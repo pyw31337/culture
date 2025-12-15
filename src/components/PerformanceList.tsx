@@ -147,6 +147,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Favorite Venues State
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
 
     useEffect(() => {
         const savedVenues = localStorage.getItem('culture_favorite_venues');
@@ -863,17 +864,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (favoriteVenues.length > 0) {
-                                            setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded);
-                                            // Optional: If user wants to see the filter toggle state visually in expanded view, we could expand.
-                                            // But user asked to toggle Exposure/Non-exposure of list.
-                                            // So just toggling state is correct.
+                                            setShowFavoriteVenues(!showFavoriteVenues);
                                         }
                                     }}
                                     disabled={favoriteVenues.length === 0}
                                     className={clsx(
                                         "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
                                         favoriteVenues.length > 0
-                                            ? (isFavoriteVenuesExpanded
+                                            ? (showFavoriteVenues
                                                 ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(16,185,129,0.3)]"
                                                 : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
                                             : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
@@ -1064,14 +1062,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             if (favoriteVenues.length > 0) {
-                                                setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded);
+                                                setShowFavoriteVenues(!showFavoriteVenues);
                                             }
                                         }}
                                         disabled={favoriteVenues.length === 0}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
                                             favoriteVenues.length > 0
-                                                ? (isFavoriteVenuesExpanded
+                                                ? (showFavoriteVenues
                                                     ? "bg-transparent border-emerald-500 text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]"
                                                     : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
@@ -1222,7 +1220,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Favorite Venues Section (Highest Priority) */}
             {
-                viewMode === 'list' && isFilterExpanded && favoriteVenuePerformances.length > 0 && (
+                viewMode === 'list' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
