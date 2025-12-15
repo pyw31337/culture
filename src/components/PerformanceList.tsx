@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -149,6 +149,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
+    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
 
     useEffect(() => {
         const savedVenues = localStorage.getItem('culture_favorite_venues');
@@ -656,10 +657,28 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     <div className="flex items-center gap-4">
                         {/* View Mode Toggles */}
-                        <div className="flex gap-2 mix-blend-luminosity">
-                            <button onClick={() => setViewMode('list')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'list' && "bg-white/20")} title="목록 보기"><LayoutGrid className="w-5 h-5" /></button>
-                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'calendar' && "bg-white/20")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
-                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10", viewMode === 'map' && "bg-white/20")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
+                        <div className="flex gap-2 mix-blend-luminosity bg-black/20 p-1 rounded-full border border-white/5 backdrop-blur-sm">
+                            <button
+                                onClick={() => { setViewMode('list'); setLayoutMode('grid'); }}
+                                className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors relative group", viewMode === 'list' && layoutMode === 'grid' ? "bg-white/20 text-[#a78bfa] shadow-inner" : "text-gray-400")}
+                                title="썸네일 보기"
+                            >
+                                <LayoutGrid className="w-5 h-5" />
+                                {viewMode === 'list' && layoutMode === 'grid' && <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#a78bfa]"></span>}
+                            </button>
+                            <button
+                                onClick={() => { setViewMode('list'); setLayoutMode('list'); }}
+                                className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors relative group", viewMode === 'list' && layoutMode === 'list' ? "bg-white/20 text-[#a78bfa] shadow-inner" : "text-gray-400")}
+                                title="리스트 보기"
+                            >
+                                <List className="w-5 h-5" />
+                                {viewMode === 'list' && layoutMode === 'list' && <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#a78bfa]"></span>}
+                            </button>
+
+                            <div className="w-[1px] h-5 bg-white/10 mx-1 self-center" />
+
+                            <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'calendar' ? "bg-white/20 text-blue-400" : "text-gray-400")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
+                            <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'map' ? "bg-white/20 text-green-400" : "text-gray-400")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
                         </div>
                     </div>
                 </div>
@@ -1491,38 +1510,79 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 <SkeletonCard key={i} />
                             ))
                         ) : (
-                            visiblePerformances.map((perf, index) => {
-                                const venueInfo = venues[perf.venue];
-                                let distLabel = null;
-                                if (activeLocation && venueInfo?.lat && venueInfo?.lng) {
-                                    const d = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng);
-                                    distLabel = d < 1 ? `${Math.floor(d * 1000)}m` : `${d.toFixed(1)}km`;
-                                }
+                            <AnimatePresence mode="popLayout" initial={false}>
+                                <div className={clsx(
+                                    "w-full transition-all duration-300",
+                                    layoutMode === 'grid'
+                                        ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6"
+                                        : "flex flex-col gap-3 max-w-5xl mx-auto"
+                                )}>
+                                    {filteredPerformances.length > 0 && (
+                                        filteredPerformances.slice(0, visibleCount).map((perf, index) => {
+                                            // Calculate District distance label if location is active is handled inside Card/Item usually or passed.
+                                            // Logic for distLabel was: const distLabel = ... (calculated above loop)
+                                            // But here 'distLabel' variable from outer scope is used?
+                                            // checking context... line 1460 "const filteredPerformances = ..."
+                                            // line 1485 "const visibleCount..."
+                                            // Where is distLabel?
+                                            // Ah, line 1513 passed distLabel={distLabel}.
+                                            // Wait, distLabel variable must be defined inside the map?
+                                            // Let's check original loop.
+                                            // "filteredPerformances.slice(0, visibleCount).map((perf, index) => {"
+                                            // "const dist = ..."
+                                            // I need to preserve this logic!
 
-                                return (
-                                    <motion.div
-                                        key={`${perf.id}-${perf.region}`}
-                                        className="h-full w-full"
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                                        transition={{ duration: 0.4, delay: index * 0.05 }}
-                                    >
-                                        <PerformanceCard
-                                            perf={perf}
-                                            distLabel={distLabel}
-                                            venueInfo={venueInfo}
-                                            onLocationClick={(loc) => {
-                                                setSearchLocation(loc);
-                                                setViewMode('map');
-                                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                            }}
-                                            isLiked={likedIds.includes(perf.id)}
-                                            onToggleLike={(e) => toggleLike(perf.id, e)}
-                                        />
-                                    </motion.div>
-                                );
-                            })
+                                            const dist = activeLocation && perf.lat && perf.lng
+                                                ? calculateDistance(activeLocation.lat, activeLocation.lng, parseFloat(perf.lat), parseFloat(perf.lng))
+                                                : null;
+                                            const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
+
+                                            // Venue Info
+                                            const venueInfo = venues[perf.venue];
+
+                                            return (
+                                                <motion.div
+                                                    key={`${perf.id}-${perf.region}`}
+                                                    className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
+                                                    initial={{ opacity: 0, scale: 0.95 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
+                                                    transition={{ duration: 0.3, delay: index * 0.03 }}
+                                                    layout
+                                                >
+                                                    {layoutMode === 'grid' ? (
+                                                        <PerformanceCard
+                                                            perf={perf}
+                                                            distLabel={distLabel}
+                                                            venueInfo={venueInfo}
+                                                            onLocationClick={(loc) => {
+                                                                setSearchLocation(loc);
+                                                                setViewMode('map');
+                                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            }}
+                                                            isLiked={likedIds.includes(perf.id)}
+                                                            onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                        />
+                                                    ) : (
+                                                        <PerformanceListItem
+                                                            perf={perf}
+                                                            distLabel={distLabel}
+                                                            venueInfo={venueInfo}
+                                                            onLocationClick={(loc) => {
+                                                                setSearchLocation(loc);
+                                                                setViewMode('map');
+                                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            }}
+                                                            isLiked={likedIds.includes(perf.id)}
+                                                            onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                        />
+                                                    )}
+                                                </motion.div>
+                                            );
+                                        })
+                                    )}
+                                </div>
+                            </AnimatePresence>
                         )}
                     </AnimatePresence>
                 </div>
@@ -1632,6 +1692,119 @@ function SkeletonCard() {
                 </div>
                 <div className="h-7 w-3/4 bg-gray-700/50 rounded-md" />
                 <div className="h-4 w-1/2 bg-gray-700/50 rounded-md" />
+            </div>
+        </div>
+    );
+}
+
+// ---------------------------
+// 📋 List View Item Component
+// ---------------------------
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+    const genreStyle = GENRE_STYLES[perf.genre] || {};
+
+    return (
+        <div className="group relative z-10 bg-[#0a0a0a] border border-white/5 hover:border-white/20 rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1 hover:shadow-xl">
+            {/* Image (Left) */}
+            <div className="relative w-28 sm:w-40 shrink-0 aspect-[4/5] sm:aspect-[4/3] overflow-hidden">
+                <Image
+                    src={perf.image || "/api/placeholder/400/300"}
+                    alt={perf.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 640px) 112px, 160px"
+                    loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+                {/* Distance Badge on Image */}
+                {distLabel && (
+                    <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md">
+                        {distLabel}
+                    </div>
+                )}
+            </div>
+
+            {/* Content (Right) */}
+            <div className="flex-1 p-3 sm:p-4 flex flex-col justify-between relative min-w-0">
+
+                {/* Header: Badges & Title */}
+                <div>
+                    <div className="flex flex-wrap gap-2 mb-1.5 items-center">
+                        <span className={clsx(
+                            "px-2 py-0.5 rounded text-[10px] font-bold border",
+                            genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
+                        )}>
+                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                        </span>
+
+                        {/* Region/District */}
+                        <span className="text-[10px] text-gray-400 border border-white/5 px-1.5 py-0.5 rounded bg-white/5">
+                            {perf.region} {perf.district}
+                        </span>
+
+                        {/* Date - Condensed */}
+                        <span className="text-[10px] text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
+                            <Calendar className="w-3 h-3" />
+                            {perf.date.split('~')[0].trim()}
+                        </span>
+                    </div>
+
+                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                        <h3 className="text-base sm:text-lg font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
+                            {perf.title}
+                        </h3>
+                    </a>
+
+                    <div className="flex items-center gap-1 text-xs text-gray-400 mt-1">
+                        <MapPin className="w-3 h-3 text-[#a78bfa]" />
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                            }}
+                            className="hover:text-white hover:underline truncate"
+                        >
+                            {perf.venue}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Actions (Bottom Right Absolute or Flex) */}
+                <div className="mt-2 flex items-end justify-between border-t border-white/5 pt-2">
+                    <div className="flex gap-2">
+                        {/* Optional extra info */}
+                    </div>
+
+                    {/* Interaction Buttons */}
+                    <div className="flex items-center gap-2">
+                        {/* Like Button */}
+                        <button
+                            onClick={onToggleLike}
+                            className={clsx(
+                                "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all border",
+                                isLiked
+                                    ? "bg-pink-500/10 border-pink-500/50 text-pink-500 hover:bg-pink-500 hover:text-white"
+                                    : "bg-gray-800/50 border-gray-700 text-gray-400 hover:border-gray-500 hover:text-white"
+                            )}
+                        >
+                            <Heart className={clsx("w-3.5 h-3.5", isLiked && "fill-current")} />
+                            <span className="hidden xs:inline">{isLiked ? '찜됨' : '찜하기'}</span>
+                        </button>
+
+                        {/* View Details Button */}
+                        <a
+                            href={perf.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={e => e.stopPropagation()}
+                            className="bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white px-3 py-1.5 rounded-full text-xs font-bold transition-colors border border-white/10 hover:border-white/30 flex items-center gap-1"
+                        >
+                            예매
+                            <Share2 className="w-3 h-3" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );
