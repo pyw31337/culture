@@ -657,7 +657,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     <div className="flex items-center gap-4">
                         {/* View Mode Toggles */}
-                        <div className="flex gap-2 mix-blend-luminosity bg-black/20 p-1 rounded-full border border-white/5 backdrop-blur-sm">
+                        <div className="flex gap-1 mix-blend-luminosity bg-black/20 p-1 rounded-full border border-white/5 backdrop-blur-sm">
                             {/* Combined Grid/List Toggle */}
                             <button
                                 onClick={() => {
@@ -679,8 +679,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <List className="w-5 h-5" />
                                 )}
                             </button>
-
-                            <div className="w-[1px] h-5 bg-white/10 mx-1 self-center" />
 
                             <button onClick={() => setViewMode('calendar')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'calendar' ? "bg-white/20 text-blue-400" : "text-gray-400")} title="캘린더 보기"><CalendarDays className="w-5 h-5" /></button>
                             <button onClick={() => setViewMode('map')} className={clsx("p-2 rounded-full hover:bg-white/10 transition-colors", viewMode === 'map' ? "bg-white/20 text-green-400" : "text-gray-400")} title="지도 보기"><MapIcon className="w-5 h-5" /></button>
@@ -1907,7 +1905,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </div>
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-1 sm:line-clamp-2">
+                            <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
                                 {perf.title}
                             </h3>
                         </a>
@@ -1924,12 +1922,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 {perf.venue}
                             </button>
                         </div>
-                    </div>
-
-                    {/* Actions Footer (kept for spacing/future use) */}
-                    <div className="mt-2 flex items-end justify-between border-t border-white/5 pt-2">
-                        <div className="flex gap-2" />
-                        <div className="flex items-center gap-2" />
                     </div>
                 </div>
             </div>
