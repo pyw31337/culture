@@ -877,7 +877,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
                                     )}
                                 >
-                                    <BuildingStadium className={clsx("w-3 h-3", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                    <BuildingStadium className={clsx("w-3 h-3", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
                                     <span className="hidden sm:inline">공연장</span>
                                 </button>
 
@@ -1075,7 +1075,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <BuildingStadium className={clsx("w-4 h-4", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                        <BuildingStadium className={clsx("w-4 h-4", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
                                         <span>공연장</span>
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
