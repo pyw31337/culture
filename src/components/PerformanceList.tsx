@@ -1112,7 +1112,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                isFavoriteVenuesExpanded ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
+                                                showFavoriteVenues ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {favoriteVenues.length}
                                             </span>
