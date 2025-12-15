@@ -1181,7 +1181,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 "transition-all duration-300 overflow-hidden backdrop-blur-md bg-black/20",
                                 showKeywordInput ? "max-h-60 opacity-100 border-b border-white/5 mb-2" : "max-h-0 opacity-0"
                             )} onClick={(e) => e.stopPropagation()}>
-                                <div className="p-4 flex flex-col gap-3">
+                                <div className="p-4 flex flex-col gap-3 border border-yellow-500/50 rounded-lg">
                                     <div className="flex flex-col sm:flex-row items-center gap-3">
                                         <input
                                             type="text"
@@ -1333,56 +1333,58 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             }
 
             {/* Favorite Venues List Modal */}
-            {showFavoriteListModal && (
-                <div
-                    className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-                    onClick={() => setShowFavoriteListModal(false)}
-                >
+            {
+                showFavoriteListModal && (
                     <div
-                        className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
-                        onClick={e => e.stopPropagation()}
+                        className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                        onClick={() => setShowFavoriteListModal(false)}
                     >
-                        {/* Modal Header */}
-                        <div className="p-4 border-b border-gray-800 flex justify-between items-center">
-                            <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
-                                <BuildingStadium className="w-5 h-5" />
-                                찜한 공연장 목록
-                            </h3>
-                            <button
-                                onClick={() => setShowFavoriteListModal(false)}
-                                className="text-gray-400 hover:text-white transition-colors"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-                        </div>
+                        <div
+                            className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            {/* Modal Header */}
+                            <div className="p-4 border-b border-gray-800 flex justify-between items-center">
+                                <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
+                                    <BuildingStadium className="w-5 h-5" />
+                                    찜한 공연장 목록
+                                </h3>
+                                <button
+                                    onClick={() => setShowFavoriteListModal(false)}
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
 
-                        {/* Modal Body: List */}
-                        <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2 scrollbar-hide">
-                            {favoriteVenues.length === 0 ? (
-                                <p className="text-center text-gray-500 py-4">찜한 공연장이 없습니다.</p>
-                            ) : (
-                                favoriteVenues.map((venueName) => (
-                                    <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
-                                        <div className="flex flex-col">
-                                            <span className="text-sm font-bold text-gray-200">{venueName}</span>
-                                            {venues[venueName]?.address && (
-                                                <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
-                                            )}
+                            {/* Modal Body: List */}
+                            <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2 scrollbar-hide">
+                                {favoriteVenues.length === 0 ? (
+                                    <p className="text-center text-gray-500 py-4">찜한 공연장이 없습니다.</p>
+                                ) : (
+                                    favoriteVenues.map((venueName) => (
+                                        <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
+                                            <div className="flex flex-col">
+                                                <span className="text-sm font-bold text-gray-200">{venueName}</span>
+                                                {venues[venueName]?.address && (
+                                                    <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
+                                                )}
+                                            </div>
+                                            <button
+                                                onClick={() => toggleFavoriteVenue(venueName)}
+                                                className="p-1.5 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/10 transition-colors"
+                                                title="삭제"
+                                            >
+                                                <X className="w-4 h-4" />
+                                            </button>
                                         </div>
-                                        <button
-                                            onClick={() => toggleFavoriteVenue(venueName)}
-                                            className="p-1.5 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/10 transition-colors"
-                                            title="삭제"
-                                        >
-                                            <X className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                ))
-                            )}
+                                    ))
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
             {/* Liked Performances Section (Above Keywords) */}
             {
