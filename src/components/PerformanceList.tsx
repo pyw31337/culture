@@ -1542,7 +1542,7 @@ function SkeletonCard() {
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
 
 
     const cardRef = useRef<HTMLDivElement>(null);
