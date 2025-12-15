@@ -988,5 +988,45 @@
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
     "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260108_HEUNGKUK PINKSPIDERS_KOREA EXPRESSWAY",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs KOREA EXPRESSWAY",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-08 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260114_HEUNGKUK PINKSPIDERS_KOREA EXPRESSWAY",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs KOREA EXPRESSWAY",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-14 19:00",
+    "venue": "인천 삼산월드체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "incheon",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260109_HYUNDAI CAPITAL_SAMSUNG BLUEFANGS",
+    "title": "[배구] HYUNDAI CAPITAL vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-09 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260114_HYUNDAI CAPITAL_SAMSUNG BLUEFANGS",
+    "title": "[배구] HYUNDAI CAPITAL vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-14 19:00",
+    "venue": "천안 유관순체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
   }
 ]
