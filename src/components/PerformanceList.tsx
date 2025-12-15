@@ -128,6 +128,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [showLikes, setShowLikes] = useState(true);
 
+    // Initial Load for Likes Expanded State
+    useEffect(() => {
+        const savedExpanded = localStorage.getItem('culture_likes_expanded');
+        if (savedExpanded !== null) {
+            setIsLikesExpanded(JSON.parse(savedExpanded));
+        }
+    }, []);
+
+    // Persist Likes Expanded State
+    useEffect(() => {
+        localStorage.setItem('culture_likes_expanded', JSON.stringify(isLikesExpanded));
+    }, [isLikesExpanded]);
+
     // Load Likes from LocalStorage
     useEffect(() => {
         const savedLikes = localStorage.getItem('culture_likes');
@@ -159,6 +172,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Favorite Venues State
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+
+    // Initial Load for Favorite Venues Expanded State
+    useEffect(() => {
+        const savedExpanded = localStorage.getItem('culture_venues_expanded');
+        if (savedExpanded !== null) {
+            setIsFavoriteVenuesExpanded(JSON.parse(savedExpanded));
+        }
+    }, []);
+
+    // Persist Favorite Venues Expanded State
+    useEffect(() => {
+        localStorage.setItem('culture_venues_expanded', JSON.stringify(isFavoriteVenuesExpanded));
+    }, [isFavoriteVenuesExpanded]);
+
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
