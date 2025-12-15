@@ -1,32 +1,132 @@
 [
   {
-    "id": "kbl_20251214_소노_LG",
-    "title": "[농구] 소노 vs LG",
+    "id": "kbl_20251215_한국가스공사_현대모비스",
+    "title": "[농구] 한국가스공사 vs 현대모비스",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-14 14:00",
+    "date": "2025-12-15 19:00",
+    "venue": "대구체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251216_KCC_상무",
+    "title": "[농구] KCC vs 상무",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-16 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251216_DB_삼성",
+    "title": "[농구] DB vs 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-16 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251216_소노_KT",
+    "title": "[농구] 소노 vs KT",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-16 19:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr",
     "region": "gyeonggi",
     "genre": "basketball"
   },
   {
-    "id": "kbl_20251214_KCC_정관장",
-    "title": "[농구] KCC vs 정관장",
+    "id": "kbl_20251217_현대모비스_정관장",
+    "title": "[농구] 현대모비스 vs 정관장",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-14 14:00",
+    "date": "2025-12-17 19:00",
+    "venue": "울산동천체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251218_KCC_한국가스공사",
+    "title": "[농구] KCC vs 한국가스공사",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-18 19:00",
     "venue": "부산사직체육관",
     "link": "https://www.kbl.or.kr",
     "region": "etc",
     "genre": "basketball"
   },
   {
-    "id": "kbl_20251214_KT_SK",
-    "title": "[농구] KT vs SK",
+    "id": "kbl_20251219_KT_DB",
+    "title": "[농구] KT vs DB",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-14 16:30",
+    "date": "2025-12-19 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr",
     "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251220_SK_삼성",
+    "title": "[농구] SK vs 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-20 14:00",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251220_한국가스공사_정관장",
+    "title": "[농구] 한국가스공사 vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-20 14:00",
+    "venue": "대구체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251220_KCC_소노",
+    "title": "[농구] KCC vs 소노",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-20 16:30",
+    "venue": "부산사직체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251221_LG_DB",
+    "title": "[농구] LG vs DB",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-21 14:00",
+    "venue": "창원체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251221_SK_현대모비스",
+    "title": "[농구] SK vs 현대모비스",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-21 14:00",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251221_KCC_KT",
+    "title": "[농구] KCC vs KT",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-21 16:30",
+    "venue": "부산사직체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
     "genre": "basketball"
   }
 ]
