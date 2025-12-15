@@ -1688,8 +1688,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </div>
                                 </div>
 
-                                {/* Content Section (Bottom, Yellow/Pink) */}
-                                <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
+                                {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
+                                <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="font-bold text-lg text-black mb-1 line-clamp-1 group-hover:opacity-80 transition-opacity">
                                             {perf.title}
