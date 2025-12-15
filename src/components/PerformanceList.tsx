@@ -5,7 +5,8 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw, Building2 } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
+import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -1052,7 +1053,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <Building2 className={clsx("w-4 h-4", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                        <BuildingStadium className={clsx("w-4 h-4", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
                                         <span>공연장</span>
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
@@ -1204,7 +1205,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             onClick={() => setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded)}
                         >
                             <h3 className="text-xl font-bold text-emerald-500 flex items-center">
-                                <Building2 className="w-6 h-6 text-emerald-500 mr-2" />
+                                <BuildingStadium className="w-6 h-6 text-emerald-500 mr-2" />
                                 찜한 공연장 공연
                                 <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({favoriteVenuePerformances.length})</span>
                             </h3>
@@ -1682,7 +1683,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         )}
                                         style={{ transform: 'translateZ(20px)' }}
                                     >
-                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <Building2 className="w-3 h-3 fill-emerald-500" />}
+                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
                                         {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
                                     </div>
                                 </div>
