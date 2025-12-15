@@ -182,14 +182,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // New: Keyword Section Toggle
     const [isKeywordsExpanded, setIsKeywordsExpanded] = useState(true);
 
-    // Auto-collapse logic removed to prevent scroll jitter
-    // useEffect(() => {
-    //     if (isSticky) {
-    //         setIsFilterExpanded(false);
-    //     } else {
-    //         setIsFilterExpanded(true);
-    //     }
-    // }, [isSticky]);
+    // Auto-collapse logic: Collapse when sticky (top reached), Expand when not sticky (scrolled up)
+    useEffect(() => {
+        if (isSticky) {
+            setIsFilterExpanded(false);
+        } else {
+            setIsFilterExpanded(true);
+        }
+    }, [isSticky]);
 
     // Infinite Scroll State
     // Fake Loading State for UX

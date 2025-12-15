@@ -323,46 +323,51 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                 {uniqueVenues.length > 0 && (
                     <div className="absolute bottom-4 left-0 right-0 z-[90] px-4">
                         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">
-                            {uniqueVenues.map((v: any) => (
-                                <button
-                                    key={v.venueName}
-                                    onClick={() => {
-                                        if (mapInstance && v.lat && v.lng) {
-                                            const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                            mapInstance.panTo(moveLatLon);
+                            {uniqueVenues.map((v: any) => {
+                                const isFavorite = favoriteVenues.includes(v.venueName);
+                                return (
+                                    <button
+                                        key={v.venueName}
+                                        onClick={() => {
+                                            if (mapInstance && v.lat && v.lng) {
+                                                const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                mapInstance.panTo(moveLatLon);
 
-                                            // Open Overlay
-                                            const overlay = overlaysRef.current[v.venueName];
-                                            if (overlay) {
-                                                // Close all others ? 
-                                                Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
-                                                overlay.setMap(mapInstance);
+                                                // Open Overlay
+                                                const overlay = overlaysRef.current[v.venueName];
+                                                if (overlay) {
+                                                    Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
+                                                    overlay.setMap(mapInstance);
+                                                }
                                             }
-                                        }
-                                    }}
-                                    className="snap-center shrink-0 w-64 bg-white/90 backdrop-blur text-black p-3 rounded-xl shadow-xl border border-white/20 text-left flex flex-col gap-1 hover:bg-white transition"
-                                >
-                                    <div className="flex justify-between items-start w-full">
-                                        <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                onToggleFavorite(v.venueName);
-                                            }}
-                                            className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
-                                        >
-                                            <BuildingStadium
-                                                className={`w-4 h-4 ${favoriteVenues.includes(v.venueName) ? 'text-emerald-500 fill-emerald-500' : 'text-gray-400'}`}
-                                            />
-                                        </button>
-                                    </div>
-                                    <p className="text-xs text-gray-600 truncate">{v.address || '주소 정보 없음'}</p>
-                                    <div className="mt-1 flex items-center justify-between text-xs">
-                                        <span className="font-semibold text-blue-600">{v.performances.length}개 공연</span>
-                                        {/* Distance could be calculated if we have centerLocation */}
-                                    </div>
-                                </button>
-                            ))}
+                                        }}
+                                        className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl border text-left flex flex-col gap-1 transition ${isFavorite
+                                            ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
+                                            : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
+                                            }`}
+                                    >
+                                        <div className="flex justify-between items-start w-full">
+                                            <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    onToggleFavorite(v.venueName);
+                                                }}
+                                                className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
+                                            >
+                                                <BuildingStadium
+                                                    className={`w-4 h-4 ${isFavorite ? 'text-white fill-white' : 'text-gray-400'}`}
+                                                />
+                                            </button>
+                                        </div>
+                                        <p className={`text-xs truncate ${isFavorite ? 'text-emerald-100' : 'text-gray-600'}`}>{v.address || '주소 정보 없음'}</p>
+                                        <div className="mt-1 flex items-center justify-between text-xs">
+                                            <span className={`font-bold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
+                                            {/* Distance could be calculated if we have centerLocation */}
+                                        </div>
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
                 )}
