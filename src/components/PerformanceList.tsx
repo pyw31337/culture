@@ -656,7 +656,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </p>
                     {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block">
-                        특별한 오늘, 당신을 위한<br /><span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal mx-2 py-1">Spotlight</span>는 어디일까요?
+                        특별한 오늘, 당신을 위한<br /><span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는 어디일까요?
                     </h2>
                     {/* Mobile: 2 lines (400px~640px) -> 4 lines (<400px) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
