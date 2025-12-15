@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, CalendarDays, Map as MapIcon, RotateCcw, Building2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -139,6 +139,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const likedPerformances = useMemo(() => {
         return initialPerformances.filter(p => likedIds.includes(p.id));
     }, [initialPerformances, likedIds]);
+
+    // Favorite Venues State
+    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
+    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+
+    useEffect(() => {
+        const savedVenues = localStorage.getItem('culture_favorite_venues');
+        if (savedVenues) {
+            try {
+                setFavoriteVenues(JSON.parse(savedVenues));
+            } catch (e) {
+                console.error("Failed to parse favorite venues", e);
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('culture_favorite_venues', JSON.stringify(favoriteVenues));
+    }, [favoriteVenues]);
+
+    const toggleFavoriteVenue = (venueName: string) => {
+        setFavoriteVenues(prev =>
+            prev.includes(venueName) ? prev.filter(v => v !== venueName) : [...prev, venueName]
+        );
+    };
+
+    const favoriteVenuePerformances = useMemo(() => {
+        return initialPerformances.filter(p => favoriteVenues.includes(p.venue));
+    }, [initialPerformances, favoriteVenues]);
 
 
 
@@ -1003,6 +1032,36 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                                 {/* Replaced Search Bar with Keyword Button in Expanded Mode */}
                                 <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3 w-full xl:w-auto items-center justify-end">
+                                    {/* Venue Like Button */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (favoriteVenues.length > 0) {
+                                                setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded);
+                                            }
+                                        }}
+                                        disabled={favoriteVenues.length === 0}
+                                        className={clsx(
+                                            "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
+                                            favoriteVenues.length > 0
+                                                ? (isFavoriteVenuesExpanded
+                                                    ? "bg-transparent border-emerald-500 text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                                                    : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
+                                                : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
+                                        )}
+                                    >
+                                        <Building2 className={clsx("w-4 h-4", isFavoriteVenuesExpanded && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                        <span>공연장</span>
+                                        {favoriteVenues.length > 0 && (
+                                            <span className={clsx(
+                                                "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
+                                                isFavoriteVenuesExpanded ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
+                                            )}>
+                                                {favoriteVenues.length}
+                                            </span>
+                                        )}
+                                    </button>
+
                                     {/* Like Button */}
                                     <button
                                         onClick={(e) => {
@@ -1133,6 +1192,57 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </div>
                 </div>
             </div>
+
+            {/* Favorite Venues Section (Highest Priority) */}
+            {
+                viewMode === 'list' && isFilterExpanded && favoriteVenuePerformances.length > 0 && (
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
+                        <div
+                            className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
+                            onClick={() => setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded)}
+                        >
+                            <h3 className="text-xl font-bold text-emerald-500 flex items-center">
+                                <Building2 className="w-6 h-6 text-emerald-500 mr-2" />
+                                찜한 공연장 공연
+                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({favoriteVenuePerformances.length})</span>
+                            </h3>
+                            <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
+                                {isFavoriteVenuesExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
+                            </button>
+                        </div>
+                        {isFavoriteVenuesExpanded && (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
+                                <AnimatePresence mode="popLayout">
+                                    {favoriteVenuePerformances.map((performance, index) => (
+                                        <motion.div
+                                            key={`fav-venue-${performance.id}`}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                                        >
+                                            <PerformanceCard
+                                                perf={performance}
+                                                distLabel={null}
+                                                venueInfo={venues[performance.venue] || null}
+                                                onLocationClick={(loc) => {
+                                                    setSearchLocation(loc);
+                                                    setViewMode('map');
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
+                                                isLiked={likedIds.includes(performance.id)}
+                                                onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                variant="emerald"
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                            </div>
+                        )}
+                    </div>
+                )
+            }
 
             {/* Liked Performances Section (Above Keywords) */}
             {
@@ -1393,6 +1503,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue }
                                 : null)
                         }
+                        favoriteVenues={favoriteVenues}
+                        onToggleFavorite={toggleFavoriteVenue}
                         onClose={() => setViewMode('list')}
                     />
                 )
@@ -1487,7 +1599,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 className={
                     clsx(
                         "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full",
-                        variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
+                        variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : variant === 'emerald' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
                     )
                 }
                 style={{ transformStyle: 'preserve-3d' }}
@@ -1495,7 +1607,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 <div className="gold-shimmer-wrapper">
                     <div
                         className="gold-shimmer-border"
-                        style={{ '--shimmer-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : '#a78bfa' } as React.CSSProperties}
+                        style={{ '--shimmer-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : variant === 'emerald' ? '#10b981' : '#a78bfa' } as React.CSSProperties}
                     />
 
                     <div className={clsx(
@@ -1504,7 +1616,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             ? "bg-yellow-500 ring-1 ring-yellow-500/50 hover:ring-white/50"
                             : variant === 'pink'
                                 ? "bg-pink-500 ring-1 ring-pink-500/50 hover:ring-white/50"
-                                : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                                : variant === 'emerald'
+                                    ? "bg-emerald-500 ring-1 ring-emerald-500/50 hover:ring-white/50"
+                                    : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
                     )}>
 
 
@@ -1537,8 +1651,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             style={{ left: '-25%', top: '-25%' }}
                         />
 
-                        {/* --- VARIANT: YELLOW/PINK (Keyword/Like Interest) --- */}
-                        {variant === 'yellow' || variant === 'pink' ? (
+                        {/* --- VARIANT: YELLOW/PINK/EMERALD (Interest) --- */}
+                        {variant === 'yellow' || variant === 'pink' || variant === 'emerald' ? (
                             <>
                                 {/* Image Section (Top, Aspect 3/4) */}
 
@@ -1558,12 +1672,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div
                                         className={clsx(
                                             "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
-                                            variant === 'yellow' ? "bg-black/80 text-yellow-500 border-yellow-500/30" : "bg-black/80 text-pink-500 border-pink-500/30"
+                                            variant === 'yellow'
+                                                ? "bg-black/80 text-yellow-500 border-yellow-500/30"
+                                                : variant === 'pink'
+                                                    ? "bg-black/80 text-pink-500 border-pink-500/30"
+                                                    : "bg-black/80 text-emerald-500 border-emerald-500/30"
                                         )}
                                         style={{ transform: 'translateZ(20px)' }}
                                     >
-                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : <Heart className="w-3 h-3 fill-pink-500" />}
-                                        {variant === 'yellow' ? '알림' : '좋아요'}
+                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <Building2 className="w-3 h-3 fill-emerald-500" />}
+                                        {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
                                     </div>
                                 </div>
 

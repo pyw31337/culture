@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Performance } from '@/types';
-import { X } from 'lucide-react';
+import { X, Building2 } from 'lucide-react';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 
@@ -19,9 +19,11 @@ interface KakaoMapModalProps {
     performances: Performance[];
     onClose: () => void;
     centerLocation?: { lat: number; lng: number; name: string } | null;
+    favoriteVenues: string[];
+    onToggleFavorite: (venueName: string) => void;
 }
 
-export default function KakaoMapModal({ performances, onClose, centerLocation }: KakaoMapModalProps) {
+export default function KakaoMapModal({ performances, onClose, centerLocation, favoriteVenues, onToggleFavorite }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const overlaysRef = useRef<Record<string, any>>({});
@@ -339,7 +341,20 @@ export default function KakaoMapModal({ performances, onClose, centerLocation }:
                                     }}
                                     className="snap-center shrink-0 w-64 bg-white/90 backdrop-blur text-black p-3 rounded-xl shadow-xl border border-white/20 text-left flex flex-col gap-1 hover:bg-white transition"
                                 >
-                                    <h4 className="font-bold text-sm truncate">{v.venueName}</h4>
+                                    <div className="flex justify-between items-start w-full">
+                                        <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onToggleFavorite(v.venueName);
+                                            }}
+                                            className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
+                                        >
+                                            <Building2
+                                                className={`w-4 h-4 ${favoriteVenues.includes(v.venueName) ? 'text-emerald-500 fill-emerald-500' : 'text-gray-400'}`}
+                                            />
+                                        </button>
+                                    </div>
                                     <p className="text-xs text-gray-600 truncate">{v.address || '주소 정보 없음'}</p>
                                     <div className="mt-1 flex items-center justify-between text-xs">
                                         <span className="font-semibold text-blue-600">{v.performances.length}개 공연</span>
