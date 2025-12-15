@@ -15,6 +15,14 @@ interface CalendarModalProps {
     onClose: () => void;
 }
 
+// Helper for image optimization
+const getOptimizedUrl = (url: string, width: number = 200) => {
+    if (!url) return "";
+    if (url.startsWith('/')) return url;
+    if (url.includes('kfescdn')) return url;
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=80&output=webp`;
+};
+
 export default function CalendarModal({ performances, onClose }: CalendarModalProps) {
     const [currentMonth, setCurrentMonth] = useState(new Date());
 
@@ -178,7 +186,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
                                     >
                                         {perf.image && (
-                                            <img src={perf.image} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" />
+                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" />
                                         )}
                                         <div className="min-w-0 flex-1">
                                             <div className="flex items-center gap-2 mb-1">

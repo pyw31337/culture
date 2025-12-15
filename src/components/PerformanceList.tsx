@@ -53,6 +53,17 @@ function deg2rad(deg: number) {
     return deg * (Math.PI / 180)
 }
 
+// Image Optimization Helper
+const getOptimizedUrl = (url: string, width: number = 400) => {
+    if (!url) return "/api/placeholder/300/400";
+    if (url.startsWith('/')) return url; // Local images
+    if (url.includes('kfescdn')) return url; // VisitKorea images are already optimized/thumbnails
+
+    // Use wsrv.nl for on-the-fly resizing and WebP conversion
+    // w: width, q: quality, output: format
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=80&output=webp`;
+};
+
 export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
@@ -1938,7 +1949,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 {/* Image (Left) */}
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
                     <Image
-                        src={perf.image || "/api/placeholder/400/300"}
+                        src={getOptimizedUrl(perf.image, 200) || "/api/placeholder/400/300"}
                         alt={perf.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -2138,7 +2149,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                     <div className="absolute inset-0 z-0">
                                         <Image
-                                            src={perf.image || "/api/placeholder/400/300"}
+                                            src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
                                             alt={perf.title}
                                             fill
                                             className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -2196,7 +2207,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 {/* Image Layer */}
                                 {perf.image ? (
                                     <Image
-                                        src={perf.image}
+                                        src={getOptimizedUrl(perf.image, 400)}
                                         alt={perf.title}
                                         fill
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
