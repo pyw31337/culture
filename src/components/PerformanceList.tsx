@@ -787,7 +787,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             </header>
 
             {/* Hero Section */}
-            <div className="relative z-[60] max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8">
+            <div className={clsx(
+                "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8",
+                (isDropdownOpen && activeSearchSource === 'hero') ? "z-[120]" : "z-[60]"
+            )}>
                 <div className="text-left">
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
@@ -835,7 +838,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
 
                 {/* Hero Search Bar */}
-                <div className={clsx("w-full lg:w-auto relative group", isDropdownOpen && activeSearchSource === 'hero' ? "z-[120]" : "z-[60]")}>
+                <div className="w-full lg:w-auto relative group z-[60]">
                     <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
                         <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative mix-blend-hard-light">
                             {/* Radius Select for Hero */}
