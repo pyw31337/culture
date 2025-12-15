@@ -148,6 +148,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
+    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
 
     useEffect(() => {
         const savedVenues = localStorage.getItem('culture_favorite_venues');
@@ -1235,11 +1236,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
                             onClick={() => setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded)}
                         >
-                            <h3 className="text-xl font-bold text-emerald-500 flex items-center">
-                                <BuildingStadium className="w-6 h-6 text-emerald-500 mr-2" />
-                                찜한 공연장 공연
-                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({favoriteVenuePerformances.length})</span>
-                            </h3>
+                            <div className="flex items-center gap-3">
+                                <h3 className="text-xl font-bold text-emerald-500 flex items-center">
+                                    <BuildingStadium className="w-6 h-6 text-emerald-500 mr-2" />
+                                    찜한 공연장
+                                    <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({favoriteVenuePerformances.length})</span>
+                                </h3>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowFavoriteListModal(true);
+                                    }}
+                                    className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-black transition-colors"
+                                >
+                                    목록보기
+                                </button>
+                            </div>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
                                 {isFavoriteVenuesExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
                             </button>
@@ -1288,7 +1300,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         >
                             <h3 className="text-xl font-bold text-pink-500 flex items-center">
                                 <Heart className="w-6 h-6 fill-pink-500 text-pink-500 mr-2" />
-                                좋아요한 공연
+                                좋아요
                                 <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({likedPerformances.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
@@ -1340,7 +1352,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         >
                             <h3 className="text-xl font-bold text-yellow-500 flex items-center">
                                 <Star className="w-6 h-6 fill-yellow-500 text-yellow-500 mr-2" />
-                                키워드 공연
+                                키워드
                                 <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({keywordMatches.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
@@ -1829,6 +1841,58 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     </div>
                 </div>
             </div >
+
+            {/* Favorite Venues List Modal */}
+            {showFavoriteListModal && (
+                <div
+                    className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                    onClick={() => setShowFavoriteListModal(false)}
+                >
+                    <div
+                        className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        {/* Modal Header */}
+                        <div className="p-4 border-b border-gray-800 flex justify-between items-center">
+                            <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
+                                <BuildingStadium className="w-5 h-5" />
+                                찜한 공연장 목록
+                            </h3>
+                            <button
+                                onClick={() => setShowFavoriteListModal(false)}
+                                className="text-gray-400 hover:text-white transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
+
+                        {/* Modal Body: List */}
+                        <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2 scrollbar-hide">
+                            {favoriteVenues.length === 0 ? (
+                                <p className="text-center text-gray-500 py-4">찜한 공연장이 없습니다.</p>
+                            ) : (
+                                favoriteVenues.map((venueName) => (
+                                    <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-gray-200">{venueName}</span>
+                                            {venues[venueName]?.address && (
+                                                <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
+                                            )}
+                                        </div>
+                                        <button
+                                            onClick={() => toggleFavoriteVenue(venueName)}
+                                            className="p-1.5 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/10 transition-colors"
+                                            title="삭제"
+                                        >
+                                            <X className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div >
     );
 }
