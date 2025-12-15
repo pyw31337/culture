@@ -13,6 +13,9 @@ import venueData from '@/data/venues.json';
 import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
+const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
+
 interface Venue {
     name: string;
     address: string;
@@ -177,14 +180,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // New: Keyword Section Toggle
     const [isKeywordsExpanded, setIsKeywordsExpanded] = useState(true);
 
-    // Auto-collapse when sticky, Auto-expand when top
-    useEffect(() => {
-        if (isSticky) {
-            setIsFilterExpanded(false);
-        } else {
-            setIsFilterExpanded(true);
-        }
-    }, [isSticky]);
+    // Auto-collapse logic removed to prevent scroll jitter
+    // useEffect(() => {
+    //     if (isSticky) {
+    //         setIsFilterExpanded(false);
+    //     } else {
+    //         setIsFilterExpanded(true);
+    //     }
+    // }, [isSticky]);
 
     // Infinite Scroll State
     // Fake Loading State for UX
@@ -537,8 +540,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
     // Dynamically Import Components
-    const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
-    const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
+
 
     // Sticky Sentinel Observer
     // Sticky Logic with getBoundingClientRect + Scroll Listener (More Robust)
