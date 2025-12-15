@@ -889,7 +889,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     {/* Search Results Dropdown (Attached to Hero Input) */}
                     {isDropdownOpen && activeSearchSource === 'hero' && searchResults.length > 0 && (
-                        <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
+                        <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[120] overflow-hidden max-h-80 overflow-y-auto">
                             {searchResults.map((result, idx) => {
                                 // Address Parsing: Only Region + Gu (e.g., 서울 영등포구)
                                 const addressParts = result.address ? result.address.split(' ') : [];
