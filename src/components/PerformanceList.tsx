@@ -845,7 +845,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div
                     className={clsx(
                         "w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2 transition-colors duration-300 rounded-lg",
-                        !isFilterExpanded && "cursor-pointer hover:bg-white/5 py-1"
+                        !isFilterExpanded && "cursor-pointer py-1"
                     )}
                     onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
                 >
