@@ -1567,10 +1567,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className={clsx(
                     "grid gap-6",
                     viewMode === 'list'
-                        ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5" // List Mode: Multi-column
+                        ? "grid-cols-1" // List Mode: Single Column Wrapper (Inner wrapper handles grid)
                         : viewMode === 'map'
-                            ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" // Map Mode (Bottom sheet style)
-                            : "grid-cols-1" // Calendar Mode (Not grid)
+                            ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" // Map Mode
+                            : "grid-cols-1" // Calendar Mode
                 )}>
                     <AnimatePresence mode="popLayout">
                         {isFiltering ? (
@@ -1771,18 +1771,18 @@ function SkeletonCard() {
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald' }) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
 
-    // Determine border/shadow color based on variant
+    // Determine border/shadow/bg color based on variant
     const variantStyle = variant === 'emerald'
-        ? "border-emerald-500/30 hover:border-emerald-500/60 hover:shadow-[0_0_15px_-5px_rgba(16,185,129,0.3)]"
+        ? "bg-emerald-950/20 border-emerald-500/30 hover:border-emerald-500/60 hover:shadow-[0_0_15px_-5px_rgba(16,185,129,0.3)]"
         : variant === 'pink'
-            ? "border-pink-500/30 hover:border-pink-500/60 hover:shadow-[0_0_15px_-5px_rgba(236,72,153,0.3)]"
+            ? "bg-pink-950/20 border-pink-500/30 hover:border-pink-500/60 hover:shadow-[0_0_15px_-5px_rgba(236,72,153,0.3)]"
             : variant === 'yellow'
-                ? "border-yellow-500/30 hover:border-yellow-500/60 hover:shadow-[0_0_15px_-5px_rgba(234,179,8,0.3)]"
-                : "border-white/5 hover:border-white/20 hover:shadow-xl";
+                ? "bg-yellow-950/20 border-yellow-500/30 hover:border-yellow-500/60 hover:shadow-[0_0_15px_-5px_rgba(234,179,8,0.3)]"
+                : "bg-[#0a0a0a] border-white/5 hover:border-white/20 hover:shadow-xl";
 
     return (
         <div className={clsx(
-            "group relative z-10 bg-[#0a0a0a] border rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1",
+            "group relative z-10 border rounded-xl overflow-hidden flex transition-all duration-300 hover:bg-white/5 hover:translate-x-1",
             variantStyle
         )}>
             {/* Image (Left) */}
