@@ -1532,13 +1532,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             // "const dist = ..."
                                             // I need to preserve this logic!
 
-                                            const dist = activeLocation && perf.lat && perf.lng
-                                                ? calculateDistance(activeLocation.lat, activeLocation.lng, parseFloat(perf.lat), parseFloat(perf.lng))
-                                                : null;
-                                            const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
-
                                             // Venue Info
                                             const venueInfo = venues[perf.venue];
+
+                                            const dist = activeLocation && venueInfo?.lat && venueInfo?.lng
+                                                ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
+                                                : null;
+                                            const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
                                             return (
                                                 <motion.div
