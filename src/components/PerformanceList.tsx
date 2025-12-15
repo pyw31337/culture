@@ -207,13 +207,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 if (decompressed) {
                     const shareData = JSON.parse(decompressed);
                     if (shareData.l && Array.isArray(shareData.l)) {
-                        setLikedIds(shareData.l);
+                        setLikedIds(prev => Array.from(new Set([...prev, ...shareData.l])));
                     }
                     if (shareData.v && Array.isArray(shareData.v)) {
-                        setFavoriteVenues(shareData.v);
+                        setFavoriteVenues(prev => Array.from(new Set([...prev, ...shareData.v])));
                     }
                     if (shareData.k && Array.isArray(shareData.k)) {
-                        setKeywords(shareData.k);
+                        setKeywords(prev => Array.from(new Set([...prev, ...shareData.k])));
                     }
                     // Clear the hash after loading
                     window.history.replaceState(null, '', window.location.pathname);
