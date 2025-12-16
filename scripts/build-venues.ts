@@ -143,7 +143,21 @@ async function buildVenues() {
         fetchPerformances('gyeonggi'),
         fetchPerformances('incheon'),
     ]);
-    const all = [...seoul, ...gyeonggi, ...incheon];
+    const interparkItems = [...seoul, ...gyeonggi, ...incheon];
+
+    // Read TimeTicket Data
+    let timeticketItems: any[] = [];
+    const TIMETICKET_FILE = path.join(process.cwd(), 'src/data/timeticket.json');
+    if (fs.existsSync(TIMETICKET_FILE)) {
+        try {
+            timeticketItems = JSON.parse(fs.readFileSync(TIMETICKET_FILE, 'utf-8'));
+            console.log(`Loaded ${timeticketItems.length} TimeTicket items.`);
+        } catch (e) {
+            console.error('Failed to load TimeTicket data', e);
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems];
 
     console.log(`Total items: ${all.length}`);
 
@@ -188,16 +202,28 @@ async function buildVenues() {
 
     // 3. Process new venues and update with coordinates (Slow pass)
     let processedCount = 0;
-    const MAX_PROCESS = 100;
+    const MAX_PROCESS = 2000;
 
-    for (const venueName of uniqueVenues) {
+    // Sort to prioritize '트릭아이' for immediate check
+    const sortedVenues = Array.from(uniqueVenues).sort((a, b) => {
+        if (a.includes('트릭아이') && !b.includes('트릭아이')) return -1;
+        if (b.includes('트릭아이') && !a.includes('트릭아이')) return 1;
+        return 0;
+    });
+
+    for (const venueName of sortedVenues) {
         // Skip if we already have district AND lat/lng
-        if (venues[venueName].district && venues[venueName].lat) continue;
+        if (venues[venueName]?.district && venues[venueName]?.lat) continue;
 
         // Also skip if we have address?
-        if (venues[venueName].address && venues[venueName].address !== '정보 없음') continue;
+        if (venues[venueName]?.address && venues[venueName]?.address !== '정보 없음') continue;
 
         if (processedCount >= MAX_PROCESS) break;
+
+        // Ensure entry exists
+        if (!venues[venueName]) {
+            venues[venueName] = { name: venueName, address: '정보 없음', district: '' };
+        }
 
         // ... rest of loop
         const perf = all.find(p => p.venue === venueName);
@@ -212,11 +238,16 @@ async function buildVenues() {
 
         // 3a. Fetch Address if missing
         if (!address || address === '정보 없음') {
-            // ... existing logic ...
-            address = await getVenueAddress(perf.id);
+            // Check if the performance object itself has an address (TimeTicket)
+            // @ts-ignore
+            if (perf.address) {
+                // @ts-ignore
+                address = perf.address;
+                console.log(`   -> Using Provided Address: ${address}`);
+            } else {
+                address = await getVenueAddress(perf.id);
+            }
         }
-
-        // ... continue logic ...
 
         if (address) {
             // Extract district (Gu)
@@ -225,6 +256,7 @@ async function buildVenues() {
 
             // 3b. Geocode if missing lat/lng
             if (!lat || !lng) {
+                /*
                 try {
                     // Use Nominatim (OpenStreetMap)
                     // Must send User-Agent
@@ -268,8 +300,9 @@ async function buildVenues() {
                         }
                     }
                 } catch (e) {
-                    // console.error('   -> Geocoding failed');
+                     console.error('   -> Geocoding failed', e);
                 }
+                */
 
                 // Fallback to District Coords
                 if ((!lat || !lng) && district) {
@@ -282,7 +315,7 @@ async function buildVenues() {
                 }
 
                 // Respect Rate Limit (1s) if we tried geocoding
-                await new Promise(r => setTimeout(r, 100)); // Faster if we fail fast, but let's keep it safe.
+                // await new Promise(r => setTimeout(r, 1000));
             }
         }
 
@@ -294,9 +327,15 @@ async function buildVenues() {
             lng
         };
         processedCount++;
+
+        // Incremental Save
+        if (processedCount % 20 === 0) {
+            fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
+            console.log(`[Autosave] Saved up to ${processedCount} items.`);
+        }
     }
 
-    // 4. Save
+    // 4. Save Final
     fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
     console.log(`Saved ${Object.keys(venues).length} venues to ${VENUE_FILE}`);
 }

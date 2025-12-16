@@ -258,6 +258,11 @@ async function scrapeTimeTicket() {
                     }
                 });
 
+                // Clean Venue Name (Remove " / 총 00석" etc)
+                if (venue.includes('/')) {
+                    venue = venue.split('/')[0].trim();
+                }
+
                 // Fallback structure (Old logic)
                 if (!venue) {
                     const allElements = document.body.getElementsByTagName('*');
