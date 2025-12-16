@@ -1,6 +1,6 @@
 [
   {
-    "id": "timeticket_m1g84xxs1",
+    "id": "timeticket_84847z249",
     "title": "한뼘사이",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -13,10 +13,11 @@
     "discount": "72%",
     "runningTime": "105분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로10길 11"
   },
   {
-    "id": "timeticket_mj696e5vr",
+    "id": "timeticket_5ynih3x0i",
     "title": "뱀프 X 헌터",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -29,10 +30,11 @@
     "discount": "78%",
     "runningTime": "90분",
     "ageLimit": "12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 94 , JS빌딩 지하"
   },
   {
-    "id": "timeticket_2xngv68nc",
+    "id": "timeticket_s3s5iky90",
     "title": "썸데이",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -45,10 +47,11 @@
     "discount": "76%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 72"
   },
   {
-    "id": "timeticket_31yvo58ce",
+    "id": "timeticket_om6k0ci9l",
     "title": "뷰티풀 라이프",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -61,10 +64,11 @@
     "discount": "72%",
     "runningTime": "90분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 이화장길 26"
   },
   {
-    "id": "timeticket_02k1je7xz",
+    "id": "timeticket_23z7xvbgd",
     "title": "죽여주는 이야기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -77,10 +81,11 @@
     "discount": "67%",
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 25"
   },
   {
-    "id": "timeticket_rphftavyb",
+    "id": "timeticket_yqek0p76k",
     "title": "과속스캔들",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -93,10 +98,11 @@
     "discount": "75%",
     "runningTime": "90분",
     "ageLimit": "8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 47 , 지하 1층"
   },
   {
-    "id": "timeticket_d7pyoztgw",
+    "id": "timeticket_48pnlssni",
     "title": "연애, 오류404",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.06.25~2025.12.31",
@@ -109,10 +115,11 @@
     "discount": "81%",
     "runningTime": "80분",
     "ageLimit": "중학생 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 52"
   },
   {
-    "id": "timeticket_jenl9brk1",
+    "id": "timeticket_wwtp3efhm",
     "title": "사내연애 보고서",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -125,10 +132,11 @@
     "discount": "74%",
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 12 , 지하 1층"
   },
   {
-    "id": "timeticket_0jepqhyg9",
+    "id": "timeticket_wkzq0etlo",
     "title": "오 마이 갓",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -141,10 +149,11 @@
     "discount": "82%",
     "runningTime": "75분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 68 , 지하 1층"
   },
   {
-    "id": "timeticket_d8zhsj7ir",
+    "id": "timeticket_ul69kzu3e",
     "title": "라면",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -157,10 +166,11 @@
     "discount": "72%",
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로10길 5 , 지하1층"
   },
   {
-    "id": "timeticket_yqunqlofa",
+    "id": "timeticket_lv7r0v7db",
     "title": "핫식스",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -173,10 +183,11 @@
     "discount": "77%",
     "runningTime": "130분",
     "ageLimit": "20세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 63 , 지하2층"
   },
   {
-    "id": "timeticket_3xvuql90i",
+    "id": "timeticket_ta1wnje99",
     "title": "쉬어매드니스",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -189,10 +200,11 @@
     "discount": "78%",
     "runningTime": "110분",
     "ageLimit": "16세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 동숭길 55 , 지하1층"
   },
   {
-    "id": "timeticket_bcmt22ygk",
+    "id": "timeticket_6ug3qhnor",
     "title": "써니텐",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -205,10 +217,11 @@
     "discount": "42%",
     "runningTime": "100분",
     "ageLimit": "10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 26 JTN아트홀 1관"
   },
   {
-    "id": "timeticket_hwyyta4st",
+    "id": "timeticket_p5jqbv7eo",
     "title": "미세스마캠",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.21~2026.02.01",
@@ -221,10 +234,11 @@
     "discount": "55%",
     "runningTime": "120분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로 144 , 지하 2층"
   },
   {
-    "id": "timeticket_blzb9t2p5",
+    "id": "timeticket_fzbbjl024",
     "title": "김종욱 찾기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -237,10 +251,11 @@
     "discount": "77%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8길 25"
   },
   {
-    "id": "timeticket_ykbl89m3x",
+    "id": "timeticket_7ial371q7",
     "title": "너의 목소리가 들려",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -253,10 +268,11 @@
     "discount": "82%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 63 지하2층"
   },
   {
-    "id": "timeticket_j2cbo6ipz",
+    "id": "timeticket_99gn8h3my",
     "title": "2호선 세입자",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -269,10 +285,11 @@
     "discount": "72%",
     "runningTime": "90분",
     "ageLimit": "초등학생(보호자동반 8세) 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로10길 5 , 5층"
   },
   {
-    "id": "timeticket_dxan66h1t",
+    "id": "timeticket_lkl8jrzzv",
     "title": "오백에 삼십",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -285,10 +302,11 @@
     "discount": "69%",
     "runningTime": "100분",
     "ageLimit": "14세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 26 JTN 아트홀 3관"
   },
   {
-    "id": "timeticket_dgy8m2ng7",
+    "id": "timeticket_67ilb7mll",
     "title": "운빨로맨스",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -301,10 +319,11 @@
     "discount": "62%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로8가길 80 , 5층"
   },
   {
-    "id": "timeticket_p56a12zdo",
+    "id": "timeticket_t0cdfy3f8",
     "title": "701호",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -317,10 +336,11 @@
     "discount": "67%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 86-11"
   },
   {
-    "id": "timeticket_rmvlo8zyq",
+    "id": "timeticket_xldfl1zjk",
     "title": "나의 PS 파트너",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -333,10 +353,11 @@
     "discount": "59%",
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 30 3층"
   },
   {
-    "id": "timeticket_fbp2unjxe",
+    "id": "timeticket_77m5i3gk7",
     "title": "옥탑방 고양이",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -349,10 +370,11 @@
     "discount": "74%",
     "runningTime": "100분",
     "ageLimit": "13세(중학생) 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로10길 24"
   },
   {
-    "id": "timeticket_ycjcjxz2c",
+    "id": "timeticket_auqdghdm4",
     "title": "보물찾기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -365,10 +387,11 @@
     "discount": "75%",
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 22 , 5층 아트포레스트"
   },
   {
-    "id": "timeticket_q1t690bek",
+    "id": "timeticket_grh24ebiw",
     "title": "남사친 여사친",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -381,10 +404,11 @@
     "discount": "69%",
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 49 , 4층"
   },
   {
-    "id": "timeticket_p7v9gegdi",
+    "id": "timeticket_6tzh675oe",
     "title": "비누향기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -397,10 +421,11 @@
     "discount": "74%",
     "runningTime": "110분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 창경궁로 258-9"
   },
   {
-    "id": "timeticket_yl33z7a2p",
+    "id": "timeticket_g41tx27my",
     "title": "조각 : 사라진 기억",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -413,10 +438,11 @@
     "discount": "74%",
     "runningTime": "70분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 50 , 지하1층"
   },
   {
-    "id": "timeticket_ftn9pkwpg",
+    "id": "timeticket_d9eigeq3h",
     "title": "자취",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -429,10 +455,11 @@
     "discount": "74%",
     "runningTime": "80분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로12길 50"
   },
   {
-    "id": "timeticket_ors2kxl71",
+    "id": "timeticket_epcmtjl25",
     "title": "아모르파티",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -445,10 +472,11 @@
     "discount": "59%",
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 24 , 3층"
   },
   {
-    "id": "timeticket_9lrjpveyr",
+    "id": "timeticket_2soa6rjet",
     "title": "벨리버튼",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.16~2025.12.28",
@@ -461,10 +489,11 @@
     "discount": "71%",
     "runningTime": "90분",
     "ageLimit": "만 15세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 78 , 지하 1층"
   },
   {
-    "id": "timeticket_9meaoc57g",
+    "id": "timeticket_unoelq4x0",
     "title": "사빠디",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -477,10 +506,11 @@
     "discount": "70%",
     "runningTime": "100분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 48 , 4층 아루또소극장"
   },
   {
-    "id": "timeticket_oxkfxszdv",
+    "id": "timeticket_vu60mab7h",
     "title": "딜리버리",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -493,10 +523,11 @@
     "discount": "67%",
     "runningTime": "90분",
     "ageLimit": "8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 30 , 4층"
   },
   {
-    "id": "timeticket_308w03m4u",
+    "id": "timeticket_tf62ed2s1",
     "title": "늘근도둑이야기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -509,10 +540,11 @@
     "discount": "72%",
     "runningTime": "100분",
     "ageLimit": "12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로12길 22 , 아트포레스트 지하 1층"
   },
   {
-    "id": "timeticket_vzp5q5qrs",
+    "id": "timeticket_hwje774o8",
     "title": "끝까지 간다",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -525,10 +557,11 @@
     "discount": "53%",
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 이화장1길 24"
   },
   {
-    "id": "timeticket_nref8jvn2",
+    "id": "timeticket_wr9t14ay8",
     "title": "북극곰 예술여행",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -541,10 +574,11 @@
     "discount": "50%",
     "runningTime": "60분",
     "ageLimit": "만 3세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 이화장1길 24"
   },
   {
-    "id": "timeticket_f0clvd260",
+    "id": "timeticket_wvdyafrnq",
     "title": "죽어야 사는 남자",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.05~2025.12.31",
@@ -557,10 +591,11 @@
     "discount": "77%",
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 41 , 지하 1층"
   },
   {
-    "id": "timeticket_ktckeuagm",
+    "id": "timeticket_4zg94weap",
     "title": "아빠와 딸",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -573,10 +608,11 @@
     "discount": "71%",
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 49 , 4층"
   },
   {
-    "id": "timeticket_jajkxen3f",
+    "id": "timeticket_2tedsj5v3",
     "title": "엘리펀트 송",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.22~2026.03.08",
@@ -589,10 +625,11 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 21 , 3층 예스24스테이지 3관"
   },
   {
-    "id": "timeticket_37k9qbirp",
+    "id": "timeticket_aufnel3b9",
     "title": "판",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2026.03.08",
@@ -605,10 +642,11 @@
     "discount": "50%",
     "runningTime": "110분",
     "ageLimit": "14세 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 126 , 동덕여대 공연예술 연구소 지하 4층"
   },
   {
-    "id": "timeticket_v60y5dsq7",
+    "id": "timeticket_hhocn85sw",
     "title": "미드나잇 : 액터뮤지션",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.13~2026.03.15",
@@ -621,10 +659,11 @@
     "discount": "40%",
     "runningTime": "100분",
     "ageLimit": "전체 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 83 , 예스24아트원 1관"
   },
   {
-    "id": "timeticket_5swtjrc6l",
+    "id": "timeticket_sf58cunsk",
     "title": "트레이스 유",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.04~2026.03.01",
@@ -637,10 +676,11 @@
     "discount": "36%",
     "runningTime": "110분",
     "ageLimit": "중학생 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 29 , 링크아트센터 벅스홀"
   },
   {
-    "id": "timeticket_ejdor6fqt",
+    "id": "timeticket_ahnwu8rew",
     "title": "로빈",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.01~2026.03.01",
@@ -653,10 +693,11 @@
     "discount": "45%",
     "runningTime": "100분",
     "ageLimit": "8세 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 85"
   },
   {
-    "id": "timeticket_8u1ol3q8p",
+    "id": "timeticket_k5mv3dkpm",
     "title": "#0528",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.14~2026.01.11",
@@ -669,10 +710,11 @@
     "discount": "50%",
     "runningTime": "110분",
     "ageLimit": "중학생 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 123"
   },
   {
-    "id": "timeticket_6unr8cgva",
+    "id": "timeticket_5kz85i80u",
     "title": "나르치스와 골드문트",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2026.03.22",
@@ -685,10 +727,11 @@
     "discount": "55%",
     "runningTime": "100분",
     "ageLimit": "만 11세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 83 , 예스24 아트원 2관"
   },
   {
-    "id": "timeticket_j1q8uubxf",
+    "id": "timeticket_ww2i1e8v0",
     "title": "이름 없는 약속들로부터",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.10.10~2025.12.28",
@@ -701,10 +744,11 @@
     "discount": "66%",
     "runningTime": "120분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 69 , 극장 온(구 CJ 아지트)"
   },
   {
-    "id": "timeticket_uzamjj8gp",
+    "id": "timeticket_3citxwwkt",
     "title": "캐빈",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.27~2026.03.01",
@@ -717,10 +761,11 @@
     "discount": "40%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 혜화로 17 , et theatre 1 (이티 씨어터 원)"
   },
   {
-    "id": "timeticket_qreu8577s",
+    "id": "timeticket_da8brpc6d",
     "title": "그때도 오늘2: 꽃신",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.16~2026.02.22",
@@ -733,10 +778,11 @@
     "discount": "30%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 148"
   },
   {
-    "id": "timeticket_16n3m3czq",
+    "id": "timeticket_gwze7gbec",
     "title": "테이크 오프",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.14~2026.02.01",
@@ -749,10 +795,11 @@
     "discount": "40%",
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로11길 23 대학로 스타시티"
   },
   {
-    "id": "timeticket_9k7ablz78",
+    "id": "timeticket_rwuz7hzoj",
     "title": "에쿠우스 : EQUUS",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.10.03~2026.02.01",
@@ -765,10 +812,11 @@
     "discount": "35%",
     "runningTime": "110분",
     "ageLimit": "17세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 130-5"
   },
   {
-    "id": "timeticket_5yv2cimei",
+    "id": "timeticket_wzydxmeey",
     "title": "바람으로의 여행",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.07~2026.01.10",
@@ -781,10 +829,11 @@
     "discount": "30%",
     "runningTime": "125분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 80 , 리트모빌딩 지하"
   },
   {
-    "id": "timeticket_9bahjeio1",
+    "id": "timeticket_0mose9mqc",
     "title": "테이프",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.31~2026.01.11",
@@ -797,10 +846,11 @@
     "discount": "60%",
     "runningTime": "75분",
     "ageLimit": "만 16세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로 303 , 지하 1층 소극장 공유"
   },
   {
-    "id": "timeticket_f8ey1c8n6",
+    "id": "timeticket_lzo4anqrg",
     "title": "서재 결혼 시키기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.13~2025.12.21",
@@ -813,10 +863,11 @@
     "discount": "35%",
     "runningTime": "165분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 17"
   },
   {
-    "id": "timeticket_8w1j117ab",
+    "id": "timeticket_g7ljg2754",
     "title": "라이어 1탄",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -829,10 +880,11 @@
     "discount": "66%",
     "runningTime": "100분",
     "ageLimit": "중학생 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 133 , 상명아트홀 1관"
   },
   {
-    "id": "timeticket_xvrfhl258",
+    "id": "timeticket_bae66px7w",
     "title": "기억의 숲",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -845,10 +897,11 @@
     "discount": "46%",
     "runningTime": "80분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 성균관로4길 42"
   },
   {
-    "id": "timeticket_ruxktmjuo",
+    "id": "timeticket_xx56cetvz",
     "title": "스위치",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -861,10 +914,11 @@
     "discount": "64%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 동숭길 140 , 지하1층"
   },
   {
-    "id": "timeticket_6p88fi3wi",
+    "id": "timeticket_6d75qhwmb",
     "title": "크리미널 시즌5",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -877,10 +931,11 @@
     "discount": "70%",
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 동숭길 39 , 지하2층"
   },
   {
-    "id": "timeticket_t3t2fuyr5",
+    "id": "timeticket_4vspkf5zh",
     "title": "헝키쇼 : HUNKY SHOW",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -893,10 +948,11 @@
     "discount": "45%",
     "runningTime": "90분",
     "ageLimit": "만 19세 이상 (여성)",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 15 , 지하 2층"
   },
   {
-    "id": "timeticket_3v7mvvv2o",
+    "id": "timeticket_kt0kkv9zi",
     "title": "담배가게 아가씨",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20~2026.02.28",
@@ -909,10 +965,11 @@
     "discount": "20%",
     "runningTime": "110분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 15-11 4층, 하마씨어터"
   },
   {
-    "id": "timeticket_sewwg39kn",
+    "id": "timeticket_d958fz3gv",
     "title": "투모로우 모닝",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.03~2026.03.02",
@@ -925,10 +982,11 @@
     "discount": "70%",
     "runningTime": "90분",
     "ageLimit": "8세(초등생) 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 79 , 지하 1층"
   },
   {
-    "id": "timeticket_ptn1ymvns",
+    "id": "timeticket_nq1t2gltp",
     "title": "남주를 부탁해",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -941,10 +999,11 @@
     "discount": "66%",
     "runningTime": "90분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 145 , 3층"
   },
   {
-    "id": "timeticket_srquhms8o",
+    "id": "timeticket_8k0k7thqa",
     "title": "마피아 게임",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.14~2025.12.31",
@@ -957,10 +1016,11 @@
     "discount": "65%",
     "runningTime": "90분",
     "ageLimit": "14세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로35길 26"
   },
   {
-    "id": "timeticket_nah9huzkz",
+    "id": "timeticket_qrtapz3xo",
     "title": "오를라(The Horla)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.20~2025.12.27",
@@ -973,10 +1033,11 @@
     "discount": "55%",
     "runningTime": "60분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 47"
   },
   {
-    "id": "timeticket_qquzepqld",
+    "id": "timeticket_d5u06uiee",
     "title": "오렌지스카이",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.18~2026.01.04",
@@ -989,10 +1050,11 @@
     "discount": "58%",
     "runningTime": "90분",
     "ageLimit": "10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_9oc4ujx2j",
+    "id": "timeticket_munhcflsx",
     "title": "연남동 빙굴빙굴 빨래방",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "~2025.12.31",
@@ -1005,10 +1067,11 @@
     "discount": "56%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로11길 23 , 7층"
   },
   {
-    "id": "timeticket_pm7bo5m5e",
+    "id": "timeticket_fchziopcu",
     "title": "어서 오세요, 휴남동 서점입니다",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1021,10 +1084,11 @@
     "discount": "50%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 52 , 3층"
   },
   {
-    "id": "timeticket_h8brnm7lt",
+    "id": "timeticket_q2orss244",
     "title": "불편한 편의점",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1037,10 +1101,11 @@
     "discount": "42%",
     "runningTime": "100분",
     "ageLimit": "8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로 132"
   },
   {
-    "id": "timeticket_keeus9dda",
+    "id": "timeticket_16ybrawlp",
     "title": "100층짜리 집",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2026.01.09~2026.03.02",
@@ -1053,10 +1118,11 @@
     "discount": "65%",
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 성균관로 25-2 , 성균관대학교 새천년홀"
   },
   {
-    "id": "timeticket_dtc3vm3hv",
+    "id": "timeticket_ploeg4u4a",
     "title": "세비야의 이발사",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.03.14~2025.12.31",
@@ -1069,10 +1135,11 @@
     "discount": "70%",
     "runningTime": "90분",
     "ageLimit": "6세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 64"
   },
   {
-    "id": "timeticket_8d5myrhxy",
+    "id": "timeticket_fw53oejnd",
     "title": "급식왕",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2024.12.14~2025.12.27",
@@ -1085,10 +1152,11 @@
     "discount": "50%",
     "runningTime": "60분",
     "ageLimit": "만 3세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
-    "id": "timeticket_7vlltlukh",
+    "id": "timeticket_jv0vtv9lr",
     "title": "프리즌",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1101,10 +1169,11 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 54 , 지하 1층"
   },
   {
-    "id": "timeticket_sf972u9i6",
+    "id": "timeticket_pkoqga0hj",
     "title": "택시안에서",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1117,10 +1186,11 @@
     "discount": "73%",
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 동숭길 76 , 지하1층"
   },
   {
-    "id": "timeticket_vv8pywh0n",
+    "id": "timeticket_qljvzi0op",
     "title": "헤어지는 기쁨",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.12~2025.12.31",
@@ -1133,10 +1203,11 @@
     "discount": "67%",
     "runningTime": "80분",
     "ageLimit": "만 14세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 39 , 지하 2층 봄날 아트홀"
   },
   {
-    "id": "timeticket_7w56jyc2s",
+    "id": "timeticket_9ei89fy9o",
     "title": "개같은 아빠",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.19~2026.02.01",
@@ -1149,10 +1220,11 @@
     "discount": "56%",
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 26 , 지하 1층"
   },
   {
-    "id": "timeticket_qxv9d2lnl",
+    "id": "timeticket_b5tohv45o",
     "title": "벼랑끝에서",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.30~2026.01.04",
@@ -1165,10 +1237,11 @@
     "discount": "53%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로12길 63 , 3층"
   },
   {
-    "id": "timeticket_oa8ojblk2",
+    "id": "timeticket_z8dwmniai",
     "title": "행오버",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1181,10 +1254,11 @@
     "discount": "66%",
     "runningTime": "90분",
     "ageLimit": "16세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로12길 69 , 3층"
   },
   {
-    "id": "timeticket_wp069a1h7",
+    "id": "timeticket_47pzi9qgq",
     "title": "크리미널 시즌4",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1197,10 +1271,11 @@
     "discount": "70%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 동숭길 39 , 지하1층"
   },
   {
-    "id": "timeticket_d0ho0wo0z",
+    "id": "timeticket_js9kf8k53",
     "title": "스폿라이트",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1213,10 +1288,11 @@
     "discount": "50%",
     "runningTime": "80분",
     "ageLimit": "만 19세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대명1길 7 , 3층"
   },
   {
-    "id": "timeticket_17108qa23",
+    "id": "timeticket_xsk0y82qk",
     "title": "매직라이브펍",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.07.18~2025.12.31",
@@ -1229,10 +1305,11 @@
     "discount": "51%",
     "runningTime": "70분",
     "ageLimit": "만 19세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로26길 41-3 , 지하 1층"
   },
   {
-    "id": "timeticket_724lqv534",
+    "id": "timeticket_pllgojqqn",
     "title": "졸탄쇼",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1245,10 +1322,11 @@
     "discount": "54%",
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로 116 시윤아트홀 지하 1층"
   },
   {
-    "id": "timeticket_cx9ts1m6j",
+    "id": "timeticket_iok997two",
     "title": "호두까기인형",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.01~2025.12.31",
@@ -1261,10 +1339,11 @@
     "discount": "64%",
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로 258-9 , 지하 1층"
   },
   {
-    "id": "timeticket_m9d0rlitx",
+    "id": "timeticket_whixhv2gv",
     "title": "민영석의 재즈기타 라이브 공연",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.30",
@@ -1277,10 +1356,11 @@
     "discount": "63%",
     "runningTime": "60분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 47"
   },
   {
-    "id": "timeticket_vizd2ck4m",
+    "id": "timeticket_hmj34uip3",
     "title": "모든 날 모든 순간",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.20~2026.03.31",
@@ -1293,10 +1373,11 @@
     "discount": "75%",
     "runningTime": "100분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 50 , B1 플레이더씨어터"
   },
   {
-    "id": "timeticket_iqt4s8632",
+    "id": "timeticket_i8sb2c9zw",
     "title": "그날의 타이밍",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.07~2025.12.31",
@@ -1309,10 +1390,11 @@
     "discount": "75%",
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭4길 16-3"
   },
   {
-    "id": "timeticket_a4s8913t1",
+    "id": "timeticket_e13l8qw4j",
     "title": "뮤직드라마 청춘 : ON AIR",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1325,10 +1407,11 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 54 , 지하 1층 에이치씨어터"
   },
   {
-    "id": "timeticket_809552p33",
+    "id": "timeticket_xawj2zgk2",
     "title": "플러팅",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2026.01.25",
@@ -1341,10 +1424,11 @@
     "discount": "79%",
     "runningTime": "100분",
     "ageLimit": "만 15세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 78 , 지하 1층"
   },
   {
-    "id": "timeticket_4g87aodp2",
+    "id": "timeticket_ozpp6pft5",
     "title": "님만헤민 게스트하우스",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2026.01.08~2026.04.05",
@@ -1357,10 +1441,11 @@
     "discount": "타임티켓가",
     "runningTime": "110분",
     "ageLimit": "만 16세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 혜화로5길 5 , 선돌극장"
   },
   {
-    "id": "timeticket_l1q6j4jhm",
+    "id": "timeticket_6gjde8iyj",
     "title": "힐링 인 더 라디오 시즌6",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.20~2025.12.28",
@@ -1373,10 +1458,11 @@
     "discount": "59%",
     "runningTime": "100분",
     "ageLimit": "8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 낙산길 14 , 지하"
   },
   {
-    "id": "timeticket_1ys15ydaa",
+    "id": "timeticket_bqljaa8fp",
     "title": "세자매",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.05~2026.01.31",
@@ -1389,10 +1475,11 @@
     "discount": "27%",
     "runningTime": "180분",
     "ageLimit": "중학생 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 성균관로3길 23"
   },
   {
-    "id": "timeticket_sszt9qxbf",
+    "id": "timeticket_jcm4nk8ec",
     "title": "동상이몽",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.28",
@@ -1405,10 +1492,11 @@
     "discount": "71%",
     "runningTime": "70분",
     "ageLimit": "12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 혜화동 37-1 소극장공유"
   },
   {
-    "id": "timeticket_xxts7tyb2",
+    "id": "timeticket_880jo3d3y",
     "title": "드립소년단",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1421,10 +1509,11 @@
     "discount": "57%",
     "runningTime": "90분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
-    "id": "timeticket_abbnv6ffs",
+    "id": "timeticket_1ha3851qj",
     "title": "제우스의 고장난 번개",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1437,10 +1526,11 @@
     "discount": "64%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 혜화로 18 , 선빌딩 지하 1층"
   },
   {
-    "id": "timeticket_dtrqz5ab7",
+    "id": "timeticket_vzge2vxfu",
     "title": "미래상상마술쇼",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1453,10 +1543,11 @@
     "discount": "40%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로 116 , 공공일호 건물 지하 2층"
   },
   {
-    "id": "timeticket_86iuxdrwo",
+    "id": "timeticket_7kiibag6v",
     "title": "사춘기 메들리",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1469,10 +1560,11 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로8가길 30 , 4층"
   },
   {
-    "id": "timeticket_rq09qlker",
+    "id": "timeticket_90kkybone",
     "title": "시간을 파는 상점",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1485,10 +1577,11 @@
     "discount": "51%",
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로8가길 36 , 3층"
   },
   {
-    "id": "timeticket_2egfyn6ic",
+    "id": "timeticket_3obgwg2ht",
     "title": "내일은 내일에게",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1501,10 +1594,11 @@
     "discount": "51%",
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로 128 , 21세기빌딩 5층"
   },
   {
-    "id": "timeticket_xzn19axpe",
+    "id": "timeticket_2qhyfoq1l",
     "title": "콩쥐 팥쥐",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1517,10 +1611,11 @@
     "discount": "50%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_isz7mxq0w",
+    "id": "timeticket_d9jpigeys",
     "title": "피노키오야 노올자~!",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1533,10 +1628,11 @@
     "discount": "64%",
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로 258-9 , 지하 1층"
   },
   {
-    "id": "timeticket_z137ha1yf",
+    "id": "timeticket_9qex7tgkh",
     "title": "아기돼지 삼형제-늑대숲 또옹돼지 원정대",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1549,10 +1645,11 @@
     "discount": "64%",
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로10길 12 3층"
   },
   {
-    "id": "timeticket_0ghde58lm",
+    "id": "timeticket_lfhmt6zm2",
     "title": "오즈의 마법사",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1565,10 +1662,11 @@
     "discount": "50%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_7597leyac",
+    "id": "timeticket_jmeku8plv",
     "title": "반짝반짝 라푼젤",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1581,10 +1679,11 @@
     "discount": "55%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 종로구 대학로14길 18-2 , 지하1층"
   },
   {
-    "id": "timeticket_isafhqcgd",
+    "id": "timeticket_w4ax70kt6",
     "title": "반짝반짝 인어공주",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1597,10 +1696,11 @@
     "discount": "55%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_hlr14o6xv",
+    "id": "timeticket_q8nbdv306",
     "title": "반짝반짝 백설공주",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1613,10 +1713,11 @@
     "discount": "50%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_dsi8vn6g9",
+    "id": "timeticket_jrkn3ah1e",
     "title": "반짝반짝 신데렐라",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1629,10 +1730,11 @@
     "discount": "50%",
     "runningTime": "50분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_6j7e8thdk",
+    "id": "timeticket_xzpvat351",
     "title": "타지마할의 근위병",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.12~2026.01.04",
@@ -1645,10 +1747,11 @@
     "discount": "61%",
     "runningTime": "100분",
     "ageLimit": "14세 이상(2012년 출생자부터)",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 강서구 마곡중앙로 136 , 유플러스 스테이지"
   },
   {
-    "id": "timeticket_z821hvthm",
+    "id": "timeticket_peomdkkjv",
     "title": "나 혼자만 레벨업 on ICE",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.31",
@@ -1661,10 +1764,11 @@
     "discount": "40%",
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 양천구 안양천로 939 목동 아이스링크장"
   },
   {
-    "id": "timeticket_eq0j327ah",
+    "id": "timeticket_w64gl7ecf",
     "title": "집이 없어",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.26~2025.12.28",
@@ -1677,10 +1781,11 @@
     "discount": "50%",
     "runningTime": "100분",
     "ageLimit": "초등학생 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 성동구 서울숲2길 32-14 , (성수동1가,갤러리아 포레) G층"
   },
   {
-    "id": "timeticket_x59appvmr",
+    "id": "timeticket_sk9ayf07p",
     "title": "은밀한 연애",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.28",
@@ -1693,10 +1798,11 @@
     "discount": "68%",
     "runningTime": "75분",
     "ageLimit": "만 12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 이화장길 72 2층 무하아트센터 2관"
   },
   {
-    "id": "timeticket_0tupxxyau",
+    "id": "timeticket_0ibvmlvwf",
     "title": "난타(NANTA) - 명동",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1709,10 +1815,11 @@
     "discount": "40%",
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 명동길 26 , 유네스코회관 3층"
   },
   {
-    "id": "timeticket_z3dyjqreq",
+    "id": "timeticket_50tpwggdx",
     "title": "난타(NANTA) - 홍대",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1725,10 +1832,11 @@
     "discount": "40%",
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 마포구 양화로16길 29 ,옐로우다이아몬드 지하2층 , 지하3층"
   },
   {
-    "id": "timeticket_cm0tsczi9",
+    "id": "timeticket_9502zk0hg",
     "title": "호두까기인형(송파)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.06~2026.01.25",
@@ -1741,10 +1849,11 @@
     "discount": "55%",
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 송파구 올림픽로 424 , 올림픽공원 내 우리금융아트홀"
   },
   {
-    "id": "timeticket_roh1ga4fi",
+    "id": "timeticket_wliauqukn",
     "title": "푸른 사자 와니니",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2026.01.03~2026.01.25",
@@ -1757,10 +1866,11 @@
     "discount": "55%",
     "runningTime": "100분",
     "ageLimit": "48개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 노원구 중계로 181 , 대공연장"
   },
   {
-    "id": "timeticket_60ryt8ukq",
+    "id": "timeticket_dsmvi05ng",
     "title": "페인터즈(광화문전용관)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1773,10 +1883,11 @@
     "discount": "30%",
     "runningTime": "75분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 정동길 3 , 경향아트힐"
   },
   {
-    "id": "timeticket_o1iazpvm9",
+    "id": "timeticket_dhcg0i1io",
     "title": "점프",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1789,10 +1900,11 @@
     "discount": "46%",
     "runningTime": "80분",
     "ageLimit": "36개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 마른내로 47 , 명보아트홀 지하 3층"
   },
   {
-    "id": "timeticket_kium7nlb5",
+    "id": "timeticket_kzp5rakzt",
     "title": "와일드 와일드",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2024.08.16~2025.12.31",
@@ -1805,10 +1917,11 @@
     "discount": "57%",
     "runningTime": "75분",
     "ageLimit": "만 19세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 마른내로 47 , 명보아트홀 지하 1층"
   },
   {
-    "id": "timeticket_8db3mq9ds",
+    "id": "timeticket_39tcl52x3",
     "title": "산울림 편지콘서트 ＜에릭 사티와 벨 에포크의 예술가들＞",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.18~2026.01.11",
@@ -1821,10 +1934,11 @@
     "discount": "34%",
     "runningTime": "175분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 마포구 와우산로 157 , 서교동, 지층 (소극장 산울림)"
   },
   {
-    "id": "timeticket_8fxjkzxu0",
+    "id": "timeticket_shch8gi8h",
     "title": "아주아주 배고픈 애벌레 쇼",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.10.24~2026.03.02",
@@ -1837,10 +1951,11 @@
     "discount": "43%",
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 마포구 양화로 45 , 메세나폴리스 2층"
   },
   {
-    "id": "timeticket_gvz7sr5mt",
+    "id": "timeticket_a4v6ga2be",
     "title": "장수탕 선녀님",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2021.09.16~2026.02.08",
@@ -1853,10 +1968,11 @@
     "discount": "46%",
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 성동구 서울숲2길 32-14 , G층"
   },
   {
-    "id": "timeticket_xug06cf2v",
+    "id": "timeticket_pcegixs44",
     "title": "알사탕",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.04.18~2026.02.08",
@@ -1869,10 +1985,11 @@
     "discount": "55%",
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 성동구 서울숲2길 32-14 , G층"
   },
   {
-    "id": "timeticket_yoh98i80q",
+    "id": "timeticket_cnczccnkp",
     "title": "흉터",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1885,10 +2002,11 @@
     "discount": "46%",
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 마포구 와우산로 147-1"
   },
   {
-    "id": "timeticket_45az2binw",
+    "id": "timeticket_tnczua5zk",
     "title": "크리스마스캐럴",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.28",
@@ -1901,10 +2019,11 @@
     "discount": "50%",
     "runningTime": "80분",
     "ageLimit": "만 5세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 성북구 길음로7길 20 , 꿈빛극장"
   },
   {
-    "id": "timeticket_nvfd3luaj",
+    "id": "timeticket_4kpxb62hr",
     "title": "윤형빈쇼 로맨틱 크리스마스/신년맞이 코미디의맛",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20~2025.12.31",
@@ -1917,10 +2036,11 @@
     "discount": "32%",
     "runningTime": "90분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 마포구 와우산로21길 29 , 지하1층"
   },
   {
-    "id": "timeticket_0z3w22vl5",
+    "id": "timeticket_ripylr37i",
     "title": "개그스테이지",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1933,10 +2053,11 @@
     "discount": "58%",
     "runningTime": "90분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 마포구 와우산로21길 29 , 지하 1층"
   },
   {
-    "id": "timeticket_0e7y4f3g9",
+    "id": "timeticket_9khla26t0",
     "title": "맥주 한잔 하실래요?",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1949,10 +2070,11 @@
     "discount": "30%",
     "runningTime": "150분",
     "ageLimit": "만 19세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 을지로38길 9-4 , 4층"
   },
   {
-    "id": "timeticket_hytmdje4a",
+    "id": "timeticket_9ztfb0az5",
     "title": "코쿤쇼 : KOKOON SHOW",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -1965,10 +2087,11 @@
     "discount": "56%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울 마포구 와우산로21길 29 , 지하1층"
   },
   {
-    "id": "timeticket_5blszuuav",
+    "id": "timeticket_i5bkqr8x1",
     "title": "베베핀 뮤지컬 ＜두근두근 새친구＞",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.19~2026.01.04",
@@ -1981,10 +2104,11 @@
     "discount": "69%",
     "runningTime": "65분",
     "ageLimit": "12개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 서대문구 연세로 50"
   },
   {
-    "id": "timeticket_0hdejgdg7",
+    "id": "timeticket_tpa9ph8f0",
     "title": "산타와 빈양말",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.22~2025.12.25",
@@ -1997,10 +2121,11 @@
     "discount": "50%",
     "runningTime": "70분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 광진구 능동로 76"
   },
   {
-    "id": "timeticket_oqaqvr20f",
+    "id": "timeticket_r9nff7bpi",
     "title": "별의 무리 : Constellations",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.17~2025.12.24",
@@ -2013,10 +2138,11 @@
     "discount": "50%",
     "runningTime": "100분",
     "ageLimit": "만 14세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 구로구 새말로 107-32 , 신도림역 3번 출구 아래 서울문화센터 신도림 안쪽으로 입장"
   },
   {
-    "id": "timeticket_x7mvjm0wv",
+    "id": "timeticket_pnycp5c6z",
     "title": "폭풍우 치는 밤에",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.05.03~2025.12.28",
@@ -2029,10 +2155,11 @@
     "discount": "68%",
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 송파구 올림픽로 424"
   },
   {
-    "id": "timeticket_cbzv7ubrx",
+    "id": "timeticket_wimm94cx7",
     "title": "마트로시카",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.01~2025.12.31",
@@ -2045,10 +2172,11 @@
     "discount": "32%",
     "runningTime": "110분",
     "ageLimit": "만 13세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 중구 초동 18-5 , 명보아트홀 3층"
   },
   {
-    "id": "timeticket_f5gvhmpnz",
+    "id": "timeticket_s8rtkcxmr",
     "title": "안녕 또 안녕",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.17~2025.12.31",
@@ -2061,10 +2189,11 @@
     "discount": "71%",
     "runningTime": "70분",
     "ageLimit": "12세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 종로구 창경궁로34길 18-12 지하 1층"
   },
   {
-    "id": "timeticket_fw4yrqjaj",
+    "id": "timeticket_5v7ljdha9",
     "title": "나무늘보 릴렉스",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.15~2026.01.04",
@@ -2077,10 +2206,11 @@
     "discount": "63%",
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 구로구 구로중앙로 134 , 구로 예술나무씨어터"
   },
   {
-    "id": "timeticket_srrmz809h",
+    "id": "timeticket_mg03s2w9z",
     "title": "가방 들어주는 아이들",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2026.01.03~2026.02.08",
@@ -2093,10 +2223,11 @@
     "discount": "67%",
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 광진구 능동로 216 , 서울상상나라 B1"
   },
   {
-    "id": "timeticket_oyfvvxsjp",
+    "id": "timeticket_r7i8v6lh5",
     "title": "영시기",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2109,10 +2240,11 @@
     "discount": "50%",
     "runningTime": "80분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 성동구 성덕정길 135-1 , 지하 1층"
   },
   {
-    "id": "timeticket_dcxg0ji6k",
+    "id": "timeticket_3mz53uzcl",
     "title": "판타스틱 스노우맨",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2025.12.27",
@@ -2125,10 +2257,11 @@
     "discount": "45%",
     "runningTime": "55분",
     "ageLimit": "20개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  서울특별시 마포구 대흥로20길 28 , 마포아트센터 3층"
   },
   {
-    "id": "timeticket_0hfzom7qs",
+    "id": "timeticket_62cw65200",
     "title": "2025 남진 전국투어 콘서트(의정부)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20",
@@ -2141,10 +2274,11 @@
     "discount": "24%",
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 의정부시 의정로 1 , 의정부예술의전당 대극장"
   },
   {
-    "id": "timeticket_nsogf93xy",
+    "id": "timeticket_8qvbnxaqr",
     "title": "2025 박강성 전국투어 콘서트 : MY LIFE (의정부)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.21",
@@ -2157,10 +2291,11 @@
     "discount": "29%",
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 의정부시 의정로 1 , 군산예술의전당 대공연장"
   },
   {
-    "id": "timeticket_4l1cqy7wc",
+    "id": "timeticket_hc4yt13mu",
     "title": "2025 부활 40주년 콘서트(성남)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.31",
@@ -2173,10 +2308,11 @@
     "discount": "30%",
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 성남시 분당구 성남대로 808 , 성남아트센터"
   },
   {
-    "id": "timeticket_vlkmpdmmp",
+    "id": "timeticket_wdvp4m2on",
     "title": "메리크리스마스 산타할아버지(성남)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.25",
@@ -2189,10 +2325,11 @@
     "discount": "48%",
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 성남시 수정구 수정로171번길 10 , 성남시의료원 성남아트리움 대극장"
   },
   {
-    "id": "timeticket_l7z36vwe9",
+    "id": "timeticket_drdpb5495",
     "title": "루돌프의 크리스마스 선물(성남)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.19~2025.12.21",
@@ -2205,10 +2342,11 @@
     "discount": "53%",
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 성남시 분당구 성남대로 808 , 성남아트센터 앙상블시어터"
   },
   {
-    "id": "timeticket_3zofi2rf3",
+    "id": "timeticket_w8g1j7bdh",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(성남)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2025.12.25",
@@ -2221,10 +2359,11 @@
     "discount": "43%",
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 성남시 분당구 야탑로75번길 9 , 별관 지하 1층"
   },
   {
-    "id": "timeticket_90zilm7zz",
+    "id": "timeticket_sja4v8cem",
     "title": "라푼젤(고양)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.27~2025.12.28",
@@ -2237,10 +2376,11 @@
     "discount": "58%",
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 고양시 덕양구 어울림로 33 , 고양 어울림누리 별모래 극장"
   },
   {
-    "id": "timeticket_h74i0t0lp",
+    "id": "timeticket_3tkebr1i2",
     "title": "더 매직서커스(인천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.27~2025.12.28",
@@ -2253,10 +2393,11 @@
     "discount": "52%",
     "runningTime": "55분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 서구 서달로 190 , 인천서구문화회관 대공연장"
   },
   {
-    "id": "timeticket_glpsyj9ec",
+    "id": "timeticket_jpjw1o6d8",
     "title": "스크루지의 크리스마스 캐롤(인천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.25",
@@ -2269,10 +2410,11 @@
     "discount": "53%",
     "runningTime": "55분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
   },
   {
-    "id": "timeticket_um844d5xr",
+    "id": "timeticket_o076o8kj3",
     "title": "아기 돼지 삼형제(인천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2025.12.25",
@@ -2285,10 +2427,11 @@
     "discount": "53%",
     "runningTime": "55분",
     "ageLimit": "전체이용가",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 부평구 아트센터로 166 , 1층"
   },
   {
-    "id": "timeticket_wgdziv49t",
+    "id": "timeticket_imudx2czs",
     "title": "성냥팔이 소녀(인천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20~2025.12.21",
@@ -2301,10 +2444,11 @@
     "discount": "58%",
     "runningTime": "55분",
     "ageLimit": "전체이용가",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
   },
   {
-    "id": "timeticket_j46ovuxgx",
+    "id": "timeticket_qka3xr1bu",
     "title": "판타스틱 스노우맨(인천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.13~2026.01.11",
@@ -2317,13 +2461,14 @@
     "discount": "61%",
     "runningTime": "55분",
     "ageLimit": "20개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 계양구 방축로 21 , 1층 공연장"
   },
   {
-    "id": "timeticket_7m7mhol1h",
+    "id": "timeticket_icmn06xt3",
     "title": "코미디 매직쇼(송도)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
-    "date": "2025.02.05~2025.12.31",
+    "date": "OPEN RUN",
     "venue": "미리내 마술극단 송도점",
     "link": "https://timeticket.co.kr/product/6135",
     "region": "gyeonggi",
@@ -2333,10 +2478,11 @@
     "discount": "42%",
     "runningTime": "60분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 3층"
   },
   {
-    "id": "timeticket_ss683nepi",
+    "id": "timeticket_zfmm6ccsz",
     "title": "스탠드업 코미디(송도)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2349,10 +2495,11 @@
     "discount": "47%",
     "runningTime": "80분",
     "ageLimit": "만 17세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 2층"
   },
   {
-    "id": "timeticket_kk3a3duju",
+    "id": "timeticket_ns7w4fd96",
     "title": "어린이 마술쇼(송도)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2365,10 +2512,11 @@
     "discount": "18%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플 스트리트 D동 3층 (메가박스 2층 에스컬레이터 이용)"
   },
   {
-    "id": "timeticket_gfd3uhcez",
+    "id": "timeticket_i4doke8uy",
     "title": "루돌프의 크리스마스 선물(부천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.09~2025.12.27",
@@ -2381,10 +2529,11 @@
     "discount": "55%",
     "runningTime": "50분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 부천시 원미구 길주로 1"
   },
   {
-    "id": "timeticket_u2uuvs9nj",
+    "id": "timeticket_91xq438nm",
     "title": "어린이 마술쇼(부천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2397,10 +2546,11 @@
     "discount": "60%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 부천시 원미구 송내대로265번길 67 , 7층 (월드컵타운)"
   },
   {
-    "id": "timeticket_085cfpk62",
+    "id": "timeticket_3o8l9n1e9",
     "title": "한뼘사이(수원)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.11.21~2026.01.04",
@@ -2413,10 +2563,11 @@
     "discount": "51%",
     "runningTime": "105분",
     "ageLimit": "만 11세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 팔달구 인계로 123 , KBS 수원아트홀"
   },
   {
-    "id": "timeticket_uerr2f56t",
+    "id": "timeticket_qq9i5alx7",
     "title": "파리나무십자가 소년합창단 특별 초청 공연(수원)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.17",
@@ -2429,10 +2580,11 @@
     "discount": "31%",
     "runningTime": "115분",
     "ageLimit": "만 7세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 팔달구 효원로307번길 20 , 경기아트센터 대극장"
   },
   {
-    "id": "timeticket_2ql89pj7p",
+    "id": "timeticket_7a3q1j82k",
     "title": "과학에 빠진 마술사(수원)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.24~2026.02.28",
@@ -2445,10 +2597,11 @@
     "discount": "16%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 AK ARTHALL"
   },
   {
-    "id": "timeticket_h7bt104lr",
+    "id": "timeticket_i2mf8snm4",
     "title": "코미디 매직쇼(수원)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2461,10 +2614,11 @@
     "discount": "42%",
     "runningTime": "60분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_w5ac5eo1l",
+    "id": "timeticket_yl4xi9fxm",
     "title": "어린이 마술쇼(수원)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2477,10 +2631,11 @@
     "discount": "18%",
     "runningTime": "50분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_qbq45aaph",
+    "id": "timeticket_58hhs09ki",
     "title": "호두까기인형(과천)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.04~2025.12.28",
@@ -2493,10 +2648,11 @@
     "discount": "60%",
     "runningTime": "70분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 과천시 상하벌로 110 , 어울림홀"
   },
   {
-    "id": "timeticket_v5a540jnj",
+    "id": "timeticket_rp57dbzgf",
     "title": "스탠드업 코미디(광교)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "OPEN RUN",
@@ -2509,10 +2665,11 @@
     "discount": "56%",
     "runningTime": "90분",
     "ageLimit": "만 16세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_b9e20h37w",
+    "id": "timeticket_fx3eme0tz",
     "title": "라푼젤(용인)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.27~2025.12.28",
@@ -2525,10 +2682,11 @@
     "discount": "58%",
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
   },
   {
-    "id": "timeticket_2d9u63sbp",
+    "id": "timeticket_bb0h4ecig",
     "title": "콧구멍을 후비면(용인)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20~2025.12.21",
@@ -2541,10 +2699,11 @@
     "discount": "58%",
     "runningTime": "55분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
   },
   {
-    "id": "timeticket_1us0vf95z",
+    "id": "timeticket_qfyfmhpwl",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(용인)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2025.12.25",
@@ -2557,10 +2716,11 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 용인시 수지구 문정로7번길 15"
   },
   {
-    "id": "timeticket_ei1rl8ned",
+    "id": "timeticket_05hxmekh4",
     "title": "꿀벌 마야의 모험(용인)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.09.13~2026.01.25",
@@ -2573,10 +2733,11 @@
     "discount": "34%",
     "runningTime": "50분",
     "ageLimit": "18개월 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 내"
   },
   {
-    "id": "timeticket_1bicq2c7e",
+    "id": "timeticket_3qr9b4t6b",
     "title": "사과가 쿵! (평택)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.20~2025.12.21",
@@ -2589,10 +2750,11 @@
     "discount": "58%",
     "runningTime": "55분",
     "ageLimit": "전체관람가",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 평택시 경기대로 1366 , 북부문화예술회관"
   },
   {
-    "id": "timeticket_j4vvcctkp",
+    "id": "timeticket_do2crfd2b",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(평택)",
     "image": "https://timeticket.co.kr/mobile_img/nothumb.jpg",
     "date": "2025.12.23~2025.12.25",
@@ -2605,6 +2767,7 @@
     "discount": "50%",
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
-    "casting": ""
+    "casting": "",
+    "address": "·  경기 평택시 경기대로 1366"
   }
 ]

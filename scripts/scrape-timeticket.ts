@@ -20,6 +20,7 @@ export interface Performance {
     runningTime: string;
     ageLimit: string;
     casting: string;
+    address?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/timeticket.json');
@@ -247,12 +248,25 @@ async function scrapeTimeTicket() {
                 // But typically if there is a "sale" price, the higher number nearby might be original.
                 // For safety, leaving blank or matching simple "정가 : ..." pattern if exists.
 
+                // Address
+                let address = '';
+                const addressEl = document.querySelector('#ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box > p:nth-child(2)');
+                if (addressEl) {
+                    const text = addressEl.textContent || '';
+                    if (text.includes('주소')) {
+                        address = text.replace('주소', '').replace(':', '').trim();
+                    } else {
+                        address = text.trim();
+                    }
+                }
+
                 return {
                     runningTime,
                     ageLimit,
                     date: date || 'OPEN RUN',
                     venue: venue || '대학로',
-                    originalPrice
+                    originalPrice,
+                    address
                 };
             });
 
@@ -270,8 +284,10 @@ async function scrapeTimeTicket() {
                 discount: item.discount,
                 runningTime: detailData.runningTime,
                 ageLimit: detailData.ageLimit,
-                casting: ''
+                casting: '',
+                address: detailData.address
             });
+
 
         } catch (e) {
             // console.error(`Failed to scrape ${item.title}: ${e}`);
