@@ -2374,31 +2374,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </span>
                                     </div>
 
-                                    {/* Price & Discount info (Default Card) - Redesigned */}
-                                    {(perf.price || perf.discount) && (
-                                        <div className="flex justify-between items-end mt-2 w-full pt-1">
-                                            {/* Left: Discount */}
-                                            <div className="flex flex-col">
-                                                {perf.discount && (
-                                                    <div className="text-red-500 drop-shadow-md">
-                                                        <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                        <span className="text-sm font-light">%</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            {/* Right: Price */}
-                                            <div className="flex flex-col items-end">
-                                                {perf.originalPrice && <span className="text-gray-400 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
-                                                {perf.price && (
-                                                    <div className="text-white drop-shadow-md">
-                                                        <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                        <span className="text-xs font-light ml-0.5">원</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-                                    )}
-
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                             {perf.title.trim()}
@@ -2423,6 +2398,31 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {perf.venue}
                                         </button>
                                     </div>
+
+                                    {/* Price & Discount info (Default Card) - Moved to Bottom */}
+                                    {(perf.price || perf.discount) && (
+                                        <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
+                                            {/* Left: Discount */}
+                                            <div className="flex flex-col justify-end">
+                                                {perf.discount && (
+                                                    <div className="text-red-500 drop-shadow-md leading-none">
+                                                        <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                        <span className="text-sm font-light ml-0.5">%</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            {/* Right: Price */}
+                                            <div className="flex items-baseline gap-1.5">
+                                                {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
+                                                {perf.price && (
+                                                    <div className="text-white drop-shadow-md leading-none">
+                                                        <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </>
                         )}

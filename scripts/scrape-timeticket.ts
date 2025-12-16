@@ -125,201 +125,212 @@ async function scrapeTimeTicket() {
                     const link = linkAttribute ? (linkAttribute.startsWith('http') ? linkAttribute : 'https://timeticket.co.kr' + linkAttribute) : '';
 
                     const imgEl = item.querySelector('.thumb img');
-                    let image = imgEl ? imgEl.getAttribute('src') || '' : '';
-                    if (image && !image.startsWith('http')) {
-                        image = 'https://timeticket.co.kr' + image;
+                    const thumbDiv = item.querySelector('.thumb');
+
+                    // Check for lazy loading data-src first (most reliable), then src
+                    let image = imgEl ? (imgEl.getAttribute('data-src') || imgEl.getAttribute('src') || '') : '';
+
+                    // Fallback to background image if extracted
+                    if (!image && thumbDiv) {
+                        const style = thumbDiv.getAttribute('style');
+                        const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
+                        if (match) image = match[1];
+                    } (most reliable), then src
+                let image = imgEl ? (imgEl.getAttribute('data-src') || imgEl.getAttribute('src') || '') : '';
+
+                // Fallback to background image if extracted
+                if (!image && thumbDiv) {
+                    const style = thumbDiv.getAttribute('style');
+                    const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
+                    if (match) image = match[1];
+                }
+
+                if (image && !image.startsWith('http') && !image.startsWith('data:')) {
+                    image = 'https://timeticket.co.kr' + image;
+                }
+
+                const titleEl = item.querySelector('.ticket_info .title');
+                const title = titleEl ? titleEl.textContent?.trim() || '' : '';
+
+                const categoryEl = item.querySelector('.ticket_info .category');
+                const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
+
+                let genre = 'play';
+                if (categoryText.includes('뮤지컬')) genre = 'musical';
+                else if (categoryText.includes('콘서트')) genre = 'concert';
+
+                const discountEl = item.querySelector('.sale_percent');
+                const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
+
+                const priceEl = item.querySelector('.baro_price');
+                const price = priceEl ? priceEl.textContent?.trim() || '' : '';
+
+                if (link && title) {
+                    results.push({
+                        link,
+                        region: currentRegion,
+                        title,
+                        image,
+                        discount,
+                        price,
+                        genre
+                    });
+                }
+            });
+            return results;
+        }, region);
+
+        for (const item of listItems) {
+            if (!seenTitles.has(item.title)) {
+                seenTitles.add(item.title);
+                pendingItems.push(item);
+            }
+        }
+
+    } catch (e) {
+        console.error(`  Error collecting links from region ${code}: ${e}`);
+    }
+}
+
+console.log(`  Found ${pendingItems.length} unique performances.`);
+
+// 2. Scrape Details
+console.log(`\nPhase 2: Scraping details...`);
+const progressBar = new ProgressBar(pendingItems.length);
+let processedCount = 0;
+
+for (const item of pendingItems) {
+    try {
+        await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+        // Wait for the key element containing details. 
+        // We'll give it a moment to render any JS driven content
+        await new Promise(r => setTimeout(r, 500)); // Minimal wait for stability
+
+        const detailData = await page.evaluate(() => {
+            let runningTime = '';
+            let ageLimit = '';
+            let originalPrice = '';
+            let venue = '';
+            let date = '';
+
+            // Try to find specific elements first
+            const allElements = document.body.getElementsByTagName('*');
+
+            for (let i = 0; i < allElements.length; i++) {
+                const el = allElements[i] as HTMLElement;
+                const text = el.innerText || '';
+
+                // Venue
+                // Look for a line that starts with "장소 :" or contains it significantly
+                // and is NOT the tab menu
+                if (!venue && text.includes('장소 :') && text.length < 100 && !text.includes('공연정보')) {
+                    const parts = text.split('장소 :');
+                    if (parts.length > 1) {
+                        const candidate = parts[1].trim().split('\n')[0];
+                        if (candidate && candidate !== '환불규정' && candidate !== '문의') {
+                            venue = candidate;
+                        }
                     }
-
-                    const titleEl = item.querySelector('.ticket_info .title');
-                    const title = titleEl ? titleEl.textContent?.trim() || '' : '';
-
-                    const categoryEl = item.querySelector('.ticket_info .category');
-                    const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
-
-                    let genre = 'play';
-                    if (categoryText.includes('뮤지컬')) genre = 'musical';
-                    else if (categoryText.includes('콘서트')) genre = 'concert';
-
-                    const discountEl = item.querySelector('.sale_percent');
-                    const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
-
-                    const priceEl = item.querySelector('.baro_price');
-                    const price = priceEl ? priceEl.textContent?.trim() || '' : '';
-
-                    if (link && title) {
-                        results.push({
-                            link,
-                            region: currentRegion,
-                            title,
-                            image,
-                            discount,
-                            price,
-                            genre
-                        });
-                    }
-                });
-                return results;
-            }, region);
-
-            for (const item of listItems) {
-                if (!seenTitles.has(item.title)) {
-                    seenTitles.add(item.title);
-                    pendingItems.push(item);
                 }
             }
 
-        } catch (e) {
-            console.error(`  Error collecting links from region ${code}: ${e}`);
-        }
+            const bodyText = document.body.innerText;
+
+            // Fallback Regex
+            if (!venue) {
+                const venueMatch = bodyText.match(/장소\s*[:]\s*([^\n\/·]+)/);
+                if (venueMatch) {
+                    const v = venueMatch[1].trim();
+                    if (v !== '환불규정') venue = v;
+                }
+            }
+
+            // Running Time
+            const runTimeMatch = bodyText.match(/이용시간\s*[:]?\s*약?\s*(\d+분)/);
+            if (runTimeMatch) runningTime = runTimeMatch[1];
+
+            // Age Limit (Simple extraction, taking first meaningful match)
+            const ageMatch = bodyText.match(/이용등급\s*[:]?\s*([^\n]+)/);
+            if (ageMatch) {
+                let age = ageMatch[1].trim();
+                if (age.includes('·')) age = age.split('·')[0].trim();
+                ageLimit = age;
+            }
+
+            // Date
+            const dateMatch = bodyText.match(/(?:진행)?기간\s*[:]?\s*([^\n·]{5,})/);
+            if (dateMatch) date = dateMatch[1].trim();
+
+            // Original Price guessing
+            // Often hidden or strikethrough in UI, hard to parse from text alone if not labeled "정가"
+            // But typically if there is a "sale" price, the higher number nearby might be original.
+            // For safety, leaving blank or matching simple "정가 : ..." pattern if exists.
+
+            // Address
+            let address = '';
+            const addressEl = document.querySelector('#ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box > p:nth-child(2)');
+            if (addressEl) {
+                const text = addressEl.textContent || '';
+                if (text.includes('주소')) {
+                    address = text.replace('주소', '').replace(':', '').trim();
+                } else {
+                    address = text.trim();
+                }
+            }
+
+            return {
+                runningTime,
+                ageLimit,
+                date: date || 'OPEN RUN',
+                venue: venue || '대학로',
+                originalPrice,
+                address,
+            };
+        });
+
+        // Use LIST image strictly as requested by user (thist is more reliable correctly)
+        const finalImage = item.image;
+
+        allItems.push({
+            id: `timeticket_${Math.random().toString(36).substr(2, 9)}`,
+            title: item.title,
+            image: finalImage,
+            date: detailData.date,
+            venue: detailData.venue,
+            link: item.link,
+            region: item.region,
+            genre: item.genre,
+            price: item.price,
+            originalPrice: detailData.originalPrice || item.price,
+            discount: item.discount,
+            runningTime: detailData.runningTime,
+            ageLimit: detailData.ageLimit,
+            casting: '',
+            address: detailData.address
+        });
+
+
+    } catch (e) {
+        // console.error(`Failed to scrape ${item.title}: ${e}`);
     }
 
-    console.log(`  Found ${pendingItems.length} unique performances.`);
+    processedCount++;
+    progressBar.update(processedCount);
+}
 
-    // 2. Scrape Details
-    console.log(`\nPhase 2: Scraping details...`);
-    const progressBar = new ProgressBar(pendingItems.length);
-    let processedCount = 0;
+progressBar.finish();
+console.log(`\nCompleted! Total collected: ${allItems.length}`);
 
-    for (const item of pendingItems) {
-        try {
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+await browser.close();
 
-            // Wait for the key element containing details. 
-            // We'll give it a moment to render any JS driven content
-            await new Promise(r => setTimeout(r, 500)); // Minimal wait for stability
+if (allItems.length === 0) {
+    console.error("No items collected! Skipping file save to prevent data loss.");
+    return;
+}
 
-            const detailData = await page.evaluate(() => {
-                let runningTime = '';
-                let ageLimit = '';
-                let originalPrice = '';
-                let venue = '';
-                let date = '';
-
-                // Try to find specific elements first
-                const allElements = document.body.getElementsByTagName('*');
-
-                for (let i = 0; i < allElements.length; i++) {
-                    const el = allElements[i] as HTMLElement;
-                    const text = el.innerText || '';
-
-                    // Venue
-                    // Look for a line that starts with "장소 :" or contains it significantly
-                    // and is NOT the tab menu
-                    if (!venue && text.includes('장소 :') && text.length < 100 && !text.includes('공연정보')) {
-                        const parts = text.split('장소 :');
-                        if (parts.length > 1) {
-                            const candidate = parts[1].trim().split('\n')[0];
-                            if (candidate && candidate !== '환불규정' && candidate !== '문의') {
-                                venue = candidate;
-                            }
-                        }
-                    }
-                }
-
-                const bodyText = document.body.innerText;
-
-                // Fallback Regex
-                if (!venue) {
-                    const venueMatch = bodyText.match(/장소\s*[:]\s*([^\n\/·]+)/);
-                    if (venueMatch) {
-                        const v = venueMatch[1].trim();
-                        if (v !== '환불규정') venue = v;
-                    }
-                }
-
-                // Running Time
-                const runTimeMatch = bodyText.match(/이용시간\s*[:]?\s*약?\s*(\d+분)/);
-                if (runTimeMatch) runningTime = runTimeMatch[1];
-
-                // Age Limit (Simple extraction, taking first meaningful match)
-                const ageMatch = bodyText.match(/이용등급\s*[:]?\s*([^\n]+)/);
-                if (ageMatch) {
-                    let age = ageMatch[1].trim();
-                    if (age.includes('·')) age = age.split('·')[0].trim();
-                    ageLimit = age;
-                }
-
-                // Date
-                const dateMatch = bodyText.match(/(?:진행)?기간\s*[:]?\s*([^\n·]{5,})/);
-                if (dateMatch) date = dateMatch[1].trim();
-
-                // Original Price guessing
-                // Often hidden or strikethrough in UI, hard to parse from text alone if not labeled "정가"
-                // But typically if there is a "sale" price, the higher number nearby might be original.
-                // For safety, leaving blank or matching simple "정가 : ..." pattern if exists.
-
-                // Address
-                let address = '';
-                const addressEl = document.querySelector('#ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box > p:nth-child(2)');
-                if (addressEl) {
-                    const text = addressEl.textContent || '';
-                    if (text.includes('주소')) {
-                        address = text.replace('주소', '').replace(':', '').trim();
-                    } else {
-                        address = text.trim();
-                    }
-                }
-
-                return {
-                    runningTime,
-                    ageLimit,
-                    date: date || 'OPEN RUN',
-                    venue: venue || '대학로',
-                    originalPrice,
-                    address,
-                    // Image (High Res)
-                    image: (() => {
-                        let img = document.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
-                        if (img && !img.startsWith('http')) {
-                            img = 'https://timeticket.co.kr' + img;
-                        }
-                        return img;
-                    })()
-                };
-            });
-
-            // Use detailed image if found, else fallback to list image (which might be nothumb)
-            const finalImage = detailData.image || item.image;
-
-            allItems.push({
-                id: `timeticket_${Math.random().toString(36).substr(2, 9)}`,
-                title: item.title,
-                image: finalImage,
-                date: detailData.date,
-                venue: detailData.venue,
-                link: item.link,
-                region: item.region,
-                genre: item.genre,
-                price: item.price,
-                originalPrice: detailData.originalPrice || item.price,
-                discount: item.discount,
-                runningTime: detailData.runningTime,
-                ageLimit: detailData.ageLimit,
-                casting: '',
-                address: detailData.address
-            });
-
-
-        } catch (e) {
-            // console.error(`Failed to scrape ${item.title}: ${e}`);
-        }
-
-        processedCount++;
-        progressBar.update(processedCount);
-    }
-
-    progressBar.finish();
-    console.log(`\nCompleted! Total collected: ${allItems.length}`);
-
-    await browser.close();
-
-    if (allItems.length === 0) {
-        console.error("No items collected! Skipping file save to prevent data loss.");
-        return;
-    }
-
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allItems, null, 2));
-    console.log(`Saved to ${OUTPUT_PATH}`);
+fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allItems, null, 2));
+console.log(`Saved to ${OUTPUT_PATH}`);
 }
 
 scrapeTimeTicket().catch(console.error);
