@@ -7,4 +7,6 @@ export type Performance = {
     link: string;
     region: string;
     genre: string;
+    price?: string;
+    discount?: string;
 };

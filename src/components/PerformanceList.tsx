@@ -554,7 +554,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             if (selectedRegion !== 'all' && p.region !== selectedRegion) return false;
 
             // 2. Genre Filter
-            if (selectedGenre !== 'all' && p.genre !== selectedGenre) return false;
+            if (selectedGenre === 'hotdeal') {
+                if (!p.discount && !p.price) return false;
+            } else if (selectedGenre !== 'all' && p.genre !== selectedGenre) return false;
 
             // 3. District Filter (only if region is selected)
             if (selectedRegion !== 'all' && selectedDistrict !== 'all') {
@@ -2275,6 +2277,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
+                                        {perf.discount && <span className="text-red-600 bg-white/80 px-1.5 py-0.5 rounded text-xs font-bold">{perf.discount}</span>}
                                         <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
                                     </div>
                                 </div>
@@ -2331,6 +2334,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
                                             })()}
                                         </span>
+
+                                        {/* Discount/Price Badge */}
+                                        {(perf.discount || perf.price) && (
+                                            <span className="px-2 py-1 rounded-[4px] text-xs bg-red-600 text-white border border-red-500/50 backdrop-blur-sm flex items-center gap-1 font-bold shadow-lg animate-pulse">
+                                                {perf.discount && <span>{perf.discount}</span>}
+                                                {perf.price && <span className="font-normal opacity-90">{perf.price}</span>}
+                                            </span>
+                                        )}
                                     </div>
 
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>

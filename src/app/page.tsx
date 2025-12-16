@@ -20,6 +20,14 @@ try {
     console.log('No yes24.json found, using empty array');
 }
 
+// TimeTicket data
+let timeticketData: any[] = [];
+try {
+    timeticketData = require('@/data/timeticket.json');
+} catch (e) {
+    console.log('No timeticket.json found, using empty array');
+}
+
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -85,8 +93,9 @@ async function getPerformances() {
     const basketball = kblData as unknown as any[];
     const festivals = festivalData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
+    const timeticket = timeticketData as unknown as any[];
 
-    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals, ...yes24];
+    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals, ...yes24, ...timeticket];
 
     // Filter expired
     // We use a fixed "now" for static build. 
