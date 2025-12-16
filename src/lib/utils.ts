@@ -2,6 +2,8 @@ export const getOptimizedUrl = (url: string, width: number = 400) => {
     if (!url) return '';
     // TimeTicket blocks wsrv.nl (403 Forbidden), skipping optimization as requested
     if (url.includes('timeticket.co.kr')) return url;
+    // Skip external optimization for local images (relative paths)
+    if (url.startsWith('/')) return url;
 
     try {
         // use wsrv.nl for image optimization
