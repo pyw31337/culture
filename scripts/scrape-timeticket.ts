@@ -266,14 +266,25 @@ async function scrapeTimeTicket() {
                     date: date || 'OPEN RUN',
                     venue: venue || '대학로',
                     originalPrice,
-                    address
+                    address,
+                    // Image (High Res)
+                    image: (() => {
+                        let img = document.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+                        if (img && !img.startsWith('http')) {
+                            img = 'https://timeticket.co.kr' + img;
+                        }
+                        return img;
+                    })()
                 };
             });
+
+            // Use detailed image if found, else fallback to list image (which might be nothumb)
+            const finalImage = detailData.image || item.image;
 
             allItems.push({
                 id: `timeticket_${Math.random().toString(36).substr(2, 9)}`,
                 title: item.title,
-                image: item.image,
+                image: finalImage,
                 date: detailData.date,
                 venue: detailData.venue,
                 link: item.link,

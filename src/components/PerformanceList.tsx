@@ -2288,14 +2288,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
-                                        <div className="flex flex-col items-end">
-                                            {(perf.price || perf.discount) && (
-                                                <div className="flex gap-1 items-center mb-0.5">
-                                                    {perf.discount && <span className="text-red-600 bg-white/80 px-1.5 py-0.5 rounded text-xs font-bold">{perf.discount}</span>}
-                                                    {perf.price && <span className="text-gray-900 text-xs font-bold">{perf.price}</span>}
-                                                </div>
-                                            )}
-                                            <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                                        <div className="mt-auto pt-3 flex flex-col items-start w-full">
+                                            <div className="flex items-center gap-1.5 w-full">
+                                                {perf.discount && <span className="text-red-700 text-xl font-extrabold">{perf.discount}</span>}
+                                                {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
+                                            </div>
+                                            <div className="flex justify-between items-baseline w-full mt-[-2px]">
+                                                {perf.price && <span className="text-black text-2xl font-black tracking-tighter">{perf.price}</span>}
+                                                <span className="text-gray-900 text-xs font-bold opacity-70">{perf.date}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
