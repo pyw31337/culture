@@ -1,10 +1,10 @@
 [
   {
-    "id": "timeticket_oa4bsbj4t",
+    "id": "timeticket_pyf1oppmy",
     "title": "한뼘사이",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/09/09/1725856757-60-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "라온아트홀",
+    "venue": "라온아트홀 / 총 206석",
     "link": "https://timeticket.co.kr/product/3560",
     "region": "seoul",
     "genre": "play",
@@ -14,14 +14,14 @@
     "runningTime": "105분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로10길 11"
+    "address": "서울 종로구 대학로10길 11"
   },
   {
-    "id": "timeticket_k30930xqv",
+    "id": "timeticket_gds1nrebg",
     "title": "뱀프 X 헌터",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/04/1741067832-64-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JS아트홀",
+    "venue": "JS아트홀 / 총 185석",
     "link": "https://timeticket.co.kr/product/5503",
     "region": "seoul",
     "genre": "musical",
@@ -31,14 +31,14 @@
     "runningTime": "90분",
     "ageLimit": "12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 94 , JS빌딩 지하"
+    "address": "서울특별시 종로구 동숭길 94 , JS빌딩 지하"
   },
   {
-    "id": "timeticket_a09taslyq",
+    "id": "timeticket_qtbjq4yr7",
     "title": "썸데이",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/05/12/1747009908-97-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "무하아트센터",
+    "venue": "무하아트센터 / 총 164석",
     "link": "https://timeticket.co.kr/product/5229",
     "region": "seoul",
     "genre": "musical",
@@ -48,14 +48,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 72"
+    "address": "서울특별시 종로구 이화장길 72"
   },
   {
-    "id": "timeticket_qj6lpkobc",
+    "id": "timeticket_2puw7mskb",
     "title": "뷰티풀 라이프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/13/1734079269-61-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN 아트홀 4관",
+    "venue": "JTN 아트홀 4관 / 총 208석",
     "link": "https://timeticket.co.kr/product/3471",
     "region": "seoul",
     "genre": "play",
@@ -65,14 +65,14 @@
     "runningTime": "90분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울 종로구 이화장길 26"
+    "address": "서울 종로구 이화장길 26"
   },
   {
-    "id": "timeticket_o1u6a6yhx",
+    "id": "timeticket_ddeua7p32",
     "title": "죽여주는 이야기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/26/1742964704-90-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "지인시어터",
+    "venue": "지인시어터 / 총 175석",
     "link": "https://timeticket.co.kr/product/5150",
     "region": "seoul",
     "genre": "play",
@@ -82,14 +82,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 25"
+    "address": "서울특별시 종로구 동숭길 25"
   },
   {
-    "id": "timeticket_9ez0coqcf",
+    "id": "timeticket_gwbln54sb",
     "title": "과속스캔들",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/31/1753949053-71-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "나인진홀 2관",
+    "venue": "나인진홀 2관 / 총 94석",
     "link": "https://timeticket.co.kr/product/5778",
     "region": "seoul",
     "genre": "play",
@@ -99,14 +99,14 @@
     "runningTime": "90분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 47 , 지하 1층"
+    "address": "서울특별시 종로구 동숭길 47 , 지하 1층"
   },
   {
-    "id": "timeticket_wijs1bs5o",
+    "id": "timeticket_8tji6h1t1",
     "title": "연애, 오류404",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/09/1749446253-22-_wonbon_N_7_255x357_70_2.jpg",
     "date": "2025.06.25~2025.12.31",
-    "venue": "스카이씨어터",
+    "venue": "스카이씨어터 / 총 139석",
     "link": "https://timeticket.co.kr/product/6336",
     "region": "seoul",
     "genre": "play",
@@ -116,14 +116,14 @@
     "runningTime": "80분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 52"
+    "address": "서울특별시 종로구 대학로8가길 52"
   },
   {
-    "id": "timeticket_s7h6my7eb",
+    "id": "timeticket_ko8l1hkpx",
     "title": "사내연애 보고서",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5400/5465/5465-00-251016d0-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "제나아트홀",
+    "venue": "제나아트홀 / 총 203석",
     "link": "https://timeticket.co.kr/product/5465",
     "region": "seoul",
     "genre": "play",
@@ -133,14 +133,14 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 12 , 지하 1층"
+    "address": "서울특별시 종로구 대학로10길 12 , 지하 1층"
   },
   {
-    "id": "timeticket_8wzgt0xtu",
+    "id": "timeticket_9ln0m3bp1",
     "title": "오 마이 갓",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621557313-62-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "오마이갓 전용관",
+    "venue": "오마이갓 전용관 / 총 78석",
     "link": "https://timeticket.co.kr/product/3121",
     "region": "seoul",
     "genre": "play",
@@ -150,14 +150,14 @@
     "runningTime": "75분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 68 , 지하 1층"
+    "address": "서울특별시 종로구 동숭길 68 , 지하 1층"
   },
   {
-    "id": "timeticket_vylxal3t2",
+    "id": "timeticket_dd30bipas",
     "title": "라면",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/08/13/1755060762-39-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "해피씨어터",
+    "venue": "해피씨어터 / 총 200석",
     "link": "https://timeticket.co.kr/product/4343",
     "region": "seoul",
     "genre": "play",
@@ -167,14 +167,14 @@
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로10길 5 , 지하1층"
+    "address": "서울 종로구 대학로10길 5 , 지하1층"
   },
   {
-    "id": "timeticket_yvlqkvpsy",
+    "id": "timeticket_4s12b11y8",
     "title": "핫식스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/16/1752644205-1-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "도토리씨어터",
+    "venue": "도토리씨어터 / 총 126석",
     "link": "https://timeticket.co.kr/product/3258",
     "region": "seoul",
     "genre": "play",
@@ -184,14 +184,14 @@
     "runningTime": "130분",
     "ageLimit": "20세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 63 , 지하2층"
+    "address": "서울특별시 종로구 대학로12길 63 , 지하2층"
   },
   {
-    "id": "timeticket_j6wf0uy1y",
+    "id": "timeticket_66mxi1jn5",
     "title": "쉬어매드니스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4404/4404-00-25120897-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "콘텐츠박스",
+    "venue": "콘텐츠박스 / 총 160석",
     "link": "https://timeticket.co.kr/product/4404",
     "region": "seoul",
     "genre": "play",
@@ -201,14 +201,14 @@
     "runningTime": "110분",
     "ageLimit": "16세 이상",
     "casting": "",
-    "address": "·  서울 종로구 동숭길 55 , 지하1층"
+    "address": "서울 종로구 동숭길 55 , 지하1층"
   },
   {
-    "id": "timeticket_wguogmxbf",
+    "id": "timeticket_2bpgkt21v",
     "title": "써니텐",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/30/1751244656-13-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN아트홀 1관",
+    "venue": "JTN아트홀 1관 / 총 230석",
     "link": "https://timeticket.co.kr/product/5496",
     "region": "seoul",
     "genre": "musical",
@@ -218,14 +218,14 @@
     "runningTime": "100분",
     "ageLimit": "10세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 26 JTN아트홀 1관"
+    "address": "서울특별시 종로구 이화장길 26 JTN아트홀 1관"
   },
   {
-    "id": "timeticket_1v2bphn9d",
+    "id": "timeticket_5sxft7ov1",
     "title": "미세스마캠",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6669/6669-00-251110be-255x357.jpg",
     "date": "2025.11.21~2026.02.01",
-    "venue": "대학로 더굿씨어터",
+    "venue": "대학로 더굿씨어터 / 총 300석",
     "link": "https://timeticket.co.kr/product/6669",
     "region": "seoul",
     "genre": "play",
@@ -235,14 +235,14 @@
     "runningTime": "120분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로 144 , 지하 2층"
+    "address": "서울특별시 종로구 대학로 144 , 지하 2층"
   },
   {
-    "id": "timeticket_w5gaw6cyl",
+    "id": "timeticket_1yuazpzli",
     "title": "김종욱 찾기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/11/08/1667872064-93-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "브릭스씨어터",
+    "venue": "브릭스씨어터 / 총 188석",
     "link": "https://timeticket.co.kr/product/4896",
     "region": "seoul",
     "genre": "musical",
@@ -252,14 +252,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8길 25"
+    "address": "서울특별시 종로구 대학로8길 25"
   },
   {
-    "id": "timeticket_ox19ovs7q",
+    "id": "timeticket_lnkxomx8u",
     "title": "너의 목소리가 들려",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621550193-67-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "도토리씨어터",
+    "venue": "도토리씨어터 / 총 106석",
     "link": "https://timeticket.co.kr/product/3811",
     "region": "seoul",
     "genre": "play",
@@ -269,14 +269,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 63 지하2층"
+    "address": "서울특별시 종로구 대학로12길 63 지하2층"
   },
   {
-    "id": "timeticket_akqvklcu6",
+    "id": "timeticket_j4xunyld0",
     "title": "2호선 세입자",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/12/29/1640756550-51-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "바탕골 소극장",
+    "venue": "바탕골 소극장 / 총 152석",
     "link": "https://timeticket.co.kr/product/4706",
     "region": "seoul",
     "genre": "play",
@@ -286,14 +286,14 @@
     "runningTime": "90분",
     "ageLimit": "초등학생(보호자동반 8세) 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로10길 5 , 5층"
+    "address": "서울 종로구 대학로10길 5 , 5층"
   },
   {
-    "id": "timeticket_7dw3mf3cp",
+    "id": "timeticket_0vegbhib4",
     "title": "오백에 삼십",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/06/28/1719534331-75-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN 아트홀 3관",
+    "venue": "JTN 아트홀 3관 / 총 207석",
     "link": "https://timeticket.co.kr/product/5462",
     "region": "seoul",
     "genre": "play",
@@ -303,14 +303,14 @@
     "runningTime": "100분",
     "ageLimit": "14세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 26 JTN 아트홀 3관"
+    "address": "서울특별시 종로구 이화장길 26 JTN 아트홀 3관"
   },
   {
-    "id": "timeticket_j4rysqi54",
+    "id": "timeticket_aart4gygf",
     "title": "운빨로맨스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4499/4499-00-25120211-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "컬쳐씨어터",
+    "venue": "컬쳐씨어터 / 총 127석",
     "link": "https://timeticket.co.kr/product/4499",
     "region": "seoul",
     "genre": "play",
@@ -320,14 +320,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로8가길 80 , 5층"
+    "address": "서울 종로구 대학로8가길 80 , 5층"
   },
   {
-    "id": "timeticket_1cpt5hiw3",
+    "id": "timeticket_muf0c32x0",
     "title": "701호",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/27/1743050918-31-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "우리소극장",
+    "venue": "우리소극장 / 총 110석",
     "link": "https://timeticket.co.kr/product/5480",
     "region": "seoul",
     "genre": "play",
@@ -337,14 +337,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 86-11"
+    "address": "서울특별시 종로구 이화장길 86-11"
   },
   {
-    "id": "timeticket_5knefbnw0",
+    "id": "timeticket_j5ov0nd3h",
     "title": "나의 PS 파트너",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/01/22/1737528220-51-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "마루아트홀",
+    "venue": "마루아트홀 / 총 170석",
     "link": "https://timeticket.co.kr/product/3476",
     "region": "seoul",
     "genre": "play",
@@ -354,14 +354,14 @@
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 30 3층"
+    "address": "서울특별시 종로구 대학로8가길 30 3층"
   },
   {
-    "id": "timeticket_l7gewr0hh",
+    "id": "timeticket_6de1wtskc",
     "title": "옥탑방 고양이",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/1000/1800/1895/1895-00-25090108-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "틴틴홀",
+    "venue": "틴틴홀 / 총 223석",
     "link": "https://timeticket.co.kr/product/1895",
     "region": "seoul",
     "genre": "play",
@@ -371,14 +371,14 @@
     "runningTime": "100분",
     "ageLimit": "13세(중학생) 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로10길 24"
+    "address": "서울 종로구 대학로10길 24"
   },
   {
-    "id": "timeticket_bit13y6qb",
+    "id": "timeticket_xzmshh5x7",
     "title": "보물찾기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5900/5905/5905-00-251209b6-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "아트포레스트 2관",
+    "venue": "아트포레스트 2관 / 총 150석",
     "link": "https://timeticket.co.kr/product/5905",
     "region": "seoul",
     "genre": "play",
@@ -388,14 +388,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 22 , 5층 아트포레스트"
+    "address": "서울특별시 종로구 대학로12길 22 , 5층 아트포레스트"
   },
   {
-    "id": "timeticket_gxqmtn8un",
+    "id": "timeticket_wuk8fcgb6",
     "title": "남사친 여사친",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/05/27/1716786736-92-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "세우아트센터 2관",
+    "venue": "세우아트센터 2관 / 총 102석",
     "link": "https://timeticket.co.kr/product/5438",
     "region": "seoul",
     "genre": "play",
@@ -405,14 +405,14 @@
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 49 , 4층"
+    "address": "서울특별시 종로구 대학로12길 49 , 4층"
   },
   {
-    "id": "timeticket_elyggua9w",
+    "id": "timeticket_p0m6l77oi",
     "title": "비누향기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/05/02/1714615976-44-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "서연아트홀",
+    "venue": "서연아트홀 / 총 170석",
     "link": "https://timeticket.co.kr/product/4548",
     "region": "seoul",
     "genre": "play",
@@ -422,14 +422,14 @@
     "runningTime": "110분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울 종로구 창경궁로 258-9"
+    "address": "서울 종로구 창경궁로 258-9"
   },
   {
-    "id": "timeticket_qb1wnuyba",
+    "id": "timeticket_q29y2wzhd",
     "title": "조각 : 사라진 기억",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621549734-49-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "댕로홀",
+    "venue": "댕로홀 / 총 83석",
     "link": "https://timeticket.co.kr/product/2820",
     "region": "seoul",
     "genre": "play",
@@ -439,14 +439,14 @@
     "runningTime": "70분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 50 , 지하1층"
+    "address": "서울특별시 종로구 대학로12길 50 , 지하1층"
   },
   {
-    "id": "timeticket_dxt59c1m2",
+    "id": "timeticket_oyrfov9rn",
     "title": "자취",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621550886-19-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "댕로홀",
+    "venue": "댕로홀 / 총 83석",
     "link": "https://timeticket.co.kr/product/4494",
     "region": "seoul",
     "genre": "play",
@@ -456,14 +456,14 @@
     "runningTime": "80분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로12길 50"
+    "address": "서울 종로구 대학로12길 50"
   },
   {
-    "id": "timeticket_auak7wbno",
+    "id": "timeticket_kkdwkbphj",
     "title": "아모르파티",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6609/6609-00-25101058-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "올래홀",
+    "venue": "올래홀 / 총 152석",
     "link": "https://timeticket.co.kr/product/6609",
     "region": "seoul",
     "genre": "play",
@@ -473,14 +473,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 24 , 3층"
+    "address": "서울특별시 종로구 대학로10길 24 , 3층"
   },
   {
-    "id": "timeticket_rmb0l6m1j",
+    "id": "timeticket_pv3eq1lsr",
     "title": "벨리버튼",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6704/6704-00-251124b3-255x357.jpg",
     "date": "2025.12.16~2025.12.28",
-    "venue": "씨어터 조이",
+    "venue": "씨어터 조이 / 총 100석",
     "link": "https://timeticket.co.kr/product/6704",
     "region": "seoul",
     "genre": "play",
@@ -490,14 +490,14 @@
     "runningTime": "90분",
     "ageLimit": "만 15세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 78 , 지하 1층"
+    "address": "서울특별시 종로구 이화장길 78 , 지하 1층"
   },
   {
-    "id": "timeticket_0tu94mdfp",
+    "id": "timeticket_n2enbwnww",
     "title": "사빠디",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/01/13/1736746702-0-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아루또소극장",
+    "venue": "아루또소극장 / 총 70석",
     "link": "https://timeticket.co.kr/product/5300",
     "region": "seoul",
     "genre": "play",
@@ -507,14 +507,14 @@
     "runningTime": "100분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 48 , 4층 아루또소극장"
+    "address": "서울특별시 종로구 대학로8가길 48 , 4층 아루또소극장"
   },
   {
-    "id": "timeticket_xcv3rsh1n",
+    "id": "timeticket_7zi6orv8n",
     "title": "딜리버리",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/05/02/1714614846-9-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아라아트홀",
+    "venue": "아라아트홀 / 총 160석",
     "link": "https://timeticket.co.kr/product/4979",
     "region": "seoul",
     "genre": "play",
@@ -524,14 +524,14 @@
     "runningTime": "90분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 30 , 4층"
+    "address": "서울특별시 종로구 대학로8가길 30 , 4층"
   },
   {
-    "id": "timeticket_9anlwqgsc",
+    "id": "timeticket_2p1mysow3",
     "title": "늘근도둑이야기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/02/21/1645407531-84-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아트포레스트 1관",
+    "venue": "아트포레스트 1관 / 총 212석",
     "link": "https://timeticket.co.kr/product/4721",
     "region": "seoul",
     "genre": "play",
@@ -541,14 +541,14 @@
     "runningTime": "100분",
     "ageLimit": "12세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로12길 22 , 아트포레스트 지하 1층"
+    "address": "서울 종로구 대학로12길 22 , 아트포레스트 지하 1층"
   },
   {
-    "id": "timeticket_w1znoi7ua",
+    "id": "timeticket_721hrcpry",
     "title": "끝까지 간다",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/09/25/1727248972-80-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "북극곰소극장",
+    "venue": "북극곰소극장 / 총 50석",
     "link": "https://timeticket.co.kr/product/4591",
     "region": "seoul",
     "genre": "play",
@@ -558,14 +558,14 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울 종로구 이화장1길 24"
+    "address": "서울 종로구 이화장1길 24"
   },
   {
-    "id": "timeticket_49cxpwe0a",
+    "id": "timeticket_fbqi5dnkp",
     "title": "북극곰 예술여행",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/09/25/1727228915-74-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "북극곰소극장",
+    "venue": "북극곰소극장 / 총 50석",
     "link": "https://timeticket.co.kr/product/4592",
     "region": "seoul",
     "genre": "play",
@@ -575,14 +575,14 @@
     "runningTime": "60분",
     "ageLimit": "만 3세 이상",
     "casting": "",
-    "address": "·  서울 종로구 이화장1길 24"
+    "address": "서울 종로구 이화장1길 24"
   },
   {
-    "id": "timeticket_361bvhrls",
+    "id": "timeticket_fljpo1dxp",
     "title": "죽어야 사는 남자",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5600/5611/5611-00-25110561-255x357.jpg",
     "date": "2025.12.05~2025.12.31",
-    "venue": "업스테이지",
+    "venue": "업스테이지 / 총 153석",
     "link": "https://timeticket.co.kr/product/5611",
     "region": "seoul",
     "genre": "play",
@@ -592,14 +592,14 @@
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 41 , 지하 1층"
+    "address": "서울특별시 종로구 동숭길 41 , 지하 1층"
   },
   {
-    "id": "timeticket_tc3navqzk",
+    "id": "timeticket_6zm2fhiyw",
     "title": "아빠와 딸",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6627/6627-00-251208e9-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "세우아트센터 2관",
+    "venue": "세우아트센터 2관 / 총 102석",
     "link": "https://timeticket.co.kr/product/6627",
     "region": "seoul",
     "genre": "play",
@@ -609,14 +609,14 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 49 , 4층"
+    "address": "서울특별시 종로구 대학로12길 49 , 4층"
   },
   {
-    "id": "timeticket_ekzuizonc",
+    "id": "timeticket_nbt8kmugp",
     "title": "엘리펀트 송",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6776/6776-00-25121102-255x357.jpg",
     "date": "2025.11.22~2026.03.08",
-    "venue": "예스24스테이지 3관",
+    "venue": "예스24스테이지 3관 / 총 248석",
     "link": "https://timeticket.co.kr/product/6776",
     "region": "seoul",
     "genre": "play",
@@ -626,10 +626,10 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 21 , 3층 예스24스테이지 3관"
+    "address": "서울특별시 종로구 대학로12길 21 , 3층 예스24스테이지 3관"
   },
   {
-    "id": "timeticket_zbdo9rrkx",
+    "id": "timeticket_986abdoph",
     "title": "판",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6772/6772-00-2512108a-255x357.jpg",
     "date": "2025.12.23~2026.03.08",
@@ -643,14 +643,14 @@
     "runningTime": "110분",
     "ageLimit": "14세 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 126 , 동덕여대 공연예술 연구소 지하 4층"
+    "address": "서울특별시 종로구 동숭길 126 , 동덕여대 공연예술 연구소 지하 4층"
   },
   {
-    "id": "timeticket_58efjalgj",
+    "id": "timeticket_5o19lq7mi",
     "title": "미드나잇 : 액터뮤지션",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6769/6769-00-251210a2-255x357.jpg",
     "date": "2025.12.13~2026.03.15",
-    "venue": "예스24 아트원 1관",
+    "venue": "예스24 아트원 1관 / 총 335석",
     "link": "https://timeticket.co.kr/product/6769",
     "region": "seoul",
     "genre": "musical",
@@ -660,14 +660,14 @@
     "runningTime": "100분",
     "ageLimit": "전체 관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 83 , 예스24아트원 1관"
+    "address": "서울특별시 종로구 대학로12길 83 , 예스24아트원 1관"
   },
   {
-    "id": "timeticket_nakbg77qu",
+    "id": "timeticket_r7c6ux1ga",
     "title": "트레이스 유",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6753/6753-00-2512087d-255x357.jpg",
     "date": "2025.12.04~2026.03.01",
-    "venue": "링크아트센터 벅스홀",
+    "venue": "링크아트센터 벅스홀 / 총 381석",
     "link": "https://timeticket.co.kr/product/6753",
     "region": "seoul",
     "genre": "musical",
@@ -677,14 +677,14 @@
     "runningTime": "110분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 29 , 링크아트센터 벅스홀"
+    "address": "서울특별시 종로구 대학로14길 29 , 링크아트센터 벅스홀"
   },
   {
-    "id": "timeticket_ivc5t931z",
+    "id": "timeticket_q0adgnx9x",
     "title": "로빈",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6709/6709-00-251124d9-255x357.jpg",
     "date": "2025.12.01~2026.03.01",
-    "venue": "대학로 TOM(티오엠) 1관",
+    "venue": "대학로 TOM(티오엠) 1관 / 총 321석",
     "link": "https://timeticket.co.kr/product/6709",
     "region": "seoul",
     "genre": "musical",
@@ -694,14 +694,14 @@
     "runningTime": "100분",
     "ageLimit": "8세 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 85"
+    "address": "서울특별시 종로구 대학로8가길 85"
   },
   {
-    "id": "timeticket_eq596rusn",
+    "id": "timeticket_totov4r3h",
     "title": "#0528",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6691/6691-00-251119eb-255x357.jpg",
     "date": "2025.11.14~2026.01.11",
-    "venue": "링크아트센터드림 드림1관",
+    "venue": "링크아트센터드림 드림1관 / 총 352석",
     "link": "https://timeticket.co.kr/product/6691",
     "region": "seoul",
     "genre": "musical",
@@ -711,14 +711,14 @@
     "runningTime": "110분",
     "ageLimit": "중학생 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 123"
+    "address": "서울특별시 종로구 동숭길 123"
   },
   {
-    "id": "timeticket_hox94he2x",
+    "id": "timeticket_sybix2rqz",
     "title": "나르치스와 골드문트",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6686/6686-00-25111898-255x357.jpg",
     "date": "2025.12.23~2026.03.22",
-    "venue": "예스24 아트원 2관",
+    "venue": "예스24 아트원 2관 / 총 269석",
     "link": "https://timeticket.co.kr/product/6686",
     "region": "seoul",
     "genre": "musical",
@@ -728,14 +728,14 @@
     "runningTime": "100분",
     "ageLimit": "만 11세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 83 , 예스24 아트원 2관"
+    "address": "서울특별시 종로구 대학로12길 83 , 예스24 아트원 2관"
   },
   {
-    "id": "timeticket_xtot3z3in",
+    "id": "timeticket_b7amkkuiq",
     "title": "이름 없는 약속들로부터",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6748/6748-00-25120490-255x357.jpg",
     "date": "2025.10.10~2025.12.28",
-    "venue": "극장 온",
+    "venue": "극장 온 / 총 154석",
     "link": "https://timeticket.co.kr/product/6748",
     "region": "seoul",
     "genre": "musical",
@@ -745,14 +745,14 @@
     "runningTime": "120분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 69 , 극장 온(구 CJ 아지트)"
+    "address": "서울특별시 종로구 대학로12길 69 , 극장 온(구 CJ 아지트)"
   },
   {
-    "id": "timeticket_q0o778tfd",
+    "id": "timeticket_25asp9ea1",
     "title": "캐빈",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6711/6711-00-25112569-255x357.jpg",
     "date": "2025.11.27~2026.03.01",
-    "venue": "et theatre 1 (이티 씨어터 원)",
+    "venue": "et theatre 1 (이티 씨어터 원) / 총 224석",
     "link": "https://timeticket.co.kr/product/6711",
     "region": "seoul",
     "genre": "musical",
@@ -762,14 +762,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 혜화로 17 , et theatre 1 (이티 씨어터 원)"
+    "address": "서울특별시 종로구 혜화로 17 , et theatre 1 (이티 씨어터 원)"
   },
   {
-    "id": "timeticket_sg6ve3vbf",
+    "id": "timeticket_bixcbm99a",
     "title": "그때도 오늘2: 꽃신",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6682/6682-00-2511143d-255x357.jpg",
     "date": "2025.12.16~2026.02.22",
-    "venue": "NOL 서경스퀘어 스콘 2관",
+    "venue": "NOL 서경스퀘어 스콘 2관 / 총 240석",
     "link": "https://timeticket.co.kr/product/6682",
     "region": "seoul",
     "genre": "play",
@@ -779,10 +779,10 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 148"
+    "address": "서울특별시 종로구 동숭길 148"
   },
   {
-    "id": "timeticket_t6yfk6a5h",
+    "id": "timeticket_sczqxkjme",
     "title": "테이크 오프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6689/6689-00-251118f6-255x357.jpg",
     "date": "2025.11.14~2026.02.01",
@@ -796,31 +796,31 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로11길 23 대학로 스타시티"
+    "address": "서울특별시 종로구 대학로11길 23 대학로 스타시티"
   },
   {
-    "id": "timeticket_wjft3pels",
+    "id": "timeticket_lj9qu3xd5",
     "title": "에쿠우스 : EQUUS",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6538/6538-00-25090828-255x357.jpg",
     "date": "2025.10.03~2026.02.01",
-    "venue": "예그린씨어터",
+    "venue": "예그린씨어터 / 총 183석",
     "link": "https://timeticket.co.kr/product/6538",
     "region": "seoul",
     "genre": "play",
-    "price": "42,900원",
-    "originalPrice": "42,900원",
-    "discount": "35%",
+    "price": "33,000원",
+    "originalPrice": "33,000원",
+    "discount": "50%",
     "runningTime": "110분",
     "ageLimit": "17세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 130-5"
+    "address": "서울특별시 종로구 동숭길 130-5"
   },
   {
-    "id": "timeticket_51n5pziyc",
+    "id": "timeticket_f4rzd1wh5",
     "title": "바람으로의 여행",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5800/5876/5876-00-2509045e-255x357.jpg",
     "date": "2025.11.07~2026.01.10",
-    "venue": "스튜디오 블루",
+    "venue": "스튜디오 블루 / 총 150석",
     "link": "https://timeticket.co.kr/product/5876",
     "region": "seoul",
     "genre": "musical",
@@ -830,14 +830,14 @@
     "runningTime": "125분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 80 , 리트모빌딩 지하"
+    "address": "서울특별시 종로구 대학로8가길 80 , 리트모빌딩 지하"
   },
   {
-    "id": "timeticket_uqha734zj",
+    "id": "timeticket_nj1dt27pc",
     "title": "테이프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6736/6736-00-2512010a-255x357.jpg",
     "date": "2025.12.31~2026.01.11",
-    "venue": "소극장 공유",
+    "venue": "소극장 공유 / 총 50석",
     "link": "https://timeticket.co.kr/product/6736",
     "region": "seoul",
     "genre": "play",
@@ -847,14 +847,14 @@
     "runningTime": "75분",
     "ageLimit": "만 16세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로 303 , 지하 1층 소극장 공유"
+    "address": "서울특별시 종로구 창경궁로 303 , 지하 1층 소극장 공유"
   },
   {
-    "id": "timeticket_k2v6q7528",
+    "id": "timeticket_tbya4ya27",
     "title": "서재 결혼 시키기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6692/6692-00-2511192f-255x357.jpg",
     "date": "2025.12.13~2025.12.21",
-    "venue": "대학로예술극장 소극장",
+    "venue": "대학로예술극장 소극장 / 총 118석",
     "link": "https://timeticket.co.kr/product/6692",
     "region": "seoul",
     "genre": "play",
@@ -864,14 +864,14 @@
     "runningTime": "165분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 17"
+    "address": "서울특별시 종로구 대학로10길 17"
   },
   {
-    "id": "timeticket_115gkjfhp",
+    "id": "timeticket_dg4iw3svf",
     "title": "라이어 1탄",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/17/1734412288-15-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "상명아트홀 1관",
+    "venue": "상명아트홀 1관 / 총 119석",
     "link": "https://timeticket.co.kr/product/6072",
     "region": "seoul",
     "genre": "play",
@@ -881,14 +881,14 @@
     "runningTime": "100분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 133 , 상명아트홀 1관"
+    "address": "서울특별시 종로구 동숭길 133 , 상명아트홀 1관"
   },
   {
-    "id": "timeticket_v03zin5yq",
+    "id": "timeticket_l4i7o7s22",
     "title": "기억의 숲",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/03/1751503531-59-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "지즐소극장",
+    "venue": "지즐소극장 / 총 60석",
     "link": "https://timeticket.co.kr/product/5692",
     "region": "seoul",
     "genre": "play",
@@ -898,14 +898,14 @@
     "runningTime": "80분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 성균관로4길 42"
+    "address": "서울특별시 종로구 성균관로4길 42"
   },
   {
-    "id": "timeticket_fp3ormfkl",
+    "id": "timeticket_ifeze4r7e",
     "title": "스위치",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/01/27/1643250182-82-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아스가르드 씨어터",
+    "venue": "아스가르드 씨어터 / 총 61석",
     "link": "https://timeticket.co.kr/product/3156",
     "region": "seoul",
     "genre": "play",
@@ -915,14 +915,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울 종로구 동숭길 140 , 지하1층"
+    "address": "서울 종로구 동숭길 140 , 지하1층"
   },
   {
-    "id": "timeticket_8yh12spfj",
+    "id": "timeticket_4v5vvuvrd",
     "title": "크리미널 시즌5",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5100/5140/5140-00-25101036-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "봄날아트홀 2관",
+    "venue": "봄날아트홀 2관 / 총 120석",
     "link": "https://timeticket.co.kr/product/5140",
     "region": "seoul",
     "genre": "play",
@@ -932,14 +932,14 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  서울 종로구 동숭길 39 , 지하2층"
+    "address": "서울 종로구 동숭길 39 , 지하2층"
   },
   {
-    "id": "timeticket_w5k8kz5p1",
+    "id": "timeticket_kihhi49qk",
     "title": "헝키쇼 : HUNKY SHOW",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6200/6231/6231-00-250916ef-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "스타스테이지",
+    "venue": "스타스테이지 / 총 204석",
     "link": "https://timeticket.co.kr/product/6231",
     "region": "seoul",
     "genre": "musical",
@@ -949,14 +949,14 @@
     "runningTime": "90분",
     "ageLimit": "만 19세 이상 (여성)",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 15 , 지하 2층"
+    "address": "서울특별시 종로구 대학로12길 15 , 지하 2층"
   },
   {
-    "id": "timeticket_q6cs55et0",
+    "id": "timeticket_pmeci0idz",
     "title": "담배가게 아가씨",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6706/6706-00-251124b4-255x357.jpg",
     "date": "2025.12.20~2026.02.28",
-    "venue": "대학로 하마씨어터",
+    "venue": "대학로 하마씨어터 / 총 159석",
     "link": "https://timeticket.co.kr/product/6706",
     "region": "seoul",
     "genre": "musical",
@@ -966,14 +966,14 @@
     "runningTime": "110분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 15-11 4층, 하마씨어터"
+    "address": "서울특별시 종로구 대학로10길 15-11 4층, 하마씨어터"
   },
   {
-    "id": "timeticket_2tpoqhmjd",
+    "id": "timeticket_1lz46g9o9",
     "title": "투모로우 모닝",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6705/6705-00-251124d1-255x357.jpg",
     "date": "2025.12.03~2026.03.02",
-    "venue": "큐씨어터",
+    "venue": "큐씨어터 / 총 182석",
     "link": "https://timeticket.co.kr/product/6705",
     "region": "seoul",
     "genre": "musical",
@@ -983,14 +983,14 @@
     "runningTime": "90분",
     "ageLimit": "8세(초등생) 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 79 , 지하 1층"
+    "address": "서울특별시 종로구 대학로8가길 79 , 지하 1층"
   },
   {
-    "id": "timeticket_vdiyjsaoi",
+    "id": "timeticket_yqcpja9sx",
     "title": "남주를 부탁해",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6653/6653-00-251106ab-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "스케치홀",
+    "venue": "스케치홀 / 총 211석",
     "link": "https://timeticket.co.kr/product/6653",
     "region": "seoul",
     "genre": "play",
@@ -1000,14 +1000,14 @@
     "runningTime": "90분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 145 , 3층"
+    "address": "서울특별시 종로구 동숭길 145 , 3층"
   },
   {
-    "id": "timeticket_p7qugmcb9",
+    "id": "timeticket_bflqaahfs",
     "title": "마피아 게임",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6665/6665-00-25110715-255x357.jpg",
     "date": "2025.11.14~2025.12.31",
-    "venue": "미래아트홀",
+    "venue": "미래아트홀 / 총 70석",
     "link": "https://timeticket.co.kr/product/6665",
     "region": "seoul",
     "genre": "play",
@@ -1017,14 +1017,14 @@
     "runningTime": "90분",
     "ageLimit": "14세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로35길 26"
+    "address": "서울특별시 종로구 창경궁로35길 26"
   },
   {
-    "id": "timeticket_glpi40u33",
+    "id": "timeticket_wa1icog2j",
     "title": "오를라(The Horla)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6624/6624-00-2510177e-255x357.jpg",
     "date": "2025.11.20~2025.12.27",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀 1관 / 총 77석",
     "link": "https://timeticket.co.kr/product/6624",
     "region": "seoul",
     "genre": "play",
@@ -1034,14 +1034,14 @@
     "runningTime": "60분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 47"
+    "address": "서울특별시 종로구 동숭길 47"
   },
   {
-    "id": "timeticket_372fyopyl",
+    "id": "timeticket_n1z27q44y",
     "title": "오렌지스카이",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5400/5413/5413-00-251113bf-255x357.jpg",
     "date": "2025.12.18~2026.01.04",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/5413",
     "region": "seoul",
     "genre": "musical",
@@ -1051,14 +1051,14 @@
     "runningTime": "90분",
     "ageLimit": "10세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_y1riukq1n",
+    "id": "timeticket_qkwrqmafs",
     "title": "연남동 빙굴빙굴 빨래방",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5600/5651/5651-00-25102907-255x357.jpg",
     "date": "~2025.12.31",
-    "venue": "후암씨어터",
+    "venue": "후암씨어터 / 총 208석",
     "link": "https://timeticket.co.kr/product/5651",
     "region": "seoul",
     "genre": "musical",
@@ -1068,14 +1068,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로11길 23 , 7층"
+    "address": "서울특별시 종로구 대학로11길 23 , 7층"
   },
   {
-    "id": "timeticket_in4bgxaup",
+    "id": "timeticket_n6jm81md2",
     "title": "어서 오세요, 휴남동 서점입니다",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5700/5781/5781-00-2511267a-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "루미나아트홀",
+    "venue": "루미나아트홀 / 총 201석",
     "link": "https://timeticket.co.kr/product/5781",
     "region": "seoul",
     "genre": "musical",
@@ -1085,14 +1085,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 52 , 3층"
+    "address": "서울특별시 종로구 대학로8가길 52 , 3층"
   },
   {
-    "id": "timeticket_sl01va98h",
+    "id": "timeticket_7ov8qqhla",
     "title": "불편한 편의점",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5000/5034/5034-00-2511262c-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "올웨이즈씨어터",
+    "venue": "올웨이즈씨어터 / 총 299석",
     "link": "https://timeticket.co.kr/product/5034",
     "region": "seoul",
     "genre": "play",
@@ -1102,14 +1102,14 @@
     "runningTime": "100분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로 132"
+    "address": "서울특별시 종로구 대학로 132"
   },
   {
-    "id": "timeticket_kfc3fo8tg",
+    "id": "timeticket_360w6dm9o",
     "title": "100층짜리 집",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6670/6670-00-251110a0-255x357.jpg",
     "date": "2026.01.09~2026.03.02",
-    "venue": "성균관대학교 새천년홀",
+    "venue": "성균관대학교 새천년홀 / 총 770석",
     "link": "https://timeticket.co.kr/product/6670",
     "region": "seoul",
     "genre": "musical",
@@ -1119,14 +1119,14 @@
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 성균관로 25-2 , 성균관대학교 새천년홀"
+    "address": "서울특별시 종로구 성균관로 25-2 , 성균관대학교 새천년홀"
   },
   {
-    "id": "timeticket_m2g00mlp4",
+    "id": "timeticket_yg85u9s7w",
     "title": "세비야의 이발사",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/25/1742886871-88-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "2025.03.14~2025.12.31",
-    "venue": "인터파크 유니플렉스 3관",
+    "venue": "인터파크 유니플렉스 3관 / 총 202석",
     "link": "https://timeticket.co.kr/product/6239",
     "region": "seoul",
     "genre": "musical",
@@ -1136,14 +1136,14 @@
     "runningTime": "90분",
     "ageLimit": "6세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 64"
+    "address": "서울특별시 종로구 대학로12길 64"
   },
   {
-    "id": "timeticket_n3w5c1fc4",
+    "id": "timeticket_3ip5snfxo",
     "title": "급식왕",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/11/1733892401-47-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "2024.12.14~2025.12.27",
-    "venue": "스케치홀",
+    "venue": "스케치홀 / 총 211석",
     "link": "https://timeticket.co.kr/product/6056",
     "region": "seoul",
     "genre": "play",
@@ -1153,14 +1153,14 @@
     "runningTime": "60분",
     "ageLimit": "만 3세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 145 , 3층 스케치홀"
+    "address": "서울특별시 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
-    "id": "timeticket_s2fdkhx2t",
+    "id": "timeticket_ay7lcrb58",
     "title": "프리즌",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4300/4352/4352-00-25110615-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "에이치씨어터",
+    "venue": "에이치씨어터 / 총 176석",
     "link": "https://timeticket.co.kr/product/4352",
     "region": "seoul",
     "genre": "play",
@@ -1170,14 +1170,14 @@
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 54 , 지하 1층"
+    "address": "서울특별시 종로구 이화장길 54 , 지하 1층"
   },
   {
-    "id": "timeticket_np9l02ybb",
+    "id": "timeticket_fqv1g0gz1",
     "title": "택시안에서",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/03/25/1711352214-89-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "해바라기소극장",
+    "venue": "해바라기소극장 / 총 120석",
     "link": "https://timeticket.co.kr/product/4450",
     "region": "seoul",
     "genre": "play",
@@ -1187,14 +1187,14 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울 종로구 동숭길 76 , 지하1층"
+    "address": "서울 종로구 동숭길 76 , 지하1층"
   },
   {
-    "id": "timeticket_v3uvo0jel",
+    "id": "timeticket_v8lxo4n4u",
     "title": "헤어지는 기쁨",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6758/6758-00-25120873-255x357.jpg",
     "date": "2025.11.12~2025.12.31",
-    "venue": "봄날 아트홀 1관",
+    "venue": "봄날 아트홀 1관 / 총 115석",
     "link": "https://timeticket.co.kr/product/6758",
     "region": "seoul",
     "genre": "play",
@@ -1204,14 +1204,14 @@
     "runningTime": "80분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 39 , 지하 2층 봄날 아트홀"
+    "address": "서울특별시 종로구 동숭길 39 , 지하 2층 봄날 아트홀"
   },
   {
-    "id": "timeticket_ok6g78g3y",
+    "id": "timeticket_a2wov5sd3",
     "title": "개같은 아빠",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6756/6756-00-25120896-255x357.jpg",
     "date": "2025.12.19~2026.02.01",
-    "venue": "아트하우스",
+    "venue": "아트하우스 / 총 210석",
     "link": "https://timeticket.co.kr/product/6756",
     "region": "seoul",
     "genre": "play",
@@ -1221,14 +1221,14 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 26 , 지하 1층"
+    "address": "서울특별시 종로구 대학로10길 26 , 지하 1층"
   },
   {
-    "id": "timeticket_7fid2za5w",
+    "id": "timeticket_q5az5o0jt",
     "title": "벼랑끝에서",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6754/6754-00-251208cf-255x357.jpg",
     "date": "2025.12.30~2026.01.04",
-    "venue": "소극장혜화당",
+    "venue": "소극장혜화당 / 총 63석",
     "link": "https://timeticket.co.kr/product/6754",
     "region": "seoul",
     "genre": "play",
@@ -1238,14 +1238,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로12길 63 , 3층"
+    "address": "서울특별시 종로구 대학로12길 63 , 3층"
   },
   {
-    "id": "timeticket_xq16a07tm",
+    "id": "timeticket_xygfieg0q",
     "title": "행오버",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/15/1744692577-18-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "정극장",
+    "venue": "정극장 / 총 120석",
     "link": "https://timeticket.co.kr/product/4712",
     "region": "seoul",
     "genre": "play",
@@ -1255,14 +1255,14 @@
     "runningTime": "90분",
     "ageLimit": "16세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로12길 69 , 3층"
+    "address": "서울 종로구 대학로12길 69 , 3층"
   },
   {
-    "id": "timeticket_kfj9lzirw",
+    "id": "timeticket_kbwc06krp",
     "title": "크리미널 시즌4",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/3000/3800/3895/3895-00-251010f1-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "봄날아트홀 1관",
+    "venue": "봄날아트홀 1관 / 총 124석",
     "link": "https://timeticket.co.kr/product/3895",
     "region": "seoul",
     "genre": "play",
@@ -1272,14 +1272,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울 종로구 동숭길 39 , 지하1층"
+    "address": "서울 종로구 동숭길 39 , 지하1층"
   },
   {
-    "id": "timeticket_k5ilaoqrv",
+    "id": "timeticket_ehqb18374",
     "title": "스폿라이트",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6503/6503-00-2508283b-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "뮤지컬펍 스폿라이트",
+    "venue": "뮤지컬펍 스폿라이트 / 총 80석",
     "link": "https://timeticket.co.kr/product/6503",
     "region": "seoul",
     "genre": "musical",
@@ -1289,14 +1289,14 @@
     "runningTime": "80분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대명1길 7 , 3층"
+    "address": "서울특별시 종로구 대명1길 7 , 3층"
   },
   {
-    "id": "timeticket_bqb7kcawu",
+    "id": "timeticket_pjv01ecvq",
     "title": "매직라이브펍",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6400/6411/6411-00-25090271-255x357.jpg",
     "date": "2025.07.18~2025.12.31",
-    "venue": "매직라이브펍",
+    "venue": "매직라이브펍 / 총 14석",
     "link": "https://timeticket.co.kr/product/6411",
     "region": "seoul",
     "genre": "musical",
@@ -1306,14 +1306,14 @@
     "runningTime": "70분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로26길 41-3 , 지하 1층"
+    "address": "서울특별시 종로구 창경궁로26길 41-3 , 지하 1층"
   },
   {
-    "id": "timeticket_xlfdak5s4",
+    "id": "timeticket_jf8okimx3",
     "title": "졸탄쇼",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/03/06/1709693099-62-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "시윤아트홀",
+    "venue": "시윤아트홀 / 총 180석",
     "link": "https://timeticket.co.kr/product/4568",
     "region": "seoul",
     "genre": "concert",
@@ -1323,14 +1323,14 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로 116 시윤아트홀 지하 1층"
+    "address": "서울특별시 종로구 대학로 116 시윤아트홀 지하 1층"
   },
   {
-    "id": "timeticket_zkn4ehfy1",
+    "id": "timeticket_owt8engah",
     "title": "호두까기인형",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6655/6655-00-25110592-255x357.jpg",
     "date": "2025.12.01~2025.12.31",
-    "venue": "서연아트홀",
+    "venue": "서연아트홀 / 총 168석",
     "link": "https://timeticket.co.kr/product/6655",
     "region": "seoul",
     "genre": "musical",
@@ -1340,14 +1340,14 @@
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로 258-9 , 지하 1층"
+    "address": "서울특별시 종로구 창경궁로 258-9 , 지하 1층"
   },
   {
-    "id": "timeticket_dv8imwkmn",
+    "id": "timeticket_4pdhlm1t5",
     "title": "민영석의 재즈기타 라이브 공연",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6720/6720-00-251127df-255x357.jpg",
     "date": "2025.12.30",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀 1관 / 총 77석",
     "link": "https://timeticket.co.kr/product/6720",
     "region": "seoul",
     "genre": "concert",
@@ -1357,14 +1357,14 @@
     "runningTime": "60분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 47"
+    "address": "서울특별시 종로구 동숭길 47"
   },
   {
-    "id": "timeticket_mqls10a6r",
+    "id": "timeticket_ihg348adv",
     "title": "모든 날 모든 순간",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6760/6760-00-251211ee-255x357.jpg",
     "date": "2025.11.20~2026.03.31",
-    "venue": "플레이더씨어터",
+    "venue": "플레이더씨어터 / 총 100석",
     "link": "https://timeticket.co.kr/product/6760",
     "region": "seoul",
     "genre": "play",
@@ -1374,14 +1374,14 @@
     "runningTime": "100분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 50 , B1 플레이더씨어터"
+    "address": "서울특별시 종로구 동숭길 50 , B1 플레이더씨어터"
   },
   {
-    "id": "timeticket_avgv4qxmb",
+    "id": "timeticket_kx15yz5s4",
     "title": "그날의 타이밍",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5700/5747/5747-00-251211fc-255x357.jpg",
     "date": "2025.11.07~2025.12.31",
-    "venue": "단막극장",
+    "venue": "단막극장 / 총 100석",
     "link": "https://timeticket.co.kr/product/5747",
     "region": "seoul",
     "genre": "play",
@@ -1391,14 +1391,14 @@
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭4길 16-3"
+    "address": "서울특별시 종로구 동숭4길 16-3"
   },
   {
-    "id": "timeticket_7n126t983",
+    "id": "timeticket_qwzsc5z57",
     "title": "뮤직드라마 청춘 : ON AIR",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6757/6757-00-2512085e-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "에이치씨어터",
+    "venue": "에이치씨어터 / 총 176석",
     "link": "https://timeticket.co.kr/product/6757",
     "region": "seoul",
     "genre": "play",
@@ -1408,14 +1408,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 54 , 지하 1층 에이치씨어터"
+    "address": "서울특별시 종로구 이화장길 54 , 지하 1층 에이치씨어터"
   },
   {
-    "id": "timeticket_pl3hyefzy",
+    "id": "timeticket_l8brl3gu8",
     "title": "플러팅",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6740/6740-00-25120218-255x357.jpg",
     "date": "2025.12.24~2026.01.25",
-    "venue": "코델아트홀",
+    "venue": "코델아트홀 / 총 107석",
     "link": "https://timeticket.co.kr/product/6740",
     "region": "seoul",
     "genre": "play",
@@ -1425,14 +1425,14 @@
     "runningTime": "100분",
     "ageLimit": "만 15세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 78 , 지하 1층"
+    "address": "서울특별시 종로구 동숭길 78 , 지하 1층"
   },
   {
-    "id": "timeticket_s94z1dxhj",
+    "id": "timeticket_m33f5jnha",
     "title": "님만헤민 게스트하우스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6544/6544-00-251001d6-255x357.jpg",
     "date": "2026.01.08~2026.04.05",
-    "venue": "선돌극장",
+    "venue": "선돌극장 / 총 100석",
     "link": "https://timeticket.co.kr/product/6544",
     "region": "seoul",
     "genre": "musical",
@@ -1442,14 +1442,14 @@
     "runningTime": "110분",
     "ageLimit": "만 16세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 혜화로5길 5 , 선돌극장"
+    "address": "서울특별시 종로구 혜화로5길 5 , 선돌극장"
   },
   {
-    "id": "timeticket_fki9q3qj8",
+    "id": "timeticket_nzsud9yl2",
     "title": "힐링 인 더 라디오 시즌6",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5900/5967/5967-00-25101758-255x357.jpg",
     "date": "2025.11.20~2025.12.28",
-    "venue": "R&J씨어터",
+    "venue": "R&J씨어터 / 총 120석",
     "link": "https://timeticket.co.kr/product/5967",
     "region": "seoul",
     "genre": "musical",
@@ -1459,14 +1459,14 @@
     "runningTime": "100분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 낙산길 14 , 지하"
+    "address": "서울특별시 종로구 낙산길 14 , 지하"
   },
   {
-    "id": "timeticket_kw8x7zd73",
+    "id": "timeticket_bl6ywilkp",
     "title": "세자매",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6738/6738-00-25120206-255x357.jpg",
     "date": "2025.12.05~2026.01.31",
-    "venue": "안똔체홉극장",
+    "venue": "안똔체홉극장 / 총 60석",
     "link": "https://timeticket.co.kr/product/6738",
     "region": "seoul",
     "genre": "play",
@@ -1476,14 +1476,14 @@
     "runningTime": "180분",
     "ageLimit": "중학생 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 성균관로3길 23"
+    "address": "서울특별시 종로구 성균관로3길 23"
   },
   {
-    "id": "timeticket_0x3k6fzge",
+    "id": "timeticket_basech2jh",
     "title": "동상이몽",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6693/6693-00-25111972-255x357.jpg",
     "date": "2025.12.24~2025.12.28",
-    "venue": "소극장공유",
+    "venue": "소극장공유 / 총 70석",
     "link": "https://timeticket.co.kr/product/6693",
     "region": "seoul",
     "genre": "play",
@@ -1493,14 +1493,14 @@
     "runningTime": "70분",
     "ageLimit": "12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 혜화동 37-1 소극장공유"
+    "address": "서울특별시 종로구 혜화동 37-1 소극장공유"
   },
   {
-    "id": "timeticket_z0rtzp24r",
+    "id": "timeticket_8wskrersj",
     "title": "드립소년단",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/03/20/1710901463-49-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "스케치홀",
+    "venue": "스케치홀 / 총 211석",
     "link": "https://timeticket.co.kr/product/5560",
     "region": "seoul",
     "genre": "play",
@@ -1510,14 +1510,14 @@
     "runningTime": "90분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 동숭길 145 , 3층 스케치홀"
+    "address": "서울특별시 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
-    "id": "timeticket_k1fsu3i9b",
+    "id": "timeticket_0twq7ahhv",
     "title": "제우스의 고장난 번개",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/17/1752734875-30-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "브이씨어터",
+    "venue": "브이씨어터 / 총 85석",
     "link": "https://timeticket.co.kr/product/6421",
     "region": "seoul",
     "genre": "musical",
@@ -1527,14 +1527,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 혜화로 18 , 선빌딩 지하 1층"
+    "address": "서울특별시 종로구 혜화로 18 , 선빌딩 지하 1층"
   },
   {
-    "id": "timeticket_je887w5e8",
+    "id": "timeticket_35f30tjas",
     "title": "미래상상마술쇼",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2023/11/24/1700807605-86-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "파랑새극장",
+    "venue": "파랑새극장 / 총 112석",
     "link": "https://timeticket.co.kr/product/5337",
     "region": "seoul",
     "genre": "musical",
@@ -1544,14 +1544,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로 116 , 공공일호 건물 지하 2층"
+    "address": "서울특별시 종로구 대학로 116 , 공공일호 건물 지하 2층"
   },
   {
-    "id": "timeticket_94vhkxhup",
+    "id": "timeticket_bc4x8js3s",
     "title": "사춘기 메들리",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/19/1750292156-43-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아라아트홀",
+    "venue": "아라아트홀 / 총 170석",
     "link": "https://timeticket.co.kr/product/3494",
     "region": "seoul",
     "genre": "play",
@@ -1561,14 +1561,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로8가길 30 , 4층"
+    "address": "서울특별시 종로구 대학로8가길 30 , 4층"
   },
   {
-    "id": "timeticket_jibjnkvjy",
+    "id": "timeticket_of1i3qzc8",
     "title": "시간을 파는 상점",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/01/31/1738293502-81-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "파랑씨어터",
+    "venue": "파랑씨어터 / 총 161석",
     "link": "https://timeticket.co.kr/product/3126",
     "region": "seoul",
     "genre": "play",
@@ -1578,14 +1578,14 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울 종로구 대학로8가길 36 , 3층"
+    "address": "서울 종로구 대학로8가길 36 , 3층"
   },
   {
-    "id": "timeticket_abpnn8hhi",
+    "id": "timeticket_rhkh4nqf4",
     "title": "내일은 내일에게",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/11/1744359869-85-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "초록씨어터",
+    "venue": "초록씨어터 / 총 161석",
     "link": "https://timeticket.co.kr/product/5157",
     "region": "seoul",
     "genre": "play",
@@ -1595,14 +1595,14 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로 128 , 21세기빌딩 5층"
+    "address": "서울특별시 종로구 대학로 128 , 21세기빌딩 5층"
   },
   {
-    "id": "timeticket_yq0yfvg3d",
+    "id": "timeticket_n1zfddkns",
     "title": "콩쥐 팥쥐",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/10/23/1729660430-37-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/5959",
     "region": "seoul",
     "genre": "musical",
@@ -1612,14 +1612,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_6zsjkatv8",
+    "id": "timeticket_fn68m9u0a",
     "title": "피노키오야 노올자~!",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/08/05/1754358724-37-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "서연아트홀",
+    "venue": "서연아트홀 / 총 168석",
     "link": "https://timeticket.co.kr/product/5467",
     "region": "seoul",
     "genre": "musical",
@@ -1629,14 +1629,14 @@
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로 258-9 , 지하 1층"
+    "address": "서울특별시 종로구 창경궁로 258-9 , 지하 1층"
   },
   {
-    "id": "timeticket_e0xy0nmum",
+    "id": "timeticket_q5tuzp7g8",
     "title": "아기돼지 삼형제-늑대숲 또옹돼지 원정대",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5400/5481/5481-00-25110574-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "라온씨어터",
+    "venue": "라온씨어터 / 총 164석",
     "link": "https://timeticket.co.kr/product/5481",
     "region": "seoul",
     "genre": "musical",
@@ -1646,14 +1646,14 @@
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로10길 12 3층"
+    "address": "서울특별시 종로구 대학로10길 12 3층"
   },
   {
-    "id": "timeticket_7c3piymea",
+    "id": "timeticket_2ccmuoydw",
     "title": "오즈의 마법사",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/15/1744694066-96-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/6261",
     "region": "seoul",
     "genre": "musical",
@@ -1663,14 +1663,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_5wfet6xvn",
+    "id": "timeticket_ifjh5dib4",
     "title": "반짝반짝 라푼젤",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2020/04/23/1587607324-70-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 100석",
     "link": "https://timeticket.co.kr/product/3817",
     "region": "seoul",
     "genre": "musical",
@@ -1680,14 +1680,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울 종로구 대학로14길 18-2 , 지하1층"
+    "address": "서울 종로구 대학로14길 18-2 , 지하1층"
   },
   {
-    "id": "timeticket_s4vbwp6gc",
+    "id": "timeticket_ss73b9h3f",
     "title": "반짝반짝 인어공주",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2023/06/01/1685606257-9-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/5133",
     "region": "seoul",
     "genre": "musical",
@@ -1697,14 +1697,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_puu6i09ur",
+    "id": "timeticket_fcg7yjuih",
     "title": "반짝반짝 백설공주",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/01/08/1704678469-89-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/5414",
     "region": "seoul",
     "genre": "musical",
@@ -1714,14 +1714,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_2jqddgit9",
+    "id": "timeticket_yty4ecig9",
     "title": "반짝반짝 신데렐라",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/09/23/1727075747-50-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "달밤엔씨어터",
+    "venue": "달밤엔씨어터 / 총 109석",
     "link": "https://timeticket.co.kr/product/5897",
     "region": "seoul",
     "genre": "musical",
@@ -1731,14 +1731,14 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
-    "id": "timeticket_luye5wji0",
+    "id": "timeticket_2wau65cff",
     "title": "타지마할의 근위병",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6778/6778-00-251212e2-255x357.jpg",
     "date": "2025.11.12~2026.01.04",
-    "venue": "LG아트센터 서울, U+ 스테이지",
+    "venue": "LG아트센터 서울, U+ 스테이지 / 총 365석",
     "link": "https://timeticket.co.kr/product/6778",
     "region": "seoul",
     "genre": "play",
@@ -1748,14 +1748,14 @@
     "runningTime": "100분",
     "ageLimit": "14세 이상(2012년 출생자부터)",
     "casting": "",
-    "address": "·  서울특별시 강서구 마곡중앙로 136 , 유플러스 스테이지"
+    "address": "서울특별시 강서구 마곡중앙로 136 , 유플러스 스테이지"
   },
   {
-    "id": "timeticket_t86euqnnb",
+    "id": "timeticket_gii6q0dj1",
     "title": "나 혼자만 레벨업 on ICE",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6717/6717-00-2511261a-255x357.jpg",
     "date": "2025.12.24~2025.12.31",
-    "venue": "목동아이스링크",
+    "venue": "목동아이스링크 / 총 4000석",
     "link": "https://timeticket.co.kr/product/6717",
     "region": "seoul",
     "genre": "musical",
@@ -1765,14 +1765,14 @@
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 양천구 안양천로 939 목동 아이스링크장"
+    "address": "서울특별시 양천구 안양천로 939 목동 아이스링크장"
   },
   {
-    "id": "timeticket_1y66ubiv3",
+    "id": "timeticket_6ox6mfz97",
     "title": "집이 없어",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6675/6675-00-251111aa-255x357.jpg",
     "date": "2025.11.26~2025.12.28",
-    "venue": "서울숲 씨어터 2관",
+    "venue": "서울숲 씨어터 2관 / 총 297석",
     "link": "https://timeticket.co.kr/product/6675",
     "region": "seoul",
     "genre": "musical",
@@ -1782,14 +1782,14 @@
     "runningTime": "100분",
     "ageLimit": "초등학생 이상",
     "casting": "",
-    "address": "·  서울특별시 성동구 서울숲2길 32-14 , (성수동1가,갤러리아 포레) G층"
+    "address": "서울특별시 성동구 서울숲2길 32-14 , (성수동1가,갤러리아 포레) G층"
   },
   {
-    "id": "timeticket_08fnhcxjl",
+    "id": "timeticket_w4isgwxt2",
     "title": "은밀한 연애",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6700/6700-00-25112093-255x357.jpg",
     "date": "2025.12.24~2025.12.28",
-    "venue": "대학로 무하아트센터 2관",
+    "venue": "대학로 무하아트센터 2관 / 총 76석",
     "link": "https://timeticket.co.kr/product/6700",
     "region": "seoul",
     "genre": "play",
@@ -1799,14 +1799,14 @@
     "runningTime": "75분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 이화장길 72 2층 무하아트센터 2관"
+    "address": "서울특별시 종로구 이화장길 72 2층 무하아트센터 2관"
   },
   {
-    "id": "timeticket_evv9z2f94",
+    "id": "timeticket_b3bq0ccht",
     "title": "난타(NANTA) - 명동",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/11/11/1731301986-44-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "명동 난타극장",
+    "venue": "명동 난타극장 / 총 386석",
     "link": "https://timeticket.co.kr/product/4798",
     "region": "seoul",
     "genre": "musical",
@@ -1816,14 +1816,14 @@
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 중구 명동길 26 , 유네스코회관 3층"
+    "address": "서울특별시 중구 명동길 26 , 유네스코회관 3층"
   },
   {
-    "id": "timeticket_pez1extd2",
+    "id": "timeticket_6l2e8ackv",
     "title": "난타(NANTA) - 홍대",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/11/11/1731302039-5-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "홍대난타극장",
+    "venue": "홍대난타극장 / 총 323석",
     "link": "https://timeticket.co.kr/product/5303",
     "region": "seoul",
     "genre": "musical",
@@ -1833,14 +1833,14 @@
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
     "casting": "",
-    "address": "·  서울특별시 마포구 양화로16길 29 ,옐로우다이아몬드 지하2층 , 지하3층"
+    "address": "서울특별시 마포구 양화로16길 29 ,옐로우다이아몬드 지하2층 , 지하3층"
   },
   {
-    "id": "timeticket_hah07sjzb",
+    "id": "timeticket_oy3u5gah1",
     "title": "호두까기인형(송파)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6630/6630-00-25102199-255x357.jpg",
     "date": "2025.12.06~2026.01.25",
-    "venue": "우리금융아트홀",
+    "venue": "우리금융아트홀 / 총 1184석",
     "link": "https://timeticket.co.kr/product/6630",
     "region": "seoul",
     "genre": "musical",
@@ -1850,14 +1850,14 @@
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  서울특별시 송파구 올림픽로 424 , 올림픽공원 내 우리금융아트홀"
+    "address": "서울특별시 송파구 올림픽로 424 , 올림픽공원 내 우리금융아트홀"
   },
   {
-    "id": "timeticket_gifjue7nh",
+    "id": "timeticket_miok8w408",
     "title": "푸른 사자 와니니",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6777/6777-00-25121105-255x357.jpg",
     "date": "2026.01.03~2026.01.25",
-    "venue": "노원문화예술회관 대공연장",
+    "venue": "노원문화예술회관 대공연장 / 총 519석",
     "link": "https://timeticket.co.kr/product/6777",
     "region": "seoul",
     "genre": "musical",
@@ -1867,14 +1867,14 @@
     "runningTime": "100분",
     "ageLimit": "48개월 이상",
     "casting": "",
-    "address": "·  서울특별시 노원구 중계로 181 , 대공연장"
+    "address": "서울특별시 노원구 중계로 181 , 대공연장"
   },
   {
-    "id": "timeticket_9smpiaxgq",
+    "id": "timeticket_3k9qpb7ky",
     "title": "페인터즈(광화문전용관)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5600/5636/5636-00-2512091c-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "광화문 전용관(경향아트힐)",
+    "venue": "광화문 전용관(경향아트힐) / 총 338석",
     "link": "https://timeticket.co.kr/product/5636",
     "region": "seoul",
     "genre": "musical",
@@ -1884,14 +1884,14 @@
     "runningTime": "75분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 중구 정동길 3 , 경향아트힐"
+    "address": "서울특별시 중구 정동길 3 , 경향아트힐"
   },
   {
-    "id": "timeticket_giuy6dzlf",
+    "id": "timeticket_ij7oqb6pl",
     "title": "점프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/19/1742360360-74-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "명보아트홀 가온홀",
+    "venue": "명보아트홀 가온홀 / 총 333석",
     "link": "https://timeticket.co.kr/product/5983",
     "region": "seoul",
     "genre": "musical",
@@ -1901,14 +1901,14 @@
     "runningTime": "80분",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "·  서울특별시 중구 마른내로 47 , 명보아트홀 지하 3층"
+    "address": "서울특별시 중구 마른내로 47 , 명보아트홀 지하 3층"
   },
   {
-    "id": "timeticket_vixnxgjls",
+    "id": "timeticket_wd3pymwdx",
     "title": "와일드 와일드",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/01/1751348408-0-_wonbon_N_7_255x357_70_2.jpg",
     "date": "2024.08.16~2025.12.31",
-    "venue": "와일드 와일드 전용관(명보아트홀)",
+    "venue": "와일드 와일드 전용관(명보아트홀) / 총 310석",
     "link": "https://timeticket.co.kr/product/5743",
     "region": "seoul",
     "genre": "musical",
@@ -1918,14 +1918,14 @@
     "runningTime": "75분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "·  서울특별시 중구 마른내로 47 , 명보아트홀 지하 1층"
+    "address": "서울특별시 중구 마른내로 47 , 명보아트홀 지하 1층"
   },
   {
-    "id": "timeticket_35p3wbk07",
+    "id": "timeticket_wgyu7rl7j",
     "title": "산울림 편지콘서트 ＜에릭 사티와 벨 에포크의 예술가들＞",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6690/6690-00-25111888-255x357.jpg",
     "date": "2025.12.18~2026.01.11",
-    "venue": "소극장 산울림",
+    "venue": "소극장 산울림 / 총 90석",
     "link": "https://timeticket.co.kr/product/6690",
     "region": "seoul",
     "genre": "concert",
@@ -1935,14 +1935,14 @@
     "runningTime": "175분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 마포구 와우산로 157 , 서교동, 지층 (소극장 산울림)"
+    "address": "서울특별시 마포구 와우산로 157 , 서교동, 지층 (소극장 산울림)"
   },
   {
-    "id": "timeticket_hf8rdbowx",
+    "id": "timeticket_fexnndsa5",
     "title": "아주아주 배고픈 애벌레 쇼",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6642/6642-00-25102848-255x357.jpg",
     "date": "2025.10.24~2026.03.02",
-    "venue": "신한카드 SOL페이 스퀘어 드림홀",
+    "venue": "신한카드 SOL페이 스퀘어 드림홀 / 총 187석",
     "link": "https://timeticket.co.kr/product/6642",
     "region": "seoul",
     "genre": "musical",
@@ -1952,14 +1952,14 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "·  서울특별시 마포구 양화로 45 , 메세나폴리스 2층"
+    "address": "서울특별시 마포구 양화로 45 , 메세나폴리스 2층"
   },
   {
-    "id": "timeticket_9w3t5wt8c",
+    "id": "timeticket_a3n0wh7xa",
     "title": "장수탕 선녀님",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2023/12/28/1703725025-99-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "2021.09.16~2026.02.08",
-    "venue": "서울숲 씨어터 2관",
+    "venue": "서울숲 씨어터 2관 / 총 345석",
     "link": "https://timeticket.co.kr/product/5402",
     "region": "seoul",
     "genre": "musical",
@@ -1969,14 +1969,14 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "·  서울특별시 성동구 서울숲2길 32-14 , G층"
+    "address": "서울특별시 성동구 서울숲2길 32-14 , G층"
   },
   {
-    "id": "timeticket_6ckliuazn",
+    "id": "timeticket_d6m2ukhhn",
     "title": "알사탕",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/14/1744614534-92-_wonbon_N_7_255x357_70_2.jpg",
     "date": "2025.04.18~2026.02.08",
-    "venue": "서울숲 씨어터 1관",
+    "venue": "서울숲 씨어터 1관 / 총 244석",
     "link": "https://timeticket.co.kr/product/5401",
     "region": "seoul",
     "genre": "musical",
@@ -1986,14 +1986,14 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "·  서울특별시 성동구 서울숲2길 32-14 , G층"
+    "address": "서울특별시 성동구 서울숲2길 32-14 , G층"
   },
   {
-    "id": "timeticket_3ci41g77x",
+    "id": "timeticket_vfwwi6lra",
     "title": "흉터",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/05/26/1748219230-4-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "씨어터 윤",
+    "venue": "씨어터 윤 / 총 60석",
     "link": "https://timeticket.co.kr/product/4819",
     "region": "seoul",
     "genre": "play",
@@ -2003,14 +2003,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 마포구 와우산로 147-1"
+    "address": "서울특별시 마포구 와우산로 147-1"
   },
   {
-    "id": "timeticket_s2xv49qpd",
+    "id": "timeticket_62l58x4z5",
     "title": "크리스마스캐럴",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6779/6779-00-25121278-255x357.jpg",
     "date": "2025.12.24~2025.12.28",
-    "venue": "꿈빛극장",
+    "venue": "꿈빛극장 / 총 324석",
     "link": "https://timeticket.co.kr/product/6779",
     "region": "seoul",
     "genre": "play",
@@ -2020,14 +2020,14 @@
     "runningTime": "80분",
     "ageLimit": "만 5세 이상",
     "casting": "",
-    "address": "·  서울특별시 성북구 길음로7길 20 , 꿈빛극장"
+    "address": "서울특별시 성북구 길음로7길 20 , 꿈빛극장"
   },
   {
-    "id": "timeticket_7r87c3jrs",
+    "id": "timeticket_2q4lf0jil",
     "title": "윤형빈쇼 로맨틱 크리스마스/신년맞이 코미디의맛",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6668/6668-00-25111383-255x357.jpg",
     "date": "2025.12.20~2025.12.31",
-    "venue": "케이팝스테이지 K-POP STAGE",
+    "venue": "케이팝스테이지 K-POP STAGE / 총 147석",
     "link": "https://timeticket.co.kr/product/6668",
     "region": "seoul",
     "genre": "concert",
@@ -2037,14 +2037,14 @@
     "runningTime": "90분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울 마포구 와우산로21길 29 , 지하1층"
+    "address": "서울 마포구 와우산로21길 29 , 지하1층"
   },
   {
-    "id": "timeticket_ol93o81kd",
+    "id": "timeticket_5b4zeyl20",
     "title": "개그스테이지",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2000/2100/2190/2190-00-251124c8-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "K-POP STAGE",
+    "venue": "K-POP STAGE / 총 147석",
     "link": "https://timeticket.co.kr/product/2190",
     "region": "seoul",
     "genre": "concert",
@@ -2054,14 +2054,14 @@
     "runningTime": "90분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울 마포구 와우산로21길 29 , 지하 1층"
+    "address": "서울 마포구 와우산로21길 29 , 지하 1층"
   },
   {
-    "id": "timeticket_ukgkmhk10",
+    "id": "timeticket_jwbr7z8sc",
     "title": "맥주 한잔 하실래요?",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/14/1752469450-14-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "극장 더더더",
+    "venue": "극장 더더더 / 총 28석",
     "link": "https://timeticket.co.kr/product/5652",
     "region": "seoul",
     "genre": "play",
@@ -2071,14 +2071,14 @@
     "runningTime": "150분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "·  서울특별시 중구 을지로38길 9-4 , 4층"
+    "address": "서울특별시 중구 을지로38길 9-4 , 4층"
   },
   {
-    "id": "timeticket_pd3xvcvxo",
+    "id": "timeticket_laqp0mxoe",
     "title": "코쿤쇼 : KOKOON SHOW",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/03/1751530502-60-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "케이팝스테이지 K-POP STAGE",
+    "venue": "케이팝스테이지 K-POP STAGE / 총 147석",
     "link": "https://timeticket.co.kr/product/6394",
     "region": "seoul",
     "genre": "concert",
@@ -2088,14 +2088,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울 마포구 와우산로21길 29 , 지하1층"
+    "address": "서울 마포구 와우산로21길 29 , 지하1층"
   },
   {
-    "id": "timeticket_o0qkgz38o",
+    "id": "timeticket_ufky8samx",
     "title": "베베핀 뮤지컬 ＜두근두근 새친구＞",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6652/6652-00-251104cc-255x357.jpg",
     "date": "2025.12.19~2026.01.04",
-    "venue": "연세대학교 백주년기념관 콘서트홀",
+    "venue": "연세대학교 백주년기념관 콘서트홀 / 총 815석",
     "link": "https://timeticket.co.kr/product/6652",
     "region": "seoul",
     "genre": "musical",
@@ -2105,14 +2105,14 @@
     "runningTime": "65분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "·  서울특별시 서대문구 연세로 50"
+    "address": "서울특별시 서대문구 연세로 50"
   },
   {
-    "id": "timeticket_y6ivwhtm4",
+    "id": "timeticket_ddarem9z6",
     "title": "산타와 빈양말",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6633/6633-00-25102216-255x357.jpg",
     "date": "2025.11.22~2025.12.25",
-    "venue": "나루아트센터 대공연장",
+    "venue": "나루아트센터 대공연장 / 총 119석",
     "link": "https://timeticket.co.kr/product/6633",
     "region": "seoul",
     "genre": "musical",
@@ -2122,14 +2122,14 @@
     "runningTime": "70분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  서울특별시 광진구 능동로 76"
+    "address": "서울특별시 광진구 능동로 76"
   },
   {
-    "id": "timeticket_t1qhhzr77",
+    "id": "timeticket_onyxehsq2",
     "title": "별의 무리 : Constellations",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6780/6780-00-251212ff-255x357.jpg",
     "date": "2025.12.17~2025.12.24",
-    "venue": "신도림 오페라하우스 지하소극장",
+    "venue": "신도림 오페라하우스 지하소극장 / 총 40석",
     "link": "https://timeticket.co.kr/product/6780",
     "region": "seoul",
     "genre": "play",
@@ -2139,14 +2139,14 @@
     "runningTime": "100분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "·  서울특별시 구로구 새말로 107-32 , 신도림역 3번 출구 아래 서울문화센터 신도림 안쪽으로 입장"
+    "address": "서울특별시 구로구 새말로 107-32 , 신도림역 3번 출구 아래 서울문화센터 신도림 안쪽으로 입장"
   },
   {
-    "id": "timeticket_t723y8yh2",
+    "id": "timeticket_3et3w6uqe",
     "title": "폭풍우 치는 밤에",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6200/6268/6268-00-251210fc-255x357.jpg",
     "date": "2025.05.03~2025.12.28",
-    "venue": "올림픽홀 뮤즈라이브",
+    "venue": "올림픽홀 뮤즈라이브  / 총 198석",
     "link": "https://timeticket.co.kr/product/6268",
     "region": "seoul",
     "genre": "musical",
@@ -2156,14 +2156,14 @@
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  서울특별시 송파구 올림픽로 424"
+    "address": "서울특별시 송파구 올림픽로 424"
   },
   {
-    "id": "timeticket_be4xdd4kc",
+    "id": "timeticket_pncypantb",
     "title": "마트로시카",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6781/6781-00-2512121c-255x357.jpg",
     "date": "2025.12.01~2025.12.31",
-    "venue": "명보아트홀 3층 라온홀",
+    "venue": "명보아트홀 3층 라온홀 / 총 263석",
     "link": "https://timeticket.co.kr/product/6781",
     "region": "seoul",
     "genre": "play",
@@ -2173,14 +2173,14 @@
     "runningTime": "110분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "·  서울특별시 중구 초동 18-5 , 명보아트홀 3층"
+    "address": "서울특별시 중구 초동 18-5 , 명보아트홀 3층"
   },
   {
-    "id": "timeticket_6fx3xz255",
+    "id": "timeticket_u9sagrmd0",
     "title": "안녕 또 안녕",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6694/6694-00-25111949-255x357.jpg",
     "date": "2025.12.17~2025.12.31",
-    "venue": "제이원씨어터",
+    "venue": "제이원씨어터 / 총 80석",
     "link": "https://timeticket.co.kr/product/6694",
     "region": "seoul",
     "genre": "play",
@@ -2190,14 +2190,14 @@
     "runningTime": "70분",
     "ageLimit": "12세 이상",
     "casting": "",
-    "address": "·  서울특별시 종로구 창경궁로34길 18-12 지하 1층"
+    "address": "서울특별시 종로구 창경궁로34길 18-12 지하 1층"
   },
   {
-    "id": "timeticket_2erwbs4uv",
+    "id": "timeticket_319c75lkb",
     "title": "나무늘보 릴렉스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6755/6755-00-2512108b-255x357.jpg",
     "date": "2025.12.15~2026.01.04",
-    "venue": "구로 예술나무 씨어터",
+    "venue": "구로 예술나무 씨어터 / 총 232석",
     "link": "https://timeticket.co.kr/product/6755",
     "region": "seoul",
     "genre": "musical",
@@ -2207,14 +2207,14 @@
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  서울특별시 구로구 구로중앙로 134 , 구로 예술나무씨어터"
+    "address": "서울특별시 구로구 구로중앙로 134 , 구로 예술나무씨어터"
   },
   {
-    "id": "timeticket_6hghv82ny",
+    "id": "timeticket_o49tv0ozn",
     "title": "가방 들어주는 아이들",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6708/6708-00-251124bd-255x357.jpg",
     "date": "2026.01.03~2026.02.08",
-    "venue": "서울 상상나라극장",
+    "venue": "서울 상상나라극장 / 총 200석",
     "link": "https://timeticket.co.kr/product/6708",
     "region": "seoul",
     "genre": "musical",
@@ -2224,14 +2224,14 @@
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "·  서울특별시 광진구 능동로 216 , 서울상상나라 B1"
+    "address": "서울특별시 광진구 능동로 216 , 서울상상나라 B1"
   },
   {
-    "id": "timeticket_0lm5uc247",
+    "id": "timeticket_1d2yadb44",
     "title": "영시기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6400/6464/6464-00-25111791-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "성수소극장",
+    "venue": "성수소극장 / 총 65석",
     "link": "https://timeticket.co.kr/product/6464",
     "region": "seoul",
     "genre": "play",
@@ -2241,14 +2241,14 @@
     "runningTime": "80분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 성동구 성덕정길 135-1 , 지하 1층"
+    "address": "서울특별시 성동구 성덕정길 135-1 , 지하 1층"
   },
   {
-    "id": "timeticket_t6kw8qppo",
+    "id": "timeticket_b3om0i0sk",
     "title": "판타스틱 스노우맨",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6584/6584-00-25092279-255x357.jpg",
     "date": "2025.12.23~2025.12.27",
-    "venue": "마포아트센터 플레이맥",
+    "venue": "마포아트센터 플레이맥 / 총 179석",
     "link": "https://timeticket.co.kr/product/6584",
     "region": "seoul",
     "genre": "musical",
@@ -2258,14 +2258,14 @@
     "runningTime": "55분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "·  서울특별시 마포구 대흥로20길 28 , 마포아트센터 3층"
+    "address": "서울특별시 마포구 대흥로20길 28 , 마포아트센터 3층"
   },
   {
-    "id": "timeticket_oeguk7s5p",
+    "id": "timeticket_d2i6klnez",
     "title": "빛의 시어터 ＜파라오의 이집트＞",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6200/6215/6215-00-251117b0-255x357.jpg",
     "date": "2025.12.01~2025.12.31]",
-    "venue": "입구 티켓박스",
+    "venue": "빛의 시어터",
     "link": "https://timeticket.co.kr/product/6215",
     "region": "seoul",
     "genre": "exhibition",
@@ -2275,14 +2275,14 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 광진구 워커힐로 177 , 지하 1층"
+    "address": "서울특별시 광진구 워커힐로 177 , 지하 1층"
   },
   {
-    "id": "timeticket_9ofzrej97",
+    "id": "timeticket_0r6s5rr4i",
     "title": "사랑의 단상 : Montage of Love",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/05/28/1748422994-51-_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.31][유효기간:~2026.3.22]",
-    "venue": "입구 티켓 박스",
+    "venue": "뚝섬미술관",
     "link": "https://timeticket.co.kr/product/5979",
     "region": "seoul",
     "genre": "exhibition",
@@ -2292,14 +2292,14 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 성동구 아차산로 33 , 지하 1층"
+    "address": "서울특별시 성동구 아차산로 33 , 지하 1층"
   },
   {
-    "id": "timeticket_6tz9iwzor",
+    "id": "timeticket_yqnogi3cb",
     "title": "빈센트 발 : SHADOWGRAM",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6641/6641-00-25110699-255x357.jpg",
     "date": "25.12.12~25.12.31][유효기간:25.12.12~26.04.19]",
-    "venue": "MUSEUM 209 (소피텔 앰배서더 서울 호텔 3층)",
+    "venue": "MUSEUM 209",
     "link": "https://timeticket.co.kr/product/6641",
     "region": "seoul",
     "genre": "exhibition",
@@ -2309,10 +2309,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 송파구 잠실로 209 , 소피텔 앰배서더 서울 호텔 3층"
+    "address": "서울특별시 송파구 잠실로 209 , 소피텔 앰배서더 서울 호텔 3층"
   },
   {
-    "id": "timeticket_qcvc5i0nh",
+    "id": "timeticket_se66l11gy",
     "title": "헤일리 티프먼, 일상을 그리다",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6739/6739-00-25120219-255x357.jpg",
     "date": "~2026.02.01 20시] 얼리버드할인[쿠폰사용가능] [유효기간:~2025.12.31 20시] 얼리버드할인",
@@ -2326,10 +2326,10 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 강서구 공항대로 165 , 원그로브 C동 2층 W213호"
+    "address": "서울특별시 강서구 공항대로 165 , 원그로브 C동 2층 W213호"
   },
   {
-    "id": "timeticket_a3dhwxvky",
+    "id": "timeticket_ndkuogvct",
     "title": "클림트와 리치오디의 기적",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6634/6634-00-2511212f-255x357.jpg",
     "date": "25.12.19~25.12.31 19시] 얼리버드[유효기간:25.12.19~26.02.01 19시] 얼리버드",
@@ -2343,10 +2343,10 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 강남구 테헤란로 518 , 섬유센터빌딩 지하 1층"
+    "address": "서울특별시 강남구 테헤란로 518 , 섬유센터빌딩 지하 1층"
   },
   {
-    "id": "timeticket_3t122wohj",
+    "id": "timeticket_fkhch1f0c",
     "title": "World ART FESTA 월드아트페스타 2026",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6733/6733-00-2512058a-255x357.jpg",
     "date": "25.01.22~26.01.25] 얼리버드",
@@ -2360,10 +2360,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 강남구 영동대로 513 , 코액스 C홀"
+    "address": "서울특별시 강남구 영동대로 513 , 코액스 C홀"
   },
   {
-    "id": "timeticket_gnkj1iqk0",
+    "id": "timeticket_e7krisdfq",
     "title": "칼로스 아트 스페이스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6535/6535-00-250905f1-255x357.jpg",
     "date": "~2025.12.31]",
@@ -2377,10 +2377,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 서초구 양재천로 119 , 지하 1층"
+    "address": "서울특별시 서초구 양재천로 119 , 지하 1층"
   },
   {
-    "id": "timeticket_6xkzhsvlv",
+    "id": "timeticket_f0jr7mb17",
     "title": "마이오운타임 × 아이스홍시 : MEOWMENT",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6784/6784-00-251215bc-255x357.jpg",
     "date": "25.12.27~25.12.31][유효기간:25.12.27~26.01.22]",
@@ -2394,14 +2394,14 @@
     "runningTime": "",
     "ageLimit": "취학 아동부터 가능",
     "casting": "",
-    "address": "·  서울특별시 중구 서소문로 116 , 유원빌딩 1601호"
+    "address": "서울특별시 중구 서소문로 116 , 유원빌딩 1601호"
   },
   {
-    "id": "timeticket_7vghtrw4l",
+    "id": "timeticket_hy8bavbyg",
     "title": "보노보노 40주년 특별전 in Seoul",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6681/6681-00-2511137e-255x357.jpg",
     "date": "25.12.12~25.12.31][유효기간:25.12.12~26.03.29]",
-    "venue": "티켓박스",
+    "venue": "충무아트센터 갤러리",
     "link": "https://timeticket.co.kr/product/6681",
     "region": "seoul",
     "genre": "exhibition",
@@ -2411,14 +2411,14 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 중구 퇴계로 387"
+    "address": "서울특별시 중구 퇴계로 387"
   },
   {
-    "id": "timeticket_75ncuq36r",
+    "id": "timeticket_5gt44d0k9",
     "title": "핑크버블",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6606/6606-00-25100278-255x357.jpg",
     "date": "~2025.12.31][유효기간:~2026.02.28]",
-    "venue": "K현대미술관 지하 1층",
+    "venue": "K현대미술관",
     "link": "https://timeticket.co.kr/product/6606",
     "region": "seoul",
     "genre": "exhibition",
@@ -2428,14 +2428,14 @@
     "runningTime": "",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "·  서울특별시 강남구 선릉로 807 , 지하 1층"
+    "address": "서울특별시 강남구 선릉로 807 , 지하 1층"
   },
   {
-    "id": "timeticket_h806dmao5",
+    "id": "timeticket_lq96739j1",
     "title": "괴짜전 2025",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/24/1750743490-86-_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.31][유효기간:~2026.02.28]",
-    "venue": "K현대미술관 3F-5F",
+    "venue": "K현대미술관",
     "link": "https://timeticket.co.kr/product/6369",
     "region": "seoul",
     "genre": "exhibition",
@@ -2445,10 +2445,10 @@
     "runningTime": "",
     "ageLimit": "만 3세 이상",
     "casting": "",
-    "address": "·  서울특별시 강남구 선릉로 807 , K현대미술관 3층~5층"
+    "address": "서울특별시 강남구 선릉로 807 , K현대미술관 3층~5층"
   },
   {
-    "id": "timeticket_pzuz5tbhv",
+    "id": "timeticket_trsby5pia",
     "title": "퓨처그라운드(서울)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/08/01/1754030482-49-_wonbon_N_7_255x357_70_2.jpg",
     "date": "2025.12.01~2025.12.31]",
@@ -2462,10 +2462,10 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "·  서울특별시 강서구 하늘길 38 , 롯데몰 김포공항점 1층 전시홀"
+    "address": "서울특별시 강서구 하늘길 38 , 롯데몰 김포공항점 1층 전시홀"
   },
   {
-    "id": "timeticket_oolmdlvlo",
+    "id": "timeticket_1hp3jkfyc",
     "title": "OPCI",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/03/18/1742282451-36-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.31]",
@@ -2479,14 +2479,14 @@
     "runningTime": "",
     "ageLimit": "15세 이상",
     "casting": "",
-    "address": "·  서울특별시 영등포구 영중로 15"
+    "address": "서울특별시 영등포구 영중로 15"
   },
   {
-    "id": "timeticket_mv1j7fyf4",
+    "id": "timeticket_mv0sj4lkh",
     "title": "박라희 개인전 ＜햇살 아래, 스텔라 마을 친구들＞",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6695/6695-00-2511190c-255x357.jpg",
     "date": "25.12.02~25.12.26]",
-    "venue": "입구 티켓 박스",
+    "venue": "라이크디즈1601",
     "link": "https://timeticket.co.kr/product/6695",
     "region": "seoul",
     "genre": "exhibition",
@@ -2496,10 +2496,10 @@
     "runningTime": "",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  서울특별시 중구 서소문로 116 , 유원빌딩 1601호"
+    "address": "서울특별시 중구 서소문로 116 , 유원빌딩 1601호"
   },
   {
-    "id": "timeticket_ulm6mo72t",
+    "id": "timeticket_ao5e3mhb6",
     "title": "컬러풀뮤지엄",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/05/24/1653389714-45-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.21]",
@@ -2513,14 +2513,14 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울 종로구 인사동길 49 , 6층"
+    "address": "서울 종로구 인사동길 49 , 6층"
   },
   {
-    "id": "timeticket_t7bqakyzk",
+    "id": "timeticket_uieh7csm6",
     "title": "트릭아이 뮤지엄",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/10/15/1728972805-27-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.31]",
-    "venue": "입구 티켓박스",
+    "venue": "트릭아이뮤지엄 홍대 / 코코넛박스",
     "link": "https://timeticket.co.kr/product/5938",
     "region": "seoul",
     "genre": "exhibition",
@@ -2530,14 +2530,14 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  서울특별시 마포구 홍익로3길 20 , 지하 2층"
+    "address": "서울특별시 마포구 홍익로3길 20 , 지하 2층"
   },
   {
-    "id": "timeticket_mqqxqbbl5",
+    "id": "timeticket_tvp1mpgkp",
     "title": "2025 남진 전국투어 콘서트(의정부)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6768/6768-00-2512105d-255x357.jpg",
     "date": "2025.12.20",
-    "venue": "의정부예술의전당 대극장",
+    "venue": "의정부예술의전당 대극장 / 총 1000석",
     "link": "https://timeticket.co.kr/product/6768",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2547,14 +2547,14 @@
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  경기 의정부시 의정로 1 , 의정부예술의전당 대극장"
+    "address": "경기 의정부시 의정로 1 , 의정부예술의전당 대극장"
   },
   {
-    "id": "timeticket_g4qbhrl8q",
+    "id": "timeticket_vpn4cthwk",
     "title": "2025 박강성 전국투어 콘서트 : MY LIFE (의정부)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6742/6742-00-251203cf-255x357.jpg",
     "date": "2025.12.21",
-    "venue": "의정부예술의전당 대극장",
+    "venue": "의정부예술의전당 대극장 / 총 1000석",
     "link": "https://timeticket.co.kr/product/6742",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2564,14 +2564,14 @@
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  경기 의정부시 의정로 1 , 군산예술의전당 대공연장"
+    "address": "경기 의정부시 의정로 1 , 군산예술의전당 대공연장"
   },
   {
-    "id": "timeticket_92rrysmi2",
+    "id": "timeticket_4o0xf9wjl",
     "title": "2025 부활 40주년 콘서트(성남)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6744/6744-00-25120344-255x357.jpg",
     "date": "2025.12.31",
-    "venue": "성남아트센터 오페라하우스",
+    "venue": "성남아트센터 오페라하우스 / 총 1570석",
     "link": "https://timeticket.co.kr/product/6744",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2581,14 +2581,14 @@
     "runningTime": "120분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  경기 성남시 분당구 성남대로 808 , 성남아트센터"
+    "address": "경기 성남시 분당구 성남대로 808 , 성남아트센터"
   },
   {
-    "id": "timeticket_ce0d10wrn",
+    "id": "timeticket_dhziwl3vo",
     "title": "메리크리스마스 산타할아버지(성남)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6725/6725-00-2511283d-255x357.jpg",
     "date": "2025.12.24~2025.12.25",
-    "venue": "성남아트리움 대극장",
+    "venue": "성남아트리움 대극장 / 총 645석",
     "link": "https://timeticket.co.kr/product/6725",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2598,14 +2598,14 @@
     "runningTime": "60분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 성남시 수정구 수정로171번길 10 , 성남시의료원 성남아트리움 대극장"
+    "address": "경기 성남시 수정구 수정로171번길 10 , 성남시의료원 성남아트리움 대극장"
   },
   {
-    "id": "timeticket_0bkrcceqt",
+    "id": "timeticket_fnoirg67f",
     "title": "루돌프의 크리스마스 선물(성남)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6723/6723-00-251128f2-255x357.jpg",
     "date": "2025.12.19~2025.12.21",
-    "venue": "성남아트센터 앙상블시어터",
+    "venue": "성남아트센터 앙상블시어터 / 총 373석",
     "link": "https://timeticket.co.kr/product/6723",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2615,14 +2615,14 @@
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 성남시 분당구 성남대로 808 , 성남아트센터 앙상블시어터"
+    "address": "경기 성남시 분당구 성남대로 808 , 성남아트센터 앙상블시어터"
   },
   {
-    "id": "timeticket_png87vjj3",
+    "id": "timeticket_jzyfq9weg",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(성남)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6658/6658-00-25110630-255x357.jpg",
     "date": "2025.12.23~2025.12.25",
-    "venue": "바른아트센터",
+    "venue": "바른아트센터 / 총 180석",
     "link": "https://timeticket.co.kr/product/6658",
     "region": "gyeonggi",
     "genre": "play",
@@ -2632,14 +2632,14 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  경기 성남시 분당구 야탑로75번길 9 , 별관 지하 1층"
+    "address": "경기 성남시 분당구 야탑로75번길 9 , 별관 지하 1층"
   },
   {
-    "id": "timeticket_y3d14hq79",
+    "id": "timeticket_hc25xd7dp",
     "title": "라푼젤(고양)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6727/6727-00-25112887-255x357.jpg",
     "date": "2025.12.27~2025.12.28",
-    "venue": "고양 어울림누리 별모래 극장",
+    "venue": "고양 어울림누리 별모래 극장 / 총 366석",
     "link": "https://timeticket.co.kr/product/6727",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2649,14 +2649,14 @@
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 고양시 덕양구 어울림로 33 , 고양 어울림누리 별모래 극장"
+    "address": "경기 고양시 덕양구 어울림로 33 , 고양 어울림누리 별모래 극장"
   },
   {
-    "id": "timeticket_6cubl5aqf",
+    "id": "timeticket_petl9tc75",
     "title": "더 매직서커스(인천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6731/6731-00-2511281c-255x357.jpg",
     "date": "2025.12.27~2025.12.28",
-    "venue": "인천서구문화회관 대공연장",
+    "venue": "인천서구문화회관 대공연장 / 총 742석",
     "link": "https://timeticket.co.kr/product/6731",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2666,14 +2666,14 @@
     "runningTime": "55분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  인천광역시 서구 서달로 190 , 인천서구문화회관 대공연장"
+    "address": "인천광역시 서구 서달로 190 , 인천서구문화회관 대공연장"
   },
   {
-    "id": "timeticket_lz9whc5eu",
+    "id": "timeticket_zb583yxem",
     "title": "스크루지의 크리스마스 캐롤(인천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6730/6730-00-25112830-255x357.jpg",
     "date": "2025.12.24~2025.12.25",
-    "venue": "인천 청라블루노바홀",
+    "venue": "인천 청라블루노바홀 / 총 480석",
     "link": "https://timeticket.co.kr/product/6730",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2683,14 +2683,14 @@
     "runningTime": "55분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
+    "address": "인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
   },
   {
-    "id": "timeticket_mz2ak1ggw",
+    "id": "timeticket_2lgda16c1",
     "title": "아기 돼지 삼형제(인천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6726/6726-00-25112887-255x357.jpg",
     "date": "2025.12.24~2025.12.25",
-    "venue": "부평아트센터 해누리극장",
+    "venue": "부평아트센터 해누리극장 / 총 868석",
     "link": "https://timeticket.co.kr/product/6726",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2700,14 +2700,14 @@
     "runningTime": "55분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "·  인천광역시 부평구 아트센터로 166 , 1층"
+    "address": "인천광역시 부평구 아트센터로 166 , 1층"
   },
   {
-    "id": "timeticket_4b9ql87i4",
+    "id": "timeticket_47rnmuzz2",
     "title": "성냥팔이 소녀(인천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6724/6724-00-251128a4-255x357.jpg",
     "date": "2025.12.20~2025.12.21",
-    "venue": "인천 청라블루노바홀",
+    "venue": "인천 청라블루노바홀 / 총 480석",
     "link": "https://timeticket.co.kr/product/6724",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2717,14 +2717,14 @@
     "runningTime": "55분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "·  인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
+    "address": "인천광역시 서구 청라대로 20 , 청라복합문화센터 청라블루노바홀"
   },
   {
-    "id": "timeticket_4xrdrfezo",
+    "id": "timeticket_jav9tbq08",
     "title": "판타스틱 스노우맨(인천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6632/6632-00-2510212c-255x357.jpg",
     "date": "2025.12.13~2026.01.11",
-    "venue": "인천어린이과학관 공연장",
+    "venue": "인천어린이과학관 공연장 / 총 172석",
     "link": "https://timeticket.co.kr/product/6632",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2734,14 +2734,14 @@
     "runningTime": "55분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "·  인천광역시 계양구 방축로 21 , 1층 공연장"
+    "address": "인천광역시 계양구 방축로 21 , 1층 공연장"
   },
   {
-    "id": "timeticket_ko55gzsio",
+    "id": "timeticket_bp2vuzhvy",
     "title": "코미디 매직쇼(송도)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6100/6135/6135-00-251016aa-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "미리내 마술극단 송도점",
+    "venue": "미리내 마술극단 송도점 / 총 60석",
     "link": "https://timeticket.co.kr/product/6135",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2751,14 +2751,14 @@
     "runningTime": "60분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 3층"
+    "address": "인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 3층"
   },
   {
-    "id": "timeticket_qkqn3r87k",
+    "id": "timeticket_apxugggi0",
     "title": "스탠드업 코미디(송도)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6000/6084/6084-00-251016ea-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "송도 메가박스",
+    "venue": "송도 메가박스 / 총 100석",
     "link": "https://timeticket.co.kr/product/6084",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2768,14 +2768,14 @@
     "runningTime": "80분",
     "ageLimit": "만 17세 이상",
     "casting": "",
-    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 2층"
+    "address": "인천광역시 연수구 송도과학로16번길 33-4 , 트리플스트리트 D동 2층"
   },
   {
-    "id": "timeticket_8vb2cqruu",
+    "id": "timeticket_qovsoe3tl",
     "title": "어린이 마술쇼(송도)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5300/5342/5342-00-25101650-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "미리내 마술극단 송도점",
+    "venue": "미리내 마술극단 송도점 / 총 30석",
     "link": "https://timeticket.co.kr/product/5342",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2785,14 +2785,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  인천광역시 연수구 송도과학로16번길 33-4 , 트리플 스트리트 D동 3층 (메가박스 2층 에스컬레이터 이용)"
+    "address": "인천광역시 연수구 송도과학로16번길 33-4 , 트리플 스트리트 D동 3층 (메가박스 2층 에스컬레이터 이용)"
   },
   {
-    "id": "timeticket_9dcwvln4z",
+    "id": "timeticket_ld9xr315j",
     "title": "루돌프의 크리스마스 선물(부천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6635/6635-00-25111403-255x357.jpg",
     "date": "2025.12.09~2025.12.27",
-    "venue": "한국만화박물관",
+    "venue": "한국만화박물관 / 총 386석",
     "link": "https://timeticket.co.kr/product/6635",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2802,14 +2802,14 @@
     "runningTime": "50분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 부천시 원미구 길주로 1"
+    "address": "경기 부천시 원미구 길주로 1"
   },
   {
-    "id": "timeticket_iun9lctfq",
+    "id": "timeticket_ngpog952k",
     "title": "어린이 마술쇼(부천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5400/5494/5494-00-25103127-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "부천마술극장",
+    "venue": "부천마술극장 / 총 80석",
     "link": "https://timeticket.co.kr/product/5494",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2819,14 +2819,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 부천시 원미구 송내대로265번길 67 , 7층 (월드컵타운)"
+    "address": "경기 부천시 원미구 송내대로265번길 67 , 7층 (월드컵타운)"
   },
   {
-    "id": "timeticket_qnkjiy1nn",
+    "id": "timeticket_1jes8pt3k",
     "title": "한뼘사이(수원)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6783/6783-00-2512159d-255x357.jpg",
     "date": "2025.11.21~2026.01.04",
-    "venue": "KBS수원아트홀",
+    "venue": "KBS수원아트홀 / 총 200석",
     "link": "https://timeticket.co.kr/product/6783",
     "region": "gyeonggi",
     "genre": "play",
@@ -2836,14 +2836,14 @@
     "runningTime": "105분",
     "ageLimit": "만 11세 이상",
     "casting": "",
-    "address": "·  경기 수원시 팔달구 인계로 123 , KBS 수원아트홀"
+    "address": "경기 수원시 팔달구 인계로 123 , KBS 수원아트홀"
   },
   {
-    "id": "timeticket_tat10vyer",
+    "id": "timeticket_9yx8fje5e",
     "title": "파리나무십자가 소년합창단 특별 초청 공연(수원)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6745/6745-00-251204af-255x357.jpg",
     "date": "2025.12.17",
-    "venue": "경기아트센터 대극장",
+    "venue": "경기아트센터 대극장 / 총 1500석",
     "link": "https://timeticket.co.kr/product/6745",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2853,14 +2853,14 @@
     "runningTime": "115분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "·  경기 수원시 팔달구 효원로307번길 20 , 경기아트센터 대극장"
+    "address": "경기 수원시 팔달구 효원로307번길 20 , 경기아트센터 대극장"
   },
   {
-    "id": "timeticket_7q4t0ys9k",
+    "id": "timeticket_lubpynjzq",
     "title": "과학에 빠진 마술사(수원)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6715/6715-00-251126b7-255x357.jpg",
     "date": "2025.12.24~2026.02.28",
-    "venue": "AK ARTHALL",
+    "venue": "AK ARTHALL / 총 110석",
     "link": "https://timeticket.co.kr/product/6715",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2870,14 +2870,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 AK ARTHALL"
+    "address": "경기 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 AK ARTHALL"
   },
   {
-    "id": "timeticket_z0w9pnu55",
+    "id": "timeticket_c0s7x3i58",
     "title": "코미디 매직쇼(수원)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6100/6113/6113-00-2510168f-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "광교 매직앤조이",
+    "venue": "광교 매직앤조이 / 총 60석",
     "link": "https://timeticket.co.kr/product/6113",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2887,14 +2887,14 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_10dd4dsdn",
+    "id": "timeticket_xgmg9dror",
     "title": "어린이 마술쇼(수원)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5700/5724/5724-00-2510103e-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "광교 매직앤조이",
+    "venue": "광교 매직앤조이 / 총 60석",
     "link": "https://timeticket.co.kr/product/5724",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2904,14 +2904,14 @@
     "runningTime": "50분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_nuho5d1ko",
+    "id": "timeticket_x6kwtg4og",
     "title": "호두까기인형(과천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6673/6673-00-2511100a-255x357.jpg",
     "date": "2025.12.04~2025.12.28",
-    "venue": "국립과천과학관 어울림홀",
+    "venue": "국립과천과학관 어울림홀 / 총 495석",
     "link": "https://timeticket.co.kr/product/6673",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2921,14 +2921,14 @@
     "runningTime": "70분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 과천시 상하벌로 110 , 어울림홀"
+    "address": "경기 과천시 상하벌로 110 , 어울림홀"
   },
   {
-    "id": "timeticket_ixmzlny6q",
+    "id": "timeticket_t1xufqjvj",
     "title": "스탠드업 코미디(광교)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5700/5730/5730-00-25101689-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "광교 매직앤조이",
+    "venue": "광교 매직앤조이 / 총 60석",
     "link": "https://timeticket.co.kr/product/5730",
     "region": "gyeonggi",
     "genre": "concert",
@@ -2938,14 +2938,14 @@
     "runningTime": "90분",
     "ageLimit": "만 16세 이상",
     "casting": "",
-    "address": "·  경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
-    "id": "timeticket_rdrnie2kt",
+    "id": "timeticket_pb2k9855q",
     "title": "라푼젤(용인)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6729/6729-00-251128f2-255x357.jpg",
     "date": "2025.12.27~2025.12.28",
-    "venue": "용인 문화예술원 마루홀",
+    "venue": "용인 문화예술원 마루홀 / 총 300석",
     "link": "https://timeticket.co.kr/product/6729",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2955,14 +2955,14 @@
     "runningTime": "55분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "·  경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
+    "address": "경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
   },
   {
-    "id": "timeticket_vj8gxmbjd",
+    "id": "timeticket_jiuj5zwkz",
     "title": "콧구멍을 후비면(용인)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6728/6728-00-25112802-255x357.jpg",
     "date": "2025.12.20~2025.12.21",
-    "venue": "용인 문화예술원 마루홀",
+    "venue": "용인 문화예술원 마루홀 / 총 300석",
     "link": "https://timeticket.co.kr/product/6728",
     "region": "gyeonggi",
     "genre": "musical",
@@ -2972,14 +2972,14 @@
     "runningTime": "55분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
+    "address": "경기 용인시 처인구 중부대로 1199 , 용인 문화예술원 마루홀"
   },
   {
-    "id": "timeticket_m16orqw1g",
+    "id": "timeticket_cymxkpw3z",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(용인)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6662/6662-00-2511243c-255x357.jpg",
     "date": "2025.12.23~2025.12.25",
-    "venue": "용인시 평생학습관 큰어울마당",
+    "venue": "용인시 평생학습관 큰어울마당 / 총 542석",
     "link": "https://timeticket.co.kr/product/6662",
     "region": "gyeonggi",
     "genre": "play",
@@ -2989,14 +2989,14 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  경기 용인시 수지구 문정로7번길 15"
+    "address": "경기 용인시 수지구 문정로7번길 15"
   },
   {
-    "id": "timeticket_wzc32v5dv",
+    "id": "timeticket_8cpv5k36j",
     "title": "꿀벌 마야의 모험(용인)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6529/6529-00-25090848-255x357.jpg",
     "date": "2025.09.13~2026.01.25",
-    "venue": "디아나아트홀",
+    "venue": "디아나아트홀 / 총 50석",
     "link": "https://timeticket.co.kr/product/6529",
     "region": "gyeonggi",
     "genre": "musical",
@@ -3006,14 +3006,14 @@
     "runningTime": "50분",
     "ageLimit": "18개월 이상",
     "casting": "",
-    "address": "·  경기 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 내"
+    "address": "경기 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 내"
   },
   {
-    "id": "timeticket_3ghz9r0nd",
+    "id": "timeticket_sg4u53c0q",
     "title": "사과가 쿵! (평택)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6722/6722-00-251128f3-255x357.jpg",
     "date": "2025.12.20~2025.12.21",
-    "venue": "평택북부문화예술회관 대공연장",
+    "venue": "평택북부문화예술회관 대공연장 / 총 631석",
     "link": "https://timeticket.co.kr/product/6722",
     "region": "gyeonggi",
     "genre": "musical",
@@ -3023,14 +3023,14 @@
     "runningTime": "55분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 평택시 경기대로 1366 , 북부문화예술회관"
+    "address": "경기 평택시 경기대로 1366 , 북부문화예술회관"
   },
   {
-    "id": "timeticket_5r5vzkd2l",
+    "id": "timeticket_6vsjk2a2a",
     "title": "러브액츄얼리 첫번째 사연 : 크리스마스 특별공연(평택)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6663/6663-00-251107b5-255x357.jpg",
     "date": "2025.12.23~2025.12.25",
-    "venue": "평택북부문화예술회관 소공연장",
+    "venue": "평택북부문화예술회관 소공연장 / 총 282석",
     "link": "https://timeticket.co.kr/product/6663",
     "region": "gyeonggi",
     "genre": "play",
@@ -3040,10 +3040,10 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "·  경기 평택시 경기대로 1366"
+    "address": "경기 평택시 경기대로 1366"
   },
   {
-    "id": "timeticket_991ziwhau",
+    "id": "timeticket_kj6iri09a",
     "title": "다이노베이 시즌3(용인)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/04/1733295043-43-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
@@ -3057,10 +3057,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 용인시 기흥구 신고매로 59"
+    "address": "경기 용인시 기흥구 신고매로 59"
   },
   {
-    "id": "timeticket_f4l4fua3a",
+    "id": "timeticket_g6m5l7z96",
     "title": "레노부르크뮤지엄 ＜빛을 찾았,나＞(부천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6537/6537-00-25090599-255x357.jpg",
     "date": "~2025.12.31]",
@@ -3074,10 +3074,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 부천시 오정구 신흥로511번길 180"
+    "address": "경기 부천시 오정구 신흥로511번길 180"
   },
   {
-    "id": "timeticket_4dwv9mwcl",
+    "id": "timeticket_x82kqpv62",
     "title": "레노부르크뮤지엄 ＜GLEAM:E 빛나＞(부천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6536/6536-00-250905ba-255x357.jpg",
     "date": "~2025.12.31]",
@@ -3091,10 +3091,10 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "·  경기 부천시 오정구 신흥로511번길 180"
+    "address": "경기 부천시 오정구 신흥로511번길 180"
   },
   {
-    "id": "timeticket_5xxfzaczs",
+    "id": "timeticket_vckeic7bg",
     "title": "와일드벅스 곤충탐험대",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6602/6602-00-2509299a-255x357.jpg",
     "date": "~2025.12.31][유효기간:~2026.01.31]",
@@ -3108,13 +3108,13 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "·  인천광역시 중구 월미로 222 , 뽀로로앤타요 빌딩 1층"
+    "address": "인천광역시 중구 월미로 222 , 뽀로로앤타요 빌딩 1층"
   },
   {
-    "id": "timeticket_5nrtvt8jw",
+    "id": "timeticket_cick65fnm",
     "title": "매직플로우 원더빌리지(고양)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/29/1753765943-75-_wonbon_N_7_255x357_70_2.jpg",
-    "date": "~25.12.31]",
+    "date": "~2025.12.31",
     "venue": "매직플로우 원더빌리지",
     "link": "https://timeticket.co.kr/product/6061",
     "region": "gyeonggi",
@@ -3125,10 +3125,10 @@
     "runningTime": "",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "·  경기 고양시 덕양구 고양대로 1955 , 3층 매직플로우"
+    "address": "경기 고양시 덕양구 고양대로 1955 , 3층 매직플로우"
   },
   {
-    "id": "timeticket_0qqyi6sij",
+    "id": "timeticket_g5rgdbxsr",
     "title": "매직플로우 원더파크(과천)",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/01/1743473920-30-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2025.12.31]",
@@ -3142,6 +3142,6 @@
     "runningTime": "120분",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "·  경기 과천시 대공원광장로 80 , 종합안내소"
+    "address": "경기 과천시 대공원광장로 80 , 종합안내소"
   }
 ]

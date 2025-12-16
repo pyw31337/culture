@@ -220,37 +220,67 @@ async function scrapeTimeTicket() {
                 let originalPrice = '';
                 let venue = '';
                 let date = '';
+                let address = '';
 
-                // Try to find specific elements first
-                const allElements = document.body.getElementsByTagName('*');
+                const bodyText = document.body.innerText;
 
-                for (let i = 0; i < allElements.length; i++) {
-                    const el = allElements[i] as HTMLElement;
-                    const text = el.innerText || '';
+                // Improved Venue & Address Parsing from specific container(s)
+                const infoBoxes = document.querySelectorAll('.viewpage_text.radius_box');
+                infoBoxes.forEach(infoBox => {
+                    const text = infoBox.textContent || '';
 
-                    // Venue
-                    // Look for a line that starts with "장소 :" or contains it significantly
-                    // and is NOT the tab menu
-                    if (!venue && text.includes('장소 :') && text.length < 100 && !text.includes('공연정보')) {
-                        const parts = text.split('장소 :');
-                        if (parts.length > 1) {
-                            const candidate = parts[1].trim().split('\n')[0];
-                            if (candidate && candidate !== '환불규정' && candidate !== '문의') {
-                                venue = candidate;
+                    // 1. Try to extract specific lines if they exist as <p> tags
+                    const pTags = infoBox.querySelectorAll('p');
+                    pTags.forEach(p => {
+                        const pText = p.textContent?.trim() || '';
+                        if (pText.includes('장소') && !pText.includes('티켓배부')) {
+                            const part = pText.split('장소')[1]?.replace(/[:\·]/g, '').trim();
+                            if (part && part !== '문의' && part !== '환불규정') venue = part;
+                        }
+                        if (pText.includes('주소')) {
+                            const part = pText.split('주소')[1]?.replace(/[:\·]/g, '').trim();
+                            if (part) address = part;
+                        }
+                    });
+
+                    // 2. Fallback: Regex on full text if p tags didn't help (or format is different)
+                    if (!venue) {
+                        // Excluding '티켓배부장소' which is often '입구 티켓박스'
+                        const vMatch = text.match(/(?<!배부)장소\s*[:\·]?\s*([^\n\/·]+)/);
+                        if (vMatch) {
+                            const v = vMatch[1].trim();
+                            if (v !== '문의' && v !== '환불규정') venue = v;
+                        }
+                    }
+                    if (!address) {
+                        const aMatch = text.match(/주소\s*[:\·]?\s*([^\n]+)/);
+                        if (aMatch) address = aMatch[1].trim();
+                    }
+                });
+
+                // Fallback structure (Old logic)
+                if (!venue) {
+                    const allElements = document.body.getElementsByTagName('*');
+                    for (let i = 0; i < allElements.length; i++) {
+                        const el = allElements[i] as HTMLElement;
+                        const text = el.innerText || '';
+                        if (!venue && text.includes('장소 :') && text.length < 100 && !text.includes('공연정보')) {
+                            const parts = text.split('장소 :');
+                            if (parts.length > 1) {
+                                const candidate = parts[1].trim().split('\n')[0];
+                                if (candidate && candidate !== '환불규정' && candidate !== '문의' && !candidate.includes('티켓박스')) {
+                                    venue = candidate;
+                                }
                             }
                         }
                     }
                 }
 
-                const bodyText = document.body.innerText;
-
-                // Fallback Regex
-                if (!venue) {
-                    const venueMatch = bodyText.match(/장소\s*[:]\s*([^\n\/·]+)/);
-                    if (venueMatch) {
-                        const v = venueMatch[1].trim();
-                        if (v !== '환불규정') venue = v;
-                    }
+                // Final cleanups
+                if (venue.includes('티켓박스') || venue.includes('매표소')) {
+                    // Try to find a better venue name if the current one is just a meeting point
+                    // Often the title contains the venue or it's unparseable. 
+                    // Keep as is if no better option, but the above logic prioritizes the infoBox which usually has the real venue.
                 }
 
                 // Running Time
@@ -268,23 +298,6 @@ async function scrapeTimeTicket() {
                 // Date
                 const dateMatch = bodyText.match(/(?:진행)?기간\s*[:]?\s*([^\n·]{5,})/);
                 if (dateMatch) date = dateMatch[1].trim();
-
-                // Original Price guessing
-                // Often hidden or strikethrough in UI, hard to parse from text alone if not labeled "정가"
-                // But typically if there is a "sale" price, the higher number nearby might be original.
-                // For safety, leaving blank or matching simple "정가 : ..." pattern if exists.
-
-                // Address
-                let address = '';
-                const addressEl = document.querySelector('#ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box > p:nth-child(2)');
-                if (addressEl) {
-                    const text = addressEl.textContent || '';
-                    if (text.includes('주소')) {
-                        address = text.replace('주소', '').replace(':', '').trim();
-                    } else {
-                        address = text.trim();
-                    }
-                }
 
                 return {
                     runningTime,
