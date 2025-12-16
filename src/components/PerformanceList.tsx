@@ -555,7 +555,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             // 2. Genre Filter
             if (selectedGenre === 'hotdeal') {
-                if (!p.discount && !p.price) return false;
+                const hasPrice = p.price && p.price.length > 0;
+                const hasDiscount = p.discount && p.discount.length > 0;
+                if (!hasPrice && !hasDiscount) return false;
             } else if (selectedGenre !== 'all' && p.genre !== selectedGenre) return false;
 
             // 3. District Filter (only if region is selected)
