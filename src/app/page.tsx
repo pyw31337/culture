@@ -114,21 +114,40 @@ async function getPerformances() {
     // Also exclude generic '예매하기' venue name which indicates a parsing error or placeholder
     const validRegions = ['seoul', 'gyeonggi', 'incheon'];
 
-    return allPerformances.filter(p => {
-        // 1. Expiration Check
+    // 3. Bad Data / Blocklist Check
+    const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
+
+    const filtered = allPerformances.filter(p => {
         if (!isPerformanceActive(p.date, now)) return false;
-
-        // 2. Strict Region Check (User Request: Exclude other regions for Sports)
         if (!validRegions.includes(p.region)) return false;
-
-        // 3. Bad Data / Blocklist Check
         if (p.venue === '예매하기') return false;
-
-        const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
-
         return true;
     });
+
+    // 4. Deduplication Logic (Normalize Title & Prioritize Price)
+    const uniqueMap = new Map<string, any>();
+
+    filtered.forEach(p => {
+        // Normalize title: remove spaces, special chars, lowercase
+        const key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+
+        if (uniqueMap.has(key)) {
+            const existing = uniqueMap.get(key);
+            // Prioritize the one with price/discount info
+            if (!existing.price && p.price) {
+                uniqueMap.set(key, p);
+            }
+            // If both have price (unlikely for now) or neither, keep existing or overwrite?
+            // TimeTicket usually comes last in spread, so later items might be TimeTicket.
+            // If existing is TimeTicket (has price), keep it.
+            // If new is TimeTicket (has price), take it (covered by if above).
+        } else {
+            uniqueMap.set(key, p);
+        }
+    });
+
+    return Array.from(uniqueMap.values());
 }
 
 export default async function Home() {
