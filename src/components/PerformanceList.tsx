@@ -1784,7 +1784,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     animate={{ opacity: 1, scale: 1 }}
                                                     exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
                                                     transition={{ duration: 0.3, delay: index * 0.03 }}
-                                                    layout
                                                 >
                                                     {layoutMode === 'grid' ? (
                                                         <PerformanceCard
