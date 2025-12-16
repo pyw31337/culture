@@ -2104,6 +2104,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 {perf.venue}
                             </button>
                         </div>
+
+                        {/* Price & Discount info for List View */}
+                        {(perf.price || perf.discount) && (
+                            <div className="flex items-center gap-2 mt-2">
+                                {perf.discount && <span className="text-red-500 font-bold text-sm">{perf.discount}</span>}
+                                {perf.price && <span className="text-white font-bold text-sm">{perf.price}</span>}
+                                {perf.originalPrice && <span className="text-gray-500 text-xs line-through">{perf.originalPrice}</span>}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -2279,8 +2288,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
-                                        {perf.discount && <span className="text-red-600 bg-white/80 px-1.5 py-0.5 rounded text-xs font-bold">{perf.discount}</span>}
-                                        <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                                        <div className="flex flex-col items-end">
+                                            {(perf.price || perf.discount) && (
+                                                <div className="flex gap-1 items-center mb-0.5">
+                                                    {perf.discount && <span className="text-red-600 bg-white/80 px-1.5 py-0.5 rounded text-xs font-bold">{perf.discount}</span>}
+                                                    {perf.price && <span className="text-gray-900 text-xs font-bold">{perf.price}</span>}
+                                                </div>
+                                            )}
+                                            <span className="text-gray-900 text-xs font-medium">{perf.date}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </>

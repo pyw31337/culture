@@ -286,6 +286,11 @@ async function scrapeTimeTicket() {
 
     await browser.close();
 
+    if (allItems.length === 0) {
+        console.error("No items collected! Skipping file save to prevent data loss.");
+        return;
+    }
+
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allItems, null, 2));
     console.log(`Saved to ${OUTPUT_PATH}`);
 }
