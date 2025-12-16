@@ -12,6 +12,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
 import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
+import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
 
@@ -33,8 +34,6 @@ interface PerformanceListProps {
     lastUpdated: string;
 }
 
-
-
 function getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2 - lat1);  // deg2rad below
@@ -52,17 +51,6 @@ function getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon
 function deg2rad(deg: number) {
     return deg * (Math.PI / 180)
 }
-
-// Image Optimization Helper
-const getOptimizedUrl = (url: string, width: number = 400) => {
-    if (!url) return "/api/placeholder/300/400";
-    if (url.startsWith('/')) return url; // Local images
-    if (url.includes('kfescdn')) return url; // VisitKorea images are already optimized/thumbnails
-
-    // Use wsrv.nl for on-the-fly resizing and WebP conversion
-    // w: width, q: quality, output: format
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=80&output=webp`;
-};
 
 export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');

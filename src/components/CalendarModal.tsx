@@ -7,6 +7,7 @@ import { ko } from 'date-fns/locale';
 import { X, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
+import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 
 // Remove local GENRE_COLORS map
 
@@ -14,14 +15,6 @@ interface CalendarModalProps {
     performances: Performance[];
     onClose: () => void;
 }
-
-// Helper for image optimization
-const getOptimizedUrl = (url: string, width: number = 200) => {
-    if (!url) return "";
-    if (url.startsWith('/')) return url;
-    if (url.includes('kfescdn')) return url;
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=80&output=webp`;
-};
 
 export default function CalendarModal({ performances, onClose }: CalendarModalProps) {
     const [currentMonth, setCurrentMonth] = useState(new Date());
