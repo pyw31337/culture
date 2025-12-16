@@ -28,6 +28,14 @@ try {
     console.log('No timeticket.json found, using empty array');
 }
 
+// Movie data
+let movieData: any[] = [];
+try {
+    movieData = require('@/data/movies.json');
+} catch (e) {
+    console.log('No movies.json found, using empty array');
+}
+
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -94,8 +102,9 @@ async function getPerformances() {
     const festivals = festivalData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
+    const movies = movieData as unknown as any[];
 
-    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals, ...yes24, ...timeticket];
+    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals, ...yes24, ...timeticket, ...movies];
 
     // Filter expired
     // We use a fixed "now" for static build. 
@@ -118,6 +127,9 @@ async function getPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
+        // Movies: Always active if in list, and region is 'all'
+        if (p.genre === 'movie') return true;
+
         if (!isPerformanceActive(p.date, now)) return false;
         if (!validRegions.includes(p.region)) return false;
         if (p.venue === '예매하기') return false;

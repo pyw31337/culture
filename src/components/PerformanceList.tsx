@@ -2082,16 +2082,24 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </a>
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
-                            <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                }}
-                                className="hover:text-white hover:underline truncate"
-                            >
-                                {perf.venue}
-                            </button>
+                            {/* Venue / Place (Grade for Movies) */}
+                            {perf.genre === 'movie' ? (
+                                <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
+                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                    {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                </div>
+                            ) : (
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                    }}
+                                    className="hover:text-white hover:underline truncate text-gray-400 text-xs flex items-center gap-1 mb-2"
+                                >
+                                    <MapPin className="w-3 h-3 flex-shrink-0" />
+                                    {perf.venue}
+                                </button>
+                            )}
                         </div>
 
                         {/* Price & Discount info for List View */}
@@ -2279,16 +2287,24 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </h3>
                                     </a>
 
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                        }}
-                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max relative z-[100]"
-                                    >
-                                        <MapPin className="w-3 h-3 text-gray-700" />
-                                        {perf.venue}
-                                    </button>
+                                    {/* Venue / Place (Grade for Movies) */}
+                                    {perf.genre === 'movie' ? (
+                                        <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
+                                            <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
+                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                        </div>
+                                    ) : (
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                            }}
+                                            className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                        >
+                                            <MapPin className="w-3 h-3 text-gray-700" />
+                                            {perf.venue}
+                                        </button>
+                                    )}
                                     <div className="mt-auto mb-2">
                                         <div className="flex items-center gap-1.5 w-full">
                                             {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
@@ -2381,22 +2397,32 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </a>
 
                                     <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                if (venueInfo?.lat && venueInfo?.lng) {
-                                                    onLocationClick({
-                                                        lat: venueInfo.lat,
-                                                        lng: venueInfo.lng,
-                                                        name: perf.venue
-                                                    });
-                                                }
-                                            }}
-                                            className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
-                                        >
-                                            {perf.venue}
-                                        </button>
+                                        {/* Venue / Place (Grade for Movies) */}
+                                        {perf.genre === 'movie' ? (
+                                            <div className="text-gray-400 text-xs flex items-center gap-1 truncate">
+                                                <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        if (venueInfo?.lat && venueInfo?.lng) {
+                                                            onLocationClick({
+                                                                lat: venueInfo.lat,
+                                                                lng: venueInfo.lng,
+                                                                name: perf.venue
+                                                            });
+                                                        }
+                                                    }}
+                                                    className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
+                                                >
+                                                    {perf.venue}
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
 
                                     {/* Price & Discount info (Default Card) - Moved to Bottom */}

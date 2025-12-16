@@ -1,6 +1,7 @@
 export const GENRES = [
     { id: 'all', label: '전체' },
     { id: 'hotdeal', label: '🔥 핫딜' },
+    { id: 'movie', label: '🎬 영화' }, // Added Movie
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
@@ -18,6 +19,7 @@ export const GENRES = [
 ];
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
+    'movie': { hex: '#06b6d4', twText: 'text-cyan-600', twBg: 'bg-cyan-600', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-500' }, // Movie Style
     'musical': { hex: '#be185d', twText: 'text-pink-700', twBg: 'bg-pink-700', twBorder: 'border-pink-500', twActivebg: 'bg-pink-600' },
     'concert': { hex: '#2563eb', twText: 'text-blue-700', twBg: 'bg-blue-700', twBorder: 'border-blue-500', twActivebg: 'bg-blue-600' },
     'play': { hex: '#16a34a', twText: 'text-green-700', twBg: 'bg-green-700', twBorder: 'border-green-500', twActivebg: 'bg-green-600' },
