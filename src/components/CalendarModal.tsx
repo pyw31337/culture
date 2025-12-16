@@ -179,7 +179,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
                                     >
                                         {perf.image && (
-                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" />
+                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
                                         )}
                                         <div className="min-w-0 flex-1">
                                             <div className="flex items-center gap-2 mb-1">
