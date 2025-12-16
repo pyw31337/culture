@@ -1996,6 +1996,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            onClick={() => window.open(perf.link, '_blank')}
         >
             <div
                 ref={cardRef}
@@ -2177,6 +2178,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            onClick={() => window.open(perf.link, '_blank')}
         >
             {/* New Gold Shimmer Wrapper Structure */}
             <div
