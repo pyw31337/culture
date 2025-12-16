@@ -100,89 +100,102 @@ async function scrapeTimeTicket() {
 
     let pendingItems: { link: string, region: string, title: string, image: string, discount: string, price: string, genre: string }[] = [];
 
+    // Categories: 2096 (Performance), 2100 (Exhibition)
+    const CATEGORIES = [2096, 2100];
+
     for (const { code, region } of REGION_CODES) {
-        const url = `https://timeticket.co.kr/list.php?category=2096&area=${code}`;
-        // console.log(`  Visiting ${url}...`);
+        for (const category of CATEGORIES) {
+            const url = `https://timeticket.co.kr/list.php?category=${category}&area=${code}`;
+            // console.log(`  Visiting ${url}...`);
 
-        try {
-            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-
-            // Wait for list to load
             try {
-                await page.waitForSelector('.ticket_list_wrap a', { timeout: 5000 });
-            } catch (e) {
-                console.log(`  No items found or timeout for region ${code}`);
-                continue;
-            }
+                await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-            const listItems = await page.evaluate((currentRegion) => {
-                const results: any[] = [];
-                // The structure seems to be div.ticket_list_wrap > a
-                const items = document.querySelectorAll('.ticket_list_wrap > a');
+                // Wait for list to load
+                try {
+                    await page.waitForSelector('.ticket_list_wrap a', { timeout: 5000 });
+                } catch (e) {
+                    console.log(`  No items found or timeout for region ${code} category ${category}`);
+                    continue;
+                }
 
-                items.forEach((item) => {
-                    const linkAttribute = item.getAttribute('href');
-                    const link = linkAttribute ? (linkAttribute.startsWith('http') ? linkAttribute : 'https://timeticket.co.kr' + linkAttribute) : '';
+                const listItems = await page.evaluate((currentRegion, currentCategory) => {
+                    const results: any[] = [];
+                    // The structure seems to be div.ticket_list_wrap > a
+                    const items = document.querySelectorAll('.ticket_list_wrap > a');
 
-                    const imgEl = item.querySelector('.thumb img');
-                    const thumbDiv = item.querySelector('.thumb');
+                    items.forEach((item) => {
+                        const linkAttribute = item.getAttribute('href');
+                        const link = linkAttribute ? (linkAttribute.startsWith('http') ? linkAttribute : 'https://timeticket.co.kr' + linkAttribute) : '';
 
-                    // Standard src extraction is sufficient now that we don't block images
-                    let image = imgEl ? (imgEl.getAttribute('src') || imgEl.getAttribute('data-src') || '') : '';
-                    if (image && !image.startsWith('http')) {
-                        image = 'https://timeticket.co.kr' + image;
-                    }
+                        const imgEl = item.querySelector('.thumb img');
+                        const thumbDiv = item.querySelector('.thumb');
 
-                    // Fallback to background image if extracted
-                    if (!image && thumbDiv) {
-                        const style = thumbDiv.getAttribute('style');
-                        const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
-                        if (match) image = match[1];
+                        // Standard src extraction is sufficient now that we don't block images
+                        let image = imgEl ? (imgEl.getAttribute('src') || imgEl.getAttribute('data-src') || '') : '';
                         if (image && !image.startsWith('http')) {
                             image = 'https://timeticket.co.kr' + image;
                         }
+
+                        // Fallback to background image if extracted
+                        if (!image && thumbDiv) {
+                            const style = thumbDiv.getAttribute('style');
+                            const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
+                            if (match) image = match[1];
+                            if (image && !image.startsWith('http')) {
+                                image = 'https://timeticket.co.kr' + image;
+                            }
+                        }
+
+                        const titleEl = item.querySelector('.ticket_info .title');
+                        const title = titleEl ? titleEl.textContent?.trim() || '' : '';
+
+                        const categoryEl = item.querySelector('.ticket_info .category');
+                        const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
+
+                        let genre = 'play';
+                        if (currentCategory === 2100) {
+                            genre = 'exhibition';
+                        } else {
+                            if (categoryText.includes('뮤지컬')) genre = 'musical';
+                            else if (categoryText.includes('콘서트')) genre = 'concert';
+                        }
+
+                        const discountEl = item.querySelector('.sale_percent');
+                        const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
+
+                        const priceEl = item.querySelector('.baro_price');
+                        const price = priceEl ? priceEl.textContent?.trim() || '' : '';
+
+                        if (link && title) {
+                            results.push({
+                                link,
+                                region: currentRegion,
+                                title,
+                                image,
+                                discount,
+                                price,
+                                genre
+                            });
+                        }
+                    });
+                    return results;
+                }, region, category);
+
+                for (const item of listItems) {
+                    // Check duplicate strictly.
+                    // However, sometimes same title exists in different regions or categories?
+                    // Usually not. Dedup by title is fine for now as per previous logic.
+                    // But duplicates across categories (e.g. play vs musical if mislabeled) should be handled.
+                    if (!seenTitles.has(item.title)) {
+                        seenTitles.add(item.title);
+                        pendingItems.push(item);
                     }
-
-                    const titleEl = item.querySelector('.ticket_info .title');
-                    const title = titleEl ? titleEl.textContent?.trim() || '' : '';
-
-                    const categoryEl = item.querySelector('.ticket_info .category');
-                    const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
-
-                    let genre = 'play';
-                    if (categoryText.includes('뮤지컬')) genre = 'musical';
-                    else if (categoryText.includes('콘서트')) genre = 'concert';
-
-                    const discountEl = item.querySelector('.sale_percent');
-                    const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
-
-                    const priceEl = item.querySelector('.baro_price');
-                    const price = priceEl ? priceEl.textContent?.trim() || '' : '';
-
-                    if (link && title) {
-                        results.push({
-                            link,
-                            region: currentRegion,
-                            title,
-                            image,
-                            discount,
-                            price,
-                            genre
-                        });
-                    }
-                });
-                return results;
-            }, region);
-
-            for (const item of listItems) {
-                if (!seenTitles.has(item.title)) {
-                    seenTitles.add(item.title);
-                    pendingItems.push(item);
                 }
-            }
 
-        } catch (e) {
-            console.error(`  Error collecting links from region ${code}: ${e}`);
+            } catch (e) {
+                console.error(`  Error collecting links from region ${code} cat ${category}: ${e}`);
+            }
         }
     }
 
