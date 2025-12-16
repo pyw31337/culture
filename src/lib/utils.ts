@@ -1,6 +1,6 @@
 export const getOptimizedUrl = (url: string, width: number = 400) => {
     if (!url) return '';
-    // TimeTicket blocks wsrv.nl (403 Forbidden), so return original URL
+    // TimeTicket blocks wsrv.nl (403 Forbidden), skipping optimization as requested
     if (url.includes('timeticket.co.kr')) return url;
 
     try {
