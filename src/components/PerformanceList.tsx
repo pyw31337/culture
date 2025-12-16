@@ -2292,7 +2292,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </button>
                                     <div className="mt-auto mb-2">
                                         <div className="flex items-center gap-1.5 w-full">
-                                            {perf.discount && <span className="text-red-700 text-xl font-extrabold">{perf.discount}</span>}
+                                            {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
                                             {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
                                             {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
                                         </div>
@@ -2305,7 +2305,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </div>
                                 </div>
                                 {/* Version Log for Debug */}
-                                <script dangerouslySetInnerHTML={{ __html: `console.log('Deploy Version: 2025-12-16 12:00 Fixes (Images, Date, Modal, UI)');` }} />
+                                <script dangerouslySetInnerHTML={{ __html: `console.log('Deploy Version: 2025-12-16 14:40 Fixes (HotDeal Badge, UI Refine)');` }} />
                             </>
                         ) : (
                             /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
@@ -2325,10 +2325,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {/* Hot Deal Badge (Top Left) */}
                                         {perf.discount && (
                                             <div
-                                                className="absolute top-2 left-2 z-40 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
+                                                className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
                                                 style={{ transform: 'translateZ(20px)' }}
                                             >
-                                                <Flame className="w-3 h-3 fill-white" />
+                                                <Flame className="w-3 h-3 fill-rose-500" />
                                                 핫딜
                                             </div>
                                         )}
@@ -2405,7 +2405,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {/* Left: Discount */}
                                             <div className="flex flex-col justify-end">
                                                 {perf.discount && (
-                                                    <div className="text-red-500 drop-shadow-md leading-none">
+                                                    <div className="text-rose-500 drop-shadow-md leading-none">
                                                         <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
                                                         <span className="text-sm font-light ml-0.5">%</span>
                                                     </div>
