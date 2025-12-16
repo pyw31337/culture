@@ -315,7 +315,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-            <div className="relative w-full h-full max-w-7xl max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
+            <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
                 {/* Close Button */}
                 <button
                     onClick={onClose}

@@ -2192,7 +2192,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             onTouchEnd={handleTouchEnd}
         >
             {/* New Gold Shimmer Wrapper Structure */}
-            < div
+            <div
                 ref={cardRef}
                 className={
                     clsx(
@@ -2312,11 +2312,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             </div>
                                             <div className="flex justify-between items-baseline w-full mt-[-2px]">
                                                 {perf.price && <span className="text-black text-2xl font-black tracking-tighter">{perf.price}</span>}
-                                                <span className="text-gray-900 text-xs font-bold opacity-70">{perf.date}</span>
+                                                <span className="text-gray-900 text-[13px] font-bold opacity-70">{perf.date}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {/* Version Log for Debug */}
+                                <script dangerouslySetInnerHTML={{ __html: `console.log('Deploy Version: 2025-12-16 12:00 Fixes (Images, Date, Modal, UI)');` }} />
                             </>
                         ) : (
                             /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
@@ -2370,15 +2372,32 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
                                             })()}
                                         </span>
-
-                                        {/* Discount/Price Badge */}
-                                        {(perf.discount || perf.price) && (
-                                            <span className="px-2 py-1 rounded-[4px] text-xs bg-red-600 text-white border border-red-500/50 backdrop-blur-sm flex items-center gap-1 font-bold shadow-lg animate-pulse">
-                                                {perf.discount && <span>{perf.discount}</span>}
-                                                {perf.price && <span className="font-normal opacity-90">{perf.price}</span>}
-                                            </span>
-                                        )}
                                     </div>
+
+                                    {/* Price & Discount info (Default Card) - Redesigned */}
+                                    {(perf.price || perf.discount) && (
+                                        <div className="flex justify-between items-end mt-2 w-full pt-1">
+                                            {/* Left: Discount */}
+                                            <div className="flex flex-col">
+                                                {perf.discount && (
+                                                    <div className="text-red-500 drop-shadow-md">
+                                                        <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                        <span className="text-sm font-light">%</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            {/* Right: Price */}
+                                            <div className="flex flex-col items-end">
+                                                {perf.originalPrice && <span className="text-gray-400 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
+                                                {perf.price && (
+                                                    <div className="text-white drop-shadow-md">
+                                                        <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
 
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
                                         <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
@@ -2409,9 +2428,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         )}
                     </div>
                 </div>
-            </div >
+            </div>
 
 
-        </div >
+        </div>
     );
 }
