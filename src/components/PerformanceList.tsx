@@ -2312,27 +2312,29 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <>
                                 {/* Image Layer */}
                                 {perf.image ? (
-                                    <Image
-                                        src={getOptimizedUrl(perf.image, 400)}
-                                        alt={perf.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
-                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer"
-                                    />
-                                    {/* Hot Deal Badge (Top Left) */}
-                                {perf.discount && (
-                                    <div
-                                        className="absolute top-2 left-2 z-40 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
-                                        style={{ transform: 'translateZ(20px)' }}
-                                    >
-                                        <Flame className="w-3 h-3 fill-white" />
-                                        핫딜
-                                    </div>
-                                )}
+                                    <>
+                                        <Image
+                                            src={getOptimizedUrl(perf.image, 400)}
+                                            alt={perf.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer"
+                                        />
+                                        {/* Hot Deal Badge (Top Left) */}
+                                        {perf.discount && (
+                                            <div
+                                                className="absolute top-2 left-2 z-40 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
+                                                style={{ transform: 'translateZ(20px)' }}
+                                            >
+                                                <Flame className="w-3 h-3 fill-white" />
+                                                핫딜
+                                            </div>
+                                        )}
+                                    </>
                                 ) : (
-                                <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
                                 )}
 
                                 {/* Distance Badge (Top Right) */}
