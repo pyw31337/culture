@@ -82,10 +82,10 @@ async function scrapeTimeTicket() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 1024 });
 
-    // Block images and fonts to speed up
+    // Block only fonts and stylesheets to speed up, ALLOW IMAGES to prevent onerror
     await page.setRequestInterception(true);
     page.on('request', (req) => {
-        if (['image', 'font', 'stylesheet'].includes(req.resourceType())) {
+        if (['font', 'stylesheet'].includes(req.resourceType())) {
             req.abort();
         } else {
             req.continue();
@@ -127,15 +127,20 @@ async function scrapeTimeTicket() {
                     const imgEl = item.querySelector('.thumb img');
                     const thumbDiv = item.querySelector('.thumb');
 
-                    // Check for lazy loading data-src first (most reliable), then src
-                    let image = imgEl ? (imgEl.getAttribute('data-src') || imgEl.getAttribute('src') || '') : '';
+                    // Standard src extraction is sufficient now that we don't block images
+                    let image = imgEl ? (imgEl.getAttribute('src') || imgEl.getAttribute('data-src') || '') : '';
+                    if (image && !image.startsWith('http')) {
+                        image = 'https://timeticket.co.kr' + image;
+                    }
 
                     // Fallback to background image if extracted
                     if (!image && thumbDiv) {
                         const style = thumbDiv.getAttribute('style');
                         const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
                         if (match) image = match[1];
-                        image = 'https://timeticket.co.kr' + image;
+                        if (image && !image.startsWith('http')) {
+                            image = 'https://timeticket.co.kr' + image;
+                        }
                     }
 
                     const titleEl = item.querySelector('.ticket_info .title');
