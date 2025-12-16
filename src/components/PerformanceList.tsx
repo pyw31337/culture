@@ -2174,18 +2174,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
+            className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
         >
             {/* New Gold Shimmer Wrapper Structure */}
             <div
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full",
+                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full",
                         variant === 'yellow' ? "rounded-xl" : variant === 'pink' ? "rounded-xl" : variant === 'emerald' ? "rounded-xl" : "rounded-2xl aspect-[2/3]"
                     )
                 }
@@ -2193,7 +2191,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             >
                 <div className="gold-shimmer-wrapper">
                     <div
-                        className="gold-shimmer-border"
+                        className="hidden sm:block gold-shimmer-border"
                         style={{ '--shimmer-color': variant === 'pink' ? '#ec4899' : variant === 'yellow' ? '#eab308' : variant === 'emerald' ? '#10b981' : '#a78bfa' } as React.CSSProperties}
                     />
 
@@ -2234,7 +2232,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         {/* Glare Effect */}
                         <div
                             ref={glareRef}
-                            className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
+                            className="hidden sm:block absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
                             style={{ left: '-25%', top: '-25%' }}
                         />
 
@@ -2274,7 +2272,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
-                                <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
+                                <div className={clsx("p-4 flex flex-col flex-1 sm:transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
                                     <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                         <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
                                             {perf.title.trim()}
