@@ -1996,7 +1996,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            onClick={() => window.open(perf.link, '_blank')}
         >
             <div
                 ref={cardRef}
@@ -2017,16 +2016,19 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 />
 
                 {/* Image (Left) */}
+                {/* Image (Left) - Link Wrapped */}
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
-                    <Image
-                        src={getOptimizedUrl(perf.image, 200) || "/api/placeholder/400/300"}
-                        alt={perf.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        sizes="(max-width: 640px) 128px, 192px"
-                        loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20 block" onClick={e => e.stopPropagation()}>
+                        <Image
+                            src={getOptimizedUrl(perf.image, 200) || "/api/placeholder/400/300"}
+                            alt={perf.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            sizes="(max-width: 640px) 128px, 192px"
+                            loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                    </a>
 
                     {/* Distance Badge on Image */}
                     {distLabel && (
@@ -2096,7 +2098,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         {/* Price & Discount info for List View */}
                         {/* Price & Discount info for List View - Redesigned (11st Style) */}
                         {(perf.price || perf.discount) && (
-                            <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 pt-2">
+                            <a href={perf.link} target="_blank" rel="noopener noreferrer" className="flex justify-between items-end mt-2 w-full border-t border-white/5 pt-2 group/price hover:bg-white/5 transition-colors rounded" onClick={e => e.stopPropagation()}>
                                 {/* Left: Discount */}
                                 <div className="flex flex-col">
                                     {perf.discount && (
@@ -2116,7 +2118,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         </div>
                                     )}
                                 </div>
-                            </div>
+                            </a>
                         )}
                     </div>
                 </div>
@@ -2178,7 +2180,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            onClick={() => window.open(perf.link, '_blank')}
         >
             {/* New Gold Shimmer Wrapper Structure */}
             <div
@@ -2312,17 +2313,20 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
                             <>
                                 {/* Image Layer */}
+                                {/* Image Layer - Link Wrapped */}
                                 {perf.image ? (
                                     <>
-                                        <Image
-                                            src={getOptimizedUrl(perf.image, 400)}
-                                            alt={perf.title}
-                                            fill
-                                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
-                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer"
-                                        />
+                                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20 block" onClick={e => e.stopPropagation()}>
+                                            <Image
+                                                src={getOptimizedUrl(perf.image, 400)}
+                                                alt={perf.title}
+                                                fill
+                                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+                                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        </a>
                                         {/* Hot Deal Badge (Top Left) */}
                                         {perf.discount && (
                                             <div
@@ -2401,28 +2405,31 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </div>
 
                                     {/* Price & Discount info (Default Card) - Moved to Bottom */}
+                                    {/* Price & Discount info (Default Card) - Moved to Bottom - Wrapped in Link */}
                                     {(perf.price || perf.discount) && (
-                                        <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
-                                            {/* Left: Discount */}
-                                            <div className="flex flex-col justify-end">
-                                                {perf.discount && (
-                                                    <div className="text-rose-500 drop-shadow-md leading-none">
-                                                        <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                        <span className="text-sm font-light ml-0.5">%</span>
-                                                    </div>
-                                                )}
+                                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block mt-3 w-full border-t border-white/10 pt-3 group/price hover:bg-white/5 transition-colors rounded" onClick={e => e.stopPropagation()}>
+                                            <div className="flex justify-between items-end">
+                                                {/* Left: Discount */}
+                                                <div className="flex flex-col justify-end">
+                                                    {perf.discount && (
+                                                        <div className="text-rose-500 drop-shadow-md leading-none">
+                                                            <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                            <span className="text-sm font-light ml-0.5">%</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                {/* Right: Price */}
+                                                <div className="flex items-baseline gap-1.5">
+                                                    {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
+                                                    {perf.price && (
+                                                        <div className="text-white drop-shadow-md leading-none">
+                                                            <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                            <span className="text-xs font-light ml-0.5">원</span>
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
-                                            {/* Right: Price */}
-                                            <div className="flex items-baseline gap-1.5">
-                                                {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
-                                                {perf.price && (
-                                                    <div className="text-white drop-shadow-md leading-none">
-                                                        <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                        <span className="text-xs font-light ml-0.5">원</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
+                                        </a>
                                     )}
                                 </div>
                             </>
