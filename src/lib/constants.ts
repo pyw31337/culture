@@ -10,6 +10,7 @@ export const GENRES = [
     { id: 'festival', label: '축제' },
     // { id: 'leisure', label: '레저' }, // Removed or commented out if not used? Keeping consistency with view_file
     { id: 'leisure', label: '레저' },
+    { id: 'kids', label: '키즈' }, // Added Kids (Category 2123)
     { id: 'volleyball', label: '배구' },
     { id: 'basketball', label: '농구' },
     { id: 'baseball', label: '야구' },
@@ -25,6 +26,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'activity': { hex: '#0891b2', twText: 'text-cyan-700', twBg: 'bg-cyan-700', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-600' }, // New Activity Style (Cyan-700)
     'festival': { hex: '#f97316', twText: 'text-orange-500', twBg: 'bg-orange-500', twBorder: 'border-orange-400', twActivebg: 'bg-orange-400' },
     'leisure': { hex: '#ea580c', twText: 'text-orange-700', twBg: 'bg-orange-700', twBorder: 'border-orange-500', twActivebg: 'bg-orange-600' },
+    'kids': { hex: '#84cc16', twText: 'text-lime-700', twBg: 'bg-lime-700', twBorder: 'border-lime-500', twActivebg: 'bg-lime-600' }, // New Kids Style (Lime)
     'volleyball': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' },
     'basketball': { hex: '#c2410c', twText: 'text-orange-800', twBg: 'bg-orange-800', twBorder: 'border-orange-600', twActivebg: 'bg-orange-700' },
     'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-700', twActivebg: 'bg-blue-800' },

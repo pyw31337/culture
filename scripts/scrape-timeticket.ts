@@ -100,11 +100,12 @@ async function scrapeTimeTicket() {
 
     let pendingItems: { link: string, region: string, title: string, image: string, discount: string, price: string, genre: string }[] = [];
 
-    // Categories: 2096 (Performance), 2100 (Exhibition), 2125 (Activity)
+    // Categories: Prioritize Kids/Activity to ensure correct genre attribution before deduplication
     const CATEGORIES = [
-        { id: 2096, defaultGenre: 'play' },
-        { id: 2100, defaultGenre: 'exhibition' },
-        { id: 2125, defaultGenre: 'activity' }
+        { id: 2123, defaultGenre: 'kids' },      // Kids
+        { id: 2125, defaultGenre: 'activity' },  // Activity
+        { id: 2096, defaultGenre: 'play' },      // Performance
+        { id: 2100, defaultGenre: 'exhibition' } // Exhibition
     ];
 
     for (const { code, region } of REGION_CODES) {
