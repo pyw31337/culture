@@ -100,12 +100,16 @@ async function scrapeTimeTicket() {
 
     let pendingItems: { link: string, region: string, title: string, image: string, discount: string, price: string, genre: string }[] = [];
 
-    // Categories: 2096 (Performance), 2100 (Exhibition)
-    const CATEGORIES = [2096, 2100];
+    // Categories: 2096 (Performance), 2100 (Exhibition), 2125 (Activity)
+    const CATEGORIES = [
+        { id: 2096, defaultGenre: 'play' },
+        { id: 2100, defaultGenre: 'exhibition' },
+        { id: 2125, defaultGenre: 'activity' }
+    ];
 
     for (const { code, region } of REGION_CODES) {
-        for (const category of CATEGORIES) {
-            const url = `https://timeticket.co.kr/list.php?category=${category}&area=${code}`;
+        for (const cat of CATEGORIES) {
+            const url = `https://timeticket.co.kr/list.php?category=${cat.id}&area=${code}`;
             // console.log(`  Visiting ${url}...`);
 
             try {
@@ -115,11 +119,11 @@ async function scrapeTimeTicket() {
                 try {
                     await page.waitForSelector('.ticket_list_wrap a', { timeout: 5000 });
                 } catch (e) {
-                    console.log(`  No items found or timeout for region ${code} category ${category}`);
+                    // console.log(`  No items found or timeout for region ${code} category ${cat.id}`);
                     continue;
                 }
 
-                const listItems = await page.evaluate((currentRegion, currentCategory) => {
+                const listItems = await page.evaluate((currentRegion, currentCatId, currentDefaultGenre) => {
                     const results: any[] = [];
                     // The structure seems to be div.ticket_list_wrap > a
                     const items = document.querySelectorAll('.ticket_list_wrap > a');
@@ -153,13 +157,14 @@ async function scrapeTimeTicket() {
                         const categoryEl = item.querySelector('.ticket_info .category');
                         const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
 
-                        let genre = 'play';
-                        if (currentCategory === 2100) {
-                            genre = 'exhibition';
-                        } else {
+                        let genre = currentDefaultGenre;
+
+                        // Refine 'play' genre into 'musical' or 'concert' if keywords found
+                        if (currentCatId === 2096) {
                             if (categoryText.includes('뮤지컬')) genre = 'musical';
                             else if (categoryText.includes('콘서트')) genre = 'concert';
                         }
+                        // 'activity' and 'exhibition' rely on defaultGenre unless specific keywords exist (none defined currently)
 
                         const discountEl = item.querySelector('.sale_percent');
                         const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
@@ -180,7 +185,7 @@ async function scrapeTimeTicket() {
                         }
                     });
                     return results;
-                }, region, category);
+                }, region, cat.id, cat.defaultGenre);
 
                 for (const item of listItems) {
                     // Check duplicate strictly.
@@ -194,7 +199,7 @@ async function scrapeTimeTicket() {
                 }
 
             } catch (e) {
-                console.error(`  Error collecting links from region ${code} cat ${category}: ${e}`);
+                console.error(`  Error collecting links from region ${code} cat ${cat.id}: ${e}`);
             }
         }
     }

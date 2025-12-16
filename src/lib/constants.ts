@@ -1,12 +1,14 @@
 export const GENRES = [
     { id: 'all', label: '전체' },
-    { id: 'hotdeal', label: '핫딜' },
+    { id: 'hotdeal', label: '🔥 핫딜' },
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
     { id: 'classic', label: '클래식/무용' },
     { id: 'exhibition', label: '전시/행사' },
+    { id: 'activity', label: '액티비티' }, // Added Activity
     { id: 'festival', label: '축제' },
+    // { id: 'leisure', label: '레저' }, // Removed or commented out if not used? Keeping consistency with view_file
     { id: 'leisure', label: '레저' },
     { id: 'volleyball', label: '배구' },
     { id: 'basketball', label: '농구' },
@@ -20,6 +22,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'play': { hex: '#16a34a', twText: 'text-green-700', twBg: 'bg-green-700', twBorder: 'border-green-500', twActivebg: 'bg-green-600' },
     'classic': { hex: '#ca8a04', twText: 'text-yellow-700', twBg: 'bg-yellow-700', twBorder: 'border-yellow-500', twActivebg: 'bg-yellow-600' },
     'exhibition': { hex: '#9333ea', twText: 'text-purple-700', twBg: 'bg-purple-700', twBorder: 'border-purple-500', twActivebg: 'bg-purple-600' },
+    'activity': { hex: '#0891b2', twText: 'text-cyan-700', twBg: 'bg-cyan-700', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-600' }, // New Activity Style (Cyan-700)
     'festival': { hex: '#f97316', twText: 'text-orange-500', twBg: 'bg-orange-500', twBorder: 'border-orange-400', twActivebg: 'bg-orange-400' },
     'leisure': { hex: '#ea580c', twText: 'text-orange-700', twBg: 'bg-orange-700', twBorder: 'border-orange-500', twActivebg: 'bg-orange-600' },
     'volleyball': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' },
