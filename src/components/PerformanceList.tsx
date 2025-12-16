@@ -2351,7 +2351,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {/* Content Layer (Bottom) - Fixed Position */}
                                 <div
-                                    className="absolute inset-x-0 bottom-0 p-5 z-20"
+                                    className="absolute inset-x-0 bottom-0 p-5 z-[70]"
                                     style={{ transform: 'translateZ(30px)' }} // 3D Depth
                                 >
 
