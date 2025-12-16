@@ -2073,7 +2073,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     <div className="flex flex-col gap-1">
                         <div className="flex flex-wrap gap-2 mb-1 items-center">
                             <span className={clsx(
-                                "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border",
+                                "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border whitespace-nowrap",
                                 genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -2106,11 +2106,28 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </div>
 
                         {/* Price & Discount info for List View */}
+                        {/* Price & Discount info for List View - Redesigned (11st Style) */}
                         {(perf.price || perf.discount) && (
-                            <div className="flex items-center gap-2 mt-2">
-                                {perf.discount && <span className="text-red-500 font-bold text-sm">{perf.discount}</span>}
-                                {perf.price && <span className="text-white font-bold text-sm">{perf.price}</span>}
-                                {perf.originalPrice && <span className="text-gray-500 text-xs line-through">{perf.originalPrice}</span>}
+                            <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 pt-2">
+                                {/* Left: Discount */}
+                                <div className="flex flex-col">
+                                    {perf.discount && (
+                                        <div className="text-red-500">
+                                            <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                            <span className="text-sm font-light">%</span>
+                                        </div>
+                                    )}
+                                </div>
+                                {/* Right: Price */}
+                                <div className="flex flex-col items-end">
+                                    {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
+                                    {perf.price && (
+                                        <div className="text-white">
+                                            <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                            <span className="text-xs font-light ml-0.5">원</span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -2285,7 +2302,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {perf.venue}
                                     </button>
                                     <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
-                                        <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded">
+                                        <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
                                         <div className="mt-auto pt-3 flex flex-col items-start w-full">
