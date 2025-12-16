@@ -2212,7 +2212,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         {/* Like Button (Heart) */}
                         <button
                             onClick={onToggleLike}
-                            className="absolute top-3 right-3 z-50 p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
+                            className="absolute top-3 right-3 z-[100] p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
                             style={{ transform: 'translateZ(50px)' }}
                         >
                             <Heart
@@ -2275,7 +2275,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
                                 <div className={clsx("p-4 flex flex-col flex-1 transform-style-3d", variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500")} style={{ transform: 'translateZ(10px)' }}>
-                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                         <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
                                             {perf.title.trim()}
                                         </h3>
@@ -2286,7 +2286,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             e.stopPropagation();
                                             if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
                                         }}
-                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max relative z-[100]"
                                     >
                                         <MapPin className="w-3 h-3 text-gray-700" />
                                         {perf.venue}
@@ -2376,7 +2376,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </span>
                                     </div>
 
-                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[60]" onClick={e => e.stopPropagation()}>
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                         <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                             {perf.title.trim()}
                                         </h3>
@@ -2395,7 +2395,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     });
                                                 }
                                             }}
-                                            className="hover:text-[#a78bfa] hover:underline truncate"
+                                            className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
                                         >
                                             {perf.venue}
                                         </button>
