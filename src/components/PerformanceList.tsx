@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -2290,20 +2290,18 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <MapPin className="w-3 h-3 text-gray-700" />
                                         {perf.venue}
                                     </button>
-                                    <div className="flex justify-between items-end border-t border-black/10 pt-2 mt-auto">
+                                    <div className="mt-auto mb-2">
+                                        <div className="flex items-center gap-1.5 w-full">
+                                            {perf.discount && <span className="text-red-700 text-xl font-extrabold">{perf.discount}</span>}
+                                            {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
+                                            {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center border-t border-black/10 pt-2">
                                         <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
-                                        <div className="mt-auto pt-3 flex flex-col items-start w-full">
-                                            <div className="flex items-center gap-1.5 w-full">
-                                                {perf.discount && <span className="text-red-700 text-xl font-extrabold">{perf.discount}</span>}
-                                                {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
-                                            </div>
-                                            <div className="flex justify-between items-baseline w-full mt-[-2px]">
-                                                {perf.price && <span className="text-black text-2xl font-black tracking-tighter">{perf.price}</span>}
-                                                <span className="text-gray-900 text-[13px] font-bold opacity-70">{perf.date}</span>
-                                            </div>
-                                        </div>
+                                        <span className="text-gray-900 text-[13px] font-bold opacity-70">{perf.date}</span>
                                     </div>
                                 </div>
                                 {/* Version Log for Debug */}
@@ -2323,8 +2321,18 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         loading="lazy"
                                         referrerPolicy="no-referrer"
                                     />
+                                    {/* Hot Deal Badge (Top Left) */}
+                                {perf.discount && (
+                                    <div
+                                        className="absolute top-2 left-2 z-40 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1"
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        <Flame className="w-3 h-3 fill-white" />
+                                        핫딜
+                                    </div>
+                                )}
                                 ) : (
-                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
+                                <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
                                 )}
 
                                 {/* Distance Badge (Top Right) */}
