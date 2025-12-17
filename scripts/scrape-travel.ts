@@ -140,27 +140,63 @@ async function scrapeTravel() {
                 // Selector: #app > div > div > div.Detail_information > div > div.DetailProductInfo > div.row > span > i:nth-child(2)
                 // Simplified: .DetailProductInfo .row span i:nth-child(2)? 
                 // Let's use evaluate to be flexible
-                const dateText = await page.evaluate(() => {
+                // Scrape Details (Date, Price, Agent)
+                const details = await page.evaluate(() => {
                     try {
-                        // Try various selectors as the specific path might vary slightly
-                        const target = document.querySelector('.DetailProductInfo .row span i:nth-child(2)'); // User's hint
-                        // Fallback: look for text pattern matching date 'MM.DD'
-                        if (target) return target.textContent?.trim();
+                        const infoDiv = document.querySelector('.Detail_information');
+                        if (!infoDiv) return null;
 
-                        // Fallback 2: Look for '출발' text
-                        const spans = document.querySelectorAll('span');
-                        for (const s of spans) {
-                            if (s.textContent?.includes('출발')) return s.textContent.trim();
+                        // Date
+                        const dateEl = infoDiv.querySelector('.DetailProductInfo .row span i:nth-child(2)');
+                        const date = dateEl?.textContent?.trim() || '';
+
+                        // Agent
+                        const agentImg = infoDiv.querySelector('.DetailProductInfo .agent img');
+                        const agentName = agentImg?.getAttribute('alt') || '';
+                        // We might want the image URL too if needed, but text is good for now as per previous logic, or maybe mixed?
+                        // User asked for "Agent Info" replacement. Let's get both.
+
+                        // Prices
+                        const peoplePanel = infoDiv.querySelector('.DetailSelectPeople .panel');
+
+                        // Original Price
+                        const originalPriceEl = peoplePanel?.querySelector('.deleted .amount');
+                        const originalPrice = originalPriceEl?.textContent?.trim() || '';
+
+                        // Final Price
+                        const finalPriceEl = peoplePanel?.querySelector('.final .amount');
+                        const finalPrice = finalPriceEl?.textContent?.trim() || '';
+
+                        // Discount
+                        // The user said: detail > panel > final > span is discount rate
+                        // It might be like "5%" or similar?
+                        const discountEl = peoplePanel?.querySelector('.final span');
+                        let discount = discountEl?.textContent?.trim() || '';
+
+                        // Sometimes the span isn't the discount if structure varies, need to be careful. 
+                        // If it doesn't look like a %, maybe ignore?
+                        if (discount && !originalPrice) {
+                            // If no original price, this might not be a discount span??
+                            // Let's assume user selector is correct.
                         }
-                        return '';
-                    } catch (e) { return ''; }
+
+                        return { date, agentName, originalPrice, finalPrice, discount };
+                    } catch (e) { return null; }
                 });
 
-                if (dateText) {
-                    item.date = dateText.replace('출발', '').trim();
+                if (details) {
+                    if (details.date) item.date = details.date.replace('출발', '').trim();
+                    if (details.agentName) item.agent = details.agentName; // Update agent from detail page
+
+                    // Update Price info
+                    if (details.finalPrice) item.price = details.finalPrice;
+                    if (details.originalPrice) item.originalPrice = details.originalPrice;
+                    if (details.discount) item.discount = details.discount;
                 } else {
                     item.date = '날짜 확인 필요';
                 }
+
+                console.log(`[${i + 1}/${travelItems.length}] Scraped: ${item.title.substring(0, 10)}... | Date: ${item.date} | Price: ${item.price} (${item.discount || 'No D/C'})`);
 
                 // Also Check Price again if list was messy? 
                 // List price is usually sufficient if regexed.
@@ -189,6 +225,8 @@ async function scrapeTravel() {
                 link: item.link,
                 genre: 'travel',
                 price: item.price + '원',
+                originalPrice: item.originalPrice ? item.originalPrice + '원' : undefined,
+                discount: item.discount,
                 region: 'overseas'
             };
         });

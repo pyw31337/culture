@@ -2123,40 +2123,39 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         {/* Price & Discount info for List View */}
                         {/* Price & Discount info for List View - Redesigned (11st Style) */}
                         {(perf.price || perf.discount) && (
-                            <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 pt-2">
-                                {/* Left: Discount */}
-                                <div className="flex flex-col">
-                                    {perf.discount && (
-                                        <div className="text-red-500">
-                                            <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                            <span className="text-sm font-light">%</span>
-                                        </div>
-                                    )}
-
-                                    {/* Travel Options (Bottom) */}
-                                    {perf.genre === 'travel' && perf.venue.split('|')[1] && (
-                                        <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
-                                            {perf.venue.split('|')[1]?.trim()}
-                                        </div>
-                                    )}
+                            <div className="flex flex-col mt-2 w-full border-t border-white/5 pt-2">
+                                <div className="flex justify-between items-end">
+                                    {/* Left: Discount */}
+                                    <div className="flex flex-col">
+                                        {perf.discount && (
+                                            <div className="text-red-500">
+                                                <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                <span className="text-sm font-light">%</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                    {/* Right: Price */}
+                                    <div className="flex flex-col items-end">
+                                        {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
+                                        {perf.price && (
+                                            <div className="text-white">
+                                                <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                <span className="text-xs font-light ml-0.5">원</span>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                                {/* Right: Price */}
-                                <div className="flex flex-col items-end">
-                                    {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
-                                    {perf.price && (
-                                        <div className="text-white">
-                                            <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                            <span className="text-xs font-light ml-0.5">원</span>
-                                        </div>
-                                    )}
 
-                                    {/* Travel Options (Bottom) */}
-                                    {perf.genre === 'travel' && perf.venue.split('|')[1] && (
-                                        <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
-                                            {perf.venue.split('|')[1]?.trim()}
-                                        </div>
-                                    )}
-                                </div>
+                                {/* Travel Options (Bottom - Full Width & Formatted) */}
+                                {perf.genre === 'travel' && perf.venue.split('|')[1] && (
+                                    <div className="mt-2 pt-2 border-t border-dashed border-white/10 text-[11px] text-gray-400 leading-relaxed">
+                                        {perf.venue.split('|')[1].split('/').map((opt: string, i: number) => (
+                                            <div key={i} className="mb-0.5 last:mb-0">
+                                                {opt.trim()}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>
