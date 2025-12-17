@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame, Plane } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -2082,7 +2082,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </a>
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
-                            {/* Venue / Place (Grade for Movies) */}
+                            // Venue / Place (Grade for Movies, Agent for Travel)
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
@@ -2093,6 +2093,18 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                         </>
                                     )}
+                                </div>
+                            ) : perf.genre === 'travel' ? (
+                                <div className="text-gray-400 text-xs flex flex-col gap-0.5 mb-2 truncate">
+                                    {/* Agent */}
+                                    <div className="flex items-center gap-1 font-bold text-sky-400">
+                                        <Plane className="w-3 h-3" />
+                                        {perf.venue.split('|')[0]?.trim()}
+                                    </div>
+                                    {/* Options */}
+                                    <div className="text-[10px] text-gray-500 truncate">
+                                        {perf.venue.split('|')[1]?.trim()}
+                                    </div>
                                 </div>
                             ) : (
                                 <button
@@ -2293,7 +2305,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </h3>
                                     </a>
 
-                                    {/* Venue / Place (Grade for Movies) */}
+                                    // Venue / Place (Grade for Movies, Agent for Travel)
                                     {perf.genre === 'movie' ? (
                                         <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
                                             {perf.gradeIcon ? (
@@ -2304,6 +2316,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                                 </>
                                             )}
+                                        </div>
+                                    ) : perf.genre === 'travel' ? (
+                                        <div className="text-gray-800 text-xs flex flex-col gap-0.5 mb-2 w-max cursor-default">
+                                            <div className="flex items-center gap-1 font-bold text-sky-700">
+                                                <Plane className="w-3 h-3" />
+                                                {perf.venue.split('|')[0]?.trim()}
+                                            </div>
+                                            <div className="text-[10px] text-gray-600 truncate max-w-[150px]">
+                                                {perf.venue.split('|')[1]?.trim()}
+                                            </div>
                                         </div>
                                     ) : (
                                         <button
@@ -2409,7 +2431,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </a>
 
                                     <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                                        {/* Venue / Place (Grade for Movies) */}
+                                        // Venue / Place (Grade for Movies, Agent for Travel)
                                         {perf.genre === 'movie' ? (
                                             <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                 {perf.gradeIcon ? (
@@ -2420,6 +2442,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                         {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                                     </>
                                                 )}
+                                            </div>
+                                        ) : perf.genre === 'travel' ? (
+                                            <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
+                                                <div className="flex items-center gap-1 font-bold text-sky-400">
+                                                    <Plane className="w-3.5 h-3.5" />
+                                                    {perf.venue.split('|')[0]?.trim()}
+                                                </div>
+                                                <div className="text-[10px] text-gray-500 truncate">
+                                                    {perf.venue.split('|')[1]?.trim()}
+                                                </div>
                                             </div>
                                         ) : (
                                             <>

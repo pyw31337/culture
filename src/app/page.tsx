@@ -3,6 +3,7 @@ import PerformanceList from '@/components/PerformanceList';
 
 import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
+import travelData from '@/data/travel.json';
 
 // Festival data - will be empty array if file doesn't exist yet
 let festivalData: any[] = [];
@@ -103,8 +104,25 @@ async function getPerformances() {
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
     const movies = movieData as unknown as any[];
+    const travels = travelData as unknown as any[];
 
-    const allPerformances = [...seoul, ...gyeonggi, ...incheon, ...volleyball, ...basketball, ...festivals, ...yes24, ...timeticket, ...movies];
+    // Aggregate Data
+    const allPerformances = [
+        ...seoul,
+        ...gyeonggi,
+        ...incheon,
+        ...yes24,
+        ...timeticket,
+        ...festivals,
+        ...volleyball, // KOVO
+        ...basketball, // KBL
+        ...movies,   // Movies
+        ...travels // Travel
+    ].map(p => ({
+        ...p,
+        // Ensure ID is string
+        id: String(p.id)
+    }));
 
     // Filter expired
     // We use a fixed "now" for static build. 
@@ -193,7 +211,7 @@ export default async function Home() {
     const hour = getPart('hour');
     const minute = getPart('minute');
 
-    const lastUpdated = `${year}.${month}.${day}. (${weekday}) ${hour}:${minute}`;
+    const lastUpdated = `${year}.${month}.${day}.(${weekday}) ${hour}:${minute} `;
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20">
