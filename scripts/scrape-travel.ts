@@ -166,11 +166,15 @@ async function scrapeTravel() {
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
-        fs.writeFileSync(
-            path.join(outputDir, 'travel.json'),
-            JSON.stringify(performances, null, 2)
-        );
-        console.log(`Saved ${performances.length} travel items to src/data/travel.json`);
+        if (performances.length > 0) {
+            fs.writeFileSync(
+                path.join(outputDir, 'travel.json'),
+                JSON.stringify(performances, null, 2)
+            );
+            console.log(`Saved ${performances.length} travel items to src/data/travel.json`);
+        } else {
+            console.log('No travel items found. Skipping file save to preserve existing data.');
+        }
 
     } catch (error) {
         console.error('Scraping Error:', error);
