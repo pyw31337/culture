@@ -1257,22 +1257,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowFavoriteVenues(!showFavoriteVenues);
                                             }
                                         }}
-                                        disabled={favoriteVenues.length === 0}
+                                        disabled={favoriteVenues.length === 0 || selectedGenre !== 'all'}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
-                                            favoriteVenues.length > 0
+                                            (favoriteVenues.length > 0 && selectedGenre === 'all')
                                                 ? (showFavoriteVenues
                                                     ? "bg-transparent border-emerald-500 text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]"
                                                     : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <BuildingStadium className={clsx("w-4 h-4", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                        <BuildingStadium className={clsx("w-4 h-4", showFavoriteVenues && favoriteVenues.length > 0 && selectedGenre === 'all' ? "fill-emerald-500" : "fill-none")} />
                                         <span>공연장</span>
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                showFavoriteVenues ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
+                                                (showFavoriteVenues && selectedGenre === 'all') ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {favoriteVenues.length}
                                             </span>
@@ -1287,22 +1287,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowLikes(!showLikes);
                                             }
                                         }}
-                                        disabled={likedIds.length === 0}
+                                        disabled={likedIds.length === 0 || selectedGenre !== 'all'}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
-                                            likedIds.length > 0
+                                            (likedIds.length > 0 && selectedGenre === 'all')
                                                 ? (showLikes
                                                     ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
                                                     : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <Heart className={clsx("w-4 h-4", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
+                                        <Heart className={clsx("w-4 h-4", showLikes && likedIds.length > 0 && selectedGenre === 'all' ? "fill-pink-500" : "fill-none")} />
                                         <span>좋아요</span>
                                         {likedIds.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                showLikes ? "bg-pink-500 text-black" : "bg-gray-700 text-gray-400"
+                                                (showLikes && selectedGenre === 'all') ? "bg-pink-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {likedIds.length}
                                             </span>
