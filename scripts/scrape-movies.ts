@@ -39,47 +39,68 @@ async function scrapeMovies() {
             throw e;
         }
 
-        // Extract basic info from the list
-        const rawMovies = await page.evaluate(() => {
-            const items = document.querySelectorAll('.card_content .card_item');
-            const data: any[] = [];
+        // Initial Load
+        let totalMovies: any[] = [];
+        let pageNum = 1;
+        const MAX_PAGES = 5; // Safety limit
 
-            items.forEach((item) => {
-                try {
-                    const titleEl = item.querySelector('.data_box .this_text') || item.querySelector('strong.this_text');
-                    const imageEl = item.querySelector('.img_box img');
-                    const linkEl = item.querySelector('a.data_area');
-                    // Date is usually in the first info_group dd
-                    const dateEl = item.querySelector('.info_group dd');
+        while (pageNum <= MAX_PAGES) {
+            console.log(`Scraping page ${pageNum}...`);
 
-                    if (titleEl && linkEl) {
-                        let title = titleEl.textContent?.trim() || '';
-                        let image = imageEl?.getAttribute('src') || '';
-                        let link = linkEl.getAttribute('href') || '';
-                        let date = dateEl?.textContent?.trim() || '';
+            // Extract items from current view
+            const newItems = await page.evaluate(() => {
+                const items = document.querySelectorAll('.card_content .card_item');
+                const data: any[] = [];
+                items.forEach((item) => {
+                    try {
+                        const titleEl = item.querySelector('.data_box .this_text') || item.querySelector('strong.this_text');
+                        const imageEl = item.querySelector('.img_box img');
+                        const linkEl = item.querySelector('a.data_area');
+                        const dateEl = item.querySelector('.info_group dd');
 
-                        // Fix relative links
-                        if (link && !link.startsWith('http')) {
-                            if (link.startsWith('/')) {
-                                link = 'https://m.search.naver.com' + link;
-                            } else {
-                                link = 'https://m.search.naver.com/' + link;
+                        if (titleEl && linkEl) {
+                            let title = titleEl.textContent?.trim() || '';
+                            let image = imageEl?.getAttribute('src') || '';
+                            let link = linkEl.getAttribute('href') || '';
+                            let date = dateEl?.textContent?.trim() || '';
+
+                            if (link && !link.startsWith('http')) {
+                                if (link.startsWith('/')) {
+                                    link = 'https://m.search.naver.com' + link;
+                                } else {
+                                    link = 'https://m.search.naver.com/' + link;
+                                }
                             }
+                            data.push({ title, image, link, date });
                         }
+                    } catch (e) { }
+                });
+                return data;
+            }) as any[];
 
-                        data.push({
-                            title,
-                            image,
-                            link,
-                            date
-                        });
-                    }
-                } catch (err) {
-                    // Start logging errors if needed
+            console.log(`Found ${newItems.length} items on page ${pageNum}`);
+
+            // Add unique items
+            for (const item of newItems) {
+                if (!totalMovies.find(m => m.title === item.title)) {
+                    totalMovies.push(item);
                 }
-            });
-            return data;
-        }) as any[];
+            }
+
+            // Check for Next Button
+            const nextBtn = await page.$('.pg_next.on'); // 'on' class usually means active
+            if (!nextBtn) {
+                console.log('No more pages (next button not active).');
+                break;
+            }
+
+            console.log('Clicking Next page...');
+            await nextBtn.click();
+            await new Promise(r => setTimeout(r, 2000)); // Wait for load
+            pageNum++;
+        }
+
+        const rawMovies = totalMovies;
 
         console.log(`Found ${rawMovies.length} movies. Processing details...`);
 
