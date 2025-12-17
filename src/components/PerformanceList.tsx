@@ -1435,9 +1435,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
             </div>
 
-            {/* Favorite Venues Section (Highest Priority) */}
+            {/* Favorite Venues Section (Highest Priority) - Only Visible in 'All' Tab */}
             {
-                viewMode === 'list' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
+                viewMode === 'list' && selectedGenre === 'all' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
@@ -1572,9 +1572,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            {/* Liked Performances Section (Above Keywords) */}
+            {/* Liked Performances Section (Above Keywords) - Only Visible in 'All' Tab */}
             {
-                viewMode === 'list' && showLikes && likedPerformances.length > 0 && (
+                viewMode === 'list' && selectedGenre === 'all' && showLikes && likedPerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
@@ -1735,7 +1735,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </>
                                 ) : (
                                     <>
-                                        <span>추천 공연</span>
+                                        <span>
+                                            {selectedGenre === 'all'
+                                                ? '추천 공연'
+                                                : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '공연'}`
+                                            }
+                                        </span>
                                         <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({filteredPerformances.length})</span>
                                     </>
                                 )}
