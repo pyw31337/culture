@@ -62,150 +62,139 @@ async function scrapeTravel() {
         }
 
         // Wait for list to load
-        // Try waiting for any list item or the main container
         try {
-            await page.waitForSelector('ul > li div.information', { timeout: 20000 });
+            await page.waitForSelector('.products .item', { timeout: 10000 });
         } catch (e) {
-            console.log('List selector timeout. Taking debug screenshot...');
+            console.log('Timeout waiting for .products .item');
+            // Take screenshot to debug
             await page.screenshot({ path: 'debug_travel_timeout.png' });
             fs.writeFileSync('debug_travel_timeout.html', await page.content());
             throw new Error('Timeout waiting for travel list');
         }
 
-        // Scrape items (Basic Info from List)
-        const basicItems = await page.evaluate(() => {
-            const items = document.querySelectorAll('ul > li'); // Broad selector
-            const data: any[] = [];
+        // Initialize results array
+        const travelItems: any[] = [];
+        const maxItems = 20;
 
-            items.forEach((item) => {
-                try {
-                    const infoDiv = item.querySelector('.information');
-                    if (!infoDiv) return;
-
-                    // Title
-                    const titleEl = infoDiv.querySelector('strong') || infoDiv.querySelector('[class*="title"]');
-                    const title = titleEl?.textContent?.trim() || '';
-
-                    // Link
-                    const linkEl = item.querySelector('a');
-                    let link = linkEl?.getAttribute('href') || '';
-                    if (link && !link.startsWith('http')) {
-                        link = 'https://pkgtour.naver.com' + link;
-                    }
-
-                    // Price (Clean extraction)
-                    // Usually in .price strong. If multiple numbers exist, we need to be careful.
-                    const priceDiv = item.querySelector('.price');
-                    const priceStrong = priceDiv?.querySelector('strong');
-                    // Get only the text of the strong tag, not children if any?
-                    let price = priceStrong?.textContent?.trim() || '';
-                    // Fallback cleanup if it contains garbage
-                    const priceMatch = price.match(/[\d,]+/);
-                    if (priceMatch) price = priceMatch[0];
-
-                    // Agent
-                    const agentEl = item.querySelector('.agent');
-                    const agent = agentEl?.textContent?.trim() || '여행사';
-
-                    // Options (from list for now, might be moved)
-                    const optionsEl = infoDiv.querySelector('.options');
-                    const options = optionsEl?.textContent?.trim() || '';
-
-                    // Image
-                    const imgEl = item.querySelector('figure img') || item.querySelector('img');
-                    const thumb = imgEl?.getAttribute('src') || '';
-
-                    if (title && price && link) {
-                        data.push({ title, price, agent, options, image: thumb, link, date: '' });
-                    }
-                } catch (e) { }
-            });
-            return data;
-        });
-
-        console.log(`Found ${basicItems.length} basic items. Fetching details...`);
-
-        // Limit to 20 to avoid timeout
-        const travelItems = basicItems.slice(0, 20);
-
-        // Fetch Details (Date)
-        for (let i = 0; i < travelItems.length; i++) {
-            const item = travelItems[i];
+        // Loop to scrape items one by one via navigation
+        for (let i = 0; i < maxItems; i++) {
             try {
-                // Navigate to detail page
-                // Optimization: Don't need to load everything.
-                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 10000 });
+                // Re-query items after every navigation/back
+                await page.waitForSelector('.products .item', { timeout: 10000 });
+                const items = await page.$$('.products .item');
 
-                // Scrape Date
-                // Selector: #app > div > div > div.Detail_information > div > div.DetailProductInfo > div.row > span > i:nth-child(2)
-                // Simplified: .DetailProductInfo .row span i:nth-child(2)? 
-                // Let's use evaluate to be flexible
-                // Scrape Details (Date, Price, Agent)
-                const details = await page.evaluate(() => {
-                    try {
-                        const infoDiv = document.querySelector('.Detail_information');
-                        if (!infoDiv) return null;
-
-                        // Date
-                        const dateEl = infoDiv.querySelector('.DetailProductInfo .row span i:nth-child(2)');
-                        const date = dateEl?.textContent?.trim() || '';
-
-                        // Agent
-                        const agentImg = infoDiv.querySelector('.DetailProductInfo .agent img');
-                        const agentName = agentImg?.getAttribute('alt') || '';
-                        // We might want the image URL too if needed, but text is good for now as per previous logic, or maybe mixed?
-                        // User asked for "Agent Info" replacement. Let's get both.
-
-                        // Prices
-                        const peoplePanel = infoDiv.querySelector('.DetailSelectPeople .panel');
-
-                        // Original Price
-                        const originalPriceEl = peoplePanel?.querySelector('.deleted .amount');
-                        const originalPrice = originalPriceEl?.textContent?.trim() || '';
-
-                        // Final Price
-                        const finalPriceEl = peoplePanel?.querySelector('.final .amount');
-                        const finalPrice = finalPriceEl?.textContent?.trim() || '';
-
-                        // Discount
-                        // The user said: detail > panel > final > span is discount rate
-                        // It might be like "5%" or similar?
-                        const discountEl = peoplePanel?.querySelector('.final span');
-                        let discount = discountEl?.textContent?.trim() || '';
-
-                        // Sometimes the span isn't the discount if structure varies, need to be careful. 
-                        // If it doesn't look like a %, maybe ignore?
-                        if (discount && !originalPrice) {
-                            // If no original price, this might not be a discount span??
-                            // Let's assume user selector is correct.
-                        }
-
-                        return { date, agentName, originalPrice, finalPrice, discount };
-                    } catch (e) { return null; }
-                });
-
-                if (details) {
-                    if (details.date) item.date = details.date.replace('출발', '').trim();
-                    if (details.agentName) item.agent = details.agentName; // Update agent from detail page
-
-                    // Update Price info
-                    if (details.finalPrice) item.price = details.finalPrice;
-                    if (details.originalPrice) item.originalPrice = details.originalPrice;
-                    if (details.discount) item.discount = details.discount;
-                } else {
-                    item.date = '날짜 확인 필요';
+                if (i >= items.length) {
+                    console.log('No more items to scrape.');
+                    break;
                 }
 
-                console.log(`[${i + 1}/${travelItems.length}] Scraped: ${item.title.substring(0, 10)}... | Date: ${item.date} | Price: ${item.price} (${item.discount || 'No D/C'})`);
+                const itemElement = items[i];
 
-                // Also Check Price again if list was messy? 
-                // List price is usually sufficient if regexed.
+                // 1. Scrape Basic Info from List Item BEFORE clicking
+                const basicInfo = await itemElement.evaluate((el) => {
+                    const title = el.querySelector('.information .name')?.textContent?.trim() || '';
+                    const price = el.querySelector('.price .final .value')?.textContent?.trim() || '';
+                    const img = el.querySelector('figure img')?.getAttribute('src') || '';
+                    const options = el.querySelector('.options.as_sub')?.textContent?.trim() || '';
+                    return { title, price, image: img, options };
+                });
 
-                console.log(`[${i + 1}/${travelItems.length}] Scraped Date: ${item.date}`);
+                console.log(`[${i + 1}/${maxItems}] scrap processing: ${basicInfo.title.substring(0, 20)}...`);
+
+                if (!basicInfo.title) {
+                    console.log('  Skipping empty title item');
+                    continue;
+                }
+
+                // 2. Click and Navigate to Detail
+                // Click the anchor or the title
+                const anchor = await itemElement.$('a.anchor');
+                if (anchor) {
+                    await Promise.all([
+                        page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }),
+                        anchor.click()
+                    ]);
+                } else {
+                    console.log('  No anchor found, trying button...');
+                    const btn = await itemElement.$('button.reserve');
+                    if (btn) {
+                        await Promise.all([
+                            page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }),
+                            btn.click()
+                        ]);
+                    } else {
+                        console.log('  No clickable element found. Skipping.');
+                        continue;
+                    }
+                }
+
+                // 3. Scrape Detail Page
+                const detailData = await page.evaluate(() => {
+                    const infoDiv = document.querySelector('.DetailProductInfo');
+                    const agentStats = document.querySelector('.AgentStatistics');
+                    const peoplePanel = document.querySelector('.DetailSelectPeople');
+
+                    if (!infoDiv) return null;
+
+                    const title = infoDiv.querySelector('.name')?.textContent?.trim() || '';
+
+                    const dateEls = Array.from(document.querySelectorAll('.DetailProductInfo .row .desc .date') || []);
+                    const dateEl = dateEls.find(el => el.textContent?.includes('출발'));
+                    const date = dateEl?.textContent?.replace('출발', '').trim() || '';
+
+                    const durationEl = dateEls.find(el => el.textContent?.includes('박'));
+                    const duration = durationEl?.textContent?.trim() || '';
+
+                    const agentName = agentStats?.querySelector('.title b')?.textContent?.trim() || '';
+
+                    const finalPriceEl = peoplePanel?.querySelector('.final .amount');
+                    const finalPrice = finalPriceEl?.textContent?.trim() || '';
+
+                    const originalPriceEl = peoplePanel?.querySelector('.deleted .amount');
+                    const originalPrice = originalPriceEl?.textContent?.trim() || '';
+
+                    const discountEl = peoplePanel?.querySelector('.final .sale .rate');
+                    const discount = discountEl?.textContent?.trim() || '';
+
+                    // Try to get high res image
+                    const mainImg = document.querySelector('.DetailPhotoGrid .images .img');
+                    const imgSrc = mainImg?.getAttribute('src') || '';
+
+                    return { title, date, duration, agentName, finalPrice, originalPrice, discount, imgSrc };
+                });
+
+                // 4. Merge Data
+                const finalItem = {
+                    title: detailData?.title || basicInfo.title,
+                    price: detailData?.finalPrice || basicInfo.price,
+                    originalPrice: detailData?.originalPrice,
+                    discount: detailData?.discount,
+                    date: detailData?.date || '',
+                    agent: detailData?.agentName || '여행사',
+                    image: detailData?.imgSrc || basicInfo.image,
+                    link: page.url(), // Capture the current URL!
+                    options: basicInfo.options,
+                    venue: ''
+                };
+
+                // Construct Venue
+                const dur = detailData?.duration || '';
+                finalItem.venue = `${finalItem.agent} ${dur ? '| ' + dur : ''}`;
+
+                travelItems.push(finalItem);
+                console.log(`  > Done. Date: ${finalItem.date}, Price: ${finalItem.price}`);
+
+                // 5. Go Back to List
+                await page.goBack({ waitUntil: 'networkidle2' });
 
             } catch (e) {
-                console.log(`Failed to scrape detail for ${item.title}: ${e}`);
-                item.date = '상세페이지 참조';
+                console.log(`Error processing item ${i}: ${e}`);
+                // Try to recover by going back if we are not on list page?
+                // Or just continue, but if we are on detail page, next loop selector will fail.
+                // Safest to force go back if URL suggests we are deep.
+                if (!page.url().includes('/list')) {
+                    try { await page.goBack({ waitUntil: 'networkidle2' }); } catch (err) { }
+                }
             }
         }
 
@@ -221,7 +210,7 @@ async function scrapeTravel() {
                 title: `[여행] ${item.title}`,
                 image: item.image,
                 date: item.date || '날짜 미정',
-                venue: `${item.agent} | ${item.options}`, // Storing Agent & Options in Venue for UI
+                venue: item.venue,
                 link: item.link,
                 genre: 'travel',
                 price: item.price + '원',
