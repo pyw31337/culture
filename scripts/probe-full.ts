@@ -20,7 +20,7 @@ async function probe() {
 
         return Array.from(boxes).map((box, idx) => ({
             index: idx,
-            text: box.innerText
+            text: (box as HTMLElement).innerText
         }));
     });
 
