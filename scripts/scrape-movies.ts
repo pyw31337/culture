@@ -51,12 +51,22 @@ async function scrapeMovies() {
             const newItems = await page.evaluate(() => {
                 const items = document.querySelectorAll('.card_content .card_item');
                 const data: any[] = [];
-                items.forEach((item) => {
+                items.forEach((item, idx) => {
                     try {
                         const titleEl = item.querySelector('.data_box .this_text') || item.querySelector('strong.this_text');
                         const imageEl = item.querySelector('.img_box img');
                         const linkEl = item.querySelector('a.data_area');
                         const dateEl = item.querySelector('.info_group dd');
+
+                        // Try to find grade in list
+                        // Common selectors: .ico_grade, or inside .info_group text
+                        let grade = '';
+                        const gradeEl = item.querySelector('.ico_grade') || item.querySelector('.c_grade'); // hypothetical selectors
+                        if (gradeEl) grade = gradeEl.textContent?.trim() || '';
+
+                        // Capture debug HTML for the first item
+                        let debugHtml = '';
+                        if (idx === 0) debugHtml = item.outerHTML;
 
                         if (titleEl && linkEl) {
                             let title = titleEl.textContent?.trim() || '';
@@ -67,11 +77,14 @@ async function scrapeMovies() {
                             if (link && !link.startsWith('http')) {
                                 if (link.startsWith('/')) {
                                     link = 'https://m.search.naver.com' + link;
+                                } else if (link.startsWith('?')) {
+                                    // Relative query string, usually for search.naver
+                                    link = 'https://m.search.naver.com/search.naver' + link;
                                 } else {
                                     link = 'https://m.search.naver.com/' + link;
                                 }
                             }
-                            data.push({ title, image, link, date });
+                            data.push({ title, image, link, date, grade, debugHtml });
                         }
                     } catch (e) { }
                 });
@@ -79,6 +92,11 @@ async function scrapeMovies() {
             }) as any[];
 
             console.log(`Found ${newItems.length} items on page ${pageNum}`);
+
+            // Save debug HTML if available
+            if (newItems.length > 0 && newItems[0].debugHtml) {
+                fs.writeFileSync('debug_list_item.html', newItems[0].debugHtml);
+            }
 
             // Add unique items
             for (const item of newItems) {
@@ -115,29 +133,37 @@ async function scrapeMovies() {
             const raw = rawMovies[i];
             console.log(`[${i + 1}/${Math.min(rawMovies.length, MAX_ITEMS)}] Processing: ${raw.title}`);
 
-            let grade = "전체 관람가"; // Default fallback
+            // Use list-scraped grade if available, otherwise default to unknown
+            let grade = raw.grade || "등급 미정";
 
-            // Try to fetch detail page for Grade
-            if (raw.link) {
+            // Try to fetch detail page for Grade if missed
+            if (grade === "등급 미정" && raw.link) {
                 try {
                     // Open in same page to save resources
                     await page.goto(raw.link, { waitUntil: 'domcontentloaded', timeout: 8000 });
-                    await new Promise(r => setTimeout(r, 500)); // fast wait
+
+                    // Debug: Save first detail page HTML
+                    if (i === 0) {
+                        fs.writeFileSync('debug_movie_detail.html', await page.content());
+                        console.log('Saved debug_movie_detail.html');
+                    }
 
                     const extractedGrade = await page.evaluate(() => {
-                        const bodyText = document.body.innerText;
-                        // Prioritize explicit text
-                        if (bodyText.includes('청소년 관람불가')) return '청소년 관람불가';
-                        if (bodyText.includes('15세 관람가')) return '15세 관람가';
-                        if (bodyText.includes('12세 관람가')) return '12세 관람가';
-                        if (bodyText.includes('전체 관람가')) return '전체 관람가';
-
-                        // Look for '등급' label
+                        // Strategy 1: Look for specific Description List structure (Naver Mobile standard)
+                        // <div class="info_group"> <dt>등급</dt> <dd>15세 관람가</dd> </div>
                         const dts = Array.from(document.querySelectorAll('dt'));
                         const gradeDt = dts.find(dt => dt.textContent?.includes('등급'));
                         if (gradeDt && gradeDt.nextElementSibling) {
                             return gradeDt.nextElementSibling.textContent?.trim();
                         }
+
+                        // Strategy 2: Search entire body for pattern (Fallback)
+                        const bodyText = document.body.innerText;
+                        if (bodyText.includes('전체 관람가')) return '전체 관람가';
+                        if (bodyText.includes('12세 관람가')) return '12세 관람가';
+                        if (bodyText.includes('15세 관람가')) return '15세 관람가';
+                        if (bodyText.includes('청소년 관람불가')) return '청소년 관람불가';
+
                         return null;
                     });
 
@@ -149,13 +175,33 @@ async function scrapeMovies() {
                 }
             }
 
+            // High-res Image
+            // Extract the real 'src' from the query param if wrapped
+            // e.g. https://search.pstatic.net/common?src=https%3A%2F%2F...&type=...
+            let highResImage = raw.image;
+            try {
+                const urlObj = new URL(raw.image);
+                const realSrc = urlObj.searchParams.get('src');
+                if (realSrc) {
+                    highResImage = decodeURIComponent(realSrc);
+                    // Remove type parameters from the extracted URL if present
+                    highResImage = highResImage.split('?')[0];
+                } else {
+                    // Fallback cleanup if not wrapped
+                    highResImage = highResImage.split('?')[0];
+                }
+            } catch (e) {
+                // Invalid URL, keep original or basic cleanup
+                highResImage = highResImage.split('?')[0];
+            }
+
             // Construct final movie object
             const id = `movie_${raw.date.replace(/[\.\s]/g, '')}_${raw.title.replace(/[\s\(\)]/g, '_').substring(0, 10)}`;
 
             movies.push({
                 id: id,
-                title: `[영화] ${raw.title}`, // Add prefix for UI clarity if needed, or keep clean
-                image: raw.image,
+                title: raw.title, // Removed [영화] prefix
+                image: highResImage,
                 date: raw.date, // Keep original format (YYYY.MM.DD.)
                 venue: grade, // Venue field used for Grade
                 gradeIcon: null, // No icon for now
