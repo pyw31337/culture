@@ -215,6 +215,34 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Load shared data from URL on mount
     useEffect(() => {
         if (typeof window === 'undefined') return;
+
+        // 1. Check for Category Query (e.g. /?travel or /?category=travel)
+        const params = new URLSearchParams(window.location.search);
+        let targetGenre = '';
+
+        // Check for ?travel, ?movie keys directly
+        GENRES.forEach(g => {
+            if (params.has(g.id)) {
+                targetGenre = g.id;
+            }
+        });
+
+        // Check for ?category=travel
+        if (!targetGenre && params.get('category')) {
+            const cat = params.get('category');
+            if (GENRES.some(g => g.id === cat)) {
+                targetGenre = cat!;
+            }
+        }
+
+        if (targetGenre && targetGenre !== 'all') {
+            setSelectedGenre(targetGenre);
+            // Optional: Clean URL? Maybe keeps it shareable.
+            // window.history.replaceState(null, '', window.location.pathname);
+            console.log(`[DeepLink] Activated category: ${targetGenre}`);
+        }
+
+        // 2. Check for Hash Data (Share URL)
         const hash = window.location.hash;
         if (hash.startsWith('#s=')) {
             try {
