@@ -1045,162 +1045,165 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {!isFilterExpanded && (
                         <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
                             {/* Row 1: Filter Summary Text */}
-                            <div className="flex items-center gap-4 text-gray-400 text-sm w-full lg:w-auto flex-1 overflow-hidden min-w-0">
-                                <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
-                                <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right min-w-0">
-                                    {selectedGenre !== 'all' && (
-                                        <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-extrabold border border-[#a78bfa]/30">
-                                            {GENRES.find(g => g.id === selectedGenre)?.label}
-                                        </span>
-                                    )}
-                                    {selectedRegion !== 'all' && (
-                                        <span className="text-white bg-blue-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-blue-500/30">
-                                            {REGIONS.find(r => r.id === selectedRegion)?.label}
-                                            {selectedDistrict !== 'all' && ` ${selectedDistrict}`}
-                                        </span>
-                                    )}
-                                    {selectedVenue !== 'all' && (
-                                        <span className="text-white bg-green-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-green-500/30">
-                                            {selectedVenue}
-                                        </span>
-                                    )}
-                                    {activeLocation && (
-                                        <span className="text-green-400 text-xs font-extrabold flex items-center gap-1">
-                                            <MapPin className="w-3 h-3" />
-                                            {radius}km 반경
-                                        </span>
-                                    )}
-                                    {selectedGenre === 'all' && selectedRegion === 'all' && selectedVenue === 'all' && !activeLocation && (
-                                        <span className="text-gray-500 font-extrabold">모든 공연 보기 (필터 미적용)</span>
-                                    )}
-                                </div>
-
-                            </div>
-
-                            {/* Row 2: [Star] [Search] [Toggle] */}
-                            <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-hidden flex-nowrap shrink-0">
-                                {/* Venue Button (Collapsed) */}
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        if (favoriteVenues.length > 0) {
-                                            setShowFavoriteVenues(!showFavoriteVenues);
-                                        }
-                                    }}
-                                    disabled={favoriteVenues.length === 0}
-                                    className={clsx(
-                                        "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
-                                        favoriteVenues.length > 0
-                                            ? (showFavoriteVenues
-                                                ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(16,185,129,0.3)]"
-                                                : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
-                                            : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
-                                    )}
-                                >
-                                    <BuildingStadium className={clsx("w-3 h-3", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
-                                    <span className="hidden sm:inline">공연장</span>
-                                </button>
-
-                                {/* Like Button (Collapsed) */}
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        if (likedIds.length > 0) {
-                                            setShowLikes(!showLikes);
-                                        }
-                                    }}
-                                    disabled={likedIds.length === 0}
-                                    className={clsx(
-                                        "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
-                                        likedIds.length > 0
-                                            ? (showLikes
-                                                ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(236,72,153,0.3)]"
-                                                : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
-                                            : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
-                                    )}
-                                >
-                                    <Heart className={clsx("w-3 h-3", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
-                                    <span className="hidden sm:inline">좋아요</span>
-                                </button>
-
-                                {/* Keyword Button (Collapsed) */}
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        // Open filter and focus keyword input
-                                        setIsFilterExpanded(true);
-                                        setShowKeywordInput(true);
-                                    }}
-                                    className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
-                                >
-                                    <Star className="w-3 h-3 fill-current" />
-                                    <span className="hidden sm:inline">키워드</span>
-                                </button>
-
-                                {/* Quick Search Bar - Reduced visual weight for mobile fit */}
-                                <div className="p-[1px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[60px] lg:w-56 shrink">
-                                    <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
-                                        <Search className="w-3.5 h-3.5 text-white sm:mr-2" />
-                                        <input
-                                            type="text"
-                                            value={searchText}
-                                            onClick={(e) => e.stopPropagation()}
-                                            onFocus={() => setActiveSearchSource('sticky')}
-                                            onChange={handleSearchTextChange}
-                                            onKeyDown={handleKeyDown}
-                                            className="bg-transparent border-none text-white text-xs sm:text-sm font-bold w-full focus:outline-none placeholder-gray-500 min-w-0"
-                                            placeholder="검색..."
-                                        />
+                            <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
+                                {/* Row 1: Filter Summary Text */}
+                                <div className="flex items-center gap-4 text-gray-400 text-sm w-full lg:w-auto flex-1 overflow-hidden min-w-0">
+                                    <Filter className="w-4 h-4 text-[#a78bfa] shrink-0" />
+                                    <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap mask-gradient-right min-w-0">
+                                        {selectedGenre !== 'all' && (
+                                            <span className="text-white bg-[#a78bfa]/20 px-2 py-0.5 rounded text-xs font-extrabold border border-[#a78bfa]/30">
+                                                {GENRES.find(g => g.id === selectedGenre)?.label}
+                                            </span>
+                                        )}
+                                        {selectedRegion !== 'all' && (
+                                            <span className="text-white bg-blue-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-blue-500/30">
+                                                {REGIONS.find(r => r.id === selectedRegion)?.label}
+                                                {selectedDistrict !== 'all' && ` ${selectedDistrict}`}
+                                            </span>
+                                        )}
+                                        {selectedVenue !== 'all' && (
+                                            <span className="text-white bg-green-500/20 px-2 py-0.5 rounded text-xs font-extrabold border border-green-500/30">
+                                                {selectedVenue}
+                                            </span>
+                                        )}
+                                        {activeLocation && (
+                                            <span className="text-green-400 text-xs font-extrabold flex items-center gap-1">
+                                                <MapPin className="w-3 h-3" />
+                                                {radius}km 반경
+                                            </span>
+                                        )}
+                                        {selectedGenre === 'all' && selectedRegion === 'all' && selectedVenue === 'all' && !activeLocation && (
+                                            <span className="text-gray-500 font-extrabold">모든 공연 보기 (필터 미적용)</span>
+                                        )}
                                     </div>
 
-                                    {/* Dropdown for Sticky Header */}
-                                    {isDropdownOpen && activeSearchSource === 'sticky' && searchResults.length > 0 && (
-                                        <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-2xl z-[150] overflow-hidden max-h-60 overflow-y-auto">
-                                            {searchResults.map((result, idx) => {
-                                                const addressParts = result.address ? result.address.split(' ') : [];
-                                                const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
-
-                                                return (
-                                                    <div
-                                                        key={`search-sticky-${idx}`}
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            handleSelectResult(result);
-                                                        }}
-                                                        className={`px-4 py-3 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
-                                                            }`}
-                                                    >
-                                                        <div className="flex items-center gap-2 min-w-0">
-                                                            <div className="bg-black/50 p-1.5 rounded-full shrink-0 border border-white/10">
-                                                                {result.type === 'video' ? <Star className="w-3 h-3 text-yellow-500" /> : <MapPin className="w-3 h-3 text-[#a78bfa]" />}
-                                                            </div>
-                                                            <div className="text-white text-sm font-bold truncate">
-                                                                {result.name}
-                                                            </div>
-                                                        </div>
-                                                        <div className="text-gray-400 text-xs whitespace-nowrap shrink-0">
-                                                            {shortAddress}
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    )}
-
-
                                 </div>
 
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setIsFilterExpanded(true);
-                                        setShowKeywordInput(false);
-                                    }}
-                                    className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto lg:ml-2"
-                                >
-                                    <ChevronDown className="w-4 h-4" />
-                                </button>
+                                {/* Row 2: [Star] [Search] [Toggle] */}
+                                <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-hidden flex-nowrap shrink-0">
+                                    {/* Venue Button (Collapsed) */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (favoriteVenues.length > 0) {
+                                                setShowFavoriteVenues(!showFavoriteVenues);
+                                            }
+                                        }}
+                                        disabled={favoriteVenues.length === 0}
+                                        className={clsx(
+                                            "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
+                                            favoriteVenues.length > 0
+                                                ? (showFavoriteVenues
+                                                    ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                                                    : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
+                                                : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
+                                        )}
+                                    >
+                                        <BuildingStadium className={clsx("w-3 h-3", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
+                                        <span className="hidden sm:inline">공연장</span>
+                                    </button>
+
+                                    {/* Like Button (Collapsed) */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (likedIds.length > 0) {
+                                                setShowLikes(!showLikes);
+                                            }
+                                        }}
+                                        disabled={likedIds.length === 0}
+                                        className={clsx(
+                                            "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
+                                            likedIds.length > 0
+                                                ? (showLikes
+                                                    ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(236,72,153,0.3)]"
+                                                    : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
+                                                : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
+                                        )}
+                                    >
+                                        <Heart className={clsx("w-3 h-3", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
+                                        <span className="hidden sm:inline">좋아요</span>
+                                    </button>
+
+                                    {/* Keyword Button (Collapsed) */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            // Open filter and focus keyword input
+                                            setIsFilterExpanded(true);
+                                            setShowKeywordInput(true);
+                                        }}
+                                        className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
+                                    >
+                                        <Star className="w-3 h-3 fill-current" />
+                                        <span className="hidden sm:inline">키워드</span>
+                                    </button>
+
+                                    {/* Quick Search Bar - Reduced visual weight for mobile fit */}
+                                    <div className="p-[1px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-md opacity-90 hover:opacity-100 flex-1 lg:flex-none max-w-sm min-w-[60px] lg:w-56 shrink">
+                                        <div className="bg-[#0a0a0a] rounded-full flex items-center px-2 py-1 relative">
+                                            <Search className="w-3.5 h-3.5 text-white sm:mr-2" />
+                                            <input
+                                                type="text"
+                                                value={searchText}
+                                                onClick={(e) => e.stopPropagation()}
+                                                onFocus={() => setActiveSearchSource('sticky')}
+                                                onChange={handleSearchTextChange}
+                                                onKeyDown={handleKeyDown}
+                                                className="bg-transparent border-none text-white text-xs sm:text-sm font-bold w-full focus:outline-none placeholder-gray-500 min-w-0"
+                                                placeholder="검색..."
+                                            />
+                                        </div>
+
+                                        {/* Dropdown for Sticky Header */}
+                                        {isDropdownOpen && activeSearchSource === 'sticky' && searchResults.length > 0 && (
+                                            <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-2xl z-[150] overflow-hidden max-h-60 overflow-y-auto">
+                                                {searchResults.map((result, idx) => {
+                                                    const addressParts = result.address ? result.address.split(' ') : [];
+                                                    const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
+
+                                                    return (
+                                                        <div
+                                                            key={`search-sticky-${idx}`}
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                handleSelectResult(result);
+                                                            }}
+                                                            className={`px-4 py-3 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                                                }`}
+                                                        >
+                                                            <div className="flex items-center gap-2 min-w-0">
+                                                                <div className="bg-black/50 p-1.5 rounded-full shrink-0 border border-white/10">
+                                                                    {result.type === 'video' ? <Star className="w-3 h-3 text-yellow-500" /> : <MapPin className="w-3 h-3 text-[#a78bfa]" />}
+                                                                </div>
+                                                                <div className="text-white text-sm font-bold truncate">
+                                                                    {result.name}
+                                                                </div>
+                                                            </div>
+                                                            <div className="text-gray-400 text-xs whitespace-nowrap shrink-0">
+                                                                {shortAddress}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
+
+
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsFilterExpanded(true);
+                                            setShowKeywordInput(false);
+                                        }}
+                                        className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto lg:ml-2"
+                                    >
+                                        <ChevronDown className="w-4 h-4" />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -2005,8 +2008,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                             }}
                                                             isLiked={likedIds.includes(perf.id)}
                                                             onToggleLike={(e) => toggleLike(perf.id, e)}
-                                                            isRecommended={selectedGenre === 'all' && !activeLocation} // Only recommend in 'All' tab and when not searching location
-                                                            onShare={() => copyItemShareUrl(perf.id)} // Will define this function
+                                                            // Logic Update: 
+                                                            // - Ribbon: REMOVE from here (pass false)
+                                                            // - Gradient: KEEP for general recommended lists
+                                                            // - Actions: ENABLE for these lists
+                                                            showRibbon={false}
+                                                            isGradient={selectedGenre === 'all' && !activeLocation}
+                                                            enableActions={selectedGenre === 'all' && !activeLocation}
+                                                            onShare={() => copyItemShareUrl(perf.id)}
+                                                            onDetail={() => window.open(perf.link, '_blank')}
                                                         />
                                                     ) : (
                                                         <PerformanceListItem
@@ -2376,7 +2386,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, isRecommended = false, onShare }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, isRecommended?: boolean, onShare?: () => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, showRibbon?: boolean, enableActions?: boolean, isGradient?: boolean, onShare?: () => void, onDetail?: () => void }) {
 
 
     const cardRef = useRef<HTMLDivElement>(null);
@@ -2424,22 +2434,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const handleCardClick = (e: React.MouseEvent) => {
         // PC: Just navigate (handled by link)
         // Mobile: Toggle actions if recommended
-        if (window.innerWidth <= 768 && isRecommended) {
-            e.preventDefault(); // Prevent immediate navigation
-            // Check if clicking on buttons or their container, if so don't toggle? 
-            // Actually, if actions are shown, tapping card area (not buttons) should probably hide them or navigate?
-            // Requirment: "Mobile: when touched, show buttons. Touch elsewhere -> hide."
-            // Simple toggle for now:
-            if (!showActions) {
-                setShowActions(true);
-            } else {
-                // If already showing, maybe we want to allow clicking through?
-                // But usually "touch elsewhere" logic needs global listener or backdrop.
-                // Let's rely on global click handling or just toggle off.
-                setShowActions(false);
-            }
+        if (!showActions) {
+            setShowActions(true);
+        } else {
+            // If already showing, maybe we want to allow clicking through?
+            // But usually "touch elsewhere" logic needs global listener or backdrop.
+            // Let's rely on global click handling or just toggle off.
+            setShowActions(false);
         }
-    };
+    }
+
 
     // Global listener to close actions on outside click (Mobile)
     useEffect(() => {
@@ -2485,13 +2489,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 ? "bg-pink-500 ring-1 ring-pink-500/50 hover:ring-white/50"
                                 : variant === 'emerald'
                                     ? "bg-emerald-500 ring-1 ring-emerald-500/50 hover:ring-white/50"
-                                    : isRecommended
+                                    : isGradient
                                         ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a] border border-[#a78bfa]/30 shadow-[0_0_15px_rgba(167,139,250,0.3)]"
                                         : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
                     )}>
 
-                        {/* 🎗️ Recommended Ribbon */}
-                        {isRecommended && (
+                        {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
+                        {showRibbon && (
                             <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
                                 <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-[10px] font-bold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20">
                                     추천 공연
@@ -2769,6 +2773,28 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </div>
                                     )}
                                 </div>
+                                {/* Actions Overlay (Share/Details) - Visible on Hover/Touch if enabled */}
+                                {enableActions && (
+                                    <div className={clsx(
+                                        "absolute inset-x-0 bottom-0 z-[80] p-4 flex items-end justify-center gap-2 transform transition-transform duration-300 ease-out bg-gradient-to-t from-black/95 via-black/80 to-transparent pt-12",
+                                        showActions ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
+                                    )}>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); onShare?.(); }}
+                                            className="flex-1 bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center gap-2 transition-all font-bold shadow-lg h-12"
+                                        >
+                                            <Share2 className="w-4 h-4" />
+                                            <span className="text-sm">공유</span>
+                                        </button>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
+                                            className="flex-1 bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center gap-2 transition-all font-bold shadow-lg h-12"
+                                        >
+                                            <Search className="w-4 h-4" />
+                                            <span className="text-sm">자세히</span>
+                                        </button>
+                                    </div>
+                                )}
                             </>
                         )}
                     </div>
