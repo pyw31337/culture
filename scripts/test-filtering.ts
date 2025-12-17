@@ -6,7 +6,7 @@ const timeticketData = require('../src/data/timeticket.json');
 
 const selectedGenre = 'hotdeal';
 
-const filtered = timeticketData.filter(p => {
+const filtered = timeticketData.filter((p: any) => {
     // 2. Genre Filter
     if (selectedGenre === 'hotdeal') {
         // Logic from PerformanceList.tsx
