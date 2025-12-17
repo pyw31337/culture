@@ -2085,8 +2085,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             {/* Venue / Place (Grade for Movies) */}
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
-                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                    {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                    {perf.gradeIcon ? (
+                                        <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
+                                    ) : (
+                                        <>
+                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                        </>
+                                    )}
                                 </div>
                             ) : (
                                 <button
@@ -2290,8 +2296,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     {/* Venue / Place (Grade for Movies) */}
                                     {perf.genre === 'movie' ? (
                                         <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
-                                            <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
-                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            {perf.gradeIcon ? (
+                                                <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
+                                            ) : (
+                                                <>
+                                                    <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
+                                                    {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                </>
+                                            )}
                                         </div>
                                     ) : (
                                         <button
@@ -2399,9 +2411,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
                                         {/* Venue / Place (Grade for Movies) */}
                                         {perf.genre === 'movie' ? (
-                                            <div className="text-gray-400 text-xs flex items-center gap-1 truncate">
-                                                <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
+                                                {perf.gradeIcon ? (
+                                                    <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
+                                                ) : (
+                                                    <>
+                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                        {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                    </>
+                                                )}
                                             </div>
                                         ) : (
                                             <>

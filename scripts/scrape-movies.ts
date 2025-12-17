@@ -62,6 +62,10 @@ async function scrapeMovies() {
                 continue;
             }
 
+            // Scroll to top to ensure sticky headers don't block clicks (common issue)
+            // await page.evaluate(() => window.scrollTo(0, 0)); 
+            // Actually, KOBIS has a modal, so scrolling to element is better.
+
             // Click to open popup
             try {
                 // Scroll to title and click via evaluate (more robust)
@@ -99,7 +103,20 @@ async function scrapeMovies() {
                         if (fallbackEl) grade = fallbackEl.textContent?.trim() || "";
                     }
 
-                    return { poster, grade };
+                    // Grade Icon Extraction
+                    let gradeIcon = null;
+                    if (gradeDt && gradeDt.nextElementSibling) {
+                        const iconImg = gradeDt.nextElementSibling.querySelector('img');
+                        if (iconImg) gradeIcon = iconImg.getAttribute('src');
+                    }
+                    if (!gradeIcon) {
+                        const fallbackImg = popup.querySelector('div.ovf.info.info1 dl dd:nth-child(10) img');
+                        if (fallbackImg) gradeIcon = fallbackImg.getAttribute('src');
+                    }
+
+                    const fullGradeIcon = gradeIcon ? `https://www.kobis.or.kr${gradeIcon}` : null;
+
+                    return { poster, grade, fullGradeIcon };
                 }, popupSelector);
 
                 // Close popup - Robust method
@@ -136,7 +153,8 @@ async function scrapeMovies() {
                     image: details?.poster || "", // Will be remote URL
                     date: basicInfo.date, // Release Date
                     venue: details?.grade || "정보없음", // Mapping Grade to Venue field for now
-                    link: `https://search.daum.net/search?w=tot&q=${encodeURIComponent(basicInfo.title)}`, // Daum Search Link
+                    gradeIcon: details?.fullGradeIcon, // Setup new field
+                    link: `https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(basicInfo.title)}`, // Updated to Mobile Search
                     region: 'all', // Movies are nationwide
                     genre: 'movie' // New Genre
                 });
