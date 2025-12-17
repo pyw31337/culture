@@ -160,7 +160,12 @@ async function getPerformances() {
 
     filtered.forEach(p => {
         // Normalize title: remove spaces, special chars, lowercase
-        const key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+        let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+
+        // Exception for Travel: Include Date in key to allow same title with different dates
+        if (p.genre === 'travel') {
+            key += `_${p.date}`;
+        }
 
         if (uniqueMap.has(key)) {
             const existing = uniqueMap.get(key);

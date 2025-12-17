@@ -46,7 +46,8 @@ async function scrapeTravel() {
             imminent: 'true',
             shortCut: '8wmdot',
             departureDate: `${depDateStart},${depDateEnd}`,
-            departure: 'ICN,GMP'
+            departure: 'ICN,GMP',
+            shoppingCount: '0,0' // Enforce No Shopping
         });
 
         const targetUrl = `${baseUrl}?${params.toString()}`;
@@ -58,7 +59,7 @@ async function scrapeTravel() {
         try {
             await page.waitForSelector('.commons_loading', { hidden: true, timeout: 15000 });
         } catch (e) {
-            console.log('Loading spinner did not disappear or wasnt found. Proceeding...');
+            console.log('Loading spinner wait timeout or not found.');
         }
 
         // Wait for list to load
@@ -74,17 +75,26 @@ async function scrapeTravel() {
 
         // Initialize results array
         const travelItems: any[] = [];
-        const maxItems = 20;
+        const maxItems = 50; // Increased limit
 
         // Loop to scrape items one by one via navigation
         for (let i = 0; i < maxItems; i++) {
             try {
                 // Re-query items after every navigation/back
                 await page.waitForSelector('.products .item', { timeout: 10000 });
-                const items = await page.$$('.products .item');
+
+                // Check if we need to scroll to find the ith item
+                let items = await page.$$('.products .item');
+                if (i >= items.length) {
+                    console.log(`Index ${i} out of range (found ${items.length}). Scrolling down...`);
+                    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+                    await new Promise(r => setTimeout(r, 2000)); // Wait for lazy load
+                    items = await page.$$('.products .item');
+                    console.log(`New item count: ${items.length}`);
+                }
 
                 if (i >= items.length) {
-                    console.log('No more items to scrape.');
+                    console.log('No more items to scrape even after scroll.');
                     break;
                 }
 
@@ -92,7 +102,10 @@ async function scrapeTravel() {
 
                 // 1. Scrape Basic Info from List Item BEFORE clicking
                 const basicInfo = await itemElement.evaluate((el) => {
-                    const title = el.querySelector('.information .name')?.textContent?.trim() || '';
+                    let title = el.querySelector('.information .name')?.textContent?.trim() || '';
+                    // Remove prefixes like [여행] if present
+                    title = title.replace(/^\[.*?\]\s*/, '').trim();
+
                     const price = el.querySelector('.price .final .value')?.textContent?.trim() || '';
                     const img = el.querySelector('figure img')?.getAttribute('src') || '';
                     const options = el.querySelector('.options.as_sub')?.textContent?.trim() || '';
@@ -136,7 +149,9 @@ async function scrapeTravel() {
 
                     if (!infoDiv) return null;
 
-                    const title = infoDiv.querySelector('.name')?.textContent?.trim() || '';
+                    let title = infoDiv.querySelector('.name')?.textContent?.trim() || '';
+                    // Clean title in detail too
+                    title = title.replace(/^\[.*?\]\s*/, '').trim();
 
                     const dateEls = Array.from(document.querySelectorAll('.DetailProductInfo .row .desc .date') || []);
                     const dateEl = dateEls.find(el => el.textContent?.includes('출발'));
@@ -207,7 +222,7 @@ async function scrapeTravel() {
 
             return {
                 id: `travel_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-                title: `[여행] ${item.title}`,
+                title: item.title,
                 image: item.image,
                 date: item.date || '날짜 미정',
                 venue: item.venue,
