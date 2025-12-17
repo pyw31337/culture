@@ -50,6 +50,7 @@ jobs:
           npx tsx scripts/scrape-festival.ts
           npx tsx scripts/scrape-yes24.ts
           npx tsx scripts/scrape-timeticket.ts
+          npx tsx scripts/scrape-travel.ts
 
       - name: Commit and Push changes
         run: |
