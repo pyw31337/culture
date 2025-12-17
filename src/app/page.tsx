@@ -145,8 +145,8 @@ async function getPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
-        // Movies: Always active if in list, and region is 'all'
-        if (p.genre === 'movie') return true;
+        // Movies & Travel: Always show regardless of region/date logic (handle internally or assume active)
+        if (p.genre === 'movie' || p.genre === 'travel') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
         if (!validRegions.includes(p.region)) return false;
