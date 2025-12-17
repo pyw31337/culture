@@ -179,6 +179,30 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
     const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
+    const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null); // Shared Item ID
+
+    // Share Item URL Generation
+    const copyItemShareUrl = async (id: string) => {
+        const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
+        const url = `${baseUrl}#p=${id}`;
+
+        try {
+            await navigator.clipboard.writeText(url);
+            setShareUrlCopied(true);
+            setTimeout(() => setShareUrlCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy URL:', err);
+            // Fallback
+            const textArea = document.createElement('textarea');
+            textArea.value = url;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setShareUrlCopied(true);
+            setTimeout(() => setShareUrlCopied(false), 2000);
+        }
+    };
 
     // Share URL Generation
     const generateShareUrl = () => {
@@ -265,6 +289,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 }
             } catch (e) {
                 console.error('Failed to parse shared URL:', e);
+            }
+        }
+
+        // 3. Check for Single Item Share (#p=ID)
+        const hashP = window.location.hash;
+        if (hashP.startsWith('#p=')) {
+            const pId = hashP.substring(3);
+            if (pId) {
+                setSharedPerformanceId(pId);
+                console.log('[Share] Loaded shared item:', pId);
             }
         }
     }, []);
@@ -1518,6 +1552,143 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
+            {/* 🍞 Toast Notification for Copy */}
+            <AnimatePresence>
+                {shareUrlCopied && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 50 }}
+                        className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-[10000] bg-black/80 text-white px-6 py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/20 flex items-center gap-2"
+                    >
+                        <Check className="w-5 h-5 text-green-400" />
+                        <span className="font-bold">공유 링크가 복사되었습니다!</span>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* 🎁 Shared Item Layer Popup (Dimmed Background) */}
+            <AnimatePresence>
+                {sharedPerformanceId && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+                        onClick={() => setSharedPerformanceId(null)} // Close on background click
+                    >
+                        {(() => {
+                            const sharedItem = initialPerformances.find(p => p.id === sharedPerformanceId);
+                            if (!sharedItem) return (
+                                <div className="text-white text-xl font-bold flex flex-col items-center">
+                                    <span className="mb-2">⚠️</span>
+                                    찾을 수 없는 공연입니다. (ID: {sharedPerformanceId})
+                                </div>
+                            );
+
+                            return (
+                                <motion.div
+                                    initial={{ scale: 0.9, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.9, opacity: 0 }}
+                                    className="bg-gray-900 border border-gray-700 w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
+                                    onClick={e => e.stopPropagation()}
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setSharedPerformanceId(null)}
+                                        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-white hover:text-black transition-colors"
+                                    >
+                                        <X className="w-6 h-6" />
+                                    </button>
+
+                                    {/* Image Section */}
+                                    <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
+                                        <Image
+                                            src={getOptimizedUrl(sharedItem.image, 800) || "/api/placeholder/800/600"}
+                                            alt={sharedItem.title}
+                                            fill
+                                            className="object-contain md:object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
+
+                                        {/* Ribbon for Shared View */}
+                                        <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
+                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-xs font-bold py-1.5 w-40 text-center origin-top-left -rotate-45 translate-y-[24px] -translate-x-[34px] shadow-lg box-border border-b-2 border-white/20">
+                                                추천 공연
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Content Section */}
+                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 to-[#1a1b26]">
+                                        <div className="flex flex-col gap-4">
+                                            {/* Header */}
+                                            <div>
+                                                <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
+                                                <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
+                                                    {sharedItem.title}
+                                                </h2>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
+                                                        {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
+                                                    </span>
+                                                    <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 border border-white/10 rounded">
+                                                        <Calendar className="w-3 h-3" />
+                                                        {sharedItem.date}
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            {/* Details Grid */}
+                                            <div className="grid grid-cols-1 gap-4 py-6 border-t border-white/10 border-b">
+                                                <div className="flex items-start gap-3">
+                                                    <MapPin className="w-5 h-5 text-gray-400 mt-1" />
+                                                    <div>
+                                                        <div className="text-gray-400 text-xs font-bold uppercase">Venue</div>
+                                                        <div className="text-white font-medium text-lg">{sharedItem.venue}</div>
+                                                        {venues[sharedItem.venue]?.address && (
+                                                            <div className="text-gray-500 text-sm mt-1">{venues[sharedItem.venue].address}</div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                {(sharedItem.price || sharedItem.discount) && (
+                                                    <div className="flex items-start gap-3">
+                                                        <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
+                                                        <div>
+                                                            <div className="text-gray-400 text-xs font-bold uppercase">Price</div>
+                                                            <div className="flex items-baseline gap-2">
+                                                                {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
+                                                                {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Action Button */}
+                                            <div className="mt-auto pt-6">
+                                                <a
+                                                    href={sharedItem.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-[#a78bfa]/50 transition-all transform hover:-translate-y-1"
+                                                >
+                                                    예매하러 가기
+                                                </a>
+                                                <p className="text-center text-gray-500 text-xs mt-3">
+                                                    * 예매처로 이동합니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })()}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Favorite Venues List Modal */}
             {
                 showFavoriteListModal && (
@@ -1834,6 +2005,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                             }}
                                                             isLiked={likedIds.includes(perf.id)}
                                                             onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                            isRecommended={selectedGenre === 'all' && !activeLocation} // Only recommend in 'All' tab and when not searching location
+                                                            onShare={() => copyItemShareUrl(perf.id)} // Will define this function
                                                         />
                                                     ) : (
                                                         <PerformanceListItem
@@ -2203,7 +2376,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, isRecommended = false, onShare }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, isRecommended?: boolean, onShare?: () => void }) {
 
 
     const cardRef = useRef<HTMLDivElement>(null);
@@ -2233,9 +2406,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         glareRef.current.style.opacity = '0';
     };
 
+    const [showActions, setShowActions] = useState(false); // For Mobile Touch
+
     // Mobile Touch Tilt
     const handleTouchStart = () => {
-        if (!cardRef.current || window.innerWidth > 768) return; // Mobile only check if needed, or just let it be responsive
+        if (!cardRef.current || window.innerWidth > 768) return;
         // Apply a gentle tilt
         cardRef.current.style.transform = `perspective(1000px) rotateX(5deg) scale3d(0.98, 0.98, 0.98)`;
     };
@@ -2246,11 +2421,44 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
     };
 
+    const handleCardClick = (e: React.MouseEvent) => {
+        // PC: Just navigate (handled by link)
+        // Mobile: Toggle actions if recommended
+        if (window.innerWidth <= 768 && isRecommended) {
+            e.preventDefault(); // Prevent immediate navigation
+            // Check if clicking on buttons or their container, if so don't toggle? 
+            // Actually, if actions are shown, tapping card area (not buttons) should probably hide them or navigate?
+            // Requirment: "Mobile: when touched, show buttons. Touch elsewhere -> hide."
+            // Simple toggle for now:
+            if (!showActions) {
+                setShowActions(true);
+            } else {
+                // If already showing, maybe we want to allow clicking through?
+                // But usually "touch elsewhere" logic needs global listener or backdrop.
+                // Let's rely on global click handling or just toggle off.
+                setShowActions(false);
+            }
+        }
+    };
+
+    // Global listener to close actions on outside click (Mobile)
+    useEffect(() => {
+        if (!showActions) return;
+        const handleGlobalClick = (e: any) => {
+            if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+                setShowActions(false);
+            }
+        };
+        document.addEventListener('touchstart', handleGlobalClick);
+        return () => document.removeEventListener('touchstart', handleGlobalClick);
+    }, [showActions]);
+
     return (
         <div
             className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={handleCardClick}
         >
             {/* New Gold Shimmer Wrapper Structure */}
             <div
@@ -2277,8 +2485,19 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 ? "bg-pink-500 ring-1 ring-pink-500/50 hover:ring-white/50"
                                 : variant === 'emerald'
                                     ? "bg-emerald-500 ring-1 ring-emerald-500/50 hover:ring-white/50"
-                                    : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
+                                    : isRecommended
+                                        ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a] border border-[#a78bfa]/30 shadow-[0_0_15px_rgba(167,139,250,0.3)]"
+                                        : "bg-gray-900 border border-white/10 group-hover:shadow-[#a78bfa]/20"
                     )}>
+
+                        {/* 🎗️ Recommended Ribbon */}
+                        {isRecommended && (
+                            <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
+                                <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-[10px] font-bold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20">
+                                    추천 공연
+                                </div>
+                            </div>
+                        )}
 
 
                         {/* Like Button (Heart) */}

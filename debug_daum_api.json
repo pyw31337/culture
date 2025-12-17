@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+
+
+
+<html lang="ko" class="os_mac">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta property="og:author" content="다음연예" />
+<meta property="og:site_name" content="다음연예" />
+<meta property="og:title" content="다음연예 | 최신 뉴스" />
+<meta property="og:image" content="//t1.daumcdn.net/media/img-media/mobile/meta/entertain_og.png" />
+<meta property="og:description" content="다음연예" />
+<meta property="og:url" content="https://entertain.daum.net/news/movie" />
+    <title>다음연예 | 최신 뉴스</title>
+<link rel="shortcut icon" href="//t1.daumcdn.net/top/favicon/20241223/daum64x64.png">
+<script type="text/javascript" src="https://t1.daumcdn.net/tiara/js/v1/tiara-1.2.0.min.js"></script>
+
+<script>
+    var ENV = {
+        Profile: {
+            isProduction: 'true' || false,
+            isSandbox: '' || false,
+            isCbt: '' || false,
+        }
+    }
+</script>
+
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/media/kraken/entertain/a4d79b0/commonCSSBundle.merged.css" />
+<style>
+    .owl-item{float:left}
+</style>
+<script src="//t1.daumcdn.net/media/kraken/entertain/a4d79b0/common.merged.js"></script>
+        <script src="//t1.daumcdn.net/media/kraken/entertain/a4d79b0/NewsMainComponent.merged.js"></script>
+</head>
+<body>
+<div id="kakaoIndex">
+    <a href="#kakaoBody">본문 바로가기</a>
+    <a href="#kakaoGnb">메뉴 바로가기</a>
+</div>
+
+<div id="kakaoWrap" class="entertain_type1">
+<div id="wrapMinidaum"></div>
+<script type="text/javascript">
+	var minidaum_options = {
+		// background 타입 지정 관련 옵션. default: white.
+		bgType: "white", // white, dark, custom(no background)
+		// logout 시 return url 변경 여부 flag : default: false - 다음탑으로 이동
+		enableLogoutRetun: true, // false - 다음탑으로 이동, true - 현재페이지 혹은 returnUrl 값으로 이동
+		returnUrl: window.location.href, // default='' , 현재페이지 = window.location.href
+		// 실시간 이슈 사용 여부, default: false
+		disableHotissue: false, // false일 경우 사용, true일 경우 미사용
+		// 로고 사용 여부, default: false
+		disableLogo: true, // false일 경우 사용, true일 경우 미사용
+		// 티아라 사용 여부, default: false
+		disableTracker: true, // false일 경우 사용, true일 경우 미사용
+		// 플래시에 의한 레이어 가림 현상 방지 사용 여부, default: false
+		enableShield: false // false일 경우 미사용, true일 경우 사용
+	}
+</script>
+
+  <script src="//go.daum.net/minidaum_pc.daum"></script>
+
+<div id="kakaoHead" role="banner">
+	<div class="kakaohead_top">
+		<h1 class="tit_daum">
+			<a href="https://www.daum.net/" class="link_daum" data-tiara-layer="gnb default logo">
+				<svg focusable="false" aria-haspopup="true" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M11 5.83C13.8556 5.83 16.1656 8.316 16.0556 11.1958C15.9522 13.9348 13.6158 16.17 10.8746 16.17H7.2578C7.0158 16.17 6.8178 15.972 6.8178 15.73V6.27C6.8178 6.028 7.0158 5.83 7.2578 5.83H10.9978M11 0H2.2C1.4718 0 0.880005 0.5918 0.880005 1.32V20.68C0.880005 21.4082 1.4718 22 2.2 22H11C17.0742 22 22 17.0742 22 11C22 4.9258 17.0742 0 11 0Z" fill="#273552" />
+				</svg>
+			</a>
+			<a href="https://entertain.daum.net" id="kakaoServiceLogo" data-tiara-layer="gnb service enter"><span class="ir_wa">연예</span></a>
+		</h1>
+		<strong class="screen_out">관련서비스</strong>
+		<ul id="kakaoRelServices">
+			<li><a href="https://news.daum.net" class="link_services" data-tiara-layer="gnb service news">뉴스</a></li>
+			<li><a href="https://sports.daum.net" class="link_services" data-tiara-layer="gnb service sports">스포츠</a></li>
+			<li><a href="https://weather.daum.net" class="link_services" data-tiara-layer="gnb service weather">날씨</a></li>
+		</ul>
+	</div>
+	<div id="kakaoGnb" role="navigation">
+		<div class="inner_gnb">
+			<h2 class="screen_out">연예 메인메뉴</h2>
+			<ul class="gnb_enter">
+				<li >
+					<a href="/" class="link_gnb link_gnb1" data-tiara-layer="gnb tab home">
+						<span class="ir_wa">홈</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+				<li >
+					<a href="/ranking/keyword" class="link_gnb link_gnb2" data-tiara-layer="gnb tab ranking">
+						<span class="ir_wa">랭킹</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+				<li class="on">
+					<a href="/news" class="link_gnb link_gnb3" data-tiara-layer="gnb tab news">
+						<span class="ir_wa">뉴스</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+				<li >
+					<a href="/tv" class="link_gnb link_gnb5" data-tiara-layer="gnb tab tv">
+						<span class="ir_wa">TV</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+				<li >
+					<a href="/photo" class="link_gnb link_gnb7" data-tiara-layer="gnb tab photo">
+						<span class="ir_wa">포토</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+				<li >
+					<a href="/poll" class="link_gnb link_gnb8" data-tiara-layer="gnb tab poll">
+						<span class="ir_wa">투표</span>
+						<span class="bar_gnb"><span class="inner_bar"></span></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- // kakaoHead -->
+<script src="//t1.daumcdn.net/media/kraken/entertain/a4d79b0/MouseOverComponent.merged.js"></script>
+
+<div id="kakaoContent" class="cont_news no_ad" role="main">
+	<h2 id="kakaoBody" class="screen_out">최신 뉴스</h2>
+	<div id="cMain">
+		<div id="mArticle" data-page="1" data-date="">
+<div class="head_enter">
+    <div class="tab_enter ">
+        <a href="/news" class="link_tab on" data-tiara-layer="tab new">최신</a>
+        <a href="/news/series" class="link_tab " data-tiara-layer="tab series">연재</a>
+    </div>
+        <div class="tab_enter2">
+            <a href="/news" class="link_tab " data-tiara-layer="tab_catagory all">전체</a>
+            <a href="/news/star" class="link_tab " data-tiara-layer="tab_catagory star">스타</a>
+            <a href="/news/drama" class="link_tab " data-tiara-layer="tab_catagory drama">드라마</a>
+            <a href="/news/variety" class="link_tab " data-tiara-layer="tab_catagory variety">예능</a>
+            <a href="/news/music" class="link_tab " data-tiara-layer="tab_catagory music">뮤직</a>
+            <a href="/news/movie" class="link_tab on" data-tiara-layer="tab_catagory movie">영화</a>
+            <a href="/news/abroad" class="link_tab " data-tiara-layer="tab_catagory abroad">해외</a>
+        </div>
+</div>
+
+			<div class="box_g box_news box_allnews">
+				<h3 class="screen_out">최신뉴스</h3>
+				<h4 class="screen_out"></h4>
+				<ul class="list_news" data-tiara-layer="recentnews news_list">
+				</ul>
+			</div>
+			<div class="paging_enter">
+			</div>
+
+			<div class="date_nav">
+			</div>
+		</div>
+
+		<div id="mAside" role="complementary" data-tiara-layer="right">
+<div class="aside_g aside_ad">
+	<h3 class="screen_out">광고</h3>
+	<ins class="kakao_ad_area" style="display:block"
+	     data-ad-frame-id   = "adWing"
+	     data-ad-frame-name = "adWing"
+	     data-ad-unit       = "08E76"
+	     data-ad-type       = "D"
+	     data-ad-width      = "250"
+	     data-ad-height     = "250">
+	</ins>
+	</div>
+
+<div class="aside_g aside_phototv">
+	<h3 class="tit_enter">포토&amp;TV</h3>
+	<div class="cont_aside">
+		<ul class="list_multimedia" data-tiara-layer="photo_tv">
+			<li>
+				<div class="item_multimedia">
+					<a href="https://gallery.v.daum.net/p/viewer/977/Pt8MMbhDC1" class="wrap_thumb" data-tiara-ordnum="1">
+						<div class="thumb_img"><img src="https://img1.daumcdn.net/thumb/S144x100ht.u/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202512%2F17%2Fpoctan%2F20251217115507783vugh.jpg&scode=media" alt="손종원 셰프 \'선재스님과 알콩달콩 볼하트\' " class="thumb_g"></div>
+						<span class="ico_enter ico_photo">포토뷰</span>
+					</a>
+					<div class="cont_thumb">
+						<strong class="tit_item"><a href="https://gallery.v.daum.net/p/viewer/977/Pt8MMbhDC1" class="link_txt" data-tiara-layer="right photo_tv photo" data-tiara-ordnum="1">손종원 셰프 '선재스님과 알콩달콩 볼하트' </a></strong>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item_multimedia">
+					<a href="https://gallery.v.daum.net/p/viewer/251/0x2G5zOc1y" class="wrap_thumb" data-tiara-ordnum="2">
+						<div class="thumb_img"><img src="https://img1.daumcdn.net/thumb/S144x100ht.u/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202512%2F17%2Fxportsnews%2F20251217073406863ntau.jpg&scode=media" alt="노홍철, 기획·연출→주연 모두 맡은 류현경에 감탄 \"참 멋지고 덩달아 신나\" " class="thumb_g"></div>
+						<span class="ico_enter ico_photo">포토뷰</span>
+					</a>
+					<div class="cont_thumb">
+						<strong class="tit_item"><a href="https://gallery.v.daum.net/p/viewer/251/0x2G5zOc1y" class="link_txt" data-tiara-layer="right photo_tv photo" data-tiara-ordnum="2">노홍철, 기획·연출→주연 모두 맡은 류현경에 감탄 "참 멋지고 덩달아 신나" </a></strong>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item_multimedia">
+					<a href="https://entertain.daum.net/tv/6103713/video/459985242" class="wrap_thumb" data-tiara-ordnum="3">
+						<div class="thumb_img"><img src="https://img1.daumcdn.net/thumb/S144x100ht.u/?fname=https%3A%2F%2Fthumb.kakaocdn.net%2Fdna%2Fkamp%2Fsource%2Frv35x9wdorcfimxsn501m8umu%2Fthumbs%2Fthumb.jpg%3Fcredential%3DTuMuFGKUIcirOSjFzOpncbomGFEIdZWK%26expires%3D33322838406%26signature%3DmJ4ZNWbadHhDbEfxpzdJXHUu9Ww%253D%26ts%3D1765929606&scode=media" alt=" ＂마마 체통을 지키셔야지요＂ 숨길 수 없는 겉달속강 김세정, MBC 251219 방송" class="thumb_g"></div>
+						<span class="info_play"><span class="screen_out">재생시간</span>01:24</span>
+						
+					</a>
+					<div class="cont_thumb">
+						<strong class="tit_item"><a href="https://entertain.daum.net/tv/6103713/video/459985242" class="link_txt" data-tiara-layer="right photo_tv photo" data-tiara-ordnum="3"> ＂마마 체통을 지키셔야지요＂ 숨길 수 없는 겉달속강 김세정, MBC 251219 방송</a></strong>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item_multimedia">
+					<a href="https://entertain.daum.net/tv/6108551/video/459980484" class="wrap_thumb" data-tiara-ordnum="4">
+						<div class="thumb_img"><img src="https://img1.daumcdn.net/thumb/S144x100ht.u/?fname=https%3A%2F%2Fthumb.kakaocdn.net%2Fdna%2Fkamp%2Fsource%2Frvqj8gx5zvt32jz48tpi9z4j2%2Fthumbs%2Fthumb.jpg%3Fcredential%3DTuMuFGKUIcirOSjFzOpncbomGFEIdZWK%26expires%3D33322805395%26signature%3DSLdqHGpRWke3pBVoGNo37lJczqg%253D%26ts%3D1765896595&scode=media" alt="내가 지금 뭘 본 거지? 흥과 끼를 타고난 가수, 서도의 〈깨어나〉♪ | JTBC 251216 방송" class="thumb_g"></div>
+						<span class="info_play"><span class="screen_out">재생시간</span>03:31</span>
+						
+					</a>
+					<div class="cont_thumb">
+						<strong class="tit_item"><a href="https://entertain.daum.net/tv/6108551/video/459980484" class="link_txt" data-tiara-layer="right photo_tv photo" data-tiara-ordnum="4">내가 지금 뭘 본 거지? 흥과 끼를 타고난 가수, 서도의 〈깨어나〉♪ | JTBC 251216 방송</a></strong>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="aside_g aside_poll">
+	<h3 class="tit_enter">투표</h3>
+	<div class="cont_aside">
+		<span class="wrap_thumb">
+			<img src="https://img1.daumcdn.net/thumb/S296x150ht.u/?fname=http%3A%2F%2Fthumb.kakaocdn.net%2Fdna%2Fkamp%2Fsource%2Frv9pqzr4rjzk2si333lxvprxf%2Fthumbs%2F1.jpg%3Fcredential%3DTuMuFGKUIcirOSjFzOpncbomGFEIdZWK%26expires%3D33321031709%26signature%3DgPCo%252F9pOuqKUx9%252FXA9lPf1xQcB0%253D%26ts%3D1764122909%26kamp_tidx%3D0&scode=media" class="thumb_g" alt="">
+		</span>
+		<a href="/poll/37231" class="cont_thumb" data-tiara-layer="poll">
+			<strong class="tit_thumb">
+				<span class="inner_tit">
+					<span class="ico_enter ico_question">Q</span>500만 돌파!  '주토피아' 1편 VS 2편 내 최애는?<span class="btn_poll">투표하기</span>
+				</span>
+			</strong>
+		</a>
+	</div>
+</div>
+
+
+	<div class="aside_g aside_shopping">
+		<h3 class="screen_out">광고</h3>
+		<div id="daum-sfocus-root">
+			<ins class="kakao_ad_area" style="display:block"
+				 data-ad-frame-id   = "adWing"
+				 data-ad-frame-name = "adWing"
+					 data-ad-unit = "DAN-IUpi96pXnc0yJVZe"
+				 data-ad-type       = "D"
+				 data-ad-width      = "250"
+				 data-ad-height     = "250">
+			</ins>
+		</div>
+	</div>
+
+		</div>
+	</div>
+
+	<div class="wrap_post">
+		<div class="box_post">
+			<a href="#none" class="btn_close"><span class="ico_enter">레이어 닫기</span></a>
+			<iframe name="postView" width="560px" height="600px" style="border:0"></iframe>
+		</div>
+	</div>
+
+	<div class="cl_b"></div>
+</div>
+
+<hr class="hide">
+<div id="kakaoFoot" class="footer_comm" role="contentinfo">
+    <div class="inner_foot" data-tiara-layer="footer">
+	    <div class="direct_link" data-tiara-layer="direct">
+		    <h2 class="screen_out">바로가기</h2>
+		    <div class="direct_bundle">
+			    <div class="item_bundle">
+				    <a href="/ranking/keyword" class="link_txt" data-tiara-layer="footer direct ranking">TOP키워드</a>
+			    </div>
+			    <div class="item_bundle">
+				    <a href="/news" class="link_txt" data-tiara-layer="footer direct news">최신뉴스</a>
+			    </div>
+			    <div class="item_bundle">
+				    <a href="/news/series" class="link_txt" data-tiara-layer="footer direct series">연재</a>
+			    </div>
+			    <div class="item_bundle">
+				    <a href="/tv" class="link_txt" data-tiara-layer="footer direct gallery">TV</a>
+			    </div>
+		    </div>
+	    </div>
+	    <h2 class="screen_out">서비스 이용정보</h2>
+	    <div class="footer_link">
+			<a href="https://news.daum.net/edit" class="link_info" data-tiara-action-name="footer_다음뉴스 서비스안내" data-tiara-layer="footer info_daumnews" data-tiara-copy="다음뉴스 서비스안내" data-tiara-click-url="https://news.daum.net/edit">다음뉴스 서비스안내</a>
+		    <a href="https://news.daum.net/newscenter24" class="link_info" data-tiara-action-name="footer_24시간 뉴스센터" data-tiara-layer="footer newscenter" data-tiara-copy="24시간 뉴스센터" data-tiara-click-url="https://news.daum.net/newscenter24">24시간 뉴스센터</a>
+		    <a href="https://brunch.co.kr/@daumnews" class="link_info"
+         data-tiara-action-name="footer_공지사항" data-tiara-layer="footer notice" data-tiara-copy="공지사항" data-tiara-click-url="https://brunch.co.kr/@daumnews"
+        >공지사항</a>
+		    <a href="http://policy.daum.net/policy/info" class="link_info" data-tiara-action-name="footer_이용약관" data-tiara-layer="footer policy" data-tiara-copy="이용약관" data-tiara-click-url="https://policy.daum.net/policy/info">서비스 약관/정책</a>
+	    </div>
+	    <div class="footer_link">
+		    <span class="link_info">기사배열책임자 : 임광욱</span>
+		    <span class="link_info">청소년보호책임자 : 이호원</span>
+	    </div>
+	    <div class="info_copyright">
+		    <strong class="info_warn">기사에 대한 저작권 및 법적 책임은 자료제공사 또는<br>글쓴이에 있으며, axz의 입장과 다를 수 있습니다.</strong>
+		    <small class="txt_copyright">© <strong class="txt_kakao"><a href="https://career.axzcorp.com/" class="link_kakao"
+        data-tiara-action-name="footer_ⓒ AXZ Corp." data-tiara-layer="footer axzcorp" data-tiara-copy="ⓒ AXZ Corp." data-tiara-click-url="https://career.axzcorp.com/"
+        >AXZ Corp.</a></strong> </small>
+	    </div>
+    </div>
+</div>	<!-- // kakaoFoot -->
+    <script async type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js"></script>
+<script src="//t1.daumcdn.net/media/kraken/entertain/a4d79b0/MoreButtonComponent.merged.js"></script>
+</div>
+</body>
+</html>
