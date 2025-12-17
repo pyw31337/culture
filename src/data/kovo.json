@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251217_PEPPER SAVINGS BANK_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] PEPPER SAVINGS BANK vs INDUSTRIAL BANK OF KOREA",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-17 19:00",
-    "venue": "페퍼스타디움",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251212_OK SAVINGS BANK_WOORICARD",
-    "title": "[배구] OK SAVINGS BANK vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-12 11:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251217_OK SAVINGS BANK_WOORICARD",
-    "title": "[배구] OK SAVINGS BANK vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-17 19:00",
-    "venue": "부산강서실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251212_HYUNDAI E&C_KOREA EXPRESSWAY",
-    "title": "[배구] HYUNDAI E&C vs KOREA EXPRESSWAY",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-12 11:00",
-    "venue": "예매하기",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251218_HYUNDAI E&C_KOREA EXPRESSWAY",
     "title": "[배구] HYUNDAI E&C vs KOREA EXPRESSWAY",
     "image": "/culture/images/volleyball_poster.png",
@@ -1025,6 +985,46 @@
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-15 19:00",
     "venue": "수원 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260110_KB STARS_KOREAN AIR",
+    "title": "[배구] KB STARS vs KOREAN AIR",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-10 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260116_KB STARS_KOREAN AIR",
+    "title": "[배구] KB STARS vs KOREAN AIR",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-16 19:00",
+    "venue": "의정부 경민대학교 기념관(체육관)",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260111_HYUNDAI E&C_JUNG KWAN JANG",
+    "title": "[배구] HYUNDAI E&C vs JUNG KWAN JANG",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-11 11:00",
+    "venue": "예매하기",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260116_HYUNDAI E&C_JUNG KWAN JANG",
+    "title": "[배구] HYUNDAI E&C vs JUNG KWAN JANG",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-16 19:00",
+    "venue": "수원실내체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "gyeonggi",
     "genre": "volleyball"
