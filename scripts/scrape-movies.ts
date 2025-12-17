@@ -70,6 +70,7 @@ async function scrapeMovies() {
 
                         if (titleEl && linkEl) {
                             let title = titleEl.textContent?.trim() || '';
+                            title = title.replace(/^\[영화\]\s*/, '');
                             let image = imageEl?.getAttribute('src') || '';
                             let link = linkEl.getAttribute('href') || '';
                             let date = dateEl?.textContent?.trim() || '';
@@ -129,6 +130,16 @@ async function scrapeMovies() {
         const movies = [];
         const MAX_ITEMS = 20;
 
+        function cleanGrade(g: string): string {
+            if (!g) return "등급 미정";
+            g = g.replace("관람등급", "").trim();
+            if (g.includes("12세")) return "12세 관람가";
+            if (g.includes("15세")) return "15세 관람가";
+            if (g.includes("청소년") || g.includes("불가")) return "청소년 관람불가";
+            if (g.includes("전체")) return "전체 관람가";
+            return "등급 미정";
+        }
+
         for (let i = 0; i < Math.min(rawMovies.length, MAX_ITEMS); i++) {
             const raw = rawMovies[i];
             console.log(`[${i + 1}/${Math.min(rawMovies.length, MAX_ITEMS)}] Processing: ${raw.title}`);
@@ -136,6 +147,7 @@ async function scrapeMovies() {
             // Use list-scraped grade if available, otherwise default to unknown
             let grade = raw.grade || "등급 미정";
 
+            // Try to fetch detail page for Grade if missed
             // Try to fetch detail page for Grade if missed
             if (grade === "등급 미정" && raw.link) {
                 try {
@@ -148,31 +160,36 @@ async function scrapeMovies() {
                         console.log('Saved debug_movie_detail.html');
                     }
 
-                    const extractedGrade = await page.evaluate(() => {
+                    let extractedGrade = await page.evaluate(() => {
                         // Strategy 1: Look for specific Description List structure (Naver Mobile standard)
-                        // <div class="info_group"> <dt>등급</dt> <dd>15세 관람가</dd> </div>
                         const dts = Array.from(document.querySelectorAll('dt'));
                         const gradeDt = dts.find(dt => dt.textContent?.includes('등급'));
                         if (gradeDt && gradeDt.nextElementSibling) {
                             return gradeDt.nextElementSibling.textContent?.trim();
                         }
-
-                        // Strategy 2: Search entire body for pattern (Fallback)
-                        const bodyText = document.body.innerText;
-                        if (bodyText.includes('전체 관람가')) return '전체 관람가';
-                        if (bodyText.includes('12세 관람가')) return '12세 관람가';
-                        if (bodyText.includes('15세 관람가')) return '15세 관람가';
-                        if (bodyText.includes('청소년 관람불가')) return '청소년 관람불가';
-
                         return null;
                     });
 
+                    // Strategy 2: Regex on Page Content (Robust Fallback)
+                    if (!extractedGrade) {
+                        const html = await page.content();
+                        const kobisMatch = html.match(/관람등급\s*([0-9]+세|전체|청소년)(?:이상)?\s*(관람가|관람불가)/);
+                        if (kobisMatch) {
+                            extractedGrade = kobisMatch[0];
+                        } else {
+                            const generalMatch = html.match(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/);
+                            if (generalMatch) extractedGrade = generalMatch[0];
+                        }
+                    }
+
                     if (extractedGrade) {
-                        grade = extractedGrade.replace(/도움말/g, '').trim();
+                        grade = cleanGrade(extractedGrade);
                     }
                 } catch (e) {
                     console.log(`Error fetching details for ${raw.title}`);
                 }
+            } else {
+                grade = cleanGrade(grade);
             }
 
             // High-res Image
