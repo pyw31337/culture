@@ -1555,20 +1555,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            {/* 🍞 Toast Notification for Copy */}
-            <AnimatePresence>
-                {shareUrlCopied && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 50 }}
-                        className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-[10000] bg-black/80 text-white px-6 py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/20 flex items-center gap-2"
-                    >
-                        <Check className="w-5 h-5 text-green-400" />
-                        <span className="font-bold">공유 링크가 복사되었습니다!</span>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+
 
             {/* 🎁 Shared Item Layer Popup (Dimmed Background) */}
             <AnimatePresence>
@@ -1617,14 +1604,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                                         {/* Ribbon for Shared View */}
                                         <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
-                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-xs font-bold py-1.5 w-40 text-center origin-top-left -rotate-45 translate-y-[42px] -translate-x-[32px] shadow-lg box-border border-b-2 border-white/20">
+                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[56px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
                                                 추천 공연
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
+                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900">
                                         <div className="flex flex-col gap-4">
                                             {/* Header */}
                                             <div>
@@ -1648,10 +1635,37 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 <div className="flex items-start gap-3">
                                                     <MapPin className="w-5 h-5 text-gray-400 mt-1" />
                                                     <div>
-                                                        <div className="text-gray-400 text-xs font-bold uppercase">Venue</div>
-                                                        <div className="text-white font-medium text-lg">{sharedItem.venue}</div>
+                                                        <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
+                                                            onClick={() => {
+                                                                // Open Map Modal over this popup
+                                                                // Ensure KakaoMapModal Z-Index is > 99999
+                                                                if (venues[sharedItem.venue]?.lat) {
+                                                                    setSearchLocation({
+                                                                        lat: venues[sharedItem.venue].lat!,
+                                                                        lng: venues[sharedItem.venue].lng!,
+                                                                        name: sharedItem.venue
+                                                                    });
+                                                                    setViewMode('map');
+                                                                }
+                                                            }}
+                                                        >
+                                                            {sharedItem.venue}
+                                                        </div>
                                                         {venues[sharedItem.venue]?.address && (
-                                                            <div className="text-gray-500 text-sm mt-1">{venues[sharedItem.venue].address}</div>
+                                                            <div className="text-gray-500 text-sm mt-1 cursor-pointer hover:text-gray-300 transition-colors"
+                                                                onClick={() => {
+                                                                    if (venues[sharedItem.venue]?.lat) {
+                                                                        setSearchLocation({
+                                                                            lat: venues[sharedItem.venue].lat!,
+                                                                            lng: venues[sharedItem.venue].lng!,
+                                                                            name: sharedItem.venue
+                                                                        });
+                                                                        setViewMode('map');
+                                                                    }
+                                                                }}
+                                                            >
+                                                                {venues[sharedItem.venue].address}
+                                                            </div>
                                                         )}
                                                     </div>
                                                 </div>
@@ -1675,8 +1689,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     href={sharedItem.link}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-[#a78bfa]/50 transition-all transform hover:-translate-y-1"
+                                                    className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
                                                 >
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:animate-[shine_1.5s_ease-in-out_infinite]" />
                                                     예매하러 가기
                                                 </a>
                                                 <p className="text-center text-gray-500 text-xs mt-3">
@@ -2387,6 +2402,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 // 🌟 3D Tilt Card Component
 // ---------------------------
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, showRibbon?: boolean, enableActions?: boolean, isGradient?: boolean, onShare?: () => void, onDetail?: () => void }) {
+    const [isCopied, setIsCopied] = useState(false);
 
 
     const cardRef = useRef<HTMLDivElement>(null);
@@ -2690,7 +2706,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </span>
                                         {/* Date Badge */}
-                                        <span className="px-2 py-1 rounded-[4px] text-xs bg-white/10 text-gray-300 border border-white/10 backdrop-blur-sm flex items-center gap-1">
+                                        <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
                                             <Calendar className="w-3.5 h-3.5" />
                                             {(() => {
                                                 const parts = perf.date.split('~').map((s: string) => s.trim());
@@ -2787,11 +2803,29 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         showActions ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
                                     )}>
                                         <button
-                                            onClick={(e) => { e.stopPropagation(); onShare?.(); }}
-                                            className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onShare?.();
+                                                setIsCopied(true);
+                                                setTimeout(() => setIsCopied(false), 2000);
+                                            }}
+                                            className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12 relative group/share"
                                             aria-label="공유하기"
                                         >
                                             <Share2 className="w-5 h-5" />
+                                            <AnimatePresence>
+                                                {isCopied && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: 10 }}
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/80 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl"
+                                                    >
+                                                        복사됨!
+                                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/80 border-r border-b border-white/20 rotate-45 transform" />
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
