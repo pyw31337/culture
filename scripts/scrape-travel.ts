@@ -72,47 +72,19 @@ async function scrapeTravel() {
             throw new Error('Timeout waiting for travel list');
         }
 
-        // Scrape items
-        const travelItems = await page.evaluate(() => {
-            // Updated selector strategy based on observation (it's likely a list LI)
-            const items = document.querySelectorAll('ul > li'); // Broad selector, filter inside
+        // Scrape items (Basic Info from List)
+        const basicItems = await page.evaluate(() => {
+            const items = document.querySelectorAll('ul > li'); // Broad selector
             const data: any[] = [];
-
 
             items.forEach((item) => {
                 try {
-                    // Check if it's a valid product item
                     const infoDiv = item.querySelector('.information');
                     if (!infoDiv) return;
 
-                    // Thumbnail
-                    const imgEl = item.querySelector('figure img') || item.querySelector('img');
-                    const thumb = imgEl?.getAttribute('src') || '';
-
                     // Title
                     const titleEl = infoDiv.querySelector('strong') || infoDiv.querySelector('[class*="title"]');
-                    const title = titleEl?.textContent?.trim() || infoDiv.textContent?.trim().substring(0, 50) + '...';
-
-                    // Agent (often in a specific class or just text)
-                    const agentEl = item.querySelector('.agent') || item.querySelector('[class*="agent"]');
-                    const agent = agentEl?.textContent?.trim() || '여행사';
-
-                    // Price
-                    const priceDiv = item.querySelector('.price') || item.querySelector('[class*="price"]');
-                    const priceStrong = priceDiv?.querySelector('strong') || priceDiv;
-                    const price = priceStrong?.textContent?.trim() || '';
-
-                    // Options / Sub Info
-                    const optionsEl = infoDiv.querySelector('.options') || infoDiv.querySelector('[class*="options"]');
-                    const options = optionsEl?.textContent?.trim() || '';
-
-                    // Period / Date
-                    // User mentioned div:nth-child(3) in information
-                    const divs = infoDiv.querySelectorAll('div');
-                    let period = '';
-                    if (divs.length > 2) {
-                        period = divs[2]?.textContent?.trim() || '';
-                    }
+                    const title = titleEl?.textContent?.trim() || '';
 
                     // Link
                     const linkEl = item.querySelector('a');
@@ -121,24 +93,85 @@ async function scrapeTravel() {
                         link = 'https://pkgtour.naver.com' + link;
                     }
 
-                    if (title && price) {
-                        data.push({
-                            title,
-                            image: thumb,
-                            price,
-                            agent,
-                            options,
-                            period,
-                            link
-                        });
-                    }
+                    // Price (Clean extraction)
+                    // Usually in .price strong. If multiple numbers exist, we need to be careful.
+                    const priceDiv = item.querySelector('.price');
+                    const priceStrong = priceDiv?.querySelector('strong');
+                    // Get only the text of the strong tag, not children if any?
+                    let price = priceStrong?.textContent?.trim() || '';
+                    // Fallback cleanup if it contains garbage
+                    const priceMatch = price.match(/[\d,]+/);
+                    if (priceMatch) price = priceMatch[0];
 
+                    // Agent
+                    const agentEl = item.querySelector('.agent');
+                    const agent = agentEl?.textContent?.trim() || '여행사';
+
+                    // Options (from list for now, might be moved)
+                    const optionsEl = infoDiv.querySelector('.options');
+                    const options = optionsEl?.textContent?.trim() || '';
+
+                    // Image
+                    const imgEl = item.querySelector('figure img') || item.querySelector('img');
+                    const thumb = imgEl?.getAttribute('src') || '';
+
+                    if (title && price && link) {
+                        data.push({ title, price, agent, options, image: thumb, link, date: '' });
+                    }
                 } catch (e) { }
             });
             return data;
         });
 
-        console.log(`Found ${travelItems.length} items.`);
+        console.log(`Found ${basicItems.length} basic items. Fetching details...`);
+
+        // Limit to 20 to avoid timeout
+        const travelItems = basicItems.slice(0, 20);
+
+        // Fetch Details (Date)
+        for (let i = 0; i < travelItems.length; i++) {
+            const item = travelItems[i];
+            try {
+                // Navigate to detail page
+                // Optimization: Don't need to load everything.
+                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 10000 });
+
+                // Scrape Date
+                // Selector: #app > div > div > div.Detail_information > div > div.DetailProductInfo > div.row > span > i:nth-child(2)
+                // Simplified: .DetailProductInfo .row span i:nth-child(2)? 
+                // Let's use evaluate to be flexible
+                const dateText = await page.evaluate(() => {
+                    try {
+                        // Try various selectors as the specific path might vary slightly
+                        const target = document.querySelector('.DetailProductInfo .row span i:nth-child(2)'); // User's hint
+                        // Fallback: look for text pattern matching date 'MM.DD'
+                        if (target) return target.textContent?.trim();
+
+                        // Fallback 2: Look for '출발' text
+                        const spans = document.querySelectorAll('span');
+                        for (const s of spans) {
+                            if (s.textContent?.includes('출발')) return s.textContent.trim();
+                        }
+                        return '';
+                    } catch (e) { return ''; }
+                });
+
+                if (dateText) {
+                    item.date = dateText.replace('출발', '').trim();
+                } else {
+                    item.date = '날짜 확인 필요';
+                }
+
+                // Also Check Price again if list was messy? 
+                // List price is usually sufficient if regexed.
+
+                console.log(`[${i + 1}/${travelItems.length}] Scraped Date: ${item.date}`);
+
+            } catch (e) {
+                console.log(`Failed to scrape detail for ${item.title}: ${e}`);
+                item.date = '상세페이지 참조';
+            }
+        }
 
         // Transform to App Format
         const performances = travelItems.map(item => {
@@ -151,7 +184,7 @@ async function scrapeTravel() {
                 id: `travel_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
                 title: `[여행] ${item.title}`,
                 image: item.image,
-                date: item.period || '날짜 미정',
+                date: item.date || '날짜 미정',
                 venue: `${item.agent} | ${item.options}`, // Storing Agent & Options in Venue for UI
                 link: item.link,
                 genre: 'travel',

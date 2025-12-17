@@ -1124,6 +1124,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             })}
                                         </div>
                                     )}
+
+
                                 </div>
 
                                 <button
@@ -1213,6 +1215,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             </div>
                                         </div>
                                     )}
+
+
                                 </div>
 
                                 {/* Replaced Search Bar with Keyword Button in Expanded Mode */}
@@ -2082,7 +2086,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </a>
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
-                            // Venue / Place (Grade for Movies, Agent for Travel)
+
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
@@ -2100,10 +2104,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     <div className="flex items-center gap-1 font-bold text-sky-400">
                                         <Plane className="w-3 h-3" />
                                         {perf.venue.split('|')[0]?.trim()}
-                                    </div>
-                                    {/* Options */}
-                                    <div className="text-[10px] text-gray-500 truncate">
-                                        {perf.venue.split('|')[1]?.trim()}
                                     </div>
                                 </div>
                             ) : (
@@ -2132,6 +2132,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             <span className="text-sm font-light">%</span>
                                         </div>
                                     )}
+
+                                    {/* Travel Options (Bottom) */}
+                                    {perf.genre === 'travel' && perf.venue.split('|')[1] && (
+                                        <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
+                                            {perf.venue.split('|')[1]?.trim()}
+                                        </div>
+                                    )}
                                 </div>
                                 {/* Right: Price */}
                                 <div className="flex flex-col items-end">
@@ -2142,6 +2149,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             <span className="text-xs font-light ml-0.5">원</span>
                                         </div>
                                     )}
+
+                                    {/* Travel Options (Bottom) */}
+                                    {perf.genre === 'travel' && perf.venue.split('|')[1] && (
+                                        <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
+                                            {perf.venue.split('|')[1]?.trim()}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -2149,6 +2163,8 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 </div>
             </div>
         </div>
+
+
     );
 }
 
@@ -2305,7 +2321,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </h3>
                                     </a>
 
-                                    // Venue / Place (Grade for Movies, Agent for Travel)
+
                                     {perf.genre === 'movie' ? (
                                         <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
                                             {perf.gradeIcon ? (
@@ -2322,9 +2338,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             <div className="flex items-center gap-1 font-bold text-sky-700">
                                                 <Plane className="w-3 h-3" />
                                                 {perf.venue.split('|')[0]?.trim()}
-                                            </div>
-                                            <div className="text-[10px] text-gray-600 truncate max-w-[150px]">
-                                                {perf.venue.split('|')[1]?.trim()}
                                             </div>
                                         </div>
                                     ) : (
@@ -2431,7 +2444,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </a>
 
                                     <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                                        // Venue / Place (Grade for Movies, Agent for Travel)
+
                                         {perf.genre === 'movie' ? (
                                             <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                 {perf.gradeIcon ? (
@@ -2448,9 +2461,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 <div className="flex items-center gap-1 font-bold text-sky-400">
                                                     <Plane className="w-3.5 h-3.5" />
                                                     {perf.venue.split('|')[0]?.trim()}
-                                                </div>
-                                                <div className="text-[10px] text-gray-500 truncate">
-                                                    {perf.venue.split('|')[1]?.trim()}
                                                 </div>
                                             </div>
                                         ) : (
@@ -2498,6 +2508,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     </div>
                                                 )}
                                             </div>
+                                        </div>
+                                    )}
+
+                                    {/* Travel Options (Bottom) */}
+                                    {perf.genre === 'travel' && perf.venue.split('|')[1] && (
+                                        <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
+                                            {perf.venue.split('|')[1]?.trim()}
                                         </div>
                                     )}
                                 </div>
