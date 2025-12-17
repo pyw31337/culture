@@ -1617,14 +1617,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                                         {/* Ribbon for Shared View */}
                                         <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
-                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-xs font-bold py-1.5 w-40 text-center origin-top-left -rotate-45 translate-y-[24px] -translate-x-[34px] shadow-lg box-border border-b-2 border-white/20">
+                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-xs font-bold py-1.5 w-40 text-center origin-top-left -rotate-45 translate-y-[42px] -translate-x-[32px] shadow-lg box-border border-b-2 border-white/20">
                                                 추천 공연
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 to-[#1a1b26]">
+                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
                                         <div className="flex flex-col gap-4">
                                             {/* Header */}
                                             <div>
@@ -1636,7 +1636,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
                                                         {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
                                                     </span>
-                                                    <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 border border-white/10 rounded">
+                                                    <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
                                                         <Calendar className="w-3 h-3" />
                                                         {sharedItem.date}
                                                     </span>
@@ -2670,9 +2670,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {/* Content Layer (Bottom) - Fixed Position */}
                                 <div
-                                    className="absolute inset-x-0 bottom-0 p-5 z-[70]"
-                                    style={{ transform: 'translateZ(30px)' }} // 3D Depth
+                                    className={clsx(
+                                        "absolute inset-x-0 bottom-0 p-5 z-[70] transition-transform duration-300 ease-out",
+                                        enableActions && (showActions ? "-translate-y-[60px]" : "group-hover:-translate-y-[60px]")
+                                    )}
+                                    style={{ transform: (enableActions && showActions) ? 'translateY(-60px) translateZ(30px)' : 'translateZ(30px)', transformStyle: 'preserve-3d' }} // inline style backup for conditional
                                 >
+                                    {/* Override transform for group-hover via className if possible, but translateZ needs to be preserved. 
+                                        Actually, combining transform classes with style transform is tricky.
+                                        Let's rely on className for the Y translation and style for Z.
+                                    */}
 
                                     {/* Tags/Badges */}
                                     <div className="flex flex-wrap gap-2 mb-2">
@@ -2781,17 +2788,17 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     )}>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); onShare?.(); }}
-                                            className="flex-1 bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center gap-2 transition-all font-bold shadow-lg h-12"
+                                            className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12"
+                                            aria-label="공유하기"
                                         >
-                                            <Share2 className="w-4 h-4" />
-                                            <span className="text-sm">공유</span>
+                                            <Share2 className="w-5 h-5" />
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
-                                            className="flex-1 bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center gap-2 transition-all font-bold shadow-lg h-12"
+                                            className="w-[80%] bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12"
                                         >
-                                            <Search className="w-4 h-4" />
-                                            <span className="text-sm">자세히</span>
+                                            <Search className="w-5 h-5" />
+                                            <span className="ml-2">자세히보기</span>
                                         </button>
                                     </div>
                                 )}

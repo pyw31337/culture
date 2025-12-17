@@ -153,7 +153,11 @@ async function scrapeTimeTicket() {
                         }
 
                         const titleEl = item.querySelector('.ticket_info .title');
-                        const title = titleEl ? titleEl.textContent?.trim() || '' : '';
+                        let title = titleEl ? titleEl.textContent?.trim() || '' : '';
+                        // Robust cleaning: remove leading/trailing whitespace and specific pattern
+                        title = title.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+                        // Remove space before specific full-width bracket tag if it exists internally or normally
+                        title = title.replace(/\s+(?=［만원의행복］)/g, '');
 
                         const categoryEl = item.querySelector('.ticket_info .category');
                         const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
