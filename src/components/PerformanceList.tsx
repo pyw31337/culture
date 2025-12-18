@@ -2640,11 +2640,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
                                     alt={perf.title}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
                                 {/* Hot Deal Badge (Top Left) */}
                                 {perf.discount && (
@@ -2659,11 +2659,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
 
                                 <div
-                                    className={clsx(
-                                        "absolute inset-x-0 bottom-0 p-5 z-[70] transition-transform duration-300 ease-out",
-                                        enableActions && (showActions ? "-translate-y-[60px]" : "group-hover:-translate-y-[60px]")
-                                    )}
-                                    style={{ transform: (enableActions && showActions) ? 'translateY(-60px) translateZ(30px)' : 'translateZ(30px)', transformStyle: 'preserve-3d' }}
+                                    className="absolute inset-x-0 bottom-0 p-5 z-[70]"
+                                    style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                                 >
                                     {/* Tags/Badges */}
                                     <div className="flex flex-wrap gap-2 mb-2">
@@ -2708,24 +2705,26 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 </div>
                                             </div>
                                         ) : (
-                                            <>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    // Always try to open map, even if lat/lng missing (maybe address lookup inside modal?)
+                                                    // But logic says: if (venueInfo?.lat) ... 
+                                                    // Let's assume onLocationClick handles fallback or we just pass what we have.
+                                                    // But checking venueInfo is safer. If it's null, we can't open map.
+                                                    if (onLocationClick) {
+                                                        onLocationClick({
+                                                            lat: venueInfo?.lat || 0,
+                                                            lng: venueInfo?.lng || 0,
+                                                            name: perf.venue
+                                                        });
+                                                    }
+                                                }}
+                                                className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer"
+                                            >
                                                 <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        if (venueInfo?.lat && venueInfo?.lng) {
-                                                            onLocationClick({
-                                                                lat: venueInfo.lat,
-                                                                lng: venueInfo.lng,
-                                                                name: perf.venue
-                                                            });
-                                                        }
-                                                    }}
-                                                    className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
-                                                >
-                                                    {perf.venue}
-                                                </button>
-                                            </>
+                                                {perf.venue}
+                                            </button>
                                         )}
                                     </div>
 
