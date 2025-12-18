@@ -30,6 +30,7 @@ export async function fetchPerformances(regionName: string = 'seoul'): Promise<P
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       },
+      timeout: 5000, // Timeout after 5 seconds to prevent build hangs
     });
 
     const decoded = iconv.decode(response.data, 'euc-kr');
