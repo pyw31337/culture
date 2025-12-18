@@ -2520,11 +2520,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                 {/* Main Card Content */}
                 <div className={clsx(
-                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px]",
+                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
                     isGradient
                         ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a]"
                         : "bg-gray-900"
-                )}>
+                )}
+                    style={{ transform: 'translateZ(0)' }} // Force stacking context for Safari overflow fix
+                >
 
                     {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
                     {showRibbon && (
@@ -2712,7 +2714,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
                                     alt={perf.title}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     loading="lazy"
                                 />
