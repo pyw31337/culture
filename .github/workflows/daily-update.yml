@@ -42,15 +42,16 @@ jobs:
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
 
       - name: Run Scrapers
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
-          npx tsx scripts/scrape-kovo.ts
-          npx tsx scripts/scrape-kbl.ts
-          npx tsx scripts/scrape-festival.ts
-          npx tsx scripts/scrape-yes24.ts
-          npx tsx scripts/scrape-timeticket.ts
-          npx tsx scripts/scrape-travel.ts
+          npx tsx scripts/scrape-kovo.ts || true
+          npx tsx scripts/scrape-kbl.ts || true
+          npx tsx scripts/scrape-festival.ts || true
+          npx tsx scripts/scrape-yes24.ts || true
+          npx tsx scripts/scrape-timeticket.ts || true
+          npx tsx scripts/scrape-travel.ts || true
 
       - name: Commit and Push changes
         run: |
