@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write # Needed to push changes
+  actions: read   # Needed to check previous run status
 
 jobs:
   update-data:
@@ -41,8 +42,33 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
 
+      - name: Check Retry Condition (Skip if 12:00 PM and prev run success)
+        id: check_retry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current_hour=$(date -u +%H)
+          # 03 UTC is 12 KST.
+          if [ "$current_hour" -eq "03" ]; then
+            echo "Time is 12:00 PM KST (03:00 UTC). Checking if previous run succeeded..."
+            # Get status of the last COMPLETED run for this workflow
+            last_status=$(gh run list --workflow daily-update.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion')
+            echo "Last run status: $last_status"
+            
+            if [ "$last_status" == "success" ]; then
+              echo "Previous run was successful. Skipping this retry execution."
+              echo "SKIP_EXECUTION=true" >> $GITHUB_ENV
+            else
+              echo "Previous run failed or unknown ($last_status). Proceeding with retry."
+              echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
+            fi
+          else
+            echo "Regular schedule. Proceeding."
+            echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
+          fi
+
       - name: Run Scrapers
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
@@ -56,6 +82,7 @@ jobs:
           npx tsx scripts/scrape-movies.ts || true
 
       - name: Commit and Push changes
+        if: env.SKIP_EXECUTION != 'true'
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
@@ -64,9 +91,11 @@ jobs:
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update sports data" && git push)
 
       - name: Build Website
+        if: env.SKIP_EXECUTION != 'true'
         run: npm run build
 
       - name: FTP Deploy
+        if: env.SKIP_EXECUTION != 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
