@@ -2398,15 +2398,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     );
 }
 
+
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, showRibbon?: boolean, enableActions?: boolean, isGradient?: boolean, onShare?: () => void, onDetail?: () => void }) {
     const [isCopied, setIsCopied] = useState(false);
-
+    const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
     const cardRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null); // Kept for consistency if needed, though unused in Yellow
     const glareRef = useRef<HTMLDivElement>(null);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -2432,34 +2432,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         glareRef.current.style.opacity = '0';
     };
 
-    const [showActions, setShowActions] = useState(false); // For Mobile Touch
-
-    // Mobile Touch Tilt
-    const handleTouchStart = () => {
-        if (!cardRef.current || window.innerWidth > 768) return;
-        // Apply a gentle tilt
-        cardRef.current.style.transform = `perspective(1000px) rotateX(5deg) scale3d(0.98, 0.98, 0.98)`;
-    };
-
-    const handleTouchEnd = () => {
-        if (!cardRef.current) return;
-        // Reset
-        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
-    };
-
     const handleCardClick = (e: React.MouseEvent) => {
-        // PC: Just navigate (handled by link)
-        // Mobile: Toggle actions if recommended
         if (!showActions) {
             setShowActions(true);
         } else {
-            // If already showing, maybe we want to allow clicking through?
-            // But usually "touch elsewhere" logic needs global listener or backdrop.
-            // Let's rely on global click handling or just toggle off.
             setShowActions(false);
         }
     }
-
 
     // Global listener to close actions on outside click (Mobile)
     useEffect(() => {
@@ -2472,6 +2451,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         document.addEventListener('touchstart', handleGlobalClick);
         return () => document.removeEventListener('touchstart', handleGlobalClick);
     }, [showActions]);
+
+    const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
     return (
         <div
@@ -2486,14 +2467,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 className={
                     clsx(
                         "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full rounded-xl",
-                        variant === 'default' ? "gold-shimmer-wrapper" : "", // Apply wrapper only for default
+                        variant === 'default' ? "gold-shimmer-wrapper" : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
                             : variant === 'pink'
                                 ? "border border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
                                 : variant === 'yellow'
                                     ? "border border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                                    : "border-0" // Default handles border via shimmer
+                                    : "border-0"
                     )
                 }
                 style={{ transformStyle: 'preserve-3d' }}
@@ -2508,20 +2489,17 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     }}
                 />
 
-                {/* Shimmer Effect (Default Only) */}
+                {/* Shimmer Border (Default Only) */}
                 {variant === 'default' && (
                     <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? '#a78bfa' : 'gold' } as React.CSSProperties} />
                 )}
 
                 {/* Main Card Content */}
                 <div className={clsx(
-                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-xl", // Ensure main content is rounded
+                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-xl",
                     isGradient
                         ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a]"
-                        : "bg-gray-900",
-                    // Add border to main content for separation from shimmer border if needed, OR remove if shimmer acts as border
-                    // User said "remove new line", so we rely on shimmer spacing (padding: 1px in wrapper)
-                    (variant !== 'default') ? "" : ""
+                        : "bg-gray-900"
                 )}>
 
                     {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
@@ -2551,23 +2529,25 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     </button>
 
                     {/* Neon Stroke Effect (Border Gradient) */}
-
                     {variant !== 'yellow' && variant !== 'pink' && (
                         <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                     )}
 
-                    {/* Glare Effect */}
+                    {/* Glare Effect 2 */}
                     <div
                         ref={glareRef}
                         className="hidden sm:block absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
                         style={{ left: '-25%', top: '-25%' }}
                     />
 
-                    {/* --- VARIANT: YELLOW/PINK/EMERALD (Interest) --- */}
-                    {variant === 'yellow' || variant === 'pink' || variant === 'emerald' ? (
+                    {/* ========================================================= */}
+                    {/*             VARIANT LOGIC: Interest vs Default            */}
+                    {/* ========================================================= */}
+
+                    {isInterestVariant ? (
+                        /* --- VARIANT: INTEREST (Yellow/Pink/Emerald) --- */
                         <>
                             {/* Image Section (Top, Aspect 3/4) */}
-
                             <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                 <div className="absolute inset-0 z-0">
                                     <Image
@@ -2605,7 +2585,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {perf.title.trim()}
                                     </h3>
                                 </a>
-
 
                                 {perf.genre === 'movie' ? (
                                     <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
@@ -2651,212 +2630,160 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <span className="text-gray-900 text-[13px] font-bold opacity-70">{perf.date}</span>
                                 </div>
                             </div>
-                            {/* Version Log for Debug */}
-                            <script dangerouslySetInnerHTML={{ __html: `console.log('Deploy Version: 2025-12-16 14:40 Fixes (HotDeal Badge, UI Refine)');` }} />
                         </>
                     ) : (
                         /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
                         <>
-                            {/* Image Layer */}
-                            {/* Image Layer - Link Wrapped */}
-                            {perf.image ? (
-                                <>
-                                    <Image
-                                        src={getOptimizedUrl(perf.image, 400)}
-                                        alt={perf.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
-                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer"
-                                    />
-                                    {/* Hot Deal Badge (Top Left) */}
-                                    {perf.discount && (
-                                        <div
-                                            className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
-                                            style={{ transform: 'translateZ(20px)' }}
-                                        >
-                                            <Flame className="w-3 h-3 fill-rose-500" />
-                                            핫딜
-                                        </div>
-                                    )}
-                                </>
-                            ) : (
-                                <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">No Image</div>
-                            )}
+                            <div className="relative h-full w-full">
+                                <Image
+                                    src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
+                                    alt={perf.title}
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-                            {/* Distance Badge (Top Right) */}
-                            {distLabel && (
                                 <div
-                                    className="absolute top-4 right-4 z-40 bg-black/60 backdrop-blur-md border border-[#a78bfa]/30 text-[#c084fc] px-3 py-1 rounded-full text-xs font-bold shadow-lg"
-                                    style={{ transform: 'translateZ(20px)' }}
+                                    className={clsx(
+                                        "absolute inset-x-0 bottom-0 p-5 z-[70] transition-transform duration-300 ease-out",
+                                        enableActions && (showActions ? "-translate-y-[60px]" : "group-hover:-translate-y-[60px]")
+                                    )}
+                                    style={{ transform: (enableActions && showActions) ? 'translateY(-60px) translateZ(30px)' : 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                                 >
-                                    {distLabel}
-                                </div>
-                            )}
+                                    {/* Tags/Badges */}
+                                    <div className="flex flex-wrap gap-2 mb-2">
+                                        <span className={clsx(
+                                            "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                            GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                        )}>
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </span>
+                                        <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
+                                            <Calendar className="w-3.5 h-3.5" />
+                                            {(() => {
+                                                const parts = perf.date.split('~').map((s: string) => s.trim());
+                                                return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
+                                            })()}
+                                        </span>
+                                    </div>
 
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none" />
+                                    <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
+                                        <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                            {perf.title.trim()}
+                                        </h3>
+                                    </a>
 
-                            {/* Content Layer (Bottom) - Fixed Position */}
-                            <div
-                                className={clsx(
-                                    "absolute inset-x-0 bottom-0 p-5 z-[70] transition-transform duration-300 ease-out",
-                                    enableActions && (showActions ? "-translate-y-[60px]" : "group-hover:-translate-y-[60px]")
-                                )}
-                                style={{ transform: (enableActions && showActions) ? 'translateY(-60px) translateZ(30px)' : 'translateZ(30px)', transformStyle: 'preserve-3d' }} // inline style backup for conditional
-                            >
-                                {/* Override transform for group-hover via className if possible, but translateZ needs to be preserved. 
-                                        Actually, combining transform classes with style transform is tricky.
-                                        Let's rely on className for the Y translation and style for Z.
-                                    */}
+                                    <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                        {perf.genre === 'movie' ? (
+                                            <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
+                                                {perf.gradeIcon ? (
+                                                    <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
+                                                ) : (
+                                                    <>
+                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                        {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                    </>
+                                                )}
+                                            </div>
+                                        ) : perf.genre === 'travel' ? (
+                                            <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
+                                                <div className="flex items-center gap-1 font-bold text-sky-400">
+                                                    <Plane className="w-3.5 h-3.5" />
+                                                    {perf.venue.split('|')[0]?.trim()}
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        if (venueInfo?.lat && venueInfo?.lng) {
+                                                            onLocationClick({
+                                                                lat: venueInfo.lat,
+                                                                lng: venueInfo.lng,
+                                                                name: perf.venue
+                                                            });
+                                                        }
+                                                    }}
+                                                    className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
+                                                >
+                                                    {perf.venue}
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
 
-                                {/* Tags/Badges */}
-                                <div className="flex flex-wrap gap-2 mb-2">
-                                    <span className={clsx(
-                                        "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
-                                        GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
-                                    )}>
-                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                    </span>
-                                    {/* Date Badge */}
-                                    <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
-                                        <Calendar className="w-3.5 h-3.5" />
-                                        {(() => {
-                                            const parts = perf.date.split('~').map((s: string) => s.trim());
-                                            return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
-                                        })()}
-                                    </span>
-                                </div>
-
-                                <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                    <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                        {perf.title.trim()}
-                                    </h3>
-                                </a>
-
-                                <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-
-                                    {perf.genre === 'movie' ? (
-                                        <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                            {perf.gradeIcon ? (
-                                                <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
-                                            ) : (
-                                                <>
-                                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                    {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
-                                                </>
-                                            )}
-                                        </div>
-                                    ) : perf.genre === 'travel' ? (
-                                        <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
-                                            <div className="flex items-center gap-1 font-bold text-sky-400">
-                                                <Plane className="w-3.5 h-3.5" />
-                                                {perf.venue.split('|')[0]?.trim()}
+                                    {(perf.price || perf.discount) && (
+                                        <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
+                                            <div className="flex flex-col justify-end">
+                                                {perf.discount && (
+                                                    <div className="text-rose-500 drop-shadow-md leading-none">
+                                                        <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                        <span className="text-sm font-light ml-0.5">%</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="flex items-baseline gap-1.5">
+                                                {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
+                                                {perf.price && (
+                                                    <div className="text-white drop-shadow-md leading-none">
+                                                        <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
-                                    ) : (
-                                        <>
-                                            <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (venueInfo?.lat && venueInfo?.lng) {
-                                                        onLocationClick({
-                                                            lat: venueInfo.lat,
-                                                            lng: venueInfo.lng,
-                                                            name: perf.venue
-                                                        });
-                                                    }
-                                                }}
-                                                className="hover:text-[#a78bfa] hover:underline truncate relative z-[100]"
-                                            >
-                                                {perf.venue}
-                                            </button>
-                                        </>
                                     )}
                                 </div>
 
-                                {/* Price & Discount info (Default Card) - Moved to Bottom */}
-                                {/* Price & Discount info (Default Card) - Moved to Bottom - Wrapped in Link */}
-                                {(perf.price || perf.discount) && (
-                                    <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
-                                        {/* Left: Discount */}
-                                        <div className="flex flex-col justify-end">
-                                            {perf.discount && (
-                                                <div className="text-rose-500 drop-shadow-md leading-none">
-                                                    <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                    <span className="text-sm font-light ml-0.5">%</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                        {/* Right: Price */}
-                                        <div className="flex items-baseline gap-1.5">
-                                            {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
-                                            {perf.price && (
-                                                <div className="text-white drop-shadow-md leading-none">
-                                                    <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                    <span className="text-xs font-light ml-0.5">원</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Travel Options (Bottom) */}
-                                {perf.genre === 'travel' && perf.venue.split('|')[1] && (
-                                    <div className="mt-2 pt-2 border-t border-white/10 text-[11px] text-gray-400 leading-tight">
-                                        {perf.venue.split('|')[1]?.trim()}
+                                {/* Actions Overlay */}
+                                {enableActions && (
+                                    <div className={clsx(
+                                        "absolute inset-x-0 bottom-0 z-[80] p-4 flex items-end justify-center gap-2 transform transition-transform duration-300 ease-out bg-gradient-to-t from-black/95 via-black/80 to-transparent pt-12",
+                                        showActions ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
+                                    )}>
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onShare?.();
+                                                setIsCopied(true);
+                                                setTimeout(() => setIsCopied(false), 2000);
+                                            }}
+                                            className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12 relative group/share"
+                                            aria-label="공유하기"
+                                        >
+                                            <Share2 className="w-5 h-5" />
+                                            <AnimatePresence>
+                                                {isCopied && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: 10 }}
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/80 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl"
+                                                    >
+                                                        복사됨!
+                                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/80 border-r border-b border-white/20 rotate-45 transform" />
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </button>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
+                                            className="w-[80%] bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12"
+                                        >
+                                            <Search className="w-5 h-5" />
+                                            <span className="ml-2">자세히보기</span>
+                                        </button>
                                     </div>
                                 )}
                             </div>
-                            {/* Actions Overlay (Share/Details) - Visible on Hover/Touch if enabled */}
-                            {enableActions && (
-                                <div className={clsx(
-                                    "absolute inset-x-0 bottom-0 z-[80] p-4 flex items-end justify-center gap-2 transform transition-transform duration-300 ease-out bg-gradient-to-t from-black/95 via-black/80 to-transparent pt-12",
-                                    showActions ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
-                                )}>
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            onShare?.();
-                                            setIsCopied(true);
-                                            setTimeout(() => setIsCopied(false), 2000);
-                                        }}
-                                        className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12 relative group/share"
-                                        aria-label="공유하기"
-                                    >
-                                        <Share2 className="w-5 h-5" />
-                                        <AnimatePresence>
-                                            {isCopied && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: 10 }}
-                                                    className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/80 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl"
-                                                >
-                                                    복사됨!
-                                                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/80 border-r border-b border-white/20 rotate-45 transform" />
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                    </button>
-                                    <button
-                                        onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
-                                        className="w-[80%] bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-12"
-                                    >
-                                        <Search className="w-5 h-5" />
-                                        <span className="ml-2">자세히보기</span>
-                                    </button>
-                                </div>
-                            )}
                         </>
                     )}
                 </div>
             </div>
         </div>
-
-
-
     );
 }
