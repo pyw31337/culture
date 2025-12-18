@@ -100,12 +100,20 @@ async function getPerformances() {
 
         if (!isPerformanceActive(p.date, now)) return false;
 
+        // Sports (Volleyball/Basketball): Strict Region Filter (Seoul, Gyeonggi, Incheon only)
+        if (p.genre === 'volleyball' || p.genre === 'basketball') {
+            if (!['seoul', 'gyeonggi', 'incheon'].includes(p.region)) return false;
+        }
+
         // Allow 'etc' but maybe we want to visualize it differently? 
         // For now, just allow it so the list isn't empty.
         if (!validRegions.includes(p.region)) return false;
 
         // Filter out bad venues
         if (p.venue === '예매하기') return false;
+        // Check for venue names that are actually dates (e.g., "12.18(목) 19:00") - Parsing Error Cleaning
+        if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
+
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
     });

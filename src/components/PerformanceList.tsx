@@ -1582,9 +1582,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     initial={{ scale: 0.9, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     exit={{ scale: 0.9, opacity: 0 }}
-                                    className="bg-gray-900 border border-gray-700 w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
+                                    className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
                                     onClick={e => e.stopPropagation()}
                                 >
+                                    {/* Neon Stroke Effect for Popup */}
+                                    <div className="absolute inset-[-2px] z-[-1] rounded-[17px] animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
                                     {/* Close Button */}
                                     <button
                                         onClick={() => setSharedPerformanceId(null)}
@@ -2497,7 +2499,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                 {/* Main Card Content */}
                 <div className={clsx(
-                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-xl",
+                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px]",
                     isGradient
                         ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a]"
                         : "bg-gray-900"
