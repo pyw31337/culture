@@ -2645,6 +2645,18 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
+                                {/* Hot Deal Badge (Top Left) */}
+                                {perf.discount && (
+                                    <div
+                                        className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        <Flame className="w-3 h-3 fill-rose-500" />
+                                        핫딜
+                                    </div>
+                                )}
+                                <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
+
                                 <div
                                     className={clsx(
                                         "absolute inset-x-0 bottom-0 p-5 z-[70] transition-transform duration-300 ease-out",
