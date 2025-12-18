@@ -1531,6 +1531,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     enableActions={true}
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                     variant="emerald"
                                                 />
                                             ) : (
@@ -1813,6 +1815,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={true}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     enableActions={true}
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                     variant="pink"
                                                 />
                                             ) : (
@@ -1886,6 +1890,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     enableActions={true}
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                     variant="yellow"
                                                 />
                                             ) : (
