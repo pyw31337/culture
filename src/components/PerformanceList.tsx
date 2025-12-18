@@ -1530,6 +1530,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     }}
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    enableActions={true}
                                                     variant="emerald"
                                                 />
                                             ) : (
@@ -1811,6 +1812,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     }}
                                                     isLiked={true}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    enableActions={true}
                                                     variant="pink"
                                                 />
                                             ) : (
@@ -1883,6 +1885,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     }}
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                    enableActions={true}
                                                     variant="yellow"
                                                 />
                                             ) : (
