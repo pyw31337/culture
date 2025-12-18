@@ -177,7 +177,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
-    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('list'); // Default to LIST view (Wide cards) to fix grid render bug
+    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
 
     const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null); // Shared Item ID
@@ -2468,7 +2468,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 className={
                     clsx(
                         "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full rounded-xl",
-                        variant === 'default' ? "gold-shimmer-wrapper" : "",
+                        variant === 'default' ? "gold-shimmer-wrapper aspect-[3/4]" : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
                             : variant === 'pink'
