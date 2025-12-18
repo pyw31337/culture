@@ -177,7 +177,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
-    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
+    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('list'); // Default to LIST view (Wide cards) to fix grid render bug
+
     const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null); // Shared Item ID
 
