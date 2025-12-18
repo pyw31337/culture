@@ -2438,25 +2438,25 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     </div>
                                 )}
                             </div>
-                            </div>
+
                         )}
 
-                    {/* Detail View Button */}
-                    <div className="mt-3">
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onDetail?.();
-                            }}
-                            className="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1"
-                        >
-                            자세히 보기
-                            <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
-                        </button>
+                        {/* Detail View Button */}
+                        <div className="mt-3">
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    onDetail?.();
+                                }}
+                                className="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1"
+                            >
+                                자세히 보기
+                                <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div >
 
 
