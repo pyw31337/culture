@@ -58,6 +58,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
     const [selectedGenre, setSelectedGenre] = useState<string>('all');
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
+    const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
 
     // Debug Data Availability
     useEffect(() => {
@@ -81,19 +82,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [newKeyword, setNewKeyword] = useState('');
 
     useEffect(() => {
-        const saved = localStorage.getItem('culture_keywords');
-        if (saved) {
-            try {
-                setKeywords(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse keywords", e);
+        // Consolidated Loader for all LocalStorage items
+        const loadState = (key: string, setter: (val: any) => void) => {
+            const saved = localStorage.getItem(key);
+            if (saved) {
+                try {
+                    setter(JSON.parse(saved));
+                } catch (e) {
+                    console.error(`Failed to parse ${key}`, e);
+                }
             }
-        }
+        };
+
+        loadState('culture_keywords', setKeywords);
+        loadState('culture_likes', setLikedIds);
+        loadState('culture_favorite_venues', setFavoriteVenues);
+        loadState('culture_likes_expanded', setIsLikesExpanded);
+        loadState('culture_venues_expanded', setIsFavoriteVenuesExpanded);
+
+        setIsStorageLoaded(true);
     }, []);
 
     useEffect(() => {
+        if (!isStorageLoaded) return;
         localStorage.setItem('culture_keywords', JSON.stringify(keywords));
-    }, [keywords]);
+    }, [keywords, isStorageLoaded]);
 
     const addKeyword = () => {
         if (!newKeyword.trim()) return;
@@ -117,35 +130,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [showLikes, setShowLikes] = useState(true);
 
-    // Initial Load for Likes Expanded State
-    useEffect(() => {
-        const savedExpanded = localStorage.getItem('culture_likes_expanded');
-        if (savedExpanded !== null) {
-            setIsLikesExpanded(JSON.parse(savedExpanded));
-        }
-    }, []);
-
     // Persist Likes Expanded State
     useEffect(() => {
+        if (!isStorageLoaded) return;
         localStorage.setItem('culture_likes_expanded', JSON.stringify(isLikesExpanded));
-    }, [isLikesExpanded]);
+    }, [isLikesExpanded, isStorageLoaded]);
 
-    // Load Likes from LocalStorage
-    useEffect(() => {
-        const savedLikes = localStorage.getItem('culture_likes');
-        if (savedLikes) {
-            try {
-                setLikedIds(JSON.parse(savedLikes));
-            } catch (e) {
-                console.error("Failed to parse likes", e);
-            }
-        }
-    }, []);
+    // Load Likes Expanded State (Removed - handled by consolidated loader)
+    // Load Likes from LocalStorage (Removed - handled by consolidated loader)
 
     // Save Likes to LocalStorage
+    // Save Likes to LocalStorage
     useEffect(() => {
+        if (!isStorageLoaded) return;
         localStorage.setItem('culture_likes', JSON.stringify(likedIds));
-    }, [likedIds]);
+    }, [likedIds, isStorageLoaded]);
 
     const toggleLike = (id: string, e?: React.MouseEvent) => {
         e?.stopPropagation();
@@ -163,17 +162,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
 
     // Initial Load for Favorite Venues Expanded State
-    useEffect(() => {
-        const savedExpanded = localStorage.getItem('culture_venues_expanded');
-        if (savedExpanded !== null) {
-            setIsFavoriteVenuesExpanded(JSON.parse(savedExpanded));
-        }
-    }, []);
+    // Initial Load for Favorite Venues Expanded State (Removed - handled by consolidated loader)
 
     // Persist Favorite Venues Expanded State
     useEffect(() => {
+        if (!isStorageLoaded) return;
         localStorage.setItem('culture_venues_expanded', JSON.stringify(isFavoriteVenuesExpanded));
-    }, [isFavoriteVenuesExpanded]);
+    }, [isFavoriteVenuesExpanded, isStorageLoaded]);
 
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
@@ -316,20 +311,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         };
     }, []);
 
-    useEffect(() => {
-        const savedVenues = localStorage.getItem('culture_favorite_venues');
-        if (savedVenues) {
-            try {
-                setFavoriteVenues(JSON.parse(savedVenues));
-            } catch (e) {
-                console.error("Failed to parse favorite venues", e);
-            }
-        }
-    }, []);
+
 
     useEffect(() => {
+        if (!isStorageLoaded) return;
         localStorage.setItem('culture_favorite_venues', JSON.stringify(favoriteVenues));
-    }, [favoriteVenues]);
+    }, [favoriteVenues, isStorageLoaded]);
 
     const toggleFavoriteVenue = (venueName: string) => {
         setFavoriteVenues(prev =>
