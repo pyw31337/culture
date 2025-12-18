@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame, Plane } from 'lucide-react';
+import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame, Plane, Bell } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -176,6 +176,43 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null); // Shared Item ID
+
+    // NEW: Notification System for New Keyword Matches
+    const [newMatches, setNewMatches] = useState<Performance[]>([]);
+    const [showNewMatchesModal, setShowNewMatchesModal] = useState(false);
+
+    useEffect(() => {
+        if (!isStorageLoaded || keywords.length === 0) return;
+
+        // 1. Find all current matches
+        const currentMatches = initialPerformances.filter(p =>
+            keywords.some(k => p.title.toLowerCase().includes(k.toLowerCase()) || p.venue.toLowerCase().includes(k.toLowerCase()))
+        );
+
+        if (currentMatches.length === 0) return;
+
+        // 2. Load Seen IDs
+        const seenIds: string[] = JSON.parse(localStorage.getItem('culture_seen_keyword_matches') || '[]');
+
+        // 3. Identify truly new items
+        const newItems = currentMatches.filter(p => !seenIds.includes(p.id));
+
+        if (newItems.length > 0) {
+            setNewMatches(newItems);
+            setShowNewMatchesModal(true);
+        }
+    }, [initialPerformances, keywords, isStorageLoaded]);
+
+    const handleCloseNotification = () => {
+        // Mark checked items as seen
+        const seenIds: string[] = JSON.parse(localStorage.getItem('culture_seen_keyword_matches') || '[]');
+        const newIds = newMatches.map(p => p.id);
+        const updatedSeenIds = Array.from(new Set([...seenIds, ...newIds]));
+
+        localStorage.setItem('culture_seen_keyword_matches', JSON.stringify(updatedSeenIds));
+        setShowNewMatchesModal(false);
+        setNewMatches([]);
+    };
 
     // Share Item URL Generation
     const copyItemShareUrl = async (id: string) => {
@@ -2156,6 +2193,79 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     />
                 )
             }
+
+            {/* 🔔 New Matches Notification Modal */}
+            <AnimatePresence>
+                {showNewMatchesModal && newMatches.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+                        onClick={handleCloseNotification}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 20 }}
+                            className="bg-gray-900 border border-yellow-500/50 rounded-2xl w-full max-w-md overflow-hidden shadow-[0_0_50px_rgba(234,179,8,0.3)] relative"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            {/* Header */}
+                            <div className="bg-yellow-500/10 p-5 flex items-start gap-4 border-b border-yellow-500/20">
+                                <div className="p-3 bg-yellow-500 rounded-full text-black shadow-lg shadow-yellow-500/20">
+                                    <Bell className="w-6 h-6 fill-black" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-white mb-1">새로운 공연 알림</h3>
+                                    <p className="text-gray-400 text-sm">
+                                        설정하신 키워드({keywords.length}개)에 해당하는 <br />
+                                        <span className="text-yellow-400 font-bold">{newMatches.length}개</span>의 새로운 공연이 발견되었습니다!
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* List */}
+                            <div className="p-4 max-h-[50vh] overflow-y-auto space-y-3 custom-scrollbar">
+                                {newMatches.slice(0, 5).map(perf => (
+                                    <div key={perf.id} className="flex gap-3 bg-black/40 p-3 rounded-xl border border-white/5 hover:border-yellow-500/30 transition-colors">
+                                        <div className="relative w-16 h-20 bg-gray-800 rounded-lg overflow-hidden shrink-0">
+                                            <Image
+                                                src={getOptimizedUrl(perf.image, 100) || "/api/placeholder/100/130"}
+                                                alt={perf.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div className="flex-1 min-w-0 py-1">
+                                            <div className="text-xs text-yellow-500 font-bold mb-1">
+                                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            </div>
+                                            <h4 className="text-white font-bold text-sm truncate leading-tight mb-1">{perf.title}</h4>
+                                            <p className="text-gray-500 text-xs truncate">{perf.venue} • {perf.date}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                                {newMatches.length > 5 && (
+                                    <div className="text-center py-2 text-gray-500 text-sm">
+                                        외 {newMatches.length - 5}개의 공연이 더 있습니다.
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Footer */}
+                            <div className="p-4 border-t border-white/10 flex gap-3">
+                                <button
+                                    onClick={handleCloseNotification}
+                                    className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl transition-all shadow-lg shadow-yellow-500/10"
+                                >
+                                    확인했습니다
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
         </div >
     );
