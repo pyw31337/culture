@@ -1547,6 +1547,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     variant="emerald"
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                 />
                                             )}
                                         </motion.div>
@@ -1831,6 +1833,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={true}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     variant="pink"
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                 />
                                             )}
                                         </motion.div>
@@ -1906,6 +1910,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     isLiked={likedIds.includes(performance.id)}
                                                     onToggleLike={(e) => toggleLike(performance.id, e)}
                                                     variant="yellow"
+                                                    onShare={() => copyItemShareUrl(performance.id)}
+                                                    onDetail={() => window.open(performance.link, '_blank')}
                                                 />
                                             )}
                                         </motion.div>
@@ -2056,6 +2062,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                             }}
                                                             isLiked={likedIds.includes(perf.id)}
                                                             onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                            onShare={() => copyItemShareUrl(perf.id)}
+                                                            onDetail={() => window.open(perf.link, '_blank')}
                                                         />
                                                     )}
                                                 </motion.div>
@@ -2181,8 +2189,9 @@ function SkeletonCard() {
 // ---------------------------
 // 📋 List View Item Component (Updated with Tilt/Shadow)
 // ---------------------------
-function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default' }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald' }) {
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', onShare?: () => void, onDetail?: () => void }) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
+    const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
@@ -2296,6 +2305,36 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             )}
                         />
                     </button>
+                    {/* Share Button (Bottom Left on Image) */}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onShare?.();
+                            setIsCopied(true);
+                            setTimeout(() => setIsCopied(false), 2000);
+                        }}
+                        className="absolute bottom-1 left-1 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors z-[60] flex items-center justify-center group/share"
+                    >
+                        {isCopied ? (
+                            <Check className="w-3.5 h-3.5 text-green-400" />
+                        ) : (
+                            <Share2 className="w-3.5 h-3.5 text-white group-hover/share:text-emerald-400 transition-colors" />
+                        )}
+                    </button>
+
+                    {/* Copied Toast for List Item */}
+                    <AnimatePresence>
+                        {isCopied && (
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-bold px-2 py-1 round-md whitespace-nowrap border border-white/20 z-[200] shadow-xl"
+                            >
+                                복사됨!
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
 
                 {/* Content (Right) - Apply variant background here */}
@@ -2315,7 +2354,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </span>
 
                             {/* Date - Condensed */}
-                            <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 border border-white/5 px-1.5 py-0.5 rounded bg-white/5 ml-auto sm:ml-0">
+                            <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 ml-auto sm:ml-0">
                                 <Calendar className="w-3 h-3" />
                                 {perf.date.split('~')[0].trim()}
                             </span>
@@ -2399,11 +2438,26 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     </div>
                                 )}
                             </div>
+                            </div>
                         )}
+
+                    {/* Detail View Button */}
+                    <div className="mt-3">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onDetail?.();
+                            }}
+                            className="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1"
+                        >
+                            자세히 보기
+                            <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        </div >
 
 
     );
