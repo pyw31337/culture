@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251218_HYUNDAI E&C_KOREA EXPRESSWAY",
-    "title": "[배구] HYUNDAI E&C vs KOREA EXPRESSWAY",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-18 19:00",
-    "venue": "수원실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251213_KB STARS_SAMSUNG BLUEFANGS",
-    "title": "[배구] KB STARS vs SAMSUNG BLUEFANGS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-13 11:00",
-    "venue": "12.18(목) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251218_KB STARS_SAMSUNG BLUEFANGS",
-    "title": "[배구] KB STARS vs SAMSUNG BLUEFANGS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-18 19:00",
-    "venue": "의정부 경민대학교 기념관(체육관)",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251213_JUNG KWAN JANG_GS CALTEX",
-    "title": "[배구] JUNG KWAN JANG vs GS CALTEX",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-13 11:00",
-    "venue": "12.19(금) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251219_JUNG KWAN JANG_GS CALTEX",
     "title": "[배구] JUNG KWAN JANG vs GS CALTEX",
     "image": "/culture/images/volleyball_poster.png",
@@ -1027,6 +987,46 @@
     "venue": "수원실내체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260111_OK SAVINGS BANK_SAMSUNG BLUEFANGS",
+    "title": "[배구] OK SAVINGS BANK vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-11 11:00",
+    "venue": "01.17(토) 14:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260117_OK SAVINGS BANK_SAMSUNG BLUEFANGS",
+    "title": "[배구] OK SAVINGS BANK vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-17 14:00",
+    "venue": "부산강서실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260112_PEPPER SAVINGS BANK_KOREA EXPRESSWAY",
+    "title": "[배구] PEPPER SAVINGS BANK vs KOREA EXPRESSWAY",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-12 11:00",
+    "venue": "01.17(토) 16:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260117_PEPPER SAVINGS BANK_KOREA EXPRESSWAY",
+    "title": "[배구] PEPPER SAVINGS BANK vs KOREA EXPRESSWAY",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-17 16:00",
+    "venue": "페퍼스타디움",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
     "genre": "volleyball"
   }
 ]
