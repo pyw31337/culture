@@ -2579,111 +2579,107 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
                                     {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
                                 </div>
+
+                                {/* Action Buttons (Slide Up inside Image) */}
+                                {enableActions && (
+                                    <div className={clsx(
+                                        "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between transition-transform duration-300 ease-out",
+                                        "translate-y-[100%] group-hover:translate-y-0"
+                                    )}>
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onShare?.();
+                                                setIsCopied(true);
+                                                setTimeout(() => setIsCopied(false), 2000);
+                                            }}
+                                            className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
+                                            aria-label="공유하기"
+                                        >
+                                            <Share2 className="w-5 h-5" />
+                                            <AnimatePresence>
+                                                {isCopied && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                                        exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
+                                                    >
+                                                        <span className="text-emerald-400">✓</span> 복사됨!
+                                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </button>
+                                        <a
+                                            href={perf.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
+                                        >
+                                            자세히 보기
+                                            <Search className="w-4 h-4" />
+                                        </a>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
                             <div className={clsx(
-                                "relative flex-1 sm:transform-style-3d overflow-hidden",
+                                "relative flex-1 sm:transform-style-3d overflow-hidden p-4 flex flex-col min-h-0",
                                 variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500"
                             )} style={{ transform: 'translateZ(10px)' }}>
 
-                                <div className={clsx(
-                                    "flex flex-col h-full transition-transform duration-300 ease-out",
-                                    enableActions ? "translate-y-[60px] group-hover:translate-y-0" : ""
-                                )}>
-                                    {/* Text Content Area */}
-                                    <div className="p-4 flex flex-col flex-1 min-h-0">
-                                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                            <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
-                                                {perf.title.trim()}
-                                            </h3>
-                                        </a>
+                                {/* Text Content Area */}
+                                <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
+                                    <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
+                                        {perf.title.trim()}
+                                    </h3>
+                                </a>
 
-                                        {perf.genre === 'movie' ? (
-                                            <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
-                                                {perf.gradeIcon ? (
-                                                    <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
-                                                ) : (
-                                                    <>
-                                                        <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
-                                                        {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
-                                                    </>
-                                                )}
-                                            </div>
-                                        ) : perf.genre === 'travel' ? (
-                                            <div className="text-gray-800 text-xs flex flex-col gap-0.5 mb-2 w-max cursor-default">
-                                                <div className="flex items-center gap-1 font-bold text-sky-700">
-                                                    <Plane className="w-3 h-3" />
-                                                    {perf.venue.split('|')[0]?.trim()}
-                                                </div>
-                                            </div>
+                                {perf.genre === 'movie' ? (
+                                    <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
+                                        {perf.gradeIcon ? (
+                                            <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
                                         ) : (
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                                }}
-                                                className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
-                                            >
-                                                <MapPin className="w-3 h-3 text-gray-700" />
-                                                {perf.venue}
-                                            </button>
+                                            <>
+                                                <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
+                                                {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            </>
                                         )}
-                                        <div className="mt-auto mb-2">
-                                            <div className="flex items-center gap-1.5 w-full">
-                                                {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
-                                                {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
-                                                {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
-                                            </div>
-                                        </div>
-                                        <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
-                                            <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
-                                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                            </span>
-                                            <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
+                                    </div>
+                                ) : perf.genre === 'travel' ? (
+                                    <div className="text-gray-800 text-xs flex flex-col gap-0.5 mb-2 w-max cursor-default">
+                                        <div className="flex items-center gap-1 font-bold text-sky-700">
+                                            <Plane className="w-3 h-3" />
+                                            {perf.venue.split('|')[0]?.trim()}
                                         </div>
                                     </div>
-
-                                    {/* Action Buttons (Slide Up) */}
-                                    {enableActions && (
-                                        <div className="h-[60px] shrink-0 p-4 pt-0 flex gap-2 items-center justify-between pb-4">
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    onShare?.();
-                                                    setIsCopied(true);
-                                                    setTimeout(() => setIsCopied(false), 2000);
-                                                }}
-                                                className="w-[20%] bg-black/10 hover:bg-black/80 hover:text-white text-black border border-black/10 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-sm h-full relative group/share"
-                                                aria-label="공유하기"
-                                            >
-                                                <Share2 className="w-5 h-5" />
-                                                <AnimatePresence>
-                                                    {isCopied && (
-                                                        <motion.div
-                                                            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
-                                                        >
-                                                            <span className="text-emerald-400">✓</span> 복사됨!
-                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </button>
-                                            <a
-                                                href={perf.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                onClick={(e) => e.stopPropagation()}
-                                                className="flex-1 bg-black text-white hover:bg-black/80 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-sm h-full gap-2 text-sm"
-                                            >
-                                                자세히 보기
-                                                <Search className="w-4 h-4" />
-                                            </a>
-                                        </div>
-                                    )}
+                                ) : (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+                                        }}
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                    >
+                                        <MapPin className="w-3 h-3 text-gray-700" />
+                                        {perf.venue}
+                                    </button>
+                                )}
+                                <div className="mt-auto mb-2">
+                                    <div className="flex items-center gap-1.5 w-full">
+                                        {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
+                                        {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
+                                        {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
+                                    </div>
+                                </div>
+                                <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
+                                    <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
+                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    </span>
+                                    <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
                                 </div>
                             </div>
                         </>
