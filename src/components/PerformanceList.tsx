@@ -2787,3 +2787,5 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         </div>
     );
 }
+
+// Build Trigger: 2025-12-18 10:48
