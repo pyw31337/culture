@@ -2030,7 +2030,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                             // - Actions: ENABLE for these lists
                                                             showRibbon={false}
                                                             isGradient={selectedGenre === 'all' && !activeLocation}
-                                                            enableActions={selectedGenre === 'all' && !activeLocation}
+                                                            enableActions={true}
                                                             onShare={() => copyItemShareUrl(perf.id)}
                                                             onDetail={() => window.open(perf.link, '_blank')}
                                                         />
@@ -2758,7 +2758,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                         {/* Actions (Hidden initially, slides up with info) */}
                                         {enableActions && (
-                                            <div className="relative z-10 p-4 pt-2 flex items-center justify-center gap-2 h-[70px]">
+                                            <div className="relative z-10 p-4 pt-3 flex items-center justify-center gap-2 h-[70px]">
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
