@@ -122,7 +122,12 @@ async function scrapeKovo() {
 
             const dateStr = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 
-            const venue = lines[i + 1]; // Venue is usually next
+            let venue = lines[i + 1];
+            // Skip "예매하기" or known button labels if they appear between date and venue
+            if (venue === '예매하기' || venue === '예매 대기' || venue === '판매 예정') {
+                venue = lines[i + 2];
+            }
+
 
             // Find teams. Scan forward a few lines for "VS".
             // usually:
