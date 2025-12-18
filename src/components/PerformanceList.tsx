@@ -2659,12 +2659,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
 
                                 <div
-                                    className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-b-xl"
+                                    className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-xl"
                                     style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                                 >
                                     <div className={clsx(
                                         "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                        enableActions ? "translate-y-[70px] group-hover:translate-y-0" : ""
+                                        enableActions ? "translate-y-[60px] group-hover:translate-y-0" : ""
                                     )}>
                                         {/* Gradient Background Layer - spans full height of content */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
@@ -2766,9 +2766,23 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                         setIsCopied(true);
                                                         setTimeout(() => setIsCopied(false), 2000);
                                                     }}
-                                                    className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-full relative"
+                                                    className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-full relative group/share"
+                                                    aria-label="공유하기"
                                                 >
                                                     <Share2 className="w-5 h-5" />
+                                                    <AnimatePresence>
+                                                        {isCopied && (
+                                                            <motion.div
+                                                                initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                                className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
+                                                            >
+                                                                <span className="text-emerald-400">✓</span> 복사됨!
+                                                                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
                                                 </button>
                                                 <button
                                                     onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
