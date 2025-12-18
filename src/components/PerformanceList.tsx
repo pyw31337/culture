@@ -1569,7 +1569,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+                        className="fixed inset-0 z-[99999] bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
                         onClick={() => setSharedPerformanceId(null)} // Close on background click
                     >
                         {(() => {
@@ -1586,7 +1586,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     initial={{ scale: 0.9, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     exit={{ scale: 0.9, opacity: 0 }}
-                                    className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
+                                    className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] border border-white/20 relative flex flex-col md:flex-row max-h-[90vh]"
                                     onClick={e => e.stopPropagation()}
                                 >
                                     {/* Neon Stroke Effect for Popup */}
