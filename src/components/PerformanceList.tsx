@@ -238,10 +238,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     // Load shared data from URL on mount
+    // Load shared data from URL on mount & hash change
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
-        // 1. Check for Category Query (e.g. /?travel or /?category=travel)
+        // 1. Check for Category Query (e.g. /?travel or /?category=travel) - One time check on mount
         const params = new URLSearchParams(window.location.search);
         let targetGenre = '';
 
@@ -262,46 +263,57 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
         if (targetGenre && targetGenre !== 'all') {
             setSelectedGenre(targetGenre);
-            // Optional: Clean URL? Maybe keeps it shareable.
-            // window.history.replaceState(null, '', window.location.pathname);
             console.log(`[DeepLink] Activated category: ${targetGenre}`);
         }
 
-        // 2. Check for Hash Data (Share URL)
-        const hash = window.location.hash;
-        if (hash.startsWith('#s=')) {
-            try {
-                const compressed = hash.substring(3);
-                const decompressed = LZString.decompressFromEncodedURIComponent(compressed);
-                if (decompressed) {
-                    const shareData = JSON.parse(decompressed);
-                    if (shareData.l && Array.isArray(shareData.l)) {
-                        setLikedIds(prev => Array.from(new Set([...prev, ...shareData.l])));
-                    }
-                    if (shareData.v && Array.isArray(shareData.v)) {
-                        setFavoriteVenues(prev => Array.from(new Set([...prev, ...shareData.v])));
-                    }
-                    if (shareData.k && Array.isArray(shareData.k)) {
-                        setKeywords(prev => Array.from(new Set([...prev, ...shareData.k])));
-                    }
-                    // Clear the hash after loading
-                    window.history.replaceState(null, '', window.location.pathname);
-                    console.log('[Share] Loaded shared data:', shareData);
-                }
-            } catch (e) {
-                console.error('Failed to parse shared URL:', e);
-            }
-        }
+        // 2. Hash Change Handler for Share Data (#s=) and Performance Popup (#p=)
+        const handleHashCheck = () => {
+            const hash = window.location.hash;
 
-        // 3. Check for Single Item Share (#p=ID)
-        const hashP = window.location.hash;
-        if (hashP.startsWith('#p=')) {
-            const pId = hashP.substring(3);
-            if (pId) {
-                setSharedPerformanceId(pId);
-                console.log('[Share] Loaded shared item:', pId);
+            // Type A: Share Settings (#s=)
+            if (hash.startsWith('#s=')) {
+                try {
+                    const compressed = hash.substring(3);
+                    const decompressed = LZString.decompressFromEncodedURIComponent(compressed);
+                    if (decompressed) {
+                        const shareData = JSON.parse(decompressed);
+                        if (shareData.l && Array.isArray(shareData.l)) {
+                            setLikedIds(prev => Array.from(new Set([...prev, ...shareData.l])));
+                        }
+                        if (shareData.v && Array.isArray(shareData.v)) {
+                            setFavoriteVenues(prev => Array.from(new Set([...prev, ...shareData.v])));
+                        }
+                        if (shareData.k && Array.isArray(shareData.k)) {
+                            setKeywords(prev => Array.from(new Set([...prev, ...shareData.k])));
+                        }
+                        // Clear the hash after loading settings to avoid re-triggering?
+                        // Or keep it? Usually better to clean up if it's "consumable".
+                        // Logic in previous version cleaned it up.
+                        window.history.replaceState(null, '', window.location.pathname);
+                        console.log('[Share] Loaded shared data:', shareData);
+                    }
+                } catch (e) {
+                    console.error('Failed to parse shared URL:', e);
+                }
             }
-        }
+            // Type B: Single Item Share (#p=)
+            else if (hash.startsWith('#p=')) {
+                const pId = hash.substring(3);
+                if (pId) {
+                    setSharedPerformanceId(pId);
+                    console.log('[Share] Loaded shared item:', pId);
+                }
+            }
+        };
+
+        // Initial Check
+        handleHashCheck();
+
+        // Listen for hash changes (SPA Navigation)
+        window.addEventListener('hashchange', handleHashCheck);
+        return () => {
+            window.removeEventListener('hashchange', handleHashCheck);
+        };
     }, []);
 
     useEffect(() => {
