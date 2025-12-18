@@ -87,13 +87,23 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
     }
 }
 
+// Interpark Data (Pre-scraped)
+let interparkData: any[] = [];
+try {
+    interparkData = require('@/data/interpark.json');
+} catch (e) {
+    console.log('No interpark.json found, using empty array');
+}
+
 // This function runs at build time on the server (or revalidation)
 async function getPerformances() {
-    const [seoul, gyeonggi, incheon] = await Promise.all([
-        fetchPerformances('seoul'),
-        fetchPerformances('gyeonggi'),
-        fetchPerformances('incheon'),
-    ]);
+    // Replaced live fetch with pre-scraped JSON to avoid CI blocking
+    // const [seoul, gyeonggi, incheon] = await Promise.all([ ... ]);
+
+    // We treat interparkData as the source for seoul/gyeonggi/incheon combined
+    // Or we can filter it if we want distinct arrays, but for aggregation it doesn't matter much
+    // as long as region field is correct.
+    const interpark = interparkData as unknown as any[];
 
     // Format KOVO data to match Performance interface if specific fields missing/need adjustment?
     // It already matches since we used the interface in the scraper script.
@@ -108,9 +118,7 @@ async function getPerformances() {
 
     // Aggregate Data
     const allPerformances = [
-        ...seoul,
-        ...gyeonggi,
-        ...incheon,
+        ...interpark,
         ...yes24,
         ...timeticket,
         ...festivals,
