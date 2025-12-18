@@ -56,121 +56,102 @@ async function scrapeYes24() {
     await page.goto(SEARCH_URL, { waitUntil: 'networkidle2', timeout: 90000 }); // Increased timeout
 
     // 1. Click "공연" (Performances) Tab
-    // The tab index might vary, best to click by text content or specific class if stable.
     console.log('Clicking "Performance" tab...');
     try {
         await page.evaluate(() => {
-            const tabs = Array.from(document.querySelectorAll('.srch-tab a'));
+            const tabs = Array.from(document.querySelectorAll('.srch-division a'));
             const performanceTab = tabs.find(t => t.textContent?.includes('공연'));
             if (performanceTab) (performanceTab as HTMLElement).click();
         });
-        await new Promise(r => setTimeout(r, 3000)); // Wait for tab switch
+        await new Promise(r => setTimeout(r, 5000)); // Wait for tab switch
     } catch (e) {
         console.warn('Could not click Performance tab, might already be on it or selector changed.');
     }
 
-    // 2. Click "판매마감 제외" (Exclude Sold Out)
+    // 2. Click "판매마감 제외" (Exclude Sold Out) - This might be dynamic
     console.log('Activating "Exclude Sold Out"...');
     try {
         await page.evaluate(() => {
-            const filters = Array.from(document.querySelectorAll('.category > div'));
+            // Check if filter exists
+            const filters = Array.from(document.querySelectorAll('.category > div, .srch-option a'));
             const soldOutFilter = filters.find(f => f.textContent?.includes('판매마감 제외'));
             if (soldOutFilter && !soldOutFilter.classList.contains('on')) {
                 (soldOutFilter as HTMLElement).click();
             }
         });
-        await new Promise(r => setTimeout(r, 3000)); // Wait for filter
+        await new Promise(r => setTimeout(r, 3000));
     } catch (e) {
-        console.warn('Could not set Sold Out filter.');
+        console.warn('Could not set Sold Out filter (might not be present).');
     }
 
     // 3. Scroll to load more items
     console.log('Loading more items...');
     try {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
+            await new Promise(r => setTimeout(r, 2000));
+            // Also click "more" button if exists
+            await page.evaluate(() => {
+                const moreBtn = document.querySelector('.srch-more a');
+                if (moreBtn) (moreBtn as HTMLElement).click();
+            });
             await new Promise(r => setTimeout(r, 2000));
         }
     } catch (e) {
-        console.warn('Error during scrolling/loading more:', e);
+        console.warn('Error during scrolling/loading more.');
     }
 
-    // 4. Extract Items (Robust Link-Based Method)
+    // 4. Extract Items (Updated Selector Logic)
     console.log('Extracting items...');
     const items = await page.evaluate(() => {
         const results: any[] = [];
-        const seenLinks = new Set();
+        const containerItems = Array.from(document.querySelectorAll('.srch-list-item'));
 
-        // Find links
-        const links = Array.from(document.querySelectorAll('a[href*="/Perf/"]'));
+        containerItems.forEach((el) => {
+            try {
+                // Check Exclusive Badge
+                const stateEl = el.querySelector('.item-state');
+                const isExclusive = stateEl && (stateEl.textContent?.includes('단독'));
 
-        links.forEach((linkEl) => {
-            const href = linkEl.getAttribute('href');
-            if (!href || seenLinks.has(href)) return;
-            seenLinks.add(href);
+                // If we want ONLY exclusive items
+                if (!isExclusive) return;
 
-            let container = linkEl.parentElement;
-            let found = false;
-            for (let i = 0; i < 5; i++) {
-                if (!container) break;
+                const linkEl = el.querySelector('.item-tit a');
+                if (!linkEl) return;
 
-                const img = container.querySelector('img');
-                // Title (any text that isn't date/venue)
-                const titleEl = container.querySelector('.tit') || container.querySelector('.name') || container.querySelector('p.tit');
+                const link = linkEl.getAttribute('href');
+                const fullLink = link ? (link.startsWith('http') ? link : 'http://ticket.yes24.com' + link) : '';
 
-                if (img && (titleEl || container.innerText.length > 5)) {
-                    // Check Exclusive
-                    const stateTag = container.querySelector('.item-state') || container.querySelector('.state');
-                    const isExclusive = stateTag && (stateTag.textContent?.includes('단독') || stateTag.textContent?.includes('단독판매'));
+                const title = linkEl.textContent?.trim() || '';
+                const imageEl = el.querySelector('img');
+                const image = imageEl?.getAttribute('src') || '';
 
-                    if (isExclusive) {
-                        try {
-                            const fullLink = href.startsWith('http') ? href : 'http://ticket.yes24.com' + href;
-                            const image = img.getAttribute('src') || '';
+                // Date is usually 3rd div (index 2)
+                const divs = el.querySelectorAll('div');
+                // div[0] = img container, div[1] = content(title/state), div[2] = date, div[3] = venue
+                let date = '';
+                let venue = '';
 
-                            let title = '';
-                            if (titleEl) title = titleEl.textContent?.trim() || '';
-                            else {
-                                const lines = container.innerText.split('\n');
-                                title = lines[0].trim();
-                            }
-
-                            const dateMatch = container.innerText.match(/202\d\.\d{2}\.\d{2}(\s*~\s*202\d\.\d{2}\.\d{2})?/);
-                            const date = dateMatch ? dateMatch[0] : '';
-
-                            // Venue?
-                            const hallEl = container.querySelector('.hall');
-                            let venue = '';
-                            if (hallEl) venue = hallEl.textContent?.trim() || '';
-
-                            if (!venue) {
-                                // Fallback: text analysis
-                                // split by newlines, filter empty
-                                const lines = container.innerText.split(/\n/).map((l: string) => l.trim()).filter((l: string) => l);
-                                // Expected: Title, Date, Venue
-                                // Find line that looks like date
-                                const dateIndex = lines.findIndex((l: string) => l.match(/202\d\.\d{2}\.\d{2}/));
-                                if (dateIndex !== -1 && dateIndex + 1 < lines.length) {
-                                    venue = lines[dateIndex + 1];
-                                }
-                            }
-
-                            if (title && date) {
-                                results.push({
-                                    title,
-                                    image,
-                                    date,
-                                    venue,
-                                    link: fullLink
-                                });
-                                found = true;
-                            }
-                        } catch (e) { }
+                // Iterate divs to match date pattern if structure varies
+                // But strict structure is usually reliable in this list
+                if (divs.length >= 4) {
+                    const candidateDate = divs[2].textContent?.trim() || '';
+                    if (candidateDate.match(/202\d\.\d{2}\.\d{2}/)) {
+                        date = candidateDate;
                     }
-                    if (found) break;
+                    venue = divs[3].textContent?.trim() || '';
                 }
-                container = container.parentElement;
-            }
+
+                if (title && date && fullLink) {
+                    results.push({
+                        title,
+                        image,
+                        date,
+                        venue,
+                        link: fullLink
+                    });
+                }
+            } catch (err) { }
         });
 
         return results;
@@ -183,6 +164,13 @@ async function scrapeYes24() {
 
     for (const item of items) {
         if (seenTitles.has(item.title)) continue;
+
+        // Skip dummy/test items if any
+        if (item.title.includes('예스24') && item.title.includes('단독')) {
+            // Keep it if it's legit, but some are ads. 
+            // The HTML showed "예스24 ... 단독 사은품" which are magazines.
+            // But those were in `viewArticle`. `.srch-list-item` seems to be strictly `viewPerf`.
+        }
 
         let region = classifyRegion(item.venue);
         if (!region) region = 'unknown';
@@ -208,8 +196,14 @@ async function scrapeYes24() {
 
     await browser.close();
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(uniqueItems, null, 2));
-    console.log(`Saved to ${OUTPUT_PATH}`);
+    // Preserve existing file if we found 0 items to avoid wiping data on failure, or overwrite?
+    // User wants it repaired. If it returns 0, it's safer not to save empty.
+    if (uniqueItems.length > 0) {
+        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(uniqueItems, null, 2));
+        console.log(`Saved to ${OUTPUT_PATH}`);
+    } else {
+        console.warn('No items found. Skipping save.');
+    }
 }
 
 scrapeYes24().catch(console.error);

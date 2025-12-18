@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 20 * * *' # 05:00 KST (20:00 UTC previous day)
     - cron: '0 3 * * *'  # 12:00 KST (03:00 UTC)
+    - cron: '10 3 * * *' # 12:10 KST (03:10 UTC)
   workflow_dispatch:
   push:
     branches:
@@ -46,6 +47,7 @@ jobs:
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
+          node scripts/scrape-interpark-standalone.js || true
           npx tsx scripts/scrape-kovo.ts || true
           npx tsx scripts/scrape-kbl.ts || true
           npx tsx scripts/scrape-festival.ts || true
