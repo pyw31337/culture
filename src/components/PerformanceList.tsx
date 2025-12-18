@@ -1582,69 +1582,81 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     initial={{ scale: 0.9, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     exit={{ scale: 0.9, opacity: 0 }}
-                                    className="w-full max-w-5xl rounded-[15px] shadow-2xl relative gold-shimmer-wrapper group p-[1px]"
+                                    className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
                                     onClick={e => e.stopPropagation()}
                                 >
-                                    {/* Gold Shimmer Border */}
-                                    <div className="gold-shimmer-border" style={{ '--shimmer-color': '#a78bfa' } as React.CSSProperties} />
+                                    {/* Neon Stroke Effect for Popup */}
+                                    <div className="absolute inset-[-2px] z-[-1] rounded-[17px] animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setSharedPerformanceId(null)}
+                                        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-white hover:text-black transition-colors"
+                                    >
+                                        <X className="w-6 h-6" />
+                                    </button>
 
-                                    {/* Main Content (Wrapped) */}
-                                    <div className="gold-shimmer-main bg-gray-900 rounded-[15px] overflow-hidden flex flex-col md:flex-row max-h-[90vh]">
-                                        {/* Close Button */}
-                                        <button
-                                            onClick={() => setSharedPerformanceId(null)}
-                                            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-white hover:text-black transition-colors"
-                                        >
-                                            <X className="w-6 h-6" />
-                                        </button>
+                                    {/* Image Section */}
+                                    <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
+                                        <Image
+                                            src={getOptimizedUrl(sharedItem.image, 800) || "/api/placeholder/800/600"}
+                                            alt={sharedItem.title}
+                                            fill
+                                            className="object-contain md:object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
 
-                                        {/* Image Section */}
-                                        <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
-                                            <Image
-                                                src={getOptimizedUrl(sharedItem.image, 800) || "/api/placeholder/800/600"}
-                                                alt={sharedItem.title}
-                                                fill
-                                                className="object-contain md:object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
-
-                                            {/* Ribbon for Shared View */}
-                                            <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
-                                                <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
-                                                    추천 공연
-                                                </div>
+                                        {/* Ribbon for Shared View */}
+                                        <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
+                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
+                                                추천 공연
                                             </div>
                                         </div>
+                                    </div>
 
-                                        {/* Content Section */}
-                                        <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900">
-                                            <div className="flex flex-col gap-4">
-                                                {/* Header */}
-                                                <div>
-                                                    <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
-                                                    <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
-                                                        {sharedItem.title}
-                                                    </h2>
-                                                    <div className="flex flex-wrap gap-2">
-                                                        <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
-                                                            {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
-                                                        </span>
-                                                        <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
-                                                            <Calendar className="w-3 h-3" />
-                                                            {sharedItem.date}
-                                                        </span>
-                                                    </div>
+                                    {/* Content Section */}
+                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900">
+                                        <div className="flex flex-col gap-4">
+                                            {/* Header */}
+                                            <div>
+                                                <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
+                                                <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
+                                                    {sharedItem.title}
+                                                </h2>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
+                                                        {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
+                                                    </span>
+                                                    <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
+                                                        <Calendar className="w-3 h-3" />
+                                                        {sharedItem.date}
+                                                    </span>
                                                 </div>
+                                            </div>
 
-                                                {/* Details Grid */}
-                                                <div className="grid grid-cols-1 gap-4 py-6 border-t border-white/10 border-b">
-                                                    <div className="flex items-start gap-3">
-                                                        <MapPin className="w-5 h-5 text-gray-400 mt-1" />
-                                                        <div>
-                                                            <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
+                                            {/* Details Grid */}
+                                            <div className="grid grid-cols-1 gap-4 py-6 border-t border-white/10 border-b">
+                                                <div className="flex items-start gap-3">
+                                                    <MapPin className="w-5 h-5 text-gray-400 mt-1" />
+                                                    <div>
+                                                        <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
+                                                            onClick={() => {
+                                                                // Open Map Modal over this popup
+                                                                // Ensure KakaoMapModal Z-Index is > 99999
+                                                                if (venues[sharedItem.venue]?.lat) {
+                                                                    setSearchLocation({
+                                                                        lat: venues[sharedItem.venue].lat!,
+                                                                        lng: venues[sharedItem.venue].lng!,
+                                                                        name: sharedItem.venue
+                                                                    });
+                                                                    setViewMode('map');
+                                                                }
+                                                            }}
+                                                        >
+                                                            {sharedItem.venue}
+                                                        </div>
+                                                        {venues[sharedItem.venue]?.address && (
+                                                            <div className="text-gray-500 text-sm mt-1 cursor-pointer hover:text-gray-300 transition-colors"
                                                                 onClick={() => {
-                                                                    // Open Map Modal over this popup
-                                                                    // Ensure KakaoMapModal Z-Index is > 99999
                                                                     if (venues[sharedItem.venue]?.lat) {
                                                                         setSearchLocation({
                                                                             lat: venues[sharedItem.venue].lat!,
@@ -1655,55 +1667,39 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                                     }
                                                                 }}
                                                             >
-                                                                {sharedItem.venue}
+                                                                {venues[sharedItem.venue].address}
                                                             </div>
-                                                            {venues[sharedItem.venue]?.address && (
-                                                                <div className="text-gray-500 text-sm mt-1 cursor-pointer hover:text-gray-300 transition-colors"
-                                                                    onClick={() => {
-                                                                        if (venues[sharedItem.venue]?.lat) {
-                                                                            setSearchLocation({
-                                                                                lat: venues[sharedItem.venue].lat!,
-                                                                                lng: venues[sharedItem.venue].lng!,
-                                                                                name: sharedItem.venue
-                                                                            });
-                                                                            setViewMode('map');
-                                                                        }
-                                                                    }}
-                                                                >
-                                                                    {venues[sharedItem.venue].address}
-                                                                </div>
-                                                            )}
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                {(sharedItem.price || sharedItem.discount) && (
+                                                    <div className="flex items-start gap-3">
+                                                        <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
+                                                        <div>
+                                                            <div className="text-gray-400 text-xs font-bold uppercase">Price</div>
+                                                            <div className="flex items-baseline gap-2">
+                                                                {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
+                                                                {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    {(sharedItem.price || sharedItem.discount) && (
-                                                        <div className="flex items-start gap-3">
-                                                            <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
-                                                            <div>
-                                                                <div className="text-gray-400 text-xs font-bold uppercase">Price</div>
-                                                                <div className="flex items-baseline gap-2">
-                                                                    {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
-                                                                    {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                                )}
+                                            </div>
 
-                                                {/* Action Button */}
-                                                <div className="mt-auto pt-6">
-                                                    <a
-                                                        href={sharedItem.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
-                                                    >
-                                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shine_1s_ease-in-out_infinite]" />
-                                                        예매하러 가기
-                                                    </a>
-                                                    <p className="text-center text-gray-500 text-xs mt-3">
-                                                        * 예매처로 이동합니다.
-                                                    </p>
-                                                </div>
+                                            {/* Action Button */}
+                                            <div className="mt-auto pt-6">
+                                                <a
+                                                    href={sharedItem.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
+                                                >
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shine_1s_ease-in-out_infinite]" />
+                                                    예매하러 가기
+                                                </a>
+                                                <p className="text-center text-gray-500 text-xs mt-3">
+                                                    * 예매처로 이동합니다.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -2665,7 +2661,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
 
                                 <div
-                                    className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-xl"
+                                    className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-[15px]"
                                     style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                                 >
                                     <div className={clsx(
