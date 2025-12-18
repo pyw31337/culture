@@ -60,6 +60,16 @@ class ProgressBar {
     finish() {
         process.stdout.write('\n');
     }
+
+}
+
+function saveData(data: Performance[]) {
+    if (data.length === 0) {
+        console.log("No items to save.");
+        return;
+    }
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(data, null, 2));
+    console.log(`\nSaved ${data.length} items to ${OUTPUT_PATH}`);
 }
 
 async function scrapeTimeTicket() {
@@ -216,9 +226,16 @@ async function scrapeTimeTicket() {
     const progressBar = new ProgressBar(pendingItems.length);
     let processedCount = 0;
 
+    // Trap interrupts to save partial data
+    process.on('SIGINT', () => {
+        console.log('\nProcess interrupted! Saving collected data...');
+        saveData(allItems);
+        process.exit();
+    });
+
     for (const item of pendingItems) {
         try {
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
 
             // Wait for the key element containing details. 
             // We'll give it a moment to render any JS driven content
@@ -364,8 +381,7 @@ async function scrapeTimeTicket() {
         return;
     }
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allItems, null, 2));
-    console.log(`Saved to ${OUTPUT_PATH}`);
+    saveData(allItems);
 }
 
 scrapeTimeTicket().catch(console.error);
