@@ -71,7 +71,18 @@ const HERO_TEMPLATES = {
         { line1: "오늘 하루는,", line2Pre: "복잡한 생각 비우고 ", highlight: "몰입의 시간", suffix: "을 가져보세요.", keywords: ["몰입"] },
         { line1: "예술이 필요한 순간,", line2Pre: "당신의 마음을 채워줄 ", highlight: "아름다운 이야기", suffix: "가 있습니다.", keywords: ["예술", "스토리"] },
         { line1: "무대 위 벅찬 감동,", line2Pre: "생생하게 살아숨쉬는 ", highlight: "열정의 현장", suffix: "으로 초대합니다.", keywords: ["감동", "열정"] },
-        { line1: "평범한 주말을,", line2Pre: "두고두고 기억될 ", highlight: "영화 같은 하루", suffix: "로 만들어보세요.", keywords: ["주말", "영화"] }
+        { line1: "평범한 주말을,", line2Pre: "두고두고 기억될 ", highlight: "영화 같은 하루", suffix: "로 만들어보세요.", keywords: ["주말", "영화"] },
+        // New Conversational Templates
+        { line1: "혹시, 마음이 답답하신가요?", line2Pre: "꽉 막힌 속을 뻥 뚫어줄 ", highlight: "시원한 무대", suffix: "를 준비했어요.", keywords: ["스트레스", "해소"] },
+        { line1: "커피 한 잔보다,", line2Pre: "더 진한 여운을 남길 ", highlight: "예술 한 잔", suffix: " 어떠세요?", keywords: ["커피", "여운"] },
+        { line1: "집에만 있기엔 아까워요,", line2Pre: "지금 바로 떠날 수 있는 ", highlight: "공연 바캉스", suffix: "가 여기 있습니다.", keywords: ["바캉스", "외출"] },
+        { line1: "당신의 영혼을 채워줄,", line2Pre: "단 한 조각의 ", highlight: "마지막 퍼즐", suffix: " 같은 공연.", keywords: ["영혼", "예술"] },
+        { line1: "매일 똑같은 하루,", line2Pre: "당신의 일상에 ", highlight: "특별한 BGM", suffix: "을 깔아드릴게요.", keywords: ["음악", "일상"] },
+        { line1: "무료한 시간, 뭐 할까 고민된다면,", line2Pre: "저와 함께 ", highlight: "문화 탐험", suffix: " 떠나보실래요?", keywords: ["탐험", "고민"] },
+        { line1: "설마 아직도 안 보셨나요?", line2Pre: "남들 다 본다는 ", highlight: "화제의 그 공연", suffix: "!", keywords: ["유행", "화제"] },
+        { line1: "오늘 기분은 어떤가요?", line2Pre: "당신의 기분에 딱 맞는 ", highlight: "맞춤형 무대", suffix: "를 찾아드릴게요.", keywords: ["기분", "맞춤"] },
+        { line1: "눈과 귀가 호강하는 날,", line2Pre: "오감을 깨우는 ", highlight: "짜릿한 경험", suffix: "을 선물합니다.", keywords: ["오감", "경험"] },
+        { line1: "잠시 스마트폰은 내려놓고,", line2Pre: "눈앞에서 펼쳐지는 ", highlight: "생생한 감동", suffix: "을 느껴보세요.", keywords: ["디지털디톡스", "감동"] }
     ],
     keyword: [
         { line1: "드디어 오늘,", line2Pre: "기다리던 ", highlight: "{keyword}", suffix: " 공연이 오픈했어요!", keywords: ["{keyword}"] },
@@ -90,20 +101,29 @@ const HERO_TEMPLATES = {
             { line1: "우산 챙기셨나요?", line2Pre: "비 오는 날 더 운치 있는 ", highlight: "실내 데이트", suffix: "를 즐겨보세요.", keywords: ["비", "실내", "데이트"] },
             { line1: "흐린 날씨엔 역시,", line2Pre: "기분 전환을 위한 ", highlight: "신나는 공연", suffix: "이 최고죠.", keywords: ["기분전환", "신나는"] },
             { line1: "빗소리와 함께,", line2Pre: "더 깊어지는 ", highlight: "감성 충전", suffix: "의 시간을 가져보세요.", keywords: ["감성", "비"] },
-            { line1: "축 쳐지는 궂은 날씨,", line2Pre: "당신의 텐션을 올려줄 ", highlight: "에너지 넘치는 무대", suffix: "가 필요해요.", keywords: ["에너지", "콘서트"] }
+            { line1: "축 쳐지는 궂은 날씨,", line2Pre: "당신의 텐션을 올려줄 ", highlight: "에너지 넘치는 무대", suffix: "가 필요해요.", keywords: ["에너지", "콘서트"] },
+            // New
+            { line1: "비도 오고 그래서,", line2Pre: "당신의 마음을 적실 ", highlight: "음악이 있는 곳", suffix: "을 찾아봤어요.", keywords: ["비", "음악"] },
+            { line1: "눅눅한 공기는 잊고,", line2Pre: "쾌적하고 시원한 ", highlight: "공연장 나들이", suffix: "는 어떨까요?", keywords: ["실내", "쾌적"] }
         ],
         snow: [
             { line1: "하얀 눈이 내리는 날,", line2Pre: "포근한 ", highlight: "공연장", suffix: "에서 몸을 녹이세요.", keywords: ["눈", "겨울", "따뜻한"] },
             { line1: "온 세상이 하얀 오늘,", line2Pre: "따뜻한 ", highlight: "감동", suffix: "을 만나보세요.", keywords: ["눈", "감동"] },
             { line1: "손발 시린 겨울,", line2Pre: "마음만은 훈훈하게 ", highlight: "로맨틱한 공연", suffix: " 어떠세요?", keywords: ["겨울", "로맨틱"] },
-            { line1: "눈 오는 날의 낭만,", line2Pre: "영화 주인공처럼 ", highlight: "아름다운 추억", suffix: "을 남겨보세요.", keywords: ["눈", "낭만"] }
+            { line1: "눈 오는 날의 낭만,", line2Pre: "영화 주인공처럼 ", highlight: "아름다운 추억", suffix: "을 남겨보세요.", keywords: ["눈", "낭만"] },
+            // New
+            { line1: "첫눈 같은 설렘,", line2Pre: "당신을 기다리는 ", highlight: "순백의 무대", suffix: "가 있습니다.", keywords: ["눈", "설렘"] },
+            { line1: "눈길 조심하세요!", line2Pre: "하지만 이 공연은 ", highlight: "놓치면 후회", suffix: "할지도 몰라요.", keywords: ["눈", "추천"] }
         ],
         clear: [
             { line1: "날씨 좋은 오늘,", line2Pre: "산책하듯 ", highlight: "즐기기 좋은 공연", suffix: "들을 모았어요.", keywords: ["야외", "산책"] },
             { line1: "화창한 하늘 아래,", line2Pre: "설레는 마음으로 ", highlight: "공연장 나들이", suffix: " 어때요?", keywords: ["나들이"] },
             { line1: "오늘 같은 날씨엔,", line2Pre: "야외 활동 대신 시원한 ", highlight: "공연장 데이트!", suffix: "", keywords: ["데이트", "시원한"] },
             { line1: "햇살 가득한 날,", line2Pre: "어디론가 떠나고 싶다면 ", highlight: "문화 바캉스", suffix: "를 즐겨보세요.", keywords: ["바캉스", "여행"] },
-            { line1: "기분 좋은 바람이 불 땐,", line2Pre: "사랑하는 사람과 ", highlight: "설레는 데이트", suffix: "를 계획해보세요.", keywords: ["데이트", "설레는"] }
+            { line1: "기분 좋은 바람이 불 땐,", line2Pre: "사랑하는 사람과 ", highlight: "설레는 데이트", suffix: "를 계획해보세요.", keywords: ["데이트", "설레는"] },
+            // New
+            { line1: "하늘이 참 예쁘네요,", line2Pre: "이런 날엔 ", highlight: "예쁜 추억", suffix: "을 만들어야죠.", keywords: ["하늘", "추억"] },
+            { line1: "햇살맛집 여기 있어요,", line2Pre: "광합성만큼 중요한 ", highlight: "문화 합성", suffix: "의 시간!", keywords: ["햇살", "문화"] }
         ]
     },
     // New Categories
@@ -124,19 +144,33 @@ const HERO_TEMPLATES = {
     season: {
         spring: [ // 3, 4, 5
             { line1: "봄바람 휘날리며,", line2Pre: "꽃향기보다 설레는 ", highlight: "봄 맞이 공연", suffix: "으로 나들이 가요.", keywords: ["봄", "꽃"] },
-            { line1: "따뜻한 봄날,", line2Pre: "겨우내 얼었던 감성을 녹여줄 ", highlight: "말랑말랑한 전시", suffix: "를 추천해요.", keywords: ["봄", "전시"] }
+            { line1: "따뜻한 봄날,", line2Pre: "겨우내 얼었던 감성을 녹여줄 ", highlight: "말랑말랑한 전시", suffix: "를 추천해요.", keywords: ["봄", "전시"] },
+            // New
+            { line1: "벚꽃은 졌지만,", line2Pre: "우리들의 봄은 ", highlight: "이제 시작", suffix: "입니다.", keywords: ["봄", "시작"] },
+            { line1: "나랑 봄 보러 가지 않을래?", line2Pre: "노래 가사처럼 ", highlight: "설렘 가득한", suffix: " 공연 어때요?", keywords: ["봄", "설렘"] }
         ],
         summer: [ // 6, 7, 8
             { line1: "무더운 여름,", line2Pre: "더위를 시원하게 날려버릴 ", highlight: "짜릿한 페스티벌", suffix: "이 시작됩니다.", keywords: ["여름", "페스티벌", "시원한"] },
-            { line1: "해가 길어진 여름밤,", line2Pre: "잠들기 아쉬운 당신을 위한 ", highlight: "심야 괴담? 아니, 심야 공연!", suffix: "", keywords: ["여름", "심야"] }
+            { line1: "해가 길어진 여름밤,", line2Pre: "잠들기 아쉬운 당신을 위한 ", highlight: "심야 괴담? 아니, 심야 공연!", suffix: "", keywords: ["여름", "심야"] },
+            // New
+            { line1: "여름 휴가 계획 하셨나요?", line2Pre: "멀리 못 간다면 ", highlight: "도심 속 피서", suffix: "를 즐겨보세요.", keywords: ["여름", "휴가"] },
+            { line1: "아이스 아메리카노처럼,", line2Pre: "머리끝까지 시원해지는 ", highlight: "쿨한 무대", suffix: "가 기다립니다.", keywords: ["여름", "시원한"] }
         ],
         autumn: [ // 9, 10, 11
             { line1: "독서의 계절 가을,", line2Pre: "책보다 깊은 울림을 주는 ", highlight: "명작 공연", suffix: "을 만나보세요.", keywords: ["가을", "독서"] },
-            { line1: "선선한 가을 바람,", line2Pre: "센치해진 마음을 달래줄 ", highlight: "감성 충만 뮤직", suffix: " 플레이리스트.", keywords: ["가을", "감성"] }
+            { line1: "선선한 가을 바람,", line2Pre: "센치해진 마음을 달래줄 ", highlight: "감성 충만 뮤직", suffix: " 플레이리스트.", keywords: ["가을", "감성"] },
+            // New
+            { line1: "가을 타나 봐요,", line2Pre: "외로운 마음을 달래줄 ", highlight: "따스한 위로", suffix: "가 필요해요.", keywords: ["가을", "위로"] },
+            { line1: "단풍보다 붉게 물든,", line2Pre: "예술가들의 ", highlight: "뜨거운 열정", suffix: "을 만나보세요.", keywords: ["가을", "열정"] }
         ],
         winter: [ // 12, 1, 2
             { line1: "추운 겨울이지만,", line2Pre: "마음의 온도를 높여줄 ", highlight: "따뜻한 공연", suffix: "이 여기 있어요.", keywords: ["겨울", "따뜻한"] },
-            { line1: "한 해를 마무리하며,", line2Pre: "소중한 사람들과 나누고픈 ", highlight: "특별한 선물", suffix: " 같은 시간.", keywords: ["연말", "선물"] }
+            { line1: "한 해를 마무리하며,", line2Pre: "소중한 사람들과 나누고픈 ", highlight: "특별한 선물", suffix: " 같은 시간.", keywords: ["연말", "선물"] },
+            // New
+            { line1: "코끝이 찡한 겨울,", line2Pre: "얼어붙은 몸과 마음을 ", highlight: "사르르 녹여줄", suffix: " 감동의 무대.", keywords: ["겨울", "감동"] },
+            { line1: "이불 밖은 위험해?", line2Pre: "아니요, 이 공연을 놓치는 게 ", highlight: "더 위험해요!", suffix: "", keywords: ["겨울", "집순이"] },
+            { line1: "겨울 밤하늘 별처럼,", line2Pre: "당신의 기억 속에 ", highlight: "오래 반짝일", suffix: " 추억 하나.", keywords: ["겨울", "추억"] },
+            { line1: "붕어빵보다 따끈한,", line2Pre: "갓 구워낸 ", highlight: "신작 공연", suffix: " 소식입니다.", keywords: ["겨울", "신작"] }
         ]
     },
     holiday: {
