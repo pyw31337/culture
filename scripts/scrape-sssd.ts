@@ -8,10 +8,33 @@ puppeteer.use(StealthPlugin());
 // SSSD only has mobile URLs - desktop paths return 404
 const TARGET_URL = 'https://www.sssd.co.kr/m/search/class/category?midx=all';
 const OUTPUT_FILE = path.join(__dirname, '../src/data/sssd-class.json');
+
+// Korean User Agent for better locale detection
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
+async function setupKoreanLocale(page: any) {
+    // Set comprehensive Korean locale settings
+    await page.setExtraHTTPHeaders({
+        'Accept-Language': 'ko-KR,ko;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    });
+
+    // Set Korean cookies before navigation
+    await page.setCookie(
+        { name: 'SSSD_MW_LANG', value: 'ko-KR', domain: '.sssd.co.kr', path: '/' },
+        { name: 'lang', value: 'ko', domain: '.sssd.co.kr', path: '/' },
+        { name: 'locale', value: 'ko_KR', domain: '.sssd.co.kr', path: '/' }
+    );
+
+    // Override navigator.language via JavaScript
+    await page.evaluateOnNewDocument(() => {
+        Object.defineProperty(navigator, 'language', { get: () => 'ko-KR' });
+        Object.defineProperty(navigator, 'languages', { get: () => ['ko-KR', 'ko'] });
+    });
+}
+
 async function scrape() {
-    console.log('Starting SSSD Scraper (Mobile Version)...');
+    console.log('Starting SSSD Scraper (Korean Locale Enforced)...');
 
     const browser = await puppeteer.launch({
         headless: true,
@@ -20,29 +43,23 @@ async function scrape() {
             '--disable-setuid-sandbox',
             '--disable-blink-features=AutomationControlled',
             '--window-size=1920,1080',
-            '--lang=ko-KR'
+            '--lang=ko-KR',
+            '--accept-lang=ko-KR'
         ]
     });
 
     try {
         const page = await browser.newPage();
         await page.setUserAgent(USER_AGENT);
-        await page.setExtraHTTPHeaders({
-            'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
-        });
         await page.setViewport({ width: 1920, height: 1080 });
 
-        // Set Korean locale cookie
-        await page.setCookie({
-            name: 'SSSD_MW_LANG',
-            value: 'ko-KR',
-            domain: '.sssd.co.kr'
-        });
+        // Apply Korean locale settings BEFORE navigation
+        await setupKoreanLocale(page);
 
         console.log(`Navigating to ${TARGET_URL}...`);
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        // Wait for list - correct selector from browser probe
+        // Wait for list
         const listSelector = '.class-search-result li';
         try {
             await page.waitForSelector(listSelector, { timeout: 15000 });
@@ -51,14 +68,14 @@ async function scrape() {
             await new Promise(r => setTimeout(r, 5000));
         }
 
-        // Scroll to load more items
-        console.log('Scrolling to load items...');
+        // Scroll to load more items with longer wait for lazy loading
+        console.log('Scrolling to load items (with image loading wait)...');
         await page.evaluate(async () => {
             await new Promise<void>((resolve) => {
                 let totalHeight = 0;
-                const distance = 100;
+                const distance = 200;
                 let scrolls = 0;
-                const maxScrolls = 50;
+                const maxScrolls = 30;
                 const timer = setInterval(() => {
                     const scrollHeight = document.body.scrollHeight;
                     window.scrollBy(0, distance);
@@ -68,11 +85,19 @@ async function scrape() {
                         clearInterval(timer);
                         resolve();
                     }
-                }, 100);
+                }, 200); // Slower scroll for image loading
             });
         });
 
-        // Extract List Items using correct selectors from browser probe
+        // Wait for images to load after scrolling
+        console.log('Waiting for images to load...');
+        await new Promise(r => setTimeout(r, 5000));
+
+        // Scroll back to top and wait again
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await new Promise(r => setTimeout(r, 2000));
+
+        // Extract List Items - check for lazy-loaded images
         console.log('Extracting list items...');
         const items = await page.evaluate((selector) => {
             const elements = Array.from(document.querySelectorAll(selector));
@@ -86,24 +111,53 @@ async function scrape() {
                 const titleEl = linkEl.querySelector('div:nth-child(3)');
                 const title = titleEl ? (titleEl as HTMLElement).innerText.trim() : '';
 
-                // Image: CSS background-image on nested div
+                // Image: Try multiple sources for lazy-loaded images
                 const imgDiv = linkEl.querySelector('div > div');
                 let image = '';
+
                 if (imgDiv) {
+                    // Check inline style first
                     const style = (imgDiv as HTMLElement).getAttribute('style');
                     if (style) {
                         const match = style.match(/url\(["']?(.+?)["']?\)/);
-                        if (match) image = match[1];
+                        if (match && !match[1].includes('img_loding_bg')) {
+                            image = match[1];
+                        }
+                    }
+
+                    // Check computed style
+                    if (!image || image.includes('img_loding_bg')) {
+                        const computed = window.getComputedStyle(imgDiv);
+                        const bgImage = computed.backgroundImage;
+                        if (bgImage && bgImage !== 'none') {
+                            const match = bgImage.match(/url\(["']?(.+?)["']?\)/);
+                            if (match && !match[1].includes('img_loding_bg')) {
+                                image = match[1];
+                            }
+                        }
+                    }
+
+                    // Check data-bg attribute (common lazy loading pattern)
+                    if (!image || image.includes('img_loding_bg')) {
+                        const dataBg = (imgDiv as HTMLElement).getAttribute('data-bg') ||
+                            (imgDiv as HTMLElement).getAttribute('data-src') ||
+                            (imgDiv as HTMLElement).getAttribute('data-lazy');
+                        if (dataBg && !dataBg.includes('img_loding_bg')) {
+                            image = dataBg;
+                        }
                     }
                 }
 
-                // Fallback: check computed style for background-image
-                if (!image && imgDiv) {
-                    const computed = window.getComputedStyle(imgDiv);
-                    const bgImage = computed.backgroundImage;
-                    if (bgImage && bgImage !== 'none') {
-                        const match = bgImage.match(/url\(["']?(.+?)["']?\)/);
-                        if (match) image = match[1];
+                // Check for img tag inside
+                if (!image || image.includes('img_loding_bg')) {
+                    const imgTag = linkEl.querySelector('img');
+                    if (imgTag) {
+                        const src = imgTag.getAttribute('data-src') ||
+                            imgTag.getAttribute('data-lazy') ||
+                            imgTag.getAttribute('src');
+                        if (src && !src.includes('img_loding_bg')) {
+                            image = src;
+                        }
                     }
                 }
 
@@ -129,15 +183,10 @@ async function scrape() {
             try {
                 const detailPage = await browser.newPage();
                 await detailPage.setUserAgent(USER_AGENT);
-                await detailPage.setExtraHTTPHeaders({
-                    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
-                });
-                await detailPage.setCookie({
-                    name: 'SSSD_MW_LANG',
-                    value: 'ko-KR',
-                    domain: '.sssd.co.kr'
-                });
                 await detailPage.setViewport({ width: 1920, height: 1080 });
+
+                // Apply Korean locale settings BEFORE navigation
+                await setupKoreanLocale(detailPage);
 
                 await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 });
 
@@ -145,7 +194,7 @@ async function scrape() {
                 await new Promise(r => setTimeout(r, 3000));
 
                 const detailInfo = await detailPage.evaluate(() => {
-                    // 1. Address Extraction: PRIORITIZE #placeCopy data-clipboard-text (but SKIP URLs)
+                    // 1. Address Extraction: PRIORITIZE #placeCopy data-clipboard-text
                     let location = '';
                     const locationEl = document.querySelector('#placeCopy');
 
@@ -191,7 +240,6 @@ async function scrape() {
 
                     if (!location) location = '상세페이지 참조';
 
-
                     // 2. Price: Use precise selectors
                     let discountRate = '';
                     let originalPrice = '';
@@ -222,7 +270,15 @@ async function scrape() {
                     if (timeEl) time = (timeEl as HTMLElement).innerText.trim();
                     if (peopleEl) capacity = (peopleEl as HTMLElement).innerText.trim();
 
-                    return { location, parking, time, capacity, discountRate, originalPrice, finalPrice };
+                    // 4. Get image from detail page as fallback
+                    let detailImage = '';
+                    const mainImg = document.querySelector('.class-detail-img img, .swiper-slide img');
+                    if (mainImg) {
+                        detailImage = (mainImg as HTMLImageElement).src ||
+                            (mainImg as HTMLElement).getAttribute('data-src') || '';
+                    }
+
+                    return { location, parking, time, capacity, discountRate, originalPrice, finalPrice, detailImage };
                 });
 
                 await detailPage.close();
@@ -233,6 +289,12 @@ async function scrape() {
                     detailInfo.capacity
                 ].filter(s => s && s.trim() !== '' && !['Copy Address', '주소복사'].includes(s) && !s.includes('http'));
 
+                // Use detail page image as fallback if list image is placeholder
+                let finalImage = item.image;
+                if (!finalImage || finalImage.includes('img_loding_bg')) {
+                    finalImage = detailInfo.detailImage || '';
+                }
+
                 results.push({
                     id: `sssd-${i}`,
                     title: item.title,
@@ -241,7 +303,7 @@ async function scrape() {
                     price: detailInfo.finalPrice || '가격 정보 없음',
                     originalPrice: detailInfo.originalPrice,
                     discount: detailInfo.discountRate,
-                    image: item.image,
+                    image: finalImage,
                     link: item.link,
                     genre: 'class',
                     source: 'sssd',
