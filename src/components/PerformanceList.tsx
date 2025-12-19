@@ -212,6 +212,50 @@ const HERO_TEMPLATES = {
             { line1: "Good Bye 2025,", line2Pre: "한 해의 마지막 페이지를 ", highlight: "아름다운 선율", suffix: "로 장식해보세요.", keywords: ["연말", "콘서트", "음악회"] },
             { line1: "수고했어 올해도,", line2Pre: "나를 위한 연말 정산, ", highlight: "최고의 공연", suffix: "으로 보상받으세요.", keywords: ["연말", "보상"] }
         ]
+    },
+    // Genre Specific Templates
+    genre: {
+        volleyball: [
+            { line1: "오늘 배구 경기 어때요?", line2Pre: "스파이크 한 방에 스트레스 날려버릴 ", highlight: "배구 직관", suffix: " 가보자고!", keywords: ["배구", "volleyball", "V-리그"] },
+            { line1: "심장이 쫄깃한 랠리,", line2Pre: "코트 위의 뜨거운 열기, ", highlight: "배구장", suffix: "으로 초대합니다.", keywords: ["배구", "volleyball"] }
+        ],
+        basketball: [
+            { line1: "버저비터의 짜릿함!", line2Pre: "0.1초의 승부, ", highlight: "농구 직관", suffix: "의 묘미를 느껴보세요.", keywords: ["농구", "basketball", "KBL"] },
+            { line1: "슬램덩크 좋아하세요?", line2Pre: "현실에서 펼쳐지는 ", highlight: "박진감 넘치는 경기", suffix: "가 기다립니다.", keywords: ["농구", "basketball"] }
+        ],
+        soccer: [
+            { line1: "골~인! 함성 소리,", line2Pre: "푸른 잔디 위에서 펼쳐지는 ", highlight: "축구 경기", suffix: " 함께 응원해요.", keywords: ["축구", "soccer", "K리그"] },
+            { line1: "오늘은 축구 보는 날,", line2Pre: "치킨 하나 사들고 ", highlight: "축구장 나들이", suffix: " 어떠세요?", keywords: ["축구", "soccer"] }
+        ],
+        baseball: [
+            { line1: "야구장 갈 준비 됐나요?", line2Pre: "9회말 2아웃, ", highlight: "역전의 드라마", suffix: "를 눈앞에서!", keywords: ["야구", "baseball", "KBO"] },
+            { line1: "홈런볼보다 맛있는 직관,", line2Pre: "다 같이 부르는 ", highlight: "응원가", suffix: "가 그리울 땐 야구장으로!", keywords: ["야구", "baseball"] }
+        ],
+        musical: [
+            { line1: "오늘은 내가 주인공,", line2Pre: "화려한 조명 아래 펼쳐지는 ", highlight: "뮤지컬 한 편", suffix: " 어때요?", keywords: ["뮤지컬", "musical"] },
+            { line1: "눈과 귀가 즐거운 시간,", line2Pre: "당신의 감성을 채워줄 ", highlight: "명작 뮤지컬", suffix: "을 만나보세요.", keywords: ["뮤지컬", "musical"] }
+        ],
+        play: [
+            { line1: "대학로 감성 충전,", line2Pre: "배우들의 숨소리까지 느껴지는 ", highlight: "연극 무대", suffix: "로 초대합니다.", keywords: ["연극", "play", "대학로"] },
+            { line1: "소소하지만 확실한 행복,", line2Pre: "웃음과 감동이 있는 ", highlight: "연극 한 편", suffix: " 관람하세요.", keywords: ["연극", "play"] }
+        ],
+        classical: [
+            { line1: "우아한 하루의 완성,", line2Pre: "마음을 차분하게 해줄 ", highlight: "클래식 선율", suffix: "을 선물합니다.", keywords: ["클래식", "classical", "음악회"] },
+            { line1: "복잡한 생각은 잠시 끄고,", line2Pre: "오케스트라의 ", highlight: "웅장한 울림", suffix: "에 빠져보세요.", keywords: ["클래식", "classical"] }
+        ],
+        exhibition: [
+            { line1: "조용한 사색이 필요한 날,", line2Pre: "나만의 속도로 즐기는 ", highlight: "미술관 데이트", suffix: " 어떠세요?", keywords: ["전시", "exhibition", "미술관"] },
+            { line1: "새로운 영감이 필요하다면,", line2Pre: "감각을 깨우는 ", highlight: "특별한 전시", suffix: "를 찾아보세요.", keywords: ["전시", "exhibition"] }
+        ],
+        kids: [
+            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 공연", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
+            { line1: "엄마 아빠 어디가?", line2Pre: "아이들이 더 좋아하는 ", highlight: "신나는 체험", suffix: " 떠나볼까요?", keywords: ["아동", "kids"] }
+        ],
+        travel: [
+            { line1: "곧 연휴인데 어디 가지?", line2Pre: "지금 떠나기 딱 좋은 ", highlight: "여행지 정보", suffix: "를 모아봤어요.", keywords: ["여행", "travel", "투어"] },
+            { line1: "일상 탈출, 준비되셨나요?", line2Pre: "가볍게 떠날 수 있는 ", highlight: "당일치기 여행", suffix: "을 추천해요.", keywords: ["여행", "travel"] },
+            { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] }
+        ]
     }
 };
 
@@ -454,7 +498,33 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             // Seollal 2025: 1.28 - 1.30
             if (month === 1 && (date >= 28 && date <= 30)) pool.push(...HERO_TEMPLATES.holiday.seollal);
             // Chuseok 2025: 10.5 - 10.8
+            // Chuseok 2025: 10.5 - 10.8
             if (month === 10 && (date >= 5 && date <= 8)) pool.push(...HERO_TEMPLATES.holiday.chuseok);
+
+            // 1.5 Genre Availability Check (Contextual Promotion)
+            // Check if specific genres exist in the current list to promote them
+            // Logic: If we have > 0 items of a genre, add its templates to pool
+            // Travel (Always check)
+            if (initialPerformances.some(p => p.genre === 'travel')) {
+                // High priority for travel if near weekend (Fri/Sat)
+                const weight = (day === 5 || day === 6) ? 2 : 1;
+                for (let i = 0; i < weight; i++) pool.push(...HERO_TEMPLATES.genre.travel);
+            }
+            // Sports (Check for matches)
+            if (initialPerformances.some(p => p.genre === 'volleyball')) pool.push(...HERO_TEMPLATES.genre.volleyball);
+            if (initialPerformances.some(p => p.genre === 'basketball')) pool.push(...HERO_TEMPLATES.genre.basketball);
+            if (initialPerformances.some(p => p.genre === 'soccer')) pool.push(...HERO_TEMPLATES.genre.soccer);
+            if (initialPerformances.some(p => p.genre === 'baseball')) pool.push(...HERO_TEMPLATES.genre.baseball);
+
+            // Arts
+            // Randomly promote arts to diversify (10% chance each to add to pool if available)
+            if (Math.random() > 0.5) {
+                if (initialPerformances.some(p => p.genre === 'musical')) pool.push(...HERO_TEMPLATES.genre.musical);
+                if (initialPerformances.some(p => p.genre === 'play')) pool.push(...HERO_TEMPLATES.genre.play);
+                if (initialPerformances.some(p => p.genre === 'classical')) pool.push(...HERO_TEMPLATES.genre.classical);
+                if (initialPerformances.some(p => p.genre === 'exhibition')) pool.push(...HERO_TEMPLATES.genre.exhibition);
+                if (initialPerformances.some(p => p.genre === 'kids')) pool.push(...HERO_TEMPLATES.genre.kids);
+            }
 
             // 2. Keyword Check
             const savedKeywords: string[] = JSON.parse(localStorage.getItem('culture_keywords') || '[]');
