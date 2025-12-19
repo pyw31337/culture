@@ -53,37 +53,42 @@ function deg2rad(deg: number) {
 }
 
 // --- Text Templates for Hero Section ---
+// --- Text Templates for Hero Section ---
+// Structure:
+// Line 1: line1
+// Line 2: line2Pre + <Highlight> + suffix
+
 const HERO_TEMPLATES = {
     general: [
-        { prefix: "특별한 오늘, 당신을 위한", highlight: "Spotlight", suffix: "는 어디일까요?" },
-        { prefix: "반복되는 일상 속, 당신을 위한", highlight: "새로운 영감", suffix: "은 어디일까요?" },
-        { prefix: "감성이 메마른 날, 당신을 위한", highlight: "설레는 경험", suffix: "은 어디일까요?" },
-        { prefix: "소중한 사람과 함께, 당신을 위한", highlight: "잊지 못할 추억", suffix: "은 어디일까요?" },
-        { prefix: "혼자만의 시간이 필요할 때, 당신을 위한", highlight: "특별한 순간", suffix: "은 어디일까요?" },
-        { prefix: "이번 주말, 당신을 위한", highlight: "취향 저격 공연", suffix: "은 어디일까요?" },
-        { prefix: "문득 떠나고 싶은 지금, 당신을 위한", highlight: "뜻밖의 발견", suffix: "은 어디일까요?" }
+        { line1: "특별한 오늘,", line2Pre: "당신을 위한 ", highlight: "Spotlight", suffix: "는 어디일까요?" },
+        { line1: "반복되는 일상 속,", line2Pre: "당신을 위한 ", highlight: "새로운 영감", suffix: "은 어디일까요?" },
+        { line1: "감성이 메마른 날,", line2Pre: "당신을 위한 ", highlight: "설레는 경험", suffix: "은 어디일까요?" },
+        { line1: "소중한 사람과 함께,", line2Pre: "당신을 위한 ", highlight: "잊지 못할 추억", suffix: "은 어디일까요?" },
+        { line1: "혼자만의 시간이 필요할 때,", line2Pre: "당신을 위한 ", highlight: "특별한 순간", suffix: "은 어디일까요?" },
+        { line1: "이번 주말,", line2Pre: "당신을 위한 ", highlight: "취향 저격 공연", suffix: "은 어디일까요?" },
+        { line1: "문득 떠나고 싶은 지금,", line2Pre: "당신을 위한 ", highlight: "뜻밖의 발견", suffix: "은 어디일까요?" }
     ],
     keyword: [
-        { prefix: "드디어 오늘 기다리던", highlight: "{keyword}", suffix: "공연이 오픈했어요!" },
-        { prefix: "요즘 가장 핫한", highlight: "{keyword}", suffix: "소식, 놓치지 않으셨나요?" },
-        { prefix: "당신의 취향 저격,", highlight: "{keyword}", suffix: "컬렉션을 준비했습니다." },
-        { prefix: "지금 딱 예매하기 좋은", highlight: "{keyword}", suffix: "공연을 만나보세요." },
-        { prefix: "망설이면 늦어요!", highlight: "{keyword}", suffix: "인기 공연 총집합." }
+        { line1: "드디어 오늘,", line2Pre: "기다리던 ", highlight: "{keyword}", suffix: " 공연이 오픈했어요!" },
+        { line1: "요즘 가장 핫한", line2Pre: "", highlight: "{keyword}", suffix: " 소식, 놓치지 않으셨나요?" },
+        { line1: "당신의 취향 저격,", line2Pre: "준비된 ", highlight: "{keyword}", suffix: " 컬렉션을 만나보세요." },
+        { line1: "지금 딱 예매하기 좋은", line2Pre: "", highlight: "{keyword}", suffix: " 공연을 만나보세요." },
+        { line1: "망설이면 늦어요!", line2Pre: "", highlight: "{keyword}", suffix: " 인기 공연 총집합." }
     ],
     weather: {
         rain: [
-            { prefix: "비 예보가 있는 오늘,", highlight: "촉촉한 감성", suffix: "공연 어떠신가요?" },
-            { prefix: "우산 챙기셨나요?", highlight: "비 오는 날", suffix: "더 운치 있는 실내 데이트." },
-            { prefix: "흐린 날씨엔 역시", highlight: "기분 전환", suffix: "공연이 최고죠." }
+            { line1: "비 예보가 있는 오늘,", line2Pre: "감성 가득한 ", highlight: "촉촉한 전시/공연", suffix: " 어떠신가요?" },
+            { line1: "우산 챙기셨나요?", line2Pre: "비 오는 날 더 운치 있는 ", highlight: "실내 데이트", suffix: "를 즐겨보세요." },
+            { line1: "흐린 날씨엔 역시,", line2Pre: "기분 전환을 위한 ", highlight: "신나는 공연", suffix: "이 최고죠." }
         ],
         snow: [
-            { prefix: "하얀 눈이 내리는 날,", highlight: "포근한", suffix: "공연장에서 몸을 녹이세요." },
-            { prefix: "온 세상이 하얀 오늘,", highlight: "따뜻한 감동", suffix: "을 만나보세요." }
+            { line1: "하얀 눈이 내리는 날,", line2Pre: "포근한 ", highlight: "공연장", suffix: "에서 몸을 녹이세요." },
+            { line1: "온 세상이 하얀 오늘,", line2Pre: "따뜻한 ", highlight: "감동", suffix: "을 만나보세요." }
         ],
         clear: [
-            { prefix: "날씨 좋은 오늘,", highlight: "산책하듯", suffix: "즐기기 좋은 공연들을 모았어요." },
-            { prefix: "화창한 하늘 아래,", highlight: "설레는 마음", suffix: "으로 공연장 나들이 어때요?" },
-            { prefix: "오늘 같은 날씨엔", highlight: "야외 활동", suffix: "대신 시원한 공연장 데이트!" }
+            { line1: "날씨 좋은 오늘,", line2Pre: "산책하듯 ", highlight: "즐기기 좋은 공연", suffix: "들을 모았어요." },
+            { line1: "화창한 하늘 아래,", line2Pre: "설레는 마음으로 ", highlight: "공연장 나들이", suffix: " 어때요?" },
+            { line1: "오늘 같은 날씨엔,", line2Pre: "야외 활동 대신 시원한 ", highlight: "공연장 데이트!", suffix: "" }
         ]
     }
 };
@@ -1034,8 +1039,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </p>
                     {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
                     {/* Hero Text: Dynamic */}
+                    {/* Hero Text: Dynamic */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block break-keep">
-                        {heroText.prefix}<br />
+                        {heroText.line1}<br />
+                        {heroText.line2Pre}
                         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
                             {heroText.highlight}
                         </span>
@@ -1043,7 +1050,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </h2>
                     {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
-                        {heroText.prefix}<br />
+                        {heroText.line1}<br />
+                        {heroText.line2Pre}
                         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
                             {heroText.highlight}
                         </span><br />
