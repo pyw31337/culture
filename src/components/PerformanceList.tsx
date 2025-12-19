@@ -192,6 +192,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [heroText, setHeroText] = useState(HERO_TEMPLATES.general[0]);
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
 
+    // Like & Venue State (Moved to top for scope access)
+    const [likedIds, setLikedIds] = useState<string[]>([]);
+    const [showLikes, setShowLikes] = useState(true);
+    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
+    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
+
     // Context-Aware Hero Text Logic
     useEffect(() => {
         const updateHeroText = async () => {
@@ -232,6 +239,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     };
                 });
                 for (let i = 0; i < 3; i++) pool.push(...keywordTemplates);
+            }
+
+            // Always ensure general templates are in the pool for fallback
+            if (pool.filter(t => t.keywords.length === 0).length === 0) {
+                pool.push(...HERO_TEMPLATES.general);
             }
 
             // 3. Time/Day Context
@@ -298,10 +310,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     );
 
                     if (!hasMatch) {
-                        // Invalid context: Remove and retry
                         pool.splice(idx, 1);
                         continue;
                     }
+                } else {
+                    // If template has NO keywords (e.g. Spotlight), it is always valid.
+                    // No specific performance match required because it's generic.
                 }
 
                 selectedTemplate = candidate;
@@ -356,6 +370,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         loadState('culture_favorite_venues', setFavoriteVenues);
         loadState('culture_likes_expanded', setIsLikesExpanded);
         loadState('culture_venues_expanded', setIsFavoriteVenuesExpanded);
+        loadState('culture_show_favorite_venues', setShowFavoriteVenues);
+        loadState('culture_show_likes', setShowLikes);
 
         setIsStorageLoaded(true);
     }, []);
@@ -364,6 +380,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         if (!isStorageLoaded) return;
         localStorage.setItem('culture_keywords', JSON.stringify(keywords));
     }, [keywords, isStorageLoaded]);
+
+    useEffect(() => {
+        if (!isStorageLoaded) return;
+        localStorage.setItem('culture_show_favorite_venues', JSON.stringify(showFavoriteVenues));
+    }, [showFavoriteVenues, isStorageLoaded]);
+
+    useEffect(() => {
+        if (!isStorageLoaded) return;
+        localStorage.setItem('culture_show_likes', JSON.stringify(showLikes));
+    }, [showLikes, isStorageLoaded]);
 
     const addKeyword = () => {
         if (!newKeyword.trim()) return;
@@ -384,8 +410,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     // Like System State
-    const [likedIds, setLikedIds] = useState<string[]>([]);
-    const [showLikes, setShowLikes] = useState(true);
+    // Like System State
+    // [State moved to top]
 
     // Persist Likes Expanded State
     useEffect(() => {
@@ -415,8 +441,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     }, [initialPerformances, likedIds]);
 
     // Favorite Venues State
-    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
-    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+    // Favorite Venues State
+    // [State moved to top]
 
     // Initial Load for Favorite Venues Expanded State
     // Initial Load for Favorite Venues Expanded State (Removed - handled by consolidated loader)
@@ -427,7 +453,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         localStorage.setItem('culture_venues_expanded', JSON.stringify(isFavoriteVenuesExpanded));
     }, [isFavoriteVenuesExpanded, isStorageLoaded]);
 
-    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true); // Controls section visibility
+    // [State moved to top]
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
 
