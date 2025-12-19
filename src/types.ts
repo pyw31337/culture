@@ -1,5 +1,8 @@
 export type Performance = {
     id: string;
+    title: string;
+    date: string;
+    venue: string;
     image: string;
     link: string;
     region: string;
