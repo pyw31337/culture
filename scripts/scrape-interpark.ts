@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fetchPerformances } from '../src/lib/interpark.ts';
+import { fetchPerformances } from '../src/lib/interpark';
 
 async function scrapeInterpark() {
     console.log('Starting Interpark scraping...');
