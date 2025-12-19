@@ -38,7 +38,7 @@ async function scrape() {
         console.log(`Found ${links.length} products.`);
 
         const results = [];
-        const MAX_ITEMS = 50; // scrape up to 50 items for now
+        const MAX_ITEMS = 300; // scrape all items (approx 200)
 
         for (let i = 0; i < Math.min(links.length, MAX_ITEMS); i++) {
             const url = links[i];
