@@ -680,6 +680,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Handle Input Change (Real-time Text Filter)
     const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
+
+        // Auto-close lists when starting a search (UI refinement)
+        if (val && !searchText) {
+            setShowFavoriteVenues(false);
+            setShowLikes(false);
+        }
+
         setSearchText(val);
         // Reset location search when user types (revert to text filter)
         if (searchLocation) {
@@ -1388,17 +1395,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowFavoriteVenues(!showFavoriteVenues);
                                             }
                                         }}
-                                        disabled={favoriteVenues.length === 0 || !!searchText}
+                                        disabled={favoriteVenues.length === 0}
                                         className={clsx(
                                             "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
-                                            (favoriteVenues.length > 0 && !searchText)
+                                            favoriteVenues.length > 0
                                                 ? (showFavoriteVenues
                                                     ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(16,185,129,0.3)]"
                                                     : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
                                                 : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
                                         )}
                                     >
-                                        <BuildingStadium className={clsx("w-3 h-3", showFavoriteVenues && favoriteVenues.length > 0 && !searchText ? "fill-emerald-500" : "fill-none")} />
+                                        <BuildingStadium className={clsx("w-3 h-3", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
                                         <span className="hidden sm:inline">공연장</span>
                                     </button>
 
@@ -1410,17 +1417,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowLikes(!showLikes);
                                             }
                                         }}
-                                        disabled={likedIds.length === 0 || !!searchText}
+                                        disabled={likedIds.length === 0}
                                         className={clsx(
                                             "shrink-0 p-1 px-2 rounded-full border text-xs font-bold flex items-center gap-1 transition-all",
-                                            (likedIds.length > 0 && !searchText)
+                                            likedIds.length > 0
                                                 ? (showLikes
                                                     ? "border-pink-500/50 bg-pink-500/10 text-pink-500 hover:bg-pink-500 hover:text-black cursor-pointer shadow-[0_0_10px_rgba(236,72,153,0.3)]"
                                                     : "border-gray-700 bg-gray-800/50 text-gray-400 hover:text-gray-200")
                                                 : "border-gray-700 bg-gray-800/50 text-gray-600 cursor-not-allowed opacity-50"
                                         )}
                                     >
-                                        <Heart className={clsx("w-3 h-3", showLikes && likedIds.length > 0 && !searchText ? "fill-pink-500" : "fill-none")} />
+                                        <Heart className={clsx("w-3 h-3", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
                                         <span className="hidden sm:inline">좋아요</span>
                                     </button>
 
@@ -1773,7 +1780,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Favorite Venues Section (Highest Priority) - Only Visible in 'All' Tab */}
             {
-                viewMode === 'list' && selectedGenre === 'all' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && !searchText && (
+                viewMode === 'list' && selectedGenre === 'all' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
@@ -2069,7 +2076,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Liked Performances Section (Above Keywords) - Only Visible in 'All' Tab */}
             {
-                viewMode === 'list' && selectedGenre === 'all' && showLikes && likedPerformances.length > 0 && !searchText && (
+                viewMode === 'list' && selectedGenre === 'all' && showLikes && likedPerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
