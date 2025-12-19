@@ -3533,7 +3533,22 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     {perf.cast && perf.cast.length > 0 && (
                                                         <div className="flex gap-1 items-start">
                                                             <span className="text-gray-500 font-bold shrink-0">출연</span>
-                                                            <span className="text-gray-300 line-clamp-1">{perf.cast.slice(0, 3).join(', ')}</span>
+                                                            <div className="block truncate relative z-[101]">
+                                                                {perf.cast.slice(0, 3).map((actor: string, idx: number) => (
+                                                                    <span key={idx}>
+                                                                        <a
+                                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(actor)}`}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                                            onClick={e => e.stopPropagation()}
+                                                                        >
+                                                                            {actor}
+                                                                        </a>
+                                                                        {idx < Math.min(perf.cast.length, 3) - 1 && ', '}
+                                                                    </span>
+                                                                ))}
+                                                            </div>
                                                         </div>
                                                     )}
                                                     {perf.movieInfo && (
