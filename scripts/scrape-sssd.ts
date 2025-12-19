@@ -156,85 +156,75 @@ async function scrape() {
                     domain: '.sssd.co.kr'
                 });
 
-                await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 });
 
-                // Explicit wait for summary to ensure dynamic content loads
+                // Wait for key elements
                 try {
-                    await detailPage.waitForSelector('.class-detail-summery-area', { timeout: 5000 });
-                } catch (e) {
-                    // ignore timeout, proceed
-                }
-
-                // Wait a bit more for text hydration
-                await new Promise(r => setTimeout(r, 1000));
+                    await detailPage.waitForSelector('#placeCopy', { timeout: 10000 });
+                } catch (e) { /* ignore */ }
 
                 const detailInfo = await detailPage.evaluate(() => {
-                    // 1. Address Extraction: Improved Robustness
+                    // 1. Address Extraction: PRIORITIZE #placeCopy data-clipboard-text (but SKIP URLs)
                     let location = '';
                     const locationEl = document.querySelector('#placeCopy');
+
                     if (locationEl) {
-                        location = locationEl.getAttribute('data-clipboard-text') || '';
-                        if (!location || location === 'Copy Address' || location === '주소복사') {
-                            location = (locationEl as HTMLElement).innerText.trim();
+                        const clipboardText = locationEl.getAttribute('data-clipboard-text');
+                        // ONLY USE if it's NOT a URL and not placeholder text
+                        if (clipboardText &&
+                            clipboardText.trim().length > 0 &&
+                            !clipboardText.startsWith('http') &&
+                            clipboardText !== 'Copy Address' &&
+                            clipboardText !== '주소복사') {
+                            location = clipboardText.trim();
                         }
                     }
 
-                    // Fallback: look for ANY element with class containing 'address' or strict text
-                    if (!location || location.includes('http') || location === 'Copy Address' || location === '주소복사') {
-                        // Try to find the summary text explicitly
-                        const addressSpan = document.querySelector('.class-detail-place-copy, .address-text');
-                        if (addressSpan) location = (addressSpan as HTMLElement).textContent?.trim() || '';
+                    // Fallback 1: .detail-place element (abbreviated address like "마포구 상수동")
+                    if (!location) {
+                        const detailPlace = document.querySelector('.detail-place');
+                        if (detailPlace) {
+                            const text = (detailPlace as HTMLElement).innerText.trim();
+                            if (text && text.length > 2) {
+                                location = text;
+                            }
+                        }
                     }
 
-                    // Regex Fallback (Final Resort)
-                    if (!location || location === 'Copy Address' || location === '주소복사') {
-                        const bodyText = document.body.innerText;
-                        const match = bodyText.match(/[가-힣]+[시도]?\s*[가-힣]+[구군시]\s+[가-힣\d]+[로길동가읍면].+/);
-                        if (match) location = match[0];
-                    }
-
-                    // Cleanup
-                    if (location === 'Copy Address' || location === '주소복사') location = '상세페이지 참조';
+                    // Final cleanup
+                    if (!location) location = '상세페이지 참조';
 
 
-                    // 2. Summary Info: Use Class Logic
+                    // 2. Summary Info: Use specific selectors for Tags
                     let parking = '';
                     let time = '';
                     let capacity = '';
 
-                    const summaryDivs = Array.from(document.querySelectorAll('.class-detail-summery-area > div'));
-                    if (summaryDivs.length >= 4) {
-                        // Usually index 1 is Parking, 2 is Time, 3 is Capacity (0 is partial address)
-                        if (summaryDivs[1]) parking = (summaryDivs[1] as HTMLElement).innerText.trim();
-                        if (summaryDivs[2]) time = (summaryDivs[2] as HTMLElement).innerText.trim();
-                        if (summaryDivs[3]) capacity = (summaryDivs[3] as HTMLElement).innerText.trim();
-                    }
+                    const parkingEl = document.querySelector('.detail-car');
+                    const timeEl = document.querySelector('.detail-time');
+                    const peopleEl = document.querySelector('.detail-people');
+
+                    if (parkingEl) parking = (parkingEl as HTMLElement).innerText.trim();
+                    if (timeEl) time = (timeEl as HTMLElement).innerText.trim();
+                    if (peopleEl) capacity = (peopleEl as HTMLElement).innerText.trim();
 
 
-                    // 3. Price
+                    // 3. Price: Use precise selectors from browser probe
                     let discountRate = '';
                     let originalPrice = '';
                     let finalPrice = '';
 
-                    // Try getting strictly from price bar
-                    const priceRow = document.querySelector('#price-bar .row .detail_txt');
-                    if (priceRow) {
-                        const discountEl = priceRow.querySelector('.discount_rate');
-                        const baseEl = priceRow.querySelector('.base_price');
+                    const discountEl = document.querySelector('.discount_rate');
+                    const baseEl = document.querySelector('.base_price');
+                    const priceEl = document.querySelector('.price01');
 
-                        if (discountEl) discountRate = (discountEl as HTMLElement).innerText.trim();
-                        if (baseEl) originalPrice = (baseEl as HTMLElement).innerText.trim();
-
-                        // Final price is the identifying text (could be in .price01 or just text node)
-                        const raw = (priceRow as HTMLElement).innerText;
-                        // Remove discount and base to find final
-                        let remain = raw.replace(discountRate, '').replace(originalPrice, '').trim();
-                        // Clean up newlines
-                        finalPrice = remain.split('\n').pop()?.trim() || '';
-                    } else {
-                        // Fallback to title area price if bar missing
+                    if (discountEl) discountRate = (discountEl as HTMLElement).innerText.trim();
+                    if (baseEl) originalPrice = (baseEl as HTMLElement).innerText.trim();
+                    if (priceEl) {
+                        // Get the parent .list-price div for full price text
                         const listPrice = document.querySelector('.list-price');
                         if (listPrice) finalPrice = (listPrice as HTMLElement).innerText.trim();
+                        else finalPrice = (priceEl as HTMLElement).innerText.trim() + '원';
                     }
 
                     return { location, parking, time, capacity, discountRate, originalPrice, finalPrice };
@@ -242,7 +232,7 @@ async function scrape() {
 
                 await detailPage.close();
 
-                // Clean tags
+                // Clean tags - filter out empty or placeholder values
                 const tags = [
                     detailInfo.parking,
                     detailInfo.time,
@@ -253,7 +243,7 @@ async function scrape() {
                     id: `sssd-${i}`,
                     title: item.title,
                     date: '상시', // Class
-                    venue: detailInfo.location || '장소 정보 없음',
+                    venue: detailInfo.location,
                     // Split fields for correct UI rendering
                     price: detailInfo.finalPrice || '가격 정보 없음',
                     originalPrice: detailInfo.originalPrice,

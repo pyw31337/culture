@@ -63,7 +63,7 @@
     "id": "sssd-4",
     "title": "[홍대] 크리스마스 한정 컵케이크 4구 만들기!",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "9-10 Wausan-ro 11-gil, Mapo-gu, Seoul, Republic of Korea 2nd Floor",
     "price": "₩36,900",
     "originalPrice": "₩50,000",
     "discount": "26%",
@@ -71,7 +71,11 @@
     "link": "https://www.sssd.co.kr/m/class/detail/54336",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "No Parking",
+      "Duration: 1 hours 30 minutes",
+      "Maximum: 12 people"
+    ],
     "status": "OPEN"
   },
   {
@@ -106,36 +110,6 @@
   },
   {
     "id": "sssd-7",
-    "title": "[마곡] 크리스마스 30팀 한정, 두바이 필링가득 뚠뚠 스노우맨케이크",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "₩39,000",
-    "originalPrice": "₩65,000",
-    "discount": "40%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251204/0a9f60b1-00af-4612-837c-8c65b030ea9b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54151",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-8",
-    "title": "[서울] 물레 원데이클래스 / 빙글빙글 돌아가는 물레로 나만의 도자기 만들기!",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "₩35,000",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250318/21785a31-b9f5-449a-97c0-760d19792c06.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/50166",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-9",
     "title": "[성수] 겨울 한정! 크리스마스 귀여운 눈사람 스모어쿠키 만들기!!",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -150,7 +124,52 @@
     "status": "OPEN"
   },
   {
+    "id": "sssd-8",
+    "title": "[마곡] 크리스마스 30팀 한정, 두바이 필링가득 뚠뚠 스노우맨케이크",
+    "date": "상시",
+    "venue": "상세페이지 참조",
+    "price": "₩39,000",
+    "originalPrice": "₩65,000",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251204/0a9f60b1-00af-4612-837c-8c65b030ea9b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54151",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-9",
+    "title": "[강남] 메리 크리스마스 쫀득 바삭 달달한 티그레!!! (6개)",
+    "date": "상시",
+    "venue": "상세페이지 참조",
+    "price": "₩38,000",
+    "originalPrice": "₩54,000",
+    "discount": "29%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231202/8da1bf86-96b9-4bdb-b571-c19b91537b6a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/41221",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [],
+    "status": "OPEN"
+  },
+  {
     "id": "sssd-10",
+    "title": "[서울] 물레 원데이클래스 / 빙글빙글 돌아가는 물레로 나만의 도자기 만들기!",
+    "date": "상시",
+    "venue": "상세페이지 참조",
+    "price": "₩35,000",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250318/21785a31-b9f5-449a-97c0-760d19792c06.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50166",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-11",
     "title": "[부천] 두바이쫀득쿠키 원데이클래스,요즘핫한 2세대 쫀득쿠키 등장!",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -165,7 +184,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-11",
+    "id": "sssd-12",
     "title": "[종로] 모루인형 만들기 40분 체험 원데이클래스",
     "date": "상시",
     "venue": "23-1 Insadong-gil, Jongno-gu, Seoul 4F",
@@ -181,21 +200,6 @@
       "Duration: 40 minutes",
       "Maximum: 30 people"
     ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-12",
-    "title": "[강남] 메리 크리스마스 쫀득 바삭 달달한 티그레!!! (6개)",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "₩38,000",
-    "originalPrice": "₩54,000",
-    "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231202/8da1bf86-96b9-4bdb-b571-c19b91537b6a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/41221",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
     "status": "OPEN"
   },
   {
@@ -264,21 +268,6 @@
   },
   {
     "id": "sssd-17",
-    "title": "우리 오늘부터 1일🩷달콤한 2030소셜다이닝 소개팅!",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "₩39,000",
-    "originalPrice": "₩50,000",
-    "discount": "22%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250813/b0bc09b8-3480-4f1d-a616-3332e1f08e6f-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/52483",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-18",
     "title": "향기로 이어지는 인연, 퍼퓸시그널💘",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -293,7 +282,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-19",
+    "id": "sssd-18",
     "title": "[경의선숲길] 볼거리도 풍성한 담금주공방 빛나는구술",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -308,7 +297,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-20",
+    "id": "sssd-19",
     "title": "[잠실] 2인1케이크: 3D 입체 생크림 초코볼 트리케이크(사이즈업) 커플 데이트",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -323,7 +312,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-21",
+    "id": "sssd-20",
     "title": "[압구정] 크리스마스! 오리지널 아이싱 진저쿠키 만들기!",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -338,7 +327,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-22",
+    "id": "sssd-21",
     "title": "[부평] 2인 가능 생크림 딸기 케이크 만들기 원데이 클래스",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -353,7 +342,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-23",
+    "id": "sssd-22",
     "title": "[압구정] 오리지널 진저브레드 쿠키 하우스 만들기 체험",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -368,7 +357,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-24",
+    "id": "sssd-23",
     "title": "[쌈지길]조개껍데기는 녹슬지 않는다.",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -383,7 +372,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-25",
+    "id": "sssd-24",
     "title": "[홍대]몸치도 무조건 최애 안무 댄스 마스터!! 원데이 클래스",
     "date": "상시",
     "venue": "상세페이지 참조",
@@ -398,7 +387,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-26",
+    "id": "sssd-25",
     "title": "[종로] 1대1 메이크업클래스★내 이목구비,분위기에 맞는 베스트 화장법 찾기",
     "date": "상시",
     "venue": "121-1 Jong-ro, Jongno-gu, Seoul, Republic of Korea 5F",
@@ -414,6 +403,21 @@
       "Duration: 1 hours 30 minutes",
       "Maximum: 1 people"
     ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-26",
+    "title": "우리 오늘부터 1일🩷달콤한 2030소셜다이닝 소개팅!",
+    "date": "상시",
+    "venue": "상세페이지 참조",
+    "price": "₩39,000",
+    "originalPrice": "₩50,000",
+    "discount": "22%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250813/b0bc09b8-3480-4f1d-a616-3332e1f08e6f-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/52483",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [],
     "status": "OPEN"
   },
   {
@@ -435,7 +439,7 @@
     "id": "sssd-28",
     "title": "[강남] 리뷰평점1위 대표원장 pure daily makeup class",
     "date": "상시",
-    "venue": "10 Gangnam-daero 61-gil, Seocho-gu, Seoul, Republic of Korea 703",
+    "venue": "상세페이지 참조",
     "price": "₩149,000",
     "originalPrice": "₩210,000",
     "discount": "29%",
@@ -443,23 +447,19 @@
     "link": "https://www.sssd.co.kr/m/class/detail/23945",
     "genre": "class",
     "source": "sssd",
-    "tags": [
-      "Has Parking",
-      "Duration: 1 hours 30 minutes",
-      "Maximum: 1 people"
-    ],
+    "tags": [],
     "status": "OPEN"
   },
   {
     "id": "sssd-29",
-    "title": "[광진구] 크리스마스 스페셜 귀엽고 맛있는 쿠키 만들기 (6개)",
+    "title": "[성북] 휘낭시에/마들렌/머핀 베이킹을 직접! 손쉬운 셀프 베이킹",
     "date": "상시",
     "venue": "상세페이지 참조",
-    "price": "₩40,000",
-    "originalPrice": "₩55,000",
-    "discount": "27%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231130/457d85c2-a03e-4108-b353-65043b334f01.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/41147",
+    "price": "₩24,900",
+    "originalPrice": "₩35,000",
+    "discount": "28%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250703/57d2184e-0ce4-4756-83ab-c609b56d8551-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/39117",
     "genre": "class",
     "source": "sssd",
     "tags": [],
