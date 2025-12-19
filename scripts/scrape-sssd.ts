@@ -99,12 +99,27 @@ async function scrape() {
                         const match = style.match(/url\(["']?(.+?)["']?\)/);
                         if (match) image = match[1];
                     }
+
+                    // If no style url, check data-src on the div itself (lazy load)
+                    if (!image) {
+                        image = (imgDiv as HTMLElement).getAttribute('data-src') || '';
+                    }
                 }
 
                 // Fallback to img tag if background-image fails
                 if (!image) {
                     const imgTag = el.querySelector('img');
-                    if (imgTag) image = imgTag.src;
+                    if (imgTag) {
+                        image = imgTag.getAttribute('data-original') || imgTag.getAttribute('data-src') || imgTag.src;
+                    }
+                }
+
+                // Fallback: look for any div with unexpected structure
+                if (!image) {
+                    const anyImg = el.querySelector('.list-img img');
+                    if (anyImg) {
+                        image = anyImg.getAttribute('data-original') || anyImg.getAttribute('data-src') || (anyImg as HTMLImageElement).src;
+                    }
                 }
 
                 return { title, link, image };
@@ -222,14 +237,7 @@ async function scrape() {
                         if (listPrice) finalPrice = (listPrice as HTMLElement).innerText.trim();
                     }
 
-                    let priceString = finalPrice;
-                    if (discountRate && originalPrice) {
-                        priceString = `${discountRate} ${originalPrice} -> ${finalPrice}`;
-                    } else if (discountRate) {
-                        priceString = `${discountRate} ${finalPrice}`;
-                    }
-
-                    return { location, parking, time, capacity, priceString, discountRate, originalPrice, finalPrice };
+                    return { location, parking, time, capacity, discountRate, originalPrice, finalPrice };
                 });
 
                 await detailPage.close();
@@ -246,7 +254,11 @@ async function scrape() {
                     title: item.title,
                     date: '상시', // Class
                     venue: detailInfo.location || '장소 정보 없음',
-                    price: detailInfo.priceString || '가격 정보 없음', // Use the composed price string
+                    // Split fields for correct UI rendering
+                    price: detailInfo.finalPrice || '가격 정보 없음',
+                    originalPrice: detailInfo.originalPrice,
+                    discount: detailInfo.discountRate,
+
                     image: item.image,
                     link: item.link,
                     genre: 'class',
