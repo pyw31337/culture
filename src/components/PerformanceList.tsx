@@ -225,7 +225,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 // Add keyword templates (weight: higher)
                 const keywordTemplates = HERO_TEMPLATES.keyword.map(t => {
                     const randomKeyword = savedKeywords[Math.floor(Math.random() * savedKeywords.length)];
-                    return { ...t, highlight: t.highlight.replace('{keyword}', randomKeyword) };
+                    return {
+                        ...t,
+                        highlight: t.highlight.replace('{keyword}', randomKeyword),
+                        keywords: t.keywords.map(k => k.replace('{keyword}', randomKeyword)) // Fix: Replace keyword in array too
+                    };
                 });
                 for (let i = 0; i < 3; i++) pool.push(...keywordTemplates);
             }
@@ -274,11 +278,39 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 console.log("Weather fetch failed (ignoring).");
             }
 
-            // Final Selection from Pool
-            const randomTemplate = pool[Math.floor(Math.random() * pool.length)];
-            setHeroText(randomTemplate);
-            if (randomTemplate.keywords) {
-                setContextKeywords(randomTemplate.keywords);
+            // Final Selection with Validation
+            // Ensure the selected template has matching performances (if it has keywords)
+            let selectedTemplate = HERO_TEMPLATES.general[0];
+            let attempts = 0;
+            const maxAttempts = 20;
+
+            while (pool.length > 0 && attempts < maxAttempts) {
+                const idx = Math.floor(Math.random() * pool.length);
+                const candidate = pool[idx];
+                attempts++;
+
+                // Validate: If template has keywords, at least one must yield results
+                if (candidate.keywords && candidate.keywords.length > 0) {
+                    const hasMatch = initialPerformances.some(p =>
+                        candidate.keywords!.some(k =>
+                            p.title.includes(k) || p.genre.includes(k)
+                        )
+                    );
+
+                    if (!hasMatch) {
+                        // Invalid context: Remove and retry
+                        pool.splice(idx, 1);
+                        continue;
+                    }
+                }
+
+                selectedTemplate = candidate;
+                break;
+            }
+
+            setHeroText(selectedTemplate);
+            if (selectedTemplate.keywords) {
+                setContextKeywords(selectedTemplate.keywords);
             }
         };
 
