@@ -1248,7 +1248,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 type="text"
                                 value={searchText}
                                 onFocus={() => setActiveSearchSource('hero')}
-                                onChange={handleSearchTextChange}
+                                onChange={(e) => {
+                                    setSearchText(e.target.value);
+                                    if (e.target.value.length > 0) {
+                                        setIsLikesExpanded(false);
+                                        setIsFavoriteVenuesExpanded(false);
+                                    }
+                                }}
                                 onKeyDown={handleKeyDown}
                                 className="bg-transparent border-none text-white text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600"
                                 placeholder={activeLocation ? "주변 공연장 검색..." : "공연명, 장소, 지역 검색..."}
