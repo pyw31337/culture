@@ -363,6 +363,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             const candidate = pool[idx];
             attempts++;
 
+            if (candidate === heroText) continue;
+
             // Validate: If template has keywords, at least one must yield results
             if (candidate.keywords && candidate.keywords.length > 0) {
                 const hasMatch = initialPerformances.some(p =>
