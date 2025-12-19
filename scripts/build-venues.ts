@@ -157,7 +157,19 @@ async function buildVenues() {
         }
     }
 
-    const all = [...interparkItems, ...timeticketItems];
+    // Read MyRealTrip Data
+    let myrealtripItems: any[] = [];
+    const MYREALTRIP_FILE = path.join(process.cwd(), 'src/data/myrealtrip-kids.json');
+    if (fs.existsSync(MYREALTRIP_FILE)) {
+        try {
+            myrealtripItems = JSON.parse(fs.readFileSync(MYREALTRIP_FILE, 'utf-8'));
+            console.log(`Loaded ${myrealtripItems.length} MyRealTrip items.`);
+        } catch (e) {
+            console.error('Failed to load MyRealTrip data', e);
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems];
 
     console.log(`Total items: ${all.length}`);
 
@@ -244,6 +256,11 @@ async function buildVenues() {
                 // @ts-ignore
                 address = perf.address;
                 console.log(`   -> Using Provided Address: ${address}`);
+            } else if ((perf as any).source === 'myrealtrip') {
+                // MyRealTrip venues are often "Name (Address)" or just "Address" in venue field
+                // Use venue as address
+                address = perf.venue;
+                console.log(`   -> Using MyRealTrip Venue as Address: ${address}`);
             } else {
                 address = await getVenueAddress(perf.id);
             }

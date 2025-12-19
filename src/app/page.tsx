@@ -9,6 +9,7 @@ import festivalsData from '@/data/festivals.json';
 import yes24Data from '@/data/yes24.json';
 import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
+import kidsData from '@/data/myrealtrip-kids.json';
 
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
@@ -56,6 +57,7 @@ async function getPerformances() {
     const timeticket = timeticketData as unknown as any[];
     const movies = moviesData as unknown as any[];
     const travels = travelData as unknown as any[];
+    const kids = kidsData as unknown as any[];
 
     // Aggregate Data
     const allPerformances = [
@@ -66,7 +68,8 @@ async function getPerformances() {
         ...volleyball, // KOVO
         ...basketball, // KBL
         ...movies,   // Movies
-        ...travels // Travel
+        ...travels, // Travel
+        ...kids,     // Kids (MyRealTrip)
     ].map(p => ({
         ...p,
         // Ensure ID is string
@@ -95,8 +98,8 @@ async function getPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
-        // Movies & Travel: Always show regardless of region/date logic
-        if (p.genre === 'movie' || p.genre === 'travel') return true;
+        // Movies & Travel & Kids: Always show regardless of region/date logic (Kids has unstructured date)
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 
