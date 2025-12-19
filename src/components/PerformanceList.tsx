@@ -1106,16 +1106,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
                         onClick={() => {
-                            setSearchText('');
-                            setSelectedRegion('all');
-                            setSelectedDistrict('all');
-                            setSelectedVenue('all');
-                            setSelectedGenre('all');
-                            setUserLocation(null);
-                            setSearchLocation(null);
-                            setSearchResults([]);
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                            setIsFilterExpanded(true);
+                            window.location.href = 'http://pyw31337.dothome.co.kr/culture/';
                         }}
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
