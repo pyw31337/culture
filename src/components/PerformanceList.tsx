@@ -3038,7 +3038,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 {perf.director && (
                                     <div className="flex gap-2 items-start">
                                         <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                        <span className="text-gray-300 truncate">{perf.director}</span>
+                                        <a
+                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-300 truncate hover:text-white hover:underline transition-colors"
+                                            onClick={e => e.stopPropagation()}
+                                        >
+                                            {perf.director.replace('더보기', '').trim()}
+                                        </a>
                                     </div>
                                 )}
                                 {/* Cast */}
@@ -3046,18 +3054,22 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     <div className="flex gap-2 items-start">
                                         <span className="text-gray-500 font-bold shrink-0">출연</span>
                                         <div className="flex flex-wrap gap-x-1 leading-snug">
-                                            {perf.cast.slice(0, 5).map((actor: string, idx: number) => (
-                                                <a
-                                                    key={idx}
-                                                    href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(actor)}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-gray-300 hover:text-white hover:underline transition-colors"
-                                                    onClick={e => e.stopPropagation()}
-                                                >
-                                                    {actor}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
-                                                </a>
-                                            ))}
+                                            {perf.cast.slice(0, 5).map((actor: string, idx: number) => {
+                                                const cleanName = actor.replace('더보기', '').trim();
+                                                if (!cleanName) return null;
+                                                return (
+                                                    <a
+                                                        key={idx}
+                                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                        onClick={e => e.stopPropagation()}
+                                                    >
+                                                        {cleanName}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
+                                                    </a>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 )}
@@ -3527,27 +3539,39 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     {perf.director && (
                                                         <div className="flex gap-1 items-start">
                                                             <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                                            <span className="text-gray-300 truncate">{perf.director}</span>
+                                                            <a
+                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]"
+                                                                onClick={e => e.stopPropagation()}
+                                                            >
+                                                                {perf.director.replace('더보기', '').trim()}
+                                                            </a>
                                                         </div>
                                                     )}
                                                     {perf.cast && perf.cast.length > 0 && (
                                                         <div className="flex gap-1 items-start">
                                                             <span className="text-gray-500 font-bold shrink-0">출연</span>
                                                             <div className="block truncate relative z-[101]">
-                                                                {perf.cast.slice(0, 3).map((actor: string, idx: number) => (
-                                                                    <span key={idx}>
-                                                                        <a
-                                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(actor)}`}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            className="text-gray-300 hover:text-white hover:underline transition-colors"
-                                                                            onClick={e => e.stopPropagation()}
-                                                                        >
-                                                                            {actor}
-                                                                        </a>
-                                                                        {idx < Math.min(perf.cast.length, 3) - 1 && ', '}
-                                                                    </span>
-                                                                ))}
+                                                                {perf.cast.slice(0, 3).map((actor: string, idx: number) => {
+                                                                    const cleanName = actor.replace('더보기', '').trim();
+                                                                    if (!cleanName) return null;
+                                                                    return (
+                                                                        <span key={idx}>
+                                                                            <a
+                                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                                                onClick={e => e.stopPropagation()}
+                                                                            >
+                                                                                {cleanName}
+                                                                            </a>
+                                                                            {idx < Math.min(perf.cast.length, 3) - 1 && ', '}
+                                                                        </span>
+                                                                    );
+                                                                })}
                                                             </div>
                                                         </div>
                                                     )}
