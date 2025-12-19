@@ -10,6 +10,7 @@ import yes24Data from '@/data/yes24.json';
 import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
+import classData from '@/data/klook-class.json';
 
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
@@ -58,6 +59,7 @@ async function getPerformances() {
     const movies = moviesData as unknown as any[];
     const travels = travelData as unknown as any[];
     const kids = kidsData as unknown as any[];
+    const classes = classData as unknown as any[];
 
     // Aggregate Data
     const allPerformances = [
@@ -70,6 +72,7 @@ async function getPerformances() {
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)
+        ...classes,  // Class (Klook)
     ].map(p => ({
         ...p,
         // Ensure ID is string
@@ -98,8 +101,8 @@ async function getPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
-        // Movies & Travel & Kids: Always show regardless of region/date logic (Kids has unstructured date)
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids') return true;
+        // Movies & Travel & Kids & Class: Always show regardless of region/date logic
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 

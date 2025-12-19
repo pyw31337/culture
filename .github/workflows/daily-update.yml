@@ -81,6 +81,7 @@ jobs:
           npx tsx scripts/scrape-travel.ts || true
           node scripts/scrape-movies.js || true
           node scripts/scrape-myrealtrip.js || true
+          node scripts/scrape-klook.js || true
           npx tsx scripts/build-venues.ts || true
 
       - name: Commit and Push changes

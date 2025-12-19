@@ -169,7 +169,19 @@ async function buildVenues() {
         }
     }
 
-    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems];
+    // Read Klook Data
+    let klookItems: any[] = [];
+    const KLOOK_FILE = path.join(process.cwd(), 'src/data/klook-class.json');
+    if (fs.existsSync(KLOOK_FILE)) {
+        try {
+            klookItems = JSON.parse(fs.readFileSync(KLOOK_FILE, 'utf-8'));
+            console.log(`Loaded ${klookItems.length} Klook items.`);
+        } catch (e) {
+            console.error('Failed to load Klook data', e);
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems];
 
     console.log(`Total items: ${all.length}`);
 
@@ -261,6 +273,9 @@ async function buildVenues() {
                 // Use venue as address
                 address = perf.venue;
                 console.log(`   -> Using MyRealTrip Venue as Address: ${address}`);
+            } else if ((perf as any).source === 'klook') {
+                address = perf.venue;
+                console.log(`   -> Using Klook Venue as Address: ${address}`);
             } else {
                 address = await getVenueAddress(perf.id);
             }

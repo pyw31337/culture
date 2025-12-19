@@ -8,7 +8,8 @@ export const GENRES = [
     { id: 'classic', label: '클래식/무용' },
     { id: 'exhibition', label: '전시/행사' },
     { id: 'activity', label: '액티비티' },
-    { id: 'travel', label: '여행' }, // New Travel category
+    { id: 'class', label: '클래스' }, // New Class category
+    { id: 'travel', label: '여행' },
     { id: 'festival', label: '축제' },
     // { id: 'leisure', label: '레저' }, // Removed or commented out if not used? Keeping consistency with view_file
     { id: 'leisure', label: '레저' },
@@ -27,6 +28,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'classic': { hex: '#ca8a04', twText: 'text-yellow-700', twBg: 'bg-yellow-700', twBorder: 'border-yellow-500', twActivebg: 'bg-yellow-600' },
     'exhibition': { hex: '#9333ea', twText: 'text-purple-700', twBg: 'bg-purple-700', twBorder: 'border-purple-500', twActivebg: 'bg-purple-600' },
     'activity': { hex: '#0891b2', twText: 'text-cyan-700', twBg: 'bg-cyan-700', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-600' },
+    'class': { hex: '#6366f1', twText: 'text-indigo-600', twBg: 'bg-indigo-600', twBorder: 'border-indigo-500', twActivebg: 'bg-indigo-500' }, // Indigo for Class
     'travel': { hex: '#0ea5e9', twText: 'text-sky-600', twBg: 'bg-sky-600', twBorder: 'border-sky-500', twActivebg: 'bg-sky-500' }, // Sky Blue for Travel
     'festival': { hex: '#f97316', twText: 'text-orange-500', twBg: 'bg-orange-500', twBorder: 'border-orange-400', twActivebg: 'bg-orange-400' },
     'leisure': { hex: '#ea580c', twText: 'text-orange-700', twBg: 'bg-orange-700', twBorder: 'border-orange-500', twActivebg: 'bg-orange-600' },
