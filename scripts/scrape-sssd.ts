@@ -1,4 +1,3 @@
-
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
@@ -20,16 +19,31 @@ async function scrape() {
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-blink-features=AutomationControlled',
-            '--window-size=1920,1080'
+            '--window-size=1920,1080',
+            '--lang=ko-KR' // Set browser language
         ]
     });
 
     try {
         const page = await browser.newPage();
         await page.setUserAgent(USER_AGENT);
+
+        // Critical: Set Accept-Language to Korean
+        await page.setExtraHTTPHeaders({
+            'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
+        });
+
         await page.setViewport({ width: 1920, height: 1080 });
 
         console.log(`Navigating to ${TARGET_URL}...`);
+
+        // Force Korean Language via Cookie
+        await page.setCookie({
+            name: 'SSSD_MW_LANG',
+            value: 'ko-KR',
+            domain: '.sssd.co.kr'
+        });
+
         await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
         // Wait for list
@@ -41,14 +55,14 @@ async function scrape() {
             await new Promise(r => setTimeout(r, 3000));
         }
 
-        // Scroll to load more items (optional but recommended for infinite scroll pages)
+        // Scroll to load more items
         console.log('Scrolling to load items...');
         await page.evaluate(async () => {
             await new Promise<void>((resolve) => {
                 let totalHeight = 0;
                 const distance = 100;
                 let scrolls = 0;
-                const maxScrolls = 50; // Limit scroll to avoid infinite loops
+                const maxScrolls = 50;
                 const timer = setInterval(() => {
                     const scrollHeight = document.body.scrollHeight;
                     window.scrollBy(0, distance);
@@ -75,20 +89,25 @@ async function scrape() {
                 const titleEl = el.querySelector('div.list-subject.text-line-restrict.text-2-line');
                 const title = titleEl ? (titleEl as HTMLElement).innerText.trim() : '';
 
-                const priceEl = el.querySelector('div.list-price');
-                const price = priceEl ? (priceEl as HTMLElement).innerText.replace(/\n/g, ' ').trim() : '';
-
+                // Helper to extract image URL from background-image
                 const imgDiv = el.querySelector('div.list-img > div');
                 let image = '';
                 if (imgDiv) {
                     const style = (imgDiv as HTMLElement).getAttribute('style');
-                    if (style && style.includes('url(')) {
-                        const match = style.match(/url\("?(.+?)"?\)/);
+                    // Match url("...") or url(...)
+                    if (style) {
+                        const match = style.match(/url\(["']?(.+?)["']?\)/);
                         if (match) image = match[1];
                     }
                 }
 
-                return { title, link, price, image };
+                // Fallback to img tag if background-image fails
+                if (!image) {
+                    const imgTag = el.querySelector('img');
+                    if (imgTag) image = imgTag.src;
+                }
+
+                return { title, link, image };
             }).filter(item => item && item.title && item.link);
         }, listSelector);
 
@@ -100,91 +119,134 @@ async function scrape() {
         // Detail Scraping Loop
         for (let i = 0; i < total; i++) {
             const item = items[i];
-            // Safe check
             if (!item) continue;
 
             const progress = `[${i + 1}/${total}]`;
-            // Log to stdout/stderr in a way that shows progress
             process.stdout.write(`${progress} Scraping ${item.title.substring(0, 20)}... \r`);
 
-            // Skip if invalid link
             if (!item.link.startsWith('http')) continue;
 
             try {
                 const detailPage = await browser.newPage();
                 await detailPage.setUserAgent(USER_AGENT);
+
+                // Set Header for Detail Page too
+                await detailPage.setExtraHTTPHeaders({
+                    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
+                });
+
+                await detailPage.setCookie({
+                    name: 'SSSD_MW_LANG',
+                    value: 'ko-KR',
+                    domain: '.sssd.co.kr'
+                });
+
                 await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-                // Wait a bit for dynamic content
+                // Explicit wait for summary to ensure dynamic content loads
+                try {
+                    await detailPage.waitForSelector('.class-detail-summery-area', { timeout: 5000 });
+                } catch (e) {
+                    // ignore timeout, proceed
+                }
+
+                // Wait a bit more for text hydration
                 await new Promise(r => setTimeout(r, 1000));
 
                 const detailInfo = await detailPage.evaluate(() => {
+                    // 1. Address Extraction: Improved Robustness
+                    let location = '';
                     const locationEl = document.querySelector('#placeCopy');
-                    let location = locationEl ? locationEl.getAttribute('data-clipboard-text') : '';
+                    if (locationEl) {
+                        location = locationEl.getAttribute('data-clipboard-text') || '';
+                        if (!location || location === 'Copy Address' || location === '주소복사') {
+                            location = (locationEl as HTMLElement).innerText.trim();
+                        }
+                    }
 
+                    // Fallback: look for ANY element with class containing 'address' or strict text
                     if (!location || location.includes('http') || location === 'Copy Address' || location === '주소복사') {
-                        const addressSpan = document.querySelector('span.address-text');
+                        // Try to find the summary text explicitly
+                        const addressSpan = document.querySelector('.class-detail-place-copy, .address-text');
                         if (addressSpan) location = (addressSpan as HTMLElement).textContent?.trim() || '';
                     }
 
+                    // Regex Fallback (Final Resort)
                     if (!location || location === 'Copy Address' || location === '주소복사') {
                         const bodyText = document.body.innerText;
-                        // Relaxed regex for road addresses (matches "City Gu Road/Dong ...")
                         const match = bodyText.match(/[가-힣]+[시도]?\s*[가-힣]+[구군시]\s+[가-힣\d]+[로길동가읍면].+/);
                         if (match) location = match[0];
                     }
 
-                    if (!location && locationEl) {
-                        const text = (locationEl as HTMLElement).innerText.trim();
-                        if (text !== 'Copy Address' && text !== '주소복사') {
-                            location = text;
-                        } else {
-                            location = '상세페이지 참조';
-                        }
-                    }
+                    // Cleanup
+                    if (location === 'Copy Address' || location === '주소복사') location = '상세페이지 참조';
 
-                    const summaryArea = document.querySelector('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area');
 
+                    // 2. Summary Info: Use Class Logic
                     let parking = '';
                     let time = '';
                     let capacity = '';
 
-                    if (summaryArea) {
-                        const div2 = summaryArea.querySelector('div:nth-child(2)');
-                        const div3 = summaryArea.querySelector('div:nth-child(3)');
-                        const div4 = summaryArea.querySelector('div:nth-child(4)');
-
-                        if (div2) parking = (div2 as HTMLElement).innerText.trim();
-                        if (div3) time = (div3 as HTMLElement).innerText.trim();
-                        if (div4) capacity = (div4 as HTMLElement).innerText.trim();
+                    const summaryDivs = Array.from(document.querySelectorAll('.class-detail-summery-area > div'));
+                    if (summaryDivs.length >= 4) {
+                        // Usually index 1 is Parking, 2 is Time, 3 is Capacity (0 is partial address)
+                        if (summaryDivs[1]) parking = (summaryDivs[1] as HTMLElement).innerText.trim();
+                        if (summaryDivs[2]) time = (summaryDivs[2] as HTMLElement).innerText.trim();
+                        if (summaryDivs[3]) capacity = (summaryDivs[3] as HTMLElement).innerText.trim();
                     }
 
-                    return { location, parking, time, capacity };
+
+                    // 3. Price
+                    let discountRate = '';
+                    let originalPrice = '';
+                    let finalPrice = '';
+
+                    // Try getting strictly from price bar
+                    const priceRow = document.querySelector('#price-bar .row .detail_txt');
+                    if (priceRow) {
+                        const discountEl = priceRow.querySelector('.discount_rate');
+                        const baseEl = priceRow.querySelector('.base_price');
+
+                        if (discountEl) discountRate = (discountEl as HTMLElement).innerText.trim();
+                        if (baseEl) originalPrice = (baseEl as HTMLElement).innerText.trim();
+
+                        // Final price is the identifying text (could be in .price01 or just text node)
+                        const raw = (priceRow as HTMLElement).innerText;
+                        // Remove discount and base to find final
+                        let remain = raw.replace(discountRate, '').replace(originalPrice, '').trim();
+                        // Clean up newlines
+                        finalPrice = remain.split('\n').pop()?.trim() || '';
+                    } else {
+                        // Fallback to title area price if bar missing
+                        const listPrice = document.querySelector('.list-price');
+                        if (listPrice) finalPrice = (listPrice as HTMLElement).innerText.trim();
+                    }
+
+                    let priceString = finalPrice;
+                    if (discountRate && originalPrice) {
+                        priceString = `${discountRate} ${originalPrice} -> ${finalPrice}`;
+                    } else if (discountRate) {
+                        priceString = `${discountRate} ${finalPrice}`;
+                    }
+
+                    return { location, parking, time, capacity, priceString, discountRate, originalPrice, finalPrice };
                 });
 
                 await detailPage.close();
 
-                // Format "venue" to include key info
-                // The user asked to show location. And also asked to show parking, time, capacity "like travel category at the bottom".
-                // Since I am just producing a JSON object, I'll store them in fields. 
-                // The 'venue' field in the main app is usually displayed prominently. I'll put the address there.
-                // The other fields (parking, time, capacity) might need to be appended to the venue or stored in `tags` or `description` if the UI doesn't support custom fields.
-                // Reviewing `page.tsx`: it uses `PerformanceItem` which displays `venue`. 
-                // Travel items usually don't have special fields in `PerformanceItem` unless customized.
-                // However, I can create a composite string for one of the fields or use `tags`.
-                // Let's store them as extra properties for now, but also composite them into `venue` or a new field if needed.
-                // Actually, `PerformanceListItem` usually shows `venue` and `date`.
-                // I'll put the address in `venue`.
-                // I'll put the extra info in `tags` because that's a common way to show extra pills/info.
-
-                const tags = [detailInfo.parking, detailInfo.time, detailInfo.capacity].filter(s => s && s.trim() !== '' && !['Copy Address', '주소복사'].includes(s) && !s.includes('http'));
+                // Clean tags
+                const tags = [
+                    detailInfo.parking,
+                    detailInfo.time,
+                    detailInfo.capacity
+                ].filter(s => s && s.trim() !== '' && !['Copy Address', '주소복사'].includes(s) && !s.includes('http'));
 
                 results.push({
-                    id: `sssd-${i}`, // Simple ID
+                    id: `sssd-${i}`,
                     title: item.title,
                     date: '상시', // Class
                     venue: detailInfo.location || '장소 정보 없음',
-                    price: item.price,
+                    price: detailInfo.priceString || '가격 정보 없음', // Use the composed price string
                     image: item.image,
                     link: item.link,
                     genre: 'class',
@@ -200,7 +262,6 @@ async function scrape() {
 
         console.log(`\nScraping complete! Saved ${results.length} items to ${OUTPUT_FILE}`);
 
-        // Ensure directory exists
         const dir = path.dirname(OUTPUT_FILE);
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir, { recursive: true });
