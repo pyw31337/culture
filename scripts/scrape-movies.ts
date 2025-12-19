@@ -149,44 +149,55 @@ async function scrapeMovies() {
 
             // Try to fetch detail page for Grade if missed
             // Try to fetch detail page for Grade if missed
-            if (grade === "등급 미정" && raw.link) {
-                try {
-                    // Open in same page to save resources
-                    await page.goto(raw.link, { waitUntil: 'domcontentloaded', timeout: 8000 });
+            if (grade === "등급 미정") {
+                // 1. Try Naver Detail (if link exists)
+                if (raw.link) {
+                    try {
+                        // Open in same page to save resources
+                        await page.goto(raw.link, { waitUntil: 'domcontentloaded', timeout: 5000 }); // Reduced timeout
 
-                    // Debug: Save first detail page HTML
-                    if (i === 0) {
-                        fs.writeFileSync('debug_movie_detail.html', await page.content());
-                        console.log('Saved debug_movie_detail.html');
-                    }
+                        let extractedGrade = await page.evaluate(() => {
+                            // Strategy 1: Look for specific Description List structure (Naver Mobile standard)
+                            const dts = Array.from(document.querySelectorAll('dt'));
+                            const gradeDt = dts.find(dt => dt.textContent?.includes('등급'));
+                            if (gradeDt && gradeDt.nextElementSibling) {
+                                return gradeDt.nextElementSibling.textContent?.trim();
+                            }
+                            // Strategy 2: Common text patterns in Naver
+                            const html = document.body.innerText;
+                            const match = html.match(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/);
+                            return match ? match[0] : null;
+                        });
 
-                    let extractedGrade = await page.evaluate(() => {
-                        // Strategy 1: Look for specific Description List structure (Naver Mobile standard)
-                        const dts = Array.from(document.querySelectorAll('dt'));
-                        const gradeDt = dts.find(dt => dt.textContent?.includes('등급'));
-                        if (gradeDt && gradeDt.nextElementSibling) {
-                            return gradeDt.nextElementSibling.textContent?.trim();
+                        if (extractedGrade) {
+                            grade = cleanGrade(extractedGrade);
                         }
-                        return null;
-                    });
+                    } catch (e) {
+                        // Naver detail failed, proceed to Daum
+                    }
+                }
 
-                    // Strategy 2: Regex on Page Content (Robust Fallback)
-                    if (!extractedGrade) {
-                        const html = await page.content();
-                        const kobisMatch = html.match(/관람등급\s*([0-9]+세|전체|청소년)(?:이상)?\s*(관람가|관람불가)/);
-                        if (kobisMatch) {
-                            extractedGrade = kobisMatch[0];
-                        } else {
-                            const generalMatch = html.match(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/);
-                            if (generalMatch) extractedGrade = generalMatch[0];
+                // 2. If still unknown, Try Daum Search fallback
+                if (grade === "등급 미정") {
+                    try {
+                        const daumUrl = `https://search.daum.net/search?w=tot&q=${encodeURIComponent(raw.title + ' 영화')}`;
+                        console.log(`Checking Daum for grade: ${raw.title}`);
+                        await page.goto(daumUrl, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+                        const daumGrade = await page.evaluate(() => {
+                            const html = document.body.innerText;
+                            // Regex for standard Korean ratings
+                            const match = html.match(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/);
+                            return match ? match[0] : null;
+                        });
+
+                        if (daumGrade) {
+                            grade = cleanGrade(daumGrade);
+                            console.log(`Found grade on Daum: ${grade}`);
                         }
+                    } catch (e) {
+                        console.log(`Daum check failed for ${raw.title}`);
                     }
-
-                    if (extractedGrade) {
-                        grade = cleanGrade(extractedGrade);
-                    }
-                } catch (e) {
-                    console.log(`Error fetching details for ${raw.title}`);
                 }
             } else {
                 grade = cleanGrade(grade);

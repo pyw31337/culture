@@ -2,7 +2,7 @@
   {
     "id": "movie_20251217_아바타:_불과_재",
     "title": "아바타: 불과 재",
-    "image": "https://s.pstatic.net/movie.phinf/20251128_88/1764308482091Jr5jh_JPEG/movie_image.jpg",
+    "image": "https://s.pstatic.net/movie.phinf/20251217_118/1765951474121LjtOH_JPEG/movie_image.jpg",
     "date": "2025.12.17.",
     "venue": "12세 관람가",
     "gradeIcon": null,
@@ -15,20 +15,9 @@
     "title": "주토피아 2",
     "image": "https://s.pstatic.net/movie.phinf/20251126_216/17641208921706FCfp_JPEG/movie_image.jpg",
     "date": "2025.11.26.",
-    "venue": "등급 미정",
+    "venue": "전체 관람가",
     "gradeIcon": null,
     "link": "https://m.search.daum.net/search?w=tot&q=%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84%202%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
-    "id": "movie_20251203_윗집_사람들",
-    "title": "윗집 사람들",
-    "image": "https://s.pstatic.net/movie.phinf/20251203_163/17647286711859Ak5j_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "청소년 관람불가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%97%EC%A7%91%20%EC%82%AC%EB%9E%8C%EB%93%A4%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie"
   },
@@ -40,6 +29,17 @@
     "venue": "전체 관람가",
     "gradeIcon": null,
     "link": "https://m.search.daum.net/search?w=tot&q=%EB%BD%80%EB%A1%9C%EB%A1%9C%20%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%8A%A4%EC%9C%84%ED%8A%B8%EC%BA%90%EC%8A%AC%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
+    "id": "movie_20251203_윗집_사람들",
+    "title": "윗집 사람들",
+    "image": "https://s.pstatic.net/movie.phinf/20251203_163/17647286711859Ak5j_JPEG/movie_image.jpg",
+    "date": "2025.12.03.",
+    "venue": "청소년 관람불가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%97%EC%A7%91%20%EC%82%AC%EB%9E%8C%EB%93%A4%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie"
   },
@@ -77,17 +77,6 @@
     "genre": "movie"
   },
   {
-    "id": "movie_20251210_더_러닝_맨",
-    "title": "더 러닝 맨",
-    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
-    "date": "2025.12.10.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
     "id": "movie_20251210_여행과_나날",
     "title": "여행과 나날",
     "image": "https://s.pstatic.net/movie.phinf/20251119_96/1763544733243a3wqW_JPEG/movie_image.jpg",
@@ -99,11 +88,22 @@
     "genre": "movie"
   },
   {
+    "id": "movie_20251210_더_러닝_맨",
+    "title": "더 러닝 맨",
+    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
+    "date": "2025.12.10.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
     "id": "movie_20250924_극장판_체인소_맨:",
     "title": "극장판 체인소 맨: 레제편",
     "image": "https://s.pstatic.net/movie.phinf/20251024_263/1761270408060kfuwT_JPEG/movie_image.jpg",
     "date": "2025.09.24.",
-    "venue": "등급 미정",
+    "venue": "15세 관람가",
     "gradeIcon": null,
     "link": "https://m.search.daum.net/search?w=tot&q=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%B2%B4%EC%9D%B8%EC%86%8C%20%EB%A7%A8%3A%20%EB%A0%88%EC%A0%9C%ED%8E%B8%20%EC%98%81%ED%99%94",
     "region": "전국",
@@ -121,13 +121,13 @@
     "genre": "movie"
   },
   {
-    "id": "movie_20251203_정보원",
-    "title": "정보원",
-    "image": "https://s.pstatic.net/movie.phinf/20251110_51/1762751776181ah2ln_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "등급 미정",
+    "id": "movie_20251217_사운드_오브_폴링",
+    "title": "사운드 오브 폴링",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_66/17639530624873faQp_JPEG/movie_image.jpg",
+    "date": "2025.12.17.",
+    "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%A0%95%EB%B3%B4%EC%9B%90%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%82%AC%EC%9A%B4%EB%93%9C%20%EC%98%A4%EB%B8%8C%20%ED%8F%B4%EB%A7%81%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie"
   },
@@ -143,50 +143,6 @@
     "genre": "movie"
   },
   {
-    "id": "movie_20251217_사운드_오브_폴링",
-    "title": "사운드 오브 폴링",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_66/17639530624873faQp_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%82%AC%EC%9A%B4%EB%93%9C%20%EC%98%A4%EB%B8%8C%20%ED%8F%B4%EB%A7%81%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
-    "id": "movie_20251212_아이돌리쉬_세븐_퍼",
-    "title": "아이돌리쉬 세븐 퍼스트 비트! 극장총집편 후편",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_15/1763952358000UCQj6_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "등급 미정",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%95%84%EC%9D%B4%EB%8F%8C%EB%A6%AC%EC%89%AC%20%EC%84%B8%EB%B8%90%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EB%B9%84%ED%8A%B8!%20%EA%B7%B9%EC%9E%A5%EC%B4%9D%EC%A7%91%ED%8E%B8%20%ED%9B%84%ED%8E%B8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
-    "id": "movie_20251112_나우_유_씨_미_3",
-    "title": "나우 유 씨 미 3",
-    "image": "https://s.pstatic.net/movie.phinf/20251112_102/1762922939184IQj9e_JPEG/movie_image.jpg",
-    "date": "2025.11.12.",
-    "venue": "등급 미정",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%82%98%EC%9A%B0%20%EC%9C%A0%20%EC%94%A8%20%EB%AF%B8%203%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
-    "id": "movie_20251126_석류의_빛깔",
-    "title": "석류의 빛깔",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
-    "date": "2025.11.26.",
-    "venue": "등급 미정",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie"
-  },
-  {
     "id": "movie_20251212_에반게리온_신극장판",
     "title": "에반게리온 신극장판: 서",
     "image": "https://s.pstatic.net/movie.phinf/20251215_153/1765764586584n0VVd_JPEG/movie_image.jpg",
@@ -198,13 +154,35 @@
     "genre": "movie"
   },
   {
-    "id": "movie_20251217_고백하지마",
-    "title": "고백하지마",
-    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
+    "id": "movie_20251203_정보원",
+    "title": "정보원",
+    "image": "https://s.pstatic.net/movie.phinf/20251110_51/1762751776181ah2ln_JPEG/movie_image.jpg",
+    "date": "2025.12.03.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%A0%95%EB%B3%B4%EC%9B%90%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
+    "id": "movie_20251212_아이돌리쉬_세븐_퍼",
+    "title": "아이돌리쉬 세븐 퍼스트 비트! 극장총집편 후편",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_15/1763952358000UCQj6_JPEG/movie_image.jpg",
+    "date": "2025.12.12.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%95%84%EC%9D%B4%EB%8F%8C%EB%A6%AC%EC%89%AC%20%EC%84%B8%EB%B8%90%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EB%B9%84%ED%8A%B8!%20%EA%B7%B9%EC%9E%A5%EC%B4%9D%EC%A7%91%ED%8E%B8%20%ED%9B%84%ED%8E%B8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
+    "id": "movie_20251126_석류의_빛깔",
+    "title": "석류의 빛깔",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
+    "date": "2025.11.26.",
     "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie"
   },
@@ -216,6 +194,28 @@
     "venue": "15세 관람가",
     "gradeIcon": null,
     "link": "https://m.search.daum.net/search?w=tot&q=%ED%8C%8C%EB%A6%AC%2C%20%EB%B0%A4%EC%9D%98%20%EC%97%AC%ED%96%89%EC%9E%90%EB%93%A4%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
+    "id": "movie_20251112_나우_유_씨_미_3",
+    "title": "나우 유 씨 미 3",
+    "image": "https://s.pstatic.net/movie.phinf/20251112_102/1762922939184IQj9e_JPEG/movie_image.jpg",
+    "date": "2025.11.12.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%82%98%EC%9A%B0%20%EC%9C%A0%20%EC%94%A8%20%EB%AF%B8%203%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie"
+  },
+  {
+    "id": "movie_20251217_고백하지마",
+    "title": "고백하지마",
+    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
+    "date": "2025.12.17.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie"
   }
