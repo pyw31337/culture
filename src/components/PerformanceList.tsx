@@ -183,7 +183,7 @@ const HERO_TEMPLATES = {
 type HeroTemplate = typeof HERO_TEMPLATES.general[number];
 
 const Cursor = () => (
-    <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-2 align-sub animate-pulse" />
+    <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
 );
 
 const TypingHero = ({
