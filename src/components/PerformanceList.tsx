@@ -1845,22 +1845,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowFavoriteVenues(!showFavoriteVenues);
                                             }
                                         }}
-                                        disabled={favoriteVenues.length === 0 || selectedGenre !== 'all'}
+                                        disabled={favoriteVenues.length === 0}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
-                                            (favoriteVenues.length > 0 && selectedGenre === 'all')
+                                            (favoriteVenues.length > 0)
                                                 ? (showFavoriteVenues
                                                     ? "bg-transparent border-emerald-500 text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]"
                                                     : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <BuildingStadium className={clsx("w-4 h-4", showFavoriteVenues && favoriteVenues.length > 0 && selectedGenre === 'all' ? "fill-emerald-500" : "fill-none")} />
+                                        <BuildingStadium className={clsx("w-4 h-4", showFavoriteVenues && favoriteVenues.length > 0 ? "fill-emerald-500" : "fill-none")} />
                                         <span>공연장</span>
                                         {favoriteVenues.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                (showFavoriteVenues && selectedGenre === 'all') ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
+                                                (showFavoriteVenues) ? "bg-emerald-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {favoriteVenues.length}
                                             </span>
@@ -1875,22 +1875,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setShowLikes(!showLikes);
                                             }
                                         }}
-                                        disabled={likedIds.length === 0 || selectedGenre !== 'all'}
+                                        disabled={likedIds.length === 0}
                                         className={clsx(
                                             "flex items-center justify-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium border transition-all group w-full sm:w-auto",
-                                            (likedIds.length > 0 && selectedGenre === 'all')
+                                            (likedIds.length > 0)
                                                 ? (showLikes
                                                     ? "bg-transparent border-pink-500 text-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.3)]"
                                                     : "border-gray-600 text-gray-500 hover:border-gray-400 hover:text-gray-300")
                                                 : "border-gray-800 text-gray-600 cursor-not-allowed opacity-50 bg-gray-900/50"
                                         )}
                                     >
-                                        <Heart className={clsx("w-4 h-4", showLikes && likedIds.length > 0 && selectedGenre === 'all' ? "fill-pink-500" : "fill-none")} />
+                                        <Heart className={clsx("w-4 h-4", showLikes && likedIds.length > 0 ? "fill-pink-500" : "fill-none")} />
                                         <span>좋아요</span>
                                         {likedIds.length > 0 && (
                                             <span className={clsx(
                                                 "ml-1 text-xs px-1.5 py-0.5 rounded-full transition-colors",
-                                                (showLikes && selectedGenre === 'all') ? "bg-pink-500 text-black" : "bg-gray-700 text-gray-400"
+                                                (showLikes) ? "bg-pink-500 text-black" : "bg-gray-700 text-gray-400"
                                             )}>
                                                 {likedIds.length}
                                             </span>
@@ -2023,9 +2023,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 </div>
             </div>
 
-            {/* Favorite Venues Section (Highest Priority) - Only Visible in 'All' Tab */}
+            {/* Favorite Venues Section (Highest Priority) - Visible if Toggled */}
             {
-                viewMode === 'list' && selectedGenre === 'all' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
+                viewMode === 'list' && showFavoriteVenues && favoriteVenuePerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-emerald-500 cursor-pointer group"
@@ -2059,51 +2059,53 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     : "grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
                             )}>
                                 <AnimatePresence mode="popLayout">
-                                    {favoriteVenuePerformances.map((performance, index) => (
-                                        <motion.div
-                                            key={`fav-venue-${performance.id}`}
-                                            layout
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                                        >
-                                            {layoutMode === 'grid' ? (
-                                                <PerformanceCard
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={likedIds.includes(performance.id)}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    enableActions={true}
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                    variant="emerald"
-                                                />
-                                            ) : (
-                                                <PerformanceListItem
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={likedIds.includes(performance.id)}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    variant="emerald"
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                />
-                                            )}
-                                        </motion.div>
-                                    ))}
+                                    {favoriteVenuePerformances
+                                        .filter(p => selectedGenre === 'all' || p.genre === selectedGenre)
+                                        .map((performance, index) => (
+                                            <motion.div
+                                                key={`fav-venue-${performance.id}`}
+                                                layout
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                                transition={{ duration: 0.3, delay: index * 0.05 }}
+                                            >
+                                                {layoutMode === 'grid' ? (
+                                                    <PerformanceCard
+                                                        perf={performance}
+                                                        distLabel={null}
+                                                        venueInfo={venues[performance.venue] || null}
+                                                        onLocationClick={(loc) => {
+                                                            setSearchLocation(loc);
+                                                            setViewMode('map');
+                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }}
+                                                        isLiked={likedIds.includes(performance.id)}
+                                                        onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                        enableActions={true}
+                                                        onShare={() => copyItemShareUrl(performance.id)}
+                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        variant="emerald"
+                                                    />
+                                                ) : (
+                                                    <PerformanceListItem
+                                                        perf={performance}
+                                                        distLabel={null}
+                                                        venueInfo={venues[performance.venue] || null}
+                                                        onLocationClick={(loc) => {
+                                                            setSearchLocation(loc);
+                                                            setViewMode('map');
+                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }}
+                                                        isLiked={likedIds.includes(performance.id)}
+                                                        onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                        variant="emerald"
+                                                        onShare={() => copyItemShareUrl(performance.id)}
+                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                    />
+                                                )}
+                                            </motion.div>
+                                        ))}
                                 </AnimatePresence>
                             </div>
                         )}
@@ -2321,9 +2323,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            {/* Liked Performances Section (Above Keywords) - Only Visible in 'All' Tab */}
+            {/* Liked Performances Section (Above Keywords) - Visible if Toggled */}
             {
-                viewMode === 'list' && selectedGenre === 'all' && showLikes && likedPerformances.length > 0 && (
+                viewMode === 'list' && showLikes && likedPerformances.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
@@ -2347,51 +2349,53 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             )}>
 
                                 <AnimatePresence mode="popLayout">
-                                    {likedPerformances.map((performance, index) => (
-                                        <motion.div
-                                            key={`liked-${performance.id}`}
-                                            layout
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                                        >
-                                            {layoutMode === 'grid' ? (
-                                                <PerformanceCard
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={true}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    enableActions={true}
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                    variant="pink"
-                                                />
-                                            ) : (
-                                                <PerformanceListItem
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={true}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    variant="pink"
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                />
-                                            )}
-                                        </motion.div>
-                                    ))}
+                                    {likedPerformances
+                                        .filter(p => selectedGenre === 'all' || p.genre === selectedGenre)
+                                        .map((performance, index) => (
+                                            <motion.div
+                                                key={`liked-${performance.id}`}
+                                                layout
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                                                transition={{ duration: 0.3, delay: index * 0.05 }}
+                                            >
+                                                {layoutMode === 'grid' ? (
+                                                    <PerformanceCard
+                                                        perf={performance}
+                                                        distLabel={null}
+                                                        venueInfo={venues[performance.venue] || null}
+                                                        onLocationClick={(loc) => {
+                                                            setSearchLocation(loc);
+                                                            setViewMode('map');
+                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }}
+                                                        isLiked={true}
+                                                        onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                        enableActions={true}
+                                                        onShare={() => copyItemShareUrl(performance.id)}
+                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        variant="pink"
+                                                    />
+                                                ) : (
+                                                    <PerformanceListItem
+                                                        perf={performance}
+                                                        distLabel={null}
+                                                        venueInfo={venues[performance.venue] || null}
+                                                        onLocationClick={(loc) => {
+                                                            setSearchLocation(loc);
+                                                            setViewMode('map');
+                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }}
+                                                        isLiked={true}
+                                                        onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                        variant="pink"
+                                                        onShare={() => copyItemShareUrl(performance.id)}
+                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                    />
+                                                )}
+                                            </motion.div>
+                                        ))}
                                 </AnimatePresence>
                             </div>
                         )}
