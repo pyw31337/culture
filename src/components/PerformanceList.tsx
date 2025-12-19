@@ -140,10 +140,42 @@ const HERO_TEMPLATES = {
         ]
     },
     holiday: {
-        christmas: [ // 12/23, 24, 25
+        newYear: [ // 1.1
+            { line1: "새로운 시작 1월,", line2Pre: "올해는 더 행복한 일만 가득하길 ", highlight: "문화생활", suffix: "로 응원합니다." },
+            { line1: "Happy New Year!", line2Pre: "작심삼일이 되지 않도록 ", highlight: "첫 공연 나들이", suffix: " 계획해볼까요?" }
+        ],
+        seollal: [ // Lunar New Year (2025: 1.28-30)
+            { line1: "새해 복 많이 받으세요!", line2Pre: "가족들과 함께 나누는 ", highlight: "풍성한 덕담", suffix: " 같은 공연." },
+            { line1: "즐거운 설 연휴,", line2Pre: "오랜만에 만난 친척들과 ", highlight: "특별한 추억", suffix: "을 만들어보세요." }
+        ],
+        valentine: [ // 2.14
+            { line1: "달콤한 발렌타인,", line2Pre: "사랑하는 연인에게 초콜릿보다 달달한 ", highlight: "공연 데이트", suffix: "를 선물하세요." },
+            { line1: "두근두근 설레는 오늘,", line2Pre: "썸타는 그 사람과 ", highlight: "로맨틱한 시간", suffix: "을 보내고 싶다면?" }
+        ],
+        samil: [ // 3.1
+            { line1: "대한독립만세!", line2Pre: "3.1절의 의미를 되새기며 ", highlight: "역사가 깃든", suffix: " 전시를 찾아보는 건 어떨까요?" },
+            { line1: "뜻깊은 휴일,", line2Pre: "감사한 마음으로 즐기는 ", highlight: "문화 휴식", suffix: "을 제안합니다." }
+        ],
+        children: [ // 5.5
+            { line1: "오늘은 어린이날!", line2Pre: "우리 아이들의 세상, 꿈과 희망이 가득한 ", highlight: "키즈 공연", suffix: " 총출동!" },
+            { line1: "엄마 아빠 사랑해요,", line2Pre: "온 가족이 함께 웃을 수 있는 ", highlight: "패밀리 쇼", suffix: "를 만나보세요." }
+        ],
+        chuseok: [ // Chuseok (2025: 10.5-8)
+            { line1: "더도 말고 덜도 말고 한가위만 같아라,", line2Pre: "보름달처럼 꽉 찬 ", highlight: "감동의 무대", suffix: "가 기다립니다." },
+            { line1: "풍성한 추석 연휴,", line2Pre: "가족 모두가 만족할 ", highlight: "대작 뮤지컬", suffix: " 어떠신가요?" }
+        ],
+        halloween: [ // 10.31
+            { line1: "Trick or Treat!", line2Pre: "할로윈의 밤, 등골이 오싹해지는 ", highlight: "이색 호러", suffix: " 체험을 즐겨보세요." },
+            { line1: "유령이 나올 것 같은 밤,", line2Pre: "평범한 일상을 깨울 ", highlight: "짜릿한 파티", suffix: " 같은 공연!" }
+        ],
+        christmas: [ // 12.23-25
             { line1: "메리 크리스마스!", line2Pre: "산타가 선물처럼 준비한 ", highlight: "환상적인 쇼", suffix: "를 놓치지 마세요." },
             { line1: "낭만 가득 성탄절,", line2Pre: "사랑하는 연인과 함께 ", highlight: "기적 같은 순간", suffix: "을 만들어보세요." },
             { line1: "Happy Holidays,", line2Pre: "반짝이는 트리보다 빛나는 ", highlight: "당신의 미소", suffix: "를 보고 싶어요." }
+        ],
+        yearEnd: [ // 12.26-31
+            { line1: "Good Bye 2025,", line2Pre: "한 해의 마지막 페이지를 ", highlight: "아름다운 선율", suffix: "로 장식해보세요." },
+            { line1: "수고했어 올해도,", line2Pre: "나를 위한 연말 정산, ", highlight: "최고의 공연", suffix: "으로 보상받으세요." }
         ]
     }
 };
@@ -162,48 +194,88 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Context-Aware Hero Text Logic
     useEffect(() => {
         const updateHeroText = async () => {
-            const roll = Math.random(); // 0.0 ~ 1.0
+            const now = new Date();
+            const month = now.getMonth() + 1; // 1-12
+            const date = now.getDate();
+            const day = now.getDay(); // 0(Sun) - 6(Sat)
+            const hour = now.getHours();
 
-            // 1. Keyword Check (40% chance if keywords exist)
+            let pool: typeof HERO_TEMPLATES.general = [...HERO_TEMPLATES.general];
+
+            // 1. Holiday Check (High Priority)
+            // Fixed Dates
+            if (month === 1 && date === 1) pool.push(...HERO_TEMPLATES.holiday.newYear);
+            if (month === 2 && date === 14) pool.push(...HERO_TEMPLATES.holiday.valentine);
+            if (month === 3 && date === 1) pool.push(...HERO_TEMPLATES.holiday.samil);
+            if (month === 5 && date === 5) pool.push(...HERO_TEMPLATES.holiday.children);
+            if (month === 10 && date === 31) pool.push(...HERO_TEMPLATES.holiday.halloween);
+            if (month === 12 && (date >= 23 && date <= 25)) pool.push(...HERO_TEMPLATES.holiday.christmas);
+            if (month === 12 && (date >= 26 && date <= 31)) pool.push(...HERO_TEMPLATES.holiday.yearEnd);
+
+            // Lunar Dates (2025 Specific Approximation)
+            // Seollal 2025: 1.28 - 1.30
+            if (month === 1 && (date >= 28 && date <= 30)) pool.push(...HERO_TEMPLATES.holiday.seollal);
+            // Chuseok 2025: 10.5 - 10.8
+            if (month === 10 && (date >= 5 && date <= 8)) pool.push(...HERO_TEMPLATES.holiday.chuseok);
+
+            // 2. Keyword Check
             const savedKeywords: string[] = JSON.parse(localStorage.getItem('culture_keywords') || '[]');
-            if (savedKeywords.length > 0 && roll < 0.4) {
-                const randomKeyword = savedKeywords[Math.floor(Math.random() * savedKeywords.length)];
-                const template = HERO_TEMPLATES.keyword[Math.floor(Math.random() * HERO_TEMPLATES.keyword.length)];
-                setHeroText({
-                    ...template,
-                    highlight: template.highlight.replace('{keyword}', randomKeyword)
+            if (savedKeywords.length > 0) {
+                // Add keyword templates (weight: higher)
+                const keywordTemplates = HERO_TEMPLATES.keyword.map(t => {
+                    const randomKeyword = savedKeywords[Math.floor(Math.random() * savedKeywords.length)];
+                    return { ...t, highlight: t.highlight.replace('{keyword}', randomKeyword) };
                 });
-                return;
+                for (let i = 0; i < 3; i++) pool.push(...keywordTemplates);
             }
 
-            // 2. Weather Check (30% chance - adjusted to 0.4~0.7 range)
-            if (roll >= 0.4 && roll < 0.7) {
-                try {
-                    // Fetch Seoul Weather (Lightweight Open-Meteo API)
+            // 3. Time/Day Context
+            // Friday
+            if (day === 5) {
+                for (let i = 0; i < 2; i++) pool.push(...HERO_TEMPLATES.time.friday);
+            }
+            // Evening (After 16:00)
+            if (hour >= 16) {
+                for (let i = 0; i < 2; i++) pool.push(...HERO_TEMPLATES.time.evening);
+            }
+
+            // 4. Season Context
+            let currentSeasonTemplates: typeof HERO_TEMPLATES.general = [];
+            if (month >= 3 && month <= 5) currentSeasonTemplates = HERO_TEMPLATES.season.spring;
+            else if (month >= 6 && month <= 8) currentSeasonTemplates = HERO_TEMPLATES.season.summer;
+            else if (month >= 9 && month <= 11) currentSeasonTemplates = HERO_TEMPLATES.season.autumn;
+            else currentSeasonTemplates = HERO_TEMPLATES.season.winter;
+
+            // Add season templates (Weight: Normal)
+            pool.push(...currentSeasonTemplates);
+
+
+            // 5. Weather Check (Async)
+            try {
+                // 30% chance to consider weather heavily
+                if (Math.random() < 0.3) {
                     const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current_weather=true');
                     const data = await res.json();
-                    const code = data.current_weather?.weathercode; // WMO Code
+                    const code = data.current_weather?.weathercode;
 
                     let weatherType: 'rain' | 'snow' | 'clear' | null = null;
-
-                    // WMO Codes
-                    if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) weatherType = 'rain'; // Drizzle / Rain
-                    else if ([71, 73, 75, 77, 85, 86].includes(code)) weatherType = 'snow'; // Snow
-                    else if (code === 0 || code === 1) weatherType = 'clear'; // Clear / Mainly Clear
+                    if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) weatherType = 'rain';
+                    else if ([71, 73, 75, 77, 85, 86].includes(code)) weatherType = 'snow';
+                    else if (code === 0 || code === 1) weatherType = 'clear';
 
                     if (weatherType && HERO_TEMPLATES.weather[weatherType]) {
-                        const templates = HERO_TEMPLATES.weather[weatherType];
-                        setHeroText(templates[Math.floor(Math.random() * templates.length)]);
-                        return;
+                        // If rain/snow, VERY high priority (add 5 times)
+                        const weight = (weatherType === 'rain' || weatherType === 'snow') ? 5 : 2;
+                        for (let i = 0; i < weight; i++) pool.push(...HERO_TEMPLATES.weather[weatherType]);
                     }
-                } catch (e) {
-                    // Fallback to general on error
-                    console.log("Weather fetch failed, falling back to general.");
                 }
+            } catch (e) {
+                console.log("Weather fetch failed (ignoring).");
             }
 
-            // 3. Fallback: General (30% chance or fallback)
-            setHeroText(HERO_TEMPLATES.general[Math.floor(Math.random() * HERO_TEMPLATES.general.length)]);
+            // Final Selection from Pool
+            const randomTemplate = pool[Math.floor(Math.random() * pool.length)];
+            setHeroText(randomTemplate);
         };
 
         updateHeroText();
