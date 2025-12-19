@@ -5,7 +5,8 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { MapPin, Calendar, Search, Filter, X, ChevronDown, ChevronUp, Share2, Navigation, Star, Heart, LayoutGrid, List, CalendarDays, Map as MapIcon, RotateCcw, Link2, Check, Flame, Plane, Bell } from 'lucide-react';
+import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation } from 'lucide-react';
+import ImageWithFallback from './ImageWithFallback'; // Import the new component
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -2151,8 +2152,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                                     {/* Image Section */}
                                     <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
-                                        <Image
-                                            src={getOptimizedUrl(sharedItem.image, 800) || "/api/placeholder/800/600"}
+                                        <ImageWithFallback
+                                            src={sharedItem.image}
+                                            optimizationWidth={800}
                                             alt={sharedItem.title}
                                             fill
                                             className="object-contain md:object-cover"
@@ -2743,8 +2745,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 {newMatches.slice(0, 5).map(perf => (
                                     <div key={perf.id} className="flex gap-3 bg-black/40 p-3 rounded-xl border border-white/5 hover:border-yellow-500/30 transition-colors">
                                         <div className="relative w-16 h-20 bg-gray-800 rounded-lg overflow-hidden shrink-0">
-                                            <Image
-                                                src={getOptimizedUrl(perf.image, 100) || "/api/placeholder/100/130"}
+                                            <ImageWithFallback
+                                                src={perf.image}
+                                                optimizationWidth={100}
                                                 alt={perf.title}
                                                 fill
                                                 className="object-cover"
@@ -2897,8 +2900,9 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 {/* Image (Left) - Link Wrapped */}
                 {/* Image (Left) */}
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
-                    <Image
-                        src={getOptimizedUrl(perf.image, 200) || "/api/placeholder/400/300"}
+                    <ImageWithFallback
+                        src={perf.image}
+                        optimizationWidth={200}
                         alt={perf.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -3240,8 +3244,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             {/* Image Section (Top, Aspect 3/4) */}
                             <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                 <div className="absolute inset-0 z-0">
-                                    <Image
-                                        src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
+                                    <ImageWithFallback
+                                        src={perf.image}
+                                        optimizationWidth={400}
                                         alt={perf.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -3374,8 +3379,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
                         <>
                             <div className="relative h-full w-full">
-                                <Image
-                                    src={getOptimizedUrl(perf.image, 400) || "/api/placeholder/400/300"}
+                                <ImageWithFallback
+                                    src={perf.image}
+                                    optimizationWidth={400}
                                     alt={perf.title}
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
