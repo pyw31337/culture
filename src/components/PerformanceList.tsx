@@ -3521,6 +3521,27 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 )}
                                             </div>
 
+                                            {/* Movie Metadata (Director, Cast, Info) for Grid View */}
+                                            {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                                                <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
+                                                    {perf.director && (
+                                                        <div className="flex gap-1 items-start">
+                                                            <span className="text-gray-500 font-bold shrink-0">감독</span>
+                                                            <span className="text-gray-300 truncate">{perf.director}</span>
+                                                        </div>
+                                                    )}
+                                                    {perf.cast && perf.cast.length > 0 && (
+                                                        <div className="flex gap-1 items-start">
+                                                            <span className="text-gray-500 font-bold shrink-0">출연</span>
+                                                            <span className="text-gray-300 line-clamp-1">{perf.cast.slice(0, 3).join(', ')}</span>
+                                                        </div>
+                                                    )}
+                                                    {perf.movieInfo && (
+                                                        <div className="text-gray-500 text-[10px] mt-0.5 line-clamp-1">{perf.movieInfo}</div>
+                                                    )}
+                                                </div>
+                                            )}
+
                                             {(perf.price || perf.discount) && (
                                                 <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
                                                     <div className="flex flex-col justify-end">
