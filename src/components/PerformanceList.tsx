@@ -52,6 +52,42 @@ function deg2rad(deg: number) {
     return deg * (Math.PI / 180)
 }
 
+// --- Text Templates for Hero Section ---
+const HERO_TEMPLATES = {
+    general: [
+        { prefix: "특별한 오늘, 당신을 위한", highlight: "Spotlight", suffix: "는 어디일까요?" },
+        { prefix: "반복되는 일상 속, 당신을 위한", highlight: "새로운 영감", suffix: "은 어디일까요?" },
+        { prefix: "감성이 메마른 날, 당신을 위한", highlight: "설레는 경험", suffix: "은 어디일까요?" },
+        { prefix: "소중한 사람과 함께, 당신을 위한", highlight: "잊지 못할 추억", suffix: "은 어디일까요?" },
+        { prefix: "혼자만의 시간이 필요할 때, 당신을 위한", highlight: "특별한 순간", suffix: "은 어디일까요?" },
+        { prefix: "이번 주말, 당신을 위한", highlight: "취향 저격 공연", suffix: "은 어디일까요?" },
+        { prefix: "문득 떠나고 싶은 지금, 당신을 위한", highlight: "뜻밖의 발견", suffix: "은 어디일까요?" }
+    ],
+    keyword: [
+        { prefix: "드디어 오늘 기다리던", highlight: "{keyword}", suffix: "공연이 오픈했어요!" },
+        { prefix: "요즘 가장 핫한", highlight: "{keyword}", suffix: "소식, 놓치지 않으셨나요?" },
+        { prefix: "당신의 취향 저격,", highlight: "{keyword}", suffix: "컬렉션을 준비했습니다." },
+        { prefix: "지금 딱 예매하기 좋은", highlight: "{keyword}", suffix: "공연을 만나보세요." },
+        { prefix: "망설이면 늦어요!", highlight: "{keyword}", suffix: "인기 공연 총집합." }
+    ],
+    weather: {
+        rain: [
+            { prefix: "비 예보가 있는 오늘,", highlight: "촉촉한 감성", suffix: "공연 어떠신가요?" },
+            { prefix: "우산 챙기셨나요?", highlight: "비 오는 날", suffix: "더 운치 있는 실내 데이트." },
+            { prefix: "흐린 날씨엔 역시", highlight: "기분 전환", suffix: "공연이 최고죠." }
+        ],
+        snow: [
+            { prefix: "하얀 눈이 내리는 날,", highlight: "포근한", suffix: "공연장에서 몸을 녹이세요." },
+            { prefix: "온 세상이 하얀 오늘,", highlight: "따뜻한 감동", suffix: "을 만나보세요." }
+        ],
+        clear: [
+            { prefix: "날씨 좋은 오늘,", highlight: "산책하듯", suffix: "즐기기 좋은 공연들을 모았어요." },
+            { prefix: "화창한 하늘 아래,", highlight: "설레는 마음", suffix: "으로 공연장 나들이 어때요?" },
+            { prefix: "오늘 같은 날씨엔", highlight: "야외 활동", suffix: "대신 시원한 공연장 데이트!" }
+        ]
+    }
+};
+
 export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
@@ -59,6 +95,59 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [selectedGenre, setSelectedGenre] = useState<string>('all');
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
+
+    // Hero Text State (Hydration Safe: Start with Default, then randomize)
+    const [heroText, setHeroText] = useState(HERO_TEMPLATES.general[0]);
+
+    // Context-Aware Hero Text Logic
+    useEffect(() => {
+        const updateHeroText = async () => {
+            const roll = Math.random(); // 0.0 ~ 1.0
+
+            // 1. Keyword Check (40% chance if keywords exist)
+            const savedKeywords: string[] = JSON.parse(localStorage.getItem('culture_keywords') || '[]');
+            if (savedKeywords.length > 0 && roll < 0.4) {
+                const randomKeyword = savedKeywords[Math.floor(Math.random() * savedKeywords.length)];
+                const template = HERO_TEMPLATES.keyword[Math.floor(Math.random() * HERO_TEMPLATES.keyword.length)];
+                setHeroText({
+                    ...template,
+                    highlight: template.highlight.replace('{keyword}', randomKeyword)
+                });
+                return;
+            }
+
+            // 2. Weather Check (30% chance - adjusted to 0.4~0.7 range)
+            if (roll >= 0.4 && roll < 0.7) {
+                try {
+                    // Fetch Seoul Weather (Lightweight Open-Meteo API)
+                    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current_weather=true');
+                    const data = await res.json();
+                    const code = data.current_weather?.weathercode; // WMO Code
+
+                    let weatherType: 'rain' | 'snow' | 'clear' | null = null;
+
+                    // WMO Codes
+                    if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) weatherType = 'rain'; // Drizzle / Rain
+                    else if ([71, 73, 75, 77, 85, 86].includes(code)) weatherType = 'snow'; // Snow
+                    else if (code === 0 || code === 1) weatherType = 'clear'; // Clear / Mainly Clear
+
+                    if (weatherType && HERO_TEMPLATES.weather[weatherType]) {
+                        const templates = HERO_TEMPLATES.weather[weatherType];
+                        setHeroText(templates[Math.floor(Math.random() * templates.length)]);
+                        return;
+                    }
+                } catch (e) {
+                    // Fallback to general on error
+                    console.log("Weather fetch failed, falling back to general.");
+                }
+            }
+
+            // 3. Fallback: General (30% chance or fallback)
+            setHeroText(HERO_TEMPLATES.general[Math.floor(Math.random() * HERO_TEMPLATES.general.length)]);
+        };
+
+        updateHeroText();
+    }, []);
 
     // Debug Data Availability
     useEffect(() => {
@@ -944,15 +1033,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         )}
                     </p>
                     {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
+                    {/* Hero Text: Dynamic */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block">
-                        특별한 오늘, 당신을 위한<br /><span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는 어디일까요?
+                        {heroText.prefix}<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                            {heroText.highlight}
+                        </span>
+                        {heroText.suffix}
                     </h2>
-                    {/* Mobile: 2 lines (400px~640px) -> 4 lines (<400px) */}
+                    {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
-                        특별한 오늘,<br className="hidden max-[400px]:block" />
-                        당신을 위한<br />
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">Spotlight</span>는<br className="hidden max-[400px]:block" />
-                        어디일까요?
+                        {heroText.prefix}<br />
+                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                            {heroText.highlight}
+                        </span><br />
+                        {heroText.suffix}
                     </h2>
                     <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
                         {lastUpdated} 기준
