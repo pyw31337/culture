@@ -2158,6 +2158,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             alt={sharedItem.title}
                                             fill
                                             className="object-contain md:object-cover"
+                                            referrerPolicy="no-referrer"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
 
@@ -2751,6 +2752,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 alt={perf.title}
                                                 fill
                                                 className="object-cover"
+                                                referrerPolicy="no-referrer"
                                             />
                                         </div>
                                         <div className="flex-1 min-w-0 py-1">
@@ -2908,6 +2910,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 640px) 128px, 192px"
                         loading="lazy"
+                        referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
@@ -3387,6 +3390,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     loading="lazy"
+                                    referrerPolicy="no-referrer"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
