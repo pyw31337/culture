@@ -188,10 +188,12 @@ const Cursor = () => (
 
 const TypingHero = ({
     template,
-    onCycle
+    onCycle,
+    paused
 }: {
     template: HeroTemplate,
-    onCycle: () => void
+    onCycle: () => void,
+    paused: boolean
 }) => {
     const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
     const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('WAIT');
@@ -230,6 +232,10 @@ const TypingHero = ({
     }, []); // Run once
 
     useEffect(() => {
+        // If paused, do NOT schedule next tick.
+        // When unpaused, this effect will re-run and schedule based on current phase.
+        if (paused) return;
+
         let timeout: NodeJS.Timeout;
 
         if (phase === 'WAIT') {
@@ -265,7 +271,7 @@ const TypingHero = ({
         }
 
         return () => clearTimeout(timeout);
-    }, [phase, progress, totalLen, onCycle]);
+    }, [phase, progress, totalLen, onCycle, paused]);
 
     // Helper to slice text based on global progress
     const getSub = (text: string, offset: number) => {
@@ -324,6 +330,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
+    const [isHeroVisible, setIsHeroVisible] = useState(true); // Track visibility for pausing animation
+
+    // Intersection Observer for Hero Section
+    const heroRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsHeroVisible(entry.isIntersecting);
+            },
+            { threshold: 0 } // Any part visible = visible. Fully hidden = paused.
+        );
+
+        if (heroRef.current) {
+            observer.observe(heroRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     // Template Pool & Selector System
     const templatePoolRef = useRef<HeroTemplate[]>([]);
@@ -1394,7 +1418,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
-                    <TypingHero template={heroText} onCycle={handleHeroCycle} />
+                    {/* Hero Text: Dynamic */}
+                    <div ref={heroRef}>
+                        <TypingHero template={heroText} onCycle={handleHeroCycle} paused={!isHeroVisible} />
+                    </div>
                     {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
                         {heroText.line1}<br />
