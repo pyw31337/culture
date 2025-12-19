@@ -180,6 +180,132 @@ const HERO_TEMPLATES = {
     }
 };
 
+type HeroTemplate = typeof HERO_TEMPLATES.general[number];
+
+const Cursor = () => (
+    <span className="inline-block w-[2px] h-[1em] bg-[#FACC15] ml-1 align-sub animate-pulse" />
+);
+
+const TypingHero = ({
+    template,
+    onCycle
+}: {
+    template: HeroTemplate,
+    onCycle: () => void
+}) => {
+    const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
+    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('WAIT');
+    const [progress, setProgress] = useState(0);
+
+    // Calculate segment lengths
+    const len1 = displayedTemplate.line1.length;
+    const len2Pre = displayedTemplate.line2Pre.length;
+    const lenHl = displayedTemplate.highlight.length;
+    const lenSuf = displayedTemplate.suffix.length;
+    const totalLen = len1 + len2Pre + lenHl + lenSuf;
+
+    // React to template updates from parent
+    useEffect(() => {
+        // Only update if actually different to avoid loops
+        if (template !== displayedTemplate) {
+            setDisplayedTemplate(template);
+
+            if (phase === 'DELETE') {
+                // We were deleting and just got new text -> Start Typing
+                setPhase('TYPE');
+                setProgress(0);
+            } else {
+                // Initial load or valid instant switch -> Show Full
+                setPhase('WAIT');
+                setProgress(9999); // Ensure full visibility
+            }
+        }
+    }, [template, displayedTemplate, phase]); // Added displayedTemplate and phase to dependencies
+
+    // Initial Mount: Ensure visibility (if not handled by prop update)
+    useEffect(() => {
+        if (phase === 'WAIT' && progress === 0) {
+            setProgress(9999);
+        }
+    }, []); // Run once
+
+    useEffect(() => {
+        let timeout: NodeJS.Timeout;
+
+        if (phase === 'WAIT') {
+            // Wait 5 seconds before deleting
+            timeout = setTimeout(() => {
+                setPhase('DELETE');
+                setProgress(totalLen); // Start deleting from true end
+            }, 5000);
+        } else if (phase === 'DELETE') {
+            // Delete backwards
+            timeout = setTimeout(() => {
+                setProgress(prev => {
+                    const next = prev - 1;
+                    if (next < 0) {
+                        onCycle(); // Request new template
+                        return 0; // Wait for prop update to switch phase
+                    }
+                    return next;
+                });
+            }, 50);
+        } else if (phase === 'TYPE') {
+            // Type forwards
+            timeout = setTimeout(() => {
+                setProgress(prev => {
+                    const next = prev + 1;
+                    if (next > totalLen) {
+                        setPhase('WAIT');
+                        return totalLen;
+                    }
+                    return next;
+                });
+            }, 100);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [phase, progress, totalLen, onCycle]);
+
+    // Helper to slice text based on global progress
+    const getSub = (text: string, offset: number) => {
+        if (progress < offset) return '';
+        if (progress >= offset + text.length) return text;
+        return text.slice(0, progress - offset);
+    };
+
+    const t1 = getSub(displayedTemplate.line1, 0);
+    const t2Pre = getSub(displayedTemplate.line2Pre, len1);
+    const tHl = getSub(displayedTemplate.highlight, len1 + len2Pre);
+    const tSuf = getSub(displayedTemplate.suffix, len1 + len2Pre + lenHl);
+
+    // Determine active segment for cursor placement
+    let cursorSegment: 'line1' | 'line2Pre' | 'hl' | 'suffix' | null = null;
+
+    // Only show cursor if we are actively typing/deleting or waiting
+    // But precise placement:
+    if (progress <= len1) cursorSegment = 'line1';
+    else if (progress <= len1 + len2Pre) cursorSegment = 'line2Pre';
+    else if (progress <= len1 + len2Pre + lenHl) cursorSegment = 'hl';
+    else cursorSegment = 'suffix';
+
+    return (
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
+            {t1}
+            {cursorSegment === 'line1' && <Cursor />}
+            <br />
+            {t2Pre}
+            {cursorSegment === 'line2Pre' && <Cursor />}
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                {tHl}
+            </span>
+            {cursorSegment === 'hl' && <Cursor />}
+            {tSuf}
+            {cursorSegment === 'suffix' && <Cursor />}
+        </h2>
+    );
+};
+
 export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
@@ -199,7 +325,50 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
 
-    // Context-Aware Hero Text Logic
+    // Template Pool & Selector System
+    const templatePoolRef = useRef<HeroTemplate[]>([]);
+
+    const selectNextTemplate = () => {
+        const pool = templatePoolRef.current.length > 0 ? templatePoolRef.current : HERO_TEMPLATES.general;
+        let selectedTemplate: HeroTemplate = HERO_TEMPLATES.general[0];
+        let attempts = 0;
+        const maxAttempts = 20;
+
+        while (pool.length > 0 && attempts < maxAttempts) {
+            const idx = Math.floor(Math.random() * pool.length);
+            const candidate = pool[idx];
+            attempts++;
+
+            // Validate: If template has keywords, at least one must yield results
+            if (candidate.keywords && candidate.keywords.length > 0) {
+                const hasMatch = initialPerformances.some(p =>
+                    candidate.keywords!.some(k =>
+                        p.title.includes(k) || p.genre.includes(k)
+                    )
+                );
+
+                if (!hasMatch) {
+                    continue;
+                }
+            }
+
+            selectedTemplate = candidate;
+            break;
+        }
+
+        setHeroText(selectedTemplate);
+        if (selectedTemplate.keywords) {
+            setContextKeywords(selectedTemplate.keywords);
+        }
+    };
+
+    // Cycle Handler for Typing Effect
+    const handleHeroCycle = () => {
+        selectNextTemplate();
+        // Since setHeroText updates state, TypingHero will react to the prop change in its effect
+    };
+
+    // Context-Aware Hero Text Initialization
     useEffect(() => {
         const updateHeroText = async () => {
             const now = new Date();
@@ -290,42 +459,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 console.log("Weather fetch failed (ignoring).");
             }
 
-            // Final Selection with Validation
-            // Ensure the selected template has matching performances (if it has keywords)
-            let selectedTemplate = HERO_TEMPLATES.general[0];
-            let attempts = 0;
-            const maxAttempts = 20;
+            // Save pool to ref for cycling
+            templatePoolRef.current = pool;
 
-            while (pool.length > 0 && attempts < maxAttempts) {
-                const idx = Math.floor(Math.random() * pool.length);
-                const candidate = pool[idx];
-                attempts++;
-
-                // Validate: If template has keywords, at least one must yield results
-                if (candidate.keywords && candidate.keywords.length > 0) {
-                    const hasMatch = initialPerformances.some(p =>
-                        candidate.keywords!.some(k =>
-                            p.title.includes(k) || p.genre.includes(k)
-                        )
-                    );
-
-                    if (!hasMatch) {
-                        pool.splice(idx, 1);
-                        continue;
-                    }
-                } else {
-                    // If template has NO keywords (e.g. Spotlight), it is always valid.
-                    // No specific performance match required because it's generic.
-                }
-
-                selectedTemplate = candidate;
-                break;
-            }
-
-            setHeroText(selectedTemplate);
-            if (selectedTemplate.keywords) {
-                setContextKeywords(selectedTemplate.keywords);
-            }
+            // Initial Selection
+            selectNextTemplate();
         };
 
         updateHeroText();
@@ -1255,14 +1393,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: 2 lines on PC, 4 lines on Mobile */}
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block break-keep">
-                        {heroText.line1}<br />
-                        {heroText.line2Pre}
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
-                            {heroText.highlight}
-                        </span>
-                        {heroText.suffix}
-                    </h2>
+                    {/* Hero Text: Dynamic */}
+                    <TypingHero template={heroText} onCycle={handleHeroCycle} />
                     {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
                         {heroText.line1}<br />
