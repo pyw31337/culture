@@ -10,7 +10,7 @@ import yes24Data from '@/data/yes24.json';
 import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
-import classData from '@/data/klook-class.json';
+import classData from '@/data/sssd-class.json';
 
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
