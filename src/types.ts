@@ -1,12 +1,15 @@
 export type Performance = {
     id: string;
-    title: string;
     image: string;
-    date: string;
-    venue: string;
     link: string;
     region: string;
     genre: string;
-    price?: string;
+    description?: string;
     discount?: string;
+    originalPrice?: string;
+    price?: string;
+    gradeIcon?: string;
+    cast?: string[];
+    director?: string;
+    movieInfo?: string;
 };

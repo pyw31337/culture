@@ -79,7 +79,7 @@ jobs:
           npx tsx scripts/scrape-yes24.ts || true
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-travel.ts || true
-          npx tsx scripts/scrape-movies.ts || true
+          node scripts/scrape-movies.js || true
 
       - name: Commit and Push changes
         if: env.SKIP_EXECUTION != 'true'

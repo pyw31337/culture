@@ -3031,6 +3031,46 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             )}
                         </div>
 
+                        {/* Movie Metadata (Cast, Director, Info) */}
+                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                            <div className="mt-2 text-xs text-gray-400 space-y-1 border-t border-white/5 pt-2">
+                                {/* Director */}
+                                {perf.director && (
+                                    <div className="flex gap-2 items-start">
+                                        <span className="text-gray-500 font-bold shrink-0">감독</span>
+                                        <span className="text-gray-300 truncate">{perf.director}</span>
+                                    </div>
+                                )}
+                                {/* Cast */}
+                                {perf.cast && perf.cast.length > 0 && (
+                                    <div className="flex gap-2 items-start">
+                                        <span className="text-gray-500 font-bold shrink-0">출연</span>
+                                        <div className="flex flex-wrap gap-x-1 leading-snug">
+                                            {perf.cast.slice(0, 5).map((actor: string, idx: number) => (
+                                                <a
+                                                    key={idx}
+                                                    href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(actor)}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                    onClick={e => e.stopPropagation()}
+                                                >
+                                                    {actor}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                {/* Info */}
+                                {perf.movieInfo && (
+                                    <div className="flex gap-2 items-start">
+                                        <span className="text-gray-500 font-bold shrink-0">정보</span>
+                                        <span className="text-gray-300 line-clamp-1">{perf.movieInfo}</span>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
                         {/* Price & Discount info for List View */}
                         {/* Price & Discount info for List View - Redesigned (11st Style) */}
                         {(perf.price || perf.discount) && (
