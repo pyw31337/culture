@@ -48,18 +48,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4321185",
-    "title": "[키즈][서울/종로] 아이와 함께 궁궐투어 달빛궁궐 창경궁",
-    "date": "저녁타임 18:30~20:00  (원활한 진행을 위해 투어시작 10분 전까지 도착해 주시기 바랍니다.)",
-    "venue": "서울특별시 종로구 창경궁로 185 창경궁",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/14/T6Fo/tQtaq0oHMj.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4321185",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3886103",
     "title": "[키즈][겨울방학 얼리버드] 초등 세종충무공이야기로 모여라!",
     "date": "오전 11시 / 오후 14시 30분",
@@ -67,6 +55,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/01/9Tdk/8LGOr9pbLY.png",
     "link": "https://experiences.myrealtrip.com/products/3886103",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4321185",
+    "title": "[키즈][서울/종로] 아이와 함께 궁궐투어 달빛궁궐 창경궁",
+    "date": "저녁타임 18:30~20:00  (원활한 진행을 위해 투어시작 10분 전까지 도착해 주시기 바랍니다.)",
+    "venue": "서울특별시 종로구 창경궁로 185 창경궁",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/14/T6Fo/tQtaq0oHMj.jpg",
+    "link": "https://experiences.myrealtrip.com/products/4321185",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -156,18 +156,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3880369",
-    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
-    "date": "-오전 10시30분  -오후 13시30분",
-    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3880369",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3852749",
     "title": "[키즈/가족][서울/용산] 가족과 함께! 그리스 로마전 도슨트 투어",
     "date": "14시 / 16시",
@@ -175,6 +163,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/FFk0/qjipEAtzIJ.jpg",
     "link": "https://experiences.myrealtrip.com/products/3852749",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3880369",
+    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
+    "date": "-오전 10시30분  -오후 13시30분",
+    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3880369",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -312,18 +312,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885192",
-    "title": "[키즈][경기/수원] 술술샘과 함께하는 수원화성 나들이(수원화성박물관부터 수원화성까지)",
-    "date": "예약 확정 후 만나는 시간을 조율합니다.",
-    "venue": "▶만남의 장소 : 수원화성박물관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/glBO/7yDg6huKT9.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885192",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3828448",
     "title": "[키즈][서울/종로] 역사전공자와 함께 재밌게 즐기는 경복궁!",
     "date": "매주 토일 오전 10시, 13시",
@@ -343,6 +331,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/01/10/kfIg/mwGdRq45WS.jpg",
     "link": "https://experiences.myrealtrip.com/products/4165719",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885192",
+    "title": "[키즈][경기/수원] 술술샘과 함께하는 수원화성 나들이(수원화성박물관부터 수원화성까지)",
+    "date": "예약 확정 후 만나는 시간을 조율합니다.",
+    "venue": "▶만남의 장소 : 수원화성박물관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/glBO/7yDg6huKT9.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885192",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -420,18 +420,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885199",
-    "title": "[키즈/단독특가][용산/겨울얼리버드] 술술 풀리는 초등한국사 5회 완성 국립중앙박물관",
-    "date": "예약 확정 후 만나는 시간을 조율합니다.",
-    "venue": "▶만남의 장소 : 국립중앙박물관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/zrOE/tQV9P7NNCP.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885199",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3880359",
     "title": "[키즈] 경복궁으로 떠나는 조선 한국사 초등 역사체험",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -439,6 +427,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/4BGv/ZaHsLcIujH.jpg",
     "link": "https://experiences.myrealtrip.com/products/3880359",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885199",
+    "title": "[키즈/단독특가][용산/겨울얼리버드] 술술 풀리는 초등한국사 5회 완성 국립중앙박물관",
+    "date": "예약 확정 후 만나는 시간을 조율합니다.",
+    "venue": "▶만남의 장소 : 국립중앙박물관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/zrOE/tQV9P7NNCP.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885199",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -528,18 +528,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3852754",
-    "title": "[키즈/가족][서울/종로] 가족과 함께 경복궁! 궁궐 도슨트 투어",
-    "date": "11시",
-    "venue": "흥례문 입장 후 좌측 물품보관함",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/cqqe/RjuUIeWxPO.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3852754",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3880373",
     "title": "[키즈/서울] 달마다 새롭게 10회 과정! 한국사 역사체험 탐험대",
     "date": "일자 별 투어 시간이 달라 옵션애서 시간을 확인해 주세요.",
@@ -552,13 +540,13 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885197",
-    "title": "[키즈/겨울얼리버드][국립중앙박물관] 술술 세계사2탄 고대 그리스로마 소수정예",
-    "date": "체험 전 담당 강사님이 안내 메세지 전송드리니 참고 부탁드립니다.",
-    "venue": "▶만남의 장소 : 국립중앙박물관 상설전시관  內 1층 으뜸홀(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "id": "mrt-3852754",
+    "title": "[키즈/가족][서울/종로] 가족과 함께 경복궁! 궁궐 도슨트 투어",
+    "date": "11시",
+    "venue": "흥례문 입장 후 좌측 물품보관함",
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/zYw4/rtRSGU5jT8.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885197",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/cqqe/RjuUIeWxPO.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3852754",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -571,6 +559,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/bBQC/ltEbYLlur9.jpg",
     "link": "https://experiences.myrealtrip.com/products/3852755",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885197",
+    "title": "[키즈/겨울얼리버드][국립중앙박물관] 술술 세계사2탄 고대 그리스로마 소수정예",
+    "date": "체험 전 담당 강사님이 안내 메세지 전송드리니 참고 부탁드립니다.",
+    "venue": "▶만남의 장소 : 국립중앙박물관 상설전시관  內 1층 으뜸홀(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/zYw4/rtRSGU5jT8.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885197",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -612,18 +612,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3880378",
-    "title": "[키즈][서울/용산] 전쟁기념관 3회특강: 사다리 전쟁사 초등역사체험",
-    "date": "10시30분~12시30분  13시30분~15시30분",
-    "venue": "용산 전쟁기념관(서울 용산구 이태원로 29)",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/Aykl/f3zYoqOS1z.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3880378",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3852751",
     "title": "[키즈/가족체험][서울/중구] 궁궐 도슨트 역사 투어, 가족과 함께 덕수궁!",
     "date": "예약 확정 후 만나는 시간을 조율합니다.",
@@ -631,6 +619,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/1DOa/nOZ3O0SQOZ.jpg",
     "link": "https://experiences.myrealtrip.com/products/3852751",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3880378",
+    "title": "[키즈][서울/용산] 전쟁기념관 3회특강: 사다리 전쟁사 초등역사체험",
+    "date": "10시30분~12시30분  13시30분~15시30분",
+    "venue": "용산 전쟁기념관(서울 용산구 이태원로 29)",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/Aykl/f3zYoqOS1z.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3880378",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -888,18 +888,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4234525",
-    "title": "일본 스페이스 일일캠프! JAXA츠쿠바우주센터 패밀리투어 & 츠쿠바엑스포센터 키즈도슨트",
-    "date": "10:20",
-    "venue": "츠쿠바 역",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/02/13/nPUv/e4t5Dsdy0D.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4234525",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3880380",
     "title": "[키즈][서울/용산][프라이빗] 사다리 세계사 2탄ㅣ 중국&일본 전 ㅣ초등역사체험",
     "date": "10시 30분 / 13시 30분",
@@ -907,6 +895,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/p37C/zVTZhK1aPy.jpg",
     "link": "https://experiences.myrealtrip.com/products/3880380",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4234525",
+    "title": "일본 스페이스 일일캠프! JAXA츠쿠바우주센터 패밀리투어 & 츠쿠바엑스포센터 키즈도슨트",
+    "date": "10:20",
+    "venue": "츠쿠바 역",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/02/13/nPUv/e4t5Dsdy0D.jpg",
+    "link": "https://experiences.myrealtrip.com/products/4234525",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1188,18 +1188,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4584395",
-    "title": "온가족이 함께하는 국립중앙박물관 도슨트 | 전연령 투어",
-    "date": "날짜별로 수업 시간이 상이하니, 신청 시 수업 시간을 잘 확인해주세요 :)",
-    "venue": "국립중앙박물관",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/30/9ygJ/kwUPR59XFJ.jpeg",
-    "link": "https://experiences.myrealtrip.com/products/4584395",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4439026",
     "title": "[라라클래스/전시 공식] 파라오의 이집트 초등 도슨트 체험 – 빛의 시어터",
     "date": "10시 20분, 13시 10분, 15시 50분",
@@ -1207,6 +1195,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/08/3q5j/uC1pjUvxVD.jpg",
     "link": "https://experiences.myrealtrip.com/products/4439026",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4584395",
+    "title": "온가족이 함께하는 국립중앙박물관 도슨트 | 전연령 투어",
+    "date": "날짜별로 수업 시간이 상이하니, 신청 시 수업 시간을 잘 확인해주세요 :)",
+    "venue": "국립중앙박물관",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/30/9ygJ/kwUPR59XFJ.jpeg",
+    "link": "https://experiences.myrealtrip.com/products/4584395",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1332,18 +1332,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4631815",
-    "title": "[겨울방학특가] 국립중앙박물관 도슨트 수업으로 배우는 선사~조선 4회 한국사 정복 투어",
-    "date": "일자 별 투어 시작 시간이 달라 날짜 선택 후 시간을 확인해 주세요.",
-    "venue": "국립중앙박물관",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/06/18/jKaj/tsc5GHmyKc.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4631815",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3886107",
     "title": "[서울/중구] 별빛달빛 덕수궁 야행",
     "date": "동절기(10월~3월) - 평일 : 19:00~20:40 - 주말 및 공휴일 : 18:00~19:40 하절기(4월~9월) - 평일 : 19:00~20:40 - 주말 및 공휴일 :18:30~20:10",
@@ -1356,13 +1344,13 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885247",
-    "title": "[라라클래스] 경복궁 미취학 역사탐험대 - 세종대왕의 하루 따라가기  (6-8세)",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "경복궁",
+    "id": "mrt-4631815",
+    "title": "[겨울방학특가] 국립중앙박물관 도슨트 수업으로 배우는 선사~조선 4회 한국사 정복 투어",
+    "date": "일자 별 투어 시작 시간이 달라 날짜 선택 후 시간을 확인해 주세요.",
+    "venue": "국립중앙박물관",
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/PWvU/PnBFIxcxou.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885247",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/06/18/jKaj/tsc5GHmyKc.jpg",
+    "link": "https://experiences.myrealtrip.com/products/4631815",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1375,6 +1363,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/14/Rd1g/usaRH13MWS.jpg",
     "link": "https://experiences.myrealtrip.com/products/3828719",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885247",
+    "title": "[라라클래스] 경복궁 미취학 역사탐험대 - 세종대왕의 하루 따라가기  (6-8세)",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "경복궁",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/PWvU/PnBFIxcxou.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885247",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1476,18 +1476,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885276",
-    "title": "[라라클래스] 초등 저학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
-    "date": "상품 상세페이지를 참고해 주세요",
-    "venue": "대한민국역사박물관 1층 안내데스크 앞",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/Y7lW/yw4sRU0ZlT.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885276",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885265",
     "title": "[라라클래스] 겨울방학 특강, 국립중앙박물관 4회로 초등 저학년 한국사 흐름 완성!",
     "date": "예약 확정 후 수업 일정을 조율합니다.",
@@ -1495,6 +1483,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/5IX3/U0zAYP7U2H.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885265",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885276",
+    "title": "[라라클래스] 초등 저학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
+    "date": "상품 상세페이지를 참고해 주세요",
+    "venue": "대한민국역사박물관 1층 안내데스크 앞",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/Y7lW/yw4sRU0ZlT.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885276",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1555,6 +1555,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/1hvR/2FpLmcdFwe.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885298",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-5518079",
+    "title": "[오픈특가/부모분리]이슬람 미술 '찬란한 빛의 여정' 국립중앙박물관 도슨트 투어",
+    "date": "수업 10분전 만남",
+    "venue": "국립중앙박물관",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/02/ltWt/u1ohjZ1fTQ.jpg",
+    "link": "https://experiences.myrealtrip.com/products/5518079",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1680,18 +1692,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885278",
-    "title": "[라라클래스] 초등 고학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
-    "date": "상품 상세페이지를 참고해 주세요",
-    "venue": "대한민국역사박물관 1층 안내데스크 앞 집결",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/LHF5/U3VXkmYbZK.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885278",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885312",
     "title": "[라라클래스 X 강원관광재단] 구석기부터 조선까지! 초등 한국사탐험대! [국립춘천박물관]",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -1699,6 +1699,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/EXsJ/j011ZV7soq.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885312",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885278",
+    "title": "[라라클래스] 초등 고학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
+    "date": "상품 상세페이지를 참고해 주세요",
+    "venue": "대한민국역사박물관 1층 안내데스크 앞 집결",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/LHF5/U3VXkmYbZK.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885278",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1800,18 +1812,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885264",
-    "title": "[라라클래스] 미취학 역사 4회 완성! 역사탐험대 - 국립중앙박물관 선사~조선시대까지",
-    "date": "예약 확정 후 수업 일정을 조율합니다.",
-    "venue": "전쟁기념관/국립중앙박물관/대한민국역사박물관",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/POrh/Hi7qZ5ClBR.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885264",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-5539586",
     "title": "[국립중앙박물관] 이순신 탐험대, 미취학 전용 - 거북선을 타고 바다로 모험을 떠나요",
     "date": "10시 20분, 12시 50분, 15시 20분",
@@ -1819,6 +1819,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/17/KB71/10zY4t8UD8.jpg",
     "link": "https://experiences.myrealtrip.com/products/5539586",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885264",
+    "title": "[라라클래스] 미취학 역사 4회 완성! 역사탐험대 - 국립중앙박물관 선사~조선시대까지",
+    "date": "예약 확정 후 수업 일정을 조율합니다.",
+    "venue": "전쟁기념관/국립중앙박물관/대한민국역사박물관",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/POrh/Hi7qZ5ClBR.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885264",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1860,18 +1872,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3924491",
-    "title": "[라라클래스] 경복궁 역사탐험대 초등 \"Premium\" Season 2 (8-13세)",
-    "date": "상세페이지 확인해주세요",
-    "venue": "서울 종로구 사직로 161 경복궁 매표소 앞",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/13/dYjh/LalXHVAvZ5.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3924491",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885304",
     "title": "[라라클래스] 창경궁 \"Premium\" 초등 역사투어! (8-13세)",
     "date": "* 예약 확정 후 수업 일정을 조율합니다.",
@@ -1879,6 +1879,18 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/obZq/Vjp3KqCg8T.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885304",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3924491",
+    "title": "[라라클래스] 경복궁 역사탐험대 초등 \"Premium\" Season 2 (8-13세)",
+    "date": "상세페이지 확인해주세요",
+    "venue": "서울 종로구 사직로 161 경복궁 매표소 앞",
+    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/13/dYjh/LalXHVAvZ5.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3924491",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1975,18 +1987,6 @@
     "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/13/n4lV/2XMco9oEKw.jpg",
     "link": "https://experiences.myrealtrip.com/products/3924490",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
-    "id": "mrt-5518079",
-    "title": "[오픈특가/부모분리]이슬람 미술 '찬란한 빛의 여정' 국립중앙박물관 도슨트 투어",
-    "date": "수업 10분전 만남",
-    "venue": "국립중앙박물관",
-    "price": "6만원 결제 시 네이버페이 포인트 2,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/02/ltWt/u1ohjZ1fTQ.jpg",
-    "link": "https://experiences.myrealtrip.com/products/5518079",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"

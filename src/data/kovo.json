@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251220_HEUNGKUK PINKSPIDERS_PEPPER SAVINGS BANK",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs PEPPER SAVINGS BANK",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-20 14:00",
-    "venue": "인천 삼산월드체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "incheon",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251215_HYUNDAI CAPITAL_OK SAVINGS BANK",
-    "title": "[배구] HYUNDAI CAPITAL vs OK SAVINGS BANK",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-15 11:00",
-    "venue": "12.20(토) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251220_HYUNDAI CAPITAL_OK SAVINGS BANK",
-    "title": "[배구] HYUNDAI CAPITAL vs OK SAVINGS BANK",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-20 14:00",
-    "venue": "천안 유관순체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251215_WOORICARD_KB STARS",
-    "title": "[배구] WOORICARD vs KB STARS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-15 11:00",
-    "venue": "12.21(일) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251221_WOORICARD_KB STARS",
     "title": "[배구] WOORICARD vs KB STARS",
     "image": "/culture/images/volleyball_poster.png",
