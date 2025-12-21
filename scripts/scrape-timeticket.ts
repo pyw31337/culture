@@ -92,6 +92,12 @@ async function scrapeTimeTicket() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 1024 });
 
+    // Set User Agent and Headers for stability
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.setExtraHTTPHeaders({
+        'Accept-Language': 'ko-KR,ko;q=0.9',
+    });
+
     // Block only fonts and stylesheets to speed up, ALLOW IMAGES to prevent onerror
     await page.setRequestInterception(true);
     page.on('request', (req) => {
