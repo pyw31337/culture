@@ -178,25 +178,6 @@
     "movieInfo": "한국공연 / 127분"
   },
   {
-    "id": "movie_20251210_더_러닝_맨",
-    "title": "더 러닝 맨",
-    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
-    "date": "2025.12.10.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "글렌 파월",
-      "윌리엄 H. 머시",
-      "리 페이스",
-      "콜맨 도밍고"
-    ],
-    "director": "에드가 라이트",
-    "movieInfo": "영국액션 / 133분"
-  },
-  {
     "id": "movie_20251119_국보",
     "title": "국보",
     "image": "https://s.pstatic.net/movie.phinf/20251030_160/1761815232514Tp8t6_JPEG/movie_image.jpg",
@@ -214,6 +195,25 @@
     ],
     "director": "이상일",
     "movieInfo": "일본드라마 / 175분"
+  },
+  {
+    "id": "movie_20251210_더_러닝_맨",
+    "title": "더 러닝 맨",
+    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
+    "date": "2025.12.10.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "글렌 파월",
+      "윌리엄 H. 머시",
+      "리 페이스",
+      "콜맨 도밍고"
+    ],
+    "director": "에드가 라이트",
+    "movieInfo": "영국액션 / 133분"
   },
   {
     "id": "movie_20251217_사운드_오브_폴링",
@@ -235,6 +235,25 @@
     "movieInfo": "독일드라마 / 155분"
   },
   {
+    "id": "movie_20251212_아이돌리쉬_세븐_퍼",
+    "title": "아이돌리쉬 세븐 퍼스트 비트! 극장총집편 후편",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_15/1763952358000UCQj6_JPEG/movie_image.jpg",
+    "date": "2025.12.12.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%95%84%EC%9D%B4%EB%8F%8C%EB%A6%AC%EC%89%AC%20%EC%84%B8%EB%B8%90%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EB%B9%84%ED%8A%B8!%20%EA%B7%B9%EC%9E%A5%EC%B4%9D%EC%A7%91%ED%8E%B8%20%ED%9B%84%ED%8E%B8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "마스다 토시키",
+      "시라이 유스케",
+      "요나가 츠바사",
+      "켄"
+    ],
+    "director": "벳쇼 마코토",
+    "movieInfo": "일본애니메이션 / 108분"
+  },
+  {
     "id": "movie_20251212_에반게리온_신극장판",
     "title": "에반게리온 신극장판: 서",
     "image": "https://s.pstatic.net/movie.phinf/20251215_153/1765764586584n0VVd_JPEG/movie_image.jpg",
@@ -250,7 +269,7 @@
       "미츠이시 코토노",
       "야마구치 유리코"
     ],
-    "director": "안노 히데아키(총감독), 야마구치 마사유키, 마에다 마히로, 츠루마키 카즈야",
+    "director": "안노 히데아키 더보기",
     "movieInfo": "일본애니메이션 외"
   },
   {
@@ -273,41 +292,6 @@
     "movieInfo": "한국액션 외 / 103분"
   },
   {
-    "id": "movie_20251212_아이돌리쉬_세븐_퍼",
-    "title": "아이돌리쉬 세븐 퍼스트 비트! 극장총집편 후편",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_15/1763952358000UCQj6_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "전체 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%95%84%EC%9D%B4%EB%8F%8C%EB%A6%AC%EC%89%AC%20%EC%84%B8%EB%B8%90%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EB%B9%84%ED%8A%B8!%20%EA%B7%B9%EC%9E%A5%EC%B4%9D%EC%A7%91%ED%8E%B8%20%ED%9B%84%ED%8E%B8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "마스다 토시키",
-      "시라이 유스케",
-      "요나가 츠바사",
-      "켄"
-    ],
-    "director": "벳쇼 마코토",
-    "movieInfo": "일본애니메이션 / 108분"
-  },
-  {
-    "id": "movie_20251126_석류의_빛깔",
-    "title": "석류의 빛깔",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
-    "date": "2025.11.26.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "소피코 치아우레리"
-    ],
-    "director": "세르게이 파라자노프",
-    "movieInfo": "소련드라마 / 80분"
-  },
-  {
     "id": "movie_20251217_파리,_밤의_여행자",
     "title": "파리, 밤의 여행자들",
     "image": "https://s.pstatic.net/movie.phinf/20251217_109/1765938354839bBcn7_JPEG/movie_image.jpg",
@@ -325,6 +309,22 @@
     ],
     "director": "미카엘 허스",
     "movieInfo": "프랑스드라마 / 111분"
+  },
+  {
+    "id": "movie_20251126_석류의_빛깔",
+    "title": "석류의 빛깔",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
+    "date": "2025.11.26.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "소피코 치아우레리"
+    ],
+    "director": "세르게이 파라자노프",
+    "movieInfo": "소련드라마 / 80분"
   },
   {
     "id": "movie_20251112_나우_유_씨_미_3",
