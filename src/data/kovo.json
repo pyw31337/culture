@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251221_WOORICARD_KB STARS",
-    "title": "[배구] WOORICARD vs KB STARS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-21 14:00",
-    "venue": "장충체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "seoul",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251216_INDUSTRIAL BANK OF KOREA_HYUNDAI E&C",
-    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-16 11:00",
-    "venue": "12.21(일) 16:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251221_INDUSTRIAL BANK OF KOREA_HYUNDAI E&C",
-    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-21 16:00",
-    "venue": "화성종합경기타운 실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251216_GS CALTEX_KOREA EXPRESSWAY",
-    "title": "[배구] GS CALTEX vs KOREA EXPRESSWAY",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-16 11:00",
-    "venue": "12.23(화) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251223_GS CALTEX_KOREA EXPRESSWAY",
     "title": "[배구] GS CALTEX vs KOREA EXPRESSWAY",
     "image": "/culture/images/volleyball_poster.png",
@@ -987,6 +947,46 @@
     "venue": "화성종합경기타운 실내체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260113_KEPCO_KOREAN AIR",
+    "title": "[배구] KEPCO vs KOREAN AIR",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-13 11:00",
+    "venue": "01.20(화) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260120_KEPCO_KOREAN AIR",
+    "title": "[배구] KEPCO vs KOREAN AIR",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-20 19:00",
+    "venue": "수원 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260115_GS CALTEX_JUNG KWAN JANG",
+    "title": "[배구] GS CALTEX vs JUNG KWAN JANG",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-15 11:00",
+    "venue": "01.20(화) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260120_GS CALTEX_JUNG KWAN JANG",
+    "title": "[배구] GS CALTEX vs JUNG KWAN JANG",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-20 19:00",
+    "venue": "장충체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "seoul",
     "genre": "volleyball"
   }
 ]
