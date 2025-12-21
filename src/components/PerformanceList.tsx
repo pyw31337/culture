@@ -1526,8 +1526,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
+                    {/* Hero Text: Dynamic */}
                     <div ref={heroRef}>
-                        <TypingHero template={heroText} onCycle={handleHeroCycle} paused={!isHeroVisible || viewMode !== 'list'} />
+                        <TypingHero
+                            template={
+                                searchText ? {
+                                    line1: "찾으시는 공연,",
+                                    line2Pre: "입력하신 ",
+                                    highlight: `"${searchText}"`,
+                                    suffix: " 키워드로 정리해드릴게요.",
+                                    keywords: []
+                                } : heroText
+                            }
+                            onCycle={handleHeroCycle}
+                            paused={!isHeroVisible || viewMode !== 'list' || !!searchText}
+                        />
                     </div>
                     {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
