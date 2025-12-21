@@ -1527,7 +1527,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
                     <div ref={heroRef}>
-                        <TypingHero template={heroText} onCycle={handleHeroCycle} paused={!isHeroVisible} />
+                        <TypingHero template={heroText} onCycle={handleHeroCycle} paused={!isHeroVisible || viewMode !== 'list'} />
                     </div>
                     {/* Mobile: Dynamic (Simplified Layout) */}
                     <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
