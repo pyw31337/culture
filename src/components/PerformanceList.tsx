@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation } from 'lucide-react';
+import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback'; // Import the new component
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
@@ -16,10 +16,11 @@ import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
+import BottomNav, { BottomMenuType } from './BottomNav';
+import BottomNavSheet from './BottomNavSheet';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
-import SideMenu from './SideMenu';
 
 interface Venue {
     name: string;
@@ -425,9 +426,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
 
+    // Hero Text State (Hydration Safe: Start with Default, then randomize)
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
-    const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+    // Bottom Navigation State
+    const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
+    const [viewMode, setViewMode] = useState<string>('list'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
 
     // Like & Venue State (Moved to top for scope access)
     const [likedIds, setLikedIds] = useState<string[]>([]);
@@ -1370,102 +1375,122 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         return Array.from(distinctVenues).sort();
     }, [initialPerformances, selectedRegion, selectedDistrict]);
 
+    // --- Bottom Nav Handlers ---
+    const handleMenuClick = (menu: BottomMenuType) => {
+        if (activeBottomMenu === menu) {
+            setActiveBottomMenu(null); // Toggle off
+        } else {
+            setActiveBottomMenu(menu);
+        }
+    };
+
+    const handleKeywordAdd = (keyword: string) => {
+        if (!contextKeywords.includes(keyword)) {
+            const updated = [...contextKeywords, keyword];
+            setContextKeywords(updated);
+            localStorage.setItem('culture_keywords', JSON.stringify(updated));
+        }
+    };
+
+    const handleKeywordRemove = (keyword: string) => {
+        const updated = contextKeywords.filter(k => k !== keyword);
+        setContextKeywords(updated);
+        localStorage.setItem('culture_keywords', JSON.stringify(updated));
+    };
+
+    // --- Derived Filters for Search/Region ---
     const filteredPerformances = useMemo(() => {
-        let results = initialPerformances.filter(p => {
-            // 1. Region Filter
-            if (selectedRegion !== 'all' && p.region !== selectedRegion) return false;
+        let filtered = initialPerformances;
 
-            // 2. Genre Filter
+        // Search Filter
+        if (searchText) {
+            const lowerSearch = searchText.toLowerCase();
+            filtered = filtered.filter(p =>
+                p.title.toLowerCase().includes(lowerSearch) ||
+                p.venue.toLowerCase().includes(lowerSearch) ||
+                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).toLowerCase().includes(lowerSearch))
+            );
+        }
+
+        // Genre Filter
+        if (selectedGenre !== 'all') {
             if (selectedGenre === 'hotdeal') {
-                const hasPrice = p.price && p.price.length > 0;
-                const hasDiscount = p.discount && p.discount.length > 0;
-                if (!hasPrice && !hasDiscount) return false;
-            } else if (selectedGenre !== 'all' && p.genre !== selectedGenre) return false;
-
-            // 3. District Filter (only if region is selected)
-            if (selectedRegion !== 'all' && selectedDistrict !== 'all') {
-                const v = venues[p.venue];
-                if (!v || v.district !== selectedDistrict) return false;
+                filtered = filtered.filter(p => p.discount && p.discount !== '' && p.discount !== '0');
+            } else {
+                filtered = filtered.filter(p => p.genre === selectedGenre);
             }
+        }
 
-            // 3.5 Venue Filter
-            if (selectedVenue !== 'all' && p.venue !== selectedVenue) return false;
-
-            // 4. Radius Filter (if active location exists)
-            if (activeLocation) {
-                const v = venues[p.venue];
-                if (v && v.lat && v.lng) {
-                    const dist = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, v.lat, v.lng);
-                    if (dist > radius) return false;
-                } else {
-                    // Hide venues without coords if in radius mode
-                    return false;
+        // Region Filter
+        if (selectedRegion !== 'all') {
+            filtered = filtered.filter(p => {
+                const venueInfo = venues[p.venue];
+                if (!venueInfo) {
+                    // Fallback check if venue name contains region
+                    const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label;
+                    return regionLabel ? p.venue.includes(regionLabel) : false;
                 }
-            }
+                const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label;
+                if (!regionLabel) return false;
 
-            // 5. Text Filter (Fallback if no location matched OR if we are just typing)
-            // Logic: If searchLocation is SET, we ignore text filter (we show all nearby).
-            // If searchLocation is NULL, we filter by searchText real-time.
-            if (!searchLocation && debouncedSearchText) {
-                const searchLower = debouncedSearchText.toLowerCase();
-                return (
-                    p.title.toLowerCase().includes(searchLower) ||
-                    p.venue.toLowerCase().includes(searchLower)
-                );
-            }
+                // Matches "서울" part of address
+                const isRegionMatch = venueInfo.address.startsWith(regionLabel);
 
-            return true;
+                if (!isRegionMatch) return false;
+
+                if (selectedDistrict !== 'all') {
+                    // Check district
+                    return venueInfo.district === selectedDistrict || venueInfo.address.includes(selectedDistrict);
+                }
+                return true;
+            });
+        }
+
+        // Venue Filter
+        if (selectedVenue !== 'all') {
+            filtered = filtered.filter(p => p.venue === selectedVenue);
+        }
+
+        return filtered;
+    }, [initialPerformances, searchText, selectedGenre, selectedRegion, selectedDistrict, selectedVenue]);
+
+
+    // "Page" Selection Logic
+    const displayPerformances = useMemo(() => {
+        if (viewMode === 'likes-perf') {
+            return initialPerformances.filter(p => likedIds.includes(p.id));
+        }
+        if (viewMode === 'likes-venue') {
+            return []; // Placeholder if we handle UI separately
+        }
+        return filteredPerformances;
+    }, [initialPerformances, likedIds, viewMode, filteredPerformances, activeLocation, searchLocation, radius]);
+
+    // Sorting (Date asc)
+    const sortedPerformances = useMemo(() => {
+        return [...displayPerformances].sort((a, b) => {
+            // Simple string compare or date object
+            return a.date.localeCompare(b.date);
+        });
+    }, [displayPerformances]);
+
+    // Apply Radius Filter if active (Geolocation)
+    const finalPerformances = useMemo(() => {
+        if (!activeLocation) return sortedPerformances;
+
+        // Radius Logic ... (simplified re-implementation)
+        // If activeLocation is set, we filter sortedPerformances by radius
+        const origin = searchLocation || userLocation;
+        if (!origin) return sortedPerformances;
+
+        return sortedPerformances.filter(p => {
+            const v = venues[p.venue];
+            if (!v || !v.lat || !v.lng) return false;
+            const d = getDistanceFromLatLonInKm(origin.lat, origin.lng, v.lat, v.lng);
+            return d <= radius;
         });
 
-        // SORTING PRIORITY:
-        // 1. Context Match (Bonus Score)
-        // 2. Distance (if activeLocation)
-        // 3. Date (Soonest first)
-
-        results.sort((a, b) => {
-            // 1. Context Score
-            let scoreA = 0;
-            let scoreB = 0;
-
-            if (contextKeywords.length > 0) {
-                const getScore = (p: Performance) => {
-                    let s = 0;
-                    const v = venues[p.venue];
-                    for (const kw of contextKeywords) {
-                        if (p.title.includes(kw)) s += 1000;
-                        if (p.genre.includes(kw)) s += 500;
-                        if (p.venue.includes(kw)) s += 2000; // High priority for venue match
-                        if (v && v.district && v.district.includes(kw)) s += 1500; // High priority for district match
-                    }
-                    return s;
-                };
-                scoreA = getScore(a);
-                scoreB = getScore(b);
-            }
-
-            if (scoreA !== scoreB) {
-                return scoreB - scoreA; // High score first
-            }
-
-            // 2. Distance
-            if (activeLocation) {
-                const vA = venues[a.venue];
-                const vB = venues[b.venue];
-                if (vA?.lat && vA?.lng && vB?.lat && vB?.lng) {
-                    const distA = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, vA.lat, vA.lng);
-                    const distB = getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, vB.lat, vB.lng);
-                    if (Math.abs(distA - distB) > 0.1) { // 100m difference relevance
-                        return distA - distB;
-                    }
-                }
-            }
-
-            // 3. Date (Soonest first)
-            return new Date(a.date).getTime() - new Date(b.date).getTime();
-        });
-
-        return results;
-    }, [initialPerformances, debouncedSearchText, selectedRegion, selectedDistrict, selectedVenue, selectedGenre, radius, activeLocation, searchLocation, contextKeywords]);
+    }, [sortedPerformances, activeLocation, searchLocation, userLocation, radius]);
 
     // Split logic for Keyword Notification
     const { keywordMatches, normalPerformances } = useMemo(() => {
@@ -1520,8 +1545,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const visiblePerformances = filteredPerformances.slice(0, visibleCount);
 
-    // View Mode State
-    const [viewMode, setViewMode] = useState<'list' | 'calendar' | 'map'>('list');
+    // View Mode State (Declared at top)
 
 
 
@@ -1594,6 +1618,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    // --- Bottom Nav Handlers ---
     return (
         <div
             className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
@@ -3083,21 +3108,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 }
             </div >
 
-            {/* Side Menu Trigger Button (Above Scroll Top) */}
-            <button
-                onClick={() => setIsSideMenuOpen(true)}
-                className="fixed bottom-20 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#a78bfa]/50 transition-all z-50 group sm:hidden"
-                style={{
-                    backgroundImage: 'linear-gradient(#000, #000), linear-gradient(to right, #f472b6, #a78bfa)',
-                    backgroundClip: 'padding-box, border-box'
-                }}
-                aria-label="Open Menu"
-            >
-                <div className="text-white">
-                    <Menu className="w-6 h-6 stroke-current" />
-                </div>
-            </button>
-
             {/* Scroll to Top Button */}
             {
                 showScrollTop && (
@@ -3118,27 +3128,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </button>
                 )
             }
-
-            <SideMenu
-                isOpen={isSideMenuOpen}
-                onClose={() => setIsSideMenuOpen(false)}
-                viewMode={viewMode}
-                setViewMode={setViewMode}
-                selectedRegion={selectedRegion}
-                setSelectedRegion={setSelectedRegion}
-                selectedDistrict={selectedDistrict}
-                setSelectedDistrict={setSelectedDistrict}
-                selectedVenue={selectedVenue}
-                setSelectedVenue={setSelectedVenue}
-                selectedGenre={selectedGenre}
-                setSelectedGenre={setSelectedGenre}
-                showLikes={showLikes}
-                setShowLikes={setShowLikes}
-                showFavoriteVenues={showFavoriteVenues}
-                setShowFavoriteVenues={setShowFavoriteVenues}
-                districts={districts}
-                venues={availableVenues}
-            />
 
             {/* Render View Modals */}
             {
@@ -3242,7 +3231,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )}
             </AnimatePresence>
 
-        </div >
+
+        </div>
     );
 }
 
@@ -3897,224 +3887,182 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         </>
                     ) : (
                         /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
-                        <>
-                            <div className="relative h-full w-full">
-                                <ImageWithFallback
-                                    src={perf.image}
-                                    optimizationWidth={400}
-                                    alt={perf.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
+                        <div className="relative h-full w-full">
+                            <ImageWithFallback
+                                src={perf.image}
+                                optimizationWidth={400}
+                                alt={perf.title}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                loading="lazy"
+                                referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
-                                {/* Hot Deal Badge (Top Left) */}
-                                {perf.discount && (
-                                    <div
-                                        className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
-                                        style={{ transform: 'translateZ(20px)' }}
-                                    >
-                                        <Flame className="w-3 h-3 fill-rose-500" />
-                                        핫딜
-                                    </div>
-                                )}
-                                <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
-
+                            {/* Hot Deal Badge (Top Left) */}
+                            {perf.discount && (
                                 <div
-                                    className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-[15px]"
-                                    style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
+                                    className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
+                                    style={{ transform: 'translateZ(20px)' }}
                                 >
-                                    <div className={clsx(
-                                        "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                        enableActions ? "translate-y-[60px] group-hover:translate-y-0" : ""
-                                    )}>
-                                        {/* Gradient Background Layer - spans full height of content */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
+                                    <Flame className="w-3 h-3 fill-rose-500" />
+                                    핫딜
+                                </div>
+                            )}
+                            <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
 
-                                        {/* Performance Info */}
-                                        <div className="relative z-10 p-5 pb-2">
-                                            {/* Tags/Badges */}
-                                            <div className="flex flex-wrap gap-2 mb-2">
-                                                <span className={clsx(
-                                                    "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
-                                                    GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
-                                                )}>
-                                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
-                                                </span>
-                                                <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
-                                                    <Calendar className="w-3.5 h-3.5" />
-                                                    {(() => {
-                                                        const parts = perf.date.split('~').map((s: string) => s.trim());
-                                                        return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
-                                                    })()}
-                                                </span>
-                                            </div>
+                            <div
+                                className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-[15px]"
+                                style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
+                            >
+                                <div className={clsx(
+                                    "relative transition-transform duration-300 ease-out flex flex-col justify-end",
+                                    enableActions ? "translate-y-[60px] group-hover:translate-y-0" : ""
+                                )}>
+                                    {/* Gradient Background Layer - spans full height of content */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
-                                            <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                                <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                                    {perf.title.trim()}
-                                                </h3>
-                                            </a>
-
-                                            <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
-                                                {perf.genre === 'movie' ? (
-                                                    <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                                        {perf.gradeIcon ? (
-                                                            <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
-                                                        ) : (
-                                                            <>
-                                                                <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                ) : perf.genre === 'travel' ? (
-                                                    <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
-                                                        <div className="flex items-center gap-1 font-bold text-sky-400">
-                                                            <Plane className="w-3.5 h-3.5" />
-                                                            {perf.venue.split('|')[0]?.trim()}
-                                                        </div>
-                                                    </div>
-                                                ) : (
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            if (onLocationClick) {
-                                                                onLocationClick({
-                                                                    lat: venueInfo?.lat || 0,
-                                                                    lng: venueInfo?.lng || 0,
-                                                                    name: perf.venue
-                                                                });
-                                                            }
-                                                        }}
-                                                        className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer"
-                                                    >
-                                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                                        {perf.venue}
-                                                    </button>
-                                                )}
-                                            </div>
-
-                                            {/* Movie Metadata (Director, Cast, Info) for Grid View */}
-                                            {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
-                                                <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
-                                                    {perf.director && (
-                                                        <div className="flex gap-1 items-start">
-                                                            <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                                            <a
-                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]"
-                                                                onClick={e => e.stopPropagation()}
-                                                            >
-                                                                {perf.director.replace('더보기', '').trim()}
-                                                            </a>
-                                                        </div>
-                                                    )}
-                                                    {perf.cast && perf.cast.length > 0 && (
-                                                        <div className="flex gap-1 items-start">
-                                                            <span className="text-gray-500 font-bold shrink-0">출연</span>
-                                                            <div className="block truncate relative z-[101]">
-                                                                {perf.cast.slice(0, 3).map((actor: string, idx: number) => {
-                                                                    const cleanName = actor.replace('더보기', '').trim();
-                                                                    if (!cleanName) return null;
-                                                                    return (
-                                                                        <span key={idx}>
-                                                                            <a
-                                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
-                                                                                className="text-gray-300 hover:text-white hover:underline transition-colors"
-                                                                                onClick={e => e.stopPropagation()}
-                                                                            >
-                                                                                {cleanName}
-                                                                            </a>
-                                                                            {idx < Math.min(perf.cast.length, 3) - 1 && ', '}
-                                                                        </span>
-                                                                    );
-                                                                })}
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                    {perf.movieInfo && (
-                                                        <div className="text-gray-500 text-[10px] mt-0.5 line-clamp-1">{perf.movieInfo}</div>
-                                                    )}
-                                                </div>
-                                            )}
-
-                                            {(perf.price || perf.discount) && (
-                                                <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
-                                                    <div className="flex flex-col justify-end">
-                                                        {perf.discount && (
-                                                            <div className="text-rose-500 drop-shadow-md leading-none">
-                                                                <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                                <span className="text-sm font-light ml-0.5">%</span>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="flex items-baseline gap-1.5">
-                                                        {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
-                                                        {perf.price && (
-                                                            <div className="text-white drop-shadow-md leading-none">
-                                                                <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                                <span className="text-xs font-light ml-0.5">원</span>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            )}
+                                    {/* Performance Info */}
+                                    <div className="relative z-10 p-5 pb-2">
+                                        {/* Tags/Badges */}
+                                        <div className="flex flex-wrap gap-2 mb-2">
+                                            <span className={clsx(
+                                                "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                            )}>
+                                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            </span>
+                                            <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
+                                                <Calendar className="w-3.5 h-3.5" />
+                                                {(() => {
+                                                    const parts = perf.date.split('~').map((s: string) => s.trim());
+                                                    return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
+                                                })()}
+                                            </span>
                                         </div>
 
-                                        {/* Actions (Hidden initially, slides up with info) */}
-                                        {enableActions && (
-                                            <div className="relative z-10 p-4 pt-3 flex items-center justify-center gap-2 h-[70px]">
+                                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
+                                            <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                                {perf.title.trim()}
+                                            </h3>
+                                        </a>
+
+                                        <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                            {perf.genre === 'movie' ? (
+                                                <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
+                                                    {perf.gradeIcon ? (
+                                                        <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
+                                                    ) : (
+                                                        <>
+                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                        </>
+                                                    )}
+                                                </div>
+                                            ) : perf.genre === 'travel' ? (
+                                                <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
+                                                    <div className="flex items-center gap-1 font-bold text-sky-400">
+                                                        <Plane className="w-3.5 h-3.5" />
+                                                        {perf.venue.split('|')[0]?.trim()}
+                                                    </div>
+                                                </div>
+                                            ) : (
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        onShare?.();
-                                                        setIsCopied(true);
-                                                        setTimeout(() => setIsCopied(false), 2000);
+                                                        if (onLocationClick) {
+                                                            onLocationClick({
+                                                                lat: venueInfo?.lat || 0,
+                                                                lng: venueInfo?.lng || 0,
+                                                                name: perf.venue
+                                                            });
+                                                        }
                                                     }}
-                                                    className="w-[20%] bg-white/10 hover:bg-white hover:text-black text-white backdrop-blur-md border border-white/20 py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-full relative group/share"
-                                                    aria-label="공유하기"
+                                                    className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer"
                                                 >
-                                                    <Share2 className="w-5 h-5" />
-                                                    <AnimatePresence>
-                                                        {isCopied && (
-                                                            <motion.div
-                                                                initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                                className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
-                                                            >
-                                                                <span className="text-emerald-400">✓</span> 복사됨!
-                                                                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
-                                                            </motion.div>
-                                                        )}
-                                                    </AnimatePresence>
+                                                    <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
+                                                    {perf.venue}
                                                 </button>
-                                                <button
-                                                    onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
-                                                    className="w-[80%] bg-[#a78bfa] hover:bg-[#8b5cf6] text-white py-3 rounded-xl flex items-center justify-center transition-all font-bold shadow-lg h-full"
-                                                >
-                                                    <Search className="w-5 h-5" />
-                                                    <span className="ml-2">자세히보기</span>
-                                                </button>
+                                            )}
+                                        </div>
+
+                                        {/* Movie Metadata (Director, Cast, Info) for Grid View */}
+                                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                                            <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
+                                                {perf.director && (
+                                                    <div className="flex gap-1 items-start">
+                                                        <span className="text-gray-500 font-bold shrink-0">감독</span>
+                                                        <a
+                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]"
+                                                            onClick={e => e.stopPropagation()}
+                                                        >
+                                                            {perf.director.replace('더보기', '').trim()}
+                                                        </a>
+                                                    </div>
+                                                )}
+                                                {perf.cast && perf.cast.length > 0 && (
+                                                    <div className="flex gap-1 items-start">
+                                                        <span className="text-gray-500 font-bold shrink-0">출연</span>
+                                                        <div className="block truncate relative z-[101]">
+                                                            {perf.cast.slice(0, 3).map((actor: string, idx: number) => {
+                                                                const cleanName = actor.replace('더보기', '').trim();
+                                                                if (!cleanName) return null;
+                                                                return (
+                                                                    <span key={idx}>
+                                                                        <a
+                                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                                            onClick={e => e.stopPropagation()}
+                                                                        >
+                                                                            {cleanName}
+                                                                        </a>
+                                                                        {idx < Math.min(perf.cast.length, 3) - 1 && ', '}
+                                                                    </span>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {perf.movieInfo && (
+                                                    <div className="text-gray-500 text-[10px] mt-0.5 line-clamp-1">{perf.movieInfo}</div>
+                                                )}
+                                            </div>
+                                        )}
+
+                                        {(perf.price || perf.discount) && (
+                                            <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
+                                                <div className="flex flex-col justify-end">
+                                                    {perf.discount && (
+                                                        <div className="text-rose-500 drop-shadow-md leading-none">
+                                                            <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                            <span className="text-sm font-light ml-0.5">%</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-baseline gap-1.5">
+                                                    {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
+                                                    {perf.price && (
+                                                        <div className="text-white drop-shadow-md leading-none">
+                                                            <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                            <span className="text-xs font-light ml-0.5">원</span>
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
                                         )}
                                     </div>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
         </div>
     );
 }
-
-// Build Trigger: 2025-12-18 10:48
