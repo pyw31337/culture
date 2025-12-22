@@ -1589,7 +1589,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
                         onClick={() => {
-                            window.location.href = 'http://pyw31337.dothome.co.kr/culture/';
+                            window.location.href = 'https://pyw31337.github.io/culture/';
                         }}
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
@@ -1651,12 +1651,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <button
                             onClick={handleCurrentLocationClick}
-                            className="mr-2 inline-flex items-center justify-center p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/loc"
-                            title="현재 위치로 찾기"
+                            className="flex items-center gap-1 hover:text-white transition-colors group/label mr-2"
+                            title="내 위치 찾기"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-emerald-400 group-hover/loc:stroke-emerald-300 group-hover/loc:scale-110 transition-all icon icon-tabler icons-tabler-outline icon-tabler-current-location"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
+                            <span>
+                                {activeLocation ? (searchLocation ? '검색위치 :' : '설정위치 :') : '현재위치 :'}
+                            </span>
                         </button>
-                        <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
+                        <span className="text-white border-b border-[#a78bfa]">
                             {activeLocation
                                 ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
                                 : (
