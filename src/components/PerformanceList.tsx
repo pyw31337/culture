@@ -813,7 +813,33 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
         const url = `${baseUrl}#p=${id}`;
 
-        // 1. Try Kakao Share
+        let clipboardSuccess = false;
+
+        // 1. Always try Clipboard Copy first
+        try {
+            await navigator.clipboard.writeText(url);
+            setShareUrlCopied(true);
+            setTimeout(() => setShareUrlCopied(false), 2000);
+            clipboardSuccess = true;
+        } catch (err) {
+            console.error('Failed to copy URL:', err);
+            // Fallback for older browsers
+            try {
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                setShareUrlCopied(true);
+                setTimeout(() => setShareUrlCopied(false), 2000);
+                clipboardSuccess = true;
+            } catch (fallbackErr) {
+                console.error('Fallback copy failed:', fallbackErr);
+            }
+        }
+
+        // 2. Try Kakao Share (Simultaneously)
         if (typeof window !== 'undefined' && (window as any).Kakao) {
             if (!(window as any).Kakao.isInitialized()) {
                 (window as any).Kakao.init('0236cfffa7cfef34abacd91a6d7c73c0');
@@ -841,29 +867,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         },
                     ],
                 });
-                return false; // Kakao Share used (no clipboard toast needed)
             }
         }
 
-        // 2. Fallback to Clipboard Copy
-        try {
-            await navigator.clipboard.writeText(url);
-            setShareUrlCopied(true);
-            setTimeout(() => setShareUrlCopied(false), 2000);
-            return true; // Clipboard used
-        } catch (err) {
-            console.error('Failed to copy URL:', err);
-            // Fallback
-            const textArea = document.createElement('textarea');
-            textArea.value = url;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            setShareUrlCopied(true);
-            setTimeout(() => setShareUrlCopied(false), 2000);
-            return true; // Clipboard used
-        }
+        // Return true if clipboard copy succeeded (to show local toast)
+        // Even if Kakao launched, user wants clipboard copy, so showing "Copied" is appropriate now.
+        return clipboardSuccess;
     };
 
     // Share URL Generation
