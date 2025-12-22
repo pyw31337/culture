@@ -1669,7 +1669,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className="text-white border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
                         >
-                            {(activeLocation && !selectedRegion && !selectedVenue) // Show GPS/Search if NO manual filter
+                            {(activeLocation && selectedRegion === 'all' && selectedVenue === 'all') // Show GPS/Search if NO manual filter
                                 ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
                                 : (
                                     (selectedRegion !== 'all' || selectedVenue !== 'all')
@@ -2870,7 +2870,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <>
                                         <MapPin className="text-green-500 w-5 h-5" />
                                         <span className="truncate max-w-[150px] sm:max-w-xs">
-                                            {searchLocation ? `'${searchLocation.name}'` : '내 위치'}
+                                            {searchLocation ? `'${searchLocation.name}'` : (userAddress || '내 위치')}
                                         </span>
                                         <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
                                     </>
