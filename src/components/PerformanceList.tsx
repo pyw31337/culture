@@ -1659,18 +1659,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
                             <span>
-                                {activeLocation ? (searchLocation ? '검색위치 :' : '설정위치 :') : '현재위치 :'}
+                                {(selectedRegion !== 'all' || selectedVenue !== 'all')
+                                    ? '설정위치 :'
+                                    : (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
+                                }
                             </span>
                         </button>
                         <span
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className="text-white border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
                         >
-                            {activeLocation
+                            {(activeLocation && !selectedRegion && !selectedVenue) // Show GPS/Search if NO manual filter
                                 ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
                                 : (
-                                    selectedRegion !== 'all'
-                                        ? `${REGIONS.find(r => r.id === selectedRegion)?.label || ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim()
+                                    (selectedRegion !== 'all' || selectedVenue !== 'all')
+                                        ? `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
                                         : '전체 지역'
                                 )
                             }
@@ -1790,10 +1793,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,
                                     suffix: " 키워드로 정리해드릴게요.",
                                     keywords: []
+                                } : (selectedRegion !== 'all' || selectedVenue !== 'all') ? {
+                                    line1: "현재,",
+                                    line2Pre: `${[
+                                        selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '',
+                                        selectedDistrict !== 'all' ? selectedDistrict : '',
+                                        selectedVenue !== 'all' ? selectedVenue : ''
+                                    ].filter(Boolean).join(' ')}에서 진행중인 `,
+                                    highlight: "공연",
+                                    suffix: "들을 찾아줄게요.",
+                                    keywords: []
                                 } : heroText
                             }
                             onCycle={handleHeroCycle}
-                            paused={!isHeroVisible || viewMode !== 'list' || !!searchText}
+                            paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
                         />
                     </div>
                     {/* Mobile: Dynamic (Simplified Layout) */}
