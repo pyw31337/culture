@@ -2101,6 +2101,34 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 {/* Filter Controls (Venue, Region, District) */}
                                 <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
 
+                                    {/* View Toggles (Mobile: Top, PC: Right) */}
+                                    <div className="flex gap-1 order-first sm:order-last justify-between sm:justify-start bg-black/20 p-1 rounded-full border border-white/5 backdrop-blur-sm shrink-0">
+                                        <div className="flex gap-1 w-full sm:w-auto justify-between sm:justify-start">
+                                            <button
+                                                onClick={() => {
+                                                    if (viewMode !== 'list') {
+                                                        setViewMode('list');
+                                                    } else {
+                                                        setLayoutMode(prev => prev === 'grid' ? 'list' : 'grid');
+                                                    }
+                                                }}
+                                                className={clsx(
+                                                    "flex-1 sm:flex-none p-1.5 px-3 sm:px-1.5 rounded-full hover:bg-white/10 transition-colors relative group flex items-center justify-center",
+                                                    viewMode === 'list' ? "bg-white/20 text-white shadow-inner" : "text-gray-400"
+                                                )}
+                                                title={layoutMode === 'grid' ? "리스트 보기" : "썸네일 보기"}
+                                            >
+                                                {viewMode === 'list' && layoutMode === 'list' ? <LayoutGrid className="w-4 h-4" /> : <List className="w-4 h-4" />}
+                                            </button>
+                                            <button onClick={() => setViewMode('calendar')} className={clsx("flex-1 sm:flex-none p-1.5 px-3 sm:px-1.5 rounded-full hover:bg-white/10 transition-colors flex items-center justify-center", viewMode === 'calendar' ? "bg-white/20 text-white" : "text-gray-400")} title="캘린더">
+                                                <CalendarDays className="w-4 h-4" />
+                                            </button>
+                                            <button onClick={() => setViewMode('map')} className={clsx("flex-1 sm:flex-none p-1.5 px-3 sm:px-1.5 rounded-full hover:bg-white/10 transition-colors flex items-center justify-center", viewMode === 'map' ? "bg-white/20 text-white" : "text-gray-400")} title="지도">
+                                                <MapIcon className="w-4 h-4" />
+                                            </button>
+                                        </div>
+                                    </div>
+
                                     {/* Venue Select */}
                                     <div className="relative shrink-0 w-full sm:w-auto">
                                         <select
