@@ -265,7 +265,17 @@ const HERO_TEMPLATES = {
     ]
 };
 
-type HeroTemplate = typeof HERO_TEMPLATES.general[number] | typeof HERO_TEMPLATES.location[number];
+// Define explicit interface to allow optional boldPrefix
+interface HeroTemplate {
+    line1: string;
+    line2Pre: string;
+    highlight: string;
+    suffix: string;
+    keywords: string[];
+    boldPrefix?: string; // New optional field for white bold text
+}
+
+// type HeroTemplate = typeof HERO_TEMPLATES.general[number] | typeof HERO_TEMPLATES.location[number];
 
 const Cursor = () => (
     <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
@@ -286,10 +296,11 @@ const TypingHero = ({
 
     // Calculate segment lengths
     const len1 = displayedTemplate.line1.length;
+    const lenBold = displayedTemplate.boldPrefix?.length || 0;
     const len2Pre = displayedTemplate.line2Pre.length;
     const lenHl = displayedTemplate.highlight.length;
     const lenSuf = displayedTemplate.suffix.length;
-    const totalLen = len1 + len2Pre + lenHl + lenSuf;
+    const totalLen = len1 + lenBold + len2Pre + lenHl + lenSuf;
 
     // React to template updates from parent
     useEffect(() => {
@@ -366,18 +377,20 @@ const TypingHero = ({
     };
 
     const t1 = getSub(displayedTemplate.line1, 0);
-    const t2Pre = getSub(displayedTemplate.line2Pre, len1);
-    const tHl = getSub(displayedTemplate.highlight, len1 + len2Pre);
-    const tSuf = getSub(displayedTemplate.suffix, len1 + len2Pre + lenHl);
+    const tBold = displayedTemplate.boldPrefix ? getSub(displayedTemplate.boldPrefix, len1) : '';
+    const t2Pre = getSub(displayedTemplate.line2Pre, len1 + lenBold);
+    const tHl = getSub(displayedTemplate.highlight, len1 + lenBold + len2Pre);
+    const tSuf = getSub(displayedTemplate.suffix, len1 + lenBold + len2Pre + lenHl);
 
     // Determine active segment for cursor placement
-    let cursorSegment: 'line1' | 'line2Pre' | 'hl' | 'suffix' | null = null;
+    let cursorSegment: 'line1' | 'bold' | 'line2Pre' | 'hl' | 'suffix' | null = null;
 
     // Only show cursor if we are actively typing/deleting or waiting
     // But precise placement:
     if (progress <= len1) cursorSegment = 'line1';
-    else if (progress <= len1 + len2Pre) cursorSegment = 'line2Pre';
-    else if (progress <= len1 + len2Pre + lenHl) cursorSegment = 'hl';
+    else if (progress <= len1 + lenBold) cursorSegment = 'bold';
+    else if (progress <= len1 + lenBold + len2Pre) cursorSegment = 'line2Pre';
+    else if (progress <= len1 + lenBold + len2Pre + lenHl) cursorSegment = 'hl';
     else cursorSegment = 'suffix';
 
     return (
@@ -385,6 +398,12 @@ const TypingHero = ({
             {t1}
             {cursorSegment === 'line1' && <Cursor />}
             <br />
+            {tBold && (
+                <span className="font-extrabold text-white">
+                    {tBold}
+                </span>
+            )}
+            {cursorSegment === 'bold' && <Cursor />}
             {t2Pre}
             {cursorSegment === 'line2Pre' && <Cursor />}
             <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
@@ -1795,11 +1814,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     keywords: []
                                 } : (selectedRegion !== 'all' || selectedVenue !== 'all') ? {
                                     line1: "현재,",
-                                    line2Pre: `${[
+                                    boldPrefix: `${[
                                         selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '',
                                         selectedDistrict !== 'all' ? selectedDistrict : '',
                                         selectedVenue !== 'all' ? selectedVenue : ''
-                                    ].filter(Boolean).join(' ')}에서 진행중인 `,
+                                    ].filter(Boolean).join(' ')}`,
+                                    line2Pre: "에서 진행중인 ",
                                     highlight: "공연",
                                     suffix: "들을 찾아줄게요.",
                                     keywords: []

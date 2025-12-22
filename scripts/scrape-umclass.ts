@@ -88,91 +88,92 @@ async function scrapeUmClass() {
     const allItems: UmClassItem[] = [];
     const seenTitles = new Set<string>();
 
-    // We target "Region 2" (Seoul likely, based on URL) and iterate pages
-    let currentPage = 1;
-    let hasNextPage = true;
-    const MAX_PAGES = 5; // Safety limit for now, increase if needed
-
-    console.log(`\nPhase 1: Collecting class links...`);
+    const MAX_PAGES = 20; // Increased limit to collect more pages per area
 
     let pendingItems: { link: string, title: string, image: string, discount: string, price: string }[] = [];
 
-    while (hasNextPage && currentPage <= MAX_PAGES) {
-        const url = `https://www.umclass.com/plan/29?page=${currentPage}&area=2`;
-        console.log(`  Visiting Page ${currentPage}: ${url}`);
-
-        try {
-            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-
-            // detailed wait not strictly necessary if networkidle2 works, but good for safety
+    // Iterate over multiple area codes to broaden coverage
+    const AREAS = [1, 2, 3, 4, 5]; // expand to more regions (e.g., Seoul, Busan, etc.)
+    for (const area of AREAS) {
+        let currentPage = 1;
+        let hasNextPage = true;
+        console.log(`\nPhase 1: Collecting class links for area ${area}...`);
+        while (hasNextPage && currentPage <= MAX_PAGES) {
+            const url = `https://www.umclass.com/plan/29?page=${currentPage}&area=${area}`;
+            console.log(`  Visiting Page ${currentPage} (area ${area}): ${url}`);
             try {
+                await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
                 await page.waitForSelector('.classPlan-contents-list', { timeout: 5000 });
             } catch (e) {
                 console.log(`    No list container found on page ${currentPage}. Ending.`);
                 break;
             }
 
-            const pageItems = await page.evaluate(() => {
-                const listItems = document.querySelectorAll('.classPlan-contents-list > div');
-                const results: any[] = [];
+            try {
+                const pageItems = await page.evaluate(() => {
+                    const listItems = document.querySelectorAll('.class-search-result.search-result-area ul.append-area > li');
+                    const results: any[] = [];
 
-                if (listItems.length === 0) return [];
+                    if (listItems.length === 0) return [];
 
-                listItems.forEach((item) => {
-                    const anchor = item.querySelector('a');
-                    if (!anchor) return;
+                    listItems.forEach((item) => {
+                        const anchor = item.querySelector('a');
+                        if (!anchor) return;
 
-                    const link = anchor.href;
-                    const titleElem = anchor.querySelector('div:nth-child(2) > span');
-                    const title = titleElem ? titleElem.textContent?.trim() : '';
+                        const link = anchor.href;
+                        const titleElem = anchor.querySelector('.list-subject');
+                        const title = titleElem ? titleElem.textContent?.trim() : '';
 
-                    if (!title || !link) return;
+                        if (!title || !link) return;
 
-                    // Image
-                    const imgDiv = anchor.querySelector('.classPlan-lazy.class-lis-img');
-                    let image = '';
-                    if (imgDiv) {
-                        const style = window.getComputedStyle(imgDiv);
-                        image = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-                    }
+                        // Image
+                        const imgDiv = anchor.querySelector('.list-img .img');
+                        let image = '';
+                        if (imgDiv) {
+                            const style = window.getComputedStyle(imgDiv);
+                            image = style.backgroundImage.slice(4, -1).replace(/\"/g, "");
+                        }
 
-                    // Price
-                    const discountElem = anchor.querySelector('.class-lis-mony-mt > span:nth-child(1)');
-                    const priceElem = anchor.querySelector('.class-lis-mony-mt > span:nth-child(2)');
+                        // Discount and Price
+                        const discountElem = anchor.querySelector('.discount-rate');
+                        const priceElem = anchor.querySelector('.price');
 
-                    const discount = discountElem ? discountElem.textContent?.trim() || '' : '';
-                    const price = priceElem ? (priceElem.textContent?.trim() || '') : ''; // Often the final price
+                        const discount = discountElem ? discountElem.textContent?.trim() || '' : '';
+                        const price = priceElem ? priceElem.textContent?.trim() || '' : '';
 
-                    results.push({
-                        title,
-                        link,
-                        image,
-                        discount,
-                        price
+                        results.push({
+                            title,
+                            link,
+                            image,
+                            discount,
+                            price
+                        });
                     });
+                    return results;
                 });
-                return results;
-            });
 
-            if (pageItems.length === 0) {
-                console.log(`    No items found on page ${currentPage}. Stopping.`);
-                hasNextPage = false;
-            } else {
-                console.log(`    Found ${pageItems.length} items.`);
-                for (const item of pageItems) {
-                    if (!seenTitles.has(item.title)) {
-                        seenTitles.add(item.title);
-                        pendingItems.push(item);
+                if (pageItems.length === 0) {
+                    console.log(`    No items found on page ${currentPage}. Stopping.`);
+                    hasNextPage = false;
+                } else {
+                    console.log(`    Found ${pageItems.length} items.`);
+                    for (const item of pageItems) {
+                        if (!seenTitles.has(item.title)) {
+                            seenTitles.add(item.title);
+                            pendingItems.push(item);
+                        }
                     }
+                    currentPage++;
                 }
-                currentPage++;
+            } catch (e) {
+                console.error(`    Error on page ${currentPage} (area ${area}): ${e}`);
+                // If an error occurs, try to continue to the next page or area, but stop current page processing.
+                hasNextPage = false; // Stop processing pages for this area if an error occurs
             }
-
-        } catch (error) {
-            console.error(`    Error on page ${currentPage}: ${error}`);
-            hasNextPage = false;
         }
     }
+
+
 
     console.log(`  Total unique classes found: ${pendingItems.length}`);
 
