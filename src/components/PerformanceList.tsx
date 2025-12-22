@@ -19,6 +19,7 @@ import LZString from 'lz-string';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
+import SideMenu from './SideMenu';
 
 interface Venue {
     name: string;
@@ -424,9 +425,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
 
-    // Hero Text State (Hydration Safe: Start with Default, then randomize)
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
+    const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
     // Like & Venue State (Moved to top for scope access)
     const [likedIds, setLikedIds] = useState<string[]>([]);
@@ -3082,6 +3083,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 }
             </div >
 
+            {/* Side Menu Trigger Button (Above Scroll Top) */}
+            <button
+                onClick={() => setIsSideMenuOpen(true)}
+                className="fixed bottom-20 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#a78bfa]/50 transition-all z-50 group sm:hidden"
+                style={{
+                    backgroundImage: 'linear-gradient(#000, #000), linear-gradient(to right, #f472b6, #a78bfa)',
+                    backgroundClip: 'padding-box, border-box'
+                }}
+                aria-label="Open Menu"
+            >
+                <div className="text-white">
+                    <Menu className="w-6 h-6 stroke-current" />
+                </div>
+            </button>
+
             {/* Scroll to Top Button */}
             {
                 showScrollTop && (
@@ -3102,6 +3118,27 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </button>
                 )
             }
+
+            <SideMenu
+                isOpen={isSideMenuOpen}
+                onClose={() => setIsSideMenuOpen(false)}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
+                selectedRegion={selectedRegion}
+                setSelectedRegion={setSelectedRegion}
+                selectedDistrict={selectedDistrict}
+                setSelectedDistrict={setSelectedDistrict}
+                selectedVenue={selectedVenue}
+                setSelectedVenue={setSelectedVenue}
+                selectedGenre={selectedGenre}
+                setSelectedGenre={setSelectedGenre}
+                showLikes={showLikes}
+                setShowLikes={setShowLikes}
+                showFavoriteVenues={showFavoriteVenues}
+                setShowFavoriteVenues={setShowFavoriteVenues}
+                districts={districts}
+                venues={availableVenues}
+            />
 
             {/* Render View Modals */}
             {
