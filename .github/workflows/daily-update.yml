@@ -97,7 +97,35 @@ jobs:
         if: env.SKIP_EXECUTION != 'true'
         run: npm run build
 
-      - name: FTP Deploy
+      - name: Deploy to GitHub Pages
+        if: env.SKIP_EXECUTION != 'true'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+
+      - name: Prepare Redirect for Dothome
+        if: env.SKIP_EXECUTION != 'true'
+        run: |
+          # Clear the output directory
+          rm -rf out/*
+          # Create Redirect File
+          cat <<EOF > out/index.html
+          <!DOCTYPE html>
+          <html lang="ko">
+          <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="refresh" content="0; url=https://pyw31337.github.io/culture/">
+          <script>window.location.href = "https://pyw31337.github.io/culture/";</script>
+          <title>Redirecting...</title>
+          </head>
+          <body>
+          <p>사이트가 이전되었습니다. <a href="https://pyw31337.github.io/culture/">https://pyw31337.github.io/culture/</a>로 이동합니다.</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy Redirect to Dothome (FTP)
         if: env.SKIP_EXECUTION != 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
