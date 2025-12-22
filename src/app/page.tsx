@@ -12,6 +12,8 @@ import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
 
+import umclassData from '@/data/umclass.json';
+
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -60,6 +62,7 @@ async function getPerformances() {
     const travels = travelData as unknown as any[];
     const kids = kidsData as unknown as any[];
     const classes = classData as unknown as any[];
+    const umclasses = umclassData as unknown as any[];
 
     // Aggregate Data
     const allPerformances = [
@@ -73,6 +76,7 @@ async function getPerformances() {
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)
         ...classes,  // Class (Klook)
+        ...umclasses, // Class (UmClass)
     ].map(p => ({
         ...p,
         // Ensure ID is string
