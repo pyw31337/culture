@@ -1672,11 +1672,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                         {/* Expand Filter Button */}
                         <button
-                            onClick={() => setIsFilterExpanded(true)}
-                            className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/expand"
-                            title="지역 변경"
+                            onClick={() => setIsFilterExpanded(prev => !prev)}
+                            className={clsx(
+                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/expand",
+                                isFilterExpanded && "bg-white/20 text-white"
+                            )}
+                            title={isFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
                         >
-                            <ChevronDown className="w-3.5 h-3.5 group-hover/expand:scale-110 transition-transform" />
+                            <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isFilterExpanded && "rotate-180")} />
                         </button>
 
                         {/* Reset Location Button */}
