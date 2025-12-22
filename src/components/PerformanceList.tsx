@@ -1398,6 +1398,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         localStorage.setItem('culture_keywords', JSON.stringify(updated));
     };
 
+    // --- Bottom Nav Wrapper Handlers ---
+
+
+    const handleViewModeChange = (mode: string) => {
+        setViewMode(mode);
+        scrollToTop();
+    }
+
+    const handleGenreSelect = (genre: string) => {
+        setSelectedGenre(genre);
+        scrollToTop();
+    };
+
+    const handleRegionSelect = (region: string) => {
+        setSelectedRegion(region);
+        setSelectedDistrict('all');
+    };
+
+    const handleDistrictSelect = (district: string) => {
+        setSelectedDistrict(district);
+    };
+
+    const handleLikePerfClick = () => {
+        setViewMode('likes-perf');
+        setActiveBottomMenu(null);
+        scrollToTop();
+    };
+
+    const handleLikeVenueClick = () => {
+        setViewMode('likes-venue');
+        setActiveBottomMenu(null);
+        scrollToTop();
+    };
+
     // --- Derived Filters for Search/Region ---
     const filteredPerformances = useMemo(() => {
         let filtered = initialPerformances;
@@ -3232,6 +3266,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             </AnimatePresence>
 
 
+
+            {/* Bottom Navigation Sheet */}
+            <BottomNavSheet
+                activeMenu={activeBottomMenu}
+                onClose={() => setActiveBottomMenu(null)}
+                viewMode={viewMode}
+                onViewModeChange={handleViewModeChange}
+                selectedGenre={selectedGenre}
+                onGenreSelect={handleGenreSelect}
+                searchText={searchText}
+                onSearchChange={setSearchText}
+                selectedRegion={selectedRegion}
+                onRegionSelect={handleRegionSelect}
+                selectedDistrict={selectedDistrict}
+                onDistrictSelect={handleDistrictSelect}
+                keywords={contextKeywords}
+                onKeywordAdd={handleKeywordAdd}
+                onKeywordRemove={handleKeywordRemove}
+                districts={districts}
+            />
+
+            {/* Fixed Bottom Navigation Bar */}
+            <BottomNav
+                activeMenu={activeBottomMenu}
+                onMenuClick={handleMenuClick}
+                currentViewMode={viewMode}
+                onLikePerfClick={handleLikePerfClick}
+                onLikeVenueClick={handleLikeVenueClick}
+            />
         </div>
     );
 }
@@ -3257,6 +3320,7 @@ function SkeletonCard() {
                 <div className="h-7 w-3/4 bg-gray-700/50 rounded-md" />
                 <div className="h-4 w-1/2 bg-gray-700/50 rounded-md" />
             </div>
+
         </div>
     );
 }
@@ -4063,6 +4127,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     )}
                 </div>
             </div>
+
+
         </div>
     );
 }
