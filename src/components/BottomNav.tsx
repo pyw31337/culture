@@ -19,7 +19,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         { id: 'location', label: '위치', icon: MapPin, action: () => onMenuClick('location') },
         {
             id: 'likes-perf',
-            label: '찜한공연',
+            label: '좋아요 공연',
             icon: Heart,
             action: onLikePerfClick,
             isActive: currentViewMode === 'likes-perf'
@@ -35,8 +35,8 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 z-[9990] bg-black/80 backdrop-blur-xl border-t border-white/10 pb-safe">
-            <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <nav className="fixed bottom-0 left-0 right-0 z-[9990] bg-gradient-to-t from-black via-[#1a0b2e] to-transparent backdrop-blur-xl border-t border-purple-500/20 pb-safe">
+            <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
                 {navItems.map((item) => {
                     const isActive = item.isActive || activeMenu === item.id;
                     const Icon = item.icon;
@@ -46,16 +46,22 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                             key={item.id}
                             onClick={item.action}
                             className={clsx(
-                                "flex flex-col items-center justify-center gap-1 w-full h-full transition-all duration-300",
-                                isActive ? "text-white scale-105" : "text-gray-500 hover:text-gray-300"
+                                "flex flex-col items-center justify-center gap-1.5 w-full h-full transition-all duration-300 relative group",
+                                isActive ? "text-[#a78bfa] -translate-y-1" : "text-gray-400 hover:text-gray-200"
                             )}
                         >
+                            {/* Active Indicator Glow */}
+                            {isActive && (
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-purple-600/20 rounded-full blur-xl pointer-events-none" />
+                            )}
+
                             <Icon
                                 className={clsx(
                                     "w-6 h-6 transition-all duration-300",
-                                    isActive && "stroke-2 shadow-glow"
+                                    isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
                                 )}
-                                strokeWidth={isActive ? 2.5 : 2}
+                                strokeWidth={isActive ? 2.5 : 1.5}
+                                fill={isActive ? "currentColor" : "none"} // Fill icon when active
                             />
                             <span className="text-[10px] font-medium tracking-tight">
                                 {item.label}

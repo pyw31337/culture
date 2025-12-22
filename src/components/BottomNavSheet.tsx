@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
-import { X, Search } from 'lucide-react';
+import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, Mic2, Music, Ticket, Frame, Baby, Star } from 'lucide-react';
 import { BottomMenuType } from './BottomNav';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 
@@ -63,6 +63,18 @@ export default function BottomNavSheet({
         }
     };
 
+    // Helper to get genre icon
+    const getGenreIcon = (id: string) => {
+        switch (id) {
+            case 'concert': return Mic2;
+            case 'classic': return Music;
+            case 'musical': return Ticket; // Fallback or specific
+            case 'exhibition': return Frame;
+            case 'kids': return Baby;
+            default: return LayoutGrid;
+        }
+    };
+
     return (
         <>
             {/* Backdrop */}
@@ -77,79 +89,99 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-16 left-0 right-0 z-[9985] bg-[#1a1a1a]/90 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl transition-transform duration-300 ease-out max-h-[70vh] flex flex-col shadow-2xl pb-safe",
+                    "fixed bottom-16 left-0 right-0 z-[9985] bg-[#1a0b2e]/95 backdrop-blur-2xl border-t border-purple-500/20 rounded-t-3xl transition-transform duration-300 ease-out max-h-[70vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-safe",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
                 {/* Handle Bar */}
                 <div className="w-full flex justify-center pt-3 pb-1" onClick={onClose}>
-                    <div className="w-12 h-1.5 bg-gray-600 rounded-full cursor-pointer hover:bg-gray-500 transition-colors" />
+                    <div className="w-12 h-1.5 bg-gray-600/50 rounded-full cursor-pointer hover:bg-gray-500 transition-colors" />
                 </div>
 
                 {/* Content Area */}
-                <div className="p-4 overflow-y-auto custom-scrollbar">
+                <div className="p-6 overflow-y-auto custom-scrollbar">
 
                     {/* VIEW MENU */}
                     {activeMenu === 'view' && (
-                        <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-white mb-4 px-1">보기 방식 선택</h3>
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold text-white mb-4 px-1 flex items-center gap-2">
+                                <span className="text-purple-400">#</span> 보기 방식
+                            </h3>
+                            <div className="grid grid-cols-2 gap-4">
                                 {[
-                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심' },
-                                    { id: 'list', label: '리스트 보기', desc: '정보 중심' },
-                                    { id: 'calendar', label: '달력 보기', desc: '일자별 일정' },
-                                    { id: 'map', label: '지도 보기', desc: '위치 기반' }
-                                ].map((mode) => (
-                                    <button
-                                        key={mode.id}
-                                        onClick={() => { onViewModeChange(mode.id); onClose(); }}
-                                        className={clsx(
-                                            "p-4 rounded-xl border text-left transition-all hover:scale-[1.02]",
-                                            viewMode === mode.id
-                                                ? "bg-white text-black border-white shadow-lg"
-                                                : "bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700"
-                                        )}
-                                    >
-                                        <div className="text-sm font-bold mb-1">{mode.label}</div>
-                                        <div className={clsx("text-xs opacity-70", viewMode === mode.id ? "text-gray-600" : "text-gray-500")}>
-                                            {mode.desc}
-                                        </div>
-                                    </button>
-                                ))}
+                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: Grid3X3, color: 'text-purple-400' },
+                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: List, color: 'text-blue-400' },
+                                    { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
+                                    { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
+                                ].map((mode) => {
+                                    const Icon = mode.icon;
+                                    const isSelected = viewMode === mode.id;
+                                    return (
+                                        <button
+                                            key={mode.id}
+                                            onClick={() => { onViewModeChange(mode.id); onClose(); }}
+                                            className={clsx(
+                                                "p-4 rounded-2xl border text-left transition-all duration-300 group hover:scale-[1.02]",
+                                                isSelected
+                                                    ? "bg-white/10 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)]"
+                                                    : "bg-gray-900/50 border-white/5 hover:bg-gray-800"
+                                            )}
+                                        >
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className={clsx("p-2 rounded-lg bg-gray-800", isSelected ? "text-white" : mode.color)}>
+                                                    <Icon size={20} />
+                                                </div>
+                                                <div className="text-sm font-bold text-gray-200">{mode.label}</div>
+                                            </div>
+                                            <div className={clsx("text-xs pl-1", isSelected ? "text-gray-300" : "text-gray-500")}>
+                                                {mode.desc}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
                     )}
 
                     {/* CATEGORY MENU */}
                     {activeMenu === 'category' && (
-                        <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-white mb-4 px-1">카테고리 선택</h3>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold text-white mb-4 px-1 flex items-center gap-2">
+                                <span className="text-purple-400">#</span> 카테고리
+                            </h3>
+                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                                 <button
                                     onClick={() => { onGenreSelect('all'); onClose(); }}
                                     className={clsx(
-                                        "px-3 py-3 rounded-xl text-sm font-medium transition-all border",
+                                        "aspect-square rounded-2xl p-4 flex flex-col items-center justify-center gap-2 transition-all border",
                                         selectedGenre === 'all'
-                                            ? "bg-white text-black border-white font-bold"
-                                            : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700"
+                                            ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50"
+                                            : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
                                     )}
                                 >
-                                    전체
+                                    <LayoutGrid size={24} />
+                                    <span className="text-sm font-medium">전체</span>
                                 </button>
-                                {GENRES.filter(g => g.id !== 'hotdeal').map(genre => (
-                                    <button
-                                        key={genre.id}
-                                        onClick={() => { onGenreSelect(genre.id); onClose(); }}
-                                        className={clsx(
-                                            "px-3 py-3 rounded-xl text-xs sm:text-sm font-medium transition-all border flex flex-col items-center justify-center gap-1",
-                                            selectedGenre === genre.id
-                                                ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white`
-                                                : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700 hover:text-gray-200"
-                                        )}
-                                    >
-                                        {genre.label}
-                                    </button>
-                                ))}
+
+                                {GENRES.filter(g => g.id !== 'hotdeal').map(genre => {
+                                    const GenreIcon = getGenreIcon(genre.id);
+                                    const isSelected = selectedGenre === genre.id;
+                                    return (
+                                        <button
+                                            key={genre.id}
+                                            onClick={() => { onGenreSelect(genre.id); onClose(); }}
+                                            className={clsx(
+                                                "aspect-square rounded-2xl p-4 flex flex-col items-center justify-center gap-2 transition-all border",
+                                                isSelected
+                                                    ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg`
+                                                    : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
+                                            )}
+                                        >
+                                            <GenreIcon size={24} />
+                                            <span className="text-sm font-medium">{genre.label}</span>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
                     )}
@@ -157,30 +189,34 @@ export default function BottomNavSheet({
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
                         <div className="space-y-6">
-                            <h3 className="text-lg font-bold text-white px-1">위치 및 검색</h3>
+                            <h3 className="text-xl font-bold text-white px-1 flex items-center gap-2">
+                                <span className="text-purple-400">#</span> 위치 및 검색
+                            </h3>
 
                             {/* Search Bar */}
-                            <div className="relative">
+                            <div className="relative group">
                                 <input
                                     type="text"
                                     value={searchText}
                                     onChange={(e) => onSearchChange(e.target.value)}
                                     placeholder="공연명, 출연진, 장소 검색..."
-                                    className="w-full bg-gray-800 border-none rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-white/20 transition-all text-base"
+                                    className="w-full bg-gray-900/80 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all text-base"
                                 />
-                                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-purple-400 transition-colors w-5 h-5" />
                             </div>
 
                             {/* Location Selectors */}
-                            <div className="flex flex-col sm:flex-row gap-3">
-                                <div className="flex-1 space-y-2">
-                                    <label className="text-xs text-gray-400 ml-1">지역 (시/도)</label>
-                                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="text-xs font-bold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">지역 (시/도)</label>
+                                    <div className="flex flex-wrap gap-2">
                                         <button
                                             onClick={() => onRegionSelect('all')}
                                             className={clsx(
-                                                "py-2.5 rounded-lg text-xs font-medium border transition-colors",
-                                                selectedRegion === 'all' ? "bg-white text-black border-white" : "bg-gray-800 text-gray-400 border-gray-700"
+                                                "px-4 py-2.5 rounded-xl text-sm font-medium border transition-all",
+                                                selectedRegion === 'all'
+                                                    ? "bg-purple-600 text-white border-purple-500 shadow-md"
+                                                    : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800"
                                             )}
                                         >
                                             전체
@@ -190,8 +226,10 @@ export default function BottomNavSheet({
                                                 key={r.id}
                                                 onClick={() => onRegionSelect(r.id)}
                                                 className={clsx(
-                                                    "py-2.5 rounded-lg text-xs font-medium border transition-colors",
-                                                    selectedRegion === r.id ? "bg-white text-black border-white" : "bg-gray-800 text-gray-400 border-gray-700"
+                                                    "px-4 py-2.5 rounded-xl text-sm font-medium border transition-all",
+                                                    selectedRegion === r.id
+                                                        ? "bg-white text-black border-white shadow-md font-bold"
+                                                        : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800"
                                                 )}
                                             >
                                                 {r.label}
@@ -199,46 +237,55 @@ export default function BottomNavSheet({
                                         ))}
                                     </div>
                                 </div>
-                            </div>
 
-                            {selectedRegion !== 'all' && (
-                                <div className="space-y-2 animate-scale-in">
-                                    <label className="text-xs text-gray-400 ml-1">상세 지역 (구/군)</label>
-                                    <div className="flex flex-wrap gap-2">
-                                        <button
-                                            onClick={() => onDistrictSelect('all')}
-                                            className={clsx(
-                                                "px-3 py-2 rounded-lg text-xs font-medium border transition-colors",
-                                                selectedDistrict === 'all' ? "bg-white text-black border-white" : "bg-gray-800 text-gray-400 border-gray-700"
-                                            )}
-                                        >
-                                            전체
-                                        </button>
-                                        {districts.map(d => (
+                                {selectedRegion !== 'all' && (
+                                    <div className="animate-fade-in-up">
+                                        <label className="text-xs font-bold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">상세 지역 (구/군)</label>
+                                        <div className="flex flex-wrap gap-2 p-4 bg-gray-900/30 rounded-2xl border border-white/5">
                                             <button
-                                                key={d}
-                                                onClick={() => onDistrictSelect(d)}
+                                                onClick={() => onDistrictSelect('all')}
                                                 className={clsx(
-                                                    "px-3 py-2 rounded-lg text-xs font-medium border transition-colors",
-                                                    selectedDistrict === d ? "bg-white text-black border-white" : "bg-gray-800 text-gray-400 border-gray-700"
+                                                    "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
+                                                    selectedDistrict === 'all'
+                                                        ? "bg-purple-500/20 text-purple-300 border-purple-500/50"
+                                                        : "bg-gray-800 text-gray-400 border-gray-700"
                                                 )}
                                             >
-                                                {d}
+                                                전체
                                             </button>
-                                        ))}
+                                            {districts.map(d => (
+                                                <button
+                                                    key={d}
+                                                    onClick={() => onDistrictSelect(d)}
+                                                    className={clsx(
+                                                        "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
+                                                        selectedDistrict === d
+                                                            ? "bg-white text-black border-white font-bold"
+                                                            : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700"
+                                                    )}
+                                                >
+                                                    {d}
+                                                </button>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+                            </div>
                         </div>
                     )}
 
                     {/* ALARM MENU */}
                     {activeMenu === 'alarm' && (
                         <div className="space-y-6">
-                            <h3 className="text-lg font-bold text-white px-1">키워드 알림 설정</h3>
-                            <p className="text-sm text-gray-400 px-1">
-                                등록한 키워드가 포함된 공연이 있으면 홈 화면 타이틀에서 알려드려요.
-                            </p>
+                            <h3 className="text-xl font-bold text-white px-1 flex items-center gap-2">
+                                <span className="text-purple-400">#</span> 키워드 알림
+                            </h3>
+                            <div className="bg-purple-900/20 border border-purple-500/20 rounded-2xl p-4">
+                                <p className="text-sm text-purple-200/80 leading-relaxed">
+                                    등록한 키워드가 포함된 공연이 오픈되면<br />
+                                    홈 화면에서 가장 먼저 알려드려요! 🔔
+                                </p>
+                            </div>
 
                             <form onSubmit={handleKeywordSubmit} className="flex gap-2">
                                 <input
@@ -246,33 +293,33 @@ export default function BottomNavSheet({
                                     value={keywordInput}
                                     onChange={(e) => setKeywordInput(e.target.value)}
                                     placeholder="키워드 입력 (예: 뮤지컬, 아이유)"
-                                    className="flex-1 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors"
+                                    className="flex-1 bg-gray-900/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500/50 transition-colors"
                                 />
                                 <button
                                     type="submit"
                                     disabled={!keywordInput.trim()}
-                                    className="bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                    className="bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-500 disabled:opacity-50 disabled:grayscale transition-all shadow-lg shadow-purple-900/50"
                                 >
                                     추가
                                 </button>
                             </form>
 
-                            <div className="space-y-2">
-                                <label className="text-xs text-gray-500 ml-1">등록된 키워드</label>
+                            <div className="space-y-3">
+                                <label className="text-xs font-bold text-gray-500 ml-1 block uppercase tracking-wider">등록된 키워드</label>
                                 {keywords.length === 0 ? (
-                                    <div className="text-center py-8 text-gray-600 bg-gray-800/30 rounded-xl border border-dashed border-gray-700">
-                                        등록된 키워드가 없습니다.
+                                    <div className="text-center py-12 text-gray-500 bg-gray-800/30 rounded-2xl border border-dashed border-white/5">
+                                        아직 등록된 키워드가 없어요.
                                     </div>
                                 ) : (
                                     <div className="flex flex-wrap gap-2">
                                         {keywords.map(k => (
-                                            <div key={k} className="flex items-center gap-2 bg-gray-800 text-white px-3 py-1.5 rounded-full border border-gray-700 group hover:border-red-500/50 transition-colors">
-                                                <span className="text-sm">{k}</span>
+                                            <div key={k} className="flex items-center gap-2 bg-gray-800 text-white pl-4 pr-2 py-2 rounded-full border border-gray-700 group hover:border-red-500/30 transition-all hover:bg-gray-750">
+                                                <span className="text-sm font-medium">{k}</span>
                                                 <button
                                                     onClick={() => onKeywordRemove(k)}
-                                                    className="text-gray-500 hover:text-red-400 transition-colors"
+                                                    className="p-1 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
                                                 >
-                                                    <X className="w-3 h-3" />
+                                                    <X size={14} />
                                                 </button>
                                             </div>
                                         ))}

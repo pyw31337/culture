@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight } from 'lucide-react';
+import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback'; // Import the new component
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
@@ -1495,10 +1495,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             return initialPerformances.filter(p => likedIds.includes(p.id));
         }
         if (viewMode === 'likes-venue') {
-            return []; // Placeholder if we handle UI separately
+            return initialPerformances.filter(p => favoriteVenues.includes(p.venue));
         }
         return filteredPerformances;
-    }, [initialPerformances, likedIds, viewMode, filteredPerformances, activeLocation, searchLocation, radius]);
+    }, [initialPerformances, likedIds, favoriteVenues, viewMode, filteredPerformances]);
 
     // Sorting (Date asc)
     const sortedPerformances = useMemo(() => {
@@ -2964,13 +2964,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 flex items-center gap-2">
-                                {activeLocation ? (
+                                {viewMode === 'likes-perf' ? (
+                                    <>
+                                        <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
+                                        <span>좋아요 공연</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                    </>
+                                ) : viewMode === 'likes-venue' ? (
+                                    <>
+                                        <Star className="text-yellow-400 w-6 h-6 fill-yellow-400" />
+                                        <span>찜한 공연장</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                    </>
+                                ) : activeLocation ? (
                                     <>
                                         <MapPin className="text-green-500 w-5 h-5" />
                                         <span className="truncate max-w-[150px] sm:max-w-xs">
                                             {searchLocation ? `'${searchLocation.name}'` : (userAddress || '내 위치')}
                                         </span>
-                                        <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
+                                        <span className="text-base sm:text-xl shrink-0">주변 ({displayPerformances.length})</span>
                                     </>
                                 ) : (
                                     <>
@@ -2980,7 +2992,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '공연'}`
                                             }
                                         </span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({filteredPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
                                     </>
                                 )}
                             </h2>
@@ -3006,112 +3018,109 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </div>
                         </div>
                     </div>
+
+                    {/* View Toggle */}
+                    <div className="flex items-center bg-gray-800 rounded-lg p-1 border border-gray-700">
+                        <button
+                            onClick={() => setLayoutMode('grid')}
+                            className={clsx(
+                                "p-1.5 rounded-md transition-all",
+                                layoutMode === 'grid' ? "bg-gray-600 text-white shadow-sm" : "text-gray-400 hover:text-gray-200"
+                            )}
+                            title="바둑판 보기"
+                        >
+                            <LayoutGrid className="w-5 h-5" />
+                        </button>
+                        <button
+                            onClick={() => setLayoutMode('list')}
+                            className={clsx(
+                                "p-1.5 rounded-md transition-all",
+                                layoutMode === 'list' ? "bg-gray-600 text-white shadow-sm" : "text-gray-400 hover:text-gray-200"
+                            )}
+                            title="리스트 보기"
+                        >
+                            <LayoutList className="w-5 h-5" />
+                        </button>
+                    </div>
                 </div>
 
-                <div className={clsx(
-                    "grid gap-6",
-                    viewMode === 'list'
-                        ? "grid-cols-1" // List Mode: Single Column Wrapper (Inner wrapper handles grid)
-                        : viewMode === 'map'
-                            ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" // Map Mode
-                            : "grid-cols-1" // Calendar Mode
-                )}>
-                    <AnimatePresence mode="popLayout">
-                        {isFiltering ? (
-                            Array.from({ length: 8 }).map((_, i) => (
-                                <SkeletonCard key={i} />
-                            ))
-                        ) : (
-                            <AnimatePresence mode="popLayout" initial={false}>
-                                <div className={clsx(
-                                    "w-full transition-all duration-300",
-                                    layoutMode === 'grid'
-                                        ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6"
-                                        : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
-                                )}>
-                                    {filteredPerformances.length > 0 && (
-                                        filteredPerformances.slice(0, visibleCount).map((perf, index) => {
-                                            // Calculate District distance label if location is active is handled inside Card/Item usually or passed.
-                                            // Logic for distLabel was: const distLabel = ... (calculated above loop)
-                                            // But here 'distLabel' variable from outer scope is used?
-                                            // checking context... line 1460 "const filteredPerformances = ..."
-                                            // line 1485 "const visibleCount..."
-                                            // Where is distLabel?
-                                            // Ah, line 1513 passed distLabel={distLabel}.
-                                            // Wait, distLabel variable must be defined inside the map?
-                                            // Let's check original loop.
-                                            // "filteredPerformances.slice(0, visibleCount).map((perf, index) => {"
-                                            // "const dist = ..."
-                                            // I need to preserve this logic!
+                {/* Grid/List View */}
+                <div className="min-h-[50vh]">
+                    <AnimatePresence mode="wait">
+                        <div className={clsx(
+                            "w-full",
+                            layoutMode === 'grid'
+                                ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-6"
+                                : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
+                        )}>
+                            {displayPerformances.length > 0 && (
+                                displayPerformances.slice(0, visibleCount).map((perf, index) => {
+                                    // Venue Info
+                                    const venueInfo = venues[perf.venue];
 
-                                            // Venue Info
-                                            const venueInfo = venues[perf.venue];
+                                    const dist = activeLocation && venueInfo?.lat && venueInfo?.lng
+                                        ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
+                                        : null;
+                                    const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
-                                            const dist = activeLocation && venueInfo?.lat && venueInfo?.lng
-                                                ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
-                                                : null;
-                                            const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
-
-                                            return (
-                                                <motion.div
-                                                    key={`${perf.id}-${perf.region}`}
-                                                    className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
-                                                    initial={{ opacity: 0, scale: 0.95 }}
-                                                    animate={{ opacity: 1, scale: 1 }}
-                                                    exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                                                    transition={{ duration: 0.3, delay: index * 0.03 }}
-                                                >
-                                                    {layoutMode === 'grid' ? (
-                                                        <PerformanceCard
-                                                            perf={perf}
-                                                            distLabel={distLabel}
-                                                            venueInfo={venueInfo}
-                                                            onLocationClick={(loc) => {
-                                                                setSearchLocation(loc);
-                                                                setViewMode('map');
-                                                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                            }}
-                                                            isLiked={likedIds.includes(perf.id)}
-                                                            onToggleLike={(e) => toggleLike(perf.id, e)}
-                                                            // Logic Update: 
-                                                            // - Ribbon: REMOVE from here (pass false)
-                                                            // - Gradient: KEEP for general recommended lists
-                                                            // - Actions: ENABLE for these lists
-                                                            showRibbon={false}
-                                                            isGradient={selectedGenre === 'all' && !activeLocation}
-                                                            enableActions={true}
-                                                            onShare={() => copyItemShareUrl(perf.id)}
-                                                            onDetail={() => window.open(perf.link, '_blank')}
-                                                        />
-                                                    ) : (
-                                                        <PerformanceListItem
-                                                            perf={perf}
-                                                            distLabel={distLabel}
-                                                            venueInfo={venueInfo}
-                                                            onLocationClick={(loc) => {
-                                                                setSearchLocation(loc);
-                                                                setViewMode('map');
-                                                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                            }}
-                                                            isLiked={likedIds.includes(perf.id)}
-                                                            onToggleLike={(e) => toggleLike(perf.id, e)}
-                                                            onShare={() => copyItemShareUrl(perf.id)}
-                                                            onDetail={() => window.open(perf.link, '_blank')}
-                                                        />
-                                                    )}
-                                                </motion.div>
-                                            );
-                                        })
-                                    )}
-                                </div>
-                            </AnimatePresence>
-                        )}
+                                    return (
+                                        <motion.div
+                                            key={`${perf.id}-${perf.region}`}
+                                            className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
+                                            transition={{ duration: 0.3, delay: index * 0.03 }}
+                                        >
+                                            {layoutMode === 'grid' ? (
+                                                <PerformanceCard
+                                                    perf={perf}
+                                                    distLabel={distLabel}
+                                                    venueInfo={venueInfo}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(perf.id)}
+                                                    onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                    // Logic Update: 
+                                                    // - Ribbon: REMOVE from here (pass false)
+                                                    // - Gradient: KEEP for general recommended lists
+                                                    // - Actions: ENABLE for these lists
+                                                    showRibbon={false}
+                                                    isGradient={selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue'}
+                                                    enableActions={true}
+                                                    onShare={() => copyItemShareUrl(perf.id)}
+                                                    onDetail={() => window.open(perf.link, '_blank')}
+                                                />
+                                            ) : (
+                                                <PerformanceListItem
+                                                    perf={perf}
+                                                    distLabel={distLabel}
+                                                    venueInfo={venueInfo}
+                                                    onLocationClick={(loc) => {
+                                                        setSearchLocation(loc);
+                                                        setViewMode('map');
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    }}
+                                                    isLiked={likedIds.includes(perf.id)}
+                                                    onToggleLike={(e) => toggleLike(perf.id, e)}
+                                                    onShare={() => copyItemShareUrl(perf.id)}
+                                                    onDetail={() => window.open(perf.link, '_blank')}
+                                                />
+                                            )}
+                                        </motion.div>
+                                    );
+                                })
+                            )}
+                        </div>
                     </AnimatePresence>
                 </div>
 
                 {/* Sentinel for Infinite Scroll - Only in List Mode */}
                 {
-                    viewMode === 'list' && visibleCount < filteredPerformances.length && (
+                    viewMode === 'list' && visibleCount < displayPerformances.length && (
                         <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
                             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
                         </div>
@@ -3120,23 +3129,50 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 {/* Empty State */}
                 {
-                    filteredPerformances.length === 0 && (
-                        <div className="flex flex-col items-center justify-center py-20 text-gray-500 w-full text-center px-4">
-                            <Navigation className="w-12 h-12 mb-4 opacity-20" />
-                            <p>
-                                {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                                    ? '현재 경기 일정이 없습니다.'
-                                    : '조건에 맞는 공연이 없습니다.'}
-                            </p>
-                            <button onClick={() => {
-                                setSelectedRegion('all');
-                                setSelectedDistrict('all');
-                                setSelectedGenre('all');
-                                setSearchText('');
-                                setUserLocation(null);
-                            }} className="mt-4 text-blue-400 hover:underline">
-                                필터 초기화
-                            </button>
+                    displayPerformances.length === 0 && (
+                        <div className="flex flex-col items-center justify-center py-24 text-gray-500 w-full text-center px-4 animate-fade-in-up">
+                            {viewMode === 'likes-perf' ? (
+                                <>
+                                    <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
+                                        <Heart className="w-10 h-10 text-pink-500/50" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-300 mb-2">좋아요한 공연이 없네요</h3>
+                                    <p className="text-gray-500">마음에 드는 공연에 하트를 눌러보세요!</p>
+                                </>
+                            ) : viewMode === 'likes-venue' ? (
+                                <>
+                                    <div className="w-20 h-20 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6">
+                                        <Star className="w-10 h-10 text-yellow-500/50" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-300 mb-2">찜한 공연장이 없네요</h3>
+                                    <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
+                                    <button
+                                        onClick={() => setShowFavoriteListModal(true)}
+                                        className="px-6 py-2.5 rounded-full bg-yellow-500/20 text-yellow-500 font-bold hover:bg-yellow-500 hover:text-black transition-all"
+                                    >
+                                        공연장 찾기
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <Navigation className="w-16 h-16 mb-6 opacity-20" />
+                                    <h3 className="text-xl font-bold text-gray-300 mb-2">
+                                        {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                                            ? '현재 경기 일정이 없습니다.'
+                                            : '조건에 맞는 공연이 없습니다.'}
+                                    </h3>
+                                    <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
+                                    <button onClick={() => {
+                                        setSelectedRegion('all');
+                                        setSelectedDistrict('all');
+                                        setSelectedGenre('all');
+                                        setSearchText('');
+                                        setUserLocation(null);
+                                    }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
+                                        필터 초기화
+                                    </button>
+                                </>
+                            )}
                         </div>
                     )
                 }
