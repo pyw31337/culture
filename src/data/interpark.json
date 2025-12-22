@@ -290,6 +290,16 @@
     "genre": "musical"
   },
   {
+    "id": "25018411",
+    "title": "가족뮤지컬 〈건전지 아빠〉 - 앵콜",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018411_p.gif",
+    "date": "2026.01.08 ~ 2026.02.08",
+    "venue": "이화여자대학교 ECC 영산극장",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018411",
+    "region": "seoul",
+    "genre": "musical"
+  },
+  {
     "id": "25017858",
     "title": "가족뮤지컬 〈급식왕2 - 좀비가 나타났다〉 - 서울 용산",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017858_p.gif",
@@ -1636,16 +1646,6 @@
     "date": "2026.01.08 ~ 2026.02.08",
     "venue": "대학로 스타시티 7층 후암씨어터",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017454",
-    "region": "seoul",
-    "genre": "musical"
-  },
-  {
-    "id": "25018112",
-    "title": "한정림의 피아노 콘서트, Like Home",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018112_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "블루스퀘어 네모(NEMO)",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018112",
     "region": "seoul",
     "genre": "musical"
   },
@@ -3140,12 +3140,52 @@
     "genre": "play"
   },
   {
+    "id": "25018399",
+    "title": "2026 제 16회 페스티벌 판을 열다 참가작 〈그들의 약속〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018399_p.gif",
+    "date": "2026.01.07 ~ 2026.01.11",
+    "venue": "놀터예술공방",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018399",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
     "id": "25018380",
     "title": "2026 제 16회 페스티벌 판을 열다 참가작 〈어둔 극장〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018380_p.gif",
     "date": "2026.01.28 ~ 2026.02.01",
     "venue": "놀터예술공방",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018380",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
+    "id": "25018383",
+    "title": "2026 제 16회 페스티벌 판을 열다 참가작 〈에덴의 섬〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018383_p.gif",
+    "date": "2026.01.21 ~ 2026.01.25",
+    "venue": "놀터예술공방",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018383",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
+    "id": "25018384",
+    "title": "2026 제 16회 페스티벌 판을 열다 참가작 〈테라씨의 여행〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018384_p.gif",
+    "date": "2026.02.11 ~ 2026.02.15",
+    "venue": "놀터예술공방",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018384",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
+    "id": "25018392",
+    "title": "2026 제16회 페스티벌 판을 열다 참가작 〈그려진 그림자〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018392_p.gif",
+    "date": "2026.01.14 ~ 2026.01.18",
+    "venue": "놀터예술공방",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018392",
     "region": "seoul",
     "genre": "play"
   },
@@ -3346,6 +3386,16 @@
     "date": "2025.12.17 ~ 2025.12.28",
     "venue": "더줌아트센터",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25016882",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
+    "id": "25018391",
+    "title": "국립극단［2026 기획초청 Pick크닉］［열린 객석］ 〈이상한어린이연극-오감도〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018391_p.gif",
+    "date": "2026.02.06 ~ 2026.02.14",
+    "venue": "국립극단 명동예술극장",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018391",
     "region": "seoul",
     "genre": "play"
   },
@@ -4003,7 +4053,7 @@
     "id": "25015981",
     "title": "연극 〈내가 하면 로맨스〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25015981_p.gif",
-    "date": "2025.11.01 ~ 2025.12.31",
+    "date": "2025.11.01 ~ 2026.02.28",
     "venue": "한성아트홀 2관",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25015981",
     "region": "seoul",
@@ -4500,6 +4550,16 @@
     "genre": "play"
   },
   {
+    "id": "25018403",
+    "title": "취리히 여행",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018403_p.gif",
+    "date": "2026.01.15 ~ 2026.02.01",
+    "venue": "씨어터 쿰",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018403",
+    "region": "seoul",
+    "genre": "play"
+  },
+  {
     "id": "25000783",
     "title": "카페연극〈HE and SHE〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25000783_p.gif",
@@ -4728,16 +4788,6 @@
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25013149",
     "region": "seoul",
     "genre": "play"
-  },
-  {
-    "id": "P0004514",
-    "title": "(사)프렌즈오브뮤직 30회 정기연주회 - Valhalla Winter",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004514_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "세종문화회관 체임버홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=P0004514",
-    "region": "seoul",
-    "genre": "classic"
   },
   {
     "id": "25017276",
@@ -5546,6 +5596,16 @@
     "date": "2026.01.21 ~ 2026.01.21",
     "venue": "롯데콘서트홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017423",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018398",
+    "title": "광진구민과 함께하는 2026 광진문화재단 신년음악회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018398_p.gif",
+    "date": "2026.01.23 ~ 2026.01.23",
+    "venue": "나루아트센터 대공연장",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018398",
     "region": "seoul",
     "genre": "classic"
   },
@@ -6470,6 +6530,16 @@
     "genre": "classic"
   },
   {
+    "id": "25018388",
+    "title": "김하늘 피아노 독주회 - 드뷔시 전곡 연주 시리즈 I",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018388_p.gif",
+    "date": "2026.01.11 ~ 2026.01.11",
+    "venue": "예술의전당 리사이틀홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018388",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
     "id": "25016643",
     "title": "김현경 바이올린 독주회",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25016643_p.gif",
@@ -6506,6 +6576,16 @@
     "date": "2026.03.13 ~ 2026.03.13",
     "venue": "예술의전당 IBK기업은행챔버홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018048",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018393",
+    "title": "김희수 첼로 독주회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018393_p.gif",
+    "date": "2026.01.28 ~ 2026.01.28",
+    "venue": "예술의전당 인춘아트홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018393",
     "region": "seoul",
     "genre": "classic"
   },
@@ -6550,16 +6630,6 @@
     "genre": "classic"
   },
   {
-    "id": "25017711",
-    "title": "노예리, 김혜인, 노예나 트리오 리사이틀",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017711_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "일신홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017711",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "25018031",
     "title": "대니 구 데뷔 10주년 리사이틀 - 공주",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018031_p.gif",
@@ -6596,16 +6666,6 @@
     "date": "2025.12.25 ~ 2025.12.25",
     "venue": "예술의전당 IBK기업은행챔버홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25014464",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "25016655",
-    "title": "도예성 귀국 바이올린 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016655_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "금호아트홀 연세",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25016655",
     "region": "seoul",
     "genre": "classic"
   },
@@ -6706,6 +6766,16 @@
     "date": "2025.12.28 ~ 2025.12.28",
     "venue": "영산아트홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017610",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018326",
+    "title": "메조소프라노 황현희 귀국 독창회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018326_p.gif",
+    "date": "2026.01.20 ~ 2026.01.20",
+    "venue": "영산아트홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018326",
     "region": "seoul",
     "genre": "classic"
   },
@@ -6926,6 +6996,16 @@
     "date": "2026.01.05 ~ 2026.01.05",
     "venue": "금호아트홀 연세",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017658",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018249",
+    "title": "소프라노 이승현 독창회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018249_p.gif",
+    "date": "2026.01.06 ~ 2026.01.06",
+    "venue": "금호아트홀 연세",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018249",
     "region": "seoul",
     "genre": "classic"
   },
@@ -7280,6 +7360,16 @@
     "genre": "classic"
   },
   {
+    "id": "25018390",
+    "title": "윤진영 바이올린 독주회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018390_p.gif",
+    "date": "2026.02.25 ~ 2026.02.25",
+    "venue": "예술의전당 리사이틀홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018390",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
     "id": "25016964",
     "title": "이근영 귀국 피아노 독주회",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25016964_p.gif",
@@ -7326,6 +7416,16 @@
     "date": "2025.12.30 ~ 2025.12.30",
     "venue": "예술의전당 리사이틀홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017258",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018389",
+    "title": "이아라 전지안 듀오 리사이틀",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018389_p.gif",
+    "date": "2026.01.29 ~ 2026.01.29",
+    "venue": "예술의전당 인춘아트홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018389",
     "region": "seoul",
     "genre": "classic"
   },
@@ -7590,6 +7690,16 @@
     "genre": "classic"
   },
   {
+    "id": "25018387",
+    "title": "조선 피아노 독주회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018387_p.gif",
+    "date": "2025.12.31 ~ 2025.12.31",
+    "venue": "예술의전당 인춘아트홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018387",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
     "id": "25016252",
     "title": "조수미 크리스마스 콘서트 〈My Secret Christmas〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25016252_p.gif",
@@ -7790,16 +7900,6 @@
     "genre": "classic"
   },
   {
-    "id": "25017447",
-    "title": "콰르텟숨과 함께 하는 ＂Merry Winter Night＂",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017447_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "페리지홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017447",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "25015290",
     "title": "크로싱 - 김진세,사토시 고고,박윤우 기타트리오",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25015290_p.gif",
@@ -7816,16 +7916,6 @@
     "date": "2025.12.31 ~ 2025.12.31",
     "venue": "세종문화회관 대극장",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=P0004489",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "25015333",
-    "title": "크리스마스 지브리＆디즈니 OST 콘서트",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25015333_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "롯데콘서트홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25015333",
     "region": "seoul",
     "genre": "classic"
   },
@@ -7856,6 +7946,16 @@
     "date": "2026.01.13 ~ 2026.01.18",
     "venue": "롯데콘서트홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25016259",
+    "region": "seoul",
+    "genre": "classic"
+  },
+  {
+    "id": "25018301",
+    "title": "클라비어 디아몬트 피아노 앙상블 창단 6주년 기념 콘서트 - ‘KEYSPARK’",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018301_p.gif",
+    "date": "2026.01.09 ~ 2026.01.09",
+    "venue": "금호아트홀 연세",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018301",
     "region": "seoul",
     "genre": "classic"
   },
@@ -8341,7 +8441,7 @@
   },
   {
     "id": "25018208",
-    "title": "PHILHARMONIC ENSEMBLE(빈필 하모닉 앙상블: 13인의 빈 필하모닉 수석 및 현역 단원)",
+    "title": "PHILHARMONIC ENSEMBLE(필 하모닉 앙상블: 13인의 빈 필하모닉 수석 및 현역 단원)",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018208_p.gif",
     "date": "2026.02.03 ~ 2026.02.03",
     "venue": "관악아트홀",
@@ -8356,16 +8456,6 @@
     "date": "2026.01.17 ~ 2026.01.17",
     "venue": "모차르트홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017732",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "25017630",
-    "title": "TeDeum 정기연주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017630_p.gif",
-    "date": "2025.12.22 ~ 2025.12.22",
-    "venue": "영산양재홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017630",
     "region": "seoul",
     "genre": "classic"
   },
@@ -8640,6 +8730,16 @@
     "genre": "etc"
   },
   {
+    "id": "25018231",
+    "title": "긍만고 시리즈 Ⅳ 〈쌍향수〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018231_p.gif",
+    "date": "2026.01.16 ~ 2026.01.17",
+    "venue": "대학로예술극장 대극장",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018231",
+    "region": "seoul",
+    "genre": "etc"
+  },
+  {
     "id": "25018196",
     "title": "김성녀의 마당놀이 〈심청이와 춘향이가 온다〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018196_p.gif",
@@ -8686,6 +8786,16 @@
     "date": "2025.12.25 ~ 2025.12.26",
     "venue": "노무현시민센터 다목적홀(가치하다)",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018024",
+    "region": "seoul",
+    "genre": "etc"
+  },
+  {
+    "id": "25018336",
+    "title": "안애순 컴퍼니 〈춤이 말하다: 문소리x리아킴〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018336_p.gif",
+    "date": "2026.01.22 ~ 2026.01.23",
+    "venue": "강북문화예술회관 강북소나무홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018336",
     "region": "seoul",
     "genre": "etc"
   },
@@ -9081,7 +9191,7 @@
   },
   {
     "id": "25015780",
-    "title": "［굿바이 45% 할인 특가］ 울트라백화점 서울",
+    "title": "［굿바이 45% 할인 특가］ 울트라백화점 단일권",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25015780_p.gif",
     "date": "2025.10.30 ~ 2026.01.11",
     "venue": "DDP 뮤지엄 전시 2관",
@@ -9203,7 +9313,7 @@
     "id": "23008852",
     "title": "［소풍］ 창경궁 야경투어",
     "image": "https://ticketimage.interpark.com/Play/image/large/23/23008852_p.gif",
-    "date": "2023.06.28 ~ 2025.12.31",
+    "date": "2023.06.28 ~ 2026.12.31",
     "venue": "창경궁",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=23008852",
     "region": "seoul",
@@ -9646,6 +9756,16 @@
     "date": "2025.07.04 ~ 2025.12.31",
     "venue": "블루스퀘어",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25009721",
+    "region": "seoul",
+    "genre": "exhibition"
+  },
+  {
+    "id": "25018354",
+    "title": "브릭 아트 뮤지엄",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018354_p.gif",
+    "date": "2025.12.24 ~ 2026.12.31",
+    "venue": "덕스(DUEX) 홍대 2관",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018354",
     "region": "seoul",
     "genre": "exhibition"
   },
@@ -10373,7 +10493,7 @@
     "id": "Y3001567",
     "title": "［용산］ 크라운 해태 키즈뮤지엄",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001567_p.gif",
-    "date": "2023.10.19 ~ 2025.12.31",
+    "date": "2023.10.19 ~ 2026.01.31",
     "venue": "크라운 해태 키즈뮤지엄",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=Y3001567",
     "region": "seoul",
@@ -11206,6 +11326,16 @@
     "date": "2026.01.03 ~ 2026.01.04",
     "venue": "구리아트홀 코스모스 대극장",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017724",
+    "region": "gyeonggi",
+    "genre": "musical"
+  },
+  {
+    "id": "25018407",
+    "title": "가족뮤지컬 〈꼬마버스 타요 - 소원을 들어주는 요술 지팡이 대소동〉 - 평택",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018407_p.gif",
+    "date": "2026.03.06 ~ 2026.03.07",
+    "venue": "평택서부문화예술회관 대공연장",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25018407",
     "region": "gyeonggi",
     "genre": "musical"
   },
@@ -12940,6 +13070,16 @@
     "genre": "classic"
   },
   {
+    "id": "25017064",
+    "title": "부천시립합창단 - 우리가 노래하는 이유",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017064_p.gif",
+    "date": "2026.02.12 ~ 2026.02.12",
+    "venue": "부천아트센터 콘서트홀",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017064",
+    "region": "gyeonggi",
+    "genre": "classic"
+  },
+  {
     "id": "25017073",
     "title": "부천시립합창단 가족음악회 - 음악극 ＇수궁가＇",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017073_p.gif",
@@ -12976,16 +13116,6 @@
     "date": "2026.03.20 ~ 2026.03.20",
     "venue": "부천아트센터 콘서트홀",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017068",
-    "region": "gyeonggi",
-    "genre": "classic"
-  },
-  {
-    "id": "25017064",
-    "title": "부천시립합창단 어린이 음악회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017064_p.gif",
-    "date": "2026.02.12 ~ 2026.02.12",
-    "venue": "부천아트센터 콘서트홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25017064",
     "region": "gyeonggi",
     "genre": "classic"
   },
