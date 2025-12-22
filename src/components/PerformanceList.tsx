@@ -1130,6 +1130,41 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }
     };
 
+    // 📍 Handle Current Location Click
+    const handleCurrentLocationClick = () => {
+        if (!navigator.geolocation) {
+            alert("브라우저가 위치 정보를 지원하지 않습니다.");
+            return;
+        }
+
+        setIsSearching(true);
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                setUserLocation({ lat: latitude, lng: longitude });
+                setSearchLocation(null); // Clear manual search
+                setRadius(5); // Default radius 5km
+
+                // Update Hero Text
+                setHeroText({
+                    line1: "현재 계신 곳 주변,",
+                    line2Pre: "가장 가까운 ",
+                    highlight: "핫플레이스",
+                    suffix: "를 모아봤어요.",
+                    keywords: ["내주변"]
+                });
+
+                setIsSearching(false);
+            },
+            (error) => {
+                console.error("Geolocation error:", error);
+                alert("위치 정보를 가져올 수 없습니다. (HTTPS 연결이 필요하거나 권한이 차단되었을 수 있습니다.)");
+                setIsSearching(false);
+            },
+            { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        );
+    };
+
     // Handle Search (Enter / Button -> Location Search)
     const handleSearch = async () => {
         if (!searchText.trim()) {
@@ -1597,6 +1632,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             )}>
                 <div className="text-left">
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
+                        <button
+                            onClick={handleCurrentLocationClick}
+                            className="mr-2 inline-flex items-center justify-center p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-emerald-400 hover:text-emerald-300 transition-all border border-emerald-500/30 group/loc"
+                            title="현재 위치로 찾기"
+                        >
+                            <Navigation className="w-3.5 h-3.5 fill-current group-hover/loc:scale-110 transition-transform" />
+                        </button>
                         <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
                             {activeLocation
                                 ? (searchLocation ? searchLocation.name : '내 위치 (GPS)')
