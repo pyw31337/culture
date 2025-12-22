@@ -55,9 +55,15 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     };
 
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+    const [selectedPopupGenre, setSelectedPopupGenre] = useState('all');
 
     // Filter events for the selected popup date
     const selectedDateEvents = selectedDate ? getPerformancesForDay(selectedDate) : [];
+
+    // Apply Genre Filter
+    const filteredDateEvents = selectedPopupGenre === 'all'
+        ? selectedDateEvents
+        : selectedDateEvents.filter(p => p.genre === selectedPopupGenre);
 
     return (
         <>
@@ -95,7 +101,10 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             return (
                                 <div
                                     key={day.toISOString()}
-                                    onClick={() => setSelectedDate(day)}
+                                    onClick={() => {
+                                        setSelectedDate(day);
+                                        setSelectedPopupGenre('all'); // Reset filter when opening
+                                    }}
                                     className={clsx(
                                         "min-h-[80px] sm:min-h-[120px] bg-gray-900 p-2 flex flex-col gap-1 transition-colors hover:bg-gray-800/80 cursor-pointer relative",
                                         !isCurrentMonth && "opacity-30 bg-gray-900/50"
@@ -137,6 +146,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     setSelectedDate(day);
+                                                    setSelectedPopupGenre('all'); // Reset filter when opening
                                                 }}
                                             >
                                                 +{dayEvents.length - 2} more
@@ -166,11 +176,33 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             </button>
                         </div>
 
-                        <div className="p-4 overflow-y-auto space-y-3">
-                            {selectedDateEvents.length === 0 ? (
-                                <p className="text-center text-gray-500 py-8">일정이 없습니다.</p>
+                        {/* Genre Tabs */}
+                        <div className="px-4 py-3 bg-gray-800/50 border-b border-gray-700 overflow-x-auto scrollbar-hide">
+                            <div className="flex gap-2">
+                                {GENRES.filter(g => g.id !== 'hotdeal').map(g => (
+                                    <button
+                                        key={g.id}
+                                        onClick={() => setSelectedPopupGenre(g.id)}
+                                        className={clsx(
+                                            "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-colors border",
+                                            selectedPopupGenre === g.id
+                                                ? "bg-white text-black border-white"
+                                                : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500 hover:text-gray-200"
+                                        )}
+                                    >
+                                        {g.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="p-4 overflow-y-auto space-y-3 custom-scrollbar">
+                            {filteredDateEvents.length === 0 ? (
+                                <p className="text-center text-gray-500 py-8">
+                                    {selectedPopupGenre === 'all' ? '일정이 없습니다.' : '해당 장르의 일정이 없습니다.'}
+                                </p>
                             ) : (
-                                selectedDateEvents.map(perf => (
+                                filteredDateEvents.map(perf => (
                                     <a
                                         key={perf.id}
                                         href={perf.link}
