@@ -1006,7 +1006,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
 
     const [isSticky, setIsSticky] = useState(false); // Track if filters are pinned to top
-    const [isFilterExpanded, setIsFilterExpanded] = useState(false); // Toggle Detailed Search
+    const [isStickyFilterExpanded, setIsStickyFilterExpanded] = useState(false); // Sticky Header Filter
+    const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false); // Hero Inline Filter
 
     // New: Keyword Section Toggle
     const [isKeywordsExpanded, setIsKeywordsExpanded] = useState(true);
@@ -1014,7 +1015,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Auto-collapse logic: Collapse when sticky (top reached)
     useEffect(() => {
         if (isSticky) {
-            setIsFilterExpanded(false);
+            setIsStickyFilterExpanded(false);
         }
     }, [isSticky]);
 
@@ -1674,14 +1675,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                         {/* Expand Filter Button */}
                         <button
-                            onClick={() => setIsFilterExpanded(prev => !prev)}
+                            onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className={clsx(
                                 "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/expand",
-                                isFilterExpanded && "bg-white/20 text-white"
+                                isHeroFilterExpanded && "bg-white/20 text-white"
                             )}
-                            title={isFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
+                            title={isHeroFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
                         >
-                            <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isFilterExpanded && "rotate-180")} />
+                            <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isHeroFilterExpanded && "rotate-180")} />
                         </button>
 
                         {/* Reset Location Button */}
@@ -1703,7 +1704,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     </p>
 
                     {/* Inline Filter Panel (Toggle) */}
-                    {isFilterExpanded && (
+                    {isHeroFilterExpanded && (
                         <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full">
                             <div className="absolute top-0 bottom-0 left-[-100vw] right-[-100vw] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner -z-10" />
                             <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-0 py-2.5">
@@ -1919,14 +1920,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div
                     className={clsx(
                         "w-full max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 space-y-2 transition-colors duration-300 rounded-lg",
-                        !isFilterExpanded && "cursor-pointer py-1"
+                        !isStickyFilterExpanded && "cursor-pointer py-1"
                     )}
-                    onClick={() => !isFilterExpanded && setIsFilterExpanded(true)}
+                    onClick={() => !isStickyFilterExpanded && setIsStickyFilterExpanded(true)}
                 >
 
 
                     {/* Collapsed View Redesigned - Recursive Layout */}
-                    {!isFilterExpanded && (
+                    {!isStickyFilterExpanded && (
                         <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
                             {/* Row 1: Filter Summary Text */}
                             <div className="flex flex-col lg:flex-row items-center gap-2 w-full relative">
@@ -2014,7 +2015,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             // Open filter and focus keyword input
-                                            setIsFilterExpanded(true);
+                                            setIsStickyFilterExpanded(true);
                                             setShowKeywordInput(true);
                                         }}
                                         className="shrink-0 p-1 px-2 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-xs font-bold hover:bg-yellow-500 hover:text-black flex items-center gap-1 transition-all"
@@ -2080,7 +2081,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         type="button"
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            setIsFilterExpanded(true);
+                                            setIsStickyFilterExpanded(true);
                                             setShowKeywordInput(false);
                                         }}
                                         className="shrink-0 flex items-center justify-center p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors ml-auto lg:ml-2"
@@ -2095,7 +2096,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Expanded View */}
                     <div className={clsx(
                         "transition-all duration-300 overflow-hidden",
-                        isFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                        isStickyFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                     )}>
                         <div className="flex flex-col gap-3">
                             {/* Row 1: Filters & Search */}
@@ -2371,7 +2372,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     type="button"
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        setIsFilterExpanded(false);
+                                        setIsStickyFilterExpanded(false);
                                     }}
                                     className="p-1.5 rounded-full text-gray-400 hover:text-white bg-gray-800 border border-gray-700 hover:bg-gray-700 shrink-0"
                                     title="검색창 접기"
