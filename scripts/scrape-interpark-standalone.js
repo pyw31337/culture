@@ -61,8 +61,14 @@ async function fetchPerformances(regionName) {
                     image = image.replace('http://', 'https://');
                 }
 
-                const idMatch = link.match(/GoodsCode=(\d+)/);
-                const id = idMatch ? idMatch[1] : `unknown-${Math.random().toString(36).substr(2, 9)}`;
+                const idMatch = link.match(/GoodsCode=([A-Za-z0-9]+)/);
+                let id = idMatch ? idMatch[1] : null;
+
+                if (!id) {
+                    // Fallback: Deterministic Hash
+                    const uniqueString = `${title}-${date}-${venue}`;
+                    id = `unknown-${require('crypto').createHash('md5').update(uniqueString).digest('hex').substring(0, 8)}`;
+                }
                 const venue = $el.find('dd.place').text().trim();
                 const date = $el.find('dd.date').text().trim();
 
