@@ -1130,6 +1130,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }
     };
 
+    const [userAddress, setUserAddress] = useState<string>('');
+
     // 📍 Handle Current Location Click
     const handleCurrentLocationClick = () => {
         if (!navigator.geolocation) {
@@ -1144,6 +1146,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 setUserLocation({ lat: latitude, lng: longitude });
                 setSearchLocation(null); // Clear manual search
                 setRadius(5); // Default radius 5km
+
+                // Reverse Geocoding (Coord -> Address)
+                if (window.kakao && window.kakao.maps && window.kakao.maps.services) {
+                    const geocoder = new window.kakao.maps.services.Geocoder();
+                    geocoder.coord2Address(longitude, latitude, (result: any[], status: any) => {
+                        if (status === window.kakao.maps.services.Status.OK) {
+                            const addr = result[0].road_address ? result[0].road_address.address_name : result[0].address.address_name;
+                            setUserAddress(addr);
+                        } else {
+                            setUserAddress('내 위치');
+                        }
+                    });
+                } else {
+                    setUserAddress('내 위치');
+                }
 
                 // Update Hero Text
                 setHeroText({
@@ -1634,14 +1651,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <button
                             onClick={handleCurrentLocationClick}
-                            className="mr-2 inline-flex items-center justify-center p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-emerald-400 hover:text-emerald-300 transition-all border border-emerald-500/30 group/loc"
+                            className="mr-2 inline-flex items-center justify-center p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/loc"
                             title="현재 위치로 찾기"
                         >
-                            <Navigation className="w-3.5 h-3.5 fill-current group-hover/loc:scale-110 transition-transform" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-emerald-400 group-hover/loc:stroke-emerald-300 group-hover/loc:scale-110 transition-all icon icon-tabler icons-tabler-outline icon-tabler-current-location"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
                         </button>
                         <MapPin className="w-4 h-4" /> 현재 위치: <span className="text-white border-b border-[#a78bfa]">
                             {activeLocation
-                                ? (searchLocation ? searchLocation.name : '내 위치 (GPS)')
+                                ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
                                 : (
                                     selectedRegion !== 'all'
                                         ? `${REGIONS.find(r => r.id === selectedRegion)?.label || ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim()
