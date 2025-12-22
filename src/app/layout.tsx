@@ -21,13 +21,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://pyw31337.dothome.co.kr"),
+  metadataBase: new URL("https://pyw31337.github.io/culture"),
   title: "Culture Flow 서울 · 경기 · 인천 통합 공연 검색",
   description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
   openGraph: {
     title: "Culture Flow",
     siteName: "Culture Flow",
-    url: "http://pyw31337.dothome.co.kr/culture/",
+    url: "https://pyw31337.github.io/culture/",
     description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
     images: [
       {
@@ -56,6 +56,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-5GWFPEPEW5');
+          `}
+        </Script>
         {children}
         <Script
           id="kakao-map-script"
