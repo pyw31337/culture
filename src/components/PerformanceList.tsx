@@ -1704,7 +1704,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {isFilterExpanded && (
                         <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top w-screen ml-[calc(50%-50vw)] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner">
                             <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide">
+                                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-1.5">
 
                                     {/* Venue Select */}
                                     <div className="relative shrink-0 w-full sm:w-auto">
@@ -1754,7 +1754,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     setSelectedDistrict(e.target.value);
                                                     setSelectedVenue('all'); // Reset venue when district changes
                                                 }}
-                                                className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                                className="w-full sm:w-32 appearance-none bg-white/5 border border-white/10 text-gray-200 text-sm rounded-full focus:bg-gray-800 focus:border-white/20 block p-2.5 pr-8 transition-colors"
                                             >
                                                 <option value="all">전체 지역</option>
                                                 {districts.map(d => (
@@ -2179,7 +2179,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     setSelectedDistrict(e.target.value);
                                                     setSelectedVenue('all'); // Reset venue when district changes
                                                 }}
-                                                className="w-full sm:w-32 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                                className="w-full sm:w-32 appearance-none bg-white/5 border border-white/10 text-gray-200 text-sm rounded-full focus:bg-gray-800 focus:border-white/20 block p-2.5 pr-8 transition-colors"
                                             >
                                                 <option value="all">전체 지역</option>
                                                 {districts.map(d => (
