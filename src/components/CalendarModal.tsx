@@ -177,7 +177,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         </div>
 
                         {/* Genre Tabs */}
-                        <div className="px-4 py-3 bg-gray-800/50 border-b border-gray-700 overflow-x-auto scrollbar-hide">
+                        <div className="px-4 py-3 bg-black/50 border-b border-gray-700 overflow-x-auto scrollbar-hide shrink-0">
                             <div className="flex gap-2">
                                 {GENRES.filter(g => g.id !== 'hotdeal').map(g => (
                                     <button
