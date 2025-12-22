@@ -1647,7 +1647,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8",
                 (isDropdownOpen && activeSearchSource === 'hero') ? "z-[120]" : "z-[60]"
             )}>
-                <div className="text-left">
+                <div className="text-left flex-1 min-w-0 z-10">
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <button
                             onClick={handleCurrentLocationClick}
@@ -1702,71 +1702,70 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     {/* Inline Filter Panel (Toggle) */}
                     {isFilterExpanded && (
-                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top w-screen ml-[calc(50%-50vw)] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner">
-                            <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                                <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-1.5">
+                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full">
+                            <div className="absolute top-0 bottom-0 left-[-100vw] right-[-100vw] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner -z-10" />
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-0">
 
-                                    {/* Venue Select */}
-                                    <div className="relative shrink-0 w-full sm:w-auto">
-                                        <select
-                                            value={selectedVenue}
-                                            onChange={(e) => setSelectedVenue(e.target.value)}
-                                            className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                {/* Venue Select */}
+                                <div className="relative shrink-0 w-full sm:w-auto">
+                                    <select
+                                        value={selectedVenue}
+                                        onChange={(e) => setSelectedVenue(e.target.value)}
+                                        className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                    >
+                                        <option value="all">전체 공연장</option>
+                                        {availableVenues.map(v => (
+                                            <option key={v} value={v}>{v}</option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+
+                                {/* Region Buttons Filter Group */}
+                                <div className="flex bg-white/5 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10">
+                                    {REGIONS.map(r => (
+                                        <button
+                                            key={r.id}
+                                            onClick={() => {
+                                                setSelectedRegion(r.id);
+                                                setSelectedDistrict('all');
+                                                setSelectedVenue('all');
+                                            }}
+                                            className={clsx(
+                                                'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
+                                                selectedRegion === r.id
+                                                    ? 'bg-white text-black font-bold shadow-lg mix-blend-lighten'
+                                                    : 'text-gray-400 hover:text-white hover:bg-white/10 mix-blend-lighten'
+                                            )}
                                         >
-                                            <option value="all">전체 공연장</option>
-                                            {availableVenues.map(v => (
-                                                <option key={v} value={v}>{v}</option>
+                                            {r.label}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {/* District Select */}
+                                {selectedRegion !== 'all' && (
+                                    <div className="relative w-full sm:w-auto">
+                                        <select
+                                            value={selectedDistrict}
+                                            onChange={(e) => {
+                                                setSelectedDistrict(e.target.value);
+                                                setSelectedVenue('all'); // Reset venue when district changes
+                                            }}
+                                            className="w-full sm:w-32 appearance-none bg-white/5 border border-white/10 text-gray-200 text-sm rounded-full focus:bg-gray-800 focus:border-white/20 block p-2.5 pr-8 transition-colors"
+                                        >
+                                            <option value="all">전체 지역</option>
+                                            {districts.map(d => (
+                                                <option key={d} value={d}>{d}</option>
                                             ))}
                                         </select>
                                         <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                             <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                         </div>
                                     </div>
-
-                                    {/* Region Buttons Filter Group */}
-                                    <div className="flex bg-white/5 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10">
-                                        {REGIONS.map(r => (
-                                            <button
-                                                key={r.id}
-                                                onClick={() => {
-                                                    setSelectedRegion(r.id);
-                                                    setSelectedDistrict('all');
-                                                    setSelectedVenue('all');
-                                                }}
-                                                className={clsx(
-                                                    'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
-                                                    selectedRegion === r.id
-                                                        ? 'bg-white text-black font-bold shadow-lg mix-blend-lighten'
-                                                        : 'text-gray-400 hover:text-white hover:bg-white/10 mix-blend-lighten'
-                                                )}
-                                            >
-                                                {r.label}
-                                            </button>
-                                        ))}
-                                    </div>
-
-                                    {/* District Select */}
-                                    {selectedRegion !== 'all' && (
-                                        <div className="relative w-full sm:w-auto">
-                                            <select
-                                                value={selectedDistrict}
-                                                onChange={(e) => {
-                                                    setSelectedDistrict(e.target.value);
-                                                    setSelectedVenue('all'); // Reset venue when district changes
-                                                }}
-                                                className="w-full sm:w-32 appearance-none bg-white/5 border border-white/10 text-gray-200 text-sm rounded-full focus:bg-gray-800 focus:border-white/20 block p-2.5 pr-8 transition-colors"
-                                            >
-                                                <option value="all">전체 지역</option>
-                                                {districts.map(d => (
-                                                    <option key={d} value={d}>{d}</option>
-                                                ))}
-                                            </select>
-                                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+                                )}
                             </div>
                         </div>
                     )}
