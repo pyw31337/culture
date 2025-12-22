@@ -93,92 +93,101 @@ async function scrapeMochaClass() {
     // Need to encode params properly or use exact string.
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 5; // Start with safe limit
+    const MAX_PAGES = 50; // Increased limit for maximum collection
+    const LOCATIONS = ['서울', '경기', '인천', '부산', '대구', '광주', '대전', '울산']; // Iterate top locations to be thorough
 
     console.log(`\nPhase 1: Collecting class links...`);
 
     let pendingItems: { link: string, title: string, image: string, price: string }[] = [];
 
-    while (hasNextPage && currentPage <= MAX_PAGES) {
-        const url = `https://mochaclass.com/Search?page=${currentPage}&is_online_class=false&where=list&course=%EC%9B%90%EB%8D%B0%EC%9D%B4&sort=%EA%B1%B0%EB%A6%AC%EC%88%9C&location=%EC%84%9C%EC%9A%B8`;
-        console.log(`  Visiting Page ${currentPage}: ${url}`);
+    // Iterate locations to avoid 10k limit on single search
+    for (const loc of LOCATIONS) {
+        let currentPage = 1;
+        let hasNextPage = true;
+        console.log(`\n  Scraping Location: ${loc}`);
 
-        try {
-            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+        while (hasNextPage && currentPage <= MAX_PAGES) {
+            // Removed 'course' filter to get all types. Removed 'location' hardcoding.
+            const url = `https://mochaclass.com/Search?page=${currentPage}&is_online_class=false&where=list&sort=%EA%B1%B0%EB%A6%AC%EC%88%9C&location=${encodeURIComponent(loc)}`;
+            console.log(`    Visiting Page ${currentPage} (${loc}): ${url}`);
 
             try {
-                // Wait for grid container
-                await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
-            } catch (e) {
-                console.log(`    No list container found on page ${currentPage}. Ending or Timeout.`);
-                break;
-            }
+                await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 
-            const pageItems = await page.evaluate(() => {
-                const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
-                let targetGrid: Element | null = null;
-                // Simple heuristic: find the grid with the most 'a' children
-                grids.forEach((g: any) => {
-                    if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
-                        targetGrid = g;
-                    }
-                });
+                try {
+                    // Wait for grid container
+                    await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
+                } catch (e) {
+                    console.log(`    No list container found on page ${currentPage}. Ending or Timeout.`);
+                    break;
+                }
 
-                if (!targetGrid) return [];
-
-                const anchors = (targetGrid as Element).querySelectorAll('a');
-                const results: any[] = [];
-
-                anchors.forEach((anchor: any) => {
-                    const link = anchor.href;
-                    if (!link || !link.includes('/class/')) return; // Ensure it's a class link
-
-                    // Title
-                    const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
-                    const title = titleElem ? titleElem.textContent?.trim() : '';
-                    if (!title) return;
-
-                    // Image
-                    const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
-                    const image = imgElem ? imgElem.getAttribute('src') || '' : '';
-
-                    // Price
-                    const priceElem = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v > div > p');
-                    const price = priceElem ? (priceElem.textContent?.trim() || '') : '';
-
-                    results.push({
-                        title,
-                        link,
-                        image,
-                        price
+                const pageItems = await page.evaluate(() => {
+                    const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
+                    let targetGrid: Element | null = null;
+                    // Simple heuristic: find the grid with the most 'a' children
+                    grids.forEach((g: any) => {
+                        if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
+                            targetGrid = g;
+                        }
                     });
+
+                    if (!targetGrid) return [];
+
+                    const anchors = (targetGrid as Element).querySelectorAll('a');
+                    const results: any[] = [];
+
+                    anchors.forEach((anchor: any) => {
+                        const link = anchor.href;
+                        if (!link || !link.includes('/class/')) return; // Ensure it's a class link
+
+                        // Title
+                        const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
+                        const title = titleElem ? titleElem.textContent?.trim() : '';
+                        if (!title) return;
+
+                        // Image
+                        const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
+                        const image = imgElem ? imgElem.getAttribute('src') || '' : '';
+
+                        // Price
+                        const priceElem = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v > div > p');
+                        const price = priceElem ? (priceElem.textContent?.trim() || '') : '';
+
+                        results.push({
+                            title,
+                            link,
+                            image,
+                            price
+                        });
+                    });
+                    return results;
                 });
-                return results;
-            });
 
-            if (pageItems.length === 0) {
-                console.log(`    No items found on page ${currentPage}. Stopping.`);
-                hasNextPage = false;
-            } else {
-                console.log(`    Found ${pageItems.length} items.`);
-                let newItemsCount = 0;
-                for (const item of pageItems) {
-                    if (!seenTitles.has(item.title)) {
-                        seenTitles.add(item.title);
-                        pendingItems.push(item);
-                        newItemsCount++;
+                if (pageItems.length === 0) {
+                    console.log(`    No items found on page ${currentPage}. Stopping.`);
+                    hasNextPage = false;
+                } else {
+                    console.log(`    Found ${pageItems.length} items.`);
+                    let newItemsCount = 0;
+                    for (const item of pageItems) {
+                        if (!seenTitles.has(item.title)) {
+                            seenTitles.add(item.title);
+                            pendingItems.push(item);
+                            newItemsCount++;
+                        }
                     }
+                    if (newItemsCount === 0) {
+                        // If all items on this page are duplicates, we might be looping or done.
+                        // But maybe user wants deep scrape. Let's continue until empty or max.
+                    }
+                    currentPage++;
                 }
-                if (newItemsCount === 0) {
-                    // If all items on this page are duplicates, we might be looping or done.
-                    // But maybe user wants deep scrape. Let's continue until empty or max.
-                }
-                currentPage++;
-            }
 
-        } catch (error) {
-            console.error(`    Error on page ${currentPage}: ${error}`);
-            hasNextPage = false;
+            } catch (error) {
+                console.error(`    Error on page ${currentPage}: ${error}`);
+                hasNextPage = false;
+            }
         }
     }
 
@@ -235,7 +244,8 @@ async function scrapeMochaClass() {
                 date: 'OPEN RUN',
                 venue: venue,
                 link: item.link,
-                region: 'seoul',
+
+                region: address.includes('서울') ? 'seoul' : 'gyeonggi', // Simple fallback, or detect better
                 genre: 'class',
                 price: item.price,
                 originalPrice: item.price,

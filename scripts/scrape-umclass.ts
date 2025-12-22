@@ -88,12 +88,12 @@ async function scrapeUmClass() {
     const allItems: UmClassItem[] = [];
     const seenTitles = new Set<string>();
 
-    const MAX_PAGES = 20; // Increased limit to collect more pages per area
+    const MAX_PAGES = 50; // Deep scrape
 
     let pendingItems: { link: string, title: string, image: string, discount: string, price: string }[] = [];
 
-    // Iterate over multiple area codes to broaden coverage
-    const AREAS = [1, 2, 3, 4, 5]; // expand to more regions (e.g., Seoul, Busan, etc.)
+    // Iterate over more area codes (1-16 covers most of Korea)
+    const AREAS = Array.from({ length: 16 }, (_, i) => i + 1);
     for (const area of AREAS) {
         let currentPage = 1;
         let hasNextPage = true;
@@ -238,7 +238,7 @@ async function scrapeUmClass() {
                 date: 'OPEN RUN', // Classes are usually ongoing
                 venue: venue,
                 link: item.link,
-                region: 'seoul', // Assuming Area 2 is Seoul
+                region: address.includes('서울') ? 'seoul' : 'gyeonggi',
                 genre: 'class',
                 price: item.price,
                 originalPrice: item.price, // Can calculate from discount if needed, but simplicity first
