@@ -1707,7 +1707,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {isHeroFilterExpanded && (
                         <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full">
                             <div className="absolute top-0 bottom-0 left-[-100vw] right-[-100vw] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner -z-10" />
-                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-0 py-2.5">
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto scrollbar-hide pl-0 py-2.5">
 
                                 {/* Venue Select */}
                                 <div className="relative shrink-0 w-full sm:w-auto">
