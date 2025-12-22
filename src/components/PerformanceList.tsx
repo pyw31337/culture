@@ -809,12 +809,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     // Share Item URL Generation (Kakao Share Integration)
-    const copyItemShareUrl = async (id: string) => {
+    const copyItemShareUrl = async (id: string): Promise<boolean> => {
         const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
         const url = `${baseUrl}#p=${id}`;
 
         // 1. Try Kakao Share
-        if (typeof window !== 'undefined' && (window as any).Kakao && (window as any).Kakao.isInitialized()) {
+        if (typeof window !== 'undefined' && (window as any).Kakao) {
+            if (!(window as any).Kakao.isInitialized()) {
+                (window as any).Kakao.init('0236cfffa7cfef34abacd91a6d7c73c0');
+            }
             const perf = initialPerformances.find(p => p.id === id);
             if (perf) {
                 (window as any).Kakao.Share.sendDefault({
@@ -838,7 +841,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         },
                     ],
                 });
-                return; // Exit if Kakao Share triggered
+                return false; // Kakao Share used (no clipboard toast needed)
             }
         }
 
@@ -847,6 +850,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             await navigator.clipboard.writeText(url);
             setShareUrlCopied(true);
             setTimeout(() => setShareUrlCopied(false), 2000);
+            return true; // Clipboard used
         } catch (err) {
             console.error('Failed to copy URL:', err);
             // Fallback
@@ -858,6 +862,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             document.body.removeChild(textArea);
             setShareUrlCopied(true);
             setTimeout(() => setShareUrlCopied(false), 2000);
+            return true; // Clipboard used
         }
     };
 
@@ -1081,7 +1086,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             script.id = linkScriptId;
             script.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js';
             script.async = true;
-            script.integrity = 'sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2txfZW917TEHcM/LpnEFtt';
             script.crossOrigin = 'anonymous';
             script.onload = handleLinkLoad;
             document.head.appendChild(script);
@@ -2995,7 +2999,7 @@ function SkeletonCard() {
 // ---------------------------
 // 📋 List View Item Component (Updated with Tilt/Shadow)
 // ---------------------------
-function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', onShare?: () => void, onDetail?: () => void }) {
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', onShare?: () => Promise<boolean>, onDetail?: () => void }) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -3115,11 +3119,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     </button>
                     {/* Share Button (Bottom Left on Image) */}
                     <button
-                        onClick={(e) => {
+                        onClick={async (e) => {
                             e.stopPropagation();
-                            onShare?.();
-                            setIsCopied(true);
-                            setTimeout(() => setIsCopied(false), 2000);
+                            if (onShare) {
+                                const usedClipboard = await onShare();
+                                if (usedClipboard) {
+                                    setIsCopied(true);
+                                    setTimeout(() => setIsCopied(false), 2000);
+                                }
+                            }
                         }}
                         className="absolute bottom-1 left-1 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors z-[60] flex items-center justify-center group/share"
                     >
@@ -3327,7 +3335,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 // ---------------------------
 // 🌟 3D Tilt Card Component
 // ---------------------------
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, showRibbon?: boolean, enableActions?: boolean, isGradient?: boolean, onShare?: () => void, onDetail?: () => void }) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: { perf: any, distLabel: string | null, venueInfo: any, onLocationClick: (loc: any) => void, variant?: 'default' | 'yellow' | 'pink' | 'emerald', isLiked?: boolean, onToggleLike?: (e: React.MouseEvent) => void, showRibbon?: boolean, enableActions?: boolean, isGradient?: boolean, onShare?: () => Promise<boolean>, onDetail?: () => void }) {
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
@@ -3512,11 +3520,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         "translate-y-[100%] group-hover:translate-y-0"
                                     )}>
                                         <button
-                                            onClick={(e) => {
+                                            onClick={async (e) => {
                                                 e.stopPropagation();
-                                                onShare?.();
-                                                setIsCopied(true);
-                                                setTimeout(() => setIsCopied(false), 2000);
+                                                if (onShare) {
+                                                    const usedClipboard = await onShare();
+                                                    if (usedClipboard) {
+                                                        setIsCopied(true);
+                                                        setTimeout(() => setIsCopied(false), 2000);
+                                                    }
+                                                }
                                             }}
                                             className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
                                             aria-label="공유하기"
