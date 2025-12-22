@@ -1153,7 +1153,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     geocoder.coord2Address(longitude, latitude, (result: any[], status: any) => {
                         if (status === window.kakao.maps.services.Status.OK) {
                             const addr = result[0].road_address ? result[0].road_address.address_name : result[0].address.address_name;
-                            setUserAddress(addr);
+                            // Shorten address to Region + District (e.g., '서울시 성동구')
+                            const shortAddr = addr.split(' ').slice(0, 2).join(' ');
+                            setUserAddress(shortAddr);
                         } else {
                             setUserAddress('내 위치');
                         }
@@ -1573,7 +1575,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     return (
         <div
-            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
+            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden"
         >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
@@ -1704,7 +1706,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {isFilterExpanded && (
                         <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full">
                             <div className="absolute top-0 bottom-0 left-[-100vw] right-[-100vw] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner -z-10" />
-                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-0">
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto pb-1 scrollbar-hide pl-0 py-2.5">
 
                                 {/* Venue Select */}
                                 <div className="relative shrink-0 w-full sm:w-auto">
@@ -1781,7 +1783,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 searchText ? {
                                     line1: "찾으시는 공연,",
                                     line2Pre: "입력하신 ",
-                                    highlight: `"${searchText}"`,
+                                    highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,
                                     suffix: " 키워드로 정리해드릴게요.",
                                     keywords: []
                                 } : heroText
