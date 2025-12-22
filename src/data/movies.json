@@ -19,25 +19,6 @@
     "movieInfo": "미국SF 외 / 197분"
   },
   {
-    "id": "movie_20251211_뽀로로_극장판_스위",
-    "title": "뽀로로 극장판 스위트캐슬 대모험",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_212/1763950990806KOxMh_JPEG/movie_image.jpg",
-    "date": "2025.12.11.",
-    "venue": "전체 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%BD%80%EB%A1%9C%EB%A1%9C%20%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%8A%A4%EC%9C%84%ED%8A%B8%EC%BA%90%EC%8A%AC%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "이선",
-      "이미자",
-      "김현지",
-      "홍소영"
-    ],
-    "director": "천유림",
-    "movieInfo": "한국애니메이션 / 67분"
-  },
-  {
     "id": "movie_20251126_주토피아_2",
     "title": "주토피아 2",
     "image": "https://s.pstatic.net/movie.phinf/20251126_216/17641208921706FCfp_JPEG/movie_image.jpg",
@@ -55,6 +36,25 @@
     ],
     "director": "자레드 부시 더보기",
     "movieInfo": "미국애니메이션 외 / 108분"
+  },
+  {
+    "id": "movie_20251211_뽀로로_극장판_스위",
+    "title": "뽀로로 극장판 스위트캐슬 대모험",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_212/1763950990806KOxMh_JPEG/movie_image.jpg",
+    "date": "2025.12.11.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%BD%80%EB%A1%9C%EB%A1%9C%20%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%8A%A4%EC%9C%84%ED%8A%B8%EC%BA%90%EC%8A%AC%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "이선",
+      "이미자",
+      "김현지",
+      "홍소영"
+    ],
+    "director": "천유림",
+    "movieInfo": "한국애니메이션 / 67분"
   },
   {
     "id": "movie_20251203_윗집_사람들",
@@ -254,23 +254,23 @@
     "movieInfo": "일본애니메이션 / 108분"
   },
   {
-    "id": "movie_20251212_에반게리온_신극장판",
-    "title": "에반게리온 신극장판: 서",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_153/1765764586584n0VVd_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "등급 미정",
+    "id": "movie_20251217_파리,_밤의_여행자",
+    "title": "파리, 밤의 여행자들",
+    "image": "https://s.pstatic.net/movie.phinf/20251217_109/1765938354839bBcn7_JPEG/movie_image.jpg",
+    "date": "2025.12.17.",
+    "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8%20%EC%8B%A0%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%EC%84%9C%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%8C%8C%EB%A6%AC%2C%20%EB%B0%A4%EC%9D%98%20%EC%97%AC%ED%96%89%EC%9E%90%EB%93%A4%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "오가타 메구미",
-      "하야시바라 메구미",
-      "미츠이시 코토노",
-      "야마구치 유리코"
+      "샤를로뜨 갱스부르",
+      "퀴토 레용 리히터",
+      "노에이 아비타",
+      "메건 노덤"
     ],
-    "director": "안노 히데아키 더보기",
-    "movieInfo": "일본애니메이션 외"
+    "director": "미카엘 허스",
+    "movieInfo": "프랑스드라마 / 111분"
   },
   {
     "id": "movie_20251203_정보원",
@@ -292,25 +292,6 @@
     "movieInfo": "한국액션 외 / 103분"
   },
   {
-    "id": "movie_20251217_파리,_밤의_여행자",
-    "title": "파리, 밤의 여행자들",
-    "image": "https://s.pstatic.net/movie.phinf/20251217_109/1765938354839bBcn7_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%8C%8C%EB%A6%AC%2C%20%EB%B0%A4%EC%9D%98%20%EC%97%AC%ED%96%89%EC%9E%90%EB%93%A4%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "샤를로뜨 갱스부르",
-      "퀴토 레용 리히터",
-      "노에이 아비타",
-      "메건 노덤"
-    ],
-    "director": "미카엘 허스",
-    "movieInfo": "프랑스드라마 / 111분"
-  },
-  {
     "id": "movie_20251126_석류의_빛깔",
     "title": "석류의 빛깔",
     "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
@@ -325,6 +306,43 @@
     ],
     "director": "세르게이 파라자노프",
     "movieInfo": "소련드라마 / 80분"
+  },
+  {
+    "id": "movie_20251212_에반게리온_신극장판",
+    "title": "에반게리온 신극장판: 서",
+    "image": "https://s.pstatic.net/movie.phinf/20251215_153/1765764586584n0VVd_JPEG/movie_image.jpg",
+    "date": "2025.12.12.",
+    "venue": "등급 미정",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8%20%EC%8B%A0%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%EC%84%9C%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "오가타 메구미",
+      "하야시바라 메구미",
+      "미츠이시 코토노",
+      "야마구치 유리코"
+    ],
+    "director": "안노 히데아키(총감독), 야마구치 마사유키, 마에다 마히로, 츠루마키 카즈야",
+    "movieInfo": "일본애니메이션 외"
+  },
+  {
+    "id": "movie_20251217_고백하지마",
+    "title": "고백하지마",
+    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
+    "date": "2025.12.17.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "김충길",
+      "류현경",
+      "김오키"
+    ],
+    "director": "류현경",
+    "movieInfo": "한국드라마 / 69분"
   },
   {
     "id": "movie_20251112_나우_유_씨_미_3",
@@ -344,23 +362,5 @@
     ],
     "director": "루벤 플레셔",
     "movieInfo": "미국액션 외 / 112분"
-  },
-  {
-    "id": "movie_20251217_고백하지마",
-    "title": "고백하지마",
-    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "김충길",
-      "류현경",
-      "김오키"
-    ],
-    "director": "류현경",
-    "movieInfo": "한국드라마 / 69분"
   }
 ]
