@@ -1662,7 +1662,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 {activeLocation ? (searchLocation ? '검색위치 :' : '설정위치 :') : '현재위치 :'}
                             </span>
                         </button>
-                        <span className="text-white border-b border-[#a78bfa]">
+                        <span
+                            onClick={() => setIsHeroFilterExpanded(prev => !prev)}
+                            className="text-white border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
+                        >
                             {activeLocation
                                 ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
                                 : (
