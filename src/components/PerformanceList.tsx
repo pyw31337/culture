@@ -425,7 +425,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
 
     // Hero Text State (Hydration Safe: Start with Default, then randomize)
-    const [heroText, setHeroText] = useState(HERO_TEMPLATES.general[0]);
+    const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
 
     // Like & Venue State (Moved to top for scope access)
