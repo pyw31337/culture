@@ -1803,41 +1803,59 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text: Dynamic */}
-                    <div ref={heroRef}>
-                        <TypingHero
-                            template={
-                                searchText ? {
-                                    line1: "찾으시는 공연,",
-                                    line2Pre: "입력하신 ",
-                                    highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,
-                                    suffix: " 키워드로 정리해드릴게요.",
-                                    keywords: []
-                                } : (selectedRegion !== 'all' || selectedVenue !== 'all') ? {
-                                    line1: "현재,",
-                                    boldPrefix: `${[
-                                        selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '',
-                                        selectedDistrict !== 'all' ? selectedDistrict : '',
-                                        selectedVenue !== 'all' ? selectedVenue : ''
-                                    ].filter(Boolean).join(' ')}`,
-                                    line2Pre: "에서 진행중인 ",
-                                    highlight: "공연",
-                                    suffix: "들을 찾아줄게요.",
-                                    keywords: []
-                                } : heroText
-                            }
-                            onCycle={handleHeroCycle}
-                            paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
-                        />
-                    </div>
+                    {/* Hero Text Logic Extraction */}
+                    {(() => {
+                        const currentTemplate = searchText ? {
+                            line1: "찾으시는 공연,",
+                            line2Pre: "입력하신 ",
+                            highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,
+                            suffix: " 키워드로 정리해드릴게요.",
+                            keywords: [],
+                            boldPrefix: undefined
+                        } as HeroTemplate : (selectedRegion !== 'all' || selectedVenue !== 'all') ? {
+                            line1: "현재,",
+                            boldPrefix: `${[
+                                selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '',
+                                selectedDistrict !== 'all' ? selectedDistrict : '',
+                                selectedVenue !== 'all' ? selectedVenue : ''
+                            ].filter(Boolean).join(' ')}`,
+                            line2Pre: "에서 진행중인 ",
+                            highlight: "공연",
+                            suffix: "들을 찾아줄게요.",
+                            keywords: []
+                        } : heroText;
+
+                        return (
+                            <>
+                                <div ref={heroRef}>
+                                    <TypingHero
+                                        template={currentTemplate}
+                                        onCycle={handleHeroCycle}
+                                        paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
+                                    />
+                                </div>
+                                {/* Mobile: Dynamic (Simplified Layout) */}
+                                <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
+                                    {currentTemplate.line1}<br />
+                                    {currentTemplate.boldPrefix && (
+                                        <>
+                                            <span className="font-extrabold text-white">{currentTemplate.boldPrefix}</span>
+                                            {/* No BR here, let it flow or add space? Design usually flows. */}
+                                            {/* But template structure implies distinct segments. */}
+                                            {/* line2Pre usually follows immediately. */}
+                                        </>
+                                    )}
+                                    {currentTemplate.line2Pre}
+                                    <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                                        {currentTemplate.highlight}
+                                    </span><br />
+                                    {currentTemplate.suffix}
+                                </h2>
+                            </>
+                        );
+                    })()}
                     {/* Mobile: Dynamic (Simplified Layout) */}
-                    <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
-                        {heroText.line1}<br />
-                        {heroText.line2Pre}
-                        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
-                            {heroText.highlight}
-                        </span><br />
-                        {heroText.suffix}
-                    </h2>
+
                     <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
                         {lastUpdated} 기준
                     </div>
