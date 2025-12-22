@@ -256,10 +256,16 @@ const HERO_TEMPLATES = {
             { line1: "일상 탈출, 준비되셨나요?", line2Pre: "가볍게 떠날 수 있는 ", highlight: "당일치기 여행", suffix: "을 추천해요.", keywords: ["여행", "travel"] },
             { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] }
         ]
-    }
+    },
+    location: [
+        { line1: "오늘 {location}에서,", line2Pre: "특별한 ", highlight: "{genre} 한 편", suffix: " 어떠세요?", keywords: ["{location}"] },
+        { line1: "이번 주말, {location}에서", line2Pre: "당신을 기다리는 ", highlight: "{genre} 공연", suffix: "이 발견되었네요.", keywords: ["{location}"] },
+        { line1: "{location} 나들이 가신다면,", line2Pre: "함께 즐기기 좋은 ", highlight: "{genre}", suffix: " 추천드려요.", keywords: ["{location}"] },
+        { line1: "{location}의 밤을,", line2Pre: "아름답게 수놓을 ", highlight: "{genre}", suffix: " 어떠신가요?", keywords: ["{location}"] }
+    ]
 };
 
-type HeroTemplate = typeof HERO_TEMPLATES.general[number];
+type HeroTemplate = typeof HERO_TEMPLATES.general[number] | typeof HERO_TEMPLATES.location[number];
 
 const Cursor = () => (
     <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
@@ -448,7 +454,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             if (candidate.keywords && candidate.keywords.length > 0) {
                 const hasMatch = initialPerformances.some(p =>
                     candidate.keywords!.some(k =>
-                        p.title.includes(k) || p.genre.includes(k)
+                        p.title.includes(k) ||
+                        p.genre.includes(k) ||
+                        p.venue.includes(k) ||
+                        (venues[p.venue]?.district?.includes(k))
                     )
                 );
 
@@ -588,6 +597,39 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 }
             } catch (e) {
                 console.log("Weather fetch failed (ignoring).");
+            }
+
+            // 6. Location Context (District/Venue) - New!
+            // Pick a random performance to promote its location
+            if (initialPerformances.length > 0) {
+                // Try 3 times to find a suitable location candidate
+                for (let i = 0; i < 3; i++) {
+                    const randomPerf = initialPerformances[Math.floor(Math.random() * initialPerformances.length)];
+                    const v = venues[randomPerf.venue];
+
+                    // Candidate strings: District or Venue Name
+                    const locationCandidates: string[] = [];
+                    if (v && v.district) locationCandidates.push(v.district);
+                    locationCandidates.push(randomPerf.venue);
+
+                    // Pick one location (District preferred if available and brief, else Venue)
+                    const chosenLocation = locationCandidates.length > 0 ? locationCandidates[0] : null;
+
+                    if (chosenLocation) {
+                        const genreLabel = GENRES.find(g => g.id === randomPerf.genre)?.label || "공연";
+
+                        // Map location templates
+                        const locTemplates = HERO_TEMPLATES.location.map(t => ({
+                            ...t,
+                            line1: t.line1.replace('{location}', chosenLocation),
+                            line2Pre: t.line2Pre.replace('{location}', chosenLocation),
+                            highlight: t.highlight.replace('{genre}', genreLabel),
+                            keywords: t.keywords.map(k => k.replace('{location}', chosenLocation))
+                        }));
+
+                        pool.push(...locTemplates);
+                    }
+                }
             }
 
             // Save pool to ref for cycling
@@ -1300,9 +1342,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             if (contextKeywords.length > 0) {
                 const getScore = (p: Performance) => {
                     let s = 0;
+                    const v = venues[p.venue];
                     for (const kw of contextKeywords) {
                         if (p.title.includes(kw)) s += 1000;
                         if (p.genre.includes(kw)) s += 500;
+                        if (p.venue.includes(kw)) s += 2000; // High priority for venue match
+                        if (v && v.district && v.district.includes(kw)) s += 1500; // High priority for district match
                     }
                     return s;
                 };
