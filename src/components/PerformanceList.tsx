@@ -1692,7 +1692,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </button>
 
                         {/* Reset Location Button */}
-                        {(activeLocation || selectedRegion !== 'all') && (
+                        {(activeLocation || selectedRegion !== 'all' || selectedVenue !== 'all') && (
                             <button
                                 onClick={() => {
                                     setSelectedRegion('all');
