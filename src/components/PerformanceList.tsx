@@ -1667,6 +1667,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             }
                         </span>
 
+                        {/* Expand Filter Button */}
+                        <button
+                            onClick={() => setIsFilterExpanded(true)}
+                            className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/expand"
+                            title="지역 변경"
+                        >
+                            <ChevronDown className="w-3.5 h-3.5 group-hover/expand:scale-110 transition-transform" />
+                        </button>
+
                         {/* Reset Location Button */}
                         {(activeLocation || selectedRegion !== 'all') && (
                             <button
