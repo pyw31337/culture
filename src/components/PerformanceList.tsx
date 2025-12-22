@@ -1576,7 +1576,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     return (
         <div
-            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative overflow-x-hidden"
+            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
         >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
