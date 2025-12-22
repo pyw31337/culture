@@ -2096,7 +2096,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Expanded View */}
                     <div className={clsx(
                         "transition-all duration-300 overflow-hidden",
-                        isStickyFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                        isStickyFilterExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 invisible"
                     )}>
                         <div className="flex flex-col gap-3">
                             {/* Row 1: Filters & Search */}
