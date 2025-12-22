@@ -2422,7 +2422,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                     <div className="flex items-start gap-3">
                                                         <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
                                                         <div>
-                                                            <div className="text-gray-400 text-xs font-bold uppercase">Price</div>
+
                                                             <div className="flex items-baseline gap-2">
                                                                 {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
                                                                 {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
