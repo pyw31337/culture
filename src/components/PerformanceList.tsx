@@ -766,11 +766,41 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         setNewMatches([]);
     };
 
-    // Share Item URL Generation
+    // Share Item URL Generation (Kakao Share Integration)
     const copyItemShareUrl = async (id: string) => {
         const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
         const url = `${baseUrl}#p=${id}`;
 
+        // 1. Try Kakao Share
+        if (typeof window !== 'undefined' && (window as any).Kakao && (window as any).Kakao.isInitialized()) {
+            const perf = initialPerformances.find(p => p.id === id);
+            if (perf) {
+                (window as any).Kakao.Share.sendDefault({
+                    objectType: 'feed',
+                    content: {
+                        title: perf.title,
+                        description: `${perf.date} | ${perf.venue}`,
+                        imageUrl: perf.image,
+                        link: {
+                            mobileWebUrl: url,
+                            webUrl: url,
+                        },
+                    },
+                    buttons: [
+                        {
+                            title: '공연 상세 보기',
+                            link: {
+                                mobileWebUrl: url,
+                                webUrl: url,
+                            },
+                        },
+                    ],
+                });
+                return; // Exit if Kakao Share triggered
+            }
+        }
+
+        // 2. Fallback to Clipboard Copy
         try {
             await navigator.clipboard.writeText(url);
             setShareUrlCopied(true);
@@ -961,46 +991,62 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         return () => clearTimeout(timer);
     }, [searchText]);
 
-    // Load Kakao Maps SDK for Search
+    // Load Kakao Maps & Link SDK
     useEffect(() => {
-        const scriptId = 'kakao-map-script';
+        const mapScriptId = 'kakao-map-script';
+        const linkScriptId = 'kakao-link-script';
+        const APP_KEY = '0236cfffa7cfef34abacd91a6d7c73c0';
 
-        // internal handler
-        const handleLoad = () => {
+        // Internal handler for Maps
+        const handleMapLoad = () => {
             window.kakao.maps.load(() => {
                 setIsSdkLoaded(true);
             });
         };
 
-        if (document.getElementById(scriptId)) {
-            // Script already exists. Check if loaded.
+        // Internal handler for Link
+        const handleLinkLoad = () => {
+            if ((window as any).Kakao && !(window as any).Kakao.isInitialized()) {
+                (window as any).Kakao.init(APP_KEY);
+                console.log('Kakao Link Initialized');
+            }
+        };
+
+        // 1. Load Maps SDK
+        if (document.getElementById(mapScriptId)) {
             if (window.kakao && window.kakao.maps && window.kakao.maps.services) {
                 setIsSdkLoaded(true);
             } else {
-                // Exist but might be loading? Add listener? 
-                // It's safer to just assume it will load or is loaded.
-                // We can manually trigger check or attach onload.
-                const existingScript = document.getElementById(scriptId) as HTMLScriptElement;
-                existingScript.addEventListener('load', handleLoad);
-                // Fallback check
-                setTimeout(() => {
-                    if (window.kakao && window.kakao.maps) setIsSdkLoaded(true);
-                }, 1000);
+                const existingScript = document.getElementById(mapScriptId) as HTMLScriptElement;
+                existingScript.addEventListener('load', handleMapLoad);
             }
-            return;
+        } else {
+            const script = document.createElement('script');
+            script.id = mapScriptId;
+            script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${APP_KEY}&autoload=false&libraries=services`;
+            script.async = true;
+            script.onload = handleMapLoad;
+            document.head.appendChild(script);
         }
 
-        const script = document.createElement('script');
-        script.id = scriptId;
-        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services`;
-        script.async = true;
-
-        script.onload = handleLoad;
-
-        document.head.appendChild(script);
+        // 2. Load Link SDK (for Sharing)
+        if (document.getElementById(linkScriptId)) {
+            if ((window as any).Kakao && !(window as any).Kakao.isInitialized()) {
+                (window as any).Kakao.init(APP_KEY);
+            }
+        } else {
+            const script = document.createElement('script');
+            script.id = linkScriptId;
+            script.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js';
+            script.async = true;
+            script.integrity = 'sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2txfZW917TEHcM/LpnEFtt';
+            script.crossOrigin = 'anonymous';
+            script.onload = handleLinkLoad;
+            document.head.appendChild(script);
+        }
 
         return () => {
-            // Cleanup listeners if strict, but script serves whole app.
+            // Cleanup listeners if needed
         };
     }, []);
 
