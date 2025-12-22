@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "scrape:movies": "npx ts-node scripts/scrape-movies.ts",
-    "scrape:class": "npx ts-node scripts/scrape-umclass.ts"
+    "scrape:class": "npx ts-node scripts/scrape-umclass.ts",
+    "scrape:mochaclass": "npx ts-node scripts/scrape-mochaclass.ts"
   },
   "dependencies": {
     "axios": "^1.13.2",
