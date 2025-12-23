@@ -3894,15 +3894,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             >
                                 <div className={clsx(
                                     "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                    enableActions ? "translate-y-[60px] group-hover:translate-y-0" : ""
+                                    enableActions ? "translate-y-[50px] group-hover:translate-y-0" : ""
                                 )}>
                                     {/* Gradient Background Layer - spans full height of content */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
                                     {/* Performance Info */}
-                                    <div className="relative z-10 p-5 pb-2">
+                                    <div className="relative z-10 p-4 pb-2">
                                         {/* Tags/Badges */}
-                                        <div className="flex flex-wrap gap-2 mb-2">
+                                        <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(
                                                 "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
                                                 GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
@@ -3919,12 +3919,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </div>
 
                                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                            <h3 className="text-xl md:text-2xl font-[800] tracking-tighter text-white mb-1 leading-none line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                            <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                                 {perf.title.trim()}
                                             </h3>
                                         </a>
 
-                                        <div className="flex items-center gap-1.5 mt-2 text-gray-300 text-xs md:text-sm font-medium">
+                                        <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
                                             {perf.genre === 'movie' ? (
                                                 <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                     {perf.gradeIcon ? (
@@ -4012,12 +4012,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         )}
 
                                         {(perf.price || perf.discount) && (
-                                            <div className="flex justify-between items-end mt-3 w-full border-t border-white/10 pt-3">
+                                            <div className="flex justify-between items-end mt-2 w-full border-t border-white/10 pt-2">
                                                 <div className="flex flex-col justify-end">
                                                     {perf.discount && (
                                                         <div className="text-rose-500 drop-shadow-md leading-none">
-                                                            <span className="text-[2rem] font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                            <span className="text-sm font-light ml-0.5">%</span>
+                                                            <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                                            <span className="text-xs font-light ml-0.5">%</span>
                                                         </div>
                                                     )}
                                                 </div>
@@ -4025,7 +4025,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
                                                     {perf.price && (
                                                         <div className="text-white drop-shadow-md leading-none">
-                                                            <span className="text-xl font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                            <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
                                                             <span className="text-xs font-light ml-0.5">원</span>
                                                         </div>
                                                     )}
@@ -4033,6 +4033,50 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             </div>
                                         )}
                                     </div>
+
+                                    {/* Action Buttons (Share & Detail) */}
+                                    {enableActions && (
+                                        <div className="relative z-10 px-4 pb-3 pt-1 flex gap-2 items-center justify-between">
+                                            <button
+                                                onClick={async (e) => {
+                                                    e.stopPropagation();
+                                                    if (onShare) {
+                                                        const usedClipboard = await onShare();
+                                                        if (usedClipboard) {
+                                                            setIsCopied(true);
+                                                            setTimeout(() => setIsCopied(false), 2000);
+                                                        }
+                                                    }
+                                                }}
+                                                className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-2 rounded-[10px] flex items-center justify-center transition-all font-bold shadow-lg h-[40px] relative group/share"
+                                                aria-label="공유하기"
+                                            >
+                                                <Share2 className="w-4 h-4" />
+                                                <AnimatePresence>
+                                                    {isCopied && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            exit={{ opacity: 0, y: -10 }}
+                                                            className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-green-600 text-white text-xs font-bold rounded-md whitespace-nowrap shadow-lg"
+                                                        >
+                                                            복사됨!
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </button>
+                                            <a
+                                                href={perf.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 bg-[#a78bfa] hover:bg-[#9063f0] text-black py-2 rounded-[10px] flex items-center gap-1.5 justify-center transition-all font-bold text-sm h-[40px] shadow-lg relative z-[100]"
+                                                onClick={e => e.stopPropagation()}
+                                            >
+                                                자세히 보기
+                                                <Search className="w-4 h-4" />
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
