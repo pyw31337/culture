@@ -3,6 +3,7 @@
 import React from 'react';
 import { Layout, LayoutGrid, MapPin, Heart, Star } from 'lucide-react';
 import { clsx } from 'clsx';
+import { GENRES } from '@/lib/constants';
 
 export type BottomMenuType = 'view' | 'category' | 'location' | null;
 
@@ -14,13 +15,19 @@ interface BottomNavProps {
     onLikeVenueClick: () => void;
     likeCount?: number;
     venueCount?: number;
+    selectedGenre?: string;
 }
 
-export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0 }: BottomNavProps) {
+export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0, selectedGenre = 'all' }: BottomNavProps) {
+    // Determine Category Label
+    const categoryLabel = (selectedGenre && selectedGenre !== 'all')
+        ? (GENRES.find(g => g.id === selectedGenre)?.label || '카테고리')
+        : '카테고리';
+
     // Left side items
     const leftItems = [
         { id: 'view', label: '보기', icon: Layout, action: () => onMenuClick('view') },
-        { id: 'category', label: '카테고리', icon: LayoutGrid, action: () => onMenuClick('category') },
+        { id: 'category', label: categoryLabel, icon: LayoutGrid, action: () => onMenuClick('category') },
     ];
 
     // Right side items with badge counts

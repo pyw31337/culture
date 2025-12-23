@@ -3193,6 +3193,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 onLikeVenueClick={handleLikeVenueClick}
                 likeCount={likedIds.length}
                 venueCount={favoriteVenues.length}
+                selectedGenre={selectedGenre}
             />
         </div>
     );
