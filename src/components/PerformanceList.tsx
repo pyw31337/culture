@@ -2770,9 +2770,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 )
             }
 
-            {/* Keyword Matches Section (Only in List View) */}
+            {/* Keyword Matches Section (Always visible, always list layout) */}
             {
-                viewMode === 'list' && keywordMatches.length > 0 && (
+                keywordMatches.length > 0 && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
@@ -2788,12 +2788,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className={clsx(
-                                "grid gap-4 sm:gap-6",
-                                layoutMode === 'grid'
-                                    ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
-                                    : "grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
-                            )}>
+                            <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                                 <AnimatePresence mode="popLayout">
                                     {keywordMatches.map((performance, idx) => (
                                         <motion.div

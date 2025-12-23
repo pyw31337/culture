@@ -82,13 +82,12 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         <nav className="fixed bottom-0 left-0 right-0 z-[9990] pb-safe">
             {/* Main bar container with notch */}
             <div className="relative max-w-7xl mx-auto px-2">
-                {/* Center floating button with gradient border shimmer */}
+                {/* Center floating button with rotating gradient border */}
                 <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
-                    {/* Outer gradient border wrapper - reverse direction for visibility */}
+                    {/* Outer gradient border wrapper - rotating conic gradient */}
                     <div className={clsx(
-                        "relative w-[68px] h-[68px] rounded-full p-[3px]",
-                        "bg-gradient-to-tr from-[#f472b6] via-[#a78bfa] to-[#60a5fa]",
-                        "animate-purple-shimmer"
+                        "relative w-[68px] h-[68px] rounded-full p-[1px] overflow-hidden",
+                        "animate-rotate-gradient"
                     )}>
                         <button
                             onClick={() => onMenuClick('location')}
