@@ -27,6 +27,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Chrome
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
         with:
@@ -38,6 +39,7 @@ jobs:
           npm ci
 
       - name: Install System Dependencies (Puppeteer)
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
