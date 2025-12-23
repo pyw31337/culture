@@ -4,6 +4,7 @@ import React from 'react';
 import { Layout, LayoutGrid, MapPin, Heart, Star } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
+import { getGenreIcon } from '@/components/GenreIcons';
 
 export type BottomMenuType = 'view' | 'category' | 'location' | null;
 
@@ -24,10 +25,19 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         ? (GENRES.find(g => g.id === selectedGenre)?.label || '카테고리')
         : '카테고리';
 
+    // Determine Category Icon
+    const CategoryIcon = (selectedGenre && selectedGenre !== 'all')
+        ? ({ className }: { className?: string }) => (
+            <span className={clsx(className, "flex items-center justify-center")}>
+                {getGenreIcon(selectedGenre)}
+            </span>
+        )
+        : LayoutGrid;
+
     // Left side items
     const leftItems = [
         { id: 'view', label: '보기', icon: Layout, action: () => onMenuClick('view') },
-        { id: 'category', label: categoryLabel, icon: LayoutGrid, action: () => onMenuClick('category') },
+        { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick('category') },
     ];
 
     // Right side items with badge counts
