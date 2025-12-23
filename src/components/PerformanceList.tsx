@@ -2775,7 +2775,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Keyword Matches Section (Always visible, always list layout) */}
             {
-                keywordMatches.length > 0 && (
+                keywordMatches.length > 0 && viewMode !== 'likes-perf' && viewMode !== 'likes-venue' && (
                     <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 mt-6 mb-8 relative z-10">
                         <div
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
