@@ -3881,7 +3881,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             >
                                 <div className={clsx(
                                     "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                    enableActions ? `translate-y-[55px] group-hover:translate-y-0 ${showActions ? 'translate-y-0' : ''}` : ""
+                                    enableActions
+                                        ? (showActions ? "translate-y-0" : "translate-y-[55px] group-hover:translate-y-0")
+                                        : ""
                                 )}>
                                     {/* Gradient Background Layer - spans full height of content */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
