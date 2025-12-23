@@ -181,7 +181,43 @@ async function buildVenues() {
         }
     }
 
-    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems];
+    // Read UmClass Data
+    let umclassItems: any[] = [];
+    const UMCLASS_FILE = path.join(process.cwd(), 'src/data/umclass.json');
+    if (fs.existsSync(UMCLASS_FILE)) {
+        try {
+            umclassItems = JSON.parse(fs.readFileSync(UMCLASS_FILE, 'utf-8'));
+            console.log(`Loaded ${umclassItems.length} UmClass items.`);
+        } catch (e) {
+            console.error('Failed to load UmClass data', e);
+        }
+    }
+
+    // Read MochaClass Data
+    let mochaclassItems: any[] = [];
+    const MOCHACLASS_FILE = path.join(process.cwd(), 'src/data/mochaclass.json');
+    if (fs.existsSync(MOCHACLASS_FILE)) {
+        try {
+            mochaclassItems = JSON.parse(fs.readFileSync(MOCHACLASS_FILE, 'utf-8'));
+            console.log(`Loaded ${mochaclassItems.length} MochaClass items.`);
+        } catch (e) {
+            console.error('Failed to load MochaClass data', e);
+        }
+    }
+
+    // Read SSSD Class Data
+    let sssdItems: any[] = [];
+    const SSSD_FILE = path.join(process.cwd(), 'src/data/sssd-class.json');
+    if (fs.existsSync(SSSD_FILE)) {
+        try {
+            sssdItems = JSON.parse(fs.readFileSync(SSSD_FILE, 'utf-8'));
+            console.log(`Loaded ${sssdItems.length} SSSD items.`);
+        } catch (e) {
+            console.error('Failed to load SSSD data', e);
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems, ...umclassItems, ...mochaclassItems, ...sssdItems];
 
     console.log(`Total items: ${all.length}`);
 
