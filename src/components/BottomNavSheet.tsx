@@ -95,7 +95,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-16 left-0 right-0 z-[9985] bg-[#1a0b2e]/95 backdrop-blur-2xl border-t border-purple-500/20 rounded-t-3xl transition-transform duration-300 ease-out max-h-[70vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-safe",
+                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/90 backdrop-blur-xl border-t border-purple-500/30 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] pb-20",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
@@ -151,22 +151,22 @@ export default function BottomNavSheet({
 
                     {/* CATEGORY MENU */}
                     {activeMenu === 'category' && (
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-bold text-white mb-4 px-1 flex items-center gap-2">
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-bold text-white px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 카테고리
                             </h3>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                            <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
                                 <button
                                     onClick={() => { onGenreSelect('all'); onClose(); }}
                                     className={clsx(
-                                        "aspect-square rounded-2xl p-4 flex flex-col items-center justify-center gap-2 transition-all border",
+                                        "rounded-xl p-2 flex flex-col items-center justify-center gap-1 transition-all border",
                                         selectedGenre === 'all'
                                             ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50"
                                             : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
                                     )}
                                 >
-                                    <LayoutGrid size={24} />
-                                    <span className="text-sm font-medium">전체</span>
+                                    <LayoutGrid size={18} />
+                                    <span className="text-[10px] font-medium">전체</span>
                                 </button>
 
                                 {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
@@ -177,14 +177,14 @@ export default function BottomNavSheet({
                                             key={genre.id}
                                             onClick={() => { onGenreSelect(genre.id); onClose(); }}
                                             className={clsx(
-                                                "aspect-square rounded-2xl p-4 flex flex-col items-center justify-center gap-2 transition-all border",
+                                                "rounded-xl p-2 flex flex-col items-center justify-center gap-1 transition-all border",
                                                 isSelected
                                                     ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg`
                                                     : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
                                             )}
                                         >
-                                            <GenreIcon size={24} />
-                                            <span className="text-sm font-medium">{genre.label}</span>
+                                            <GenreIcon size={18} />
+                                            <span className="text-[10px] font-medium truncate max-w-full">{genre.label}</span>
                                         </button>
                                     );
                                 })}
