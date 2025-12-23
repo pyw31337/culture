@@ -1437,7 +1437,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const handleLikePerfClick = () => {
         if (viewMode === 'likes-perf') {
-            setViewMode('list');
+            setViewMode('grid');
         } else {
             setViewMode('likes-perf');
         }
@@ -1447,7 +1447,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const handleLikeVenueClick = () => {
         if (viewMode === 'likes-venue') {
-            setViewMode('list');
+            setViewMode('grid');
         } else {
             setViewMode('likes-venue');
         }
@@ -3059,7 +3059,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 viewMode === 'calendar' && (
                     <CalendarModal
                         performances={filteredPerformances} // Pass filtered!
-                        onClose={() => setViewMode('list')}
+                        onClose={() => setViewMode('grid')}
                     />
                 )
             }
@@ -3076,7 +3076,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         }
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}
-                        onClose={() => setViewMode('list')}
+                        onClose={() => setViewMode('grid')}
                     />
                 )
             }
