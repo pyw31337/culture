@@ -95,7 +95,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 backdrop-blur-xl border-t-2 border-amber-400/60 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7),0_0_30px_rgba(251,191,36,0.15)] pb-20 animate-gold-shimmer",
+                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 backdrop-blur-xl border-t-2 border-purple-400/60 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] pb-20 animate-purple-shimmer",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
@@ -214,18 +214,17 @@ export default function BottomNavSheet({
                                 <span className="text-purple-400">#</span> 위치 및 검색
                             </h3>
 
-                            {/* Search Bar - Fancy Gradient */}
-                            <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] rounded-2xl blur-sm opacity-50 group-focus-within:opacity-80 transition-opacity animate-gradient-x" />
-                                <div className="relative bg-black/80 rounded-2xl p-[2px]">
-                                    <div className="relative flex items-center bg-gray-900 rounded-[14px]">
-                                        <Search className="absolute left-4 text-purple-400 w-5 h-5" />
+                            {/* Search Bar - Hero Style */}
+                            <div className="w-full relative group">
+                                <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-focus-within:shadow-purple-500/40 opacity-90 group-focus-within:opacity-100">
+                                    <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative">
+                                        <Search className="ml-3 text-purple-400 w-5 h-5" />
                                         <input
                                             type="text"
                                             value={searchText}
                                             onChange={(e) => onSearchChange(e.target.value)}
                                             placeholder="공연명, 출연진, 장소 검색..."
-                                            className="w-full bg-transparent py-4 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none text-base"
+                                            className="bg-transparent border-none text-white text-lg font-bold px-4 py-3 w-full focus:outline-none placeholder-gray-600"
                                         />
                                     </div>
                                 </div>

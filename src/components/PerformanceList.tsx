@@ -798,6 +798,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false); // Controls List Modal visibility
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid'); // Default to Grid (Thumbnail) view
 
+    // Sync layoutMode when viewMode changes to grid or list
+    useEffect(() => {
+        if (viewMode === 'grid' || viewMode === 'list') {
+            setLayoutMode(viewMode);
+        }
+    }, [viewMode]);
+
     const [shareUrlCopied, setShareUrlCopied] = useState(false); // Share URL copy feedback
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null); // Shared Item ID
 
