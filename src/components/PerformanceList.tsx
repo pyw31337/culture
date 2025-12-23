@@ -1753,9 +1753,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     >
                         <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
                         {/* Keyword count badge */}
-                        {keywords.length > 0 && (
+                        {savedKeywords.length > 0 && (
                             <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
-                                {keywords.length > 99 ? '99+' : keywords.length}
+                                {savedKeywords.length > 99 ? '99+' : savedKeywords.length}
                             </span>
                         )}
                     </button>
@@ -2791,7 +2791,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             </button>
                         </div>
                         {isKeywordsExpanded && (
-                            <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                            <div className="grid gap-4 sm:gap-6 grid-cols-1">
                                 <AnimatePresence mode="popLayout">
                                     {keywordMatches.map((performance, idx) => (
                                         <motion.div
