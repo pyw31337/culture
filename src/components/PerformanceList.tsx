@@ -1963,7 +1963,48 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     {/* Hero Text: Dynamic */}
                     {/* Hero Text Logic Extraction */}
                     {(() => {
-                        const currentTemplate = searchText ? {
+                        // Dynamic title messages for likes-perf
+                        const likesPerfMessages = [
+                            { line1: "평소에", line2Pre: "좋아요로 Pick 한 ", highlight: "공연들", suffix: "을 살펴볼까요?" },
+                            { line1: "당신의", line2Pre: "마음을 사로잡은 ", highlight: "공연", suffix: "들이에요." },
+                            { line1: "하트를 눌렀던", line2Pre: "그 순간을 ", highlight: "다시", suffix: " 만나보세요." },
+                            { line1: "찜해둔", line2Pre: "공연 중에 ", highlight: "오늘", suffix: " 볼만한 건 뭐가 있을까요?" },
+                            { line1: "좋아요 리스트,", line2Pre: "당신만의 ", highlight: "컬렉션", suffix: "이에요." },
+                            { line1: "설렘이 담긴", line2Pre: "공연 ", highlight: "리스트", suffix: "를 확인해볼게요." },
+                            { line1: "기억해둔", line2Pre: "그 공연들, ", highlight: "지금", suffix: " 확인해보세요." },
+                            { line1: "마음에 담아둔", line2Pre: "공연 ", highlight: "목록", suffix: "이에요." },
+                            { line1: "좋아요 버튼,", line2Pre: "진심을 담아 누른 ", highlight: "공연", suffix: "들이죠." },
+                            { line1: "당신의 취향이", line2Pre: "반영된 ", highlight: "공연들", suffix: "을 모아봤어요." }
+                        ];
+
+                        // Dynamic title messages for likes-venue
+                        const likesVenueMessages = [
+                            { line1: "찜한 공연장에서", line2Pre: "오늘 어떤 ", highlight: "공연", suffix: "이 열리고 있을까요?" },
+                            { line1: "자주 찾는", line2Pre: "공연장의 ", highlight: "일정", suffix: "을 확인해보세요." },
+                            { line1: "좋아하는 공연장,", line2Pre: "그곳의 ", highlight: "무대", suffix: "가 기다리고 있어요." },
+                            { line1: "마음에 든 공연장의", line2Pre: "오늘의 ", highlight: "라인업", suffix: "은 뭘까요?" },
+                            { line1: "찜한 공연장에서", line2Pre: "새로운 ", highlight: "공연", suffix: "을 발견해보세요." },
+                            { line1: "익숙한 그 공연장,", line2Pre: "특별한 ", highlight: "오늘", suffix: "이 될 수도 있어요." },
+                            { line1: "당신이 사랑하는", line2Pre: "공연장의 ", highlight: "소식", suffix: "을 전해드릴게요." },
+                            { line1: "공연장 Pick,", line2Pre: "거기서 뭐 ", highlight: "하고 있나", suffix: " 볼까요?" },
+                            { line1: "찜한 공연장 어때요?", line2Pre: "오늘의 ", highlight: "무대", suffix: "를 확인해보세요." },
+                            { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "공연", suffix: "이 기다리고 있을지도요." }
+                        ];
+
+                        // Pick a random message (seeded by current minute for variety but stability)
+                        const minuteSeed = new Date().getMinutes();
+                        const perfMsg = likesPerfMessages[minuteSeed % likesPerfMessages.length];
+                        const venueMsg = likesVenueMessages[minuteSeed % likesVenueMessages.length];
+
+                        const currentTemplate = viewMode === 'likes-perf' ? {
+                            ...perfMsg,
+                            keywords: [],
+                            boldPrefix: undefined
+                        } as HeroTemplate : viewMode === 'likes-venue' ? {
+                            ...venueMsg,
+                            keywords: [],
+                            boldPrefix: undefined
+                        } as HeroTemplate : searchText ? {
                             line1: "찾으시는 공연,",
                             line2Pre: "입력하신 ",
                             highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,

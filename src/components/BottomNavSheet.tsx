@@ -155,18 +155,18 @@ export default function BottomNavSheet({
                             <h3 className="text-lg font-bold text-white px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 카테고리
                             </h3>
-                            <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                 <button
                                     onClick={() => { onGenreSelect('all'); onClose(); }}
                                     className={clsx(
-                                        "rounded-xl p-2 flex flex-col items-center justify-center gap-1 transition-all border",
+                                        "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                         selectedGenre === 'all'
                                             ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50"
                                             : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
                                     )}
                                 >
-                                    <LayoutGrid size={18} />
-                                    <span className="text-[10px] font-medium">전체</span>
+                                    <LayoutGrid size={16} />
+                                    <span className="text-sm font-medium">전체</span>
                                 </button>
 
                                 {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
@@ -177,14 +177,14 @@ export default function BottomNavSheet({
                                             key={genre.id}
                                             onClick={() => { onGenreSelect(genre.id); onClose(); }}
                                             className={clsx(
-                                                "rounded-xl p-2 flex flex-col items-center justify-center gap-1 transition-all border",
+                                                "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                                 isSelected
                                                     ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg`
                                                     : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
                                             )}
                                         >
-                                            <GenreIcon size={18} />
-                                            <span className="text-[10px] font-medium truncate max-w-full">{genre.label}</span>
+                                            <GenreIcon size={16} />
+                                            <span className="text-sm font-medium truncate">{genre.label}</span>
                                         </button>
                                     );
                                 })}
@@ -199,16 +199,21 @@ export default function BottomNavSheet({
                                 <span className="text-purple-400">#</span> 위치 및 검색
                             </h3>
 
-                            {/* Search Bar */}
+                            {/* Search Bar - Fancy Gradient */}
                             <div className="relative group">
-                                <input
-                                    type="text"
-                                    value={searchText}
-                                    onChange={(e) => onSearchChange(e.target.value)}
-                                    placeholder="공연명, 출연진, 장소 검색..."
-                                    className="w-full bg-gray-900/80 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all text-base"
-                                />
-                                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-purple-400 transition-colors w-5 h-5" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] rounded-2xl blur-sm opacity-50 group-focus-within:opacity-80 transition-opacity animate-gradient-x" />
+                                <div className="relative bg-black/80 rounded-2xl p-[2px]">
+                                    <div className="relative flex items-center bg-gray-900 rounded-[14px]">
+                                        <Search className="absolute left-4 text-purple-400 w-5 h-5" />
+                                        <input
+                                            type="text"
+                                            value={searchText}
+                                            onChange={(e) => onSearchChange(e.target.value)}
+                                            placeholder="공연명, 출연진, 장소 검색..."
+                                            className="w-full bg-transparent py-4 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none text-base"
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Location Selectors */}
@@ -278,35 +283,25 @@ export default function BottomNavSheet({
                                     </div>
                                 )}
 
-                                {/* Venue List */}
+                                {/* Venue List - Select Dropdown */}
                                 <div className="animate-fade-in-up">
                                     <label className="text-xs font-bold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">공연장 ({availableVenues.length})</label>
-                                    <div className="flex flex-wrap gap-2 p-4 bg-gray-900/30 rounded-2xl border border-white/5 max-h-[150px] overflow-y-auto custom-scrollbar">
-                                        <button
-                                            onClick={() => onVenueSelect('all')}
-                                            className={clsx(
-                                                "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
-                                                selectedVenue === 'all'
-                                                    ? "bg-purple-500/20 text-purple-300 border-purple-500/50"
-                                                    : "bg-gray-800 text-gray-400 border-gray-700"
-                                            )}
+                                    <div className="relative">
+                                        <select
+                                            value={selectedVenue}
+                                            onChange={(e) => onVenueSelect(e.target.value)}
+                                            className="w-full bg-gray-900/80 border border-white/10 rounded-xl py-3 px-4 text-white appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all text-sm"
                                         >
-                                            전체
-                                        </button>
-                                        {availableVenues.map(v => (
-                                            <button
-                                                key={v}
-                                                onClick={() => onVenueSelect(v)}
-                                                className={clsx(
-                                                    "px-3 py-2 rounded-lg text-xs font-medium border transition-all text-left truncate max-w-full",
-                                                    selectedVenue === v
-                                                        ? "bg-white text-black border-white font-bold"
-                                                        : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700"
-                                                )}
-                                            >
-                                                {v}
-                                            </button>
-                                        ))}
+                                            <option value="all">전체 공연장</option>
+                                            {availableVenues.map(v => (
+                                                <option key={v} value={v}>{v}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
