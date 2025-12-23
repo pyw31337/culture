@@ -1496,6 +1496,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         return filtered;
     }, [initialPerformances, searchText, selectedGenre, selectedRegion, selectedDistrict, selectedVenue]);
 
+    // Derived: Available Venues based on current Region/District selection
+    const availableVenues_unused = useMemo(() => {
+        // Start with all venues from the loaded data
+        let venueList = Object.keys(venues);
+
+        if (selectedRegion !== 'all') {
+            venueList = venueList.filter(vName => {
+                const v = venues[vName];
+                if (!v) return false;
+                const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label;
+                if (!regionLabel) return false;
+
+                const isRegionMatch = v.address.startsWith(regionLabel);
+                if (!isRegionMatch) return false;
+
+                if (selectedDistrict !== 'all') {
+                    return v.district === selectedDistrict || v.address.includes(selectedDistrict);
+                }
+                return true;
+            });
+        }
+
+        return venueList.sort();
+    }, [venues, selectedRegion, selectedDistrict]);
+
 
     // "Page" Selection Logic
     const displayPerformances = useMemo(() => {
@@ -2808,6 +2833,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 onKeywordAdd={handleKeywordAdd}
                 onKeywordRemove={handleKeywordRemove}
                 districts={districts}
+                availableVenues={availableVenues}
+                selectedVenue={selectedVenue}
+                onVenueSelect={(v) => {
+                    setSelectedVenue(v);
+                    scrollToTop();
+                }}
             />
 
             {/* Fixed Bottom Navigation Bar */}

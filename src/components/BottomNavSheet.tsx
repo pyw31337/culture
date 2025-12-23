@@ -22,6 +22,9 @@ interface BottomNavSheetProps {
     onKeywordAdd: (keyword: string) => void;
     onKeywordRemove: (keyword: string) => void;
     districts: string[]; // Passed from parent based on selectedRegion
+    availableVenues: string[];
+    selectedVenue: string;
+    onVenueSelect: (venue: string) => void;
 }
 
 export default function BottomNavSheet({
@@ -40,7 +43,10 @@ export default function BottomNavSheet({
     keywords,
     onKeywordAdd,
     onKeywordRemove,
-    districts
+    districts,
+    availableVenues,
+    selectedVenue,
+    onVenueSelect
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -163,7 +169,7 @@ export default function BottomNavSheet({
                                     <span className="text-sm font-medium">전체</span>
                                 </button>
 
-                                {GENRES.filter(g => g.id !== 'hotdeal').map(genre => {
+                                {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
                                     const GenreIcon = getGenreIcon(genre.id);
                                     const isSelected = selectedGenre === genre.id;
                                     return (
@@ -221,7 +227,8 @@ export default function BottomNavSheet({
                                         >
                                             전체
                                         </button>
-                                        {REGIONS.map(r => (
+
+                                        {REGIONS.filter(r => r.id !== 'all').map(r => (
                                             <button
                                                 key={r.id}
                                                 onClick={() => onRegionSelect(r.id)}
@@ -270,6 +277,38 @@ export default function BottomNavSheet({
                                         </div>
                                     </div>
                                 )}
+
+                                {/* Venue List */}
+                                <div className="animate-fade-in-up">
+                                    <label className="text-xs font-bold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">공연장 ({availableVenues.length})</label>
+                                    <div className="flex flex-wrap gap-2 p-4 bg-gray-900/30 rounded-2xl border border-white/5 max-h-[150px] overflow-y-auto custom-scrollbar">
+                                        <button
+                                            onClick={() => onVenueSelect('all')}
+                                            className={clsx(
+                                                "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
+                                                selectedVenue === 'all'
+                                                    ? "bg-purple-500/20 text-purple-300 border-purple-500/50"
+                                                    : "bg-gray-800 text-gray-400 border-gray-700"
+                                            )}
+                                        >
+                                            전체
+                                        </button>
+                                        {availableVenues.map(v => (
+                                            <button
+                                                key={v}
+                                                onClick={() => onVenueSelect(v)}
+                                                className={clsx(
+                                                    "px-3 py-2 rounded-lg text-xs font-medium border transition-all text-left truncate max-w-full",
+                                                    selectedVenue === v
+                                                        ? "bg-white text-black border-white font-bold"
+                                                        : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700"
+                                                )}
+                                            >
+                                                {v}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     )}

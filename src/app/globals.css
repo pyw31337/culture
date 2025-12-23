@@ -49,6 +49,17 @@ body {
   scrollbar-width: none;
 }
 
+/* Custom Bottom Nav Icon Styles */
+.active-view-icon>*:nth-child(2),
+.active-view-icon>*:nth-child(3) {
+  fill: #1a0b2e !important;
+  /* Matches bottom nav gradient mid-tone */
+}
+
+.active-location-icon>circle {
+  fill: #1a0b2e !important;
+}
+
 /* Text Gradient Animation */
 
 @keyframes shine {
