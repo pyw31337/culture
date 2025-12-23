@@ -58,7 +58,10 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                             <Icon
                                 className={clsx(
                                     "w-6 h-6 transition-all duration-300",
-                                    isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
+                                    isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]",
+                                    // Custom fill logic for specific icons to preserve inner details
+                                    isActive && item.id === 'view' && "[&>rect]:fill-none [&>path:nth-child(2)]:!fill-transparent [&>path:nth-child(3)]:!fill-transparent",
+                                    isActive && item.id === 'location' && "[&>circle]:!fill-transparent"
                                 )}
                                 strokeWidth={isActive ? 2.5 : 1.5}
                                 fill={isActive ? "currentColor" : "none"} // Fill icon when active
