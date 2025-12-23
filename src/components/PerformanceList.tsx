@@ -1744,11 +1744,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             setIsAlarmOpen(!isAlarmOpen);
                         }}
                         className={clsx(
-                            "p-2 rounded-full transition-all duration-300 ml-4",
+                            "p-2 rounded-full transition-all duration-300 ml-4 relative",
                             isAlarmOpen ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
                         )}
                     >
                         <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
+                        {/* Keyword count badge */}
+                        {keywords.length > 0 && (
+                            <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
+                                {keywords.length > 99 ? '99+' : keywords.length}
+                            </span>
+                        )}
                     </button>
                 </div>
 
@@ -3187,6 +3193,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 currentViewMode={viewMode}
                 onLikePerfClick={handleLikePerfClick}
                 onLikeVenueClick={handleLikeVenueClick}
+                likeCount={likedIds.length}
+                venueCount={favoriteVenues.length}
             />
         </div>
     );

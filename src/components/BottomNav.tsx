@@ -12,34 +12,38 @@ interface BottomNavProps {
     onMenuClick: (menu: BottomMenuType) => void;
     onLikePerfClick: () => void;
     onLikeVenueClick: () => void;
+    likeCount?: number;
+    venueCount?: number;
 }
 
-export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick }: BottomNavProps) {
+export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0 }: BottomNavProps) {
     // Left side items
     const leftItems = [
         { id: 'view', label: '보기', icon: Layout, action: () => onMenuClick('view') },
         { id: 'category', label: '카테고리', icon: LayoutGrid, action: () => onMenuClick('category') },
     ];
 
-    // Right side items
+    // Right side items with badge counts
     const rightItems = [
         {
             id: 'likes-perf',
             label: '좋아요',
             icon: Heart,
             action: onLikePerfClick,
-            isActive: currentViewMode === 'likes-perf'
+            isActive: currentViewMode === 'likes-perf',
+            badgeCount: likeCount
         },
         {
             id: 'likes-venue',
             label: '공연장',
             icon: Star,
             action: onLikeVenueClick,
-            isActive: currentViewMode === 'likes-venue'
+            isActive: currentViewMode === 'likes-venue',
+            badgeCount: venueCount
         },
     ];
 
-    const renderNavItem = (item: typeof leftItems[0] & { isActive?: boolean }) => {
+    const renderNavItem = (item: typeof leftItems[0] & { isActive?: boolean; badgeCount?: number }) => {
         const isActive = item.isActive || activeMenu === item.id;
         const Icon = item.icon;
 
@@ -52,13 +56,21 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     isActive ? "text-[#a78bfa]" : "text-gray-400 hover:text-gray-200"
                 )}
             >
-                <Icon
-                    className={clsx(
-                        "w-5 h-5 transition-all duration-300",
-                        isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
+                <div className="relative">
+                    <Icon
+                        className={clsx(
+                            "w-5 h-5 transition-all duration-300",
+                            isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
+                        )}
+                        strokeWidth={isActive ? 2.5 : 1.5}
+                    />
+                    {/* Badge Count */}
+                    {item.badgeCount !== undefined && item.badgeCount > 0 && (
+                        <span className="absolute -top-2 -right-2.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-pink-500/30 border border-white/20">
+                            {item.badgeCount > 99 ? '99+' : item.badgeCount}
+                        </span>
                     )}
-                    strokeWidth={isActive ? 2.5 : 1.5}
-                />
+                </div>
                 <span className="text-[10px] font-medium tracking-tight">
                     {item.label}
                 </span>
@@ -70,23 +82,30 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         <nav className="fixed bottom-0 left-0 right-0 z-[9990] pb-safe">
             {/* Main bar container with notch */}
             <div className="relative max-w-7xl mx-auto px-2">
-                {/* Center floating button */}
+                {/* Center floating button with gradient border shimmer */}
                 <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
-                    <button
-                        onClick={() => onMenuClick('location')}
-                        className={clsx(
-                            "w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
-                            "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
-                            "hover:scale-110 hover:shadow-[0_0_30px_rgba(167,139,250,0.6)]",
-                            "active:scale-95",
-                            activeMenu === 'location' && "ring-4 ring-white/30 shadow-[0_0_40px_rgba(167,139,250,0.8)]"
-                        )}
-                    >
-                        <MapPin
-                            className="w-7 h-7 text-white drop-shadow-lg"
-                            strokeWidth={2.5}
-                        />
-                    </button>
+                    {/* Outer gradient border wrapper - reverse direction for visibility */}
+                    <div className={clsx(
+                        "relative w-[68px] h-[68px] rounded-full p-[3px]",
+                        "bg-gradient-to-tr from-[#f472b6] via-[#a78bfa] to-[#60a5fa]",
+                        "animate-purple-shimmer"
+                    )}>
+                        <button
+                            onClick={() => onMenuClick('location')}
+                            className={clsx(
+                                "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
+                                "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
+                                "hover:scale-105",
+                                "active:scale-95",
+                                activeMenu === 'location' && "shadow-[0_0_40px_rgba(167,139,250,0.8)]"
+                            )}
+                        >
+                            <MapPin
+                                className="w-7 h-7 text-white drop-shadow-lg"
+                                strokeWidth={2.5}
+                            />
+                        </button>
+                    </div>
                     {/* Ripple effect when active */}
                     {activeMenu === 'location' && (
                         <div className="absolute inset-0 rounded-full animate-ping bg-purple-400/30 pointer-events-none" />
