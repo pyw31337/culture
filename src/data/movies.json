@@ -197,25 +197,6 @@
     "movieInfo": "일본드라마 / 175분"
   },
   {
-    "id": "movie_20251210_더_러닝_맨",
-    "title": "더 러닝 맨",
-    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
-    "date": "2025.12.10.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "글렌 파월",
-      "윌리엄 H. 머시",
-      "리 페이스",
-      "콜맨 도밍고"
-    ],
-    "director": "에드가 라이트",
-    "movieInfo": "영국액션 / 133분"
-  },
-  {
     "id": "movie_20251217_사운드_오브_폴링",
     "title": "사운드 오브 폴링",
     "image": "https://s.pstatic.net/movie.phinf/20251124_66/17639530624873faQp_JPEG/movie_image.jpg",
@@ -233,6 +214,25 @@
     ],
     "director": "마샤 쉴린스키",
     "movieInfo": "독일드라마 / 155분"
+  },
+  {
+    "id": "movie_20251210_더_러닝_맨",
+    "title": "더 러닝 맨",
+    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
+    "date": "2025.12.10.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "글렌 파월",
+      "윌리엄 H. 머시",
+      "리 페이스",
+      "콜맨 도밍고"
+    ],
+    "director": "에드가 라이트",
+    "movieInfo": "영국액션 / 133분"
   },
   {
     "id": "movie_20251212_아이돌리쉬_세븐_퍼",
@@ -311,22 +311,6 @@
     "movieInfo": "프랑스드라마 / 111분"
   },
   {
-    "id": "movie_20251126_석류의_빛깔",
-    "title": "석류의 빛깔",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
-    "date": "2025.11.26.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "소피코 치아우레리"
-    ],
-    "director": "세르게이 파라자노프",
-    "movieInfo": "소련드라마 / 80분"
-  },
-  {
     "id": "movie_20251217_고백하지마",
     "title": "고백하지마",
     "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
@@ -345,22 +329,41 @@
     "movieInfo": "한국드라마 / 69분"
   },
   {
-    "id": "movie_20251112_나우_유_씨_미_3",
-    "title": "나우 유 씨 미 3",
-    "image": "https://s.pstatic.net/movie.phinf/20251112_102/1762922939184IQj9e_JPEG/movie_image.jpg",
-    "date": "2025.11.12.",
+    "id": "movie_20251126_석류의_빛깔",
+    "title": "석류의 빛깔",
+    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
+    "date": "2025.11.26.",
     "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%82%98%EC%9A%B0%20%EC%9C%A0%20%EC%94%A8%20%EB%AF%B8%203%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "제시 아이젠버그",
-      "우디 해럴슨",
-      "데이브 프랭코",
-      "아일라 피셔"
+      "소피코 치아우렐리",
+      "멜콘 알렉산얀",
+      "비렌 갤스티안",
+      "기오르기 게게크코리 외"
     ],
-    "director": "루벤 플레셔",
-    "movieInfo": "미국액션 외 / 112분"
+    "director": "세르게이 파라자노프",
+    "movieInfo": "소련드라마 / 80분"
+  },
+  {
+    "id": "movie_20251022_세계의_주인",
+    "title": "세계의 주인",
+    "image": "https://s.pstatic.net/movie.phinf/20251022_120/1761101991917Ejewy_JPEG/movie_image.jpg",
+    "date": "2025.10.22.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%A3%BC%EC%9D%B8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "서수빈",
+      "장혜진",
+      "김정식",
+      "강채윤"
+    ],
+    "director": "윤가은",
+    "movieInfo": "한국드라마 / 119분"
   }
 ]
