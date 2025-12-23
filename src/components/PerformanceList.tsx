@@ -432,7 +432,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Bottom Navigation State
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
-    const [viewMode, setViewMode] = useState<string>('list'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
+    const [viewMode, setViewMode] = useState<string>('grid'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
 
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
