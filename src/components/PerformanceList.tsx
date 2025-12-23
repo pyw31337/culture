@@ -2226,8 +2226,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             boldPrefix: undefined
                         } as HeroTemplate : genreMsg ? {
                             ...genreMsg,
-                            keywords: [],
-                            boldPrefix: undefined
+                            keywords: []
                         } as HeroTemplate : searchText ? {
                             line1: "찾으시는 공연,",
                             line2Pre: "입력하신 ",
@@ -2799,40 +2798,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                                             transition={{ duration: 0.3, delay: idx * 0.05 }}
                                         >
-                                            {layoutMode === 'grid' ? (
-                                                <PerformanceCard
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={likedIds.includes(performance.id)}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    enableActions={true}
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                    variant="yellow"
-                                                />
-                                            ) : (
-                                                <PerformanceListItem
-                                                    perf={performance}
-                                                    distLabel={null}
-                                                    venueInfo={venues[performance.venue] || null}
-                                                    onLocationClick={(loc) => {
-                                                        setSearchLocation(loc);
-                                                        setViewMode('map');
-                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                                                    }}
-                                                    isLiked={likedIds.includes(performance.id)}
-                                                    onToggleLike={(e) => toggleLike(performance.id, e)}
-                                                    variant="yellow"
-                                                    onShare={() => copyItemShareUrl(performance.id)}
-                                                    onDetail={() => window.open(performance.link, '_blank')}
-                                                />
-                                            )}
+                                            {/* Keyword matches always use list view */}
+                                            <PerformanceListItem
+                                                perf={performance}
+                                                distLabel={null}
+                                                venueInfo={venues[performance.venue] || null}
+                                                onLocationClick={(loc) => {
+                                                    setSearchLocation(loc);
+                                                    setViewMode('map');
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }}
+                                                isLiked={likedIds.includes(performance.id)}
+                                                onToggleLike={(e) => toggleLike(performance.id, e)}
+                                                variant="yellow"
+                                                onShare={() => copyItemShareUrl(performance.id)}
+                                                onDetail={() => window.open(performance.link, '_blank')}
+                                            />
                                         </motion.div>
                                     ))}
                                 </AnimatePresence>
@@ -3894,7 +3875,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             >
                                 <div className={clsx(
                                     "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                    enableActions ? "translate-y-[50px] group-hover:translate-y-0" : ""
+                                    enableActions ? "translate-y-[55px] group-hover:translate-y-0" : ""
                                 )}>
                                     {/* Gradient Background Layer - spans full height of content */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
@@ -4036,7 +4017,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                     {/* Action Buttons (Share & Detail) */}
                                     {enableActions && (
-                                        <div className="relative z-10 px-4 pb-3 pt-1 flex gap-2 items-center justify-between">
+                                        <div className="relative z-10 px-4 pb-3 pt-2 mt-1 flex gap-2 items-center justify-between">
                                             <button
                                                 onClick={async (e) => {
                                                     e.stopPropagation();
