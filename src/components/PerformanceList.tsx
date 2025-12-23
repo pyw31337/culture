@@ -3025,7 +3025,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 {/* Sentinel for Infinite Scroll - Only in List Mode */}
                 {
-                    viewMode === 'list' && visibleCount < displayPerformances.length && (
+                    (viewMode === 'list' || viewMode === 'grid') && visibleCount < displayPerformances.length && (
                         <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
                             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
                         </div>
