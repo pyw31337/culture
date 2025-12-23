@@ -313,60 +313,7 @@ export default function BottomNavSheet({
                         </div>
                     )}
 
-                    {/* ALARM MENU */}
-                    {activeMenu === 'alarm' && (
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-bold text-white px-1 flex items-center gap-2">
-                                <span className="text-purple-400">#</span> 키워드 알림
-                            </h3>
-                            <div className="bg-purple-900/20 border border-purple-500/20 rounded-2xl p-4">
-                                <p className="text-sm text-purple-200/80 leading-relaxed">
-                                    등록한 키워드가 포함된 공연이 오픈되면<br />
-                                    홈 화면에서 가장 먼저 알려드려요! 🔔
-                                </p>
-                            </div>
 
-                            <form onSubmit={handleKeywordSubmit} className="flex gap-2">
-                                <input
-                                    type="text"
-                                    value={keywordInput}
-                                    onChange={(e) => setKeywordInput(e.target.value)}
-                                    placeholder="키워드 입력 (예: 뮤지컬, 아이유)"
-                                    className="flex-1 bg-gray-900/80 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500/50 transition-colors"
-                                />
-                                <button
-                                    type="submit"
-                                    disabled={!keywordInput.trim()}
-                                    className="bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-500 disabled:opacity-50 disabled:grayscale transition-all shadow-lg shadow-purple-900/50"
-                                >
-                                    추가
-                                </button>
-                            </form>
-
-                            <div className="space-y-3">
-                                <label className="text-xs font-bold text-gray-500 ml-1 block uppercase tracking-wider">등록된 키워드</label>
-                                {keywords.length === 0 ? (
-                                    <div className="text-center py-12 text-gray-500 bg-gray-800/30 rounded-2xl border border-dashed border-white/5">
-                                        아직 등록된 키워드가 없어요.
-                                    </div>
-                                ) : (
-                                    <div className="flex flex-wrap gap-2">
-                                        {keywords.map(k => (
-                                            <div key={k} className="flex items-center gap-2 bg-gray-800 text-white pl-4 pr-2 py-2 rounded-full border border-gray-700 group hover:border-red-500/30 transition-all hover:bg-gray-750">
-                                                <span className="text-sm font-medium">{k}</span>
-                                                <button
-                                                    onClick={() => onKeywordRemove(k)}
-                                                    className="p-1 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
-                                                >
-                                                    <X size={14} />
-                                                </button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    )}
 
                 </div>
             </div>

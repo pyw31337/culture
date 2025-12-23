@@ -434,6 +434,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
     const [viewMode, setViewMode] = useState<string>('list'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
 
+    // Alarm Panel State
+    const [isAlarmOpen, setIsAlarmOpen] = useState(false);
+    const [keywordInput, setKeywordInput] = useState('');
+
     // Like & Venue State (Moved to top for scope access)
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [showLikes, setShowLikes] = useState(true);
@@ -1725,7 +1729,95 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </span>
                     </div>
 
+                    {/* Alarm Toggle Button */}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsAlarmOpen(!isAlarmOpen);
+                        }}
+                        className={clsx(
+                            "p-2 rounded-full transition-all duration-300 ml-4",
+                            isAlarmOpen ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                        )}
+                    >
+                        <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
+                    </button>
+                </div>
 
+                {/* Alarm Panel (Slide Down) */}
+                <div className={clsx(
+                    "absolute top-full left-0 right-0 bg-[#1a0b2e]/95 backdrop-blur-2xl border-b border-purple-500/20 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top",
+                    isAlarmOpen ? "max-h-[500px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
+                )}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                        <div className="flex justify-between items-center mb-4">
+                            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                                <Bell size={18} className="text-purple-400" />
+                                <span className="text-purple-100">키워드 알림</span>
+                            </h3>
+                            <button
+                                onClick={() => setIsAlarmOpen(false)}
+                                className="p-1 rounded-full text-gray-500 hover:text-white hover:bg-white/10 transition-colors"
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
+
+                        <div className="bg-purple-900/20 border border-purple-500/20 rounded-xl p-3 mb-4">
+                            <p className="text-xs text-purple-200/80 leading-relaxed">
+                                등록한 키워드가 포함된 공연이 오픈되면 홈 화면에서 알려드려요! 🔔
+                            </p>
+                        </div>
+
+                        <form
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                if (keywordInput.trim()) {
+                                    handleKeywordAdd(keywordInput.trim());
+                                    setKeywordInput('');
+                                }
+                            }}
+                            className="flex gap-2 mb-4"
+                        >
+                            <input
+                                type="text"
+                                value={keywordInput}
+                                onChange={(e) => setKeywordInput(e.target.value)}
+                                placeholder="키워드 추가 (예: 아이유)"
+                                className="flex-1 bg-gray-900/80 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500/50 transition-colors"
+                            />
+                            <button
+                                type="submit"
+                                disabled={!keywordInput.trim()}
+                                className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-purple-500 disabled:opacity-50 transition-all font-medium"
+                            >
+                                추가
+                            </button>
+                        </form>
+
+                        <div className="space-y-2">
+                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">등록된 키워드</label>
+                            {contextKeywords.length === 0 ? (
+                                <div className="text-center py-6 text-gray-500 bg-gray-800/30 rounded-xl border border-dashed border-white/5 text-xs">
+                                    키워드를 등록해보세요.
+                                </div>
+                            ) : (
+                                <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto custom-scrollbar">
+                                    {contextKeywords.map(k => (
+                                        <div key={k} className="flex items-center gap-1.5 bg-gray-800 text-white pl-3 pr-1.5 py-1.5 rounded-full border border-gray-700 hover:border-purple-500/30 transition-all">
+                                            <span className="text-xs font-medium">{k}</span>
+                                            <button
+                                                onClick={() => handleKeywordRemove(k)}
+                                                className="p-0.5 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                                            >
+                                                <X size={12} />
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </header>
 

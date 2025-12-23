@@ -31,7 +31,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
             action: onLikeVenueClick,
             isActive: currentViewMode === 'likes-venue'
         },
-        { id: 'alarm', label: '알림', icon: Bell, action: () => onMenuClick('alarm') },
+
     ];
 
     return (
