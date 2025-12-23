@@ -3038,7 +3038,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 showScrollTop && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-24 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce group"
+                        className="fixed bottom-20 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce group"
                         style={{
                             backgroundImage: 'linear-gradient(#000, #000), linear-gradient(to right, #a78bfa, #f472b6)',
                             backgroundClip: 'padding-box, border-box'

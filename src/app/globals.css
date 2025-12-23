@@ -227,9 +227,9 @@ body {
     content: '';
     position: absolute;
     inset: -1px;
-    background: conic-gradient(from 0deg, #f472b6, #a78bfa, #60a5fa, #34d399, #facc15, #f472b6);
+    background: conic-gradient(from 0deg, #a78bfa, #f472b6, #a78bfa, #f472b6, #a78bfa);
     border-radius: inherit;
-    animation: rotate-gradient 3s linear infinite;
+    animation: rotate-gradient 1.5s linear infinite;
     z-index: -1;
   }
 

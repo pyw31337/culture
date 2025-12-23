@@ -255,14 +255,11 @@ export default function BottomNavSheet({
                                                     : "bg-gray-900/50 border-white/5 hover:bg-gray-800"
                                             )}
                                         >
-                                            <div className="flex items-center gap-3 mb-2">
-                                                <div className={clsx("p-2 rounded-lg bg-gray-800", isSelected ? "text-white" : mode.color)}>
+                                            <div className="flex items-center gap-3">
+                                                <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white" : "text-gray-400 p-0 bg-transparent")}>
                                                     <Icon size={20} />
                                                 </div>
                                                 <div className="text-sm font-bold text-gray-200">{mode.label}</div>
-                                            </div>
-                                            <div className={clsx("text-xs pl-1", isSelected ? "text-gray-300" : "text-gray-500")}>
-                                                {mode.desc}
                                             </div>
                                         </button>
                                     );
