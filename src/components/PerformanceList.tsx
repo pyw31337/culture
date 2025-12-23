@@ -2003,12 +2003,110 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         const perfMsg = likesPerfMessages[minuteSeed % likesPerfMessages.length];
                         const venueMsg = likesVenueMessages[minuteSeed % likesVenueMessages.length];
 
+                        // Category-specific emotional messages
+                        const genreMessages: Record<string, { line1: string; line2Pre: string; highlight: string; suffix: string }[]> = {
+                            hotdeal: [
+                                { line1: "지금 아니면", line2Pre: "놓칠 수 있는 ", highlight: "핫딜", suffix: "을 모아봤어요." },
+                                { line1: "가성비 갑!", line2Pre: "할인의 ", highlight: "기회", suffix: "를 잡아보세요." },
+                                { line1: "이 가격에?", line2Pre: "놓치면 아까운 ", highlight: "특가", suffix: "공연들이에요." }
+                            ],
+                            movie: [
+                                { line1: "퇴근하고", line2Pre: "영화 한편에 ", highlight: "맥주 한잔", suffix: "만한게 없죠?" },
+                                { line1: "오늘 밤,", line2Pre: "극장에서 만나는 ", highlight: "영화", suffix: "는 어떠세요?" },
+                                { line1: "팝콘 향기 가득한", line2Pre: "어둠 속 ", highlight: "스크린", suffix: "이 기다리고 있어요." }
+                            ],
+                            musical: [
+                                { line1: "무대 위 감동,", line2Pre: "배우들의 ", highlight: "열창", suffix: "이 기다리고 있어요." },
+                                { line1: "라이브로 느끼는", line2Pre: "뮤지컬의 ", highlight: "감동", suffix: "을 경험해보세요." },
+                                { line1: "음악과 연기가", line2Pre: "만나는 ", highlight: "무대", suffix: "를 만나보세요." }
+                            ],
+                            theater: [
+                                { line1: "배우의 숨결이", line2Pre: "느껴지는 ", highlight: "연극", suffix: "한 편 어떠세요?" },
+                                { line1: "작은 무대,", line2Pre: "큰 ", highlight: "감동", suffix: "이 기다리고 있어요." },
+                                { line1: "살아있는 연기,", line2Pre: "진짜 ", highlight: "무대", suffix: "를 만나보세요." }
+                            ],
+                            concert: [
+                                { line1: "라이브의 전율,", line2Pre: "콘서트 ", highlight: "현장", suffix: "을 느껴보세요." },
+                                { line1: "함께 따라부르는", line2Pre: "떼창의 ", highlight: "감동", suffix: "을 느껴보세요." },
+                                { line1: "귀가 아닌", line2Pre: "온몸으로 느끼는 ", highlight: "음악", suffix: "이에요." }
+                            ],
+                            classic: [
+                                { line1: "클래식의 선율이", line2Pre: "마음을 적시는 ", highlight: "순간", suffix: "을 선물해드릴게요." },
+                                { line1: "오케스트라의", line2Pre: "웅장한 ", highlight: "하모니", suffix: "를 느껴보세요." },
+                                { line1: "고요 속에서", line2Pre: "피어나는 ", highlight: "선율", suffix: "을 만나보세요." }
+                            ],
+                            exhibition: [
+                                { line1: "작품 앞에서", line2Pre: "멍하니 서있는 ", highlight: "시간", suffix: "도 괜찮아요." },
+                                { line1: "예술이 주는", line2Pre: "특별한 ", highlight: "영감", suffix: "을 느껴보세요." },
+                                { line1: "눈으로 담는", line2Pre: "아름다운 ", highlight: "전시", suffix: "를 만나보세요." }
+                            ],
+                            activity: [
+                                { line1: "몸을 움직이면", line2Pre: "마음도 ", highlight: "가벼워져요", suffix: "." },
+                                { line1: "짜릿한 경험,", line2Pre: "액티비티 ", highlight: "도전", suffix: "은 어떠세요?" },
+                                { line1: "일상을 벗어나", line2Pre: "특별한 ", highlight: "체험", suffix: "을 해보세요." }
+                            ],
+                            class: [
+                                { line1: "배움의 즐거움,", line2Pre: "새로운 ", highlight: "나", suffix: "를 발견해보세요." },
+                                { line1: "취미 하나 늘리는", line2Pre: "특별한 ", highlight: "시간", suffix: "을 가져보세요." },
+                                { line1: "오늘 뭐 배울까?", line2Pre: "재미있는 ", highlight: "클래스", suffix: "를 찾아봐요." }
+                            ],
+                            travel: [
+                                { line1: "떠나요,", line2Pre: "일상을 벗어나 ", highlight: "여행", suffix: "으로!" },
+                                { line1: "새로운 풍경이", line2Pre: "기다리는 ", highlight: "여행지", suffix: "를 추천해드릴게요." },
+                                { line1: "짐 싸고 떠나볼까요?", line2Pre: "설레는 ", highlight: "여행", suffix: "이 기다리고 있어요." }
+                            ],
+                            festival: [
+                                { line1: "축제의 열기 속으로!", line2Pre: "신나는 ", highlight: "페스티벌", suffix: "을 즐겨보세요." },
+                                { line1: "함께여서 더 즐거운", line2Pre: "축제 ", highlight: "현장", suffix: "으로 가볼까요?" },
+                                { line1: "불꽃놀이처럼", line2Pre: "화려한 ", highlight: "축제", suffix: "가 기다리고 있어요." }
+                            ],
+                            leisure: [
+                                { line1: "자연 속에서", line2Pre: "여유로운 ", highlight: "휴식", suffix: "을 즐겨보세요." },
+                                { line1: "레저 활동으로", line2Pre: "스트레스 ", highlight: "해소", suffix: "하는 건 어때요?" },
+                                { line1: "바람을 가르며", line2Pre: "즐기는 ", highlight: "레저", suffix: "를 추천해드릴게요." }
+                            ],
+                            volleyball: [
+                                { line1: "스파이크!", line2Pre: "짜릿한 ", highlight: "배구", suffix: " 경기를 관람해보세요." },
+                                { line1: "응원 열기 가득한", line2Pre: "배구 ", highlight: "경기장", suffix: "으로 가볼까요?" },
+                                { line1: "세트 점수,", line2Pre: "긴장감 넘치는 ", highlight: "배구", suffix: "를 즐겨보세요." }
+                            ],
+                            basketball: [
+                                { line1: "덩크슛!", line2Pre: "역동적인 ", highlight: "농구", suffix: " 경기가 기다려요." },
+                                { line1: "코트 위 열정,", line2Pre: "농구 ", highlight: "경기", suffix: "를 관람해보세요." },
+                                { line1: "버저비터의 짜릿함!", line2Pre: "농구 ", highlight: "경기장", suffix: "으로 가볼까요?" }
+                            ],
+                            baseball: [
+                                { line1: "치맥과 함께하는", line2Pre: "야구장 ", highlight: "직관", suffix: "은 어떠세요?" },
+                                { line1: "홈런 타구를", line2Pre: "직접 ", highlight: "눈으로", suffix: " 확인해보세요." },
+                                { line1: "9회말 투아웃,", line2Pre: "야구의 ", highlight: "묘미", suffix: "를 느껴보세요." }
+                            ],
+                            football: [
+                                { line1: "골~~~!", line2Pre: "열정 가득한 ", highlight: "축구", suffix: " 경기를 관람해보세요." },
+                                { line1: "경기장 함성 속으로", line2Pre: "축구 ", highlight: "경기", suffix: "를 보러 가볼까요?" },
+                                { line1: "대한민국!", line2Pre: "뜨거운 응원과 ", highlight: "축구", suffix: "를 즐겨보세요." }
+                            ],
+                            kids: [
+                                { line1: "아이와 함께하는", line2Pre: "특별한 ", highlight: "추억", suffix: "을 만들어보세요." },
+                                { line1: "아이 눈이 반짝!", line2Pre: "키즈 ", highlight: "공연", suffix: "을 찾아봐요." },
+                                { line1: "온 가족이 즐기는", line2Pre: "가족 ", highlight: "공연", suffix: "은 어떠세요?" }
+                            ]
+                        };
+
+                        // Get genre-specific message
+                        const genreMsg = selectedGenre !== 'all' && genreMessages[selectedGenre]
+                            ? genreMessages[selectedGenre][minuteSeed % genreMessages[selectedGenre].length]
+                            : null;
+
                         const currentTemplate = viewMode === 'likes-perf' ? {
                             ...perfMsg,
                             keywords: [],
                             boldPrefix: undefined
                         } as HeroTemplate : viewMode === 'likes-venue' ? {
                             ...venueMsg,
+                            keywords: [],
+                            boldPrefix: undefined
+                        } as HeroTemplate : genreMsg ? {
+                            ...genreMsg,
                             keywords: [],
                             boldPrefix: undefined
                         } as HeroTemplate : searchText ? {
