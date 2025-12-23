@@ -1415,7 +1415,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     const handleViewModeChange = (mode: string) => {
         setViewMode(mode);
-        scrollToTop();
+        // Don't scroll to top for calendar and map modes - they are layer popups
+        if (mode !== 'calendar' && mode !== 'map') {
+            scrollToTop();
+        }
     }
 
     const handleGenreSelect = (genre: string) => {
