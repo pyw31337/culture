@@ -1421,13 +1421,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     const handleLikePerfClick = () => {
-        setViewMode('likes-perf');
+        if (viewMode === 'likes-perf') {
+            setViewMode('list');
+        } else {
+            setViewMode('likes-perf');
+        }
         setActiveBottomMenu(null);
         scrollToTop();
     };
 
     const handleLikeVenueClick = () => {
-        setViewMode('likes-venue');
+        if (viewMode === 'likes-venue') {
+            setViewMode('list');
+        } else {
+            setViewMode('likes-venue');
+        }
         setActiveBottomMenu(null);
         scrollToTop();
     };
@@ -2521,14 +2529,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 {/* Grid/List View */}
                 <div className="min-h-[50vh]">
                     <AnimatePresence mode="wait">
-                        <div className={clsx(
-                            "w-full",
-                            layoutMode === 'grid'
-                                ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-6"
-                                : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
-                        )}>
-                            {displayPerformances.length > 0 && (
-                                displayPerformances.slice(0, visibleCount).map((perf, index) => {
+                        {displayPerformances.length > 0 ? (
+                            <div
+                                key="grid-container"
+                                className={clsx(
+                                    "w-full",
+                                    layoutMode === 'grid'
+                                        ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-6"
+                                        : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
+                                )}
+                            >
+                                {displayPerformances.slice(0, visibleCount).map((perf, index) => {
                                     // Venue Info
                                     const venueInfo = venues[perf.venue];
 
@@ -2586,9 +2597,61 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             )}
                                         </motion.div>
                                     );
-                                })
-                            )}
-                        </div>
+                                })}
+                            </div>
+                        ) : (
+                            /* Empty State */
+                            <motion.div
+                                key="empty-state"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                className="flex flex-col items-center justify-center py-10 text-gray-500 w-full text-center px-4"
+                            >
+                                {viewMode === 'likes-perf' ? (
+                                    <>
+                                        <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
+                                            <Heart className="w-10 h-10 text-pink-500/50" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-300 mb-2">좋아요한 공연이 없네요</h3>
+                                        <p className="text-gray-500">마음에 드는 공연에 하트를 눌러보세요!</p>
+                                    </>
+                                ) : viewMode === 'likes-venue' ? (
+                                    <>
+                                        <div className="w-20 h-20 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6">
+                                            <Star className="w-10 h-10 text-yellow-500/50" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-300 mb-2">찜한 공연장이 없네요</h3>
+                                        <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
+                                        <button
+                                            onClick={() => setShowFavoriteListModal(true)}
+                                            className="px-6 py-2.5 rounded-full bg-yellow-500/20 text-yellow-500 font-bold hover:bg-yellow-500 hover:text-black transition-all"
+                                        >
+                                            공연장 찾기
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Navigation className="w-16 h-16 mb-6 opacity-20" />
+                                        <h3 className="text-xl font-bold text-gray-300 mb-2">
+                                            {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
+                                                ? '현재 경기 일정이 없습니다.'
+                                                : '조건에 맞는 공연이 없습니다.'}
+                                        </h3>
+                                        <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
+                                        <button onClick={() => {
+                                            setSelectedRegion('all');
+                                            setSelectedDistrict('all');
+                                            setSelectedGenre('all');
+                                            setSearchText('');
+                                            setUserLocation(null);
+                                        }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
+                                            필터 초기화
+                                        </button>
+                                    </>
+                                )}
+                            </motion.div>
+                        )}
                     </AnimatePresence>
                 </div>
 
@@ -2597,56 +2660,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     viewMode === 'list' && visibleCount < displayPerformances.length && (
                         <div ref={observerTarget} className="h-20 flex items-center justify-center opacity-50">
                             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-                        </div>
-                    )
-                }
-
-                {/* Empty State */}
-                {
-                    displayPerformances.length === 0 && (
-                        <div className="flex flex-col items-center justify-center py-24 text-gray-500 w-full text-center px-4 animate-fade-in-up">
-                            {viewMode === 'likes-perf' ? (
-                                <>
-                                    <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
-                                        <Heart className="w-10 h-10 text-pink-500/50" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-300 mb-2">좋아요한 공연이 없네요</h3>
-                                    <p className="text-gray-500">마음에 드는 공연에 하트를 눌러보세요!</p>
-                                </>
-                            ) : viewMode === 'likes-venue' ? (
-                                <>
-                                    <div className="w-20 h-20 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6">
-                                        <Star className="w-10 h-10 text-yellow-500/50" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-300 mb-2">찜한 공연장이 없네요</h3>
-                                    <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
-                                    <button
-                                        onClick={() => setShowFavoriteListModal(true)}
-                                        className="px-6 py-2.5 rounded-full bg-yellow-500/20 text-yellow-500 font-bold hover:bg-yellow-500 hover:text-black transition-all"
-                                    >
-                                        공연장 찾기
-                                    </button>
-                                </>
-                            ) : (
-                                <>
-                                    <Navigation className="w-16 h-16 mb-6 opacity-20" />
-                                    <h3 className="text-xl font-bold text-gray-300 mb-2">
-                                        {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                                            ? '현재 경기 일정이 없습니다.'
-                                            : '조건에 맞는 공연이 없습니다.'}
-                                    </h3>
-                                    <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
-                                    <button onClick={() => {
-                                        setSelectedRegion('all');
-                                        setSelectedDistrict('all');
-                                        setSelectedGenre('all');
-                                        setSearchText('');
-                                        setUserLocation(null);
-                                    }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
-                                        필터 초기화
-                                    </button>
-                                </>
-                            )}
                         </div>
                     )
                 }
