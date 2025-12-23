@@ -437,6 +437,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
+    const [savedKeywords, setSavedKeywords] = useState<string[]>([]); // User-saved keywords (persisted)
 
     // Like & Venue State (Moved to top for scope access)
     const [likedIds, setLikedIds] = useState<string[]>([]);
@@ -705,7 +706,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             }
         };
 
-        loadState('culture_keywords', setKeywords);
+        loadState('culture_keywords', setSavedKeywords);
         loadState('culture_likes', setLikedIds);
         loadState('culture_favorite_venues', setFavoriteVenues);
         loadState('culture_likes_expanded', setIsLikesExpanded);
@@ -718,8 +719,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_keywords', JSON.stringify(keywords));
-    }, [keywords, isStorageLoaded]);
+        localStorage.setItem('culture_keywords', JSON.stringify(savedKeywords));
+    }, [savedKeywords, isStorageLoaded]);
 
     useEffect(() => {
         if (!isStorageLoaded) return;
@@ -1389,16 +1390,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     };
 
     const handleKeywordAdd = (keyword: string) => {
-        if (!contextKeywords.includes(keyword)) {
-            const updated = [...contextKeywords, keyword];
-            setContextKeywords(updated);
+        if (!savedKeywords.includes(keyword)) {
+            const updated = [...savedKeywords, keyword];
+            setSavedKeywords(updated);
             localStorage.setItem('culture_keywords', JSON.stringify(updated));
         }
     };
 
     const handleKeywordRemove = (keyword: string) => {
-        const updated = contextKeywords.filter(k => k !== keyword);
-        setContextKeywords(updated);
+        const updated = savedKeywords.filter(k => k !== keyword);
+        setSavedKeywords(updated);
         localStorage.setItem('culture_keywords', JSON.stringify(updated));
     };
 
@@ -1565,7 +1566,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Split logic for Keyword Notification
     const { keywordMatches, normalPerformances } = useMemo(() => {
-        if (keywords.length === 0) {
+        if (savedKeywords.length === 0) {
             return { keywordMatches: [], normalPerformances: filteredPerformances };
         }
 
@@ -1573,7 +1574,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         const others: typeof filteredPerformances = [];
 
         filteredPerformances.forEach(p => {
-            const isMatch = keywords.some(k => p.title.includes(k));
+            const isMatch = savedKeywords.some(k => p.title.includes(k));
             if (isMatch) {
                 matches.push(p);
             } else {
@@ -1582,7 +1583,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         });
 
         return { keywordMatches: matches, normalPerformances: others };
-    }, [filteredPerformances, keywords]);
+    }, [filteredPerformances, savedKeywords]);
 
     // Reset visible count when filters change
     useEffect(() => {
@@ -1797,13 +1798,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                         <div className="space-y-2">
                             <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">등록된 키워드</label>
-                            {contextKeywords.length === 0 ? (
+                            {savedKeywords.length === 0 ? (
                                 <div className="text-center py-6 text-gray-500 bg-gray-800/30 rounded-xl border border-dashed border-white/5 text-xs">
                                     키워드를 등록해보세요.
                                 </div>
                             ) : (
                                 <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto custom-scrollbar">
-                                    {contextKeywords.map(k => (
+                                    {savedKeywords.map(k => (
                                         <div key={k} className="flex items-center gap-1.5 bg-gray-800 text-white pl-3 pr-1.5 py-1.5 rounded-full border border-gray-700 hover:border-purple-500/30 transition-all">
                                             <span className="text-xs font-medium">{k}</span>
                                             <button
