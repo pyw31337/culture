@@ -192,4 +192,22 @@ body {
   .animate-cursor-blink {
     animation: cursor-blink 1s infinite;
   }
+
+  @keyframes gold-border-pulse {
+
+    0%,
+    100% {
+      border-color: rgba(251, 191, 36, 0.4);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(251, 191, 36, 0.1);
+    }
+
+    50% {
+      border-color: rgba(251, 191, 36, 0.8);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7), 0 0 40px rgba(251, 191, 36, 0.3);
+    }
+  }
+
+  .animate-gold-shimmer {
+    animation: gold-border-pulse 3s ease-in-out infinite;
+  }
 }

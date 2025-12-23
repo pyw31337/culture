@@ -2622,7 +2622,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             {/* Main Content */}
             <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
                 {/* Results Info */}
-                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-16 gap-2">
+                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-8 gap-2">
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 flex items-center gap-2">
@@ -2829,7 +2829,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 showScrollTop && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce group"
+                        className="fixed bottom-24 right-6 p-3 bg-black/60 backdrop-blur-md border-[1.5px] border-transparent bg-origin-border rounded-full shadow-lg hover:shadow-[#f472b6]/50 transition-all z-50 animate-bounce group"
                         style={{
                             backgroundImage: 'linear-gradient(#000, #000), linear-gradient(to right, #a78bfa, #f472b6)',
                             backgroundClip: 'padding-box, border-box'

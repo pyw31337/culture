@@ -95,7 +95,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/90 backdrop-blur-xl border-t border-purple-500/30 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] pb-20",
+                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 backdrop-blur-xl border-t-2 border-amber-400/60 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7),0_0_30px_rgba(251,191,36,0.15)] pb-20 animate-gold-shimmer",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
@@ -155,7 +155,8 @@ export default function BottomNavSheet({
                             <h3 className="text-lg font-bold text-white px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 카테고리
                             </h3>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
+                                {/* All */}
                                 <button
                                     onClick={() => { onGenreSelect('all'); onClose(); }}
                                     className={clsx(
@@ -167,6 +168,20 @@ export default function BottomNavSheet({
                                 >
                                     <LayoutGrid size={16} />
                                     <span className="text-sm font-medium">전체</span>
+                                </button>
+
+                                {/* Hotdeal */}
+                                <button
+                                    onClick={() => { onGenreSelect('hotdeal'); onClose(); }}
+                                    className={clsx(
+                                        "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
+                                        selectedGenre === 'hotdeal'
+                                            ? "bg-gradient-to-r from-orange-500 to-red-500 text-white border-transparent shadow-lg shadow-orange-900/50"
+                                            : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
+                                    )}
+                                >
+                                    <Star size={16} />
+                                    <span className="text-sm font-medium">핫딜</span>
                                 </button>
 
                                 {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
