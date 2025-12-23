@@ -1763,7 +1763,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 {/* Alarm Panel (Slide Down) */}
                 <div className={clsx(
-                    "absolute top-full left-0 right-0 bg-[#1a0b2e]/95 backdrop-blur-2xl border-b border-purple-500/20 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top",
+                    "absolute top-full left-0 right-0 bg-[#1a0b2e]/95 backdrop-blur-3xl border-b border-purple-500/20 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top",
                     isAlarmOpen ? "max-h-[500px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
                 )}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
