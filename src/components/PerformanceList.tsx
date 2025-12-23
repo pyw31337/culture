@@ -3167,7 +3167,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 selectedGenre={selectedGenre}
                 onGenreSelect={handleGenreSelect}
                 searchText={searchText}
-                onSearchChange={setSearchText}
+                onSearchChange={(text) => {
+                    setSearchText(text);
+                    if (text && selectedGenre !== 'all') {
+                        setSelectedGenre('all');
+                    }
+                }}
                 selectedRegion={selectedRegion}
                 onRegionSelect={handleRegionSelect}
                 selectedDistrict={selectedDistrict}
