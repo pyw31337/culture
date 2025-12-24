@@ -1,5 +1,43 @@
 [
   {
+    "id": "movie_20251224_오늘_밤,_세계에서",
+    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    "image": "https://s.pstatic.net/movie.phinf/20251210_239/1765332420998f0r9J_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "추영우",
+      "신시아",
+      "조유정",
+      "진호은"
+    ],
+    "director": "김혜영",
+    "movieInfo": "한국로맨스/멜로 / 106분"
+  },
+  {
+    "id": "movie_20251224_극장판_짱구는_못말",
+    "title": "극장판 짱구는 못말려: 초화려! 작열하는 떡잎마을 댄서즈",
+    "image": "https://s.pstatic.net/movie.phinf/20251204_2/1764833652411A1O31_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%A7%B1%EA%B5%AC%EB%8A%94%20%EB%AA%BB%EB%A7%90%EB%A0%A4%3A%20%EC%B4%88%ED%99%94%EB%A0%A4!%20%EC%9E%91%EC%97%B4%ED%95%98%EB%8A%94%20%EB%96%A1%EC%9E%8E%EB%A7%88%EC%9D%84%20%EB%8C%84%EC%84%9C%EC%A6%88%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "박영남",
+      "소연",
+      "김환진",
+      "정유정"
+    ],
+    "director": "하시모토 마사카즈",
+    "movieInfo": "일본애니메이션 외 / 105분"
+  },
+  {
     "id": "movie_20251217_아바타:_불과_재",
     "title": "아바타: 불과 재",
     "image": "https://s.pstatic.net/movie.phinf/20251217_118/1765951474121LjtOH_JPEG/movie_image.jpg",
@@ -74,6 +112,25 @@
     ],
     "director": "하정우",
     "movieInfo": "한국드라마 외 / 107분"
+  },
+  {
+    "id": "movie_20251224_척의_일생",
+    "title": "척의 일생",
+    "image": "https://s.pstatic.net/movie.phinf/20251222_145/1766391846582Io2SJ_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%B2%99%EC%9D%98%20%EC%9D%BC%EC%83%9D%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "톰 히들스턴",
+      "카렌 길런",
+      "치웨텔 에지오포",
+      "제이콥 트렘블레이"
+    ],
+    "director": "마이크 플래너건",
+    "movieInfo": "미국드라마 외 / 111분"
   },
   {
     "id": "movie_20251203_극장판_주술회전:_",
@@ -152,6 +209,25 @@
     "movieInfo": "일본드라마 / 89분"
   },
   {
+    "id": "movie_20251224_슈퍼_해피_포에버",
+    "title": "슈퍼 해피 포에버",
+    "image": "https://s.pstatic.net/movie.phinf/20251201_231/1764558218179PjUYg_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%8A%88%ED%8D%BC%20%ED%95%B4%ED%94%BC%20%ED%8F%AC%EC%97%90%EB%B2%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "사노 히로키",
+      "미야타 요시노리",
+      "야마모토 나이루",
+      "호앙 누 쿠인"
+    ],
+    "director": "이가라시 코헤이",
+    "movieInfo": "일본드라마 / 95분"
+  },
+  {
     "id": "movie_20250924_극장판_체인소_맨:",
     "title": "극장판 체인소 맨: 레제편",
     "image": "https://s.pstatic.net/movie.phinf/20251024_263/1761270408060kfuwT_JPEG/movie_image.jpg",
@@ -163,19 +239,6 @@
     "genre": "movie",
     "director": "요시하라 타츠야",
     "movieInfo": "일본애니메이션 / 100분"
-  },
-  {
-    "id": "movie_20251212_블루_아카이브_:_",
-    "title": "블루 아카이브 : 디 오케스트라 인 시네마",
-    "image": "https://s.pstatic.net/movie.phinf/20251202_168/1764655986668tjzgc_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%B8%94%EB%A3%A8%20%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C%20%3A%20%EB%94%94%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%9D%BC%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "director": "조윤수",
-    "movieInfo": "한국공연 / 127분"
   },
   {
     "id": "movie_20251119_국보",
@@ -216,23 +279,17 @@
     "movieInfo": "독일드라마 / 155분"
   },
   {
-    "id": "movie_20251210_더_러닝_맨",
-    "title": "더 러닝 맨",
-    "image": "https://s.pstatic.net/movie.phinf/20251120_188/1763628534179Dlsdz_JPEG/movie_image.jpg",
-    "date": "2025.12.10.",
+    "id": "movie_20251212_블루_아카이브_:_",
+    "title": "블루 아카이브 : 디 오케스트라 인 시네마",
+    "image": "https://s.pstatic.net/movie.phinf/20251202_168/1764655986668tjzgc_JPEG/movie_image.jpg",
+    "date": "2025.12.12.",
     "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8D%94%20%EB%9F%AC%EB%8B%9D%20%EB%A7%A8%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%B8%94%EB%A3%A8%20%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C%20%3A%20%EB%94%94%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%9D%BC%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
-    "cast": [
-      "글렌 파월",
-      "윌리엄 H. 머시",
-      "리 페이스",
-      "콜맨 도밍고"
-    ],
-    "director": "에드가 라이트",
-    "movieInfo": "영국액션 / 133분"
+    "director": "조윤수",
+    "movieInfo": "한국공연 / 127분"
   },
   {
     "id": "movie_20251212_아이돌리쉬_세븐_퍼",
@@ -254,42 +311,41 @@
     "movieInfo": "일본애니메이션 / 108분"
   },
   {
-    "id": "movie_20251212_에반게리온_신극장판",
-    "title": "에반게리온 신극장판: 서",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_153/1765764586584n0VVd_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "등급 미정",
+    "id": "movie_20251022_세계의_주인",
+    "title": "세계의 주인",
+    "image": "https://s.pstatic.net/movie.phinf/20251022_120/1761101991917Ejewy_JPEG/movie_image.jpg",
+    "date": "2025.10.22.",
+    "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8%20%EC%8B%A0%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%EC%84%9C%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%A3%BC%EC%9D%B8%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "오가타 메구미",
-      "하야시바라 메구미",
-      "미츠이시 코토노",
-      "야마구치 유리코"
+      "서수빈",
+      "장혜진",
+      "김정식",
+      "강채윤"
     ],
-    "director": "안노 히데아키(총감독), 야마구치 마사유키, 마에다 마히로, 츠루마키 카즈야",
-    "movieInfo": "일본애니메이션 외"
+    "director": "윤가은",
+    "movieInfo": "한국드라마 / 119분"
   },
   {
-    "id": "movie_20251203_정보원",
-    "title": "정보원",
-    "image": "https://s.pstatic.net/movie.phinf/20251110_51/1762751776181ah2ln_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
+    "id": "movie_20251224_위험사회",
+    "title": "위험사회",
+    "image": "https://s.pstatic.net/movie.phinf/20251212_247/1765507216029u79Sl_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
     "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%A0%95%EB%B3%B4%EC%9B%90%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%84%ED%97%98%EC%82%AC%ED%9A%8C%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "허성태",
-      "조복래",
-      "서민주",
-      "차순배"
+      "박우건",
+      "장준휘",
+      "황상경"
     ],
-    "director": "김석",
-    "movieInfo": "한국액션 외 / 103분"
+    "director": "김병준",
+    "movieInfo": "한국드라마 외 / 100분"
   },
   {
     "id": "movie_20251217_파리,_밤의_여행자",
@@ -309,61 +365,5 @@
     ],
     "director": "미카엘 허스",
     "movieInfo": "프랑스드라마 / 111분"
-  },
-  {
-    "id": "movie_20251217_고백하지마",
-    "title": "고백하지마",
-    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "김충길",
-      "류현경",
-      "김오키"
-    ],
-    "director": "류현경",
-    "movieInfo": "한국드라마 / 69분"
-  },
-  {
-    "id": "movie_20251126_석류의_빛깔",
-    "title": "석류의 빛깔",
-    "image": "https://s.pstatic.net/movie.phinf/20251124_297/1763966974465eAQlG_JPEG/movie_image.jpg",
-    "date": "2025.11.26.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%9D%EB%A5%98%EC%9D%98%20%EB%B9%9B%EA%B9%94%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "소피코 치아우렐리",
-      "멜콘 알렉산얀",
-      "비렌 갤스티안",
-      "기오르기 게게크코리 외"
-    ],
-    "director": "세르게이 파라자노프",
-    "movieInfo": "소련드라마 / 80분"
-  },
-  {
-    "id": "movie_20251022_세계의_주인",
-    "title": "세계의 주인",
-    "image": "https://s.pstatic.net/movie.phinf/20251022_120/1761101991917Ejewy_JPEG/movie_image.jpg",
-    "date": "2025.10.22.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%A3%BC%EC%9D%B8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "서수빈",
-      "장혜진",
-      "김정식",
-      "강채윤"
-    ],
-    "director": "윤가은",
-    "movieInfo": "한국드라마 / 119분"
   }
 ]

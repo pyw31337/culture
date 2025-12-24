@@ -1,35 +1,5 @@
 [
   {
-    "id": "kbl_20251223_DB_소노",
-    "title": "[농구] DB vs 소노",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-23 13:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20251223_상무_현대모비스",
-    "title": "[농구] 상무 vs 현대모비스",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-23 15:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20251223_LG_한국가스공사",
-    "title": "[농구] LG vs 한국가스공사",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-23 19:00",
-    "venue": "창원체육관",
-    "link": "https://www.kbl.or.kr",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
     "id": "kbl_20251224_KCC_삼성",
     "title": "[농구] KCC vs 삼성",
     "image": "/culture/images/kbl_poster.png",
