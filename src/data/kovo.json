@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251224_HEUNGKUK PINKSPIDERS_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs INDUSTRIAL BANK OF KOREA",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-24 19:00",
-    "venue": "인천 삼산월드체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "incheon",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251219_HYUNDAI CAPITAL_WOORICARD",
-    "title": "[배구] HYUNDAI CAPITAL vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-19 11:00",
-    "venue": "12.24(수) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251224_HYUNDAI CAPITAL_WOORICARD",
-    "title": "[배구] HYUNDAI CAPITAL vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-24 19:00",
-    "venue": "천안 유관순체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251219_KB STARS_KOREAN AIR",
-    "title": "[배구] KB STARS vs KOREAN AIR",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-19 11:00",
-    "venue": "12.25(목) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251225_KB STARS_KOREAN AIR",
     "title": "[배구] KB STARS vs KOREAN AIR",
     "image": "/culture/images/volleyball_poster.png",
@@ -1025,6 +985,46 @@
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "대전 충무체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260117_HEUNGKUK PINKSPIDERS_GS CALTEX",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-17 11:00",
+    "venue": "01.23(금) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260123_HEUNGKUK PINKSPIDERS_GS CALTEX",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-23 19:00",
+    "venue": "인천 삼산월드체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "incheon",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260118_HYUNDAI CAPITAL_KEPCO",
+    "title": "[배구] HYUNDAI CAPITAL vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-18 11:00",
+    "venue": "01.23(금) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260123_HYUNDAI CAPITAL_KEPCO",
+    "title": "[배구] HYUNDAI CAPITAL vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-23 19:00",
+    "venue": "천안 유관순체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
     "genre": "volleyball"

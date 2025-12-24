@@ -2,7 +2,7 @@
   {
     "id": "movie_20251224_오늘_밤,_세계에서",
     "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
-    "image": "https://s.pstatic.net/movie.phinf/20251210_239/1765332420998f0r9J_JPEG/movie_image.jpg",
+    "image": "https://s.pstatic.net/movie.phinf/20251224_290/176654193725799gIU_JPEG/movie_image.jpg",
     "date": "2025.12.24.",
     "venue": "12세 관람가",
     "gradeIcon": null,
@@ -21,7 +21,7 @@
   {
     "id": "movie_20251224_극장판_짱구는_못말",
     "title": "극장판 짱구는 못말려: 초화려! 작열하는 떡잎마을 댄서즈",
-    "image": "https://s.pstatic.net/movie.phinf/20251204_2/1764833652411A1O31_JPEG/movie_image.jpg",
+    "image": "https://s.pstatic.net/movie.phinf/20251224_284/1766544319078nKHWK_JPEG/movie_image.jpg",
     "date": "2025.12.24.",
     "venue": "전체 관람가",
     "gradeIcon": null,
@@ -348,22 +348,22 @@
     "movieInfo": "한국드라마 외 / 100분"
   },
   {
-    "id": "movie_20251217_파리,_밤의_여행자",
-    "title": "파리, 밤의 여행자들",
-    "image": "https://s.pstatic.net/movie.phinf/20251217_109/1765938354839bBcn7_JPEG/movie_image.jpg",
+    "id": "movie_20251217_담뽀뽀",
+    "title": "담뽀뽀",
+    "image": "https://s.pstatic.net/movie.phinf/20251120_263/1763624235959ChTlL_JPEG/movie_image.jpg",
     "date": "2025.12.17.",
-    "venue": "15세 관람가",
+    "venue": "청소년 관람불가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%8C%8C%EB%A6%AC%2C%20%EB%B0%A4%EC%9D%98%20%EC%97%AC%ED%96%89%EC%9E%90%EB%93%A4%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%8B%B4%EB%BD%80%EB%BD%80%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "샤를로뜨 갱스부르",
-      "퀴토 레용 리히터",
-      "노에이 아비타",
-      "메건 노덤"
+      "야마자키 츠토무",
+      "미야모토 노부코",
+      "야쿠쇼 코지",
+      "와타나베 켄"
     ],
-    "director": "미카엘 허스",
-    "movieInfo": "프랑스드라마 / 111분"
+    "director": "이타미 쥬조",
+    "movieInfo": "일본코미디 외 / 113분"
   }
 ]

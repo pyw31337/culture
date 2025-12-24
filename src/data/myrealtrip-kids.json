@@ -564,18 +564,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3852755",
-    "title": "[키즈][방학/얼리버드] 국립중앙박물관 세계사 시리즈3 '인더스에서 황하까지~ 중국&인도'",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "국립중앙박물관 3층 세계문화관 중국실, 인도실",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/bBQC/ltEbYLlur9.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3852755",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885196",
     "title": "[키즈][경기/수원] 술술쌤과 함께하는 화성행궁 수원화성 달빛나들이(화성행궁~수원화성)",
     "date": "예약 확정 후 만나는 시간을 조율합니다.",
@@ -583,6 +571,18 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/ESj8/hHwzyUVFO7.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885196",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3852755",
+    "title": "[키즈][방학/얼리버드] 국립중앙박물관 세계사 시리즈3 '인더스에서 황하까지~ 중국&인도'",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "국립중앙박물관 3층 세계문화관 중국실, 인도실",
+    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/bBQC/ltEbYLlur9.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3852755",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
