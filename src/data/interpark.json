@@ -4900,16 +4900,6 @@
     "genre": "classic"
   },
   {
-    "id": "25015691",
-    "title": "2025 금난새의 크리스마스 선물",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25015691_p.gif",
-    "date": "2025.12.25 ~ 2025.12.25",
-    "venue": "롯데콘서트홀",
-    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25015691",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "25010825",
     "title": "2025 로데아트센터 마티네 콘서트 시리즈 〈클래식 모닝〉 Pf. 안종도",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25010825_p.gif",
@@ -15826,6 +15816,16 @@
     "date": "2025.07.01 ~ 2025.12.31",
     "venue": "남이섬 가평 선착장(남이섬 입구)",
     "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=25009111",
+    "region": "gyeonggi",
+    "genre": "leisure"
+  },
+  {
+    "id": "Y5000883",
+    "title": "디스커버스 의왕 어린이 테마파크",
+    "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5000883_p.gif",
+    "date": "2025.12.25 ~ 2026.01.30",
+    "venue": "디스커버스 의왕",
+    "link": "http://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=Y5000883",
     "region": "gyeonggi",
     "genre": "leisure"
   },
