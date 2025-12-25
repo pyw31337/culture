@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251225_KB STARS_KOREAN AIR",
-    "title": "[배구] KB STARS vs KOREAN AIR",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-25 14:00",
-    "venue": "의정부 경민대학교 기념관(체육관)",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251220_HYUNDAI E&C_JUNG KWAN JANG",
-    "title": "[배구] HYUNDAI E&C vs JUNG KWAN JANG",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-20 11:00",
-    "venue": "12.25(목) 16:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251225_HYUNDAI E&C_JUNG KWAN JANG",
-    "title": "[배구] HYUNDAI E&C vs JUNG KWAN JANG",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-25 16:00",
-    "venue": "수원실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251220_SAMSUNG BLUEFANGS_OK SAVINGS BANK",
-    "title": "[배구] SAMSUNG BLUEFANGS vs OK SAVINGS BANK",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-20 11:00",
-    "venue": "12.26(금) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251226_SAMSUNG BLUEFANGS_OK SAVINGS BANK",
     "title": "[배구] SAMSUNG BLUEFANGS vs OK SAVINGS BANK",
     "image": "/culture/images/volleyball_poster.png",

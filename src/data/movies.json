@@ -190,25 +190,6 @@
     "movieInfo": "미국판타지 외 / 137분"
   },
   {
-    "id": "movie_20251224_슈퍼_해피_포에버",
-    "title": "슈퍼 해피 포에버",
-    "image": "https://s.pstatic.net/movie.phinf/20251201_231/1764558218179PjUYg_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%8A%88%ED%8D%BC%20%ED%95%B4%ED%94%BC%20%ED%8F%AC%EC%97%90%EB%B2%84%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "사노 히로키",
-      "미야타 요시노리",
-      "야마모토 나이루",
-      "호앙 누 쿠인"
-    ],
-    "director": "이가라시 코헤이",
-    "movieInfo": "일본드라마 / 95분"
-  },
-  {
     "id": "movie_20251210_여행과_나날",
     "title": "여행과 나날",
     "image": "https://s.pstatic.net/movie.phinf/20251119_96/1763544733243a3wqW_JPEG/movie_image.jpg",
@@ -226,6 +207,25 @@
     ],
     "director": "미야케 쇼",
     "movieInfo": "일본드라마 / 89분"
+  },
+  {
+    "id": "movie_20251224_슈퍼_해피_포에버",
+    "title": "슈퍼 해피 포에버",
+    "image": "https://s.pstatic.net/movie.phinf/20251201_231/1764558218179PjUYg_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%8A%88%ED%8D%BC%20%ED%95%B4%ED%94%BC%20%ED%8F%AC%EC%97%90%EB%B2%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "사노 히로키",
+      "미야타 요시노리",
+      "야마모토 나이루",
+      "호앙 누 쿠인"
+    ],
+    "director": "이가라시 코헤이",
+    "movieInfo": "일본드라마 / 95분"
   },
   {
     "id": "movie_20251119_국보",
