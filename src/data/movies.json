@@ -1,24 +1,5 @@
 [
   {
-    "id": "movie_20251224_오늘_밤,_세계에서",
-    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
-    "image": "https://s.pstatic.net/movie.phinf/20251224_290/176654193725799gIU_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "추영우",
-      "신시아",
-      "조유정",
-      "진호은"
-    ],
-    "director": "김혜영",
-    "movieInfo": "한국로맨스/멜로 / 106분"
-  },
-  {
     "id": "movie_20251224_극장판_짱구는_못말",
     "title": "극장판 짱구는 못말려: 초화려! 작열하는 떡잎마을 댄서즈",
     "image": "https://s.pstatic.net/movie.phinf/20251224_284/1766544319078nKHWK_JPEG/movie_image.jpg",
@@ -36,6 +17,25 @@
     ],
     "director": "하시모토 마사카즈",
     "movieInfo": "일본애니메이션 외 / 105분"
+  },
+  {
+    "id": "movie_20251224_오늘_밤,_세계에서",
+    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    "image": "https://s.pstatic.net/movie.phinf/20251224_290/176654193725799gIU_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "추영우",
+      "신시아",
+      "조유정",
+      "진호은"
+    ],
+    "director": "김혜영",
+    "movieInfo": "한국로맨스/멜로 / 106분"
   },
   {
     "id": "movie_20251217_아바타:_불과_재",
@@ -131,6 +131,32 @@
     ],
     "director": "하정우",
     "movieInfo": "한국드라마 외 / 107분"
+  },
+  {
+    "id": "movie_20251226_후지모토_타츠키_1",
+    "title": "후지모토 타츠키 17-26 파트 1",
+    "image": "https://s.pstatic.net/movie.phinf/20251208_129/1765178556350wkAnS_JPEG/movie_image.jpg",
+    "date": "2025.12.26.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%9B%84%EC%A7%80%EB%AA%A8%ED%86%A0%20%ED%83%80%EC%B8%A0%ED%82%A4%2017-26%20%ED%8C%8C%ED%8A%B8%201%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "director": "나가야 세이시로 더보기",
+    "movieInfo": "일본애니메이션 / 67분"
+  },
+  {
+    "id": "movie_20251226_후지모토_타츠키_1",
+    "title": "후지모토 타츠키 17-26 파트 2",
+    "image": "https://s.pstatic.net/movie.phinf/20251208_130/1765179164756N4Imf_JPEG/movie_image.jpg",
+    "date": "2025.12.26.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%9B%84%EC%A7%80%EB%AA%A8%ED%86%A0%20%ED%83%80%EC%B8%A0%ED%82%A4%2017-26%20%ED%8C%8C%ED%8A%B8%202%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "director": "와타나베 테츠아키 더보기",
+    "movieInfo": "일본애니메이션 / 76분"
   },
   {
     "id": "movie_20251203_프레디의_피자가게_",
@@ -266,25 +292,6 @@
     "movieInfo": "독일드라마 / 155분"
   },
   {
-    "id": "movie_20251022_세계의_주인",
-    "title": "세계의 주인",
-    "image": "https://s.pstatic.net/movie.phinf/20251022_120/1761101991917Ejewy_JPEG/movie_image.jpg",
-    "date": "2025.10.22.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%A3%BC%EC%9D%B8%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "서수빈",
-      "장혜진",
-      "김정식",
-      "강채윤"
-    ],
-    "director": "윤가은",
-    "movieInfo": "한국드라마 / 119분"
-  },
-  {
     "id": "movie_20251212_아이돌리쉬_세븐_퍼",
     "title": "아이돌리쉬 세븐 퍼스트 비트! 극장총집편 후편",
     "image": "https://s.pstatic.net/movie.phinf/20251124_15/1763952358000UCQj6_JPEG/movie_image.jpg",
@@ -304,17 +311,23 @@
     "movieInfo": "일본애니메이션 / 108분"
   },
   {
-    "id": "movie_20251212_블루_아카이브_:_",
-    "title": "블루 아카이브 : 디 오케스트라 인 시네마",
-    "image": "https://s.pstatic.net/movie.phinf/20251202_168/1764655986668tjzgc_JPEG/movie_image.jpg",
-    "date": "2025.12.12.",
-    "venue": "15세 관람가",
+    "id": "movie_20251022_세계의_주인",
+    "title": "세계의 주인",
+    "image": "https://s.pstatic.net/movie.phinf/20251022_120/1761101991917Ejewy_JPEG/movie_image.jpg",
+    "date": "2025.10.22.",
+    "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%B8%94%EB%A3%A8%20%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C%20%3A%20%EB%94%94%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%9D%BC%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%84%B8%EA%B3%84%EC%9D%98%20%EC%A3%BC%EC%9D%B8%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
-    "director": "조윤수",
-    "movieInfo": "한국공연 / 127분"
+    "cast": [
+      "서수빈",
+      "장혜진",
+      "김정식",
+      "강채윤"
+    ],
+    "director": "윤가은",
+    "movieInfo": "한국드라마 / 119분"
   },
   {
     "id": "movie_20251224_위험사회",
@@ -333,24 +346,6 @@
     ],
     "director": "김병준",
     "movieInfo": "한국드라마 외 / 100분"
-  },
-  {
-    "id": "movie_20251217_고백하지마",
-    "title": "고백하지마",
-    "image": "https://s.pstatic.net/movie.phinf/20251125_276/1764037349502Tq80X_JPEG/movie_image.jpg",
-    "date": "2025.12.17.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B3%A0%EB%B0%B1%ED%95%98%EC%A7%80%EB%A7%88%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "김충길",
-      "류현경",
-      "김오키"
-    ],
-    "director": "류현경",
-    "movieInfo": "한국드라마 / 69분"
   },
   {
     "id": "movie_20251217_파리,_밤의_여행자",
