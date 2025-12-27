@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251227_KEPCO_HYUNDAI CAPITAL",
-    "title": "[배구] KEPCO vs HYUNDAI CAPITAL",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-27 14:00",
-    "venue": "수원 실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251222_GS CALTEX_HEUNGKUK PINKSPIDERS",
-    "title": "[배구] GS CALTEX vs HEUNGKUK PINKSPIDERS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-22 11:00",
-    "venue": "12.27(토) 16:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251227_GS CALTEX_HEUNGKUK PINKSPIDERS",
-    "title": "[배구] GS CALTEX vs HEUNGKUK PINKSPIDERS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-27 16:00",
-    "venue": "장충체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "seoul",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251222_WOORICARD_KOREAN AIR",
-    "title": "[배구] WOORICARD vs KOREAN AIR",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-22 15:00",
-    "venue": "12.28(일) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251228_WOORICARD_KOREAN AIR",
     "title": "[배구] WOORICARD vs KOREAN AIR",
     "image": "/culture/images/volleyball_poster.png",
