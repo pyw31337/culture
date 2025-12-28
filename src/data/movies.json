@@ -159,25 +159,6 @@
     "movieInfo": "일본애니메이션 / 76분"
   },
   {
-    "id": "movie_20251203_프레디의_피자가게_",
-    "title": "프레디의 피자가게 2",
-    "image": "https://s.pstatic.net/movie.phinf/20251113_227/1763013543477szpf5_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%94%84%EB%A0%88%EB%94%94%EC%9D%98%20%ED%94%BC%EC%9E%90%EA%B0%80%EA%B2%8C%202%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "조쉬 허처슨",
-      "엘리자베스 라일",
-      "파이퍼 루비오",
-      "매튜 릴라드"
-    ],
-    "director": "엠마 타미",
-    "movieInfo": "미국공포 외 / 103분"
-  },
-  {
     "id": "movie_20251203_극장판_주술회전:_",
     "title": "극장판 주술회전: 시부야사변 X 사멸회유",
     "image": "https://s.pstatic.net/movie.phinf/20251203_36/1764728349013yoGaB_JPEG/movie_image.jpg",
@@ -195,6 +176,25 @@
     ],
     "director": "고쇼조노 쇼타",
     "movieInfo": "일본애니메이션 / 87분"
+  },
+  {
+    "id": "movie_20251203_프레디의_피자가게_",
+    "title": "프레디의 피자가게 2",
+    "image": "https://s.pstatic.net/movie.phinf/20251113_227/1763013543477szpf5_JPEG/movie_image.jpg",
+    "date": "2025.12.03.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%94%84%EB%A0%88%EB%94%94%EC%9D%98%20%ED%94%BC%EC%9E%90%EA%B0%80%EA%B2%8C%202%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "조쉬 허처슨",
+      "엘리자베스 라일",
+      "파이퍼 루비오",
+      "매튜 릴라드"
+    ],
+    "director": "엠마 타미",
+    "movieInfo": "미국공포 외 / 103분"
   },
   {
     "id": "movie_20251119_위키드:_포_굿",
@@ -229,25 +229,6 @@
     "movieInfo": "한국SF 외 / 102분"
   },
   {
-    "id": "movie_20251210_여행과_나날",
-    "title": "여행과 나날",
-    "image": "https://s.pstatic.net/movie.phinf/20251119_96/1763544733243a3wqW_JPEG/movie_image.jpg",
-    "date": "2025.12.10.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%AC%ED%96%89%EA%B3%BC%20%EB%82%98%EB%82%A0%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "심은경",
-      "카와이 유미",
-      "타카다 만사쿠",
-      "츠츠미 신이치"
-    ],
-    "director": "미야케 쇼",
-    "movieInfo": "일본드라마 / 89분"
-  },
-  {
     "id": "movie_20251224_슈퍼_해피_포에버",
     "title": "슈퍼 해피 포에버",
     "image": "https://s.pstatic.net/movie.phinf/20251201_231/1764558218179PjUYg_JPEG/movie_image.jpg",
@@ -265,6 +246,25 @@
     ],
     "director": "이가라시 코헤이",
     "movieInfo": "일본드라마 / 95분"
+  },
+  {
+    "id": "movie_20251210_여행과_나날",
+    "title": "여행과 나날",
+    "image": "https://s.pstatic.net/movie.phinf/20251119_96/1763544733243a3wqW_JPEG/movie_image.jpg",
+    "date": "2025.12.10.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%AC%ED%96%89%EA%B3%BC%20%EB%82%98%EB%82%A0%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "심은경",
+      "카와이 유미",
+      "타카다 만사쿠",
+      "츠츠미 신이치"
+    ],
+    "director": "미야케 쇼",
+    "movieInfo": "일본드라마 / 89분"
   },
   {
     "id": "movie_20251119_국보",
