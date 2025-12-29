@@ -1,32 +1,132 @@
 [
   {
-    "id": "kbl_20251228_LG_정관장",
-    "title": "[농구] LG vs 정관장",
+    "id": "kbl_20251229_소노_SK",
+    "title": "[농구] 소노 vs SK",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-28 14:00",
-    "venue": "창원체육관",
+    "date": "2025-12-29 19:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251230_KT_삼성",
+    "title": "[농구] KT vs 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-30 19:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20251231_현대모비스_LG",
+    "title": "[농구] 현대모비스 vs LG",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2025-12-31 19:00",
+    "venue": "울산동천체육관",
     "link": "https://www.kbl.or.kr",
     "region": "etc",
     "genre": "basketball"
   },
   {
-    "id": "kbl_20251228_DB_삼성",
-    "title": "[농구] DB vs 삼성",
+    "id": "kbl_20251231_KCC_DB",
+    "title": "[농구] KCC vs DB",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-28 14:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20251228_KCC_현대모비스",
-    "title": "[농구] KCC vs 현대모비스",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-28 16:30",
+    "date": "2025-12-31 21:30",
     "venue": "부산사직체육관",
     "link": "https://www.kbl.or.kr",
     "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260101_소노_한국가스공사",
+    "title": "[농구] 소노 vs 한국가스공사",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-01 14:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260101_SK_정관장",
+    "title": "[농구] SK vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-01 16:30",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260102_삼성_LG",
+    "title": "[농구] 삼성 vs LG",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-02 19:00",
+    "venue": "잠실실내체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260103_현대모비스_한국가스공사",
+    "title": "[농구] 현대모비스 vs 한국가스공사",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-03 14:00",
+    "venue": "울산동천체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260103_소노_KT",
+    "title": "[농구] 소노 vs KT",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-03 14:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260103_SK_정관장",
+    "title": "[농구] SK vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-03 16:30",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260104_KT_LG",
+    "title": "[농구] KT vs LG",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-04 14:00",
+    "venue": "수원 KT 소닉붐 아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260104_삼성_DB",
+    "title": "[농구] 삼성 vs DB",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-04 14:00",
+    "venue": "잠실실내체육관",
+    "link": "https://www.kbl.or.kr",
+    "region": "seoul",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260104_정관장_KCC",
+    "title": "[농구] 정관장 vs KCC",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-04 16:30",
+    "venue": "안양 정관장 아레나",
+    "link": "https://www.kbl.or.kr",
+    "region": "gyeonggi",
     "genre": "basketball"
   }
 ]

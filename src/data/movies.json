@@ -114,25 +114,6 @@
     "movieInfo": "미국드라마 외 / 111분"
   },
   {
-    "id": "movie_20251203_윗집_사람들",
-    "title": "윗집 사람들",
-    "image": "https://s.pstatic.net/movie.phinf/20251203_163/17647286711859Ak5j_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "청소년 관람불가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%97%EC%A7%91%20%EC%82%AC%EB%9E%8C%EB%93%A4%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "하정우",
-      "공효진",
-      "김동욱",
-      "이하늬"
-    ],
-    "director": "하정우",
-    "movieInfo": "한국드라마 외 / 107분"
-  },
-  {
     "id": "movie_20251226_후지모토_타츠키_1",
     "title": "후지모토 타츠키 17-26 파트 1",
     "image": "https://s.pstatic.net/movie.phinf/20251208_129/1765178556350wkAnS_JPEG/movie_image.jpg",
@@ -157,6 +138,25 @@
     "genre": "movie",
     "director": "와타나베 테츠아키 더보기",
     "movieInfo": "일본애니메이션 / 76분"
+  },
+  {
+    "id": "movie_20251203_윗집_사람들",
+    "title": "윗집 사람들",
+    "image": "https://s.pstatic.net/movie.phinf/20251203_163/17647286711859Ak5j_JPEG/movie_image.jpg",
+    "date": "2025.12.03.",
+    "venue": "청소년 관람불가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%97%EC%A7%91%20%EC%82%AC%EB%9E%8C%EB%93%A4%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "하정우",
+      "공효진",
+      "김동욱",
+      "이하늬"
+    ],
+    "director": "하정우",
+    "movieInfo": "한국드라마 외 / 107분"
   },
   {
     "id": "movie_20251203_극장판_주술회전:_",
@@ -343,21 +343,22 @@
     "movieInfo": "일본애니메이션 / 108분"
   },
   {
-    "id": "movie_20251224_위험사회",
-    "title": "위험사회",
-    "image": "https://s.pstatic.net/movie.phinf/20251212_247/1765507216029u79Sl_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
+    "id": "movie_20251217_파리,_밤의_여행자",
+    "title": "파리, 밤의 여행자들",
+    "image": "https://s.pstatic.net/movie.phinf/20251217_109/1765938354839bBcn7_JPEG/movie_image.jpg",
+    "date": "2025.12.17.",
     "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%9C%84%ED%97%98%EC%82%AC%ED%9A%8C%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%8C%8C%EB%A6%AC%2C%20%EB%B0%A4%EC%9D%98%20%EC%97%AC%ED%96%89%EC%9E%90%EB%93%A4%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "박우건",
-      "장준휘",
-      "황상경"
+      "샤를로뜨 갱스부르",
+      "퀴토 레용 리히터",
+      "노에이 아비타",
+      "메건 노덤"
     ],
-    "director": "김병준",
-    "movieInfo": "한국드라마 외 / 100분"
+    "director": "미카엘 허스",
+    "movieInfo": "프랑스드라마 / 111분"
   }
 ]
