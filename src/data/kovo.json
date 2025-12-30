@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251230_PEPPER SAVINGS BANK_GS CALTEX",
-    "title": "[배구] PEPPER SAVINGS BANK vs GS CALTEX",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-30 19:00",
-    "venue": "페퍼스타디움",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251225_OK SAVINGS BANK_KEPCO",
-    "title": "[배구] OK SAVINGS BANK vs KEPCO",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-25 11:00",
-    "venue": "12.30(화) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251230_OK SAVINGS BANK_KEPCO",
-    "title": "[배구] OK SAVINGS BANK vs KEPCO",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-30 19:00",
-    "venue": "부산강서실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251225_HYUNDAI CAPITAL_KB STARS",
-    "title": "[배구] HYUNDAI CAPITAL vs KB STARS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-25 11:00",
-    "venue": "12.31(수) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20251231_HYUNDAI CAPITAL_KB STARS",
     "title": "[배구] HYUNDAI CAPITAL vs KB STARS",
     "image": "/culture/images/volleyball_poster.png",
@@ -90,8 +50,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20251227_JUNG KWAN JANG_KOREA EXPRESSWAY",
-    "title": "[배구] JUNG KWAN JANG vs KOREA EXPRESSWAY",
+    "id": "kovo_20251227_JUNG KWAN JANG_HIPASS",
+    "title": "[배구] JUNG KWAN JANG vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2025-12-27 11:00",
     "venue": "01.01(목) 16:00",
@@ -100,8 +60,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260101_JUNG KWAN JANG_KOREA EXPRESSWAY",
-    "title": "[배구] JUNG KWAN JANG vs KOREA EXPRESSWAY",
+    "id": "kovo_20260101_JUNG KWAN JANG_HIPASS",
+    "title": "[배구] JUNG KWAN JANG vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-01 16:00",
     "venue": "대전 충무체육관",
@@ -270,8 +230,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260101_KOREA EXPRESSWAY_HYUNDAI E&C",
-    "title": "[배구] KOREA EXPRESSWAY vs HYUNDAI E&C",
+    "id": "kovo_20260101_HIPASS_HYUNDAI E&C",
+    "title": "[배구] HIPASS vs HYUNDAI E&C",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-01 11:00",
     "venue": "01.07(수) 19:00",
@@ -280,8 +240,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260107_KOREA EXPRESSWAY_HYUNDAI E&C",
-    "title": "[배구] KOREA EXPRESSWAY vs HYUNDAI E&C",
+    "id": "kovo_20260107_HIPASS_HYUNDAI E&C",
+    "title": "[배구] HIPASS vs HYUNDAI E&C",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-07 19:00",
     "venue": "김천실내체육관",
@@ -410,8 +370,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260105_KOREA EXPRESSWAY_GS CALTEX",
-    "title": "[배구] KOREA EXPRESSWAY vs GS CALTEX",
+    "id": "kovo_20260105_HIPASS_GS CALTEX",
+    "title": "[배구] HIPASS vs GS CALTEX",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-05 11:00",
     "venue": "01.10(토) 16:00",
@@ -420,8 +380,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260110_KOREA EXPRESSWAY_GS CALTEX",
-    "title": "[배구] KOREA EXPRESSWAY vs GS CALTEX",
+    "id": "kovo_20260110_HIPASS_GS CALTEX",
+    "title": "[배구] HIPASS vs GS CALTEX",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-10 16:00",
     "venue": "김천실내체육관",
@@ -510,8 +470,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260108_HEUNGKUK PINKSPIDERS_KOREA EXPRESSWAY",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs KOREA EXPRESSWAY",
+    "id": "kovo_20260108_HEUNGKUK PINKSPIDERS_HIPASS",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-08 11:00",
     "venue": "01.14(수) 19:00",
@@ -520,8 +480,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260114_HEUNGKUK PINKSPIDERS_KOREA EXPRESSWAY",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs KOREA EXPRESSWAY",
+    "id": "kovo_20260114_HEUNGKUK PINKSPIDERS_HIPASS",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-14 19:00",
     "venue": "인천 삼산월드체육관",
@@ -650,8 +610,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260112_PEPPER SAVINGS BANK_KOREA EXPRESSWAY",
-    "title": "[배구] PEPPER SAVINGS BANK vs KOREA EXPRESSWAY",
+    "id": "kovo_20260112_PEPPER SAVINGS BANK_HIPASS",
+    "title": "[배구] PEPPER SAVINGS BANK vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-12 11:00",
     "venue": "01.17(토) 16:00",
@@ -660,8 +620,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260117_PEPPER SAVINGS BANK_KOREA EXPRESSWAY",
-    "title": "[배구] PEPPER SAVINGS BANK vs KOREA EXPRESSWAY",
+    "id": "kovo_20260117_PEPPER SAVINGS BANK_HIPASS",
+    "title": "[배구] PEPPER SAVINGS BANK vs HIPASS",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-17 16:00",
     "venue": "페퍼스타디움",
@@ -790,8 +750,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260116_KOREA EXPRESSWAY_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] KOREA EXPRESSWAY vs INDUSTRIAL BANK OF KOREA",
+    "id": "kovo_20260116_HIPASS_INDUSTRIAL BANK OF KOREA",
+    "title": "[배구] HIPASS vs INDUSTRIAL BANK OF KOREA",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-16 11:00",
     "venue": "01.22(목) 19:00",
@@ -800,8 +760,8 @@
     "genre": "volleyball"
   },
   {
-    "id": "kovo_20260122_KOREA EXPRESSWAY_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] KOREA EXPRESSWAY vs INDUSTRIAL BANK OF KOREA",
+    "id": "kovo_20260122_HIPASS_INDUSTRIAL BANK OF KOREA",
+    "title": "[배구] HIPASS vs INDUSTRIAL BANK OF KOREA",
     "image": "/culture/images/volleyball_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "김천실내체육관",
@@ -867,6 +827,46 @@
     "venue": "천안 유관순체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260118_KEPCO_HYUNDAI CAPITAL",
+    "title": "[배구] KEPCO vs HYUNDAI CAPITAL",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-18 11:00",
+    "venue": "01.29(목) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260129_KEPCO_HYUNDAI CAPITAL",
+    "title": "[배구] KEPCO vs HYUNDAI CAPITAL",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-29 19:00",
+    "venue": "수원 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260124_GS CALTEX_HEUNGKUK PINKSPIDERS",
+    "title": "[배구] GS CALTEX vs HEUNGKUK PINKSPIDERS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-24 11:00",
+    "venue": "01.29(목) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260129_GS CALTEX_HEUNGKUK PINKSPIDERS",
+    "title": "[배구] GS CALTEX vs HEUNGKUK PINKSPIDERS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-29 19:00",
+    "venue": "장충체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "seoul",
     "genre": "volleyball"
   }
 ]

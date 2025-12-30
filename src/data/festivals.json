@@ -48,45 +48,5 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=8e3215e7-02ad-488a-997d-979b2b8b682f&cntntsNm=겨울청계천의빛",
     "region": "seoul",
     "genre": "festival"
-  },
-  {
-    "id": "festival_6",
-    "title": "서울라이트 광화문",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_d92518e2-7953-4d7c-9123-912b5fb87510_15.jpg",
-    "date": "2025.12.12~2026.01.04",
-    "venue": "서울 종로구",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d92518e2-7953-4d7c-9123-912b5fb87510&cntntsNm=서울라이트광화문",
-    "region": "seoul",
-    "genre": "festival"
-  },
-  {
-    "id": "festival_7",
-    "title": "서울빛초롱축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_bcd79254-697d-47f5-a408-e022f0e9f7fd_27.jpg",
-    "date": "2025.12.12~2026.01.04",
-    "venue": "서울 중구",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=bcd79254-697d-47f5-a408-e022f0e9f7fd&cntntsNm=서울빛초롱축제",
-    "region": "seoul",
-    "genre": "festival"
-  },
-  {
-    "id": "festival_8",
-    "title": "양평빙송어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
-    "date": "2025.12.06~2026.03.02",
-    "venue": "경기도 양평군",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee90ecd1-8a54-4858-ac6d-b95e7f8d113a&cntntsNm=양평빙송어축제",
-    "region": "gyeonggi",
-    "genre": "festival"
-  },
-  {
-    "id": "festival_9",
-    "title": "관악별빛산책",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_f1083d7d-3abb-4f3e-a27b-67f8ecd01a22_13.jpg",
-    "date": "2025.12.01~2025.12.31",
-    "venue": "서울 관악구",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f1083d7d-3abb-4f3e-a27b-67f8ecd01a22&cntntsNm=관악별빛산책",
-    "region": "seoul",
-    "genre": "festival"
   }
 ]
