@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20251231_HYUNDAI CAPITAL_KB STARS",
-    "title": "[배구] HYUNDAI CAPITAL vs KB STARS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-31 19:00",
-    "venue": "천안 유관순체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251226_HEUNGKUK PINKSPIDERS_HYUNDAI E&C",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-26 11:00",
-    "venue": "12.31(수) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251231_HEUNGKUK PINKSPIDERS_HYUNDAI E&C",
-    "title": "[배구] HEUNGKUK PINKSPIDERS vs HYUNDAI E&C",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-31 19:00",
-    "venue": "인천 삼산월드체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "incheon",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20251226_KOREAN AIR_SAMSUNG BLUEFANGS",
-    "title": "[배구] KOREAN AIR vs SAMSUNG BLUEFANGS",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2025-12-26 11:00",
-    "venue": "01.01(목) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20260101_KOREAN AIR_SAMSUNG BLUEFANGS",
     "title": "[배구] KOREAN AIR vs SAMSUNG BLUEFANGS",
     "image": "/culture/images/volleyball_poster.png",
@@ -867,6 +827,46 @@
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "seoul",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260124_WOORICARD_SAMSUNG BLUEFANGS",
+    "title": "[배구] WOORICARD vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-24 15:00",
+    "venue": "01.30(금) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260130_WOORICARD_SAMSUNG BLUEFANGS",
+    "title": "[배구] WOORICARD vs SAMSUNG BLUEFANGS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-30 19:00",
+    "venue": "장충체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "seoul",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260125_INDUSTRIAL BANK OF KOREA_HIPASS",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HIPASS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-25 11:00",
+    "venue": "01.30(금) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20260130_INDUSTRIAL BANK OF KOREA_HIPASS",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs HIPASS",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2026-01-30 19:00",
+    "venue": "화성종합경기타운 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
     "genre": "volleyball"
   }
 ]
