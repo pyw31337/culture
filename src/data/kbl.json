@@ -1,15 +1,5 @@
 [
   {
-    "id": "kbl_20251230_KT_삼성",
-    "title": "[농구] KT vs 삼성",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2025-12-30 19:00",
-    "venue": "수원 KT 소닉붐 아레나",
-    "link": "https://www.kbl.or.kr",
-    "region": "gyeonggi",
-    "genre": "basketball"
-  },
-  {
     "id": "kbl_20251231_현대모비스_LG",
     "title": "[농구] 현대모비스 vs LG",
     "image": "/culture/images/kbl_poster.png",
