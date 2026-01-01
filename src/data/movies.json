@@ -264,24 +264,6 @@
     "movieInfo": "미국코미디 외 / 110분"
   },
   {
-    "id": "movie_20251231_터널",
-    "title": "터널",
-    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "타이 호아",
-      "투 안 호",
-      "쿠앙 투안"
-    ],
-    "director": "탁 추옌부이",
-    "movieInfo": "베트남전쟁 외 / 126분"
-  },
-  {
     "id": "movie_20251203_극장판_주술회전:_",
     "title": "극장판 주술회전: 시부야사변 X 사멸회유",
     "image": "https://s.pstatic.net/movie.phinf/20251203_36/1764728349013yoGaB_JPEG/movie_image.jpg",
@@ -299,6 +281,24 @@
     ],
     "director": "고쇼조노 쇼타",
     "movieInfo": "일본애니메이션 / 87분"
+  },
+  {
+    "id": "movie_20251231_터널",
+    "title": "터널",
+    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
+    "date": "2025.12.31.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "타이 호아",
+      "투 안 호",
+      "쿠앙 투안"
+    ],
+    "director": "탁 추옌부이",
+    "movieInfo": "베트남전쟁 외 / 126분"
   },
   {
     "id": "movie_20251203_프레디의_피자가게_",
