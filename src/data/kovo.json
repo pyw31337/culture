@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20270102_OK SAVINGS BANK_WOORICARD",
-    "title": "[배구] OK SAVINGS BANK vs WOORICARD",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2027-01-02 19:00",
-    "venue": "부산강서실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20261228_PEPPER SAVINGS BANK_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] PEPPER SAVINGS BANK vs INDUSTRIAL BANK OF KOREA",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2026-12-28 11:00",
-    "venue": "01.02(금) 19:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20270102_PEPPER SAVINGS BANK_INDUSTRIAL BANK OF KOREA",
-    "title": "[배구] PEPPER SAVINGS BANK vs INDUSTRIAL BANK OF KOREA",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2027-01-02 19:00",
-    "venue": "페퍼스타디움",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20261228_KB STARS_KEPCO",
-    "title": "[배구] KB STARS vs KEPCO",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2026-12-28 11:00",
-    "venue": "01.03(토) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20270103_KB STARS_KEPCO",
     "title": "[배구] KB STARS vs KEPCO",
     "image": "/culture/images/volleyball_poster.png",
@@ -867,6 +827,46 @@
     "venue": "대전 충무체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270126_HYUNDAI CAPITAL_OK SAVINGS BANK",
+    "title": "[배구] HYUNDAI CAPITAL vs OK SAVINGS BANK",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-01-26 11:00",
+    "venue": "02.01(일) 14:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270201_HYUNDAI CAPITAL_OK SAVINGS BANK",
+    "title": "[배구] HYUNDAI CAPITAL vs OK SAVINGS BANK",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-02-01 14:00",
+    "venue": "천안 유관순체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270127_HEUNGKUK PINKSPIDERS_PEPPER SAVINGS BANK",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs PEPPER SAVINGS BANK",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-01-27 11:00",
+    "venue": "02.01(일) 16:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270201_HEUNGKUK PINKSPIDERS_PEPPER SAVINGS BANK",
+    "title": "[배구] HEUNGKUK PINKSPIDERS vs PEPPER SAVINGS BANK",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-02-01 16:00",
+    "venue": "인천 삼산월드체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "incheon",
     "genre": "volleyball"
   }
 ]

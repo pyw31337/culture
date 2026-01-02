@@ -288,18 +288,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3886102",
-    "title": "[키즈][겨울방학 얼리버드] 국립항공박물관 도슨트 투어",
-    "date": "오전 11시 / 오후 14시 30분",
-    "venue": "국립항공박물관 로비",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/DPzO/aUwFVB6TLR.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3886102",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4489831",
     "title": "[키즈/초등한국사/서울_특가] 국립중앙박물관 한국사특강(역사체험학습)_겨울방학 얼리버드할인",
     "date": "수업 시작 시간 10분 전",
@@ -307,6 +295,18 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/09/GFNL/O6gAketz9P.jpg",
     "link": "https://experiences.myrealtrip.com/products/4489831",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3886102",
+    "title": "[키즈][겨울방학 얼리버드] 국립항공박물관 도슨트 투어",
+    "date": "오전 11시 / 오후 14시 30분",
+    "venue": "국립항공박물관 로비",
+    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/DPzO/aUwFVB6TLR.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3886102",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -852,18 +852,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3896378",
-    "title": "[키즈][겨울방학 얼리버드] 비행기에 관심 많은 예비초를 위한 국립항공박물관 도슨트",
-    "date": "오전 11시 / 오후 2시 30분",
-    "venue": "국립항공박물관",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/04/bzBy/l1LXXiMMLZ.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3896378",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4414531",
     "title": "[키즈] [부산_복천박물관&장영실과학동산] 부산 속 역사와 과학 이야기",
     "date": "오전 10시, 오후 1시",
@@ -871,6 +859,18 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/04/01/ERAT/oFouQ4fokm.png",
     "link": "https://experiences.myrealtrip.com/products/4414531",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3896378",
+    "title": "[키즈][겨울방학 얼리버드] 비행기에 관심 많은 예비초를 위한 국립항공박물관 도슨트",
+    "date": "오전 11시 / 오후 2시 30분",
+    "venue": "국립항공박물관",
+    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/04/bzBy/l1LXXiMMLZ.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3896378",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1212,18 +1212,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4439026",
-    "title": "[라라클래스/전시 공식] 파라오의 이집트 초등 도슨트 체험 – 빛의 시어터",
-    "date": "10시 20분, 13시 10분, 15시 50분",
-    "venue": "빛의 시어터",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/08/3q5j/uC1pjUvxVD.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4439026",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3886460",
     "title": "[역사와답사] 공쌤과 함께 만나요! 신라와 조선!!",
     "date": "오전 :  9시 30분  오후 : 13시 30분",
@@ -1423,18 +1411,6 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/A1Kj/7G4uvgpg0t.jpg",
     "link": "https://experiences.myrealtrip.com/products/3880372",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
-    "id": "mrt-4439020",
-    "title": "[라라클래스/전시 공식] 파라오의 이집트 미취학 도슨트 체험 – 빛의 시어터",
-    "date": "10시 20분, 13시 10분, 15시 50분",
-    "venue": "빛의 시어터",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/05/08/0A0g/Ybp1b4Dhwb.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4439020",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
