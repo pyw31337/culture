@@ -1,25 +1,5 @@
 [
   {
-    "id": "kbl_20260101_소노_한국가스공사",
-    "title": "[농구] 소노 vs 한국가스공사",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-01 14:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr",
-    "region": "gyeonggi",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260101_SK_정관장",
-    "title": "[농구] SK vs 정관장",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-01 16:30",
-    "venue": "잠실학생체육관",
-    "link": "https://www.kbl.or.kr",
-    "region": "seoul",
-    "genre": "basketball"
-  },
-  {
     "id": "kbl_20260102_삼성_LG",
     "title": "[농구] 삼성 vs LG",
     "image": "/culture/images/kbl_poster.png",
