@@ -1,45 +1,5 @@
 [
   {
-    "id": "kovo_20270103_KB STARS_KEPCO",
-    "title": "[배구] KB STARS vs KEPCO",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2027-01-03 14:00",
-    "venue": "의정부 경민대학교 기념관(체육관)",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20261229_HYUNDAI E&C_GS CALTEX",
-    "title": "[배구] HYUNDAI E&C vs GS CALTEX",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2026-12-29 11:00",
-    "venue": "01.03(토) 16:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20270103_HYUNDAI E&C_GS CALTEX",
-    "title": "[배구] HYUNDAI E&C vs GS CALTEX",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2027-01-03 16:00",
-    "venue": "수원실내체육관",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "gyeonggi",
-    "genre": "volleyball"
-  },
-  {
-    "id": "kovo_20261229_KOREAN AIR_HYUNDAI CAPITAL",
-    "title": "[배구] KOREAN AIR vs HYUNDAI CAPITAL",
-    "image": "/culture/images/volleyball_poster.png",
-    "date": "2026-12-29 11:00",
-    "venue": "01.04(일) 14:00",
-    "link": "https://kovo.co.kr/tickets/single",
-    "region": "etc",
-    "genre": "volleyball"
-  },
-  {
     "id": "kovo_20270104_KOREAN AIR_HYUNDAI CAPITAL",
     "title": "[배구] KOREAN AIR vs HYUNDAI CAPITAL",
     "image": "/culture/images/volleyball_poster.png",
@@ -867,6 +827,46 @@
     "venue": "인천 삼산월드체육관",
     "link": "https://kovo.co.kr/tickets/single",
     "region": "incheon",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270127_INDUSTRIAL BANK OF KOREA_GS CALTEX",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-01-27 11:00",
+    "venue": "02.02(월) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270202_INDUSTRIAL BANK OF KOREA_GS CALTEX",
+    "title": "[배구] INDUSTRIAL BANK OF KOREA vs GS CALTEX",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-02-02 19:00",
+    "venue": "화성종합경기타운 실내체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "gyeonggi",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270128_WOORICARD_KEPCO",
+    "title": "[배구] WOORICARD vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-01-28 11:00",
+    "venue": "02.02(월) 19:00",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "etc",
+    "genre": "volleyball"
+  },
+  {
+    "id": "kovo_20270202_WOORICARD_KEPCO",
+    "title": "[배구] WOORICARD vs KEPCO",
+    "image": "/culture/images/volleyball_poster.png",
+    "date": "2027-02-02 19:00",
+    "venue": "장충체육관",
+    "link": "https://kovo.co.kr/tickets/single",
+    "region": "seoul",
     "genre": "volleyball"
   }
 ]
