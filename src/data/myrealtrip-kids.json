@@ -168,18 +168,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3880369",
-    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
-    "date": "-오전 10시30분  -오후 13시30분",
-    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3880369",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3886099",
     "title": "[키즈][겨울방학 얼리버드] 국립중앙박물관-레벨업 한국사 초등 역사 체험",
     "date": "오전 11시 / 오후 2시 30분",
@@ -187,6 +175,18 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/9lNL/blqdSdwoBP.jpg",
     "link": "https://experiences.myrealtrip.com/products/3886099",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3880369",
+    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
+    "date": "-오전 10시30분  -오후 13시30분",
+    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
+    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3880369",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -300,18 +300,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3828442",
-    "title": "[키즈][서울/서대문] 서대문 자연사박물관 투어, 지구가 품은 이야기",
-    "date": "매주 토/일 10시, 13시",
-    "venue": "서울 서대문구 연희로32길 51 서대문자연사박물관",
-    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/OT2X/o4RY3pmmKq.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3828442",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3851387",
     "title": "[키즈] 세계사시리즈 2탄! 국립세계문자박물관에서 역사탐험 떠나요",
     "date": "옵션(시간)을 선택할 때, 신청가능한 날짜가 표기되어있습니다! 신청하시기 전에 꼭 확인 해주세요😉",
@@ -319,6 +307,18 @@
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/zmeC/A4LkShLDRX.jpg",
     "link": "https://experiences.myrealtrip.com/products/3851387",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3828442",
+    "title": "[키즈][서울/서대문] 서대문 자연사박물관 투어, 지구가 품은 이야기",
+    "date": "매주 토/일 10시, 13시",
+    "venue": "서울 서대문구 연희로32길 51 서대문자연사박물관",
+    "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/OT2X/o4RY3pmmKq.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3828442",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -713,7 +713,7 @@
     "date": "상품 상세 페이지를 참고해주세요.",
     "venue": "국립세계문자박물관",
     "price": "7만원 결제 시 네이버페이 포인트 3,000원 적립",
-    "image": "",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/iAjh/8pXU7G5y6p.jpg",
     "link": "https://experiences.myrealtrip.com/products/3828458",
     "genre": "kids",
     "source": "myrealtrip",
