@@ -219,25 +219,6 @@
     "movieInfo": "미국코미디 외 / 110분"
   },
   {
-    "id": "movie_20251224_척의_일생",
-    "title": "척의 일생",
-    "image": "https://s.pstatic.net/movie.phinf/20251222_145/1766391846582Io2SJ_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%B2%99%EC%9D%98%20%EC%9D%BC%EC%83%9D%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "톰 히들스턴",
-      "카렌 길런",
-      "치웨텔 에지오포",
-      "제이콥 트렘블레이"
-    ],
-    "director": "마이크 플래너건",
-    "movieInfo": "미국드라마 외 / 111분"
-  },
-  {
     "id": "movie_20251226_후지모토_타츠키_1",
     "title": "후지모토 타츠키 17-26 파트 2",
     "image": "https://s.pstatic.net/movie.phinf/20251208_130/1765179164756N4Imf_JPEG/movie_image.jpg",
@@ -264,6 +245,25 @@
     "movieInfo": "일본애니메이션 / 67분"
   },
   {
+    "id": "movie_20251224_척의_일생",
+    "title": "척의 일생",
+    "image": "https://s.pstatic.net/movie.phinf/20251222_145/1766391846582Io2SJ_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%B2%99%EC%9D%98%20%EC%9D%BC%EC%83%9D%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "톰 히들스턴",
+      "카렌 길런",
+      "치웨텔 에지오포",
+      "제이콥 트렘블레이"
+    ],
+    "director": "마이크 플래너건",
+    "movieInfo": "미국드라마 외 / 111분"
+  },
+  {
     "id": "movie_20251203_극장판_주술회전:_",
     "title": "극장판 주술회전: 시부야사변 X 사멸회유",
     "image": "https://s.pstatic.net/movie.phinf/20251203_36/1764728349013yoGaB_JPEG/movie_image.jpg",
@@ -281,24 +281,6 @@
     ],
     "director": "고쇼조노 쇼타",
     "movieInfo": "일본애니메이션 / 87분"
-  },
-  {
-    "id": "movie_20251231_터널",
-    "title": "터널",
-    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "타이 호아",
-      "투 안 호",
-      "쿠앙 투안"
-    ],
-    "director": "탁 추옌부이",
-    "movieInfo": "베트남전쟁 외 / 126분"
   },
   {
     "id": "movie_20260102_에반게리온_신극장판",
@@ -320,41 +302,56 @@
     "movieInfo": "일본애니메이션 외 / 112분"
   },
   {
-    "id": "movie_20251203_프레디의_피자가게_",
-    "title": "프레디의 피자가게 2",
-    "image": "https://s.pstatic.net/movie.phinf/20251113_227/1763013543477szpf5_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "12세 관람가",
+    "id": "movie_20251231_터널",
+    "title": "터널",
+    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
+    "date": "2025.12.31.",
+    "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%94%84%EB%A0%88%EB%94%94%EC%9D%98%20%ED%94%BC%EC%9E%90%EA%B0%80%EA%B2%8C%202%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "조쉬 허처슨",
-      "엘리자베스 라일",
-      "파이퍼 루비오",
-      "매튜 릴라드"
+      "타이 호아",
+      "투 안 호",
+      "쿠앙 투안"
     ],
-    "director": "엠마 타미",
-    "movieInfo": "미국공포 외 / 103분"
+    "director": "탁 추옌부이",
+    "movieInfo": "베트남전쟁 외 / 126분"
   },
   {
-    "id": "movie_20251231_하나_그리고_둘",
-    "title": "하나 그리고 둘",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_273/1765766480679L1w99_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
+    "id": "movie_20251210_여행과_나날",
+    "title": "여행과 나날",
+    "image": "https://s.pstatic.net/movie.phinf/20251119_96/1763544733243a3wqW_JPEG/movie_image.jpg",
+    "date": "2025.12.10.",
     "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%95%98%EB%82%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%91%98%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%AC%ED%96%89%EA%B3%BC%20%EB%82%98%EB%82%A0%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "오념진",
-      "금연령",
-      "켈리 리",
-      "조나단 창"
+      "심은경",
+      "카와이 유미",
+      "타카다 만사쿠",
+      "츠츠미 신이치"
     ],
-    "director": "에드워드 양",
-    "movieInfo": "대만드라마"
+    "director": "미야케 쇼",
+    "movieInfo": "일본드라마 / 89분"
+  },
+  {
+    "id": "movie_20251231_#런석진_에피소드.",
+    "title": "#런석진_에피소드. 투어 더 무비",
+    "image": "https://s.pstatic.net/movie.phinf/20251208_268/17651682350141kRUf_JPEG/movie_image.jpg",
+    "date": "2025.12.31.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%23%EB%9F%B0%EC%84%9D%EC%A7%84_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C.%20%ED%88%AC%EC%96%B4%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "진"
+    ],
+    "director": "박준수",
+    "movieInfo": "한국공연 / 94분"
   }
 ]

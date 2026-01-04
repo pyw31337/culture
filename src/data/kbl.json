@@ -1,35 +1,5 @@
 [
   {
-    "id": "kbl_20260103_현대모비스_한국가스공사",
-    "title": "[농구] 현대모비스 vs 한국가스공사",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-03 14:00",
-    "venue": "울산동천체육관",
-    "link": "https://www.kbl.or.kr",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260103_소노_KT",
-    "title": "[농구] 소노 vs KT",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-03 14:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr",
-    "region": "gyeonggi",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260103_SK_정관장",
-    "title": "[농구] SK vs 정관장",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-03 16:30",
-    "venue": "잠실학생체육관",
-    "link": "https://www.kbl.or.kr",
-    "region": "seoul",
-    "genre": "basketball"
-  },
-  {
     "id": "kbl_20260104_KT_LG",
     "title": "[농구] KT vs LG",
     "image": "/culture/images/kbl_poster.png",
