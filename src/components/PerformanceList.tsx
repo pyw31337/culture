@@ -3563,8 +3563,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
                                         {perf.price && (
                                             <div className="text-white">
-                                                <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                <span className="text-xs font-light ml-0.5">원</span>
+                                                {perf.price.includes('무료') || perf.price === '0' ? (
+                                                    <span className="text-lg font-extrabold">무료</span>
+                                                ) : (
+                                                    <>
+                                                        <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                    </>
+                                                )}
                                             </div>
                                         )}
                                     </div>
@@ -4061,8 +4067,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
                                                     {perf.price && (
                                                         <div className="text-white drop-shadow-md leading-none">
-                                                            <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                            <span className="text-xs font-light ml-0.5">원</span>
+                                                            {perf.price.includes('무료') || perf.price === '0' ? (
+                                                                <span className="text-lg font-extrabold">무료</span>
+                                                            ) : (
+                                                                <>
+                                                                    <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
+                                                                    <span className="text-xs font-light ml-0.5">원</span>
+                                                                </>
+                                                            )}
                                                         </div>
                                                     )}
                                                 </div>
