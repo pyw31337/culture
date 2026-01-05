@@ -1153,6 +1153,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             setShowLikes(false);
         }
 
+        if (val && selectedGenre !== 'all') {
+            setSelectedGenre('all');
+        }
+
         setSearchText(val);
         // Reset location search when user types (revert to text filter)
         if (searchLocation) {
