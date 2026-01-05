@@ -17,13 +17,10 @@ interface ScrapedEvent {
     link: string;
 }
 
-const TARGET_URL = 'https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?searchCate=&menuNo=200110';
-const START_DATE = '2026-01-01';
-const END_DATE = '2026-12-31';
+const TARGET_URL = 'https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=2026-01-01&edate=2026-12-31';
 
 async function mapCategory(title: string): Promise<string> {
     const t = title.toLowerCase();
-
     if (t.includes('뮤지컬')) return 'musical';
     if (t.includes('콘서트')) return 'concert';
     if (t.includes('연극')) return 'theater';
@@ -31,100 +28,101 @@ async function mapCategory(title: string): Promise<string> {
     if (t.includes('전시') || t.includes('미술') || t.includes('사진') || t.includes('박물관') || t.includes('개인전')) return 'exhibition';
     if (t.includes('클래스') || t.includes('강좌') || t.includes('교육') || t.includes('교실')) return 'class';
     if (t.includes('체험') || t.includes('축제') || t.includes('페스티벌')) return 'leisure';
-
     return 'unknown';
 }
 
 async function scrape() {
-    console.log('🚀 Starting Seoul Culture Scraper (2026)...');
+    console.log('🚀 Starting Seoul Culture Scraper (2026) - URL Params Strategy...');
     const browser = await puppeteer.launch({
         headless: "new" as any,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,800']
     });
     const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 800 });
 
     // Set User Agent
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
-    // URL-based Scraper Strategy with Improved Wait
+    // 1. Initial Navigation with Search Params
+    await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded' });
+    console.log('   Page Loaded via URL Params.');
+
+    // Check if dates are set in inputs (verification)
+    const inputs = await page.evaluate(() => {
+        const i1 = document.getElementById('datepicker01') as HTMLInputElement;
+        const i2 = document.getElementById('datepicker02') as HTMLInputElement;
+        return { start: i1?.value, end: i2?.value };
+    });
+    console.log('   Inputs Verification:', inputs);
+
+    // Wait for list items to ensure content is there
+    try {
+        await page.waitForSelector('#dataList > li', { timeout: 10000 });
+    } catch (e) {
+        console.log('   No list items found on initial load. Dumping info...');
+        const body = await page.evaluate(() => document.body.innerHTML);
+        const text = await page.evaluate(() => document.body.innerText);
+        console.log('--- BODY INNER TEXT (First 1000 chars) ---');
+        console.log(text.substring(0, 1000));
+        await browser.close();
+        return;
+    }
 
     let collectedEvents: ScrapedEvent[] = [];
     let hasNext = true;
     let pageNum = 1;
-    let lastFirstTitle = '';
+    let lastFirstId = '';
 
-    // Safety limit
     const MAX_PAGES = 50;
 
-    while (hasNext) {
-        let pageUrl = `${TARGET_URL}&searchStartDate=${START_DATE.replace(/-/g, '.')}&searchEndDate=${END_DATE.replace(/-/g, '.')}`;
+    while (hasNext && pageNum <= MAX_PAGES) {
+        console.log(`📄 Scraping Page ${pageNum}...`);
+
+        // Wait slightly
         if (pageNum > 1) {
-            pageUrl += `&pageIndex=${pageNum}`;
+            try {
+                await page.waitForSelector('#dataList > li', { timeout: 5000 });
+            } catch (e) { }
         }
 
-        console.log(`🔗 Navigating to Page ${pageNum}: ${pageUrl}`);
-
-        try {
-            await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
-        } catch (e) {
-            console.log('   TIMEOUT. Retrying...');
-            await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
-        }
-
-        // Wait for LIST ITEMS (not just list container)
-        try {
-            await page.waitForSelector('#dataList > li', { timeout: 10000 });
-        } catch (e) {
-            console.log('   No list items found (timeout). Checking content...');
-            const html = await page.evaluate(() => document.querySelector('#dataList')?.innerHTML || 'No #dataList');
-            console.log('   #dataList HTML:', html.substring(0, 200).replace(/\n/g, ' '));
-
-            // Should we look for 'No results' message?
-            // .nodata ?
-
-            hasNext = false;
-            break;
-        }
-
-        // Extract Basic Info
+        // Extract Items
         const listItems = await page.evaluate(() => {
             const items: any[] = [];
             const rows = document.querySelectorAll('#dataList > li');
-
-            rows.forEach(row => {
+            rows.forEach((row, index) => {
                 const linkEl = row.querySelector('a');
                 if (!linkEl) return;
-
                 const link = linkEl.href;
                 const img = row.querySelector('.img img')?.getAttribute('src');
                 const title = row.querySelector('.txt2 .tit')?.textContent?.trim() || '';
                 const place = row.querySelector('.txt2 .place')?.textContent?.trim() || '';
                 const dateDiv = row.querySelector('.txt2 > div');
                 const date = dateDiv?.textContent?.trim().replace(/\s+/g, ' ') || '';
-
                 const absoluteImg = img ? (img.startsWith('http') ? img : `https://culture.seoul.go.kr${img}`) : '';
 
-                items.push({
-                    title,
-                    link,
-                    poster: absoluteImg,
-                    place,
-                    date
-                });
+                // Generate a pseudo-ID based on title + date to track duplication
+                const pseudoId = title + '_' + date;
+
+                items.push({ title, link, poster: absoluteImg, place, date, pseudoId });
             });
             return items;
         });
 
-        console.log(`   Found ${listItems.length} items on page ${pageNum}`);
-
-        if (listItems.length === 0) {
-            hasNext = false;
+        // Check for stagnation
+        if (listItems.length > 0) {
+            if (listItems[0].pseudoId === lastFirstId) {
+                console.log('   ⚠️ Detected Page Stagnation (Same content). Stopping.');
+                break;
+            }
+            lastFirstId = listItems[0].pseudoId;
+        } else {
+            console.log('   No items on this page. Stopping.');
             break;
         }
 
-        // Loop and details extraction...
-        // ... (reuse existing loop logic logic)
+        console.log(`   Found ${listItems.length} items.`);
 
+        // Process Details
         for (const item of listItems) {
             let genre = await mapCategory(item.title);
             const detailPage = await browser.newPage();
@@ -148,37 +146,66 @@ async function scrape() {
                     link: item.link
                 });
             } catch (e: any) {
-                console.error(`   Failed to scrape details for ${item.title}:`, e.message);
+                console.error(`   Failed details for ${item.title}`);
             } finally { await detailPage.close(); }
         }
 
-        pageNum++;
-        if (pageNum > MAX_PAGES) hasNext = false;
+        // Pagination: Click Next
+        // Use initPageData if available for consistency
+        const nextResult = await page.evaluate((pNum) => {
+            // @ts-ignore
+            if (typeof initPageData === 'function') {
+                // @ts-ignore
+                initPageData(pNum + 1);
+                return true;
+            }
+            return false;
+        }, pageNum);
 
-        // No JS navigation needed since we use goto
+        if (nextResult) {
+            console.log(`   Calling initPageData(${pageNum + 1})...`);
+            await new Promise(r => setTimeout(r, 2000));
+            try {
+                await page.waitForNetworkIdle({ timeout: 2000 }).catch(() => { });
+            } catch (e) { }
+        } else {
+            console.log('   initPageData not found for pagination? Attempting click...');
+            const hasNextBtn = await page.$('.paging .next > a');
+            if (!hasNextBtn) {
+                console.log('   No Next Button found. Reached end.');
+                hasNext = false;
+            } else {
+                console.log('   Clicking Next Page...');
+                await page.evaluate(() => {
+                    const btn = document.querySelector('.paging .next > a') as HTMLElement;
+                    if (btn) btn.click();
+                });
+                await new Promise(r => setTimeout(r, 2000));
+                try {
+                    await page.waitForNetworkIdle({ timeout: 2000 }).catch(() => { });
+                } catch (e) { }
+            }
+        }
+
+        pageNum++;
     }
 
     await browser.close();
 
     const outputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
-    // Filter for 2026 events only
-    const validEvents = collectedEvents.filter(e => e.date.includes('2026'));
-    fs.writeFileSync(outputPath, JSON.stringify(validEvents, null, 2));
-
-    console.log(`✅ Scrape Complete! Saved ${validEvents.length} events (from ${collectedEvents.length} total) to ${outputPath}`);
-
-    // Log sample date for debug
-    if (validEvents.length > 0) {
-        console.log('Sample Date:', validEvents[0].date);
+    // Final check for duplicates based on title+date
+    const uniqueEvents = [];
+    const seen = new Set();
+    for (const e of collectedEvents) {
+        const key = e.title + e.date;
+        if (!seen.has(key)) {
+            uniqueEvents.push(e);
+            seen.add(key);
+        }
     }
 
-    const unknown = validEvents.filter(e => e.genre === 'unknown');
-    if (unknown.length > 0) {
-        console.log('⚠️  Found Unclassified Events (Title):');
-        // Limit output
-        unknown.slice(0, 20).forEach(e => console.log(`- ${e.title}`));
-        if (unknown.length > 20) console.log(`... and ${unknown.length - 20} more.`);
-    }
+    fs.writeFileSync(outputPath, JSON.stringify(uniqueEvents, null, 2));
+    console.log(`✅ Scrape Complete! Saved ${uniqueEvents.length} unique events to ${outputPath}`);
 }
 
 scrape().catch(console.error);
