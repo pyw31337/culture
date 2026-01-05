@@ -23,13 +23,14 @@ const END_DATE = '2026-12-31';
 
 async function mapCategory(title: string): Promise<string> {
     const t = title.toLowerCase();
-    if (t.includes('음악회') || t.includes('독주회') || t.includes('독창회') || t.includes('연주회')) return 'classic';
-    if (t.includes('개인전') || t.includes('기획전') || t.includes('전시')) return 'exhibition';
-    if (t.includes('축제') || t.includes('페스타')) return 'festival';
+
     if (t.includes('뮤지컬')) return 'musical';
-    if (t.includes('연극')) return 'play';
     if (t.includes('콘서트')) return 'concert';
-    if (t.includes('클래스') || t.includes('강좌') || t.includes('교육') || t.includes('체험')) return 'education';
+    if (t.includes('연극')) return 'theater';
+    if (t.includes('클래식') || t.includes('음악회') || t.includes('독주회') || t.includes('리사이틀')) return 'classic';
+    if (t.includes('전시') || t.includes('미술') || t.includes('사진') || t.includes('박물관') || t.includes('개인전')) return 'exhibition';
+    if (t.includes('클래스') || t.includes('강좌') || t.includes('교육') || t.includes('교실')) return 'class';
+    if (t.includes('체험') || t.includes('축제') || t.includes('페스티벌')) return 'leisure';
 
     return 'unknown';
 }
