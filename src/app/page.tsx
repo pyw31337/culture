@@ -13,6 +13,7 @@ import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
 
 import umclassData from '@/data/umclass.json';
+import seoulData from '@/data/seoul-culture.json';
 
 import mochaclassData from '@/data/mochaclass.json';
 
@@ -66,6 +67,7 @@ async function getPerformances() {
     const classes = classData as unknown as any[];
     const umclasses = umclassData as unknown as any[];
     const mochaclasses = mochaclassData as unknown as any[];
+    const seoulCulture = seoulData as unknown as any[];
 
     // Aggregate Data
     const allPerformances = [
@@ -81,6 +83,7 @@ async function getPerformances() {
         ...classes,  // Class (Klook)
         ...umclasses, // Class (UmClass)
         ...mochaclasses, // Class (MochaClass)
+        ...seoulCulture, // Seoul Culture
     ].map(p => ({
         ...p,
         // Ensure ID is string
