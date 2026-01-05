@@ -71,7 +71,9 @@ async function getPerformances() {
         ...p,
         venue: p.place,
         region: 'seoul',
-        image: p.poster // Map 'poster' from JSON to 'image' expected by Performance type
+        image: p.poster, // Map 'poster' from JSON to 'image' expected by Performance type
+        price: p.cost,   // Map 'cost' from JSON to 'price'
+        date: p.time ? `${p.date} (${p.time})` : p.date // Append time to date for display
     }));
 
     // Aggregate Data
