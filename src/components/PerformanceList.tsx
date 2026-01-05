@@ -1740,25 +1740,52 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </span>
                     </div>
 
-                    {/* Alarm Toggle Button */}
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setIsAlarmOpen(!isAlarmOpen);
-                        }}
-                        className={clsx(
-                            "p-2 rounded-full transition-all duration-300 ml-4 relative",
-                            isAlarmOpen ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
-                        )}
-                    >
-                        <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
-                        {/* Keyword count badge */}
-                        {savedKeywords.length > 0 && (
-                            <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
-                                {savedKeywords.length > 99 ? '99+' : savedKeywords.length}
-                            </span>
-                        )}
-                    </button>
+                    <div className="flex items-center gap-1 ml-4">
+                        {/* Map Toggle Button */}
+                        <button
+                            onClick={() => setViewMode(viewMode === 'map' ? 'grid' : 'map')}
+                            className={clsx(
+                                "p-2 rounded-full transition-all duration-300 relative",
+                                viewMode === 'map' ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                            )}
+                            aria-label="지도 보기"
+                        >
+                            <MapIcon size={24} strokeWidth={viewMode === 'map' ? 2.5 : 2} />
+                        </button>
+
+                        {/* Calendar Toggle Button */}
+                        <button
+                            onClick={() => setViewMode(viewMode === 'calendar' ? 'grid' : 'calendar')}
+                            className={clsx(
+                                "p-2 rounded-full transition-all duration-300 relative",
+                                viewMode === 'calendar' ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                            )}
+                            aria-label="달력 보기"
+                        >
+                            <CalendarDays size={24} strokeWidth={viewMode === 'calendar' ? 2.5 : 2} />
+                        </button>
+
+                        {/* Alarm Toggle Button */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsAlarmOpen(!isAlarmOpen);
+                            }}
+                            className={clsx(
+                                "p-2 rounded-full transition-all duration-300 relative",
+                                isAlarmOpen ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                            )}
+                            aria-label="알림 설정"
+                        >
+                            <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
+                            {/* Keyword count badge */}
+                            {savedKeywords.length > 0 && (
+                                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
+                                    {savedKeywords.length > 99 ? '99+' : savedKeywords.length}
+                                </span>
+                            )}
+                        </button>
+                    </div>
                 </div>
 
                 {/* Alarm Panel (Slide Down) */}
