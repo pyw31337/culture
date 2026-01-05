@@ -3223,7 +3223,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 currentViewMode={viewMode}
                 onLikePerfClick={handleLikePerfClick}
                 onLikeVenueClick={handleLikeVenueClick}
-                likeCount={likedIds.length}
+                likeCount={likedPerformances.length}
                 venueCount={favoriteVenues.length}
                 selectedGenre={selectedGenre}
             />
