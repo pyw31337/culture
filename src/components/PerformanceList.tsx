@@ -632,9 +632,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             // 6. Location Context (District/Venue) - New!
             // Pick a random performance to promote its location
             if (initialPerformances.length > 0) {
+                // Filter specifically for Seoul, Gyeonggi, Incheon events to promote local context
+                const targetPerformances = initialPerformances.filter(p => ['seoul', 'gyeonggi', 'incheon'].includes(p.region));
+                const candidates = targetPerformances.length > 0 ? targetPerformances : initialPerformances;
+
                 // Try 3 times to find a suitable location candidate
                 for (let i = 0; i < 3; i++) {
-                    const randomPerf = initialPerformances[Math.floor(Math.random() * initialPerformances.length)];
+                    const randomPerf = candidates[Math.floor(Math.random() * candidates.length)];
                     const v = venues[randomPerf.venue];
 
                     // Candidate strings: District or Venue Name
