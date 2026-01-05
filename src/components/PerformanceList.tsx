@@ -55,6 +55,31 @@ function deg2rad(deg: number) {
     return deg * (Math.PI / 180)
 }
 
+// Helper to extract first price from a price string like "VIP석 154,000원 R석 132,000원..."
+// Returns { label: 'VIP석', price: '154,000' } or { label: null, price: '30,000' }
+function extractFirstPrice(priceStr: string): { label: string | null; price: string } | null {
+    if (!priceStr) return null;
+
+    // Check for free
+    if (priceStr.includes('무료') || priceStr === '0') {
+        return { label: null, price: '무료' };
+    }
+
+    // Try to match pattern: "XX석 NUMBER원" or "전석 NUMBER원"
+    const match = priceStr.match(/([가-힣A-Z]+석?)\s*([\d,]+)원?/);
+    if (match) {
+        return { label: match[1], price: match[2] };
+    }
+
+    // Fallback: just extract first number
+    const numMatch = priceStr.match(/([\d,]+)/);
+    if (numMatch) {
+        return { label: null, price: numMatch[1] };
+    }
+
+    return null;
+}
+
 // --- Text Templates for Hero Section ---
 // --- Text Templates for Hero Section ---
 // Structure:
@@ -3561,18 +3586,23 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     {/* Right: Price */}
                                     <div className="flex flex-col items-end">
                                         {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
-                                        {perf.price && (
-                                            <div className="text-white">
-                                                {perf.price.includes('무료') || perf.price === '0' ? (
-                                                    <span className="text-lg font-extrabold">무료</span>
-                                                ) : (
-                                                    <>
-                                                        <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                        <span className="text-xs font-light ml-0.5">원</span>
-                                                    </>
-                                                )}
-                                            </div>
-                                        )}
+                                        {perf.price && (() => {
+                                            const extracted = extractFirstPrice(perf.price);
+                                            if (!extracted) return null;
+                                            return (
+                                                <div className="text-white">
+                                                    {extracted.price === '무료' ? (
+                                                        <span className="text-lg font-extrabold">무료</span>
+                                                    ) : (
+                                                        <>
+                                                            {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                            <span className="text-lg font-extrabold">{extracted.price}</span>
+                                                            <span className="text-xs font-light ml-0.5">원</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            );
+                                        })()}
                                     </div>
                                 </div>
 
@@ -4065,18 +4095,23 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 </div>
                                                 <div className="flex items-baseline gap-1.5">
                                                     {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
-                                                    {perf.price && (
-                                                        <div className="text-white drop-shadow-md leading-none">
-                                                            {perf.price.includes('무료') || perf.price === '0' ? (
-                                                                <span className="text-lg font-extrabold">무료</span>
-                                                            ) : (
-                                                                <>
-                                                                    <span className="text-lg font-extrabold">{perf.price.replace(/[^0-9,]/g, '')}</span>
-                                                                    <span className="text-xs font-light ml-0.5">원</span>
-                                                                </>
-                                                            )}
-                                                        </div>
-                                                    )}
+                                                    {perf.price && (() => {
+                                                        const extracted = extractFirstPrice(perf.price);
+                                                        if (!extracted) return null;
+                                                        return (
+                                                            <div className="text-white drop-shadow-md leading-none">
+                                                                {extracted.price === '무료' ? (
+                                                                    <span className="text-lg font-extrabold">무료</span>
+                                                                ) : (
+                                                                    <>
+                                                                        {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                                        <span className="text-lg font-extrabold">{extracted.price}</span>
+                                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                                    </>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })()}
                                                 </div>
                                             </div>
                                         )}
