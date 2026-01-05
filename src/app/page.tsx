@@ -67,7 +67,11 @@ async function getPerformances() {
     const classes = classData as unknown as any[];
     const umclasses = umclassData as unknown as any[];
     const mochaclasses = mochaclassData as unknown as any[];
-    const seoulCulture = seoulData as unknown as any[];
+    const seoulCulture = (seoulData as unknown as any[]).map(p => ({
+        ...p,
+        venue: p.place,
+        region: 'seoul'
+    }));
 
     // Aggregate Data
     const allPerformances = [
