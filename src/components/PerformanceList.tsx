@@ -1147,14 +1147,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
 
+        // Enforce Global Search: Reset ViewMode and Category on ANY input
+        if (val) {
+            if (viewMode === 'likes-perf' || viewMode === 'likes-venue') {
+                setViewMode('grid');
+            }
+            if (selectedGenre !== 'all') {
+                setSelectedGenre('all');
+            }
+        }
+
         // Auto-close lists when starting a search (UI refinement)
         if (val && !searchText) {
             setShowFavoriteVenues(false);
             setShowLikes(false);
-        }
-
-        if (val && selectedGenre !== 'all') {
-            setSelectedGenre('all');
         }
 
         setSearchText(val);
