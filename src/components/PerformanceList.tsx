@@ -3537,7 +3537,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     className="hover:text-white hover:underline truncate text-gray-400 text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    {perf.venue}
+                                    <span className="truncate">{perf.venue}</span>
                                 </button>
                             )}
                         </div>
@@ -3937,8 +3937,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         }}
                                         className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
                                     >
-                                        <MapPin className="w-3 h-3 text-gray-700" />
-                                        {perf.venue}
+                                        <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
+                                        <span className="truncate">{perf.venue}</span>
                                     </button>
                                 )}
                                 <div className="mt-auto mb-2">
@@ -4052,10 +4052,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                             });
                                                         }
                                                     }}
-                                                    className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer"
+                                                    className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full"
                                                 >
-                                                    <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />
-                                                    {perf.venue}
+                                                    <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
+                                                    <span className="truncate">{perf.venue}</span>
                                                 </button>
                                             )}
                                         </div>
