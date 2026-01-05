@@ -111,34 +111,54 @@ async function scrapeUmClass() {
 
             try {
                 const pageItems = await page.evaluate(() => {
-                    const listItems = document.querySelectorAll('.class-search-result.search-result-area ul.append-area > li');
+                    // Try multiple selectors for robustness
+                    let listItems = document.querySelectorAll('.classPlan-contents-list a[href*="/classInfo/"]');
+                    if (listItems.length === 0) {
+                        listItems = document.querySelectorAll('a[href*="/classInfo/"]');
+                    }
+
                     const results: any[] = [];
 
                     if (listItems.length === 0) return [];
 
-                    listItems.forEach((item) => {
-                        const anchor = item.querySelector('a');
-                        if (!anchor) return;
+                    listItems.forEach((anchor) => {
+                        const link = (anchor as HTMLAnchorElement).href;
+                        const titleElem = anchor.querySelector('.list-subject') ||
+                            anchor.querySelector('[class*="subject"]') ||
+                            anchor.querySelector('[class*="title"]');
+                        let title = titleElem ? titleElem.textContent?.trim() : '';
 
-                        const link = anchor.href;
-                        const titleElem = anchor.querySelector('.list-subject');
-                        const title = titleElem ? titleElem.textContent?.trim() : '';
+                        // Fallback: get text from anchor if no title element
+                        if (!title) {
+                            const text = anchor.textContent?.trim() || '';
+                            // Extract class name from text (usually the longest line)
+                            const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 10);
+                            title = lines.find(l => l.includes('클래스') || l.includes('[')) || lines[0] || '';
+                        }
 
-                        if (!title || !link) return;
+                        if (!title || !link || !link.includes('/classInfo/')) return;
 
                         // Image
-                        const imgDiv = anchor.querySelector('.list-img .img');
+                        const imgDiv = anchor.querySelector('[class*="img"]');
                         let image = '';
                         if (imgDiv) {
                             const style = window.getComputedStyle(imgDiv);
-                            image = style.backgroundImage.slice(4, -1).replace(/\"/g, "");
+                            const bgImage = style.backgroundImage;
+                            if (bgImage && bgImage !== 'none') {
+                                image = bgImage.slice(4, -1).replace(/"/g, '');
+                            }
+                        }
+                        // Fallback: check for img tag
+                        if (!image) {
+                            const imgTag = anchor.querySelector('img');
+                            if (imgTag) image = imgTag.src;
                         }
 
                         // Discount and Price
-                        const discountElem = anchor.querySelector('.discount-rate');
-                        const priceElem = anchor.querySelector('.price');
+                        const discountElem = anchor.querySelector('[class*="discount"]');
+                        const priceElem = anchor.querySelector('[class*="price"]');
 
-                        const discount = discountElem ? discountElem.textContent?.trim() || '' : '';
+                        const discount = discountElem ? discountElem.textContent?.trim().replace(/[^0-9%]/g, '') || '' : '';
                         const price = priceElem ? priceElem.textContent?.trim() || '' : '';
 
                         results.push({
