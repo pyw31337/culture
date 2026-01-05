@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   basePath: isProd ? '/culture' : '',
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'culture.seoul.go.kr',
+      },
+    ],
   },
 };
 
