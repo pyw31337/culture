@@ -70,7 +70,8 @@ async function getPerformances() {
     const seoulCulture = (seoulData as unknown as any[]).map(p => ({
         ...p,
         venue: p.place,
-        region: 'seoul'
+        region: 'seoul',
+        image: p.poster // Map 'poster' from JSON to 'image' expected by Performance type
     }));
 
     // Aggregate Data
