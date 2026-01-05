@@ -29,7 +29,7 @@ async function mapCategory(title: string): Promise<string> {
     if (t.includes('뮤지컬')) return 'musical';
     if (t.includes('연극')) return 'play';
     if (t.includes('콘서트')) return 'concert';
-    if (t.includes('클래스') || t.includes('강좌')) return 'class';
+    if (t.includes('클래스') || t.includes('강좌') || t.includes('교육') || t.includes('체험')) return 'education';
 
     return 'unknown';
 }
@@ -42,40 +42,48 @@ async function scrape() {
     });
     const page = await browser.newPage();
 
-    // Use URL params for date filtering
-    const searchUrl = `${TARGET_URL}&searchStartDate=${START_DATE.replace(/-/g, '.')}&searchEndDate=${END_DATE.replace(/-/g, '.')}`;
-    console.log(`🔗 Navigating to: ${searchUrl}`);
+    // Set User Agent
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
-    await page.goto(searchUrl, { waitUntil: 'networkidle2' });
-
-    // Verify if filter applied (optional, or just proceed)
-    // We skip DOM manipulation for dates now.
-
-    /* 
-    await page.evaluate(() => {
-        // @ts-ignore
-        document.querySelector('#searchStartDate').value = '2026.01.01';
-        // @ts-ignore
-        document.querySelector('#searchEndDate').value = '2026.12.31';
-        // Click search button
-        // @ts-ignore
-        document.querySelector('.btn-search').click();
-    }); 
-    */
-
-
+    // URL-based Scraper Strategy with Improved Wait
 
     let collectedEvents: ScrapedEvent[] = [];
     let hasNext = true;
     let pageNum = 1;
+    let lastFirstTitle = '';
 
     // Safety limit
     const MAX_PAGES = 50;
 
     while (hasNext) {
-        console.log(`📄 Scraping List Page ${pageNum}...`);
+        let pageUrl = `${TARGET_URL}&searchStartDate=${START_DATE.replace(/-/g, '.')}&searchEndDate=${END_DATE.replace(/-/g, '.')}`;
+        if (pageNum > 1) {
+            pageUrl += `&pageIndex=${pageNum}`;
+        }
 
-        await page.waitForSelector('#dataList');
+        console.log(`🔗 Navigating to Page ${pageNum}: ${pageUrl}`);
+
+        try {
+            await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        } catch (e) {
+            console.log('   TIMEOUT. Retrying...');
+            await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
+        }
+
+        // Wait for LIST ITEMS (not just list container)
+        try {
+            await page.waitForSelector('#dataList > li', { timeout: 10000 });
+        } catch (e) {
+            console.log('   No list items found (timeout). Checking content...');
+            const html = await page.evaluate(() => document.querySelector('#dataList')?.innerHTML || 'No #dataList');
+            console.log('   #dataList HTML:', html.substring(0, 200).replace(/\n/g, ' '));
+
+            // Should we look for 'No results' message?
+            // .nodata ?
+
+            hasNext = false;
+            break;
+        }
 
         // Extract Basic Info
         const listItems = await page.evaluate(() => {
@@ -113,19 +121,19 @@ async function scrape() {
             break;
         }
 
+        // Loop and details extraction...
+        // ... (reuse existing loop logic logic)
+
         for (const item of listItems) {
             let genre = await mapCategory(item.title);
-
             const detailPage = await browser.newPage();
             try {
                 await detailPage.goto(item.link, { waitUntil: 'domcontentloaded' });
-
                 const details = await detailPage.evaluate(() => {
                     const time = document.querySelector('.intro-top .type-box ul li:nth-child(3) .type-td span')?.textContent?.trim() || '';
                     const cost = document.querySelector('.intro-top .type-box ul li:nth-child(5) .type-td span')?.textContent?.trim() || '';
                     return { time, cost };
                 });
-
                 collectedEvents.push({
                     id: `seoul-culture-${Math.random().toString(36).substr(2, 9)}`,
                     title: item.title,
@@ -138,56 +146,32 @@ async function scrape() {
                     source: 'seoul-culture',
                     link: item.link
                 });
-
             } catch (e: any) {
                 console.error(`   Failed to scrape details for ${item.title}:`, e.message);
-            } finally {
-                await detailPage.close();
-            }
+            } finally { await detailPage.close(); }
         }
 
-        // Pagination
-        const nextButton = await page.$('#paging > a.next');
+        pageNum++;
+        if (pageNum > MAX_PAGES) hasNext = false;
 
-        if (nextButton) {
-            const canClick = await page.evaluate(() => {
-                const btn = document.querySelector('#paging > a.next');
-                // Check if it's the last page (often href="#" or implicit logic)
-                // But typically if 'next' exists in the DOM, it might be clickable.
-                // We rely on listItems check as well.
-                return !!btn;
-            });
-
-            if (canClick) {
-                await Promise.all([
-                    page.evaluate(() => {
-                        const btn = document.querySelector('#paging > a.next') as HTMLElement;
-                        if (btn) btn.click();
-                    }),
-                    page.waitForNavigation({ waitUntil: 'networkidle2' }).catch(() => { })
-                ]);
-                pageNum++;
-            } else {
-                hasNext = false;
-            }
-        } else {
-            hasNext = false;
-        }
-
-        if (pageNum > MAX_PAGES) {
-            console.log('Reach max page limit.');
-            hasNext = false;
-        }
+        // No JS navigation needed since we use goto
     }
 
     await browser.close();
 
     const outputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
-    fs.writeFileSync(outputPath, JSON.stringify(collectedEvents, null, 2));
+    // Filter for 2026 events only
+    const validEvents = collectedEvents.filter(e => e.date.includes('2026'));
+    fs.writeFileSync(outputPath, JSON.stringify(validEvents, null, 2));
 
-    console.log(`✅ Scrape Complete! Saved ${collectedEvents.length} events to ${outputPath}`);
+    console.log(`✅ Scrape Complete! Saved ${validEvents.length} events (from ${collectedEvents.length} total) to ${outputPath}`);
 
-    const unknown = collectedEvents.filter(e => e.genre === 'unknown');
+    // Log sample date for debug
+    if (validEvents.length > 0) {
+        console.log('Sample Date:', validEvents[0].date);
+    }
+
+    const unknown = validEvents.filter(e => e.genre === 'unknown');
     if (unknown.length > 0) {
         console.log('⚠️  Found Unclassified Events (Title):');
         // Limit output
