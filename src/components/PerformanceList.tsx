@@ -3471,6 +3471,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 venueCount={favoriteVenues.length}
                 selectedGenre={selectedGenre}
             />
+
+
+            <FavoriteVenuesModal
+                isOpen={isFavoriteVenuesModalOpen}
+                onClose={() => setIsFavoriteVenuesModalOpen(false)}
+                favoriteVenues={favoriteVenues}
+                onRemove={handleRemoveFavoriteVenue}
+            />
         </div>
     );
 }
@@ -4346,14 +4354,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 </div>
             </div>
 
-
-
-            <FavoriteVenuesModal
-                isOpen={isFavoriteVenuesModalOpen}
-                onClose={() => setIsFavoriteVenuesModalOpen(false)}
-                favoriteVenues={favoriteVenues}
-                onRemove={handleRemoveFavoriteVenue}
-            />
         </div>
     );
 }
