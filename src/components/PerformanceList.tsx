@@ -23,6 +23,7 @@ import { getGenreIcon } from '@/components/GenreIcons';
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
+const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 import { useSearchParams, useRouter } from 'next/navigation';
 
 interface Venue {
@@ -515,6 +516,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [showLikes, setShowLikes] = useState(true);
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
+    const [isFavoriteVenuesModalOpen, setIsFavoriteVenuesModalOpen] = useState(false);
     const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
     const [isHeroVisible, setIsHeroVisible] = useState(true); // Track visibility for pausing animation
@@ -1607,6 +1609,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }
         setActiveBottomMenu(null);
         scrollToTop();
+    };
+
+    const handleRemoveFavoriteVenue = (venueName: string) => {
+        setFavoriteVenues(prev => prev.filter(v => v !== venueName));
     };
 
     // --- Derived Filters for Search/Region ---
@@ -3088,6 +3094,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         <Star className="text-yellow-400 w-6 h-6 fill-yellow-400" />
                                         <span>찜한 공연장</span>
                                         <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                        <button
+                                            onClick={() => setIsFavoriteVenuesModalOpen(true)}
+                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-medium transition-colors flex items-center gap-1.5 border border-white/10"
+                                        >
+                                            <List size={14} />
+                                            찜한공연장 목록
+                                        </button>
                                     </>
                                 ) : activeLocation ? (
                                     <>
@@ -4334,6 +4347,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             </div>
 
 
+
+            <FavoriteVenuesModal
+                isOpen={isFavoriteVenuesModalOpen}
+                onClose={() => setIsFavoriteVenuesModalOpen(false)}
+                favoriteVenues={favoriteVenues}
+                onRemove={handleRemoveFavoriteVenue}
+            />
         </div>
     );
 }
