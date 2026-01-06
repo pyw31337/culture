@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, LayoutList, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun } from 'lucide-react';
-import { BottomMenuType, CloverIcon } from './BottomNav';
+import { BottomMenuType, CloverIcon, ListDetailsIcon } from './BottomNav';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 
 interface BottomNavSheetProps {
@@ -162,7 +162,7 @@ export default function BottomNavSheet({
                             <div className="grid grid-cols-2 gap-4">
                                 {[
                                     { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: CloverIcon, color: 'text-purple-400' },
-                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: CloverIcon, color: 'text-blue-400' },
+                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: ListDetailsIcon, color: 'text-blue-400' },
                                     { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
                                     { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
                                 ].map((mode) => {

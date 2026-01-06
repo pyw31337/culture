@@ -39,6 +39,29 @@ export const CloverIcon = ({ className, strokeWidth = 2 }: { className?: string;
     </svg>
 );
 
+export const ListDetailsIcon = ({ className, size = 24 }: { className?: string; size?: number }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={clsx("icon icon-tabler icons-tabler-outline icon-tabler-list-details", className)}
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M13 5h8" />
+        <path d="M13 9h5" />
+        <path d="M13 15h8" />
+        <path d="M13 19h5" />
+        <path d="M3 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" />
+        <path d="M3 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" />
+    </svg>
+);
+
 export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0, selectedGenre = 'all' }: BottomNavProps) {
     // Determine Category Label
     const categoryLabel = (selectedGenre && selectedGenre !== 'all')
@@ -52,7 +75,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 {getGenreIcon(selectedGenre)}
             </span>
         )
-        : LayoutGrid;
+        : CloverIcon;
 
     // Left side items
     const leftItems = [
@@ -85,7 +108,17 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         },
     ];
 
-    const renderNavItem = (item: typeof leftItems[0] & { isActive?: boolean; badgeCount?: number }) => {
+    // Navigation Item Type
+    interface NavItem {
+        id: string;
+        label: string;
+        icon: React.ElementType;
+        action: () => void;
+        isActive?: boolean;
+        badgeCount?: number;
+    }
+
+    const renderNavItem = (item: NavItem) => {
         const isActive = item.isActive || activeMenu === item.id;
         const Icon = item.icon;
 
