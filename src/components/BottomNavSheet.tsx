@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun } from 'lucide-react';
-import { BottomMenuType } from './BottomNav';
+import { BottomMenuType, CloverIcon } from './BottomNav';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 
 interface BottomNavSheetProps {
@@ -161,8 +161,8 @@ export default function BottomNavSheet({
                             </h3>
                             <div className="grid grid-cols-2 gap-4">
                                 {[
-                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: Grid3X3, color: 'text-purple-400' },
-                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: List, color: 'text-blue-400' },
+                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: LayoutGrid, color: 'text-purple-400' },
+                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: LayoutList, color: 'text-blue-400' },
                                     { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
                                     { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
                                 ].map((mode) => {
@@ -209,7 +209,7 @@ export default function BottomNavSheet({
                                             : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
-                                    <LayoutGrid size={16} />
+                                    <CloverIcon className="w-4 h-4" />
                                     <span className="text-sm font-medium">전체</span>
                                 </button>
 
