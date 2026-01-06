@@ -202,7 +202,7 @@ export default function BottomNavSheet({
                     {/* CATEGORY MENU */}
                     {activeMenu === 'category' && (
                         <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-white px-1 flex items-center gap-2">
+                            <h3 className="text-lg font-bold text-white light:text-black px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 카테고리
                             </h3>
                             <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
@@ -212,8 +212,8 @@ export default function BottomNavSheet({
                                     className={clsx(
                                         "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                         selectedGenre === 'all'
-                                            ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50"
-                                            : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
+                                            ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none"
+                                            : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
                                     <LayoutGrid size={16} />
@@ -226,8 +226,8 @@ export default function BottomNavSheet({
                                     className={clsx(
                                         "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                         selectedGenre === 'hotdeal'
-                                            ? "bg-gradient-to-r from-orange-500 to-red-500 text-white border-transparent shadow-lg shadow-orange-900/50"
-                                            : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
+                                            ? "bg-gradient-to-r from-orange-500 to-red-500 text-white border-transparent shadow-lg shadow-orange-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none light:bg-none"
+                                            : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
                                     <Star size={16} />

@@ -2431,7 +2431,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     {currentTemplate.line1}<br />
                                     {currentTemplate.boldPrefix && (
                                         <>
-                                            <span className="font-extrabold text-white">{currentTemplate.boldPrefix}</span>
+                                            <span className="font-extrabold text-white light:text-black">{currentTemplate.boldPrefix}</span>
                                             {/* No BR here, let it flow or add space? Design usually flows. */}
                                             {/* But template structure implies distinct segments. */}
                                             {/* line2Pre usually follows immediately. */}
@@ -3549,7 +3549,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         <div className="flex flex-wrap gap-2 mb-1 items-center">
                             <span className={clsx(
                                 "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border whitespace-nowrap",
-                                genreStyle.twBg ? `${genreStyle.twBg} border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
+                                genreStyle.twBg ? `${genreStyle.twBg} text-white border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                             </span>
