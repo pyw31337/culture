@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
-import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, Mic2, Music, Ticket, Frame, Baby, Star } from 'lucide-react';
+import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun } from 'lucide-react';
 import { BottomMenuType } from './BottomNav';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 
@@ -52,6 +52,25 @@ export default function BottomNavSheet({
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
+    const [isLight, setIsLight] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const isLightMode = document.documentElement.classList.contains('light');
+            setIsLight(isLightMode);
+        }
+    }, [isVisible]); // Check whenever sheet opens
+
+    const toggleTheme = () => {
+        const doc = document.documentElement;
+        if (doc.classList.contains('light')) {
+            doc.classList.remove('light');
+            setIsLight(false);
+        } else {
+            doc.classList.add('light');
+            setIsLight(true);
+        }
+    };
 
     useEffect(() => {
         if (activeMenu) {
@@ -85,7 +104,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 backdrop-blur-xl border-t-2 border-purple-400/60 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] pb-20 animate-purple-shimmer",
+                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 light:bg-white/95 backdrop-blur-xl border-t-2 border-purple-400/60 light:border-purple-600/30 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-20 animate-purple-shimmer",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
@@ -100,8 +119,34 @@ export default function BottomNavSheet({
                     {/* VIEW MENU */}
                     {activeMenu === 'view' && (
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold text-white mb-4 px-1 flex items-center gap-2">
-                                <span className="text-purple-400">#</span> 보기 방식
+                            <h3 className="text-xl font-bold text-white light:text-black mb-4 px-1 flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <span className="text-purple-400 light:text-purple-600">#</span> 보기 방식
+                                </div>
+
+                                {/* Theme Toggle */}
+                                <div className="flex bg-gray-800 light:bg-gray-200 p-1 rounded-full border border-white/10 light:border-black/5">
+                                    <button
+                                        onClick={toggleTheme}
+                                        className={clsx(
+                                            "p-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 px-3",
+                                            !isLight ? "bg-gray-700 text-white shadow-md" : "text-gray-400 hover:text-gray-600"
+                                        )}
+                                    >
+                                        <Moon size={14} />
+                                        <span className="text-xs font-bold">다크</span>
+                                    </button>
+                                    <button
+                                        onClick={toggleTheme}
+                                        className={clsx(
+                                            "p-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 px-3",
+                                            isLight ? "bg-white text-orange-500 shadow-md" : "text-gray-400 hover:text-gray-300"
+                                        )}
+                                    >
+                                        <Sun size={14} />
+                                        <span className="text-xs font-bold">라이트</span>
+                                    </button>
+                                </div>
                             </h3>
                             <div className="grid grid-cols-2 gap-4">
                                 {[

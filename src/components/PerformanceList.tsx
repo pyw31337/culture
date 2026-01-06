@@ -1837,7 +1837,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // --- Bottom Nav Handlers ---
     return (
         <div
-            className="min-h-screen bg-transparent text-gray-100 font-sans pb-20 relative"
+            className="min-h-screen bg-transparent text-gray-100 light:text-gray-900 font-sans pb-20 relative"
         >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}
@@ -3427,8 +3427,8 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
         : variant === 'pink'
             ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
             : variant === 'yellow'
-                ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                : "border-white/5 hover:border-white/20 shadow-xl hover:shadow-2xl";
+                ? "border-yellow-500/40 light:border-yellow-400 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
+                : "border-white/5 light:border-black/5 hover:border-white/20 light:hover:border-black/20 shadow-xl hover:shadow-2xl bg-gray-900 light:bg-white";
 
     // Content background for colored variants
     const contentBgStyle = variant === 'emerald'
@@ -3562,12 +3562,12 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </div>
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
+                            <h3 className="text-lg sm:text-xl font-bold text-white light:text-black leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
                                 {perf.title.trim()}
                             </h3>
                         </a>
 
-                        <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
+                        <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-gray-600 mt-1">
 
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
@@ -3594,7 +3594,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         e.stopPropagation();
                                         if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
                                     }}
-                                    className="hover:text-white hover:underline truncate text-gray-400 text-xs flex items-center gap-1 mb-2"
+                                    className="hover:text-white hover:underline truncate text-gray-400 light:text-gray-600 text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
                                     <span className="truncate">{perf.venue}</span>
@@ -3828,7 +3828,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
                     isGradient
                         ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a]"
-                        : "bg-gray-900"
+                        : "bg-gray-900 light:bg-white"
                 )}
                     style={{ transform: 'translateZ(0)' }} // Force stacking context for Safari overflow fix
                 >
@@ -4062,7 +4062,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(
                                                 "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
-                                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20 light:border-black/10` : 'bg-black/30 light:bg-gray-100 border-[#a78bfa]/50 text-[#a78bfa] light:text-purple-600'
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
@@ -4076,12 +4076,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </div>
 
                                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                            <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                            <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white light:text-black mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                                 {perf.title.trim()}
                                             </h3>
                                         </a>
 
-                                        <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
+                                        <div className="flex items-center gap-1.5 mt-1 text-gray-300 light:text-gray-600 text-xs font-medium">
                                             {perf.genre === 'movie' ? (
                                                 <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                     {perf.gradeIcon ? (
@@ -4122,7 +4122,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                         {/* Movie Metadata (Director, Cast, Info) for Grid View */}
                                         {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
-                                            <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
+                                            <div className="mt-2 text-xs text-gray-400 light:text-gray-600 space-y-0.5 border-t border-white/10 light:border-black/10 pt-2">
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">
                                                         <span className="text-gray-500 font-bold shrink-0">감독</span>

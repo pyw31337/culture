@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant light (&:where(.light, .light *));
 
 @layer base {
 
@@ -25,6 +26,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
+  .light {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   /* Optional: Define light mode if needed, but defaulting to Dark for this design */
   /* :root {
@@ -39,6 +52,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   word-break: keep-all;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
