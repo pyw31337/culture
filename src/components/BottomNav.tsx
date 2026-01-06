@@ -96,66 +96,36 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     };
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 z-[9990] pb-safe">
-            {/* Main bar container with notch */}
-            <div className="relative max-w-7xl mx-auto px-2">
-                {/* Center floating button with rotating gradient border */}
-                <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
-                    {/* Outer gradient border wrapper - rotating conic gradient */}
-                    <div className={clsx(
-                        "relative w-[68px] h-[68px] rounded-full p-[1px] overflow-hidden",
-                        "animate-rotate-gradient"
-                    )}>
-                        <button
-                            onClick={() => onMenuClick('location')}
-                            className={clsx(
-                                "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
-                                "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
-                                "hover:scale-105",
-                                "active:scale-95",
-                                activeMenu === 'location' && "shadow-[0_0_40px_rgba(167,139,250,0.8)]"
-                            )}
-                        >
-                            <MapPin
-                                className="w-7 h-7 text-white drop-shadow-lg"
-                                strokeWidth={2.5}
-                            />
-                        </button>
-                    </div>
-                    {/* Ripple effect when active */}
-                    {activeMenu === 'location' && (
-                        <div className="absolute inset-0 rounded-full animate-ping bg-purple-400/30 pointer-events-none" />
-                    )}
+        <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9990] w-[90%] max-w-[360px]">
+            <div className="relative h-[68px] bg-black/60 backdrop-blur-2xl rounded-full border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex items-center justify-between px-5 ring-1 ring-white/5">
+                {/* Left Side */}
+                <div className="flex gap-1">
+                    {leftItems.map(renderNavItem)}
                 </div>
 
-                {/* Bottom bar with curved notch */}
-                <div className="relative bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 backdrop-blur-xl border-t border-purple-500/20 rounded-t-3xl overflow-hidden">
-                    {/* SVG Notch Mask */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
-                        <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
-                            <path
-                                d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
-                                fill="#1a0b2e"
-                                className="drop-shadow-lg"
-                            />
-                        </svg>
-                    </div>
+                {/* Center Action (Location) */}
+                <div className="relative -top-5">
+                    <button
+                        onClick={() => onMenuClick('location')}
+                        className={clsx(
+                            "w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 shadow-[0_8px_16px_rgba(0,0,0,0.3)] border-4 border-[#1a1b1e]", // Dark border to mask background if needed, or transparent?
+                            "bg-gradient-to-br from-[#a78bfa] to-[#f472b6]",
+                            "hover:scale-105 active:scale-95 group"
+                        )}
+                    >
+                        <MapPin
+                            className="w-6 h-6 text-white drop-shadow-md group-hover:animate-bounce"
+                            strokeWidth={2.5}
+                        />
+                        {activeMenu === 'location' && (
+                            <span className="absolute inset-0 rounded-full animate-ping bg-purple-400/30 -z-10" />
+                        )}
+                    </button>
+                </div>
 
-                    {/* Navigation Items Container */}
-                    <div className="h-16 flex items-center">
-                        {/* Left Side */}
-                        <div className="flex-1 flex items-center justify-evenly h-full">
-                            {leftItems.map(renderNavItem)}
-                        </div>
-
-                        {/* Center Spacer for the floating button */}
-                        <div className="w-20" />
-
-                        {/* Right Side */}
-                        <div className="flex-1 flex items-center justify-evenly h-full">
-                            {rightItems.map(renderNavItem)}
-                        </div>
-                    </div>
+                {/* Right Side */}
+                <div className="flex gap-1">
+                    {rightItems.map(renderNavItem)}
                 </div>
             </div>
         </nav>
