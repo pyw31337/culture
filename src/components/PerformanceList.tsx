@@ -2444,7 +2444,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <TypingHero
                                         template={currentTemplate}
                                         onCycle={handleHeroCycle}
-                                        paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
+                                        paused={!isHeroVisible || (viewMode !== 'list' && viewMode !== 'grid') || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
                                     />
                                 </div>
                                 {/* Mobile: Dynamic (Simplified Layout) */}
