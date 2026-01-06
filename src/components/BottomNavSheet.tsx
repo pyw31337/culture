@@ -166,8 +166,9 @@ export default function BottomNavSheet({
                                     { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
                                     { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
                                 ].map((mode) => {
-                                    const Icon = mode.icon;
                                     const isSelected = viewMode === mode.id;
+                                    // Use CloverIcon for the selected item to match BottomNav, otherwise use specific icon
+                                    const DisplayIcon = isSelected ? CloverIcon : mode.icon;
                                     return (
                                         <button
                                             key={mode.id}
@@ -181,7 +182,7 @@ export default function BottomNavSheet({
                                         >
                                             <div className="flex items-center gap-3">
                                                 <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white light:bg-purple-100 light:text-purple-600" : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")}>
-                                                    <Icon size={20} />
+                                                    <DisplayIcon size={20} className={clsx(isSelected && "w-5 h-5")} />
                                                 </div>
                                                 <div className="text-sm font-bold text-gray-200 light:text-black">{mode.label}</div>
                                             </div>
