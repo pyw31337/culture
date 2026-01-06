@@ -3510,7 +3510,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
             : variant === 'yellow'
                 ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                : "border-white/5 hover:border-white/20 shadow-xl hover:shadow-2xl bg-gray-900";
+                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl bg-gray-900 light:bg-white";
 
     // Content background for colored variants
     const contentBgStyle = variant === 'emerald'
@@ -3637,19 +3637,19 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </span>
 
                             {/* Date - Condensed */}
-                            <span className="text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 ml-auto sm:ml-0">
+                            <span className="text-[10px] sm:text-xs text-gray-400 light:text-black flex items-center gap-1 ml-auto sm:ml-0">
                                 <Calendar className="w-3 h-3" />
                                 {perf.date.split('~')[0].trim()}
                             </span>
                         </div>
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="text-lg sm:text-xl font-bold text-white leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
+                            <h3 className="text-lg sm:text-xl font-bold text-white light:text-black leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
                                 {perf.title.trim()}
                             </h3>
                         </a>
 
-                        <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 mt-1">
+                        <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
 
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
@@ -3663,7 +3663,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     )}
                                 </div>
                             ) : perf.genre === 'travel' ? (
-                                <div className="text-gray-400 text-xs flex flex-col gap-0.5 mb-2 truncate">
+                                <div className="text-gray-400 light:text-black text-xs flex flex-col gap-0.5 mb-2 truncate">
                                     {/* Agent */}
                                     <div className="flex items-center gap-1 font-bold text-sky-400">
                                         <Plane className="w-3 h-3" />
@@ -3676,133 +3676,138 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         e.stopPropagation();
                                         if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
                                     }}
-                                    className="hover:text-white hover:underline truncate text-gray-400 text-xs flex items-center gap-1 mb-2"
+                                    }}
+                            className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
-                                    <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    <span className="truncate">{perf.venue}</span>
-                                </button>
+                            <MapPin className="w-3 h-3 flex-shrink-0" />
+                            <span className="truncate">{perf.venue}</span>
+                        </button>
+                            )}
+                    </div>
+
+                    {/* Movie Metadata (Cast, Director, Info) */}
+                    {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                        <div className="mt-2 text-xs text-gray-400 light:text-gray-700 space-y-1 border-t border-white/5 light:border-black/5 pt-2">
+                            {/* Director */}
+                            {perf.director && (
+                                <div className="flex gap-2 items-start">
+                                    <span className="text-gray-500 font-bold shrink-0">감독</span>
+                                    <a
+                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-300 light:text-black truncate hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
+                                        onClick={e => e.stopPropagation()}
+                                    >
+                                        {perf.director.replace('더보기', '').trim()}
+                                    </a>
+                                </div>
+                            )}
+                            {/* Cast */}
+                            {perf.cast && perf.cast.length > 0 && (
+                                <div className="flex gap-2 items-start">
+                                    <span className="text-gray-500 font-bold shrink-0">출연</span>
+                                    <div className="flex flex-wrap gap-x-1 leading-snug">
+                                        {perf.cast.slice(0, 5).map((actor: string, idx: number) => {
+                                            const cleanName = actor.replace('더보기', '').trim();
+                                            if (!cleanName) return null;
+                                            return (
+                                                <a
+                                                    key={idx}
+                                                    href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-gray-300 light:text-black hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
+                                                    onClick={e => e.stopPropagation()}
+                                                >
+                                                    {cleanName}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
+                                                </a>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            )}
+                            {/* Info */}
+                            {perf.movieInfo && (
+                                <div className="flex gap-2 items-start">
+                                    <span className="text-gray-500 font-bold shrink-0">정보</span>
+                                    <span className="text-gray-300 light:text-black line-clamp-1">{perf.movieInfo}</span>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {/* Price & Discount info for List View */}
+                    {/* Price & Discount info for List View - Redesigned (11st Style) */}
+                    {(perf.price || perf.discount) && (
+                        <div className="flex flex-col mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
+                            <div className="flex justify-between items-end">
+                                {/* Left: Discount */}
+                                <div className="flex flex-col">
+                                    {perf.discount && (
+                                        <div className="text-red-500">
+                                            <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
+                                            <span className="text-sm font-light">%</span>
+                                        </div>
+                                    )}
+                                </div>
+                                {/* Right: Price */}
+                                <div className="flex flex-col items-end">
+                                    {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
+                                    {perf.price && (() => {
+                                        const extracted = extractFirstPrice(perf.price);
+                                        if (!extracted) return null;
+                                        return (
+                                            <div className="text-white">
+                                                {extracted.price === '무료' ? (
+                                                    <span className="text-lg font-extrabold">무료</span>
+                                                ) : (
+                                                    <>
+                                                        {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                        <span className="text-lg font-extrabold">{extracted.price}</span>
+                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                    </>
+                                                )}
+                                            </div>
+                                        );
+                                    })()}
+                                </div>
+                            </div>
+
+                            {/* Travel Options (Bottom - Full Width & Formatted) */}
+                            {perf.genre === 'travel' && perf.venue.split('|')[1] && (
+                                <div className="mt-2 pt-2 border-t border-dashed border-white/10 text-[11px] text-gray-400 leading-relaxed">
+                                    {perf.venue.split('|')[1].split('/').map((opt: string, i: number) => (
+                                        <div key={i} className="mb-0.5 last:mb-0">
+                                            {opt.trim()}
+                                        </div>
+                                    ))}
+                                </div>
                             )}
                         </div>
 
-                        {/* Movie Metadata (Cast, Director, Info) */}
-                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
-                            <div className="mt-2 text-xs text-gray-400 space-y-1 border-t border-white/5 pt-2">
-                                {/* Director */}
-                                {perf.director && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                        <a
-                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-300 truncate hover:text-white hover:underline transition-colors"
-                                            onClick={e => e.stopPropagation()}
-                                        >
-                                            {perf.director.replace('더보기', '').trim()}
-                                        </a>
-                                    </div>
-                                )}
-                                {/* Cast */}
-                                {perf.cast && perf.cast.length > 0 && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">출연</span>
-                                        <div className="flex flex-wrap gap-x-1 leading-snug">
-                                            {perf.cast.slice(0, 5).map((actor: string, idx: number) => {
-                                                const cleanName = actor.replace('더보기', '').trim();
-                                                if (!cleanName) return null;
-                                                return (
-                                                    <a
-                                                        key={idx}
-                                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="text-gray-300 hover:text-white hover:underline transition-colors"
-                                                        onClick={e => e.stopPropagation()}
-                                                    >
-                                                        {cleanName}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
-                                                    </a>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                )}
-                                {/* Info */}
-                                {perf.movieInfo && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">정보</span>
-                                        <span className="text-gray-300 line-clamp-1">{perf.movieInfo}</span>
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                    )}
 
-                        {/* Price & Discount info for List View */}
-                        {/* Price & Discount info for List View - Redesigned (11st Style) */}
-                        {(perf.price || perf.discount) && (
-                            <div className="flex flex-col mt-2 w-full border-t border-white/5 pt-2">
-                                <div className="flex justify-between items-end">
-                                    {/* Left: Discount */}
-                                    <div className="flex flex-col">
-                                        {perf.discount && (
-                                            <div className="text-red-500">
-                                                <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
-                                                <span className="text-sm font-light">%</span>
-                                            </div>
-                                        )}
-                                    </div>
-                                    {/* Right: Price */}
-                                    <div className="flex flex-col items-end">
-                                        {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
-                                        {perf.price && (() => {
-                                            const extracted = extractFirstPrice(perf.price);
-                                            if (!extracted) return null;
-                                            return (
-                                                <div className="text-white">
-                                                    {extracted.price === '무료' ? (
-                                                        <span className="text-lg font-extrabold">무료</span>
-                                                    ) : (
-                                                        <>
-                                                            {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                            <span className="text-lg font-extrabold">{extracted.price}</span>
-                                                            <span className="text-xs font-light ml-0.5">원</span>
-                                                        </>
-                                                    )}
-                                                </div>
-                                            );
-                                        })()}
-                                    </div>
-                                </div>
-
-                                {/* Travel Options (Bottom - Full Width & Formatted) */}
-                                {perf.genre === 'travel' && perf.venue.split('|')[1] && (
-                                    <div className="mt-2 pt-2 border-t border-dashed border-white/10 text-[11px] text-gray-400 leading-relaxed">
-                                        {perf.venue.split('|')[1].split('/').map((opt: string, i: number) => (
-                                            <div key={i} className="mb-0.5 last:mb-0">
-                                                {opt.trim()}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                        )}
-
-                        {/* Detail View Button */}
-                        <div className="mt-3">
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    onDetail?.();
-                                }}
-                                className="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1"
-                            >
-                                자세히 보기
-                                <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
-                            </button>
-                        </div>
+                    {/* Detail View Button */}
+                    <div className="mt-3">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onDetail?.();
+                            }}
+                            className="w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1"
+                        >
+                            자세히 보기
+                            <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
         </div >
 
 
