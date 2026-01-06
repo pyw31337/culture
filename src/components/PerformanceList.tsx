@@ -2095,7 +2095,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         <button
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className={clsx(
-                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/expand",
+                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20",
                                 isHeroFilterExpanded && "bg-white/20 text-white"
                             )}
                             title={isHeroFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
@@ -2123,9 +2123,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                     {/* Inline Filter Panel (Toggle) */}
                     {isHeroFilterExpanded && (
-                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full">
-                            <div className="absolute top-0 bottom-0 left-[-100vw] right-[-100vw] bg-black/40 backdrop-blur-md border-y border-white/10 shadow-inner -z-10" />
-                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto scrollbar-hide pl-0 py-2.5">
+                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl overflow-hidden z-[60]">
+                            {/* Inner content wrapper */}
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto scrollbar-hide p-4">
 
                                 {/* Venue Select */}
                                 <div className="relative shrink-0 w-full sm:w-auto">
