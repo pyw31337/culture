@@ -776,7 +776,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             line1: t.line1.replace('{location}', chosenLocation),
                             line2Pre: t.line2Pre.replace('{location}', chosenLocation),
                             highlight: t.highlight.replace('{genre}', genreLabel),
-                            keywords: t.keywords.map(k => k.replace('{location}', chosenLocation))
+                            keywords: [
+                                ...t.keywords.map(k => k.replace('{location}', chosenLocation)),
+                                genreLabel,
+                                randomPerf.genre
+                            ]
                         }));
 
                         pool.push(...locTemplates);
