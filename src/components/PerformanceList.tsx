@@ -2480,7 +2480,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <TypingHero
                                         template={currentTemplate}
                                         onCycle={handleHeroCycle}
-                                        paused={!isHeroVisible || !['list', 'grid', 'likes-perf', 'likes-venue'].includes(viewMode) || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
+                                        paused={!isHeroVisible || !['list', 'grid', 'likes-perf', 'likes-venue'].includes(viewMode)}
                                     />
                                 </div>
                                 {/* Mobile: Dynamic (Simplified Layout) */}
