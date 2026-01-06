@@ -18,6 +18,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
+import { getGenreIcon } from '@/components/GenreIcons';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
@@ -3077,7 +3078,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </>
                                 ) : (
                                     <>
-                                        <span>
+                                        <span className="flex items-center gap-2">
+                                            {getGenreIcon(selectedGenre, 28)}
                                             {selectedGenre === 'all'
                                                 ? '추천 공연'
                                                 : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '공연'}`
