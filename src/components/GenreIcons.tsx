@@ -15,6 +15,14 @@ export const MovieIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
+// Musical: Butterfly masks
+export const MusicalIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 8.918S9.394 7.74 8 7.5c-1.807-.31-3.833 0-5.5 0c0 0-.371 3.22 0 4.763c.257 1.069.716 2.166 1.5 2.937c.662.65 1.59 1.042 2.5 1.226c1.309.265 2.778.312 4-.226c.64-.282 1.5-1.464 1.5-1.464m0-5.818S14.606 7.74 16 7.5c1.807-.31 3.833 0 5.5 0c0 0 .371 3.22 0 4.763c-.257 1.069-.716 2.166-1.5 2.937c-.662.65-1.59 1.042-2.5 1.226c-1.309.265-2.778.312-4-.226c-.64-.282-1.5-1.464-1.5-1.464" />
+        <path d="M9.931 12.25c-.095.756-1.061 1.257-2.157 1.12c-1.097-.139-1.908-.864-1.813-1.62s1.061-1.257 2.158-1.12c1.096.139 1.907.864 1.812 1.62m4.138 0c.095.756 1.061 1.257 2.157 1.12c1.097-.139 1.908-.864 1.813-1.62s-1.061-1.257-2.158-1.12c-1.096.139-1.907.864-1.812 1.62" />
+    </svg>
+);
+
 // Concert: MicVocal
 export const MicVocalIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -24,17 +32,10 @@ export const MicVocalIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Theater: Drama
+// Theater: Party Popper
 export const DramaIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 11h.01" />
-        <path d="M14 6h.01" />
-        <path d="M18 6h.01" />
-        <path d="M6.5 13.1h.01" />
-        <path d="M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3" />
-        <path d="M17.4 9.9c-.8.8-2 .8-2.8 0" />
-        <path d="M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7" />
-        <path d="M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4" />
+        <path d="M15.295 19.562L16 22m1-6l3.758 2.098M19 12.5l3.026-.598M7.61 6.3a3 3 0 0 0-3.92 1.3l-1.38 2.79a3 3 0 0 0 1.3 3.91l6.89 3.597a1 1 0 0 0 1.342-.447l3.106-6.211a1 1 0 0 0-.447-1.341zM8 9V2" />
     </svg>
 );
 
@@ -49,11 +50,11 @@ export const PianoIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Exhibition: Fan
+// Exhibition: Sailboat / Event
 export const FanIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z" />
-        <path d="M12 12v.01" />
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 22H2l1.5-9.5c2-.5 6-2.5 8.5-6.5c2.5 4 6.5 6 8.5 6.5zM12 2v4l4.5-2z" />
+        <path d="m15.5 22l-2-7.5h-3l-2 7.5" />
     </svg>
 );
 
@@ -134,13 +135,15 @@ export const FootballIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Musical icon (using TicketIcon for now)
-export const MusicalIcon = ({ size = 16 }: { size?: number }) => (
+// Leisure: Kayak
+export const KayakIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 5l0 2" />
-        <path d="M15 11l0 2" />
-        <path d="M15 17l0 2" />
-        <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+        <path d="M6.414 6.414a2 2 0 0 0 0 -2.828l-1.414 -1.414l-2.828 2.828l1.414 1.414a2 2 0 0 0 2.828 0" />
+        <path d="M17.586 17.586a2 2 0 0 0 0 2.828l1.414 1.414l2.828 -2.828l-1.414 -1.414a2 2 0 0 0 -2.828 0" />
+        <path d="M6.5 6.5l11 11" />
+        <path d="M22 2.5c-9.983 2.601 -17.627 7.952 -20 19.5c9.983 -2.601 17.627 -7.952 20 -19.5" />
+        <path d="M6.5 12.5l5 5" />
+        <path d="M12.5 6.5l5 5" />
     </svg>
 );
 
@@ -159,7 +162,7 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'travel': return <PlaneTiltIcon size={size} />;
         case 'kids': return <HorseToyIcon size={size} />;
         case 'festival': return <FestivalIcon size={size} />;
-        case 'leisure': return <TicketIcon size={size} />;
+        case 'leisure': return <KayakIcon size={size} />;
         case 'volleyball': return <VolleyballIcon size={size} />;
         case 'basketball': return <BasketballIcon size={size} />;
         case 'baseball': return <BaseballIcon size={size} />;
