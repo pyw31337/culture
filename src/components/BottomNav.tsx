@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Layout, LayoutGrid, MapPin, Heart, Star } from 'lucide-react';
+import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
@@ -36,7 +36,12 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
 
     // Left side items
     const leftItems = [
-        { id: 'view', label: '보기', icon: Layout, action: () => onMenuClick('view') },
+        {
+            id: 'view',
+            label: currentViewMode === 'list' ? '리스트보기' : '썸네일보기',
+            icon: currentViewMode === 'list' ? LayoutList : LayoutGrid,
+            action: () => onMenuClick('view')
+        },
         { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick('category') },
     ];
 
