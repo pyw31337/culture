@@ -161,14 +161,14 @@ export default function BottomNavSheet({
                             </h3>
                             <div className="grid grid-cols-2 gap-4">
                                 {[
-                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: LayoutGrid, color: 'text-purple-400' },
-                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: LayoutList, color: 'text-blue-400' },
+                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: CloverIcon, color: 'text-purple-400' },
+                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: CloverIcon, color: 'text-blue-400' },
                                     { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
                                     { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
                                 ].map((mode) => {
                                     const isSelected = viewMode === mode.id;
-                                    // Use CloverIcon for the selected item to match BottomNav, otherwise use specific icon
-                                    const DisplayIcon = isSelected ? CloverIcon : mode.icon;
+                                    // Use icon from config (Clover for list/grid)
+                                    const DisplayIcon = mode.icon;
                                     return (
                                         <button
                                             key={mode.id}
