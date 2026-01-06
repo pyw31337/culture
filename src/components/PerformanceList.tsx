@@ -1837,7 +1837,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     // --- Bottom Nav Handlers ---
     return (
         <div
-            className="min-h-screen bg-transparent text-gray-100 light:text-gray-900 font-sans pb-20 relative"
+            className="min-h-screen bg-transparent text-gray-100 light:text-gray-900 light:bg-white font-sans pb-20 relative"
         >
             {/* 🌌 Aurora Background */}
             {/* 🌌 Aurora Background Removed as per request */}

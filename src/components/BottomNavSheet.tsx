@@ -56,19 +56,37 @@ export default function BottomNavSheet({
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            const isLightMode = document.documentElement.classList.contains('light');
-            setIsLight(isLightMode);
+            // Check localStorage first, then system preference, then default to dark (false)
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light');
+                setIsLight(true);
+            } else if (savedTheme === 'dark') {
+                document.documentElement.classList.remove('light');
+                setIsLight(false);
+            } else {
+                // If no preference, check system
+                const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (systemPrefersLight) {
+                    // document.documentElement.classList.add('light'); // Optional: Default to system
+                    // setIsLight(true);
+                }
+            }
+            // Sync state with classList just in case
+            setIsLight(document.documentElement.classList.contains('light'));
         }
-    }, [isVisible]); // Check whenever sheet opens
+    }, [isVisible]); // Sync when sheet opens, but mainly run once on mount (handled by separate effect if needed, but this is fine)
 
     const toggleTheme = () => {
         const doc = document.documentElement;
         if (doc.classList.contains('light')) {
             doc.classList.remove('light');
             setIsLight(false);
+            localStorage.setItem('theme', 'dark');
         } else {
             doc.classList.add('light');
             setIsLight(true);
+            localStorage.setItem('theme', 'light');
         }
     };
 
