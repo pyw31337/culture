@@ -21,6 +21,8 @@ import BottomNavSheet from './BottomNavSheet';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
+const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
+import { useSearchParams, useRouter } from 'next/navigation';
 
 interface Venue {
     name: string;
@@ -515,6 +517,53 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
     const [isHeroVisible, setIsHeroVisible] = useState(true); // Track visibility for pausing animation
     const [isInitialLoading, setIsInitialLoading] = useState(true); // Initial content loading state
+
+    // Detail Modal State & Deep Linking
+    const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
+    const searchParams = useSearchParams();
+    const router = useRouter();
+
+    // Deep Linking Effect
+    useEffect(() => {
+        if (!initialPerformances || initialPerformances.length === 0) return;
+
+        const id = searchParams.get('id');
+        if (id) {
+            const target = initialPerformances.find(p => p.id === id);
+            if (target) {
+                setSelectedPerformance(target);
+                // Optional: Scroll to card? Maybe just showing modal is enough.
+            }
+        }
+    }, [searchParams, initialPerformances]);
+
+    // Modal Handlers
+    const handleDetailOpen = (perf: Performance) => {
+        setSelectedPerformance(perf);
+        // Update URL without reload for sharing capability
+        // const newUrl = new URL(window.location.href);
+        // newUrl.searchParams.set('id', perf.id);
+        // window.history.pushState({}, '', newUrl.toString());
+    };
+
+    const handleDetailClose = () => {
+        setSelectedPerformance(null);
+        // Remove ID from URL
+        // const newUrl = new URL(window.location.href);
+        // newUrl.searchParams.delete('id');
+        // window.history.pushState({}, '', newUrl.toString());
+    };
+
+    const handleBooking = (link: string) => {
+        window.open(link, '_blank');
+    };
+
+    const handleCopyLink = (id: string) => {
+        const url = `${window.location.origin}${window.location.pathname}?id=${id}`;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('공유 링크가 복사되었습니다!');
+        });
+    };
 
     // Intersection Observer for Hero Section
     const heroRef = useRef<HTMLDivElement>(null);
@@ -2566,7 +2615,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
                                                         enableActions={true}
                                                         onShare={() => copyItemShareUrl(performance.id)}
-                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(performance)}
                                                         variant="emerald"
                                                     />
                                                 ) : (
@@ -2583,7 +2632,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
                                                         variant="emerald"
                                                         onShare={() => copyItemShareUrl(performance.id)}
-                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(performance)}
                                                     />
                                                 )}
                                             </motion.div>
@@ -2856,7 +2905,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
                                                         enableActions={true}
                                                         onShare={() => copyItemShareUrl(performance.id)}
-                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(performance)}
                                                         variant="pink"
                                                     />
                                                 ) : (
@@ -2873,7 +2922,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
                                                         variant="pink"
                                                         onShare={() => copyItemShareUrl(performance.id)}
-                                                        onDetail={() => window.open(performance.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(performance)}
                                                     />
                                                 )}
                                             </motion.div>
@@ -3060,7 +3109,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         isGradient={selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue'}
                                                         enableActions={true}
                                                         onShare={() => copyItemShareUrl(perf.id)}
-                                                        onDetail={() => window.open(perf.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(perf)}
                                                     />
                                                 ) : (
                                                     <PerformanceListItem
@@ -3075,7 +3124,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                         isLiked={likedIds.includes(perf.id)}
                                                         onToggleLike={(e) => toggleLike(perf.id, e)}
                                                         onShare={() => copyItemShareUrl(perf.id)}
-                                                        onDetail={() => window.open(perf.link, '_blank')}
+                                                        onDetail={() => handleDetailOpen(perf)}
                                                     />
                                                 )}
                                             </motion.div>
@@ -3196,6 +3245,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     />
                 )
             }
+
+            {/* Detail View Modal (Deep Linking) */}
+            {selectedPerformance && (
+                <PerformanceDetailModal
+                    performance={selectedPerformance}
+                    isOpen={!!selectedPerformance}
+                    onClose={handleDetailClose}
+                    onBooking={() => handleBooking(selectedPerformance.link)}
+                    onShare={() => handleCopyLink(selectedPerformance.id)}
+                />
+            )}
 
             {/* 🔔 New Matches Notification Modal */}
             <AnimatePresence>

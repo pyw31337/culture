@@ -1,5 +1,6 @@
 import { fetchPerformances } from '@/lib/interpark';
 import PerformanceList from '@/components/PerformanceList';
+import { Suspense } from 'react';
 
 import interparkData from '@/data/interpark.json';
 import kovoData from '@/data/kovo.json';
@@ -207,7 +208,9 @@ export default async function Home() {
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20">
-            <PerformanceList initialPerformances={performances} lastUpdated={lastUpdated} />
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
+                <PerformanceList initialPerformances={performances} lastUpdated={lastUpdated} />
+            </Suspense>
         </main>
     );
 }
