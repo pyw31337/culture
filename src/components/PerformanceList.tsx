@@ -493,6 +493,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
     // Hero Text State (Hydration Safe: Start with Default, then randomize)
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
+    // Random seed for default view shuffling
+    const [shuffleSeed, setShuffleSeed] = useState<number | null>(null);
+
+    useEffect(() => {
+        setShuffleSeed(Math.random());
+    }, []);
+
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
 
     // Bottom Navigation State
@@ -1744,9 +1751,23 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             return [...shuffledMatched, ...sortedUnmatched];
         }
 
-        // Default: Just sort by date
-        return [...displayPerformances].sort((a, b) => a.date.localeCompare(b.date));
-    }, [displayPerformances, contextKeywords]);
+        // Default: Sort by date, then randomize top 40 for variety
+        const sortedByDate = [...displayPerformances].sort((a, b) => a.date.localeCompare(b.date));
+
+        // If sorting for "Recommended" (default view with no keywords), shuffle the top items
+        // We use shuffleSeed to ensure it only changes on mount/refresh
+        if (shuffleSeed) {
+            const randomForDefault = seededRandom(shuffleSeed.toString());
+            const TOP_COUNT = 40;
+            const topItems = sortedByDate.slice(0, TOP_COUNT);
+            const remainingItems = sortedByDate.slice(TOP_COUNT);
+
+            const shuffledTop = topItems.sort(() => randomForDefault() - 0.5);
+            return [...shuffledTop, ...remainingItems];
+        }
+
+        return sortedByDate;
+    }, [displayPerformances, contextKeywords, shuffleSeed]);
 
     // Apply Radius Filter if active (Geolocation)
     const finalPerformances = useMemo(() => {
