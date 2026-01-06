@@ -15,45 +15,80 @@ export const MovieIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
+// Concert: MicVocal
+export const MicVocalIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12" />
+        <path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5" />
+        <circle cx="16" cy="7" r="5" />
+    </svg>
+);
+
+// Theater: Drama
+export const DramaIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 11h.01" />
+        <path d="M14 6h.01" />
+        <path d="M18 6h.01" />
+        <path d="M6.5 13.1h.01" />
+        <path d="M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3" />
+        <path d="M17.4 9.9c-.8.8-2 .8-2.8 0" />
+        <path d="M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7" />
+        <path d="M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4" />
+    </svg>
+);
+
+// Classic: Piano
+export const PianoIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+        <path d="M9 19v-6" />
+        <path d="M8 5v8h2v-8" />
+        <path d="M15 19v-6" />
+        <path d="M14 5v8h2v-8" />
+    </svg>
+);
+
+// Exhibition: Fan
+export const FanIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z" />
+        <path d="M12 12v.01" />
+    </svg>
+);
+
+// Activity/Leisure: Ticket
 export const TicketIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 5l0 2" /><path d="M15 11l0 2" /><path d="M15 17l0 2" />
+        <path d="M15 5l0 2" />
+        <path d="M15 11l0 2" />
+        <path d="M15 17l0 2" />
         <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
     </svg>
 );
 
-export const TheaterIcon = ({ size = 16 }: { size?: number }) => (
+// Travel: PlaneTilt
+export const PlaneTiltIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9.5 11l.01 0" /><path d="M14.5 11l.01 0" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
-        <path d="M7 5h1v-2h8v2h1a3 3 0 0 1 3 3v9a3 3 0 0 1 -3 3v1h-10v-1a3 3 0 0 1 -3 -3v-9a3 3 0 0 1 3 -3" />
+        <path d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5" />
     </svg>
 );
 
-export const ExhibitionIcon = ({ size = 16 }: { size?: number }) => (
+// Kids: HorseToy
+export const HorseToyIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21v-13l9 -4l9 4v13" />
-        <path d="M13 13h4v8h-10v-6h6" />
-        <path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
+        <path d="M3.5 17.5c5.667 4.667 11.333 4.667 17 0" />
+        <path d="M19 18.5l-2 -8.5l1 -2l2 1l1.5 -1.5l-2.5 -4.5c-5.052 .218 -5.99 3.133 -7 6h-6a3 3 0 0 0 -3 3" />
+        <path d="M5 18.5l2 -9.5" />
+        <path d="M8 20l2 -5h4l2 5" />
     </svg>
 );
 
-export const ActivityIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-    </svg>
-);
-
+// Class icon (kept for backwards compatibility)
 export const ClassIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
         <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
-    </svg>
-);
-
-export const TravelIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 12l4 -2a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-1a2 2 0 0 0 -2 2v1a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-1a2 2 0 0 0 -2 -2h-1a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2l4 2" />
-        <path d="M9 12v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
     </svg>
 );
 
@@ -62,15 +97,6 @@ export const FestivalIcon = ({ size = 16 }: { size?: number }) => (
         <path d="M4 5h2" /><path d="M5 4v2" /><path d="M11.5 4l-.5 2" /><path d="M18 5h2" /><path d="M19 4v2" />
         <path d="M15 9l-1 1" /><path d="M18 13l2 -.5" /><path d="M18 19h2" /><path d="M19 18v2" />
         <path d="M14 16.518l-6.518 -6.518l-4.39 9.58a1 1 0 0 0 1.329 1.329l9.579 -4.39z" />
-    </svg>
-);
-
-export const LeisureIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6.414 6.414a2 2 0 0 0 0 -2.828l-1.414 -1.414l-2.828 2.828l1.414 1.414a2 2 0 0 0 2.828 0z" />
-        <path d="M17.586 17.586a2 2 0 0 0 0 2.828l1.414 1.414l2.828 -2.828l-1.414 -1.414a2 2 0 0 0 -2.828 0z" />
-        <path d="M6.5 6.5l11 11" /><path d="M22 2.5c-9.983 2.601 -17.627 7.952 -20 19.5c9.983 -2.601 17.627 -7.952 20 -19.5z" />
-        <path d="M6.5 12.5l5 5" /><path d="M12.5 6.5l5 5" />
     </svg>
 );
 
@@ -108,25 +134,36 @@ export const FootballIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
+// Musical icon (using TicketIcon for now)
+export const MusicalIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 5l0 2" />
+        <path d="M15 11l0 2" />
+        <path d="M15 17l0 2" />
+        <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+    </svg>
+);
+
 // Helper to get genre icon
 export const getGenreIcon = (id: string, size = 16) => {
     switch (id) {
         case 'hotdeal': return <FlameIcon size={size} />;
         case 'movie': return <MovieIcon size={size} />;
-        case 'musical': return <TicketIcon size={size} />;
-        case 'theater': return <TheaterIcon size={size} />;
-        case 'concert': return <TheaterIcon size={size} />; // Fallback to theater
-        case 'classic': return <ClassIcon size={size} />;
-        case 'exhibition': return <ExhibitionIcon size={size} />;
-        case 'activity': return <ActivityIcon size={size} />;
+        case 'musical': return <MusicalIcon size={size} />;
+        case 'theater': return <DramaIcon size={size} />;
+        case 'concert': return <MicVocalIcon size={size} />;
+        case 'classic': return <PianoIcon size={size} />;
+        case 'exhibition': return <FanIcon size={size} />;
+        case 'activity': return <TicketIcon size={size} />;
         case 'class': return <ClassIcon size={size} />;
-        case 'travel': return <TravelIcon size={size} />;
+        case 'travel': return <PlaneTiltIcon size={size} />;
+        case 'kids': return <HorseToyIcon size={size} />;
         case 'festival': return <FestivalIcon size={size} />;
-        case 'leisure': return <LeisureIcon size={size} />;
+        case 'leisure': return <TicketIcon size={size} />;
         case 'volleyball': return <VolleyballIcon size={size} />;
         case 'basketball': return <BasketballIcon size={size} />;
         case 'baseball': return <BaseballIcon size={size} />;
-        case 'football': return <FootballIcon size={size} />; // Soccer mapped to football
+        case 'football': return <FootballIcon size={size} />;
         case 'soccer': return <FootballIcon size={size} />;
         default: return <LayoutGrid size={size} />;
     }

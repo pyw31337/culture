@@ -223,7 +223,7 @@ export default function BottomNavSheet({
                                             : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
-                                    <Star size={16} />
+                                    {getGenreIcon('hotdeal', 16)}
                                     <span className="text-sm font-medium">핫딜</span>
                                 </button>
 
