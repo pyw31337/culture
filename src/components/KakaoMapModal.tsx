@@ -47,25 +47,32 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
 
-                // Initialize Clusterer
-                const clusterer = new window.kakao.maps.MarkerClusterer({
-                    map: map,
-                    averageCenter: true,
-                    minLevel: 6, // Venues spread at level 5
-                    disableClickZoom: false,
-                    styles: [{
-                        width: '50px', height: '50px',
-                        background: 'rgba(37, 99, 235, 0.9)', // Blue-600
-                        borderRadius: '50%',
-                        color: 'white',
-                        textAlign: 'center',
-                        lineHeight: '50px',
-                        fontWeight: 'bold',
-                        fontSize: '14px',
-                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-                        border: '2px solid rgba(255,255,255,0.8)'
-                    }]
-                });
+                // Initialize Clusterer Safely
+                let clusterer: any = null;
+                try {
+                    if (window.kakao.maps.MarkerClusterer) {
+                        clusterer = new window.kakao.maps.MarkerClusterer({
+                            map: map,
+                            averageCenter: true,
+                            minLevel: 6, // Venues spread at level 5
+                            disableClickZoom: false,
+                            styles: [{
+                                width: '50px', height: '50px',
+                                background: 'rgba(37, 99, 235, 0.9)', // Blue-600
+                                borderRadius: '50%',
+                                color: 'white',
+                                textAlign: 'center',
+                                lineHeight: '50px',
+                                fontWeight: 'bold',
+                                fontSize: '14px',
+                                boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+                                border: '2px solid rgba(255,255,255,0.8)'
+                            }]
+                        });
+                    }
+                } catch (e) {
+                    console.warn('Failed to initialize MarkerClusterer:', e);
+                }
 
                 // Force layout update
                 setTimeout(() => { map.relayout(); map.setCenter(options.center); }, 100);
@@ -227,8 +234,12 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     };
                 });
 
-                // Add markers to clusterer
-                clusterer.addMarkers(markers);
+                // Add markers to clusterer or map
+                if (clusterer) {
+                    clusterer.addMarkers(markers);
+                } else {
+                    markers.forEach(m => m.setMap(map));
+                }
 
                 // Sync Function
                 const syncOverlays = () => {
@@ -253,13 +264,18 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
             if (window.kakao && window.kakao.maps && window.kakao.maps.MarkerClusterer) {
                 initializeMap();
             } else {
+                let retryCount = 0;
                 const checkInterval = setInterval(() => {
+                    retryCount++;
                     if (window.kakao && window.kakao.maps && window.kakao.maps.MarkerClusterer) {
                         clearInterval(checkInterval);
                         initializeMap();
+                    } else if (retryCount > 20) { // Fallback after ~2s
+                        clearInterval(checkInterval);
+                        console.warn('MarkerClusterer not found after timeout. Initializing map without clustering.');
+                        initializeMap();
                     }
                 }, 100);
-                setTimeout(() => clearInterval(checkInterval), 5000);
             }
             return;
         }
