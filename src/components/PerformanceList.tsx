@@ -22,7 +22,6 @@ import BottomNavSheet from './BottomNavSheet';
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
-import ThreeDTiltCard from './ThreeDTiltCard';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 interface Venue {
@@ -518,27 +517,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
     const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
     const [isHeroVisible, setIsHeroVisible] = useState(true); // Track visibility for pausing animation
     const [isInitialLoading, setIsInitialLoading] = useState(true); // Initial content loading state
-
-    // Hero Background State (Design 2.0)
-    const [heroImages, setHeroImages] = useState<string[]>([]);
-    const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
-
-    useEffect(() => {
-        if (initialPerformances && initialPerformances.length > 0) {
-            const shuffled = [...initialPerformances]
-                .filter(p => p.image) // Must have image
-                .sort(() => 0.5 - Math.random());
-            setHeroImages(shuffled.slice(0, 5).map(p => p.image));
-        }
-    }, [initialPerformances]);
-
-    useEffect(() => {
-        if (heroImages.length === 0) return;
-        const interval = setInterval(() => {
-            setCurrentHeroImageIndex(prev => (prev + 1) % heroImages.length);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [heroImages]);
 
     // Detail Modal State & Deep Linking
     const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
@@ -2441,39 +2419,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                         return (
                             <>
-                                <div ref={heroRef} className="relative min-h-[40vh] flex flex-col justify-center overflow-hidden py-20 px-4">
-                                    {/* Design 2.0: Dynamic Background */}
-                                    <div className="absolute inset-0 -z-10 bg-black">
-                                        <AnimatePresence mode="popLayout">
-                                            {heroImages.length > 0 && (
-                                                <motion.div
-                                                    key={currentHeroImageIndex}
-                                                    initial={{ opacity: 0, scale: 1.1 }}
-                                                    animate={{ opacity: 0.6, scale: 1 }}
-                                                    exit={{ opacity: 0 }}
-                                                    transition={{ duration: 2, ease: "easeInOut" }}
-                                                    className="absolute inset-0"
-                                                >
-                                                    <ImageWithFallback
-                                                        src={getOptimizedUrl(heroImages[currentHeroImageIndex], 1200)}
-                                                        fill
-                                                        className="object-cover blur-[50px] opacity-60"
-                                                        priority
-                                                        alt="Hero Background"
-                                                    />
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1b1e] via-[#1a1b1e]/60 to-black/30" />
-                                    </div>
-
-                                    <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-                                        <TypingHero
-                                            template={currentTemplate}
-                                            onCycle={handleHeroCycle}
-                                            paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
-                                        />
-                                    </div>
+                                <div ref={heroRef}>
+                                    <TypingHero
+                                        template={currentTemplate}
+                                        onCycle={handleHeroCycle}
+                                        paused={!isHeroVisible || viewMode !== 'list' || !!searchText || selectedRegion !== 'all' || selectedVenue !== 'all'}
+                                    />
                                 </div>
                                 {/* Mobile: Dynamic (Simplified Layout) */}
                                 <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
@@ -3785,8 +3736,30 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
     const cardRef = useRef<HTMLDivElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
 
-    // ThreeDTiltCard handles tilt logic.
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current || !glareRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+        glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
+        glareRef.current.style.opacity = '1';
+    };
+
+    const handleMouseLeave = () => {
+        if (!cardRef.current || !glareRef.current) return;
+        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+        glareRef.current.style.opacity = '0';
+    };
 
     const handleCardClick = (e: React.MouseEvent) => {
         if (!showActions) {
@@ -3810,10 +3783,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
-
     return (
-        <ThreeDTiltCard
-            className="cursor-pointer group h-full relative hover:z-[9999]"
+        <div
+            className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
             onClick={handleCardClick}
         >
             {/* New Gold Shimmer Wrapper Structure */}
@@ -3835,7 +3809,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 {/* Glare Effect */}
-
+                <div
+                    ref={glareRef}
+                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200 rounded-xl"
+                    style={{
+                        background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 60%)',
+                        mixBlendMode: 'overlay',
+                    }}
+                />
 
                 {/* Shimmer Border (Default Only) */}
                 {variant === 'default' && (
@@ -3884,7 +3865,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     )}
 
                     {/* Glare Effect 2 */}
-
+                    <div
+                        ref={glareRef}
+                        className="hidden sm:block absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
+                        style={{ left: '-25%', top: '-25%' }}
+                    />
 
                     {/* ========================================================= */}
                     {/*             VARIANT LOGIC: Interest vs Default            */}
@@ -4268,6 +4253,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             </div>
 
 
-        </ThreeDTiltCard>
+        </div>
     );
 }
