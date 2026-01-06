@@ -170,7 +170,32 @@ async function getPerformances() {
         }
     });
 
-    return Array.from(uniqueMap.values());
+
+
+
+    // 5. Assign Stable IDs based on Normalized Title (Key)
+    // This ensures Deep Links allow sharing even if source ID changes or provider shifts
+    // Warn: This will invalidate existing localStorage likes if they used source IDs.
+    // Given the stage (Development), this is acceptable for consistency.
+    const stablePerformances = Array.from(uniqueMap.entries()).map(([key, p]) => {
+        // Simple hash function for ID
+        let hash = 0;
+        const str = key + (p.date?.split('~')[0] || ''); // Combine title + start date for collision resistance
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        const stableId = `perf_${Math.abs(hash).toString(16)}`; // Hex format
+
+        return {
+            ...p,
+            id: stableId,
+            originalId: p.id // Keep original for reference
+        };
+    });
+
+    return stablePerformances;
 }
 
 export default async function Home() {
