@@ -471,7 +471,7 @@ const TypingHero = ({
             {cursorSegment === 'line1' && <Cursor />}
             <br />
             {tBold && (
-                <span className="font-extrabold text-white">
+                <span className="font-extrabold text-white light:text-black">
                     {tBold}
                 </span>
             )}
