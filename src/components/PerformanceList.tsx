@@ -1682,13 +1682,30 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         return filteredPerformances;
     }, [initialPerformances, likedIds, favoriteVenues, viewMode, filteredPerformances]);
 
-    // Sorting (Date asc)
+    // Sorting (Keyword Match desc, then Date asc)
     const sortedPerformances = useMemo(() => {
         return [...displayPerformances].sort((a, b) => {
-            // Simple string compare or date object
+            // 1. Keyword Priority
+            if (contextKeywords.length > 0) {
+                // Check if title, venue, genre, or cast contains any of the context keywords
+                const hasMatch = (p: Performance) => contextKeywords.some(k =>
+                    p.title.includes(k) ||
+                    p.venue.includes(k) ||
+                    p.genre.includes(k) ||
+                    (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).includes(k))
+                );
+
+                const aMatch = hasMatch(a);
+                const bMatch = hasMatch(b);
+
+                if (aMatch && !bMatch) return -1;
+                if (!aMatch && bMatch) return 1;
+            }
+
+            // 2. Date Sort (Default)
             return a.date.localeCompare(b.date);
         });
-    }, [displayPerformances]);
+    }, [displayPerformances, contextKeywords]);
 
     // Apply Radius Filter if active (Geolocation)
     const finalPerformances = useMemo(() => {
