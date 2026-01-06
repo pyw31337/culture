@@ -1686,29 +1686,50 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         return filteredPerformances;
     }, [initialPerformances, likedIds, favoriteVenues, viewMode, filteredPerformances]);
 
-    // Sorting (Keyword Match desc, then Date asc)
+    // Sorting (Keyword Match desc with shuffle, then Date asc)
     const sortedPerformances = useMemo(() => {
-        return [...displayPerformances].sort((a, b) => {
-            // 1. Keyword Priority
-            if (contextKeywords.length > 0) {
-                // Check if title, venue, genre, or cast contains any of the context keywords
-                const hasMatch = (p: Performance) => contextKeywords.some(k =>
-                    p.title.includes(k) ||
-                    p.venue.includes(k) ||
-                    p.genre.includes(k) ||
-                    (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).includes(k))
-                );
-
-                const aMatch = hasMatch(a);
-                const bMatch = hasMatch(b);
-
-                if (aMatch && !bMatch) return -1;
-                if (!aMatch && bMatch) return 1;
+        // Create a seeded random value based on keywords to ensure consistent shuffle within a template cycle
+        // but different shuffle when template/keywords change
+        const shuffleSeed = contextKeywords.join(',');
+        const seededRandom = (seed: string) => {
+            let hash = 0;
+            for (let i = 0; i < seed.length; i++) {
+                hash = ((hash << 5) - hash) + seed.charCodeAt(i);
+                hash |= 0;
             }
+            // Simple LCG for seeded random
+            let state = Math.abs(hash) || Date.now();
+            return () => {
+                state = (state * 1103515245 + 12345) & 0x7fffffff;
+                return state / 0x7fffffff;
+            };
+        };
 
-            // 2. Date Sort (Default)
-            return a.date.localeCompare(b.date);
-        });
+        const random = seededRandom(shuffleSeed);
+
+        if (contextKeywords.length > 0) {
+            // Separate matching and non-matching items
+            const hasMatch = (p: Performance) => contextKeywords.some(k =>
+                p.title.includes(k) ||
+                p.venue.includes(k) ||
+                p.genre.includes(k) ||
+                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).includes(k))
+            );
+
+            const matched = displayPerformances.filter(hasMatch);
+            const unmatched = displayPerformances.filter(p => !hasMatch(p));
+
+            // Shuffle matched items using seeded random
+            const shuffledMatched = [...matched].sort(() => random() - 0.5);
+
+            // Sort unmatched by date
+            const sortedUnmatched = [...unmatched].sort((a, b) => a.date.localeCompare(b.date));
+
+            return [...shuffledMatched, ...sortedUnmatched];
+        }
+
+        // Default: Just sort by date
+        return [...displayPerformances].sort((a, b) => a.date.localeCompare(b.date));
     }, [displayPerformances, contextKeywords]);
 
     // Apply Radius Filter if active (Geolocation)
