@@ -1890,7 +1890,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000"></div>
             {/* Header: Logo & Last Updated */}
             {/* Header */}
-            <header className="relative z-[150] bg-gray-900/80 light:bg-white/80 backdrop-blur-md border-b border-gray-700 light:border-gray-200 mix-blend-lighten light:mix-blend-normal">
+            <header className="relative z-[150] bg-transparent backdrop-blur-none border-b border-transparent light:border-transparent">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
