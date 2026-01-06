@@ -72,7 +72,7 @@ export default function RootLayout({
         {children}
         <Script
           id="kakao-map-script"
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services,clusterer"
           strategy="afterInteractive"
         />
       </body>

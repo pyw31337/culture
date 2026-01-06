@@ -1241,7 +1241,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         } else {
             const script = document.createElement('script');
             script.id = mapScriptId;
-            script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${APP_KEY}&autoload=false&libraries=services`;
+            script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${APP_KEY}&autoload=false&libraries=services,clusterer`;
             script.async = true;
             script.onload = handleMapLoad;
             document.head.appendChild(script);
