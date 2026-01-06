@@ -61,7 +61,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex items-center justify-center p-4 sm:p-6"
+                        className="fixed inset-0 bg-black/60 backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6"
                     />
 
                     {/* Modal Content */}
@@ -69,29 +69,29 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed z-[101] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
+                        className="fixed z-[101] w-full max-w-4xl bg-black/40 backdrop-blur-2xl rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/20 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] ring-1 ring-white/10"
                     >
                         {/* Close Button (Mobile Absolute) */}
                         <button
                             onClick={onClose}
-                            className="absolute top-4 right-4 z-[110] p-2 bg-black/50 rounded-full text-white/80 hover:bg-white hover:text-black transition-all md:hidden"
+                            className="absolute top-4 right-4 z-[110] p-2 bg-black/20 backdrop-blur-md rounded-full text-white/80 hover:bg-white hover:text-black transition-all md:hidden border border-white/10"
                         >
                             <X size={20} />
                         </button>
 
                         {/* Left: Image Section */}
-                        <div className="w-full md:w-2/5 h-64 md:h-auto relative bg-black/50">
+                        <div className="w-full md:w-2/5 h-64 md:h-auto relative">
                             <div className="absolute inset-0">
                                 <ImageWithFallback
                                     src={getOptimizedUrl(performance.image, 800)}
                                     alt={performance.title}
                                     fill
-                                    className="object-cover opacity-80"
+                                    className="object-cover opacity-60 blur-sm scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1b1e] via-transparent to-transparent md:bg-gradient-to-r" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent md:bg-gradient-to-r" />
                             </div>
                             <div className="relative z-10 h-full flex items-center justify-center p-6">
-                                <div className="relative aspect-[3/4] w-48 md:w-64 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
+                                <div className="relative aspect-[3/4] w-48 md:w-64 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/30 transform hover:scale-[1.02] transition-transform duration-500">
                                     <ImageWithFallback
                                         src={getOptimizedUrl(performance.image, 600)}
                                         alt={performance.title}
@@ -103,73 +103,66 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                         </div>
 
                         {/* Right: Info Section */}
-                        <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col h-full overflow-y-auto custom-scrollbar">
+                        <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col h-full overflow-y-auto custom-scrollbar relative">
+                            {/* Subtle Noise Texture Overlay (Optional, simplified to gradient here) */}
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-50" />
+
                             {/* Header */}
-                            <div className="flex justify-between items-start mb-6">
+                            <div className="relative flex justify-between items-start mb-6 z-10">
                                 <div>
-                                    <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-bold mb-3 border border-white/5">
+                                    <span className="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-[10px] font-bold mb-3 border border-white/20 shadow-sm tracking-wider">
                                         {performance.genre.toUpperCase()}
                                     </span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2 break-keep">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2 break-keep drop-shadow-lg">
                                         {performance.title}
                                     </h2>
-
-
                                 </div>
                                 <button
                                     onClick={onClose}
-                                    className="hidden md:block p-2 text-gray-400 hover:text-white transition-colors"
+                                    className="hidden md:block p-2 text-white/50 hover:text-white transition-colors hover:bg-white/10 rounded-full"
                                 >
                                     <X size={24} />
                                 </button>
                             </div>
 
                             {/* Details Grid */}
-                            <div className="grid gap-4 mb-8">
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <Calendar className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">일정</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.date}</p>
+                            <div className="relative grid gap-3 mb-8 z-10">
+                                {[
+                                    { icon: Calendar, label: "일정", value: performance.date, color: "text-indigo-300" },
+                                    { icon: MapPin, label: "장소", value: performance.venue, color: "text-rose-300" },
+                                    { icon: Clock, label: "가격", value: performance.price || '무료', color: "text-amber-300" }
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors shadow-inner">
+                                        <div className={`p-2 rounded-lg bg-white/5 ${item.color}`}>
+                                            <item.icon className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] text-gray-400 uppercase tracking-widest">{item.label}</p>
+                                            <p className="text-sm text-gray-100 font-medium">{item.value}</p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">장소</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.venue}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <Clock className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.price || '무료'}</p>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
 
                             {/* Actions */}
-                            <div className="mt-auto grid grid-cols-2 gap-3">
+                            <div className="mt-auto grid grid-cols-2 gap-3 z-10">
                                 <button
                                     onClick={onShare}
-                                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                    className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/15 transition-all border border-white/10 hover:border-white/30 backdrop-blur-sm group"
                                 >
-                                    <Share2 size={18} />
-                                    공유하기
+                                    <Share2 size={18} className="group-hover:scale-110 transition-transform" />
+                                    <span className="text-sm">공유하기</span>
                                 </button>
                                 <button
                                     onClick={generateICS}
-                                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                    className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/15 transition-all border border-white/10 hover:border-white/30 backdrop-blur-sm group"
                                 >
-                                    <Download size={18} />
-                                    캘린더 저장
+                                    <Download size={18} className="group-hover:scale-110 transition-transform" />
+                                    <span className="text-sm">캘린더 저장</span>
                                 </button>
                                 <button
                                     onClick={onBooking}
-                                    className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
+                                    className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] hover:scale-[1.01] transition-all border border-indigo-400/30"
                                 >
                                     <ExternalLink size={20} />
                                     예매처 바로가기
@@ -177,7 +170,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                             </div>
 
                             {/* Footer Info */}
-                            <div className="mt-6 text-center text-[10px] text-gray-500">
+                            <div className="mt-6 text-center text-[10px] text-white/30 z-10">
                                 데이터 출처: {performance.link.includes('interpark') ? '인터파크' : '서울문화포털'} 외
                             </div>
                         </div>
