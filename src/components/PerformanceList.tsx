@@ -363,7 +363,8 @@ const TypingHero = ({
     paused: boolean
 }) => {
     const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
-    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('WAIT');
+    // Start from TYPE phase with progress 0 for typing animation on initial mount
+    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('TYPE');
     const [progress, setProgress] = useState(0);
 
     // Calculate segment lengths
@@ -385,19 +386,12 @@ const TypingHero = ({
                 setPhase('TYPE');
                 setProgress(0);
             } else {
-                // Initial load or valid instant switch -> Show Full
-                setPhase('WAIT');
-                setProgress(9999); // Ensure full visibility
+                // Template changed during WAIT or TYPE -> Start typing the new one
+                setPhase('TYPE');
+                setProgress(0);
             }
         }
     }, [template, displayedTemplate, phase]); // Added displayedTemplate and phase to dependencies
-
-    // Initial Mount: Ensure visibility (if not handled by prop update)
-    useEffect(() => {
-        if (phase === 'WAIT' && progress === 0) {
-            setProgress(9999);
-        }
-    }, []); // Run once
 
     useEffect(() => {
         // If paused, do NOT schedule next tick.
