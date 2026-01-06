@@ -182,15 +182,15 @@ export default function BottomNavSheet({
                                             className={clsx(
                                                 "p-4 rounded-2xl border text-left transition-all duration-300 group hover:scale-[1.02]",
                                                 isSelected
-                                                    ? "bg-white/10 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)]"
-                                                    : "bg-gray-900/50 border-white/5 hover:bg-gray-800"
+                                                    ? "bg-white/10 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)] light:bg-purple-50 light:border-purple-600 light:shadow-none"
+                                                    : "bg-gray-900/50 light:bg-white border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50"
                                             )}
                                         >
                                             <div className="flex items-center gap-3">
-                                                <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white" : "text-gray-400 p-0 bg-transparent")}>
+                                                <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white light:bg-purple-100 light:text-purple-600" : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")}>
                                                     <Icon size={20} />
                                                 </div>
-                                                <div className="text-sm font-bold text-gray-200">{mode.label}</div>
+                                                <div className="text-sm font-bold text-gray-200 light:text-black">{mode.label}</div>
                                             </div>
                                         </button>
                                     );
@@ -243,8 +243,8 @@ export default function BottomNavSheet({
                                             className={clsx(
                                                 "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                                 isSelected
-                                                    ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg`
-                                                    : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800 hover:border-white/10"
+                                                    ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg light:bg-white light:text-purple-700 light:border-purple-600 light:ring-purple-600`
+                                                    : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                             )}
                                         >
                                             {getGenreIcon(genre.id, 16)}

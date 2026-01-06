@@ -466,7 +466,7 @@ const TypingHero = ({
     else cursorSegment = 'suffix';
 
     return (
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
             {t1}
             {cursorSegment === 'line1' && <Cursor />}
             <br />
@@ -1869,7 +1869,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         <h1 className="text-[1.5rem] md:text-3xl font-extrabold text-white light:text-black tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
-                        <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
+                        <span className="text-xs md:text-sm text-gray-400 light:text-gray-600 font-bold hidden sm:inline-block tracking-widest border-l border-gray-600 light:border-gray-400 pl-3 ml-1">
                             서울 · 경기 · 인천 통합 문화 검색
                         </span>
                     </div>
@@ -2008,10 +2008,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <button
                             onClick={handleCurrentLocationClick}
-                            className="flex items-center gap-1 hover:text-white transition-colors group/label mr-2"
+                            className="flex items-center gap-1 hover:text-white light:hover:text-purple-600 transition-colors group/label mr-2"
                             title="내 위치 찾기"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] light:text-purple-600 group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
                             <span>
                                 {(selectedRegion !== 'all' || selectedVenue !== 'all')
                                     ? '설정위치 :'
@@ -2021,7 +2021,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         </button>
                         <span
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
-                            className="text-white border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
+                            className="text-white light:text-black border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
                         >
                             {(activeLocation && selectedRegion === 'all' && selectedVenue === 'all') // Show GPS/Search if NO manual filter
                                 ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
@@ -2427,7 +2427,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     />
                                 </div>
                                 {/* Mobile: Dynamic (Simplified Layout) */}
-                                <h2 className="text-4xl font-light text-white leading-[1.2] tracking-tighter block sm:hidden">
+                                <h2 className="text-4xl font-light text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
                                     {currentTemplate.line1}<br />
                                     {currentTemplate.boldPrefix && (
                                         <>
@@ -2456,7 +2456,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 {/* Hero Search Bar */}
                 <div className="w-full lg:w-auto relative group z-[60]">
                     <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-hover:shadow-purple-500/40 opacity-90 group-hover:opacity-100">
-                        <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative mix-blend-hard-light">
+                        <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
                             {/* Radius Select for Hero */}
                             {activeLocation && (
                                 <div className="border-r border-gray-700 pr-0 mr-2 ml-3 relative flex items-center">
@@ -2482,7 +2482,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 onFocus={() => setActiveSearchSource('hero')}
                                 onChange={handleSearchTextChange}
                                 onKeyDown={handleKeyDown}
-                                className="bg-transparent border-none text-white text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600"
+                                className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                                 placeholder={activeLocation ? "주변 공연장 검색..." : "공연명, 장소, 지역 검색..."}
                             />
 
@@ -2995,7 +2995,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-8 gap-2">
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
-                            <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 flex items-center gap-2">
+                            <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 light:text-black flex items-center gap-2">
                                 {viewMode === 'likes-perf' ? (
                                     <>
                                         <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />

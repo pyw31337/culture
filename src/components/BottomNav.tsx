@@ -70,7 +70,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onClick={item.action}
                 className={clsx(
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
-                    isActive ? "text-[#a78bfa] light:text-purple-600" : "text-gray-400 hover:text-gray-200 light:text-gray-400 light:hover:text-gray-600"
+                    isActive ? "text-[#a78bfa] light:text-purple-600" : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
                 )}
             >
                 <div className="relative">
