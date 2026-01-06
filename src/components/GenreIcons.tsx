@@ -158,6 +158,7 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'movie': return <MovieIcon size={size} />;
         case 'musical': return <MusicalIcon size={size} />;
         case 'theater': return <DramaIcon size={size} />;
+        case 'play': return <DramaIcon size={size} />; // 연극 in GENRES uses 'play'
         case 'concert': return <MicVocalIcon size={size} />;
         case 'classic': return <PianoIcon size={size} />;
         case 'exhibition': return <FanIcon size={size} />;
