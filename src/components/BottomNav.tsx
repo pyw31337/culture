@@ -79,7 +79,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                             "w-5 h-5 transition-all duration-300",
                             isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
                         )}
-                        strokeWidth={isActive ? 2.5 : 1.5}
+                        strokeWidth={isActive ? 2.5 : 2}
                     />
                     {/* Badge Count */}
                     {item.badgeCount !== undefined && item.badgeCount > 0 && (

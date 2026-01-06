@@ -17,7 +17,7 @@ export const MovieIcon = ({ size = 16 }: { size?: number }) => (
 
 // Musical: Butterfly masks
 export const MusicalIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 8.918S9.394 7.74 8 7.5c-1.807-.31-3.833 0-5.5 0c0 0-.371 3.22 0 4.763c.257 1.069.716 2.166 1.5 2.937c.662.65 1.59 1.042 2.5 1.226c1.309.265 2.778.312 4-.226c.64-.282 1.5-1.464 1.5-1.464m0-5.818S14.606 7.74 16 7.5c1.807-.31 3.833 0 5.5 0c0 0 .371 3.22 0 4.763c-.257 1.069-.716 2.166-1.5 2.937c-.662.65-1.59 1.042-2.5 1.226c-1.309.265-2.778.312-4-.226c-.64-.282-1.5-1.464-1.5-1.464" />
         <path d="M9.931 12.25c-.095.756-1.061 1.257-2.157 1.12c-1.097-.139-1.908-.864-1.813-1.62s1.061-1.257 2.158-1.12c1.096.139 1.907.864 1.812 1.62m4.138 0c.095.756 1.061 1.257 2.157 1.12c1.097-.139 1.908-.864 1.813-1.62s-1.061-1.257-2.158-1.12c-1.096.139-1.907.864-1.812 1.62" />
     </svg>
@@ -56,7 +56,7 @@ export const PianoIcon = ({ size = 16 }: { size?: number }) => (
 
 // Exhibition: Sailboat / Event
 export const FanIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 22H2l1.5-9.5c2-.5 6-2.5 8.5-6.5c2.5 4 6.5 6 8.5 6.5zM12 2v4l4.5-2z" />
         <path d="m15.5 22l-2-7.5h-3l-2 7.5" />
     </svg>
