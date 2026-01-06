@@ -52,47 +52,34 @@ export default function BottomNavSheet({
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
-    // Default to true (Light) to match new layout script default
+    // Default to true (Light) as that is now the CSS default
     const [isLight, setIsLight] = useState(true);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            // New Logic: Script handles initial class. We just sync state.
-            const hasLightClass = document.documentElement.classList.contains('light');
-            setIsLight(hasLightClass);
+            // Check if .dark class is present (set by layout script)
+            const hasDarkClass = document.documentElement.classList.contains('dark');
+            setIsLight(!hasDarkClass);
 
-            // Note: The previous logic is superseded by the layout script for initialization,
-            // but we still respect localStorage changes if they happen externally.
+            // Sync with localStorage if needed
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.documentElement.classList.add('light');
-                setIsLight(true);
-            } else if (savedTheme === 'dark') {
-                document.documentElement.classList.remove('light');
+            if (savedTheme === 'dark' && !hasDarkClass) {
+                document.documentElement.classList.add('dark');
                 setIsLight(false);
-            } else {
-                // If no preference, check system
-                const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-                if (systemPrefersLight) {
-                    // document.documentElement.classList.add('light'); // Optional: Default to system
-                    // setIsLight(true);
-                }
             }
-            // Sync state with classList just in case
-            setIsLight(document.documentElement.classList.contains('light'));
         }
-    }, [isVisible]); // Sync when sheet opens, but mainly run once on mount (handled by separate effect if needed, but this is fine)
+    }, [isVisible]);
 
     const toggleTheme = () => {
         const doc = document.documentElement;
-        if (doc.classList.contains('light')) {
-            doc.classList.remove('light');
-            setIsLight(false);
-            localStorage.setItem('theme', 'dark');
-        } else {
-            doc.classList.add('light');
+        if (doc.classList.contains('dark')) {
+            doc.classList.remove('dark');
             setIsLight(true);
             localStorage.setItem('theme', 'light');
+        } else {
+            doc.classList.add('dark');
+            setIsLight(false);
+            localStorage.setItem('theme', 'dark');
         }
     };
 

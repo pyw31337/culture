@@ -62,11 +62,9 @@ export default function RootLayout({
               (function() {
                 try {
                   var localTheme = localStorage.getItem('theme');
-                  // Default to light if no preference or if preference is light
-                  if (localTheme !== 'dark') {
-                    document.documentElement.classList.add('light');
-                  } else {
-                    document.documentElement.classList.remove('light');
+                  // Default is Light (:root). We only add .dark if explicitly set.
+                  if (localTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
                   }
                 } catch (e) {}
               })();

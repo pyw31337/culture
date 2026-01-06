@@ -765,7 +765,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                     locationCandidates.push(randomPerf.venue);
 
                     // Pick one location (District preferred if available and brief, else Venue)
-                    const chosenLocation = locationCandidates.length > 0 ? locationCandidates[0] : null;
+                    let chosenLocation = locationCandidates.length > 0 ? locationCandidates[0] : null;
+
+                    // Strict Blocklist for Non-Metropolitan Areas (Leaked Data)
+                    const BLOCKED_REGIONS = ['부산', '대구', '대전', '광주', '울산', '창원', '경상', '전라', '충청', '강원'];
+                    if (chosenLocation && BLOCKED_REGIONS.some(region => chosenLocation!.includes(region))) {
+                        chosenLocation = null;
+                    }
 
                     if (chosenLocation) {
                         const genreLabel = GENRES.find(g => g.id === randomPerf.genre)?.label || "공연";
