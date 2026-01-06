@@ -2497,7 +2497,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
                 {/* Hero Search Bar */}
                 <div className="w-full lg:w-auto relative group z-[60]">
-                    <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100">
+                    {/* Light Mode: Subtle Purple Glow Behind Search Bar */}
+                    <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
+                    <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]">
                         <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
                             {/* Radius Select for Hero */}
                             {activeLocation && (
