@@ -618,6 +618,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
         }
     };
 
+    // Sync contextKeywords with heroText whenever heroText changes
+    // This ensures sorting always uses the current hero's keywords
+    useEffect(() => {
+        if (heroText.keywords && heroText.keywords.length > 0) {
+            setContextKeywords(heroText.keywords);
+        }
+    }, [heroText]);
+
     // Cycle Handler for Typing Effect
     const handleHeroCycle = () => {
         selectNextTemplate();
