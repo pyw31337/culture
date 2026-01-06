@@ -3816,7 +3816,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] h-full rounded-[15px]",
+                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,0.5)] h-full rounded-[15px]",
                         variant === 'default' ? "gold-shimmer-wrapper aspect-[3/4]" : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"

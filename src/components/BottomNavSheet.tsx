@@ -52,11 +52,17 @@ export default function BottomNavSheet({
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
-    const [isLight, setIsLight] = useState(false);
+    // Default to true (Light) to match new layout script default
+    const [isLight, setIsLight] = useState(true);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            // Check localStorage first, then system preference, then default to dark (false)
+            // New Logic: Script handles initial class. We just sync state.
+            const hasLightClass = document.documentElement.classList.contains('light');
+            setIsLight(hasLightClass);
+
+            // Note: The previous logic is superseded by the layout script for initialization,
+            // but we still respect localStorage changes if they happen externally.
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {
                 document.documentElement.classList.add('light');

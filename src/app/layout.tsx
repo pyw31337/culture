@@ -56,6 +56,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var localTheme = localStorage.getItem('theme');
+                  // Default to light if no preference or if preference is light
+                  if (localTheme !== 'dark') {
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5"
           strategy="afterInteractive"
