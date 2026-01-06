@@ -3510,7 +3510,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
             : variant === 'yellow'
                 ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl bg-gray-900 light:bg-white";
+                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl light:shadow-none light:hover:shadow-none bg-gray-900 light:bg-white";
 
     // Content background for colored variants
     const contentBgStyle = variant === 'emerald'
@@ -3877,7 +3877,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,0.5)] h-full rounded-[15px]",
+                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl light:shadow-none group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-none h-full rounded-[15px]",
                         variant === 'default' ? "gold-shimmer-wrapper aspect-[3/4]" : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
