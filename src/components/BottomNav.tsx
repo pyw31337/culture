@@ -70,7 +70,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onClick={item.action}
                 className={clsx(
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
-                    isActive ? "text-[#a78bfa]" : "text-gray-400 hover:text-gray-200"
+                    isActive ? "text-[#a78bfa] light:text-purple-600" : "text-gray-400 hover:text-gray-200 light:text-gray-400 light:hover:text-gray-600"
                 )}
             >
                 <div className="relative">
@@ -113,6 +113,8 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                                 "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
                                 "hover:scale-105",
                                 "active:scale-95",
+                                "active:scale-95",
+                                "bg-white light:bg-white", // Floating button bg
                                 activeMenu === 'location' && "shadow-[0_0_40px_rgba(167,139,250,0.8)]"
                             )}
                         >
@@ -129,14 +131,13 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 </div>
 
                 {/* Bottom bar with curved notch */}
-                <div className="relative bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 backdrop-blur-xl border-t border-purple-500/20 rounded-t-3xl overflow-hidden">
+                <div className="relative bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 backdrop-blur-xl border-t border-purple-500/20 light:border-black/5 rounded-t-3xl overflow-hidden shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
                     {/* SVG Notch Mask */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
                         <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
                             <path
                                 d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
-                                fill="#1a0b2e"
-                                className="drop-shadow-lg"
+                                className="drop-shadow-lg fill-[#1a0b2e] light:fill-gray-50 transition-colors duration-300"
                             />
                         </svg>
                     </div>

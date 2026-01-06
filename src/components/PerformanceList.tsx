@@ -1848,7 +1848,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
             <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 mix-blend-screen animate-pulse-slow delay-1000"></div>
             {/* Header: Logo & Last Updated */}
             {/* Header */}
-            <header className="relative z-[150] bg-gray-900/80 backdrop-blur-md border-b border-gray-700 mix-blend-lighten">
+            <header className="relative z-[150] bg-gray-900/80 light:bg-white/80 backdrop-blur-md border-b border-gray-700 light:border-gray-200 mix-blend-lighten light:mix-blend-normal">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
                     <div
                         className="flex items-center gap-3 cursor-pointer group"
@@ -1866,7 +1866,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 priority
                             />
                         </div>
-                        <h1 className="text-[1.5rem] md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
+                        <h1 className="text-[1.5rem] md:text-3xl font-extrabold text-white light:text-black tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 font-light hidden sm:inline-block tracking-widest border-l border-gray-600 pl-3 ml-1">
@@ -1880,7 +1880,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             onClick={() => setViewMode(viewMode === 'map' ? 'grid' : 'map')}
                             className={clsx(
                                 "p-2 rounded-full transition-all duration-300 relative",
-                                viewMode === 'map' ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                                viewMode === 'map' ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
                             )}
                             aria-label="지도 보기"
                         >
@@ -1892,7 +1892,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             onClick={() => setViewMode(viewMode === 'calendar' ? 'grid' : 'calendar')}
                             className={clsx(
                                 "p-2 rounded-full transition-all duration-300 relative",
-                                viewMode === 'calendar' ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                                viewMode === 'calendar' ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
                             )}
                             aria-label="달력 보기"
                         >
@@ -1907,7 +1907,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             }}
                             className={clsx(
                                 "p-2 rounded-full transition-all duration-300 relative",
-                                isAlarmOpen ? "bg-purple-500/20 text-purple-300" : "text-gray-400 hover:text-white hover:bg-white/5"
+                                isAlarmOpen ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
                             )}
                             aria-label="알림 설정"
                         >
@@ -1925,25 +1925,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
             {/* Alarm Panel (Slide Down) - Moved Outside Header to avoid mix-blend-mode issues */}
             <div className={clsx(
-                "absolute top-16 sm:top-20 left-0 right-0 bg-[#1a0b2e]/95 backdrop-blur-3xl border-b border-purple-500/20 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top z-[200]",
+                "absolute top-16 sm:top-20 left-0 right-0 bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border-b border-purple-500/20 light:border-black/5 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top z-[200]",
                 isAlarmOpen ? "max-h-[500px] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
             )}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                            <Bell size={18} className="text-purple-400" />
-                            <span className="text-purple-100">키워드 알림</span>
+                        <h3 className="text-lg font-bold text-white light:text-black flex items-center gap-2">
+                            <Bell size={18} className="text-purple-400 light:text-purple-600" />
+                            <span className="text-purple-100 light:text-gray-800">키워드 알림</span>
                         </h3>
                         <button
                             onClick={() => setIsAlarmOpen(false)}
-                            className="p-1 rounded-full text-gray-500 hover:text-white hover:bg-white/10 transition-colors"
+                            className="p-1 rounded-full text-gray-500 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/10 transition-colors"
                         >
                             <X size={18} />
                         </button>
                     </div>
 
-                    <div className="bg-purple-900/20 border border-purple-500/20 rounded-xl p-3 mb-4">
-                        <p className="text-xs text-purple-200/80 leading-relaxed">
+                    <div className="bg-purple-900/20 light:bg-purple-50 border border-purple-500/20 light:border-purple-200 rounded-xl p-3 mb-4">
+                        <p className="text-xs text-purple-200/80 light:text-purple-900 leading-relaxed">
                             등록한 키워드가 포함된 공연이 오픈되면 홈 화면에서 알려드려요! 🔔
                         </p>
                     </div>
@@ -1963,7 +1963,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                             value={keywordInput}
                             onChange={(e) => setKeywordInput(e.target.value)}
                             placeholder="키워드 추가 (예: 아이유)"
-                            className="flex-1 bg-gray-900/80 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500/50 transition-colors"
+                            className="flex-1 bg-gray-900/80 light:bg-gray-100 border border-white/10 light:border-black/10 rounded-lg px-3 py-2 text-sm text-white light:text-black focus:outline-none focus:border-purple-500/50 transition-colors"
                         />
                         <button
                             type="submit"
@@ -1983,7 +1983,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         ) : (
                             <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto custom-scrollbar">
                                 {savedKeywords.map(k => (
-                                    <div key={k} className="flex items-center gap-1.5 bg-gray-800 text-white pl-3 pr-1.5 py-1.5 rounded-full border border-gray-700 hover:border-purple-500/30 transition-all">
+                                    <div key={k} className="flex items-center gap-1.5 bg-gray-800 light:bg-white text-white light:text-black pl-3 pr-1.5 py-1.5 rounded-full border border-gray-700 light:border-gray-300 hover:border-purple-500/30 transition-all">
                                         <span className="text-xs font-medium">{k}</span>
                                         <button
                                             onClick={() => handleKeywordRemove(k)}
