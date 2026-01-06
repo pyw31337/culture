@@ -4061,7 +4061,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(
-                                                "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all",
+                                                "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all text-white",
                                                 GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -4235,9 +4235,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             </button>
                                             <a
                                                 href={perf.link}
-                                                target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex-1 bg-[#a78bfa] hover:bg-[#9063f0] text-black py-2 rounded-[10px] flex items-center gap-1.5 justify-center transition-all font-bold text-sm h-[40px] shadow-lg relative z-[100]"
+                                                className="flex-1 bg-[#a78bfa] hover:bg-[#9063f0] text-white py-2 rounded-[10px] flex items-center gap-1.5 justify-center transition-all font-bold text-sm h-[40px] shadow-lg relative z-[100]"
                                                 onClick={e => e.stopPropagation()}
                                             >
                                                 자세히 보기
