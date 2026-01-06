@@ -3716,8 +3716,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                                         href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
                                                         className="text-gray-300 light:text-black hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
                                                         onClick={e => e.stopPropagation()}
                                                     >
