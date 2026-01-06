@@ -1709,12 +1709,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
 
         if (contextKeywords.length > 0) {
             // Separate matching and non-matching items
-            const hasMatch = (p: Performance) => contextKeywords.some(k =>
-                p.title.includes(k) ||
-                p.venue.includes(k) ||
-                p.genre.includes(k) ||
-                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).includes(k))
-            );
+            const hasMatch = (p: Performance) => contextKeywords.some(k => {
+                // Direct text matching
+                const textMatch =
+                    p.title.includes(k) ||
+                    p.venue.includes(k) ||
+                    (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).includes(k));
+
+                // Genre matching: Check if keyword matches genre ID exactly OR genre label
+                const genreLabel = GENRES.find(g => g.id === p.genre)?.label || '';
+                const genreMatch = p.genre === k || genreLabel === k || genreLabel.includes(k);
+
+                return textMatch || genreMatch;
+            });
 
             const matched = displayPerformances.filter(hasMatch);
             const unmatched = displayPerformances.filter(p => !hasMatch(p));
