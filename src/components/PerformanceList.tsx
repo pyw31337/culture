@@ -2095,8 +2095,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                         <button
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className={clsx(
-                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20",
-                                isHeroFilterExpanded && "bg-white/20 text-white"
+                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10",
+                                isHeroFilterExpanded && "bg-white/20 text-white light:bg-purple-100 light:text-purple-700"
                             )}
                             title={isHeroFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
                         >
@@ -2132,11 +2132,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     <select
                                         value={selectedVenue}
                                         onChange={(e) => setSelectedVenue(e.target.value)}
-                                        className="w-full sm:w-40 appearance-none bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8"
+                                        className="w-full sm:w-40 appearance-none bg-purple-900/20 light:bg-purple-50 border border-purple-500/20 light:border-purple-200 text-gray-200 light:text-purple-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-8 transition-colors font-medium"
                                     >
                                         <option value="all">전체 공연장</option>
                                         {availableVenues.map(v => (
-                                            <option key={v} value={v}>{v}</option>
+                                            <option key={v} value={v} className="bg-gray-900 text-white light:bg-white light:text-black">{v}</option>
                                         ))}
                                     </select>
                                     <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
@@ -2145,7 +2145,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                 </div>
 
                                 {/* Region Buttons Filter Group */}
-                                <div className="flex bg-white/5 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10">
+                                <div className="flex bg-gray-900/80 light:bg-gray-100/80 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10 light:border-black/5">
                                     {REGIONS.map(r => (
                                         <button
                                             key={r.id}
@@ -2157,8 +2157,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                             className={clsx(
                                                 'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
                                                 selectedRegion === r.id
-                                                    ? 'bg-white text-black font-bold shadow-lg mix-blend-lighten'
-                                                    : 'text-gray-400 hover:text-white hover:bg-white/10 mix-blend-lighten'
+                                                    ? 'bg-white light:bg-white text-black light:text-purple-700 font-bold shadow-lg mix-blend-normal light:shadow-sm light:border light:border-purple-100'
+                                                    : 'text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5'
                                             )}
                                         >
                                             {r.label}
@@ -2175,11 +2175,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                                 setSelectedDistrict(e.target.value);
                                                 setSelectedVenue('all'); // Reset venue when district changes
                                             }}
-                                            className="w-full sm:w-32 appearance-none bg-white/5 border border-white/10 text-gray-200 text-sm rounded-full focus:bg-gray-800 focus:border-white/20 block p-2.5 pr-8 transition-colors"
+                                            className="w-full sm:w-32 appearance-none bg-purple-900/20 light:bg-purple-50 border border-purple-500/20 light:border-purple-200 text-gray-200 light:text-purple-900 text-sm rounded-xl focus:bg-gray-800 light:focus:bg-white focus:border-white/20 block p-2.5 pr-8 transition-colors font-medium"
                                         >
                                             <option value="all">전체 지역</option>
                                             {districts.map(d => (
-                                                <option key={d} value={d}>{d}</option>
+                                                <option key={d} value={d} className="bg-gray-900 text-white light:bg-white light:text-black">{d}</option>
                                             ))}
                                         </select>
                                         <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
