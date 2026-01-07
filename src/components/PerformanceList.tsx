@@ -1946,7 +1946,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110 duration-300">
                             <Image
-                                src="images/ticket_icon.png"
+                                src="/culture/images/ticket_icon.png"
                                 alt="Culture Flow Icon"
                                 fill
                                 className="object-cover"
@@ -3243,7 +3243,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
                                                 <Heart className="w-10 h-10 text-pink-500/50" />
                                             </div>
-                                            <h3 className="text-xl font-bold text-gray-300 mb-2">좋아요한 공연이 없네요</h3>
+                                            <h3 className="text-xl font-bold text-pink-400 mb-2">좋아요한 공연이 없네요</h3>
                                             <p className="text-gray-500">마음에 드는 공연에 하트를 눌러보세요!</p>
                                         </>
                                     ) : viewMode === 'likes-venue' ? (
@@ -3251,7 +3251,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6">
                                                 <Star className="w-10 h-10 text-emerald-500/50" />
                                             </div>
-                                            <h3 className="text-xl font-bold text-gray-300 mb-2">찜한 공연장이 없네요</h3>
+                                            <h3 className="text-xl font-bold text-emerald-400 mb-2">찜한 공연장이 없네요</h3>
                                             <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
                                             <button
                                                 onClick={() => setViewMode('map')}
