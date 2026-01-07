@@ -1,9 +1,7 @@
-
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-// Type definition matching the project's Performance interface
 export interface Performance {
     id: string;
     title: string;
@@ -15,160 +13,95 @@ export interface Performance {
     genre: string;
 }
 
-const KOVO_URL = 'https://kovo.co.kr/tickets/single';
+const KOVO_SCHEDULE_URL = 'https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kovo.json');
-
-// User requested static thumbnail
-// NOTE: Must include basePath '/culture' as defined in next.config.ts because we use standard <img> tags
 const VOLLEYBALL_POSTER = '/culture/images/volleyball_poster.png';
-// const TEAM_LOGOS: Record<string, string> = { ... } // Removed
-// Static poster defined above.
+
+const TEAMS = [
+    '대한항공', '현대캐피탈', '한국전력', '우리카드', 'OK저축은행', '삼성화재', 'KB손해보험',
+    '현대건설', '흥국생명', '정관장', 'IBK기업은행', 'GS칼텍스', '한국도로공사', '페퍼저축은행'
+];
 
 async function scrapeKovo() {
-    console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
+    console.log(`Starting KOVO Scraper (Full Schedule)...`);
     const browser = await puppeteer.launch({
         headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage', // Critical for CI envs with limited shared memory
-            '--disable-gpu'            // Standard CI stability flag
-        ],
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 
     const page = await browser.newPage();
-
-    // Set viewport to desktop for clear rendering
     await page.setViewport({ width: 1280, height: 1024 });
 
-    console.log(`Navigating to ${KOVO_URL}...`);
-    await page.goto(KOVO_URL, { waitUntil: 'networkidle0', timeout: 60000 });
+    console.log(`Navigating to ${KOVO_SCHEDULE_URL}...`);
+    await page.goto(KOVO_SCHEDULE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-    // Wait for the main list container or some specific text to confirm load
-    console.log('Waiting for schedule list...');
-    // Looking at the innerText screenshot, the list seems to be a custom flex layout.
-    // We'll wait for a common element like "Home" or "VS" which appears in match cards.
+    // Ensure page is fully loaded (wait for a known team name)
     try {
-        await page.waitForFunction(
-            () => document.body.innerText.includes('VS'),
-            { timeout: 10000 }
-        );
-    } catch (e) {
-        console.warn("Timed out waiting for 'VS', but continuing in case content is loaded otherwise.");
-    }
+        await page.waitForFunction(() => document.body.innerText.includes('대한항공'), { timeout: 10000 });
+    } catch (e) { }
 
-    // Attempt to extract data
-    // Since class names are obfuscated (e.g. css-184u2kf), we might iterate over structure or use text heuristics.
-    // Based on the text dump, matches look like:
-    // 12.11(목) 19:00
-    // 대전 충무체육관
-    // Home
-    // 삼성화재
-    // VS
-    // 현대캐피탈
-    // Away
-    // [일반예매]
-
-    // Attempt to extract data
-    // Just grab the full text content. The structure is linear enough.
-    const matches = await page.evaluate(() => {
-        return document.body.innerText;
-    });
-
+    const textContent = await page.evaluate(() => document.body.innerText);
     await browser.close();
 
-    // Parse the text content outside details
-    // The text pattern is:
-    // 12.11(목) 19:00 \n 대전 충무체육관 \n Home \n 삼성화재 \n VS \n 현대캐피탈 ...
-
-    // We'll split by double newlines or scan line by line.
-    console.log('Parsing text content...');
-    // console.log(matches); // It's just a string
-
-    const lines = (matches as string).split('\n').map(l => l.trim()).filter(l => l);
+    console.log('Parsing content...');
+    const matchLines = textContent.split('\n').map(l => l.trim()).filter(l => l);
     const performances: Performance[] = [];
 
-    // Simple state machine parser
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
+    let currentDate = '';
 
-        // Identify Date/Time line: e.g. "12.11(목) 19:00"
-        // Regex: \d{1,2}\.\d{1,2}\([월화수목금토일]\)\s\d{2}:\d{2}
-        const dateMatch = line.match(/^(\d{1,2})\.(\d{1,2})\(([월화수목금토일])\)\s(\d{2}:\d{2})$/);
+    for (let i = 0; i < matchLines.length; i++) {
+        const line = matchLines[i];
 
+        // Date Pattern: 2025.10.18 (토)
+        const dateMatch = line.match(/^(\d{4})\.(\d{2})\.(\d{2})\s\([가-힣]\)$/);
         if (dateMatch) {
-            // Found a match start
-            // Next line should be venue: "대전 충무체육관"
-            // Then "Home" (optional?)
-            // Then Team 1
-            // Then "VS"
-            // Then Team 2
+            currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+            continue;
+        }
 
-            const month = dateMatch[1];
-            const day = dateMatch[2];
-            const time = dateMatch[4];
+        // Time Pattern: 16:00 or 19:00 (Start of a match block)
+        if (line.match(/^\d{2}:\d{2}$/) && currentDate) {
+            const time = line;
+            // Next line should be Venue
+            const venue = matchLines[i + 1];
 
-            // Current year is safe assumption? Or derived from month (if Dec -> 2024, if Jan -> 2025)
-            // KOVO season spans 2 years. 
-            // Simple logic: if month >= 10, use 2025 (current season start), wait.
-            // Current date is Dec 2025. 
-            const currentYear = new Date().getFullYear();
-            // Note: Data might be for 2025-2026 season given "도드람 2025~2026 V-리그" title in text dump.
-            // If month is 12, it's Dec 2025. If 1, it's Jan 2026.
+            // Search for teams in subsequent lines
+            let homeTeam = '';
+            let awayTeam = '';
+            let foundTeams = 0;
 
-            let year = currentYear;
-            if (parseInt(month) < 6) year = currentYear + 1; // Basic heuristic for spring part of season
+            // Look ahead up to 10 lines for team names
+            for (let j = i + 2; j < i + 12 && j < matchLines.length; j++) {
+                const txt = matchLines[j];
+                if (TEAMS.some(t => txt.includes(t))) { // using includes to be safe
+                    // Clean team name if it contains extra text (though usually it's exact)
+                    const matchedTeam = TEAMS.find(t => txt.includes(t)) || txt;
 
-            const dateStr = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-
-            let venue = lines[i + 1];
-            // Skip "예매하기" or known button labels if they appear between date and venue
-            if (venue === '예매하기' || venue === '예매 대기' || venue === '판매 예정') {
-                venue = lines[i + 2];
-            }
-
-
-            // Find teams. Scan forward a few lines for "VS".
-            // usually:
-            // i+1: Venue
-            // i+2: "Home" or Team
-            // i+3: Team Name 1 (if i+2 was Home)
-
-            // Let's look for VS index
-            let vsIndex = -1;
-            for (let j = i + 1; j < i + 10 && j < lines.length; j++) {
-                if (lines[j] === 'VS') {
-                    vsIndex = j;
-                    break;
+                    if (foundTeams === 0) {
+                        homeTeam = matchedTeam;
+                        foundTeams++;
+                    } else if (foundTeams === 1) {
+                        awayTeam = matchedTeam;
+                        foundTeams++;
+                        break; // Found both
+                    }
                 }
             }
 
-            if (vsIndex !== -1) {
-                // Teams are around VS
-                const homeTeam = lines[vsIndex - 1];
-                const awayTeam = lines[vsIndex + 1];
-
-                // Avoid capturing "Home" tag if present
-                // If line before VS is HomeTeam, and line before that is "Home", clean it up.
-                // Text dump: "Home" \n "삼성화재" \n "VS"
-                // So homeTeam = lines[vsIndex-1] is correct ("삼성화재")
-
+            if (homeTeam && awayTeam) {
+                // Determine Genre (Men/Women) - optional but good for context
+                // Filter IDs
+                const id = `kovo_${currentDate.replace(/-/g, '')}_${homeTeam}_${awayTeam}`;
                 const title = `[배구] ${homeTeam} vs ${awayTeam}`;
-
-                // Construct ID
-                const id = `kovo_${dateStr.replace(/-/g, '')}_${homeTeam}_${awayTeam}`;
-
-                // Static user-provided poster
-                const image = VOLLEYBALL_POSTER;
 
                 performances.push({
                     id,
                     title,
-                    image,
-                    date: `${dateStr} ${time}`,
+                    image: VOLLEYBALL_POSTER,
+                    date: `${currentDate} ${time}`,
                     venue,
-                    link: KOVO_URL, // Generic link to ticket page
+                    link: KOVO_SCHEDULE_URL,
                     region: classifyRegion(venue),
                     genre: 'volleyball'
                 });
@@ -176,20 +109,17 @@ async function scrapeKovo() {
         }
     }
 
-    console.log(`Extracted ${performances.length} matches.`);
-
-    // Save to file
+    console.log(`Total collected: ${performances.length}`);
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
     console.log(`Saved to ${OUTPUT_PATH}`);
 }
 
 function classifyRegion(venue: string): string {
+    if (!venue) return 'etc';
     if (venue.includes('서울') || venue.includes('장충')) return 'seoul';
-    if (venue.includes('인천') || venue.includes('계양')) return 'incheon';
+    if (venue.includes('인천') || venue.includes('계양') || venue.includes('삼산')) return 'incheon';
     if (venue.includes('수원') || venue.includes('의정부') || venue.includes('안산') || venue.includes('화성')) return 'gyeonggi';
-    return 'etc'; // Daejeon, Cheonan, Gimcheon etc. will be 'etc' or filtered out? 
-    // The app currently filters by Seoul/Gyeonggi/Incheon. 'etc' items might not show unless we add a 'All' or 'Other' region, 
-    // OR we just include them and let the user see them if they select "All Regions".
+    return 'etc';
 }
 
 scrapeKovo().catch(console.error);
