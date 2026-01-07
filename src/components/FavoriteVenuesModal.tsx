@@ -36,7 +36,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove }: Favo
                                 <div>
                                     <h2 className="text-xl font-bold text-white">찜한 공연장 목록</h2>
                                     <p className="text-sm text-gray-400 mt-1">
-                                        총 <span className="text-purple-400 font-bold">{favoriteVenues.length}</span>개의 공연장이 있습니다
+                                        총 <span className="text-emerald-400 font-bold">{favoriteVenues.length}</span>개의 공연장이 있습니다
                                     </p>
                                 </div>
                                 <button
@@ -58,10 +58,10 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove }: Favo
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 exit={{ opacity: 0, x: -20 }}
-                                                className="flex items-center justify-between p-4 bg-white/5 rounded-2xl group hover:bg-white/10 transition-colors border border-white/5 hover:border-purple-500/30"
+                                                className={`flex items-center justify-between p-4 bg-white/5 rounded-2xl group hover:bg-white/10 transition-colors border border-white/5 hover:border-emerald-500/30`}
                                             >
                                                 <div className="flex items-center gap-3 overflow-hidden">
-                                                    <div className="p-2 rounded-xl bg-purple-500/20 text-purple-400 shrink-0">
+                                                    <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
                                                         <MapPin size={18} />
                                                     </div>
                                                     <span className="text-gray-200 font-medium truncate">

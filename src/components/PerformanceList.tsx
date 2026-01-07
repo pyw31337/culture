@@ -3539,7 +3539,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
         : variant === 'pink'
             ? "bg-pink-950/40"
             : variant === 'yellow'
-                ? "bg-yellow-950"
+                ? "bg-yellow-400"
                 : ""; // Default: transparent (no bg class)
 
     return (
@@ -3815,10 +3815,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     e.stopPropagation();
                                     onDetail?.();
                                 }}
-                                className="w-full py-2 bg-white/5 hover:bg-white/10 light:bg-gray-100 light:hover:bg-purple-600 border border-white/10 hover:border-white/20 light:border-gray-200 light:hover:border-purple-600 rounded-lg text-xs sm:text-sm font-bold text-gray-400 hover:text-white light:text-gray-600 light:hover:text-white transition-all flex items-center justify-center gap-1"
+                                className="w-full py-2 bg-transparent hover:bg-white/10 border border-white/60 hover:border-white text-xs sm:text-sm font-bold text-white transition-all flex items-center justify-center gap-1"
                             >
                                 자세히 보기
-                                <ChevronDown className="-rotate-90 w-3 h-3 opacity-50" />
+                                <ChevronDown className="-rotate-90 w-3 h-3 text-white" />
                             </button>
                         </div>
                     </div>
