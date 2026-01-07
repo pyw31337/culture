@@ -3588,7 +3588,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 {/* Image (Left) */}
                 {/* Image (Left) - Link Wrapped */}
                 {/* Image (Left) */}
-                <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden">
+                <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0">
                     <ImageWithFallback
                         src={perf.image}
                         optimizationWidth={200}
