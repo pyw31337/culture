@@ -1,10 +1,30 @@
 [
   {
-    "id": "kbl_20260107_50_35",
-    "title": "창원 LG vs 서울 삼성",
+    "id": "kbl_20260108_68_24",
+    "title": "한국가스공사 vs KCC",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-07 19:00",
-    "venue": "창원체육관",
+    "date": "2026-01-08 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260108_67_29",
+    "title": "소노 vs 상무",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-08 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
+    "id": "kbl_20260108_16_06",
+    "title": "원주 DB vs 수원 KT",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-08 19:00",
+    "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball"
@@ -140,31 +160,11 @@
     "genre": "basketball"
   },
   {
-    "id": "kbl_20260108_68_24",
-    "title": "한국가스공사 vs KCC",
+    "id": "kbl_20260107_50_35",
+    "title": "창원 LG vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 13:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260108_67_29",
-    "title": "소노 vs 상무",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 15:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260108_16_06",
-    "title": "원주 DB vs 수원 KT",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 19:00",
-    "venue": "원주DB프로미아레나",
+    "date": "2026-01-07 19:00",
+    "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball"

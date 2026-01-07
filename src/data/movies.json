@@ -18,25 +18,6 @@
     "movieInfo": "한국로맨스/멜로 / 114분"
   },
   {
-    "id": "movie_20251224_오늘_밤,_세계에서",
-    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
-    "image": "https://s.pstatic.net/movie.phinf/20251224_290/176654193725799gIU_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "미치에다 슌스케",
-      "후쿠모토 리코",
-      "후루카와 코토네",
-      "마츠모토 호노카"
-    ],
-    "director": "미키 타카히로",
-    "movieInfo": "일본로맨스/멜로 / 121분"
-  },
-  {
     "id": "movie_20251217_아바타:_불과_재",
     "title": "아바타: 불과 재",
     "image": "https://s.pstatic.net/movie.phinf/20251217_118/1765951474121LjtOH_JPEG/movie_image.jpg",
@@ -73,6 +54,25 @@
     ],
     "director": "자레드 부시 더보기",
     "movieInfo": "미국애니메이션 외 / 108분"
+  },
+  {
+    "id": "movie_20251224_오늘_밤,_세계에서",
+    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    "image": "https://s.pstatic.net/movie.phinf/20251224_290/176654193725799gIU_JPEG/movie_image.jpg",
+    "date": "2025.12.24.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "미치에다 슌스케",
+      "후쿠모토 리코",
+      "후루카와 코토네",
+      "마츠모토 호노카"
+    ],
+    "director": "미키 타카히로",
+    "movieInfo": "일본로맨스/멜로 / 121분"
   },
   {
     "id": "movie_20251231_신의악단",
@@ -113,6 +113,25 @@
     "movieInfo": "일본애니메이션 외 / 105분"
   },
   {
+    "id": "movie_20260107_굿_포츈",
+    "title": "굿 포츈",
+    "image": "https://s.pstatic.net/movie.phinf/20251211_35/1765436626099udCWx_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B5%BF%20%ED%8F%AC%EC%B8%88%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "키아누 리브스",
+      "아지즈 안사리",
+      "세스 로건",
+      "산드라 오"
+    ],
+    "director": "아지즈 안사리",
+    "movieInfo": "미국코미디 외 / 98분"
+  },
+  {
     "id": "movie_20260101_스폰지밥_무비:_네",
     "title": "스폰지밥 무비: 네모바지를 찾아서",
     "image": "https://s.pstatic.net/movie.phinf/20260102_37/1767318013213dNa9R_JPEG/movie_image.jpg",
@@ -131,6 +150,25 @@
     "movieInfo": "미국애니메이션 외 / 96분"
   },
   {
+    "id": "movie_20260107_마이_선샤인",
+    "title": "마이 선샤인",
+    "image": "https://s.pstatic.net/movie.phinf/20260107_93/1767761771387ls70j_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "전체 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%A7%88%EC%9D%B4%20%EC%84%A0%EC%83%A4%EC%9D%B8%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "코시야마 케이타츠",
+      "나카니시 키아라",
+      "이케마츠 소스케",
+      "와카바 류야"
+    ],
+    "director": "오쿠야마 히로시",
+    "movieInfo": "일본드라마 / 90분"
+  },
+  {
     "id": "movie_20260101_톰과_제리:_황금나",
     "title": "톰과 제리: 황금나침반 대소동",
     "image": "https://s.pstatic.net/movie.phinf/20251119_183/1763517513701RJ9t3_JPEG/movie_image.jpg",
@@ -142,6 +180,25 @@
     "genre": "movie",
     "director": "장강",
     "movieInfo": "중국애니메이션 외 / 99분"
+  },
+  {
+    "id": "movie_20260107_피렌체",
+    "title": "피렌체",
+    "image": "https://s.pstatic.net/movie.phinf/20251202_40/1764643290618Y3iAs_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "12세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%94%BC%EB%A0%8C%EC%B2%B4%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "김민종",
+      "예지원",
+      "유정하",
+      "해리 벤자민"
+    ],
+    "director": "이창열",
+    "movieInfo": "한국드라마 / 102분"
   },
   {
     "id": "movie_20251211_뽀로로_극장판_스위",
@@ -182,23 +239,23 @@
     "movieInfo": "프랑스로맨스/멜로 외 / 108분"
   },
   {
-    "id": "movie_20251231_누벨바그",
-    "title": "누벨바그",
-    "image": "https://s.pstatic.net/movie.phinf/20251223_4/1766452346167lc7QT_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "12세 관람가",
+    "id": "movie_20260107_철도원",
+    "title": "철도원",
+    "image": "https://s.pstatic.net/movie.phinf/20251226_164/1766732979876jtDyJ_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "전체 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EB%88%84%EB%B2%A8%EB%B0%94%EA%B7%B8%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%B2%A0%EB%8F%84%EC%9B%90%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "기욤 마르베크",
-      "조이 도이치",
-      "오브리 뒬랭",
-      "알릭스 베네제크"
+      "히로스에 료코",
+      "다카쿠라 켄",
+      "오타케 시노부",
+      "안도 마사노부"
     ],
-    "director": "리처드 링클레이터",
-    "movieInfo": "프랑스코미디 외 / 105분"
+    "director": "후루하타 야스오",
+    "movieInfo": "일본가족 외 / 112분"
   },
   {
     "id": "movie_20251231_파더_마더_시스터_",
@@ -220,17 +277,61 @@
     "movieInfo": "미국코미디 외 / 110분"
   },
   {
-    "id": "movie_20251226_후지모토_타츠키_1",
-    "title": "후지모토 타츠키 17-26 파트 2",
-    "image": "https://s.pstatic.net/movie.phinf/20251208_130/1765179164756N4Imf_JPEG/movie_image.jpg",
-    "date": "2025.12.26.",
-    "venue": "15세 관람가",
+    "id": "movie_20251231_누벨바그",
+    "title": "누벨바그",
+    "image": "https://s.pstatic.net/movie.phinf/20251223_4/1766452346167lc7QT_JPEG/movie_image.jpg",
+    "date": "2025.12.31.",
+    "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%9B%84%EC%A7%80%EB%AA%A8%ED%86%A0%20%ED%83%80%EC%B8%A0%ED%82%A4%2017-26%20%ED%8C%8C%ED%8A%B8%202%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%88%84%EB%B2%A8%EB%B0%94%EA%B7%B8%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
-    "director": "와타나베 테츠아키 더보기",
-    "movieInfo": "일본애니메이션 / 76분"
+    "cast": [
+      "기욤 마르베크",
+      "조이 도이치",
+      "오브리 뒬랭",
+      "알릭스 베네제크"
+    ],
+    "director": "리처드 링클레이터",
+    "movieInfo": "프랑스코미디 외 / 105분"
+  },
+  {
+    "id": "movie_20260107_라스베가스를_떠나며",
+    "title": "라스베가스를 떠나며",
+    "image": "https://s.pstatic.net/movie.phinf/20251212_81/1765522644651Ny647_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "청소년 관람불가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EB%9D%BC%EC%8A%A4%EB%B2%A0%EA%B0%80%EC%8A%A4%EB%A5%BC%20%EB%96%A0%EB%82%98%EB%A9%B0%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "니콜라스 케이지",
+      "엘리자베스 슈",
+      "줄리안 샌즈",
+      "리차드 루이스"
+    ],
+    "director": "마이크 피기스",
+    "movieInfo": "프랑스로맨스/멜로 외 / 111분"
+  },
+  {
+    "id": "movie_20260107_어리석은_자는_누구",
+    "title": "어리석은 자는 누구인가",
+    "image": "https://s.pstatic.net/movie.phinf/20251222_289/1766369629129krsF7_JPEG/movie_image.jpg",
+    "date": "2026.01.07.",
+    "venue": "15세 관람가",
+    "gradeIcon": null,
+    "link": "https://m.search.daum.net/search?w=tot&q=%EC%96%B4%EB%A6%AC%EC%84%9D%EC%9D%80%20%EC%9E%90%EB%8A%94%20%EB%88%84%EA%B5%AC%EC%9D%B8%EA%B0%80%20%EC%98%81%ED%99%94",
+    "region": "전국",
+    "genre": "movie",
+    "cast": [
+      "키타무라 타쿠미",
+      "하야시 유타",
+      "아야노 고",
+      "야마시타 미즈키"
+    ],
+    "director": "나가타 코토",
+    "movieInfo": "일본스릴러 외 / 130분"
   },
   {
     "id": "movie_20251226_후지모토_타츠키_1",
@@ -246,113 +347,16 @@
     "movieInfo": "일본애니메이션 / 67분"
   },
   {
-    "id": "movie_20251224_척의_일생",
-    "title": "척의 일생",
-    "image": "https://s.pstatic.net/movie.phinf/20251222_145/1766391846582Io2SJ_JPEG/movie_image.jpg",
-    "date": "2025.12.24.",
+    "id": "movie_20251226_후지모토_타츠키_1",
+    "title": "후지모토 타츠키 17-26 파트 2",
+    "image": "https://s.pstatic.net/movie.phinf/20251208_130/1765179164756N4Imf_JPEG/movie_image.jpg",
+    "date": "2025.12.26.",
     "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%B2%99%EC%9D%98%20%EC%9D%BC%EC%83%9D%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%9B%84%EC%A7%80%EB%AA%A8%ED%86%A0%20%ED%83%80%EC%B8%A0%ED%82%A4%2017-26%20%ED%8C%8C%ED%8A%B8%202%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
-    "cast": [
-      "톰 히들스턴",
-      "카렌 길런",
-      "치웨텔 에지오포",
-      "제이콥 트렘블레이"
-    ],
-    "director": "마이크 플래너건",
-    "movieInfo": "미국드라마 외 / 111분"
-  },
-  {
-    "id": "movie_20251203_극장판_주술회전:_",
-    "title": "극장판 주술회전: 시부야사변 X 사멸회유",
-    "image": "https://s.pstatic.net/movie.phinf/20251203_36/1764728349013yoGaB_JPEG/movie_image.jpg",
-    "date": "2025.12.03.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%A3%BC%EC%88%A0%ED%9A%8C%EC%A0%84%3A%20%EC%8B%9C%EB%B6%80%EC%95%BC%EC%82%AC%EB%B3%80%20X%20%EC%82%AC%EB%A9%B8%ED%9A%8C%EC%9C%A0%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "에노키 준야",
-      "우치다 유우마",
-      "세토 마사미",
-      "츠다 켄지로"
-    ],
-    "director": "고쇼조노 쇼타",
-    "movieInfo": "일본애니메이션 / 87분"
-  },
-  {
-    "id": "movie_20260102_에반게리온_신극장판",
-    "title": "에반게리온 신극장판: 파",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_254/1765764682863L247L_JPEG/movie_image.jpg",
-    "date": "2026.01.02.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8%20%EC%8B%A0%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%ED%8C%8C%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "오가타 메구미",
-      "하야시바라 메구미",
-      "미야무라 유코",
-      "사카모토 마야"
-    ],
-    "director": "안노 히데아키 더보기",
-    "movieInfo": "일본애니메이션 외 / 112분"
-  },
-  {
-    "id": "movie_20251231_하나_그리고_둘",
-    "title": "하나 그리고 둘",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_273/1765766480679L1w99_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "12세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%95%98%EB%82%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%91%98%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "오념진",
-      "금연령",
-      "켈리 리",
-      "조나단 창"
-    ],
-    "director": "에드워드 양",
-    "movieInfo": "대만드라마"
-  },
-  {
-    "id": "movie_20251231_#런석진_에피소드.",
-    "title": "#런석진_에피소드. 투어 더 무비",
-    "image": "https://s.pstatic.net/movie.phinf/20251208_268/17651682350141kRUf_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "전체 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%23%EB%9F%B0%EC%84%9D%EC%A7%84_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C.%20%ED%88%AC%EC%96%B4%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "진"
-    ],
-    "director": "박준수",
-    "movieInfo": "한국공연 / 94분"
-  },
-  {
-    "id": "movie_20251231_터널",
-    "title": "터널",
-    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
-    "date": "2025.12.31.",
-    "venue": "15세 관람가",
-    "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
-    "region": "전국",
-    "genre": "movie",
-    "cast": [
-      "타이 호아",
-      "투 안 호",
-      "쿠앙 투안"
-    ],
-    "director": "탁 추옌부이",
-    "movieInfo": "베트남전쟁 외 / 126분"
+    "director": "와타나베 테츠아키 더보기",
+    "movieInfo": "일본애니메이션 / 76분"
   }
 ]

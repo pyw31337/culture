@@ -39,25 +39,6 @@
   },
   {
     "id": "sssd-2",
-    "title": "[강남] 특별한 레시피, 두바이 쫀득쿠키 만들기",
-    "date": "상시",
-    "venue": "서울 강남구 봉은사로51길 13 (논현동) 1층 카페 데쎄르룸",
-    "price": "55,000원",
-    "originalPrice": "60,000원",
-    "discount": "8%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260101/50baf1b1-6346-435f-944d-51b56d97144d.jpeg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54547",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 15분",
-      "최대 수용 가능 인원 5명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-3",
     "title": "[부천] 두바이쫀득쿠키 원데이클래스,요즘핫한 2세대 쫀득쿠키 등장!",
     "date": "상시",
     "venue": "경기 부천시 원미구 부천로3번길 48 (심곡동, 심곡동 피노키오 상가) 피노키오 상가 411호",
@@ -76,140 +57,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-4",
-    "title": "[수원] 두바이 쫀득쿠키 2세대 10개 완성 클래스",
+    "id": "sssd-3",
+    "title": "[강남] 특별한 레시피, 두바이 쫀득쿠키 만들기",
     "date": "상시",
-    "venue": "경기 수원시 팔달구 화서문로32번길 25-6 (신풍동) 2층 민림이네 베이킹",
-    "price": "50,000원",
-    "originalPrice": "55,000원",
-    "discount": "9%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/c88b0f9e-cc12-40ba-883f-cb4b7dc3a78d-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/53877",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 12명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-5",
-    "title": "[연남] 남다른 에그타르트 6ps 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 마포구 동교로51안길 24 (연남동) 2층 감성버터",
-    "price": "35,000원",
+    "venue": "서울 강남구 봉은사로51길 13 (논현동) 1층 카페 데쎄르룸",
+    "price": "55,000원",
     "originalPrice": "60,000원",
-    "discount": "41%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240604/fa6e2cc8-a97b-4abf-a476-8265d4157a8e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/45108",
+    "discount": "8%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260101/50baf1b1-6346-435f-944d-51b56d97144d.jpeg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54547",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-6",
-    "title": "[수원 신동카페거리] 생딸기 두바이 쫀득 쿠키 클래스",
-    "date": "상시",
-    "venue": "경기 수원시 영통구 권선로882번길 43-33 (신동) 101호 라뮤제 베이크하우스",
-    "price": "45,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/1ef656c4-64ca-49a2-9dcc-a65419721e0b-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54505",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
       "총 1시간 15분",
-      "최대 수용 가능 인원 10명"
+      "최대 수용 가능 인원 5명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-7",
-    "title": "[성수] 도자기 물레 + 컬러 액션 페인팅 3작품 유니크한 도자기만들기 [노키즈]",
-    "date": "상시",
-    "venue": "서울 성동구 성덕정길 103-39 (성수동2가) 1층 Deep atelier",
-    "price": "52,000원",
-    "originalPrice": "56,000원",
-    "discount": "7%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210607%2F856411fa-fe88-4ac6-bc1e-94c363f5ae61.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/17572",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-8",
-    "title": "[홍대] 품절대란! 두바이 쫀득쿠키 8개 완성 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 와우산로22길 72 (상수동) 202호 스위츠찬미 (미장원지슬 주황계단으로 올라오세요)",
-    "price": "64,000원",
-    "originalPrice": "140,000원",
-    "discount": "54%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251210/d33d9de1-ed81-4e82-af3e-fd7951ff7c38-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54241",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-9",
-    "title": "[서울] 물레 원데이클래스 / 빙글빙글 돌아가는 물레로 나만의 도자기 만들기!",
-    "date": "상시",
-    "venue": "서울 동작구 대림로 40 (신대방동) 1층 포유클레이 세라믹스튜디오",
-    "price": "35,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250318/21785a31-b9f5-449a-97c0-760d19792c06.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/50166",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 30명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-10",
-    "title": "[강남/청담 원장] 썸을 부르는 1:1 메이크업클래스 퍼스널컬러 진단",
-    "date": "상시",
-    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
-    "price": "148,000원",
-    "originalPrice": "250,000원",
-    "discount": "40%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250514/93e637d2-2c42-4f48-afa0-498fdda298f5-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/6317",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-11",
+    "id": "sssd-4",
     "title": "[강서/마곡] 두바이 쫀득쿠키 원데이클래스",
     "date": "상시",
     "venue": "서울 강서구 마곡중앙6로 11 (마곡동, 보타닉파크타워3) 220호 BL_nk",
@@ -228,7 +95,155 @@
     "status": "OPEN"
   },
   {
+    "id": "sssd-5",
+    "title": "[수원 신동카페거리] 생딸기 두바이 쫀득 쿠키 클래스",
+    "date": "상시",
+    "venue": "경기 수원시 영통구 권선로882번길 43-33 (신동) 101호 라뮤제 베이크하우스",
+    "price": "45,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/1ef656c4-64ca-49a2-9dcc-a65419721e0b-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54505",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 15분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-6",
+    "title": "[연남] 남다른 에그타르트 6ps 원데이 클래스",
+    "date": "상시",
+    "venue": "상세페이지 참조",
+    "price": "35,000원",
+    "originalPrice": "60,000원",
+    "discount": "41%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240604/fa6e2cc8-a97b-4abf-a476-8265d4157a8e.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/45108",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-7",
+    "title": "[수원] 두바이 쫀득쿠키 2세대 10개 완성 클래스",
+    "date": "상시",
+    "venue": "경기 수원시 팔달구 화서문로32번길 25-6 (신풍동) 2층 민림이네 베이킹",
+    "price": "50,000원",
+    "originalPrice": "55,000원",
+    "discount": "9%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/c88b0f9e-cc12-40ba-883f-cb4b7dc3a78d-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53877",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 12명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-8",
+    "title": "[성수] 도자기 물레 + 컬러 액션 페인팅 3작품 유니크한 도자기만들기 [노키즈]",
+    "date": "상시",
+    "venue": "서울 성동구 성덕정길 103-39 (성수동2가) 1층 Deep atelier",
+    "price": "52,000원",
+    "originalPrice": "56,000원",
+    "discount": "7%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210607%2F605538cc-9631-44ea-90ba-323a12906abc.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17572",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-9",
+    "title": "[강남/청담 원장] 썸을 부르는 1:1 메이크업클래스 퍼스널컬러 진단",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
+    "price": "148,000원",
+    "originalPrice": "250,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250514/93e637d2-2c42-4f48-afa0-498fdda298f5-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/6317",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-10",
+    "title": "[마곡] 아낌 없이 듬-뿍, 두쫀쿠 말고 뚠뚠 두쫀케를 만들어보자 !!",
+    "date": "상시",
+    "venue": "서울 강서구 금낭화로 40 (방화동, 우리빌딩) 3층",
+    "price": "35,000원",
+    "originalPrice": "62,000원",
+    "discount": "43%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/0268fabd-3078-4cf6-af15-8f97884dcedf.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54458",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 14명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-11",
+    "title": "[후기 1,000개돌파] 매일 아침 15분이 헛되지 않게 메이크업 배우기",
+    "date": "상시",
+    "venue": "서울 서초구 강남대로 359 (서초동, 대우도씨에빛2) 19층 1905호",
+    "price": "149,000원",
+    "originalPrice": "210,000원",
+    "discount": "29%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251010/4b469e04-f1ba-46e8-9c91-a276e15a5263-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/8910",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
     "id": "sssd-12",
+    "title": "[서울] 물레 원데이클래스 / 빙글빙글 돌아가는 물레로 나만의 도자기 만들기!",
+    "date": "상시",
+    "venue": "서울 동작구 대림로 40 (신대방동) 1층 포유클레이 세라믹스튜디오",
+    "price": "35,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250318/21785a31-b9f5-449a-97c0-760d19792c06.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50166",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 30명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-13",
     "title": "[청담] 친절한 혜온 쌤의 두 배 더 예뻐지는 1:1 데일리 메이크업 클래스",
     "date": "상시",
     "venue": "서울 강남구 선릉로148길 15 (청담동) 301호 뮤티드메이크업",
@@ -247,40 +262,21 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-13",
-    "title": "[강남] 리뷰평점1위 대표원장 pure daily makeup class",
-    "date": "상시",
-    "venue": "서울 서초구 강남대로61길 10 (서초동, 센터프라자) 703호",
-    "price": "149,000원",
-    "originalPrice": "210,000원",
-    "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250813/e19b734d-f5f7-44d5-9fbf-a63d81bd3b1e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/23945",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
     "id": "sssd-14",
-    "title": "[강남/청담] 민서실장 내 손으로 배우는 1:1 데일리 메이크업클래스",
+    "title": "[강북] 대세탑승!! 100%피스타치오원물맛 그대로 두바이 쫀득쿠키 원데이클래스",
     "date": "상시",
-    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
-    "price": "99,000원",
-    "originalPrice": "140,000원",
-    "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251128/98768401-794d-448d-b707-e1fdcc40bb6f-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/5798",
+    "venue": "서울 강북구 삼양로81길 5 (수유동, 남성빌딩) 1층",
+    "price": "48,000원",
+    "originalPrice": "60,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260105/c1659dcf-693e-41dc-b9ae-ce52cc027229-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54589",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 가능",
       "총 1시간 10분",
-      "최대 수용 가능 인원 1명"
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
@@ -305,63 +301,6 @@
   },
   {
     "id": "sssd-16",
-    "title": "[후기 1,000개돌파] 매일 아침 15분이 헛되지 않게 메이크업 배우기",
-    "date": "상시",
-    "venue": "서울 서초구 강남대로 359 (서초동, 대우도씨에빛2) 19층 1905호",
-    "price": "149,000원",
-    "originalPrice": "210,000원",
-    "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251010/4b469e04-f1ba-46e8-9c91-a276e15a5263-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/8910",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-17",
-    "title": "[경의선숲길] 볼거리도 풍성한 담금주공방 빛나는구술",
-    "date": "상시",
-    "venue": "서울 마포구 백범로 34 (신수동) 2층",
-    "price": "25,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250715/68e54486-02d4-4726-a236-5e7e9576f345.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/48306",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 45분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-18",
-    "title": "[영등포구청역 2분] 특별 한정 보컬 원데이클래스 체험!!",
-    "date": "상시",
-    "venue": "서울 영등포구 양산로 128 (당산동1가, 백양빌딩) 401호(공간04)",
-    "price": "45,000원",
-    "originalPrice": "80,000원",
-    "discount": "43%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250707/65d91f40-7b17-4f7a-82e6-884423ae562b-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/34183",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-19",
     "title": "[성수] 프랑스 오리지널 사브레 쿠키 원데이클래스",
     "date": "상시",
     "venue": "서울 광진구 아차산로21길 15 (화양동, 이화음악학원) 2층 쿠키키쿠 베이킹스튜디오",
@@ -380,216 +319,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-20",
-    "title": "[강남]\"1:1 원장직강, 1시간 30분만에 샵에서 받은느낌 나도 연예인처럼! \"",
-    "date": "상시",
-    "venue": "서울 강남구 강남대로152길 30 (신사동) on네일 아이래쉬 3번룸",
-    "price": "130,000원",
-    "originalPrice": "150,000원",
-    "discount": "13%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/ac56a07e-64ac-4987-948d-3923faac636e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/48051",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-21",
-    "title": "[홍대] 언커무드 나만의 무드를 담은 향수 만들기 (30ml)",
-    "date": "상시",
-    "venue": "서울 마포구 성미산로 191 (연남동) 2층 언커무드 연남점",
-    "price": "28,000원",
-    "originalPrice": "30,000원",
-    "discount": "6%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250423/8b330631-31bc-470f-b4f1-6b4cbb4b5332-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/50715",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-22",
-    "title": "[청담/도산] [2:1] 친구와 함께 배워보는 퍼스널메이크업/스타일링 클래스",
-    "date": "상시",
-    "venue": "서울 강남구 언주로168길 6-9 (신사동) 고센뷰티 (영빌딩)",
-    "price": "99,000원",
-    "originalPrice": "210,000원",
-    "discount": "52%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/eb850c3f-908f-4c3d-85e1-d5e462528cee.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/49520",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 2시간",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-23",
-    "title": "[홍대] 홍대반지카페 99.9% 실버 커플링 우정링 만들기 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 잔다리로6길 40-6 (서교동) 3층 홍대반지카페",
-    "price": "35,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220408/10beba66-36a1-4d41-a066-8ca041c706f8.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/24488",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 34명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-24",
-    "title": "[건대] K-POP DANCE 재밌게 배우기 / 건대 원데이 댄스 클래스 춤 맛집",
-    "date": "상시",
-    "venue": "서울 광진구 능동로 50 (자양동, 이튼타워리버2차) 2층 208호 무드킨댄스학원",
-    "price": "33,000원",
-    "originalPrice": "50,000원",
-    "discount": "34%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250918/cb52eadb-0550-41c9-a1dd-adfcfa9a4863.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/4134",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-25",
-    "title": "[문래] 일렉기타 베이스기타 통기타 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 영등포구 도림로128가길 13-6 (문래동3가) 3층 레코드블루",
-    "price": "29,900원",
-    "originalPrice": "35,000원",
-    "discount": "14%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251209/e15724bb-0bd1-4a81-a867-fb35274b0fe7.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/15752",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-26",
-    "title": "[수원][스타필드] 다양한 베이킹을 나만의 특별한 디저트로! 손쉬운 셀프베이킹",
-    "date": "상시",
-    "venue": "경기 수원시 장안구 수성로 175 (정자동) 스타필드 수원 6층 클래스콕 베이킹룸",
-    "price": "29,900원",
-    "originalPrice": "40,000원",
-    "discount": "25%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250703/a40ef35a-f824-443a-b2de-64cf97e14f3d.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51779",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-27",
-    "title": "[마곡] 아낌 없이 듬-뿍, 두쫀쿠 말고 뚠뚠 두쫀케를 만들어보자 !!",
-    "date": "상시",
-    "venue": "서울 강서구 금낭화로 40 (방화동, 우리빌딩) 3층",
-    "price": "35,000원",
-    "originalPrice": "62,000원",
-    "discount": "43%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/0268fabd-3078-4cf6-af15-8f97884dcedf.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54458",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 14명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-28",
-    "title": "[강남] 물레와 핸드빌딩 2가지 기법으로 2작품 만드는 도자기 원데이",
-    "date": "상시",
-    "venue": "서울 강남구 삼성로103길 23 (삼성동) 서울특별시 강남구 삼성로103길 23 (삼성동 125) 101호  소리나는공",
-    "price": "43,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251102/b5a36223-7cd2-4342-86de-9a91c50d4b18.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/39410",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 3명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-29",
-    "title": "[강남/청담 민실장] 데일리 내추럴1:1 메이크업클래스",
-    "date": "상시",
-    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
-    "price": "110,000원",
-    "originalPrice": "150,000원",
-    "discount": "26%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/e35b1cbe-6f3a-4685-8ec3-27e37527eb2e-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/10559",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-30",
-    "title": "[강남] 포르투갈식 부드럽고 촉촉한 에그타르트 만들기!!",
-    "date": "상시",
-    "venue": "서울 강남구 강남대로162길 27-3 (신사동) 두리빌딩 502호",
-    "price": "38,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230923/455611d7-ec7c-4d1a-abb4-42e77814b0b3.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/39367",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 16명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-31",
+    "id": "sssd-17",
     "title": "[송파] 바삭쫀득! 두바이쫀득쿠키 프라이빗 원데이클래스",
     "date": "상시",
     "venue": "서울 송파구 가락로30길 17 (송파동) 102호, 티키티키베이크",
@@ -608,64 +338,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-32",
-    "title": "[망원동]다양한 베이킹 원데이 클래스 모음전",
-    "date": "상시",
-    "venue": "서울 마포구 월드컵로15길 56 (망원동, 노블캐슬) 1층 JSLounge",
-    "price": "33,000원",
-    "originalPrice": "50,000원",
-    "discount": "34%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/438c7650-2a1a-408c-9f31-a3f0746d5071-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/21064",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-33",
-    "title": "[강남] 망고&로투스&티라미수 3종 케이크세트! 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 강남구 강남대로162길 27-3 (신사동) 두리빌딩 502호",
-    "price": "39,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230801%2Fc4b05b1f-66ba-4f50-b841-d6129c9da89b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/38080",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-34",
-    "title": "[수원] 16개 토핑 제공 휘낭시에 베이킹(14개 완성) 원데이 클래스",
-    "date": "상시",
-    "venue": "경기 수원시 팔달구 권선로741번길 21 (인계동, 인계지음) 2층 슈가그루브",
-    "price": "36,000원",
-    "originalPrice": "45,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240423%2Fdd339b4f-a4c6-4894-a8c9-dfc63a2826f3.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/43619",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-35",
+    "id": "sssd-18",
     "title": "[잠실] 기념일 휘낭시에 베이킹, 맛있는 데이트코스 추천!",
     "date": "상시",
     "venue": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
@@ -684,26 +357,140 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-36",
-    "title": "[강북] 대세탑승!! 100%피스타치오원물맛 그대로 두바이 쫀득쿠키 원데이클래스",
+    "id": "sssd-19",
+    "title": "[강남] 망고&로투스&티라미수 3종 케이크세트! 원데이 클래스",
     "date": "상시",
-    "venue": "서울 강북구 삼양로81길 5 (수유동, 남성빌딩) 1층",
-    "price": "48,000원",
-    "originalPrice": "60,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260105/c1659dcf-693e-41dc-b9ae-ce52cc027229-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54589",
+    "venue": "서울 강남구 강남대로162길 27-3 (신사동) 두리빌딩 502호",
+    "price": "39,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240306%2Fa5342f9c-90d6-4546-9103-996f08a5510c.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/38080",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 가능",
-      "총 1시간 10분",
+      "주차 불가",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-20",
+    "title": "[망원동]다양한 베이킹 원데이 클래스 모음전",
+    "date": "상시",
+    "venue": "서울 마포구 월드컵로15길 56 (망원동, 노블캐슬) 1층 JSLounge",
+    "price": "33,000원",
+    "originalPrice": "50,000원",
+    "discount": "34%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251230/438c7650-2a1a-408c-9f31-a3f0746d5071-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/21064",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
       "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-37",
+    "id": "sssd-21",
+    "title": "[영등포구청역 2분] 특별 한정 보컬 원데이클래스 체험!!",
+    "date": "상시",
+    "venue": "서울 영등포구 양산로 128 (당산동1가, 백양빌딩) 401호(공간04)",
+    "price": "45,000원",
+    "originalPrice": "80,000원",
+    "discount": "43%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250707/65d91f40-7b17-4f7a-82e6-884423ae562b-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/34183",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-22",
+    "title": "[서초] 너무맛있어요! 두바이 쫀득 찹쌀떡 두바이 모찌 원데이클래스(2인이상)",
+    "date": "상시",
+    "venue": "서울 서초구 방배중앙로25길 19 (방배동) 1층 라콤카페",
+    "price": "39,900원",
+    "originalPrice": "59,900원",
+    "discount": "33%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260105/0739204d-dcc8-4ae1-9feb-819639d0c0e0.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54567",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 23명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-23",
+    "title": "[강남] 물레와 핸드빌딩 2가지 기법으로 2작품 만드는 도자기 원데이",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로103길 23 (삼성동) 서울특별시 강남구 삼성로103길 23 (삼성동 125) 101호  소리나는공",
+    "price": "43,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251102/b5a36223-7cd2-4342-86de-9a91c50d4b18.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/39410",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 3명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-24",
+    "title": "[강남/청담] 민서실장 내 손으로 배우는 1:1 데일리 메이크업클래스",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
+    "price": "99,000원",
+    "originalPrice": "140,000원",
+    "discount": "29%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251128/98768401-794d-448d-b707-e1fdcc40bb6f-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/5798",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-25",
+    "title": "[망원] 초보자도 쉽고 예쁘게 글라스아트 만들기",
+    "date": "상시",
+    "venue": "서울 마포구 망원로3길 34 (망원동) 2층",
+    "price": "45,000원",
+    "originalPrice": "65,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250203%2F0e474d71-f92e-46b0-ac0a-8443334218be.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/49249",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 2시간",
+      "최대 수용 가능 인원 16명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-26",
     "title": "[잠실] 바삭쫀득 토스트 휘낭시에 8pc 만들기",
     "date": "상시",
     "venue": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
@@ -722,159 +509,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-38",
-    "title": "[서초] 겉바속쫀 호불호 없는 휘낭시에 9종 취향에 맞는 휘낭시에 만들기(성인)",
+    "id": "sssd-27",
+    "title": "[홍대] 언커무드 나만의 무드를 담은 향수 만들기 (30ml)",
     "date": "상시",
-    "venue": "서울 서초구 잠원로 46-3 (잠원동, 이디엘) 305호",
-    "price": "29,000원",
-    "originalPrice": "55,000원",
-    "discount": "47%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230526/bd6dc31c-0a8b-43c5-a890-41008e36d49b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/36371",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 50분",
-      "최대 수용 가능 인원 3명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-39",
-    "title": "[강남] 휘낭시에보다 더 달달하고 바삭 쫀득한 티그레 만들기!",
-    "date": "상시",
-    "venue": "서울 강남구 강남대로162길 27-3 (신사동) 두리빌딩 502호",
-    "price": "33,000원",
-    "originalPrice": "65,000원",
-    "discount": "49%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230426%2Fcd89a176-497b-43a9-ba1a-477a0f07f14b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/35699",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 16명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-40",
-    "title": "[송파] 겉바속탱! 쿠키 에그타르트 만들기 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 송파구 송파대로44길 3 (송파동) 2층",
-    "price": "35,000원",
-    "originalPrice": "50,000원",
-    "discount": "30%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/aec4ec95-9cbb-4113-adc6-24b4534e9c9a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/46034",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 16명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-41",
-    "title": "[인천] 토핑 휘낭시에 원데이 베이킹 클래스(14개완성/꼬깔2개포함)",
-    "date": "상시",
-    "venue": "인천 남동구 인하로507번길 80 (구월동, 태광프라자) 401호",
-    "price": "35,000원",
-    "originalPrice": "50,000원",
-    "discount": "30%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240502/18a1136f-0a55-466f-a055-211d41236f3a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/35331",
+    "venue": "서울 마포구 성미산로 191 (연남동) 2층 언커무드 연남점",
+    "price": "28,000원",
+    "originalPrice": "30,000원",
+    "discount": "6%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250423/8b330631-31bc-470f-b4f1-6b4cbb4b5332-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50715",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 1시간",
-      "최대 수용 가능 인원 8명"
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-42",
-    "title": "[관악] 대세 소금빵! 버터풍미의 바삭함과 담백짭짤한 소금빵&초코소금빵 만들기!",
-    "date": "상시",
-    "venue": "서울 관악구 남부순환로 1808 (봉천동, 관악센츄리타워) 901호 공방 뮬",
-    "price": "36,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251103/49e077f0-875a-44ff-a139-a55347223145-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/37788",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-43",
-    "title": "[마포] 귀여움 한도초과.. 토마토,메론 거북이 쿠키 만들기!",
-    "date": "상시",
-    "venue": "서울 마포구 독막로19길 30-7 (상수동, Blessvillage 블레스빌리지) 1층",
-    "price": "35,000원",
-    "originalPrice": "50,000원",
-    "discount": "30%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250612/dc0d45ab-82a7-40e7-b023-05e19197c4cf.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51682",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 12명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-44",
-    "title": "[강동구] 전통주 공방에서 막걸리 만들기/막걸리공방 원데이클래스",
-    "date": "상시",
-    "venue": "서울 강동구 상암로39길 93 (천호동) 1층 갯모루양조",
-    "price": "45,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251229/757ea55e-5d12-429c-a62b-7c2c48c7a53c.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/40488",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 14명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-45",
-    "title": "[잠실] 쫀득 바삭~ 두바이 쫀득쿠키 만들기",
-    "date": "상시",
-    "venue": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
-    "price": "59,900원",
-    "originalPrice": "99,900원",
-    "discount": "40%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251210/b8063626-6698-4521-af0d-1f714d6b944c.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54248",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 45분",
-      "최대 수용 가능 인원 40명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-46",
+    "id": "sssd-28",
     "title": "[송파] 나만 고양이 없어. 나만 강아지 없어..반려동물 도자기컵 클래스",
     "date": "상시",
     "venue": "서울 송파구 법원로4길 5 (문정동, 송파법조타운푸르지오) 125호 세도공",
@@ -893,26 +547,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-47",
-    "title": "[성수] 컬러 힐링 마블 물레 도자기 원데이 클래스 *노키즈*",
-    "date": "상시",
-    "venue": "서울 성동구 연무장길 76 (성수동2가, 성수 AK 밸리) 211호 컬러온스튜디오",
-    "price": "56,000원",
-    "originalPrice": "75,000원",
-    "discount": "25%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220508/a5d95dd1-e7e4-4a1e-aa54-b79b5d5c2d38.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/26822",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-48",
+    "id": "sssd-29",
     "title": "마블 도자기 만들기 [ 접시 / 요거트볼 / 소주잔2개 / 잔 중 택1,키즈불가]",
     "date": "상시",
     "venue": "서울 영등포구 도림로 485-1 (문래동4가) 2층",
@@ -931,7 +566,292 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-49",
+    "id": "sssd-30",
+    "title": "[인천] 맛&비주얼 잡은 귀염뽀짝 버터쿠키 베이킹 원데이 클래스(15~20개완성)",
+    "date": "상시",
+    "venue": "인천 남동구 인하로507번길 80 (구월동, 태광프라자) 401호",
+    "price": "38,000원",
+    "originalPrice": "55,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240308/8e307142-a6f0-442d-a597-5eb00a213475.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/43432",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 25명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-31",
+    "title": "[마포] 너무 귀여운 동물 생크림 치즈케이크 만들기!",
+    "date": "상시",
+    "venue": "서울 마포구 독막로19길 30-7 (상수동, Blessvillage 블레스빌리지) 1층",
+    "price": "35,000원",
+    "originalPrice": "50,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250416/eeced3d9-63be-49c3-9a7b-6332fe83e833.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50763",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 15분",
+      "최대 수용 가능 인원 12명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-32",
+    "title": "[수원][스타필드] 다양한 베이킹을 나만의 특별한 디저트로! 손쉬운 셀프베이킹",
+    "date": "상시",
+    "venue": "경기 수원시 장안구 수성로 175 (정자동) 스타필드 수원 6층 클래스콕 베이킹룸",
+    "price": "29,900원",
+    "originalPrice": "40,000원",
+    "discount": "25%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250703/a40ef35a-f824-443a-b2de-64cf97e14f3d.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51779",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-33",
+    "title": "[대치] (+NEW 고구마빵) 쫀득!포슬! 춘천 명물 감자빵 만들기",
+    "date": "상시",
+    "venue": "서울 강남구 역삼로70길 17 (대치동) 301호",
+    "price": "35,000원",
+    "originalPrice": "40,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250926/f0dcccfa-25ac-488e-b307-ce8e08742095.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53087",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-34",
+    "title": "[인천] 토핑 휘낭시에 원데이 베이킹 클래스(14개완성/꼬깔2개포함)",
+    "date": "상시",
+    "venue": "인천 남동구 인하로507번길 80 (구월동, 태광프라자) 401호",
+    "price": "35,000원",
+    "originalPrice": "50,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240502/18a1136f-0a55-466f-a055-211d41236f3a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/35331",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-35",
+    "title": "[서초] 겉바속쫀 호불호 없는 휘낭시에 9종 취향에 맞는 휘낭시에 만들기(성인)",
+    "date": "상시",
+    "venue": "서울 서초구 잠원로 46-3 (잠원동, 이디엘) 305호",
+    "price": "29,000원",
+    "originalPrice": "55,000원",
+    "discount": "47%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230526/bd6dc31c-0a8b-43c5-a890-41008e36d49b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36371",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 50분",
+      "최대 수용 가능 인원 3명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-36",
+    "title": "[송파] 겉바속탱! 쿠키 에그타르트 만들기 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 송파구 송파대로44길 3 (송파동) 2층",
+    "price": "35,000원",
+    "originalPrice": "50,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/aec4ec95-9cbb-4113-adc6-24b4534e9c9a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/46034",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 16명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-37",
+    "title": "[강남] 포르투갈식 부드럽고 촉촉한 에그타르트 만들기!!",
+    "date": "상시",
+    "venue": "서울 강남구 강남대로162길 27-3 (신사동) 두리빌딩 502호",
+    "price": "38,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230923/455611d7-ec7c-4d1a-abb4-42e77814b0b3.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/39367",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 16명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-38",
+    "title": "[홍대] <케이크> 나만의 스타일로! 커스텀 케이크 홍대 베이킹 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 와우산로 128-1 (창전동) 3층",
+    "price": "28,000원",
+    "originalPrice": "35,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/32973d29-924f-498e-ac5a-9e7f8c243066-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/46898",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-39",
+    "title": "[마포] 필링 듬뿍! 귀여운 가나슈마들렌 만들기!",
+    "date": "상시",
+    "venue": "서울 마포구 독막로19길 30-7 (상수동, Blessvillage 블레스빌리지) 1층",
+    "price": "35,000원",
+    "originalPrice": "50,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250501/16678097-5b8d-4c31-82ec-28d8eeeb47a5.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51027",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-40",
+    "title": "[동작구]반죽부터 쫀~득 쫀득 4가지맛 스모어쿠키",
+    "date": "상시",
+    "venue": "서울 동작구 상도로36길 5 (상도1동) 3층 (7호선 상도역 2번출구에서 1분거리)",
+    "price": "35,000원",
+    "originalPrice": "45,000원",
+    "discount": "22%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231130/77a88768-d697-49b0-8816-3a9e02f12aa7.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17171",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 16명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-41",
+    "title": "[종로] 달콤 부드러운 홍콩식 에그타르트 만들기 베이킹 (레시피 제공!!)",
+    "date": "상시",
+    "venue": "서울 종로구 창신12길 33 (창신동) 1층 시나몬 스튜디오",
+    "price": "35,000원",
+    "originalPrice": "45,000원",
+    "discount": "22%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250415%2F5052df7b-2d16-4b60-9e57-ab51fbfb457d.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50748",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-42",
+    "title": "[성수] 키보드 키캡 키링 만들기",
+    "date": "상시",
+    "venue": "서울 성동구 서울숲6길 22 (성수동1가) 4층",
+    "price": "9,900원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251222/b4c0aeb4-8998-4cf1-948a-1903c3a979fe.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54451",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 32명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-43",
+    "title": "[문래] 나만의 실버 커플링 우정 반지 만들기 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 영등포구 도림로 475 (문래동4가) 204호",
+    "price": "60,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241124%2F80f5857c-13be-42eb-ba24-346419524853.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/28514",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-44",
+    "title": "[홍대] 945공방 둘다클래스_물레+핸드빌딩 원데이 클래스, 둘 다 해보자!",
+    "date": "상시",
+    "venue": "서울 마포구 어울마당로 153-3 (동교동) 지하1층",
+    "price": "53,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240802%2F8a00ff19-b7d9-493c-8f6f-8c3c695b4136.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/40609",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 3명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-45",
     "title": "[성수] 자유롭게 작업하는 성수동 도자기 원데이 클래스",
     "date": "상시",
     "venue": "서울 성동구 왕십리로16가길 10-30 (성수동1가) 6층",
@@ -950,197 +870,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-50",
-    "title": "[망원] 초보자도 쉽고 예쁘게 글라스아트 만들기",
+    "id": "sssd-46",
+    "title": "[홍대] 홍대반지카페 99.9% 실버 커플링 우정링 만들기 원데이클래스",
     "date": "상시",
-    "venue": "서울 마포구 망원로3길 34 (망원동) 2층",
-    "price": "45,000원",
-    "originalPrice": "65,000원",
-    "discount": "30%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250215%2F46c34f5d-c252-4984-832d-77c407904ce3.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/49249",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 2시간",
-      "최대 수용 가능 인원 16명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-51",
-    "title": "[망원] 반짝반짝 취향저격! 모루 손거울 키링 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 마포구 동교로 53-1 (망원동) 2F, 202호",
-    "price": "15,000원",
-    "originalPrice": "24,000원",
-    "discount": "37%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251129/01d48018-eefc-45ed-b459-7e68d98d6ecb.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/49226",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 30명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-52",
-    "title": "[송파] MYOMYO 내 손으로 만드는 혜자 도자기 플레이트",
-    "date": "상시",
-    "venue": "서울 송파구 법원로4길 5 (문정동, 송파법조타운푸르지오) 125호 세도공",
-    "price": "48,000원",
+    "venue": "서울 마포구 잔다리로6길 40-6 (서교동) 3층 홍대반지카페",
+    "price": "35,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250520/6c341bca-c581-422a-ac30-223e6d227cbe-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/16373",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-53",
-    "title": "[문래] 나만의 실버 커플링 우정 반지 만들기 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 영등포구 도림로 475 (문래동4가) 204호",
-    "price": "60,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250409%2F4d7c5fbc-d1e2-4d19-991c-f26e0ba56ae6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/28514",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220408/10beba66-36a1-4d41-a066-8ca041c706f8.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/24488",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 1시간",
-      "최대 수용 가능 인원 10명"
+      "최대 수용 가능 인원 34명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-54",
-    "title": "[서울 북촌] 우드카빙 - 사각사각 나무 식기류 만들기",
-    "date": "상시",
-    "venue": "서울 종로구 계동길 122-1 (계동) 1층 나비공방 상점",
-    "price": "29,500원",
-    "originalPrice": "35,000원",
-    "discount": "15%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200825/22b1c872-755e-4526-834f-a64b315ea2e4.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/10866",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 40분",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-55",
-    "title": "[혜화/마로니에] 1+1 플라비 탄생화 써지컬팔찌만들기 클래스",
-    "date": "상시",
-    "venue": "서울 종로구 동숭3길 6-2 (동숭동) 1층",
-    "price": "45,000원",
-    "originalPrice": "50,000원",
-    "discount": "10%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20231115%2Ffa3a89bb-440b-4318-9222-058e0d638fd1.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/40572",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 20명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-56",
-    "title": "[홍대] 언커무드 특별한 써지컬 팔찌 만들기",
-    "date": "상시",
-    "venue": "서울 마포구 성미산로 191 (연남동) 2층 언커무드",
-    "price": "20,000원",
-    "originalPrice": "25,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250414/fc6a955c-513a-4071-8753-c8d320941cdb.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/50712",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 24명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-57",
-    "title": "[홍대] 945공방 둘다클래스_물레+핸드빌딩 원데이 클래스, 둘 다 해보자!",
-    "date": "상시",
-    "venue": "서울 마포구 어울마당로 153-3 (동교동) 지하1층",
-    "price": "53,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241112%2Fb89d91d8-92f6-4469-b734-3ba354d1cc74.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/40609",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 3명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-58",
-    "title": "[용산] 언커무드 특별한 써지컬 팔찌 만들기",
-    "date": "상시",
-    "venue": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
-    "price": "20,000원",
-    "originalPrice": "25,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241115/a595652b-5b90-4acb-9a61-29ad6fea1ceb.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/43462",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 22명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-59",
-    "title": "[성수] 내 마음대로 양껏! 도자기 마블 접시 & 오브제 만들기 원데이노키즈*",
-    "date": "상시",
-    "venue": "서울 성동구 연무장길 76 (성수동2가, 성수 AK 밸리) 211호 컬러온스튜디오",
-    "price": "46,000원",
-    "originalPrice": "48,000원",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220422/204c39e2-58e2-4bf4-b6f7-6b9e54ff6743.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/26596",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-60",
+    "id": "sssd-47",
     "title": "[쌈지길]조개껍데기는 녹슬지 않는다.",
     "date": "상시",
     "venue": "서울 종로구 인사동길 44 (관훈동, 쌈지길) 2충 휘향찬란",
@@ -1159,178 +908,45 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-61",
-    "title": "[성수] 나만의 프리미엄 원목도마 만들기 원데이클래스",
+    "id": "sssd-48",
+    "title": "[혜화/마로니에] 1+1 플라비 탄생화 써지컬팔찌만들기 클래스",
     "date": "상시",
-    "venue": "서울 성동구 왕십리로10길 5-6 (성수동1가) 지하 1층",
-    "price": "50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250501/370ac7b0-4307-4812-922a-c4c666220f9e-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/20987",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 20명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-62",
-    "title": "가장 특별한 나만의 반지, 직접 만드는 감성가득 원데이 클래스 (각인제공 이벤트)",
-    "date": "상시",
-    "venue": "서울 종로구 종로 121-1 (종로3가) 5층 아델라인공방's",
+    "venue": "서울 종로구 동숭3길 6-2 (동숭동) 1층",
     "price": "45,000원",
-    "originalPrice": "60,000원",
-    "discount": "25%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251110/b0014ca1-ef7c-4682-a8e2-ecf053fc02f7-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/35390",
+    "originalPrice": "50,000원",
+    "discount": "10%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20231115%2F6a26ea87-336c-42f1-9085-0035b5a450b7.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/40572",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 30명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-63",
-    "title": "[홍대] 빙글빙글! 마블 물레 도자기 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 마포구 월드컵북로5가길 30 (서교동) 지1층 OMG",
-    "price": "70,000원",
-    "originalPrice": "80,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240628/b7921ac9-6287-4bb8-a4c0-1e3521534bff.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/45256",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-64",
-    "title": "[강동] 빙글빙글 물레로 나만의 도자기그릇 만들기 2작품 (14세이상)",
-    "date": "상시",
-    "venue": "서울 강동구 고덕로24길 30 (암사동) 지하1층",
-    "price": "50,000원",
-    "originalPrice": "52,000원",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240630%2F229c7aa5-8a5e-45bc-9355-64fb225cdba4.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/43617",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-65",
-    "title": "[홍대] 홍대반지만들기공방 은반지 만들기 체험",
-    "date": "상시",
-    "venue": "서울 마포구 홍익로6길 23 (동교동) 3층 홍대반지만들기공방",
-    "price": "34,500원",
-    "originalPrice": "35,000원",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250623/ed97d218-ceea-42b7-8d1e-7840e9f459a6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51836",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 30분",
-      "최대 수용 가능 인원 34명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-66",
-    "title": "[일산] 향기는 손끝을 타고~ 천연핸드크림 만들기",
-    "date": "상시",
-    "venue": "경기 고양시 일산동구 무궁화로187번길 17 (정발산동) 잎새의향기 아로마공방",
-    "price": "35,000원",
-    "originalPrice": "40,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230305%2Fcb6ca86a-ce06-4c90-a770-404dc9463fe5.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/34299",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
       "총 1시간",
-      "최대 수용 가능 인원 12명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-67",
-    "title": "[성수] 왕초보도 가능! 핸드메이드 소품 만들기 재봉틀 체험",
-    "date": "상시",
-    "venue": "서울 성동구 광나루로 291 (송정동) 401호",
-    "price": "39,000원",
-    "originalPrice": "55,000원",
-    "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250401/a0d622bd-f427-4d6d-aec9-76d4b7739dbf.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/50459",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-68",
-    "title": "[홍대역연결] 코코넛화분 업사이클링 ! 코코팟 화분페인팅",
-    "date": "상시",
-    "venue": "서울 마포구 양화로 183 (동교동, 효성홍익인간오피스텔) 지하1층  스무드 SMOOD 공방 (역전우동 맞은편)",
-    "price": "35,000원",
-    "originalPrice": "40,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251103/6ec2b176-f8cb-462d-8143-c59862bbaaa0-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51867",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
       "최대 수용 가능 인원 20명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-69",
-    "title": "[의정부] 반짝반짝 빛나는 글라스아트 도어벨, 오너먼트 원데이 클래스",
+    "id": "sssd-49",
+    "title": "[홍대] 언커무드 특별한 써지컬 팔찌 만들기",
     "date": "상시",
-    "venue": "경기 의정부시 태평로137번길 55 (의정부동) 1층 루루네작업실",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240701/fd34765b-b56b-4cd1-82d5-aa12ab4fea5d.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/45566",
+    "venue": "서울 마포구 성미산로 191 (연남동) 2층 언커무드",
+    "price": "20,000원",
+    "originalPrice": "25,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250414/fc6a955c-513a-4071-8753-c8d320941cdb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50712",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 6명"
+      "총 1시간",
+      "최대 수용 가능 인원 24명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-70",
+    "id": "sssd-50",
     "title": "[사당] 프라이빗 핸드빌딩 조물조물 도자기 식기를 만들어요",
     "date": "상시",
     "venue": "서울 동작구 사당로20길 26 (사당동) 1층 원앤온 도자기공방",
@@ -1349,33 +965,299 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-71",
-    "title": "프라이빗 마블 물레 도자기 원데이 클래스 [키즈불가]",
+    "id": "sssd-51",
+    "title": "[서울 북촌] 우드카빙 - 사각사각 나무 식기류 만들기",
     "date": "상시",
-    "venue": "서울 영등포구 도림로 485-1 (문래동4가) 2층",
-    "price": "70,000원",
-    "originalPrice": "75,000원",
-    "discount": "6%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250321/83259076-ad0a-453d-9231-353d3a694465.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/28585",
+    "venue": "서울 종로구 계동길 122-1 (계동) 1층 나비공방 상점",
+    "price": "29,500원",
+    "originalPrice": "35,000원",
+    "discount": "15%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200825/22b1c872-755e-4526-834f-a64b315ea2e4.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/10866",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간 20분",
+      "총 1시간 40분",
       "최대 수용 가능 인원 2명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-72",
+    "id": "sssd-52",
+    "title": "[잠실] 플라비 ONLY 탄생화 써지컬반지 만들기",
+    "date": "상시",
+    "venue": "서울 송파구 백제고분로45길 5 (송파동) 지하1층 플라비",
+    "price": "18,000원",
+    "originalPrice": "20,000원",
+    "discount": "10%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210314/48838b2d-47a8-42bf-89cb-35508b9a5030.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/18247",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-53",
+    "title": "[용산] 언커무드 특별한 써지컬 팔찌 만들기",
+    "date": "상시",
+    "venue": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
+    "price": "20,000원",
+    "originalPrice": "25,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241115/a595652b-5b90-4acb-9a61-29ad6fea1ceb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/43462",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 22명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-54",
+    "title": "[잠실/송리단길] 나만의 커플링 우정링 은반지 만들기 원데이클래스",
+    "date": "상시",
+    "venue": "서울 송파구 송파대로44길 3 (송파동) 1층 로릭",
+    "price": "50,000원",
+    "originalPrice": "60,000원",
+    "discount": "16%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220514%2F0990ceee-ace6-43b2-b2c5-6bfb62b5c833.png",
+    "link": "https://www.sssd.co.kr/m/class/detail/20047",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 50분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-55",
+    "title": "[성수] 내 마음대로 양껏! 도자기 마블 접시 & 오브제 만들기 원데이노키즈*",
+    "date": "상시",
+    "venue": "서울 성동구 연무장길 76 (성수동2가, 성수 AK 밸리) 211호 컬러온스튜디오",
+    "price": "46,000원",
+    "originalPrice": "48,000원",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220422/204c39e2-58e2-4bf4-b6f7-6b9e54ff6743.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/26596",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-56",
+    "title": "유니크하고 귀여운 세상에 하나뿐인 나만의 은점토 반지, 감성가득 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 종로구 종로 121-1 (종로3가) 5층 아델라인공방's",
+    "price": "68,000원",
+    "originalPrice": "80,000원",
+    "discount": "15%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250909/dd208bc8-9d75-44e4-9e4b-153a45a94014.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/35081",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 30명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-57",
+    "title": "[강남] 주문폭주! 힐링 모루인형 키링 만들기(최다 소품 보유중!!, 출강 문의)",
+    "date": "상시",
+    "venue": "서울 강남구 테헤란로 지하 340 (삼성동, 선릉역) 선릉역 도보 1분거리(자세한 주소지는 채팅으로 안내드립니다)",
+    "price": "25,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250613/b15fc3c4-fafc-4783-8371-b3710d9fe3b8.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/43068",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-58",
+    "title": "[성수] 나만의 프리미엄 원목도마 만들기 원데이클래스",
+    "date": "상시",
+    "venue": "서울 성동구 왕십리로10길 5-6 (성수동1가) 지하 1층",
+    "price": "50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250501/370ac7b0-4307-4812-922a-c4c666220f9e-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/20987",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 20명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-59",
+    "title": "[홍대] 빙글빙글! 마블 물레 도자기 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 월드컵북로5가길 30 (서교동) 지1층 OMG",
+    "price": "70,000원",
+    "originalPrice": "80,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240628/b7921ac9-6287-4bb8-a4c0-1e3521534bff.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/45256",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-60",
+    "title": "[강남] 힐링 공간에서 마블링&테라조 레진 트레이 만들기, 공방 데이트추천",
+    "date": "상시",
+    "venue": "서울 강남구 봉은사로30길 24 (역삼동) 202호",
+    "price": "36,000원",
+    "originalPrice": "60,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231231/daeef8b4-ba2c-49d9-b0e6-fd7135a0414f.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/33455",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-61",
+    "title": "[서울] 핸드빌딩 원데이클래스 / 조물조물 나만의 캐릭터 접시를 만들어요",
+    "date": "상시",
+    "venue": "서울 동작구 대림로 40 (신대방동) 1층 포유클레이 세라믹스튜디오",
+    "price": "35,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250318/c541dd74-f05a-4335-8651-63042b7c3ff6.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50167",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 30명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-62",
+    "title": "[중구] 컬러 마블 도자기 만들기",
+    "date": "상시",
+    "venue": "서울 중구 퇴계로56길 26 (쌍림동, 대호빌딩) 102호 랩포터리",
+    "price": "58,000원",
+    "originalPrice": "65,000원",
+    "discount": "10%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250527/78f36f92-cbe0-4e91-9e1e-812395564297.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51434",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 15명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-63",
+    "title": "[일산] 향기는 손끝을 타고~ 천연핸드크림 만들기",
+    "date": "상시",
+    "venue": "경기 고양시 일산동구 무궁화로187번길 17 (정발산동) 잎새의향기 아로마공방",
+    "price": "35,000원",
+    "originalPrice": "40,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230305%2F33b742d7-6f47-48c7-bfc7-b7093355efa0.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/34299",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 12명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-64",
+    "title": "[망원] 반짝반짝 취향저격! 모루 손거울 키링 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 동교로 53-1 (망원동) 2F, 202호",
+    "price": "15,000원",
+    "originalPrice": "24,000원",
+    "discount": "37%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251129/01d48018-eefc-45ed-b459-7e68d98d6ecb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/49226",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 30명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-65",
+    "title": "[마포] 실버 커플링 우정 반지 기념 반지 만들기 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 숭문길 226 (염리동, 이화빌딩) 202호",
+    "price": "63,000원",
+    "originalPrice": "90,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250927/f5b23179-4615-45aa-a89e-3e62483bb5aa.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53139",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-66",
     "title": "[홍대] 아크릴화 원데이 클래스 이색데이트 공방체험 놀거리 커플 드로잉 페인팅",
     "date": "상시",
     "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
     "price": "30,000원",
     "originalPrice": "40,000원",
     "discount": "25%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220104%2F76a86045-99ce-4293-9145-6da36c9ead05.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220104%2Fe2562ed5-d223-4dee-b0fb-1ef4a1d8e564.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/21662",
     "genre": "class",
     "source": "sssd",
@@ -1387,7 +1269,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-73",
+    "id": "sssd-67",
     "title": "꾸덕꾸덕 유화원데이클래스 (인스타예약 인기폭발!)",
     "date": "상시",
     "venue": "서울 마포구 연남로11길 29 (연남동) 연남로11길 29",
@@ -1406,7 +1288,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-74",
+    "id": "sssd-68",
+    "title": "[합정] 나이프화, 아크릴화 원데이클래스",
+    "date": "상시",
+    "venue": "서울 마포구 월드컵로3길 31-8 (합정동) 3층 미술교습소(남자식탁 건물3층)",
+    "price": "29,900원",
+    "originalPrice": "45,000원",
+    "discount": "33%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240418%2F3e1e1850-d116-4a29-832a-c199c70613eb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36159",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-69",
     "title": "[1+1] 꾸덕꾸덕 유화 일요일 클래스 (인스타예약폭발)",
     "date": "상시",
     "venue": "서울 마포구 연남로11길 29 (연남동) 지하 갈색문",
@@ -1425,26 +1326,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-75",
-    "title": "[합정] 나이프화, 아크릴화 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 월드컵로3길 31-8 (합정동) 3층 미술교습소(남자식탁 건물3층)",
-    "price": "29,900원",
-    "originalPrice": "45,000원",
-    "discount": "33%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240418%2F0d16a6c3-2ae8-4836-8b2d-e64f6925fa6d.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/36159",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-76",
+    "id": "sssd-70",
     "title": "[북촌] 소망을 담은 그림, ‘민화’ 문패 만들기",
     "date": "상시",
     "venue": "서울 종로구 북촌로 52 (가회동) B1 가회민화박물관",
@@ -1463,7 +1345,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-77",
+    "id": "sssd-71",
     "title": "[홍대] 오일파스텔 원데이 클래스 이색데이트 공방 체험 놀거리 커플 단체 드로잉",
     "date": "상시",
     "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
@@ -1482,45 +1364,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-78",
-    "title": "[홍대] 미니캔버스 페인팅 아크릴화 ! 드로잉 원데이 클래스 공방체험 이색데이트",
-    "date": "상시",
-    "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
-    "price": "9,900원",
-    "originalPrice": "20,000원",
-    "discount": "50%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241104/89c3268a-a5df-4655-a4a5-0aded1a4f462.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/47628",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-79",
-    "title": "[영등포] 왕초보도 OK, 3시간 속성 나만의 캐릭터 이모티콘 출시 클래스!",
-    "date": "상시",
-    "venue": "서울 영등포구 영신로19길 28 (영등포동, 연일빌딩) 엘더스터디룸",
-    "price": "29,000원",
-    "originalPrice": "50,000원",
-    "discount": "42%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20251024%2F6d9d2d18-445d-4af2-8c05-179cce21a281.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/53471",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 3시간",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-80",
+    "id": "sssd-72",
     "title": "[홍대] 베어브릭 아크릴화 드로잉 페인팅이색데이트 공방 체험 놀거리 커플 단체",
     "date": "상시",
     "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
@@ -1539,7 +1383,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-81",
+    "id": "sssd-73",
+    "title": "[영등포] A.도안 B.백드롭 C.거울 D.캔버스 E.베어브릭 페인팅",
+    "date": "상시",
+    "venue": "서울 영등포구 당산로26길 7-1 (당산동3가) 1층 그림라이트",
+    "price": "19,900원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241122/c997e9cc-c9ce-4d9e-8da8-f3fcbab2422f.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/27172",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-74",
     "title": "[홍대] 서울 속 힐링 드로잉 카페 : 정원 속 화실. 담다.",
     "date": "상시",
     "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
@@ -1558,14 +1421,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-82",
+    "id": "sssd-75",
     "title": "소품 같은 그림을 내손으로 그리는 아크릴화클래스",
     "date": "상시",
     "venue": "서울 마포구 월드컵로23길 20 (망원동, 망원빌) 4층",
     "price": "30,000원",
     "originalPrice": "37,000원",
     "discount": "18%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200928%2F35c4a942-423d-41de-a5f9-8f07536feadd.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200928%2F41d0490f-4988-4553-8983-05b58000375b.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/5097",
     "genre": "class",
     "source": "sssd",
@@ -1577,14 +1440,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-83",
+    "id": "sssd-76",
     "title": "[이태원] 기념일 데이트 추천 베어브릭페인팅",
     "date": "상시",
     "venue": "서울 용산구 회나무로 7 (이태원동, 화신치과의원) 지하1 감정선프로젝트",
     "price": "19,900원",
     "originalPrice": "28,000원",
     "discount": "28%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230419%2F3fa833bb-b1b9-4334-a6fb-d4ede9e1ac51.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230419%2Fc4f1c6af-f2b6-4106-bf3b-58e45428bf25.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/35483",
     "genre": "class",
     "source": "sssd",
@@ -1596,14 +1459,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-84",
+    "id": "sssd-77",
     "title": "[홍대]거울 미러 페인팅(중학생~성인)",
     "date": "상시",
     "venue": "서울 마포구 양화로 157 (동교동, 파라다이스텔) 614호",
     "price": "19,900원",
     "originalPrice": "40,000원",
     "discount": "50%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250614%2Fc36d902c-fe68-4f99-a24e-cf93b49237a1.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250312%2F512f578a-51de-4260-894a-0daf3250e3f2.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/33910",
     "genre": "class",
     "source": "sssd",
@@ -1615,7 +1478,64 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-85",
+    "id": "sssd-78",
+    "title": "[강남] 풍경보며 아크릴화 데이트, 선물, 친구랑 추억 남기기!",
+    "date": "상시",
+    "venue": "서울 강남구 봉은사로30길 24 (역삼동) 202호",
+    "price": "35,000원",
+    "originalPrice": "70,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/8baaad71-134f-4df3-8491-e1468bbe67e6-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/24644",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-79",
+    "title": "[홍대/부평] 하루만에 그린 나만의 굿즈 판매하기 아이패드 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 동교로 198 (동교동) _",
+    "price": "49,000원",
+    "originalPrice": "60,000원",
+    "discount": "18%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230610/71a5612a-7277-4c8d-8043-ba3eea1e9316.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36708",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-80",
+    "title": "[홍대] 미니캔버스 페인팅 아크릴화 ! 드로잉 원데이 클래스 공방체험 이색데이트",
+    "date": "상시",
+    "venue": "서울 마포구 와우산로29라길 16 (서교동) 3층",
+    "price": "9,900원",
+    "originalPrice": "20,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241104/89c3268a-a5df-4655-a4a5-0aded1a4f462.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/47628",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-81",
     "title": "[인천 송도] 백드롭 페인팅 미술 원데이클래스",
     "date": "상시",
     "venue": "인천 연수구 센트럴로 232 (송도동, 더샵센트럴파크1) A동상가 2층 206호 그림방앗간미술학원",
@@ -1634,7 +1554,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-86",
+    "id": "sssd-82",
     "title": "[강남] 초보자도 가능한 유화 & 아크릴화 원데이클래스",
     "date": "상시",
     "venue": "서울 강남구 강남대로152길 17 (신사동) 미학빌딩 3층 302호",
@@ -1653,7 +1573,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-87",
+    "id": "sssd-83",
     "title": "[송파] 향기를 그리는 플라워 수채화, 보태니컬 아트",
     "date": "상시",
     "venue": "서울 송파구 가락로 140 (송파동, 아이앤비빌딩) 4층 화실 봄, 그리고",
@@ -1672,7 +1592,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-88",
+    "id": "sssd-84",
     "title": "[합정] 나만의 베어브릭 1+1 만들기 원데이클래스(23cm대형)",
     "date": "상시",
     "venue": "서울 마포구 월드컵로3길 31-8 (합정동) 3층 미술교습소(남자식탁 건물3층)",
@@ -1691,14 +1611,52 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-89",
+    "id": "sssd-85",
+    "title": "[마포] 모던 수묵화 원데이클래스",
+    "date": "상시",
+    "venue": "서울 마포구 양화로8길 25-4 (서교동) (1층)",
+    "price": "40,000원",
+    "originalPrice": "50,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230406/cd1b239f-7bfe-480b-b7df-2b70c0a4a5c4.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/35181",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 5명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-86",
+    "title": "[성수] 그림데이트 추천! 성수데이트코스! 아크릴 페인팅!",
+    "date": "상시",
+    "venue": "서울 성동구 상원길 44-1 (성수동1가) 2층 미술공방 감정선 성수점",
+    "price": "19,900원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240421/ead1c3ca-5ec5-44c5-8a19-235cd432254d.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/44265",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-87",
     "title": "[홍대] 크림추상화",
     "date": "상시",
     "venue": "서울 마포구 양화로 157 (동교동, 파라다이스텔) 6층 614호",
     "price": "36,000원",
     "originalPrice": "40,000원",
     "discount": "10%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250123%2F09832dbd-5058-4d64-ace8-65e5ba8fe47f.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250220%2F92cdc18f-5262-4d0a-acf3-140565835595.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/34472",
     "genre": "class",
     "source": "sssd",
@@ -1710,7 +1668,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-90",
+    "id": "sssd-88",
+    "title": "[종로] 베어브릭 페인팅 90분 체험 원데이클래스",
+    "date": "상시",
+    "venue": "서울 종로구 인사동길 23-1 (인사동) 4층",
+    "price": "19,800원",
+    "originalPrice": "19,900원",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251102/791c9940-5e23-4d0e-b026-912f5c4f1407.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/45932",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 30명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-89",
     "title": "[홍대] 조명그리기 원데이 클래스 실내 데이트 놀거리 체험 공방",
     "date": "상시",
     "venue": "서울 마포구 어울마당로 42 (서교동) 302호",
@@ -1729,21 +1706,40 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-91",
-    "title": "[합정] 초보자도 가능한 나이프페인팅/ A4사이즈 조금 큰 캔버스!",
+    "id": "sssd-90",
+    "title": "업사이클링 실링왁스 그림 키링",
     "date": "상시",
-    "venue": "서울 마포구 월드컵로1길 48 (합정동) 미미본관건물 2층",
-    "price": "50,000원",
-    "originalPrice": "55,000원",
-    "discount": "9%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20221227/9db3f55b-b7e9-4201-b59a-218f3156b59b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/32671",
+    "venue": "서울 마포구 양화진길 61 (합정동, 두산빌라) 두산빌라 가동 101호",
+    "price": "9,500원",
+    "originalPrice": "9,800원",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250328/4da8b02e-93a6-4fba-8324-d7fd64353abd.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/50322",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-91",
+    "title": "[홍대/연남동] 귀여운 고양이, 강아지 그리기. 반려동물 초상화 원데이클래스",
+    "date": "상시",
+    "venue": "서울 마포구 동교로 262-5 (연남동) 지하1층",
+    "price": "45,000원",
+    "originalPrice": "55,000원",
+    "discount": "18%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20221215/5c5b8287-5d05-44bf-9103-f26be47cedef.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/32335",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
       "총 2시간",
-      "최대 수용 가능 인원 6명"
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
@@ -1768,31 +1764,12 @@
   },
   {
     "id": "sssd-93",
-    "title": "[분당] 색연필로 꽃피우는 식물그림, 보태니컬아트 원데이클래스",
-    "date": "상시",
-    "venue": "경기 성남시 분당구 성남대로 지하 601 (서현동, 서현역) 5번 출구 방향 도보 4분 거리",
-    "price": "38,000원",
-    "originalPrice": "40,000원",
-    "discount": "5%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240918/59d66885-5ed7-4586-96d9-da19815d618a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/46902",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 2시간",
-      "최대 수용 가능 인원 5명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-94",
     "title": "[제주]오일파스텔 원데이클래스",
     "date": "상시",
     "venue": "제주특별자치도 제주시 수덕11길 1 (노형동) 1층",
-    "price": "20,000원",
-    "originalPrice": "",
-    "discount": "",
+    "price": "35,000원",
+    "originalPrice": "40,000원",
+    "discount": "12%",
     "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240908/720c08b8-fc65-4ce8-9927-6cedac55c52d.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/46747",
     "genre": "class",
@@ -1800,6 +1777,25 @@
     "tags": [
       "주차 불가",
       "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-94",
+    "title": "[부천] 수묵화 그리기 클래스",
+    "date": "상시",
+    "venue": "경기 부천시 소사구 송내대로 32 (송내동, /) B01호",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240202%2F18a39b6b-948d-4859-9146-acf274a2420b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/42734",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
       "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
@@ -1825,120 +1821,6 @@
   },
   {
     "id": "sssd-96",
-    "title": "[대전] 아이패드 드로잉 굿즈 만들기",
-    "date": "상시",
-    "venue": "대전 서구 둔산남로180번길 22 (탄방동, 보금자리) 1층 커스텀메모리",
-    "price": "25,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250702/458063b9-ce79-4c24-b82b-deaf0323b4cc.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51967",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-97",
-    "title": "[하남미사]팔레트가 필요없는 입체적인 아크릴화!",
-    "date": "상시",
-    "venue": "경기 하남시 미사강변중앙로 161 (망월동, 미사파크뷰) 3층 302호",
-    "price": "39,000원",
-    "originalPrice": "40,000원",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250701/ce8ba39d-60ee-4ede-a4fb-3beda2a32f4e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51218",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-98",
-    "title": "[평택] 꾸덕한 버터 느낌의 백드롭페인팅 공방 데이트",
-    "date": "상시",
-    "venue": "경기 평택시 자유로7번길 5-1 (평택동) 3층 취향집",
-    "price": "19,900원",
-    "originalPrice": "50,000원",
-    "discount": "60%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251227/7e4ae4c2-735a-4041-8b73-d7f647c02c22.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54497",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-99",
-    "title": "[대구] 이색데이트! 아크릴화 원데이클래스!",
-    "date": "상시",
-    "venue": "대구 달성군 구지면 국가산단대로70길 17 (대구국가산단 디에트르 더 센트럴) 103동 102호",
-    "price": "35,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200512/bc2a5d93-1d05-4ed0-98a5-0f4f618672d6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/10916",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-100",
-    "title": "[양천구] 아이패드로 나만의 이모티콘 만들기 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 양천구 목동동로 293 (목동, 현대41타워) 2915호, 꼬노랑 작업실",
-    "price": "90,000원",
-    "originalPrice": "120,000원",
-    "discount": "25%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241219/79531081-50ef-4774-b7d1-a6d90a3c9891.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/48518",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 3시간",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-101",
-    "title": "[의정부] 나만의 베어브릭 커스텀 원데이클래스 아크릴화",
-    "date": "상시",
-    "venue": "경기 의정부시 범골로 106 (의정부동) 3층",
-    "price": "25,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241108/5c057b12-82a1-4f04-9724-a191f6bd1139.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/39757",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 2시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-102",
     "title": "[삼성] 초보자들도 쉽게 도전! 모두가 쉽게 만들수있는 꽃 샌드위치박스 클래스",
     "date": "상시",
     "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 상가동1층 111호 플라워샵 블러썸앤어나더",
@@ -1957,7 +1839,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-103",
+    "id": "sssd-97",
     "title": "[강남] 시즌 계절 꽃들로 만들어지는 네츄럴한 핸드타이드 원데이클래스",
     "date": "상시",
     "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 상가동1층 111호 플라워샵 블러썸앤어나더",
@@ -1976,273 +1858,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-104",
-    "title": "[홍대입구]나만의 감성을 담은 미니 프렌치 꽃바구니 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 월드컵북로7길 8 (서교동) 1층 델라젬플라워",
-    "price": "49,000원",
-    "originalPrice": "80,000원",
-    "discount": "38%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20221028/c4b627b0-d41b-49ee-af92-94481595c1df.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/30779",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-105",
-    "title": "[종로/인사동] 나만의 작은 정원, 테라리움 원데이클래스",
-    "date": "상시",
-    "venue": "서울 종로구 인사동길 44 (관훈동, 쌈지길) 1층 해피에버애프터",
-    "price": "42,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230608/d3d39ef7-2659-4c50-8841-102558bd862b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/36640",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-106",
-    "title": "[망원] 새벽정원 화병꽂이 클래스 (화병 포함)",
-    "date": "상시",
-    "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
-    "price": "70,000원",
-    "originalPrice": "80,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220321/78522a3b-2389-418a-8885-b8d9727523c6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/18749",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-107",
-    "title": "[삼성] 사랑하는이에게 사랑을가득담아서 하트센터피스클래스",
-    "date": "상시",
-    "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 대치동974 상가동 1층 111호",
-    "price": "55,000원",
-    "originalPrice": "60,000원",
-    "discount": "8%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240222/65dd6e2a-abe9-4c3a-bf8e-0897252df177.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/17704",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-108",
-    "title": "[성동구] 나만을 위한 계절 꽃다발(S/M사이즈) 만들기 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 성동구 한림말길 6 (옥수동) 1층 코지야드 작업실",
-    "price": "49,000원",
-    "originalPrice": "67,000원",
-    "discount": "26%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210707%2Fb085a27f-a681-4854-befb-dad39902afa4.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/20776",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 50분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-109",
-    "title": "[연남] 주드플라워 내 손으로 만드는 미니 꽃바구니 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 마포구 성미산로 116 (연남동, 펠릭스 빌딩) 1층 주드플라워",
-    "price": "49,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250428/43bd4958-75bf-4955-b09b-30fce36c4cc0-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/40690",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-110",
-    "title": "[용산] 계절 꽃으로 제작하는 핸드타이드 꽃다발 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 용산구 한강대로 177 (한강로1가) 2층",
-    "price": "72,000원",
-    "originalPrice": "80,000원",
-    "discount": "10%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251118/618f3f17-d3fb-46d3-963f-752721427cf5.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51519",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-111",
-    "title": "[인천/부평] 자연성이 살아 숨 쉬는 테라리움 원데이 클래스",
-    "date": "상시",
-    "venue": "인천 부평구 수변로52번길 7-6 (부개동) 1층 늘푸른 이야기",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240731/2907e4cf-d41d-4fc4-9f38-62c7c7c62d03.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/46128",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-112",
-    "title": "[망리단길] 새벽정원 소형 꽃다발 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
-    "price": "50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240117/f9620155-a866-4f23-a27d-6492fb28fb7a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/42347",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-113",
-    "title": "[강남] 누구나 쉽게 완성! 미니 꽃다발 취미 원데이클래스 /단체 기업출강 데이트",
-    "date": "상시",
-    "venue": "서울 강남구 언주로134길 31 (논현동, 논현빌딩) 1층 왼편 꽃집",
-    "price": "45,000원",
-    "originalPrice": "75,000원",
-    "discount": "40%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250220/7bd9d5a5-97bb-429a-940e-b66d4aebee31.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/49633",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 7명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-114",
-    "title": "시즌 꽃바구니 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 종로구 사직로9길 18-1 (사직동) 꽃집 콜럼바인",
-    "price": "42,000원",
-    "originalPrice": "55,000원",
-    "discount": "23%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210127%2F7913c27c-1e2c-4202-85f1-f50b1f6a0f9b.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/9774",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-115",
-    "title": "[강남] 나만의 작은 플라워온실 , 앙코르 캐리어박스 리오픈! / 기업특강",
-    "date": "상시",
-    "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 상가동1층 111호 플라워샵 블러썸앤어나더",
-    "price": "55,000원",
-    "originalPrice": "65,000원",
-    "discount": "15%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250526/207fe497-a47d-4e6c-814c-23d792234e16-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/36109",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-116",
-    "title": "계절을 매력을 담은 핸드타이드 꽃다발 만들기",
-    "date": "상시",
-    "venue": "서울 종로구 사직로9길 18-1 (사직동) 꽃집 콜럼바인",
-    "price": "38,000원",
-    "originalPrice": "45,000원",
-    "discount": "15%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200827%2F402095bb-2df1-4d35-b707-ca98dbeaea69.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/8594",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-117",
-    "title": "내가 원하는 꽃으로 디자인하는 나만의 특별한 플라워 클래스",
-    "date": "상시",
-    "venue": "서울 서초구 사평대로55길 29 (반포동) 2층 리오베플라워 스쿨",
-    "price": "39,000원",
-    "originalPrice": "79,000원",
-    "discount": "50%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220214/38bedc17-ef9f-48b4-85a7-19b1e13ab86a.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/25341",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 10분",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-118",
+    "id": "sssd-98",
     "title": "[마포] 1일 플로리스트 체험 / 720b 플라워 원데이 클래스",
     "date": "상시",
     "venue": "서울 마포구 마포대로8안길 6 (공덕동) 2층",
@@ -2261,14 +1877,261 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-119",
+    "id": "sssd-99",
+    "title": "[망원] 새벽정원 화병꽂이 클래스 (화병 포함)",
+    "date": "상시",
+    "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
+    "price": "70,000원",
+    "originalPrice": "80,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220321/78522a3b-2389-418a-8885-b8d9727523c6.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/18749",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-100",
+    "title": "[삼성] 사랑하는이에게 사랑을가득담아서 하트센터피스클래스",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 대치동974 상가동 1층 111호",
+    "price": "55,000원",
+    "originalPrice": "60,000원",
+    "discount": "8%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240222/65dd6e2a-abe9-4c3a-bf8e-0897252df177.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17704",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-101",
+    "title": "[성동구] 나만을 위한 계절 꽃다발(S/M사이즈) 만들기 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 성동구 한림말길 6 (옥수동) 1층 코지야드 작업실",
+    "price": "49,000원",
+    "originalPrice": "67,000원",
+    "discount": "26%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210707%2F72208b6d-abcb-4502-b29d-1fd54de47388.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/20776",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 50분",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-102",
+    "title": "[마포] 나의 첫 반려식물 가드닝 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 마포대로 33 (도화동, 마포 한화 오벨리스크) 오피스텔 1804호",
+    "price": "38,500원",
+    "originalPrice": "60,000원",
+    "discount": "35%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220907%2Fe88dd852-391e-42ff-8d3c-4b2909b030bb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/20184",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 40분",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-103",
+    "title": "[연남] 주드플라워 내 손으로 만드는 미니 꽃바구니 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 성미산로 116 (연남동, 펠릭스 빌딩) 1층 주드플라워",
+    "price": "49,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250428/43bd4958-75bf-4955-b09b-30fce36c4cc0-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/40690",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-104",
+    "title": "[용산] 계절 꽃으로 제작하는 핸드타이드 꽃다발 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 용산구 한강대로 177 (한강로1가) 2층",
+    "price": "72,000원",
+    "originalPrice": "80,000원",
+    "discount": "10%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251118/618f3f17-d3fb-46d3-963f-752721427cf5.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51519",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-105",
+    "title": "[망리단길] 새벽정원 소형 꽃다발 원데이클래스",
+    "date": "상시",
+    "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
+    "price": "50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240117/f9620155-a866-4f23-a27d-6492fb28fb7a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/42347",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-106",
+    "title": "[강남] 누구나 쉽게 완성! 미니 꽃다발 취미 원데이클래스 /단체 기업출강 데이트",
+    "date": "상시",
+    "venue": "서울 강남구 언주로134길 31 (논현동, 논현빌딩) 1층 왼편 꽃집",
+    "price": "45,000원",
+    "originalPrice": "75,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250220/7bd9d5a5-97bb-429a-940e-b66d4aebee31.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/49633",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 7명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-107",
+    "title": "시즌 꽃바구니 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 종로구 사직로9길 18-1 (사직동) 꽃집 콜럼바인",
+    "price": "42,000원",
+    "originalPrice": "55,000원",
+    "discount": "23%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200901%2F1d1500cc-8906-41af-aa03-759628c47eeb.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/9774",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-108",
+    "title": "[강남] 나만의 작은 플라워온실 , 앙코르 캐리어박스 리오픈! / 기업특강",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로68길 5 (대치동, 대치 주성아파트) 상가동1층 111호 플라워샵 블러썸앤어나더",
+    "price": "55,000원",
+    "originalPrice": "65,000원",
+    "discount": "15%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250526/207fe497-a47d-4e6c-814c-23d792234e16-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36109",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-109",
+    "title": "[종로/인사동] 나만의 작은 정원, 테라리움 원데이클래스",
+    "date": "상시",
+    "venue": "서울 종로구 인사동길 44 (관훈동, 쌈지길) 1층 해피에버애프터",
+    "price": "42,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230608/d3d39ef7-2659-4c50-8841-102558bd862b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36640",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-110",
+    "title": "계절을 매력을 담은 핸드타이드 꽃다발 만들기",
+    "date": "상시",
+    "venue": "서울 종로구 사직로9길 18-1 (사직동) 꽃집 콜럼바인",
+    "price": "38,000원",
+    "originalPrice": "45,000원",
+    "discount": "15%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241014%2F0a11cbae-837a-4219-9cb4-61aea78b4588.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/8594",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-111",
+    "title": "내가 원하는 꽃으로 디자인하는 나만의 특별한 플라워 클래스",
+    "date": "상시",
+    "venue": "서울 서초구 사평대로55길 29 (반포동) 2층 리오베플라워 스쿨",
+    "price": "39,000원",
+    "originalPrice": "79,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220214/38bedc17-ef9f-48b4-85a7-19b1e13ab86a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/25341",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-112",
     "title": "[마포] 새벽정원 바구니 클래스",
     "date": "상시",
     "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
     "price": "50,000원",
     "originalPrice": "70,000원",
     "discount": "28%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230321%2Fe27f58e4-1e14-45a2-b6f2-55122d935d64.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220601%2F4dee7dcf-3e41-44b3-b73f-2edfe5e6fb05.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/20152",
     "genre": "class",
     "source": "sssd",
@@ -2280,7 +2143,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-120",
+    "id": "sssd-113",
     "title": "[수원] 꽃다발 핸드타이드 원데이플라워클래스 +스냅&포토엽서_꽃필로그",
     "date": "상시",
     "venue": "경기 수원시 팔달구 수원천로255번길 6 (영동, 영동시장) (16262) 영동시장 28청춘청년몰 꽃필로그",
@@ -2299,14 +2162,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-121",
+    "id": "sssd-114",
     "title": "[수원] 센터피스 꽃꽂이 플라워원데이클래스 +스냅&포토엽서 제공_꽃필로그",
     "date": "상시",
     "venue": "경기 수원시 팔달구 수원천로255번길 6 (영동, 영동시장) 2층 꽃필로그 (28청춘몰 내)",
     "price": "59,000원",
     "originalPrice": "69,000원",
     "discount": "14%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200829%2Fc2822a82-35fc-49e6-834d-f9305a8777f7.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241014%2F78d84d0e-86d7-4f90-b06c-f391837331d8.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/2958",
     "genre": "class",
     "source": "sssd",
@@ -2318,7 +2181,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-122",
+    "id": "sssd-115",
     "title": "[서초] 미리메리 크리스마스! 나만의 생화 크리스마스 리스/트리 원데이클래스",
     "date": "상시",
     "venue": "서울 서초구 사평대로55길 29 (반포동) 2층 리오베플라워 스쿨",
@@ -2337,7 +2200,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-123",
+    "id": "sssd-116",
     "title": "[강남] 내손으로 직접 우아하고 세련된 웨딩부케 만들기",
     "date": "상시",
     "venue": "서울 강남구 삼성로64길 5 (대치동, 대치현대아파트) 상가동1층 111호",
@@ -2356,7 +2219,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-124",
+    "id": "sssd-117",
     "title": "[연남동] 초보 가드너를 위한 몬스테라 가드닝 원데이 클래스",
     "date": "상시",
     "venue": "서울 마포구 성미산로29안길 19-7 (연남동) 지하1층",
@@ -2375,7 +2238,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-125",
+    "id": "sssd-118",
     "title": "[연남동]11-12월 / 행운을 가져다주는 크리스마스 리스 만들기 원데이 클래스",
     "date": "상시",
     "venue": "서울 마포구 성미산로29안길 19-7 (연남동) 지하1층",
@@ -2394,7 +2257,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-126",
+    "id": "sssd-119",
     "title": "플라워 캔들리스로 인테리어 분위기를 바꿔보아요 !",
     "date": "상시",
     "venue": "서울 강남구 삼성로64길 5 (대치동, 대치현대아파트) 상가동1층 111호",
@@ -2413,7 +2276,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-127",
+    "id": "sssd-120",
     "title": "[공덕] 센터피스 만들기",
     "date": "상시",
     "venue": "서울 마포구 마포대로14길 5 (공덕동) 1층 104호 꽃집 데일리플레르",
@@ -2432,7 +2295,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-128",
+    "id": "sssd-121",
     "title": "[강남] 풍성하고 화사한 꽃다발 만들기 / 일일 플로리스트 체험 / 이색 데이트",
     "date": "상시",
     "venue": "서울 강남구 삼성로64길 5 (대치동, 대치현대아파트) 상가동1층 111호",
@@ -2451,33 +2314,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-129",
-    "title": "[마포] 나의 첫 반려식물 가드닝 클래스",
+    "id": "sssd-122",
+    "title": "[홍대입구]나만의 감성을 담은 미니 프렌치 꽃바구니 원데이클래스",
     "date": "상시",
-    "venue": "서울 마포구 마포대로 33 (도화동, 마포 한화 오벨리스크) 오피스텔 1804호",
-    "price": "38,500원",
-    "originalPrice": "60,000원",
-    "discount": "35%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210612%2F7e817159-5a94-4387-842d-1f82042d5d54.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/20184",
+    "venue": "서울 마포구 월드컵북로7길 8 (서교동) 1층 델라젬플라워",
+    "price": "49,000원",
+    "originalPrice": "80,000원",
+    "discount": "38%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20221028/c4b627b0-d41b-49ee-af92-94481595c1df.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/30779",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 가능",
-      "총 40분",
-      "최대 수용 가능 인원 6명"
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 8명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-130",
+    "id": "sssd-123",
     "title": "계절꽃으로 만드는 센터피스(S/M)/화병꽂이 만들기",
     "date": "상시",
     "venue": "서울 성동구 한림말길 6 (옥수동) 1층 코지야드 작업실",
     "price": "39,000원",
     "originalPrice": "55,000원",
     "discount": "29%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20260103%2F25f46243-bd53-459d-9559-fa456470de72.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20260103%2Fb9ac592b-11a7-4114-9619-60852bf2b23d.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/19136",
     "genre": "class",
     "source": "sssd",
@@ -2489,7 +2352,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-131",
+    "id": "sssd-124",
     "title": "[용산] 초보자도 즐겁게 할수있는 센터피스",
     "date": "상시",
     "venue": "서울 용산구 서빙고로 17 (한강로3가) 상가 1층 70호",
@@ -2508,26 +2371,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-132",
-    "title": "[홍대] 나의 추구미를 찾아가는 1:1 퍼스널 메이크업 클래스",
+    "id": "sssd-125",
+    "title": "드라마 '더 킹' 협찬 나만의 정원 만들기 테라리움",
     "date": "상시",
-    "venue": "서울 마포구 양화로 100-12 (서교동, MJ블랑로튜스) 6층",
-    "price": "139,000원",
-    "originalPrice": "300,000원",
-    "discount": "53%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/c45da600-0c77-4ca1-bd8b-ef4b2d6d11a6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/39525",
+    "venue": "서울 광진구 능동로 157 (화양동, 테라팰리스 건대4차) 803 호",
+    "price": "55,000원",
+    "originalPrice": "60,000원",
+    "discount": "8%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200531/355fa200-feb8-4d35-87fb-4c55f07fa92a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/6501",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 불가",
-      "총 1시간 20분",
-      "최대 수용 가능 인원 1명"
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-133",
+    "id": "sssd-126",
     "title": "[잠실] 나의 '퍼스널컬러'에 딱 어울리는 '메이크업'",
     "date": "상시",
     "venue": "서울 송파구 송파대로 567 (잠실동, 잠실주공아파트) 527동 건물입니다.",
@@ -2546,7 +2409,83 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-134",
+    "id": "sssd-127",
+    "title": "[강남] (메이크업 클래스)청담동 메이크업아티스트에게 배우는 메이크업 노하우",
+    "date": "상시",
+    "venue": "서울 강남구 영동대로129길 24-6 (삼성동) 플리페",
+    "price": "99,000원",
+    "originalPrice": "242,000원",
+    "discount": "59%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250910/cdc035cc-a405-48fa-92cc-d3f88c5f14af-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/16218",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-128",
+    "title": "[강남/청담 민실장] 데일리 내추럴1:1 메이크업클래스",
+    "date": "상시",
+    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
+    "price": "110,000원",
+    "originalPrice": "150,000원",
+    "discount": "26%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/e35b1cbe-6f3a-4685-8ec3-27e37527eb2e-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/10559",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-129",
+    "title": "[청담/도산] [2:1] 친구와 함께 배워보는 퍼스널메이크업/스타일링 클래스",
+    "date": "상시",
+    "venue": "서울 강남구 언주로168길 6-9 (신사동) 고센뷰티 (영빌딩)",
+    "price": "99,000원",
+    "originalPrice": "210,000원",
+    "discount": "52%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/eb850c3f-908f-4c3d-85e1-d5e462528cee.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/49520",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 2시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-130",
+    "title": "[강남]\"1:1 원장직강, 1시간 30분만에 샵에서 받은느낌 나도 연예인처럼! \"",
+    "date": "상시",
+    "venue": "서울 강남구 강남대로152길 30 (신사동) on네일 아이래쉬 3번룸",
+    "price": "130,000원",
+    "originalPrice": "150,000원",
+    "discount": "13%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/ac56a07e-64ac-4987-948d-3923faac636e.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/48051",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-131",
     "title": "[북촌]아늑한 독채\"한옥\"에서 경험하는 향수조향클래스(50ml)",
     "date": "상시",
     "venue": "서울 종로구 계동4길 10-6 (계동) 1층",
@@ -2565,22 +2504,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-135",
-    "title": "[강남] (메이크업 클래스)청담동 메이크업아티스트에게 배우는 메이크업 노하우",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "99,000원",
-    "originalPrice": "242,000원",
-    "discount": "59%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250910/cdc035cc-a405-48fa-92cc-d3f88c5f14af-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/16218",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-136",
+    "id": "sssd-132",
     "title": "[청담] 만족도 99% 원장 직강, 퍼스널컬러 인생 메이크업 1:1 마스터 클래스",
     "date": "상시",
     "venue": "서울 강남구 선릉로148길 15 (청담동) 행산빌딩 301호",
@@ -2599,64 +2523,45 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-137",
-    "title": "[청담/도산공원] 프라이빗룸 퍼스널 메이크업/스타일링 원데이 클래스 [1:1]",
+    "id": "sssd-133",
+    "title": "[강남] 리뷰평점1위 대표원장 pure daily makeup class",
     "date": "상시",
-    "venue": "서울 강남구 언주로168길 6-9 (신사동) 고센뷰티 (영빌딩)",
-    "price": "125,000원",
-    "originalPrice": "265,000원",
-    "discount": "52%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/b28fb55d-c4db-4d60-a39e-09987872969c.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/49363",
+    "venue": "서울 서초구 강남대로61길 10 (서초동, 센터프라자) 703호",
+    "price": "149,000원",
+    "originalPrice": "210,000원",
+    "discount": "29%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250813/e19b734d-f5f7-44d5-9fbf-a63d81bd3b1e.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/23945",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 가능",
       "총 1시간 30분",
-      "최대 수용 가능 인원 6명"
+      "최대 수용 가능 인원 1명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-138",
-    "title": "[용산] 언커무드 나만의 무드를 담은 향수 만들기 (30ml)",
+    "id": "sssd-134",
+    "title": "[홍대] 나의 추구미를 찾아가는 1:1 퍼스널 메이크업 클래스",
     "date": "상시",
-    "venue": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
-    "price": "28,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240908/1548524c-5397-4770-b621-1963895e3fb8.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/43478",
+    "venue": "서울 마포구 양화로 100-12 (서교동, MJ블랑로튜스) 6층",
+    "price": "139,000원",
+    "originalPrice": "300,000원",
+    "discount": "53%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/c45da600-0c77-4ca1-bd8b-ef4b2d6d11a6.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/39525",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-139",
-    "title": "[홍대] ‘나는솔로’ 메이크오버 담당 1:1 이미지 분석 / 메이크업 원데이클래스",
-    "date": "상시",
-    "venue": "서울 마포구 와우산로37길 9 (동교동) 예약 시 사전 안내 문자 드립니다",
-    "price": "145,000원",
-    "originalPrice": "240,000원",
-    "discount": "39%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250627/c7b17b9b-442b-4732-b0c6-590e9d390726.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/27467",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
       "총 1시간 20분",
       "최대 수용 가능 인원 1명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-140",
+    "id": "sssd-135",
     "title": "[청담/도산] 아이메이크업 클래스 (눈썹/속눈썹/색조/아이라인/애교살) [1:1]",
     "date": "상시",
     "venue": "서울 강남구 언주로168길 6-9 (신사동) 고센뷰티 (영빌딩)",
@@ -2675,7 +2580,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-141",
+    "id": "sssd-136",
     "title": "[신도림] 향으로 남기는 오늘의 데이트, 세상에 하나뿐인 향수 핸드크림 만들기",
     "date": "상시",
     "venue": "서울 구로구 경인로 638 (신도림동, 신도림에스케이뷰) 211호 휴센트 스튜디오 (컬러챰)",
@@ -2694,83 +2599,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-142",
-    "title": "[연남] 감각적인 시그니처 향수 제작, 뤼미에르퍼퓸 A Class",
-    "date": "상시",
-    "venue": "서울 마포구 동교로 227-11 (연남동) 3층",
-    "price": "35,000원",
-    "originalPrice": "55,000원",
-    "discount": "36%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251002/3c25579b-be1d-4700-8bca-028a7768fd78-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/35872",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 14명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-143",
-    "title": "[마포] 나에게 딱 맞는 완벽한 눈썹 그리기 (1:1클래스 / 50분)",
-    "date": "상시",
-    "venue": "서울 마포구 대흥로 186 (대흥동) 3층 RANAA PICK studio",
-    "price": "54,000원",
-    "originalPrice": "64,000원",
-    "discount": "15%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200818%2F13cf453d-0197-4fc5-96b5-7d8cb3ea45b3.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/13326",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-144",
-    "title": "[신도림] 향으로 기억되는 오늘의 데이트! 세상에 하나뿐인 향수 만들기",
-    "date": "상시",
-    "venue": "서울 구로구 경인로 638 (신도림동, 신도림에스케이뷰) 211호 휴센트 스튜디오 (컬러챰)",
-    "price": "25,000원",
-    "originalPrice": "33,000원",
-    "discount": "24%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251217/285c958a-0948-4f1b-8a38-daaed870f23c.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54381",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 50분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-145",
-    "title": "[후기 900개 이상] 퍼스널컬러+ 메이크업 시연 + 골격 진단, 립스틱 만들기",
-    "date": "상시",
-    "venue": "서울 영등포구 국제금융로6길 33 (여의도동) 라엘나스튜디오#사무실이 2개라서 필히!!! 수업전 주소확인 채팅문자 확인부탁드립니다.",
-    "price": "59,900원",
-    "originalPrice": "90,000원",
-    "discount": "33%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/2b307f83-ae28-4e38-a20b-574fc95997b2-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/22357",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-146",
+    "id": "sssd-137",
     "title": "[종로] 1대1 메이크업클래스★내 이목구비,분위기에 맞는 베스트 화장법 찾기",
     "date": "상시",
     "venue": "서울 종로구 종로 121-1 (종로3가) 5층",
@@ -2789,26 +2618,102 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-147",
-    "title": "[잠실/석촌호수] '1:1 퍼스널 향기 진단' 조향사와 함께 만드는 나만의 향수",
+    "id": "sssd-138",
+    "title": "[홍대] ‘나는솔로’ 메이크오버 담당 1:1 이미지 분석 / 메이크업 원데이클래스",
     "date": "상시",
-    "venue": "서울 송파구 송파대로49길 53 (석촌동) 3층",
-    "price": "50,000원",
-    "originalPrice": "60,000원",
-    "discount": "16%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251130/1c0043f9-7714-4f28-92a7-46cbb52d87c7.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/26851",
+    "venue": "서울 마포구 와우산로37길 9 (동교동) 예약 시 사전 안내 문자 드립니다",
+    "price": "145,000원",
+    "originalPrice": "240,000원",
+    "discount": "39%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250627/c7b17b9b-442b-4732-b0c6-590e9d390726.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/27467",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-139",
+    "title": "[연남] 감각적인 시그니처 향수 제작, 뤼미에르퍼퓸 A Class",
+    "date": "상시",
+    "venue": "서울 마포구 동교로 227-11 (연남동) 3층",
+    "price": "35,000원",
+    "originalPrice": "55,000원",
+    "discount": "36%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251002/3c25579b-be1d-4700-8bca-028a7768fd78-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/35872",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 1시간",
-      "최대 수용 가능 인원 6명"
+      "최대 수용 가능 인원 14명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-148",
+    "id": "sssd-140",
+    "title": "[마포] 나에게 딱 맞는 완벽한 눈썹 그리기 (1:1클래스 / 50분)",
+    "date": "상시",
+    "venue": "서울 마포구 대흥로 186 (대흥동) 3층 RANAA PICK studio",
+    "price": "54,000원",
+    "originalPrice": "64,000원",
+    "discount": "15%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200818%2Ff93eb378-a008-4d61-a233-f80dd55996dd.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/13326",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-141",
+    "title": "[강동] 에어랩없이 쉽고 이쁘게 머리 스타일링하기(고데기,드라이 원데이클래스)",
+    "date": "상시",
+    "venue": "서울 강동구 천호대로175길 10 (길동, 청광플러스원큐브2차) 402호",
+    "price": "55,850원",
+    "originalPrice": "89,750원",
+    "discount": "37%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250510%2F9fce7ee6-5458-4b7d-a5fd-10a207ae92de.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/42146",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-142",
+    "title": "[후기 900개 이상] 퍼스널컬러+ 메이크업 시연 + 골격 진단, 립스틱 만들기",
+    "date": "상시",
+    "venue": "서울 영등포구 국제금융로6길 33 (여의도동) 라엘나스튜디오#사무실이 2개라서 필히!!! 수업전 주소확인 채팅문자 확인부탁드립니다.",
+    "price": "59,900원",
+    "originalPrice": "90,000원",
+    "discount": "33%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250922/2b307f83-ae28-4e38-a20b-574fc95997b2-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/22357",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-143",
     "title": "[북촌] 한옥뷰 맛집 소수정원 향수클래스 50ml 오드퍼퓸",
     "date": "상시",
     "venue": "서울 종로구 계동길 128 (계동) 3층 301호",
@@ -2827,7 +2732,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-149",
+    "id": "sssd-144",
     "title": "[강동]연예인 패션 스타일리스트가 찾아주는 체형,치수분석+패션스타일(남,여)",
     "date": "상시",
     "venue": "서울 강동구 양재대로 1393 (성내동) 5층 520호",
@@ -2846,7 +2751,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-150",
+    "id": "sssd-145",
     "title": "[성수] 감각적인 시그니처 향수 제작, 뤼미에르퍼퓸 A Class",
     "date": "상시",
     "venue": "서울 성동구 연무장길 49 (성수동2가) 원창실업 나동 3층 301호",
@@ -2865,14 +2770,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-151",
+    "id": "sssd-146",
+    "title": "[용산] 언커무드 나만의 무드를 담은 향수 만들기 (30ml)",
+    "date": "상시",
+    "venue": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
+    "price": "28,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240908/1548524c-5397-4770-b621-1963895e3fb8.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/43478",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 8명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-147",
     "title": "[홍대] 플라비 ONLY 탄생화 오드퍼퓸 20ml 만들기",
     "date": "상시",
     "venue": "서울 마포구 와우산로27길 23 (서교동) 지하1층 플라비",
     "price": "20,000원",
     "originalPrice": "23,000원",
     "discount": "13%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210415%2Fdf9b677d-aa9e-4413-ad5f-4c590329811b.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210415%2Fc01db08c-c333-4434-ba66-858dd07f24e0.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/19018",
     "genre": "class",
     "source": "sssd",
@@ -2884,26 +2808,64 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-152",
-    "title": "[중랑구] 봉고데기 여신웨이브 샵 한번 갈 돈으로 평생 써먹자",
+    "id": "sssd-148",
+    "title": "[인천/구월동] 80가지 향료로 만드는 나만의 향수 원데이 클래스 50ml",
     "date": "상시",
-    "venue": "서울 중랑구 상봉중앙로 36 (상봉동) 301호 스윗비비안나",
-    "price": "38,000원",
-    "originalPrice": "85,000원",
-    "discount": "55%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200820/e777a22c-ce25-42b9-84d0-94cf8e172cfb.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/13440",
+    "venue": "인천 남동구 인하로507번길 80 (구월동, 태광프라자) 태광프라자 401호",
+    "price": "39,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230920%2F109d35ed-72a8-4a72-8677-f299e20bd72c.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/39295",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-149",
+    "title": "퍼미에이트 향수공방 시그니처 퍼퓸 A 클래스",
+    "date": "상시",
+    "venue": "서울 강서구 마곡중앙2로 35 (마곡동, 이너매스마곡Ⅱ) 513호 Permeate향기공방",
+    "price": "40,000원",
+    "originalPrice": "60,000원",
+    "discount": "33%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230331/7dfc2755-5516-49c4-bc5a-450d95dbd0dc.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/31127",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 2시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-150",
+    "title": "[성북구]내게 어울리는 눈썹 모양과 정리 후 그리기까지 눈썹완전정복 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 성북구 길음로 8 (길음동) 3층",
+    "price": "42,000원",
+    "originalPrice": "60,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220419/78fc38a5-328a-47f0-ac74-f7d4073a1a0a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/22695",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
       "최대 수용 가능 인원 2명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-153",
+    "id": "sssd-151",
     "title": "[강남] 30대만 참여 가능! 사적인 필름 로테이션 소개팅",
     "date": "상시",
     "venue": "서울 강남구 테헤란로55길 20 (역삼동) 지하 1층",
@@ -2918,6 +2880,44 @@
       "주차 불가",
       "총 2시간 30분",
       "최대 수용 가능 인원 40명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-152",
+    "title": "[잠실]경찰과 도둑 할 사람 여기여기 붙어라!🚔",
+    "date": "상시",
+    "venue": "서울 송파구 올림픽로 424 (방이동, 올림픽공원) 올림픽 공원 장미광장",
+    "price": "5,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/cb8a208a-92d6-45fa-b436-d93bfcf94500-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54607",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 25명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-153",
+    "title": "연애/결혼에 진심이라면 필수! 직장인 1위 로테이션 소개팅💞",
+    "date": "상시",
+    "venue": "서울 강남구 논현로80길 9 (역삼동) 1층",
+    "price": "25,000원",
+    "originalPrice": "30,000원",
+    "discount": "16%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251215/4e6c40d7-9e32-4278-9a2e-b2010d31d6fa.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53567",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간 30분",
+      "최대 수용 가능 인원 30명"
     ],
     "status": "OPEN"
   },
@@ -2942,20 +2942,20 @@
   },
   {
     "id": "sssd-155",
-    "title": "[잠실]경찰과 도둑 할 사람 여기여기 붙어라!🚔",
+    "title": "[선릉/와인소개팅] 타플랫폼 1위! 모두의와인",
     "date": "상시",
-    "venue": "서울 송파구 올림픽로 424 (방이동, 올림픽공원) 올림픽 공원 장미광장",
-    "price": "5,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20260106/cb8a208a-92d6-45fa-b436-d93bfcf94500-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/54607",
+    "venue": "서울 강남구 선릉로82길 5 (대치동, 캥거루 빌딩) 지하 1층",
+    "price": "29,900원",
+    "originalPrice": "100,000원",
+    "discount": "70%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251226/ae0c007f-d998-45cf-a6c6-dbdb6e151bc8.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54487",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 25명"
+      "총 3시간",
+      "최대 수용 가능 인원 60명"
     ],
     "status": "OPEN"
   },
@@ -2980,25 +2980,6 @@
   },
   {
     "id": "sssd-157",
-    "title": "연애/결혼에 진심이라면 필수! 직장인 1위 로테이션 소개팅💞",
-    "date": "상시",
-    "venue": "서울 강남구 논현로80길 9 (역삼동) 1층",
-    "price": "25,000원",
-    "originalPrice": "30,000원",
-    "discount": "16%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251215/4e6c40d7-9e32-4278-9a2e-b2010d31d6fa.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/53567",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간 30분",
-      "최대 수용 가능 인원 30명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-158",
     "title": "영화같은 만남! 낭만 가득한 영화&가치관 소개팅🎬",
     "date": "상시",
     "venue": "인천 부평구 주부토로 111 (부평동) 앤사장다락방",
@@ -3017,7 +2998,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-159",
+    "id": "sssd-158",
     "title": "향기로 이어지는 인연, 퍼퓸시그널💘",
     "date": "상시",
     "venue": "서울 마포구 포은로 146 (망원동, 명현빌딩) b1층",
@@ -3032,6 +3013,25 @@
       "주차 불가",
       "총 2시간",
       "최대 수용 가능 인원 50명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-159",
+    "title": "낯선 사람과 친구가 되는 곳, 연플레이스🏠",
+    "date": "상시",
+    "venue": "서울 서대문구 신촌로 39 (창천동) 3층 302호 연플레이스",
+    "price": "42,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251030/70794469-fe88-4f13-9aab-1abc5e8ffd91-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53552",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 3시간",
+      "최대 수용 가능 인원 80명"
     ],
     "status": "OPEN"
   },
@@ -3056,51 +3056,13 @@
   },
   {
     "id": "sssd-161",
-    "title": "일본인 친구들과 함께하는 타코야키 파티!",
-    "date": "상시",
-    "venue": "서울 마포구 신촌로2안길 12 (동교동) 건물 내부 지하 1층 라인메이트",
-    "price": "38,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250703/376be349-2d68-4fa8-99f4-456ad77a3130.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/51979",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간 30분",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-162",
-    "title": "낯선 사람과 친구가 되는 곳, 연플레이스🏠",
-    "date": "상시",
-    "venue": "서울 서대문구 신촌로 39 (창천동) 3층 302호 연플레이스",
-    "price": "42,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251030/70794469-fe88-4f13-9aab-1abc5e8ffd91-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/53552",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 3시간",
-      "최대 수용 가능 인원 80명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-163",
     "title": "[군자] 스마트폰으로 만드는 인스타 감성 사진",
     "date": "상시",
     "venue": "서울 광진구 능동로31길 8-1 (군자동) 6층",
     "price": "50,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240312%2Fe5867905-1bfa-48b3-b28b-72ecfe1526b5.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240312%2F62b0afaf-d860-401d-9af1-c20a7298ab76.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/27198",
     "genre": "class",
     "source": "sssd",
@@ -3112,7 +3074,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-164",
+    "id": "sssd-162",
     "title": "행운의 플레이모빌 키링 만들기 with 백곰삼촌",
     "date": "상시",
     "venue": "서울 중구 청파로 437-1 (중림동) 성일빌딩 2층 201호 서울토이 장난감 쇼룸",
@@ -3131,7 +3093,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-165",
+    "id": "sssd-163",
     "title": "[신도림] 혼자와도 좋아! 2030직장인 대화 모임🌙(음식, 하이볼 무제한)",
     "date": "상시",
     "venue": "서울 영등포구 도영로 66 (도림동, 영등포아트자이아파트) 아트자이후문상가 308호",
@@ -3150,7 +3112,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-166",
+    "id": "sssd-164",
     "title": "[관악구] 힐링 모임, 감성 한스푼♡ 2025년을 실링왁스 만들며 고급스럽게!",
     "date": "상시",
     "venue": "서울 관악구 인헌17길 3 (봉천동, 대동빌딩) 인수당약국 근방 1분거리에 있으며, 신청 확정 시 안내해 드려요.",
@@ -3169,7 +3131,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-167",
+    "id": "sssd-165",
     "title": "또래끼리 모여 놀자! 그림과 와인의 조화 드로잉살롱",
     "date": "상시",
     "venue": "서울 송파구 백제고분로42길 35-1 (송파동, 명성빌딩) 1층 드링킹드로잉",
@@ -3188,7 +3150,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-168",
+    "id": "sssd-166",
+    "title": "일본인 친구들과 함께하는 타코야키 파티!",
+    "date": "상시",
+    "venue": "서울 마포구 신촌로2안길 12 (동교동) 건물 내부 지하 1층 라인메이트",
+    "price": "38,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250703/376be349-2d68-4fa8-99f4-456ad77a3130.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51979",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간 30분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-167",
     "title": "일상 OFF & 감성 ON, 설렘이 기다리는 감성 다락방",
     "date": "상시",
     "venue": "인천 부평구 주부토로 111 (부평동) 앤사장다락방",
@@ -3207,7 +3188,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-169",
+    "id": "sssd-168",
     "title": "신개념 파티식 1:1 로테이션 소개팅 :우리의 온도",
     "date": "상시",
     "venue": "서울 관악구 봉천로49길 12 (봉천동) 지하1층, 모노포레스트",
@@ -3226,7 +3207,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-170",
+    "id": "sssd-169",
     "title": "[구로]좋은 사람들만 모였다! 2030직장인 로테이션 소개팅",
     "date": "상시",
     "venue": "서울 구로구 도림천로 477 (구로동, 구로디지털단지역) 구로디지털단지역 인근",
@@ -3245,7 +3226,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-171",
+    "id": "sssd-170",
     "title": "[모임] 나도 밴드체험 한번 해볼까?",
     "date": "상시",
     "venue": "서울 영등포구 당산로30길 6 (당산동3가) 3층 블루기타",
@@ -3264,7 +3245,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-172",
+    "id": "sssd-171",
     "title": "사부작사부작 도자기 빚으며 친해지는 도예소셜링",
     "date": "상시",
     "venue": "서울 강남구 논현로 332 (역삼동, 계유빌딩) b1",
@@ -3283,7 +3264,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-173",
+    "id": "sssd-172",
     "title": "[인천] 주안역 자유 독서 모임 :: 책 읽고, 차 마시면서 수다떨어요!",
     "date": "상시",
     "venue": "인천 미추홀구 염창로 55 (주안동) 4층_랑쌤드럼 (뚜레쥬르주안북부점 건물)",
@@ -3302,7 +3283,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-174",
+    "id": "sssd-173",
     "title": "다이어터들 모여라! 샐러드 만들고 다이어트 팁 공유해요!",
     "date": "상시",
     "venue": "서울 중구 을지로38길 40 (오장동) 4층 <코나투스>",
@@ -3321,7 +3302,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-175",
+    "id": "sssd-174",
     "title": "[서대문구] 색다른 경험! 동네에서 즐기는 홈스토랑 (5가지 제철요리 오마카세)",
     "date": "상시",
     "venue": "서울 서대문구 증가로10길 82-35 (홍은동) 102호",
@@ -3340,7 +3321,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-176",
+    "id": "sssd-175",
     "title": "저속노화에 밥친구까지! 우리 요리하며 친해져요!",
     "date": "상시",
     "venue": "서울 용산구 이촌로 5 (한강로3가, 한강그랜드오피스텔) 한강그랜드오피스텔 302호",
@@ -3359,7 +3340,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-177",
+    "id": "sssd-176",
     "title": "[영등포] 낙서 테라피 (젠탱글) - 패턴을 그리면서 대화하는 힐링 모임",
     "date": "상시",
     "venue": "서울 영등포구 당산로 223 (당산동5가) 2층 빌리엔젤 당산역점 (당산역 11번 출구)",
@@ -3378,7 +3359,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-178",
+    "id": "sssd-177",
     "title": "강남에서 벌어지는 속고 속이는 마피아 게임",
     "date": "상시",
     "venue": "서울 강남구 도산대로 154-4 (논현동, 광성빌딩) 301호",
@@ -3397,7 +3378,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-179",
+    "id": "sssd-178",
     "title": "위스키와 아트의 만남, 힐링하고 싶은 2030 모여라!",
     "date": "상시",
     "venue": "서울 강남구 봉은사로30길 24 (역삼동) 202호",
@@ -3416,7 +3397,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-180",
+    "id": "sssd-179",
     "title": "[서울 강남]댄스스포츠 원데이클래스",
     "date": "상시",
     "venue": "서울 강남구 삼성로 763 (청담동) 금탁프라자 지하1층",
@@ -3435,7 +3416,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-181",
+    "id": "sssd-180",
     "title": "쓰담쓰담 나만의 걱정 인형(Worry doll) 만들기 <걱정, 스트레스 타파!>",
     "date": "상시",
     "venue": "서울 영등포구 당산로 223 (당산동5가) 2층 빌리엔젤 당산역점 (당산역 11번 출구)",
@@ -3454,26 +3435,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-182",
-    "title": "[마포구] 공연장에서 하는 노래모임 '카세트'",
-    "date": "상시",
-    "venue": "서울 마포구 성미산로 52 (성산동) cassettestudio",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230828/5a0c4fff-7467-4303-974b-198b78328256.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/38678",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 2시간",
-      "최대 수용 가능 인원 8명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-183",
+    "id": "sssd-181",
     "title": "[동작] 친절한 쁨댄스와 함께하는 원데이 댄스클래스 / K-POP / 걸스힙합",
     "date": "상시",
     "venue": "서울 동작구 사당로30길 131 (사당동) 수업 별 상이(개인 번호로 공지 드립니다)",
@@ -3492,7 +3454,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-184",
+    "id": "sssd-182",
+    "title": "[건대] K-POP DANCE 재밌게 배우기 / 건대 원데이 댄스 클래스 춤 맛집",
+    "date": "상시",
+    "venue": "서울 광진구 능동로 50 (자양동, 이튼타워리버2차) 2층 208호 무드킨댄스학원",
+    "price": "33,000원",
+    "originalPrice": "50,000원",
+    "discount": "34%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250918/cb52eadb-0550-41c9-a1dd-adfcfa9a4863.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/4134",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 20분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-183",
     "title": "[홍대] 1:1 개인레슨 / 프라이빗 그룹레슨 원하는 K-POP 안무 배우기",
     "date": "상시",
     "venue": "서울 마포구 양화로 지하 160 (동교동, 홍대입구역) 주소는 홍대역 주소입니다. [홍대/신촌역 혹은 건대] 부근 스튜디오에서 수업 합니다:) 상세 주소는 따로 안내 드려요!",
@@ -3511,21 +3492,40 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-185",
-    "title": "[강남] 번지피지오라고 들어봤나~ 힘들지만 너무 재밌을텐데~!",
+    "id": "sssd-184",
+    "title": "[송파] KPOP댄스-뉴진스/에스파/키오프/블랙핑크 등",
     "date": "상시",
-    "venue": "서울 강남구 삼성로 150 (대치동, 한보미도맨션) 한보미도종합상가 302호 앨리발레&번지피지오",
-    "price": "40,000원",
-    "originalPrice": "48,000원",
+    "venue": "서울 송파구 송파대로 지하 179 (문정동, 문정역) 부근 연습실/자세한 위치 솜씨당 채팅 확인 부탁드립니다!",
+    "price": "30,000원",
+    "originalPrice": "36,000원",
     "discount": "16%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240610/57cbdbc1-ccc2-47db-8d54-526642523d0f.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/45146",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250605/93b1362e-0af8-4d07-b5c7-5f819c96286b-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/11928",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 가능",
-      "총 50분",
-      "최대 수용 가능 인원 8명"
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 6명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-185",
+    "title": "[강남] 디티디댄스 / 하루완성 / 양재역5분 / 대관료 무료",
+    "date": "상시",
+    "venue": "서울 서초구 강남대로30길 72 (양재동) 지하 1층",
+    "price": "34,000원",
+    "originalPrice": "55,000원",
+    "discount": "38%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220907/e98ed641-8a1e-497f-be2f-68104ab921ee.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/24028",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 50분",
+      "최대 수용 가능 인원 12명"
     ],
     "status": "OPEN"
   },
@@ -3550,6 +3550,25 @@
   },
   {
     "id": "sssd-187",
+    "title": "상왕십리/성신여대에서 진행하는 즐거운 댄스 시작해봐요!(그룹)",
+    "date": "상시",
+    "venue": "서울 성북구 동소문로 지하 102 (동선동4가, 성신여대입구역) 성신여대 입구역 부근 연습실",
+    "price": "33,000원",
+    "originalPrice": "40,000원",
+    "discount": "17%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220608/9ed06ff8-d76b-4d1d-a05e-51c8831f4850.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/27499",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-188",
     "title": "[상수] 최신케이팝 한번에 배우는 원데이 클레스",
     "date": "상시",
     "venue": "서울 마포구 독막로19길 19 (상수동, 서궁빌딩) 4층 디얼댄스",
@@ -3568,7 +3587,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-188",
+    "id": "sssd-189",
     "title": "[영등포] 스쿼시 처음이라구 눈높이 수업 원데이 클래스",
     "date": "상시",
     "venue": "서울 영등포구 대림로 152 (대림동, 연희빌딩) 연희빌딩 B1",
@@ -3587,59 +3606,40 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-189",
-    "title": "[강남] 하타, 빈야사, 아쉬탕가, 테라피 소그룹 요가 클래스",
+    "id": "sssd-190",
+    "title": "[광진구] 남들과는 다른, 나만의 춤을 춰보자! (소규모수업)",
     "date": "상시",
-    "venue": "서울 강남구 논현로85길 5-12 (역삼동, 제이에스빌딩) 601호",
-    "price": "35,000원",
+    "venue": "서울 광진구 아차산로25길 14 (화양동) 정확한 주소는 수업 신청 후 채팅 확인해주세요!",
+    "price": "45,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240611/9053294d-8739-4632-956b-1be9d582548b.jpeg",
-    "link": "https://www.sssd.co.kr/m/class/detail/45194",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 9명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-190",
-    "title": "[송파] KPOP댄스-뉴진스/에스파/키오프/블랙핑크 등",
-    "date": "상시",
-    "venue": "서울 송파구 송파대로 지하 179 (문정동, 문정역) 부근 연습실/자세한 위치 솜씨당 채팅 확인 부탁드립니다!",
-    "price": "30,000원",
-    "originalPrice": "36,000원",
-    "discount": "16%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250605/93b1362e-0af8-4d07-b5c7-5f819c96286b-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/11928",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210110/7e0ba373-cba1-4fc3-b1e2-570463c38963.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/16891",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 2시간",
-      "최대 수용 가능 인원 6명"
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
   {
     "id": "sssd-191",
-    "title": "[강남] 오직 우리 만을 위한 힐링 데이트 - 프라이빗 커플 요가",
+    "title": "[홍대] 힐링 댄스_ 하와이의 전통춤 훌라 Hula 체험레슨 원데이클래스",
     "date": "상시",
-    "venue": "서울 강남구 논현로85길 5-12 (역삼동, 제이에스빌딩) 601호",
-    "price": "55,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20251010%2F9a96be74-0ca2-4133-9eeb-44cab07badb9.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/37835",
+    "venue": "서울 마포구 월드컵북로4길 87 (동교동, 정원211빌딩) 지하1층 아트플랜트",
+    "price": "15,000원",
+    "originalPrice": "25,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20211025/31471044-9f0a-4e26-a89e-5495fae9073c.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/23032",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 1시간",
-      "최대 수용 가능 인원 2명"
+      "최대 수용 가능 인원 8명"
     ],
     "status": "OPEN"
   },
@@ -3664,70 +3664,32 @@
   },
   {
     "id": "sssd-193",
-    "title": "상왕십리/성신여대에서 진행하는 즐거운 댄스 시작해봐요!(그룹)",
+    "title": "[강남] 하타, 빈야사, 아쉬탕가, 테라피 소그룹 요가 클래스",
     "date": "상시",
-    "venue": "서울 성북구 동소문로 지하 102 (동선동4가, 성신여대입구역) 성신여대 입구역 부근 연습실",
-    "price": "33,000원",
-    "originalPrice": "40,000원",
-    "discount": "17%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220608/9ed06ff8-d76b-4d1d-a05e-51c8831f4850.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/27499",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 10명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-194",
-    "title": "[서울_사당] 힐링 댄스_ 하와이의 민속춤 훌라 Hula 체험레슨 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 동작구 동작대로 49 (사당동) 지하1층 라이언 밀크 연습실",
-    "price": "20,000원",
-    "originalPrice": "35,000원",
-    "discount": "42%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251228/dc269589-5c39-48fd-ae89-503115b8fe11.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/12147",
+    "venue": "서울 강남구 논현로85길 5-12 (역삼동, 제이에스빌딩) 601호",
+    "price": "35,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240611/9053294d-8739-4632-956b-1be9d582548b.jpeg",
+    "link": "https://www.sssd.co.kr/m/class/detail/45194",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
       "총 1시간",
-      "최대 수용 가능 인원 4명"
+      "최대 수용 가능 인원 9명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-195",
-    "title": "[신설동] 힙합댄스 베이직플러스 클래스 원데이",
-    "date": "상시",
-    "venue": "서울 종로구 청계천로 391 (숭인동, 숭인상가아파트) 208호",
-    "price": "35,000원",
-    "originalPrice": "120,000원",
-    "discount": "70%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230317/39722d75-199c-4788-9646-5d1c363a4de8.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/34643",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 15명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-196",
+    "id": "sssd-194",
     "title": "[선릉역] 편안한 분위기에서 진행하는 발레핏 & 필라테스",
     "date": "상시",
     "venue": "서울 강남구 선릉로86길 28 (대치동) 4층 필라테스 그리다",
     "price": "55,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240313%2Fee86a218-e18b-49f6-9805-e61169e64daf.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240313%2F61b3633c-9d78-413f-a6a8-20e51bc7f501.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/43549",
     "genre": "class",
     "source": "sssd",
@@ -3739,7 +3701,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-197",
+    "id": "sssd-195",
     "title": "탱고 [원데이 일일체험]_TANGO_ 살사 스윙 댄스 스포츠 댄스 경험자우대",
     "date": "상시",
     "venue": "서울 중구 창경궁로1길 34 (충무로4가) 3층+루프탑",
@@ -3758,14 +3720,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-198",
+    "id": "sssd-196",
+    "title": "[잠실] 이색 운동 폴댄스! 기초부터 탄탄하게 배워봐요!",
+    "date": "상시",
+    "venue": "서울 송파구 백제고분로7길 8-39 (잠실동) 정희빌딩 B1 [온폴댄스&PT 잠실새내점]",
+    "price": "20,000원",
+    "originalPrice": "40,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250110/cc6f5297-aebc-425d-9df5-f7f38fac1e01.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/48781",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-197",
     "title": "[강서] 커플/가족/친구 이색데이트 즐기기 !! 원데이 클래스",
     "date": "상시",
     "venue": "서울 강서구 공항대로45길 28 (등촌동) 3층 환승바디",
     "price": "49,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241018%2F20d52037-cf6a-4c48-a5ee-921f0128612d.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241018%2F579775c1-2883-4580-9cdd-0207fd31f8ac.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/47402",
     "genre": "class",
     "source": "sssd",
@@ -3777,7 +3758,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-199",
+    "id": "sssd-198",
     "title": "[홍대] 1:1 프라이빗 K-POP 안무 클래스",
     "date": "상시",
     "venue": "서울 마포구 월드컵북로1길 52 (서교동, 운복빌딩) 지하 1층 리즈스튜디오",
@@ -3796,26 +3777,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-200",
-    "title": "[송파] 유도 원데이클래스 / 1:1, 친구끼리, 연인끼리 즐기는 다이어트 데이트",
-    "date": "상시",
-    "venue": "서울 송파구 백제고분로40길 30 (석촌동, 삼능빌딩(SN빌딩)) B1 위아더 유도관 송파점",
-    "price": "25,000원",
-    "originalPrice": "30,000원",
-    "discount": "16%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251120/d3f2f51b-6c93-415f-b012-639bfb4323d7.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/53850",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간",
-      "최대 수용 가능 인원 50명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-201",
+    "id": "sssd-199",
     "title": "[마곡] 색다른 취미 폴댄스 원데이 클래스로 참여해보실분:)",
     "date": "상시",
     "venue": "서울 노원구 상계로1길 14-11 (상계동, 하이웰빙상가) 5층 오하운폴댄스",
@@ -3834,26 +3796,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-202",
-    "title": "[강남] 디티디댄스 / 하루완성 / 양재역5분 / 대관료 무료",
+    "id": "sssd-200",
+    "title": "[마포] 몸과 마음을 이완하는 요가",
     "date": "상시",
-    "venue": "서울 서초구 강남대로30길 72 (양재동) 지하 1층",
-    "price": "34,000원",
-    "originalPrice": "55,000원",
-    "discount": "38%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220907/e98ed641-8a1e-497f-be2f-68104ab921ee.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/24028",
+    "venue": "서울 마포구 백범로 199 (신공덕동, 메트로디오빌) 내 위치",
+    "price": "20,000원",
+    "originalPrice": "40,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250620/31ce3d4f-75cc-4446-b4a8-9e9b9f2a4aff.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/51439",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 불가",
-      "총 1시간 50분",
-      "최대 수용 가능 인원 12명"
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 2명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-203",
+    "id": "sssd-201",
     "title": "[영등포] 서울볼더스 클라이밍",
     "date": "상시",
     "venue": "서울 영등포구 양평로28마길 7 (양평동6가) 3층 서울볼더스",
@@ -3872,7 +3834,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-204",
+    "id": "sssd-202",
     "title": "[강남] 삶의 질을 높여주는 체형교정 필라테스&피티 클래스",
     "date": "상시",
     "venue": "서울 강남구 선릉로94길 3 (삼성동) 가림빌딩 3층",
@@ -3891,7 +3853,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-205",
+    "id": "sssd-203",
     "title": "[서울] 올데프 Where you at,첫 눈,키오프 럭키,카리나 good stu",
     "date": "상시",
     "venue": "서울 송파구 백제고분로 지하 368 (석촌동, 석촌역) 수업표에 기재된 주소 확인 필요",
@@ -3910,26 +3872,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-206",
-    "title": "[광진구] 남들과는 다른, 나만의 춤을 춰보자! (소규모수업)",
-    "date": "상시",
-    "venue": "서울 광진구 아차산로25길 14 (화양동) 정확한 주소는 수업 신청 후 채팅 확인해주세요!",
-    "price": "45,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210110/7e0ba373-cba1-4fc3-b1e2-570463c38963.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/16891",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-207",
+    "id": "sssd-204",
     "title": "[송파구] 방송댄스 원데이 / 1:1 개인레슨",
     "date": "상시",
     "venue": "서울 송파구 새말로5길 6 (문정동) 지하1층",
@@ -3948,14 +3891,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-208",
+    "id": "sssd-205",
+    "title": "[사당] 직장인들을 위한 방송댄스 도전기",
+    "date": "상시",
+    "venue": "서울 강남구 학동로1길 10 (논현동, 논현H빌딩) B1층",
+    "price": "30,000원",
+    "originalPrice": "50,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250408/d27f3342-d0fb-48db-8307-be553e84a660.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17780",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 5명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-206",
     "title": "[서울] 푸쉬 오프 보드샵 롱보드 강습 개인 및 단체 원데이 정기",
     "date": "상시",
     "venue": "서울 서초구 신반포로11길 40 (반포동, 한강공원 반포 안내센터) 달빛광장",
     "price": "30,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220323%2F64501765-63a7-4b25-b5a2-d8b2576818d1.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220609%2F5c4d22b9-4078-4a7a-8bfe-658fb3a29c19.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/19204",
     "genre": "class",
     "source": "sssd",
@@ -3967,7 +3929,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-209",
+    "id": "sssd-207",
     "title": "[잠실] 신청곡으로 배우는 원데이 K-POP 케이팝 댄스",
     "date": "상시",
     "venue": "서울 송파구 올림픽로 지하 265 (신천동, 잠실역2호선) .",
@@ -3986,7 +3948,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-210",
+    "id": "sssd-208",
     "title": "[사당] 쉽게 알려주고 친절한 라니쌤과 영상 남기기 원데이 클래스",
     "date": "상시",
     "venue": "서울 동작구 남부순환로 2057 (사당동) 수업장소는 다름!!!!",
@@ -4005,14 +3967,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-211",
+    "id": "sssd-209",
     "title": "체험 프리다이빙(Freediving) 이색 취미 가져보기! / 날짜 협의",
     "date": "상시",
     "venue": "서울 송파구 양재대로 지하 1231 (방이동, 올림픽공원역) 올림픽수영장",
     "price": "60,000원",
     "originalPrice": "65,000원",
     "discount": "7%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230126%2Fb6c6279d-1503-4ae9-b769-302202eb75c9.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230126%2F03c8faf7-2737-498c-b976-1083ede1c48d.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/15949",
     "genre": "class",
     "source": "sssd",
@@ -4024,26 +3986,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-212",
-    "title": "[석촌] 피아노 한곡완성 클래스! 맞춤형 코칭으로 빠르고 쉽게 인생곡 완성♡",
+    "id": "sssd-210",
+    "title": "[강남 논현] 친절한 원포인트 실내 테니스 원데이클래스 레슨 (평일)",
     "date": "상시",
-    "venue": "서울 송파구 송파대로42길 16 (송파동) 2층",
-    "price": "100,000원",
-    "originalPrice": "200,000원",
-    "discount": "50%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210211/5796858f-9714-4913-9ac1-a91b15497ff0.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/17670",
+    "venue": "서울 강남구 강남대로124길 3-6 (논현동, 호은빌딩) 지하1층",
+    "price": "63,000원",
+    "originalPrice": "65,000원",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240311/5d84686e-34a9-4740-b38d-69c758614310.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/27225",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 불가",
-      "총 4시간",
-      "최대 수용 가능 인원 1명"
+      "주차 가능",
+      "총 30분",
+      "최대 수용 가능 인원 6명"
     ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-213",
+    "id": "sssd-211",
     "title": "[광진구]듣기만 하던 음악 이제 직접 만들어봐요 현역작곡가와 함께하는 작곡클래스",
     "date": "상시",
     "venue": "서울 광진구 구의로 7 (구의동) 지하 1층",
@@ -4062,7 +4024,26 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-214",
+    "id": "sssd-212",
+    "title": "[석촌] 아로마 감정오일과 에니어그램으로 나를 깊이 들여다봐요 (2day)",
+    "date": "상시",
+    "venue": "서울 송파구 송파대로42길 16 (송파동) 2층",
+    "price": "55,000원",
+    "originalPrice": "90,000원",
+    "discount": "38%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251013/7fcbeff1-0127-46a2-8594-afefc504293b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/53312",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-213",
     "title": "[서울](정규)아이패드로 나만의 캐릭터&굿즈 만들기! 취미에서 부업까지 :)",
     "date": "상시",
     "venue": "서울 강서구 방화대로 지하 301 (방화동, 신방화역) 상세주소는 수업신청시 안내해드립니다",
@@ -4081,7 +4062,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-215",
+    "id": "sssd-214",
     "title": "[은평구] 대바늘로 뜨는 쉬운 아기조끼 손뜨개 클래스",
     "date": "상시",
     "venue": "서울 은평구 증산로3길 12-25 (증산동) 1층 유스토리",
@@ -4100,7 +4081,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-216",
+    "id": "sssd-215",
     "title": "[종로] 업사이클링 봉제 정규과정 클래스 (4회 과정)",
     "date": "상시",
     "venue": "서울 종로구 창의문로 136 (부암동) Yeok(역)",
@@ -4119,7 +4100,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-217",
+    "id": "sssd-216",
     "title": "[강남/역삼] 성인취미미술 그림배우기 유화 아크릴 소묘 성인미술학원",
     "date": "상시",
     "venue": "서울 강남구 봉은사로4길 36 (역삼동, 운현빌딩) 4층 402호",
@@ -4138,7 +4119,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-218",
+    "id": "sssd-217",
     "title": "[수원] 행궁동 미싱 공방 / 재봉틀 왕초보 입문반 4회",
     "date": "상시",
     "venue": "경기 수원시 팔달구 창룡대로7번길 38 (북수동) 1층",
@@ -4157,7 +4138,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-219",
+    "id": "sssd-218",
     "title": "[서울/당산] 나만의 이야기를 담은 그림책 출판 클래스 (4회)",
     "date": "상시",
     "venue": "서울 영등포구 당산로 161 (당산동4가) 3층",
@@ -4176,14 +4157,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-220",
+    "id": "sssd-219",
     "title": "[합정]아크릴/일러스트/수채화 정규클래스",
     "date": "상시",
     "venue": "서울 마포구 월드컵로3길 31-8 (합정동) 3층 미술교습소(남자식탁 건물3층)",
     "price": "100,000원",
     "originalPrice": "150,000원",
     "discount": "33%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200414%2F8dff05a7-0930-4b02-8a61-894919896b7e.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200414%2Fdf5118fe-68be-468d-b65e-47759e72e15c.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/10257",
     "genre": "class",
     "source": "sssd",
@@ -4195,7 +4176,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-221",
+    "id": "sssd-220",
     "title": "[분당/서현] 성인취미미술그림배우기 유화 아크릴 소묘 성인미술학원",
     "date": "상시",
     "venue": "경기 성남시 분당구 분당로53번길 13 (서현동, 산호트윈스2) 4층",
@@ -4214,7 +4195,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-222",
+    "id": "sssd-221",
     "title": "[인천] 케이크토퍼 창업 4주과정",
     "date": "상시",
     "venue": "인천 미추홀구 경인로499번길 12-25 (주안동) 101호 레오토퍼",
@@ -4233,7 +4214,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-223",
+    "id": "sssd-222",
     "title": "[광진] 커스텀 홈패션 옷만들기 패턴제작 미싱 재봉틀 프리미엄 정규소잉클래스",
     "date": "상시",
     "venue": "서울 광진구 아차산로 415 (구의동) 5층 와이마우스패션공방",
@@ -4252,7 +4233,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-224",
+    "id": "sssd-223",
     "title": "색연필로 사랑스런 고양이 초상화를 그려봐요",
     "date": "상시",
     "venue": "서울 노원구 동일로241길 44 (상계동, 수락네스트죤) 수락네스트죤 302호",
@@ -4271,14 +4252,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-225",
+    "id": "sssd-224",
     "title": "[부산/서면] 성인취미미술 그림배우기 유화 아크릴 소묘 성인미술학원",
     "date": "상시",
     "venue": "부산 부산진구 가야대로784번길 15-1 (부전동) 4층 아트아뜰리에",
     "price": "99,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20191023%2F283a4be8-3fa9-4bcd-a1e6-6a06e87b4b71.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20191023%2Fc56834f6-ad72-4ddb-8f38-b371e25b531f.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/5873",
     "genre": "class",
     "source": "sssd",
@@ -4290,7 +4271,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-226",
+    "id": "sssd-225",
     "title": "[서울대입구역] 1:1 보컬 레슨 정규 클래스",
     "date": "상시",
     "venue": "서울 관악구 관악로 128 (봉천동) 삼익빌딩 3층",
@@ -4309,7 +4290,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-227",
+    "id": "sssd-226",
     "title": "[인천레진공방] 레진아트 창업반 수료증 과정",
     "date": "상시",
     "venue": "인천 부평구 장제로 45 (부평동, 부평 현대 더로프트) 102동 1022호",
@@ -4328,7 +4309,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-228",
+    "id": "sssd-227",
     "title": "[망원] 플라워클래스 취미반 모집합니다",
     "date": "상시",
     "venue": "서울 마포구 포은로 73 (망원동) 웅장 골목",
@@ -4347,7 +4328,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-229",
+    "id": "sssd-228",
     "title": "++댄스 영상 프로젝트++ 뉴진스 How sweet / 에스파 Supernova",
     "date": "상시",
     "venue": "서울 송파구 잠실동 0 .",
@@ -4366,7 +4347,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-230",
+    "id": "sssd-229",
     "title": "(1회 90분/4주 과정) 실전처럼 재밌게 2인극 카메라연기 배워보기",
     "date": "상시",
     "venue": "서울 강남구 봉은사로74길 15 (삼성동, 호경타워) 2층",
@@ -4385,7 +4366,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-231",
+    "id": "sssd-230",
     "title": "공간을 그리다, 와이어아트 [정규반]",
     "date": "상시",
     "venue": "경기 고양시 덕양구 지정로 15 (지축동, 리더플렉스 스카이) 리더플렉스 스카이 601호 (지축역 도보 5분거리)",
@@ -4404,7 +4385,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-232",
+    "id": "sssd-231",
     "title": "[노원] 초초초보자들을 위한 해금 입문자 과정",
     "date": "상시",
     "venue": "서울 노원구 동일로241길 44 (상계동, 수락네스트죤) 수락네스트죤 302호",
@@ -4423,7 +4404,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-233",
+    "id": "sssd-232",
     "title": "[합정동] 드럼 정규 클래스",
     "date": "상시",
     "venue": "서울 마포구 성지3길 19 (합정동) 지하1층",
@@ -4442,7 +4423,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-234",
+    "id": "sssd-233",
     "title": "당신의 소소한 일상을 그림책으로 만들어 보아요.",
     "date": "상시",
     "venue": "서울 영등포구 선유로 108-5 (양평동1가) 1층",
@@ -4461,7 +4442,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-235",
+    "id": "sssd-234",
     "title": "[서울 영등포구] 3개월동안 스쿼시 정규 레슨 스트레스 날리기! (20회)",
     "date": "상시",
     "venue": "서울 영등포구 대림로 152 (대림동, 연희빌딩) 연희빌딩 B1",
@@ -4480,7 +4461,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-236",
+    "id": "sssd-235",
     "title": "[무료30분체험레슨상담진행] [신논현] 이건 첫번째 레슨 목 안아프게 노래하기 !",
     "date": "상시",
     "venue": "서울 서초구 주흥길 17 (반포동) 꽃집 건물 지층",
@@ -4499,7 +4480,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-237",
+    "id": "sssd-236",
     "title": "[홍대/신촌] 성인취미미술 그림배우기 유화 아크릴 소묘 성인미술학원",
     "date": "상시",
     "venue": "서울 마포구 와우산로23길 20-30 (서교동) 3층",
@@ -4518,7 +4499,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-238",
+    "id": "sssd-237",
     "title": "[부산] 타로 창업, 취업 전문가 수업(+타로심리상담사 자격증)",
     "date": "상시",
     "venue": "부산 중구 구덕로34번길 7 (남포동2가) 6층, 사주타로상담소",
@@ -4533,6 +4514,25 @@
       "주차 불가",
       "총 3시간",
       "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-238",
+    "title": "[석촌] 피아노 한곡완성 클래스! 맞춤형 코칭으로 빠르고 쉽게 인생곡 완성♡",
+    "date": "상시",
+    "venue": "서울 송파구 송파대로42길 16 (송파동) 2층",
+    "price": "100,000원",
+    "originalPrice": "200,000원",
+    "discount": "50%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210211/5796858f-9714-4913-9ac1-a91b15497ff0.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17670",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 4시간",
+      "최대 수용 가능 인원 1명"
     ],
     "status": "OPEN"
   },
@@ -4576,25 +4576,44 @@
   },
   {
     "id": "sssd-241",
-    "title": "[수원 영통] 초보자도 즐겁게 배우는 한식양식 집밥요리",
+    "title": "[문래] 일렉기타 베이스기타 통기타 원데이 클래스",
     "date": "상시",
-    "venue": "경기 수원시 영통구 청명남로28번길 2 (영통동, 아이텐텐빌딩) 6층 모두의요리아카데미",
-    "price": "400,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20231117/f6728ff9-f9e6-4e1d-ac1a-39039d39fa13.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/40631",
+    "venue": "서울 영등포구 도림로128가길 13-6 (문래동3가) 3층 레코드블루",
+    "price": "29,900원",
+    "originalPrice": "35,000원",
+    "discount": "14%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251209/e15724bb-0bd1-4a81-a867-fb35274b0fe7.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/15752",
     "genre": "class",
     "source": "sssd",
     "tags": [
-      "주차 가능",
-      "총 3시간",
-      "최대 수용 가능 인원 20명"
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
   },
   {
     "id": "sssd-242",
+    "title": "[건대] 원데이 보컬 초보 고음 누구나 자신감UP | 속성 강의 평일,주말 예약중",
+    "date": "상시",
+    "venue": "서울 광진구 능동로 338 (중곡동) 4층",
+    "price": "35,000원",
+    "originalPrice": "40,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240419%2Fa47c3067-996c-428f-b975-92f28d3f7068.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/38946",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-243",
     "title": "[홍대입구] 도보 5-10분! 스트레스를 시원하게 날려주는 후니드럼 원데이 클래스",
     "date": "상시",
     "venue": "서울 마포구 동교로 151 (서교동, 大同) 지하 1층",
@@ -4613,14 +4632,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-243",
+    "id": "sssd-244",
+    "title": "[건대 성수] 왁자지껄 '찐친 밴드' 데뷔 & 릴스촬영",
+    "date": "상시",
+    "venue": "서울 광진구 능동로13길 84 (화양동) 지하1층",
+    "price": "57,000원",
+    "originalPrice": "65,000원",
+    "discount": "12%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251219/bb759e66-6c66-4dfc-97ee-e04a3727ef2b.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/48755",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간 45분",
+      "최대 수용 가능 인원 20명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-245",
     "title": "[망원역 1분]노래의 즐거움을 담은 원데이보컬레슨! 발성부터 축가,커버,영상까지!",
     "date": "상시",
     "venue": "서울 마포구 월드컵로11길 14 (망원동) 팝티스트 스튜디오(B1)",
     "price": "51,800원",
     "originalPrice": "80,000원",
     "discount": "35%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20241128%2Fc92c24ab-bd89-44ef-b1a1-054e010fe94d.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250407%2Fd1d602ce-a7f0-4189-a210-4bf53a96865d.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/41232",
     "genre": "class",
     "source": "sssd",
@@ -4628,44 +4666,6 @@
       "주차 가능",
       "총 50분",
       "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-244",
-    "title": "[건대] 원데이 보컬 초보 고음 누구나 자신감UP | 속성 강의 평일,주말 예약중",
-    "date": "상시",
-    "venue": "서울 광진구 능동로 338 (중곡동) 4층",
-    "price": "35,000원",
-    "originalPrice": "40,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240419%2F4dcb57c1-d1c0-461f-91c7-dbf1b966b183.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/38946",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 50분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-245",
-    "title": "[신촌] 초보자 음치 환영! 1:1 맞춤 보컬 pt 원데이 클래스",
-    "date": "상시",
-    "venue": "서울 마포구 서강로11길 5 (창전동) 지하",
-    "price": "35,000원",
-    "originalPrice": "45,000원",
-    "discount": "22%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250630/68aae997-e131-4130-862e-3147251e5afa-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/25475",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 2명"
     ],
     "status": "OPEN"
   },
@@ -4709,6 +4709,25 @@
   },
   {
     "id": "sssd-248",
+    "title": "[하남 미사 강동] 보컬 녹음 원데이클래스 나만의 음원만들기!",
+    "date": "상시",
+    "venue": "경기 하남시 덕풍동로 111 (덕풍동, 풍산캐슬빌딩) Dp sound studio",
+    "price": "50,000원",
+    "originalPrice": "120,000원",
+    "discount": "58%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241002/e35429fb-dcac-4202-a921-d8ecf5083d49.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/47041",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 5분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-249",
     "title": "[잠실] 원포인트 보컬레슨 원데이 클래스, 음원파일 제공",
     "date": "상시",
     "venue": "서울 송파구 백제고분로40길 19-23 (석촌동) 지하",
@@ -4727,7 +4746,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-249",
+    "id": "sssd-250",
     "title": "[서울대입구역] 원데이 디제잉 DJ 클래스",
     "date": "상시",
     "venue": "서울 관악구 관악로 128 (봉천동) 3층",
@@ -4746,37 +4765,22 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-250",
-    "title": "[홍대입구역 도보 6분] 전문 녹음실에서 재밌는 원데이 보컬 레슨을 받아보자 !",
+    "id": "sssd-251",
+    "title": "[신촌] 초보자 음치 환영! 1:1 맞춤 보컬 pt 원데이 클래스",
     "date": "상시",
-    "venue": "서울 마포구 연남로1길 22 (연남동) 2층",
-    "price": "40,000원",
-    "originalPrice": "60,000원",
-    "discount": "33%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230718%2F1b6e2bbb-6041-4c41-9a84-e570d6b62633.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/20594",
+    "venue": "서울 마포구 서강로11길 5 (창전동) 지하",
+    "price": "35,000원",
+    "originalPrice": "45,000원",
+    "discount": "22%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250630/68aae997-e131-4130-862e-3147251e5afa-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/25475",
     "genre": "class",
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 50분",
+      "총 1시간",
       "최대 수용 가능 인원 2명"
     ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-251",
-    "title": "[망원역 1분]역시 노래는 혜인쌤 원데이, 원포인트 족집게 레슨",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "30,000원",
-    "originalPrice": "55,000원",
-    "discount": "45%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220516/d69f5199-adec-4543-9070-9c7ff91227d0.jpeg",
-    "link": "https://www.sssd.co.kr/m/class/detail/26980",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
     "status": "OPEN"
   },
   {
@@ -4802,7 +4806,7 @@
     "id": "sssd-253",
     "title": "[서울대입구역] 원데이 미디 작곡 클래스",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 관악구 관악로 128 (봉천동) 3층",
     "price": "65,000원",
     "originalPrice": "150,000원",
     "discount": "56%",
@@ -4810,7 +4814,11 @@
     "link": "https://www.sssd.co.kr/m/class/detail/32607",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 1명"
+    ],
     "status": "OPEN"
   },
   {
@@ -4834,17 +4842,21 @@
   },
   {
     "id": "sssd-255",
-    "title": "[수원] 올바른 발성법을 배워보는 보컬&레코딩 수업",
+    "title": "[홍대입구] 악보 없이, 좋아하는 곡으로 직접 치며 즐기는 나만의 드럼 원데이!",
     "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "25,000원",
-    "originalPrice": "40,000원",
-    "discount": "37%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241219/8c650988-c3f5-4e47-acde-1f2d974e1206.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/30784",
+    "venue": "서울 마포구 서강로9길 59 (창전동) B1 3호",
+    "price": "35,000원",
+    "originalPrice": "50,000원",
+    "discount": "30%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220206/e5ee65f5-c074-4545-8063-4dd28efa7062.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/25071",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 2명"
+    ],
     "status": "OPEN"
   },
   {
@@ -4870,7 +4882,7 @@
     "id": "sssd-257",
     "title": "[중구]목소리 자신감 듬뿍! 1:1원데이 발성 교정 클래스",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 중구 다산로11길 25 (신당동, 오붕빌딩) 3층 좋은목소리연구소",
     "price": "25,000원",
     "originalPrice": "50,000원",
     "discount": "50%",
@@ -4878,14 +4890,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/47038",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 1명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-258",
+    "title": "[건대입구역] 알차고 재미있는 보컬 원데이레슨 진행합니다 :)",
+    "date": "상시",
+    "venue": "서울 광진구 아차산로 207 (화양동, 선일빌딩) 3층, Music note 연습실",
+    "price": "45,000원",
+    "originalPrice": "50,000원",
+    "discount": "10%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230522/37ff096a-33b3-49e1-a42f-18fb69e3eb29.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/36259",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-259",
     "title": "[일산] 하루안에 드럼으로 음악의 행복을 경험 시켜드립니다! 원데이 클래스",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "경기 고양시 일산동구 산두로175번길 6-2 (정발산동) 지하 1층",
     "price": "30,000원",
     "originalPrice": "",
     "discount": "",
@@ -4893,33 +4928,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/39473",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-259",
-    "title": "[하남 미사 강동] 보컬 녹음 원데이클래스 나만의 음원만들기!",
-    "date": "상시",
-    "venue": "경기 하남시 덕풍동로 111 (덕풍동, 풍산캐슬빌딩) Dp sound studio",
-    "price": "50,000원",
-    "originalPrice": "120,000원",
-    "discount": "58%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241002/e35429fb-dcac-4202-a921-d8ecf5083d49.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/47041",
-    "genre": "class",
-    "source": "sssd",
     "tags": [
       "주차 가능",
-      "총 1시간 5분",
-      "최대 수용 가능 인원 1명"
+      "총 1시간",
+      "최대 수용 가능 인원 5명"
     ],
     "status": "OPEN"
   },
   {
     "id": "sssd-260",
+    "title": "[강동구] 음치부터 가수까지 원데이 보컬트레이닝",
+    "date": "상시",
+    "venue": "서울 강동구 천중로 222 (길동, 정선빌딩) 201호",
+    "price": "65,000원",
+    "originalPrice": "110,000원",
+    "discount": "40%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20251208/c81dc29d-0273-44f9-abe0-2222eb26e1e6.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/54186",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 3명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-261",
     "title": "[서울관광][관악] 친절한 샘과 가야금 취미 가져보기",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 관악구 관천로 71 (신림동) 201호",
     "price": "35,000원",
     "originalPrice": "55,000원",
     "discount": "36%",
@@ -4927,29 +4966,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/39904",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-261",
-    "title": "[합정동] 한 곡 완성 할 수 있는 드럼 원데이 클래스",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "40,000원",
-    "originalPrice": "50,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250325%2Fddaf1324-692f-4249-9d54-dbbd3a76bb9c.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/17562",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 6명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-262",
+    "title": "[합정동] 한 곡 완성 할 수 있는 드럼 원데이 클래스",
+    "date": "상시",
+    "venue": "서울 마포구 성지3길 19 (합정동) 지하1층",
+    "price": "40,000원",
+    "originalPrice": "50,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20250325%2Fc6ed13c0-1abd-4203-9cd0-ad6a015f194c.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/17562",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 가능",
+      "총 50분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-263",
     "title": "[역삼] 원데이 음성(발성)검사 클래스",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 강남구 역삼동 708-25 namstar vocal studio",
     "price": "48,000원",
     "originalPrice": "65,000원",
     "discount": "26%",
@@ -4957,29 +5004,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/8062",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-263",
-    "title": "[합정] 호비뮤직>피아노 원데이클래스 1곡마스터+연습실1시간",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "30,000원",
-    "originalPrice": "55,000원",
-    "discount": "45%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20190826%2Fba29fcfc-961b-4715-ac54-3d7658acf9c2.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/4765",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 2명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-264",
+    "title": "[합정] 호비뮤직>피아노 원데이클래스 1곡마스터+연습실1시간",
+    "date": "상시",
+    "venue": "서울 마포구 월드컵로3길 27 (합정동) 5층",
+    "price": "30,000원",
+    "originalPrice": "55,000원",
+    "discount": "45%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20191116%2Ff747899a-f2e7-4f0d-a218-8c61fc0dcf5e.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/4765",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-265",
     "title": "[성북구] 보컬 원데이 클래스 (음치 탈출, 고음 뚫기, 맛보기 레슨)",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 성북구 오패산로4길 49 (하월곡동) 지하 1층",
     "price": "25,000원",
     "originalPrice": "40,000원",
     "discount": "37%",
@@ -4987,14 +5042,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/28613",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 1명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-265",
+    "id": "sssd-266",
+    "title": "[홍대입구역 도보 6분] 전문 녹음실에서 재밌는 원데이 보컬 레슨을 받아보자 !",
+    "date": "상시",
+    "venue": "서울 마포구 연남로1길 22 (연남동) 2층",
+    "price": "40,000원",
+    "originalPrice": "60,000원",
+    "discount": "33%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230718%2Fca346260-ed91-4a85-a325-23f2f61c01ba.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/20594",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 2명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-267",
     "title": "[인천] 랑쌤 드럼 원데이클래스 :: 왕초보 드럼 입문하기!",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "인천 미추홀구 염창로 55 (주안동) 4층_랑쌤드럼 (뚜레쥬르주안북부점 건물)",
     "price": "37,500원",
     "originalPrice": "50,000원",
     "discount": "25%",
@@ -5002,11 +5080,34 @@
     "link": "https://www.sssd.co.kr/m/class/detail/4164",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 가능",
+      "총 1시간",
+      "최대 수용 가능 인원 6명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-266",
+    "id": "sssd-268",
+    "title": "[망원역 1분]역시 노래는 혜인쌤 원데이, 원포인트 족집게 레슨",
+    "date": "상시",
+    "venue": "서울 마포구 동교로9길 34 (망원동) 3층 루카스스튜디오",
+    "price": "30,000원",
+    "originalPrice": "55,000원",
+    "discount": "45%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20220516/d69f5199-adec-4543-9070-9c7ff91227d0.jpeg",
+    "link": "https://www.sssd.co.kr/m/class/detail/26980",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 50분",
+      "최대 수용 가능 인원 1명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-269",
     "title": "[마포]하루만에 유튜브 커버곡, 영상 제작해보자~! 녹음, 레코딩 클래스",
     "date": "상시",
     "venue": "서울 마포구 성미산로 52 (성산동) cassettestudio",
@@ -5025,59 +5126,10 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-267",
-    "title": "[합정] 나를 위한 힐링 시간, 우쿨렐레 배우기+연습실1시간",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "30,000원",
-    "originalPrice": "55,000원",
-    "discount": "45%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20201030/71462a6a-63c3-4b56-97f4-8a85ba143db9.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/15117",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-268",
-    "title": "[강서]나의 목소리 이미지는? 퍼스널 보컬&보이스 컨설팅",
-    "date": "상시",
-    "venue": "서울 강서구 공항대로 38-9 (공항동) 송정빌딩 401호,달보컬스튜디오",
-    "price": "50,000원",
-    "originalPrice": "100,000원",
-    "discount": "50%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240419/f7c2958f-65d7-49e8-ab19-4d6d6e527990.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/4799",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 50분",
-      "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-269",
-    "title": "[홍대] 기타 1:1 한곡 마스터+연습실1시간사용",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "30,000원",
-    "originalPrice": "55,000원",
-    "discount": "45%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200107/7b384638-749f-43e2-89a6-9078734eca2e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/7704",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
     "id": "sssd-270",
     "title": "[종로] 필름 넣기부터 사진관까지! 찍으면서 배우는 필름카메라 원데이 출사클래스",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 종로구 새문안로5가길 28 (적선동, 광화문 플래티넘) 광화문 플래티넘빌딩(스타벅스 정부서울청사 R점)인근, 정확한 장소는 솜씨당 채팅으로 안내드렸습니다",
     "price": "30,000원",
     "originalPrice": "",
     "discount": "",
@@ -5085,29 +5137,18 @@
     "link": "https://www.sssd.co.kr/m/class/detail/15822",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 3시간",
+      "최대 수용 가능 인원 6명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-271",
-    "title": "[망원] TCI 기질성격검사로 발견하는 나와 너의 마음 - MBTI를 넘어서",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "50,000원",
-    "originalPrice": "80,000원",
-    "discount": "37%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241022/115f746f-33dd-4eb8-a533-79222e8cd361.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/46516",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-272",
     "title": "[안국] 하루 만에 끝내는 스마트폰 사진 촬영과 보정법",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 종로구 율곡로 지하 62 (안국동, 3호선 안국역) 인근 카페",
     "price": "49,900원",
     "originalPrice": "60,000원",
     "discount": "16%",
@@ -5115,29 +5156,37 @@
     "link": "https://www.sssd.co.kr/m/class/detail/32865",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 5명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-272",
+    "title": "[망원] TCI 기질성격검사로 발견하는 나와 너의 마음 - MBTI를 넘어서",
+    "date": "상시",
+    "venue": "서울 마포구 포은로8길 11 (망원동) 가운데 매장",
+    "price": "50,000원",
+    "originalPrice": "80,000원",
+    "discount": "37%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20241022/115f746f-33dd-4eb8-a533-79222e8cd361.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/46516",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 8명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-273",
-    "title": "나는 스마트폰 사진작가! 사진 원데이클래스 강의 레슨",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230729%2F86ac0301-3e05-4ec1-9104-a5c15d00130e.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/30164",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-274",
     "title": "[합정망원] 알고싶다 나 그리고 너! \"에니어그램 심리검사 \"",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 마포구 양화로 지하 160 (동교동, 홍대입구역) 결제 후 추후 상세주소 연락드립니다.",
     "price": "45,000원",
     "originalPrice": "50,000원",
     "discount": "10%",
@@ -5145,7 +5194,30 @@
     "link": "https://www.sssd.co.kr/m/class/detail/40419",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-274",
+    "title": "[연남] 나를 담아보는 북아트 힐링 원데이 클래스 -Art therapy",
+    "date": "상시",
+    "venue": "서울 마포구 동교로30길 19 (동교동) 3층 어프로미",
+    "price": "40,000원",
+    "originalPrice": "50,000원",
+    "discount": "20%",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250929/18e616d4-2437-4a38-968b-0f20d0f54dc5-crop.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/48911",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 6명"
+    ],
     "status": "OPEN"
   },
   {
@@ -5171,7 +5243,7 @@
     "id": "sssd-276",
     "title": "[1:1]하루 만에 체험하는 목소리 변화!",
     "date": "상시",
-    "venue": "세종대 일반 대학원 실기석사 졸업(연기예술 전공)",
+    "venue": "서울 동작구 사당로16가길 42 (사당동) 지하1층(상황에 따라 장소는 변경 될 수 있음)",
     "price": "79,000원",
     "originalPrice": "150,000원",
     "discount": "47%",
@@ -5179,14 +5251,18 @@
     "link": "https://www.sssd.co.kr/m/class/detail/17430",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 1명"
+    ],
     "status": "OPEN"
   },
   {
     "id": "sssd-277",
     "title": "[강남]내 신년사주 내가 보기(이름풀이 포함, 원데이클래스)",
     "date": "상시",
-    "venue": "서울시 교육청 허가",
+    "venue": "서울 강남구 학동로 402 (삼성동, 천마빌딩) 천마빌딩 6층 604-2호",
     "price": "45,000원",
     "originalPrice": "",
     "discount": "",
@@ -5194,7 +5270,11 @@
     "link": "https://www.sssd.co.kr/m/class/detail/47738",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 가능",
+      "총 2시간",
+      "최대 수용 가능 인원 8명"
+    ],
     "status": "OPEN"
   },
   {
@@ -5237,9 +5317,28 @@
   },
   {
     "id": "sssd-280",
+    "title": "[온라인] 잘 오셨어요! 당신의 고민을 잘 들어드리는 빨간망토 유리애타로입니다.",
+    "date": "상시",
+    "venue": "서울 송파구 잠실로 12 (잠실동, 잠신중학교) 1",
+    "price": "7,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230506/62d4922a-2fd8-4306-8191-e3b195539eb2.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/35926",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 10분",
+      "최대 수용 가능 인원 4명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-281",
     "title": "[홍대] 그림으로 알아보는 심리테스트 (평일)",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 마포구 동교로38안길 8 (연남동) 3층 사부작크래프트",
     "price": "36,000원",
     "originalPrice": "50,000원",
     "discount": "28%",
@@ -5247,11 +5346,34 @@
     "link": "https://www.sssd.co.kr/m/class/detail/52988",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 4명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-281",
+    "id": "sssd-282",
+    "title": "나는 스마트폰 사진작가! 사진 원데이클래스 강의 레슨",
+    "date": "상시",
+    "venue": "서울 종로구 율곡로 지하 62 (안국동, 3호선 안국역) 장소는 요일마다 변경됩니다. / 정확한 주소지는 솜씨당 채팅으로 안내예정",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230729%2Fed9831a1-4c6c-4933-9f28-864ec70afb2a.jpg",
+    "link": "https://www.sssd.co.kr/m/class/detail/30164",
+    "genre": "class",
+    "source": "sssd",
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 10명"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "id": "sssd-283",
     "title": "왕초보도 쉽고 재밌게 배우는 사진 원데이클래스 레슨 강의",
     "date": "상시",
     "venue": "서울 종로구 돈화문로 지하 30 (묘동, 3호선 종로3가역) 장소는 요일마다 변경됩니다. / 정확한 주소지는 솜씨당 채팅으로 안내예정",
@@ -5270,7 +5392,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-282",
+    "id": "sssd-284",
     "title": "[송파/잠실] 나를 이해하는 가장 정확한 심리성격검사, TCI/MBTI",
     "date": "상시",
     "venue": "서울 송파구 백제고분로 509 (방이동, 대종빌딩) 1006호",
@@ -5289,7 +5411,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-283",
+    "id": "sssd-285",
     "title": "1급 상담사 선생님과 함께하는 TCI 심리 검사 (기질성격결과지해석/비대면가능)",
     "date": "상시",
     "venue": "서울 마포구 동교로19길 21 (서교동) 나다운심리상담센터",
@@ -5308,14 +5430,14 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-284",
+    "id": "sssd-286",
     "title": "셀카부터 전신 포즈까지 모델처럼 배워본다! 카메라 테스트 클래스!",
     "date": "상시",
     "venue": "서울 종로구 창경궁로 지하 81 (예지동, 종로4가혼수지하쇼핑센터) 종로4가혼수지하쇼핑센터 119호 Studio EUN",
     "price": "70,000원",
     "originalPrice": "",
     "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200905%2F1a2b2549-abd8-488a-88a5-7c58172d4796.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230711%2F41c8f17c-3b6b-4181-8e45-ed022d22fbf8.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/13883",
     "genre": "class",
     "source": "sssd",
@@ -5327,10 +5449,10 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-285",
+    "id": "sssd-287",
     "title": "[마포][색채심리상담] 나의 색을 찾아서! 내 마음은 무슨색일까",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 마포구 월드컵로11길 7 (망원동) 1층 루아르 망원",
     "price": "35,000원",
     "originalPrice": "40,000원",
     "discount": "12%",
@@ -5338,11 +5460,15 @@
     "link": "https://www.sssd.co.kr/m/class/detail/6316",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간 30분",
+      "최대 수용 가능 인원 4명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-286",
+    "id": "sssd-288",
     "title": "[강남] 보이스코칭 스피치/연기(호흡, 발성, 발음)",
     "date": "상시",
     "venue": "서울 서초구 서초대로77길 17 (서초동, BLOCK77) 11층",
@@ -5361,7 +5487,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-287",
+    "id": "sssd-289",
     "title": "감정조절상담사와 함께하는 ' 감정성장수업 '",
     "date": "상시",
     "venue": "서울 마포구 동교로 57-4 (망원동) 그린나무공방",
@@ -5380,29 +5506,33 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-288",
+    "id": "sssd-290",
     "title": "취미연기, 일상에 새로운 활기와 변화를 드릴거예요:)",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 서초구 방배로23길 14 (방배동, 영은빌딩) 지하1층 달빛꽃  트레이닝 센터",
     "price": "55,000원",
     "originalPrice": "70,000원",
     "discount": "21%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20240313%2F67d4c953-b18f-4a89-b45a-b9e884757341.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20210425%2F77459b04-c61d-4b85-96c6-2870731aa8d5.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/19199",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간 10분",
+      "최대 수용 가능 인원 3명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-289",
+    "id": "sssd-291",
     "title": "[송파/잠실] 그림 속 마음읽기, 심리미술전문가1급과 함께하는 그림검사",
     "date": "상시",
     "venue": "서울 송파구 백제고분로 509 (방이동, 대종빌딩) 1006호",
     "price": "50,000원",
     "originalPrice": "80,000원",
     "discount": "37%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220515%2F2be1922b-7112-4c3f-9fb3-5298e3b83b37.jpg",
+    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20220515%2F6341a93e-79c8-4131-8a98-9f3ff054bb99.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/26953",
     "genre": "class",
     "source": "sssd",
@@ -5414,10 +5544,10 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-290",
+    "id": "sssd-292",
     "title": "[이야기심리상담] 이야기를 통해 나의 긍정적인 면 찾아가기",
     "date": "상시",
-    "venue": "서울디자인인고, 숭의여고, 헌대모비스. 게스코리아, 서울시남부교육청. 서울시 돌봄 지원센터,",
+    "venue": "서울 마포구 동교로 57-4 (망원동) 201호 그린나무공방\"(꼼작)",
     "price": "30,000원",
     "originalPrice": "",
     "discount": "",
@@ -5425,14 +5555,18 @@
     "link": "https://www.sssd.co.kr/m/class/detail/17412",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 6명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-291",
+    "id": "sssd-293",
     "title": "[망원] 커플심리데이트, 마음놀이 \"내 마음의 풍경\"",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 마포구 포은로8길 11 (망원동) 가운데 매장",
     "price": "30,000원",
     "originalPrice": "38,000원",
     "discount": "21%",
@@ -5440,29 +5574,18 @@
     "link": "https://www.sssd.co.kr/m/class/detail/45175",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 2명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-292",
-    "title": "[연남] 나를 담아보는 북아트 힐링 원데이 클래스 -Art therapy",
-    "date": "상시",
-    "venue": "상세페이지 참조",
-    "price": "40,000원",
-    "originalPrice": "50,000원",
-    "discount": "20%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250929/18e616d4-2437-4a38-968b-0f20d0f54dc5-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/48911",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-293",
+    "id": "sssd-294",
     "title": "2026 신년운세 상담소맑음 (온라인 사주/궁합/멘토링)",
     "date": "상시",
-    "venue": "제주 - 여행자 마음치유 프로그램 운영",
+    "venue": "온라인 라이브 클래스 랜선 라이브 클래스",
     "price": "50,000원",
     "originalPrice": "",
     "discount": "",
@@ -5470,14 +5593,18 @@
     "link": "https://www.sssd.co.kr/m/class/detail/17385",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 가능",
+      "총 30분",
+      "최대 수용 가능 인원 1명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-294",
+    "id": "sssd-295",
     "title": "[대구] 레트로 클래식 음악감상실 감성 여행",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "대구 중구 동성로6길 45 (공평동) 3층 하이마트 고전음악감상실",
     "price": "8,500원",
     "originalPrice": "",
     "discount": "",
@@ -5485,11 +5612,15 @@
     "link": "https://www.sssd.co.kr/m/class/detail/23811",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 1시간",
+      "최대 수용 가능 인원 8명"
+    ],
     "status": "OPEN"
   },
   {
-    "id": "sssd-295",
+    "id": "sssd-296",
     "title": "[종로]초보에서 작가로! 초보자 맞춤 인물 스냅사진 원데이 클래스",
     "date": "상시",
     "venue": "서울 종로구 율곡로 지하 62 (안국동, 3호선 안국역) 장소는 변경될수도 있습니다.",
@@ -5508,7 +5639,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-296",
+    "id": "sssd-297",
     "title": "[인천 계양구] 포토샵 실무 13년차 디자이너 / 내가 필요한 것만 쏙쏙!",
     "date": "상시",
     "venue": "인천 계양구 장제로 지하 875 (임학동, 임학역) 자세한 주소는 클래스 확정후 안내드립니다 :)",
@@ -5527,7 +5658,7 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-297",
+    "id": "sssd-298",
     "title": "아로마오일 DIY & 감정아로마테라피 원데이 CLASS",
     "date": "상시",
     "venue": "경기 용인시 수지구 고기로 395 (고기동) 1층 103호 홈힐러아로마공방",
@@ -5546,10 +5677,10 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-298",
+    "id": "sssd-299",
     "title": "[힐링체험 심리상담] 의사소통 감정카드와 강점카드로 나의 긍정의 마음 회복하기",
     "date": "상시",
-    "venue": "서울디자인인고, 숭의여고, 헌대모비스. 게스코리아, 서울시남부교육청. 서울시 돌봄 지원센터,",
+    "venue": "서울 마포구 동교로 57-4 (망원동) 201호",
     "price": "40,000원",
     "originalPrice": "",
     "discount": "",
@@ -5557,22 +5688,11 @@
     "link": "https://www.sssd.co.kr/m/class/detail/20562",
     "genre": "class",
     "source": "sssd",
-    "tags": [],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-299",
-    "title": "온라인/오프라인 마음공부 명상 스터디 모임",
-    "date": "상시",
-    "venue": "서울디자인인고, 숭의여고, 헌대모비스. 게스코리아, 서울시남부교육청. 서울시 돌봄 지원센터,",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20210406/89bf11bd-9e21-4278-a125-045c129cc9b3.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/17416",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [],
+    "tags": [
+      "주차 불가",
+      "총 2시간",
+      "최대 수용 가능 인원 4명"
+    ],
     "status": "OPEN"
   }
 ]
