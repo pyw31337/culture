@@ -31,6 +31,35 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
     const overlaysRef = useRef<Record<string, any>>({});
 
+    // Drag to scroll logic
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const onMouseDown = (e: React.MouseEvent) => {
+        if (!scrollRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const onMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll-fast
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
     useEffect(() => {
         const scriptId = 'kakao-map-script';
 
@@ -346,7 +375,14 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                 {/* Bottom List for Multiple Venues */}
                 {uniqueVenues.length > 0 && (
                     <div className="absolute bottom-4 left-0 right-0 z-[90] px-4 pointer-events-none">
-                        <div className="flex gap-3 overflow-x-auto pb-2 snap-x pointer-events-auto">
+                        <div
+                            ref={scrollRef}
+                            className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                            onMouseDown={onMouseDown}
+                            onMouseLeave={onMouseLeave}
+                            onMouseUp={onMouseUp}
+                            onMouseMove={onMouseMove}
+                        >
                             {uniqueVenues.map((v: any) => {
                                 const isFavorite = favoriteVenues.includes(v.venueName);
                                 const isSelected = selectedVenue === v.venueName;
