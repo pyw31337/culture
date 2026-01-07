@@ -1711,7 +1711,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
     // "Page" Selection Logic
-    const displayPerformances = useMemo(() => {
+    const basePerformances = useMemo(() => {
         if (viewMode === 'likes-perf') {
             return initialPerformances.filter(p => likedIds.includes(p.id));
         }
@@ -1758,8 +1758,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 return textMatch || genreMatch;
             });
 
-            const matched = displayPerformances.filter(hasMatch);
-            const unmatched = displayPerformances.filter(p => !hasMatch(p));
+            const matched = basePerformances.filter(hasMatch);
+            const unmatched = basePerformances.filter(p => !hasMatch(p));
 
             // Shuffle matched items using seeded random
             const shuffledMatched = [...matched].sort(() => random() - 0.5);
@@ -1771,7 +1771,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
 
         // Default: Sort by date, then randomize top 40 for variety
-        const sortedByDate = [...displayPerformances].sort((a, b) => a.date.localeCompare(b.date));
+        const sortedByDate = [...basePerformances].sort((a, b) => a.date.localeCompare(b.date));
 
         // If sorting for "Recommended" (default view with no keywords), shuffle the top items
         // We use shuffleSeed to ensure it only changes on mount/refresh
@@ -1786,10 +1786,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
 
         return sortedByDate;
-    }, [displayPerformances, contextKeywords, shuffleSeed]);
+    }, [basePerformances, contextKeywords, shuffleSeed]);
 
     // Apply Radius Filter if active (Geolocation)
-    const finalPerformances = useMemo(() => {
+    const displayPerformances = useMemo(() => {
         if (!activeLocation) return sortedPerformances;
 
         // Radius Logic ... (simplified re-implementation)
