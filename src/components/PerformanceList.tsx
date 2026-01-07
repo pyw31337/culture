@@ -3841,14 +3841,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 className={clsx(
                                     "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent rounded-lg",
                                     variant === 'yellow'
-                                        ? "border border-white/60 hover:border-white text-white hover:bg-white/10 light:border-black/20 light:hover:border-black/60 light:text-black light:hover:bg-black/5"
+                                        ? "border border-white/20 hover:border-white/40 text-white hover:bg-white/5 light:border-black/20 light:hover:border-black/60 light:text-black light:hover:bg-black/5"
                                         : "border border-white/60 hover:border-white text-white hover:bg-white/10"
                                 )}
                             >
                                 자세히 보기
                                 <ChevronDown className={clsx(
                                     "-rotate-90 w-3 h-3",
-                                    variant === 'yellow' ? "text-black" : "text-white"
+                                    variant === 'yellow' ? "text-white light:text-black" : "text-white"
                                 )} />
                             </button>
                         </div>
