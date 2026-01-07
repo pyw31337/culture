@@ -191,14 +191,80 @@ async function enhanceVenues() {
 
                 if (!foundCoords) {
                     // Fallback: Try searching by Name
-                    const nameQuery = encodeURIComponent(venue.name);
-                    const nameGeoUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${nameQuery}&limit=1`;
-                    const nameResult: any = await page.evaluate(async (url) => {
-                        try {
-                            const res = await fetch(url, { headers: { 'User-Agent': 'CultureFlow/1.0' } });
-                            return await res.json();
-                        } catch (e) { return []; }
-                    }, nameGeoUrl);
+                    let nameQueryStr = venue.name;
+                    // Strategy 1: Remove parentheses and content inside
+                    nameQueryStr = nameQueryStr.replace(/\(.*\)/g, '').trim();
+
+                    // Strategy 2: Remove common noise words if they are at the end (Hall, Art Hall, Theater, Center, etc.)
+
+                    const tryGeocodeName = async (n: string) => {
+                        console.log(`   -> Geocoding by Name: ${n}`);
+                        const q = encodeURIComponent(n);
+                        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${q}&limit=1`;
+                        const res: any = await page.evaluate(async (u) => {
+                            try {
+                                const r = await fetch(u, { headers: { 'User-Agent': 'CultureFlow/1.0' } });
+                                return await r.json();
+                            } catch (e) { return []; }
+                        }, url);
+                        return res;
+                    };
+
+                    let nameResult = await tryGeocodeName(venue.name); // Original name
+
+                    if (!nameResult || nameResult.length === 0) {
+                        // Try without parentheses
+                        const cleanName = venue.name.replace(/\([^)]+\)/g, '').trim();
+                        if (cleanName !== venue.name) {
+                            nameResult = await tryGeocodeName(cleanName);
+                        }
+                    }
+
+                    if (!nameResult || nameResult.length === 0) {
+                        // Try removing specific details like "Hall", "theater", "1F", "Lobby", "Square"
+                        // Regex to match "Hall X", "X Hall", "Theater", "Center", etc at the end or specific words
+                        // Targeted removal for known patterns in failure list
+                        let cleanName = venue.name.replace(/\([^)]+\)/g, '').trim(); // start clean
+
+                        // Remove "1F", "2F", "B1", "Lobby", "roby"
+                        cleanName = cleanName.replace(/\s?\d+[F층]\s?/gi, '').replace(/\s?B\d+\s?/gi, '').replace(/\s?로비\s?/g, '').trim();
+
+                        // Remove "Hall", "Art Hall", "Theater", "Center" ONLY if it looks like a suffix to a main name
+                        // e.g. "Kintex Hall 6" -> "Kintex"
+                        // Heuristic: If name is long, and ends with "Hall", "Theater", etc., stripping it might help finding the building.
+                        // Common Korean suffixes: "홀", "극장", "센터", "전시장", "공연장", "아트홀"
+                        // We will try stripping the last word if it matches these patterns
+
+                        const suffixRegex = /(\s+\S*(홀|극장|센터|전시장|공연장|아트홀|체육관|경기장|박물관|미술관|기념관))$/;
+                        const match = cleanName.match(suffixRegex);
+                        if (match) {
+                            const strippedName = cleanName.replace(suffixRegex, '').trim();
+                            if (strippedName.length > 2) { // Ensure we don't reduce to empty or too short
+                                nameResult = await tryGeocodeName(strippedName);
+                            }
+                        }
+                    }
+
+                    if (nameResult && nameResult.length === 0) {
+                        // Specific manual mapping for known stubborn venues
+                        const stubbornMap: Record<string, string> = {
+                            "킨텍스 6홀": "킨텍스",
+                            "국립중앙박물관 1층(내부)-검색대 통과하자마자 오른쪽에 보이는 에스컬레이터 앞": "국립중앙박물관",
+                            "경복궁 광화문 앞 오른쪽 해태상 앞(광화문을 바라본 상태에서 오른쪽)": "경복궁 광화문",
+                            "국립중앙과학관 한국과학기술사관": "국립중앙과학관",
+                            "상암 월드컵경기장 평화의광장": "서울월드컵경기장",
+                            "임진각 평화의 공원": "임진각평화누리공원",
+                            "화성행궁 신풍루 매표소 앞": "화성행궁"
+                        };
+
+                        // Check partial match in stubborn map keys or values
+                        for (const key in stubbornMap) {
+                            if (venue.name.includes(key) || key.includes(venue.name)) {
+                                nameResult = await tryGeocodeName(stubbornMap[key]);
+                                if (nameResult && nameResult.length > 0) break;
+                            }
+                        }
+                    }
 
                     if (nameResult && nameResult.length > 0) {
                         venues[venue.name].lat = parseFloat(nameResult[0].lat);
