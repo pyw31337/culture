@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Performance } from '@/types';
-import { X } from 'lucide-react';
+import { X, Star } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -391,7 +391,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 }}
                                                 className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
                                             >
-                                                <BuildingStadium
+                                                <Star
                                                     className={`w-4 h-4 ${isFavorite ? 'text-white fill-white' : 'text-gray-400'}`}
                                                 />
                                             </button>
