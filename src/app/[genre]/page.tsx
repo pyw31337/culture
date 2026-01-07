@@ -115,8 +115,20 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball') {
-            if (!['seoul', 'gyeonggi', 'incheon'].includes(p.region)) return false;
+        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
+            // Updated to allow all regions for collected sports when possible, or just verified list
+            // For now, let's keep it restricted but ensure hockey regions are covered.
+            // Hockey uses 'gyeonggi' (Anyang) and 'etc' (Japan). 
+            // 'etc' should be allowed in filtering if we want Japan games to show.
+            // The existing code: if (!['seoul', 'gyeonggi', 'incheon'].includes(p.region)) return false;
+            // This blocks 'etc'.
+
+            // Let's modify the condition to allow 'etc' for hockey/handball if needed, or better, allow verifiedRegions + others for sports.
+            // Actually, `validRegions` logic follows below at line 122: `if (!validRegions.includes(p.region)) return false;`
+            // `validRegions` includes 'seoul', 'gyeonggi', 'incheon', 'etc'.
+            // So we just need to REMOVE or RELAX this specific sports block.
+
+            if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) return false;
         }
 
         if (!validRegions.includes(p.region)) return false;
