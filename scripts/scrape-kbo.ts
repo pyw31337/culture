@@ -271,7 +271,7 @@ async function scrapeKBO() {
                         scraped.push({
                             dateStr: dayText, // "01.01(금)"
                             time: timeText,   // "18:30"
-                            title: `[야구] ${playText}`, // "LG vs KT"
+                            title: playText.replace('vs', ' vs '), // "LG vs KT"
                             venue: venueText,
                             year: targetYear
                         });
