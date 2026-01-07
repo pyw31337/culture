@@ -337,12 +337,25 @@ async function scrapeTimeTicket() {
                 const dateMatch = bodyText.match(/(?:진행)?기간\s*[:]?\s*([^\n·]{5,})/);
                 if (dateMatch) date = dateMatch[1].trim();
 
+                // Scrape Price Info using user-provided selectors
+                const originPriceEl = document.querySelector('.origin_price');
+                if (originPriceEl) {
+                    originalPrice = originPriceEl.textContent?.trim() || '';
+                }
+
+                let salePrice = '';
+                const salePriceEl = document.querySelector('.sale_price');
+                if (salePriceEl) {
+                    salePrice = salePriceEl.textContent?.trim() || '';
+                }
+
                 return {
                     runningTime,
                     ageLimit,
                     date: date || 'OPEN RUN',
                     venue: venue || '대학로',
                     originalPrice,
+                    salePrice,
                     address,
                 };
             });
@@ -359,8 +372,8 @@ async function scrapeTimeTicket() {
                 link: item.link,
                 region: item.region,
                 genre: item.genre,
-                price: item.price,
-                originalPrice: detailData.originalPrice || item.price,
+                price: detailData.salePrice || item.price, // Prefer detail sale price
+                originalPrice: detailData.originalPrice || item.price, // Prefer detail origin price, fallback to item.price (which might be discounted, but better than nothing)
                 discount: item.discount,
                 runningTime: detailData.runningTime,
                 ageLimit: detailData.ageLimit,
