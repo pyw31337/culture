@@ -73,7 +73,7 @@ async function scrapeKbl() {
         // User wants "schedule", effectively future.
         if (!dateStr.startsWith('2026')) continue;
 
-        const title = `[농구] ${match.tnameH} vs ${match.tnameA}`;
+        const title = `${match.tnameH} vs ${match.tnameA}`;
         const id = `kbl_${match.gameDate}_${match.tcodeH}_${match.tcodeA}`;
 
         if (seenIds.has(id)) continue;

@@ -1,7 +1,17 @@
 [
   {
+    "id": "kbl_20260107_50_35",
+    "title": "창원 LG vs 서울 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-07 19:00",
+    "venue": "창원체육관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball"
+  },
+  {
     "id": "kbl_20260101_66_64",
-    "title": "[농구] 고양 소노 vs 대구 한국가스공사",
+    "title": "고양 소노 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-01 14:00",
     "venue": "고양소노아레나",
@@ -11,7 +21,7 @@
   },
   {
     "id": "kbl_20260101_55_70",
-    "title": "[농구] 서울 SK vs 안양 정관장",
+    "title": "서울 SK vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-01 16:30",
     "venue": "잠실학생",
@@ -21,7 +31,7 @@
   },
   {
     "id": "kbl_20260102_35_50",
-    "title": "[농구] 서울 삼성 vs 창원 LG",
+    "title": "서울 삼성 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-02 19:00",
     "venue": "잠실실내",
@@ -31,7 +41,7 @@
   },
   {
     "id": "kbl_20260103_10_64",
-    "title": "[농구] 울산 현대모비스 vs 대구 한국가스공사",
+    "title": "울산 현대모비스 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-03 14:00",
     "venue": "울산동천",
@@ -41,7 +51,7 @@
   },
   {
     "id": "kbl_20260103_66_06",
-    "title": "[농구] 고양 소노 vs 수원 KT",
+    "title": "고양 소노 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-03 14:00",
     "venue": "고양소노아레나",
@@ -51,7 +61,7 @@
   },
   {
     "id": "kbl_20260103_55_70",
-    "title": "[농구] 서울 SK vs 안양 정관장",
+    "title": "서울 SK vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-03 16:30",
     "venue": "잠실학생",
@@ -61,7 +71,7 @@
   },
   {
     "id": "kbl_20260104_06_50",
-    "title": "[농구] 수원 KT vs 창원 LG",
+    "title": "수원 KT vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-04 14:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -71,7 +81,7 @@
   },
   {
     "id": "kbl_20260104_35_16",
-    "title": "[농구] 서울 삼성 vs 원주 DB",
+    "title": "서울 삼성 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-04 14:00",
     "venue": "잠실실내",
@@ -81,7 +91,7 @@
   },
   {
     "id": "kbl_20260104_70_60",
-    "title": "[농구] 안양 정관장 vs 부산 KCC",
+    "title": "안양 정관장 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-04 16:30",
     "venue": "안양 정관장 아레나",
@@ -91,7 +101,7 @@
   },
   {
     "id": "kbl_20260105_64_66",
-    "title": "[농구] 대구 한국가스공사 vs 고양 소노",
+    "title": "대구 한국가스공사 vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-05 19:00",
     "venue": "대구",
@@ -101,7 +111,7 @@
   },
   {
     "id": "kbl_20260106_29_18",
-    "title": "[농구] 상무 vs KT",
+    "title": "상무 vs KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-06 13:00",
     "venue": "경희대 선승관",
@@ -111,7 +121,7 @@
   },
   {
     "id": "kbl_20260106_28_57",
-    "title": "[농구] DB vs 정관장",
+    "title": "DB vs 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-06 15:00",
     "venue": "경희대 선승관",
@@ -121,7 +131,7 @@
   },
   {
     "id": "kbl_20260106_10_60",
-    "title": "[농구] 울산 현대모비스 vs 부산 KCC",
+    "title": "울산 현대모비스 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-06 19:00",
     "venue": "울산동천",
@@ -130,18 +140,8 @@
     "genre": "basketball"
   },
   {
-    "id": "kbl_20260107_50_35",
-    "title": "[농구] 창원 LG vs 서울 삼성",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-07 19:00",
-    "venue": "창원체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
     "id": "kbl_20260108_68_24",
-    "title": "[농구] 한국가스공사 vs KCC",
+    "title": "한국가스공사 vs KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-08 13:00",
     "venue": "경희대 선승관",
@@ -151,7 +151,7 @@
   },
   {
     "id": "kbl_20260108_67_29",
-    "title": "[농구] 소노 vs 상무",
+    "title": "소노 vs 상무",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-08 15:00",
     "venue": "경희대 선승관",
@@ -161,7 +161,7 @@
   },
   {
     "id": "kbl_20260108_16_06",
-    "title": "[농구] 원주 DB vs 수원 KT",
+    "title": "원주 DB vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-08 19:00",
     "venue": "원주DB프로미아레나",
@@ -171,7 +171,7 @@
   },
   {
     "id": "kbl_20260109_70_10",
-    "title": "[농구] 안양 정관장 vs 울산 현대모비스",
+    "title": "안양 정관장 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-09 19:00",
     "venue": "안양 정관장 아레나",
@@ -181,7 +181,7 @@
   },
   {
     "id": "kbl_20260110_55_06",
-    "title": "[농구] 서울 SK vs 수원 KT",
+    "title": "서울 SK vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-10 14:00",
     "venue": "잠실학생",
@@ -191,7 +191,7 @@
   },
   {
     "id": "kbl_20260110_60_64",
-    "title": "[농구] 부산 KCC vs 대구 한국가스공사",
+    "title": "부산 KCC vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-10 14:00",
     "venue": "부산사직",
@@ -201,7 +201,7 @@
   },
   {
     "id": "kbl_20260110_50_66",
-    "title": "[농구] 창원 LG vs 고양 소노",
+    "title": "창원 LG vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-10 16:30",
     "venue": "창원체육관",
@@ -211,7 +211,7 @@
   },
   {
     "id": "kbl_20260111_06_10",
-    "title": "[농구] 수원 KT vs 울산 현대모비스",
+    "title": "수원 KT vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-11 14:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -221,7 +221,7 @@
   },
   {
     "id": "kbl_20260111_16_70",
-    "title": "[농구] 원주 DB vs 안양 정관장",
+    "title": "원주 DB vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-11 14:00",
     "venue": "원주DB프로미아레나",
@@ -231,7 +231,7 @@
   },
   {
     "id": "kbl_20260111_55_35",
-    "title": "[농구] 서울 SK vs 서울 삼성",
+    "title": "서울 SK vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-11 16:30",
     "venue": "잠실학생",
@@ -241,7 +241,7 @@
   },
   {
     "id": "kbl_20260112_64_50",
-    "title": "[농구] 대구 한국가스공사 vs 창원 LG",
+    "title": "대구 한국가스공사 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-12 19:00",
     "venue": "대구",
@@ -251,7 +251,7 @@
   },
   {
     "id": "kbl_20260112_60_66",
-    "title": "[농구] 부산 KCC vs 고양 소노",
+    "title": "부산 KCC vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-12 19:00",
     "venue": "부산사직",
@@ -261,7 +261,7 @@
   },
   {
     "id": "kbl_20260113_55_16",
-    "title": "[농구] 서울 SK vs 원주 DB",
+    "title": "서울 SK vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-13 19:00",
     "venue": "잠실학생",
@@ -271,7 +271,7 @@
   },
   {
     "id": "kbl_20260113_10_35",
-    "title": "[농구] 울산 현대모비스 vs 서울 삼성",
+    "title": "울산 현대모비스 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-13 19:00",
     "venue": "울산동천",
@@ -281,7 +281,7 @@
   },
   {
     "id": "kbl_20260114_06_60",
-    "title": "[농구] 수원 KT vs 부산 KCC",
+    "title": "수원 KT vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-14 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -291,7 +291,7 @@
   },
   {
     "id": "kbl_20260114_70_64",
-    "title": "[농구] 안양 정관장 vs 대구 한국가스공사",
+    "title": "안양 정관장 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-14 19:00",
     "venue": "안양 정관장 아레나",
@@ -301,7 +301,7 @@
   },
   {
     "id": "kbl_20260115_55_50",
-    "title": "[농구] 서울 SK vs 창원 LG",
+    "title": "서울 SK vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-15 19:00",
     "venue": "잠실학생",
@@ -311,7 +311,7 @@
   },
   {
     "id": "kbl_20260115_66_16",
-    "title": "[농구] 고양 소노 vs 원주 DB",
+    "title": "고양 소노 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-15 19:00",
     "venue": "고양소노아레나",
@@ -321,7 +321,7 @@
   },
   {
     "id": "kbl_20260116_18_31",
-    "title": "[농구] KT vs 현대모비스",
+    "title": "KT vs 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-16 13:00",
     "venue": "경희대 선승관",
@@ -331,7 +331,7 @@
   },
   {
     "id": "kbl_20260116_29_26",
-    "title": "[농구] 상무 vs 삼성",
+    "title": "상무 vs 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-16 15:00",
     "venue": "경희대 선승관",
@@ -341,7 +341,7 @@
   },
   {
     "id": "kbl_20260117_4A_5A",
-    "title": "[농구] 팀 아시아 vs 팀 루키",
+    "title": "팀 아시아 vs 팀 루키",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-17 14:00",
     "venue": "잠실실내",
@@ -351,7 +351,7 @@
   },
   {
     "id": "kbl_20260118_62_63",
-    "title": "[농구] 팀 브라운 vs 팀 코니",
+    "title": "팀 브라운 vs 팀 코니",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-18 14:00",
     "venue": "잠실실내",
@@ -361,7 +361,7 @@
   },
   {
     "id": "kbl_20260119_36_57",
-    "title": "[농구] LG vs 정관장",
+    "title": "LG vs 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-19 13:00",
     "venue": "경희대 선승관",
@@ -371,7 +371,7 @@
   },
   {
     "id": "kbl_20260119_26_68",
-    "title": "[농구] 삼성 vs 한국가스공사",
+    "title": "삼성 vs 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-19 15:00",
     "venue": "경희대 선승관",
@@ -381,7 +381,7 @@
   },
   {
     "id": "kbl_20260120_31_67",
-    "title": "[농구] 현대모비스 vs 소노",
+    "title": "현대모비스 vs 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-20 13:00",
     "venue": "경희대 선승관",
@@ -391,7 +391,7 @@
   },
   {
     "id": "kbl_20260120_19_68",
-    "title": "[농구] SK vs 한국가스공사",
+    "title": "SK vs 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-20 15:00",
     "venue": "경희대 선승관",
@@ -401,7 +401,7 @@
   },
   {
     "id": "kbl_20260121_06_70",
-    "title": "[농구] 수원 KT vs 안양 정관장",
+    "title": "수원 KT vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-21 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -411,7 +411,7 @@
   },
   {
     "id": "kbl_20260121_16_60",
-    "title": "[농구] 원주 DB vs 부산 KCC",
+    "title": "원주 DB vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-21 19:00",
     "venue": "원주DB프로미아레나",
@@ -421,7 +421,7 @@
   },
   {
     "id": "kbl_20260122_10_55",
-    "title": "[농구] 울산 현대모비스 vs 서울 SK",
+    "title": "울산 현대모비스 vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "울산동천",
@@ -431,7 +431,7 @@
   },
   {
     "id": "kbl_20260122_35_64",
-    "title": "[농구] 서울 삼성 vs 대구 한국가스공사",
+    "title": "서울 삼성 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "잠실실내",
@@ -441,7 +441,7 @@
   },
   {
     "id": "kbl_20260123_70_66",
-    "title": "[농구] 안양 정관장 vs 고양 소노",
+    "title": "안양 정관장 vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-23 19:00",
     "venue": "안양 정관장 아레나",
@@ -451,7 +451,7 @@
   },
   {
     "id": "kbl_20260123_60_50",
-    "title": "[농구] 부산 KCC vs 창원 LG",
+    "title": "부산 KCC vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-23 19:00",
     "venue": "부산사직",
@@ -461,7 +461,7 @@
   },
   {
     "id": "kbl_20260124_10_16",
-    "title": "[농구] 울산 현대모비스 vs 원주 DB",
+    "title": "울산 현대모비스 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-24 14:00",
     "venue": "울산동천",
@@ -471,7 +471,7 @@
   },
   {
     "id": "kbl_20260124_55_64",
-    "title": "[농구] 서울 SK vs 대구 한국가스공사",
+    "title": "서울 SK vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-24 14:00",
     "venue": "잠실학생",
@@ -481,7 +481,7 @@
   },
   {
     "id": "kbl_20260124_35_06",
-    "title": "[농구] 서울 삼성 vs 수원 KT",
+    "title": "서울 삼성 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-24 16:30",
     "venue": "잠실실내",
@@ -491,7 +491,7 @@
   },
   {
     "id": "kbl_20260125_50_70",
-    "title": "[농구] 창원 LG vs 안양 정관장",
+    "title": "창원 LG vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-25 14:00",
     "venue": "창원체육관",
@@ -501,7 +501,7 @@
   },
   {
     "id": "kbl_20260125_60_55",
-    "title": "[농구] 부산 KCC vs 서울 SK",
+    "title": "부산 KCC vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-25 14:00",
     "venue": "부산사직",
@@ -511,7 +511,7 @@
   },
   {
     "id": "kbl_20260125_35_66",
-    "title": "[농구] 서울 삼성 vs 고양 소노",
+    "title": "서울 삼성 vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-25 16:30",
     "venue": "잠실실내",
@@ -521,7 +521,7 @@
   },
   {
     "id": "kbl_20260126_64_06",
-    "title": "[농구] 대구 한국가스공사 vs 수원 KT",
+    "title": "대구 한국가스공사 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-26 19:00",
     "venue": "대구",
@@ -531,7 +531,7 @@
   },
   {
     "id": "kbl_20260127_29_26",
-    "title": "[농구] 상무 vs 삼성",
+    "title": "상무 vs 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-27 13:00",
     "venue": "경희대 선승관",
@@ -541,7 +541,7 @@
   },
   {
     "id": "kbl_20260127_24_57",
-    "title": "[농구] KCC vs 정관장",
+    "title": "KCC vs 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-27 15:00",
     "venue": "경희대 선승관",
@@ -551,7 +551,7 @@
   },
   {
     "id": "kbl_20260127_66_10",
-    "title": "[농구] 고양 소노 vs 울산 현대모비스",
+    "title": "고양 소노 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-27 19:00",
     "venue": "고양소노아레나",
@@ -561,7 +561,7 @@
   },
   {
     "id": "kbl_20260128_50_16",
-    "title": "[농구] 창원 LG vs 원주 DB",
+    "title": "창원 LG vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-28 19:00",
     "venue": "창원체육관",
@@ -571,7 +571,7 @@
   },
   {
     "id": "kbl_20260129_67_18",
-    "title": "[농구] 소노 vs KT",
+    "title": "소노 vs KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-29 13:00",
     "venue": "경희대 선승관",
@@ -581,7 +581,7 @@
   },
   {
     "id": "kbl_20260129_31_24",
-    "title": "[농구] 현대모비스 vs KCC",
+    "title": "현대모비스 vs KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-29 15:00",
     "venue": "경희대 선승관",
@@ -591,7 +591,7 @@
   },
   {
     "id": "kbl_20260129_70_35",
-    "title": "[농구] 안양 정관장 vs 서울 삼성",
+    "title": "안양 정관장 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-29 19:00",
     "venue": "안양 정관장 아레나",
@@ -601,7 +601,7 @@
   },
   {
     "id": "kbl_20260130_16_64",
-    "title": "[농구] 원주 DB vs 대구 한국가스공사",
+    "title": "원주 DB vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-30 19:00",
     "venue": "원주DB프로미아레나",
@@ -611,7 +611,7 @@
   },
   {
     "id": "kbl_20260131_50_10",
-    "title": "[농구] 창원 LG vs 울산 현대모비스",
+    "title": "창원 LG vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-31 14:00",
     "venue": "창원체육관",
@@ -621,7 +621,7 @@
   },
   {
     "id": "kbl_20260131_60_35",
-    "title": "[농구] 부산 KCC vs 서울 삼성",
+    "title": "부산 KCC vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-31 14:00",
     "venue": "부산사직",
@@ -631,7 +631,7 @@
   },
   {
     "id": "kbl_20260131_55_66",
-    "title": "[농구] 서울 SK vs 고양 소노",
+    "title": "서울 SK vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-01-31 16:30",
     "venue": "잠실학생",
@@ -641,7 +641,7 @@
   },
   {
     "id": "kbl_20260201_10_70",
-    "title": "[농구] 울산 현대모비스 vs 안양 정관장",
+    "title": "울산 현대모비스 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-01 14:00",
     "venue": "울산동천",
@@ -651,7 +651,7 @@
   },
   {
     "id": "kbl_20260201_06_16",
-    "title": "[농구] 수원 KT vs 원주 DB",
+    "title": "수원 KT vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-01 14:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -661,7 +661,7 @@
   },
   {
     "id": "kbl_20260201_66_64",
-    "title": "[농구] 고양 소노 vs 대구 한국가스공사",
+    "title": "고양 소노 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-01 16:30",
     "venue": "고양소노아레나",
@@ -671,7 +671,7 @@
   },
   {
     "id": "kbl_20260202_55_60",
-    "title": "[농구] 서울 SK vs 부산 KCC",
+    "title": "서울 SK vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-02 19:00",
     "venue": "잠실학생",
@@ -681,7 +681,7 @@
   },
   {
     "id": "kbl_20260203_31_28",
-    "title": "[농구] 현대모비스 vs DB",
+    "title": "현대모비스 vs DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-03 13:00",
     "venue": "경희대 선승관",
@@ -691,7 +691,7 @@
   },
   {
     "id": "kbl_20260203_26_29",
-    "title": "[농구] 삼성 vs 상무",
+    "title": "삼성 vs 상무",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-03 15:00",
     "venue": "경희대 선승관",
@@ -701,7 +701,7 @@
   },
   {
     "id": "kbl_20260203_50_06",
-    "title": "[농구] 창원 LG vs 수원 KT",
+    "title": "창원 LG vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-03 19:00",
     "venue": "창원체육관",
@@ -711,7 +711,7 @@
   },
   {
     "id": "kbl_20260204_66_60",
-    "title": "[농구] 고양 소노 vs 부산 KCC",
+    "title": "고양 소노 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-04 19:00",
     "venue": "고양소노아레나",
@@ -721,7 +721,7 @@
   },
   {
     "id": "kbl_20260205_28_29",
-    "title": "[농구] DB vs 상무",
+    "title": "DB vs 상무",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-05 13:00",
     "venue": "경희대 선승관",
@@ -731,7 +731,7 @@
   },
   {
     "id": "kbl_20260205_57_18",
-    "title": "[농구] 정관장 vs KT",
+    "title": "정관장 vs KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-05 15:00",
     "venue": "경희대 선승관",
@@ -741,7 +741,7 @@
   },
   {
     "id": "kbl_20260205_35_50",
-    "title": "[농구] 서울 삼성 vs 창원 LG",
+    "title": "서울 삼성 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-05 19:00",
     "venue": "잠실실내",
@@ -751,7 +751,7 @@
   },
   {
     "id": "kbl_20260206_55_10",
-    "title": "[농구] 서울 SK vs 울산 현대모비스",
+    "title": "서울 SK vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-06 19:00",
     "venue": "잠실학생",
@@ -761,7 +761,7 @@
   },
   {
     "id": "kbl_20260207_70_60",
-    "title": "[농구] 안양 정관장 vs 부산 KCC",
+    "title": "안양 정관장 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-07 14:00",
     "venue": "안양 정관장 아레나",
@@ -771,7 +771,7 @@
   },
   {
     "id": "kbl_20260207_66_06",
-    "title": "[농구] 고양 소노 vs 수원 KT",
+    "title": "고양 소노 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-07 14:00",
     "venue": "고양소노아레나",
@@ -781,7 +781,7 @@
   },
   {
     "id": "kbl_20260207_35_16",
-    "title": "[농구] 서울 삼성 vs 원주 DB",
+    "title": "서울 삼성 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-07 16:30",
     "venue": "잠실실내",
@@ -791,7 +791,7 @@
   },
   {
     "id": "kbl_20260208_10_64",
-    "title": "[농구] 울산 현대모비스 vs 대구 한국가스공사",
+    "title": "울산 현대모비스 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-08 14:00",
     "venue": "울산동천",
@@ -801,7 +801,7 @@
   },
   {
     "id": "kbl_20260208_70_50",
-    "title": "[농구] 안양 정관장 vs 창원 LG",
+    "title": "안양 정관장 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-08 14:00",
     "venue": "안양 정관장 아레나",
@@ -811,7 +811,7 @@
   },
   {
     "id": "kbl_20260208_16_55",
-    "title": "[농구] 원주 DB vs 서울 SK",
+    "title": "원주 DB vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-08 16:30",
     "venue": "원주DB프로미아레나",
@@ -821,7 +821,7 @@
   },
   {
     "id": "kbl_20260209_06_35",
-    "title": "[농구] 수원 KT vs 서울 삼성",
+    "title": "수원 KT vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-09 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -831,7 +831,7 @@
   },
   {
     "id": "kbl_20260210_57_29",
-    "title": "[농구] 정관장 vs 상무",
+    "title": "정관장 vs 상무",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-10 13:00",
     "venue": "경희대 선승관",
@@ -841,7 +841,7 @@
   },
   {
     "id": "kbl_20260210_24_31",
-    "title": "[농구] KCC vs 현대모비스",
+    "title": "KCC vs 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-10 15:00",
     "venue": "경희대 선승관",
@@ -851,7 +851,7 @@
   },
   {
     "id": "kbl_20260210_64_50",
-    "title": "[농구] 대구 한국가스공사 vs 창원 LG",
+    "title": "대구 한국가스공사 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-10 19:00",
     "venue": "대구",
@@ -861,7 +861,7 @@
   },
   {
     "id": "kbl_20260211_55_66",
-    "title": "[농구] 서울 SK vs 고양 소노",
+    "title": "서울 SK vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-11 19:00",
     "venue": "잠실학생",
@@ -871,7 +871,7 @@
   },
   {
     "id": "kbl_20260212_24_28",
-    "title": "[농구] KCC vs DB",
+    "title": "KCC vs DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-12 13:00",
     "venue": "경희대 선승관",
@@ -881,7 +881,7 @@
   },
   {
     "id": "kbl_20260212_29_36",
-    "title": "[농구] 상무 vs LG",
+    "title": "상무 vs LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-12 15:00",
     "venue": "경희대 선승관",
@@ -891,7 +891,7 @@
   },
   {
     "id": "kbl_20260212_10_35",
-    "title": "[농구] 울산 현대모비스 vs 서울 삼성",
+    "title": "울산 현대모비스 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-12 19:00",
     "venue": "울산동천",
@@ -901,7 +901,7 @@
   },
   {
     "id": "kbl_20260213_70_06",
-    "title": "[농구] 안양 정관장 vs 수원 KT",
+    "title": "안양 정관장 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-13 19:00",
     "venue": "안양 정관장 아레나",
@@ -911,7 +911,7 @@
   },
   {
     "id": "kbl_20260214_10_66",
-    "title": "[농구] 울산 현대모비스 vs 고양 소노",
+    "title": "울산 현대모비스 vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-14 14:00",
     "venue": "울산동천",
@@ -921,7 +921,7 @@
   },
   {
     "id": "kbl_20260214_60_64",
-    "title": "[농구] 부산 KCC vs 대구 한국가스공사",
+    "title": "부산 KCC vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-14 14:00",
     "venue": "부산사직",
@@ -931,7 +931,7 @@
   },
   {
     "id": "kbl_20260214_50_16",
-    "title": "[농구] 창원 LG vs 원주 DB",
+    "title": "창원 LG vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-14 16:30",
     "venue": "창원체육관",
@@ -941,7 +941,7 @@
   },
   {
     "id": "kbl_20260215_55_70",
-    "title": "[농구] 서울 SK vs 안양 정관장",
+    "title": "서울 SK vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-15 14:00",
     "venue": "잠실학생",
@@ -951,7 +951,7 @@
   },
   {
     "id": "kbl_20260215_60_06",
-    "title": "[농구] 부산 KCC vs 수원 KT",
+    "title": "부산 KCC vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-15 14:00",
     "venue": "부산사직",
@@ -961,7 +961,7 @@
   },
   {
     "id": "kbl_20260215_64_35",
-    "title": "[농구] 대구 한국가스공사 vs 서울 삼성",
+    "title": "대구 한국가스공사 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-15 16:30",
     "venue": "대구",
@@ -971,7 +971,7 @@
   },
   {
     "id": "kbl_20260216_50_66",
-    "title": "[농구] 창원 LG vs 고양 소노",
+    "title": "창원 LG vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-16 14:00",
     "venue": "창원체육관",
@@ -981,7 +981,7 @@
   },
   {
     "id": "kbl_20260216_16_10",
-    "title": "[농구] 원주 DB vs 울산 현대모비스",
+    "title": "원주 DB vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-16 16:30",
     "venue": "원주DB프로미아레나",
@@ -991,7 +991,7 @@
   },
   {
     "id": "kbl_20260217_64_06",
-    "title": "[농구] 대구 한국가스공사 vs 수원 KT",
+    "title": "대구 한국가스공사 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-17 14:00",
     "venue": "대구",
@@ -1001,7 +1001,7 @@
   },
   {
     "id": "kbl_20260217_35_55",
-    "title": "[농구] 서울 삼성 vs 서울 SK",
+    "title": "서울 삼성 vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-17 16:30",
     "venue": "잠실실내",
@@ -1011,7 +1011,7 @@
   },
   {
     "id": "kbl_20260218_70_16",
-    "title": "[농구] 안양 정관장 vs 원주 DB",
+    "title": "안양 정관장 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-18 14:00",
     "venue": "안양 정관장 아레나",
@@ -1021,7 +1021,7 @@
   },
   {
     "id": "kbl_20260218_60_50",
-    "title": "[농구] 부산 KCC vs 창원 LG",
+    "title": "부산 KCC vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-18 16:30",
     "venue": "부산사직",
@@ -1031,7 +1031,7 @@
   },
   {
     "id": "kbl_20260219_64_55",
-    "title": "[농구] 대구 한국가스공사 vs 서울 SK",
+    "title": "대구 한국가스공사 vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-19 19:00",
     "venue": "대구",
@@ -1041,7 +1041,7 @@
   },
   {
     "id": "kbl_20260219_66_35",
-    "title": "[농구] 고양 소노 vs 서울 삼성",
+    "title": "고양 소노 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-19 19:00",
     "venue": "고양소노아레나",
@@ -1051,7 +1051,7 @@
   },
   {
     "id": "kbl_20260220_36_18",
-    "title": "[농구] LG vs KT",
+    "title": "LG vs KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-20 13:00",
     "venue": "경희대 선승관",
@@ -1061,7 +1061,7 @@
   },
   {
     "id": "kbl_20260220_31_57",
-    "title": "[농구] 현대모비스 vs 정관장",
+    "title": "현대모비스 vs 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-20 15:00",
     "venue": "경희대 선승관",
@@ -1071,7 +1071,7 @@
   },
   {
     "id": "kbl_20260221_26_24",
-    "title": "[농구] 삼성 vs KCC",
+    "title": "삼성 vs KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-21 13:00",
     "venue": "경희대 선승관",
@@ -1081,7 +1081,7 @@
   },
   {
     "id": "kbl_20260221_36_19",
-    "title": "[농구] LG vs SK",
+    "title": "LG vs SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-21 15:00",
     "venue": "경희대 선승관",
@@ -1091,7 +1091,7 @@
   },
   {
     "id": "kbl_20260226_68_31",
-    "title": "[농구] 한국가스공사 vs 현대모비스",
+    "title": "한국가스공사 vs 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-26 13:00",
     "venue": "경희대 선승관",
@@ -1101,7 +1101,7 @@
   },
   {
     "id": "kbl_20260226_36_67",
-    "title": "[농구] LG vs 소노",
+    "title": "LG vs 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-26 15:00",
     "venue": "경희대 선승관",
@@ -1111,7 +1111,7 @@
   },
   {
     "id": "kbl_20260227_28_19",
-    "title": "[농구] DB vs SK",
+    "title": "DB vs SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-27 13:00",
     "venue": "경희대 선승관",
@@ -1121,7 +1121,7 @@
   },
   {
     "id": "kbl_20260227_68_36",
-    "title": "[농구] 한국가스공사 vs LG",
+    "title": "한국가스공사 vs LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-27 15:00",
     "venue": "경희대 선승관",
@@ -1131,7 +1131,7 @@
   },
   {
     "id": "kbl_20260228_57_26",
-    "title": "[농구] 정관장 vs 삼성",
+    "title": "정관장 vs 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-28 13:00",
     "venue": "경희대 선승관",
@@ -1141,7 +1141,7 @@
   },
   {
     "id": "kbl_20260228_24_67",
-    "title": "[농구] KCC vs 소노",
+    "title": "KCC vs 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-02-28 15:00",
     "venue": "경희대 선승관",
@@ -1151,7 +1151,7 @@
   },
   {
     "id": "kbl_20260302_31_68",
-    "title": "[농구] 현대모비스 vs 한국가스공사",
+    "title": "현대모비스 vs 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-02 13:00",
     "venue": "경희대 선승관",
@@ -1161,7 +1161,7 @@
   },
   {
     "id": "kbl_20260302_67_19",
-    "title": "[농구] 소노 vs SK",
+    "title": "소노 vs SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-02 15:00",
     "venue": "경희대 선승관",
@@ -1171,7 +1171,7 @@
   },
   {
     "id": "kbl_20260303_57_68",
-    "title": "[농구] 정관장 vs 한국가스공사",
+    "title": "정관장 vs 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-03 13:00",
     "venue": "경희대 선승관",
@@ -1181,7 +1181,7 @@
   },
   {
     "id": "kbl_20260303_28_36",
-    "title": "[농구] DB vs LG",
+    "title": "DB vs LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-03 15:00",
     "venue": "경희대 선승관",
@@ -1191,7 +1191,7 @@
   },
   {
     "id": "kbl_20260304_26_19",
-    "title": "[농구] 삼성 vs SK",
+    "title": "삼성 vs SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-04 13:00",
     "venue": "경희대 선승관",
@@ -1201,7 +1201,7 @@
   },
   {
     "id": "kbl_20260304_36_31",
-    "title": "[농구] LG vs 현대모비스",
+    "title": "LG vs 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-04 15:00",
     "venue": "경희대 선승관",
@@ -1211,7 +1211,7 @@
   },
   {
     "id": "kbl_20260305_66_70",
-    "title": "[농구] 고양 소노 vs 안양 정관장",
+    "title": "고양 소노 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-05 19:00",
     "venue": "고양소노아레나",
@@ -1221,7 +1221,7 @@
   },
   {
     "id": "kbl_20260305_16_60",
-    "title": "[농구] 원주 DB vs 부산 KCC",
+    "title": "원주 DB vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-05 19:00",
     "venue": "원주DB프로미아레나",
@@ -1231,7 +1231,7 @@
   },
   {
     "id": "kbl_20260306_50_10",
-    "title": "[농구] 창원 LG vs 울산 현대모비스",
+    "title": "창원 LG vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-06 19:00",
     "venue": "창원체육관",
@@ -1241,7 +1241,7 @@
   },
   {
     "id": "kbl_20260306_06_55",
-    "title": "[농구] 수원 KT vs 서울 SK",
+    "title": "수원 KT vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-06 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1251,7 +1251,7 @@
   },
   {
     "id": "kbl_20260307_16_66",
-    "title": "[농구] 원주 DB vs 고양 소노",
+    "title": "원주 DB vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-07 14:00",
     "venue": "원주DB프로미아레나",
@@ -1261,7 +1261,7 @@
   },
   {
     "id": "kbl_20260307_35_60",
-    "title": "[농구] 서울 삼성 vs 부산 KCC",
+    "title": "서울 삼성 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-07 14:00",
     "venue": "잠실실내",
@@ -1271,7 +1271,7 @@
   },
   {
     "id": "kbl_20260307_70_64",
-    "title": "[농구] 안양 정관장 vs 대구 한국가스공사",
+    "title": "안양 정관장 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-07 16:30",
     "venue": "안양 정관장 아레나",
@@ -1281,7 +1281,7 @@
   },
   {
     "id": "kbl_20260308_50_55",
-    "title": "[농구] 창원 LG vs 서울 SK",
+    "title": "창원 LG vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-08 14:00",
     "venue": "창원체육관",
@@ -1291,7 +1291,7 @@
   },
   {
     "id": "kbl_20260308_10_06",
-    "title": "[농구] 울산 현대모비스 vs 수원 KT",
+    "title": "울산 현대모비스 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-08 14:00",
     "venue": "울산동천",
@@ -1301,7 +1301,7 @@
   },
   {
     "id": "kbl_20260308_16_64",
-    "title": "[농구] 원주 DB vs 대구 한국가스공사",
+    "title": "원주 DB vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-08 16:30",
     "venue": "원주DB프로미아레나",
@@ -1311,7 +1311,7 @@
   },
   {
     "id": "kbl_20260309_35_70",
-    "title": "[농구] 서울 삼성 vs 안양 정관장",
+    "title": "서울 삼성 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-09 19:00",
     "venue": "잠실실내",
@@ -1321,7 +1321,7 @@
   },
   {
     "id": "kbl_20260310_18_28",
-    "title": "[농구] KT vs DB",
+    "title": "KT vs DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-10 13:00",
     "venue": "경희대 선승관",
@@ -1331,7 +1331,7 @@
   },
   {
     "id": "kbl_20260310_68_29",
-    "title": "[농구] 한국가스공사 vs 상무",
+    "title": "한국가스공사 vs 상무",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-10 15:00",
     "venue": "경희대 선승관",
@@ -1341,7 +1341,7 @@
   },
   {
     "id": "kbl_20260310_60_10",
-    "title": "[농구] 부산 KCC vs 울산 현대모비스",
+    "title": "부산 KCC vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-10 19:00",
     "venue": "부산사직",
@@ -1351,7 +1351,7 @@
   },
   {
     "id": "kbl_20260311_50_66",
-    "title": "[농구] 창원 LG vs 고양 소노",
+    "title": "창원 LG vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-11 19:00",
     "venue": "창원체육관",
@@ -1361,7 +1361,7 @@
   },
   {
     "id": "kbl_20260312_55_16",
-    "title": "[농구] 서울 SK vs 원주 DB",
+    "title": "서울 SK vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-12 19:00",
     "venue": "잠실학생",
@@ -1371,7 +1371,7 @@
   },
   {
     "id": "kbl_20260313_50_35",
-    "title": "[농구] 창원 LG vs 서울 삼성",
+    "title": "창원 LG vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-13 19:00",
     "venue": "창원체육관",
@@ -1381,7 +1381,7 @@
   },
   {
     "id": "kbl_20260314_06_55",
-    "title": "[농구] 수원 KT vs 서울 SK",
+    "title": "수원 KT vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-14 14:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1391,7 +1391,7 @@
   },
   {
     "id": "kbl_20260314_60_70",
-    "title": "[농구] 부산 KCC vs 안양 정관장",
+    "title": "부산 KCC vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-14 14:00",
     "venue": "부산사직",
@@ -1401,7 +1401,7 @@
   },
   {
     "id": "kbl_20260314_64_10",
-    "title": "[농구] 대구 한국가스공사 vs 울산 현대모비스",
+    "title": "대구 한국가스공사 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-14 16:30",
     "venue": "대구",
@@ -1411,7 +1411,7 @@
   },
   {
     "id": "kbl_20260315_16_50",
-    "title": "[농구] 원주 DB vs 창원 LG",
+    "title": "원주 DB vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-15 14:00",
     "venue": "원주DB프로미아레나",
@@ -1421,7 +1421,7 @@
   },
   {
     "id": "kbl_20260315_66_35",
-    "title": "[농구] 고양 소노 vs 서울 삼성",
+    "title": "고양 소노 vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-15 14:00",
     "venue": "고양소노아레나",
@@ -1431,7 +1431,7 @@
   },
   {
     "id": "kbl_20260315_10_60",
-    "title": "[농구] 울산 현대모비스 vs 부산 KCC",
+    "title": "울산 현대모비스 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-15 16:30",
     "venue": "울산동천",
@@ -1441,7 +1441,7 @@
   },
   {
     "id": "kbl_20260316_64_70",
-    "title": "[농구] 대구 한국가스공사 vs 안양 정관장",
+    "title": "대구 한국가스공사 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-16 19:00",
     "venue": "대구",
@@ -1451,7 +1451,7 @@
   },
   {
     "id": "kbl_20260318_06_16",
-    "title": "[농구] 수원 KT vs 원주 DB",
+    "title": "수원 KT vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-18 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1461,7 +1461,7 @@
   },
   {
     "id": "kbl_20260319_66_60",
-    "title": "[농구] 고양 소노 vs 부산 KCC",
+    "title": "고양 소노 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-19 19:00",
     "venue": "고양소노아레나",
@@ -1471,7 +1471,7 @@
   },
   {
     "id": "kbl_20260320_06_64",
-    "title": "[농구] 수원 KT vs 대구 한국가스공사",
+    "title": "수원 KT vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-20 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1481,7 +1481,7 @@
   },
   {
     "id": "kbl_20260321_66_10",
-    "title": "[농구] 고양 소노 vs 울산 현대모비스",
+    "title": "고양 소노 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-21 14:00",
     "venue": "고양소노아레나",
@@ -1491,7 +1491,7 @@
   },
   {
     "id": "kbl_20260321_60_35",
-    "title": "[농구] 부산 KCC vs 서울 삼성",
+    "title": "부산 KCC vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-21 16:30",
     "venue": "부산사직",
@@ -1501,7 +1501,7 @@
   },
   {
     "id": "kbl_20260322_70_06",
-    "title": "[농구] 안양 정관장 vs 수원 KT",
+    "title": "안양 정관장 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-22 14:00",
     "venue": "안양 정관장 아레나",
@@ -1511,7 +1511,7 @@
   },
   {
     "id": "kbl_20260322_16_64",
-    "title": "[농구] 원주 DB vs 대구 한국가스공사",
+    "title": "원주 DB vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-22 16:30",
     "venue": "원주DB프로미아레나",
@@ -1521,7 +1521,7 @@
   },
   {
     "id": "kbl_20260323_35_10",
-    "title": "[농구] 서울 삼성 vs 울산 현대모비스",
+    "title": "서울 삼성 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-23 19:00",
     "venue": "잠실실내",
@@ -1531,7 +1531,7 @@
   },
   {
     "id": "kbl_20260324_16_70",
-    "title": "[농구] 원주 DB vs 안양 정관장",
+    "title": "원주 DB vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-24 19:00",
     "venue": "원주DB프로미아레나",
@@ -1541,7 +1541,7 @@
   },
   {
     "id": "kbl_20260325_55_66",
-    "title": "[농구] 서울 SK vs 고양 소노",
+    "title": "서울 SK vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-25 19:00",
     "venue": "잠실학생",
@@ -1551,7 +1551,7 @@
   },
   {
     "id": "kbl_20260326_64_50",
-    "title": "[농구] 대구 한국가스공사 vs 창원 LG",
+    "title": "대구 한국가스공사 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-26 19:00",
     "venue": "대구",
@@ -1561,7 +1561,7 @@
   },
   {
     "id": "kbl_20260327_60_06",
-    "title": "[농구] 부산 KCC vs 수원 KT",
+    "title": "부산 KCC vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-27 19:00",
     "venue": "부산사직",
@@ -1571,7 +1571,7 @@
   },
   {
     "id": "kbl_20260328_10_55",
-    "title": "[농구] 울산 현대모비스 vs 서울 SK",
+    "title": "울산 현대모비스 vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-28 14:00",
     "venue": "울산동천",
@@ -1581,7 +1581,7 @@
   },
   {
     "id": "kbl_20260328_66_16",
-    "title": "[농구] 고양 소노 vs 원주 DB",
+    "title": "고양 소노 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-28 14:00",
     "venue": "고양소노아레나",
@@ -1591,7 +1591,7 @@
   },
   {
     "id": "kbl_20260328_35_70",
-    "title": "[농구] 서울 삼성 vs 안양 정관장",
+    "title": "서울 삼성 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-28 16:30",
     "venue": "잠실실내",
@@ -1601,7 +1601,7 @@
   },
   {
     "id": "kbl_20260329_50_55",
-    "title": "[농구] 창원 LG vs 서울 SK",
+    "title": "창원 LG vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-29 14:00",
     "venue": "창원체육관",
@@ -1611,7 +1611,7 @@
   },
   {
     "id": "kbl_20260329_64_60",
-    "title": "[농구] 대구 한국가스공사 vs 부산 KCC",
+    "title": "대구 한국가스공사 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-29 14:00",
     "venue": "대구",
@@ -1621,7 +1621,7 @@
   },
   {
     "id": "kbl_20260329_35_06",
-    "title": "[농구] 서울 삼성 vs 수원 KT",
+    "title": "서울 삼성 vs 수원 KT",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-29 16:30",
     "venue": "잠실실내",
@@ -1631,7 +1631,7 @@
   },
   {
     "id": "kbl_20260330_10_16",
-    "title": "[농구] 울산 현대모비스 vs 원주 DB",
+    "title": "울산 현대모비스 vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-30 19:00",
     "venue": "울산동천",
@@ -1641,7 +1641,7 @@
   },
   {
     "id": "kbl_20260331_70_50",
-    "title": "[농구] 안양 정관장 vs 창원 LG",
+    "title": "안양 정관장 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-03-31 19:00",
     "venue": "안양 정관장 아레나",
@@ -1651,7 +1651,7 @@
   },
   {
     "id": "kbl_20260401_60_55",
-    "title": "[농구] 부산 KCC vs 서울 SK",
+    "title": "부산 KCC vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-01 19:00",
     "venue": "부산사직",
@@ -1661,7 +1661,7 @@
   },
   {
     "id": "kbl_20260402_64_66",
-    "title": "[농구] 대구 한국가스공사 vs 고양 소노",
+    "title": "대구 한국가스공사 vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-02 19:00",
     "venue": "대구",
@@ -1671,7 +1671,7 @@
   },
   {
     "id": "kbl_20260403_06_50",
-    "title": "[농구] 수원 KT vs 창원 LG",
+    "title": "수원 KT vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-03 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1681,7 +1681,7 @@
   },
   {
     "id": "kbl_20260404_70_10",
-    "title": "[농구] 안양 정관장 vs 울산 현대모비스",
+    "title": "안양 정관장 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-04 14:00",
     "venue": "안양 정관장 아레나",
@@ -1691,7 +1691,7 @@
   },
   {
     "id": "kbl_20260404_16_35",
-    "title": "[농구] 원주 DB vs 서울 삼성",
+    "title": "원주 DB vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-04 14:00",
     "venue": "원주DB프로미아레나",
@@ -1701,7 +1701,7 @@
   },
   {
     "id": "kbl_20260404_55_64",
-    "title": "[농구] 서울 SK vs 대구 한국가스공사",
+    "title": "서울 SK vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-04 16:30",
     "venue": "잠실학생",
@@ -1711,7 +1711,7 @@
   },
   {
     "id": "kbl_20260405_50_60",
-    "title": "[농구] 창원 LG vs 부산 KCC",
+    "title": "창원 LG vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-05 14:00",
     "venue": "창원체육관",
@@ -1721,7 +1721,7 @@
   },
   {
     "id": "kbl_20260405_66_70",
-    "title": "[농구] 고양 소노 vs 안양 정관장",
+    "title": "고양 소노 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-05 14:00",
     "venue": "고양소노아레나",
@@ -1731,7 +1731,7 @@
   },
   {
     "id": "kbl_20260405_06_10",
-    "title": "[농구] 수원 KT vs 울산 현대모비스",
+    "title": "수원 KT vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-05 16:30",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1741,7 +1741,7 @@
   },
   {
     "id": "kbl_20260406_55_35",
-    "title": "[농구] 서울 SK vs 서울 삼성",
+    "title": "서울 SK vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-06 19:00",
     "venue": "잠실학생",
@@ -1751,7 +1751,7 @@
   },
   {
     "id": "kbl_20260408_10_50",
-    "title": "[농구] 울산 현대모비스 vs 창원 LG",
+    "title": "울산 현대모비스 vs 창원 LG",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-08 19:00",
     "venue": "울산동천",
@@ -1761,7 +1761,7 @@
   },
   {
     "id": "kbl_20260408_06_66",
-    "title": "[농구] 수원 KT vs 고양 소노",
+    "title": "수원 KT vs 고양 소노",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-08 19:00",
     "venue": "수원 KT 소닉붐 아레나",
@@ -1771,7 +1771,7 @@
   },
   {
     "id": "kbl_20260408_70_55",
-    "title": "[농구] 안양 정관장 vs 서울 SK",
+    "title": "안양 정관장 vs 서울 SK",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-08 19:00",
     "venue": "안양 정관장 아레나",
@@ -1781,7 +1781,7 @@
   },
   {
     "id": "kbl_20260408_60_16",
-    "title": "[농구] 부산 KCC vs 원주 DB",
+    "title": "부산 KCC vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-08 19:00",
     "venue": "부산사직",
@@ -1791,7 +1791,7 @@
   },
   {
     "id": "kbl_20260408_35_64",
-    "title": "[농구] 서울 삼성 vs 대구 한국가스공사",
+    "title": "서울 삼성 vs 대구 한국가스공사",
     "image": "/culture/images/kbl_poster.png",
     "date": "2026-04-08 19:00",
     "venue": "잠실실내",
