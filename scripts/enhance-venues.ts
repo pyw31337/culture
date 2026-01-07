@@ -192,13 +192,90 @@ async function enhanceVenues() {
                 if (!foundCoords) {
                     // Fallback: Try searching by Name
                     let nameQueryStr = venue.name;
-                    // Strategy 1: Remove parentheses and content inside
-                    nameQueryStr = nameQueryStr.replace(/\(.*\)/g, '').trim();
 
-                    // Strategy 2: Remove common noise words if they are at the end (Hall, Art Hall, Theater, Center, etc.)
+                    // 0. Ignore List
+                    const ignoreList = ['츠쿠바 역', '일본'];
+                    if (ignoreList.some(k => venue.name.includes(k))) {
+                        console.log(`   🚫 Creating Hidden/Ignored Venue: ${venue.name}`);
+                        // Optionally mark as hidden in JSON if schema supports it, or just skip
+                        // For now we skip geocoding attempts to save time
+                        continue;
+                    }
+
+                    // Cleaning Function
+                    const cleanVenueName = (raw: string) => {
+                        let c = raw;
+                        // Remove Prefixes
+                        c = c.replace(/▶\s*만남의\s*장소\s*[:]?/g, '').replace(/^주소:\s*/, '');
+
+                        // Remove Parentheses and their content (often details)
+                        c = c.replace(/\([^)]+\)/g, ' ');
+
+                        // Remove specific noise phrases provided by user or inferred
+                        const noisePatterns = [
+                            /로비/g, /역사관/g, /출구/g, /정문/g, /매표소/g, /동상/g,
+                            /물품보관함/g, /안내데스크/g, /뮤지엄샵/g, /전시관/g, /상설전시[실관]/g,
+                            /세계문화관/g, /교육관/g, /본관/g, /제\d+관/g,
+                            /\d+층/g, /지하\s*\d+층/g, /\d+번/g,
+                            /내(?!\S)/g, /內/g, /앞(?!\S)/g, // "내", "앞" as standalone words
+                            /주차장/g, /스퀘어/g, /－경기/g
+                        ];
+
+                        noisePatterns.forEach(p => c = c.replace(p, ' '));
+
+                        // Special replacements for complex cases (User specific requests)
+                        if (c.includes('광화문') && c.includes('광장')) c = '광화문광장';
+                        if (c.includes('세종대왕')) c = '광화문광장'; // Sejong statue is in Gwanghwamun Square
+
+                        // Cleanup spaces
+                        return c.trim().replace(/\s+/g, ' ');
+                    };
+
+                    // Strategy 1: Use the cleaned name
+                    let cleanedName = cleanVenueName(venue.name);
+
+                    // Manual Overrides (User Request + Stubborn)
+                    const manualMaps: Record<string, string> = {
+                        "킨텍스 6홀": "킨텍스",
+                        "국립중앙박물관 1층(내부)-검색대 통과하자마자 오른쪽에 보이는 에스컬레이터 앞": "국립중앙박물관",
+                        "경복궁 광화문 앞 오른쪽 해태상 앞(광화문을 바라본 상태에서 오른쪽)": "경복궁 광화문",
+                        "국립중앙과학관 한국과학기술사관": "국립중앙과학관",
+                        "상암 월드컵경기장 평화의광장": "서울월드컵경기장",
+                        "이화여자대학교 생활환경관 소극장": "이화여자대학교 생활환경관",
+                        "덕스(DUEX) 홍대 2관": "덕스 홍대",
+                        "나루아트센터 소공연장": "나루아트센터",
+                        "아트팩토리참기름 강화": "아트팩토리참기름",
+                        "디아나아트홀 (디아나수풀 內)": "디아나아트홀",
+                        "서울역사박물관 1층 로비": "서울역사박물관",
+                        "해당공연 공연장－경기": "경기아트센터",
+                        "서대문형무소 역사관 입구": "서대문형무소역사관",
+                        "▶만남의 장소 : 서대문형무소역사관 입구 앞 (자세한 안내는 수업전 담당 강사님이 안내드립니다.)": "서대문형무소역사관",
+                        "서대문형무소역사관 정문 앞": "서대문형무소역사관",
+                        "각 궁궐의 정문 앞": "경복궁",
+                        "법원전시관": "대법원",
+                        "토즈 광화문점(스터디카페)인원에 따라 별도 추가 공지 드립니다.": "서울 종로구 새문안로3길 15",
+                        "국립 대한민국임시정부 기념관": "국립대한민국임시정부기념관",
+                        "임진각 평화의 공원": "임진각",
+                        "전쟁기념관/국립중앙박물관/대한민국역사박물관": "전쟁기념관",
+                        "주소: 대구 달성군 유가읍 테크노대로6길 20 국립대구과학관 본관 1층 상설전시 1관에서 집결": "국립대구과학관",
+                        "국립경주박물관 내 물품보관함 앞": "국립경주박물관",
+                        "베리컴퍼니": "경기도 고양시 일산동구 위시티3로 52"
+                    };
+
+                    // Check manual map first
+                    for (const key in manualMaps) {
+                        if (venue.name.includes(key)) {
+                            cleanedName = manualMaps[key];
+                            break;
+                        }
+                    }
+
+                    // Specific fix for "불국사" hidden in long text (Item 57)
+                    if (venue.name.includes('불국사') && venue.name.length > 20) cleanedName = '불국사';
+
+                    console.log(`   -> Cleaning Name: "${venue.name}" => "${cleanedName}"`);
 
                     const tryGeocodeName = async (n: string) => {
-                        console.log(`   -> Geocoding by Name: ${n}`);
                         const q = encodeURIComponent(n);
                         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${q}&limit=1`;
                         const res: any = await page.evaluate(async (u) => {
@@ -210,59 +287,15 @@ async function enhanceVenues() {
                         return res;
                     };
 
-                    let nameResult = await tryGeocodeName(venue.name); // Original name
+                    let nameResult = await tryGeocodeName(cleanedName);
 
-                    if (!nameResult || nameResult.length === 0) {
-                        // Try without parentheses
-                        const cleanName = venue.name.replace(/\([^)]+\)/g, '').trim();
-                        if (cleanName !== venue.name) {
-                            nameResult = await tryGeocodeName(cleanName);
-                        }
-                    }
-
-                    if (!nameResult || nameResult.length === 0) {
-                        // Try removing specific details like "Hall", "theater", "1F", "Lobby", "Square"
-                        // Regex to match "Hall X", "X Hall", "Theater", "Center", etc at the end or specific words
-                        // Targeted removal for known patterns in failure list
-                        let cleanName = venue.name.replace(/\([^)]+\)/g, '').trim(); // start clean
-
-                        // Remove "1F", "2F", "B1", "Lobby", "roby"
-                        cleanName = cleanName.replace(/\s?\d+[F층]\s?/gi, '').replace(/\s?B\d+\s?/gi, '').replace(/\s?로비\s?/g, '').trim();
-
-                        // Remove "Hall", "Art Hall", "Theater", "Center" ONLY if it looks like a suffix to a main name
-                        // e.g. "Kintex Hall 6" -> "Kintex"
-                        // Heuristic: If name is long, and ends with "Hall", "Theater", etc., stripping it might help finding the building.
-                        // Common Korean suffixes: "홀", "극장", "센터", "전시장", "공연장", "아트홀"
-                        // We will try stripping the last word if it matches these patterns
-
-                        const suffixRegex = /(\s+\S*(홀|극장|센터|전시장|공연장|아트홀|체육관|경기장|박물관|미술관|기념관))$/;
-                        const match = cleanName.match(suffixRegex);
-                        if (match) {
-                            const strippedName = cleanName.replace(suffixRegex, '').trim();
-                            if (strippedName.length > 2) { // Ensure we don't reduce to empty or too short
-                                nameResult = await tryGeocodeName(strippedName);
-                            }
-                        }
-                    }
-
-                    if (nameResult && nameResult.length === 0) {
-                        // Specific manual mapping for known stubborn venues
-                        const stubbornMap: Record<string, string> = {
-                            "킨텍스 6홀": "킨텍스",
-                            "국립중앙박물관 1층(내부)-검색대 통과하자마자 오른쪽에 보이는 에스컬레이터 앞": "국립중앙박물관",
-                            "경복궁 광화문 앞 오른쪽 해태상 앞(광화문을 바라본 상태에서 오른쪽)": "경복궁 광화문",
-                            "국립중앙과학관 한국과학기술사관": "국립중앙과학관",
-                            "상암 월드컵경기장 평화의광장": "서울월드컵경기장",
-                            "임진각 평화의 공원": "임진각평화누리공원",
-                            "화성행궁 신풍루 매표소 앞": "화성행궁"
-                        };
-
-                        // Check partial match in stubborn map keys or values
-                        for (const key in stubbornMap) {
-                            if (venue.name.includes(key) || key.includes(venue.name)) {
-                                nameResult = await tryGeocodeName(stubbornMap[key]);
-                                if (nameResult && nameResult.length > 0) break;
-                            }
+                    if ((!nameResult || nameResult.length === 0) && cleanedName.includes(' ')) {
+                        // Fallback: Try even shorter (first word?)
+                        // Only if reasonable length
+                        const split = cleanedName.split(' ');
+                        if (split.length > 1 && split[0].length > 2) {
+                            console.log(`   -> Retrying with first word: ${split[0]}`);
+                            nameResult = await tryGeocodeName(split[0]);
                         }
                     }
 
