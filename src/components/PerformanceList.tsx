@@ -3095,10 +3095,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         <span>찜한 공연장</span>
                                         <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
                                         <button
-                                            onClick={() => setViewMode('map')}
-                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-medium transition-colors flex items-center gap-1.5 border border-white/10"
+                                            onClick={() => setIsFavoriteVenuesModalOpen(true)}
+                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-medium transition-colors flex items-center gap-1.5 border border-white/10 light:bg-white light:text-black light:border-gray-300 light:hover:bg-gray-100 shadow-sm"
                                         >
-                                            <List size={14} />
+                                            <List size={14} className="light:text-black" />
                                             찜한공연장 목록
                                         </button>
                                     </>
