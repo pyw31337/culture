@@ -14,6 +14,7 @@ import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
 
+import handballData from '@/data/handball.json';
 import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
@@ -64,6 +65,7 @@ async function getPerformances() {
     const volleyball = kovoData as unknown as any[];
     const basketball = kblData as unknown as any[];
     const baseball = kboData as unknown as any[];
+    const handball = handballData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -91,6 +93,7 @@ async function getPerformances() {
         ...volleyball, // KOVO
         ...basketball, // KBL
         ...baseball, // KBO
+        ...handball, // Handball
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)
@@ -119,8 +122,8 @@ async function getPerformances() {
 
     // Strict filter for Sports (Volleyball/Basketball): Must be in 'seoul', 'gyeonggi', 'incheon'
     // Also exclude generic '예매하기' venue name which indicates a parsing error or placeholder
-    // Valid regions - Added 'etc' to allow showing items with mapped region 'etc'
-    const validRegions = ['seoul', 'gyeonggi', 'incheon', 'etc'];
+    // Valid regions - Added 'etc' and 'busan', 'daegu', 'gwangju' for broader sports support
+    const validRegions = ['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'];
 
     // 3. Bad Data / Blocklist Check
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
@@ -131,9 +134,11 @@ async function getPerformances() {
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        // Sports (Volleyball/Basketball/Baseball): Strict Region Filter (Seoul, Gyeonggi, Incheon only)
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball') {
-            if (!['seoul', 'gyeonggi', 'incheon'].includes(p.region)) return false;
+        // Sports: Strict Region Filter (Seoul, Gyeonggi, Incheon only for existing/ticket-based ones, but expanding for handball)
+        // Actually, let's allow all regions for collected sports if valid
+        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball') {
+            // Allow verified regions
+            if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) return false;
         }
 
         // Allow 'etc' but maybe we want to visualize it differently? 
