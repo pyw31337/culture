@@ -3569,7 +3569,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
         : variant === 'pink'
             ? "bg-pink-950/40"
             : variant === 'yellow'
-                ? "bg-yellow-950 light:bg-yellow-400"
+                ? "bg-yellow-950 light:bg-yellow-100"
                 : ""; // Default: transparent (no bg class)
 
     return (
