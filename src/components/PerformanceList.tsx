@@ -3799,12 +3799,12 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     </div>
                                     {/* Right: Price */}
                                     <div className="flex flex-col items-end">
-                                        {perf.originalPrice && <span className="text-gray-500 text-[10px] line-through mb-[-2px]">{perf.originalPrice}</span>}
+                                        {perf.originalPrice && <span className={clsx("text-[10px] line-through mb-[-2px]", variant === 'yellow' ? "text-gray-500 light:text-white" : "text-gray-500")}>{perf.originalPrice}</span>}
                                         {perf.price && (() => {
                                             const extracted = extractFirstPrice(perf.price);
                                             if (!extracted) return null;
                                             return (
-                                                <div className="text-white">
+                                                <div className={clsx(variant === 'yellow' ? "text-white light:text-black" : "text-white")}>
                                                     {extracted.price === '무료' ? (
                                                         <span className="text-lg font-extrabold">무료</span>
                                                     ) : (
