@@ -7,9 +7,10 @@ interface FavoriteVenuesModalProps {
     onClose: () => void;
     favoriteVenues: string[];
     onRemove: (venueName: string) => void;
+    onVenueClick: (venueName: string) => void;
 }
 
-const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove }: FavoriteVenuesModalProps) => {
+const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenueClick }: FavoriteVenuesModalProps) => {
     return (
         <AnimatePresence>
             {isOpen && (
@@ -64,9 +65,12 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove }: Favo
                                                     <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
                                                         <MapPin size={18} />
                                                     </div>
-                                                    <span className="text-gray-200 font-medium truncate">
+                                                    <button
+                                                        onClick={() => onVenueClick(venueName)}
+                                                        className="text-gray-200 font-medium truncate text-left hover:underline decoration-emerald-400 decoration-2 underline-offset-4"
+                                                    >
                                                         {venueName}
-                                                    </span>
+                                                    </button>
                                                 </div>
                                                 <button
                                                     onClick={() => onRemove(venueName)}

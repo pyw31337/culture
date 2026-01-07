@@ -3478,6 +3478,23 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                 onClose={() => setIsFavoriteVenuesModalOpen(false)}
                 favoriteVenues={favoriteVenues}
                 onRemove={handleRemoveFavoriteVenue}
+                onVenueClick={(venueName) => {
+                    const venue = venues[venueName];
+                    if (venue && venue.lat && venue.lng) {
+                        setSearchLocation({
+                            lat: venue.lat,
+                            lng: venue.lng,
+                            name: venueName
+                        });
+                        setViewMode('map');
+                        // Optional: Close the favorites modal if desired, or keep it open.
+                        // User request: "그 위로 지도보기 레이어팝업을 띄워서" (Pop map OVER it)
+                        // KakaoMapModal has higher z-index (100001) than FavoriteVenuesModal (9999), 
+                        // so keeping it open works perfectly for stacking.
+                    } else {
+                        alert('공연장 위치 정보를 찾을 수 없습니다.');
+                    }
+                }}
             />
         </div>
     );
@@ -3824,7 +3841,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 className={clsx(
                                     "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent rounded-lg",
                                     variant === 'yellow'
-                                        ? "border border-black/20 hover:border-black/60 text-black hover:bg-black/5"
+                                        ? "border border-white/60 hover:border-white text-white hover:bg-white/10 light:border-black/20 light:hover:border-black/60 light:text-black light:hover:bg-black/5"
                                         : "border border-white/60 hover:border-white text-white hover:bg-white/10"
                                 )}
                             >
