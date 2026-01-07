@@ -93,7 +93,7 @@ async function scrapeKovo() {
                 // Determine Genre (Men/Women) - optional but good for context
                 // Filter IDs
                 const id = `kovo_${currentDate.replace(/-/g, '')}_${homeTeam}_${awayTeam}`;
-                const title = `[배구] ${homeTeam} vs ${awayTeam}`;
+                const title = `${homeTeam} vs ${awayTeam}`;
 
                 performances.push({
                     id,
