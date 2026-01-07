@@ -39,6 +39,9 @@ const venues = venueData as Record<string, Venue>;
 interface PerformanceListProps {
     initialPerformances: Performance[];
     lastUpdated: string;
+    initialGenre?: string; // Pre-selected genre from URL
+    isCategoryPage?: boolean; // Is this a category-specific page
+    categoryLabel?: string; // Label for the category page
 }
 
 // Skeleton Loading Component for Grid View
@@ -484,11 +487,11 @@ const TypingHero = ({
     );
 };
 
-export default function PerformanceList({ initialPerformances, lastUpdated }: PerformanceListProps) {
+export default function PerformanceList({ initialPerformances, lastUpdated, initialGenre = 'all', isCategoryPage = false, categoryLabel }: PerformanceListProps) {
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
-    const [selectedGenre, setSelectedGenre] = useState<string>('all');
+    const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false); // Guard against overwriting LS
 

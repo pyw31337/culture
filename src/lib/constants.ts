@@ -55,3 +55,13 @@ export const RADIUS_OPTIONS = [
     { value: 15, label: '15km 반경' },
     { value: 20, label: '20km 반경' },
 ];
+
+// Sports genres for composite /sports URL
+export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'hockey'];
+
+// Valid genre slugs for URL routing
+export const VALID_GENRE_SLUGS = [
+    'hotdeal', 'movie', 'musical', 'theater', 'concert', 'classic', 'exhibition',
+    'activity', 'class', 'travel', 'festival', 'leisure', 'kids',
+    'volleyball', 'basketball', 'baseball', 'soccer', 'sports'
+];
