@@ -11,7 +11,8 @@
     "genre": "movie",
     "cast": [
       "구교환",
-      "문가영"
+      "문가영",
+      "신정근"
     ],
     "director": "김도영",
     "movieInfo": "한국로맨스/멜로 / 114분"
@@ -302,22 +303,23 @@
     "movieInfo": "일본애니메이션 외 / 112분"
   },
   {
-    "id": "movie_20251231_터널",
-    "title": "터널",
-    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
+    "id": "movie_20251231_하나_그리고_둘",
+    "title": "하나 그리고 둘",
+    "image": "https://s.pstatic.net/movie.phinf/20251215_273/1765766480679L1w99_JPEG/movie_image.jpg",
     "date": "2025.12.31.",
-    "venue": "15세 관람가",
+    "venue": "12세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%95%98%EB%82%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%91%98%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "타이 호아",
-      "투 안 호",
-      "쿠앙 투안"
+      "오념진",
+      "금연령",
+      "켈리 리",
+      "조나단 창"
     ],
-    "director": "탁 추옌부이",
-    "movieInfo": "베트남전쟁 외 / 126분"
+    "director": "에드워드 양",
+    "movieInfo": "대만드라마"
   },
   {
     "id": "movie_20251231_#런석진_에피소드.",
@@ -336,22 +338,21 @@
     "movieInfo": "한국공연 / 94분"
   },
   {
-    "id": "movie_20251231_하나_그리고_둘",
-    "title": "하나 그리고 둘",
-    "image": "https://s.pstatic.net/movie.phinf/20251215_273/1765766480679L1w99_JPEG/movie_image.jpg",
+    "id": "movie_20251231_터널",
+    "title": "터널",
+    "image": "https://s.pstatic.net/movie.phinf/20251211_130/1765433997580gyjh3_JPEG/movie_image.jpg",
     "date": "2025.12.31.",
-    "venue": "12세 관람가",
+    "venue": "15세 관람가",
     "gradeIcon": null,
-    "link": "https://m.search.daum.net/search?w=tot&q=%ED%95%98%EB%82%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%91%98%20%EC%98%81%ED%99%94",
+    "link": "https://m.search.daum.net/search?w=tot&q=%ED%84%B0%EB%84%90%20%EC%98%81%ED%99%94",
     "region": "전국",
     "genre": "movie",
     "cast": [
-      "오념진",
-      "금연령",
-      "켈리 리",
-      "조나단 창"
+      "타이 호아",
+      "투 안 호",
+      "쿠앙 투안"
     ],
-    "director": "에드워드 양",
-    "movieInfo": "대만드라마"
+    "director": "탁 추옌부이",
+    "movieInfo": "베트남전쟁 외 / 126분"
   }
 ]
