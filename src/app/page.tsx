@@ -17,6 +17,9 @@ import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
 import mochaclassData from '@/data/mochaclass.json';
+import venueData from '@/data/venues.json';
+
+const venues = venueData as Record<string, { address: string }>;
 
 // Helper to check if performance is effectively expired (End Date < Today)
 function isPerformanceActive(dateStr: string, today: Date): boolean {
@@ -138,6 +141,16 @@ async function getPerformances() {
         if (p.venue === '예매하기') return false;
         // Check for venue names that are actually dates (e.g., "12.18(목) 19:00") - Parsing Error Cleaning
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
+
+        // Address-based Filtering (Stronger than region tag)
+        // If we know the address, and it's NOT in Seoul/Gyeonggi/Incheon, hide it.
+        if (venues[p.venue]) {
+            const addr = venues[p.venue].address;
+            if (addr && addr !== '정보 없음') {
+                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
+                if (!isServiceArea) return false;
+            }
+        }
 
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
