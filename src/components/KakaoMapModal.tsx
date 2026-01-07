@@ -345,8 +345,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
 
                 {/* Bottom List for Multiple Venues */}
                 {uniqueVenues.length > 0 && (
-                    <div className="absolute bottom-4 left-0 right-0 z-[90] px-4">
-                        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">
+                    <div className="absolute bottom-4 left-0 right-0 z-[90] px-4 pointer-events-none">
+                        <div className="flex gap-3 overflow-x-auto pb-2 snap-x pointer-events-auto">
                             {uniqueVenues.map((v: any) => {
                                 const isFavorite = favoriteVenues.includes(v.venueName);
                                 const isSelected = selectedVenue === v.venueName;
