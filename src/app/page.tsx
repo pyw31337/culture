@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import interparkData from '@/data/interpark.json';
 import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
+import kboData from '@/data/kbo.json';
 import travelData from '@/data/travel.json';
 import festivalsData from '@/data/festivals.json';
 import yes24Data from '@/data/yes24.json';
@@ -62,6 +63,7 @@ async function getPerformances() {
     const interpark = interparkData as unknown as any[];
     const volleyball = kovoData as unknown as any[];
     const basketball = kblData as unknown as any[];
+    const baseball = kboData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -88,6 +90,7 @@ async function getPerformances() {
         ...festivals,
         ...volleyball, // KOVO
         ...basketball, // KBL
+        ...baseball, // KBO
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)
@@ -128,8 +131,8 @@ async function getPerformances() {
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        // Sports (Volleyball/Basketball): Strict Region Filter (Seoul, Gyeonggi, Incheon only)
-        if (p.genre === 'volleyball' || p.genre === 'basketball') {
+        // Sports (Volleyball/Basketball/Baseball): Strict Region Filter (Seoul, Gyeonggi, Incheon only)
+        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball') {
             if (!['seoul', 'gyeonggi', 'incheon'].includes(p.region)) return false;
         }
 
