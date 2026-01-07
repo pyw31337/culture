@@ -144,28 +144,52 @@ async function enhanceVenues() {
 
                 let cleanAddr = match ? match[0] : addr.split('(')[0].trim();
 
-                const query = encodeURIComponent(cleanAddr);
-                const geoUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=1`;
-                console.log(`   -> Geocoding: ${cleanAddr}`);
+                // Iterative Geocoding: Strip last word until success
+                let currentSearchAddr = cleanAddr;
+                let foundCoords = false;
 
-                // Fetch with native fetch if available or use axios (need to import axios if not present, but this file uses puppeteer primarily. 
-                // Let's use page.evaluate for fetch inside browser context to avoid adding axios dependency if not needed, 
-                // OR just use fetch since node 18+ has it. Assuming node environment.
-                // But wait, the file doesn't import axios. Let's use page.evaluate to fetch from browser context to be safe and use browser headers.
+                // Loop while we have at least 2 words (to avoid searching just "Seoul" or "Gyeonggi")
+                while (currentSearchAddr.trim().split(/\s+/).length >= 2) {
+                    const query = encodeURIComponent(currentSearchAddr);
+                    const geoUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=1`;
+                    console.log(`   -> Geocoding attempt: ${currentSearchAddr}`);
 
-                const geoResult: any = await page.evaluate(async (url) => {
-                    try {
-                        const res = await fetch(url, { headers: { 'User-Agent': 'CultureFlow/1.0' } });
-                        return await res.json();
-                    } catch (e) { return []; }
-                }, geoUrl);
+                    const geoResult: any = await page.evaluate(async (url) => {
+                        try {
+                            const res = await fetch(url, { headers: { 'User-Agent': 'CultureFlow/1.0' } });
+                            return await res.json();
+                        } catch (e) { return []; }
+                    }, geoUrl);
 
-                if (geoResult && geoResult.length > 0) {
-                    venues[venue.name].lat = parseFloat(geoResult[0].lat);
-                    venues[venue.name].lng = parseFloat(geoResult[0].lon);
-                    console.log(`   ✅ Geocoded: ${venues[venue.name].lat}, ${venues[venue.name].lng}`);
+                    if (geoResult && geoResult.length > 0) {
+                        venues[venue.name].lat = parseFloat(geoResult[0].lat);
+                        venues[venue.name].lng = parseFloat(geoResult[0].lon);
+                        console.log(`   ✅ Geocoded: ${venues[venue.name].lat}, ${venues[venue.name].lng}`);
+                        foundCoords = true;
+                        break; // Success!
+                    }
+
+                    // Failed, strip last word
+                    const lastSpaceIndex = currentSearchAddr.lastIndexOf(' ');
+                    if (lastSpaceIndex === -1) break; // Should be handled by while condition but safety check
+
+                    const nextAddr = currentSearchAddr.substring(0, lastSpaceIndex).trim();
+                    if (nextAddr === currentSearchAddr) break; // Infinite loop protection
+                    currentSearchAddr = nextAddr;
+
+                    // Rate limit for Nominatim (1s) between tries
+                    await delay(1000);
+                }
+
+                if (!foundCoords) {
+                    console.log(`   ❌ Geocode Failed for all attempts starting from: ${cleanAddr}`);
+                    // Fallback: Try searching by Name (as last resort)
+                    // ... existing name search logic ...
                 } else {
-                    console.log(`   ❌ Geocode Failed for: ${cleanAddr}`);
+                    // Success case already handled break
+                }
+
+                if (!foundCoords) {
                     // Fallback: Try searching by Name
                     const nameQuery = encodeURIComponent(venue.name);
                     const nameGeoUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${nameQuery}&limit=1`;
