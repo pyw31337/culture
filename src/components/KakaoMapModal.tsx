@@ -388,8 +388,10 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                 const isSelected = selectedVenue === v.venueName;
                                 return (
                                     <button
+                                        type="button"
                                         key={v.venueName}
-                                        onClick={() => {
+                                        style={{ pointerEvents: 'auto' }}
+                                        onClick={(e) => {
                                             if (mapInstance && v.lat && v.lng) {
                                                 if (isSelected) {
                                                     // Close
@@ -406,6 +408,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                     if (overlay) overlay.setMap(mapInstance);
                                                     setSelectedVenue(v.venueName);
                                                 }
+                                            } else {
+                                                console.warn('Map click failed: missing instance or coords', { mapInstance: !!mapInstance, lat: v.lat, lng: v.lng });
                                             }
                                         }}
                                         className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300

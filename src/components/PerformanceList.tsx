@@ -3815,10 +3815,18 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     e.stopPropagation();
                                     onDetail?.();
                                 }}
-                                className="w-full py-2 bg-transparent hover:bg-white/10 border border-white/60 hover:border-white text-xs sm:text-sm font-bold text-white transition-all flex items-center justify-center gap-1"
+                                className={clsx(
+                                    "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent",
+                                    variant === 'yellow'
+                                        ? "border border-black/20 hover:border-black/60 text-black hover:bg-black/5"
+                                        : "border border-white/60 hover:border-white text-white hover:bg-white/10"
+                                )}
                             >
                                 자세히 보기
-                                <ChevronDown className="-rotate-90 w-3 h-3 text-white" />
+                                <ChevronDown className={clsx(
+                                    "-rotate-90 w-3 h-3",
+                                    variant === 'yellow' ? "text-black" : "text-white"
+                                )} />
                             </button>
                         </div>
                     </div>
