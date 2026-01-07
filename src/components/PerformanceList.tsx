@@ -3570,10 +3570,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             <div
                 ref={cardRef}
                 className={clsx(
-                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border",
+                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border backface-hidden",
                     outerVariantStyle
                 )}
-                style={{ transformStyle: 'preserve-3d' }}
+                style={{
+                    transformStyle: 'preserve-3d',
+                    WebkitMaskImage: '-webkit-radial-gradient(white, black)', // Force proper clipping on Safari/Chrome
+                }}
             >
                 {/* Glare Effect */}
                 <div
