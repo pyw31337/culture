@@ -2,111 +2,110 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-// Try the root URL
-const KBL_URL = 'https://www.kbl.or.kr';
-// User requested static thumbnail
+const KBL_URL = 'https://www.kbl.or.kr/match/schedule';
 const KBL_POSTER = '/culture/images/kbl_poster.png';
-const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl_debug.txt');
+const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
 
 async function scrapeKbl() {
-    console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
+    console.log(`Starting KBL Scraper (UI Interaction)...`);
+
     const browser = await puppeteer.launch({
         headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        ],
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 1024 });
-    // User Agent
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
-    console.log(`Navigating to ${KBL_URL}...`);
-    await page.goto(KBL_URL, { waitUntil: 'networkidle0', timeout: 60000 });
+    const collectedMatches: any[] = [];
 
-    console.log(`Current URL: ${page.url()}`);
-
-    // Wait a bit
-    await new Promise(r => setTimeout(r, 5000));
-
-    // Dump content
-    const content = await page.evaluate(() => document.body.innerText);
-    // fs.writeFileSync(OUTPUT_PATH, content); // Removed debug write
-    // console.log(`Saved text content to ${OUTPUT_PATH}`);
-
-    const lines = (content as string).split('\n').map(l => l.trim()).filter(l => l);
-    const performances: any[] = []; // Use explicit type if possible, or matches Performance interface
-
-    // Helper to map venue to region
-    function classifyRegion(venue: string): string {
-        if (venue.includes('서울') || venue.includes('잠실')) return 'seoul';
-        if (venue.includes('안양') || venue.includes('수원') || venue.includes('고양')) return 'gyeonggi';
-        if (venue.includes('인천')) return 'incheon';
-        return 'etc';
-    }
-
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        // Date Pattern: "25.12.10 수 19:00 대구체육관"
-        // Regex: ^(\d{2})\.(\d{2})\.(\d{2})\s[월화수목금토일]\s(\d{2}:\d{2})\s(.+)$
-        const dateMatch = line.match(/^(\d{2})\.(\d{2})\.(\d{2})\s[월화수목금토일]\s(\d{2}:\d{2})\s(.+)$/);
-
-        if (dateMatch) {
-            const year = `20${dateMatch[1]}`;
-            const month = dateMatch[2];
-            const day = dateMatch[3];
-            const time = dateMatch[4];
-            const venue = dateMatch[5];
-
-            // Expected structure based on debug:
-            // i   : Date/Venue
-            // i+1 : Team 1 (Home usually)
-            // i+2 : Score 1
-            // i+3 : Team 2 (Away usually)
-            // i+4 : Score 2
-            // i+5 : Status (예정/종료)
-
-            // Note: The debug file had empty lines between them, but our `lines` array filters empty lines.
-            // So indices should be contiguous in `lines`.
-
-            if (i + 3 < lines.length) {
-                const team1 = lines[i + 1];
-                const score1 = lines[i + 2]; // might be number
-                const team2 = lines[i + 3];
-                // validation: ensure team names are not scores
-                if (team1 && team2 && isNaN(Number(team1)) && isNaN(Number(team2))) {
-                    const title = `[농구] ${team1} vs ${team2}`;
-                    const dateStr = `${year}-${month}-${day}`;
-                    const id = `kbl_${dateStr.replace(/-/g, '')}_${team1}_${team2}`;
-
-                    performances.push({
-                        id,
-                        title,
-                        image: KBL_POSTER,
-                        date: `${dateStr} ${time}`,
-                        venue,
-                        link: KBL_URL,
-                        region: classifyRegion(venue),
-                        genre: 'basketball'
-                    });
-                }
+    // 1. Setup Network Listener
+    page.on('response', async res => {
+        const url = res.url();
+        if (url.includes('match/list') && res.status() === 200 && res.request().method() === 'GET') {
+            try {
+                const json = await res.json();
+                const list = Array.isArray(json) ? json : (json.list || []);
+                console.log(`Captured API response with ${list.length} matches from ${url}`);
+                collectedMatches.push(...list);
+            } catch (e) {
+                console.error('Error parsing response:', e);
             }
         }
+    });
+
+    // 2. Navigate (Triggers Jan data)
+    console.log(`Navigating to ${KBL_URL}...`);
+    await page.goto(KBL_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+
+    // 3. Click Next Month button 3 times (Feb, Mar, Apr)
+    // Selector: .ic-date-nav-next or parent button
+    try {
+        const nextBtnSelector = '.ic-date-nav-next';
+        await page.waitForSelector(nextBtnSelector, { timeout: 10000 });
+
+        for (let i = 0; i < 3; i++) {
+            console.log(`Clicking next month (${i + 1}/3)...`);
+            // Usually the icon is inside a button, clicking icon works often, or find parent
+            await page.click(nextBtnSelector);
+            // Wait for network activity
+            await new Promise(r => setTimeout(r, 3000));
+        }
+    } catch (e) {
+        console.error('Error clicking next button:', e);
     }
 
-    console.log(`Extracted ${performances.length} matches.`);
-    fs.writeFileSync(path.resolve(process.cwd(), 'src/data/kbl.json'), JSON.stringify(performances, null, 2));
-    console.log(`Saved to src/data/kbl.json`);
+    // 4. Process Data
+    const allPerformances: any[] = [];
+    const seenIds = new Set<string>();
 
-    // Also screenshot might be useful if I could view it, but text is safer.
+    for (const match of collectedMatches) {
+        const d = match.gameDate;
+        if (!d || d.length !== 8) continue;
+
+        const dateStr = `${d.substring(0, 4)}-${d.substring(4, 6)}-${d.substring(6, 8)}`;
+        const t = match.gameStart || '0000';
+        const timeStr = `${t.substring(0, 2)}:${t.substring(2, 4)}`;
+
+        // Filter: Keep only Jan-Apr 2026? Or just keep all fetched.
+        // User wants "schedule", effectively future.
+        if (!dateStr.startsWith('2026')) continue;
+
+        const title = `[농구] ${match.tnameH} vs ${match.tnameA}`;
+        const id = `kbl_${match.gameDate}_${match.tcodeH}_${match.tcodeA}`;
+
+        if (seenIds.has(id)) continue;
+        seenIds.add(id);
+
+        allPerformances.push({
+            id,
+            title,
+            image: KBL_POSTER,
+            date: `${dateStr} ${timeStr}`,
+            venue: match.stadiumname,
+            link: KBL_URL,
+            region: classifyRegion(match.stadiumname),
+            genre: 'basketball'
+        });
+    }
+
+    console.log(`Total collected: ${allPerformances.length}`);
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allPerformances, null, 2));
+    console.log(`Saved to ${OUTPUT_PATH}`);
 
     await browser.close();
+}
+
+function classifyRegion(venue: string): string {
+    if (!venue) return 'etc';
+    if (venue.includes('서울') || venue.includes('잠실')) return 'seoul';
+    if (venue.includes('안양') || venue.includes('수원') || venue.includes('고양')) return 'gyeonggi';
+    if (venue.includes('인천')) return 'incheon';
+    if (venue.includes('부산')) return 'busan';
+    if (venue.includes('창원') || venue.includes('대구') || venue.includes('울산')) return 'etc';
+    return 'etc';
 }
 
 scrapeKbl().catch(console.error);
