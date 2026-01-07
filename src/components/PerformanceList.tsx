@@ -1581,6 +1581,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     }
 
     const handleGenreSelect = (genre: string) => {
+        // If on a category page and selecting a different genre, navigate to that category's URL
+        if (isCategoryPage && genre !== initialGenre) {
+            const baseUrl = 'https://pyw31337.github.io/culture/';
+            if (genre === 'all') {
+                window.location.href = baseUrl;
+            } else {
+                window.location.href = `${baseUrl}${genre}/`;
+            }
+            return;
+        }
         setSelectedGenre(genre);
         scrollToTop();
     };
