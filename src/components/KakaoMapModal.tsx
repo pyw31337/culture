@@ -58,7 +58,23 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
         const x = e.pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 2; // Scroll-fast
         scrollRef.current.scrollLeft = scrollLeft - walk;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
     };
+
+    // Auto-select and scroll to venue in list if provided via centerLocation
+    useEffect(() => {
+        if (centerLocation?.name) {
+            setSelectedVenue(centerLocation.name);
+            // Wait for render cycle then scroll
+            setTimeout(() => {
+                if (!scrollRef.current) return;
+                const targetEl = scrollRef.current.querySelector<HTMLElement>(`[data-venue-name="${CSS.escape(centerLocation.name)}"]`);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }, 300); // 300ms delay to ensure list is rendered and modal transition is mostly done
+        }
+    }, [centerLocation]);
 
     useEffect(() => {
         const scriptId = 'kakao-map-script';
@@ -390,6 +406,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                     <button
                                         type="button"
                                         key={v.venueName}
+                                        data-venue-name={v.venueName}
                                         style={{ pointerEvents: 'auto' }}
                                         onClick={(e) => {
                                             if (mapInstance && v.lat && v.lng) {
