@@ -161,7 +161,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
     genreFiltered.forEach(p => {
         let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
 
-        if (p.genre === 'travel') {
+        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'hockey'].includes(p.genre)) {
             key += `_${p.date}`;
         }
 
