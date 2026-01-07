@@ -3695,7 +3695,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 "text-lg sm:text-xl font-bold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
                                 variant === 'yellow' ? "text-white light:text-black light:font-extrabold" : "text-white light:text-black"
                             )}>
-                                {perf.title.trim()}
+                                {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                             </h3>
                         </a>
 
@@ -4107,7 +4107,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 {/* Text Content Area */}
                                 <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                     <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
-                                        {perf.title.trim()}
+                                        {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                     </h3>
                                 </a>
 
@@ -4217,7 +4217,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                             <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
-                                                {perf.title.trim()}
+                                                {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                             </h3>
                                         </a>
 
@@ -4375,6 +4375,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             </button>
                                             <a
                                                 href={perf.link}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex-1 bg-[#a78bfa] hover:bg-[#9063f0] text-white py-2 rounded-[10px] flex items-center gap-1.5 justify-center transition-all font-bold text-sm h-[40px] shadow-lg relative z-[100]"
                                                 onClick={e => e.stopPropagation()}
