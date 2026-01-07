@@ -373,7 +373,7 @@ async function scrapeTimeTicket() {
                 region: item.region,
                 genre: item.genre,
                 price: detailData.salePrice || item.price, // Prefer detail sale price
-                originalPrice: detailData.originalPrice || item.price, // Prefer detail origin price, fallback to item.price (which might be discounted, but better than nothing)
+                originalPrice: detailData.originalPrice || '', // Prefer detail origin price, do not fallback to discounted price
                 discount: item.discount,
                 runningTime: detailData.runningTime,
                 ageLimit: detailData.ageLimit,

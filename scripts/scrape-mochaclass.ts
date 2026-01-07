@@ -98,7 +98,7 @@ async function scrapeMochaClass() {
 
     console.log(`\nPhase 1: Collecting class links...`);
 
-    let pendingItems: { link: string, title: string, image: string, price: string }[] = [];
+    let pendingItems: { link: string, title: string, image: string, price: string, originalPrice: string }[] = [];
 
     // Iterate locations to avoid 10k limit on single search
     for (const loc of LOCATIONS) {
@@ -150,15 +150,42 @@ async function scrapeMochaClass() {
                         const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
                         const image = imgElem ? imgElem.getAttribute('src') || '' : '';
 
-                        // Price
-                        const priceElem = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v > div > p');
-                        const price = priceElem ? (priceElem.textContent?.trim() || '') : '';
+                        // Price Logic Update
+                        const priceContainer = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v');
+                        let price = '';
+                        let originalPrice = '';
+
+                        if (priceContainer) {
+                            // Collect text content of all children, filtering out '포인트'
+                            const allTexts = Array.from(priceContainer.querySelectorAll('p, span, div'))
+                                .map((el: any) => el.textContent?.trim() || '')
+                                .filter((t: string) => t.length > 0 && !t.includes('포인트') && !t.includes('적립'));
+
+                            // Find price-like strings (e.g. "30,000원")
+                            const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t));
+
+                            // Parse values to compare
+                            const values = priceLike.map((t: string) => {
+                                return { text: t, val: parseInt(t.replace(/[^0-9]/g, '')) || 0 };
+                            }).filter((v: any) => v.val > 0);
+
+                            if (values.length >= 2) {
+                                // Assuming larger is original, smaller is current
+                                values.sort((a: any, b: any) => b.val - a.val);
+                                originalPrice = values[0].text;
+                                price = values[values.length - 1].text;
+                            } else if (values.length === 1) {
+                                price = values[0].text;
+                                originalPrice = price; // Same
+                            }
+                        }
 
                         results.push({
                             title,
                             link,
                             image,
-                            price
+                            price,
+                            originalPrice
                         });
                     });
                     return results;
@@ -248,7 +275,7 @@ async function scrapeMochaClass() {
                 region: address.includes('서울') ? 'seoul' : 'gyeonggi', // Simple fallback, or detect better
                 genre: 'class',
                 price: item.price,
-                originalPrice: item.price,
+                originalPrice: item.originalPrice,
                 discount: '', // Calculate if needed later
                 runningTime: '예약페이지 참조',
                 ageLimit: '전체',

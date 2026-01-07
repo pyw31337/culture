@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Performance } from '@/types';
-import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight } from 'lucide-react';
+import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight, Tag } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback'; // Import the new component
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
@@ -3803,7 +3803,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 <div className="flex justify-between items-end">
                                     {/* Left: Discount */}
                                     <div className="flex flex-col">
-                                        {perf.discount && (
+                                        {perf.discount && perf.originalPrice && perf.originalPrice !== perf.price && (
                                             <div className="text-red-500">
                                                 <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
                                                 <span className="text-sm font-light">%</span>
@@ -3812,7 +3812,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     </div>
                                     {/* Right: Price */}
                                     <div className="flex flex-col items-end">
-                                        {perf.originalPrice && <span className={clsx("text-[10px] line-through mb-[-2px]", variant === 'yellow' ? "text-gray-500 light:text-white" : "text-gray-500")}>{perf.originalPrice}</span>}
+                                        {perf.originalPrice && perf.originalPrice !== perf.price && <span className={clsx("text-[10px] line-through mb-[-2px]", variant === 'yellow' ? "text-gray-500 light:text-gray-500" : "text-gray-500")}>{perf.originalPrice}</span>}
                                         {perf.price && (() => {
                                             const extracted = extractFirstPrice(perf.price);
                                             if (!extracted) return null;
@@ -4155,7 +4155,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div className="flex items-center gap-1.5 w-full">
                                         {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
                                         {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
-                                        {perf.originalPrice && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
+                                        {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
                                     </div>
                                 </div>
                                 <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
@@ -4203,6 +4203,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         ? (showActions ? "translate-y-0" : "translate-y-[55px] group-hover:translate-y-0")
                                         : ""
                                 )}>
+                                    {/* Discount Badge - Only specific variants or if high discount. Hide if no discount */}
+                                    {perf.discountRate && perf.originalPrice && perf.originalPrice !== perf.price && (
+                                        <div className="absolute top-2 right-2 z-40 bg-black/80 text-emerald-400 border border-emerald-400/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
+                                            style={{ transform: 'translateZ(20px)' }}>
+                                            <Tag className="w-3 h-3 fill-emerald-400" />
+                                            {perf.discountRate}
+                                        </div>
+                                    )}
                                     {/* Gradient Background Layer - spans full height of content */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
@@ -4329,7 +4337,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     )}
                                                 </div>
                                                 <div className="flex items-baseline gap-1.5">
-                                                    {perf.originalPrice && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
+                                                    {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-400 text-xs line-through decoration-gray-500/70">{perf.originalPrice}</span>}
                                                     {perf.price && (() => {
                                                         const extracted = extractFirstPrice(perf.price);
                                                         if (!extracted) return null;
