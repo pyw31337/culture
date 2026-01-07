@@ -3091,11 +3091,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                     </>
                                 ) : viewMode === 'likes-venue' ? (
                                     <>
-                                        <Star className="text-yellow-400 w-6 h-6 fill-yellow-400" />
+                                        <Star className="text-emerald-500 w-6 h-6 fill-emerald-500" />
                                         <span>찜한 공연장</span>
                                         <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
                                         <button
-                                            onClick={() => setIsFavoriteVenuesModalOpen(true)}
+                                            onClick={() => setViewMode('map')}
                                             className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-medium transition-colors flex items-center gap-1.5 border border-white/10"
                                         >
                                             <List size={14} />
@@ -3245,16 +3245,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated }: Pe
                                         </>
                                     ) : viewMode === 'likes-venue' ? (
                                         <>
-                                            <div className="w-20 h-20 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6">
-                                                <Star className="w-10 h-10 text-yellow-500/50" />
+                                            <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6">
+                                                <Star className="w-10 h-10 text-emerald-500/50" />
                                             </div>
                                             <h3 className="text-xl font-bold text-gray-300 mb-2">찜한 공연장이 없네요</h3>
                                             <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
                                             <button
-                                                onClick={() => setShowFavoriteListModal(true)}
-                                                className="px-6 py-2.5 rounded-full bg-yellow-500/20 text-yellow-500 font-bold hover:bg-yellow-500 hover:text-black transition-all"
+                                                onClick={() => setViewMode('map')}
+                                                className="px-6 py-2.5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-black transition-all"
                                             >
-                                                공연장 찾기
+                                                지도에서 찾기
                                             </button>
                                         </>
                                     ) : (
