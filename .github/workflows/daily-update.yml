@@ -78,6 +78,7 @@ jobs:
           npx tsx scripts/scrape-kovo.ts || true
           npx tsx scripts/scrape-kbl.ts || true
           npx tsx scripts/scrape-festival.ts || true
+          npx tsx scripts/scrape-kbo.ts || true
           npx tsx scripts/scrape-yes24.ts || true
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-travel.ts || true
