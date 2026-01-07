@@ -3539,7 +3539,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
         : variant === 'pink'
             ? "bg-pink-950/40"
             : variant === 'yellow'
-                ? "bg-yellow-400"
+                ? "bg-yellow-950 light:bg-yellow-400"
                 : ""; // Default: transparent (no bg class)
 
     return (
@@ -3658,14 +3658,20 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </span>
 
                             {/* Date - Condensed */}
-                            <span className="text-[10px] sm:text-xs text-gray-400 light:text-black flex items-center gap-1 ml-auto sm:ml-0">
+                            <span className={clsx(
+                                "text-[10px] sm:text-xs flex items-center gap-1 ml-auto sm:ml-0",
+                                variant === 'yellow' ? "text-gray-400 light:text-black light:font-bold" : "text-gray-400 light:text-black"
+                            )}>
                                 <Calendar className="w-3 h-3" />
                                 {perf.date.split('~')[0].trim()}
                             </span>
                         </div>
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
-                            <h3 className="text-lg sm:text-xl font-bold text-white light:text-black leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5">
+                            <h3 className={clsx(
+                                "text-lg sm:text-xl font-bold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
+                                variant === 'yellow' ? "text-white light:text-black light:font-extrabold" : "text-white light:text-black"
+                            )}>
                                 {perf.title.trim()}
                             </h3>
                         </a>
@@ -3700,7 +3706,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    <span className="truncate">{perf.venue}</span>
+                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-bold")}>{perf.venue}</span>
                                 </button>
                             )}
                         </div>
@@ -3816,7 +3822,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     onDetail?.();
                                 }}
                                 className={clsx(
-                                    "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent",
+                                    "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent rounded-lg",
                                     variant === 'yellow'
                                         ? "border border-black/20 hover:border-black/60 text-black hover:bg-black/5"
                                         : "border border-white/60 hover:border-white text-white hover:bg-white/10"
