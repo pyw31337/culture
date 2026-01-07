@@ -136,7 +136,7 @@ async function getPerformances() {
 
         // Sports: Strict Region Filter (Seoul, Gyeonggi, Incheon only for existing/ticket-based ones, but expanding for handball)
         // Actually, let's allow all regions for collected sports if valid
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball') {
+        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
             // Allow verified regions
             if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) return false;
         }
