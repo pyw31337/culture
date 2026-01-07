@@ -11,6 +11,7 @@ const withPWA = require('next-pwa')({
 
 const nextConfig: NextConfig = {
   output: 'export',
+  trailingSlash: true, // Required for GitHub Pages static hosting
   basePath: isProd ? '/culture' : '',
   images: {
     unoptimized: true,
