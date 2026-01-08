@@ -4280,14 +4280,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </a>
 
                                         <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
-                                            {perf.genre === 'movie' ? (
+                                            {perf.genre === 'movie' || perf.genre === 'ott' ? (
                                                 <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                     {perf.gradeIcon ? (
                                                         <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
                                                     ) : (
                                                         <>
                                                             <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                                         </>
                                                     )}
                                                 </div>
@@ -4319,7 +4319,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         </div>
 
                                         {/* Movie Metadata (Director, Cast, Info) for Grid View */}
-                                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo) && (
                                             <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">

@@ -51,35 +51,29 @@ async function scrapeOTT() {
         // Wait for content
         await page.waitForSelector('body', { timeout: 10000 });
 
-        // DEBUG: Save HTML to file
-        const html = await page.content();
-        fs.writeFileSync('debug-ott.html', html);
-        console.log('Saved HTML to debug-ott.html');
-
-        const performances = await page.evaluate(() => {
+        // 1. Scrape Basic List (with correct Platforms)
+        const basicItems = await page.evaluate(() => {
             const items: any[] = [];
             const year = new Date().getFullYear();
 
-            // Structure: .contents-wrap contains .streaming-info (header) and .movie-list-area (list)
+            // Structure: .contents-wrap contains headers (sometimes) and content lists (sometimes)
+            // We need to track the "current" platform context as we iterate through wraps.
             const contentWraps = document.querySelectorAll('.contents-wrap');
+            let currentPlatformRaw = '';
 
             contentWraps.forEach(wrap => {
-                // 1. Extract Platform from header
+                // Check if this wrap has a platform icon (Header Wrap)
                 const platformIcon = wrap.querySelector('.streaming-info .kino-icon');
-                let platformRaw = '';
                 if (platformIcon) {
-                    platformRaw = platformIcon.className; // e.g. "kino-icon kino-icon--watcha-play"
+                    currentPlatformRaw = platformIcon.className; // Update context
                 }
 
-                // 2. Extract Date/Header
+                // Extract Date/Header (just in case it's a header wrap)
                 const headerTitle = wrap.querySelector('.streaming-info h3');
                 const headerText = headerTitle ? headerTitle.textContent?.trim() || '' : '';
 
                 // Default date logic
-                let formattedDate = new Date().toISOString().split('T')[0]; // Default to today
-
-                // Try to parse date from header if it exists
-                // Example: "1월 8일 (수)"
+                let formattedDate = new Date().toISOString().split('T')[0];
                 const dateMatch = headerText.match(/(\d{1,2})[./월]\s*(\d{1,2})/);
                 if (dateMatch) {
                     const month = dateMatch[1].padStart(2, '0');
@@ -87,7 +81,7 @@ async function scrapeOTT() {
                     formattedDate = `${year}-${month}-${day}`;
                 }
 
-                // 3. Extract Items
+                // Extract Items (if any)
                 const cards = wrap.querySelectorAll('.MovieItem');
                 cards.forEach(card => {
                     const titleEl = card.querySelector('.title, .name');
@@ -99,17 +93,15 @@ async function scrapeOTT() {
                         const image = posterEl.getAttribute('src') || posterEl.getAttribute('data-src') || '';
                         const link = linkEl ? linkEl.getAttribute('href') : '';
 
-                        // Platform logic: Use the section's platform
+                        // Platform logic: Use current context
                         const platforms: string[] = [];
-
-                        // Map class name to platform ID
-                        if (platformRaw.includes('netflix')) platforms.push('netflix');
-                        else if (platformRaw.includes('disney')) platforms.push('disney');
-                        else if (platformRaw.includes('wavve')) platforms.push('wavve');
-                        else if (platformRaw.includes('tving')) platforms.push('tving');
-                        else if (platformRaw.includes('coupang')) platforms.push('coupang');
-                        else if (platformRaw.includes('apple')) platforms.push('apple');
-                        else if (platformRaw.includes('watcha')) platforms.push('watcha');
+                        if (currentPlatformRaw.includes('netflix')) platforms.push('netflix');
+                        else if (currentPlatformRaw.includes('disney')) platforms.push('disney');
+                        else if (currentPlatformRaw.includes('wavve')) platforms.push('wavve');
+                        else if (currentPlatformRaw.includes('tving')) platforms.push('tving');
+                        else if (currentPlatformRaw.includes('coupang')) platforms.push('coupang');
+                        else if (currentPlatformRaw.includes('apple')) platforms.push('apple');
+                        else if (currentPlatformRaw.includes('watcha')) platforms.push('watcha');
 
                         // Push item
                         items.push({
@@ -129,10 +121,99 @@ async function scrapeOTT() {
             return items;
         });
 
-        // Post-process items (IDs, Mapping Platforms)
-        const processedItems: OTTPerformance[] = performances.map((p: any) => {
+        console.log(`Initial Scrape: Found ${basicItems.length} items. Starting detail enrichment...`);
+
+        // 2. Enrich with Details (Director, Cast, Runtime, Grade, Genre)
+        const enrichedItems: any[] = [];
+
+        // Process in chunks to avoid overwhelming but let's do sequential for safety first, or small concurrency
+        for (let i = 0; i < basicItems.length; i++) {
+            const item = basicItems[i];
+            console.log(`[${i + 1}/${basicItems.length}] Enriching: ${item.title}`);
+
+            try {
+                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+                const details = await page.evaluate(() => {
+                    const getText = (label: string) => {
+                        const allDivs = Array.from(document.querySelectorAll('div, span, dt, h4'));
+                        const labelEl = allDivs.find(el => el.textContent?.trim() === label);
+                        if (!labelEl) return '';
+                        // Try next sibling
+                        if (labelEl.nextElementSibling) return labelEl.nextElementSibling.textContent?.trim() || '';
+                        // Try parent's next sibling
+                        if (labelEl.parentElement?.nextElementSibling) return labelEl.parentElement.nextElementSibling.textContent?.trim() || '';
+                        return '';
+                    };
+
+                    const getCast = () => {
+                        // Find "출연진/제작진" header
+                        const allHeaders = Array.from(document.querySelectorAll('h3, h4, div'));
+                        const header = allHeaders.find(el => el.textContent?.trim() === '출연진/제작진');
+
+                        if (!header) return [];
+
+                        // Assuming the section following the header contains the list
+                        // This is heuristic. Let's look for names.
+                        // Ideally, we find the container. 
+                        // Let's try to find elements with specific class names often used for actors 
+                        // OR (better) just grabbing text from the area.
+
+                        // Fallback: If we can't parse easily, leave empty. 
+                        // But let's try to grab 'a' tags inside the next sibling container?
+                        // Based on text dump: "톰 블라이스\n주연\n에밀리 베이더\n주연"
+                        // It seems likely there are standard list items.
+
+                        // Try finding 'a' tags that link to person profile? href="/person/..."
+                        const personLinks = Array.from(document.querySelectorAll('a[href*="/person/"]'));
+                        // Filter out duplicates and likely irrelevant ones (like director if he is linked differently)
+                        // This captures Director + Actors mostly.
+                        const names = personLinks.map(l => l.querySelector('.name')?.textContent || l.textContent?.trim() || '').filter(Boolean);
+
+                        return [...new Set(names)].slice(0, 5); // Unique, Top 5
+                    };
+
+                    const director = getText('감독');
+                    const cleanDirector = director || ((() => {
+                        // Fallback: Find "감독" text and grab next name
+                        // ...
+                        return '';
+                    })());
+
+                    const cast = getCast();
+                    // Remove director from cast if present
+                    const finalCast = cast.filter(c => c !== director);
+
+                    return {
+                        movieInfo: `${getText('장르')} / ${getText('러닝타임')}`, // Combine for display
+                        grade: getText('연령등급'),
+                        director: director,
+                        cast: finalCast
+                    };
+                });
+
+                // Merge details
+                enrichedItems.push({
+                    ...item,
+                    ...details,
+                    // Map Grade to Icon or text?
+                    // PerformanceList expects 'gradeIcon' often, or just text.
+                    // Let's keep 'grade' text for now.
+                });
+
+                // Small delay to be nice
+                // await new Promise(r => setTimeout(r, 200));
+
+            } catch (e) {
+                console.error(`Failed to enrich ${item.title}:`, e);
+                enrichedItems.push(item); // Keep basic data on failure
+            }
+        }
+
+
+        // Post-process items
+        const processedItems: OTTPerformance[] = enrichedItems.map((p: any) => {
             const mappedPlatforms = p.platforms.map((raw: string) => mapPlatform(raw)).filter((Boolean) as any as (x: any) => x is string);
-            // Dedupe
             const uniquePlatforms = Array.from(new Set(mappedPlatforms)) as string[];
 
             return {
@@ -142,7 +223,7 @@ async function scrapeOTT() {
             };
         });
 
-        console.log(`Scraped ${processedItems.length} items from Kinolights.`);
+        console.log(`Scraped ${processedItems.length} items with details.`);
 
         // Save
         const outputPath = path.resolve(process.cwd(), 'src/data/ott.json');
