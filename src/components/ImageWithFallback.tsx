@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
+// Trigger rebuild for deployment
 import { getOptimizedUrl } from '@/lib/utils';
 
 interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
