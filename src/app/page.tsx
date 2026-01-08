@@ -100,7 +100,7 @@ async function getPerformances() {
         ...baseball, // KBO
         ...handball, // Handball
         ...hockey,   // Hockey
-        ...ott,      // OTT
+        ...ott.map(p => ({ ...p, venue: 'OTT' })),      // OTT
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)

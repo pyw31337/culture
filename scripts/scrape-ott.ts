@@ -142,6 +142,7 @@ async function scrapeOTT() {
                                 genre: 'ott',
                                 platforms: platforms,
                                 region: 'ott',
+                                venue: 'OTT',
                                 id: '' // Will be generated
                             });
                         }
