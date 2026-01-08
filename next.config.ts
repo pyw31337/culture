@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'culture.seoul.go.kr',
       },
+      {
+        protocol: 'https',
+        hostname: 'file.kinolights.com',
+      },
     ],
   },
 };
