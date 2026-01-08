@@ -318,10 +318,22 @@ async function scrapeTimeTicket() {
                 existing.price = item.price || existing.price;
                 existing.discount = item.discount || existing.discount;
 
-                allItems.push(existing);
-                processedCount++;
-                progressBar.update(processedCount);
-                continue;
+                // Check if we need to backfill originalPrice (for items scraped before the fix)
+                // If originalPrice is missing/empty but price exists, we should probably re-scrape detail.
+                // Check if it's "Open Run" or just missing data?
+                // Actually, if it's missing, let's fall through to Detail Scraping.
+                // But we simply 'continue' here.
+                // To force scrape, we should NOT continue.
+                // But wait, if we fall through, we need to make sure we don't duplicate logic.
+                // The simplest way: just don't enter this `if` block if originalPrice is missing.
+                if (!existing.originalPrice || existing.originalPrice === '') {
+                    // If originalPrice is missing, we fall through to the detail scraping block below.
+                } else {
+                    allItems.push(existing);
+                    processedCount++;
+                    progressBar.update(processedCount);
+                    continue;
+                }
             }
         }
 
@@ -423,7 +435,8 @@ async function scrapeTimeTicket() {
                 if (dateMatch) date = dateMatch[1].trim();
 
                 // Scrape Price Info using user-provided selectors
-                const originPriceEl = document.querySelector('.origin_price');
+                // Primary: User reported path or simpler unique class
+                const originPriceEl = document.querySelector('span.origin_price') || document.querySelector('.origin_price');
                 if (originPriceEl) {
                     originalPrice = originPriceEl.textContent?.trim() || '';
                 }
