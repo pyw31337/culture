@@ -1654,6 +1654,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         // Region Filter
         if (selectedRegion !== 'all') {
             filtered = filtered.filter(p => {
+                // 1. Trust server-side region assignment if available
+                if (p.region === selectedRegion) return true;
+
                 const venueInfo = venues[p.venue];
                 if (!venueInfo) {
                     // Fallback check if venue name contains region
