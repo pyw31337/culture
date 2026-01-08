@@ -113,6 +113,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
         ...seoulCulture,
     ].map(p => ({
         ...p,
+        venue: p.venue || 'Online',
         id: String(p.id)
     }));
 
