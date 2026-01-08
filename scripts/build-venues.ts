@@ -178,31 +178,37 @@ async function buildVenues() {
         venues = JSON.parse(fs.readFileSync(VENUE_FILE, 'utf-8'));
 
         // Sanitize loaded venues: Correct invalid districts
-        let cleanedCount = 0;
+        // Sanitize: Clear potentially invalid districts
         for (const key of Object.keys(venues)) {
-            const v = venues[key];
-            if (v.district && !ALL_VALID_DISTRICTS.includes(v.district)) {
-                // If the district is not in our valid list (e.g. '입구', '수정구'), clear it.
-                // Exception: If it's a valid Gyeonggi city suffix logic? 
-                // No, ALL_VALID_DISTRICTS has exact matches.
-                // console.log(`Sanitizing invalid district: ${v.district} in ${v.name}`);
-                v.district = '';
-                cleanedCount++;
+            if (venues[key].district && !ALL_VALID_DISTRICTS.includes(venues[key].district)) {
+                // console.log(`Clearing invalid district "${venues[key].district}" from venue "${key}"`);
+                venues[key].district = '';
             }
-        }
-        if (cleanedCount > 0) {
-            console.log(`Sanitized ${cleanedCount} venues with invalid districts.`);
         }
     }
 
-    // 1. Fetch Lists
-    console.log('Fetching performances...');
-    const [seoul, gyeonggi, incheon] = await Promise.all([
-        fetchPerformances('seoul'),
-        fetchPerformances('gyeonggi'),
-        fetchPerformances('incheon'),
-    ]);
-    const interparkItems = [...seoul, ...gyeonggi, ...incheon];
+    // Read Interpark Data (from local file, respects clean-data.ts cleaning)
+    let interparkItems: any[] = [];
+    const INTERPARK_FILE = path.join(process.cwd(), 'src/data/interpark.json');
+    if (fs.existsSync(INTERPARK_FILE)) {
+        try {
+            interparkItems = JSON.parse(fs.readFileSync(INTERPARK_FILE, 'utf-8'));
+            console.log(`Loaded ${interparkItems.length} Interpark items.`);
+        } catch (e) {
+            console.error('Failed to load Interpark data', e);
+        }
+    } else {
+        // Fallback: Fetch live (not ideal, may contain dirty data)
+        console.log('Interpark JSON not found, fetching live data...');
+        const { fetchPerformances } = await import('../src/lib/interpark');
+        const [seoul, gyeonggi, incheon] = await Promise.all([
+            fetchPerformances('seoul'),
+            fetchPerformances('gyeonggi'),
+            fetchPerformances('incheon'),
+        ]);
+        interparkItems = [...seoul, ...gyeonggi, ...incheon];
+        console.log(`Fetched ${interparkItems.length} Interpark items (live).`);
+    }
 
     // Read TimeTicket Data
     let timeticketItems: any[] = [];
