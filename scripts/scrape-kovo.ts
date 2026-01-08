@@ -24,94 +24,117 @@ const TEAMS = [
 
 async function scrapeKovo() {
     console.log(`Starting KOVO Scraper (Full Schedule)...`);
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
-    });
 
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 1024 });
+    const MAX_RETRIES = 3;
+    let retries = 0;
 
-    console.log(`Navigating to ${KOVO_SCHEDULE_URL}...`);
-    await page.goto(KOVO_SCHEDULE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+    while (retries < MAX_RETRIES) {
+        try {
+            if (retries > 0) {
+                console.log(`Retry attempt ${retries + 1}/${MAX_RETRIES}...`);
+                await new Promise(r => setTimeout(r, 5000)); // Wait 5s before retry
+            }
 
-    // Ensure page is fully loaded (wait for a known team name)
-    try {
-        await page.waitForFunction(() => document.body.innerText.includes('대한항공'), { timeout: 10000 });
-    } catch (e) { }
+            const browser = await puppeteer.launch({
+                headless: true,
+                args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+                executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
+            });
 
-    const textContent = await page.evaluate(() => document.body.innerText);
-    await browser.close();
+            const page = await browser.newPage();
+            await page.setViewport({ width: 1280, height: 1024 });
 
-    console.log('Parsing content...');
-    const matchLines = textContent.split('\n').map(l => l.trim()).filter(l => l);
-    const performances: Performance[] = [];
+            console.log(`Navigating to ${KOVO_SCHEDULE_URL}...`);
+            await page.goto(KOVO_SCHEDULE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-    let currentDate = '';
+            // Ensure page is fully loaded (wait for a known team name)
+            try {
+                await page.waitForFunction(() => document.body.innerText.includes('대한항공'), { timeout: 10000 });
+            } catch (e) {
+                console.log('Timeout waiting for "대한항공", proceeding to check content anyway...');
+            }
 
-    for (let i = 0; i < matchLines.length; i++) {
-        const line = matchLines[i];
+            const textContent = await page.evaluate(() => document.body.innerText);
+            await browser.close();
 
-        // Date Pattern: 2025.10.18 (토)
-        const dateMatch = line.match(/^(\d{4})\.(\d{2})\.(\d{2})\s\([가-힣]\)$/);
-        if (dateMatch) {
-            currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
-            continue;
-        }
+            console.log('Parsing content...');
+            const matchLines = textContent.split('\n').map(l => l.trim()).filter(l => l);
+            const performances: Performance[] = [];
 
-        // Time Pattern: 16:00 or 19:00 (Start of a match block)
-        if (line.match(/^\d{2}:\d{2}$/) && currentDate) {
-            const time = line;
-            // Next line should be Venue
-            const venue = matchLines[i + 1];
+            let currentDate = '';
 
-            // Search for teams in subsequent lines
-            let homeTeam = '';
-            let awayTeam = '';
-            let foundTeams = 0;
+            for (let i = 0; i < matchLines.length; i++) {
+                const line = matchLines[i];
 
-            // Look ahead up to 10 lines for team names
-            for (let j = i + 2; j < i + 12 && j < matchLines.length; j++) {
-                const txt = matchLines[j];
-                if (TEAMS.some(t => txt.includes(t))) { // using includes to be safe
-                    // Clean team name if it contains extra text (though usually it's exact)
-                    const matchedTeam = TEAMS.find(t => txt.includes(t)) || txt;
+                // Date Pattern: 2025.10.18 (토)
+                const dateMatch = line.match(/^(\d{4})\.(\d{2})\.(\d{2})\s\([가-힣]\)$/);
+                if (dateMatch) {
+                    currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+                    continue;
+                }
 
-                    if (foundTeams === 0) {
-                        homeTeam = matchedTeam;
-                        foundTeams++;
-                    } else if (foundTeams === 1) {
-                        awayTeam = matchedTeam;
-                        foundTeams++;
-                        break; // Found both
+                // Time Pattern: 16:00 or 19:00 (Start of a match block)
+                if (line.match(/^\d{2}:\d{2}$/) && currentDate) {
+                    const time = line;
+                    const venue = matchLines[i + 1];
+
+                    // Search for teams
+                    let homeTeam = '';
+                    let awayTeam = '';
+                    let foundTeams = 0;
+
+                    for (let j = i + 2; j < i + 12 && j < matchLines.length; j++) {
+                        const txt = matchLines[j];
+                        if (TEAMS.some(t => txt.includes(t))) {
+                            const matchedTeam = TEAMS.find(t => txt.includes(t)) || txt;
+
+                            if (foundTeams === 0) {
+                                homeTeam = matchedTeam;
+                                foundTeams++;
+                            } else if (foundTeams === 1) {
+                                awayTeam = matchedTeam;
+                                foundTeams++;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (homeTeam && awayTeam) {
+                        const id = `kovo_${currentDate.replace(/-/g, '')}_${homeTeam}_${awayTeam}`;
+                        const title = `${homeTeam} vs ${awayTeam}`;
+
+                        performances.push({
+                            id,
+                            title,
+                            image: VOLLEYBALL_POSTER,
+                            date: `${currentDate} ${time}`,
+                            venue,
+                            link: KOVO_SCHEDULE_URL,
+                            region: classifyRegion(venue),
+                            genre: 'volleyball'
+                        });
                     }
                 }
             }
 
-            if (homeTeam && awayTeam) {
-                // Determine Genre (Men/Women) - optional but good for context
-                // Filter IDs
-                const id = `kovo_${currentDate.replace(/-/g, '')}_${homeTeam}_${awayTeam}`;
-                const title = `${homeTeam} vs ${awayTeam}`;
+            console.log(`Total collected: ${performances.length}`);
 
-                performances.push({
-                    id,
-                    title,
-                    image: VOLLEYBALL_POSTER,
-                    date: `${currentDate} ${time}`,
-                    venue,
-                    link: KOVO_SCHEDULE_URL,
-                    region: classifyRegion(venue),
-                    genre: 'volleyball'
-                });
+            if (performances.length > 0) {
+                fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
+                console.log(`Saved to ${OUTPUT_PATH}`);
+                return; // Success, exit function
+            } else {
+                throw new Error('No items collected (0 items).');
             }
+
+        } catch (e) {
+            console.error(`Error during scraping (Attempt ${retries + 1}):`, e);
+            retries++;
         }
     }
 
-    console.log(`Total collected: ${performances.length}`);
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
-    console.log(`Saved to ${OUTPUT_PATH}`);
+    console.error(`Failed to scrape KOVO data after ${MAX_RETRIES} attempts.`);
+    process.exit(1);
 }
 
 function classifyRegion(venue: string): string {

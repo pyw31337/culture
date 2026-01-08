@@ -12,7 +12,7 @@ import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
-import { GENRES, REGIONS, RADIUS_OPTIONS, GENRE_STYLES } from '@/lib/constants';
+import { GENRES, GENRE_STYLES, REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
@@ -1592,6 +1592,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             return;
         }
         setSelectedGenre(genre);
+
+        // Reset location for global categories (Movie, OTT) to ensure content is visible
+        if (genre === 'movie' || genre === 'ott') {
+            setSelectedRegion('all');
+            setSelectedDistrict('all');
+            setSelectedVenue('all');
+        }
+
         scrollToTop();
     };
 
@@ -3749,8 +3757,8 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             )}
                         </div>
 
-                        {/* Movie Metadata (Cast, Director, Info) */}
-                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo) && (
+                        {/* Movie & OTT Metadata (Cast, Director, Info) */}
+                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo) && (
                             <div className="mt-2 text-xs text-gray-400 light:text-gray-700 space-y-1 border-t border-white/5 light:border-black/5 pt-2">
                                 {/* Director */}
                                 {perf.director && (
@@ -4170,20 +4178,32 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
                                     {perf.platforms && perf.platforms.length > 0 && (
                                         <div className="flex gap-1 ml-2">
-                                            {perf.platforms.map((p: string) => (
-                                                <span key={p} className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter",
-                                                    p === 'netflix' ? "bg-red-600 text-white" :
-                                                        p === 'disney' ? "bg-blue-600 text-white" :
-                                                            p === 'watcha' ? "bg-pink-600 text-white" :
-                                                                p === 'tving' ? "bg-red-500 text-white" :
-                                                                    p === 'wavve' ? "bg-blue-500 text-white" :
-                                                                        p === 'coupang' ? "bg-blue-800 text-white" :
-                                                                            p === 'apple' ? "bg-gray-800 text-white" :
-                                                                                "bg-gray-600 text-white"
-                                                )}>
-                                                    {p.substring(0, 1).toUpperCase()}
-                                                </span>
-                                            ))}
+                                            {perf.platforms.map((p: string) => {
+                                                const platformInfo = OTT_PLATFORMS[p];
+                                                if (platformInfo) {
+                                                    const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                    return (
+                                                        <a
+                                                            key={p}
+                                                            href={url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            onClick={(e) => e.stopPropagation()}
+                                                            className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
+                                                                platformInfo.color
+                                                            )}
+                                                            title={`${platformInfo.label}에서 검색`}
+                                                        >
+                                                            {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                        </a>
+                                                    );
+                                                }
+                                                return (
+                                                    <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter bg-gray-600 text-white">
+                                                        {p.substring(0, 1).toUpperCase()}
+                                                    </span>
+                                                );
+                                            })}
                                         </div>
                                     )}
                                 </div>
@@ -4256,20 +4276,38 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 {/* Platform Icons (Default Variant) */}
                                                 {perf.platforms && perf.platforms.length > 0 && (
                                                     <div className="flex gap-1 ml-1.5 border-l border-white/20 pl-1.5">
-                                                        {perf.platforms.map((p: string) => (
-                                                            <span key={p} className={clsx("w-4 h-4 flex items-center justify-center rounded-full text-[8px] font-bold uppercase",
-                                                                p === 'netflix' ? "bg-red-600 text-white" :
-                                                                    p === 'disney' ? "bg-blue-600 text-white" :
-                                                                        p === 'watcha' ? "bg-pink-600 text-white" :
-                                                                            p === 'tving' ? "bg-red-500 text-white" :
-                                                                                p === 'wavve' ? "bg-blue-500 text-white" :
-                                                                                    p === 'coupang' ? "bg-blue-800 text-white" :
-                                                                                        p === 'apple' ? "bg-gray-800 text-white" :
-                                                                                            "bg-gray-600 text-white"
-                                                            )}>
-                                                                {p.substring(0, 1).toUpperCase()}
-                                                            </span>
-                                                        ))}
+                                                        {perf.platforms.map((p: string) => {
+                                                            const platformInfo = OTT_PLATFORMS[p];
+                                                            const badgeClass = clsx(
+                                                                "w-4 h-4 flex items-center justify-center rounded-full text-[8px] font-bold uppercase cursor-pointer hover:scale-110 transition-transform",
+                                                                platformInfo ? platformInfo.color : "bg-gray-600"
+                                                            );
+
+                                                            // If platform info exists, make it a link
+                                                            if (platformInfo) {
+                                                                const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                                return (
+                                                                    <a
+                                                                        key={p}
+                                                                        href={url}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className={clsx(badgeClass, "text-white no-underline")}
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                        title={`${platformInfo.label}에서 검색`}
+                                                                    >
+                                                                        {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                                    </a>
+                                                                );
+                                                            }
+
+                                                            // Fallback for unknown platforms
+                                                            return (
+                                                                <span key={p} className={clsx(badgeClass, "text-white")}>
+                                                                    {p.substring(0, 1).toUpperCase()}
+                                                                </span>
+                                                            );
+                                                        })}
                                                     </div>
                                                 )}
                                             </span>

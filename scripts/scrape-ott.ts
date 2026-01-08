@@ -184,59 +184,79 @@ async function scrapeOTT() {
             try {
                 await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
 
+                try {
+                    await page.waitForSelector('.metadata__item', { timeout: 3000 });
+                } catch (e) {
+                    // Ignore, might be missing metadata or different layout
+                }
+
                 const details = await page.evaluate(() => {
-                    const getText = (label: string) => {
-                        const allDivs = Array.from(document.querySelectorAll('div, span, dt, h4'));
-                        const labelEl = allDivs.find(el => el.textContent?.trim() === label);
-                        if (!labelEl) return '';
-                        // Try next sibling
-                        if (labelEl.nextElementSibling) return labelEl.nextElementSibling.textContent?.trim() || '';
-                        // Try parent's next sibling
-                        if (labelEl.parentElement?.nextElementSibling) return labelEl.parentElement.nextElementSibling.textContent?.trim() || '';
+                    const cleanText = (text: string) => text.replace(/\s+/g, ' ').trim();
+
+                    // Helper to find value by label in metadata list
+                    const getMetadataValue = (labelKeywords: string[]) => {
+                        const items = Array.from(document.querySelectorAll('.metadata__item'));
+                        for (const item of items) {
+                            const titleEl = item.querySelector('.item__title');
+                            if (titleEl) {
+                                const titleText = cleanText(titleEl.textContent || '');
+                                if (labelKeywords.some(k => titleText.includes(k))) {
+                                    // The value is the text content of the item MINUS the title
+                                    const fullText = cleanText(item.textContent || '');
+                                    return fullText.replace(titleText, '').trim();
+                                }
+                            }
+                        }
+                        return '';
+                    };
+
+                    const getDirector = () => {
+                        const staffs = Array.from(document.querySelectorAll('.staff'));
+                        for (const staff of staffs) {
+                            const titleEl = staff.querySelector('.staff__title');
+                            if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
+                                const nameEl = staff.querySelector('.names__name');
+                                return nameEl ? cleanText(nameEl.textContent || '') : '';
+                            }
+                        }
                         return '';
                     };
 
                     const getCast = () => {
-                        // Find "출연진/제작진" header
-                        const allHeaders = Array.from(document.querySelectorAll('h3, h4, div'));
-                        const header = allHeaders.find(el => el.textContent?.trim() === '출연진/제작진');
-
-                        if (!header) return [];
-
-                        const personLinks = Array.from(document.querySelectorAll('a[href*="/person/"]'));
-                        // Filter out duplicates and likely irrelevant ones (like director if he is linked differently)
-                        // This captures Director + Actors mostly.
-                        const names = personLinks.map(l => l.querySelector('.name')?.textContent || l.textContent?.trim() || '').filter(Boolean);
-
-                        return [...new Set(names)].slice(0, 5); // Unique, Top 5
+                        const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
+                        return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
                     };
 
-                    const director = getText('감독');
-                    const cleanDirector = director || ((() => {
-                        // Fallback: Find "감독" text and grab next name
-                        // ...
-                        return '';
-                    })());
-
-                    const cast = getCast();
-                    // Remove director from cast if present
-                    const finalCast = cast.filter(c => c !== director);
+                    const genre = getMetadataValue(['장르']);
+                    const runtime = getMetadataValue(['러닝타임']);
+                    const date = getMetadataValue(['방영일', '개봉일']); // Priority for Date
+                    const grade = getMetadataValue(['연령등급']);
 
                     return {
-                        movieInfo: `${getText('장르')} / ${getText('러닝타임')}`, // Combine for display
-                        grade: getText('연령등급'),
-                        director: director,
-                        cast: finalCast
+                        movieInfo: [genre, runtime].filter(Boolean).join(' / '),
+                        grade: grade,
+                        director: getDirector(),
+                        cast: getCast(),
+                        detailDate: date // Pass back the specific date found on detail page
                     };
                 });
 
                 // Merge details
+                // Merge details
+                // Logic: If detailDate exists and is valid (YYYY.MM.DD or YYYY-MM-DD), use it.
+                // Kinolights usually gives "YYYY.MM.DD"
+                let finalDate = item.date;
+                if (details.detailDate) {
+                    const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
+                    if (match) {
+                        finalDate = `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
+                    }
+                }
+
                 enrichedItems.push({
                     ...item,
                     ...details,
-                    // Map Grade to Icon or text?
-                    // PerformanceList expects 'gradeIcon' often, or just text.
-                    // Let's keep 'grade' text for now.
+                    date: finalDate, // Overwrite with accurate date
                 });
 
                 // Small delay to be nice

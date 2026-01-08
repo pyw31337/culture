@@ -71,3 +71,13 @@ export const VALID_GENRE_SLUGS = [
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'hockey'
 ];
+
+export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: string }> = {
+    'netflix': { label: 'Netflix', color: 'bg-red-600', url: 'https://www.netflix.com/search?q={title}' },
+    'tving': { label: 'TVing', color: 'bg-red-500', url: 'https://www.tving.com/search/total?keyword={title}' },
+    'watcha': { label: 'Watcha', color: 'bg-pink-600', url: 'https://pedia.watcha.com/ko-KR/search?query={title}' },
+    'disney': { label: 'Disney+', color: 'bg-blue-600', url: 'https://www.disneyplus.com/search?q={title}' },
+    'wavve': { label: 'Wavve', color: 'bg-blue-500', url: 'https://www.wavve.com/search?searchWord={title}' },
+    'coupang': { label: 'Coupang Play', color: 'bg-blue-800', url: 'https://www.coupangplay.com/search?q={title}' },
+    'apple': { label: 'Apple TV+', color: 'bg-gray-800', url: 'https://tv.apple.com/kr/search?term={title}' },
+};

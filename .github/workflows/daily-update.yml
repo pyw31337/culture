@@ -83,12 +83,14 @@ jobs:
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-travel.ts || true
           node scripts/scrape-movies.js || true
+          npx ts-node scripts/scrape-ott.ts || true
           node scripts/scrape-myrealtrip.js || true
           npx tsx scripts/scrape-umclass.ts || true
           npx tsx scripts/scrape-sssd.ts || true
           npx tsx scripts/scrape-mochaclass.ts || true
           npx ts-node scripts/scrape-seoul-culture.ts || true
           npx tsx scripts/build-venues.ts || true
+          npx ts-node scripts/validate-data.ts
 
       - name: Commit and Push changes
         if: env.SKIP_EXECUTION != 'true'

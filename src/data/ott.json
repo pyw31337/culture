@@ -9,8 +9,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_그의이야기&그녀의이야기",
-    "movieInfo": "미스터리, 범죄, 서사/드라마, 스릴러 / ",
+    "movieInfo": "미스터리, 범죄, 서사/드라마, 스릴러",
     "grade": "19세 이상 시청가",
     "director": "윌리엄 올드로이드",
     "cast": [
@@ -19,7 +20,8 @@
       "파블로 쉬레이버",
       "크리스탈 폭스",
       "레베카 리튼하우스"
-    ]
+    ],
+    "detailDate": "2026년 01월 08일"
   },
   {
     "title": "비질랜티 -나의 히어로 아카데미아 ILLEGALS- 제2기",
@@ -34,8 +36,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_비질랜티-나의히어로아카데미아ILLEGALS-제2기",
-    "movieInfo": "액션 / ",
+    "movieInfo": "액션",
     "grade": "15세 이상 시청가",
     "director": "스즈키 켄이치",
     "cast": [
@@ -44,7 +47,8 @@
       "마미야 야스히로",
       "미야케 켄타",
       "스와베 준이치"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "사망 유희로 밥을 먹는다.",
@@ -57,15 +61,17 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_사망유희로밥을먹는다.",
-    "movieInfo": "액션, 판타지 / ",
+    "movieInfo": "액션, 판타지",
     "grade": "15세 이상 시청가",
     "director": "우에노 소타",
     "cast": [
       "미우라 지유키",
       "모토무라 레나",
       "미나세 이노리"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "셰프와 사냥꾼",
@@ -77,8 +83,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_셰프와사냥꾼",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
@@ -86,7 +93,8 @@
       "추성훈",
       "임우일",
       "김대호"
-    ]
+    ],
+    "detailDate": "2026년 01월 08일"
   },
   {
     "title": "차가네",
@@ -99,21 +107,22 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_차가네",
-    "movieInfo": "버라이어티 / ",
+    "movieInfo": "버라이어티",
     "grade": "15세 이상 시청가",
-    "director": "양정우이정원이지숙전혜림",
+    "director": "양정우",
     "cast": [
       "차승원",
       "추성훈",
       "딘딘",
-      "대니 구",
-      "양정우"
-    ]
+      "대니 구"
+    ],
+    "detailDate": "2026년 01월 08일"
   },
   {
     "title": "우리들의 1999",
-    "date": "2026-01-08",
+    "date": "2026-01-05",
     "image": "https://file.kinolights.com/m/content_poster/202601/06/b319bfd3-799c-4bc1-8ed6-da3ab12c3550.webp",
     "link": "https://m.kinolights.com/title/149274",
     "genre": "ott",
@@ -122,8 +131,9 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_우리들의1999",
-    "movieInfo": "서사/드라마 / ",
+    "venue": "OTT",
+    "id": "ott_20260105_우리들의1999",
+    "movieInfo": "서사/드라마",
     "grade": "15세 이상 시청가",
     "director": "여지",
     "cast": [
@@ -132,11 +142,12 @@
       "진학일",
       "장흔의",
       "니홍지에"
-    ]
+    ],
+    "detailDate": "2026년 01월 05일"
   },
   {
     "title": "노크: 더 하우스",
-    "date": "2026-01-08",
+    "date": "2023-09-20",
     "image": "https://file.kinolights.com/m/content_poster/202309/05/66337e26-eb75-42b8-b4ad-67c93323681b.webp",
     "link": "https://m.kinolights.com/title/124665",
     "genre": "ott",
@@ -145,17 +156,19 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_노크:더하우스",
+    "venue": "OTT",
+    "id": "ott_20230920_노크:더하우스",
     "movieInfo": "공포(호러), 스릴러 / 88분",
     "grade": "15세 이상 관람가",
     "director": "사뮈엘 보댕",
     "cast": [
-      "리지 캐플란 ",
+      "리지 캐플란",
       "안토니 스타",
       "클레오파트라 콜먼",
       "엘렌 더빈",
       "우디 노먼"
-    ]
+    ],
+    "detailDate": "2023년 09월 20일 개봉"
   },
   {
     "title": "더 파이팅 스페셜: 챔피언 로드",
@@ -168,6 +181,7 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_더파이팅스페셜:챔피언로드",
     "movieInfo": "서사/드라마, 액션 / 91분",
     "grade": "15세 이상 관람가",
@@ -177,8 +191,9 @@
       "코야마 리키야",
       "우츠미 켄지",
       "오노사카 마사야",
-      "세키 토모카즈 "
-    ]
+      "세키 토모카즈"
+    ],
+    "detailDate": ""
   },
   {
     "title": "소문",
@@ -191,8 +206,9 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_소문",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "박민섭",
     "cast": [
@@ -201,7 +217,8 @@
       "배향",
       "박민우",
       "박광열"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "글을 적다",
@@ -214,14 +231,16 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_글을적다",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "12세 이상 시청가",
     "director": "정윤호",
     "cast": [
       "김정은",
       "고병록"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "여행길",
@@ -234,15 +253,17 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_여행길",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "12세 이상 시청가",
     "director": "박민섭",
     "cast": [
       "현직",
       "박시아",
       "천정희"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "12평 원룸",
@@ -255,14 +276,16 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_12평원룸",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "12세 이상 시청가",
     "director": "이강희",
     "cast": [
       "윤재",
       "김광호"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "양해부탁드립니다",
@@ -275,8 +298,9 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_양해부탁드립니다",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "12세 이상 시청가",
     "director": "이은비",
     "cast": [
@@ -285,7 +309,8 @@
       "최민아",
       "김건보",
       "구병준"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "우리가 함께한 시간",
@@ -298,18 +323,20 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_우리가함께한시간",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "12세 이상 시청가",
     "director": "김홍린",
     "cast": [
       "이지원",
       "백효원"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "시수 : 복수의 길",
-    "date": "2026-01-08",
+    "date": "2026-01-07",
     "image": "https://file.kinolights.com/m/content_poster/202512/19/7b22bae1-3c00-4308-8fe6-6827e5ba5407.webp",
     "link": "https://m.kinolights.com/title/148964",
     "genre": "ott",
@@ -319,7 +346,8 @@
       "apple"
     ],
     "region": "ott",
-    "id": "ott_20260108_시수:복수의길",
+    "venue": "OTT",
+    "id": "ott_20260107_시수:복수의길",
     "movieInfo": "액션 / 89분",
     "grade": "청소년 관람불가",
     "director": "얄마리 헬렌더",
@@ -329,7 +357,8 @@
       "리처드 블레이크",
       "토미 코펠라",
       "카스파르 벨베리"
-    ]
+    ],
+    "detailDate": "2026년 01월 07일 개봉"
   },
   {
     "title": "타몬 군 지금 어느 쪽?!",
@@ -344,8 +373,9 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_타몬군지금어느쪽?!",
-    "movieInfo": "멜로/로맨스 / ",
+    "movieInfo": "멜로/로맨스",
     "grade": "15세 이상 시청가",
     "director": "나가오카 치카",
     "cast": [
@@ -353,12 +383,13 @@
       "하타노 카케루",
       "치바 쇼야",
       "하타나카 타스쿠",
-      "아마사키 코헤이 "
-    ]
+      "아마사키 코헤이"
+    ],
+    "detailDate": ""
   },
   {
     "title": "고당도",
-    "date": "2026-01-08",
+    "date": "2025-12-10",
     "image": "https://file.kinolights.com/m/content_poster/202511/28/dee9ee6b-83b6-4329-bd73-d930055ff57e.webp",
     "link": "https://m.kinolights.com/title/147847",
     "genre": "ott",
@@ -369,7 +400,8 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_고당도",
+    "venue": "OTT",
+    "id": "ott_20251210_고당도",
     "movieInfo": "범죄, 서사/드라마 / 88분",
     "grade": "15세 이상 관람가",
     "director": "권용재",
@@ -379,7 +411,8 @@
       "장리우",
       "정순범",
       "양말복"
-    ]
+    ],
+    "detailDate": "2025년 12월 10일 개봉"
   },
   {
     "title": "곡비",
@@ -391,6 +424,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_곡비",
     "movieInfo": "공포(호러), 액션 / 99분",
     "grade": "청소년 관람불가",
@@ -401,7 +435,8 @@
       "왕자강",
       "진영여",
       "차이창셴"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "동의",
@@ -413,6 +448,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_동의",
     "movieInfo": "서사/드라마 / 119분",
     "grade": "청소년 관람불가",
@@ -421,12 +457,13 @@
       "킴 이즐랭",
       "장 폴 루브",
       "레티샤 카스타",
-      "엘로디 부셰즈 "
-    ]
+      "엘로디 부셰즈"
+    ],
+    "detailDate": ""
   },
   {
     "title": "풀",
-    "date": "2026-01-08",
+    "date": "2025-06-18",
     "image": "https://file.kinolights.com/m/content_poster/202506/13/68b5d9ea-22aa-4cd0-8341-f30e7ff573ef.webp",
     "link": "https://m.kinolights.com/title/138229",
     "genre": "ott",
@@ -434,15 +471,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_풀",
+    "venue": "OTT",
+    "id": "ott_20250618_풀",
     "movieInfo": "다큐멘터리 / 88분",
     "grade": "청소년 관람불가",
     "director": "이수정",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 06월 18일 개봉"
   },
   {
     "title": "수학영재 형주",
-    "date": "2026-01-08",
+    "date": "2025-10-15",
     "image": "https://file.kinolights.com/m/content_poster/202509/23/e0bb719c-a142-4f48-baaa-0be45c9bd5b4.webp",
     "link": "https://m.kinolights.com/title/132889",
     "genre": "ott",
@@ -450,7 +489,8 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_수학영재형주",
+    "venue": "OTT",
+    "id": "ott_20251015_수학영재형주",
     "movieInfo": "서사/드라마 / 119분",
     "grade": "12세 이상 관람가",
     "director": "최창환",
@@ -460,11 +500,12 @@
       "김세원",
       "서석규",
       "우연서"
-    ]
+    ],
+    "detailDate": "2025년 10월 15일 개봉"
   },
   {
     "title": "선녀단식원",
-    "date": "2026-01-08",
+    "date": "2025-10-24",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/60917530-b0c7-4eed-a049-e191bd3495ad.webp",
     "link": "https://m.kinolights.com/title/149364",
     "genre": "ott",
@@ -472,15 +513,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_선녀단식원",
-    "movieInfo": " / ",
+    "venue": "OTT",
+    "id": "ott_20251024_선녀단식원",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "조창근",
     "cast": [
       "조혜정",
       "조민규",
       "이세온"
-    ]
+    ],
+    "detailDate": "2025년 10월 24일"
   },
   {
     "title": "싱잉 인 마이 슬립",
@@ -492,8 +535,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_싱잉인마이슬립",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 관람가",
     "director": "닉 윌슨",
     "cast": [
@@ -502,11 +546,12 @@
       "개빈 레더우드",
       "제시카 벨킨",
       "시리나 피알로"
-    ]
+    ],
+    "detailDate": "2026년 01월 08일"
   },
   {
     "title": "히트맨: 라스트 미션",
-    "date": "2026-01-08",
+    "date": "2025-11-27",
     "image": "https://file.kinolights.com/m/content_poster/202511/28/13922f77-c427-4d1e-b836-402dca71d14d.webp",
     "link": "https://m.kinolights.com/title/148284",
     "genre": "ott",
@@ -514,7 +559,8 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_히트맨:라스트미션",
+    "venue": "OTT",
+    "id": "ott_20251127_히트맨:라스트미션",
     "movieInfo": "범죄, 스릴러, 액션 / 89분",
     "grade": "15세 이상 관람가",
     "director": "마이클 해밀턴 라이트",
@@ -524,7 +570,8 @@
       "돈 올리비에리",
       "알렉스 파우노빅",
       "벤자민 조엘 아체"
-    ]
+    ],
+    "detailDate": "2025년 11월 27일 개봉"
   },
   {
     "title": "아마란스: 가장 완벽한 낙원",
@@ -536,6 +583,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_아마란스:가장완벽한낙원",
     "movieInfo": "SF, 미스터리, 스릴러 / 89분",
     "grade": "15세 이상 관람가",
@@ -543,9 +591,9 @@
     "cast": [
       "멜로라 월터스",
       "제프리 드먼",
-      "크리스토퍼 덴햄",
-      "에일린 쉴즈"
-    ]
+      "크리스토퍼 덴햄"
+    ],
+    "detailDate": ""
   },
   {
     "title": "카운티 라인",
@@ -557,6 +605,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_카운티라인",
     "movieInfo": "서사/드라마, 액션 / 89분",
     "grade": "15세 이상 관람가",
@@ -564,8 +613,9 @@
     "cast": [
       "톰 우팻",
       "제프 파헤이",
-      "패트리샤 리처드슨 "
-    ]
+      "패트리샤 리처드슨"
+    ],
+    "detailDate": ""
   },
   {
     "title": "손님",
@@ -578,6 +628,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_손님",
     "movieInfo": "서사/드라마 / 19분",
     "grade": "전체 관람가",
@@ -587,11 +638,12 @@
       "이지우",
       "송예림",
       "백병철"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "언록트: 감옥의 실험 시즌 2",
-    "date": "2026-01-08",
+    "date": "2026-01-07",
     "image": "https://file.kinolights.com/m/content_poster/202512/11/f99d3853-2d5b-47f8-8e53-1529ad28cc95.webp",
     "link": "https://m.kinolights.com/title/148564",
     "genre": "ott",
@@ -599,15 +651,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_언록트:감옥의실험시즌2",
-    "movieInfo": "리얼리티 / ",
+    "venue": "OTT",
+    "id": "ott_20260107_언록트:감옥의실험시즌2",
+    "movieInfo": "리얼리티",
     "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2026년 01월 07일"
   },
   {
     "title": "무무X차차 우발라디오",
-    "date": "2026-01-08",
+    "date": "2026-01-06",
     "image": "https://file.kinolights.com/m/content_poster/202601/07/5650ad16-5818-48a3-b411-2167033c697d.webp",
     "link": "https://m.kinolights.com/title/149323",
     "genre": "ott",
@@ -615,17 +669,16 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_무무X차차우발라디오",
-    "movieInfo": "토크쇼 / ",
+    "venue": "OTT",
+    "id": "ott_20260106_무무X차차우발라디오",
+    "movieInfo": "토크쇼",
     "grade": "12세 이상 시청가",
-    "director": "안정현한예슬김명교허재훈",
+    "director": "안정현",
     "cast": [
       "차태현",
-      "전현무",
-      "안정현",
-      "한예슬",
-      "김명교"
-    ]
+      "전현무"
+    ],
+    "detailDate": "2026년 01월 06일"
   },
   {
     "title": "마르셀로 에르난데스: 아메리칸 보이",
@@ -637,13 +690,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_마르셀로에르난데스:아메리칸보이",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "니콜라스 구센",
     "cast": [
       "마르셀로 에르난데스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "고문 아르바이트의 일상",
@@ -658,11 +713,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_고문아르바이트의일상",
-    "movieInfo": "코미디 / ",
+    "movieInfo": "코미디",
     "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "페이트/스트레인지 페이크",
@@ -677,17 +734,19 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_페이트/스트레인지페이크",
-    "movieInfo": "판타지 / ",
+    "movieInfo": "판타지",
     "grade": "19세 이상 시청가",
-    "director": "에노키도 슌사카즈메 타카히토",
+    "director": "에노키도 슌",
     "cast": [
       "오노 유우키",
       "코바야시 유우",
-      "세키 토모카즈 ",
+      "세키 토모카즈",
       "모리쿠보 쇼타로",
       "린"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "연우영안",
@@ -702,8 +761,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_연우영안",
-    "movieInfo": "멜로/로맨스 / ",
+    "movieInfo": "멜로/로맨스",
     "grade": "15세 이상 시청가",
     "director": "백운묵",
     "cast": [
@@ -711,7 +771,8 @@
       "이윤예",
       "창룽",
       "풍가이"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "천행건",
@@ -724,17 +785,19 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_천행건",
-    "movieInfo": "미스터리, 사극/시대물, 액션, 어드벤처 / ",
+    "movieInfo": "미스터리, 사극/시대물, 액션, 어드벤처",
     "grade": "15세 이상 시청가",
-    "director": "루건웨이 리저우",
+    "director": "루건",
     "cast": [
       "진준걸",
       "류우녕",
       "방한신",
       "황몽영",
       "부청"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "아재정봉등니: 나의 청춘 리플레이",
@@ -748,8 +811,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_아재정봉등니:나의청춘리플레이",
-    "movieInfo": "멜로/로맨스, 서사/드라마 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
     "grade": "15세 이상 시청가",
     "director": "카이 콩",
     "cast": [
@@ -758,11 +822,12 @@
       "갈추곡",
       "도지영",
       "오숭헌"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "THE 하우스",
-    "date": "2026-01-08",
+    "date": "2026-01-05",
     "image": "https://file.kinolights.com/m/content_poster/202601/06/a81720a1-e390-40c4-a062-32bcbe74b452.webp",
     "link": "https://m.kinolights.com/title/149272",
     "genre": "ott",
@@ -772,8 +837,9 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_THE하우스",
-    "movieInfo": "교양 / ",
+    "venue": "OTT",
+    "id": "ott_20260105_THE하우스",
+    "movieInfo": "교양",
     "grade": "15세 이상 시청가",
     "director": "손석호",
     "cast": [
@@ -781,11 +847,12 @@
       "김헌술",
       "노태린",
       "조병규"
-    ]
+    ],
+    "detailDate": "2026년 01월 05일"
   },
   {
     "title": "톰토미 별별별 시리즈 (영어)",
-    "date": "2026-01-08",
+    "date": "2025-09-11",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/dc026846-30b9-418c-b37e-77b9aa0df0a3.webp",
     "link": "https://m.kinolights.com/title/149342",
     "genre": "ott",
@@ -794,15 +861,17 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_톰토미별별별시리즈(영어)",
-    "movieInfo": " / ",
+    "venue": "OTT",
+    "id": "ott_20250911_톰토미별별별시리즈(영어)",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "김예지",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 09월 11일"
   },
   {
     "title": "톰토미 안전동요",
-    "date": "2026-01-08",
+    "date": "2025-09-13",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/0674f131-60e6-44ed-907f-068fc0e7cf2a.webp",
     "link": "https://m.kinolights.com/title/149341",
     "genre": "ott",
@@ -811,15 +880,17 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_톰토미안전동요",
-    "movieInfo": " / ",
+    "venue": "OTT",
+    "id": "ott_20250913_톰토미안전동요",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "김수용",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 09월 13일"
   },
   {
     "title": "톰토미 별별별 시리즈",
-    "date": "2026-01-08",
+    "date": "2025-09-11",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/262edc56-ecd7-49a1-8726-314349db5a3b.webp",
     "link": "https://m.kinolights.com/title/149339",
     "genre": "ott",
@@ -828,15 +899,17 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_톰토미별별별시리즈",
-    "movieInfo": " / ",
+    "venue": "OTT",
+    "id": "ott_20250911_톰토미별별별시리즈",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "김예지",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 09월 11일"
   },
   {
     "title": "<야구기인 임찬규> 같이볼래?",
-    "date": "2026-01-08",
+    "date": "2025-01-05",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/d3a171a6-64f2-477b-aa1d-f91b84089332.webp",
     "link": "https://m.kinolights.com/title/149338",
     "genre": "ott",
@@ -845,14 +918,16 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_<야구기인임찬규>같이볼래?",
-    "movieInfo": " / ",
+    "venue": "OTT",
+    "id": "ott_20250105_<야구기인임찬규>같이볼래?",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "",
     "cast": [
       "임찬규",
       "정용검"
-    ]
+    ],
+    "detailDate": "2025년 01월 05일"
   },
   {
     "title": "주니토니 지식 돋보기 신비한 우주 (영어)",
@@ -865,15 +940,17 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_주니토니지식돋보기신비한우주(영어)",
-    "movieInfo": "키즈 / ",
+    "movieInfo": "키즈",
     "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "콘크리트 마켓",
-    "date": "2026-01-08",
+    "date": "2025-12-03",
     "image": "https://file.kinolights.com/m/content_poster/202511/28/98d45190-2518-47e5-aea0-581771bfce57.webp",
     "link": "https://m.kinolights.com/title/116424",
     "genre": "ott",
@@ -882,7 +959,8 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_콘크리트마켓",
+    "venue": "OTT",
+    "id": "ott_20251203_콘크리트마켓",
     "movieInfo": "서사/드라마, 스릴러 / 122분",
     "grade": "15세 이상 관람가",
     "director": "홍기원",
@@ -892,11 +970,12 @@
       "정만식",
       "유수빈",
       "김국희"
-    ]
+    ],
+    "detailDate": "2025년 12월 03일 개봉"
   },
   {
     "title": "더 러닝 맨",
-    "date": "2026-01-08",
+    "date": "2025-12-10",
     "image": "https://file.kinolights.com/m/content_poster/202511/20/ce2e8e42-069f-4c9e-8690-95b994a0f2f9.webp",
     "link": "https://m.kinolights.com/title/144895",
     "genre": "ott",
@@ -906,21 +985,23 @@
       "apple"
     ],
     "region": "ott",
-    "id": "ott_20260108_더러닝맨",
+    "venue": "OTT",
+    "id": "ott_20251210_더러닝맨",
     "movieInfo": "스릴러, 액션, 코미디 / 133분",
     "grade": "15세 이상 관람가",
     "director": "에드가 라이트",
     "cast": [
       "글렌 파월",
       "조슈 브롤린",
-      "리 페이스 ",
+      "리 페이스",
       "마이클 세라",
       "콜맨 도밍고"
-    ]
+    ],
+    "detailDate": "2025년 12월 10일 개봉"
   },
   {
     "title": "노보케인",
-    "date": "2026-01-08",
+    "date": "2025-03-12",
     "image": "https://file.kinolights.com/m/content_poster/202502/11/f7e95318-4085-4c16-a939-bc3dfd9b134b.webp",
     "link": "https://m.kinolights.com/title/139552",
     "genre": "ott",
@@ -929,21 +1010,23 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_노보케인",
+    "venue": "OTT",
+    "id": "ott_20250312_노보케인",
     "movieInfo": "스릴러, 액션, 코미디 / 110분",
     "grade": "청소년 관람불가",
-    "director": "로버트 올슨댄 버크",
+    "director": "로버트 올슨",
     "cast": [
-      "잭 퀘이드 ",
+      "잭 퀘이드",
       "엠버 미드썬더",
       "제이콥 배덜런",
       "베티 가브리엘",
       "맷 월쉬"
-    ]
+    ],
+    "detailDate": "2025년 03월 12일 개봉"
   },
   {
     "title": "파리, 밤의 여행자들",
-    "date": "2026-01-08",
+    "date": "2025-12-17",
     "image": "https://file.kinolights.com/m/content_poster/202511/14/c51afdf6-24d3-488b-8301-db4fed68d9ba.webp",
     "link": "https://m.kinolights.com/title/131005",
     "genre": "ott",
@@ -952,7 +1035,8 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_파리,밤의여행자들",
+    "venue": "OTT",
+    "id": "ott_20251217_파리,밤의여행자들",
     "movieInfo": "서사/드라마 / 111분",
     "grade": "15세 이상 관람가",
     "director": "미카엘 허스",
@@ -961,8 +1045,9 @@
       "퀴토 라욘 리히터",
       "노에이 아비타",
       "메간 노섬",
-      "엠마누엘 베아르 "
-    ]
+      "엠마누엘 베아르"
+    ],
+    "detailDate": "2025년 12월 17일 개봉"
   },
   {
     "title": "결전의 날: 데이 오브 레코닝",
@@ -976,6 +1061,7 @@
       "apple"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_결전의날:데이오브레코닝",
     "movieInfo": "서부극(웨스턴), 액션 / 106분",
     "grade": "15세 이상 관람가",
@@ -983,10 +1069,11 @@
     "cast": [
       "잭 로리그",
       "빌리 제인",
-      "카라 제이드 마이어스 ",
+      "카라 제이드 마이어스",
       "스콧 앳킨스",
       "트레이스 에드킨스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "겨울, 봄, 여름 또는 가을",
@@ -999,21 +1086,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_겨울,봄,여름또는가을",
     "movieInfo": "멜로/로맨스, 서사/드라마 / 96분",
     "grade": "청소년 관람불가",
     "director": "티파니 폴슨",
     "cast": [
       "제나 오르테가",
-      "퍼시 하인즈-화이트 ",
+      "퍼시 하인즈-화이트",
       "아담 로드리게즈",
       "마리솔 니콜스",
       "엘리아스 카카바스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "미씽 시그널",
-    "date": "2026-01-08",
+    "date": "2026-01-07",
     "image": "https://file.kinolights.com/m/content_poster/202601/07/18360e41-1c82-48a1-a280-1d93e7eea532.webp",
     "link": "https://m.kinolights.com/title/149318",
     "genre": "ott",
@@ -1022,7 +1111,8 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_미씽시그널",
+    "venue": "OTT",
+    "id": "ott_20260107_미씽시그널",
     "movieInfo": "SF, 서사/드라마, 스릴러 / 104분",
     "grade": "12세 이상 관람가",
     "director": "휴고 카이저",
@@ -1032,7 +1122,8 @@
       "버네사 이페디오라",
       "스투어트 그레이엄",
       "조지 라샤"
-    ]
+    ],
+    "detailDate": "2026년 01월 07일 개봉"
   },
   {
     "title": "적인걸: 궤진유혼",
@@ -1045,6 +1136,7 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_적인걸:궤진유혼",
     "movieInfo": "미스터리, 스릴러, 어드벤처 / 81분",
     "grade": "15세 이상 관람가",
@@ -1054,7 +1146,8 @@
       "나림",
       "한강우",
       "심보평"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "특촬 희극 오키 유조 인생 최대의 결전",
@@ -1067,6 +1160,7 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_특촬희극오키유조인생최대의결전",
     "movieInfo": "SF, 코미디 / 88분",
     "grade": "12세 이상 관람가",
@@ -1077,11 +1171,12 @@
       "노무라 히로노부",
       "후지사키 타쿠야",
       "도요다 다카시"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "스프링 피버",
-    "date": "2026-01-08",
+    "date": "2026-01-05",
     "image": "https://file.kinolights.com/m/content_poster/202512/12/38b9efa7-7803-4ab4-a0fc-1e3351bf4c1d.webp",
     "link": "https://m.kinolights.com/title/140689",
     "genre": "ott",
@@ -1091,15 +1186,20 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_스프링피버",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "박원국",
+    "cast": [
+      "안보현",
+      "이주빈"
+    ],
+    "detailDate": "2026년 01월 05일"
   },
   {
     "title": "미스트롯4 미공개 스페셜",
-    "date": "2026-01-08",
+    "date": "2026-01-06",
     "image": "https://file.kinolights.com/m/content_poster/202601/07/5fb37a99-85f4-4807-a898-e1bca1770279.webp",
     "link": "https://m.kinolights.com/title/149322",
     "genre": "ott",
@@ -1108,11 +1208,17 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_미스트롯4미공개스페셜"
+    "venue": "OTT",
+    "id": "ott_20260108_미스트롯4미공개스페셜",
+    "movieInfo": "서바이벌",
+    "grade": "15세 이상 시청가",
+    "director": "",
+    "cast": [],
+    "detailDate": "2026년 01월 06일"
   },
   {
     "title": "신빨토크쇼 귀묘한 이야기 2",
-    "date": "2026-01-08",
+    "date": "2026-01-06",
     "image": "https://file.kinolights.com/m/content_poster/202601/07/90fe5a6e-8ca3-4f71-a8fd-38aa3b74d1e4.webp",
     "link": "https://m.kinolights.com/title/149324",
     "genre": "ott",
@@ -1121,11 +1227,19 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_신빨토크쇼귀묘한이야기2"
+    "venue": "OTT",
+    "id": "ott_20260108_신빨토크쇼귀묘한이야기2",
+    "movieInfo": "토크쇼",
+    "grade": "15세 이상 시청가",
+    "director": "",
+    "cast": [
+      "이국주"
+    ],
+    "detailDate": "2026년 01월 06일"
   },
   {
     "title": "이호선 상담소",
-    "date": "2026-01-08",
+    "date": "2026-01-06",
     "image": "https://file.kinolights.com/m/content_poster/202601/07/f92457b5-945e-4214-9592-098d7d2adeef.webp",
     "link": "https://m.kinolights.com/title/149320",
     "genre": "ott",
@@ -1134,11 +1248,17 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이호선상담소",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "토크쇼",
+    "grade": "15세 이상 시청가",
+    "director": "이민정",
+    "cast": [
+      "이호선",
+      "장영란",
+      "인교진"
+    ],
+    "detailDate": "2026년 01월 06일"
   },
   {
     "title": "뛰뛰빵빵구조대 2",
@@ -1151,15 +1271,22 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_뛰뛰빵빵구조대2",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "코미디, 키즈, 판타지",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "양정화",
+      "이용신",
+      "홍범기",
+      "신용우"
+    ],
+    "detailDate": ""
   },
   {
     "title": "트론: 아레스",
-    "date": "2026-01-08",
+    "date": "2025-10-08",
     "image": "https://file.kinolights.com/m/content_poster/202509/24/5b6e08fd-e542-4a6c-8251-ebd72e128138.webp",
     "link": "https://m.kinolights.com/title/142746",
     "genre": "ott",
@@ -1168,11 +1295,19 @@
       "disney"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_트론:아레스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 스릴러, 액션, 어드벤처 / 119분",
+    "grade": "12세 이상 관람가",
+    "director": "요아킴 뢰닝",
+    "cast": [
+      "자레드 레토",
+      "그레타 리",
+      "에반 피터스",
+      "질리언 앤더슨",
+      "제프 브리지스"
+    ],
+    "detailDate": "2025년 10월 08일 개봉"
   },
   {
     "title": "한밤중 하트튠",
@@ -1185,11 +1320,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_한밤중하트튠",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "코미디",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "구원은 없다",
@@ -1203,11 +1340,13 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_구원은없다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 스릴러 / 89분",
+    "grade": "15세 이상 관람가",
+    "director": "남궁건",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "가고 돌아오지 않으니",
@@ -1221,11 +1360,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_가고돌아오지않으니",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마 / 128분",
+    "grade": "15세 이상 관람가",
+    "director": "네기시 기치타로",
+    "cast": [
+      "히로세 스즈",
+      "키도 타이세이",
+      "오카다 마사키",
+      "가토 신스케",
+      "토타스 마츠모토"
+    ],
+    "detailDate": ""
   },
   {
     "title": "소꿉친구와는 러브 코미디를 할 수 없어",
@@ -1238,15 +1385,21 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_소꿉친구와는러브코미디를할수없어",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "쿠와바라 사토시",
+    "cast": [
+      "쿠스미 린",
+      "세리자와 유우",
+      "히라츠카 사에"
+    ],
+    "detailDate": ""
   },
   {
     "title": "S 중독자의 고백",
-    "date": "2026-01-08",
+    "date": "2011-12-29",
     "image": "https://file.kinolights.com/m/content_poster/202512/12/c93c9564-133b-400e-84ad-de0af5e8c9d0.webp",
     "link": "https://m.kinolights.com/title/15809",
     "genre": "ott",
@@ -1255,11 +1408,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_S중독자의고백",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마 / 95분",
+    "grade": "청소년 관람불가",
+    "director": "크리스티안 몰리나",
+    "cast": [],
+    "detailDate": "2011년 12월 29일 개봉"
   },
   {
     "title": "팔견전",
@@ -1273,11 +1428,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_팔견전",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 액션, 판타지 / 150분",
+    "grade": "15세 이상 관람가",
+    "director": "소리 후미히코",
+    "cast": [
+      "야쿠쇼 코지",
+      "우치노 세이요",
+      "츠치야 타오",
+      "와타나베 케이스케",
+      "스즈키 진"
+    ],
+    "detailDate": ""
   },
   {
     "title": "이세계 사정은 사축 하기 나름",
@@ -1289,11 +1452,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이세계사정은사축하기나름",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "이시히라 신지",
+    "cast": [
+      "이토 켄토",
+      "마에노 토모아키",
+      "야마시타 세이이치로",
+      "토우치 히로키",
+      "야마구치 토모히로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "마왕의 딸은 너무 친절해!!",
@@ -1305,11 +1476,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_마왕의딸은너무친절해!!",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "오오타 마사히코",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "용사 파티에 귀여운 애가 있어서, 고백해봤다.",
@@ -1321,15 +1494,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_용사파티에귀여운애가있어서,고백해봤다.",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 코미디, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "야마모토 야스타카",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "쫑알쫑알 똘똘이: 이상한 마을 대모험",
-    "date": "2026-01-08",
+    "date": "2025-04-30",
     "image": "https://file.kinolights.com/m/content_poster/202504/10/fe8e9d10-766f-4015-b8dd-1f62bdaa03c9.webp",
     "link": "https://m.kinolights.com/title/142649",
     "genre": "ott",
@@ -1338,15 +1513,17 @@
       "apple"
     ],
     "region": "ott",
-    "id": "ott_20260108_쫑알쫑알똘똘이:이상한마을대모험",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20250430_쫑알쫑알똘똘이:이상한마을대모험",
+    "movieInfo": "애니메이션, 코미디 / 59분",
+    "grade": "전체 관람가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 04월 30일 개봉"
   },
   {
     "title": "신성한 나무의 씨앗",
-    "date": "2026-01-08",
+    "date": "2025-06-03",
     "image": "https://file.kinolights.com/m/content_poster/202505/01/21464775-7b63-4b9f-966b-f6403f6ee8c2.webp",
     "link": "https://m.kinolights.com/title/133854",
     "genre": "ott",
@@ -1354,11 +1531,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_신성한나무의씨앗",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250603_신성한나무의씨앗",
+    "movieInfo": "서사/드라마 / 168분",
+    "grade": "15세 이상 관람가",
+    "director": "모함마드 라술로프",
+    "cast": [
+      "미사그 자레",
+      "소헤일라 골레스타니",
+      "세타라 말레키",
+      "마사 로스타미",
+      "레자 알라기라드"
+    ],
+    "detailDate": "2025년 06월 03일 개봉"
   },
   {
     "title": "달과 자는 여자",
@@ -1370,11 +1555,16 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_달과자는여자",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마, 성인 / 71분",
+    "grade": "청소년 관람불가",
+    "director": "이시카와 킨",
+    "cast": [
+      "오쿠다 사키",
+      "아케미 미우"
+    ],
+    "detailDate": ""
   },
   {
     "title": "문예동인지를 그리는 여자",
@@ -1386,11 +1576,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_문예동인지를그리는여자",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 성인 / 62분",
+    "grade": "청소년 관람불가",
+    "director": "카토 요시카즈",
+    "cast": [
+      "카미사키 시오리",
+      "유키노 리오",
+      "오하라 리마",
+      "호소카와 요시타카",
+      "오리카사 신야"
+    ],
+    "detailDate": ""
   },
   {
     "title": "사기게임: 1억엔의 승부",
@@ -1402,15 +1600,22 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_사기게임:1억엔의승부",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "성인 / 59분",
+    "grade": "청소년 관람불가",
+    "director": "후지와라 켄이치",
+    "cast": [
+      "코다 리리",
+      "진구지 나오",
+      "시마주 켄타로",
+      "오다 마코"
+    ],
+    "detailDate": ""
   },
   {
     "title": "기빗올: 우리들의 썸머",
-    "date": "2026-01-08",
+    "date": "2025-06-18",
     "image": "https://file.kinolights.com/m/content_poster/202505/12/066c5f71-a95f-4bb8-8f16-7b534f456729.webp",
     "link": "https://m.kinolights.com/title/139995",
     "genre": "ott",
@@ -1418,11 +1623,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_기빗올:우리들의썸머",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250618_기빗올:우리들의썸머",
+    "movieInfo": "서사/드라마 / 95분",
+    "grade": "전체 관람가",
+    "director": "사쿠라기 유헤이",
+    "cast": [
+      "아마미야 소라",
+      "이토 미쿠",
+      "타카하시 리에",
+      "키토 아카리",
+      "하세가와 이쿠미"
+    ],
+    "detailDate": "2025년 06월 18일 개봉"
   },
   {
     "title": "반란: 무로마치 부라이",
@@ -1434,11 +1647,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_반란:무로마치부라이",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "사극/시대물, 액션 / 134분",
+    "grade": "15세 이상 관람가",
+    "director": "이리에 유",
+    "cast": [
+      "오오이즈미 요",
+      "나가오 켄토",
+      "마츠모토 와카나",
+      "엔도 유야",
+      "마에노 토모야"
+    ],
+    "detailDate": ""
   },
   {
     "title": "그녀가 우리를 만났을때",
@@ -1450,15 +1671,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_그녀가우리를만났을때",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디 / 93분",
+    "grade": "청소년 관람불가",
+    "director": "댄 레비 다게르만",
+    "cast": [
+      "셀리나 링겔",
+      "리테쉬 라잔",
+      "시드니 파크",
+      "안나 캠벨",
+      "그레이엄 시블리"
+    ],
+    "detailDate": ""
   },
   {
     "title": "나는 자연인이다",
-    "date": "2026-01-08",
+    "date": "2012-08-22",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/2329196e-91b9-4b84-9e83-40eab0ffb3bb.webp",
     "link": "https://m.kinolights.com/title/87877",
     "genre": "ott",
@@ -1466,11 +1695,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_나는자연인이다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20120822_나는자연인이다",
+    "movieInfo": "리얼리티",
+    "grade": "모든 연령 시청가",
+    "director": "두승택",
+    "cast": [
+      "이승윤",
+      "윤택",
+      "정형석"
+    ],
+    "detailDate": "2012년 08월 22일"
   },
   {
     "title": "에스코트 걸",
@@ -1482,11 +1717,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_에스코트걸",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 서사/드라마, 스릴러 / 90분",
+    "grade": "청소년 관람불가",
+    "director": "미하일 포고소프",
+    "cast": [
+      "안나 스타셴바움",
+      "드미트리 나기예프",
+      "알리나 알렉세바",
+      "페타아 지커비커",
+      "비탈리야 코르니엔코"
+    ],
+    "detailDate": ""
   },
   {
     "title": "제2차초견",
@@ -1498,15 +1741,22 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_제2차초견",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 액션, 어드벤처, 코미디",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "송이인",
+      "곽준진",
+      "이구림",
+      "장쯔신"
+    ],
+    "detailDate": ""
   },
   {
     "title": "황신혜의 같이 삽시다",
-    "date": "2026-01-08",
+    "date": "2026-01-07",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/4819a230-e642-4d24-b541-822616cb5276.webp",
     "link": "https://m.kinolights.com/title/149354",
     "genre": "ott",
@@ -1514,11 +1764,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_황신혜의같이삽시다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260107_황신혜의같이삽시다",
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "허정훈",
+    "cast": [
+      "황신혜",
+      "장윤정",
+      "정가은"
+    ],
+    "detailDate": "2026년 01월 07일"
   },
   {
     "title": "다윈 사변",
@@ -1530,15 +1786,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_다윈사변",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 서사/드라마",
+    "grade": "미정",
+    "director": "츠다 나오카츠",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "언힌지드",
-    "date": "2026-01-08",
+    "date": "2020-10-07",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/d16569b8-d2f1-4a0b-a998-d404c6be3e86.webp",
     "link": "https://m.kinolights.com/title/83002",
     "genre": "ott",
@@ -1546,15 +1804,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_언힌지드",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20201007_언힌지드",
+    "movieInfo": "스릴러, 액션 / 90분",
+    "grade": "청소년 관람불가",
+    "director": "데릭 보트",
+    "cast": [
+      "러셀 크로우",
+      "카렌 피스토리우스",
+      "가브리엘 베이트먼",
+      "지미 심슨",
+      "오스틴 P. 맥켄지"
+    ],
+    "detailDate": "2020년 10월 07일 개봉"
   },
   {
     "title": "연의 편지",
-    "date": "2026-01-08",
+    "date": "2025-10-01",
     "image": "https://file.kinolights.com/m/content_poster/202508/25/7a5948d9-3f1b-46de-803e-7f463e1cb4eb.webp",
     "link": "https://m.kinolights.com/title/136655",
     "genre": "ott",
@@ -1562,15 +1828,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_연의편지",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251001_연의편지",
+    "movieInfo": "서사/드라마, 애니메이션 / 96분",
+    "grade": "12세 이상 관람가",
+    "director": "김용환",
+    "cast": [
+      "이수현",
+      "김민주",
+      "민승우",
+      "남도형",
+      "김연우"
+    ],
+    "detailDate": "2025년 10월 01일 개봉"
   },
   {
     "title": "첫 번째 남자",
-    "date": "2026-01-08",
+    "date": "2025-12-15",
     "image": "https://file.kinolights.com/m/content_poster/202512/15/5eb4377e-4a5c-4722-a44a-4c00f25d3dc0.webp",
     "link": "https://m.kinolights.com/title/148851",
     "genre": "ott",
@@ -1579,11 +1853,19 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_첫번째남자",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20251215_첫번째남자",
+    "movieInfo": "멜로/로맨스, 범죄, 서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "함은정",
+      "오현경",
+      "윤선우",
+      "함은정",
+      "박건일"
+    ],
+    "detailDate": "2025년 12월 15일"
   },
   {
     "title": "아름다운 그대에게",
@@ -1598,11 +1880,19 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_아름다운그대에게",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "타케무라 나츠키",
+    "cast": [
+      "야마네 아야",
+      "야시로 타쿠",
+      "토야 키쿠노스케",
+      "우치야마 코우키",
+      "우메하라 유이치로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "밤은 고양이와 함께 시즌 3",
@@ -1616,11 +1906,17 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_밤은고양이와함께시즌3",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "코미디",
+    "grade": "모든 연령 시청가",
+    "director": "아시나 미노루",
+    "cast": [
+      "타카가키 아야히",
+      "히노 사토시",
+      "타네자키 아츠미"
+    ],
+    "detailDate": ""
   },
   {
     "title": "MBC 뉴스데스크",
@@ -1633,15 +1929,17 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_MBC뉴스데스크",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "교양, 시사",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "프레데터: 죽음의 땅",
-    "date": "2026-01-08",
+    "date": "2025-11-05",
     "image": "https://file.kinolights.com/m/content_poster/202510/20/0814fde8-089b-4f10-b983-b2b155737688.webp",
     "link": "https://m.kinolights.com/title/143005",
     "genre": "ott",
@@ -1651,15 +1949,23 @@
       "apple"
     ],
     "region": "ott",
-    "id": "ott_20260108_프레데터:죽음의땅",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251105_프레데터:죽음의땅",
+    "movieInfo": "SF, 액션 / 107분",
+    "grade": "15세 이상 관람가",
+    "director": "댄 트라첸버그",
+    "cast": [
+      "디미트리우스 슈스터콜로아마탕기",
+      "엘르 패닝",
+      "로히날 나라얀",
+      "마이클 호믹",
+      "스테판 그루베"
+    ],
+    "detailDate": "2025년 11월 05일 개봉"
   },
   {
     "title": "가족계획",
-    "date": "2026-01-08",
+    "date": "2024-11-29",
     "image": "https://file.kinolights.com/m/content_poster/202410/31/4176db46-91e7-42ed-ad3d-fc45084c35d2.webp",
     "link": "https://m.kinolights.com/title/130432",
     "genre": "ott",
@@ -1668,11 +1974,19 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_가족계획",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20241129_가족계획",
+    "movieInfo": "서사/드라마, 스릴러, 코미디, 판타지",
+    "grade": "19세 이상 시청가",
+    "director": "김곡",
+    "cast": [
+      "배두나",
+      "류승범",
+      "백윤식",
+      "로몬",
+      "이수현"
+    ],
+    "detailDate": "2024년 11월 29일"
   },
   {
     "title": "슈퍼/맨: 크리스토퍼 리브 스토리",
@@ -1685,15 +1999,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_슈퍼/맨:크리스토퍼리브스토리",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "다큐멘터리 / 106분",
+    "grade": "12세 이상 관람가",
+    "director": "피터 에트귀",
+    "cast": [
+      "크리스토퍼 리브"
+    ],
+    "detailDate": ""
   },
   {
     "title": "소년시대",
-    "date": "2026-01-08",
+    "date": "2023-11-24",
     "image": "https://file.kinolights.com/m/content_poster/202311/20/18cca14a-8386-4876-b3f6-bc0fb9d33e36.webp",
     "link": "https://m.kinolights.com/title/126263",
     "genre": "ott",
@@ -1702,15 +2020,23 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_소년시대",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20231124_소년시대",
+    "movieInfo": "서사/드라마, 액션, 코미디",
+    "grade": "19세 이상 시청가",
+    "director": "이명우",
+    "cast": [
+      "임시완",
+      "이선빈",
+      "이시우",
+      "강혜원",
+      "김정진"
+    ],
+    "detailDate": "2023년 11월 24일"
   },
   {
     "title": "사랑 후에 오는 것들",
-    "date": "2026-01-08",
+    "date": "2024-09-27",
     "image": "https://file.kinolights.com/m/content_poster/202409/10/3f274c61-2baf-401f-91a3-ed0ba25d6707.webp",
     "link": "https://m.kinolights.com/title/129477",
     "genre": "ott",
@@ -1719,15 +2045,23 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_사랑후에오는것들",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20240927_사랑후에오는것들",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "12세 이상 시청가",
+    "director": "문현성",
+    "cast": [
+      "이세영",
+      "사카구치 켄타로",
+      "홍종현",
+      "나카무라 안",
+      "미람"
+    ],
+    "detailDate": "2024년 09월 27일"
   },
   {
     "title": "뉴토피아",
-    "date": "2026-01-08",
+    "date": "2025-02-07",
     "image": "https://file.kinolights.com/m/content_poster/202501/24/8a380063-c33a-4039-a016-58efe9651432.webp",
     "link": "https://m.kinolights.com/title/126846",
     "genre": "ott",
@@ -1736,11 +2070,19 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_뉴토피아",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250207_뉴토피아",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 스릴러, 액션, 코미디, 판타지",
+    "grade": "19세 이상 시청가",
+    "director": "윤성현",
+    "cast": [
+      "박정민",
+      "지수",
+      "임성재",
+      "김준한",
+      "강영석"
+    ],
+    "detailDate": "2025년 02월 07일"
   },
   {
     "title": "세라 스퀌: 라이브 + 인 더 플레시",
@@ -1753,15 +2095,21 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_세라스퀌:라이브+인더플레시",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "스탠드업 코미디",
+    "grade": "19세 이상 시청가",
+    "director": "코디 크리첼로",
+    "cast": [
+      "사라 셔먼",
+      "존 워터스",
+      "잭 벤싱거"
+    ],
+    "detailDate": ""
   },
   {
     "title": "슈팅스타",
-    "date": "2026-01-08",
+    "date": "2024-11-22",
     "image": "https://file.kinolights.com/m/content_poster/202411/06/4cb2b0f2-cff2-4aaf-8357-8c8f61e5a2d2.webp",
     "link": "https://m.kinolights.com/title/138301",
     "genre": "ott",
@@ -1770,11 +2118,17 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_슈팅스타",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20241122_슈팅스타",
+    "movieInfo": "리얼리티",
+    "grade": "12세 이상 시청가",
+    "director": "조효진",
+    "cast": [
+      "박지성",
+      "최용수",
+      "설기현"
+    ],
+    "detailDate": "2024년 11월 22일"
   },
   {
     "title": "하드 녹스: NFC 동부",
@@ -1787,15 +2141,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_하드녹스:NFC동부",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "다큐멘터리",
+    "grade": "12세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "리브 슈라이버"
+    ],
+    "detailDate": ""
   },
   {
     "title": "호랑이 소녀",
-    "date": "2026-01-08",
+    "date": "2025-05-07",
     "image": "https://file.kinolights.com/m/content_poster/202504/18/720d459b-7642-4290-9a91-d99cec68af31.webp",
     "link": "https://m.kinolights.com/title/123531",
     "genre": "ott",
@@ -1804,11 +2162,19 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_호랑이소녀",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250507_호랑이소녀",
+    "movieInfo": "공포(호러), 서사/드라마 / 95분",
+    "grade": "12세 이상 관람가",
+    "director": "아만다 넬 유",
+    "cast": [
+      "자프린 자이리잘",
+      "피카",
+      "디나 에스랄",
+      "샤헤이지 삼",
+      "준 로종"
+    ],
+    "detailDate": "2025년 05월 07일 개봉"
   },
   {
     "title": "표정 없는 검사",
@@ -1821,11 +2187,19 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_표정없는검사",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 서사/드라마",
+    "grade": "미정",
+    "director": "무라카미 마키토",
+    "cast": [
+      "카미카와 타카야",
+      "요시타니 아야코",
+      "오오니시 류세이",
+      "미즈키 아리사",
+      "테라와키 야스후미"
+    ],
+    "detailDate": ""
   },
   {
     "title": "장안적려지",
@@ -1838,11 +2212,18 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_장안적려지",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "레이자인",
+      "악운붕",
+      "나이나천",
+      "비비안 티엔"
+    ],
+    "detailDate": ""
   },
   {
     "title": "티라노가 온다!",
@@ -1855,15 +2236,17 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_티라노가온다!",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "키즈",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "다큐플러스Q",
-    "date": "2026-01-08",
+    "date": "2026-01-04",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/19370c4a-8c2d-49cc-879b-1aca01aedfaf.webp",
     "link": "https://m.kinolights.com/title/149244",
     "genre": "ott",
@@ -1873,15 +2256,17 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_다큐플러스Q",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260104_다큐플러스Q",
+    "movieInfo": "다큐멘터리",
+    "grade": "15세 이상 시청가",
+    "director": "박상도",
+    "cast": [],
+    "detailDate": "2026년 01월 04일"
   },
   {
     "title": "두리둥실 뭉게공항 2기",
-    "date": "2026-01-08",
+    "date": "2013-10-26",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/5a051dfb-d760-40fb-87d6-90903f4390e1.webp",
     "link": "https://m.kinolights.com/title/88909",
     "genre": "ott",
@@ -1890,15 +2275,17 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_두리둥실뭉게공항2기",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20131026_두리둥실뭉게공항2기",
+    "movieInfo": "어드벤처, 키즈",
+    "grade": "모든 연령 시청가",
+    "director": "김형선",
+    "cast": [],
+    "detailDate": "2013년 10월 26일"
   },
   {
     "title": "비밀서고 트라이앵글",
-    "date": "2026-01-08",
+    "date": "2026-01-04",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/a39fcb6d-ecfe-42ef-8ac5-cce214c3659b.webp",
     "link": "https://m.kinolights.com/title/149246",
     "genre": "ott",
@@ -1908,15 +2295,20 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_비밀서고트라이앵글",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260104_비밀서고트라이앵글",
+    "movieInfo": "토크쇼",
+    "grade": "12세 이상 시청가",
+    "director": "성세희",
+    "cast": [
+      "도경완",
+      "김기두"
+    ],
+    "detailDate": "2026년 01월 04일"
   },
   {
     "title": "존 윅 3: 파라벨룸",
-    "date": "2026-01-08",
+    "date": "2020-12-09",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/458f09ac-22fd-47b1-933a-ac49ebdb2663.webp",
     "link": "https://m.kinolights.com/title/69971",
     "genre": "ott",
@@ -1925,15 +2317,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_존윅3:파라벨룸",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20201209_존윅3:파라벨룸",
+    "movieInfo": "스릴러, 액션 / 131분",
+    "grade": "청소년 관람불가",
+    "director": "채드 스타헬스키",
+    "cast": [
+      "키아누 리브스",
+      "할리 베리",
+      "안젤리카 휴스턴",
+      "이안 맥쉐인",
+      "아시아 케이트 딜런"
+    ],
+    "detailDate": "2020년 12월 09일 재개봉 2019년 06월 26일 개봉"
   },
   {
     "title": "하희라의 몸몸몸",
-    "date": "2026-01-08",
+    "date": "2026-01-04",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/18862c3e-18f6-46b4-ba0e-504a4315ffeb.webp",
     "link": "https://m.kinolights.com/title/149252",
     "genre": "ott",
@@ -1943,11 +2343,17 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_하희라의몸몸몸",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260104_하희라의몸몸몸",
+    "movieInfo": "토크쇼",
+    "grade": "15세 이상 시청가",
+    "director": "권경덕",
+    "cast": [
+      "하희라",
+      "홍경민",
+      "박광현"
+    ],
+    "detailDate": "2026년 01월 04일"
   },
   {
     "title": "코인비저블: 보이지 않는 돈",
@@ -1960,11 +2366,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_코인비저블:보이지않는돈",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "다큐멘터리",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "혜성",
@@ -1977,15 +2385,17 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_혜성",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 서사/드라마 / 69분",
+    "grade": "12세 이상 관람가",
+    "director": "바드 로쓰볼드",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "풀뿌리의 시간",
-    "date": "2026-01-08",
+    "date": "2025-11-23",
     "image": "https://file.kinolights.com/m/content_poster/202511/25/ac2ba6a9-6961-4d19-989c-751917bac8dd.webp",
     "link": "https://m.kinolights.com/title/148189",
     "genre": "ott",
@@ -1994,15 +2404,17 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_풀뿌리의시간",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20251123_풀뿌리의시간",
+    "movieInfo": "시사",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 11월 23일"
   },
   {
     "title": "S라인",
-    "date": "2026-01-08",
+    "date": "2025-07-11",
     "image": "https://file.kinolights.com/m/content_poster/202506/24/50645945-a0e0-4624-ad54-28fb8bf61f26.webp",
     "link": "https://m.kinolights.com/title/126961",
     "genre": "ott",
@@ -2010,11 +2422,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_S라인",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250711_S라인",
+    "movieInfo": "미스터리, 서사/드라마, 스릴러, 판타지",
+    "grade": "19세 이상 시청가",
+    "director": "안주영",
+    "cast": [
+      "이수혁",
+      "이다희",
+      "아린",
+      "이은샘",
+      "이한주"
+    ],
+    "detailDate": "2025년 07월 11일"
   },
   {
     "title": "금월여가",
@@ -2026,11 +2446,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_금월여가",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "장가준",
+    "cast": [
+      "저우예",
+      "승뢰",
+      "장강락",
+      "장묘이",
+      "이명덕"
+    ],
+    "detailDate": ""
   },
   {
     "title": "장상제미",
@@ -2042,15 +2470,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_장상제미",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 사극/시대물",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "동효자",
+      "손예연",
+      "구정효",
+      "려성훤",
+      "류상린"
+    ],
+    "detailDate": ""
   },
   {
     "title": "366일",
-    "date": "2026-01-08",
+    "date": "2025-06-11",
     "image": "https://file.kinolights.com/m/content_poster/202505/12/9c8ccde8-5131-4cc6-808b-4e146cf0972d.webp",
     "link": "https://m.kinolights.com/title/140389",
     "genre": "ott",
@@ -2058,15 +2494,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_366일",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250611_366일",
+    "movieInfo": "멜로/로맨스",
+    "grade": "12세 이상 관람가",
+    "director": "신조 타케히코",
+    "cast": [
+      "아카소 에이지",
+      "이나가키 쿠루미",
+      "이시다 히카리",
+      "카미시라이시 모카",
+      "쿠니나카 료코"
+    ],
+    "detailDate": "2025년 06월 11일 개봉"
   },
   {
     "title": "그 자연이 네게 뭐라고 하니",
-    "date": "2026-01-08",
+    "date": "2025-05-14",
     "image": "https://file.kinolights.com/m/content_poster/202504/14/61e08993-6adb-4c8e-b06a-2c307e3f2f55.webp",
     "link": "https://m.kinolights.com/title/140596",
     "genre": "ott",
@@ -2074,15 +2518,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_그자연이네게뭐라고하니",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250514_그자연이네게뭐라고하니",
+    "movieInfo": "서사/드라마 / 108분",
+    "grade": "15세 이상 관람가",
+    "director": "홍상수",
+    "cast": [
+      "하성국",
+      "하성국",
+      "조윤희",
+      "강소이",
+      "박미소"
+    ],
+    "detailDate": "2025년 05월 14일 개봉"
   },
   {
     "title": "어네스트와 셀레스틴: 멜로디 소동",
-    "date": "2026-01-08",
+    "date": "2025-06-11",
     "image": "https://file.kinolights.com/m/content_poster/202505/11/a6b00663-922d-4bc9-b819-93f21295ea0c.webp",
     "link": "https://m.kinolights.com/title/124462",
     "genre": "ott",
@@ -2090,11 +2542,16 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_어네스트와셀레스틴:멜로디소동",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250611_어네스트와셀레스틴:멜로디소동",
+    "movieInfo": "어드벤처 / 80분",
+    "grade": "전체 관람가",
+    "director": "장-크리스토프 로제",
+    "cast": [
+      "램버트 윌슨",
+      "셀린 론테"
+    ],
+    "detailDate": "2025년 06월 11일 개봉"
   },
   {
     "title": "EBS 다큐 프라임",
@@ -2106,15 +2563,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_EBS다큐프라임",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "다큐멘터리",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "한국기행",
-    "date": "2026-01-08",
+    "date": "2009-08-24",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/83d54971-965e-420c-bf84-b6d8831943b3.webp",
     "link": "https://m.kinolights.com/title/107942",
     "genre": "ott",
@@ -2122,15 +2581,20 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_한국기행",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20090824_한국기행",
+    "movieInfo": "다큐멘터리",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "이금희",
+      "이희탁"
+    ],
+    "detailDate": "2009년 08월 24일"
   },
   {
     "title": "세계테마기행",
-    "date": "2026-01-08",
+    "date": "2008-02-25",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/603caa6d-9ca5-4e46-a285-032cffe085f0.webp",
     "link": "https://m.kinolights.com/title/96308",
     "genre": "ott",
@@ -2138,15 +2602,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_세계테마기행",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20080225_세계테마기행",
+    "movieInfo": "다큐멘터리",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2008년 02월 25일"
   },
   {
     "title": "얼굴",
-    "date": "2026-01-08",
+    "date": "2025-09-11",
     "image": "https://file.kinolights.com/m/content_poster/202508/14/a9af75a1-e9a5-4815-b196-33ee47368fff.webp",
     "link": "https://m.kinolights.com/title/136234",
     "genre": "ott",
@@ -2154,15 +2620,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_얼굴",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250911_얼굴",
+    "movieInfo": "미스터리, 스릴러 / 103분",
+    "grade": "15세 이상 관람가",
+    "director": "연상호",
+    "cast": [
+      "박정민",
+      "권해효",
+      "신현빈",
+      "임성재",
+      "한지현"
+    ],
+    "detailDate": "2025년 09월 11일 개봉"
   },
   {
     "title": "한산 리덕스",
-    "date": "2026-01-08",
+    "date": "2022-11-16",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/b7d9a355-ca1f-4766-9855-0e58c304556f.webp",
     "link": "https://m.kinolights.com/title/116507",
     "genre": "ott",
@@ -2170,15 +2644,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_한산리덕스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "사극/시대물, 서사/드라마, 액션 / 151분",
+    "grade": "12세 이상 관람가",
+    "director": "김한민",
+    "cast": [
+      "박해일",
+      "변요한",
+      "안성기",
+      "손현주",
+      "김성규"
+    ],
+    "detailDate": "2022년 11월 16일 개봉"
   },
   {
     "title": "34번가의 기적",
-    "date": "2026-01-08",
+    "date": "1994-12-17",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/bd00f330-4070-4d7a-8387-11ea10a31f88.webp",
     "link": "https://m.kinolights.com/title/45754",
     "genre": "ott",
@@ -2186,15 +2668,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_34번가의기적",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 판타지 / 114분",
+    "grade": "전체 관람가",
+    "director": "레스 메이필드",
+    "cast": [
+      "리차드 아텐보로",
+      "엘리자베스 퍼킨스",
+      "딜란 맥더모트",
+      "J.T. 월쉬",
+      "제임스 레마"
+    ],
+    "detailDate": "1994년 12월 17일 개봉"
   },
   {
     "title": "2025 SBS 연예대상",
-    "date": "2026-01-08",
+    "date": "2025-12-30",
     "image": "https://file.kinolights.com/m/content_poster/202512/31/70a75c7c-703e-4bd5-b1a3-1d5d5dc88464.webp",
     "link": "https://m.kinolights.com/title/149188",
     "genre": "ott",
@@ -2202,15 +2692,21 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_2025SBS연예대상",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "시상식",
+    "grade": "15세 이상 시청가",
+    "director": "안재철",
+    "cast": [
+      "전현무",
+      "차태현",
+      "이수지"
+    ],
+    "detailDate": "2025년 12월 30일"
   },
   {
     "title": "극한84",
-    "date": "2026-01-08",
+    "date": "2025-11-30",
     "image": "https://file.kinolights.com/m/content_poster/202511/19/080c393e-6b5a-4a06-bc85-d502233d0307.webp",
     "link": "https://m.kinolights.com/title/147985",
     "genre": "ott",
@@ -2219,15 +2715,20 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_극한84",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "리얼리티",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "기안84",
+      "권화운"
+    ],
+    "detailDate": "2025년 11월 30일"
   },
   {
     "title": "복숭아 꽃이 피었습니다",
-    "date": "2026-01-08",
+    "date": "2025-11-06",
     "image": "https://file.kinolights.com/m/content_poster/202511/07/dec9c89b-e682-4961-8ff1-466b3f47165d.webp",
     "link": "https://m.kinolights.com/title/147731",
     "genre": "ott",
@@ -2237,15 +2738,22 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_복숭아꽃이피었습니다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "김아영",
+    "cast": [
+      "정수빈",
+      "차세진",
+      "이도한",
+      "차유현"
+    ],
+    "detailDate": "2025년 11월 06일"
   },
   {
     "title": "컷생 - 만화in문학 : 하이라이트",
-    "date": "2026-01-08",
+    "date": "2026-01-04",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/916502fb-3c7f-44ed-be6f-28ff64e0908e.webp",
     "link": "https://m.kinolights.com/title/149245",
     "genre": "ott",
@@ -2254,15 +2762,19 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_컷생-만화in문학:하이라이트",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "토크쇼",
+    "grade": "12세 이상 시청가",
+    "director": "강홍석",
+    "cast": [
+      "넉살"
+    ],
+    "detailDate": "2026년 01월 04일"
   },
   {
     "title": "컴패니언",
-    "date": "2026-01-08",
+    "date": "2025-03-19",
     "image": "https://file.kinolights.com/m/content_poster/202502/27/9d267299-8e8f-4afb-9a63-a44c4383b3fc.webp",
     "link": "https://m.kinolights.com/title/141674",
     "genre": "ott",
@@ -2271,15 +2783,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_컴패니언",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 스릴러, 코미디 / 97분",
+    "grade": "청소년 관람불가",
+    "director": "드류 행콕",
+    "cast": [
+      "소피 대처",
+      "잭 퀘이드",
+      "루카스 게이지",
+      "메간 수리",
+      "하비 길렌"
+    ],
+    "detailDate": "2025년 03월 19일 개봉"
   },
   {
     "title": "탑건: 매버릭",
-    "date": "2026-01-08",
+    "date": "2022-06-22",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/663b0bc2-0647-4ba5-b64f-439c7ff6b683.webp",
     "link": "https://m.kinolights.com/title/76722",
     "genre": "ott",
@@ -2288,15 +2808,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_탑건:매버릭",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 액션 / 130분",
+    "grade": "12세 이상 관람가",
+    "director": "조셉 코신스키",
+    "cast": [
+      "톰 크루즈",
+      "마일즈 텔러",
+      "제니퍼 코넬리",
+      "존 햄",
+      "에드 해리스"
+    ],
+    "detailDate": "2022년 06월 22일 개봉"
   },
   {
     "title": "닌자터틀: 뮤턴트 대소동",
-    "date": "2026-01-08",
+    "date": "2023-09-14",
     "image": "https://file.kinolights.com/m/content_poster/202308/21/cc899d7b-d569-42a3-99f1-b0daa63d342c.webp",
     "link": "https://m.kinolights.com/title/121237",
     "genre": "ott",
@@ -2305,11 +2833,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_닌자터틀:뮤턴트대소동",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 액션, 어드벤처, 코미디, 판타지 / 99분",
+    "grade": "전체 관람가",
+    "director": "제프 로",
+    "cast": [
+      "니콜라스 캔투",
+      "샤먼 브라운 주니어",
+      "마이카 아비",
+      "브래디 눈",
+      "성룡"
+    ],
+    "detailDate": "2023년 09월 14일 개봉"
   },
   {
     "title": "세이렌의 참회",
@@ -2323,11 +2859,19 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_세이렌의참회",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "범죄, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "무라카미 쇼스케",
+    "cast": [
+      "아라키 유코",
+      "이케우치 히로유키",
+      "타카시마 마사노부",
+      "타카나시 린",
+      "코우모토 마사히로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "사건",
@@ -2341,11 +2885,18 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_사건",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 범죄, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "미즈타 나리히데",
+    "cast": [
+      "시이나 깃페이",
+      "키타 카나",
+      "모치즈키 아유무",
+      "아키타 시오리"
+    ],
+    "detailDate": ""
   },
   {
     "title": "60 오판대책실",
@@ -2359,15 +2910,23 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_60오판대책실",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "미스터리",
+    "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "타치 히로시",
+      "후루카와 유우키",
+      "호시노 마리",
+      "무라카미 준",
+      "아카호리 마사아키"
+    ],
+    "detailDate": ""
   },
   {
     "title": "돈 쥬앙",
-    "date": "2026-01-08",
+    "date": "1989-01-21",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/730bd30c-7c20-459a-b7a3-1182b84c3d06.webp",
     "link": "https://m.kinolights.com/title/125236",
     "genre": "ott",
@@ -2376,15 +2935,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_돈쥬앙",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_19890121_돈쥬앙",
+    "movieInfo": "서사/드라마, 코미디 / 95분",
+    "grade": "청소년 관람불가",
+    "director": "지안프랑코 민고지",
+    "cast": [
+      "세레나 그랜디",
+      "클라우디안 아우거",
+      "장 클로드 프리숭",
+      "오를레앙 르코앵",
+      "로제트"
+    ],
+    "detailDate": "1989년 01월 21일 개봉"
   },
   {
     "title": "우리는 이별에 서툴러서",
-    "date": "2026-01-08",
+    "date": "2021-12-11",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/e0936976-90ad-4bd1-892e-692a79c3c06e.webp",
     "link": "https://m.kinolights.com/title/101081",
     "genre": "ott",
@@ -2393,11 +2960,19 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_우리는이별에서툴러서",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20211211_우리는이별에서툴러서",
+    "movieInfo": "서사/드라마, 판타지 / 65분",
+    "grade": "12세 이상 관람가",
+    "director": "박동기",
+    "cast": [
+      "이건욱",
+      "김현진",
+      "김혜원",
+      "신민재",
+      "한예주"
+    ],
+    "detailDate": "2021년 12월 11일 개봉"
   },
   {
     "title": "종로3가역2번출구",
@@ -2410,11 +2985,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_종로3가역2번출구",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마 / 116분",
+    "grade": "청소년 관람불가",
+    "director": "권중목",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "콜롬바 레전드",
@@ -2427,11 +3004,15 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_콜롬바레전드",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서부극(웨스턴), 서사/드라마 / 95분",
+    "grade": "15세 이상 관람가",
+    "director": "로사리오 네리",
+    "cast": [
+      "마우리지오 볼로냐"
+    ],
+    "detailDate": ""
   },
   {
     "title": "위국일기",
@@ -2443,11 +3024,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_위국일기",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "오오시로 미유키",
+    "cast": [
+      "사와시로 미유키",
+      "모리 후코",
+      "나카무라 유코",
+      "오오츠카 히로타",
+      "마츠이 에리코"
+    ],
+    "detailDate": ""
   },
   {
     "title": "마술사 쿠논은 보인다",
@@ -2459,11 +3048,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_마술사쿠논은보인다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "판타지",
+    "grade": "15세 이상 시청가",
+    "director": "오오바 히데아키",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "언젠가, 무중력의 하늘에서",
@@ -2476,15 +3067,22 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_언젠가,무중력의하늘에서",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "미정",
+    "director": "사토 료",
+    "cast": [
+      "키류 마이",
+      "모리타 미사토",
+      "카타야마 유키",
+      "이토 마리카"
+    ],
+    "detailDate": ""
   },
   {
     "title": "미쳤대도 여자야구",
-    "date": "2026-01-08",
+    "date": "2026-01-04",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/e4579940-36c7-47e7-981a-23e94b238710.webp",
     "link": "https://m.kinolights.com/title/149253",
     "genre": "ott",
@@ -2492,11 +3090,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_미쳤대도여자야구",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260104_미쳤대도여자야구",
+    "movieInfo": "다큐멘터리",
+    "grade": "15세 이상 시청가",
+    "director": "도준우",
+    "cast": [
+      "김라경",
+      "김현아",
+      "박주아"
+    ],
+    "detailDate": "2026년 01월 04일"
   },
   {
     "title": "탕양 : 흔들리는 운명",
@@ -2508,15 +3112,20 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_탕양:흔들리는운명",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "왕성위",
+      "정금명"
+    ],
+    "detailDate": ""
   },
   {
     "title": "인간극장",
-    "date": "2026-01-08",
+    "date": "2000-05-01",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/1395a6e1-c3df-49dd-80e5-920883d065ce.webp",
     "link": "https://m.kinolights.com/title/94387",
     "genre": "ott",
@@ -2524,15 +3133,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_인간극장",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20000501_인간극장",
+    "movieInfo": "다큐멘터리",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2000년 05월 01일"
   },
   {
     "title": "에스파: 월드 투어 인 시네마",
-    "date": "2026-01-08",
+    "date": "2024-04-10",
     "image": "https://file.kinolights.com/m/content_poster/202403/21/a1bc4da0-296b-42bd-9cf6-ee6946795492.webp",
     "link": "https://m.kinolights.com/title/132116",
     "genre": "ott",
@@ -2540,15 +3151,22 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_에스파:월드투어인시네마",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20240410_에스파:월드투어인시네마",
+    "movieInfo": "콘서트 / 125분",
+    "grade": "전체 관람가",
+    "director": "오윤동",
+    "cast": [
+      "카리나",
+      "지젤",
+      "윈터",
+      "닝닝"
+    ],
+    "detailDate": "2024년 04월 10일 개봉"
   },
   {
     "title": "브레드이발소: 베이커리타운의 악당들",
-    "date": "2026-01-08",
+    "date": "2025-09-27",
     "image": "https://file.kinolights.com/m/content_poster/202509/09/b33ac35a-d8a0-40d3-a55f-93a06cbccade.webp",
     "link": "https://m.kinolights.com/title/145644",
     "genre": "ott",
@@ -2556,11 +3174,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_브레드이발소:베이커리타운의악당들",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250927_브레드이발소:베이커리타운의악당들",
+    "movieInfo": "애니메이션 / 71분",
+    "grade": "전체 관람가",
+    "director": "정지환",
+    "cast": [],
+    "detailDate": "2025년 09월 27일 개봉"
   },
   {
     "title": "이제 만나러 갑니다",
@@ -2572,11 +3192,16 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이제만나러갑니다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "버라이어티, 토크쇼",
+    "grade": "12세 이상 시청가",
+    "director": "전경남",
+    "cast": [
+      "남희석",
+      "박은혜"
+    ],
+    "detailDate": ""
   },
   {
     "title": "추락 여고생과 폐인 교사 시즌 2",
@@ -2588,11 +3213,18 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_추락여고생과폐인교사시즌2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "에다 유카",
+    "cast": [
+      "하시모토 료",
+      "타카이시 아카리",
+      "다무라 카이루",
+      "라이쿠"
+    ],
+    "detailDate": ""
   },
   {
     "title": "생활의 달인",
@@ -2604,11 +3236,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_생활의달인",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "교양",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "양희은",
+      "김태균",
+      "김보민"
+    ],
+    "detailDate": ""
   },
   {
     "title": "불념: 부러진 인연",
@@ -2620,11 +3258,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_불념:부러진인연",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "장추한",
+      "후보원",
+      "로희",
+      "야일",
+      "쑤저린"
+    ],
+    "detailDate": ""
   },
   {
     "title": "버닝 블러드",
@@ -2636,11 +3282,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_버닝블러드",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "범죄, 액션 / 88분",
+    "grade": "청소년 관람불가",
+    "director": "전국위",
+    "cast": [
+      "진소춘",
+      "사천화",
+      "빙몽몽",
+      "임효봉",
+      "주영당"
+    ],
+    "detailDate": ""
   },
   {
     "title": "적인걸: 흑룡의 비밀",
@@ -2652,15 +3306,22 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_적인걸:흑룡의비밀",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 액션, 판타지 / 96분",
+    "grade": "15세 이상 관람가",
+    "director": "황가휘",
+    "cast": [
+      "장자건",
+      "서소강",
+      "미설",
+      "서영곤"
+    ],
+    "detailDate": ""
   },
   {
     "title": "닥터솔루션 건강의 여신",
-    "date": "2026-01-08",
+    "date": "2026-01-03",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/32682ea8-6e64-40e8-8c9e-f3d30cb37f11.webp",
     "link": "https://m.kinolights.com/title/149242",
     "genre": "ott",
@@ -2669,15 +3330,21 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_닥터솔루션건강의여신",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260103_닥터솔루션건강의여신",
+    "movieInfo": "토크쇼",
+    "grade": "12세 이상 시청가",
+    "director": "이영문",
+    "cast": [
+      "김경란",
+      "윤지영",
+      "문희경"
+    ],
+    "detailDate": "2026년 01월 03일"
   },
   {
     "title": "폭군의 셰프",
-    "date": "2026-01-08",
+    "date": "2025-08-23",
     "image": "https://file.kinolights.com/m/content_poster/202507/18/386639ea-5e89-4323-b486-5325ba206c2d.webp",
     "link": "https://m.kinolights.com/title/139232",
     "genre": "ott",
@@ -2686,11 +3353,19 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_폭군의셰프",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250823_폭군의셰프",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "장태유",
+    "cast": [
+      "윤아",
+      "이채민",
+      "강한나",
+      "최귀화",
+      "윤서아"
+    ],
+    "detailDate": "2025년 08월 23일"
   },
   {
     "title": "사랑 따위 진심으로 해서 어쩌려고?",
@@ -2703,15 +3378,22 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_사랑따위진심으로해서어쩌려고?",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "히로세 아리스",
+      "마츠무라 호쿠토",
+      "니시노 나나세",
+      "이토요 마리에"
+    ],
+    "detailDate": ""
   },
   {
     "title": "스카우트",
-    "date": "2026-01-08",
+    "date": "2025-10-17",
     "image": "https://file.kinolights.com/m/content_poster/202510/20/843593b2-3d5a-4cab-8446-96910b5509a0.webp",
     "link": "https://m.kinolights.com/title/147237",
     "genre": "ott",
@@ -2720,15 +3402,22 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_스카우트",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251017_스카우트",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 성인 / 64분",
+    "grade": "청소년 관람불가",
+    "director": "로만 페레스 주니어",
+    "cast": [
+      "알리야 레이문도",
+      "골드 아세론",
+      "제로 플로레스",
+      "디바인 빌라리얼"
+    ],
+    "detailDate": "2025년 10월 17일 개봉"
   },
   {
     "title": "전지적 참견 시점",
-    "date": "2026-01-08",
+    "date": "2018-03-03",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/8dac8c7b-7e31-4154-a534-a41f2645939d.webp",
     "link": "https://m.kinolights.com/title/87598",
     "genre": "ott",
@@ -2737,15 +3426,23 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_전지적참견시점",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20180303_전지적참견시점",
+    "movieInfo": "리얼리티",
+    "grade": "15세 이상 시청가",
+    "director": "김윤집",
+    "cast": [
+      "이영자",
+      "전현무",
+      "송은이",
+      "양세형",
+      "유병재"
+    ],
+    "detailDate": "2018년 03월 03일"
   },
   {
     "title": "악녀~ 일하는 게 멋 없다고 누가 말했어~",
-    "date": "2026-01-08",
+    "date": "2022-04-13",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/44390fec-301d-420e-8310-e52d55de7206.webp",
     "link": "https://m.kinolights.com/title/108310",
     "genre": "ott",
@@ -2754,15 +3451,23 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_악녀~일하는게멋없다고누가말했어~",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20220413_악녀~일하는게멋없다고누가말했어~",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "나구모 세이이치",
+    "cast": [
+      "이마다 미오",
+      "에구치 노리코",
+      "스즈키 노부유키",
+      "타카하시 후미야",
+      "무카이 오사무"
+    ],
+    "detailDate": "2022년 04월 13일"
   },
   {
     "title": "애프터: 에버 해피",
-    "date": "2026-01-08",
+    "date": "2022-09-21",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/f562770a-8ee8-4fd0-83f5-7ab8cc6260b4.webp",
     "link": "https://m.kinolights.com/title/103468",
     "genre": "ott",
@@ -2773,11 +3478,19 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_애프터:에버해피",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20220921_애프터:에버해피",
+    "movieInfo": "멜로/로맨스, 서사/드라마 / 119분",
+    "grade": "15세 이상 관람가",
+    "director": "카스티에 랜던",
+    "cast": [
+      "조세핀 랭포드",
+      "히어로 피네스 피핀",
+      "챈스 페르도모",
+      "카터 젠킨스",
+      "키아나 마데이라"
+    ],
+    "detailDate": "2022년 09월 21일 개봉"
   },
   {
     "title": "나의 귀여움은 곧 소비 기한!?",
@@ -2790,15 +3503,21 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_나의귀여움은곧소비기한!?",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "코미디",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "야마다 료스케",
+      "요시네 쿄코",
+      "츠다 켄지로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "러닝메이트",
-    "date": "2026-01-08",
+    "date": "2025-06-19",
     "image": "https://file.kinolights.com/m/content_poster/202505/26/002dd53e-aa23-4b64-9be1-1310d892d916.webp",
     "link": "https://m.kinolights.com/title/121528",
     "genre": "ott",
@@ -2807,15 +3526,23 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_러닝메이트",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250619_러닝메이트",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "한진원",
+    "cast": [
+      "윤현수",
+      "이정식",
+      "최우성",
+      "홍화연",
+      "이봉준"
+    ],
+    "detailDate": "2025년 06월 19일"
   },
   {
     "title": "나만의 시크릿 나비효과",
-    "date": "2026-01-08",
+    "date": "2026-01-02",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/210e43dd-5a65-465b-9090-a3fe41ffbd99.webp",
     "link": "https://m.kinolights.com/title/149241",
     "genre": "ott",
@@ -2824,11 +3551,19 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_나만의시크릿나비효과",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20260102_나만의시크릿나비효과",
+    "movieInfo": "토크쇼",
+    "grade": "12세 이상 시청가",
+    "director": "이준석",
+    "cast": [
+      "채정안",
+      "이창용",
+      "김중렬",
+      "김재원",
+      "이승희"
+    ],
+    "detailDate": "2026년 01월 02일"
   },
   {
     "title": "마닐라: 쾌락 보고서 2부 (무삭제판)",
@@ -2842,15 +3577,20 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_마닐라:쾌락보고서2부(무삭제판)",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "범죄, 서사/드라마, 스릴러 / 96분",
+    "grade": "청소년 관람불가",
+    "director": "로렌스 파자르도",
+    "cast": [
+      "알렉스 빈센트 메디나",
+      "아지 아코스타"
+    ],
+    "detailDate": ""
   },
   {
     "title": "샤크: 더 스톰",
-    "date": "2026-01-08",
+    "date": "2025-05-15",
     "image": "https://file.kinolights.com/m/content_poster/202505/12/b0757359-5c43-48a2-b851-d44c69b6d3b4.webp",
     "link": "https://m.kinolights.com/title/117483",
     "genre": "ott",
@@ -2859,11 +3599,19 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_샤크:더스톰",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250515_샤크:더스톰",
+    "movieInfo": "범죄, 서사/드라마, 스릴러, 액션",
+    "grade": "15세 이상 시청가",
+    "director": "김건",
+    "cast": [
+      "김민석",
+      "이현욱",
+      "이정현",
+      "박진",
+      "배명진"
+    ],
+    "detailDate": "2025년 05월 15일"
   },
   {
     "title": "기문둔갑: 노산도사",
@@ -2877,11 +3625,18 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_기문둔갑:노산도사",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "액션, 판타지 / 88분",
+    "grade": "12세 이상 관람가",
+    "director": "류오 리",
+    "cast": [
+      "하기위",
+      "호설아",
+      "양가인",
+      "난시카이"
+    ],
+    "detailDate": ""
   },
   {
     "title": "더티 토크: 은밀한 라방 2부 (무삭제판)",
@@ -2894,11 +3649,15 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_더티토크:은밀한라방2부(무삭제판)",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마 / 91분",
+    "grade": "청소년 관람불가",
+    "director": "로만 페레스 주니어",
+    "cast": [
+      "살로메 살비"
+    ],
+    "detailDate": ""
   },
   {
     "title": "앵그리 파더",
@@ -2911,11 +3670,18 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_앵그리파더",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "범죄, 액션 / 78분",
+    "grade": "청소년 관람불가",
+    "director": "주정",
+    "cast": [
+      "왕우첨",
+      "서소강",
+      "정영한",
+      "왕호치"
+    ],
+    "detailDate": ""
   },
   {
     "title": "용사형에 처함",
@@ -2927,11 +3693,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_용사형에처함",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "액션, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "타카시마 히로유키",
+    "cast": [
+      "아자카미 요헤이",
+      "이이즈카 마유",
+      "이시가미 시즈카",
+      "호리에 슌",
+      "토키 슌이치"
+    ],
+    "detailDate": ""
   },
   {
     "title": "은애하는 도적님아",
@@ -2944,11 +3718,17 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_은애하는도적님아",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스, 코미디",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "남지현",
+      "문상민",
+      "김석훈"
+    ],
+    "detailDate": ""
   },
   {
     "title": "애프터 더 퀘이크",
@@ -2960,15 +3740,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_애프터더퀘이크",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "미정",
+    "director": "이노우에 츠요시",
+    "cast": [
+      "오카다 마사키",
+      "나루미 유이",
+      "와타나베 다이치",
+      "사토 코이치",
+      "하시모토 아이"
+    ],
+    "detailDate": ""
   },
   {
     "title": "친애하는 X",
-    "date": "2026-01-08",
+    "date": "2025-11-06",
     "image": "https://file.kinolights.com/m/content_poster/202510/16/86fccfe6-7c30-4c32-ac14-9304bd9cb39c.webp",
     "link": "https://m.kinolights.com/title/136303",
     "genre": "ott",
@@ -2977,15 +3765,23 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_친애하는X",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251106_친애하는X",
+    "movieInfo": "멜로/로맨스, 범죄, 스릴러",
+    "grade": "19세 이상 시청가",
+    "director": "이응복",
+    "cast": [
+      "김유정",
+      "김영대",
+      "김도훈",
+      "이열음",
+      "김이경"
+    ],
+    "detailDate": "2025년 11월 06일"
   },
   {
     "title": "극장판 진격의 거인 완결편 더 라스트 어택",
-    "date": "2026-01-08",
+    "date": "2025-03-13",
     "image": "https://file.kinolights.com/m/content_poster/202503/04/9c5dbfce-3218-413f-a5da-188329e5f9da.webp",
     "link": "https://m.kinolights.com/title/140481",
     "genre": "ott",
@@ -2996,15 +3792,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_극장판진격의거인완결편더라스트어택",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250313_극장판진격의거인완결편더라스트어택",
+    "movieInfo": "서사/드라마, 애니메이션, 액션, 어드벤처 / 144분",
+    "grade": "15세 이상 관람가",
+    "director": "하야시 유이치로",
+    "cast": [
+      "카지 유우키",
+      "이시카와 유이",
+      "이노우에 마리나",
+      "카미야 히로시",
+      "시마무라 유우"
+    ],
+    "detailDate": "2025년 03월 13일 개봉"
   },
   {
     "title": "영화학개론",
-    "date": "2026-01-08",
+    "date": "2025-10-21",
     "image": "https://file.kinolights.com/m/content_poster/202511/26/87da5044-01d8-4ca0-8e38-6116eb5adcad.webp",
     "link": "https://m.kinolights.com/title/148214",
     "genre": "ott",
@@ -3014,15 +3818,17 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_영화학개론",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251021_영화학개론",
+    "movieInfo": "멜로/로맨스, 성인 / 62분",
+    "grade": "청소년 관람불가",
+    "director": "후루사와 타케시",
+    "cast": [],
+    "detailDate": "2025년 10월 21일 개봉"
   },
   {
     "title": "신인감독 김연경",
-    "date": "2026-01-08",
+    "date": "2025-09-28",
     "image": "https://file.kinolights.com/m/content_poster/202509/29/6bc9c817-eeb1-469e-821d-10248bccaee6.webp",
     "link": "https://m.kinolights.com/title/146954",
     "genre": "ott",
@@ -3031,15 +3837,21 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_신인감독김연경",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250928_신인감독김연경",
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "권락희",
+    "cast": [
+      "김연경",
+      "승관",
+      "표승주"
+    ],
+    "detailDate": "2025년 09월 28일"
   },
   {
     "title": "식스데이즈",
-    "date": "2026-01-08",
+    "date": "2025-08-13",
     "image": "https://file.kinolights.com/m/content_poster/202507/01/55d7c4bf-1e6b-431f-a8c2-05f779b9a228.webp",
     "link": "https://m.kinolights.com/title/144578",
     "genre": "ott",
@@ -3051,11 +3863,18 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_식스데이즈",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250813_식스데이즈",
+    "movieInfo": "다큐멘터리 / 81분",
+    "grade": "전체 관람가",
+    "director": "종유석",
+    "cast": [
+      "도운",
+      "원필",
+      "Young K",
+      "성진"
+    ],
+    "detailDate": "2025년 08월 13일 개봉"
   },
   {
     "title": "용사 파티에서 쫓겨난 다재무능",
@@ -3070,15 +3889,23 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_용사파티에서쫓겨난다재무능",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "액션, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "칸베 히로유키",
+    "cast": [
+      "오오츠카 타케오",
+      "타치바나 히나",
+      "오오니시 사오리",
+      "타이치 요우",
+      "이와미 마나카"
+    ],
+    "detailDate": ""
   },
   {
     "title": "대탈출 : 더 스토리",
-    "date": "2026-01-08",
+    "date": "2025-07-23",
     "image": "https://file.kinolights.com/m/content_poster/202506/25/2453eed0-68dc-4b3b-88e0-0737b8a045ac.webp",
     "link": "https://m.kinolights.com/title/144304",
     "genre": "ott",
@@ -3087,21 +3914,23 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_대탈출:더스토리",
-    "movieInfo": "버라이어티 / ",
+    "venue": "OTT",
+    "id": "ott_20250723_대탈출:더스토리",
+    "movieInfo": "버라이어티",
     "grade": "15세 이상 시청가",
-    "director": "이우형양슬기",
+    "director": "이우형",
     "cast": [
       "강호동",
       "김동현",
       "유병재",
       "고경표",
       "백현"
-    ]
+    ],
+    "detailDate": "2025년 07월 23일"
   },
   {
     "title": "어쩔 수 없는 사랑노래",
-    "date": "2026-01-08",
+    "date": "2025-10-10",
     "image": "https://file.kinolights.com/m/content_poster/202510/10/0246cc53-7aae-41b7-854e-3be4fa573922.webp",
     "link": "https://m.kinolights.com/title/147076",
     "genre": "ott",
@@ -3111,7 +3940,8 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_어쩔수없는사랑노래",
+    "venue": "OTT",
+    "id": "ott_20251010_어쩔수없는사랑노래",
     "movieInfo": "멜로/로맨스, 서사/드라마, 성인 / 95분",
     "grade": "청소년 관람불가",
     "director": "니시우미 켄이치로",
@@ -3120,7 +3950,8 @@
       "후지사키 리나",
       "마미야 유키",
       "사사키 코코네"
-    ]
+    ],
+    "detailDate": "2025년 10월 10일 개봉"
   },
   {
     "title": "더티 토크: 은밀한 라방 1부 (무삭제판)",
@@ -3134,13 +3965,15 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_더티토크:은밀한라방1부(무삭제판)",
     "movieInfo": "서사/드라마 / 97분",
     "grade": "청소년 관람불가",
     "director": "로만 페레스 주니어",
     "cast": [
       "살로메 살비"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "UN-GO: 인과론",
@@ -3156,17 +3989,19 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_UN-GO:인과론",
     "movieInfo": "미스터리, 애니메이션, 판타지 / 50분",
     "grade": "15세 이상 관람가",
     "director": "미즈시마 세이지",
     "cast": [
-      "토요사키 아키 ",
-      "카츠지 료 ",
+      "토요사키 아키",
+      "카츠지 료",
       "이리노 미유",
       "미키 신이치로",
       "야마모토 노조미"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "미녀주의보",
@@ -3179,6 +4014,7 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_미녀주의보",
     "movieInfo": "멜로/로맨스, 서사/드라마, 성인 / 78분",
     "grade": "청소년 관람불가",
@@ -3188,11 +4024,12 @@
       "앤 마리 곤잘레스",
       "네이선 카주컴",
       "아놀드 레예스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "설계",
-    "date": "2026-01-08",
+    "date": "2014-09-18",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/a617372a-ecc6-481e-b71c-b2f1524c2e8e.webp",
     "link": "https://m.kinolights.com/title/19456",
     "genre": "ott",
@@ -3201,7 +4038,8 @@
       "tving"
     ],
     "region": "ott",
-    "id": "ott_20260108_설계",
+    "venue": "OTT",
+    "id": "ott_20140918_설계",
     "movieInfo": "스릴러 / 98분",
     "grade": "청소년 관람불가",
     "director": "박창진",
@@ -3210,11 +4048,12 @@
       "이기영",
       "오인혜",
       "강지섭"
-    ]
+    ],
+    "detailDate": "2014년 09월 18일 개봉"
   },
   {
     "title": "헌팅 그라운드",
-    "date": "2026-01-08",
+    "date": "2025-10-30",
     "image": "https://file.kinolights.com/m/content_poster/202510/30/81fdbae4-a6f9-4a1b-bc4e-f5e274796e2b.webp",
     "link": "https://m.kinolights.com/title/147485",
     "genre": "ott",
@@ -3224,7 +4063,8 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_헌팅그라운드",
+    "venue": "OTT",
+    "id": "ott_20251030_헌팅그라운드",
     "movieInfo": "스릴러, 액션 / 89분",
     "grade": "청소년 관람불가",
     "director": "데릭 반스",
@@ -3234,11 +4074,12 @@
       "패트릭 게로우",
       "존 맥라렌",
       "밀턴 반스"
-    ]
+    ],
+    "detailDate": "2025년 10월 30일 개봉"
   },
   {
     "title": "선 오브 리치",
-    "date": "2026-01-08",
+    "date": "2025-10-30",
     "image": "https://file.kinolights.com/m/content_poster/202510/30/f7107a85-b0d2-4aae-891d-7a990bf0e544.webp",
     "link": "https://m.kinolights.com/title/147488",
     "genre": "ott",
@@ -3247,6 +4088,7 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_선오브리치",
     "movieInfo": "코미디 / 110분",
     "grade": "12세 이상 관람가",
@@ -3257,11 +4099,12 @@
       "에르칸 콜칵 코스텐딜",
       "멜리사 됭겔",
       "아흐메트 뭄타즈 타이란"
-    ]
+    ],
+    "detailDate": "2025년 10월 30일 개봉"
   },
   {
     "title": "Bonjour♪ 사랑맛 파티스리",
-    "date": "2026-01-08",
+    "date": "2015-07-28",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/5e1838d9-5ade-4e56-aa64-71213f531d69.webp",
     "link": "https://m.kinolights.com/title/149239",
     "genre": "ott",
@@ -3270,8 +4113,9 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_Bonjour♪사랑맛파티스리",
-    "movieInfo": "멜로/로맨스 / ",
+    "movieInfo": "멜로/로맨스",
     "grade": "12세 이상 시청가",
     "director": "아키타야 노리아키",
     "cast": [
@@ -3280,7 +4124,8 @@
       "카키하라 테츠야",
       "키무라 료헤이",
       "미도리카와 히카루"
-    ]
+    ],
+    "detailDate": "2015년 07월 28일"
   },
   {
     "title": "이대형의 크보랩",
@@ -3293,14 +4138,16 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이대형의크보랩",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "",
     "cast": [
       "이대형",
       "강성철"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "달개비꽃 로맨스",
@@ -3313,6 +4160,7 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_달개비꽃로맨스",
     "movieInfo": "서사/드라마 / 95분",
     "grade": "12세 이상 관람가",
@@ -3323,7 +4171,8 @@
       "히라이와 카미",
       "사이토 타이요",
       "에구치 노리코"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "마닐라: 쾌락 보고서 1부 (무삭제판)",
@@ -3336,6 +4185,7 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_마닐라:쾌락보고서1부(무삭제판)",
     "movieInfo": "범죄, 서사/드라마, 스릴러 / 89분",
     "grade": "청소년 관람불가",
@@ -3343,11 +4193,12 @@
     "cast": [
       "알렉스 빈센트 메디나",
       "아지 아코스타"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "데인저러스 메소드",
-    "date": "2026-01-08",
+    "date": "2012-05-10",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/8260f515-2c2d-415d-9f8e-cab3e51f787a.webp",
     "link": "https://m.kinolights.com/title/25716",
     "genre": "ott",
@@ -3356,17 +4207,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_데인저러스메소드",
     "movieInfo": "멜로/로맨스, 서사/드라마 / 99분",
     "grade": "청소년 관람불가",
     "director": "데이빗 크로넨버그",
     "cast": [
       "키이라 나이틀리",
-      "비고 모텐슨 ",
-      "마이클 패스벤더 ",
+      "비고 모텐슨",
+      "마이클 패스벤더",
       "사라 가돈",
       "뱅상 카셀"
-    ]
+    ],
+    "detailDate": "2012년 05월 10일 개봉"
   },
   {
     "title": "뮤직박스: 카운팅 크로우즈: 요즘 날 본 적 있나요?",
@@ -3379,6 +4232,7 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_뮤직박스:카운팅크로우즈:요즘날본적있나요?",
     "movieInfo": "다큐멘터리 / 90분",
     "grade": "15세 이상 관람가",
@@ -3389,11 +4243,12 @@
       "스티브 커",
       "크리스 마틴",
       "메리 루이스 파커"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "뱀파이어 헌터 D",
-    "date": "2026-01-08",
+    "date": "2025-11-12",
     "image": "https://file.kinolights.com/m/content_poster/202511/03/886497cd-3db4-4b1d-8b78-00ba05be3b99.webp",
     "link": "https://m.kinolights.com/title/62043",
     "genre": "ott",
@@ -3403,6 +4258,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_뱀파이어헌터D",
     "movieInfo": "어드벤처, 판타지 / 103분",
     "grade": "15세 이상 관람가",
@@ -3413,11 +4269,12 @@
       "파멜라 애들론",
       "웬디 리",
       "마이크 맥쉐인"
-    ]
+    ],
+    "detailDate": "2025년 11월 12일 개봉"
   },
   {
     "title": "멘",
-    "date": "2026-01-08",
+    "date": "2022-07-13",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/74624e8a-c5bd-4fe6-9aa0-9a7f4d9f75d5.webp",
     "link": "https://m.kinolights.com/title/105218",
     "genre": "ott",
@@ -3427,7 +4284,8 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_멘",
+    "venue": "OTT",
+    "id": "ott_20220713_멘",
     "movieInfo": "SF, 공포(호러), 서사/드라마 / 100분",
     "grade": "청소년 관람불가",
     "director": "알렉스 가랜드",
@@ -3436,11 +4294,12 @@
       "로리 키니어",
       "파파타 에시에두",
       "게일 랜킨"
-    ]
+    ],
+    "detailDate": "2022년 07월 13일 개봉"
   },
   {
     "title": "그 여름",
-    "date": "2026-01-08",
+    "date": "2023-06-07",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/1e91fddd-b179-48d2-874c-24da07c23521.webp",
     "link": "https://m.kinolights.com/title/97631",
     "genre": "ott",
@@ -3449,18 +4308,20 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_그여름",
+    "venue": "OTT",
+    "id": "ott_20230607_그여름",
     "movieInfo": "멜로/로맨스, 서사/드라마 / 61분",
     "grade": "12세 이상 관람가",
     "director": "한지원",
     "cast": [
       "윤아영",
       "송하림"
-    ]
+    ],
+    "detailDate": "2023년 06월 07일 개봉"
   },
   {
     "title": "콜드 스킨",
-    "date": "2026-01-08",
+    "date": "2018-11-15",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/d8c8df06-5b24-4a12-92dc-163f495bc90e.webp",
     "link": "https://m.kinolights.com/title/69483",
     "genre": "ott",
@@ -3469,21 +4330,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_콜드스킨",
+    "venue": "OTT",
+    "id": "ott_20181115_콜드스킨",
     "movieInfo": "SF, 공포(호러), 스릴러, 어드벤처 / 108분",
     "grade": "15세 이상 관람가",
     "director": "자비에르 젠스",
     "cast": [
       "레이 스티븐슨",
       "데이비드 오크스",
-      "오라 가리도 ",
+      "오라 가리도",
       "존 벤필드",
       "벤 템플"
-    ]
+    ],
+    "detailDate": "2018년 11월 15일 개봉"
   },
   {
     "title": "미나리",
-    "date": "2026-01-08",
+    "date": "2021-03-03",
     "image": "https://file.kinolights.com/m/content_poster/202307/13/dc07ecc8-8f5d-4133-9f10-e7cfbe95fc22.webp",
     "link": "https://m.kinolights.com/title/76584",
     "genre": "ott",
@@ -3493,21 +4356,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_미나리",
+    "venue": "OTT",
+    "id": "ott_20210303_미나리",
     "movieInfo": "서사/드라마 / 115분",
     "grade": "12세 이상 관람가",
     "director": "정이삭",
     "cast": [
-      "스티븐 연 ",
+      "스티븐 연",
       "한예리",
       "윤여정",
       "앨런 S. 김",
       "노엘 조"
-    ]
+    ],
+    "detailDate": "2021년 03월 03일 개봉"
   },
   {
     "title": "비스티걸스 (감독판)",
-    "date": "2026-01-08",
+    "date": "2018-04-25",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/a3cdd330-740c-44f9-a0ee-1ae32246580e.webp",
     "link": "https://m.kinolights.com/title/118014",
     "genre": "ott",
@@ -3516,15 +4381,17 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_비스티걸스(감독판)",
+    "venue": "OTT",
+    "id": "ott_20180425_비스티걸스(감독판)",
     "movieInfo": "멜로/로맨스, 서사/드라마 / 118분",
     "grade": "청소년 관람불가",
     "director": "신진우",
-    "cast": []
+    "cast": [],
+    "detailDate": "2018년 04월 25일 개봉"
   },
   {
     "title": "언데드 다루는 법",
-    "date": "2026-01-08",
+    "date": "2025-01-22",
     "image": "https://file.kinolights.com/m/content_poster/202412/19/680acfae-b8fe-457c-a876-710e56a6ecdb.webp",
     "link": "https://m.kinolights.com/title/122983",
     "genre": "ott",
@@ -3533,7 +4400,8 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_언데드다루는법",
+    "venue": "OTT",
+    "id": "ott_20250122_언데드다루는법",
     "movieInfo": "공포(호러), 미스터리, 서사/드라마 / 90분",
     "grade": "15세 이상 관람가",
     "director": "테아 흐비스텐달",
@@ -3542,11 +4410,12 @@
       "앤더스 다니엘슨 리",
       "바하르 파르스",
       "비욘 선퀴스트"
-    ]
+    ],
+    "detailDate": "2025년 01월 22일 개봉"
   },
   {
     "title": "사랑 후의 두 여자",
-    "date": "2026-01-08",
+    "date": "2022-03-30",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/dbb69592-a64f-4c89-aeb5-9218f4cb63d9.webp",
     "link": "https://m.kinolights.com/title/85870",
     "genre": "ott",
@@ -3556,7 +4425,8 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_사랑후의두여자",
+    "venue": "OTT",
+    "id": "ott_20220330_사랑후의두여자",
     "movieInfo": "서사/드라마 / 91분",
     "grade": "15세 이상 관람가",
     "director": "알림 칸",
@@ -3566,11 +4436,12 @@
       "탈리드 아리스",
       "나세르 메마지아",
       "수드하 부차르"
-    ]
+    ],
+    "detailDate": "2022년 03월 30일 개봉"
   },
   {
     "title": "나의 딸, 나의 누나",
-    "date": "2026-01-08",
+    "date": "2017-03-23",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/dff99ccd-d3ca-45ac-81be-2a2f16c9c9fe.webp",
     "link": "https://m.kinolights.com/title/3564",
     "genre": "ott",
@@ -3580,11 +4451,13 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_나의딸,나의누나",
+    "venue": "OTT",
+    "id": "ott_20170323_나의딸,나의누나",
     "movieInfo": "서사/드라마 / 104분",
     "grade": "15세 이상 관람가",
     "director": "토마스 비더게인",
-    "cast": []
+    "cast": [],
+    "detailDate": "2017년 03월 23일 개봉"
   },
   {
     "title": "살인병동",
@@ -3597,15 +4470,17 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_살인병동",
     "movieInfo": "공포(호러) / 90분",
     "grade": "청소년 관람불가",
-    "director": "스티븐 코스탄스키제레미 길레스피",
-    "cast": []
+    "director": "스티븐 코스탄스키",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "클럽 제로",
-    "date": "2026-01-08",
+    "date": "2024-01-24",
     "image": "https://file.kinolights.com/m/content_poster/202312/28/13319bb2-4c10-48a8-99b9-9f53a57136e0.webp",
     "link": "https://m.kinolights.com/title/122286",
     "genre": "ott",
@@ -3614,7 +4489,8 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_클럽제로",
+    "venue": "OTT",
+    "id": "ott_20240124_클럽제로",
     "movieInfo": "미스터리, 서사/드라마, 스릴러 / 110분",
     "grade": "12세 이상 관람가",
     "director": "제시카 하우스너",
@@ -3624,11 +4500,12 @@
       "샘 호어",
       "카밀라 루더포드",
       "아만다 로렌스"
-    ]
+    ],
+    "detailDate": "2024년 01월 24일 개봉"
   },
   {
     "title": "프로디지",
-    "date": "2026-01-08",
+    "date": "2019-04-04",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/5f0517ff-fe43-4b53-8f69-a78d2bb22671.webp",
     "link": "https://m.kinolights.com/title/70800",
     "genre": "ott",
@@ -3637,21 +4514,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_프로디지",
+    "venue": "OTT",
+    "id": "ott_20190404_프로디지",
     "movieInfo": "공포(호러), 스릴러 / 92분",
     "grade": "15세 이상 관람가",
     "director": "니콜라스 맥카시",
     "cast": [
       "테일러 쉴링",
-      "잭슨 로버트 스콧 ",
-      "콜므 포어 ",
+      "잭슨 로버트 스콧",
+      "콜므 포어",
       "피터 무니",
       "브리터니 엘렌"
-    ]
+    ],
+    "detailDate": "2019년 04월 04일 개봉"
   },
   {
     "title": "이스트 워",
-    "date": "2026-01-08",
+    "date": "2021-09-17",
     "image": "https://file.kinolights.com/m/content_poster/202307/14/7e7e6d5c-98b5-4865-b1b5-85caaecbe396.webp",
     "link": "https://m.kinolights.com/title/99050",
     "genre": "ott",
@@ -3660,18 +4539,20 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_이스트워",
+    "venue": "OTT",
+    "id": "ott_20210917_이스트워",
     "movieInfo": "서사/드라마, 스릴러 / 140분",
     "grade": "청소년 관람불가",
     "director": "짐 타이후투",
     "cast": [
       "마르틴 라케메이어",
       "마르완 켄자리"
-    ]
+    ],
+    "detailDate": "2021년 09월 17일 개봉"
   },
   {
     "title": "정보원",
-    "date": "2026-01-08",
+    "date": "2025-12-03",
     "image": "https://file.kinolights.com/m/content_poster/202511/10/1a58a817-c86c-448d-adc0-e2ad159015b3.webp",
     "link": "https://m.kinolights.com/title/146124",
     "genre": "ott",
@@ -3681,7 +4562,8 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_정보원",
+    "venue": "OTT",
+    "id": "ott_20251203_정보원",
     "movieInfo": "액션, 코미디 / 103분",
     "grade": "15세 이상 관람가",
     "director": "김석",
@@ -3691,11 +4573,12 @@
       "서민주",
       "차순배",
       "장혁진"
-    ]
+    ],
+    "detailDate": "2025년 12월 03일 개봉"
   },
   {
     "title": "사랑하는 별에 불시착했습니다",
-    "date": "2026-01-08",
+    "date": "2026-01-02",
     "image": "https://file.kinolights.com/m/content_poster/202601/02/e657d14e-1c48-4702-97c9-e2dd24c50e36.webp",
     "link": "https://m.kinolights.com/title/149194",
     "genre": "ott",
@@ -3705,16 +4588,18 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_사랑하는별에불시착했습니다",
+    "venue": "OTT",
+    "id": "ott_20260102_사랑하는별에불시착했습니다",
     "movieInfo": "SF, 멜로/로맨스, 서사/드라마, 코미디 / 103분",
     "grade": "청소년 관람불가",
     "director": "코세키 유지로",
     "cast": [
-      "우노 쇼헤이 ",
+      "우노 쇼헤이",
       "마에다 오시로",
       "요시무라 유카",
       "이즈카 켄타"
-    ]
+    ],
+    "detailDate": "2026년 01월 02일 개봉"
   },
   {
     "title": "카구야 님은 고백받고 싶어 -어른으로 가는 계단-",
@@ -3727,8 +4612,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_카구야님은고백받고싶어-어른으로가는계단-",
-    "movieInfo": "멜로/로맨스 / ",
+    "movieInfo": "멜로/로맨스",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
@@ -3737,7 +4623,8 @@
       "코하라 코노미",
       "스즈키 료타",
       "토미타 미유"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "아나콘다: 블러드 헌트",
@@ -3751,6 +4638,7 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_아나콘다:블러드헌트",
     "movieInfo": "공포(호러), 액션, 판타지 / 77분",
     "grade": "15세 이상 관람가",
@@ -3760,7 +4648,8 @@
       "근양양",
       "구은전",
       "종뢰"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "클래시파이드",
@@ -3775,6 +4664,7 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_클래시파이드",
     "movieInfo": "스릴러, 액션 / 105분",
     "grade": "15세 이상 관람가",
@@ -3784,11 +4674,12 @@
       "팀 로스",
       "아비게일 브레스린",
       "맷 후킹스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "변강쇠",
-    "date": "2026-01-08",
+    "date": "1986-05-03",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/2cbcad34-ffa6-4cd2-871a-6d4f8d21e620.webp",
     "link": "https://m.kinolights.com/title/59898",
     "genre": "ott",
@@ -3797,11 +4688,13 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_변강쇠",
+    "venue": "OTT",
+    "id": "ott_19860503_변강쇠",
     "movieInfo": "성인, 코미디 / 105분",
     "grade": "청소년 관람불가",
     "director": "엄종선",
-    "cast": []
+    "cast": [],
+    "detailDate": "1986년 05월 03일 개봉"
   },
   {
     "title": "윌리엄 텔",
@@ -3814,6 +4707,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_윌리엄텔",
     "movieInfo": "서사/드라마, 액션 / 133분",
     "grade": "청소년 관람불가",
@@ -3821,10 +4715,11 @@
     "cast": [
       "클라에스 방",
       "코너 스윈델스",
-      "골쉬프테 파라하니 ",
+      "골쉬프테 파라하니",
       "조너 하우어-킹",
       "엘리 뱀버"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "NOMAD 메갈로 복스 2",
@@ -3837,8 +4732,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_NOMAD메갈로복스2",
-    "movieInfo": "SF, 서사/드라마, 액션, 어드벤처, 판타지 / ",
+    "movieInfo": "SF, 서사/드라마, 액션, 어드벤처, 판타지",
     "grade": "15세 이상 시청가",
     "director": "모리야마 요",
     "cast": [
@@ -3847,11 +4743,12 @@
       "무라세 미치요",
       "모리 나나코",
       "스즈키 타츠히사"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "우아한 친구들",
-    "date": "2026-01-08",
+    "date": "2020-07-10",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/3b095619-887b-47d1-8891-2944b88b4fd6.webp",
     "link": "https://m.kinolights.com/title/82764",
     "genre": "ott",
@@ -3860,21 +4757,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_우아한친구들",
-    "movieInfo": "멜로/로맨스, 미스터리, 서사/드라마, 스릴러 / ",
+    "venue": "OTT",
+    "id": "ott_20200710_우아한친구들",
+    "movieInfo": "멜로/로맨스, 미스터리, 서사/드라마, 스릴러",
     "grade": "19세 이상 시청가",
-    "director": "송현욱박소연",
+    "director": "송현욱",
     "cast": [
       "유준상",
       "송윤아",
       "배수빈",
       "한다감",
       "김성오"
-    ]
+    ],
+    "detailDate": "2020년 07월 10일"
   },
   {
     "title": "위 섬온 더 다크니스",
-    "date": "2026-01-08",
+    "date": "2020-09-17",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/c586f75c-8fc3-4f5c-9c21-f8e695cdf787.webp",
     "link": "https://m.kinolights.com/title/84857",
     "genre": "ott",
@@ -3883,7 +4782,8 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_위섬온더다크니스",
+    "venue": "OTT",
+    "id": "ott_20200917_위섬온더다크니스",
     "movieInfo": "공포(호러), 스릴러 / 90분",
     "grade": "청소년 관람불가",
     "director": "마크 메이어스",
@@ -3893,7 +4793,8 @@
       "로건 밀러",
       "에이미 포사이스",
       "오스틴 스위프트"
-    ]
+    ],
+    "detailDate": "2020년 09월 17일 개봉"
   },
   {
     "title": "하운드독",
@@ -3906,17 +4807,19 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_하운드독",
     "movieInfo": "서사/드라마 / 102분",
     "grade": "청소년 관람불가",
     "director": "데보라 캠프마이어",
     "cast": [
       "다코타 패닝"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "스토리 리듬송 : 나는 루루 (영어)",
-    "date": "2026-01-08",
+    "date": "2025-12-28",
     "image": "https://file.kinolights.com/m/content_poster/202512/31/985840e9-1b7b-4af7-bbf9-0a87e90ad3df.webp",
     "link": "https://m.kinolights.com/title/149180",
     "genre": "ott",
@@ -3925,15 +4828,17 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_스토리리듬송:나는루루(영어)",
-    "movieInfo": "키즈 / ",
+    "venue": "OTT",
+    "id": "ott_20251228_스토리리듬송:나는루루(영어)",
+    "movieInfo": "키즈",
     "grade": "모든 연령 시청가",
     "director": "이진식",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 12월 28일"
   },
   {
     "title": "무한대를 본 남자",
-    "date": "2026-01-08",
+    "date": "2016-11-03",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/520c964c-065c-4193-92e2-19156bd48989.webp",
     "link": "https://m.kinolights.com/title/6141",
     "genre": "ott",
@@ -3942,7 +4847,8 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_무한대를본남자",
+    "venue": "OTT",
+    "id": "ott_20161103_무한대를본남자",
     "movieInfo": "서사/드라마 / 108분",
     "grade": "12세 이상 관람가",
     "director": "맷 브라운",
@@ -3952,7 +4858,8 @@
       "토비 존스",
       "스테픈 프라이",
       "제레미 노덤"
-    ]
+    ],
+    "detailDate": "2016년 11월 03일 개봉"
   },
   {
     "title": "카산드라 드림",
@@ -3965,21 +4872,23 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_카산드라드림",
     "movieInfo": "범죄, 서사/드라마 / 108분",
     "grade": "15세 이상 관람가",
     "director": "우디 앨런",
     "cast": [
-      "이완 맥그리거 ",
-      "콜린 파렐 ",
-      "헤일리 앳웰 ",
+      "이완 맥그리거",
+      "콜린 파렐",
+      "헤일리 앳웰",
       "존 벤필드",
-      "클레어 히긴스 "
-    ]
+      "클레어 히긴스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "변강쇠 3",
-    "date": "2026-01-08",
+    "date": "1988-09-24",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/32d36c20-edfb-4fab-951a-09fde96cee1a.webp",
     "link": "https://m.kinolights.com/title/59899",
     "genre": "ott",
@@ -3988,7 +4897,8 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_변강쇠3",
+    "venue": "OTT",
+    "id": "ott_19880924_변강쇠3",
     "movieInfo": "서사/드라마 / 111분",
     "grade": "청소년 관람불가",
     "director": "엄종선",
@@ -3998,7 +4908,8 @@
       "김애경",
       "허진",
       "박예숙"
-    ]
+    ],
+    "detailDate": "1988년 09월 24일 개봉"
   },
   {
     "title": "히어로 원티드",
@@ -4011,6 +4922,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_히어로원티드",
     "movieInfo": "서사/드라마, 스릴러, 액션 / 94분",
     "grade": "15세 이상 관람가",
@@ -4018,10 +4930,11 @@
     "cast": [
       "쿠바 구딩 쥬니어",
       "레이 리오타",
-      "노만 리더스 ",
+      "노만 리더스",
       "킴 코티스",
       "토미 플라나건"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "리아차차 바른습관동요 (영어)",
@@ -4034,15 +4947,17 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_리아차차바른습관동요(영어)",
-    "movieInfo": "키즈 / ",
+    "movieInfo": "키즈",
     "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "스토리 리듬송 : 나는 루루",
-    "date": "2026-01-08",
+    "date": "2025-12-21",
     "image": "https://file.kinolights.com/m/content_poster/202512/26/7b47b73d-ec3f-4150-993c-293e2777f3e8.webp",
     "link": "https://m.kinolights.com/title/149101",
     "genre": "ott",
@@ -4051,15 +4966,17 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_스토리리듬송:나는루루",
-    "movieInfo": "키즈 / ",
+    "venue": "OTT",
+    "id": "ott_20251221_스토리리듬송:나는루루",
+    "movieInfo": "키즈",
     "grade": "모든 연령 시청가",
     "director": "이진식",
-    "cast": []
+    "cast": [],
+    "detailDate": "2025년 12월 21일"
   },
   {
     "title": "JTBC 정책 다큐멘터리 도시의 물음, 세계가 답하다 : 공존의 법칙",
-    "date": "2026-01-08",
+    "date": "2026-01-03",
     "image": "https://file.kinolights.com/m/content_poster/202601/05/7973b7be-498c-4167-9957-2a6f8be7f787.webp",
     "link": "https://m.kinolights.com/title/149254",
     "genre": "ott",
@@ -4067,11 +4984,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_JTBC정책다큐멘터리도시의물음,세계가답하다:공존의법칙",
-    "movieInfo": "다큐멘터리 / ",
+    "venue": "OTT",
+    "id": "ott_20260103_JTBC정책다큐멘터리도시의물음,세계가답하다:공존의법칙",
+    "movieInfo": "다큐멘터리",
     "grade": "15세 이상 시청가",
-    "director": "정한욱성우재",
-    "cast": []
+    "director": "정한욱",
+    "cast": [],
+    "detailDate": "2026년 01월 03일"
   },
   {
     "title": "전차 티거",
@@ -4083,6 +5002,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_전차티거",
     "movieInfo": "액션 / 2025분",
     "grade": "미정",
@@ -4092,11 +5012,12 @@
       "다비드 슈터",
       "세바스찬 우르젠도스키",
       "레오나르드 쿤츠"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "허니",
-    "date": "2026-01-08",
+    "date": "2019-04-18",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/46b84fab-8198-4b4a-8994-29e0509252ec.webp",
     "link": "https://m.kinolights.com/title/74933",
     "genre": "ott",
@@ -4104,7 +5025,8 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_허니",
+    "venue": "OTT",
+    "id": "ott_20190418_허니",
     "movieInfo": "멜로/로맨스, 서사/드라마 / 105분",
     "grade": "12세 이상 관람가",
     "director": "신토쿠 코지",
@@ -4114,11 +5036,12 @@
       "아사카와 나나",
       "미즈타니 카호",
       "요코하마 류세이"
-    ]
+    ],
+    "detailDate": "2019년 04월 18일 개봉"
   },
   {
     "title": "인사하고, 키스",
-    "date": "2026-01-08",
+    "date": "2019-05-02",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/ada52918-2b53-4303-8fe3-a838d5509780.webp",
     "link": "https://m.kinolights.com/title/75315",
     "genre": "ott",
@@ -4126,11 +5049,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_인사하고,키스",
+    "venue": "OTT",
+    "id": "ott_20190502_인사하고,키스",
     "movieInfo": "멜로/로맨스 / 100분",
     "grade": "12세 이상 관람가",
     "director": "후루사와 켄",
-    "cast": []
+    "cast": [],
+    "detailDate": "2019년 05월 02일 개봉"
   },
   {
     "title": "토고",
@@ -4142,13 +5067,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_토고",
     "movieInfo": "서사/드라마 / 113분",
     "grade": "12세 이상 관람가",
     "director": "에릭슨 코어",
     "cast": [
       "윌렘 대포"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "당신 차례입니다",
@@ -4160,15 +5087,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_당신차례입니다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 범죄, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "사쿠마 노리요시",
+    "cast": [
+      "다나카 케이",
+      "하라다 토모요",
+      "니시노 나나세",
+      "키무라 타에",
+      "나마세 카츠히사"
+    ],
+    "detailDate": ""
   },
   {
     "title": "하늘을 걷는 남자",
-    "date": "2026-01-08",
+    "date": "2015-10-28",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/59eb4f51-2229-4782-809d-0befc1d6d3da.webp",
     "link": "https://m.kinolights.com/title/11372",
     "genre": "ott",
@@ -4176,15 +5111,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_하늘을걷는남자",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20151028_하늘을걷는남자",
+    "movieInfo": "서사/드라마 / 123분",
+    "grade": "12세 이상 관람가",
+    "director": "로버트 저메키스",
+    "cast": [
+      "조셉 고든 레빗",
+      "제임스 뱃지 데일",
+      "벤 슈와츠",
+      "벤 킹슬리",
+      "스티브 발렌타인"
+    ],
+    "detailDate": "2015년 10월 28일 개봉"
   },
   {
     "title": "죄악의 땅",
-    "date": "2026-01-08",
+    "date": "2026-01-02",
     "image": "https://file.kinolights.com/m/content_poster/202512/22/e1189f4e-3476-4bf0-abe2-00b64db91a68.webp",
     "link": "https://m.kinolights.com/title/148993",
     "genre": "ott",
@@ -4192,11 +5135,18 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_죄악의땅",
-    "movieInfo": " / ",
-    "grade": "",
+    "venue": "OTT",
+    "id": "ott_20260102_죄악의땅",
+    "movieInfo": "미스터리, 범죄, 서사/드라마, 스릴러",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "크리스타 코소넨",
+      "리사 린드그렌",
+      "모하메드 누르 오클라",
+      "피터 간트만"
+    ],
+    "detailDate": "2026년 01월 02일"
   },
   {
     "title": "그리지와 레밍스 시즌 4",
@@ -4208,15 +5158,20 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_그리지와레밍스시즌4",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "키즈",
+    "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "피에르 알랭 드 가리그",
+      "요셀린 샤리에"
+    ],
+    "detailDate": ""
   },
   {
     "title": "스누피: 더 피너츠 무비",
-    "date": "2026-01-08",
+    "date": "2015-12-24",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/7b01230c-ec6a-4c18-ac39-1740ed2a5410.webp",
     "link": "https://m.kinolights.com/title/10616",
     "genre": "ott",
@@ -4224,15 +5179,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_스누피:더피너츠무비",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20151224_스누피:더피너츠무비",
+    "movieInfo": "어드벤처, 코미디 / 93분",
+    "grade": "전체 관람가",
+    "director": "스티브 마티노",
+    "cast": [
+      "빌 멜렌데즈",
+      "노아 슈냅",
+      "트롬본 쇼티",
+      "레베카 블룸",
+      "아나스타샤 브레디키나"
+    ],
+    "detailDate": "2015년 12월 24일 개봉"
   },
   {
     "title": "고장난 론",
-    "date": "2026-01-08",
+    "date": "2021-10-27",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/b7c41a6e-8d1a-413e-ad88-4336b4ad0f9e.webp",
     "link": "https://m.kinolights.com/title/96976",
     "genre": "ott",
@@ -4240,11 +5203,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_고장난론",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20211027_고장난론",
+    "movieInfo": "SF / 106분",
+    "grade": "전체 관람가",
+    "director": "사라 스미스",
+    "cast": [
+      "자흐 갈리피아나키스",
+      "잭 딜런 그레이저",
+      "올리비아 콜맨",
+      "에드 헬름스",
+      "저스티스 스미스"
+    ],
+    "detailDate": "2021년 10월 27일 개봉"
   },
   {
     "title": "리틀 야구왕 2",
@@ -4256,15 +5227,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_리틀야구왕2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "코미디 / 97분",
+    "grade": "전체 관람가",
+    "director": "데이빗 M. 에반스",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "이온 플럭스",
-    "date": "2026-01-08",
+    "date": "2006-06-22",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/73b4f2ac-cce1-4a63-8ed9-3d246e1cf491.webp",
     "link": "https://m.kinolights.com/title/32271",
     "genre": "ott",
@@ -4272,15 +5245,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_이온플럭스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20060622_이온플럭스",
+    "movieInfo": "SF, 서사/드라마, 스릴러, 액션, 어드벤처 / 92분",
+    "grade": "12세 이상 관람가",
+    "director": "캐린 쿠사마",
+    "cast": [
+      "샤를리즈 테론",
+      "마튼 초카스",
+      "조니 리 밀러",
+      "소피 오코네도",
+      "피트 포스틀스웨이트"
+    ],
+    "detailDate": "2006년 06월 22일 개봉"
   },
   {
     "title": "로봇",
-    "date": "2026-01-08",
+    "date": "2005-07-28",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/15499d22-f20d-4797-9f40-f56d8697a255.webp",
     "link": "https://m.kinolights.com/title/27144",
     "genre": "ott",
@@ -4288,15 +5269,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_로봇",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20050728_로봇",
+    "movieInfo": "SF, 코미디, 판타지 / 90분",
+    "grade": "전체 관람가",
+    "director": "카를로스 살다나",
+    "cast": [],
+    "detailDate": "2005년 07월 28일 개봉"
   },
   {
     "title": "2025 SBS 연기대상",
-    "date": "2026-01-08",
+    "date": "2025-12-31",
     "image": "https://file.kinolights.com/m/content_poster/202512/31/269b3462-07fa-4883-aef3-dbd735283ae0.webp",
     "link": "https://m.kinolights.com/title/149178",
     "genre": "ott",
@@ -4304,11 +5287,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_2025SBS연기대상",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251231_2025SBS연기대상",
+    "movieInfo": "시상식",
+    "grade": "15세 이상 시청가",
+    "director": "장석진",
+    "cast": [
+      "신동엽",
+      "채원빈",
+      "허남준"
+    ],
+    "detailDate": "2025년 12월 31일"
   },
   {
     "title": "플리퍼",
@@ -4320,11 +5309,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_플리퍼",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "어드벤처 / 95분",
+    "grade": "미정",
+    "director": "앨런 샤피로",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "WWE Over the Limit 2010",
@@ -4336,11 +5327,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWEOvertheLimit2010",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "케빈 던",
+    "cast": [
+      "존 시나",
+      "데이브 바티스타",
+      "제이크 헤이거",
+      "폴 와이트",
+      "에지"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Over The Limit 2011",
@@ -4352,11 +5351,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWEOverTheLimit2011",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "케빈 던",
+    "cast": [
+      "존 시나",
+      "마이크 미자닌",
+      "랜디 오턴",
+      "크리스천 케이지",
+      "제리 롤러"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Road to WrestleMania",
@@ -4368,11 +5375,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWERoadtoWrestleMania",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "",
+    "grade": "12세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "빅 E 랭스턴"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE One Night Only",
@@ -4384,11 +5395,18 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWEOneNightOnly",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "",
+    "grade": "12세 이상 시청가",
+    "director": "빈스 맥마흔",
+    "cast": [
+      "데이비드 스미스",
+      "숀 마이클스",
+      "브렛 하트",
+      "마크 캘러웨이"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Raw Classics",
@@ -4400,11 +5418,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWERawClassics",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "",
+    "grade": "12세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "빅 E 랭스턴"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Legend Profiles",
@@ -4416,11 +5438,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWELegendProfiles",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "",
+    "grade": "12세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "헐크 호건",
+      "스티브 오스틴",
+      "트리시 스트레터스",
+      "커트 앵글",
+      "숀 마이클스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Clash at the Castle: Scotland",
@@ -4432,11 +5462,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWEClashattheCastle:Scotland",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "",
+    "grade": "12세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "코디 로즈",
+      "앨런 존스",
+      "솔로 시코아",
+      "타마 통가",
+      "테비타 피피타"
+    ],
+    "detailDate": ""
   },
   {
     "title": "WWE Clash at the Castle 2022",
@@ -4448,15 +5486,22 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_WWEClashattheCastle2022",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "폴 마이클 레베스크",
+    "cast": [
+      "로먼 레인스",
+      "드루 매킨타이어",
+      "세스 롤린스",
+      "맷 리들"
+    ],
+    "detailDate": ""
   },
   {
     "title": "판사 이한영",
-    "date": "2026-01-08",
+    "date": "2026-01-02",
     "image": "https://file.kinolights.com/m/content_poster/202512/08/c090081f-de76-4589-9038-bc59c37aeadc.webp",
     "link": "https://m.kinolights.com/title/148497",
     "genre": "ott",
@@ -4466,11 +5511,19 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_판사이한영",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "이재진",
+    "cast": [
+      "지성",
+      "박희순",
+      "원진아",
+      "태원석",
+      "백진희"
+    ],
+    "detailDate": "2026년 01월 02일"
   },
   {
     "title": "시카고 메드 시즌 4",
@@ -4483,11 +5536,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_시카고메드시즌4",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "마이클 왁스만",
+    "cast": [
+      "닉 겔퍼스",
+      "마린 애플랙",
+      "S. 에파사 메커슨",
+      "올리버 플랫",
+      "브라이언 티"
+    ],
+    "detailDate": ""
   },
   {
     "title": "네모바지 스폰지밥 시즌 14",
@@ -4500,11 +5561,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_네모바지스폰지밥시즌14",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "코미디",
+    "grade": "7세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "톰 케니",
+      "빌 페이거바케",
+      "로저 범파스",
+      "클랜시 브라운",
+      "캐롤린 로렌스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "나의 직장상사는 코미디언 시즌 3",
@@ -4517,11 +5586,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_나의직장상사는코미디언시즌3",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "루시아 애니엘로",
+    "cast": [
+      "진 스마트",
+      "한나 에인빈더",
+      "칼 클레몬스 홉킨스",
+      "크리스토퍼 맥도날드",
+      "폴 W. 다운스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "나의 직장상사는 코미디언 시즌 4",
@@ -4534,15 +5611,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_나의직장상사는코미디언시즌4",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디",
+    "grade": "미정",
+    "director": "루시아 애니엘로",
+    "cast": [
+      "진 스마트",
+      "한나 에인빈더",
+      "칼 클레몬스 홉킨스",
+      "마크 인델리카토",
+      "폴 W. 다운스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "풀타임",
-    "date": "2026-01-08",
+    "date": "2022-08-18",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/fc01ad58-8da0-49e0-962b-37000edbd9c8.webp",
     "link": "https://m.kinolights.com/title/104665",
     "genre": "ott",
@@ -4551,11 +5636,19 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_풀타임",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20220818_풀타임",
+    "movieInfo": "서사/드라마 / 87분",
+    "grade": "전체 관람가",
+    "director": "에리크 그라벨",
+    "cast": [
+      "로르 칼라미",
+      "안 수아레즈",
+      "제네비에브 음니히",
+      "놀란 아리즈멘디",
+      "시릴 구에이"
+    ],
+    "detailDate": "2022년 08월 18일 개봉"
   },
   {
     "title": "명탐정 몽크 시즌 8",
@@ -4568,15 +5661,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_명탐정몽크시즌8",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "토니 샬호브",
+      "테드 러바인",
+      "제이슨 그레이 스탠포드",
+      "트레일러 하워드",
+      "비티 쉬럼"
+    ],
+    "detailDate": ""
   },
   {
     "title": "지금은맞고그때는틀리다",
-    "date": "2026-01-08",
+    "date": "2015-09-24",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/84068460-0403-4ba9-b831-3fd45b4a1cad.webp",
     "link": "https://m.kinolights.com/title/4378",
     "genre": "ott",
@@ -4585,11 +5686,19 @@
       "coupang"
     ],
     "region": "ott",
-    "id": "ott_20260108_지금은맞고그때는틀리다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20150924_지금은맞고그때는틀리다",
+    "movieInfo": "서사/드라마 / 121분",
+    "grade": "청소년 관람불가",
+    "director": "홍상수",
+    "cast": [
+      "정재영",
+      "김민희",
+      "윤여정",
+      "기주봉",
+      "유준상"
+    ],
+    "detailDate": "2015년 09월 24일 개봉"
   },
   {
     "title": "시카고 메드 시즌 3",
@@ -4602,11 +5711,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_시카고메드시즌3",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "마사 미첼",
+    "cast": [
+      "닉 겔퍼스",
+      "마린 애플랙",
+      "야야 다코스타",
+      "S. 에파사 메커슨",
+      "토리 더비토"
+    ],
+    "detailDate": ""
   },
   {
     "title": "시카고 메드 시즌 9",
@@ -4619,11 +5736,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_시카고메드시즌9",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "스티븐 웨버",
+      "마린 애플랙",
+      "도미닉 레인스",
+      "제시 슈람",
+      "루크 미첼"
+    ],
+    "detailDate": ""
   },
   {
     "title": "시카고 PD 시즌 12",
@@ -4636,11 +5761,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_시카고PD시즌12",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "미스터리, 범죄, 서사/드라마, 스릴러, 액션",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "제이슨 베게",
+      "마리아 스쿼치아티",
+      "패트릭 존 플루거",
+      "래로이스 호킨스",
+      "벤저민 레비 아길라르"
+    ],
+    "detailDate": ""
   },
   {
     "title": "나의 직장상사는 코미디언 시즌 2",
@@ -4653,11 +5786,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_나의직장상사는코미디언시즌2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "루시아 애니엘로",
+    "cast": [
+      "진 스마트",
+      "한나 에인빈더",
+      "칼 클레몬스 홉킨스",
+      "크리스토퍼 맥도날드",
+      "폴 W. 다운스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "로 앤 오더 성범죄전담반 시즌 25",
@@ -4670,11 +5811,18 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_로앤오더성범죄전담반시즌25",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "마리슈카 하기테이",
+      "아이스-티",
+      "피터 스카나비노",
+      "옥타비오 피사노"
+    ],
+    "detailDate": ""
   },
   {
     "title": "명탐정 몽크 시즌 6",
@@ -4687,11 +5835,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_명탐정몽크시즌6",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "토니 샬호브",
+      "테드 러바인",
+      "제이슨 그레이 스탠포드",
+      "트레일러 하워드",
+      "비티 쉬럼"
+    ],
+    "detailDate": ""
   },
   {
     "title": "졸업반",
@@ -4704,11 +5860,18 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_졸업반",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 애니메이션 / 82분",
+    "grade": "청소년 관람불가",
+    "director": "홍덕표",
+    "cast": [
+      "이주승",
+      "강진아",
+      "정영기",
+      "장혁진"
+    ],
+    "detailDate": ""
   },
   {
     "title": "하우스 시즌 2",
@@ -4721,11 +5884,19 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_하우스시즌2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "그렉 야이타네스",
+    "cast": [
+      "휴 로리",
+      "오마 엡스",
+      "로버트 숀 레오나드",
+      "제시 스펜서",
+      "리사 에델스틴"
+    ],
+    "detailDate": ""
   },
   {
     "title": "시카고 메드 시즌 8",
@@ -4738,15 +5909,23 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_시카고메드시즌8",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "마이클 프레스만",
+    "cast": [
+      "닉 겔퍼스",
+      "마린 애플랙",
+      "S. 에파사 메커슨",
+      "올리버 플랫",
+      "야야 다코스타"
+    ],
+    "detailDate": ""
   },
   {
     "title": "레드 룸스",
-    "date": "2026-01-08",
+    "date": "2024-10-09",
     "image": "https://file.kinolights.com/m/content_poster/202409/11/c037a835-c69c-4871-99e4-241a61c4a74f.webp",
     "link": "https://m.kinolights.com/title/127054",
     "genre": "ott",
@@ -4755,15 +5934,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_레드룸스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20241009_레드룸스",
+    "movieInfo": "스릴러 / 118분",
+    "grade": "15세 이상 관람가",
+    "director": "파스칼 플랜트",
+    "cast": [
+      "줄리엣 가리에피",
+      "로리 배빈 포틴",
+      "가이 소베트",
+      "나탈리 타누스",
+      "맥스웰 맥카비-로코스"
+    ],
+    "detailDate": "2024년 10월 09일 개봉"
   },
   {
     "title": "스퍼마게돈: 사정의 날",
-    "date": "2026-01-08",
+    "date": "2025-10-23",
     "image": "https://file.kinolights.com/m/content_poster/202509/11/8d29cb70-aaea-41c5-bd73-3f3baea1ae3c.webp",
     "link": "https://m.kinolights.com/title/135109",
     "genre": "ott",
@@ -4772,15 +5959,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_스퍼마게돈:사정의날",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251023_스퍼마게돈:사정의날",
+    "movieInfo": "뮤지컬, 애니메이션, 코미디 / 79분",
+    "grade": "청소년 관람불가",
+    "director": "라스무스 A. 실버르센",
+    "cast": [
+      "크리스티안 프레드릭 미켈슨",
+      "나스린 쿠스라위",
+      "엑셀 헨니",
+      "마틸드 스톰",
+      "크리스티안 루벡"
+    ],
+    "detailDate": "2025년 10월 23일 개봉"
   },
   {
     "title": "2분마다 타임루프",
-    "date": "2026-01-08",
+    "date": "2025-08-07",
     "image": "https://file.kinolights.com/m/content_poster/202507/11/ff7cd5aa-0edc-4b1b-b9ec-8eb321125e83.webp",
     "link": "https://m.kinolights.com/title/140024",
     "genre": "ott",
@@ -4789,15 +5984,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_2분마다타임루프",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250807_2분마다타임루프",
+    "movieInfo": "SF, 코미디, 판타지 / 86분",
+    "grade": "12세 이상 관람가",
+    "director": "야마구치 준타",
+    "cast": [
+      "후지타니 리코",
+      "토리고에 유우키",
+      "쿠보 시오리",
+      "나가노 무네노리",
+      "스와 마사시"
+    ],
+    "detailDate": "2025년 08월 07일 개봉"
   },
   {
     "title": "성스러운 거미",
-    "date": "2026-01-08",
+    "date": "2023-02-08",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/f428dfbb-cc84-4018-b3d6-0dbdf3f707fd.webp",
     "link": "https://m.kinolights.com/title/105826",
     "genre": "ott",
@@ -4806,15 +6009,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_성스러운거미",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20230208_성스러운거미",
+    "movieInfo": "서사/드라마, 스릴러 / 117분",
+    "grade": "청소년 관람불가",
+    "director": "알리 아바시",
+    "cast": [
+      "자르 아미르-에브라히미",
+      "메흐디 바제스타니",
+      "아라쉬 아쉬티아니",
+      "포로우잔 잠시드네자드",
+      "마스바 탈레브"
+    ],
+    "detailDate": "2023년 02월 08일 개봉"
   },
   {
     "title": "공작새",
-    "date": "2026-01-08",
+    "date": "2024-10-23",
     "image": "https://file.kinolights.com/m/content_poster/202409/27/12d42a3c-c976-40d5-9b0d-d735fb708abf.webp",
     "link": "https://m.kinolights.com/title/115156",
     "genre": "ott",
@@ -4823,15 +6034,22 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_공작새",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20241023_공작새",
+    "movieInfo": "서사/드라마 / 115분",
+    "grade": "15세 이상 관람가",
+    "director": "변성빈",
+    "cast": [
+      "최해준",
+      "김우겸",
+      "고재현",
+      "기주봉"
+    ],
+    "detailDate": "2024년 10월 23일 개봉"
   },
   {
     "title": "다른 것으로 알려질 뿐이지",
-    "date": "2026-01-08",
+    "date": "2025-08-27",
     "image": "https://file.kinolights.com/m/content_poster/202508/11/b3d18aac-18d6-4ed4-ab71-3577bafcc2c6.webp",
     "link": "https://m.kinolights.com/title/137167",
     "genre": "ott",
@@ -4840,15 +6058,23 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_다른것으로알려질뿐이지",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250827_다른것으로알려질뿐이지",
+    "movieInfo": "멜로/로맨스, 서사/드라마 / 145분",
+    "grade": "15세 이상 관람가",
+    "director": "조희영",
+    "cast": [
+      "공민정",
+      "정회린",
+      "정보람",
+      "류세일",
+      "유의태"
+    ],
+    "detailDate": "2025년 08월 27일 개봉"
   },
   {
     "title": "칸다하",
-    "date": "2026-01-08",
+    "date": "2023-09-20",
     "image": "https://file.kinolights.com/m/content_poster/202309/05/cbffa14e-9041-44e1-9806-f00f6f06a204.webp",
     "link": "https://m.kinolights.com/title/124549",
     "genre": "ott",
@@ -4857,11 +6083,19 @@
       "wavve"
     ],
     "region": "ott",
-    "id": "ott_20260108_칸다하",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20230920_칸다하",
+    "movieInfo": "스릴러, 액션 / 119분",
+    "grade": "15세 이상 관람가",
+    "director": "릭 로먼 워",
+    "cast": [
+      "제라드 버틀러",
+      "톰 리스 해리스",
+      "파하드 바게리",
+      "네이비드 네가반",
+      "알리 파잘"
+    ],
+    "detailDate": "2023년 09월 20일 개봉"
   },
   {
     "title": "젊은 베르테르의 사랑",
@@ -4874,11 +6108,19 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_젊은베르테르의사랑",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 코미디 / 101분",
+    "grade": "15세 이상 관람가",
+    "director": "호세 루렌소",
+    "cast": [
+      "더글러스 부스",
+      "알리슨 필",
+      "패트릭 J. 아담스",
+      "아이리스 애퍼타우",
+      "자우하르 벤 아이드"
+    ],
+    "detailDate": ""
   },
   {
     "title": "블러드 밤비",
@@ -4891,11 +6133,19 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_블러드밤비",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "공포(호러), 서사/드라마, 스릴러 / 80분",
+    "grade": "청소년 관람불가",
+    "director": "댄 알렌",
+    "cast": [
+      "록산느 맥키",
+      "톰 멀헤론",
+      "니콜라 라이트",
+      "러셀 제프리 뱅크스",
+      "조셉 그린우드"
+    ],
+    "detailDate": ""
   },
   {
     "title": "머드브릭",
@@ -4908,11 +6158,19 @@
       "wavve"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_머드브릭",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "공포(호러), 서사/드라마 / 87분",
+    "grade": "15세 이상 관람가",
+    "director": "니콜라 페트로비치",
+    "cast": [
+      "앤드류 하워드",
+      "필립 브로디",
+      "캄카 토치노프스키",
+      "조아킴 타시치",
+      "두시카 나스토바"
+    ],
+    "detailDate": ""
   },
   {
     "title": "버티 그레고리의 치타 클로즈 업",
@@ -4925,15 +6183,19 @@
       "disney"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_버티그레고리의치타클로즈업",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "다큐멘터리 / 45분",
+    "grade": "12세 이상 관람가",
+    "director": "지가르 가나트라",
+    "cast": [
+      "버티 그레고리"
+    ],
+    "detailDate": ""
   },
   {
     "title": "위키드: 포 굿",
-    "date": "2026-01-08",
+    "date": "2025-11-19",
     "image": "https://file.kinolights.com/m/content_poster/202510/24/7b2a7386-aac5-4b26-9df2-c8efb72f37aa.webp",
     "link": "https://m.kinolights.com/title/138898",
     "genre": "ott",
@@ -4942,15 +6204,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_위키드:포굿",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251119_위키드:포굿",
+    "movieInfo": "뮤지컬, 액션, 어드벤처, 판타지 / 137분",
+    "grade": "전체 관람가",
+    "director": "존 추",
+    "cast": [
+      "신시아 에리보",
+      "아리아나 그란데",
+      "조나단 베일리",
+      "에단 슬레이터",
+      "보웬 양"
+    ],
+    "detailDate": "2025년 11월 19일 개봉"
   },
   {
     "title": "프레디의 피자가게 2",
-    "date": "2026-01-08",
+    "date": "2025-12-03",
     "image": "https://file.kinolights.com/m/content_poster/202511/12/97e4a894-a8dc-48cb-9164-a8c2a9adf427.webp",
     "link": "https://m.kinolights.com/title/144088",
     "genre": "ott",
@@ -4959,15 +6229,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_프레디의피자가게2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251203_프레디의피자가게2",
+    "movieInfo": "공포(호러), 스릴러 / 104분",
+    "grade": "12세 이상 관람가",
+    "director": "엠마 타미",
+    "cast": [
+      "조쉬 허처슨",
+      "파이퍼 루비오",
+      "엘리자베스 라일",
+      "매튜 릴라드",
+      "스키트 울리치"
+    ],
+    "detailDate": "2025년 12월 03일 개봉"
   },
   {
     "title": "스탑 메이킹 센스",
-    "date": "2026-01-08",
+    "date": "2025-08-13",
     "image": "https://file.kinolights.com/m/content_poster/202507/11/bb0ba075-056d-4a4b-8713-c860d106c9fc.webp",
     "link": "https://m.kinolights.com/title/62365",
     "genre": "ott",
@@ -4976,15 +6254,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_스탑메이킹센스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250813_스탑메이킹센스",
+    "movieInfo": "다큐멘터리 / 88분",
+    "grade": "12세 이상 관람가",
+    "director": "조나단 드미",
+    "cast": [
+      "데이빗 번",
+      "크리스 프란츠",
+      "제리 해리슨",
+      "티나 웨이먼스",
+      "린 마브리"
+    ],
+    "detailDate": "2025년 08월 13일 개봉"
   },
   {
     "title": "머니볼",
-    "date": "2026-01-08",
+    "date": "2011-11-17",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/979283af-befa-4b3a-8b4b-bf1b504cbef0.webp",
     "link": "https://m.kinolights.com/title/48745",
     "genre": "ott",
@@ -4993,15 +6279,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_머니볼",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20111117_머니볼",
+    "movieInfo": "서사/드라마 / 133분",
+    "grade": "12세 이상 관람가",
+    "director": "베넷 밀러",
+    "cast": [
+      "브래드 피트",
+      "조나 힐",
+      "필립 세이모어 호프만",
+      "로빈 라이트",
+      "크리스 프랫"
+    ],
+    "detailDate": "2011년 11월 17일 개봉"
   },
   {
     "title": "비긴 어게인",
-    "date": "2026-01-08",
+    "date": "2024-09-18",
     "image": "https://file.kinolights.com/m/content_poster/202408/20/e357fcb8-5d3b-4c93-a172-2789b2698879.webp",
     "link": "https://m.kinolights.com/title/10784",
     "genre": "ott",
@@ -5010,15 +6304,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_비긴어게인",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20240918_비긴어게인",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디 / 104분",
+    "grade": "15세 이상 관람가",
+    "director": "존 카니",
+    "cast": [
+      "키이라 나이틀리",
+      "마크 러팔로",
+      "애덤 리바인",
+      "헤일리 스테인펠드",
+      "캐서린 키너"
+    ],
+    "detailDate": "2024년 09월 18일 재개봉 2014년 08월 13일 개봉"
   },
   {
     "title": "신세기 에반게리온",
-    "date": "2026-01-08",
+    "date": "1995-10-04",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/5ce8b396-961b-4185-bfc3-105313074177.webp",
     "link": "https://m.kinolights.com/title/83607",
     "genre": "ott",
@@ -5027,15 +6329,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_신세기에반게리온",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_19951004_신세기에반게리온",
+    "movieInfo": "SF, 액션, 판타지",
+    "grade": "15세 이상 시청가",
+    "director": "츠루마키 카즈야",
+    "cast": [
+      "오가타 메구미",
+      "미츠이시 코토노",
+      "야마구치 유리코",
+      "타치키 후미히코",
+      "하야시바라 메구미"
+    ],
+    "detailDate": "1995년 10월 04일"
   },
   {
     "title": "파르테노페",
-    "date": "2026-01-08",
+    "date": "2025-09-24",
     "image": "https://file.kinolights.com/m/content_poster/202509/09/fb2c9c47-4fc1-421a-a64a-66909280e5eb.webp",
     "link": "https://m.kinolights.com/title/133272",
     "genre": "ott",
@@ -5044,15 +6354,23 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_파르테노페",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250924_파르테노페",
+    "movieInfo": "서사/드라마, 판타지 / 137분",
+    "grade": "청소년 관람불가",
+    "director": "파올로 소렌티노",
+    "cast": [
+      "셀레스트 달라 포르타",
+      "스테파니아 산드렐리",
+      "게리 올드만",
+      "실비오 올랜도",
+      "루이자 라니에리"
+    ],
+    "detailDate": "2025년 09월 24일 개봉"
   },
   {
     "title": "레드 소냐",
-    "date": "2026-01-08",
+    "date": "2025-12-31",
     "image": "https://file.kinolights.com/m/content_poster/202512/17/f097b83a-69db-423a-a005-eb2a786ffa2e.webp",
     "link": "https://m.kinolights.com/title/146497",
     "genre": "ott",
@@ -5061,11 +6379,19 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_레드소냐",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251231_레드소냐",
+    "movieInfo": "액션, 어드벤처, 판타지 / 110분",
+    "grade": "15세 이상 관람가",
+    "director": "마이클 J. 버세트",
+    "cast": [
+      "마틸다 안나 잉그리드 루츠",
+      "로버트 시한",
+      "월리스 데이",
+      "루크 파스콸리노",
+      "마이클 비스핑"
+    ],
+    "detailDate": "2025년 12월 31일 개봉"
   },
   {
     "title": "해혼행",
@@ -5078,11 +6404,18 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_해혼행",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "모자준",
+      "황일영",
+      "경업정",
+      "진주군"
+    ],
+    "detailDate": ""
   },
   {
     "title": "누키타시 THE ANIMATION (세이란토 Ver.)",
@@ -5095,11 +6428,19 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_누키타시THEANIMATION(세이란토Ver.)",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 서사/드라마, 코미디, 판타지",
+    "grade": "19세 이상 시청가",
+    "director": "나가야마 노부요시",
+    "cast": [
+      "야나기 코헤이",
+      "오자와 미노리",
+      "이시가미 시즈카",
+      "오카모토 리에",
+      "코아키 아코"
+    ],
+    "detailDate": ""
   },
   {
     "title": "내가 연인이 될 수 있을 리 없잖아, 무리무리! (※무리가 아니었다?!) 속편",
@@ -5111,11 +6452,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_내가연인이될수있을리없잖아,무리무리!(※무리가아니었다?!)속편",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "멜로/로맨스",
+    "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "나카무라 칸나",
+      "오오니시 사오리",
+      "안자이 유카리",
+      "이치노세 카나",
+      "타나카 타카코"
+    ],
+    "detailDate": ""
   },
   {
     "title": "불 났을 땐 어쩌지?",
@@ -5128,11 +6477,16 @@
       "apple"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_불났을땐어쩌지?",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "코미디 / 101분",
+    "grade": "청소년 관람불가",
+    "director": "그레고르 슈니츨러",
+    "cast": [
+      "틸 슈바이거",
+      "마틴 파이펠"
+    ],
+    "detailDate": ""
   },
   {
     "title": "연인들",
@@ -5145,15 +6499,21 @@
       "apple"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_연인들",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디 / 97분",
+    "grade": "청소년 관람불가",
+    "director": "에이저젤 제이콥스",
+    "cast": [
+      "데브라 윙거",
+      "트레이시 레츠",
+      "에이단 길렌"
+    ],
+    "detailDate": ""
   },
   {
     "title": "브레이킹 아이스",
-    "date": "2026-01-08",
+    "date": "2025-06-04",
     "image": "https://file.kinolights.com/m/content_poster/202505/15/50462767-d39e-447c-825c-6dd8c84ad1ca.webp",
     "link": "https://m.kinolights.com/title/122284",
     "genre": "ott",
@@ -5161,11 +6521,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_브레이킹아이스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250604_브레이킹아이스",
+    "movieInfo": "멜로/로맨스, 서사/드라마 / 100분",
+    "grade": "15세 이상 관람가",
+    "director": "안소니 첸",
+    "cast": [
+      "주동우",
+      "류호연",
+      "굴초소",
+      "루광웨이",
+      "류바이샤"
+    ],
+    "detailDate": "2025년 06월 04일 개봉"
   },
   {
     "title": "백일몽여타 : 그녀와 꾸는 꿈",
@@ -5177,11 +6545,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_백일몽여타:그녀와꾸는꿈",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 코미디",
+    "grade": "15세 이상 시청가",
+    "director": "손승지",
+    "cast": [
+      "왕자선",
+      "당효천",
+      "펭보",
+      "장가위",
+      "공방니"
+    ],
+    "detailDate": ""
   },
   {
     "title": "내 남자의 조건",
@@ -5193,15 +6569,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_내남자의조건",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마, 성인 / 69분",
+    "grade": "청소년 관람불가",
+    "director": "머빈 브론디알",
+    "cast": [
+      "아르마니 헥터",
+      "기온 라유그",
+      "카리즈 만자노",
+      "젬 밀튼",
+      "자밀라 오비스포"
+    ],
+    "detailDate": ""
   },
   {
     "title": "미야자키 하야오: 자연의 영혼",
-    "date": "2026-01-08",
+    "date": "2025-05-28",
     "image": "https://file.kinolights.com/m/content_poster/202505/22/8ff63f1a-19b1-4569-b89a-9e68108bb514.webp",
     "link": "https://m.kinolights.com/title/141779",
     "genre": "ott",
@@ -5209,15 +6593,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_미야자키하야오:자연의영혼",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250528_미야자키하야오:자연의영혼",
+    "movieInfo": "다큐멘터리 / 85분",
+    "grade": "전체 관람가",
+    "director": "레오 파비에",
+    "cast": [
+      "스즈키 토시오",
+      "미야자키 고로",
+      "요네바야시 히로마사",
+      "미야자키 하야오",
+      "다카하타 이사오"
+    ],
+    "detailDate": "2025년 05월 28일 개봉"
   },
   {
     "title": "기동전사 건담 : 역습의 샤아",
-    "date": "2026-01-08",
+    "date": "2025-05-07",
     "image": "https://file.kinolights.com/m/content_poster/202504/17/a4ba2b2f-33c6-4db1-8aa1-70eba6f3fb18.webp",
     "link": "https://m.kinolights.com/title/65623",
     "genre": "ott",
@@ -5225,15 +6617,17 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_기동전사건담:역습의샤아",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250507_기동전사건담:역습의샤아",
+    "movieInfo": "SF, 서사/드라마, 액션 / 120분",
+    "grade": "12세 이상 관람가",
+    "director": "토미노 요시유키",
+    "cast": [],
+    "detailDate": "2025년 05월 07일 개봉"
   },
   {
     "title": "어브로드",
-    "date": "2026-01-08",
+    "date": "2025-06-11",
     "image": "https://file.kinolights.com/m/content_poster/202505/07/983462b8-661a-443f-9e32-33370bdbd5a6.webp",
     "link": "https://m.kinolights.com/title/123823",
     "genre": "ott",
@@ -5241,15 +6635,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_어브로드",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250611_어브로드",
+    "movieInfo": "멜로/로맨스, 스릴러, 액션 / 85분",
+    "grade": "15세 이상 관람가",
+    "director": "지오바니 푸무",
+    "cast": [
+      "장성범",
+      "임영주",
+      "토니 덴먼",
+      "아든 미칼렉",
+      "앨런 존슨"
+    ],
+    "detailDate": "2025년 06월 11일 개봉"
   },
   {
     "title": "오리지널 씬",
-    "date": "2026-01-08",
+    "date": "2001-10-12",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/cba4c86f-6133-433d-bcc4-11de90446b19.webp",
     "link": "https://m.kinolights.com/title/47272",
     "genre": "ott",
@@ -5257,15 +6659,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_오리지널씬",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20011012_오리지널씬",
+    "movieInfo": "멜로/로맨스, 스릴러 / 116분",
+    "grade": "청소년 관람불가",
+    "director": "마이클 크리스토퍼",
+    "cast": [
+      "안토니오 반데라스",
+      "안젤리나 졸리",
+      "토마스 제인",
+      "잭 톰슨",
+      "그레고리 이친"
+    ],
+    "detailDate": "2001년 10월 12일 개봉"
   },
   {
     "title": "내가 누워있을 때",
-    "date": "2026-01-08",
+    "date": "2025-05-28",
     "image": "https://file.kinolights.com/m/content_poster/202505/13/a8b8bda3-e324-4666-b0f2-1c210bf6d7c9.webp",
     "link": "https://m.kinolights.com/title/130641",
     "genre": "ott",
@@ -5273,11 +6683,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_내가누워있을때",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250528_내가누워있을때",
+    "movieInfo": "서사/드라마 / 116분",
+    "grade": "12세 이상 관람가",
+    "director": "최정문",
+    "cast": [
+      "정지인",
+      "오우리",
+      "박보람",
+      "김영필",
+      "이한주"
+    ],
+    "detailDate": "2025년 05월 28일 개봉"
   },
   {
     "title": "빵집 아가씨의 일탈",
@@ -5289,15 +6707,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_빵집아가씨의일탈",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 성인 / 67분",
+    "grade": "청소년 관람불가",
+    "director": "크리스티안 파올로 랏",
+    "cast": [
+      "아타스카 메르카도",
+      "크리스티 임페리알",
+      "마크 앤서니 페르난데스",
+      "반 알렌 옹",
+      "알로나 나바로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "크리미널 스쿼드: 판테라",
-    "date": "2026-01-08",
+    "date": "2025-06-18",
     "image": "https://file.kinolights.com/m/content_poster/202506/10/130247a0-2139-4e1e-9a86-9057cb8cb909.webp",
     "link": "https://m.kinolights.com/title/141381",
     "genre": "ott",
@@ -5305,15 +6731,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_크리미널스쿼드:판테라",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250618_크리미널스쿼드:판테라",
+    "movieInfo": "서사/드라마, 스릴러, 액션 / 144분",
+    "grade": "청소년 관람불가",
+    "director": "크리스찬 거드게스트",
+    "cast": [
+      "제라드 버틀러",
+      "오셔 잭슨 주니어",
+      "에빈 아마드",
+      "살바도레 에스포시토",
+      "오를리 슈카"
+    ],
+    "detailDate": "2025년 06월 18일 개봉"
   },
   {
     "title": "기동전사 건담 F91",
-    "date": "2026-01-08",
+    "date": "2025-05-07",
     "image": "https://file.kinolights.com/m/content_poster/202504/23/0f4be3fb-5b39-4e93-aeca-4a5e45ebc5ba.webp",
     "link": "https://m.kinolights.com/title/65884",
     "genre": "ott",
@@ -5321,11 +6755,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_기동전사건담F91",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250507_기동전사건담F91",
+    "movieInfo": "SF / 115분",
+    "grade": "15세 이상 관람가",
+    "director": "토미노 요시유키",
+    "cast": [],
+    "detailDate": "2025년 05월 07일 개봉"
   },
   {
     "title": "담장 안 미용실",
@@ -5337,11 +6773,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_담장안미용실",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "마츠모토 카나",
+    "cast": [
+      "나오",
+      "카호",
+      "나루미 리코",
+      "미츠이시 켄",
+      "고바야시 사토미"
+    ],
+    "detailDate": ""
   },
   {
     "title": "D&D ~의사와 형사의 수사선~",
@@ -5353,11 +6797,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_D&D~의사와형사의수사선~",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "미스터리, 서사/드라마",
+    "grade": "15세 이상 시청가",
+    "director": "호시노 카즈나리",
+    "cast": [
+      "후지키 나오히토",
+      "테라지마 스스무",
+      "하야미 아카리",
+      "마에다 겐타로",
+      "츠츠이 미치타카"
+    ],
+    "detailDate": ""
   },
   {
     "title": "진계적왕비",
@@ -5369,11 +6821,18 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_진계적왕비",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 사극/시대물",
+    "grade": "15세 이상 시청가",
+    "director": "유춘",
+    "cast": [
+      "대고정",
+      "욱총",
+      "조준상",
+      "화원"
+    ],
+    "detailDate": ""
   },
   {
     "title": "겟 아웃: 셀러",
@@ -5385,11 +6844,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_겟아웃:셀러",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "공포(호러) / 85분",
+    "grade": "15세 이상 관람가",
+    "director": "제이미 랭글랜즈",
+    "cast": [
+      "메간 아다라",
+      "닐 제임스",
+      "샬롯 마샬",
+      "오비 딘",
+      "미카엘라 샌즈"
+    ],
+    "detailDate": ""
   },
   {
     "title": "우리의 열 번째 여름",
@@ -5401,11 +6868,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_우리의열번째여름",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 코미디 / 109분",
+    "grade": "15세 이상 관람가",
+    "director": "브렛 헤일리",
+    "cast": [
+      "톰 블라이스",
+      "에밀리 베이더",
+      "사라 캐서린 훅",
+      "자밀라 자밀",
+      "루시엔 라비스카운트"
+    ],
+    "detailDate": ""
   },
   {
     "title": "파브리치오 코로나: 파파라치 킹",
@@ -5417,11 +6892,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_파브리치오코로나:파파라치킹",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "다큐멘터리",
+    "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "파브리지오 코로나"
+    ],
+    "detailDate": ""
   },
   {
     "title": "요즘 남자들 시즌 4",
@@ -5433,15 +6912,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_요즘남자들시즌4",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "코미디",
+    "grade": "19세 이상 시청가",
+    "director": "라우라 카바예로",
+    "cast": [
+      "페르난도 길",
+      "펠레 마르티네즈",
+      "고르카 오트소아",
+      "라울 테혼",
+      "키라 미로"
+    ],
+    "detailDate": ""
   },
   {
     "title": "가필드",
-    "date": "2026-01-08",
+    "date": "2004-08-19",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/c90987a4-dc83-4ddc-aebc-a7c8475b2599.webp",
     "link": "https://m.kinolights.com/title/42055",
     "genre": "ott",
@@ -5449,15 +6936,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_가필드",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "코미디 / 80분",
+    "grade": "전체 관람가",
+    "director": "피터 휴잇",
+    "cast": [
+      "빌 머레이",
+      "제니퍼 러브 휴잇",
+      "브레킨 메이어",
+      "스티븐 토보로스키",
+      "이반 아놀드"
+    ],
+    "detailDate": "2004년 08월 19일 개봉"
   },
   {
     "title": "노미오와 줄리엣",
-    "date": "2026-01-08",
+    "date": "2011-04-14",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/acc72911-e096-41c8-a672-ff457367e228.webp",
     "link": "https://m.kinolights.com/title/49977",
     "genre": "ott",
@@ -5465,11 +6960,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_노미오와줄리엣",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "어드벤처, 코미디 / 84분",
+    "grade": "전체 관람가",
+    "director": "켈리 애스버리",
+    "cast": [],
+    "detailDate": "2011년 04월 14일 개봉"
   },
   {
     "title": "내 사랑 플리카",
@@ -5481,15 +6978,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_내사랑플리카",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "서사/드라마 / 94분",
+    "grade": "전체 관람가",
+    "director": "마이클 메이어",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "가필드 2",
-    "date": "2026-01-08",
+    "date": "2006-07-27",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/5c0de3a3-ca17-44bb-8f46-0fa62e34e162.webp",
     "link": "https://m.kinolights.com/title/31900",
     "genre": "ott",
@@ -5497,11 +6996,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_가필드2",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20060727_가필드2",
+    "movieInfo": "코미디 / 78분",
+    "grade": "전체 관람가",
+    "director": "팀 힐",
+    "cast": [],
+    "detailDate": "2006년 07월 27일 개봉"
   },
   {
     "title": "실리안 이야기",
@@ -5514,11 +7015,13 @@
       "disney"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_실리안이야기",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "다큐멘터리 / 80분",
+    "grade": "미정",
+    "director": "타마라 코테브스카",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "주술회전 「사멸회유」 전편",
@@ -5531,14 +7034,16 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_주술회전「사멸회유」전편",
-    "movieInfo": "액션, 어드벤처 / ",
+    "movieInfo": "액션, 어드벤처",
     "grade": "15세 이상 시청가",
     "director": "고쇼조노 쇼타",
     "cast": [
       "우치다 유우마",
       "에노키 준야"
-    ]
+    ],
+    "detailDate": "2026년 01월 08일"
   },
   {
     "title": "콩나물",
@@ -5551,6 +7056,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_콩나물",
     "movieInfo": "서사/드라마 / 20분",
     "grade": "전체 관람가",
@@ -5559,7 +7065,8 @@
       "김수안",
       "오동주",
       "김소진"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "투명남과 인간녀 ~곧 부부가 될 두 사람~",
@@ -5572,8 +7079,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_투명남과인간녀~곧부부가될두사람~",
-    "movieInfo": "멜로/로맨스, 코미디, 판타지 / ",
+    "movieInfo": "멜로/로맨스, 코미디, 판타지",
     "grade": "15세 이상 시청가",
     "director": "세타 미츠호",
     "cast": [
@@ -5582,7 +7090,8 @@
       "스기야마 리호",
       "후쿠니시 마사야",
       "에노키 준야"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "어차피, 사랑하고 만다. 시즌 2",
@@ -5595,8 +7104,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_어차피,사랑하고만다.시즌2",
-    "movieInfo": "멜로/로맨스 / ",
+    "movieInfo": "멜로/로맨스",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
@@ -5605,11 +7115,12 @@
       "요시타카 시온",
       "치바 쇼야",
       "이노마타 사토시"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "인사이더",
-    "date": "2026-01-08",
+    "date": "2022-06-08",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/a20181fa-0c5b-4169-a225-29dd1f3a6b65.webp",
     "link": "https://m.kinolights.com/title/105495",
     "genre": "ott",
@@ -5618,8 +7129,9 @@
       "watcha"
     ],
     "region": "ott",
-    "id": "ott_20260108_인사이더",
-    "movieInfo": "서사/드라마 / ",
+    "venue": "OTT",
+    "id": "ott_20220608_인사이더",
+    "movieInfo": "서사/드라마",
     "grade": "19세 이상 시청가",
     "director": "",
     "cast": [
@@ -5628,7 +7140,8 @@
       "허성태",
       "김상호",
       "강영석"
-    ]
+    ],
+    "detailDate": "2022년 06월 08일"
   },
   {
     "title": "봉황무쌍 : 천루의 전설",
@@ -5641,11 +7154,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_봉황무쌍:천루의전설",
-    "movieInfo": "서사/드라마, 판타지 / ",
+    "movieInfo": "서사/드라마, 판타지",
     "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "메이크업",
@@ -5658,6 +7173,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_메이크업",
     "movieInfo": "서사/드라마 / 34분",
     "grade": "15세 이상 관람가",
@@ -5667,7 +7183,8 @@
       "박선애",
       "안성일",
       "김영아"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "그림자도 없다",
@@ -5680,6 +7197,7 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_그림자도없다",
     "movieInfo": "서사/드라마 / 23분",
     "grade": "15세 이상 관람가",
@@ -5687,7 +7205,8 @@
     "cast": [
       "김은주",
       "류아벨"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "강냉이",
@@ -5700,11 +7219,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_강냉이",
     "movieInfo": "서사/드라마 / 18분",
     "grade": "15세 이상 관람가",
     "director": "허준석",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "청이",
@@ -5717,13 +7238,15 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_청이",
     "movieInfo": "서사/드라마 / 18분",
     "grade": "12세 이상 관람가",
     "director": "김정인",
     "cast": [
       "서다인"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "현대카드 슈퍼매치 14 야닉 시너 VS 카를로스 알카라스",
@@ -5736,14 +7259,16 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_현대카드슈퍼매치14야닉시너VS카를로스알카라스",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "",
     "cast": [
       "야닉 시너",
       "카를로스 알카라스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "첫입에 반하다",
@@ -5755,17 +7280,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_첫입에반하다",
-    "movieInfo": "멜로/로맨스, 서사/드라마 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
     "grade": "모든 연령 시청가",
-    "director": "하야시다 히로카와하타나카 미유키코야마 료타",
+    "director": "하야시다 히로카와",
     "cast": [
       "아카소 에이지",
       "강혜원",
       "문지후",
       "후카가와 마이",
       "카타오카 린"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "지옥락 2기",
@@ -5777,11 +7304,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_지옥락2기",
-    "movieInfo": "액션, 판타지 / ",
+    "movieInfo": "액션, 판타지",
     "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "랜드맨",
@@ -5793,17 +7322,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_랜드맨",
-    "movieInfo": "서부극(웨스턴), 서사/드라마 / ",
+    "movieInfo": "서부극(웨스턴), 서사/드라마",
     "grade": "15세 이상 시청가",
-    "director": "스티븐 케이마이클 프리드먼테일러 셰리던",
+    "director": "스티븐 케이",
     "cast": [
       "빌리 밥 손튼",
       "알리 라터",
       "제이콥 로플랜드",
       "미셸 랜돌프",
       "폴리나 차베즈"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "기묘한 이야기 5 메이킹: 마지막 모험",
@@ -5815,8 +7346,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_기묘한이야기5메이킹:마지막모험",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "마르티나 라드완",
     "cast": [
@@ -5825,7 +7357,8 @@
       "숀 레비",
       "밀리 바비 브라운",
       "핀 울프하드"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "야구기인 임찬규",
@@ -5838,16 +7371,15 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_야구기인임찬규",
-    "movieInfo": "리얼리티, 버라이어티 / ",
+    "movieInfo": "리얼리티, 버라이어티",
     "grade": "15세 이상 시청가",
-    "director": "고경덕김혜란최소정",
+    "director": "고경덕",
     "cast": [
-      "임찬규",
-      "고경덕",
-      "김혜란",
-      "최소정"
-    ]
+      "임찬규"
+    ],
+    "detailDate": ""
   },
   {
     "title": "2026 호주 오픈",
@@ -5860,14 +7392,16 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_2026호주오픈",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "",
     "cast": [
       "야닉 시너",
       "카를로스 알카라스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "DARK MOON: 달의 제단",
@@ -5880,8 +7414,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_DARKMOON:달의제단",
-    "movieInfo": "판타지 / ",
+    "movieInfo": "판타지",
     "grade": "미정",
     "director": "시가 쇼코",
     "cast": [
@@ -5890,7 +7425,8 @@
       "토키 슌이치",
       "오가사와라 진",
       "시미즈 히로토"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "카야는 무섭지 않아",
@@ -5903,8 +7439,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_카야는무섭지않아",
-    "movieInfo": "공포(호러), 미스터리 / ",
+    "movieInfo": "공포(호러), 미스터리",
     "grade": "15세 이상 시청가",
     "director": "히로시 이케하타",
     "cast": [
@@ -5913,7 +7450,8 @@
       "카지 유우키",
       "오치아이 후쿠시",
       "타도코로 아즈사"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "더 보이프렌드 시즌 2",
@@ -5925,15 +7463,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_더보이프렌드시즌2",
-    "movieInfo": "리얼리티 / ",
+    "movieInfo": "리얼리티",
     "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "헬로카봇 12기 붐바",
-    "date": "2026-01-08",
+    "date": "2022-04-03",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/abe3cf2d-c64a-461f-9be9-90153d35508b.webp",
     "link": "https://m.kinolights.com/title/104873",
     "genre": "ott",
@@ -5941,11 +7481,13 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_헬로카봇12기붐바",
-    "movieInfo": "SF, 액션, 어드벤처, 키즈, 판타지 / ",
+    "venue": "OTT",
+    "id": "ott_20220403_헬로카봇12기붐바",
+    "movieInfo": "SF, 액션, 어드벤처, 키즈, 판타지",
     "grade": "모든 연령 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": "2022년 04월 03일"
   },
   {
     "title": "헬 모드 ~파고들기 좋아하는 게이머는 폐급 설정 이세계에서 무쌍한다~",
@@ -5958,8 +7500,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_헬모드~파고들기좋아하는게이머는폐급설정이세계에서무쌍한다~",
-    "movieInfo": "판타지 / ",
+    "movieInfo": "판타지",
     "grade": "미정",
     "director": "타마가와 마코토",
     "cast": [
@@ -5967,7 +7510,8 @@
       "이이즈카 마유",
       "하타나카 타스쿠",
       "센본기 사야카"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "우마무스메 신데렐라 그레이 1쿨",
@@ -5980,8 +7524,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_우마무스메신데렐라그레이1쿨",
-    "movieInfo": "서사/드라마 / ",
+    "movieInfo": "서사/드라마",
     "grade": "12세 이상 시청가",
     "director": "이토 유우키",
     "cast": [
@@ -5990,7 +7535,8 @@
       "이세 마리야",
       "오오조라 나오미",
       "타도코로 아즈사"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "재회: 사일런트 트루스",
@@ -6002,17 +7548,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_재회:사일런트트루스",
-    "movieInfo": "미스터리 / ",
+    "movieInfo": "미스터리",
     "grade": "미정",
-    "director": "야마모토 다이스케후카가와 요시히로",
+    "director": "야마모토 다이스케",
     "cast": [
       "타케우치 료마",
       "이노우에 마오",
-      "세토 코지 ",
+      "세토 코지",
       "와타나베 다이치",
       "키타 카나"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "타스카리: 밀수와의 전쟁",
@@ -6024,17 +7572,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_타스카리:밀수와의전쟁",
-    "movieInfo": "범죄, 서사/드라마, 스릴러 / ",
+    "movieInfo": "범죄, 서사/드라마, 스릴러",
     "grade": "15세 이상 시청가",
-    "director": "니라이 판데이라그하브 자이라스",
+    "director": "니라이 판데이",
     "cast": [
       "엠란 하스미",
       "샤라드 켈카르",
       "조야 아프로즈",
       "프레디 다루왈라",
       "아누락 신하"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "공주님 \"고문\"의 시간입니다 제2기",
@@ -6047,8 +7597,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_공주님\"고문\"의시간입니다제2기",
-    "movieInfo": "코미디 / ",
+    "movieInfo": "코미디",
     "grade": "미정",
     "director": "",
     "cast": [
@@ -6057,7 +7608,8 @@
       "이토 시즈카",
       "나가세 안나",
       "이노우에 호노카"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "애거사 크리스티의 세븐 다이얼스",
@@ -6069,17 +7621,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_애거사크리스티의세븐다이얼스",
-    "movieInfo": "미스터리, 서사/드라마, 스릴러 / ",
+    "movieInfo": "미스터리, 서사/드라마, 스릴러",
     "grade": "15세 이상 관람가",
     "director": "크리스 스위니",
     "cast": [
       "미아 매케나브루스",
-      "헬레나 본햄 카터 ",
-      "마틴 프리먼 ",
+      "헬레나 본햄 카터",
+      "마틴 프리먼",
       "코리 밀크리스트",
-      "에드워드 블루멜 "
-    ]
+      "에드워드 블루멜"
+    ],
+    "detailDate": ""
   },
   {
     "title": "【최애의 아이】 3기",
@@ -6093,11 +7647,13 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_【최애의아이】3기",
-    "movieInfo": "미스터리, 스릴러 / ",
+    "movieInfo": "미스터리, 스릴러",
     "grade": "15세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "프리즘 윤무곡",
@@ -6109,8 +7665,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_프리즘윤무곡",
-    "movieInfo": "멜로/로맨스, 서사/드라마 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
     "grade": "15세 이상 시청가",
     "director": "나카자와 카즈토",
     "cast": [
@@ -6119,7 +7676,8 @@
       "카지 유우키",
       "키토 아카리",
       "한 메구미"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "이별도 사랑이라",
@@ -6131,19 +7689,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이별도사랑이라",
-    "movieInfo": "멜로/로맨스, 서사/드라마 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마",
     "grade": "15세 이상 시청가",
-    "director": "셀림 데미르델렌커트베 투르굴",
+    "director": "셀림 데미르델렌",
     "cast": [
-      "이브라힘 첼릭콜",
-      "셀림 데미르델렌",
-      "커트베 투르굴"
-    ]
+      "이브라힘 첼릭콜"
+    ],
+    "detailDate": ""
   },
   {
     "title": "우리는 업쇼 패밀리 파트 1",
-    "date": "2026-01-08",
+    "date": "2021-05-12",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/2e5c6e13-3afc-49dc-9519-b8bb7b653c5a.webp",
     "link": "https://m.kinolights.com/title/96408",
     "genre": "ott",
@@ -6151,14 +7709,16 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_우리는업쇼패밀리파트1",
-    "movieInfo": "서사/드라마, 코미디 / ",
+    "venue": "OTT",
+    "id": "ott_20210512_우리는업쇼패밀리파트1",
+    "movieInfo": "서사/드라마, 코미디",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
       "저니 크리스틴",
       "저멜 사이먼"
-    ]
+    ],
+    "detailDate": "2021년 05월 12일"
   },
   {
     "title": "우리는 업쇼 패밀리 파트 7",
@@ -6170,8 +7730,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_우리는업쇼패밀리파트7",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
@@ -6180,7 +7741,8 @@
       "완다 사이키스",
       "칼리 스프래긴스",
       "저니 크리스틴"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "이 사랑 통역 되나요?",
@@ -6192,8 +7754,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_이사랑통역되나요?",
-    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디",
     "grade": "15세 이상 시청가",
     "director": "",
     "cast": [
@@ -6202,7 +7765,8 @@
       "후쿠시 소타",
       "이이담",
       "최우성"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "더 립",
@@ -6214,6 +7778,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_더립",
     "movieInfo": "스릴러, 액션 / 133분",
     "grade": "청소년 관람불가",
@@ -6221,10 +7786,11 @@
     "cast": [
       "맷 데이먼",
       "벤 애플렉",
-      "스티븐 연 ",
+      "스티븐 연",
       "테야나 테일러",
       "사샤 카예"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "오늘부터 인간입니다만",
@@ -6236,8 +7802,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_오늘부터인간입니다만",
-    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디, 판타지 / ",
+    "movieInfo": "멜로/로맨스, 서사/드라마, 코미디, 판타지",
     "grade": "15세 이상 시청가",
     "director": "김정권",
     "cast": [
@@ -6246,11 +7813,12 @@
       "장동주",
       "지승준",
       "이시우"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "소림축구",
-    "date": "2026-01-08",
+    "date": "2002-05-16",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/eaf5486f-ae57-4068-a9d9-753294f2a8d4.webp",
     "link": "https://m.kinolights.com/title/45021",
     "genre": "ott",
@@ -6258,20 +7826,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_소림축구",
+    "venue": "OTT",
+    "id": "ott_20020516_소림축구",
     "movieInfo": "액션, 코미디, 판타지 / 87분",
     "grade": "전체 관람가",
     "director": "주성치",
     "cast": [
+      "주성치",
       "조미",
       "오맹달",
       "황일비",
       "사현"
-    ]
+    ],
+    "detailDate": "2002년 05월 16일 개봉"
   },
   {
     "title": "마술 아카데미",
-    "date": "2026-01-08",
+    "date": "2021-11-12",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/edf92751-d7a3-4613-b68d-02d6f17c2883.webp",
     "link": "https://m.kinolights.com/title/84308",
     "genre": "ott",
@@ -6279,7 +7850,8 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_마술아카데미",
+    "venue": "OTT",
+    "id": "ott_20211112_마술아카데미",
     "movieInfo": "코미디 / 102분",
     "grade": "전체 관람가",
     "director": "마크 워터스",
@@ -6289,7 +7861,8 @@
       "알디스 호지",
       "로첼리 에이테스",
       "제프리 탬버"
-    ]
+    ],
+    "detailDate": "2021년 11월 12일 개봉"
   },
   {
     "title": "말리와 나 2",
@@ -6301,8 +7874,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_말리와나2",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "모든 연령 시청가",
     "director": "마이클 데미언",
     "cast": [
@@ -6311,7 +7885,8 @@
       "제프 구스타프슨",
       "크리스토퍼 굿맨",
       "알렉스 자하라"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "언더커버 미쓰홍",
@@ -6324,8 +7899,9 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_언더커버미쓰홍",
-    "movieInfo": "범죄, 사극/시대물, 코미디 / ",
+    "movieInfo": "범죄, 사극/시대물, 코미디",
     "grade": "15세 이상 시청가",
     "director": "박선호",
     "cast": [
@@ -6334,7 +7910,8 @@
       "하윤경",
       "조한결",
       "김도현"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "어느 꼬인 날",
@@ -6346,8 +7923,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_어느꼬인날",
-    "movieInfo": " / ",
+    "movieInfo": "",
     "grade": "15세 이상 시청가",
     "director": "로렌스 라몬트",
     "cast": [
@@ -6356,7 +7934,8 @@
       "조슈아 데이빗 닐",
       "아지자 스콧",
       "패트릭 케이지"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "장송의 프리렌 2기",
@@ -6369,8 +7948,9 @@
       "watcha"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_장송의프리렌2기",
-    "movieInfo": "어드벤처, 판타지 / ",
+    "movieInfo": "어드벤처, 판타지",
     "grade": "15세 이상 시청가",
     "director": "기타가와 토모야",
     "cast": [
@@ -6379,7 +7959,8 @@
       "코바야시 치아키",
       "오카모토 노부히코",
       "토우치 히로키"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "솔로지옥 5",
@@ -6391,8 +7972,9 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_솔로지옥5",
-    "movieInfo": "리얼리티 / ",
+    "movieInfo": "리얼리티",
     "grade": "15세 이상 시청가",
     "director": "김재원",
     "cast": [
@@ -6401,11 +7983,12 @@
       "홍진경",
       "한해",
       "덱스"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "영화 코바야시네 메이드래곤 외로움쟁이 용",
-    "date": "2026-01-08",
+    "date": "2025-07-10",
     "image": "https://file.kinolights.com/m/content_poster/202507/09/e13490d6-3c11-43e5-9a8b-be1b0e61ed24.webp",
     "link": "https://m.kinolights.com/title/144797",
     "genre": "ott",
@@ -6413,7 +7996,8 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_영화코바야시네메이드래곤외로움쟁이용",
+    "venue": "OTT",
+    "id": "ott_20250710_영화코바야시네메이드래곤외로움쟁이용",
     "movieInfo": "애니메이션, 코미디, 판타지 / 105분",
     "grade": "12세 이상 관람가",
     "director": "이시하라 타츠야",
@@ -6423,7 +8007,8 @@
       "쿠와하라 유우키",
       "스기우라 시오리",
       "타치키 후미히코"
-    ]
+    ],
+    "detailDate": "2025년 07월 10일 개봉"
   },
   {
     "title": "납치된 아이: 엘리자베스 스마트",
@@ -6435,13 +8020,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_납치된아이:엘리자베스스마트",
     "movieInfo": "다큐멘터리, 범죄 / 91분",
     "grade": "미정",
     "director": "베네딕트 샌더슨",
     "cast": [
       "엘리자베스 스마트"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "스타 서치",
@@ -6453,13 +8040,15 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_스타서치",
-    "movieInfo": "리얼리티 / ",
+    "movieInfo": "리얼리티",
     "grade": "미정",
     "director": "",
     "cast": [
-      "안소니 앤더슨 "
-    ]
+      "안소니 앤더슨"
+    ],
+    "detailDate": ""
   },
   {
     "title": "세븐킹덤의 기사",
@@ -6472,8 +8061,9 @@
       "coupang"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_세븐킹덤의기사",
-    "movieInfo": "서사/드라마, 액션, 판타지 / ",
+    "movieInfo": "서사/드라마, 액션, 판타지",
     "grade": "미정",
     "director": "",
     "cast": [
@@ -6482,7 +8072,8 @@
       "핀 베넷",
       "버티 카벨",
       "탄진 크로포드"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "초(超) 가구야 공주!",
@@ -6494,15 +8085,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_초(超)가구야공주!",
-    "movieInfo": "뮤지컬, 애니메이션 / ",
+    "movieInfo": "뮤지컬, 애니메이션",
     "grade": "미정",
     "director": "야마시타 신고",
     "cast": [
       "나츠요시 유우코",
       "나가세 안나",
       "하야미 사오리"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "잿더미 속에서: 구덩이",
@@ -6514,11 +8107,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_잿더미속에서:구덩이",
-    "movieInfo": "서사/드라마 / ",
+    "movieInfo": "서사/드라마",
     "grade": "미정",
     "director": "",
-    "cast": []
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "버트에게 자유를",
@@ -6530,17 +8125,18 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_버트에게자유를",
-    "movieInfo": "코미디 / ",
+    "movieInfo": "코미디",
     "grade": "19세 이상 시청가",
-    "director": "버트 크라이셔앤드류 모겔재러드 폴",
+    "director": "버트 크라이셔",
     "cast": [
       "버트 크라이셔",
-      "아덴 마이린 ",
+      "아덴 마이린",
       "아바 라이언",
-      "릴루 랑",
-      "앤드류 모겔"
-    ]
+      "릴루 랑"
+    ],
+    "detailDate": ""
   },
   {
     "title": "빅 페이크",
@@ -6552,6 +8148,7 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_빅페이크",
     "movieInfo": "범죄, 서사/드라마, 스릴러 / 110분",
     "grade": "미정",
@@ -6562,11 +8159,12 @@
       "안드레아 아르칸젤리",
       "피에르루이지 지간테",
       "오로라 지오비나조"
-    ]
+    ],
+    "detailDate": ""
   },
   {
     "title": "부고니아",
-    "date": "2026-01-08",
+    "date": "2025-11-05",
     "image": "https://file.kinolights.com/m/content_poster/202510/02/52fda934-90b9-4841-b775-9669b4fe9451.webp",
     "link": "https://m.kinolights.com/title/134544",
     "genre": "ott",
@@ -6574,11 +8172,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_부고니아",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "SF, 스릴러, 코미디 / 120분",
+    "grade": "청소년 관람불가",
+    "director": "요르고스 란티모스",
+    "cast": [
+      "엠마 스톤",
+      "제시 플레먼스",
+      "에이단 델비스",
+      "알리시아 실버스톤",
+      "스타브로스 할키아스"
+    ],
+    "detailDate": "2025년 11월 05일 개봉"
   },
   {
     "title": "테이크 댓",
@@ -6590,15 +8196,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_테이크댓",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "다큐멘터리",
+    "grade": "15세 이상 시청가",
+    "director": "데이비드 수타",
+    "cast": [
+      "게리 발로",
+      "하워드 도널드",
+      "마크 오언",
+      "제이슨 오렌지",
+      "로비 윌리엄스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "보스",
-    "date": "2026-01-08",
+    "date": "2025-10-03",
     "image": "https://file.kinolights.com/m/content_poster/202509/01/f6e7f3e0-dfb0-4a4a-8b95-404a93db4b0b.webp",
     "link": "https://m.kinolights.com/title/117036",
     "genre": "ott",
@@ -6607,15 +8221,23 @@
       "disney"
     ],
     "region": "ott",
-    "id": "ott_20260108_보스",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20251003_보스",
+    "movieInfo": "액션, 코미디 / 98분",
+    "grade": "15세 이상 관람가",
+    "director": "라희찬",
+    "cast": [
+      "조우진",
+      "정경호",
+      "박지환",
+      "이규형",
+      "오달수"
+    ],
+    "detailDate": "2025년 10월 03일 개봉"
   },
   {
     "title": "어쩔수가없다",
-    "date": "2026-01-08",
+    "date": "2025-09-24",
     "image": "https://file.kinolights.com/m/content_poster/202509/03/024642a8-2194-4f5e-b36d-5532878f9399.webp",
     "link": "https://m.kinolights.com/title/136358",
     "genre": "ott",
@@ -6623,11 +8245,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_어쩔수가없다",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250924_어쩔수가없다",
+    "movieInfo": "범죄, 서사/드라마, 스릴러, 코미디 / 139분",
+    "grade": "15세 이상 관람가",
+    "director": "박찬욱",
+    "cast": [
+      "이병헌",
+      "손예진",
+      "박희순",
+      "이성민",
+      "염혜란"
+    ],
+    "detailDate": "2025년 09월 24일 개봉"
   },
   {
     "title": "브리저튼 시즌 4 파트 1",
@@ -6639,15 +8269,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_브리저튼시즌4파트1",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "멜로/로맨스, 서사/드라마",
+    "grade": "19세 이상 시청가",
+    "director": "톰 베리카",
+    "cast": [
+      "루크 톰프슨",
+      "하예린",
+      "니콜라 코클란",
+      "루크 뉴턴",
+      "조나단 베일리"
+    ],
+    "detailDate": ""
   },
   {
     "title": "내 젊은 날에 보내는 편지",
-    "date": "2026-01-08",
+    "date": "2025-01-29",
     "image": "https://file.kinolights.com/m/content_poster/202601/08/0180b6e7-de60-458e-93f4-cb9de254319c.webp",
     "link": "https://m.kinolights.com/title/149337",
     "genre": "ott",
@@ -6655,11 +8293,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_내젊은날에보내는편지",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20250129_내젊은날에보내는편지",
+    "movieInfo": "",
+    "grade": "15세 이상 시청가",
+    "director": "심 F.",
+    "cast": [
+      "밀로 타슬림",
+      "클레오 하우라",
+      "아킬라 허비",
+      "조던 오마르",
+      "할림 라투콘시나"
+    ],
+    "detailDate": "2025년 01월 29일"
   },
   {
     "title": "테러맨",
@@ -6672,15 +8318,23 @@
       "tving"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_테러맨",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "액션",
+    "grade": "미정",
     "director": "",
-    "cast": []
+    "cast": [
+      "정재헌",
+      "이새벽",
+      "황창영",
+      "김연우",
+      "양정화"
+    ],
+    "detailDate": ""
   },
   {
     "title": "미스 페레그린과 이상한 아이들의 집",
-    "date": "2026-01-08",
+    "date": "2016-09-28",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/90a294e8-c5ae-4bf2-971a-a4d3dd4836c5.webp",
     "link": "https://m.kinolights.com/title/6980",
     "genre": "ott",
@@ -6688,11 +8342,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_미스페레그린과이상한아이들의집",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20160928_미스페레그린과이상한아이들의집",
+    "movieInfo": "미스터리, 판타지 / 127분",
+    "grade": "12세 이상 관람가",
+    "director": "팀 버튼",
+    "cast": [
+      "에바 그린",
+      "에이사 버터필드",
+      "사무엘 L. 잭슨",
+      "앨리슨 제니",
+      "엘라 퍼넬"
+    ],
+    "detailDate": "2016년 09월 28일 개봉"
   },
   {
     "title": "여배우 하라다 히사코",
@@ -6704,11 +8366,13 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_여배우하라다히사코",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "다큐멘터리 / 23분",
+    "grade": "15세 이상 관람가",
+    "director": "하라다 미에코",
+    "cast": [],
+    "detailDate": ""
   },
   {
     "title": "살바도르",
@@ -6720,11 +8384,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_살바도르",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "미정",
     "director": "",
-    "cast": []
+    "cast": [
+      "루이스 토사",
+      "클라우디아 살라스",
+      "후안 카를로스 벨리도"
+    ],
+    "detailDate": ""
   },
   {
     "title": "모터밸리",
@@ -6736,15 +8406,23 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_모터밸리",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "액션, 어드벤처",
+    "grade": "미정",
+    "director": "피포 메차페사",
+    "cast": [
+      "안드레아 몬토볼리",
+      "다니엘 발코니",
+      "루카 아르젠테로",
+      "줄리아 미켈리니",
+      "카테리나 포스"
+    ],
+    "detailDate": ""
   },
   {
     "title": "쿵푸 팬더",
-    "date": "2026-01-08",
+    "date": "2008-06-05",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/cc2bf7e8-b3c3-4c44-965d-ff6601216590.webp",
     "link": "https://m.kinolights.com/title/10397",
     "genre": "ott",
@@ -6752,15 +8430,23 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_쿵푸팬더",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20080605_쿵푸팬더",
+    "movieInfo": "액션, 코미디 / 92분",
+    "grade": "전체 관람가",
+    "director": "마크 오스본",
+    "cast": [
+      "잭 블랙",
+      "더스틴 호프만",
+      "성룡",
+      "루시 리우",
+      "안젤리나 졸리"
+    ],
+    "detailDate": "2008년 06월 05일 개봉"
   },
   {
     "title": "쿵푸 팬더 3",
-    "date": "2026-01-08",
+    "date": "2016-01-28",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/cee85046-1dfb-4de3-835e-611b348dc296.webp",
     "link": "https://m.kinolights.com/title/10141",
     "genre": "ott",
@@ -6768,11 +8454,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_쿵푸팬더3",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20160128_쿵푸팬더3",
+    "movieInfo": "액션, 어드벤처, 코미디 / 95분",
+    "grade": "전체 관람가",
+    "director": "여인영",
+    "cast": [
+      "잭 블랙",
+      "안젤리나 졸리",
+      "더스틴 호프만",
+      "성룡",
+      "세스 로건"
+    ],
+    "detailDate": "2016년 01월 28일 개봉"
   },
   {
     "title": "나이트 에이전트 시즌 3",
@@ -6784,15 +8478,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_나이트에이전트시즌3",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "미스터리, 액션, 어드벤처",
+    "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "가브리엘 바쏘"
+    ],
+    "detailDate": ""
   },
   {
     "title": "스펜서",
-    "date": "2026-01-08",
+    "date": "2022-03-16",
     "image": "https://file.kinolights.com/m/content_poster/202307/12/c632e9f8-2c71-465e-bb1b-a4a1457d3bf9.webp",
     "link": "https://m.kinolights.com/title/88689",
     "genre": "ott",
@@ -6800,11 +8498,19 @@
       "netflix"
     ],
     "region": "ott",
-    "id": "ott_20260108_스펜서",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "venue": "OTT",
+    "id": "ott_20220316_스펜서",
+    "movieInfo": "서사/드라마 / 117분",
+    "grade": "12세 이상 관람가",
+    "director": "파블로 라라인",
+    "cast": [
+      "크리스틴 스튜어트",
+      "샐리 호킨스",
+      "티모시 스폴",
+      "숀 해리스",
+      "잭 파딩"
+    ],
+    "detailDate": "2022년 03월 16일 개봉"
   },
   {
     "title": "원피스 시즌 2",
@@ -6816,11 +8522,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_원피스시즌2",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "액션, 어드벤처",
+    "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "이냐키 고도이",
+      "아라타 마켄유",
+      "에밀리 러드",
+      "제이콥 깁슨",
+      "타즈 스카일러"
+    ],
+    "detailDate": ""
   },
   {
     "title": "피키 블라인더스: 불멸의 남자",
@@ -6832,11 +8546,19 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_피키블라인더스:불멸의남자",
-    "movieInfo": " / ",
-    "grade": "",
-    "director": "",
-    "cast": []
+    "movieInfo": "",
+    "grade": "미정",
+    "director": "톰 하퍼",
+    "cast": [
+      "킬리언 머피",
+      "레베카 퍼거슨",
+      "배리 케오간",
+      "팀 로스",
+      "스티븐 그레이엄"
+    ],
+    "detailDate": ""
   },
   {
     "title": "하이 타이드 시즌 3",
@@ -6848,10 +8570,17 @@
       "netflix"
     ],
     "region": "ott",
+    "venue": "OTT",
     "id": "ott_20260108_하이타이드시즌3",
-    "movieInfo": " / ",
-    "grade": "",
+    "movieInfo": "서사/드라마",
+    "grade": "19세 이상 시청가",
     "director": "",
-    "cast": []
+    "cast": [
+      "폼멜리앙 티스",
+      "빌렘 드 슈라이버",
+      "엘리야 알테나",
+      "안나 드리베르"
+    ],
+    "detailDate": ""
   }
 ]
