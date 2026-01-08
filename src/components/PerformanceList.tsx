@@ -3136,6 +3136,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             {searchLocation ? `'${searchLocation.name}'` : (userAddress || '내 위치')}
                                         </span>
                                         <span className="text-base sm:text-xl shrink-0">주변 ({displayPerformances.length})</span>
+                                        <button
+                                            onClick={() => {
+                                                setSearchLocation(null);
+                                                setSearchText('');
+                                            }}
+                                            className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/reload"
+                                            title="지역 설정 초기화"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover/reload:rotate-180 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1.002 7.935 1.007 9.425 4.747" /><path d="M20 4v5h-5" /></svg>
+                                        </button>
                                     </>
                                 ) : searchText ? (
                                     <>
@@ -3171,10 +3181,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             // Optional: center map if needed, but 'activeLocation' usually drives map center anyway
                                             window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }}
-                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1"
+                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1 light:bg-gray-100 light:text-gray-900 light:border-gray-300 light:hover:bg-gray-200"
                                     >
-                                        <MapIcon className="w-3 h-3 text-[#a78bfa]" />
-                                        <span className="hidden sm:inline text-gray-200">지도보기</span>
+                                        <MapIcon className="w-3 h-3 text-[#a78bfa] light:text-purple-600" />
+                                        <span className="hidden sm:inline text-gray-200 light:text-gray-900">지도보기</span>
                                     </button>
                                 )}
                             </div>
