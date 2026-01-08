@@ -137,7 +137,7 @@ async function getPerformances() {
 
     const filtered = allPerformances.filter(p => {
         // Movies & Travel & Kids & Class: Always show regardless of region/date logic
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 
