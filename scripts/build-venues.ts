@@ -22,6 +22,23 @@ if (!fs.existsSync(path.dirname(VENUE_FILE))) {
 }
 
 // Fallback coordinates for Districts (Seoul/Gyeonggi/Incheon)
+// Valid Administrative Divisions
+const SEOUL_DISTRICTS = [
+    '강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'
+];
+
+const INCHEON_DISTRICTS = [
+    '계양구', '남동구', '동구', '미추홀구', '부평구', '서구', '연수구', '중구', '강화군', '옹진군'
+];
+
+const GYEONGGI_CITIES = [
+    '가평군', '고양시', '과천시', '광명시', '광주시', '구리시', '군포시', '김포시', '남양주시', '동두천시', '부천시', '성남시', '수원시', '시흥시', '안산시', '안성시', '안양시', '양주시', '양평군', '여주시', '연천군', '오산시', '용인시', '의왕시', '의정부시', '이천시', '파주시', '평택시', '포천시', '하남시', '화성시'
+];
+
+// Combine for lookup
+const ALL_VALID_DISTRICTS = [...SEOUL_DISTRICTS, ...INCHEON_DISTRICTS, ...GYEONGGI_CITIES];
+
+// Fallback coordinates for key districts (representative point)
 const DISTRICT_COORDS: Record<string, { lat: number, lng: number }> = {
     '강남구': { lat: 37.5172, lng: 127.0473 },
     '강동구': { lat: 37.5301, lng: 127.1238 },
@@ -48,18 +65,43 @@ const DISTRICT_COORDS: Record<string, { lat: number, lng: number }> = {
     '종로구': { lat: 37.5730, lng: 126.9794 },
     '중구': { lat: 37.5637, lng: 126.9975 },
     '중랑구': { lat: 37.6066, lng: 127.0924 },
-    // A few Gyeonggi/Incheon
+    // Gyeonggi/Incheon Representatives
     '수원시': { lat: 37.2636, lng: 127.0286 },
     '성남시': { lat: 37.4386, lng: 127.1378 },
     '고양시': { lat: 37.6584, lng: 126.8320 },
     '용인시': { lat: 37.2410, lng: 127.1775 },
     '부천시': { lat: 37.5034, lng: 126.7660 },
     '안산시': { lat: 37.368, lng: 126.836 },
-    '인천': { lat: 37.4563, lng: 126.7052 },
+    '인천': { lat: 37.4563, lng: 126.7052 }, // Generic Incheon
     '연수구': { lat: 37.4102, lng: 126.6782 },
     '남동구': { lat: 37.4473, lng: 126.7314 },
     '부평구': { lat: 37.5074, lng: 126.7217 }
 };
+
+function parseDistrict(address: string): string {
+    if (!address || address === '정보 없음') return '';
+
+    // Normalize address
+    const normalized = address.replace(/\s+/g, ' ');
+
+    // 1. Check Gyeonggi Cities first (since they end in Si/Gun)
+    for (const city of GYEONGGI_CITIES) {
+        if (normalized.includes(city)) return city;
+    }
+
+    // 2. Check Seoul/Incheon Districts (Gu/Gun)
+    // Note: 'Jung-gu' exists in both, but we can't distinguish purely by 'Jung-gu' without context.
+    // However, for valid list generation, returning 'Jung-gu' is fine.
+    // We prioritize based on order or context if needed, but simple inclusion is better than strict regex.
+    for (const dist of SEOUL_DISTRICTS) {
+        if (normalized.includes(dist)) return dist;
+    }
+    for (const dist of INCHEON_DISTRICTS) {
+        if (normalized.includes(dist)) return dist;
+    }
+
+    return '';
+}
 
 async function getVenueAddress(performanceId: string): Promise<string> {
     const url = `https://ticket.interpark.com/TIKI/Main/TikiGoodsInfo.asp?GoodsCode=${performanceId}`;
@@ -134,6 +176,23 @@ async function buildVenues() {
     let venues: Record<string, VenueData> = {};
     if (fs.existsSync(VENUE_FILE)) {
         venues = JSON.parse(fs.readFileSync(VENUE_FILE, 'utf-8'));
+
+        // Sanitize loaded venues: Correct invalid districts
+        let cleanedCount = 0;
+        for (const key of Object.keys(venues)) {
+            const v = venues[key];
+            if (v.district && !ALL_VALID_DISTRICTS.includes(v.district)) {
+                // If the district is not in our valid list (e.g. '입구', '수정구'), clear it.
+                // Exception: If it's a valid Gyeonggi city suffix logic? 
+                // No, ALL_VALID_DISTRICTS has exact matches.
+                // console.log(`Sanitizing invalid district: ${v.district} in ${v.name}`);
+                v.district = '';
+                cleanedCount++;
+            }
+        }
+        if (cleanedCount > 0) {
+            console.log(`Sanitized ${cleanedCount} venues with invalid districts.`);
+        }
     }
 
     // 1. Fetch Lists
@@ -233,27 +292,14 @@ async function buildVenues() {
 
         // If District is missing, try to find it in the Name
         if (!venues[venueName].district) {
-            // Check keys in DISTRICT_COORDS
-            for (const key of Object.keys(DISTRICT_COORDS)) {
-                // If venue name includes "강남" -> assume "강남구"
-                // But keys are "강남구", so we check if name includes "강남" or the full key
-                const simpleKey = key.replace('구', '').replace('시', '');
-                if (venueName.includes(key) || venueName.includes(simpleKey + '구') || venueName.includes(simpleKey + '문화') || venueName.includes(simpleKey + '아트')) {
-                    // Be careful with false positives, but for now this is better than empty
-                    // "강남" might be in "강남스타일" (rare venue name), but "강남구" is safer.
-                    // Let's stick to full key or "Key + something"
-
-                    if (venueName.includes(simpleKey)) {
-                        // Check mapping. Key is the full name "강남구"
-                        venues[venueName].district = key;
-
-                        // Also set coords if missing
-                        if (!venues[venueName].lat) {
-                            venues[venueName].lat = DISTRICT_COORDS[key].lat;
-                            venues[venueName].lng = DISTRICT_COORDS[key].lng;
-                        }
-                        break;
-                    }
+            // Dictionary-based check
+            const extracted = parseDistrict(venues[venueName].name);
+            if (extracted) {
+                venues[venueName].district = extracted;
+                // Set coords if missing and available
+                if (!venues[venueName].lat && DISTRICT_COORDS[extracted]) {
+                    venues[venueName].lat = DISTRICT_COORDS[extracted].lat;
+                    venues[venueName].lng = DISTRICT_COORDS[extracted].lng;
                 }
             }
         }
@@ -318,9 +364,8 @@ async function buildVenues() {
         }
 
         if (address) {
-            // Extract district (Gu)
-            const guMatch = address.match(/(\S+구)/);
-            if (guMatch) district = guMatch[1];
+            // Extract district (Gu/Si/Gun) using robust parser
+            district = parseDistrict(address);
 
             // 3b. Geocode if missing lat/lng
             if (!lat || !lng) {
