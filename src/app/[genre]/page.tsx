@@ -7,6 +7,8 @@ import interparkData from '@/data/interpark.json';
 import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
 import kboData from '@/data/kbo.json';
+import handballData from '@/data/handball.json';
+import hockeyData from '@/data/hockey.json';
 import travelData from '@/data/travel.json';
 import festivalsData from '@/data/festivals.json';
 import yes24Data from '@/data/yes24.json';
@@ -68,6 +70,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const volleyball = kovoData as unknown as any[];
     const basketball = kblData as unknown as any[];
     const baseball = kboData as unknown as any[];
+    const handball = handballData as unknown as any[];
+    const hockey = hockeyData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -94,6 +98,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
         ...volleyball,
         ...basketball,
         ...baseball,
+        ...handball,
+        ...hockey,
         ...movies,
         ...travels,
         ...kids,
@@ -133,8 +139,38 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
         if (!validRegions.includes(p.region)) return false;
 
+        if (p.genre === 'hockey') {
+            // console.log(`[Hockey Check] ${p.title} | Region: ${p.region} | ValidRegions: ${validRegions.includes(p.region)} | Blocklist: ${BLOCKLIST.some(b => p.venue.includes(b))}`);
+        }
+
         if (p.venue === '예매하기') return false;
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
+
+        if (venues[p.venue]) {
+            const addr = venues[p.venue].address;
+            if (addr && addr !== '정보 없음') {
+                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
+                // For hockey, we might have added a logic to bypass this? 
+                // Wait, the previous logic (lines 131) checks region.
+                // But this venue check (lines 139-145) explicitly checks address string for '서울|경기|인천'.
+                // If validRegions=['etc'], but address is not Seoul/Gyeonggi/Incheon (e.g. Japan address or no address),
+                // this block MIGHT drop it if venues[p.venue] exists.
+                // However, for Japanese venues, do they exist in venues.json?
+            }
+        }
+
+        // Explicit Debug for Hockey
+        if (p.genre === 'hockey') {
+            // Check if it's being dropped by Venue Address Filter
+            if (venues[p.venue]) {
+                const addr = venues[p.venue].address;
+                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
+                if (!isServiceArea) {
+                    console.log(`[Hockey Drop] Venue Address Filter: ${p.title} (${p.venue} -> ${addr})`);
+                    // This might be the culprit for 'Etc' regions if they have venue entries but non-compliant addresses.
+                }
+            }
+        }
 
         if (venues[p.venue]) {
             const addr = venues[p.venue].address;
@@ -147,6 +183,10 @@ async function getPerformances(genreFilter: string | string[] | null) {
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
     });
+
+    console.log(`[Debug] Post-Filter Count: ${filtered.length}`);
+    const hockeyFiltered = filtered.filter(p => p.genre === 'hockey');
+    console.log(`[Debug] Post-Filter Hockey: ${hockeyFiltered.length}`);
 
     // Apply genre filter
     let genreFiltered = filtered;
