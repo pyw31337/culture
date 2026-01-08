@@ -2106,63 +2106,65 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 (isDropdownOpen && activeSearchSource === 'hero') ? "z-[120]" : "z-[60]"
             )}>
                 <div className="text-left flex-1 min-w-0 z-10">
-                    <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
-                        <button
-                            onClick={handleCurrentLocationClick}
-                            className="flex items-center gap-1 hover:text-white light:hover:text-purple-600 transition-colors group/label mr-2"
-                            title="내 위치 찾기"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] light:text-purple-600 group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
-                            <span>
-                                {(selectedRegion !== 'all' || selectedVenue !== 'all')
-                                    ? '설정위치 :'
-                                    : (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
+                    {selectedGenre !== 'movie' && selectedGenre !== 'ott' && (
+                        <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
+                            <button
+                                onClick={handleCurrentLocationClick}
+                                className="flex items-center gap-1 hover:text-white light:hover:text-purple-600 transition-colors group/label mr-2"
+                                title="내 위치 찾기"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-[#a78bfa] light:text-purple-600 group-hover/label:scale-110 transition-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0" /><path d="M12 2l0 2" /><path d="M12 20l0 2" /><path d="M20 12l2 0" /><path d="M2 12l2 0" /></svg>
+                                <span>
+                                    {(selectedRegion !== 'all' || selectedVenue !== 'all')
+                                        ? '설정위치 :'
+                                        : (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
+                                    }
+                                </span>
+                            </button>
+                            <span
+                                onClick={() => setIsHeroFilterExpanded(prev => !prev)}
+                                className="text-white light:text-black border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
+                            >
+                                {(activeLocation && selectedRegion === 'all' && selectedVenue === 'all') // Show GPS/Search if NO manual filter
+                                    ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
+                                    : (
+                                        (selectedRegion !== 'all' || selectedVenue !== 'all')
+                                            ? `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
+                                            : '전체 지역'
+                                    )
                                 }
                             </span>
-                        </button>
-                        <span
-                            onClick={() => setIsHeroFilterExpanded(prev => !prev)}
-                            className="text-white light:text-black border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
-                        >
-                            {(activeLocation && selectedRegion === 'all' && selectedVenue === 'all') // Show GPS/Search if NO manual filter
-                                ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
-                                : (
-                                    (selectedRegion !== 'all' || selectedVenue !== 'all')
-                                        ? `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
-                                        : '전체 지역'
-                                )
-                            }
-                        </span>
 
-                        {/* Expand Filter Button */}
-                        <button
-                            onClick={() => setIsHeroFilterExpanded(prev => !prev)}
-                            className={clsx(
-                                "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10",
-                                isHeroFilterExpanded && "bg-white/20 text-white light:bg-purple-100 light:text-purple-700"
-                            )}
-                            title={isHeroFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
-                        >
-                            <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isHeroFilterExpanded && "rotate-180")} />
-                        </button>
-
-                        {/* Reset Location Button */}
-                        {(activeLocation || selectedRegion !== 'all' || selectedVenue !== 'all') && (
+                            {/* Expand Filter Button */}
                             <button
-                                onClick={() => {
-                                    setSelectedRegion('all');
-                                    setSelectedDistrict('all');
-                                    setSelectedVenue('all');
-                                    setUserLocation(null);
-                                    setSearchLocation(null);
-                                }}
-                                className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/reload"
-                                title="전체 지역으로 초기화"
+                                onClick={() => setIsHeroFilterExpanded(prev => !prev)}
+                                className={clsx(
+                                    "ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10",
+                                    isHeroFilterExpanded && "bg-white/20 text-white light:bg-purple-100 light:text-purple-700"
+                                )}
+                                title={isHeroFilterExpanded ? "지역 설정 닫기" : "지역 설정 열기"}
                             >
-                                <RotateCcw className="w-3.5 h-3.5 group-hover/reload:-rotate-180 transition-transform duration-500" />
+                                <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isHeroFilterExpanded && "rotate-180")} />
                             </button>
-                        )}
-                    </p>
+
+                            {/* Reset Location Button */}
+                            {(activeLocation || selectedRegion !== 'all' || selectedVenue !== 'all') && (
+                                <button
+                                    onClick={() => {
+                                        setSelectedRegion('all');
+                                        setSelectedDistrict('all');
+                                        setSelectedVenue('all');
+                                        setUserLocation(null);
+                                        setSearchLocation(null);
+                                    }}
+                                    className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white transition-all border border-white/5 hover:border-white/20 group/reload"
+                                    title="전체 지역으로 초기화"
+                                >
+                                    <RotateCcw className="w-3.5 h-3.5 group-hover/reload:-rotate-180 transition-transform duration-500" />
+                                </button>
+                            )}
+                        </p>
+                    )}
 
                     {/* Inline Filter Panel (Toggle) */}
                     {isHeroFilterExpanded && (
