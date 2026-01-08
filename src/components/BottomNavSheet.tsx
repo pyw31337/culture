@@ -261,14 +261,14 @@ export default function BottomNavSheet({
                             {/* Search Bar - Hero Style */}
                             <div className="w-full relative group">
                                 <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-focus-within:shadow-purple-500/40 opacity-90 group-focus-within:opacity-100">
-                                    <div className="bg-[#0a0a0a] rounded-full flex items-center p-1 relative">
+                                    <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
                                         <Search className="ml-3 text-purple-400 w-5 h-5" />
                                         <input
                                             type="text"
                                             value={searchText}
                                             onChange={(e) => onSearchChange(e.target.value)}
                                             placeholder="공연명, 출연진, 장소 검색..."
-                                            className="bg-transparent border-none text-white text-lg font-bold px-4 py-3 w-full focus:outline-none placeholder-gray-600"
+                                            className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                         />
                                     </div>
                                 </div>
@@ -285,7 +285,7 @@ export default function BottomNavSheet({
                                                 "px-4 py-2.5 rounded-xl text-sm font-medium border transition-all",
                                                 selectedRegion === 'all'
                                                     ? "bg-purple-600 text-white border-purple-500 shadow-md"
-                                                    : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800"
+                                                    : "bg-gray-800/50 light:bg-gray-100 text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-200"
                                             )}
                                         >
                                             전체
@@ -298,8 +298,8 @@ export default function BottomNavSheet({
                                                 className={clsx(
                                                     "px-4 py-2.5 rounded-xl text-sm font-medium border transition-all",
                                                     selectedRegion === r.id
-                                                        ? "bg-white text-black border-white shadow-md font-bold"
-                                                        : "bg-gray-800/50 text-gray-400 border-white/5 hover:bg-gray-800"
+                                                        ? "bg-white text-black border-white shadow-md font-bold light:bg-purple-600 light:text-white light:border-purple-600"
+                                                        : "bg-gray-800/50 light:bg-gray-100 text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-200"
                                                 )}
                                             >
                                                 {r.label}
@@ -311,14 +311,14 @@ export default function BottomNavSheet({
                                 {selectedRegion !== 'all' && (
                                     <div className="animate-fade-in-up">
                                         <label className="text-xs font-bold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">상세 지역 (구/군)</label>
-                                        <div className="flex flex-wrap gap-2 p-4 bg-gray-900/30 rounded-2xl border border-white/5">
+                                        <div className="flex flex-wrap gap-2 p-4 bg-gray-900/30 light:bg-gray-50 rounded-2xl border border-white/5 light:border-gray-200">
                                             <button
                                                 onClick={() => onDistrictSelect('all')}
                                                 className={clsx(
                                                     "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
                                                     selectedDistrict === 'all'
-                                                        ? "bg-purple-500/20 text-purple-300 border-purple-500/50"
-                                                        : "bg-gray-800 text-gray-400 border-gray-700"
+                                                        ? "bg-purple-500/20 text-purple-300 light:text-purple-600 border-purple-500/50 light:border-purple-300 light:bg-purple-50"
+                                                        : "bg-gray-800 light:bg-gray-100 text-gray-400 light:text-gray-600 border-gray-700 light:border-gray-300"
                                                 )}
                                             >
                                                 전체
@@ -330,8 +330,8 @@ export default function BottomNavSheet({
                                                     className={clsx(
                                                         "px-3 py-2 rounded-lg text-xs font-medium border transition-all",
                                                         selectedDistrict === d
-                                                            ? "bg-white text-black border-white font-bold"
-                                                            : "bg-gray-800 text-gray-400 border-gray-700 hover:bg-gray-700"
+                                                            ? "bg-white text-black border-white font-bold light:bg-purple-600 light:text-white light:border-purple-600"
+                                                            : "bg-gray-800 light:bg-gray-100 text-gray-400 light:text-gray-600 border-gray-700 light:border-gray-300 hover:bg-gray-700 light:hover:bg-gray-200"
                                                     )}
                                                 >
                                                     {d}
@@ -348,7 +348,7 @@ export default function BottomNavSheet({
                                         <select
                                             value={selectedVenue}
                                             onChange={(e) => onVenueSelect(e.target.value)}
-                                            className="w-full bg-gray-900/80 border border-white/10 rounded-xl py-3 px-4 text-white appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all text-sm"
+                                            className="w-full bg-gray-900/80 light:bg-white border border-white/10 light:border-gray-200 rounded-xl py-3 px-4 text-white light:text-black appearance-none cursor-pointer focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all text-sm"
                                         >
                                             <option value="all">전체 공연장</option>
                                             {availableVenues.map(v => (
