@@ -609,10 +609,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             if (candidate.keywords && candidate.keywords.length > 0) {
                 const hasMatch = initialPerformances.some(p =>
                     candidate.keywords!.some(k =>
-                        p.title.includes(k) ||
-                        p.genre.includes(k) ||
-                        p.venue.includes(k) ||
-                        (venues[p.venue]?.district?.includes(k))
+                        (p.title || '').includes(k) ||
+                        (p.genre || '').includes(k) ||
+                        (p.venue || '').includes(k) ||
+                        (venues[p.venue || '']?.district?.includes(k))
                     )
                 );
 
@@ -777,7 +777,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     // Candidate strings: District or Venue Name
                     const locationCandidates: string[] = [];
                     if (v && v.district) locationCandidates.push(v.district);
-                    locationCandidates.push(randomPerf.venue);
+                    if (randomPerf.venue) locationCandidates.push(randomPerf.venue);
 
                     // Pick one location (District preferred if available and brief, else Venue)
                     let chosenLocation = locationCandidates.length > 0 ? locationCandidates[0] : null;
@@ -966,7 +966,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
         // 1. Find all current matches
         const currentMatches = initialPerformances.filter(p =>
-            keywords.some(k => p.title.toLowerCase().includes(k.toLowerCase()) || p.venue.toLowerCase().includes(k.toLowerCase()))
+            keywords.some(k => p.title.toLowerCase().includes(k.toLowerCase()) || (p.venue || '').toLowerCase().includes(k.toLowerCase()))
         );
 
         if (currentMatches.length === 0) return;
@@ -1186,7 +1186,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     };
 
     const favoriteVenuePerformances = useMemo(() => {
-        return initialPerformances.filter(p => favoriteVenues.includes(p.venue));
+        return initialPerformances.filter(p => p.venue && favoriteVenues.includes(p.venue));
     }, [initialPerformances, favoriteVenues]);
 
 
@@ -1519,7 +1519,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         const distinctDistricts = new Set<string>();
         initialPerformances.forEach(p => {
             if (p.region !== selectedRegion) return;
-            const v = venues[p.venue];
+            const v = venues[p.venue || ''];
             if (v && v.district) {
                 distinctDistricts.add(v.district);
             }
@@ -1536,11 +1536,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
             // If district is selected, filter by district
             if (selectedDistrict !== 'all') {
-                const v = venues[p.venue];
+                const v = venues[p.venue || ''];
                 if (!v || v.district !== selectedDistrict) return;
             }
 
-            distinctVenues.add(p.venue);
+            if (p.venue) distinctVenues.add(p.venue);
         });
         // Sort alphabetically
         return Array.from(distinctVenues).sort();
