@@ -1763,25 +1763,6 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-93",
-    "title": "[제주]오일파스텔 원데이클래스",
-    "date": "상시",
-    "venue": "제주특별자치도 제주시 수덕11길 1 (노형동) 1층",
-    "price": "35,000원",
-    "originalPrice": "40,000원",
-    "discount": "12%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20240908/720c08b8-fc65-4ce8-9927-6cedac55c52d.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/46747",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
     "id": "sssd-94",
     "title": "[부천] 수묵화 그리기 클래스",
     "date": "상시",
@@ -1829,44 +1810,6 @@
     "discount": "10%",
     "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20200825%2Fc71c0237-146c-4990-af7f-e29b28a3be6c.jpg",
     "link": "https://www.sssd.co.kr/m/class/detail/6265",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간 30분",
-      "최대 수용 가능 인원 6명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-97",
-    "title": "[대구] 이색데이트! 아크릴화 원데이클래스!",
-    "date": "상시",
-    "venue": "대구 달성군 구지면 국가산단대로70길 17 (대구국가산단 디에트르 더 센트럴) 103동 102호",
-    "price": "35,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20200512/bc2a5d93-1d05-4ed0-98a5-0f4f618672d6.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/10916",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
-      "총 1시간 30분",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-98",
-    "title": "[대구][아트랩데자뷰] 취향대로 아크릴화 원데이, 오늘은 그림 도전 !",
-    "date": "상시",
-    "venue": "대구 중구 국채보상로131길 18 (동인동2가) 4층 아트랩데자뷰",
-    "price": "50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20230101%2F96d3db94-d5f9-436c-bf4c-9573e9d79e99.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/24802",
     "genre": "class",
     "source": "sssd",
     "tags": [
@@ -4252,25 +4195,6 @@
     "status": "OPEN"
   },
   {
-    "id": "sssd-224",
-    "title": "[부산/서면] 성인취미미술 그림배우기 유화 아크릴 소묘 성인미술학원",
-    "date": "상시",
-    "venue": "부산 부산진구 가야대로784번길 15-1 (부전동) 4층 아트아뜰리에",
-    "price": "99,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class%2F20191023%2Fc56834f6-ad72-4ddb-8f38-b371e25b531f.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/5873",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 2시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
     "id": "sssd-225",
     "title": "[서울대입구역] 1:1 보컬 레슨 정규 클래스",
     "date": "상시",
@@ -4494,25 +4418,6 @@
     "tags": [
       "주차 가능",
       "총 2시간",
-      "최대 수용 가능 인원 4명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-237",
-    "title": "[부산] 타로 창업, 취업 전문가 수업(+타로심리상담사 자격증)",
-    "date": "상시",
-    "venue": "부산 중구 구덕로34번길 7 (남포동2가) 6층, 사주타로상담소",
-    "price": "1,000,000원",
-    "originalPrice": "1,100,000원",
-    "discount": "9%",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20250926/e8a62ad3-82aa-41d9-93d6-d885cb774175-crop.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/9147",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 3시간",
       "최대 수용 가능 인원 4명"
     ],
     "status": "OPEN"
@@ -4873,25 +4778,6 @@
     "source": "sssd",
     "tags": [
       "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 2명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-256",
-    "title": "[광주광역시] 쉽고 재밌게 전문 연주자에게 배우는 가야금 원데이 클래스",
-    "date": "상시",
-    "venue": "광주 동구 천변우로 409 (불로동) 4층",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20230615/26c800df-6c43-4f4e-a04b-b9d5cc39a8b8.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/36781",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 가능",
       "총 1시간",
       "최대 수용 가능 인원 2명"
     ],
@@ -5578,25 +5464,6 @@
       "주차 가능",
       "총 30분",
       "최대 수용 가능 인원 1명"
-    ],
-    "status": "OPEN"
-  },
-  {
-    "id": "sssd-295",
-    "title": "[대구] 레트로 클래식 음악감상실 감성 여행",
-    "date": "상시",
-    "venue": "대구 중구 동성로6길 45 (공평동) 3층 하이마트 고전음악감상실",
-    "price": "8,500원",
-    "originalPrice": "",
-    "discount": "",
-    "image": "https://d1x9f5mf11b8gz.cloudfront.net/class/20211129/6ebea7e1-0b35-4417-8491-f6d1fb545306.jpg",
-    "link": "https://www.sssd.co.kr/m/class/detail/23811",
-    "genre": "class",
-    "source": "sssd",
-    "tags": [
-      "주차 불가",
-      "총 1시간",
-      "최대 수용 가능 인원 8명"
     ],
     "status": "OPEN"
   },
