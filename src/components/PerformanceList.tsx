@@ -509,6 +509,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Bottom Navigation State
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
     const [viewMode, setViewMode] = useState<string>('grid'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
+    const [isMapOpen, setIsMapOpen] = useState(false); // Map Modal State
 
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
@@ -3012,8 +3013,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         venueInfo={venues[performance.venue] || null}
                                                         onLocationClick={(loc) => {
                                                             setSearchLocation(loc);
-                                                            setViewMode('map');
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            setIsMapOpen(true);
                                                         }}
                                                         isLiked={true}
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
@@ -3029,8 +3029,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         venueInfo={venues[performance.venue] || null}
                                                         onLocationClick={(loc) => {
                                                             setSearchLocation(loc);
-                                                            setViewMode('map');
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            setIsMapOpen(true);
                                                         }}
                                                         isLiked={true}
                                                         onToggleLike={(e) => toggleLike(performance.id, e)}
@@ -3084,8 +3083,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                 venueInfo={venues[performance.venue] || null}
                                                 onLocationClick={(loc) => {
                                                     setSearchLocation(loc);
-                                                    setViewMode('map');
-                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    setIsMapOpen(true);
                                                 }}
                                                 isLiked={likedIds.includes(performance.id)}
                                                 onToggleLike={(e) => toggleLike(performance.id, e)}
@@ -3177,9 +3175,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 {activeLocation && (
                                     <button
                                         onClick={() => {
-                                            setViewMode('map');
-                                            // Optional: center map if needed, but 'activeLocation' usually drives map center anyway
-                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                            setIsMapOpen(true);
                                         }}
                                         className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1 light:bg-gray-100 light:text-gray-900 light:border-gray-300 light:hover:bg-gray-200"
                                     >
@@ -3236,8 +3232,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         venueInfo={venueInfo}
                                                         onLocationClick={(loc) => {
                                                             setSearchLocation(loc);
-                                                            setViewMode('map');
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            setIsMapOpen(true);
                                                         }}
                                                         isLiked={likedIds.includes(perf.id)}
                                                         onToggleLike={(e) => toggleLike(perf.id, e)}
@@ -3258,8 +3253,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         venueInfo={venueInfo}
                                                         onLocationClick={(loc) => {
                                                             setSearchLocation(loc);
-                                                            setViewMode('map');
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                            setIsMapOpen(true);
                                                         }}
                                                         isLiked={likedIds.includes(perf.id)}
                                                         onToggleLike={(e) => toggleLike(perf.id, e)}
@@ -3296,7 +3290,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <h3 className="text-xl font-bold text-emerald-400 mb-2">찜한 공연장이 없네요</h3>
                                             <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
                                             <button
-                                                onClick={() => setViewMode('map')}
+                                                onClick={() => setIsMapOpen(true)}
                                                 className="px-6 py-2.5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-black transition-all"
                                             >
                                                 지도에서 찾기
@@ -3370,7 +3364,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
 
             {
-                viewMode === 'map' && (
+                isMapOpen && (
                     <KakaoMapModal
                         performances={filteredPerformances} // Pass filtered!
                         centerLocation={
@@ -3381,7 +3375,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         }
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}
-                        onClose={() => setViewMode('grid')}
+                        onClose={() => setIsMapOpen(false)}
                     />
                 )
             }
@@ -3531,7 +3525,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             lng: venue.lng,
                             name: venueName
                         });
-                        setViewMode('map');
+                        setIsMapOpen(true);
                         // Optional: Close the favorites modal if desired, or keep it open.
                         // User request: "그 위로 지도보기 레이어팝업을 띄워서" (Pop map OVER it)
                         // KakaoMapModal has higher z-index (100001) than FavoriteVenuesModal (9999), 
