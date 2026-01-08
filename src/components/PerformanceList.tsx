@@ -2574,7 +2574,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
                             {/* Radius Select for Hero */}
                             {activeLocation && (
-                                <div className="border-r border-gray-700 pr-0 mr-2 ml-3 relative flex items-center">
+                                <div className="border-r border-gray-700 light:border-gray-300 pr-0 mr-2 ml-3 relative flex items-center">
                                     <div className="pointer-events-none absolute right-2 flex flex-col items-center justify-center opacity-70">
                                         <ChevronUp className="w-2 h-2 text-gray-400" />
                                         <ChevronDown className="w-2 h-2 text-gray-400" />
