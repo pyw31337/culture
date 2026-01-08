@@ -15,6 +15,7 @@ import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
 
 import handballData from '@/data/handball.json';
+import hockeyData from '@/data/hockey.json';
 import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
@@ -66,6 +67,7 @@ async function getPerformances() {
     const basketball = kblData as unknown as any[];
     const baseball = kboData as unknown as any[];
     const handball = handballData as unknown as any[];
+    const hockey = hockeyData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -94,6 +96,7 @@ async function getPerformances() {
         ...basketball, // KBL
         ...baseball, // KBO
         ...handball, // Handball
+        ...hockey,   // Hockey
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)
@@ -133,6 +136,11 @@ async function getPerformances() {
         if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
+
+        // Explicit Hockey Filter: Only show matches at '안양 종합운동장 실내빙상장'
+        if (p.genre === 'hockey') {
+            if (p.venue !== '안양 종합운동장 실내빙상장') return false;
+        }
 
         // Sports: Strict Region Filter (Seoul, Gyeonggi, Incheon only for existing/ticket-based ones, but expanding for handball)
         // Actually, let's allow all regions for collected sports if valid
