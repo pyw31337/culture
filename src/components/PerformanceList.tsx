@@ -1598,6 +1598,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             setSelectedRegion('all');
             setSelectedDistrict('all');
             setSelectedVenue('all');
+            setSearchLocation(null); // Reset distance/map filter
         }
 
         scrollToTop();
