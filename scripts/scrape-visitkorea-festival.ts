@@ -1,17 +1,17 @@
 /**
- * VisitKorea Festival Scraper (Nationwide)
- * Scrapes festival data from korean.visitkorea.or.kr for all Korean provinces.
+ * VisitKorea Festival Scraper
+ * Scrapes nationwide festival data from korean.visitkorea.or.kr
  */
 
-import puppeteer, { Browser, Page } from 'puppeteer';
+import { chromium, Browser, Page } from 'playwright';
 import * as fs from 'fs';
 import * as path from 'path';
+import cliProgress from 'cli-progress';
 
 const OUTPUT_FILE = path.join(process.cwd(), 'src/data/festivals.json');
 const BASE_URL = 'https://korean.visitkorea.or.kr';
 const LIST_URL = `${BASE_URL}/list/travelinfo.do?service=show`;
-// Detail URL using UUID (fstvlCntntsId)
-const DETAIL_URL_TEMPLATE = `${BASE_URL}/kfes/detail/fstvlDetail.do?fstvlCntntsId=`;
+const DETAIL_URL_TEMPLATE = `${BASE_URL}/kfes/detail/fstvlDetail.do?cmsCntntsId=`;
 
 // Nationwide region mapping from address prefix
 const REGION_MAP: Record<string, string> = {
@@ -60,7 +60,7 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string
             // @ts-ignore
             window.goPage(num);
         }, pageNum);
-        await new Promise(r => setTimeout(r, 2000)); // Wait for AJAX
+        await page.waitForTimeout(1500); // Wait for AJAX
     }
 
     // Extract items from list
@@ -73,9 +73,9 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string
             const img = li.querySelector('.area_img img') as HTMLImageElement;
 
             if (titleLink) {
-                // Extract UUID from onclick: goDetail('uuid','A02','A0207','32');
+                // Extract ID from onclick: goDetail('uuid', 'cmsCntntsId')
                 const onclick = titleLink.getAttribute('onclick') || '';
-                const match = onclick.match(/goDetail\('([a-f0-9-]+)'/);
+                const match = onclick.match(/goDetail\([^,]+,\s*'?(\d+)'?\)/);
                 const id = match ? match[1] : '';
 
                 results.push({
@@ -92,12 +92,12 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string
     return items;
 }
 
-async function scrapeDetailPage(page: Page, id: string, listTitle: string, listImage: string): Promise<FestivalItem | null> {
+async function scrapeDetailPage(page: Page, id: string): Promise<Partial<FestivalItem>> {
     const url = DETAIL_URL_TEMPLATE + id;
 
     try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-        await new Promise(r => setTimeout(r, 1500));
+        await page.waitForTimeout(1000);
 
         const details = await page.evaluate(() => {
             // Poster image (priority)
@@ -131,24 +131,19 @@ async function scrapeDetailPage(page: Page, id: string, listTitle: string, listI
         });
 
         return {
-            id,
-            title: details.title || listTitle,
-            image: details.image || listImage,
-            date: details.date || '',
-            venue: details.venue || '',
-            region: parseRegion(details.venue),
+            ...details,
             link: url,
+            region: parseRegion(details.venue),
             genre: 'festival',
         };
     } catch (error) {
         console.error(`Failed to scrape detail for ID ${id}:`, error);
-        return null;
+        return {};
     }
 }
 
 async function main() {
-    console.log('Starting VisitKorea Festival Scraper (Nationwide)...');
-    console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
+    console.log('Starting VisitKorea Festival Scraper...');
 
     // Load existing data
     let existingItems: FestivalItem[] = [];
@@ -164,46 +159,35 @@ async function main() {
         }
     }
 
-    const browser: Browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu'
-        ],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
+    const browser: Browser = await chromium.launch({ headless: true });
+    const context = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        locale: 'ko-KR',
     });
-
-    const page: Page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 1024 });
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    const page: Page = await context.newPage();
 
     try {
         // 1. Go to list page
         console.log('Loading festival list...');
-        await page.goto(LIST_URL, { waitUntil: 'networkidle0', timeout: 60000 });
-        await new Promise(r => setTimeout(r, 3000));
+        await page.goto(LIST_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+        await page.waitForTimeout(2000);
 
-        // 2. Get total pages by extracting total count
+        // 2. Get total pages
         const totalPages = await page.evaluate(() => {
-            // Look for "총 X건" text
-            const totalText = document.body.innerText.match(/총\s*([\d,]+)\s*건/);
-            if (totalText) {
-                const totalCount = parseInt(totalText[1].replace(/,/g, ''), 10);
-                const itemsPerPage = 10;
-                return Math.ceil(totalCount / itemsPerPage);
-            }
-
-            // Fallback: last page button
             const lastPageBtn = document.querySelector('.page_box .btn_pageLast') as HTMLElement;
             if (lastPageBtn) {
                 const onclick = lastPageBtn.getAttribute('onclick') || '';
                 const match = onclick.match(/goPage\((\d+)\)/);
                 return match ? parseInt(match[1], 10) : 1;
             }
-
-            return 10; // Default fallback
+            // Fallback: count page numbers
+            const pageLinks = document.querySelectorAll('.page_box a');
+            let max = 1;
+            pageLinks.forEach(a => {
+                const num = parseInt(a.textContent || '0', 10);
+                if (!isNaN(num) && num > max) max = num;
+            });
+            return max;
         });
 
         console.log(`Total pages detected: ${totalPages}`);
@@ -211,11 +195,17 @@ async function main() {
         // 3. Scrape all list pages to get IDs
         const allListItems: { id: string; title: string; thumbnailImage: string }[] = [];
 
+        const listProgress = new cliProgress.SingleBar({
+            format: 'Scraping Lists |{bar}| {percentage}% | Page {value}/{total}',
+        }, cliProgress.Presets.shades_classic);
+        listProgress.start(totalPages, 0);
+
         for (let p = 1; p <= totalPages; p++) {
-            console.log(`Scraping list page ${p}/${totalPages}...`);
             const items = await scrapeListPage(page, p);
             allListItems.push(...items);
+            listProgress.update(p);
         }
+        listProgress.stop();
 
         console.log(`Found ${allListItems.length} festivals in list.`);
 
@@ -230,24 +220,39 @@ async function main() {
         }
 
         // 5. Scrape detail pages for new items
+        const detailProgress = new cliProgress.SingleBar({
+            format: 'Scraping Details |{bar}| {percentage}% | {value}/{total}',
+        }, cliProgress.Presets.shades_classic);
+        detailProgress.start(newItems.length, 0);
+
         const results: FestivalItem[] = [...existingItems];
 
         for (let i = 0; i < newItems.length; i++) {
             const listItem = newItems[i];
-            console.log(`[${i + 1}/${newItems.length}] Scraping: ${listItem.title}`);
+            const details = await scrapeDetailPage(page, listItem.id);
 
-            const details = await scrapeDetailPage(page, listItem.id, listItem.title, listItem.thumbnailImage);
-
-            if (details) {
-                results.push(details);
+            if (details.link) {
+                results.push({
+                    id: listItem.id,
+                    title: details.title || listItem.title,
+                    image: details.image || listItem.thumbnailImage,
+                    date: details.date || '',
+                    venue: details.venue || '',
+                    region: details.region || 'etc',
+                    link: details.link,
+                    genre: 'festival',
+                });
             }
+
+            detailProgress.update(i + 1);
 
             // Rate limiting
-            if (i % 20 === 0 && i > 0) {
-                console.log(`  Progress: ${i}/${newItems.length}`);
-                await new Promise(r => setTimeout(r, 1000));
+            if (i % 10 === 0 && i > 0) {
+                await page.waitForTimeout(500);
             }
         }
+
+        detailProgress.stop();
 
         // 6. Save results
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
@@ -260,4 +265,4 @@ async function main() {
     }
 }
 
-main().catch(console.error);
+main();

@@ -12,7 +12,7 @@ import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
-import { GENRES, GENRE_STYLES, REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
@@ -1981,7 +1981,31 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             Culture Flow
                         </h1>
                         <span className="text-xs md:text-sm text-gray-400 light:text-gray-600 font-bold hidden sm:inline-block tracking-widest border-l border-gray-600 light:border-gray-400 pl-3 ml-1">
-                            서울 · 경기 · 인천 통합 문화 검색
+                            {(() => {
+                                switch (selectedGenre) {
+                                    case 'festival': return '전국 축제 정보 검색';
+                                    case 'ott': return '오늘 뭐 볼까? OTT 콘텐츠';
+                                    case 'movie': return '최신 영화 개봉 정보';
+                                    case 'travel': return '국내 여행 상품 검색';
+                                    case 'class': return '취미 클래스 검색';
+                                    case 'kids': return '아이와 함께하는 체험';
+                                    case 'baseball': return 'KBO 프로야구 일정';
+                                    case 'basketball': return 'KBL 프로농구 일정';
+                                    case 'volleyball': return 'V-리그 프로배구 일정';
+                                    case 'soccer': return 'K-리그 축구 일정';
+                                    case 'hockey': return '아시아리그 아이스하키';
+                                    case 'handball': return '핸드볼 H리그 일정';
+                                    case 'musical': return '뮤지컬 공연 정보';
+                                    case 'concert': return '콘서트 공연 정보';
+                                    case 'play': return '연극 공연 정보';
+                                    case 'classic': return '클래식 · 무용 공연';
+                                    case 'exhibition': return '전시 · 행사 정보';
+                                    case 'activity': return '액티비티 체험';
+                                    case 'leisure': return '레저 · 테마파크';
+                                    case 'hotdeal': return '🔥 오늘의 핫딜 특가';
+                                    default: return '서울 · 경기 · 인천 통합 문화 검색';
+                                }
+                            })()}
                         </span>
                     </div>
 
@@ -2201,7 +2225,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
                                 {/* Region Buttons Filter Group */}
                                 <div className="flex bg-gray-900/80 light:bg-gray-100/80 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10 light:border-black/5">
-                                    {REGIONS.map(r => (
+                                    {(selectedGenre === 'festival' ? NATIONWIDE_REGIONS : REGIONS).map(r => (
                                         <button
                                             key={r.id}
                                             onClick={() => {

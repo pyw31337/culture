@@ -54,6 +54,28 @@ export const REGIONS = [
     { id: 'incheon', label: '인천' },
 ];
 
+// Expanded regions for festival category (nationwide)
+export const NATIONWIDE_REGIONS = [
+    { id: 'all', label: '전체' },
+    { id: 'seoul', label: '서울' },
+    { id: 'gyeonggi', label: '경기' },
+    { id: 'incheon', label: '인천' },
+    { id: 'busan', label: '부산' },
+    { id: 'daegu', label: '대구' },
+    { id: 'gwangju', label: '광주' },
+    { id: 'daejeon', label: '대전' },
+    { id: 'ulsan', label: '울산' },
+    { id: 'sejong', label: '세종' },
+    { id: 'gangwon', label: '강원' },
+    { id: 'chungbuk', label: '충북' },
+    { id: 'chungnam', label: '충남' },
+    { id: 'jeonbuk', label: '전북' },
+    { id: 'jeonnam', label: '전남' },
+    { id: 'gyeongbuk', label: '경북' },
+    { id: 'gyeongnam', label: '경남' },
+    { id: 'jeju', label: '제주' },
+];
+
 export const RADIUS_OPTIONS = [
     { value: 9999, label: '전체 반경' },
     { value: 5, label: '5km 반경' },
