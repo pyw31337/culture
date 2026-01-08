@@ -4287,7 +4287,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     ) : (
                                                         <>
                                                             <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                            {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
                                                         </>
                                                     )}
                                                 </div>
@@ -4306,14 +4306,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                             onLocationClick({
                                                                 lat: venueInfo?.lat || 0,
                                                                 lng: venueInfo?.lng || 0,
-                                                                name: perf.venue
+                                                                name: perf.venue || 'Online'
                                                             });
                                                         }
                                                     }}
                                                     className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full"
                                                 >
                                                     <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
-                                                    <span className="truncate">{perf.venue}</span>
+                                                    <span className="truncate">{perf.venue || 'Online'}</span>
                                                 </button>
                                             )}
                                         </div>
@@ -4450,6 +4450,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }
