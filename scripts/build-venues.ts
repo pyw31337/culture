@@ -448,6 +448,20 @@ async function buildVenues() {
         }
     }
 
+    // 3.5 Prune Orphaned Venues
+    // Remove venues that exist in venues.json but are not in uniqueVenues (active data)
+    let prunedCount = 0;
+    for (const key of Object.keys(venues)) {
+        if (!uniqueVenues.has(key)) {
+            // console.log(`Pruning orphaned venue: ${key}`);
+            delete venues[key];
+            prunedCount++;
+        }
+    }
+    if (prunedCount > 0) {
+        console.log(`Pruned ${prunedCount} orphaned venues.`);
+    }
+
     // 4. Save Final
     fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
     console.log(`Saved ${Object.keys(venues).length} venues to ${VENUE_FILE}`);

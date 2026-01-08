@@ -35,7 +35,10 @@ const BRAND_CONSOLIDATIONS = {
     '서대문형무소역사관': '서대문형무소역사관',
     '수원화성박물관': '수원화성박물관',
     '불국사': '불국사',
-    '석굴암': '석굴암'
+    '석굴암': '석굴암',
+    '경복궁': '경복궁', // Merges all "Gyeongbokgung..." variants including Hanboknam
+    'JS아트홀': 'JS아트홀',
+    'JS 아트홀': 'JS아트홀'
 };
 
 // 3. Exclusions (If venue name contains these, remove item)
