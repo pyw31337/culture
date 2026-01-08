@@ -68,9 +68,34 @@ async function scrape() {
 
                     // Price is tricky, looking for "원"
                     let priceText = '';
-                    const priceSpans = Array.from(document.querySelectorAll('span'));
-                    const priceSpan = priceSpans.find(s => s.innerText.includes('원') && s.innerText.replace(/[^0-9]/g, '').length > 3);
-                    if (priceSpan) priceText = priceSpan.innerText;
+
+                    // Strategy 1: User's / Found Specific Class (Sticky Footer Price)
+                    const robustPrice = document.querySelector('span.css-1z0ugyy');
+                    if (robustPrice) {
+                        priceText = robustPrice.innerText;
+                    } else {
+                        // Strategy 2: User's Specific Selector (Fallback)
+                        const userSelector = document.querySelector('#__next > main > div[class*="css-"] > div[class*="css-"] > div > div > div > span'); // Slightly relaxed
+                        if (userSelector && userSelector.innerText.includes('원')) {
+                            priceText = userSelector.innerText;
+                        } else {
+                            // Strategy 3: Heuristic - Find '원' but exclude 'points' class (css-g86n38)
+                            const priceSpans = Array.from(document.querySelectorAll('span'));
+                            // Filter out points class and looking for reasonable price string
+                            const candidates = priceSpans.filter(s =>
+                                s.innerText.includes('원') &&
+                                !s.classList.contains('css-g86n38') && // Points class
+                                !s.innerText.includes('포인트') &&
+                                s.innerText.replace(/[^0-9]/g, '').length > 3
+                            );
+
+                            // Pick the one that looks most like a main price (maybe largest font? or last one?)
+                            // Usually sticky footer is last in DOM.
+                            if (candidates.length > 0) {
+                                priceText = candidates[candidates.length - 1].innerText;
+                            }
+                        }
+                    }
 
                     // Image
                     const imgSrc = getSrc('.swiper-slide-active img') || getSrc('.product-image img') || getSrc('img[alt*="상품"]');

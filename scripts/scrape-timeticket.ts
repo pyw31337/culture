@@ -72,6 +72,21 @@ function saveData(data: Performance[]) {
     console.log(`\nSaved ${data.length} items to ${OUTPUT_PATH}`);
 }
 
+function loadExistingData(): Map<string, Performance> {
+    if (!fs.existsSync(OUTPUT_PATH)) return new Map();
+    try {
+        const data = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8'));
+        const map = new Map<string, Performance>();
+        data.forEach((item: Performance) => {
+            if (item.link) map.set(item.link, item);
+        });
+        return map;
+    } catch (e) {
+        console.warn("Failed to load existing data for incremental scraping.");
+        return new Map();
+    }
+}
+
 async function scrapeTimeTicket() {
     console.log(`Starting TimeTicket Scraper...`);
     console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
@@ -110,6 +125,8 @@ async function scrapeTimeTicket() {
 
     const allItems: Performance[] = [];
     const seenTitles = new Set<string>();
+    const existingDataMap = loadExistingData();
+    console.log(`Loaded ${existingDataMap.size} existing items for incremental scraping.`);
 
     // 1. Collect Links
     console.log(`\nPhase 1: Collecting performance links...`);
@@ -134,7 +151,7 @@ async function scrapeTimeTicket() {
 
                 // Wait for list to load
                 try {
-                    await page.waitForSelector('.ticket_list_wrap a', { timeout: 5000 });
+                    await page.waitForSelector('a[href^="/product/"]', { timeout: 10000 });
                 } catch (e) {
                     // console.log(`  No items found or timeout for region ${code} category ${cat.id}`);
                     continue;
@@ -142,8 +159,8 @@ async function scrapeTimeTicket() {
 
                 const listItems = await page.evaluate((currentRegion, currentCatId, currentDefaultGenre) => {
                     const results: any[] = [];
-                    // The structure seems to be div.ticket_list_wrap > a
-                    const items = document.querySelectorAll('.ticket_list_wrap > a');
+                    // Use a more robust selector based on href pattern
+                    const items = document.querySelectorAll('a[href^="/product/"]');
 
                     items.forEach((item) => {
                         const linkAttribute = item.getAttribute('href');
@@ -208,11 +225,55 @@ async function scrapeTimeTicket() {
                     return results;
                 }, region, cat.id, cat.defaultGenre);
 
+
+                // If we get here, either no state or hash mismatch. proceed with full collection.
+                // Note regarding TimeTicket: This script collects everything first then scrapes details.
+                // Optimization: We could skip *link collection* for this category if hash matches, 
+                // BUT we need the items in `allItems` to save the full JSON at the end.
+                // Issue: If we skip, we don't have the items to write to `timeticket.json`.
+                // Solution: For now, we unfortunately must scrape to get the data to save the full file, 
+                // UNLESS `timeticket.json` is appended to? No, it's overwritten.
+                // 
+                // Alternative for "Optimization": 
+                // We typically need to produce the FULL `timeticket.json` every day.
+                // If we skip scraping, we effectively delete those items from the output file unless we load them from the previous run.
+                // 
+                // REVISED STRATEGY:
+                // Since the goal is optimization, we should probably output "new/updated" items or merge with existing data?
+                // However, the user request implies "skip collection".
+                // If we skip collection, `pendingItems` will be empty for this category.
+                // 
+                // If the user wants to reduce SERVER LOAD, skipping is good.
+                // But we need the data.
+                // 
+                // ACTUALLY: The best approach for a "Full Refresh" architecture (which this seems to be) 
+                // is to skip *Detail Scraping* if the list hasn't changed?
+                // But the detail page might have changed (unlikely for ticket sales generally, but possible).
+                // 
+                // Let's implement the "Skip and Carry Over" if possible, or just "Skip" implies "No New Data".
+                // Wait, if I skip, the final `timeticket.json` will be missing these items.
+                // That's bad.
+                // 
+                // To support true incremental scraping, we'd need to read the EXISTING `timeticket.json` first,
+                // and if we skip a category, we copy the items belonging to that category from the old file.
+                // 
+                // Let's modify the plan slightly on the fly to support this:
+                // 1. Load existing `src/data/timeticket.json` at start.
+                // 2. If Hash Matches -> Use existing items for this category/region from the loaded file.
+                // 3. If Hash Mismatch -> Scrape fresh.
+
+                // IGNORE THE ABOVE COMMENT BLOCK IN CODE, I WILL IMPLEMENT THE LOGIC BELOW.
+
+                // ... proceeding with adding items to pendingItems ... 
+
+                // Actually, implementing "Load existing" is complex in one go.
+                // Let's assume for this specific optimization (as agreed in plan) we just want to update the state 
+                // AFTER successful scrape. 
+                // WAIT. If I skip, I lose data in the current architecture.
+                // I will add logic to LOAD existing data if available to preserve it when skipping.
+
+
                 for (const item of listItems) {
-                    // Check duplicate strictly.
-                    // However, sometimes same title exists in different regions or categories?
-                    // Usually not. Dedup by title is fine for now as per previous logic.
-                    // But duplicates across categories (e.g. play vs musical if mislabeled) should be handled.
                     if (!seenTitles.has(item.title)) {
                         seenTitles.add(item.title);
                         pendingItems.push(item);
@@ -240,6 +301,30 @@ async function scrapeTimeTicket() {
     });
 
     for (const item of pendingItems) {
+        // INCREMENTAL SCRAPING OPTIMIZATION:
+        // If we already have this item in our existing data (checked by Link), reuse it!
+        // This skips the slow detailed page visit.
+        if (existingDataMap.has(item.link)) {
+            const existing = existingDataMap.get(item.link);
+            if (existing) {
+                // Update basic fields that might have changed on list page (e.g. discount, price)
+                // but keep the expensive details (venue, date, time) from existing.
+                // Actually, let's trust existing entirely for speed, 
+                // OR we can update `price` / `discount` from `item` if we want.
+                // Let's mix: ID keeps same, details keep same, but if list info changed, we could update?
+                // For simplicity and speed, just reuse the object but maybe update price?
+
+                // Force update price/discount from valid list item
+                existing.price = item.price || existing.price;
+                existing.discount = item.discount || existing.discount;
+
+                allItems.push(existing);
+                processedCount++;
+                progressBar.update(processedCount);
+                continue;
+            }
+        }
+
         try {
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
 

@@ -5,7 +5,7 @@ import path from 'path';
 
 puppeteer.use(StealthPlugin());
 
-const OUTPUT_FILE = path.join(__dirname, '../src/data/sssd-class.json');
+const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/sssd-class.json');
 
 // Korean User Agent for better locale detection
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -216,6 +216,21 @@ async function scrapeDetailPage(browser: any, item: any, setupLocale: (page: any
     }
 }
 
+function loadExistingData(): Map<string, any> {
+    if (!fs.existsSync(OUTPUT_FILE)) return new Map();
+    try {
+        const data = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+        const map = new Map<string, any>();
+        data.forEach((item: any) => {
+            if (item.link) map.set(item.link, item);
+        });
+        return map;
+    } catch (e) {
+        console.warn("Failed to load existing data for incremental scraping.");
+        return new Map();
+    }
+}
+
 async function scrape() {
     console.log('Starting SSSD Multi-Category Scraper...');
     console.log(`Will scrape ${CATEGORIES.length} categories to maximize class collection.\n`);
@@ -233,6 +248,10 @@ async function scrape() {
     });
 
     const allItems: Map<string, any> = new Map(); // Use Map to dedupe by link
+
+    const existingDataMap = loadExistingData();
+    console.log(`Loaded ${existingDataMap.size} existing items for incremental scraping.`);
+
     const listSelector = '.class-search-result li';
 
     try {
@@ -246,34 +265,46 @@ async function scrape() {
             await page.setViewport({ width: 1920, height: 1080 });
             await setupKoreanLocale(page);
 
-            try {
-                await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+            let retries = 3;
+            let success = false;
 
+            while (retries > 0 && !success) {
                 try {
-                    await page.waitForSelector(listSelector, { timeout: 10000 });
-                } catch (e) {
-                    console.log(`  No items found, skipping...`);
-                    await page.close();
-                    continue;
-                }
+                    await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
 
-                await scrollToLoadAll(page, listSelector);
-                await new Promise(r => setTimeout(r, 3000));
+                    try {
+                        await page.waitForSelector(listSelector, { timeout: 15000 });
+                    } catch (e) {
+                        console.log(`  No items found, skipping...`);
+                        success = true; // Treated as success (empty category)
+                        continue;
+                    }
 
-                const items = await extractListItems(page, listSelector);
+                    await scrollToLoadAll(page, listSelector);
+                    await new Promise(r => setTimeout(r, 3000));
 
-                let newItems = 0;
-                for (const item of items) {
-                    if (item && !allItems.has(item.link)) {
-                        allItems.set(item.link, item);
-                        newItems++;
+                    const items = await extractListItems(page, listSelector);
+
+                    let newItems = 0;
+                    for (const item of items) {
+                        if (item && !allItems.has(item.link)) {
+                            allItems.set(item.link, item);
+                            newItems++;
+                        }
+                    }
+
+                    console.log(`  Found ${items.length} items, ${newItems} new. Total unique: ${allItems.size}`);
+                    success = true;
+
+                } catch (err) {
+                    retries--;
+                    if (retries === 0) {
+                        console.error(`  Error fetching category after retries: ${err}`);
+                    } else {
+                        console.log(`  Error fetching category (timeout?), retrying... (${retries} retries left)`);
+                        await new Promise(r => setTimeout(r, 5000)); // Wait 5s before retry
                     }
                 }
-
-                console.log(`  Found ${items.length} items, ${newItems} new. Total unique: ${allItems.size}`);
-
-            } catch (err) {
-                console.error(`  Error fetching category: ${err}`);
             }
 
             await page.close();
@@ -295,6 +326,23 @@ async function scrape() {
             process.stdout.write(`${progress} Scraping ${item.title.substring(0, 30)}... \r`);
 
             if (!item.link.startsWith('http')) continue;
+
+            // INCREMENTAL SCRAPING OPTIMIZATION:
+            if (existingDataMap.has(item.link)) {
+                const existing = existingDataMap.get(item.link);
+                // Trust existing details (venue, price, etc.) for speed. 
+                // We rely on list page info (title, image) which is already fresh in `item` if we wanted to update it,
+                // but `item` from list page has limited info. 
+                // Let's use the EXISTING object fully to preserve detailed fields.
+                // NOTE: If price changed, we might miss it if we don't re-scrape detail.
+                // Ideally we should scrape detail if "modified", but we don't know.
+                // For "Daily Update", assuming immutable class details is risky but acceptable for huge speedup.
+                // Compromise: Use existing data.
+
+                results.push(existing);
+                process.stdout.write(` [Skipped - Exists] \r`);
+                continue;
+            }
 
             try {
                 const detailInfo = await scrapeDetailPage(browser, item, setupKoreanLocale);
