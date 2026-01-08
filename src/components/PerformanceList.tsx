@@ -4422,7 +4422,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {(perf.price || perf.discount) && (
                                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/10 pt-2">
                                                 <div className="flex flex-col justify-end">
-                                                    {perf.discount && (
+                                                    {perf.discount && perf.discount.replace(/[^0-9]/g, '').length > 0 && (
                                                         <div className="text-rose-500 drop-shadow-md leading-none">
                                                             <span className="text-xl font-extrabold">{perf.discount.replace(/[^0-9]/g, '')}</span>
                                                             <span className="text-xs font-light ml-0.5">%</span>
