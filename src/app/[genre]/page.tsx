@@ -159,17 +159,9 @@ async function getPerformances(genreFilter: string | string[] | null) {
             }
         }
 
-        // Explicit Debug for Hockey
+        // Explicit Hockey Filter: Only show matches at '안양 종합운동장 실내빙상장'
         if (p.genre === 'hockey') {
-            // Check if it's being dropped by Venue Address Filter
-            if (venues[p.venue]) {
-                const addr = venues[p.venue].address;
-                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
-                if (!isServiceArea) {
-                    console.log(`[Hockey Drop] Venue Address Filter: ${p.title} (${p.venue} -> ${addr})`);
-                    // This might be the culprit for 'Etc' regions if they have venue entries but non-compliant addresses.
-                }
-            }
+            if (p.venue !== '안양 종합운동장 실내빙상장') return false;
         }
 
         if (venues[p.venue]) {
