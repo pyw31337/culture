@@ -2,6 +2,7 @@ export const GENRES = [
     { id: 'all', label: '전체' },
     { id: 'hotdeal', label: '🔥 핫딜' },
     { id: 'movie', label: '영화' }, // Icon removed
+    { id: 'ott', label: 'OTT' },
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
@@ -24,6 +25,7 @@ export const GENRES = [
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
     'movie': { hex: '#06b6d4', twText: 'text-cyan-600', twBg: 'bg-cyan-600', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-500' },
+    'ott': { hex: '#8b5cf6', twText: 'text-violet-600', twBg: 'bg-violet-600', twBorder: 'border-violet-500', twActivebg: 'bg-violet-500' },
     'musical': { hex: '#be185d', twText: 'text-pink-700', twBg: 'bg-pink-700', twBorder: 'border-pink-500', twActivebg: 'bg-pink-600' },
     'concert': { hex: '#2563eb', twText: 'text-blue-700', twBg: 'bg-blue-700', twBorder: 'border-blue-500', twActivebg: 'bg-blue-600' },
     'play': { hex: '#16a34a', twText: 'text-green-700', twBg: 'bg-green-700', twBorder: 'border-green-500', twActivebg: 'bg-green-600' },
@@ -65,7 +67,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
-    'hotdeal', 'movie', 'musical', 'theater', 'concert', 'classic', 'exhibition',
+    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'concert', 'classic', 'exhibition',
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'hockey'
 ];

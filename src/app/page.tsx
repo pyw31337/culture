@@ -14,6 +14,8 @@ import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
 
+import ottData from '@/data/ott.json';
+
 import handballData from '@/data/handball.json';
 import hockeyData from '@/data/hockey.json';
 import umclassData from '@/data/umclass.json';
@@ -77,6 +79,7 @@ async function getPerformances() {
     const classes = classData as unknown as any[];
     const umclasses = umclassData as unknown as any[];
     const mochaclasses = mochaclassData as unknown as any[];
+    const ott = ottData as unknown as any[];
     const seoulCulture = (seoulData as unknown as any[]).map(p => ({
         ...p,
         venue: p.place,
@@ -97,6 +100,7 @@ async function getPerformances() {
         ...baseball, // KBO
         ...handball, // Handball
         ...hockey,   // Hockey
+        ...ott,      // OTT
         ...movies,   // Movies
         ...travels, // Travel
         ...kids,     // Kids (MyRealTrip)

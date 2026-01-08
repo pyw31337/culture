@@ -4166,6 +4166,24 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                     </span>
                                     <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
+                                    {perf.platforms && perf.platforms.length > 0 && (
+                                        <div className="flex gap-1 ml-2">
+                                            {perf.platforms.map((p: string) => (
+                                                <span key={p} className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter",
+                                                    p === 'netflix' ? "bg-red-600 text-white" :
+                                                        p === 'disney' ? "bg-blue-600 text-white" :
+                                                            p === 'watcha' ? "bg-pink-600 text-white" :
+                                                                p === 'tving' ? "bg-red-500 text-white" :
+                                                                    p === 'wavve' ? "bg-blue-500 text-white" :
+                                                                        p === 'coupang' ? "bg-blue-800 text-white" :
+                                                                            p === 'apple' ? "bg-gray-800 text-white" :
+                                                                                "bg-gray-600 text-white"
+                                                )}>
+                                                    {p.substring(0, 1).toUpperCase()}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </>
@@ -4233,6 +4251,25 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     const parts = perf.date.split('~').map((s: string) => s.trim());
                                                     return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
                                                 })()}
+                                                {/* Platform Icons (Default Variant) */}
+                                                {perf.platforms && perf.platforms.length > 0 && (
+                                                    <div className="flex gap-1 ml-1.5 border-l border-white/20 pl-1.5">
+                                                        {perf.platforms.map((p: string) => (
+                                                            <span key={p} className={clsx("w-4 h-4 flex items-center justify-center rounded-full text-[8px] font-bold uppercase",
+                                                                p === 'netflix' ? "bg-red-600 text-white" :
+                                                                    p === 'disney' ? "bg-blue-600 text-white" :
+                                                                        p === 'watcha' ? "bg-pink-600 text-white" :
+                                                                            p === 'tving' ? "bg-red-500 text-white" :
+                                                                                p === 'wavve' ? "bg-blue-500 text-white" :
+                                                                                    p === 'coupang' ? "bg-blue-800 text-white" :
+                                                                                        p === 'apple' ? "bg-gray-800 text-white" :
+                                                                                            "bg-gray-600 text-white"
+                                                            )}>
+                                                                {p.substring(0, 1).toUpperCase()}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </span>
                                         </div>
 
