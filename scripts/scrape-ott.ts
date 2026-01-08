@@ -17,7 +17,10 @@ interface OTTPerformance {
     region: 'ott';
 }
 
-const KINOLIGHTS_URL = 'https://m.kinolights.com/new?tab=upcoming';
+const TARGET_URLS = [
+    'https://m.kinolights.com/new',
+    'https://m.kinolights.com/new?tab=upcoming'
+];
 
 // Helper to map Korean platform names or classes to IDs
 function mapPlatform(nameOrClass: string): string | null {
@@ -30,6 +33,27 @@ function mapPlatform(nameOrClass: string): string | null {
     if (lower.includes('apple') || lower.includes('애플')) return 'apple';
     if (lower.includes('watcha') || lower.includes('왓챠')) return 'watcha';
     return null;
+}
+
+async function autoScroll(page: any) {
+    await page.evaluate(async () => {
+        await new Promise<void>((resolve) => {
+            let totalHeight = 0;
+            const distance = 100;
+            const timer = setInterval(() => {
+                const scrollHeight = document.body.scrollHeight;
+                window.scrollBy(0, distance);
+                totalHeight += distance;
+
+                // Stop scrolling if we've reached the bottom or a limit
+                // Just scroll for a bit to trigger lazy loads
+                if (totalHeight >= scrollHeight || totalHeight > 15000) {
+                    clearInterval(timer);
+                    resolve();
+                }
+            }, 100);
+        });
+    });
 }
 
 async function scrapeOTT() {
@@ -45,83 +69,108 @@ async function scrapeOTT() {
         const page = await browser.newPage();
         await page.setViewport({ width: 390, height: 844 }); // iPhone 12 Viewport
 
-        console.log(`Navigating to ${KINOLIGHTS_URL}...`);
-        await page.goto(KINOLIGHTS_URL, { waitUntil: 'networkidle2' });
+        let allBasicItems: any[] = [];
 
-        // Wait for content
-        await page.waitForSelector('body', { timeout: 10000 });
+        for (const url of TARGET_URLS) {
+            console.log(`Navigating to ${url}...`);
+            await page.goto(url, { waitUntil: 'networkidle2' });
 
-        // 1. Scrape Basic List (with correct Platforms)
-        const basicItems = await page.evaluate(() => {
-            const items: any[] = [];
-            const year = new Date().getFullYear();
+            // Scroll to load more content
+            console.log('Scrolling to load more content...');
+            await autoScroll(page);
+            await new Promise(r => setTimeout(r, 2000)); // Wait for lazy load
 
-            // Structure: .contents-wrap contains headers (sometimes) and content lists (sometimes)
-            // We need to track the "current" platform context as we iterate through wraps.
-            const contentWraps = document.querySelectorAll('.contents-wrap');
-            let currentPlatformRaw = '';
+            // Wait for content
+            await page.waitForSelector('body', { timeout: 10000 });
 
-            contentWraps.forEach(wrap => {
-                // Check if this wrap has a platform icon (Header Wrap)
-                const platformIcon = wrap.querySelector('.streaming-info .kino-icon');
-                if (platformIcon) {
-                    currentPlatformRaw = platformIcon.className; // Update context
-                }
+            // 1. Scrape Basic List (with correct Platforms)
+            const items = await page.evaluate(() => {
+                const results: any[] = [];
+                const year = new Date().getFullYear();
 
-                // Extract Date/Header (just in case it's a header wrap)
-                const headerTitle = wrap.querySelector('.streaming-info h3');
-                const headerText = headerTitle ? headerTitle.textContent?.trim() || '' : '';
+                const contentWraps = document.querySelectorAll('.contents-wrap');
+                let currentPlatformRaw = '';
 
-                // Default date logic
-                let formattedDate = new Date().toISOString().split('T')[0];
-                const dateMatch = headerText.match(/(\d{1,2})[./월]\s*(\d{1,2})/);
-                if (dateMatch) {
-                    const month = dateMatch[1].padStart(2, '0');
-                    const day = dateMatch[2].padStart(2, '0');
-                    formattedDate = `${year}-${month}-${day}`;
-                }
-
-                // Extract Items (if any)
-                const cards = wrap.querySelectorAll('.MovieItem');
-                cards.forEach(card => {
-                    const titleEl = card.querySelector('.title, .name');
-                    const posterEl = card.querySelector('.poster img, .responsive-image__image-container img');
-                    const linkEl = card.querySelector('a.poster-container') || card.querySelector('a');
-
-                    if (titleEl && posterEl) {
-                        const title = titleEl.textContent?.trim() || '';
-                        const image = posterEl.getAttribute('src') || posterEl.getAttribute('data-src') || '';
-                        const link = linkEl ? linkEl.getAttribute('href') : '';
-
-                        // Platform logic: Use current context
-                        const platforms: string[] = [];
-                        if (currentPlatformRaw.includes('netflix')) platforms.push('netflix');
-                        else if (currentPlatformRaw.includes('disney')) platforms.push('disney');
-                        else if (currentPlatformRaw.includes('wavve')) platforms.push('wavve');
-                        else if (currentPlatformRaw.includes('tving')) platforms.push('tving');
-                        else if (currentPlatformRaw.includes('coupang')) platforms.push('coupang');
-                        else if (currentPlatformRaw.includes('apple')) platforms.push('apple');
-                        else if (currentPlatformRaw.includes('watcha')) platforms.push('watcha');
-
-                        // Push item
-                        items.push({
-                            title,
-                            date: formattedDate,
-                            image,
-                            link: link && link.startsWith('http') ? link : `https://m.kinolights.com${link || ''}`,
-                            genre: 'ott',
-                            platforms: platforms,
-                            region: 'ott',
-                            id: '' // Will be generated
-                        });
+                contentWraps.forEach(wrap => {
+                    // Check if this wrap has a platform icon (Header Wrap)
+                    const platformIcon = wrap.querySelector('.streaming-info .kino-icon');
+                    if (platformIcon) {
+                        currentPlatformRaw = platformIcon.className; // Update context
                     }
+
+                    // Extract Date/Header (just in case it's a header wrap)
+                    const headerTitle = wrap.querySelector('.streaming-info h3');
+                    const headerText = headerTitle ? headerTitle.textContent?.trim() || '' : '';
+
+                    // Default date logic
+                    let formattedDate = new Date().toISOString().split('T')[0];
+                    const dateMatch = headerText.match(/(\d{1,2})[./월]\s*(\d{1,2})/);
+                    if (dateMatch) {
+                        const month = dateMatch[1].padStart(2, '0');
+                        const day = dateMatch[2].padStart(2, '0');
+                        formattedDate = `${year}-${month}-${day}`;
+                    }
+
+                    // Extract Items (if any)
+                    const cards = wrap.querySelectorAll('.MovieItem');
+                    cards.forEach(card => {
+                        const titleEl = card.querySelector('.title, .name');
+                        const posterEl = card.querySelector('.poster img, .responsive-image__image-container img');
+                        const linkEl = card.querySelector('a.poster-container') || card.querySelector('a');
+
+                        if (titleEl && posterEl) {
+                            const title = titleEl.textContent?.trim() || '';
+                            const image = posterEl.getAttribute('src') || posterEl.getAttribute('data-src') || '';
+                            const link = linkEl ? linkEl.getAttribute('href') : '';
+
+                            // Platform logic: Use current context
+                            const platforms: string[] = [];
+                            if (currentPlatformRaw.includes('netflix')) platforms.push('netflix');
+                            else if (currentPlatformRaw.includes('disney')) platforms.push('disney');
+                            else if (currentPlatformRaw.includes('wavve')) platforms.push('wavve');
+                            else if (currentPlatformRaw.includes('tving')) platforms.push('tving');
+                            else if (currentPlatformRaw.includes('coupang')) platforms.push('coupang');
+                            else if (currentPlatformRaw.includes('apple')) platforms.push('apple');
+                            else if (currentPlatformRaw.includes('watcha')) platforms.push('watcha');
+
+                            // Push item
+                            results.push({
+                                title,
+                                date: formattedDate,
+                                image,
+                                link: link && link.startsWith('http') ? link : `https://m.kinolights.com${link || ''}`,
+                                genre: 'ott',
+                                platforms: platforms,
+                                region: 'ott',
+                                id: '' // Will be generated
+                            });
+                        }
+                    });
                 });
+                return results;
             });
 
-            return items;
-        });
+            console.log(`Found ${items.length} items from ${url}`);
+            allBasicItems = [...allBasicItems, ...items];
+        }
 
-        console.log(`Initial Scrape: Found ${basicItems.length} items. Starting detail enrichment...`);
+        console.log(`Total items found before deduplication: ${allBasicItems.length}`);
+
+        // Deduplication
+        const uniqueItemsMap = new Map();
+        allBasicItems.forEach(item => {
+            const key = `${item.title}_${item.date}`;
+            if (!uniqueItemsMap.has(key)) {
+                uniqueItemsMap.set(key, item);
+            } else {
+                // Merge platforms if same item exists
+                const existing = uniqueItemsMap.get(key);
+                const mergedPlatforms = Array.from(new Set([...existing.platforms, ...item.platforms]));
+                uniqueItemsMap.set(key, { ...existing, platforms: mergedPlatforms });
+            }
+        });
+        const basicItems = Array.from(uniqueItemsMap.values());
+        console.log(`Unique items to process: ${basicItems.length}`);
 
         // 2. Enrich with Details (Director, Cast, Runtime, Grade, Genre)
         const enrichedItems: any[] = [];
@@ -153,18 +202,6 @@ async function scrapeOTT() {
 
                         if (!header) return [];
 
-                        // Assuming the section following the header contains the list
-                        // This is heuristic. Let's look for names.
-                        // Ideally, we find the container. 
-                        // Let's try to find elements with specific class names often used for actors 
-                        // OR (better) just grabbing text from the area.
-
-                        // Fallback: If we can't parse easily, leave empty. 
-                        // But let's try to grab 'a' tags inside the next sibling container?
-                        // Based on text dump: "톰 블라이스\n주연\n에밀리 베이더\n주연"
-                        // It seems likely there are standard list items.
-
-                        // Try finding 'a' tags that link to person profile? href="/person/..."
                         const personLinks = Array.from(document.querySelectorAll('a[href*="/person/"]'));
                         // Filter out duplicates and likely irrelevant ones (like director if he is linked differently)
                         // This captures Director + Actors mostly.
