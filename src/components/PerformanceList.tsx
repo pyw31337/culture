@@ -3371,9 +3371,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         <SkeletonGrid count={12} isListMode={layoutMode === 'list'} />
                     ) : (
                         <>
-                            <div className="bg-red-500 text-white p-2 font-bold mb-4">
-                                DEBUG: Rendered Count = {displayPerformances.length} / Visible = {visibleCount}
-                            </div>
+
                             {displayPerformances.length > 0 ? (
                                 <div
                                     key="grid-container"
@@ -4417,7 +4415,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     핫딜
                                 </div>
                             )}
-                            <script dangerouslySetInnerHTML={{ __html: `console.log('Rendering Default Card: ${perf.title}');` }} />
+
 
                             <div
                                 className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-[15px]"
