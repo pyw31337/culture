@@ -3370,7 +3370,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     {isInitialLoading ? (
                         <SkeletonGrid count={12} isListMode={layoutMode === 'list'} />
                     ) : (
-                        <AnimatePresence mode="wait">
+                        <>
+                            <div className="bg-red-500 text-white p-2 font-bold mb-4">
+                                DEBUG: Rendered Count = {displayPerformances.length} / Visible = {visibleCount}
+                            </div>
                             {displayPerformances.length > 0 ? (
                                 <div
                                     key="grid-container"
@@ -3391,13 +3394,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
                                         return (
-                                            <motion.div
+                                            <div
                                                 key={`${perf.id}-${perf.region}`}
                                                 className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
-                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                                                transition={{ duration: 0.3, delay: index * 0.03 }}
                                             >
                                                 {layoutMode === 'grid' ? (
                                                     <PerformanceCard
@@ -3435,17 +3434,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         onDetail={() => handleDetailOpen(perf)}
                                                     />
                                                 )}
-                                            </motion.div>
+                                            </div>
                                         );
                                     })}
                                 </div>
                             ) : (
                                 /* Empty State */
-                                <motion.div
+                                <div
                                     key="empty-state"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
                                     className="flex flex-col items-center justify-center py-10 text-gray-500 w-full text-center px-4"
                                 >
                                     {viewMode === 'likes-perf' ? (
