@@ -621,11 +621,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     useEffect(() => {
         if (initialPerformances.length > 0 && initialPerformances[0].genre === 'volleyball') {
             console.log('[PerformanceList Debug] Received Volleyball Performances:', initialPerformances.length);
+            console.log('[PerformanceList Debug] First Item Genre:', initialPerformances[0].genre);
             console.log('[PerformanceList Debug] Selected Region:', selectedRegion);
+            console.log('[PerformanceList Debug] Selected Genre:', selectedGenre);
         } else if (initialGenre === 'volleyball') {
             console.log('[PerformanceList Debug] Genre is volleyball but initialPerformances is:', initialPerformances.length);
         }
-    }, [initialPerformances, selectedRegion, initialGenre]);
+    }, [initialPerformances, selectedRegion, initialGenre, selectedGenre]);
+
+    useEffect(() => {
+        // Log derived counts when genre is volleyball
+        if (selectedGenre === 'volleyball' || initialGenre === 'volleyball') {
+            console.log(`[PerformanceList Debug] Filtered Count: ${filteredPerformances.length}`);
+            console.log(`[PerformanceList Debug] Display Count: ${displayPerformances.length}`);
+        }
+    }, [filteredPerformances, displayPerformances, selectedGenre, initialGenre]);
 
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
