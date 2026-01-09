@@ -29,6 +29,9 @@ async function scrapeKbl() {
                 const json = await res.json();
                 const list = Array.isArray(json) ? json : (json.list || []);
                 console.log(`Captured API response with ${list.length} matches from ${url}`);
+                if (list.length > 0) {
+                    console.log('Sample Match Data:', JSON.stringify(list[list.length - 1], null, 2));
+                }
                 collectedMatches.push(...list);
             } catch (e) {
                 console.error('Error parsing response:', e);
@@ -40,7 +43,8 @@ async function scrapeKbl() {
     console.log(`Navigating to ${KBL_URL}...`);
     await page.goto(KBL_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-    // 3. Click Next Month button 3 times (Feb, Mar, Apr)
+
+    // 4. Click Next Month button 3 times (Feb, Mar, Apr)
     // Selector: .ic-date-nav-next or parent button
     try {
         const nextBtnSelector = '.ic-date-nav-next';
@@ -48,16 +52,22 @@ async function scrapeKbl() {
 
         for (let i = 0; i < 3; i++) {
             console.log(`Clicking next month (${i + 1}/3)...`);
-            // Usually the icon is inside a button, clicking icon works often, or find parent
-            await page.click(nextBtnSelector);
-            // Wait for network activity
-            await new Promise(r => setTimeout(r, 3000));
+            try {
+                // Ensure button is clickable
+                await page.waitForSelector(nextBtnSelector, { visible: true, timeout: 5000 });
+                await page.click(nextBtnSelector);
+                // Wait for network activity
+                await new Promise(r => setTimeout(r, 3000));
+            } catch (clickErr) {
+                console.log('Next button click failed/timeouts, stopping navigation:', clickErr);
+                break;
+            }
         }
     } catch (e) {
-        console.error('Error clicking next button:', e);
+        console.error('Error in navigation sequence:', e);
     }
 
-    // 4. Process Data
+    // 5. Process Data
     const allPerformances: any[] = [];
     const seenIds = new Set<string>();
 
@@ -70,7 +80,6 @@ async function scrapeKbl() {
         const timeStr = `${t.substring(0, 2)}:${t.substring(2, 4)}`;
 
         // Filter: Keep only Jan-Apr 2026? Or just keep all fetched.
-        // User wants "schedule", effectively future.
         if (!dateStr.startsWith('2026')) continue;
 
         const title = `${match.tnameH} vs ${match.tnameA}`;
@@ -78,6 +87,11 @@ async function scrapeKbl() {
 
         if (seenIds.has(id)) continue;
         seenIds.add(id);
+
+        // Logo Construction
+        // Pattern: https://www.kbl.or.kr/assets/img/ico/logo/ic-{logoCode}.svg
+        const homeLogoUrl = match.logoH ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoH}.svg` : '';
+        const awayLogoUrl = match.logoA ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoA}.svg` : '';
 
         allPerformances.push({
             id,
@@ -87,7 +101,11 @@ async function scrapeKbl() {
             venue: match.stadiumname,
             link: KBL_URL,
             region: classifyRegion(match.stadiumname),
-            genre: 'basketball'
+            genre: 'basketball',
+            homeTeam: match.tnameH,
+            awayTeam: match.tnameA,
+            homeTeamLogo: homeLogoUrl,
+            awayTeamLogo: awayLogoUrl
         });
     }
 

@@ -1,33 +1,17 @@
 [
   {
-    "id": "kbl_20260108_68_24",
-    "title": "한국가스공사 vs KCC",
+    "id": "kbl_20260109_70_10",
+    "title": "안양 정관장 vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 13:00",
-    "venue": "경희대 선승관",
+    "date": "2026-01-09 19:00",
+    "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260108_67_29",
-    "title": "소노 vs 상무",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 15:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
-  },
-  {
-    "id": "kbl_20260108_16_06",
-    "title": "원주 DB vs 수원 KT",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-08 19:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball"
+    "region": "gyeonggi",
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260101_66_64",
@@ -37,7 +21,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260101_55_70",
@@ -47,7 +35,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260102_35_50",
@@ -57,7 +49,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260103_10_64",
@@ -67,7 +63,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260103_66_06",
@@ -77,7 +77,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260103_55_70",
@@ -87,7 +91,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260104_06_50",
@@ -97,7 +105,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260104_35_16",
@@ -107,7 +119,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260104_70_60",
@@ -117,7 +133,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260105_64_66",
@@ -127,7 +147,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260106_29_18",
@@ -137,7 +161,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260106_28_57",
@@ -147,7 +175,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "DB",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260106_10_60",
@@ -157,7 +189,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260107_50_35",
@@ -167,17 +203,53 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
-    "id": "kbl_20260109_70_10",
-    "title": "안양 정관장 vs 울산 현대모비스",
+    "id": "kbl_20260108_68_24",
+    "title": "한국가스공사 vs KCC",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-09 19:00",
-    "venue": "안양 정관장 아레나",
+    "date": "2026-01-08 13:00",
+    "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball"
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "한국가스공사",
+    "awayTeam": "KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+  },
+  {
+    "id": "kbl_20260108_67_29",
+    "title": "소노 vs 상무",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-08 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "소노",
+    "awayTeam": "상무",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg"
+  },
+  {
+    "id": "kbl_20260108_16_06",
+    "title": "원주 DB vs 수원 KT",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-08 19:00",
+    "venue": "원주DB프로미아레나",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260110_55_06",
@@ -187,7 +259,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260110_60_64",
@@ -197,7 +273,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260110_50_66",
@@ -207,7 +287,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260111_06_10",
@@ -217,7 +301,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260111_16_70",
@@ -227,7 +315,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260111_55_35",
@@ -237,7 +329,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260112_64_50",
@@ -247,7 +343,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260112_60_66",
@@ -257,7 +357,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260113_55_16",
@@ -267,7 +371,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260113_10_35",
@@ -277,7 +385,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260114_06_60",
@@ -287,7 +399,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260114_70_64",
@@ -297,7 +413,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260115_55_50",
@@ -307,7 +427,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260115_66_16",
@@ -317,7 +441,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260116_18_31",
@@ -327,7 +455,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KT",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260116_29_26",
@@ -337,7 +469,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260117_4A_5A",
@@ -347,7 +483,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "팀 아시아",
+    "awayTeam": "팀 루키",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-asia.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-rookie.svg"
   },
   {
     "id": "kbl_20260118_62_63",
@@ -357,7 +497,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "팀 브라운",
+    "awayTeam": "팀 코니",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-mong.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-gong.svg"
   },
   {
     "id": "kbl_20260119_36_57",
@@ -367,7 +511,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260119_26_68",
@@ -377,7 +525,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "삼성",
+    "awayTeam": "한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260120_31_67",
@@ -387,7 +539,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260120_19_68",
@@ -397,7 +553,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "SK",
+    "awayTeam": "한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260121_06_70",
@@ -407,7 +567,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260121_16_60",
@@ -417,7 +581,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260122_10_55",
@@ -427,7 +595,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260122_35_64",
@@ -437,7 +609,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260123_70_66",
@@ -447,7 +623,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260123_60_50",
@@ -457,7 +637,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260124_10_16",
@@ -467,7 +651,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260124_55_64",
@@ -477,7 +665,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260124_35_06",
@@ -487,7 +679,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260125_50_70",
@@ -497,7 +693,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260125_60_55",
@@ -507,7 +707,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260125_35_66",
@@ -517,7 +721,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260126_64_06",
@@ -527,7 +735,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260127_29_26",
@@ -537,7 +749,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260127_24_57",
@@ -547,7 +763,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KCC",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260127_66_10",
@@ -557,7 +777,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260128_50_16",
@@ -567,7 +791,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260129_67_18",
@@ -577,7 +805,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "소노",
+    "awayTeam": "KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260129_31_24",
@@ -587,7 +819,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260129_70_35",
@@ -597,7 +833,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260130_16_64",
@@ -607,7 +847,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260131_50_10",
@@ -617,7 +861,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260131_60_35",
@@ -627,7 +875,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260131_55_66",
@@ -637,7 +889,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260201_10_70",
@@ -647,7 +903,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260201_06_16",
@@ -657,7 +917,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260201_66_64",
@@ -667,7 +931,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260202_55_60",
@@ -677,7 +945,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260203_31_28",
@@ -687,7 +959,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260203_26_29",
@@ -697,7 +973,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "삼성",
+    "awayTeam": "상무",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg"
   },
   {
     "id": "kbl_20260203_50_06",
@@ -707,7 +987,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260204_66_60",
@@ -717,7 +1001,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260205_28_29",
@@ -727,7 +1015,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "DB",
+    "awayTeam": "상무",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg"
   },
   {
     "id": "kbl_20260205_57_18",
@@ -737,7 +1029,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "정관장",
+    "awayTeam": "KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260205_35_50",
@@ -747,7 +1043,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260206_55_10",
@@ -757,7 +1057,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260207_70_60",
@@ -767,7 +1071,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260207_66_06",
@@ -777,7 +1085,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260207_35_16",
@@ -787,7 +1099,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260208_10_64",
@@ -797,7 +1113,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260208_70_50",
@@ -807,7 +1127,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260208_16_55",
@@ -817,7 +1141,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260209_06_35",
@@ -827,7 +1155,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260210_57_29",
@@ -837,7 +1169,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "정관장",
+    "awayTeam": "상무",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg"
   },
   {
     "id": "kbl_20260210_24_31",
@@ -847,7 +1183,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KCC",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260210_64_50",
@@ -857,7 +1197,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260211_55_66",
@@ -867,7 +1211,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260212_24_28",
@@ -877,7 +1225,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KCC",
+    "awayTeam": "DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260212_29_36",
@@ -887,7 +1239,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260212_10_35",
@@ -897,7 +1253,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260213_70_06",
@@ -907,7 +1267,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260214_10_66",
@@ -917,7 +1281,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260214_60_64",
@@ -927,7 +1295,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260214_50_16",
@@ -937,7 +1309,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260215_55_70",
@@ -947,7 +1323,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260215_60_06",
@@ -957,7 +1337,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260215_64_35",
@@ -967,7 +1351,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260216_50_66",
@@ -977,7 +1365,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260216_16_10",
@@ -987,7 +1379,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260217_64_06",
@@ -997,7 +1393,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260217_35_55",
@@ -1007,7 +1407,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260218_70_16",
@@ -1017,7 +1421,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260218_60_50",
@@ -1027,7 +1435,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260219_64_55",
@@ -1037,7 +1449,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260219_66_35",
@@ -1047,7 +1463,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260220_36_18",
@@ -1057,7 +1477,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260220_31_57",
@@ -1067,7 +1491,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260221_26_24",
@@ -1077,7 +1505,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "삼성",
+    "awayTeam": "KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260221_36_19",
@@ -1087,7 +1519,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260226_68_31",
@@ -1097,7 +1533,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "한국가스공사",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260226_36_67",
@@ -1107,7 +1547,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260227_28_19",
@@ -1117,7 +1561,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "DB",
+    "awayTeam": "SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260227_68_36",
@@ -1127,7 +1575,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "한국가스공사",
+    "awayTeam": "LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260228_57_26",
@@ -1137,7 +1589,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "정관장",
+    "awayTeam": "삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260228_24_67",
@@ -1147,7 +1603,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KCC",
+    "awayTeam": "소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260302_31_68",
@@ -1157,7 +1617,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260302_67_19",
@@ -1167,7 +1631,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "소노",
+    "awayTeam": "SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260303_57_68",
@@ -1177,7 +1645,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "정관장",
+    "awayTeam": "한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260303_28_36",
@@ -1187,7 +1659,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "DB",
+    "awayTeam": "LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260304_26_19",
@@ -1197,7 +1673,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "삼성",
+    "awayTeam": "SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260304_36_31",
@@ -1207,7 +1687,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260305_66_70",
@@ -1217,7 +1701,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260305_16_60",
@@ -1227,7 +1715,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260306_50_10",
@@ -1237,7 +1729,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260306_06_55",
@@ -1247,7 +1743,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260307_16_66",
@@ -1257,7 +1757,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260307_35_60",
@@ -1267,7 +1771,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260307_70_64",
@@ -1277,7 +1785,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260308_50_55",
@@ -1287,7 +1799,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260308_10_06",
@@ -1297,7 +1813,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260308_16_64",
@@ -1307,7 +1827,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260309_35_70",
@@ -1317,7 +1841,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260310_18_28",
@@ -1327,7 +1855,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "KT",
+    "awayTeam": "DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260310_68_29",
@@ -1337,7 +1869,11 @@
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "한국가스공사",
+    "awayTeam": "상무",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg"
   },
   {
     "id": "kbl_20260310_60_10",
@@ -1347,7 +1883,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260311_50_66",
@@ -1357,7 +1897,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260312_55_16",
@@ -1367,7 +1911,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260313_50_35",
@@ -1377,7 +1925,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260314_06_55",
@@ -1387,7 +1939,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260314_60_70",
@@ -1397,7 +1953,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260314_64_10",
@@ -1407,7 +1967,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260315_16_50",
@@ -1417,7 +1981,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260315_66_35",
@@ -1427,7 +1995,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260315_10_60",
@@ -1437,7 +2009,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260316_64_70",
@@ -1447,7 +2023,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260318_06_16",
@@ -1457,7 +2037,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260319_66_60",
@@ -1467,7 +2051,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260320_06_64",
@@ -1477,7 +2065,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260321_66_10",
@@ -1487,7 +2079,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260321_60_35",
@@ -1497,7 +2093,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260322_70_06",
@@ -1507,7 +2107,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260322_16_64",
@@ -1517,7 +2121,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260323_35_10",
@@ -1527,7 +2135,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260324_16_70",
@@ -1537,7 +2149,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260325_55_66",
@@ -1547,7 +2163,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260326_64_50",
@@ -1557,7 +2177,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260327_60_06",
@@ -1567,7 +2191,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260328_10_55",
@@ -1577,7 +2205,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260328_66_16",
@@ -1587,7 +2219,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260328_35_70",
@@ -1597,7 +2233,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260329_50_55",
@@ -1607,7 +2247,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260329_64_60",
@@ -1617,7 +2261,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260329_35_06",
@@ -1627,7 +2275,11 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "수원 KT",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
   },
   {
     "id": "kbl_20260330_10_16",
@@ -1637,7 +2289,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260331_70_50",
@@ -1647,7 +2303,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260401_60_55",
@@ -1657,7 +2317,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260402_64_66",
@@ -1667,7 +2331,11 @@
     "venue": "대구",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "대구 한국가스공사",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260403_06_50",
@@ -1677,7 +2345,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260404_70_10",
@@ -1687,7 +2359,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260404_16_35",
@@ -1697,7 +2373,11 @@
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260404_55_64",
@@ -1707,7 +2387,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   },
   {
     "id": "kbl_20260405_50_60",
@@ -1717,7 +2401,11 @@
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
     "id": "kbl_20260405_66_70",
@@ -1727,7 +2415,11 @@
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
   },
   {
     "id": "kbl_20260405_06_10",
@@ -1737,7 +2429,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260406_55_35",
@@ -1747,7 +2443,11 @@
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260408_10_50",
@@ -1757,7 +2457,11 @@
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "창원 LG",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
   },
   {
     "id": "kbl_20260408_06_66",
@@ -1767,7 +2471,11 @@
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "수원 KT",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
   },
   {
     "id": "kbl_20260408_70_55",
@@ -1777,7 +2485,11 @@
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "서울 SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
   },
   {
     "id": "kbl_20260408_60_16",
@@ -1787,7 +2499,11 @@
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "부산 KCC",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
   },
   {
     "id": "kbl_20260408_35_64",
@@ -1797,6 +2513,10 @@
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
-    "genre": "basketball"
+    "genre": "basketball",
+    "homeTeam": "서울 삼성",
+    "awayTeam": "대구 한국가스공사",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
   }
 ]

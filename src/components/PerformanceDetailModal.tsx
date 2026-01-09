@@ -99,8 +99,8 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         fill
                                         className="object-cover"
                                     />
-                                    {/* Volleyball Team Logos Overlay */}
-                                    {performance.genre === 'volleyball' && performance.homeTeamLogo && performance.awayTeamLogo && (
+                                    {/* Volleyball/Basketball Team Logos Overlay */}
+                                    {(performance.genre === 'volleyball' || performance.genre === 'basketball') && performance.homeTeamLogo && performance.awayTeamLogo && (
                                         <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
                                             <div className="flex flex-col items-center gap-1">
                                                 <div className="w-14 h-14 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
