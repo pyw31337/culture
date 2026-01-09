@@ -195,8 +195,12 @@ async function getPerformances(genreFilter: string | string[] | null) {
     // Apply genre filter
     let genreFiltered = filtered;
     if (genreFilter) {
-        const genresToInclude = Array.isArray(genreFilter) ? genreFilter : [genreFilter];
-        genreFiltered = filtered.filter(p => genresToInclude.includes(p.genre));
+        if (genreFilter === 'hotdeal') {
+            genreFiltered = filtered.filter(p => !!p.discount || !!p.discountRate);
+        } else {
+            const genresToInclude = Array.isArray(genreFilter) ? genreFilter : [genreFilter];
+            genreFiltered = filtered.filter(p => genresToInclude.includes(p.genre));
+        }
     }
 
     // Deduplication

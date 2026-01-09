@@ -89,7 +89,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
-    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'concert', 'classic', 'exhibition',
+    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'exhibition',
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'hockey'
 ];
