@@ -42,16 +42,19 @@ async function scrapeKovo() {
             });
 
             const page = await browser.newPage();
+            // Set a real User-Agent to avoid blocking
+            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36');
             await page.setViewport({ width: 1280, height: 1024 });
 
             console.log(`Navigating to ${KOVO_SCHEDULE_URL}...`);
             await page.goto(KOVO_SCHEDULE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-            // Ensure page is fully loaded (wait for a known team name)
+            // Ensure page is fully loaded (wait for any table or list content, not specific text)
             try {
-                await page.waitForFunction(() => document.body.innerText.includes('대한항공'), { timeout: 10000 });
+                // Wait for the main schedule table or list
+                await page.waitForSelector('table, .schedule_list, .game-list', { timeout: 10000 });
             } catch (e) {
-                console.log('Timeout waiting for "대한항공", proceeding to check content anyway...');
+                console.log('Timeout waiting for selector, potentially checking text content...');
             }
 
             const textContent = await page.evaluate(() => document.body.innerText);

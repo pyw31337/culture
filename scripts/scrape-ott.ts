@@ -175,97 +175,103 @@ async function scrapeOTT() {
 
         // 2. Enrich with Details (Director, Cast, Runtime, Grade, Genre)
         const enrichedItems: any[] = [];
+        const CONCURRENCY = 5;
 
-        // Process in chunks to avoid overwhelming but let's do sequential for safety first, or small concurrency
-        for (let i = 0; i < basicItems.length; i++) {
-            const item = basicItems[i];
-            console.log(`[${i + 1}/${basicItems.length}] Enriching: ${item.title}`);
+        // Chunk array for parallel processing
+        for (let i = 0; i < basicItems.length; i += CONCURRENCY) {
+            const chunk = basicItems.slice(i, i + CONCURRENCY);
+            console.log(`Processing chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(basicItems.length / CONCURRENCY)}...`);
 
-            try {
-                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+            const promises = chunk.map(async (item) => {
+                const newPage = await browser.newPage();
+                // Set User-Agent for each page
+                await newPage.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1');
+                await newPage.setViewport({ width: 390, height: 844 });
 
                 try {
-                    await page.waitForSelector('.metadata__item', { timeout: 3000 });
-                } catch (e) {
-                    // Ignore, might be missing metadata or different layout
-                }
+                    // console.log(`Enriching: ${item.title}`);
+                    await newPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
 
-                const details = await page.evaluate(() => {
-                    const cleanText = (text: string) => text.replace(/\s+/g, ' ').trim();
+                    try {
+                        await newPage.waitForSelector('.metadata__item', { timeout: 3000 });
+                    } catch (e) {
+                        // Ignore
+                    }
 
-                    // Helper to find value by label in metadata list
-                    const getMetadataValue = (labelKeywords: string[]) => {
-                        const items = Array.from(document.querySelectorAll('.metadata__item'));
-                        for (const item of items) {
-                            const titleEl = item.querySelector('.item__title');
-                            if (titleEl) {
-                                const titleText = cleanText(titleEl.textContent || '');
-                                if (labelKeywords.some(k => titleText.includes(k))) {
-                                    // The value is the text content of the item MINUS the title
-                                    const fullText = cleanText(item.textContent || '');
-                                    return fullText.replace(titleText, '').trim();
+                    const details = await newPage.evaluate(() => {
+                        const cleanText = (text: string) => text.replace(/\s+/g, ' ').trim();
+
+                        // Helper to find value by label in metadata list
+                        const getMetadataValue = (labelKeywords: string[]) => {
+                            const items = Array.from(document.querySelectorAll('.metadata__item'));
+                            for (const item of items) {
+                                const titleEl = item.querySelector('.item__title');
+                                if (titleEl) {
+                                    const titleText = cleanText(titleEl.textContent || '');
+                                    if (labelKeywords.some(k => titleText.includes(k))) {
+                                        const fullText = cleanText(item.textContent || '');
+                                        return fullText.replace(titleText, '').trim();
+                                    }
                                 }
                             }
-                        }
-                        return '';
-                    };
+                            return '';
+                        };
 
-                    const getDirector = () => {
-                        const staffs = Array.from(document.querySelectorAll('.staff'));
-                        for (const staff of staffs) {
-                            const titleEl = staff.querySelector('.staff__title');
-                            if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
-                                const nameEl = staff.querySelector('.names__name');
-                                return nameEl ? cleanText(nameEl.textContent || '') : '';
+                        const getDirector = () => {
+                            const staffs = Array.from(document.querySelectorAll('.staff'));
+                            for (const staff of staffs) {
+                                const titleEl = staff.querySelector('.staff__title');
+                                if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
+                                    const nameEl = staff.querySelector('.names__name');
+                                    return nameEl ? cleanText(nameEl.textContent || '') : '';
+                                }
                             }
+                            return '';
+                        };
+
+                        const getCast = () => {
+                            const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
+                            return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
+                        };
+
+                        const genre = getMetadataValue(['장르']);
+                        const runtime = getMetadataValue(['러닝타임']);
+                        const date = getMetadataValue(['방영일', '개봉일']);
+                        const grade = getMetadataValue(['연령등급']);
+
+                        return {
+                            movieInfo: [genre, runtime].filter(Boolean).join(' / '),
+                            grade: grade,
+                            director: getDirector(),
+                            cast: getCast(),
+                            detailDate: date
+                        };
+                    });
+
+                    let finalDate = item.date;
+                    if (details.detailDate) {
+                        const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
+                        if (match) {
+                            finalDate = `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
                         }
-                        return '';
-                    };
-
-                    const getCast = () => {
-                        const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
-                        return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
-                    };
-
-                    const genre = getMetadataValue(['장르']);
-                    const runtime = getMetadataValue(['러닝타임']);
-                    const date = getMetadataValue(['방영일', '개봉일']); // Priority for Date
-                    const grade = getMetadataValue(['연령등급']);
+                    }
 
                     return {
-                        movieInfo: [genre, runtime].filter(Boolean).join(' / '),
-                        grade: grade,
-                        director: getDirector(),
-                        cast: getCast(),
-                        detailDate: date // Pass back the specific date found on detail page
+                        ...item,
+                        ...details,
+                        date: finalDate,
                     };
-                });
 
-                // Merge details
-                // Merge details
-                // Logic: If detailDate exists and is valid (YYYY.MM.DD or YYYY-MM-DD), use it.
-                // Kinolights usually gives "YYYY.MM.DD"
-                let finalDate = item.date;
-                if (details.detailDate) {
-                    const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
-                    if (match) {
-                        finalDate = `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
-                    }
+                } catch (e) {
+                    console.error(`Failed to enrich ${item.title}:`, e);
+                    return item; // Return basic item on failure
+                } finally {
+                    await newPage.close();
                 }
+            });
 
-                enrichedItems.push({
-                    ...item,
-                    ...details,
-                    date: finalDate, // Overwrite with accurate date
-                });
-
-                // Small delay to be nice
-                // await new Promise(r => setTimeout(r, 200));
-
-            } catch (e) {
-                console.error(`Failed to enrich ${item.title}:`, e);
-                enrichedItems.push(item); // Keep basic data on failure
-            }
+            const results = await Promise.all(promises);
+            enrichedItems.push(...results);
         }
 
 
