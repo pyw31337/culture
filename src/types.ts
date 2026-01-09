@@ -16,4 +16,8 @@ export type Performance = {
     cast?: string[];
     director?: string;
     movieInfo?: string;
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
 };
