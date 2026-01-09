@@ -176,7 +176,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
                 const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
 
                 // Debug logging for Volleyball
-                if (genre === 'volleyball' && !isServiceArea) {
+                if (p.genre === 'volleyball' && !isServiceArea) {
                     console.log(`[Volleyball Debug] Filtered by Venue Address: ${p.title} (${p.venue} - ${addr})`);
                 }
 
