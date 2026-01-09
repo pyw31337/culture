@@ -629,13 +629,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
     }, [initialPerformances, selectedRegion, initialGenre, selectedGenre]);
 
-    useEffect(() => {
-        // Log derived counts when genre is volleyball
-        if (selectedGenre === 'volleyball' || initialGenre === 'volleyball') {
-            console.log(`[PerformanceList Debug] Filtered Count: ${filteredPerformances.length}`);
-            console.log(`[PerformanceList Debug] Display Count: ${displayPerformances.length}`);
-        }
-    }, [filteredPerformances, displayPerformances, selectedGenre, initialGenre]);
+    // Debug logging moved to end of logic chain
 
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
@@ -1965,6 +1959,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         });
 
     }, [sortedPerformances, activeLocation, searchLocation, userLocation, radius]);
+
+    // Debug Logging for Derived Values
+    useEffect(() => {
+        // Log derived counts when genre is volleyball
+        if (selectedGenre === 'volleyball' || initialGenre === 'volleyball') {
+            console.log(`[PerformanceList Debug] Filtered Count: ${filteredPerformances.length}`);
+            console.log(`[PerformanceList Debug] Display Count: ${displayPerformances.length}`);
+        }
+    }, [filteredPerformances, displayPerformances, selectedGenre, initialGenre]);
 
     // Split logic for Keyword Notification
     const { keywordMatches, normalPerformances } = useMemo(() => {
