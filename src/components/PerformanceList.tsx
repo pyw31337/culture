@@ -617,6 +617,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [viewMode, setViewMode] = useState<string>('grid'); // 'list' | 'grid' | 'calendar' | 'map' | 'likes-perf' | 'likes-venue'
     const [isMapOpen, setIsMapOpen] = useState(false); // Map Modal State
 
+    // Debug Logging
+    useEffect(() => {
+        if (initialPerformances.length > 0 && initialPerformances[0].genre === 'volleyball') {
+            console.log('[PerformanceList Debug] Received Volleyball Performances:', initialPerformances.length);
+            console.log('[PerformanceList Debug] Selected Region:', selectedRegion);
+        } else if (initialGenre === 'volleyball') {
+            console.log('[PerformanceList Debug] Genre is volleyball but initialPerformances is:', initialPerformances.length);
+        }
+    }, [initialPerformances, selectedRegion, initialGenre]);
+
     // Alarm Panel State
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -1780,6 +1790,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
         // Region Filter
         if (selectedRegion !== 'all') {
+            const beforeRegionCount = filtered.length;
             filtered = filtered.filter(p => {
                 // 1. Trust server-side region assignment if available
                 if (p.region === selectedRegion) return true;
@@ -1796,7 +1807,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 // Matches "서울" part of address
                 const isRegionMatch = venueInfo.address.startsWith(regionLabel);
 
-                if (!isRegionMatch) return false;
+                if (!isRegionMatch) {
+                    // Log dropped items for volleyball
+                    if (p.genre === 'volleyball') {
+                        // console.log(`[PerformanceList Debug] Dropped by Client Region: ${p.title} (${venueInfo.address}) vs ${regionLabel}`);
+                    }
+                    return false;
+                }
 
                 if (selectedDistrict !== 'all') {
                     // Check district
@@ -1804,6 +1821,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 }
                 return true;
             });
+            if (selectedGenre === 'volleyball') {
+                console.log(`[PerformanceList Debug] Region Filter ('${selectedRegion}'): ${beforeRegionCount} -> ${filtered.length}`);
+            }
         }
 
         // Venue Filter
