@@ -152,9 +152,10 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 </div>
                             </div>
 
-                            {/* Director & Cast (For Movie/OTT) */}
-                            {(performance.director || (performance.cast && performance.cast.length > 0)) && (
+                            {/* Detailed Metadata Section: Director, Cast, Provider, Info */}
+                            {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.genre === 'ott' && performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
                                 <div className="mb-6 space-y-4">
+                                    {/* Director */}
                                     {performance.director && (
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">감독</h3>
@@ -170,6 +171,8 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                             </div>
                                         </div>
                                     )}
+
+                                    {/* Cast */}
                                     {performance.cast && performance.cast.length > 0 && (
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">출연</h3>
@@ -192,36 +195,43 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                             </div>
                                         </div>
                                     )}
-                                </div>
-                            )}
 
-                            {/* OTT Providers Section */}
-                            {performance.genre === 'ott' && performance.platforms && performance.platforms.length > 0 && (
-                                <div className="mb-8">
-                                    <h3 className="text-gray-400 text-xs font-bold mb-3 flex items-center gap-2">
-                                        <ExternalLink size={12} />
-                                        보러가기 (플랫폼)
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {performance.platforms.map((p: string) => {
-                                            const platform = OTT_PLATFORMS[p];
-                                            if (!platform) return null;
-                                            const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
+                                    {/* Provider (OTT only) */}
+                                    {performance.genre === 'ott' && performance.platforms && performance.platforms.length > 0 && (
+                                        <div>
+                                            <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
+                                            <div className="flex flex-wrap gap-2">
+                                                {performance.platforms.map((p: string) => {
+                                                    const platform = OTT_PLATFORMS[p];
+                                                    if (!platform) return null;
+                                                    const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
 
-                                            return (
-                                                <a
-                                                    key={p}
-                                                    href={url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className={`px-4 py-2 rounded-xl font-bold text-white text-sm shadow-lg hover:opacity-80 transition-opacity flex items-center gap-2 ${platform.color}`}
-                                                >
-                                                    {platform.label}
-                                                    <ExternalLink size={14} className="opacity-70" />
-                                                </a>
-                                            );
-                                        })}
-                                    </div>
+                                                    return (
+                                                        <a
+                                                            key={p}
+                                                            href={url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200 flex items-center gap-1.5"
+                                                        >
+                                                            {platform.label}
+                                                            <ExternalLink size={12} className="opacity-50" />
+                                                        </a>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Movie Info (Genre/Runtime/Rating) */}
+                                    {performance.movieInfo && (
+                                        <div>
+                                            <h3 className="text-gray-400 text-xs font-bold mb-2">정보</h3>
+                                            <p className="text-sm text-gray-300 leading-relaxed">
+                                                {performance.movieInfo}
+                                            </p>
+                                        </div>
+                                    )}
                                 </div>
                             )}
 
