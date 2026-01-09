@@ -177,7 +177,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                             </div>
 
                             {/* Detailed Metadata Section: Director, Cast, Provider, Info */}
-                            {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.genre === 'ott' && performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
+                            {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
                                 <div className="mb-6 space-y-4">
                                     {/* Director */}
                                     {performance.director && (
@@ -221,14 +221,21 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     )}
 
                                     {/* Provider (OTT only) */}
-                                    {performance.genre === 'ott' && performance.platforms && performance.platforms.length > 0 && (
+                                    {performance.platforms && performance.platforms.length > 0 && (
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
                                             <div className="flex flex-wrap gap-2">
                                                 {performance.platforms.map((p: string) => {
-                                                    const platform = OTT_PLATFORMS[p];
-                                                    if (!platform) return null;
-                                                    const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
+                                                    // Normalize key to lowercase to ensure match
+                                                    const key = p.toLowerCase();
+                                                    const platform = OTT_PLATFORMS[key] || OTT_PLATFORMS[p];
+
+                                                    // Fallback values if platform constant not found
+                                                    const label = platform ? platform.label : p;
+                                                    const color = platform ? platform.color : 'bg-gray-700';
+                                                    const url = platform
+                                                        ? platform.url.replace('{title}', encodeURIComponent(performance.title))
+                                                        : `https://www.google.com/search?q=${encodeURIComponent(p + ' ' + performance.title)}`;
 
                                                     return (
                                                         <a
@@ -236,10 +243,10 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                             href={url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200 flex items-center gap-1.5"
+                                                            className={`px-3 py-1.5 rounded-lg ${color} hover:brightness-110 transition-all text-sm text-white flex items-center gap-1.5 shadow-lg`}
                                                         >
-                                                            {platform.label}
-                                                            <ExternalLink size={12} className="opacity-50" />
+                                                            {label}
+                                                            <ExternalLink size={12} className="opacity-70" />
                                                         </a>
                                                     );
                                                 })}
