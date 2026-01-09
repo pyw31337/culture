@@ -70,14 +70,14 @@ async function scrapeKovo() {
 
                 if (timeElements.length === 0) {
                     console.log('Specific time class .css-hwx9jd not found, falling back to regex search');
-                    timeElements = Array.from(document.querySelectorAll('span')).filter(s => /^\d{2}:\d{2}$/.test(s.innerText.trim()));
+                    timeElements = Array.from(document.querySelectorAll('span')).filter(s => /^\d{2}:\d{2}$/.test((s as HTMLElement).innerText.trim()));
                 }
 
                 console.log(`Found ${timeElements.length} time elements`);
 
                 timeElements.forEach(timeEl => {
                     try {
-                        const time = timeEl.innerText.trim();
+                        const time = (timeEl as HTMLElement).innerText.trim();
                         // Find the row container. It's an ancestor.
                         let row = timeEl.parentElement;
                         let foundImgs: HTMLImageElement[] = [];

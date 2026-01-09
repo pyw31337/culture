@@ -335,6 +335,23 @@ async function buildVenues() {
         // Ensure entry exists
         if (!venues[venueName]) {
             venues[venueName] = { name: venueName, address: '정보 없음', district: '' };
+
+            // Smart Inheritance: Check if this new venue name contains a known venue name
+            // e.g. "Seoul Arts Center Opera House" contains "Seoul Arts Center"
+            // This prevents data loss when scrapers output slightly different names
+            const knownVenues = Object.keys(venues).sort((a, b) => b.length - a.length);
+            for (const existingKey of knownVenues) {
+                if (existingKey.length < 2) continue; // Skip short keys
+                // Verify inclusion AND that the existing key has valid data
+                if (venueName.includes(existingKey) && venues[existingKey].address && venues[existingKey].address !== '정보 없음') {
+                    console.log(`   -> Inheriting data from parent venue: "${existingKey}" for "${venueName}"`);
+                    venues[venueName].address = venues[existingKey].address;
+                    venues[venueName].district = venues[existingKey].district;
+                    venues[venueName].lat = venues[existingKey].lat;
+                    venues[venueName].lng = venues[existingKey].lng;
+                    break;
+                }
+            }
         }
 
         // ... rest of loop
@@ -455,7 +472,9 @@ async function buildVenues() {
     }
 
     // 3.5 Prune Orphaned Venues
-    // Remove venues that exist in venues.json but are not in uniqueVenues (active data)
+    // DISABLED to prevent data loss of manual inputs.
+    // If we prune, we lose venues that were manually corrected but might be temporarily missing from the scrape.
+    /*
     let prunedCount = 0;
     for (const key of Object.keys(venues)) {
         if (!uniqueVenues.has(key)) {
@@ -467,6 +486,7 @@ async function buildVenues() {
     if (prunedCount > 0) {
         console.log(`Pruned ${prunedCount} orphaned venues.`);
     }
+    */
 
     // 4. Save Final
     fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
