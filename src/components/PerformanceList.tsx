@@ -3486,7 +3486,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             </button>
                                         </>
                                     )}
-                                </motion.div>
+                                </div>
                             )}
                         </>
                     )}
