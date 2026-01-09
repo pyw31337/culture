@@ -7,7 +7,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "연세대",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2024/09/연세대200x200-32x32.png"
   },
   {
     "id": "hockey_20250909100047_HL안양vs고려대학교",
@@ -17,7 +21,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "고려대학교",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/09/고려대-32x32.png"
   },
   {
     "id": "hockey_20250920140000_아이스벅스vsHL안양",
@@ -27,7 +35,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "아이스벅스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20250921140000_아이스벅스vsHL안양",
@@ -37,7 +49,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "아이스벅스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20250923140000_아이스벅스vsHL안양",
@@ -47,7 +63,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "아이스벅스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251004160000_HL안양vs그리츠",
@@ -57,7 +77,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "그리츠",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png"
   },
   {
     "id": "hockey_20251005140000_HL안양vs그리츠",
@@ -67,7 +91,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "그리츠",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png"
   },
   {
     "id": "hockey_20251007140000_HL안양vs그리츠",
@@ -77,7 +105,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "그리츠",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png"
   },
   {
     "id": "hockey_20251018150000_레드이글스vsHL안양",
@@ -87,7 +119,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "레드이글스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251019140000_레드이글스vsHL안양",
@@ -97,7 +133,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "레드이글스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251025140000_프리블레이즈vsHL안양",
@@ -107,7 +147,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "프리블레이즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251026140000_프리블레이즈vsHL안양",
@@ -117,7 +161,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "프리블레이즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251027190000_프리블레이즈vsHL안양",
@@ -127,7 +175,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "프리블레이즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251107190000_스타즈vsHL안양",
@@ -137,7 +189,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "스타즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251108140000_스타즈vsHL안양",
@@ -147,7 +203,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "스타즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251109140000_스타즈vsHL안양",
@@ -157,7 +217,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "스타즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251115160000_HL안양vs프리블레이즈",
@@ -167,7 +231,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "프리블레이즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png"
   },
   {
     "id": "hockey_20251116140000_HL안양vs프리블레이즈",
@@ -177,7 +245,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "프리블레이즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png"
   },
   {
     "id": "hockey_20251117190000_HL안양vs프리블레이즈",
@@ -187,7 +259,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "프리블레이즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png"
   },
   {
     "id": "hockey_20251206150000_그리츠vsHL안양",
@@ -197,7 +273,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "그리츠",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251207140000_그리츠vsHL안양",
@@ -207,7 +287,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "그리츠",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20251212190000_HL안양vs아이스벅스",
@@ -217,7 +301,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "아이스벅스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png"
   },
   {
     "id": "hockey_20251213160000_HL안양vs아이스벅스",
@@ -227,7 +315,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "아이스벅스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png"
   },
   {
     "id": "hockey_20251214140000_HL안양vs아이스벅스",
@@ -237,7 +329,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "아이스벅스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png"
   },
   {
     "id": "hockey_20251221130004_HL안양vs고려대학교",
@@ -247,7 +343,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "HL안양",
+    "awayTeam": "고려대학교",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/09/고려대-32x32.png"
   },
   {
     "id": "hockey_20251223120029_HL안양vs연세대",
@@ -257,7 +357,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "HL안양",
+    "awayTeam": "연세대",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2024/09/연세대200x200-32x32.png"
   },
   {
     "id": "hockey_20260102160000_그리츠vsHL안양",
@@ -267,7 +371,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "그리츠",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260103150000_그리츠vsHL안양",
@@ -277,7 +385,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "그리츠",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260104140000_그리츠vsHL안양",
@@ -287,7 +399,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "그리츠",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/grits300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260108190000_HL안양vs레드이글스",
@@ -297,7 +413,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "레드이글스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png"
   },
   {
     "id": "hockey_20260110160000_HL안양vs레드이글스",
@@ -307,7 +427,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "레드이글스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png"
   },
   {
     "id": "hockey_20260111140000_HL안양vs레드이글스",
@@ -317,7 +441,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "레드이글스",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png"
   },
   {
     "id": "hockey_20260124140000_프리블레이즈vsHL안양",
@@ -327,7 +455,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "프리블레이즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260125140000_프리블레이즈vsHL안양",
@@ -337,7 +469,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "프리블레이즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/TFB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260130190000_스타즈vsHL안양",
@@ -347,7 +483,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "스타즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260131140000_스타즈vsHL안양",
@@ -357,7 +497,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "스타즈",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260213190000_HL안양vs스타즈",
@@ -367,7 +511,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "스타즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png"
   },
   {
     "id": "hockey_20260214160000_HL안양vs스타즈",
@@ -377,7 +525,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "스타즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png"
   },
   {
     "id": "hockey_20260215140000_HL안양vs스타즈",
@@ -387,7 +539,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "gyeonggi"
+    "region": "gyeonggi",
+    "homeTeam": "HL안양",
+    "awayTeam": "스타즈",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2025/06/kobe-25x32.png"
   },
   {
     "id": "hockey_20260228150000_레드이글스vsHL안양",
@@ -397,7 +553,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "레드이글스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260301140000_레드이글스vsHL안양",
@@ -407,7 +567,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "레드이글스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260303183000_레드이글스vsHL안양",
@@ -417,7 +581,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "레드이글스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/REH300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260314140000_아이스벅스vsHL안양",
@@ -427,7 +595,11 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "아이스벅스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   },
   {
     "id": "hockey_20260315140000_아이스벅스vsHL안양",
@@ -437,6 +609,10 @@
     "link": "http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/",
     "genre": "hockey",
     "image": "/culture/images/hockey_poster.png",
-    "region": "etc"
+    "region": "etc",
+    "homeTeam": "아이스벅스",
+    "awayTeam": "HL안양",
+    "homeTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/NIB300-32x32.png",
+    "awayTeamLogo": "http://www.hlicehockey.com/wp-content/uploads/2023/02/HL300-32x32.png"
   }
 ]

@@ -99,27 +99,21 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         fill
                                         className="object-cover"
                                     />
-                                    {/* Volleyball/Basketball Team Logos Overlay */}
-                                    {(performance.genre === 'volleyball' || performance.genre === 'basketball') && performance.homeTeamLogo && performance.awayTeamLogo && (
+                                    {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
+                                    {['volleyball', 'basketball', 'baseball', 'handball', 'hockey'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
                                         <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
                                             <div className="flex flex-col items-center gap-1">
-                                                <div className="w-14 h-14 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
+                                                <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
                                                     <img src={performance.homeTeamLogo} alt={performance.homeTeam} className="w-full h-full object-contain" />
                                                 </div>
-                                                <span className="text-[10px] font-bold text-white bg-black/50 px-2 py-0.5 rounded-full backdrop-blur-md">
-                                                    {performance.homeTeam}
-                                                </span>
+                                                <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
                                             </div>
-                                            <div className="pt-4">
-                                                <span className="text-xl font-black text-white italic drop-shadow-lg opacity-90">VS</span>
-                                            </div>
+                                            <div className="mt-8 text-white/90 font-black text-2xl italic bg-black/30 px-4 py-1 rounded-full backdrop-blur-[1px]">VS</div>
                                             <div className="flex flex-col items-center gap-1">
-                                                <div className="w-14 h-14 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
+                                                <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
                                                     <img src={performance.awayTeamLogo} alt={performance.awayTeam} className="w-full h-full object-contain" />
                                                 </div>
-                                                <span className="text-[10px] font-bold text-white bg-black/50 px-2 py-0.5 rounded-full backdrop-blur-md">
-                                                    {performance.awayTeam}
-                                                </span>
+                                                <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
                                             </div>
                                         </div>
                                     )}

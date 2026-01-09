@@ -14,6 +14,10 @@ interface Performance {
     image: string;
     region: string;
     price?: string;
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
 }
 
 const HOCKEY_URL = 'http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/';
@@ -59,6 +63,23 @@ async function scrapeHockey() {
                     }
                 }
 
+                // Extract Logos
+                // Selector: td.data-home.has-logo > span > img
+                // Note: The 'span' might be generic, just find 'img' inside data-home
+                const homeLogoSrc = $(row).find('td.data-home img').attr('src');
+                const awayLogoSrc = $(row).find('td.data-away img').attr('src');
+                // Ensure URLs are absolute if needed, or if they are relative to hlicehockey.com
+                // Usually scraped srcs might be relative.
+                // Base URL: http://www.hlicehockey.com
+                const toAbsolute = (src?: string) => {
+                    if (!src) return '';
+                    if (src.startsWith('http')) return src;
+                    return `http://www.hlicehockey.com${src.startsWith('/') ? '' : '/'}${src}`;
+                };
+
+                const homeTeamLogo = toAbsolute(homeLogoSrc);
+                const awayTeamLogo = toAbsolute(awayLogoSrc);
+
                 // Cleanup Team Names (remove leading/trailing spaces, maybe extra info)
                 const homeTeam = homeTeamRaw.replace(/\s+/g, ' ').trim();
                 const awayTeam = awayTeamRaw.replace(/\s+/g, ' ').trim();
@@ -87,7 +108,11 @@ async function scrapeHockey() {
                     link: HOCKEY_URL,
                     genre: 'hockey',
                     image: '/culture/images/hockey_poster.png',
-                    region
+                    region,
+                    homeTeam,
+                    awayTeam,
+                    homeTeamLogo,
+                    awayTeamLogo
                 });
             }
         });

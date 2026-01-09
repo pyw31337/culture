@@ -11,6 +11,10 @@ export interface Performance {
     link: string;
     region: string;
     genre: string;
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
 }
 
 const TARGET_URL = 'https://www.koreahandball.com/game/schedule_list.php';
@@ -86,14 +90,22 @@ async function scrapeHandball() {
                 // 3: Venue
             }
 
-            // Extract Teams from Content Cell
+            // Extract Teams and Logos from Content Cell
             let homeTeam = '';
             let awayTeam = '';
+            let homeTeamLogo = '';
+            let awayTeamLogo = '';
+
             if (contentCell) {
                 const homeEl = contentCell.querySelector('.team.home .name');
                 const awayEl = contentCell.querySelector('.team.away .name');
+                const homeLogoEl = contentCell.querySelector('.team.home img');
+                const awayLogoEl = contentCell.querySelector('.team.away img');
+
                 if (homeEl) homeTeam = (homeEl as HTMLElement).innerText.trim();
                 if (awayEl) awayTeam = (awayEl as HTMLElement).innerText.trim();
+                if (homeLogoEl) homeTeamLogo = (homeLogoEl as HTMLImageElement).src;
+                if (awayLogoEl) awayTeamLogo = (awayLogoEl as HTMLImageElement).src;
             }
 
             if (homeTeam && awayTeam) {
@@ -103,7 +115,11 @@ async function scrapeHandball() {
                     date: `${dateStr} ${timeStr}`,
                     venue: venueStr,
                     link: 'https://www.koreahandball.com/game/schedule_list.php',
-                    genre: 'handball'
+                    genre: 'handball',
+                    homeTeam,
+                    awayTeam,
+                    homeTeamLogo,
+                    awayTeamLogo
                 });
             }
         });

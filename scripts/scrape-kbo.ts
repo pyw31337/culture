@@ -14,6 +14,10 @@ interface Performance {
     link: string;
     region: string;
     genre: string;
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbo.json');
@@ -127,8 +131,21 @@ async function scrapeKBO() {
         await selectOption('#ddlYear', TARGET_YEAR);
     } catch (e: any) {
         console.error(`Error selecting year ${TARGET_YEAR}: ${e}`);
-        // If 2026 isn't available, we might fail.
     }
+
+    // Team Logo Map (Extracted from Probe)
+    const TEAM_LOGOS: Record<string, string> = {
+        "LG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_LG.png",
+        "한화": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_HH.png",
+        "SSG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_SK.png",
+        "삼성": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_SS.png",
+        "NC": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_NC.png",
+        "KT": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_KT.png",
+        "롯데": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_LT.png",
+        "KIA": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_HT.png",
+        "두산": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_OB.png",
+        "키움": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_WO.png"
+    };
 
     for (const series of SERIES_LIST) {
         console.log(`\n--- Scraping Series: ${series.name} (${series.id}) ---`);
@@ -297,6 +314,22 @@ async function scrapeKBO() {
 
                 const mappedVenue = mapVenue(item.venue);
 
+                // Parse Teams (Assuming standard "Away vs Home" schedule format)
+                // e.g. "한화 vs LG" (at Jamsil) -> Hanwha(Away), LG(Home)
+                const parts = item.title.split('vs');
+                let homeTeam = '';
+                let awayTeam = '';
+                let homeTeamLogo = '';
+                let awayTeamLogo = '';
+
+                if (parts.length === 2) {
+                    homeTeam = parts[0].trim();
+                    awayTeam = parts[1].trim();
+
+                    homeTeamLogo = TEAM_LOGOS[homeTeam] || '';
+                    awayTeamLogo = TEAM_LOGOS[awayTeam] || '';
+                }
+
                 allPerformances.push({
                     id,
                     title: item.title,
@@ -305,7 +338,11 @@ async function scrapeKBO() {
                     venue: mappedVenue,
                     link: TARGET_URL, // Link to schedule page
                     region: classifyRegion(mappedVenue),
-                    genre: 'baseball'
+                    genre: 'baseball',
+                    homeTeam,
+                    awayTeam,
+                    homeTeamLogo,
+                    awayTeamLogo
                 });
             }
         }
