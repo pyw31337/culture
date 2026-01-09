@@ -68,6 +68,9 @@ async function scrapeKovo() {
                 console.log('Timeout waiting for rows, checking generic content...');
             }
 
+            // Auto Scroll to load all data
+            await autoScroll(page);
+
             // Scrape Data using DOM evaluation
             const scrapedItems = await page.evaluate(() => {
                 const results: any[] = [];
@@ -111,35 +114,55 @@ async function scrapeKovo() {
                             const time = text.match(/(\d{2}:\d{2})/)?.[1] || '00:00';
 
                             // Teams & Logos
-                            // Home (Left)
-                            const homeImg = row.querySelector('.MuiBox-root.css-18arn4l img');
+                            // Past Games: Home(.css-18arn4l), Away(.css-3cjh58)
+                            // Future Games: Home(.css-g4ckpe), Away(.css-1h8qpou)
+
+                            const homeImg = row.querySelector('.MuiBox-root.css-18arn4l img') || row.querySelector('.MuiBox-root.css-g4ckpe img');
                             const homeLogo = homeImg?.getAttribute('src') || '';
                             const homeTeamFull = homeImg?.getAttribute('alt') || '';
-                            const homeTeam = homeTeamFull.split(' ').pop() || ''; // "인천 흥국생명 핑크스파이더스" -> "핑크스파이더스"
+                            const homeTeam = homeTeamFull.split(' ').pop() || '';
 
-                            // Away (Right)
-                            const awayImg = row.querySelector('.MuiBox-root.css-3cjh58 img');
+                            const awayImg = row.querySelector('.MuiBox-root.css-3cjh58 img') || row.querySelector('.MuiBox-root.css-1h8qpou img');
                             const awayLogo = awayImg?.getAttribute('src') || '';
                             const awayTeamFull = awayImg?.getAttribute('alt') || '';
                             const awayTeam = awayTeamFull.split(' ').pop() || '';
 
-                            // Venue
-                            // Venue is usually just text in the row, e.g., "인천삼산체육관"
-                            // Let's extract generic text and filter out teams/time/VS
-                            // Simplistic approach: Match known stadium names? 
-                            // Or look for text nodes that are not time/score.
-                            // The textContent includes "19:00\n흥국생명\n3 : 1\n페퍼저축은행\n인천삼산체육관\n중계..."
-                            // The venue is usually after the score/teams.
-
+                            // Venue Extraction
                             let venue = '정보없음';
-                            const venueMatch = text.match(/(장충|인천|삼산|계양|수원|안산|상록수|의정부|화성|김천|천안|대전|충무|페퍼|광주)/);
+
+                            // 1. Try finding the specific venue text node
+                            // Based on inspection, venue is often in a span or p tag.
+                            // Let's try to find a node that contains '체육관' or '스타디움'
+                            const allText = (row as HTMLElement).innerText;
+                            const venueMatch = allText.match(/[가-힣\s]*(체육관|스타디움|경기장)/);
+
                             if (venueMatch) {
-                                // Extract the full word/phrase around the match if possible, or mapping
-                                // Actually scrapeKovo classifyRegion handles mapping, we just need the string.
-                                // Let's try to get the raw text line that contains the venue.
-                                const textLines = (row as HTMLElement).innerText.split('\n');
-                                venue = textLines.find(l => l.includes('체육관') || l.includes('상록수') || l.includes('스타디움')) || venueMatch[0]; // Fallback to matched keyword
+                                // Clean up match
+                                venue = venueMatch[0].trim();
+                                const lines = allText.split('\n');
+                                const venueLine = lines.find(l => l.includes('체육관') || l.includes('스타디움') || l.includes('경기장'));
+                                if (venueLine) venue = venueLine.trim();
+                            } else {
+                                // Fallback mapping based on Home Team (using full name from ALT)
+                                // If venue is missing from text, infer from Home Team
+                                if (homeTeamFull.includes('현대건설')) venue = '수원실내체육관';
+                                else if (homeTeamFull.includes('흥국생명')) venue = '인천삼산월드체육관';
+                                else if (homeTeamFull.includes('정관장')) venue = '대전충무체육관';
+                                else if (homeTeamFull.includes('기업은행')) venue = '화성종합경기타운 실내체육관';
+                                else if (homeTeamFull.includes('GS칼텍스') || homeTeamFull.includes('Kixx')) venue = '서울장충체육관';
+                                else if (homeTeamFull.includes('도로공사')) venue = '김천실내체육관';
+                                else if (homeTeamFull.includes('페퍼저축은행')) venue = '페퍼스타디움';
+                                else if (homeTeamFull.includes('대한항공') || homeTeamFull.includes('점보스')) venue = '인천계양체육관';
+                                else if (homeTeamFull.includes('현대캐피탈') || homeTeamFull.includes('스카이워커스')) venue = '천안유관순체육관';
+                                else if (homeTeamFull.includes('한국전력') || homeTeamFull.includes('빅스톰')) venue = '수원실내체육관';
+                                else if (homeTeamFull.includes('우리카드')) venue = '서울장충체육관';
+                                else if (homeTeamFull.includes('OK저축은행') || homeTeamFull.includes('읏맨')) venue = '안산상록수체육관';
+                                else if (homeTeamFull.includes('삼성화재') || homeTeamFull.includes('블루팡스')) venue = '대전충무체육관';
+                                else if (homeTeamFull.includes('KB손해보험') || homeTeamFull.includes('스타즈')) venue = '의정부체육관';
                             }
+
+                            // Specific fix for abbreviated names
+                            if (venue === '삼산체육관') venue = '인천삼산월드체육관';
 
                             if (homeTeam && awayTeam) {
                                 results.push({
@@ -155,10 +178,6 @@ async function scrapeKovo() {
                             }
                         });
                     });
-                } else {
-                    // Fallback for when css-1821gv5 is not found (class name change?)
-                    // Try finding all rows and inferring date? No, tough.
-                    // Try text parsing fallback if results empty?
                 }
 
                 return results;
@@ -216,3 +235,22 @@ function classifyRegion(venue: string): string {
 }
 
 scrapeKovo().catch(console.error);
+
+async function autoScroll(page: any) {
+    await page.evaluate(async () => {
+        await new Promise<void>((resolve) => {
+            let totalHeight = 0;
+            const distance = 100;
+            const timer = setInterval(() => {
+                const scrollHeight = document.body.scrollHeight;
+                window.scrollBy(0, distance);
+                totalHeight += distance;
+
+                if (totalHeight >= scrollHeight) {
+                    clearInterval(timer);
+                    resolve();
+                }
+            }, 100);
+        });
+    });
+}
