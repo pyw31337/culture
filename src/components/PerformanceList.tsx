@@ -3285,7 +3285,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 {viewMode === 'likes-perf' ? (
                                     <>
                                         <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
-                                        <span>좋아요 공연</span>
+                                        <span>좋아요</span>
                                         <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
                                     </>
                                 ) : viewMode === 'likes-venue' ? (
@@ -3447,8 +3447,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
                                                 <Heart className="w-10 h-10 text-pink-500/50" />
                                             </div>
-                                            <h3 className="text-xl font-bold text-pink-400 mb-2">좋아요한 공연이 없네요</h3>
-                                            <p className="text-gray-500">마음에 드는 공연에 하트를 눌러보세요!</p>
+                                            <h3 className="text-xl font-bold text-pink-400 mb-2">좋아요한 컨텐츠가 없네요</h3>
+                                            <p className="text-gray-500">마음에 드는 컨텐츠에 하트를 눌러보세요!</p>
                                         </>
                                     ) : viewMode === 'likes-venue' ? (
                                         <>
