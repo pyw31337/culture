@@ -292,46 +292,152 @@ const HERO_TEMPLATES = {
     },
     // Genre Specific Templates
     genre: {
+        // Sports - Ball Games
         volleyball: [
             { line1: "오늘 배구 경기 어때요?", line2Pre: "스파이크 한 방에 스트레스 날려버릴 ", highlight: "배구 직관", suffix: " 가보자고!", keywords: ["배구", "volleyball", "V-리그"] },
-            { line1: "심장이 쫄깃한 랠리,", line2Pre: "코트 위의 뜨거운 열기, ", highlight: "배구장", suffix: "으로 초대합니다.", keywords: ["배구", "volleyball"] }
+            { line1: "심장이 쫄깃한 랠리,", line2Pre: "코트 위의 뜨거운 열기, ", highlight: "배구장", suffix: "으로 초대합니다.", keywords: ["배구", "volleyball"] },
+            { line1: "거침없는 강스파이크!", line2Pre: "선수들의 투지가 빛나는 ", highlight: "승부의 세계", suffix: "를 만나보세요.", keywords: ["배구", "스파이크"] },
+            { line1: "배구 여신 보러 갈래?", line2Pre: "TV보다 훨씬 더 생생한 ", highlight: "직관의 매력", suffix: "에 빠져보세요.", keywords: ["배구", "직관"] },
+            { line1: "환상적인 블로킹!", line2Pre: "손에 땀을 쥐게 하는 ", highlight: "명승부", suffix: "가 펼쳐집니다.", keywords: ["배구", "블로킹"] }
         ],
         basketball: [
             { line1: "버저비터의 짜릿함!", line2Pre: "0.1초의 승부, ", highlight: "농구 직관", suffix: "의 묘미를 느껴보세요.", keywords: ["농구", "basketball", "KBL"] },
-            { line1: "슬램덩크 좋아하세요?", line2Pre: "현실에서 펼쳐지는 ", highlight: "박진감 넘치는 경기", suffix: "가 기다립니다.", keywords: ["농구", "basketball"] }
+            { line1: "슬램덩크 좋아하세요?", line2Pre: "현실에서 펼쳐지는 ", highlight: "박진감 넘치는 경기", suffix: "가 기다립니다.", keywords: ["농구", "basketball"] },
+            { line1: "코트 위를 지배하라,", line2Pre: "선수들의 뜨거운 열정, ", highlight: "농구장", suffix: "에서 확인하세요.", keywords: ["농구", "열정"] },
+            { line1: "겨울 실내 스포츠의 꽃,", line2Pre: "추위도 잊게 만드는 ", highlight: "뜨거운 함성", suffix: " 속으로!", keywords: ["농구", "겨울"] },
+            { line1: "마이클 조던 빙의?", line2Pre: "화려한 개인기와 ", highlight: "멋진 덩크슛", suffix: "을 눈앞에서!", keywords: ["농구", "덩크"] }
         ],
         soccer: [
             { line1: "골~인! 함성 소리,", line2Pre: "푸른 잔디 위에서 펼쳐지는 ", highlight: "축구 경기", suffix: " 함께 응원해요.", keywords: ["축구", "soccer", "K리그"] },
-            { line1: "오늘은 축구 보는 날,", line2Pre: "치킨 하나 사들고 ", highlight: "축구장 나들이", suffix: " 어떠세요?", keywords: ["축구", "soccer"] }
+            { line1: "오늘은 축구 보는 날,", line2Pre: "치킨 하나 사들고 ", highlight: "축구장 나들이", suffix: " 어떠세요?", keywords: ["축구", "soccer"] },
+            { line1: "붉은 악마가 되어볼까?", line2Pre: "심장을 울리는 ", highlight: "뜨거운 응원전", suffix: "에 합류하세요.", keywords: ["축구", "응원"] },
+            { line1: "국가대표급 플레이,", line2Pre: "그라운드를 누비는 ", highlight: "선수들의 열정", suffix: "을 응원합니다.", keywords: ["축구", "국가대표"] },
+            { line1: "90분의 드라마,", line2Pre: "예측불허 승부의 세계, ", highlight: "축구 직관", suffix: "이 답입니다.", keywords: ["축구", "직관"] }
         ],
         baseball: [
             { line1: "야구장 갈 준비 됐나요?", line2Pre: "9회말 2아웃, ", highlight: "역전의 드라마", suffix: "를 눈앞에서!", keywords: ["야구", "baseball", "KBO"] },
-            { line1: "홈런볼보다 맛있는 직관,", line2Pre: "다 같이 부르는 ", highlight: "응원가", suffix: "가 그리울 땐 야구장으로!", keywords: ["야구", "baseball"] }
+            { line1: "치맥과 함께 야구장!", line2Pre: "다 같이 부르는 ", highlight: "응원가", suffix: "가 그리울 땐 야구장으로!", keywords: ["야구", "baseball", "치맥"] },
+            { line1: "홈런볼 날아갑니다!", line2Pre: "스트레스 날려버릴 ", highlight: "시원한 홈런", suffix: " 한 방!", keywords: ["야구", "홈런"] },
+            { line1: "가을 야구를 향하여,", line2Pre: "매 경기 명승부, ", highlight: "치열한 순위 싸움", suffix: "을 지켜보세요.", keywords: ["야구", "가을야구"] },
+            { line1: "야구는 끝날 때까지,", line2Pre: "끝난 게 아니다! ", highlight: "기적 같은 승리", suffix: "를 믿어보세요.", keywords: ["야구", "명언"] }
         ],
+        handball: [
+            { line1: "우생순의 감동 그대로,", line2Pre: "작은 공 하나에 담긴 ", highlight: "투지와 열정", suffix: "을 만나보세요.", keywords: ["핸드볼", "handball"] },
+            { line1: "스피드와 파워의 조화,", line2Pre: "실내에서 즐기는 ", highlight: "다이내믹한 승부", suffix: " 핸드볼!", keywords: ["핸드볼", "경기"] },
+            { line1: "핸드볼 H리그 개막!", line2Pre: "선수들의 거친 숨소리까지 들리는 ", highlight: "생생한 현장", suffix: "으로.", keywords: ["핸드볼", "H리그"] },
+            { line1: "던지고 막고 뛰고!", line2Pre: "한시도 눈을 뗄 수 없는 ", highlight: "박진감", suffix: " 넘치는 경기.", keywords: ["핸드볼", "스포츠"] },
+            { line1: "비인기? 아니 꿀재미!", line2Pre: "한 번 보면 빠져드는 ", highlight: "핸드볼의 매력", suffix: "을 발견하세요.", keywords: ["핸드볼", "매력"] }
+        ],
+        hockey: [
+            { line1: "빙판 위의 격투기,", line2Pre: "가장 빠르고 거친 스포츠, ", highlight: "아이스하키", suffix: "의 세계로!", keywords: ["하키", "hockey", "아이스하키"] },
+            { line1: "퍽! 소리 나는 쾌감,", line2Pre: "시속 160km로 질주하는 ", highlight: "퍽의 움직임", suffix: "을 쫓아보세요.", keywords: ["하키", "퍽"] },
+            { line1: "쿨한 링크장 데이트,", line2Pre: "무더위를 날려버릴 ", highlight: "시원한 경기", suffix: " 관람 어때요?", keywords: ["하키", "피서"] },
+            { line1: "바디체크의 짜릿함,", line2Pre: "남자들의 뜨거운 승부, ", highlight: "빙판 위의 전쟁", suffix: "이 시작됩니다.", keywords: ["하키", "승부"] },
+            { line1: "동계 스포츠의 꽃,", line2Pre: "순백의 링크 위 펼쳐지는 ", highlight: "화려한 플레이", suffix: "를 감상하세요.", keywords: ["하키", "동계"] }
+        ],
+
+        // Arts & Performance
         musical: [
             { line1: "오늘은 내가 주인공,", line2Pre: "화려한 조명 아래 펼쳐지는 ", highlight: "뮤지컬 한 편", suffix: " 어때요?", keywords: ["뮤지컬", "musical"] },
-            { line1: "눈과 귀가 즐거운 시간,", line2Pre: "당신의 감성을 채워줄 ", highlight: "명작 뮤지컬", suffix: "을 만나보세요.", keywords: ["뮤지컬", "musical"] }
+            { line1: "눈과 귀가 즐거운 시간,", line2Pre: "당신의 감성을 채워줄 ", highlight: "명작 뮤지컬", suffix: "을 만나보세요.", keywords: ["뮤지컬", "musical"] },
+            { line1: "브로드웨이 안 부럽다!", line2Pre: "한국에서 만나는 ", highlight: "월드클래스 무대", suffix: "가 여기 있어요.", keywords: ["뮤지컬", "대작"] },
+            { line1: "가슴 벅찬 넘버의 향연,", line2Pre: "배우들의 폭팔적인 가창력에 ", highlight: "압도당할 시간", suffix: "입니다.", keywords: ["뮤지컬", "넘버"] },
+            { line1: "VIP석 부럽지 않은,", line2Pre: "생생한 감동을 전해줄 ", highlight: "화제의 신작", suffix: "을 소개합니다.", keywords: ["뮤지컬", "신작"] }
         ],
         play: [
             { line1: "대학로 감성 충전,", line2Pre: "배우들의 숨소리까지 느껴지는 ", highlight: "연극 무대", suffix: "로 초대합니다.", keywords: ["연극", "play", "대학로"] },
-            { line1: "소소하지만 확실한 행복,", line2Pre: "웃음과 감동이 있는 ", highlight: "연극 한 편", suffix: " 관람하세요.", keywords: ["연극", "play"] }
+            { line1: "소소하지만 확실한 행복,", line2Pre: "웃음과 감동이 있는 ", highlight: "연극 한 편", suffix: " 관람하세요.", keywords: ["연극", "play"] },
+            { line1: "스크린과는 다른 매력,", line2Pre: "눈앞에서 펼쳐지는 ", highlight: "리얼한 연기", suffix: "에 빠져보세요.", keywords: ["연극", "배우"] },
+            { line1: "로맨스부터 스릴러까지,", line2Pre: "취향대로 골라 보는 ", highlight: "다채로운 연극", suffix: "의 세계.", keywords: ["연극", "취향"] },
+            { line1: "오늘 뭐 하지? 연극!", line2Pre: "친구, 연인과 함께 ", highlight: "특별한 추억", suffix: " 만들기 딱 좋아요.", keywords: ["연극", "데이트"] }
         ],
         classical: [
             { line1: "우아한 하루의 완성,", line2Pre: "마음을 차분하게 해줄 ", highlight: "클래식 선율", suffix: "을 선물합니다.", keywords: ["클래식", "classical", "음악회"] },
-            { line1: "복잡한 생각은 잠시 끄고,", line2Pre: "오케스트라의 ", highlight: "웅장한 울림", suffix: "에 빠져보세요.", keywords: ["클래식", "classical"] }
+            { line1: "복잡한 생각은 잠시 끄고,", line2Pre: "오케스트라의 ", highlight: "웅장한 울림", suffix: "에 빠져보세요.", keywords: ["클래식", "classical"] },
+            { line1: "영혼을 울리는 선율,", line2Pre: "지친 당신을 위로해줄 ", highlight: "치유의 음악", suffix: "이 흐릅니다.", keywords: ["클래식", "힐링"] },
+            { line1: "발레의 우아함,", line2Pre: "손끝 하나에도 감정이 실린 ", highlight: "아름다운 몸짓", suffix: "을 감상하세요.", keywords: ["무용", "발레"] },
+            { line1: "브런치 콘서트 어때요?", line2Pre: "여유로운 오전, ", highlight: "향긋한 커피와 클래식", suffix: "의 만남.", keywords: ["클래식", "브런치"] }
         ],
+        concert: [
+            { line1: "떼창 준비되셨나요?", line2Pre: "스트레스 확 날려버릴 ", highlight: "광란의 콘서트", suffix: " 현장으로!", keywords: ["콘서트", "concert"] },
+            { line1: "나의 최애를 만나는 날,", line2Pre: "꿈꿔왔던 바로 그 순간, ", highlight: "두근두근 설렘", suffix: " 가득!", keywords: ["콘서트", "팬미팅"] },
+            { line1: "음악에 취하는 밤,", line2Pre: "라이브로 듣는 ", highlight: "전율의 무대", suffix: "가 당신을 기다립니다.", keywords: ["콘서트", "라이브"] },
+            { line1: "목이 터져라 소리질러!", line2Pre: "모두가 하나 되는 ", highlight: "열정의 도가니", suffix: " 속으로 빠져보세요.", keywords: ["콘서트", "열정"] },
+            { line1: "감성 보컬의 라이브,", line2Pre: "지친 마음을 어루만져 줄 ", highlight: "따뜻한 노래", suffix: "를 들려드릴게요.", keywords: ["콘서트", "감성"] }
+        ],
+
+        // Exhibition & Activity
         exhibition: [
             { line1: "조용한 사색이 필요한 날,", line2Pre: "나만의 속도로 즐기는 ", highlight: "미술관 데이트", suffix: " 어떠세요?", keywords: ["전시", "exhibition", "미술관"] },
-            { line1: "새로운 영감이 필요하다면,", line2Pre: "감각을 깨우는 ", highlight: "특별한 전시", suffix: "를 찾아보세요.", keywords: ["전시", "exhibition"] }
+            { line1: "새로운 영감이 필요하다면,", line2Pre: "감각을 깨우는 ", highlight: "특별한 전시", suffix: "를 찾아보세요.", keywords: ["전시", "exhibition"] },
+            { line1: "인생샷 성지 여기!", line2Pre: "찍는 족족 화보가 되는 ", highlight: "포토존 가득", suffix: "한 전시회.", keywords: ["전시", "인생샷"] },
+            { line1: "예술과 기술의 만남,", line2Pre: "눈을 뗄 수 없는 ", highlight: "몰입형 미디어아트", suffix: "의 세계로.", keywords: ["전시", "미디어아트"] },
+            { line1: "도슨트와 함께하는,", line2Pre: "알고 보면 더 재미있는 ", highlight: "친절한 예술 여행", suffix: "을 떠나보세요.", keywords: ["전시", "도슨트"] }
         ],
-        kids: [
-            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 공연", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
-            { line1: "엄마 아빠 어디가?", line2Pre: "아이들이 더 좋아하는 ", highlight: "신나는 체험", suffix: " 떠나볼까요?", keywords: ["아동", "kids"] }
+        activity: [
+            { line1: "지루한 건 딱 질색!", line2Pre: "온몸으로 즐기는 ", highlight: "짜릿한 액티비티", suffix: "가 필요해요.", keywords: ["액티비티", "activity"] },
+            { line1: "아드레날린 폭발!", line2Pre: "일상의 스트레스를 날려버릴 ", highlight: "익사이팅 체험", suffix: " 도전!", keywords: ["액티비티", "익사이팅"] },
+            { line1: "이번 주말 이색 데이트,", line2Pre: "함께 땀 흘리며 더 가까워지는 ", highlight: "커플 액티비티", suffix: " 강추!", keywords: ["액티비티", "데이트"] },
+            { line1: "VR부터 실내 스포츠까지,", line2Pre: "날씨 걱정 없이 즐기는 ", highlight: "실내 놀이터", suffix: " 총집합.", keywords: ["액티비티", "실내"] },
+            { line1: "방소는 내가 탈출한다!", line2Pre: "두뇌 풀가동, ", highlight: "방탈출 게임", suffix: "의 주인공이 되어보세요.", keywords: ["방탈출", "액티비티"] }
         ],
+        class: [
+            { line1: "똥손도 금손 되는 마법,", line2Pre: "오늘 하루, 나만의 ", highlight: "취미 찾기", suffix: "에 도전해보세요.", keywords: ["클래스", "class", "원데이"] },
+            { line1: "퇴근 후 갓생 살기,", line2Pre: "지친 일상에 활력을 불어넣을 ", highlight: "원데이 클래스", suffix: " 어때요?", keywords: ["클래스", "직장인"] },
+            { line1: "나만의 향기 만들기,", line2Pre: "세상에 하나뿐인 ", highlight: "특별한 선물", suffix: "을 직접 만들어보세요.", keywords: ["클래스", "공방"] },
+            { line1: "요리부터 드로잉까지,", line2Pre: "배움의 즐거움이 가득한 ", highlight: "취미 부자", suffix: "의 길로 초대합니다.", keywords: ["클래스", "배움"] },
+            { line1: "베이킹의 달인 도전!", line2Pre: "달콤한 디저트 냄새 가득한 ", highlight: "쿠킹 클래스", suffix: "에서 힐링하세요.", keywords: ["클래스", "베이킹"] }
+        ],
+
+        // Lifestyle & Others
         travel: [
             { line1: "곧 연휴인데 어디 가지?", line2Pre: "지금 떠나기 딱 좋은 ", highlight: "여행지 정보", suffix: "를 모아봤어요.", keywords: ["여행", "travel", "투어"] },
             { line1: "일상 탈출, 준비되셨나요?", line2Pre: "가볍게 떠날 수 있는 ", highlight: "당일치기 여행", suffix: "을 추천해요.", keywords: ["여행", "travel"] },
-            { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] }
+            { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] },
+            { line1: "캠핑 감성 충전,", line2Pre: "타닥타닥 타오르는 ", highlight: "불멍의 시간", suffix: "을 가져보세요.", keywords: ["여행", "캠핑", "글램핑"] },
+            { line1: "바다가 부른다!", line2Pre: "속이 뻥 뚫리는 시원한 ", highlight: "오션뷰 여행", suffix: " 지금 바로 출발!", keywords: ["여행", "바다"] }
+        ],
+        festival: [
+            { line1: "축제의 계절이 왔어요!", line2Pre: "전국 방방곡곡 ", highlight: "흥겨운 축제", suffix: "가 당신을 기다립니다.", keywords: ["축제", "festival"] },
+            { line1: "밤하늘을 수놓는 불꽃,", line2Pre: "황홀한 야경과 함께하는 ", highlight: "로맨틱 축제", suffix: "를 즐겨보세요.", keywords: ["축제", "불꽃"] },
+            { line1: "맛있는 건 0칼로리?", line2Pre: "지역 특산물이 가득한 ", highlight: "미식 여행", suffix: " 떠나볼까요?", keywords: ["축제", "먹거리"] },
+            { line1: "거리마다 활기 가득,", line2Pre: "퍼레이드와 공연이 어우러진 ", highlight: "거리 축제", suffix: "의 현장으로.", keywords: ["축제", "퍼레이드"] },
+            { line1: "꽃구경 갈 사람?", line2Pre: "인생샷 백만 장 남길 수 있는 ", highlight: "꽃 축제", suffix: " 놓치지 마세요.", keywords: ["축제", "꽃"] }
+        ],
+        kids: [
+            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 공연", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
+            { line1: "엄마 아빠 어디 가?", line2Pre: "아이들이 더 좋아하는 ", highlight: "신나는 체험", suffix: " 떠나볼까요?", keywords: ["아동", "kids"] },
+            { line1: "동화 속 세상으로!", line2Pre: "아이들의 상상력을 키워줄 ", highlight: "마법 같은 공연", suffix: "을 선물하세요.", keywords: ["아동", "동화"] },
+            { line1: "교육과 재미를 동시에,", line2Pre: "놀면서 배우는 ", highlight: "유익한 전시", suffix: "를 만나보세요.", keywords: ["아동", "체험"] },
+            { line1: "캐릭터 친구들 안녕?", line2Pre: "TV 속 친구들을 직접 만나는 ", highlight: "팬미팅 시간", suffix: "!", keywords: ["아동", "캐릭터"] }
+        ],
+        movie: [
+            { line1: "영화 같은 하루,", line2Pre: "고소한 팝콘 냄새와 함께 ", highlight: "스크린 여행", suffix: " 떠나볼까요?", keywords: ["영화", "movie"] },
+            { line1: "천만 관객의 선택,", line2Pre: "지금 가장 핫한 ", highlight: "블록버스터", suffix: "를 확인하세요.", keywords: ["영화", "movie"] },
+            { line1: "감동의 대서사시,", line2Pre: "손수건 필수! 눈물 콧물 쏙 뺄 ", highlight: "인생 영화", suffix: " 한 편.", keywords: ["영화", "감동"] },
+            { line1: "심장이 쫄깃한 스릴러,", line2Pre: "반전에 반전을 거듭하는 ", highlight: "미친 스토리", suffix: "에 빠져보세요.", keywords: ["영화", "스릴러"] },
+            { line1: "달달한 로맨스,", line2Pre: "연애 세포 깨워줄 ", highlight: "사랑스러운 영화", suffix: " 추천해드려요.", keywords: ["영화", "로맨스"] }
+        ],
+        ott: [
+            { line1: "이불 밖은 위험해,", line2Pre: "집에서 편안하게 즐기는 ", highlight: "방구석 1열", suffix: " 영화관.", keywords: ["OTT", "넷플릭스"] },
+            { line1: "주말 순삭 주의보!", line2Pre: "한 번 시작하면 멈출 수 없는 ", highlight: "마성의 시리즈", suffix: " 정주행.", keywords: ["OTT", "드라마"] },
+            { line1: "뭘 볼까 고민될 땐?", line2Pre: "당신의 취향을 저격할 ", highlight: "추천작 리스트", suffix: "를 확인하세요.", keywords: ["OTT", "추천"] },
+            { line1: "내 손안의 극장,", line2Pre: "언제 어디서나 즐기는 ", highlight: "무제한 콘텐츠", suffix: "의 바다.", keywords: ["OTT", "콘텐츠"] },
+            { line1: "독점 공개작 오픈!", line2Pre: "오직 여기서만 볼 수 있는 ", highlight: "오리지널 시리즈", suffix: "를 만나보세요.", keywords: ["OTT", "오리지널"] }
+        ],
+        hotdeal: [
+            { line1: "놓치면 후회할 껄요?", line2Pre: "지금 이 순간만 가능한 ", highlight: "역대급 할인", suffix: " 찬스!", keywords: ["핫딜", "hotdeal"] },
+            { line1: "지갑은 지키고 재미는 챙기고,", line2Pre: "가성비 끝판왕 ", highlight: "반값 티켓", suffix: "이 쏟아집니다.", keywords: ["핫딜", "할인"] },
+            { line1: "마감 임박! 서두르세요,", line2Pre: "고민하는 순간 품절되는 ", highlight: "초특가 타임", suffix: ".", keywords: ["핫딜", "마감"] },
+            { line1: "문화생활도 알뜰하게,", line2Pre: "똑똑한 당신을 위한 ", highlight: "최저가 혜택", suffix: " 모음.", keywords: ["핫딜", "최저가"] },
+            { line1: "오늘만 이 가격!", line2Pre: "눈을 의심하게 만드는 ", highlight: "파격적인 혜택", suffix: "을 잡으세요.", keywords: ["핫딜", "이벤트"] }
+        ],
+        leisure: [
+            { line1: "주말엔 역시 야외로!", line2Pre: "꽉 막힌 도심을 벗어나 ", highlight: "자유를 만끽", suffix: "하세요.", keywords: ["레저", "leisure"] },
+            { line1: "물 위를 가르는 짜릿함,", line2Pre: "무더위를 잊게 해줄 ", highlight: "수상 레저", suffix: "의 세계로.", keywords: ["레저", "수상"] },
+            { line1: "하얀 설원을 질주하라,", line2Pre: "짜릿한 속도감이 느껴지는 ", highlight: "겨울 레저", suffix: " 시즌!", keywords: ["레저", "스키"] },
+            { line1: "힐링 낚시 캠프,", line2Pre: "잔잔한 물결을 바라보며 ", highlight: "세월을 낚는", suffix: " 여유를 즐기세요.", keywords: ["레저", "낚시"] },
+            { line1: "도심 속 힐링 스팟,", line2Pre: "가볍게 즐길 수 있는 ", highlight: "실내 레저", suffix: "도 다양해요.", keywords: ["레저", "실내"] }
         ]
     },
     location: [
@@ -688,15 +794,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             if (initialPerformances.some(p => p.genre === 'basketball')) pool.push(...HERO_TEMPLATES.genre.basketball);
             if (initialPerformances.some(p => p.genre === 'soccer')) pool.push(...HERO_TEMPLATES.genre.soccer);
             if (initialPerformances.some(p => p.genre === 'baseball')) pool.push(...HERO_TEMPLATES.genre.baseball);
+            if (initialPerformances.some(p => p.genre === 'handball')) pool.push(...HERO_TEMPLATES.genre.handball);
+            if (initialPerformances.some(p => p.genre === 'hockey')) pool.push(...HERO_TEMPLATES.genre.hockey);
 
-            // Arts
-            // Randomly promote arts to diversify (10% chance each to add to pool if available)
-            if (Math.random() > 0.5) {
+            // Arts & Lifestyle
+            // Randomly promote genres to diversify (20% chance each to add to pool if available)
+            if (Math.random() > 0.3) {
                 if (initialPerformances.some(p => p.genre === 'musical')) pool.push(...HERO_TEMPLATES.genre.musical);
                 if (initialPerformances.some(p => p.genre === 'play')) pool.push(...HERO_TEMPLATES.genre.play);
                 if (initialPerformances.some(p => p.genre === 'classical')) pool.push(...HERO_TEMPLATES.genre.classical);
                 if (initialPerformances.some(p => p.genre === 'exhibition')) pool.push(...HERO_TEMPLATES.genre.exhibition);
                 if (initialPerformances.some(p => p.genre === 'kids')) pool.push(...HERO_TEMPLATES.genre.kids);
+
+                // New Genres
+                if (initialPerformances.some(p => p.genre === 'movie')) pool.push(...HERO_TEMPLATES.genre.movie);
+                if (initialPerformances.some(p => p.genre === 'ott')) pool.push(...HERO_TEMPLATES.genre.ott);
+                if (initialPerformances.some(p => p.genre === 'hotdeal')) pool.push(...HERO_TEMPLATES.genre.hotdeal);
+                if (initialPerformances.some(p => p.genre === 'class')) pool.push(...HERO_TEMPLATES.genre.class);
+                if (initialPerformances.some(p => p.genre === 'activity')) pool.push(...HERO_TEMPLATES.genre.activity);
+                if (initialPerformances.some(p => p.genre === 'festival')) pool.push(...HERO_TEMPLATES.genre.festival);
+                if (initialPerformances.some(p => p.genre === 'leisure')) pool.push(...HERO_TEMPLATES.genre.leisure);
             }
 
             // 2. Keyword Check
