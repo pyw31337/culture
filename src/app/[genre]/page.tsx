@@ -134,6 +134,9 @@ async function getPerformances(genreFilter: string | string[] | null) {
         }
 
         if (!validRegions.includes(p.region)) {
+            // Allow nationwide festivals (passed date check above)
+            if (p.genre === 'festival') return true;
+
             if (p.genre === 'volleyball') {
                 // Check if it was allowed by the specific list above but then caught here?
                 // No, logic flow:

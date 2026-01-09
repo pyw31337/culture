@@ -129,11 +129,13 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
 
             let date = '';
             const dataIcon = document.querySelector('.info_ico.data');
-            if (dataIcon && dataIcon.nextElementSibling) date = dataIcon.nextElementSibling.textContent?.trim() || '';
+            if (dataIcon && dataIcon.nextElementSibling) {
+                date = (dataIcon.nextElementSibling.textContent || '').replace(/\s+/g, ' ').trim();
+            }
             if (!date) {
                 const allInfoContents = document.querySelectorAll('.info_content');
                 for (const el of allInfoContents) {
-                    const text = el.textContent?.trim() || '';
+                    const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
                     if (text.includes('~') || text.match(/\d{4}\.\d{2}/)) { date = text; break; }
                 }
             }
