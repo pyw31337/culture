@@ -1,5 +1,5 @@
 /**
- * VisitKorea Festival Scraper (Nationwide)
+ * VisitKorea Festival Scraper (Nationwide) - Fixed Version
  * Scrapes festival data from korean.visitkorea.or.kr for all Korean provinces.
  */
 
@@ -10,8 +10,8 @@ import * as path from 'path';
 const OUTPUT_FILE = path.join(process.cwd(), 'src/data/festivals.json');
 const BASE_URL = 'https://korean.visitkorea.or.kr';
 const LIST_URL = `${BASE_URL}/list/travelinfo.do?service=show`;
-// Detail URL using UUID (fstvlCntntsId)
-const DETAIL_URL_TEMPLATE = `${BASE_URL}/kfes/detail/fstvlDetail.do?fstvlCntntsId=`;
+// Detail URL template - will be constructed dynamically
+const DETAIL_BASE_URL = `${BASE_URL}/detail/fes_detail.do`;
 
 // Nationwide region mapping from address prefix
 const REGION_MAP: Record<string, string> = {
@@ -53,19 +53,45 @@ function parseRegion(address: string): string {
     return 'etc';
 }
 
-async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string; title: string; thumbnailImage: string }[]> {
-    // Navigate to page
+async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string; title: string; thumbnailImage: string; urlParams?: { cat1: string, cat2: string, areacode: string } }[]> {
+    // Navigate to page via clicking the page link
     if (pageNum > 1) {
-        await page.evaluate((num) => {
+        // Click the page number or use goPage
+        const clicked = await page.evaluate((num) => {
+            // Try to find and click the page link
+            const pageLinks = document.querySelectorAll('.page_box a');
+            for (const link of pageLinks) {
+                if (link.textContent?.trim() === String(num)) {
+                    (link as HTMLElement).click();
+                    return true;
+                }
+            }
+            // Fallback: call goPage directly  
             // @ts-ignore
-            window.goPage(num);
+            if (typeof window.goPage === 'function') {
+                // @ts-ignore
+                window.goPage(num);
+                return true;
+            }
+            return false;
         }, pageNum);
-        await new Promise(r => setTimeout(r, 2000)); // Wait for AJAX
+
+        if (!clicked) {
+            console.log(`  Warning: Could not navigate to page ${pageNum}`);
+        }
+
+        // Wait for AJAX with content change detection
+        await page.waitForFunction(() => {
+            // Check if loading indicator is hidden or items have changed
+            return document.querySelector('ul.list_thumType > li') !== null;
+        }, { timeout: 10000 }).catch(() => { });
+
+        await new Promise(r => setTimeout(r, 2000)); // Additional wait for stability
     }
 
     // Extract items from list
     const items = await page.evaluate(() => {
-        const results: { id: string; title: string; thumbnailImage: string }[] = [];
+        const results: { id: string; title: string; thumbnailImage: string; urlParams?: { cat1: string, cat2: string, areacode: string } }[] = [];
         const listItems = document.querySelectorAll('ul.list_thumType > li');
 
         listItems.forEach((li) => {
@@ -73,16 +99,30 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string
             const img = li.querySelector('.area_img img') as HTMLImageElement;
 
             if (titleLink) {
-                // Extract UUID from onclick: goDetail('uuid','A02','A0207','32');
+                // Extract params from onclick: goDetail('uuid','A02','A0207','32');
                 const onclick = titleLink.getAttribute('onclick') || '';
-                const match = onclick.match(/goDetail\('([a-f0-9-]+)'/);
-                const id = match ? match[1] : '';
+                // Match parameters inside goDetail(...)
+                const match = onclick.match(/goDetail\(([^)]+)\)/);
 
-                results.push({
-                    id,
-                    title: titleLink.innerText.trim(),
-                    thumbnailImage: img?.src || '',
-                });
+                if (match) {
+                    const args = match[1].split(',').map(s => s.trim().replace(/['"]/g, ''));
+                    if (args.length >= 4) {
+                        const [id, cat1, cat2, areacode] = args;
+                        results.push({
+                            id,
+                            title: titleLink.innerText.trim(),
+                            thumbnailImage: img?.src || '',
+                            urlParams: { cat1, cat2, areacode }
+                        });
+                    } else if (args.length >= 1) {
+                        // Fallback if only ID is present (unlikely but possible)
+                        results.push({
+                            id: args[0],
+                            title: titleLink.innerText.trim(),
+                            thumbnailImage: img?.src || '',
+                        });
+                    }
+                }
             }
         });
 
@@ -92,39 +132,95 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<{ id: string
     return items;
 }
 
-async function scrapeDetailPage(page: Page, id: string, listTitle: string, listImage: string): Promise<FestivalItem | null> {
-    const url = DETAIL_URL_TEMPLATE + id;
+async function scrapeDetailPage(page: Page, id: string, listTitle: string, listImage: string, urlParams?: { cat1: string, cat2: string, areacode: string }): Promise<FestivalItem | null> {
+    // Construct URL with all params if available, otherwise fallback to simple ID (which might fail)
+    let url = '';
+    if (urlParams) {
+        url = `${DETAIL_BASE_URL}?cotid=${id}&big_category=${urlParams.cat1}&mid_category=${urlParams.cat2}&big_area=${urlParams.areacode}`;
+    } else {
+        url = `${DETAIL_BASE_URL}?cotid=${id}`;
+    }
 
     try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
         await new Promise(r => setTimeout(r, 1500));
 
         const details = await page.evaluate(() => {
-            // Poster image (priority)
-            const posterImg = document.querySelector('#mainTab > div > div > section.poster_detail > div > div.poster_detail_wrap > div > div.detail_img_box > a > img') as HTMLImageElement;
-            let image = posterImg?.src || '';
+            // Poster image - try multiple selectors based on page structure
+            let image = '';
 
-            // Fallback: background image
+            // Try detail_img_box img first
+            const posterImg = document.querySelector('.detail_img_box img') as HTMLImageElement;
+            if (posterImg?.src) {
+                image = posterImg.src;
+            }
+
+            // Try swiper slide images
             if (!image) {
-                const bgDiv = document.querySelector('#mainTab > div > section > div > div') as HTMLElement;
+                const swiperImg = document.querySelector('.swiper-slide img') as HTMLImageElement;
+                if (swiperImg?.src) {
+                    image = swiperImg.src;
+                }
+            }
+
+            // Fallback: background image from visual_bg
+            if (!image) {
+                const bgDiv = document.querySelector('.visula_bg, .visual_bg') as HTMLElement;
                 if (bgDiv) {
                     const style = window.getComputedStyle(bgDiv);
                     const bgImage = style.backgroundImage;
                     const urlMatch = bgImage.match(/url\(["']?([^"')]+)["']?\)/);
-                    image = urlMatch ? urlMatch[1] : '';
+                    if (urlMatch) image = urlMatch[1];
                 }
             }
 
-            // Festival period
-            const periodEl = document.querySelector('#mainTab > div > div > section.poster_detail > div > div.poster_detail_wrap > div > div.img_info_box > ul > li:nth-child(1) > p');
-            const date = periodEl?.textContent?.trim() || '';
+            // Another fallback: any img in poster_detail or detail sections
+            if (!image) {
+                const anyImg = document.querySelector('.poster_detail img, .detail_info img, section img') as HTMLImageElement;
+                if (anyImg?.src) image = anyImg.src;
+            }
 
-            // Venue address
-            const venueEl = document.querySelector('#mainTab > div > div > section.poster_detail > div > div.poster_detail_wrap > div > div.img_info_box > ul > li:nth-child(2) > p');
-            const venue = venueEl?.textContent?.trim() || '';
+            // Festival period - use nextElementSibling to get the .info_content after .info_ico.data
+            let date = '';
+            const dataIcon = document.querySelector('.info_ico.data');
+            if (dataIcon && dataIcon.nextElementSibling) {
+                date = dataIcon.nextElementSibling.textContent?.trim() || '';
+            }
+            // Fallback: look for any element with .info_content that contains a date pattern
+            if (!date) {
+                const allInfoContents = document.querySelectorAll('.info_content');
+                for (const el of allInfoContents) {
+                    const text = el.textContent?.trim() || '';
+                    if (text.includes('~') || text.match(/\d{4}\.\d{2}/)) {
+                        date = text;
+                        break;
+                    }
+                }
+            }
 
-            // Title (from page)
-            const titleEl = document.querySelector('h2.tit') || document.querySelector('.poster_detail_wrap h2');
+            // Venue address - use nextElementSibling to get the .info_content after .info_ico.location
+            let venue = '';
+            const locIcon = document.querySelector('.info_ico.location');
+            if (locIcon && locIcon.nextElementSibling) {
+                venue = locIcon.nextElementSibling.textContent?.trim() || '';
+            }
+            // Fallback: look for any element that contains Korean address patterns
+            if (!venue) {
+                const allInfoContents = document.querySelectorAll('.info_content');
+                for (const el of allInfoContents) {
+                    const text = el.textContent?.trim() || '';
+                    if (text.includes('도 ') || text.includes('시 ') || text.includes('군 ') || text.includes('구 ')) {
+                        venue = text;
+                        break;
+                    }
+                }
+            }
+
+            // Title - multiple fallbacks
+            const titleEl = document.querySelector('h2#festival_head') ||
+                document.querySelector('.fstvl_tit') ||
+                document.querySelector('h2.tit') ||
+                document.querySelector('.poster_detail_wrap h2');
             const title = titleEl?.textContent?.trim() || '';
 
             return { image, date, venue, title };
@@ -147,18 +243,20 @@ async function scrapeDetailPage(page: Page, id: string, listTitle: string, listI
 }
 
 async function main() {
-    console.log('Starting VisitKorea Festival Scraper (Nationwide)...');
+    console.log('Starting VisitKorea Festival Scraper (Nationwide) - Fixed Version...');
     console.log(`Using executablePath: ${process.env.PUPPETEER_EXECUTABLE_PATH || 'Bundled'}`);
 
-    // Load existing data
+    // Load existing data with valid entries only
     let existingItems: FestivalItem[] = [];
     const existingIds = new Set<string>();
 
     if (fs.existsSync(OUTPUT_FILE)) {
         try {
-            existingItems = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            // Only keep items that have valid data (date and venue populated)
+            existingItems = loaded.filter((item: FestivalItem) => item.date && item.venue);
             existingItems.forEach(item => existingIds.add(item.id));
-            console.log(`Loaded ${existingItems.length} existing items.`);
+            console.log(`Loaded ${existingItems.length} valid existing items (filtered from ${loaded.length} total).`);
         } catch (e) {
             console.error('Failed to load existing data:', e);
         }
@@ -208,19 +306,65 @@ async function main() {
 
         console.log(`Total pages detected: ${totalPages}`);
 
-        // 3. Scrape all list pages to get IDs
-        const allListItems: { id: string; title: string; thumbnailImage: string }[] = [];
+        // 3. Scrape all list pages to get unique IDs
+        const uniqueListItems = new Map<string, { id: string; title: string; thumbnailImage: string; urlParams?: { cat1: string, cat2: string, areacode: string } }>();
 
-        for (let p = 1; p <= totalPages; p++) {
-            console.log(`Scraping list page ${p}/${totalPages}...`);
+        // Limit pages for now to avoid issues (can increase later)
+        const maxPages = Math.min(totalPages, 150);
+
+        for (let p = 1; p <= maxPages; p++) {
+            console.log(`Scraping list page ${p}/${maxPages}...`);
+
+            if (p > 1) {
+                // Navigate to page using goPage directly and wait
+                await page.evaluate((num) => {
+                    // @ts-ignore
+                    window.goPage(num);
+                }, p);
+
+                // Wait for page change
+                await new Promise(r => setTimeout(r, 2500));
+            }
+
             const items = await scrapeListPage(page, p);
-            allListItems.push(...items);
+
+            // Check for duplicate detection (same IDs as previous page)
+            let newInPage = 0;
+            for (const item of items) {
+                if (item.id && !uniqueListItems.has(item.id)) {
+                    uniqueListItems.set(item.id, item);
+                    newInPage++;
+                }
+            }
+
+            console.log(`  Page ${p}: Found ${items.length} items, ${newInPage} new unique`);
+
+            // If no new items in this page, AJAX might not be working
+            if (p > 1 && newInPage === 0) {
+                console.log(`  Warning: No new items on page ${p}, AJAX might not be working properly.`);
+                // Try clicking "Next" button instead
+                const hasNextPage = await page.evaluate(() => {
+                    const nextBtn = document.querySelector('.page_box .btn_pageNext') as HTMLElement;
+                    if (nextBtn) {
+                        nextBtn.click();
+                        return true;
+                    }
+                    return false;
+                });
+
+                if (hasNextPage) {
+                    await new Promise(r => setTimeout(r, 2500));
+                } else {
+                    console.log('  No more pages available, stopping.');
+                    break;
+                }
+            }
         }
 
-        console.log(`Found ${allListItems.length} festivals in list.`);
+        console.log(`Found ${uniqueListItems.size} unique festivals in list.`);
 
         // 4. Filter out already scraped items
-        const newItems = allListItems.filter(item => item.id && !existingIds.has(item.id));
+        const newItems = Array.from(uniqueListItems.values()).filter(item => !existingIds.has(item.id));
         console.log(`New items to scrape: ${newItems.length}`);
 
         if (newItems.length === 0) {
@@ -236,7 +380,7 @@ async function main() {
             const listItem = newItems[i];
             console.log(`[${i + 1}/${newItems.length}] Scraping: ${listItem.title}`);
 
-            const details = await scrapeDetailPage(page, listItem.id, listItem.title, listItem.thumbnailImage);
+            const details = await scrapeDetailPage(page, listItem.id, listItem.title, listItem.thumbnailImage, listItem.urlParams);
 
             if (details) {
                 results.push(details);

@@ -1,32 +1,502 @@
 [
   {
-    "id": "festival_1",
+    "id": "1cf8d5a6-2044-4d96-878d-40bd88ae47a1",
+    "title": "홍천강 꽁꽁축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7_20.jpg",
+    "date": "2026.01.09\n                                            ~ 2026.01.25",
+    "venue": "강원특별자치도 홍천군 홍천읍 갈마곡리 신장대리 85 홍천강변일원",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=1cf8d5a6-2044-4d96-878d-40bd88ae47a1&big_category=A02&mid_category=A0207&big_area=32",
+    "genre": "festival"
+  },
+  {
+    "id": "f24685fe-ea54-45db-985f-93a7fb3abf31",
+    "title": "영양꽁꽁겨울축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/bec7a8b5-db92-4da8-be98-38036f5b6991_27.png",
+    "date": "2026.01.09\n                                            ~ 2026.01.25",
+    "venue": "경상북도 영양군 영양읍 현리 674-1번지 빙상장일원",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=f24685fe-ea54-45db-985f-93a7fb3abf31&big_category=A02&mid_category=A0207&big_area=35",
+    "genre": "festival"
+  },
+  {
+    "id": "75f7b3dc-0e98-49e5-81d8-ca0592b58ae4",
+    "title": "평창송어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/e79ad504-4e44-46d4-950c-cff9292665c1_27.jpg",
+    "date": "2026.01.09\n                                            ~ 2026.02.09",
+    "venue": "강원특별자치도 평창군 진부면 경강로 3562",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=75f7b3dc-0e98-49e5-81d8-ca0592b58ae4&big_category=A02&mid_category=A0207&big_area=32",
+    "genre": "festival"
+  },
+  {
+    "id": "055d530e-b36f-4714-9292-02a75fe47b76",
+    "title": "얼음나라화천 산천어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/02a1c2ab-bce7-404a-9c8f-4eb4ac69acb3_14.jpg",
+    "date": "2026.01.10\n                                            ~ 2026.02.01",
+    "venue": "강원특별자치도 화천군 화천읍 산천어길 137",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=055d530e-b36f-4714-9292-02a75fe47b76&big_category=A02&mid_category=A0207&big_area=32",
+    "genre": "festival"
+  },
+  {
+    "id": "8d707c5e-dc5e-4afd-9156-a8dc9fd79525",
+    "title": "지리산 함양고종시 곶감축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/6efb4a9f-e74c-409e-990a-24709f0e7c9e_20.jpg",
+    "date": "2026.01.16\n                                            ~ 2026.01.18",
+    "venue": "경상남도 함양군 함양읍 교산리 1041 상림공원 고운광장",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=8d707c5e-dc5e-4afd-9156-a8dc9fd79525&big_category=A02&mid_category=A0207&big_area=36",
+    "genre": "festival"
+  },
+  {
+    "id": "e9e49fa3-4df9-4d3f-80c7-81249bba7dfa",
+    "title": "안동 암산얼음축제",
+    "image": "",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=e9e49fa3-4df9-4d3f-80c7-81249bba7dfa&big_category=A02&mid_category=A0207&big_area=35",
+    "genre": "festival"
+  },
+  {
+    "id": "51120d69-aaeb-43b3-bea1-dc4cfdb1e9a5",
+    "title": "안성 동막골 빙어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ce544916-f27c-4839-9965-9617c27687cb_8.jpg",
+    "date": "2026.01.17\n                                            ~ 2026.02.17",
+    "venue": "경기도 안성시 죽산면 곰내미길 48 광혜원 저수지 상류 일원",
+    "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=51120d69-aaeb-43b3-bea1-dc4cfdb1e9a5&big_category=A02&mid_category=A0207&big_area=31",
+    "genre": "festival"
+  },
+  {
+    "id": "0c8f4aa0-b00e-4f6e-8974-b07503c6bf7d",
+    "title": "광안리 M(Marvelous) 드론 라이트쇼",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=d086e8fc-3474-435d-b617-6ec308578947",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=0c8f4aa0-b00e-4f6e-8974-b07503c6bf7d&big_category=A02&mid_category=A0208&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "b188db24-6de0-418d-bf2d-0cf21b3bbccb",
     "title": "포천백운계곡 동장군축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_fa0210d0-c2ce-4388-ae6e-bf81716018c9_62.jpg",
-    "date": "2025.12.20~2026.02.22",
-    "venue": "경기도 포천시",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fa0210d0-c2ce-4388-ae6e-bf81716018c9&cntntsNm=포천백운계곡동장군축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/fa0210d0-c2ce-4388-ae6e-bf81716018c9_64.jpg",
+    "date": "2025.12.20\n                                            ~ 2026.02.22",
+    "venue": "경기도 포천시 포화로 236-11   포천 백운계곡 국민관광지 일원",
     "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=b188db24-6de0-418d-bf2d-0cf21b3bbccb&big_category=A02&mid_category=A0207&big_area=31",
     "genre": "festival"
   },
   {
-    "id": "festival_2",
+    "id": "9e78c4b8-8ea5-4927-a968-3d96efd3fc00",
+    "title": "영동곶감축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/c34e66ec-0b3d-48be-96eb-c0ffbb6436ec_18.jpg",
+    "date": "2026.01.30\n                                            ~ 2026.02.01",
+    "venue": "충청북도 영동군 영동읍 계산리 867-1 영동천 하상주차장",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=9e78c4b8-8ea5-4927-a968-3d96efd3fc00&big_category=A02&mid_category=A0207&big_area=33",
+    "genre": "festival"
+  },
+  {
+    "id": "ff2733a0-f24c-449e-8f12-592c2100a649",
+    "title": "온천천 빛 축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/dc91678e-3dff-402a-986a-7fd5fbfb0743_16.png",
+    "date": "2025.12.19\n                                            ~ 2026.02.01",
+    "venue": "부산광역시 동래구 중앙대로 1324 (온천동) 부산 온천천 (도시철도 동래역 4번출구 하부 ~ 큰나무 쉼터 일원)",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=ff2733a0-f24c-449e-8f12-592c2100a649&big_category=A02&mid_category=A0207&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "03481e3b-ded6-4ccb-b561-395aa639a3a6",
+    "title": "겨울공주 군밤축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/15ebe04e-d5b7-4b9f-8072-ff5b14d4cc61_19.jpg",
+    "date": "2026.02.04\n                                            ~ 2026.02.08",
+    "venue": "충청남도 공주시 금벽로 368 (신관동) 공주금강신관공원 및 미르섬",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=03481e3b-ded6-4ccb-b561-395aa639a3a6&big_category=A02&mid_category=A0207&big_area=34",
+    "genre": "festival"
+  },
+  {
+    "id": "6ea28be2-79ab-4d79-b2a1-2aa9a0f04ae4",
     "title": "서울빛초롱축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_bcd79254-697d-47f5-a408-e022f0e9f7fd_63.jpg",
-    "date": "2025.12.12~2026.01.18",
-    "venue": "서울 중구",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=bcd79254-697d-47f5-a408-e022f0e9f7fd&cntntsNm=서울빛초롱축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/bcd79254-697d-47f5-a408-e022f0e9f7fd_65.jpg",
+    "date": "2025.12.12\n                                            ~ 2026.01.18",
+    "venue": "서울특별시 중구 태평로1가 1(청계광장~삼일교) ※우이천은 연장 안합니다.",
     "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=6ea28be2-79ab-4d79-b2a1-2aa9a0f04ae4&big_category=A02&mid_category=A0207&big_area=1",
     "genre": "festival"
   },
   {
-    "id": "festival_3",
+    "id": "69973e72-1713-43ca-80a2-a125223122c5",
     "title": "양평빙송어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/300_ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
-    "date": "2025.12.06~2026.03.02",
-    "venue": "경기도 양평군",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee90ecd1-8a54-4858-ac6d-b95e7f8d113a&cntntsNm=양평빙송어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_21.jpg",
+    "date": "2025.12.06\n                                            ~ 2026.03.02",
+    "venue": "경기도 양평군 곱다니길 55-2   봉상2리 일원",
     "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=69973e72-1713-43ca-80a2-a125223122c5&big_category=A02&mid_category=A0207&big_area=31",
+    "genre": "festival"
+  },
+  {
+    "id": "4b8b3f33-236e-4869-92f0-acef93f5c560",
+    "title": "대관령눈꽃축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8_8.png",
+    "date": "2026.02.13\n                                            ~ 2026.02.22",
+    "venue": "강원특별자치도 평창군 대관령로 135-9   (대관령면) 대관령면 송천일원",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=4b8b3f33-236e-4869-92f0-acef93f5c560&big_category=A02&mid_category=A0207&big_area=32",
+    "genre": "festival"
+  },
+  {
+    "id": "afa84007-fb42-418c-a811-70a76e9dfbc8",
+    "title": "광복로 겨울빛 트리축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd3921dc-baf4-4033-a3f3-acc739585872_12.jpg",
+    "date": "2025.12.05\n                                            ~ 2026.02.22",
+    "venue": "부산광역시 중구 광복로 72-1 (광복동2가) 부산 광복로, 광복중앙로 일원",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=afa84007-fb42-418c-a811-70a76e9dfbc8&big_category=A02&mid_category=A0207&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "352301c5-9109-457d-bc9a-1078ee234ab6",
+    "title": "해운대 빛축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/b3b7a23c-c7f6-45db-930a-b139e4d8cd9f_32.jpg",
+    "date": "2025.11.29\n                                            ~ 2026.01.18",
+    "venue": "부산광역시 해운대구 해운대해변로 280 (중동) 해운대 해수욕장",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=352301c5-9109-457d-bc9a-1078ee234ab6&big_category=A02&mid_category=A0207&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "9dd0b053-d08c-4d01-a51e-461d45e3e2c8",
+    "title": "함평 겨울빛축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3afbe8aa-05a3-4cdc-aa7a-81ae0bb36cfd_39.png",
+    "date": "2025.11.28\n                                            ~ 2026.01.11",
+    "venue": "전라남도 함평군 함평읍 곤재로 27",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=9dd0b053-d08c-4d01-a51e-461d45e3e2c8&big_category=A02&mid_category=A0207&big_area=38",
+    "genre": "festival"
+  },
+  {
+    "id": "c7a43f08-f134-4ca0-a255-7286402530db",
+    "title": "제24회 성우하이텍배 KNN 환경마라톤",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=db3e553c-3123-423c-bcb9-a2dc48f4f9f1",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=c7a43f08-f134-4ca0-a255-7286402530db&big_category=A02&mid_category=A0208&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "a9df3f0f-f6b2-4faa-915b-9ed591c90a57",
+    "title": "2026 인터내셔널 키스포츠페스티벌 대구",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=5017f49d-df0c-4f82-961c-79cd4bbcb0c6",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=a9df3f0f-f6b2-4faa-915b-9ed591c90a57&big_category=A02&mid_category=A0208&big_area=4",
+    "genre": "festival"
+  },
+  {
+    "id": "44178b3b-f73d-4d6e-a85c-4c5ecb299d3f",
+    "title": "2026 부산국제보트쇼",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=a0d57d25-8bfc-43c6-b081-84b05df52c14",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=44178b3b-f73d-4d6e-a85c-4c5ecb299d3f&big_category=A02&mid_category=A0208&big_area=6",
+    "genre": "festival"
+  },
+  {
+    "id": "23bd9fbe-93b9-440d-8d65-c9318e63d9c6",
+    "title": "퓨처그라운드 (FUTUREGROUND)",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=8c2bdf27-10fe-4e5a-9faa-e2c881a4d806",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=23bd9fbe-93b9-440d-8d65-c9318e63d9c6&big_category=A02&mid_category=A0208&big_area=1",
+    "genre": "festival"
+  },
+  {
+    "id": "cc13185c-ebb1-4d96-92c6-40e610e0a514",
+    "title": "사천에어쇼",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/a212b550-67bf-422e-a110-7bb742e84672_10.png",
+    "date": "2026.10.22\n                                            ~ 2026.10.25",
+    "venue": "경상남도 사천시 사천읍 정의리 중선리 1-1, 사천비행장 일원",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=cc13185c-ebb1-4d96-92c6-40e610e0a514&big_category=A02&mid_category=A0207&big_area=36",
+    "genre": "festival"
+  },
+  {
+    "id": "8b0cd6cf-a026-42f6-a099-d15f002214f0",
+    "title": "감악산 해맞이 행사",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/1e141ca8-3663-4289-b1de-f1f8a3be5f09_14.jpg",
+    "date": "2026.01.01\n                                            ~ 2026.01.01",
+    "venue": "경상남도 거창군 신원면 덕산리 산57 감악산 정상",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=8b0cd6cf-a026-42f6-a099-d15f002214f0&big_category=A0207&mid_category=36&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "bd322698-e696-4f08-aec1-b73671f31229",
+    "title": "2026 선양 맨몸마라톤",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=2acdf59d-4af2-40f1-82a4-95afabfe6500",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=bd322698-e696-4f08-aec1-b73671f31229&big_category=A0208&mid_category=3&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "b53d2863-2036-4dcd-a513-13b90eba5eb5",
+    "title": "전주제야축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/80186dc1-eea9-44b0-846a-341eb3397e47_3.jpg",
+    "date": "2025.12.31\n                                            ~ 2025.12.31",
+    "venue": "전북특별자치도 전주시 완산구 서노송동 596-5 전주시청 앞 노송광장",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=b53d2863-2036-4dcd-a513-13b90eba5eb5&big_category=A0207&mid_category=37&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "19e0a7a1-0a2d-4e27-9814-2409e7ac307e",
+    "title": "병오년 해맞이 행사",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/513a8a6a-bb81-4f07-ac87-b58b40d14db9_6.png",
+    "date": "2025.12.31\n                                            ~ 2026.01.01",
+    "venue": "강원특별자치도 강릉시 경포로 515 (안현동) 경포해변 및 정동진 모래시계공원",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=19e0a7a1-0a2d-4e27-9814-2409e7ac307e&big_category=A0207&mid_category=32&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "5a117a34-e040-4a3d-bf99-a80667b4af99",
+    "title": "서천 마량진항 해넘이 해돋이 행사",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/0d50a35c-916b-4764-87cc-7a6545bfec14_13.jpg",
+    "date": "2025.12.31\n                                            ~ 2026.01.01",
+    "venue": "충청남도 서천군 서면 서인로 58",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=5a117a34-e040-4a3d-bf99-a80667b4af99&big_category=A0207&mid_category=34&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "dd0ee09b-cd52-4136-a005-fa97bd7fef5b",
+    "title": "울주 간절곶 해맞이",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/79dfeea3-fbe9-4033-b9c5-2b2a8178db83_43.png",
+    "date": "2025.12.31\n                                            ~ 2026.01.01",
+    "venue": "울산광역시 울주군 서생면 대송리 간절곶",
+    "region": "ulsan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=dd0ee09b-cd52-4136-a005-fa97bd7fef5b&big_category=A0207&mid_category=7&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "63a72d20-221f-41fd-b5bc-c46c05ed4345",
+    "title": "카운트다운 부산",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/bf544c33-d1f5-48f7-8089-7edd6ae44e18_15.png",
+    "date": "2025.12.31\n                                            ~ 2026.01.01",
+    "venue": "부산광역시 수영구 광안해변로 219 (광안동) 광안리 해수욕장",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=63a72d20-221f-41fd-b5bc-c46c05ed4345&big_category=A0207&mid_category=6&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "5aa64fe7-6535-484e-8248-48d03ab72b73",
+    "title": "겨울엔 양평, 불빛:애",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=7c1a0d5a-e54f-4562-bc2d-9ef1b27d9633",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=5aa64fe7-6535-484e-8248-48d03ab72b73&big_category=A0208&mid_category=31&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "651435d9-617c-45d9-b4ce-7fa359768a5a",
+    "title": "오슬로우 빈티지 마켓",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=17debb04-3e99-4623-973d-f1cc637ca2cf",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=651435d9-617c-45d9-b4ce-7fa359768a5a&big_category=A0208&mid_category=2&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "a75d2704-cb1f-447a-9098-707a28509bea",
+    "title": "오픈 포트 크리스마스 : 불멍 (Open Port Christmas)",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f013fa5a-16f4-4dfd-8d4e-49b02402604c",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=a75d2704-cb1f-447a-9098-707a28509bea&big_category=A0208&mid_category=2&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "499a603e-8e3c-4ec5-b255-bbc7fe3e4146",
+    "title": "서울일러스트레이션페어V.20",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=4f7e1abb-e637-4a46-bdf3-e94c2144acf9",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=499a603e-8e3c-4ec5-b255-bbc7fe3e4146&big_category=A0208&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "0f7ef34b-1516-41ad-b5dd-93d5c52a6d46",
+    "title": "대천겨울바다사랑축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3e01f08f-0d81-473e-9e41-338253f60c6f_16.jpg",
+    "date": "2025.12.24\n                                            ~ 2025.12.28",
+    "venue": "충청남도 보령시 고잠2길 55 (신흑동) 보령머드테마파크, 머드광장",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=0f7ef34b-1516-41ad-b5dd-93d5c52a6d46&big_category=A0207&mid_category=34&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "2b8b5453-9431-4099-9990-389db594f6bd",
+    "title": "수성빛예술제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/10dc8d4b-e6ce-46c8-8778-bf6f579ac953_10.jpg",
+    "date": "2025.12.24\n                                            ~ 2026.01.04",
+    "venue": "대구광역시 수성구 무학로 112 (두산동) 수성못",
+    "region": "daegu",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=2b8b5453-9431-4099-9990-389db594f6bd&big_category=A0207&mid_category=4&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "4789755f-ddb0-4179-843e-15d7902d593d",
+    "title": "울산 성남동 눈꽃축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/351cd2d7-3873-428b-a508-df9bce612bfc_18.png",
+    "date": "2025.12.24\n                                            ~ 2025.12.28",
+    "venue": "울산광역시 중구 젊음의거리 27-4 (성남동) 성남동 소방서 부지",
+    "region": "ulsan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=4789755f-ddb0-4179-843e-15d7902d593d&big_category=A0207&mid_category=7&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "54a8f8cc-97d1-4c3d-b614-4a3ee7deff37",
+    "title": "2025 과학영재교육 페스티벌",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=ec4dcc96-9b46-4294-a8ed-11e2e3c28ef8",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=54a8f8cc-97d1-4c3d-b614-4a3ee7deff37&big_category=A0208&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "2f0b2ebd-4257-4efb-bd8b-05e47192e8bc",
+    "title": "코믹월드 WINTER 2025",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f5c32ce3-8e0c-4188-8fff-1661e2bc2754",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=2f0b2ebd-4257-4efb-bd8b-05e47192e8bc&big_category=A0208&mid_category=31&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "ab74071d-33fb-45d0-a907-213c2d0fe3bf",
+    "title": "2025 로맨틱 한강 크리스마스 마켓",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=fc91ff4a-80ac-4599-9cd8-e271eab67e43",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=ab74071d-33fb-45d0-a907-213c2d0fe3bf&big_category=A0208&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "7150fe5d-f923-490c-8980-d2161a112f74",
+    "title": "한강페스티벌",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ddee73b5-d818-4d73-b06e-8d5294df701b_11.jpg",
+    "date": "2025.12.19\n                                            ~ 2025.12.31",
+    "venue": "서울특별시 서초구 신반포로11길 40 (반포동) 반포한강공원, 5개 한강공원 일대(반포, 여의도, 뚝섬, 잠원, 망원 중심)",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=7150fe5d-f923-490c-8980-d2161a112f74&big_category=A0207&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "7312a526-1664-4113-83ce-29acc99fa8a6",
+    "title": "강남 미디어 윈터페스타",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/1a902161-320a-4f24-9c9a-80fe5f46c340_9.jpg",
+    "date": "2025.12.19\n                                            ~ 2026.01.03",
+    "venue": "서울특별시 강남구 영동대로 511 (삼성동)",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=7312a526-1664-4113-83ce-29acc99fa8a6&big_category=A0207&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "c92aefec-4867-419d-bf1f-2d9c1737a02a",
+    "title": "K-핸드메이드페어 2025",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=28002997-b6de-4eba-b1dc-c224fb14fc55",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=c92aefec-4867-419d-bf1f-2d9c1737a02a&big_category=A0208&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "36d68129-5962-40ae-ad70-9f22b7a8c76e",
+    "title": "서울라이트 DDP 겨울",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/53a97d85-aab6-43f4-bff0-1b1ec4a9c42f_31.png",
+    "date": "2025.12.18\n                                            ~ 2025.12.31",
+    "venue": "서울특별시 중구 을지로 281 (을지로7가) 동대문디자인플라자",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=36d68129-5962-40ae-ad70-9f22b7a8c76e&big_category=A0207&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "0e016691-e0e1-46e8-9168-a856150e4c3e",
+    "title": "논산양촌곶감축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/c21e4c87-57d0-4a32-984d-7c50bec81984_33.jpg",
+    "date": "2025.12.12\n                                            ~ 2025.12.14",
+    "venue": "충청남도 논산시 양촌면 양촌리 454 양촌읍 양촌리 체육공원",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=0e016691-e0e1-46e8-9168-a856150e4c3e&big_category=A0207&mid_category=34&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "4a922f3e-533a-4a6d-b2a7-f694c3ae64fd",
+    "title": "서울라이트 광화문",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/d92518e2-7953-4d7c-9123-912b5fb87510_17.jpg",
+    "date": "2025.12.12\n                                            ~ 2026.01.04",
+    "venue": "서울특별시 종로구 세종로 1-68 5호선 광화문역 광화문광장 일대",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=4a922f3e-533a-4a6d-b2a7-f694c3ae64fd&big_category=A0207&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "763f0657-32a3-4bf1-9179-415a95fe1e8a",
+    "title": "광화문 마켓",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=ca423b42-0d15-4c1f-9e40-5db5fc5ad562",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=763f0657-32a3-4bf1-9179-415a95fe1e8a&big_category=A0208&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "d5d9614d-9c6f-463b-a09e-0577aaedb1d1",
+    "title": "겨울, 청계천의 빛",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/8e3215e7-02ad-488a-997d-979b2b8b682f_15.jpg",
+    "date": "2025.12.12\n                                            ~ 2025.12.31",
+    "venue": "서울특별시 중구 태평로1가 1",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=d5d9614d-9c6f-463b-a09e-0577aaedb1d1&big_category=A0207&mid_category=1&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "be18837e-2633-4045-afe3-6a6888ed4606",
+    "title": "부산국제아동도서전",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9d8c7e19-4d02-4945-9a60-ca951faa5a3e_21.jpg",
+    "date": "2025.12.11\n                                            ~ 2025.12.14",
+    "venue": "부산광역시 해운대구 APEC로 55 (우동) 벡스코 제1전시장 3홀",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=be18837e-2633-4045-afe3-6a6888ed4606&big_category=A0207&mid_category=6&big_area=A02",
+    "genre": "festival"
+  },
+  {
+    "id": "c5f0c14f-2bde-430b-9644-7fcff940be08",
+    "title": "굿네이버스 세계 놀이 페스티벌 '놀자GO! 지구로!'",
+    "image": "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=8d75f77e-7c04-4e6c-9626-456c6d5ed639",
+    "date": "",
+    "venue": "",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=c5f0c14f-2bde-430b-9644-7fcff940be08&big_category=A0208&mid_category=35&big_area=A02",
     "genre": "festival"
   }
 ]
