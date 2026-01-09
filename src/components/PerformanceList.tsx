@@ -4405,6 +4405,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
+                            {/* Volleyball Team Logos Overlay */}
+                            {perf.genre === 'volleyball' && perf.homeTeamLogo && perf.awayTeamLogo && (
+                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-6 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                    <img src={perf.homeTeamLogo} alt={perf.homeTeam} className="w-14 h-14 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
+                                    <div className="text-white/90 font-black text-sm italic bg-black/30 px-2 rounded-full backdrop-blur-[1px]">VS</div>
+                                    <img src={perf.awayTeamLogo} alt={perf.awayTeam} className="w-14 h-14 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
+                                </div>
+                            )}
+
                             {/* Hot Deal Badge (Top Left) */}
                             {perf.discount && (
                                 <div
