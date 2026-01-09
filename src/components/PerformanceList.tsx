@@ -44,6 +44,11 @@ interface PerformanceListProps {
     categoryLabel?: string; // Label for the category page
 }
 
+// Debug helper
+const logPlatform = (p: Performance) => {
+    if (p.genre === 'ott') console.log('[PerformanceList] OTT Item:', p.title, p.platforms);
+};
+
 // Skeleton Loading Component for Grid View
 const SkeletonCard = () => (
     <div className="relative rounded-xl overflow-hidden bg-gray-800/50 animate-pulse">
@@ -594,6 +599,13 @@ const TypingHero = ({
 };
 
 export default function PerformanceList({ initialPerformances, lastUpdated, initialGenre = 'all', isCategoryPage = false, categoryLabel }: PerformanceListProps) {
+    // Debug first few OTT items
+    useEffect(() => {
+        const ottItems = initialPerformances.filter(p => p.genre === 'ott').slice(0, 3);
+        console.log('[PerformanceList] Initial OTT Sample:', ottItems.map(p => ({ title: p.title, platforms: p.platforms })));
+    }, [initialPerformances]);
+
+
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
