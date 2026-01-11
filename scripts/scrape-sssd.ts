@@ -270,7 +270,7 @@ async function scrape() {
 
             while (retries > 0 && !success) {
                 try {
-                    await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
+                    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
                     try {
                         await page.waitForSelector(listSelector, { timeout: 15000 });
