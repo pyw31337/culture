@@ -106,17 +106,48 @@ async function enhanceVenues() {
                     if (addrEl && addrEl.textContent) return { addr: addrEl.textContent };
                 }
 
-                // 2. Search entire body text
-                const bodyText = document.body.innerText.replace(/\n/g, ' ');
-                // Look for "주소" followed by address
-                // const specificMatch = bodyText.match(/주\s*소\s*[:]?\s*([가-힣0-9\s]+(?:시|도)\s+\S+(?:구|시|군))/);
+                // 2. Search specific filtered areas if place section not found
+                // Only look in main content areas, excluding footers/headers
+                const mainContent = document.querySelector('#main_pack') || document.querySelector('#content') || document.body;
 
-                // General match
-                const match = bodyText.match(addressRegex);
-                if (match) {
-                    // Try to capture a bit more context if possible, but the regex captures City District Street/Dong
-                    return { addr: match[0] };
+                // Helper to check if element is inside footer
+                const isFooter = (el: Element | null) => {
+                    while (el) {
+                        if (el.tagName === 'FOOTER' || el.classList.contains('footer') || el.id.includes('footer')) return true;
+                        el = el.parentElement;
+                    }
+                    return false;
+                };
+
+                // Try to find address in specific classes across valid main content
+                const candidates = Array.from(document.querySelectorAll('.addr, .address, .txt_addr'));
+                for (const cand of candidates) {
+                    if (!isFooter(cand) && cand.textContent) {
+                        const match = cand.textContent.match(addressRegex);
+                        if (match) return { addr: match[0] };
+                    }
                 }
+
+                // If still nothing, match text in main_pack only
+                if (mainContent) {
+                    const text = (mainContent as HTMLElement).innerText;
+                    // Use a more strict regex that looks for "주소" label if possible, or just the pattern but check duplicates
+                    // The footer often has "사업자 주소" etc.
+                    // Let's assume the earlier selectors catch the best ones.
+                    // If we rely on regex, we must ensure it's not the generic footer one.
+
+                    // Find all matches
+                    const matches = text.match(new RegExp(addressRegex, 'g'));
+                    if (matches && matches.length > 0) {
+                        // Return the first one that usually appears in the "place" card at top
+                        // But this is risky if the ad is at top.
+                        // Let's rely on the first loop mainly.
+                        // If we fail, return null rather than wrong address.
+                        return null;
+                    }
+                }
+
+                return null;
 
                 return null;
             });
