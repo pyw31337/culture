@@ -18,7 +18,7 @@ interface PerformanceDetailModalProps {
 export default function PerformanceDetailModal({ performance, isOpen, onClose, onShare, onBooking }: PerformanceDetailModalProps) {
     if (!isOpen) return null;
 
-    console.log('[PerformanceDetailModal] Platforms:', performance.platforms);
+    // console.log('[PerformanceDetailModal] Platforms:', performance.platforms);
 
 
     // Helper to generate ICS file content
@@ -221,7 +221,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     {performance.platforms && performance.platforms.length > 0 && (
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
-                                            <div className="flex flex-wrap gap-20">
+                                            <div className="flex flex-wrap gap-2">
                                                 {performance.platforms.map((p: string) => {
                                                     // Normalize key to lowercase to ensure match
                                                     const key = p.toLowerCase();
@@ -248,12 +248,6 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                     );
                                                 })}
                                             </div>
-                                        </div>
-                                    )}
-                                    {/* Debug: Force show platforms if they exist but above condition fails/css hides */}
-                                    {performance.genre === 'ott' && (
-                                        <div className="text-[10px] text-red-500 mt-2">
-                                            DEBUG: {JSON.stringify(performance.platforms)}
                                         </div>
                                     )}
 
