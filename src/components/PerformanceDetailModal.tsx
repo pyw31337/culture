@@ -218,31 +218,27 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     )}
 
                                     {/* Provider (OTT only) */}
+                                    {/* Debug Log (Hidden in UI) */}
+                                    {(() => { console.log('[PerformanceDetailModal] Rendering platforms:', performance.platforms); return null; })()}
+
                                     {performance.platforms && performance.platforms.length > 0 && (
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
                                             <div className="flex flex-wrap gap-2">
-                                                {performance.platforms.map((p: any, idx: number) => {
-                                                    // Defensive check
-                                                    let key: string;
-                                                    if (typeof p === 'string') {
-                                                        key = p.toLowerCase();
-                                                    } else if (typeof p === 'object' && p !== null) {
-                                                        // Fallback structure if somehow objects are passed
-                                                        console.warn('[PerformanceDetailModal] Platform item is object:', p);
-                                                        key = p.id || p.name || p.key || 'unknown';
-                                                    } else {
+                                                {performance.platforms.map((p: string, idx: number) => {
+                                                    // Direct mapping, assuming p is string as validated
+                                                    let key = typeof p === 'string' ? p.toLowerCase() : String(p);
+
+                                                    const platform = OTT_PLATFORMS[key];
+
+                                                    if (!platform) {
+                                                        console.warn(`[PerformanceDetailModal] Unknown platform key: ${key}`);
                                                         return null;
                                                     }
 
-                                                    const platform = OTT_PLATFORMS[key] || OTT_PLATFORMS[p];
-
-                                                    // Fallback values if platform constant not found
-                                                    const label = platform ? platform.label : (typeof p === 'string' ? p : key);
-                                                    const color = platform ? platform.color : 'bg-gray-700';
-                                                    const url = platform
-                                                        ? platform.url.replace('{title}', encodeURIComponent(performance.title))
-                                                        : `https://www.google.com/search?q=${encodeURIComponent(label + ' ' + performance.title)}`;
+                                                    const label = platform.label;
+                                                    const color = platform.color;
+                                                    const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
 
                                                     return (
                                                         <a
