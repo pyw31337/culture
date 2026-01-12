@@ -18,7 +18,7 @@ interface PerformanceDetailModalProps {
 export default function PerformanceDetailModal({ performance, isOpen, onClose, onShare, onBooking }: PerformanceDetailModalProps) {
     if (!isOpen) return null;
 
-    // console.log('[PerformanceDetailModal] Platforms:', performance.platforms);
+    console.log('[PerformanceDetailModal] Platforms:', performance.platforms);
 
 
     // Helper to generate ICS file content
