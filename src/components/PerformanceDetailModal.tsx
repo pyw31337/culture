@@ -18,7 +18,7 @@ interface PerformanceDetailModalProps {
 export default function PerformanceDetailModal({ performance, isOpen, onClose, onShare, onBooking }: PerformanceDetailModalProps) {
     if (!isOpen) return null;
 
-    console.log('[PerformanceDetailModal] Platforms:', performance.platforms);
+    console.log('[PerformanceDetailModal] Platforms:', JSON.stringify(performance.platforms));
 
 
     // Helper to generate ICS file content
@@ -222,21 +222,31 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <div>
                                             <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
                                             <div className="flex flex-wrap gap-2">
-                                                {performance.platforms.map((p: string) => {
-                                                    // Normalize key to lowercase to ensure match
-                                                    const key = p.toLowerCase();
+                                                {performance.platforms.map((p: any, idx: number) => {
+                                                    // Defensive check
+                                                    let key: string;
+                                                    if (typeof p === 'string') {
+                                                        key = p.toLowerCase();
+                                                    } else if (typeof p === 'object' && p !== null) {
+                                                        // Fallback structure if somehow objects are passed
+                                                        console.warn('[PerformanceDetailModal] Platform item is object:', p);
+                                                        key = p.id || p.name || p.key || 'unknown';
+                                                    } else {
+                                                        return null;
+                                                    }
+
                                                     const platform = OTT_PLATFORMS[key] || OTT_PLATFORMS[p];
 
                                                     // Fallback values if platform constant not found
-                                                    const label = platform ? platform.label : p;
+                                                    const label = platform ? platform.label : (typeof p === 'string' ? p : key);
                                                     const color = platform ? platform.color : 'bg-gray-700';
                                                     const url = platform
                                                         ? platform.url.replace('{title}', encodeURIComponent(performance.title))
-                                                        : `https://www.google.com/search?q=${encodeURIComponent(p + ' ' + performance.title)}`;
+                                                        : `https://www.google.com/search?q=${encodeURIComponent(label + ' ' + performance.title)}`;
 
                                                     return (
                                                         <a
-                                                            key={p}
+                                                            key={`${key}-${idx}`}
                                                             href={url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
