@@ -3780,11 +3780,9 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
     return (
         <div
-            className="perspective-1000 cursor-pointer group relative hover:z-[9999]"
+            className="perspective-1000 group relative hover:z-[9999]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
         >
             <div
                 ref={cardRef}
@@ -3823,10 +3821,46 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
+                    {/* Sports Team Logos Overlay (List View) */}
+                    {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeamLogo && perf.awayTeamLogo && (
+                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-1.5 items-center z-20 pointer-events-none">
+                            <img src={perf.homeTeamLogo} alt={perf.homeTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
+                            <div className="text-white/90 font-black text-[10px] italic bg-black/40 px-1 rounded backdrop-blur-[1px]">VS</div>
+                            <img src={perf.awayTeamLogo} alt={perf.awayTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
+                        </div>
+                    )}
+
                     {/* Distance Badge on Image */}
                     {distLabel && (
-                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md">
+                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md z-[60]">
                             {distLabel}
+                        </div>
+                    )}
+
+                    {/* OTT Platforms on Image (List View) */}
+                    {perf.platforms && perf.platforms.length > 0 && (
+                        <div className="absolute bottom-1 right-1 flex gap-1 z-[60]">
+                            {perf.platforms.map((p: string) => {
+                                const platformInfo = OTT_PLATFORMS[p];
+                                if (!platformInfo) return null;
+                                const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                return (
+                                    <a
+                                        key={p}
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className={clsx(
+                                            "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase hover:scale-110 transition-transform shadow-md text-white border border-white/10",
+                                            platformInfo.color
+                                        )}
+                                        title={`${platformInfo.label}에서 검색`}
+                                    >
+                                        {platformInfo.label.substring(0, 1)}
+                                    </a>
+                                );
+                            })}
                         </div>
                     )}
 
@@ -3917,14 +3951,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
 
-                            {perf.genre === 'movie' ? (
+                            {perf.genre === 'movie' || perf.genre === 'ott' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
                                             <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                            {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                         </>
                                     )}
                                 </div>
@@ -4091,26 +4125,24 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                         )}
 
-                        {/* Detail View Button */}
+                        {/* Detail View Button -> Direct Link */}
                         <div className="mt-3">
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    onDetail?.();
-                                }}
+                            <a
+                                href={perf.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                                 className={clsx(
-                                    "w-full py-2 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm font-bold bg-transparent rounded-lg",
-                                    variant === 'yellow'
-                                        ? "border border-white/20 hover:border-white/40 text-white hover:bg-white/5 light:border-black/20 light:hover:border-black/60 light:text-black light:hover:bg-black/5"
-                                        : "border border-white/60 hover:border-white text-white hover:bg-white/10"
+                                    "w-full py-2.5 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border",
+                                    // Dark Mode: Subtle border/text
+                                    "border-white/20 text-gray-400 hover:text-white hover:border-white/40 hover:bg-white/5",
+                                    // Light Mode: Visible border/text
+                                    "light:border-gray-400 light:text-gray-800 light:font-bold light:hover:border-black light:hover:text-black light:hover:bg-black/5"
                                 )}
                             >
                                 자세히 보기
-                                <ChevronDown className={clsx(
-                                    "-rotate-90 w-3 h-3",
-                                    variant === 'yellow' ? "text-white light:text-black" : "text-white"
-                                )} />
-                            </button>
+                                <ChevronDown className="-rotate-90 w-3 h-3" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -4154,7 +4186,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     };
 
     const handleCardClick = (e: React.MouseEvent) => {
-        if (!showActions) {
+        if (onDetail) {
+            onDetail();
+        } else if (!showActions) {
             setShowActions(true);
         } else {
             setShowActions(false);
@@ -4237,7 +4271,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                     {/* Like Button (Heart) */}
                     <button
-                        onClick={onToggleLike}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (onToggleLike) onToggleLike(e);
+                        }}
                         className="absolute top-3 right-3 z-[100] p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
                         style={{ transform: 'translateZ(50px)' }}
                     >
@@ -4336,16 +4373,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 )}
                                             </AnimatePresence>
                                         </button>
-                                        <a
-                                            href={perf.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (onDetail) onDetail();
+                                            }}
                                             className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
                                         >
                                             자세히 보기
                                             <Search className="w-4 h-4" />
-                                        </a>
+                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -4357,20 +4394,26 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             )} style={{ transform: 'translateZ(10px)' }}>
 
                                 {/* Text Content Area */}
-                                <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
+                                <button
+                                    className="block group/link relative z-[100] text-left w-full"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (onDetail) onDetail();
+                                    }}
+                                >
                                     <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
                                         {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                     </h3>
-                                </a>
+                                </button>
 
-                                {perf.genre === 'movie' ? (
+                                {perf.genre === 'movie' || perf.genre === 'ott' ? (
                                     <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
                                         {perf.gradeIcon ? (
                                             <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
                                         ) : (
                                             <>
                                                 <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
-                                                {perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                             </>
                                         )}
                                     </div>
@@ -4513,11 +4556,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 })()}
                                                 {/* Platform Icons (Default Variant) */}
                                                 {perf.platforms && perf.platforms.length > 0 && (
-                                                    <div className="flex gap-1 ml-1.5 border-l border-white/20 pl-1.5">
+                                                    <div className="flex gap-1.5 ml-2 border-l border-white/20 pl-2">
                                                         {perf.platforms.map((p: string) => {
                                                             const platformInfo = OTT_PLATFORMS[p];
                                                             const badgeClass = clsx(
-                                                                "w-4 h-4 flex items-center justify-center rounded-full text-[8px] font-bold uppercase cursor-pointer hover:scale-110 transition-transform",
+                                                                "h-8 min-w-[32px] px-2 flex items-center justify-center rounded-md text-[13px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-sm",
                                                                 platformInfo ? platformInfo.color : "bg-gray-600"
                                                             );
 
@@ -4534,7 +4577,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                                         onClick={(e) => e.stopPropagation()}
                                                                         title={`${platformInfo.label}에서 검색`}
                                                                     >
-                                                                        {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                                        {platformInfo.label}
                                                                     </a>
                                                                 );
                                                             }
@@ -4556,6 +4599,34 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                             </h3>
                                         </a>
+
+                                        {/* Provider Text (Lower Body) */}
+                                        {perf.platforms && perf.platforms.length > 0 && (
+                                            <div className="flex gap-1 items-center mb-1 text-[11px] text-gray-400 font-medium relative z-[101]">
+                                                <span className="text-gray-500 font-bold shrink-0">[제공]</span>
+                                                <div className="flex flex-wrap gap-1 leading-none">
+                                                    {perf.platforms.map((p: string, idx: number) => {
+                                                        const platformInfo = OTT_PLATFORMS[p];
+                                                        if (!platformInfo) return null;
+                                                        const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                        return (
+                                                            <span key={idx} className="flex items-center">
+                                                                <a
+                                                                    href={url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="hover:text-white hover:underline transition-colors"
+                                                                    onClick={(e) => e.stopPropagation()}
+                                                                >
+                                                                    {platformInfo.label}
+                                                                </a>
+                                                                {idx < perf.platforms.length - 1 && <span className="mr-0.5">,</span>}
+                                                            </span>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
 
                                         <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
                                             {perf.genre === 'movie' || perf.genre === 'ott' ? (

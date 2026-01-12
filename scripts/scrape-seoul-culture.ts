@@ -34,7 +34,7 @@ async function mapCategory(title: string): Promise<string> {
 async function scrape() {
     console.log('🚀 Starting Seoul Culture Scraper (2026) - URL Params Strategy...');
     const browser = await puppeteer.launch({
-        headless: "new" as any,
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,800']
     });
     const page = await browser.newPage();

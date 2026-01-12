@@ -147,6 +147,49 @@ async function scrapeKBO() {
         "키움": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_WO.png"
     };
 
+    // Scrape Futures Logos
+    try {
+        console.log('Fetching Futures League Logos...');
+        const FUTURES_URL = 'https://www.koreabaseball.com/Futures/Schedule/GameList.aspx';
+        await page.goto(FUTURES_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+        const futuresLogos = await page.evaluate(() => {
+            const ul = document.querySelector('#cphContents_cphContents_cphContents_udpRecord > ul');
+            if (!ul) return [];
+
+            return Array.from(ul.querySelectorAll('li')).map(li => {
+                const img = li.querySelector('img');
+                const span = li.querySelector('span');
+                if (!img || !span) return null;
+                const name = span.textContent?.trim() || '';
+                const src = img.src;
+                if (name === '전체') return null;
+                return { name, src };
+            }).filter(Boolean) as { name: string, src: string }[];
+        });
+
+        console.log(`Found ${futuresLogos.length} Futures teams.`);
+        futuresLogos.forEach(item => {
+            // "고양" replaces "Goyang" etc.
+            if (!TEAM_LOGOS[item.name]) {
+                TEAM_LOGOS[item.name] = item.src;
+                console.log(`Added logo for ${item.name}`);
+            } else {
+                // Update existing if needed? KBO logos might differ for Futures (e.g. "emblemF_HH.png")
+                // User said "put logos... here". Maybe overwrite? 
+                // Regular logos are usually preferred for main teams.
+                // Let's keep Regular unless missing.
+            }
+        });
+
+    } catch (e) {
+        console.error('Failed to fetch futures logos:', e);
+    }
+
+    // Navigate back to Standard Schedule for main scraping
+    console.log('Navigating back to Regular Schedule...');
+    await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+
     for (const series of SERIES_LIST) {
         console.log(`\n--- Scraping Series: ${series.name} (${series.id}) ---`);
 

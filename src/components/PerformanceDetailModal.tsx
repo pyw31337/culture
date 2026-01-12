@@ -65,7 +65,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex items-center justify-center p-4 sm:p-6"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100000] flex items-center justify-center p-4 sm:p-6"
                     />
 
                     {/* Modal Content */}
@@ -73,7 +73,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed z-[101] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
+                        className="fixed z-[100001] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
                     >
                         {/* Close Button (Mobile Absolute) */}
                         <button

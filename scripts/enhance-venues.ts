@@ -34,7 +34,7 @@ async function enhanceVenues() {
     console.log(`Found ${missingVenues.length} venues with missing addresses.`);
 
     const browser = await puppeteer.launch({
-        headless: "new" as any,
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();

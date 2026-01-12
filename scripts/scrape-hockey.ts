@@ -1,8 +1,10 @@
 
-import axios from 'axios';
-import * as cheerio from 'cheerio';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+
+puppeteer.use(StealthPlugin());
 
 interface Performance {
     id: string;
@@ -23,89 +25,93 @@ interface Performance {
 const HOCKEY_URL = 'http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/';
 
 async function scrapeHockey() {
-    console.log('Starting Hockey Scraper (HL Anyang)...');
+    console.log('Starting Hockey Scraper (HL Anyang) [Puppeteer]...');
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
 
     try {
-        const response = await axios.get(HOCKEY_URL, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
-        });
+        const page = await browser.newPage();
+        await page.goto(HOCKEY_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        const $ = cheerio.load(response.data);
-        const data: Performance[] = [];
+        // Wait for table
+        try {
+            await page.waitForSelector('#DataTables_Table_0', { timeout: 10000 });
+        } catch (e) {
+            console.log('DataTable selector not found, trying generic .sp-post');
+        }
 
-        const VENUE_MAP: Record<string, string> = {
-            'ANYANG': '안양 종합운동장 실내빙상장',
-        };
+        const data: Performance[] = await page.evaluate(() => {
+            const rows = Array.from(document.querySelectorAll('.sp-row.sp-post'));
+            const results: Performance[] = [];
+            const VENUE_MAP: Record<string, string> = {
+                'ANYANG': '안양 종합운동장 실내빙상장',
+            };
 
-        // Select rows based on the HTML dump structure
-        $('.sp-row.sp-post').each((_, row) => {
-            const dateStrRaw = $(row).find('td.data-date a date').text().trim(); // e.g., "2025-09-21 14:00:00"
-            const timeStrRaw = $(row).find('td.data-time a date').text().trim(); // e.g., "14:00:00"
-            const homeTeamRaw = $(row).find('td.data-home').text().trim();
-            const awayTeamRaw = $(row).find('td.data-away').text().trim();
-            const venueRaw = $(row).find('td.data-venue div').text().trim(); // e.g., "ANYANG"
+            const toAbsolute = (src?: string | null) => {
+                if (!src) return '';
+                if (src.startsWith('http')) return src;
+                const base = 'http://www.hlicehockey.com';
+                return `${base}${src.startsWith('/') ? '' : '/'}${src}`;
+            };
 
-            if (dateStrRaw && homeTeamRaw && awayTeamRaw) {
-                // Parse Date
-                // The dump shows <date>2026-02-28 15:00:00</date> inside the first column.
-                // We can use that directly.
-                // Or if dateStrRaw is "2026-02-28 15:00:00", we can sanitize it.
-                // The time column also has time, but if the date column has full datetime, let's use it.
-                // It seems dateStrRaw might be "2026-02-28 15:00:00" (from the inner text of <date> tag).
+            for (const row of rows) {
+                // Selectors
+                const dateEl = row.querySelector('td.data-date date');
+                const timeEl = row.querySelector('td.data-time date');
+                const homeEl = row.querySelector('td.data-home');
+                const awayEl = row.querySelector('td.data-away');
+                const venueEl = row.querySelector('td.data-venue div');
 
-                let date = dateStrRaw.replace(/\./g, '-');
-                if (!date.includes(':')) {
-                    // Try combining with time if date didn't have time
-                    if (timeStrRaw) {
-                        date = `${date} ${timeStrRaw}`;
-                    }
+                if (!dateEl || !homeEl || !awayEl) continue;
+
+                // Date Parsing
+                const dateText = dateEl.textContent?.trim() || '';
+                const timeText = timeEl?.textContent?.trim() || '';
+
+                let date = dateText.replace(/\./g, '-');
+                // If date doesn't include time (:) and timeText exists, merge
+                if (!date.includes(':') && timeText) {
+                    date = `${date} ${timeText}`;
                 }
 
-                // Extract Logos
-                // Selector: td.data-home.has-logo > span > img
-                // Note: The 'span' might be generic, just find 'img' inside data-home
-                const homeLogoSrc = $(row).find('td.data-home img').attr('src');
-                const awayLogoSrc = $(row).find('td.data-away img').attr('src');
-                // Ensure URLs are absolute if needed, or if they are relative to hlicehockey.com
-                // Usually scraped srcs might be relative.
-                // Base URL: http://www.hlicehockey.com
-                const toAbsolute = (src?: string) => {
-                    if (!src) return '';
-                    if (src.startsWith('http')) return src;
-                    return `http://www.hlicehockey.com${src.startsWith('/') ? '' : '/'}${src}`;
-                };
+                const homeTeam = homeEl.textContent?.trim() || '';
+                const awayTeam = awayEl.textContent?.trim() || '';
+                const venueRaw = venueEl?.textContent?.trim() || '';
+                const venue = VENUE_MAP[venueRaw] || venueRaw;
 
-                const homeTeamLogo = toAbsolute(homeLogoSrc);
-                const awayTeamLogo = toAbsolute(awayLogoSrc);
+                // Logos
+                // User selector: td.data-home.has-logo > span > img
+                // We use robust find
+                const homeImg = row.querySelector('td.data-home img');
+                const awayImg = row.querySelector('td.data-away img');
 
-                // Cleanup Team Names (remove leading/trailing spaces, maybe extra info)
-                const homeTeam = homeTeamRaw.replace(/\s+/g, ' ').trim();
-                const awayTeam = awayTeamRaw.replace(/\s+/g, ' ').trim();
-
-                const venueName = VENUE_MAP[venueRaw] || venueRaw;
+                const homeTeamLogo = toAbsolute(homeImg?.getAttribute('src'));
+                const awayTeamLogo = toAbsolute(awayImg?.getAttribute('src'));
 
                 const title = `${homeTeam} vs ${awayTeam}`;
 
-                // Generate ID
-                const id = `hockey_${date.replace(/[- :]/g, '')}_${title.replace(/\s/g, '')}`;
-
                 // Region Logic
                 let region = 'etc';
-                if (venueName === '안양 종합운동장 실내빙상장') {
+                if (venue === '안양 종합운동장 실내빙상장') {
                     region = 'gyeonggi';
                 } else if (['HACHINOHE', 'AMAGASAKI', 'TOMAKOMAI', 'NIKKO', 'KUSHIRO', 'YOKOHAMA', 'TOKYO', 'SEOUL'].includes(venueRaw)) {
-                    // Basic Japan/Other mapping logic
                     region = 'etc';
                 }
 
-                data.push({
+                // ID
+                const safeDate = date.replace(/[- :]/g, '');
+                const safeTitle = title.replace(/\s/g, '');
+                const id = `hockey_${safeDate}_${safeTitle}`;
+
+                results.push({
                     id,
                     title,
                     date,
-                    venue: venueName,
-                    link: HOCKEY_URL,
+                    venue,
+                    link: 'http://www.hlicehockey.com/%EC%9D%BC%EC%A0%95-%EA%B2%B0%EA%B3%BC/',
                     genre: 'hockey',
                     image: '/culture/images/hockey_poster.png',
                     region,
@@ -115,17 +121,19 @@ async function scrapeHockey() {
                     awayTeamLogo
                 });
             }
+            return results;
         });
 
         console.log(`Extracted ${data.length} matches.`);
 
-        // Use process.cwd() since we run from project root
         const outputPath = path.resolve(process.cwd(), 'src/data/hockey.json');
         fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
-        console.log(`Saved ${data.length} items to ${outputPath}`);
+        console.log(`Saved items to ${outputPath}`);
 
     } catch (error) {
         console.error('Scraping failed:', error);
+    } finally {
+        await browser.close();
     }
 }
 

@@ -13,7 +13,7 @@ const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
 async function scrape() {
     console.log('launching browser...');
     const browser = await puppeteer.launch({
-        headless: "new",
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 

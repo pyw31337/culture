@@ -198,7 +198,7 @@ async function scrapeOTT() {
                         // Ignore
                     }
 
-                    const details = await newPage.evaluate(() => {
+                    const details = await newPage.evaluate(function () {
                         function cleanText(text: string) {
                             return text.replace(/\s+/g, ' ').trim();
                         }
@@ -210,7 +210,14 @@ async function scrapeOTT() {
                                 const titleEl = item.querySelector('.item__title');
                                 if (titleEl) {
                                     const titleText = cleanText(titleEl.textContent || '');
-                                    if (labelKeywords.some(k => titleText.includes(k))) {
+                                    let found = false;
+                                    for (const k of labelKeywords) {
+                                        if (titleText.includes(k)) {
+                                            found = true;
+                                            break;
+                                        }
+                                    }
+                                    if (found) {
                                         const fullText = cleanText(item.textContent || '');
                                         return fullText.replace(titleText, '').trim();
                                     }
@@ -233,20 +240,33 @@ async function scrapeOTT() {
 
                         function getCast() {
                             const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
-                            return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
+                            const results = [];
+                            for (let i = 0; i < actors.length && i < 5; i++) {
+                                const text = cleanText(actors[i].textContent || '');
+                                if (text) results.push(text);
+                            }
+                            return results;
                         }
 
                         const genre = getMetadataValue(['장르']);
                         const runtime = getMetadataValue(['러닝타임']);
-                        const date = getMetadataValue(['방영일', '개봉일']);
+                        const date = getMetadataValue(['방영일', '개봉일', '첫 방영일', '방영 시작일']);
                         const grade = getMetadataValue(['연령등급']);
+
+                        // Fallback: Header Date (often contains Year or full YYYY.MM.DD)
+                        const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
+                        const headerDate = headerDateEl ? cleanText(headerDateEl.textContent || '') : '';
+
+                        // Fallback: Header Grade Badge
+                        const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
+                        const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent || '') : '';
 
                         return {
                             movieInfo: [genre, runtime].filter(Boolean).join(' / '),
-                            grade: grade,
+                            grade: grade || headerGrade,
                             director: getDirector(),
                             cast: getCast(),
-                            detailDate: date
+                            detailDate: headerDate || date // Prioritize header date as it's usually the "Release" info
                         };
                     });
 
