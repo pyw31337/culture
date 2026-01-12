@@ -199,10 +199,12 @@ async function scrapeOTT() {
                     }
 
                     const details = await newPage.evaluate(() => {
-                        const cleanText = (text: string) => text.replace(/\s+/g, ' ').trim();
+                        function cleanText(text: string) {
+                            return text.replace(/\s+/g, ' ').trim();
+                        }
 
                         // Helper to find value by label in metadata list
-                        const getMetadataValue = (labelKeywords: string[]) => {
+                        function getMetadataValue(labelKeywords: string[]) {
                             const items = Array.from(document.querySelectorAll('.metadata__item'));
                             for (const item of items) {
                                 const titleEl = item.querySelector('.item__title');
@@ -215,9 +217,9 @@ async function scrapeOTT() {
                                 }
                             }
                             return '';
-                        };
+                        }
 
-                        const getDirector = () => {
+                        function getDirector() {
                             const staffs = Array.from(document.querySelectorAll('.staff'));
                             for (const staff of staffs) {
                                 const titleEl = staff.querySelector('.staff__title');
@@ -227,12 +229,12 @@ async function scrapeOTT() {
                                 }
                             }
                             return '';
-                        };
+                        }
 
-                        const getCast = () => {
+                        function getCast() {
                             const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
                             return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
-                        };
+                        }
 
                         const genre = getMetadataValue(['장르']);
                         const runtime = getMetadataValue(['러닝타임']);
