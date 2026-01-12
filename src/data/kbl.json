@@ -1,17 +1,31 @@
 [
   {
-    "id": "kbl_20260109_70_10",
-    "title": "안양 정관장 vs 울산 현대모비스",
+    "id": "kbl_20260113_55_16",
+    "title": "서울 SK vs 원주 DB",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-09 19:00",
-    "venue": "안양 정관장 아레나",
+    "date": "2026-01-13 19:00",
+    "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
+    "region": "seoul",
     "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+    "homeTeam": "서울 SK",
+    "awayTeam": "원주 DB",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
+  },
+  {
+    "id": "kbl_20260113_10_35",
+    "title": "울산 현대모비스 vs 서울 삼성",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-13 19:00",
+    "venue": "울산동천",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "울산 현대모비스",
+    "awayTeam": "서울 삼성",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260101_66_64",
@@ -196,6 +210,20 @@
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
   },
   {
+    "id": "kbl_20260107_692_55",
+    "title": "홍콩 이스턴 vs 서울SK",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-07 20:10",
+    "venue": "Southorn Stadium",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "홍콩 이스턴",
+    "awayTeam": "서울SK",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hke.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+  },
+  {
     "id": "kbl_20260107_50_35",
     "title": "창원 LG vs 서울 삼성",
     "image": "/culture/images/kbl_poster.png",
@@ -250,6 +278,20 @@
     "awayTeam": "수원 KT",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
+  },
+  {
+    "id": "kbl_20260109_70_10",
+    "title": "안양 정관장 vs 울산 현대모비스",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-09 19:00",
+    "venue": "안양 정관장 아레나",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "gyeonggi",
+    "genre": "basketball",
+    "homeTeam": "안양 정관장",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
   },
   {
     "id": "kbl_20260110_55_06",
@@ -362,34 +404,6 @@
     "awayTeam": "고양 소노",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
-  },
-  {
-    "id": "kbl_20260113_55_16",
-    "title": "서울 SK vs 원주 DB",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-13 19:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "원주 DB",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
-  },
-  {
-    "id": "kbl_20260113_10_35",
-    "title": "울산 현대모비스 vs 서울 삼성",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-01-13 19:00",
-    "venue": "울산동천",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "울산 현대모비스",
-    "awayTeam": "서울 삼성",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
   },
   {
     "id": "kbl_20260114_06_60",
@@ -558,6 +572,20 @@
     "awayTeam": "한국가스공사",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
+  },
+  {
+    "id": "kbl_20260121_50_691",
+    "title": "창원LG vs 알바크 도쿄",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-21 19:10",
+    "venue": "창원체육관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "창원LG",
+    "awayTeam": "알바크 도쿄",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-at.svg"
   },
   {
     "id": "kbl_20260121_06_70",
@@ -782,6 +810,20 @@
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+  },
+  {
+    "id": "kbl_20260128_55_573",
+    "title": "서울SK vs 타이베이 푸본 브레이브스",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-01-28 19:10",
+    "venue": "잠실학생체육관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "seoul",
+    "genre": "basketball",
+    "homeTeam": "서울SK",
+    "awayTeam": "타이베이 푸본 브레이브스",
+    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tfb.svg"
   },
   {
     "id": "kbl_20260128_50_16",
