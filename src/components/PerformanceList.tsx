@@ -4619,6 +4619,24 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                         </div>
                                                     </div>
                                                 )}
+                                                {/* Provider (OTT) */}
+                                                {perf.platforms && perf.platforms.length > 0 && (
+                                                    <div className="flex gap-1 items-start">
+                                                        <span className="text-gray-500 font-bold shrink-0">제공</span>
+                                                        <div className="block truncate relative z-[101]">
+                                                            {perf.platforms.map((p: string, idx: number) => {
+                                                                const key = typeof p === 'string' ? p.toLowerCase() : String(p);
+                                                                const platform = OTT_PLATFORMS[key];
+                                                                const label = platform ? platform.label : p;
+                                                                return (
+                                                                    <span key={idx} className="text-gray-300 hover:text-white transition-colors">
+                                                                        {label}{idx < perf.platforms.length - 1 ? ', ' : ''}
+                                                                    </span>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                )}
                                                 {perf.movieInfo && (
                                                     <div className="text-gray-500 text-[10px] mt-0.5 line-clamp-1">{perf.movieInfo}</div>
                                                 )}
