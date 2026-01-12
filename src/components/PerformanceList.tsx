@@ -1004,6 +1004,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         loadState('culture_venues_expanded', setIsFavoriteVenuesExpanded);
         loadState('culture_show_favorite_venues', setShowFavoriteVenues);
         loadState('culture_show_likes', setShowLikes);
+        loadState('culture_view_mode', setViewMode);
 
         setIsStorageLoaded(true);
         // Delay to allow content to render before removing skeleton
@@ -1024,6 +1025,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (!isStorageLoaded) return;
         localStorage.setItem('culture_show_likes', JSON.stringify(showLikes));
     }, [showLikes, isStorageLoaded]);
+
+    useEffect(() => {
+        if (!isStorageLoaded) return;
+        localStorage.setItem('culture_view_mode', JSON.stringify(viewMode));
+    }, [viewMode, isStorageLoaded]);
 
     const addKeyword = () => {
         if (!newKeyword.trim()) return;
