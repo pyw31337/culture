@@ -4001,6 +4001,25 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                                 const key = typeof p === 'string' ? p.toLowerCase() : String(p);
                                                 const platform = OTT_PLATFORMS[key];
                                                 const label = platform ? platform.label : p;
+
+                                                if (platform) {
+                                                    const url = platform.url.replace('{title}', encodeURIComponent(perf.title));
+                                                    return (
+                                                        <span key={idx}>
+                                                            <a
+                                                                href={url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-gray-300 light:text-black hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
+                                                                onClick={(e) => e.stopPropagation()}
+                                                            >
+                                                                {label}
+                                                            </a>
+                                                            {idx < perf.platforms.length - 1 ? ',' : ''}
+                                                        </span>
+                                                    );
+                                                }
+
                                                 return (
                                                     <span key={idx} className="text-gray-300 light:text-black">
                                                         {label}{idx < perf.platforms.length - 1 ? ',' : ''}
@@ -4628,6 +4647,25 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                                 const key = typeof p === 'string' ? p.toLowerCase() : String(p);
                                                                 const platform = OTT_PLATFORMS[key];
                                                                 const label = platform ? platform.label : p;
+
+                                                                if (platform) {
+                                                                    const url = platform.url.replace('{title}', encodeURIComponent(perf.title));
+                                                                    return (
+                                                                        <span key={idx}>
+                                                                            <a
+                                                                                href={url}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="text-gray-300 hover:text-white hover:underline transition-colors"
+                                                                                onClick={(e) => e.stopPropagation()}
+                                                                            >
+                                                                                {label}
+                                                                            </a>
+                                                                            {idx < perf.platforms.length - 1 ? ', ' : ''}
+                                                                        </span>
+                                                                    );
+                                                                }
+
                                                                 return (
                                                                     <span key={idx} className="text-gray-300 hover:text-white transition-colors">
                                                                         {label}{idx < perf.platforms.length - 1 ? ', ' : ''}
