@@ -128,7 +128,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
         if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
             if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) {
-                if (p.genre === 'volleyball') console.log(`[Volleyball Debug] Filtered by Region (Sports List): ${p.title} (${p.region})`);
+                // if (p.genre === 'volleyball') console.log(`[Volleyball Debug] Filtered by Region (Sports List): ${p.title} (${p.region})`);
                 return false;
             }
         }
@@ -143,7 +143,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
                 // 1. Matches sports check: passes if in allowed list.
                 // 2. Then hits this line: validRegions = ['seoul', 'gyeonggi', 'incheon', 'etc', 'ott']
                 // This effectively double-filters. If p.region is 'daegu' (allowed above), it will be caught here because 'daegu' is not in validRegions.
-                console.log(`[Volleyball Debug] Filtered by Region (General List): ${p.title} (${p.region})`);
+                // console.log(`[Volleyball Debug] Filtered by Region (General List): ${p.title} (${p.region})`);
             }
             return false;
         }
@@ -180,7 +180,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
                 // Debug logging for Volleyball
                 if (p.genre === 'volleyball' && !isServiceArea) {
-                    console.log(`[Volleyball Debug] Filtered by Venue Address: ${p.title} (${p.venue} - ${addr})`);
+                    // console.log(`[Volleyball Debug] Filtered by Venue Address: ${p.title} (${p.venue} - ${addr})`);
                 }
 
                 if (!isServiceArea) return false;
@@ -191,9 +191,9 @@ async function getPerformances(genreFilter: string | string[] | null) {
         return true;
     });
 
-    console.log(`[Debug] Post-Filter Count: ${filtered.length}`);
+    // console.log(`[Debug] Post-Filter Count: ${filtered.length}`);
     const hockeyFiltered = filtered.filter(p => p.genre === 'hockey');
-    console.log(`[Debug] Post-Filter Hockey: ${hockeyFiltered.length}`);
+    // console.log(`[Debug] Post-Filter Hockey: ${hockeyFiltered.length}`);
 
     // Apply genre filter
     let genreFiltered = filtered;
