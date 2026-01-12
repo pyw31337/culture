@@ -3992,6 +3992,25 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         </div>
                                     </div>
                                 )}
+                                {/* Provider (OTT) */}
+                                {perf.platforms && perf.platforms.length > 0 && (
+                                    <div className="flex gap-2 items-start">
+                                        <span className="text-gray-500 font-bold shrink-0">제공</span>
+                                        <div className="flex flex-wrap gap-x-1 leading-snug">
+                                            {perf.platforms.map((p: string, idx: number) => {
+                                                const key = typeof p === 'string' ? p.toLowerCase() : String(p);
+                                                const platform = OTT_PLATFORMS[key];
+                                                const label = platform ? platform.label : p;
+                                                return (
+                                                    <span key={idx} className="text-gray-300 light:text-black">
+                                                        {label}{idx < perf.platforms.length - 1 ? ',' : ''}
+                                                    </span>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                )}
+
                                 {/* Info */}
                                 {perf.movieInfo && (
                                     <div className="flex gap-2 items-start">
@@ -4077,9 +4096,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     </div>
                 </div>
             </div>
-        </div >
-
-
+        </div>
     );
 }
 
