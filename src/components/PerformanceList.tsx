@@ -4726,11 +4726,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 })()}
                                                 {/* Platform Icons (Default Variant) */}
                                                 {perf.platforms && perf.platforms.length > 0 && (
-                                                    <div className="flex gap-1.5 ml-2 border-l border-white/20 pl-2">
+                                                    <div className="flex gap-1 ml-2 border-l border-white/20 pl-2">
                                                         {perf.platforms.map((p: string) => {
                                                             const platformInfo = OTT_PLATFORMS[p];
                                                             const badgeClass = clsx(
-                                                                "h-8 min-w-[32px] px-2 flex items-center justify-center rounded-md text-[13px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-sm",
+                                                                "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-md border border-white/10",
                                                                 platformInfo ? platformInfo.color : "bg-gray-600"
                                                             );
 
@@ -4747,7 +4747,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                                         onClick={(e) => e.stopPropagation()}
                                                                         title={`${platformInfo.label}에서 검색`}
                                                                     >
-                                                                        {platformInfo.label}
+                                                                        {platformInfo.label.substring(0, 1).toUpperCase()}
                                                                     </a>
                                                                 );
                                                             }
