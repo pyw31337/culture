@@ -23,7 +23,6 @@ interface OTTItemRaw {
     link: string;
     date: string;
     platform: string;
-    platform: string;
     poster: string;
     grade: string;
 }
