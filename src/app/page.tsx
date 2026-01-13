@@ -1,5 +1,5 @@
 import { fetchPerformances } from '@/lib/interpark';
-import { safeArray } from '@/lib/data-safety';
+import { safeArray, safePerformanceList } from '@/lib/data-safety';
 import PerformanceList from '@/components/PerformanceList';
 import { Suspense } from 'react';
 
@@ -246,7 +246,7 @@ async function getPerformances() {
         };
     });
 
-    return stablePerformances;
+    return safePerformanceList(stablePerformances);
 }
 
 export default async function Home() {
