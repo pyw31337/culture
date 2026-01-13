@@ -1,4 +1,5 @@
 import { fetchPerformances } from '@/lib/interpark';
+import { safeArray } from '@/lib/data-safety';
 import PerformanceList from '@/components/PerformanceList';
 import { Suspense } from 'react';
 
@@ -68,31 +69,31 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
 
 // This function runs at build time on the server (or revalidation)
 async function getPerformances() {
-    const interpark = interparkData as unknown as any[];
-    const volleyball = kovoData as unknown as any[];
-    const basketball = kblData as unknown as any[];
-    const baseball = kboData as unknown as any[];
-    const handball = handballData as unknown as any[];
-    // const hockey = hockeyData as unknown as any[];
-    const festivals = festivalsData as unknown as any[];
-    const yes24 = yes24Data as unknown as any[];
-    const timeticket = timeticketData as unknown as any[];
-    const movies = moviesData as unknown as any[];
-    const travels = travelData as unknown as any[];
-    const kids = kidsData as unknown as any[];
-    const classes = classData as unknown as any[];
-    const umclasses = umclassData as unknown as any[];
-    const mochaclasses = mochaclassData as unknown as any[];
-    const ott = ottData as unknown as any[];
-    const mommom = mommomData as unknown as any[];
-    const museum = museumData as unknown as any[];
-    const musical = musicalData as unknown as any[];
+    const interpark = safeArray<any>(interparkData);
+    const volleyball = safeArray<any>(kovoData);
+    const basketball = safeArray<any>(kblData);
+    const baseball = safeArray<any>(kboData);
+    const handball = safeArray<any>(handballData);
+    // const hockey = safeArray<any>(hockeyData);
+    const festivals = safeArray<any>(festivalsData);
+    const yes24 = safeArray<any>(yes24Data);
+    const timeticket = safeArray<any>(timeticketData);
+    const movies = safeArray<any>(moviesData);
+    const travels = safeArray<any>(travelData);
+    const kids = safeArray<any>(kidsData);
+    const classes = safeArray<any>(classData);
+    const umclasses = safeArray<any>(umclassData);
+    const mochaclasses = safeArray<any>(mochaclassData);
+    const ott = safeArray<any>(ottData);
+    const mommom = safeArray<any>(mommomData);
+    const museum = safeArray<any>(museumData);
+    const musical = safeArray<any>(musicalData);
 
     // Debug: Trace SangSang Item
     const sangSangItem = mommom.find(p => p.title.includes('상상체험'));
     console.log('[Page Debug] SangSang in Raw Data?', !!sangSangItem, sangSangItem ? `${sangSangItem.title} (${sangSangItem.genre}) region:${sangSangItem.region}` : '');
 
-    const seoulCulture = (seoulData as unknown as any[]).map(p => ({
+    const seoulCulture = safeArray<any>(seoulData).map((p: any) => ({
         ...p,
         venue: p.place,
         region: 'seoul',

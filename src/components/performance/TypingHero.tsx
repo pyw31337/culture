@@ -1,0 +1,136 @@
+
+import React, { useState, useEffect } from 'react';
+import { HeroTemplate } from '../../lib/hero-templates';
+
+const Cursor = () => (
+    <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
+);
+
+export const TypingHero = ({
+    template,
+    onCycle,
+    paused
+}: {
+    template: HeroTemplate,
+    onCycle: () => void,
+    paused: boolean
+}) => {
+    const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
+    // Start from TYPE phase with progress 0 for typing animation on initial mount
+    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('TYPE');
+    const [progress, setProgress] = useState(0);
+
+    // Calculate segment lengths
+    const len1 = displayedTemplate.line1.length;
+    const lenBold = displayedTemplate.boldPrefix?.length || 0;
+    const len2Pre = displayedTemplate.line2Pre.length;
+    const lenHl = displayedTemplate.highlight.length;
+    const lenSuf = displayedTemplate.suffix.length;
+    const totalLen = len1 + lenBold + len2Pre + lenHl + lenSuf;
+
+    // React to template updates from parent
+    useEffect(() => {
+        // Only update if actually different to avoid loops
+        if (template !== displayedTemplate) {
+            setDisplayedTemplate(template);
+
+            if (phase === 'DELETE') {
+                // We were deleting and just got new text -> Start Typing
+                setPhase('TYPE');
+                setProgress(0);
+            } else {
+                // Template changed during WAIT or TYPE -> Start typing the new one
+                setPhase('TYPE');
+                setProgress(0);
+            }
+        }
+    }, [template, displayedTemplate, phase]); // Added displayedTemplate and phase to dependencies
+
+    useEffect(() => {
+        // If paused, do NOT schedule next tick.
+        // When unpaused, this effect will re-run and schedule based on current phase.
+        if (paused) return;
+
+        let timeout: NodeJS.Timeout;
+
+        if (phase === 'WAIT') {
+            // Wait 5 seconds before deleting
+            timeout = setTimeout(() => {
+                setPhase('DELETE');
+                setProgress(totalLen); // Start deleting from true end
+            }, 5000);
+        } else if (phase === 'DELETE') {
+            // Delete backwards
+            timeout = setTimeout(() => {
+                setProgress(prev => {
+                    const next = prev - 1;
+                    if (next < 0) {
+                        onCycle(); // Request new template
+                        return 0; // Wait for prop update to switch phase
+                    }
+                    return next;
+                });
+            }, 50);
+        } else if (phase === 'TYPE') {
+            // Type forwards
+            timeout = setTimeout(() => {
+                setProgress(prev => {
+                    const next = prev + 1;
+                    if (next > totalLen) {
+                        setPhase('WAIT');
+                        return totalLen;
+                    }
+                    return next;
+                });
+            }, 100);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [phase, progress, totalLen, onCycle, paused]);
+
+    // Helper to slice text based on global progress
+    const getSub = (text: string, offset: number) => {
+        if (progress < offset) return '';
+        if (progress >= offset + text.length) return text;
+        return text.slice(0, progress - offset);
+    };
+
+    const t1 = getSub(displayedTemplate.line1, 0);
+    const tBold = displayedTemplate.boldPrefix ? getSub(displayedTemplate.boldPrefix, len1) : '';
+    const t2Pre = getSub(displayedTemplate.line2Pre, len1 + lenBold);
+    const tHl = getSub(displayedTemplate.highlight, len1 + lenBold + len2Pre);
+    const tSuf = getSub(displayedTemplate.suffix, len1 + lenBold + len2Pre + lenHl);
+
+    // Determine active segment for cursor placement
+    let cursorSegment: 'line1' | 'bold' | 'line2Pre' | 'hl' | 'suffix' | null = null;
+
+    // Only show cursor if we are actively typing/deleting or waiting
+    // But precise placement:
+    if (progress <= len1) cursorSegment = 'line1';
+    else if (progress <= len1 + lenBold) cursorSegment = 'bold';
+    else if (progress <= len1 + lenBold + len2Pre) cursorSegment = 'line2Pre';
+    else if (progress <= len1 + lenBold + len2Pre + lenHl) cursorSegment = 'hl';
+    else cursorSegment = 'suffix';
+
+    return (
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
+            {t1}
+            {cursorSegment === 'line1' && <Cursor />}
+            <br />
+            {tBold && (
+                <span className="font-extrabold text-white light:text-black">
+                    {tBold}
+                </span>
+            )}
+            {cursorSegment === 'bold' && <Cursor />}
+            {t2Pre}
+            {cursorSegment === 'line2Pre' && <Cursor />}
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                {tHl}
+            </span>
+            {cursorSegment === 'hl' && <Cursor />}
+            {tSuf}
+            {cursorSegment === 'suffix' && <Cursor />}
+        </h2>
+    );
+};
