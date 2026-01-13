@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin } from 'lucide-react';
 import { TypingHero } from './TypingHero';
 import { HeroTemplate, HERO_TEMPLATES } from '../../lib/hero-templates';
-import { REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS } from '../../lib/constants';
+import { REGIONS, RADIUS_OPTIONS } from '../../lib/constants';
 
 interface HeroSectionProps {
     heroText: HeroTemplate;
@@ -455,8 +455,8 @@ export default function HeroSection({
                             </div>
 
                             {/* Region Buttons Filter Group */}
-                            <div className="flex bg-gray-900/80 light:bg-gray-100/80 rounded-full p-1 shrink-0 overflow-x-auto scrollbar-hide w-full sm:w-auto justify-between sm:justify-start border border-white/10 light:border-black/5">
-                                {(selectedGenre === 'festival' ? NATIONWIDE_REGIONS : REGIONS).map(r => (
+                            <div className="flex flex-wrap bg-gray-900/80 light:bg-gray-100/80 rounded-2xl p-2 shrink-0 w-full lg:w-[60%] justify-start gap-1 sm:gap-1.5 border border-white/10 light:border-black/5">
+                                {REGIONS.map(r => (
                                     <button
                                         key={r.id}
                                         onClick={() => {
@@ -465,7 +465,7 @@ export default function HeroSection({
                                             setSelectedVenue('all');
                                         }}
                                         className={clsx(
-                                            'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap text-center',
+                                            'px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all text-center',
                                             selectedRegion === r.id
                                                 ? 'bg-white light:bg-white text-black light:text-purple-700 font-bold shadow-lg mix-blend-normal light:shadow-sm light:border light:border-purple-100'
                                                 : 'text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5'

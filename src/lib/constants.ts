@@ -52,14 +52,6 @@ export const REGIONS = [
     { id: 'seoul', label: '서울' },
     { id: 'gyeonggi', label: '경기' },
     { id: 'incheon', label: '인천' },
-];
-
-// Expanded regions for festival category (nationwide)
-export const NATIONWIDE_REGIONS = [
-    { id: 'all', label: '전체' },
-    { id: 'seoul', label: '서울' },
-    { id: 'gyeonggi', label: '경기' },
-    { id: 'incheon', label: '인천' },
     { id: 'busan', label: '부산' },
     { id: 'daegu', label: '대구' },
     { id: 'gwangju', label: '광주' },
@@ -75,6 +67,9 @@ export const NATIONWIDE_REGIONS = [
     { id: 'gyeongnam', label: '경남' },
     { id: 'jeju', label: '제주' },
 ];
+
+// Alias for backward compatibility if needed, though we will update usage.
+export const NATIONWIDE_REGIONS = REGIONS;
 
 export const RADIUS_OPTIONS = [
     { value: 9999, label: '전체 반경' },
