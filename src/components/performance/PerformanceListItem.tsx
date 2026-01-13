@@ -148,12 +148,12 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         rel="noopener noreferrer"
                                         onClick={(e) => e.stopPropagation()}
                                         className={clsx(
-                                            "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase hover:scale-110 transition-transform shadow-md text-white border border-white/10",
+                                            "h-6 flex items-center justify-center rounded-md text-[10px] font-bold uppercase hover:scale-105 transition-transform shadow-md text-white border border-white/10 px-1.5 w-auto",
                                             platformInfo.color
                                         )}
                                         title={`${platformInfo.label}에서 검색`}
                                     >
-                                        {platformInfo.label.substring(0, 1)}
+                                        {platformInfo.label}
                                     </a>
                                 );
                             })}
@@ -340,13 +340,13 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className={clsx(
-                                                            "w-5 h-5 flex items-center justify-center rounded text-[9px] font-black uppercase hover:scale-110 transition-transform shadow-sm text-white border border-white/10",
+                                                            "h-5 flex items-center justify-center rounded text-[9px] font-bold uppercase hover:scale-105 transition-transform shadow-sm text-white border border-white/10 px-1 w-auto",
                                                             platform.color
                                                         )}
                                                         onClick={(e) => e.stopPropagation()}
                                                         title={platform.label}
                                                     >
-                                                        {platform.label.substring(0, 1)}
+                                                        {platform.label}
                                                     </a>
                                                 );
                                             })}
@@ -404,8 +404,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     "w-full py-2.5 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border",
                                     // Dark Mode: Subtle border/text
                                     "border-white/20 text-gray-400 hover:text-white hover:border-white/40 hover:bg-white/5",
-                                    // Light Mode: Visible border/text
-                                    "light:border-gray-400 light:text-gray-800 light:font-bold light:hover:border-black light:hover:text-black light:hover:bg-black/5"
+                                    // Light Mode: Visible border/text -> Light Gray Background, No Border
+                                    "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-bold light:hover:bg-gray-200 light:hover:text-black"
                                 )}
                             >
                                 자세히 보기

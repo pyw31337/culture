@@ -1220,8 +1220,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         const handleViewModeChange = (mode: string) => {
             setViewMode(mode);
             // Don't scroll to top for calendar and map modes - they are layer popups
+            // User requested to remove scroll to top for all modes
             if (mode !== 'calendar' && mode !== 'map') {
-                scrollToTop();
+                // scrollToTop();
             }
             if (mode === 'map') {
                 setIsMapOpen(true);
@@ -1893,42 +1894,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
 
-                {/* Sticky Sentinel - Fixed: Placed immediately above sticky header */}
-                <div ref={sentinelRef} className="h-[1px] w-full pointer-events-none absolute" style={{ marginTop: '-1px' }} />
-
-                {/* Sticky Filter Container - Refactored */}
-                {/* Sticky Filter Container - Refactored */}
-                <ErrorBoundary fallback={<div className="h-16 flex items-center justify-center bg-gray-900 border-b border-white/10 text-gray-500">필터 기능을 사용할 수 없습니다.</div>}>
-                    <FilterBar
-                        isSticky={isSticky}
-                        searchText={searchText}
-                        isDropdownOpen={isDropdownOpen}
-                        activeSearchSource={activeSearchSource}
-                        searchResults={searchResults}
-                        highlightedIndex={highlightedIndex}
-                        selectedGenre={selectedGenre}
-                        searchLocation={searchLocation}
-                        userAddress={userAddress}
-
-                        setSearchText={setSearchText}
-                        handleSearchTextChange={handleSearchTextChange}
-                        handleKeyDown={handleKeyDown}
-                        setActiveSearchSource={setActiveSearchSource}
-                        handleSelectResult={handleSelectResult}
-                        setSelectedGenre={setSelectedGenre}
-                        onReset={() => {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                            setSelectedGenre('all');
-                            setSelectedRegion('all');
-                            setSelectedDistrict('all');
-                            setSelectedVenue('all');
-                            setSearchText('');
-                            setSearchLocation(null);
-                            setUserLocation(null);
-                        }}
-                        setIsMapOpen={setIsMapOpen}
-                    />
-                </ErrorBoundary>
+                {/* Sticky feature removed as per user request */}
 
                 {/* Favorite Venues Section (Highest Priority) - Visible if Toggled */}
                 {

@@ -23,7 +23,9 @@ interface OTTItemRaw {
     link: string;
     date: string;
     platform: string;
+    platform: string;
     poster: string;
+    grade: string;
 }
 
 interface OTTPerformance {
@@ -36,6 +38,7 @@ interface OTTPerformance {
     link: string;
     genre: string;
     region: string;
+    grade: string;
 }
 
 // --- Helper Functions ---
@@ -154,13 +157,29 @@ async function scrapeList(page: any, url: string): Promise<OTTItemRaw[]> {
                     const posterEl = movie.querySelector('a.poster-container img');
                     const poster = posterEl ? (posterEl.getAttribute('src') || posterEl.getAttribute('data-src') || '') : '';
 
+                    // Extract Grade
+                    const gradeEl = movie.querySelector('i.grade-icon');
+                    let grade = '전체';
+                    if (gradeEl) {
+                        const gradeClass = gradeEl.className;
+                        if (gradeClass.includes('gr-19')) grade = '19세';
+                        else if (gradeClass.includes('gr-15')) grade = '15세';
+                        else if (gradeClass.includes('gr-12')) grade = '12세';
+                        else if (gradeClass.includes('gr-all')) grade = '전체';
+                        else if (gradeClass.includes('rate-19')) grade = '19세'; // Fallback
+                        else if (gradeClass.includes('rate-15')) grade = '15세';
+                        else if (gradeClass.includes('rate-12')) grade = '12세';
+                        else if (gradeClass.includes('rate-all')) grade = '전체';
+                    }
+
                     if (title && iconClass) {
                         items.push({
                             dateRaw: dateText,
                             platformClass: iconClass,
                             title: title,
                             link: link,
-                            poster: poster
+                            poster: poster,
+                            grade: grade
                         });
                     }
                 });
@@ -177,7 +196,8 @@ async function scrapeList(page: any, url: string): Promise<OTTItemRaw[]> {
         link: item.link.startsWith('http') ? item.link : `https://m.kinolights.com${item.link}`,
         date: normalizeDate(item.dateRaw),
         platform: mapPlatform(item.platformClass) || 'other',
-        poster: item.poster
+        poster: item.poster,
+        grade: item.grade
     }));
 }
 
@@ -210,7 +230,8 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
             image: poster || '/culture/images/placeholder.jpg',
             link: group[0].link,
             genre: 'ott',
-            region: 'all'
+            region: 'all',
+            grade: group[0].grade
         });
     }
 
