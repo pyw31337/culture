@@ -864,7 +864,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
 
             // 2. Keyword Check
-            const savedKeywords: string[] = JSON.parse(localStorage.getItem('culture_keywords') || '[]');
+            const savedKeywords: string[] = safeStorage.get<string[]>('culture_keywords', []);
             if (savedKeywords.length > 0) {
                 // Add keyword templates (weight: higher)
                 const keywordTemplates = HERO_TEMPLATES.keyword.map(t => {
@@ -1106,7 +1106,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Persist Favorite Venues Expanded State
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_venues_expanded', JSON.stringify(isFavoriteVenuesExpanded));
+        safeStorage.set('culture_venues_expanded', isFavoriteVenuesExpanded);
     }, [isFavoriteVenuesExpanded, isStorageLoaded]);
 
     // [State moved to top]
@@ -1138,7 +1138,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (currentMatches.length === 0) return;
 
         // 2. Load Seen IDs
-        const seenIds: string[] = JSON.parse(localStorage.getItem('culture_seen_keyword_matches') || '[]');
+        const seenIds: string[] = safeStorage.get<string[]>('culture_seen_keyword_matches', []);
 
         // 3. Identify truly new items
         const newItems = currentMatches.filter(p => !seenIds.includes(p.id));
@@ -1151,11 +1151,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     const handleCloseNotification = () => {
         // Mark checked items as seen
-        const seenIds: string[] = JSON.parse(localStorage.getItem('culture_seen_keyword_matches') || '[]');
+        const seenIds: string[] = safeStorage.get<string[]>('culture_seen_keyword_matches', []);
         const newIds = newMatches.map(p => p.id);
         const updatedSeenIds = Array.from(new Set([...seenIds, ...newIds]));
 
-        localStorage.setItem('culture_seen_keyword_matches', JSON.stringify(updatedSeenIds));
+        safeStorage.set('culture_seen_keyword_matches', updatedSeenIds);
         setShowNewMatchesModal(false);
         setNewMatches([]);
     };
@@ -1342,7 +1342,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_favorite_venues', JSON.stringify(favoriteVenues));
+        safeStorage.set('culture_favorite_venues', favoriteVenues);
     }, [favoriteVenues, isStorageLoaded]);
 
     const toggleFavoriteVenue = (venueName: string) => {
@@ -1725,14 +1725,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (!savedKeywords.includes(keyword)) {
             const updated = [...savedKeywords, keyword];
             setSavedKeywords(updated);
-            localStorage.setItem('culture_keywords', JSON.stringify(updated));
+            safeStorage.set('culture_keywords', updated);
         }
     };
 
     const handleKeywordRemove = (keyword: string) => {
         const updated = savedKeywords.filter(k => k !== keyword);
         setSavedKeywords(updated);
-        localStorage.setItem('culture_keywords', JSON.stringify(updated));
+        safeStorage.set('culture_keywords', updated);
     };
 
     // --- Bottom Nav Wrapper Handlers ---
