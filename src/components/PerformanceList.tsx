@@ -2180,14 +2180,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     <div className="flex items-center gap-1 ml-4">
                         {/* Map Toggle Button */}
                         <button
-                            onClick={() => setViewMode(viewMode === 'map' ? 'grid' : 'map')}
+                            onClick={() => setIsMapOpen(!isMapOpen)}
                             className={clsx(
                                 "p-2 rounded-full transition-all duration-300 relative",
-                                viewMode === 'map' ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
+                                isMapOpen ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
                             )}
                             aria-label="지도 보기"
                         >
-                            <MapIcon size={24} strokeWidth={viewMode === 'map' ? 2.5 : 2} />
+                            <MapIcon size={24} strokeWidth={isMapOpen ? 2.5 : 2} />
                         </button>
 
                         {/* Calendar Toggle Button */}
