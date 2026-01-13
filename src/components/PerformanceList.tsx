@@ -1940,8 +1940,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(selectedGenre)) {
             return [...basePerformances].sort((a, b) => {
                 // Remove (Time) or ~ range for comparison
-                const dateA = a.date.split('(')[0].split('~')[0].trim();
-                const dateB = b.date.split('(')[0].split('~')[0].trim();
+                const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
+                const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
                 return dateA.localeCompare(dateB);
             });
         }
@@ -1994,7 +1994,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
 
         // Default: Sort by date, then randomize top 40 for variety
-        let sortedByDate = [...basePerformances].sort((a, b) => a.date.localeCompare(b.date));
+        let sortedByDate = [...basePerformances].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 
         // Priority Sort: If Venue selected, put exact matches first
         if (selectedVenue !== 'all') {
@@ -4112,7 +4112,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 variant === 'yellow' ? "text-gray-400 light:text-black light:font-bold" : "text-gray-400 light:text-black"
                             )}>
                                 <Calendar className="w-3 h-3" />
-                                {perf.date.split('~')[0].trim()}
+                                {perf.date ? perf.date.split('~')[0].trim() : '상시'}
                             </span>
                         </div>
 
@@ -4721,6 +4721,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
                                                 <Calendar className="w-3.5 h-3.5" />
                                                 {(() => {
+                                                    if (!perf.date) return '상시 관람';
                                                     const parts = perf.date.split('~').map((s: string) => s.trim());
                                                     return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
                                                 })()}
