@@ -152,6 +152,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     });
                 }
 
+
                 Object.entries(venueGroups).forEach(([venueName, perfs]) => {
                     const venueInfo = venues[venueName];
                     if (!venueInfo?.lat || !venueInfo?.lng) return;
@@ -418,7 +419,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 } else {
                                                     // Open
                                                     const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                    mapInstance.panTo(moveLatLon);
+                                                    mapInstance.setLevel(3);
+                                                    mapInstance.setCenter(moveLatLon); // Force center
 
                                                     Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
                                                     const overlay = overlaysRef.current[v.venueName];

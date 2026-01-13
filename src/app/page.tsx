@@ -13,6 +13,7 @@ import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
+import soccerData from '@/data/soccer.json';
 
 import ottData from '@/data/ott.json';
 
@@ -22,6 +23,9 @@ import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
 import mochaclassData from '@/data/mochaclass.json';
+import mommomData from '@/data/mommom.json';
+import museumData from '@/data/museum.json';
+import musicalData from '@/data/musical.json';
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string }>;
@@ -93,26 +97,47 @@ async function getPerformances() {
     const allPerformances = [
         ...interpark,
         ...yes24,
+    // Debug: Trace SangSang Item
+    const mommom = mommomData as unknown as any[];
+    const museum = museumData as unknown as any[];
+    const musical = musicalData as unknown as any[];
+
+    const sangSangItem = mommom.find(p => p.title.includes('상상체험'));
+    console.log('[Page Debug] SangSang in Raw Data?', !!sangSangItem, sangSangItem ? `${sangSangItem.title} (${sangSangItem.genre}) region:${sangSangItem.region}` : '');
+
+    // 1. Initial Data Aggregation
+    const performances = [
+        ...venueData.flatMap(venue => venue.performances.map(p => ({ ...p, venue: venue.name, region: venue.region }))),
+        ...interpark,
+        ...yes24,
         ...timeticket,
         ...festivals,
-        ...volleyball, // KOVO
-        ...basketball, // KBL
-        ...baseball, // KBO
-        ...handball, // Handball
-        // ...hockey,   // Hockey - Removed
-        ...ott.map(p => ({ ...p, venue: 'OTT' })),      // OTT
-        ...movies,   // Movies
-        ...travels, // Travel
-        ...kids,     // Kids (MyRealTrip)
-        ...classes,  // Class (Klook)
-        ...umclasses, // Class (UmClass)
-        ...mochaclasses, // Class (MochaClass)
-        ...seoulCulture, // Seoul Culture
+        ...volleyball,
+        ...basketball,
+        ...baseball,
+        ...handball,
+        ...soccerData, // Imported directly
+        ...ott.map(p => ({ ...p, venue: 'OTT' })),
+        ...movies,
+        ...travels,
+        ...kids,
+        ...classes,
+        ...umclasses,
+        ...mochaclasses,
+        ...seoulCulture,
+        ...mommom,
+        ...museum,
+        ...musical,
     ].map(p => ({
         ...p,
-        // Ensure ID is string
+        // Ensure consistent ID type
         id: String(p.id)
     }));
+
+    // Debug: Trace SangSang after aggregation
+    const sangSangAgg = performances.find(p => p.title.includes('상상체험'));
+    console.log('[Page Debug] SangSang after Aggregation?', !!sangsangAgg);
+
 
     // Filter expired
     // We use a fixed "now" for static build. 

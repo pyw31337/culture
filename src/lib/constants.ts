@@ -85,13 +85,13 @@ export const RADIUS_OPTIONS = [
 ];
 
 // Sports genres for composite /sports URL
-export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'hockey', 'handball'];
+export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
     'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'exhibition',
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids',
-    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'hockey'
+    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
 
 export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: string }> = {
