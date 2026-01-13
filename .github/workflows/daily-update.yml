@@ -77,6 +77,7 @@ jobs:
           node scripts/scrape-interpark-standalone.js || true
           npx tsx scripts/scrape-kovo.ts || true
           npx tsx scripts/scrape-kbl.ts || true
+          npx tsx scripts/scrape-handball.ts || true
           npx tsx scripts/scrape-festival.ts || true
           npx tsx scripts/scrape-kbo.ts || true
           npx tsx scripts/scrape-yes24.ts || true
