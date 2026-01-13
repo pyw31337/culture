@@ -405,8 +405,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     {/* Gradient Background Layer - spans full height of content */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
-                                    {/* Performance Info */}
-                                    <div className="relative z-10 p-4 pb-2">
+                                    {/* Performance Info - Lifted up */}
+                                    <div className="relative z-10 p-4 pb-8">
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(
@@ -415,51 +415,56 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
-                                            <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
-                                                <Calendar className="w-3.5 h-3.5" />
-                                                {(() => {
-                                                    if (!perf.date) return '상시 관람';
-                                                    const parts = perf.date.split('~').map((s: string) => s.trim());
-                                                    return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : perf.date;
-                                                })()}
-                                                {/* Platform Icons (Default Variant) */}
-                                                {perf.platforms && perf.platforms.length > 0 && (
-                                                    <div className="flex gap-1 ml-2 border-l border-white/20 pl-2">
-                                                        {perf.platforms.map((p: string) => {
-                                                            const platformInfo = OTT_PLATFORMS[p];
-                                                            const badgeClass = clsx(
-                                                                "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-md border border-white/10",
-                                                                platformInfo ? platformInfo.color : "bg-gray-600"
-                                                            );
+                                            {perf.date && (
+                                                <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
+                                                    <Calendar className="w-3.5 h-3.5" />
+                                                    {(() => {
+                                                        let dateStr = perf.date;
+                                                        // Normalize YYYY-MM-DD to YYYY.MM.DD
+                                                        dateStr = dateStr.replace(/-/g, '.');
 
-                                                            // If platform info exists, make it a link
-                                                            if (platformInfo) {
-                                                                const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                                return (
-                                                                    <a
-                                                                        key={p}
-                                                                        href={url}
-                                                                        target="_blank"
-                                                                        rel="noopener noreferrer"
-                                                                        className={clsx(badgeClass, "text-white no-underline")}
-                                                                        onClick={(e) => e.stopPropagation()}
-                                                                        title={`${platformInfo.label}에서 검색`}
-                                                                    >
-                                                                        {platformInfo.label.substring(0, 1).toUpperCase()}
-                                                                    </a>
+                                                        const parts = dateStr.split('~').map((s: string) => s.trim());
+                                                        return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : dateStr;
+                                                    })()}
+                                                    {/* Platform Icons (Default Variant) */}
+                                                    {perf.platforms && perf.platforms.length > 0 && (
+                                                        <div className="flex gap-1 ml-2 border-l border-white/20 pl-2">
+                                                            {perf.platforms.map((p: string) => {
+                                                                const platformInfo = OTT_PLATFORMS[p];
+                                                                const badgeClass = clsx(
+                                                                    "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-md border border-white/10",
+                                                                    platformInfo ? platformInfo.color : "bg-gray-600"
                                                                 );
-                                                            }
 
-                                                            // Fallback for unknown platforms
-                                                            return (
-                                                                <span key={p} className={clsx(badgeClass, "text-white")}>
-                                                                    {p.substring(0, 1).toUpperCase()}
-                                                                </span>
-                                                            );
-                                                        })}
-                                                    </div>
-                                                )}
-                                            </span>
+                                                                // If platform info exists, make it a link
+                                                                if (platformInfo) {
+                                                                    const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                                    return (
+                                                                        <a
+                                                                            key={p}
+                                                                            href={url}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className={clsx(badgeClass, "text-white no-underline")}
+                                                                            onClick={(e) => e.stopPropagation()}
+                                                                            title={`${platformInfo.label}에서 검색`}
+                                                                        >
+                                                                            {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                                        </a>
+                                                                    );
+                                                                }
+
+                                                                // Fallback for unknown platforms
+                                                                return (
+                                                                    <span key={p} className={clsx(badgeClass, "text-white")}>
+                                                                        {p.substring(0, 1).toUpperCase()}
+                                                                    </span>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    )}
+                                                </span>
+                                            )}
                                         </div>
 
                                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>

@@ -168,7 +168,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         });
     };
 
-    // Intersection Observer for Hero Section
+    // Intersection Observer for Hero Section & Scroll Monitoring
     const heroRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -182,7 +182,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             observer.observe(heroRef.current);
         }
 
-        return () => observer.disconnect();
+        // Scroll Listener to enforce pausing more strictly when scrolled down
+        // (IntersectionObserver is good, but scroll offset check adds immediate responsiveness)
+        const handleScroll = () => {
+            if (window.scrollY > 150) { // If scrolled down past potential hero height
+                setIsHeroVisible(false);
+            } else {
+                if (heroRef.current) {
+                    // Re-check visibility or just assume visible if at top
+                    // We let Observer handle the "appearing" logic, but force "disappearing" on scroll
+                    setIsHeroVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     // Template Pool & Selector System

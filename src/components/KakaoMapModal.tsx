@@ -87,7 +87,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
                         : new window.kakao.maps.LatLng(37.554648, 126.972559),
-                    level: centerLocation ? 4 : 8 // Start zoomed out a bit more for clustering effect
+                    level: centerLocation ? 3 : 8 // Start zoomed out a bit more for clustering effect (3 = 100m)
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
@@ -377,7 +377,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     // replacing `export default function ... {` with `export default function ... { const [mapInstance, setMapInstance] = useState<any>(null);`
 
     return (
-        <div className="fixed inset-0 z-[100001] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
                 {/* Close Button */}
                 <button
