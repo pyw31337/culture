@@ -3491,15 +3491,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     : '조건에 맞는 공연이 없습니다.'}
                                             </h3>
                                             <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
-                                            <button onClick={() => {
-                                                setSelectedRegion('all');
-                                                setSelectedDistrict('all');
-                                                setSelectedGenre('all');
-                                                setSearchText('');
-                                                setUserLocation(null);
-                                            }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
-                                                필터 초기화
-                                            </button>
+                                            <div className="flex flex-col gap-3 items-center">
+                                                <button onClick={() => {
+                                                    setSelectedRegion('all');
+                                                    setSelectedDistrict('all');
+                                                    setSearchText('');
+                                                    setUserLocation(null);
+                                                    // Keep selectedGenre unchanged
+                                                }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
+                                                    필터 초기화
+                                                </button>
+                                                <a href="/culture/" className="px-6 py-2.5 rounded-full border border-gray-600 text-gray-400 font-medium hover:bg-gray-800 hover:text-white transition-all">
+                                                    홈으로 가기
+                                                </a>
+                                            </div>
                                         </>
                                     )}
                                 </div>
