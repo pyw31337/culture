@@ -53,9 +53,20 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
             targetDate = new Date(y, m - 1, d);
             targetDate.setHours(23, 59, 59, 999);
         }
+        // Type 3: Simple "YYYY-MM-DD" (Mommom/General)
+        else if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+            const [y, m, d] = dateStr.split('-').map(Number);
+            targetDate = new Date(y, m - 1, d);
+            targetDate.setHours(23, 59, 59, 999);
+        }
         // Fallback
         else {
             targetDate = new Date(dateStr);
+            // If valid, assume end of day to be safe? 
+            // Or leave as is for unexpected formats.
+            if (targetDate && !isNaN(targetDate.getTime())) {
+                targetDate.setHours(23, 59, 59, 999);
+            }
         }
 
         if (!targetDate || isNaN(targetDate.getTime())) return true;
@@ -157,8 +168,8 @@ async function getPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
-        // Movies & Travel & Kids & Class: Always show regardless of region/date logic
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'museum') return true;
+        // Movies & Travel & Kids & Class & Leisure & Hotdeal: Always show regardless of region/date logic
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 
