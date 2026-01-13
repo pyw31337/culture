@@ -15,12 +15,12 @@ export const GENRES = [
     // { id: 'leisure', label: '레저' }, // Removed or commented out if not used? Keeping consistency with view_file
     { id: 'leisure', label: '레저' },
     { id: 'kids', label: '키즈' },
+    { id: 'museum', label: '박물관/체험관' },
     { id: 'volleyball', label: '배구' },
     { id: 'basketball', label: '농구' },
     { id: 'baseball', label: '야구' },
     { id: 'soccer', label: '축구' },
     { id: 'handball', label: '핸드볼' },
-    { id: 'museum', label: '박물관/체험관' },
 ];
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
