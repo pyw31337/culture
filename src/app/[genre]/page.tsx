@@ -127,26 +127,27 @@ async function getPerformances(genreFilter: string | string[] | null) {
         if (!isPerformanceActive(p.date, now)) return false;
 
         if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
-            if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) {
-                // if (p.genre === 'volleyball') console.log(`[Volleyball Debug] Filtered by Region (Sports List): ${p.title} (${p.region})`);
-                return false;
-            }
+            // Updated to allowed regions including 'other' if needed, or remove check entirely. 
+            // For now, removing the restriction to allow all regions.
+            // if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) {
+            //    return false;
+            // }
         }
 
-        if (!validRegions.includes(p.region)) {
-            // Allow nationwide festivals (passed date check above)
-            if (p.genre === 'festival') return true;
+        // if (!validRegions.includes(p.region)) {
+        //     // Allow nationwide festivals (passed date check above)
+        //     if (p.genre === 'festival') return true;
 
-            if (p.genre === 'volleyball') {
-                // Check if it was allowed by the specific list above but then caught here?
-                // No, logic flow:
-                // 1. Matches sports check: passes if in allowed list.
-                // 2. Then hits this line: validRegions = ['seoul', 'gyeonggi', 'incheon', 'etc', 'ott']
-                // This effectively double-filters. If p.region is 'daegu' (allowed above), it will be caught here because 'daegu' is not in validRegions.
-                // console.log(`[Volleyball Debug] Filtered by Region (General List): ${p.title} (${p.region})`);
-            }
-            return false;
-        }
+        //     if (p.genre === 'volleyball') {
+        //         // Check if it was allowed by the specific list above but then caught here?
+        //         // No, logic flow:
+        //         // 1. Matches sports check: passes if in allowed list.
+        //         // 2. Then hits this line: validRegions = ['seoul', 'gyeonggi', 'incheon', 'etc', 'ott']
+        //         // This effectively double-filters. If p.region is 'daegu' (allowed above), it will be caught here because 'daegu' is not in validRegions.
+        //         // console.log(`[Volleyball Debug] Filtered by Region (General List): ${p.title} (${p.region})`);
+        //     }
+        //     return false;
+        // }
 
         if (p.genre === 'hockey') {
             // console.log(`[Hockey Check] ${p.title} | Region: ${p.region} | ValidRegions: ${validRegions.includes(p.region)} | Blocklist: ${BLOCKLIST.some(b => p.venue.includes(b))}`);
@@ -176,14 +177,9 @@ async function getPerformances(genreFilter: string | string[] | null) {
         if (venues[p.venue]) {
             const addr = venues[p.venue].address;
             if (addr && addr !== '정보 없음') {
-                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
-
-                // Debug logging for Volleyball
-                if (p.genre === 'volleyball' && !isServiceArea) {
-                    // console.log(`[Volleyball Debug] Filtered by Venue Address: ${p.title} (${p.venue} - ${addr})`);
-                }
-
-                if (!isServiceArea) return false;
+                // REMOVED: isServiceArea check for Seoul/Gyeonggi/Incheon
+                // const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
+                // if (!isServiceArea) return false;
             }
         }
 

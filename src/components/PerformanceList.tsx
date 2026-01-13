@@ -56,12 +56,11 @@ const SkeletonCard = () => (
         <div className="aspect-[3/4] bg-gray-700/50" />
         {/* Content Placeholder */}
         <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
-            <div className="h-4 bg-gray-600/50 rounded w-3/4 mb-2" />
-            <div className="h-3 bg-gray-600/30 rounded w-1/2 mb-2" />
             <div className="h-3 bg-gray-600/30 rounded w-2/3" />
         </div>
     </div>
 );
+
 
 // Skeleton Loading Component for List View
 const SkeletonListItem = () => (
@@ -136,7 +135,6 @@ function extractFirstPrice(priceStr: string): { label: string | null; price: str
 }
 
 // --- Text Templates for Hero Section ---
-// --- Text Templates for Hero Section ---
 // Structure:
 // Line 1: line1
 // Line 2: line2Pre + <Highlight> + suffix
@@ -149,8 +147,8 @@ const HERO_TEMPLATES = {
         { line1: "소중한 사람과 함께,", line2Pre: "당신을 위한 ", highlight: "잊지 못할 추억", suffix: "은 어디일까요?", keywords: ["가족", "연인", "친구"] },
         { line1: "혼자만의 시간이 필요할 때,", line2Pre: "당신을 위한 ", highlight: "특별한 순간", suffix: "은 어디일까요?", keywords: ["혼자", "1인"] },
         { line1: "문득 떠나고 싶은 지금,", line2Pre: "당신을 위한 ", highlight: "뜻밖의 발견", suffix: "이 기다립니다.", keywords: ["여행"] },
-        { line1: "지루한 하루의 끝,", line2Pre: "나에게 주는 ", highlight: "작은 선물", suffix: "같은 공연 어때요?", keywords: ["힐링"] },
-        { line1: "가슴 뛰는 설렘,", line2Pre: "놓치면 후회할 ", highlight: "화제의 공연", suffix: "을 확인하세요.", keywords: ["인기", "추천"] },
+        { line1: "지루한 하루의 끝,", line2Pre: "나에게 주는 ", highlight: "작은 선물", suffix: "같은 컨텐츠 어때요?", keywords: ["힐링"] },
+        { line1: "가슴 뛰는 설렘,", line2Pre: "놓치면 후회할 ", highlight: "화제의 컨텐츠", suffix: "를 확인하세요.", keywords: ["인기", "추천"] },
         { line1: "오늘 하루는,", line2Pre: "복잡한 생각 비우고 ", highlight: "몰입의 시간", suffix: "을 가져보세요.", keywords: ["몰입"] },
         { line1: "예술이 필요한 순간,", line2Pre: "당신의 마음을 채워줄 ", highlight: "아름다운 이야기", suffix: "가 있습니다.", keywords: ["예술", "스토리"] },
         { line1: "무대 위 벅찬 감동,", line2Pre: "생생하게 살아숨쉬는 ", highlight: "열정의 현장", suffix: "으로 초대합니다.", keywords: ["감동", "열정"] },
@@ -158,22 +156,22 @@ const HERO_TEMPLATES = {
         // New Conversational Templates
         { line1: "혹시, 마음이 답답하신가요?", line2Pre: "꽉 막힌 속을 뻥 뚫어줄 ", highlight: "시원한 무대", suffix: "를 준비했어요.", keywords: ["스트레스", "해소"] },
         { line1: "커피 한 잔보다,", line2Pre: "더 진한 여운을 남길 ", highlight: "예술 한 잔", suffix: " 어떠세요?", keywords: ["커피", "여운"] },
-        { line1: "집에만 있기엔 아까워요,", line2Pre: "지금 바로 떠날 수 있는 ", highlight: "공연 바캉스", suffix: "가 여기 있습니다.", keywords: ["바캉스", "외출"] },
-        { line1: "당신의 영혼을 채워줄,", line2Pre: "단 한 조각의 ", highlight: "마지막 퍼즐", suffix: " 같은 공연.", keywords: ["영혼", "예술"] },
+        { line1: "집에만 있기엔 아까워요,", line2Pre: "지금 바로 떠날 수 있는 ", highlight: "컨텐츠 바캉스", suffix: "가 여기 있습니다.", keywords: ["바캉스", "외출"] },
+        { line1: "당신의 영혼을 채워줄,", line2Pre: "단 한 조각의 ", highlight: "마지막 퍼즐", suffix: " 같은 컨텐츠.", keywords: ["영혼", "예술"] },
         { line1: "매일 똑같은 하루,", line2Pre: "당신의 일상에 ", highlight: "특별한 BGM", suffix: "을 깔아드릴게요.", keywords: ["음악", "일상"] },
         { line1: "무료한 시간, 뭐 할까 고민된다면,", line2Pre: "저와 함께 ", highlight: "문화 탐험", suffix: " 떠나보실래요?", keywords: ["탐험", "고민"] },
-        { line1: "설마 아직도 안 보셨나요?", line2Pre: "남들 다 본다는 ", highlight: "화제의 그 공연", suffix: "!", keywords: ["유행", "화제"] },
+        { line1: "설마 아직도 안 보셨나요?", line2Pre: "남들 다 본다는 ", highlight: "화제의 그 컨텐츠", suffix: "!", keywords: ["유행", "화제"] },
         { line1: "오늘 기분은 어떤가요?", line2Pre: "당신의 기분에 딱 맞는 ", highlight: "맞춤형 무대", suffix: "를 찾아드릴게요.", keywords: ["기분", "맞춤"] },
         { line1: "눈과 귀가 호강하는 날,", line2Pre: "오감을 깨우는 ", highlight: "짜릿한 경험", suffix: "을 선물합니다.", keywords: ["오감", "경험"] },
         { line1: "잠시 스마트폰은 내려놓고,", line2Pre: "눈앞에서 펼쳐지는 ", highlight: "생생한 감동", suffix: "을 느껴보세요.", keywords: ["디지털디톡스", "감동"] }
     ],
     keyword: [
-        { line1: "드디어 오늘,", line2Pre: "기다리던 ", highlight: "{keyword}", suffix: " 공연이 오픈했어요!", keywords: ["{keyword}"] },
+        { line1: "드디어 오늘,", line2Pre: "기다리던 ", highlight: "{keyword}", suffix: " 컨텐츠가 오픈했어요!", keywords: ["{keyword}"] },
         { line1: "요즘 가장 핫한", line2Pre: "", highlight: "{keyword}", suffix: " 소식, 놓치지 않으셨나요?", keywords: ["{keyword}"] },
         { line1: "당신의 취향 저격,", line2Pre: "준비된 ", highlight: "{keyword}", suffix: " 컬렉션을 만나보세요.", keywords: ["{keyword}"] },
-        { line1: "지금 딱 예매하기 좋은", line2Pre: "", highlight: "{keyword}", suffix: " 공연을 만나보세요.", keywords: ["{keyword}"] },
-        { line1: "망설이면 늦어요!", line2Pre: "", highlight: "{keyword}", suffix: " 인기 공연 총집합.", keywords: ["{keyword}"] },
-        { line1: "찾으시는 그 공연,", line2Pre: "", highlight: "{keyword}", suffix: " 관련 정보를 모두 모았습니다.", keywords: ["{keyword}"] },
+        { line1: "지금 딱 예매하기 좋은", line2Pre: "", highlight: "{keyword}", suffix: " 컨텐츠를 만나보세요.", keywords: ["{keyword}"] },
+        { line1: "망설이면 늦어요!", line2Pre: "", highlight: "{keyword}", suffix: " 인기 컨텐츠 총집합.", keywords: ["{keyword}"] },
+        { line1: "찾으시는 그 컨텐츠,", line2Pre: "", highlight: "{keyword}", suffix: " 관련 정보를 모두 모았습니다.", keywords: ["{keyword}"] },
         { line1: "팬심 저격!", line2Pre: "덕질의 완성은 역시 ", highlight: "{keyword}", suffix: " 직관이죠!", keywords: ["{keyword}"] },
         { line1: "혹시 좋아하세요?", line2Pre: "", highlight: "{keyword}", suffix: " 매니아를 위한 특별 추천.", keywords: ["{keyword}"] },
         { line1: "알림 신청 하셨나요?", line2Pre: "따끈따끈한 ", highlight: "{keyword}", suffix: " 티켓 오픈 소식!", keywords: ["{keyword}"] }
@@ -251,9 +249,9 @@ const HERO_TEMPLATES = {
             { line1: "한 해를 마무리하며,", line2Pre: "소중한 사람들과 나누고픈 ", highlight: "특별한 선물", suffix: " 같은 시간.", keywords: ["연말", "선물"] },
             // New
             { line1: "코끝이 찡한 겨울,", line2Pre: "얼어붙은 몸과 마음을 ", highlight: "사르르 녹여줄", suffix: " 감동의 무대.", keywords: ["겨울", "감동"] },
-            { line1: "이불 밖은 위험해?", line2Pre: "아니요, 이 공연을 놓치는 게 ", highlight: "더 위험해요!", suffix: "", keywords: ["겨울", "집순이"] },
+            { line1: "이불 밖은 위험해?", line2Pre: "아니요, 이 컨텐츠를 놓치는 게 ", highlight: "더 위험해요!", suffix: "", keywords: ["겨울", "집순이"] },
             { line1: "겨울 밤하늘 별처럼,", line2Pre: "당신의 기억 속에 ", highlight: "오래 반짝일", suffix: " 추억 하나.", keywords: ["겨울", "추억"] },
-            { line1: "붕어빵보다 따끈한,", line2Pre: "갓 구워낸 ", highlight: "신작 공연", suffix: " 소식입니다.", keywords: ["겨울", "신작"] }
+            { line1: "붕어빵보다 따끈한,", line2Pre: "갓 구워낸 ", highlight: "신작 컨텐츠", suffix: " 소식입니다.", keywords: ["겨울", "신작"] }
         ]
     },
     holiday: {
@@ -447,7 +445,7 @@ const HERO_TEMPLATES = {
     },
     location: [
         { line1: "오늘 {location}에서,", line2Pre: "특별한 ", highlight: "{genre} 한 편", suffix: " 어떠세요?", keywords: ["{location}"] },
-        { line1: "이번 주말, {location}에서", line2Pre: "당신을 기다리는 ", highlight: "{genre} 공연", suffix: "이 발견되었네요.", keywords: ["{location}"] },
+        { line1: "이번 주말, {location}에서", line2Pre: "당신을 기다리는 ", highlight: "{genre} 컨텐츠", suffix: "가 발견되었네요.", keywords: ["{location}"] },
         { line1: "{location} 나들이 가신다면,", line2Pre: "함께 즐기기 좋은 ", highlight: "{genre}", suffix: " 추천드려요.", keywords: ["{location}"] },
         { line1: "{location}의 밤을,", line2Pre: "아름답게 수놓을 ", highlight: "{genre}", suffix: " 어떠신가요?", keywords: ["{location}"] }
     ]
@@ -1728,6 +1726,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (mode !== 'calendar' && mode !== 'map') {
             scrollToTop();
         }
+        if (mode === 'map') {
+            setIsMapOpen(true);
+        }
     }
 
     const handleGenreSelect = (genre: string) => {
@@ -1848,9 +1849,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
         }
 
-        // Venue Filter
+        // Venue Filter (Modified: Include 10km Radius)
         if (selectedVenue !== 'all') {
-            filtered = filtered.filter(p => p.venue === selectedVenue);
+            const centerVenue = venues[selectedVenue];
+            if (centerVenue && centerVenue.lat && centerVenue.lng) {
+                // Include: 1. Exact Venue Match OR 2. Within 10km
+                filtered = filtered.filter(p => {
+                    if (p.venue === selectedVenue) return true;
+                    const pVenue = venues[p.venue];
+                    if (!pVenue?.lat || !pVenue?.lng) return false;
+                    const dist = getDistanceFromLatLonInKm(centerVenue.lat!, centerVenue.lng!, pVenue.lat, pVenue.lng);
+                    return dist <= 10;
+                });
+            } else {
+                filtered = filtered.filter(p => p.venue === selectedVenue);
+            }
         }
 
         return filtered;
@@ -1943,18 +1956,30 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
 
         // Default: Sort by date, then randomize top 40 for variety
-        const sortedByDate = [...basePerformances].sort((a, b) => a.date.localeCompare(b.date));
+        let sortedByDate = [...basePerformances].sort((a, b) => a.date.localeCompare(b.date));
+
+        // Priority Sort: If Venue selected, put exact matches first
+        if (selectedVenue !== 'all') {
+            sortedByDate.sort((a, b) => {
+                const aMatch = a.venue === selectedVenue ? 0 : 1;
+                const bMatch = b.venue === selectedVenue ? 0 : 1;
+                return aMatch - bMatch;
+            });
+        }
 
         // If sorting for "Recommended" (default view with no keywords), shuffle the top items
         // We use shuffleSeed to ensure it only changes on mount/refresh
         if (shuffleSeed) {
-            const randomForDefault = seededRandom(shuffleSeed.toString());
-            const TOP_COUNT = 40;
-            const topItems = sortedByDate.slice(0, TOP_COUNT);
-            const remainingItems = sortedByDate.slice(TOP_COUNT);
+            // Only shuffle if NOT in split venue mode (to preserve exact match order)
+            if (selectedVenue === 'all') {
+                const randomForDefault = seededRandom(shuffleSeed.toString());
+                const TOP_COUNT = 40;
+                const topItems = sortedByDate.slice(0, TOP_COUNT);
+                const remainingItems = sortedByDate.slice(TOP_COUNT);
 
-            const shuffledTop = topItems.sort(() => randomForDefault() - 0.5);
-            return [...shuffledTop, ...remainingItems];
+                const shuffledTop = topItems.sort(() => randomForDefault() - 0.5);
+                return [...shuffledTop, ...remainingItems];
+            }
         }
 
         return sortedByDate;
@@ -2370,9 +2395,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
                     {/* Inline Filter Panel (Toggle) */}
                     {isHeroFilterExpanded && (
-                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl overflow-hidden z-[60]">
-                            {/* Inner content wrapper */}
-                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-auto scrollbar-hide p-4">
+                        <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl z-[60]">
+                            {/* Inner content wrapper - Removed overflow-hidden from parent and added generous padding here */}
+                            <div className="w-full xl:w-auto flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center overflow-x-visible p-6">
 
                                 {/* Venue Select */}
                                 <div className="relative shrink-0 w-full sm:w-auto">
@@ -2447,16 +2472,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     {(() => {
                         // Dynamic title messages for likes-perf
                         const likesPerfMessages = [
-                            { line1: "평소에", line2Pre: "좋아요로 Pick 한 ", highlight: "공연들", suffix: "을 살펴볼까요?" },
-                            { line1: "당신의", line2Pre: "마음을 사로잡은 ", highlight: "공연", suffix: "들이에요." },
+                            { line1: "평소에", line2Pre: "좋아요로 Pick 한 ", highlight: "컨텐츠들", suffix: "을 살펴볼까요?" },
+                            { line1: "당신의", line2Pre: "마음을 사로잡은 ", highlight: "컨텐츠", suffix: "들이에요." },
                             { line1: "하트를 눌렀던", line2Pre: "그 순간을 ", highlight: "다시", suffix: " 만나보세요." },
-                            { line1: "찜해둔", line2Pre: "공연 중에 ", highlight: "오늘", suffix: " 볼만한 건 뭐가 있을까요?" },
+                            { line1: "찜해둔", line2Pre: "컨텐츠 중에 ", highlight: "오늘", suffix: " 볼만한 건 뭐가 있을까요?" },
                             { line1: "좋아요 리스트,", line2Pre: "당신만의 ", highlight: "컬렉션", suffix: "이에요." },
-                            { line1: "설렘이 담긴", line2Pre: "공연 ", highlight: "리스트", suffix: "를 확인해볼게요." },
-                            { line1: "기억해둔", line2Pre: "그 공연들, ", highlight: "지금", suffix: " 확인해보세요." },
-                            { line1: "마음에 담아둔", line2Pre: "공연 ", highlight: "목록", suffix: "이에요." },
-                            { line1: "좋아요 버튼,", line2Pre: "진심을 담아 누른 ", highlight: "공연", suffix: "들이죠." },
-                            { line1: "당신의 취향이", line2Pre: "반영된 ", highlight: "공연들", suffix: "을 모아봤어요." }
+                            { line1: "설렘이 담긴", line2Pre: "컨텐츠 ", highlight: "리스트", suffix: "를 확인해볼게요." },
+                            { line1: "기억해둔", line2Pre: "그 컨텐츠들, ", highlight: "지금", suffix: " 확인해보세요." },
+                            { line1: "마음에 담아둔", line2Pre: "컨텐츠 ", highlight: "목록", suffix: "이에요." },
+                            { line1: "좋아요 버튼,", line2Pre: "진심을 담아 누른 ", highlight: "컨텐츠", suffix: "들이죠." },
+                            { line1: "당신의 취향이", line2Pre: "반영된 ", highlight: "컨텐츠들", suffix: "을 모아봤어요." }
                         ];
 
                         // Dynamic title messages for likes-venue
@@ -2482,13 +2507,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         const genreMessages: Record<string, { line1: string; boldPrefix?: string; line2Pre: string; highlight: string; suffix: string }[]> = {
                             hotdeal: [
                                 { line1: "지금 아니면", boldPrefix: "핫딜", line2Pre: "을 놓칠 수 있어요! ", highlight: "특가", suffix: "를 확인해보세요." },
-                                { line1: "가성비 갑!", boldPrefix: "핫딜", line2Pre: " 공연들이 ", highlight: "기다리고", suffix: " 있어요." },
+                                { line1: "가성비 갑!", boldPrefix: "핫딜", line2Pre: " 컨텐츠들이 ", highlight: "기다리고", suffix: " 있어요." },
                                 { line1: "이 가격에?", boldPrefix: "핫딜", line2Pre: " 놓치면 ", highlight: "후회", suffix: "해요." },
-                                { line1: "오늘만!", boldPrefix: "핫딜", line2Pre: " 가격에 만나는 ", highlight: "공연", suffix: "들이에요." },
+                                { line1: "오늘만!", boldPrefix: "핫딜", line2Pre: " 가격에 만나는 ", highlight: "컨텐츠", suffix: "들이에요." },
                                 { line1: "알뜰하게", boldPrefix: "핫딜", line2Pre: "로 즐기는 ", highlight: "문화생활", suffix: "!" },
                                 { line1: "지갑은 가볍게,", boldPrefix: "핫딜", line2Pre: " 감동은 ", highlight: "크게", suffix: "!" },
-                                { line1: "현명한 선택,", boldPrefix: "핫딜", line2Pre: " 공연 ", highlight: "모음", suffix: "이에요." },
-                                { line1: "득템 찬스!", boldPrefix: "핫딜", line2Pre: " ", highlight: "공연", suffix: "을 잡아보세요." },
+                                { line1: "현명한 선택,", boldPrefix: "핫딜", line2Pre: " 컨텐츠 ", highlight: "모음", suffix: "이에요." },
+                                { line1: "득템 찬스!", boldPrefix: "핫딜", line2Pre: " ", highlight: "컨텐츠", suffix: "를 잡아보세요." },
                                 { line1: "싸고 좋은", boldPrefix: "핫딜", line2Pre: " ", highlight: "발견", suffix: "!" },
                                 { line1: "할인의 기회,", boldPrefix: "핫딜", line2Pre: " ", highlight: "지금", suffix: " 바로 확인하세요." }
                             ],
@@ -2774,7 +2799,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     <select
                                         value={radius}
                                         onChange={(e) => setRadius(Number(e.target.value))}
-                                        className="bg-transparent text-green-400 text-sm font-bold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
+                                        className="bg-transparent text-[#a78bfa] text-sm font-bold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
                                     >
                                         {RADIUS_OPTIONS.map(r => (
                                             <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
@@ -3412,8 +3437,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         return (
                                             <div
                                                 key={`${perf.id}-${perf.region}`}
-                                                className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
+                                                className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full", (selectedVenue !== 'all' && perf.venue !== selectedVenue && (index === 0 || displayPerformances[index - 1].venue === selectedVenue)) ? "col-span-full pt-8" : "")}
                                             >
+                                                {/* Split List Header */}
+                                                {(selectedVenue !== 'all' && perf.venue !== selectedVenue && (index === 0 || displayPerformances[index - 1].venue === selectedVenue)) && (
+                                                    <div className="w-full h-px relative bg-gradient-to-r from-transparent via-[#a78bfa]/50 to-transparent mb-8 flex items-center justify-center">
+                                                        <span className="bg-[#0f1115] px-4 text-[#a78bfa] text-sm font-bold tracking-widest uppercase">
+                                                            Nearby Recommendations
+                                                        </span>
+                                                    </div>
+                                                )}
                                                 {layoutMode === 'grid' ? (
                                                     <PerformanceCard
                                                         perf={perf}
@@ -3501,7 +3534,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                 }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
                                                     필터 초기화
                                                 </button>
-                                                <a href="/culture/" className="px-6 py-2.5 rounded-full border border-gray-600 text-gray-400 font-medium hover:bg-gray-800 hover:text-white transition-all">
+                                                <a href="/culture/" className="px-6 py-2.5 rounded-full bg-gray-500/20 text-gray-400 font-bold hover:bg-gray-500 hover:text-white transition-all">
                                                     홈으로 가기
                                                 </a>
                                             </div>
@@ -4039,36 +4072,30 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 )}
                                 {/* Provider (OTT) */}
                                 {perf.platforms && perf.platforms.length > 0 && (
-                                    <div className="flex gap-2 items-start">
+                                    <div className="flex gap-2 items-center">
                                         <span className="text-gray-500 font-bold shrink-0">제공</span>
-                                        <div className="flex flex-wrap gap-x-1 leading-snug">
+                                        <div className="flex flex-wrap gap-1">
                                             {perf.platforms.map((p: string, idx: number) => {
                                                 const key = typeof p === 'string' ? p.toLowerCase() : String(p);
                                                 const platform = OTT_PLATFORMS[key];
-                                                const label = platform ? platform.label : p;
+                                                if (!platform) return null;
 
-                                                if (platform) {
-                                                    const url = platform.url.replace('{title}', encodeURIComponent(perf.title));
-                                                    return (
-                                                        <span key={idx}>
-                                                            <a
-                                                                href={url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="text-gray-300 light:text-black hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
-                                                                onClick={(e) => e.stopPropagation()}
-                                                            >
-                                                                {label}
-                                                            </a>
-                                                            {idx < perf.platforms.length - 1 ? ',' : ''}
-                                                        </span>
-                                                    );
-                                                }
-
+                                                const url = platform.url.replace('{title}', encodeURIComponent(perf.title));
                                                 return (
-                                                    <span key={idx} className="text-gray-300 light:text-black">
-                                                        {label}{idx < perf.platforms.length - 1 ? ',' : ''}
-                                                    </span>
+                                                    <a
+                                                        key={idx}
+                                                        href={url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={clsx(
+                                                            "w-5 h-5 flex items-center justify-center rounded text-[9px] font-black uppercase hover:scale-110 transition-transform shadow-sm text-white border border-white/10",
+                                                            platform.color
+                                                        )}
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        title={platform.label}
+                                                    >
+                                                        {platform.label.substring(0, 1)}
+                                                    </a>
                                                 );
                                             })}
                                         </div>
