@@ -4,6 +4,7 @@ import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, LayoutList, Mi
 import { BottomMenuType, ListDetailsIcon } from './BottomNav';
 import { CloverIcon } from './GenreIcons';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
+import { safeStorage } from '@/lib/safeStorage';
 
 interface BottomNavSheetProps {
     activeMenu: BottomMenuType;
@@ -62,8 +63,8 @@ export default function BottomNavSheet({
             const hasDarkClass = document.documentElement.classList.contains('dark');
             setIsLight(!hasDarkClass);
 
-            // Sync with localStorage if needed
-            const savedTheme = localStorage.getItem('theme');
+            // Sync with localStorage if needed (using safeStorage for SSR safety)
+            const savedTheme = safeStorage.get<string>('theme', 'light');
             if (savedTheme === 'dark' && !hasDarkClass) {
                 document.documentElement.classList.add('dark');
                 setIsLight(false);
@@ -76,11 +77,11 @@ export default function BottomNavSheet({
         if (doc.classList.contains('dark')) {
             doc.classList.remove('dark');
             setIsLight(true);
-            localStorage.setItem('theme', 'light');
+            safeStorage.set('theme', 'light');
         } else {
             doc.classList.add('dark');
             setIsLight(false);
-            localStorage.setItem('theme', 'dark');
+            safeStorage.set('theme', 'dark');
         }
     };
 

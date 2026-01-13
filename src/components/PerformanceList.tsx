@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
+import { safeStorage } from '@/lib/safeStorage';
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
 import BottomNav, { BottomMenuType } from './BottomNav';
@@ -903,11 +904,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             pool.push(...currentSeasonTemplates);
 
 
-            // 5. Weather Check (Async)
+            // 5. Weather Check (Async) - with timeout to prevent blocking
             try {
                 // 30% chance to consider weather heavily
                 if (Math.random() < 0.3) {
-                    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current_weather=true');
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
+                    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current_weather=true', {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
                     const data = await res.json();
                     const code = data.current_weather?.weathercode;
 
@@ -923,6 +929,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     }
                 }
             } catch (e) {
+                // Silently ignore weather fetch failures (network issues, timeout, etc.)
                 console.log("Weather fetch failed (ignoring).");
             }
 
@@ -1005,26 +1012,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [newKeyword, setNewKeyword] = useState('');
 
     useEffect(() => {
-        // Consolidated Loader for all LocalStorage items
-        const loadState = (key: string, setter: (val: any) => void) => {
-            const saved = localStorage.getItem(key);
-            if (saved) {
-                try {
-                    setter(JSON.parse(saved));
-                } catch (e) {
-                    console.error(`Failed to parse ${key}`, e);
-                }
-            }
-        };
-
-        loadState('culture_keywords', setSavedKeywords);
-        loadState('culture_likes', setLikedIds);
-        loadState('culture_favorite_venues', setFavoriteVenues);
-        loadState('culture_likes_expanded', setIsLikesExpanded);
-        loadState('culture_venues_expanded', setIsFavoriteVenuesExpanded);
-        loadState('culture_show_favorite_venues', setShowFavoriteVenues);
-        loadState('culture_show_likes', setShowLikes);
-        loadState('culture_view_mode', setViewMode);
+        // Consolidated Loader for all LocalStorage items (using safeStorage for SSR safety)
+        setSavedKeywords(safeStorage.get<string[]>('culture_keywords', []));
+        setLikedIds(safeStorage.get<string[]>('culture_likes', []));
+        setFavoriteVenues(safeStorage.get<string[]>('culture_favorite_venues', []));
+        setIsLikesExpanded(safeStorage.get<boolean>('culture_likes_expanded', true));
+        setIsFavoriteVenuesExpanded(safeStorage.get<boolean>('culture_venues_expanded', true));
+        setShowFavoriteVenues(safeStorage.get<boolean>('culture_show_favorite_venues', true));
+        setShowLikes(safeStorage.get<boolean>('culture_show_likes', true));
+        setViewMode(safeStorage.get<string>('culture_view_mode', 'grid'));
 
         setIsStorageLoaded(true);
         // Delay to allow content to render before removing skeleton
@@ -1033,22 +1029,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_keywords', JSON.stringify(savedKeywords));
+        safeStorage.set('culture_keywords', savedKeywords);
     }, [savedKeywords, isStorageLoaded]);
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_show_favorite_venues', JSON.stringify(showFavoriteVenues));
+        safeStorage.set('culture_show_favorite_venues', showFavoriteVenues);
     }, [showFavoriteVenues, isStorageLoaded]);
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_show_likes', JSON.stringify(showLikes));
+        safeStorage.set('culture_show_likes', showLikes);
     }, [showLikes, isStorageLoaded]);
 
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_view_mode', JSON.stringify(viewMode));
+        safeStorage.set('culture_view_mode', viewMode);
     }, [viewMode, isStorageLoaded]);
 
     const addKeyword = () => {
@@ -1076,7 +1072,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Persist Likes Expanded State
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_likes_expanded', JSON.stringify(isLikesExpanded));
+        safeStorage.set('culture_likes_expanded', isLikesExpanded);
     }, [isLikesExpanded, isStorageLoaded]);
 
     // Load Likes Expanded State (Removed - handled by consolidated loader)
@@ -1086,7 +1082,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Save Likes to LocalStorage
     useEffect(() => {
         if (!isStorageLoaded) return;
-        localStorage.setItem('culture_likes', JSON.stringify(likedIds));
+        safeStorage.set('culture_likes', likedIds);
     }, [likedIds, isStorageLoaded]);
 
     const toggleLike = (id: string, e?: React.MouseEvent) => {
