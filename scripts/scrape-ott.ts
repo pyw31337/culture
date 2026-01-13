@@ -11,10 +11,14 @@ interface OTTPerformance {
     date: string; // YYYY-MM-DD format
     image: string;
     link: string;
-    genre: 'ott';
+    genre: string;
     platform?: string; // e.g., 'netflix', 'disney', 'coupang'
     platforms?: string[]; // Array of platform IDs
     region: 'ott';
+    movieInfo?: string;
+    grade?: string;
+    director?: string;
+    cast?: string[];
 }
 
 const TARGET_URLS = [
@@ -198,77 +202,62 @@ async function scrapeOTT() {
                         // Ignore
                     }
 
-                    const details = await newPage.evaluate(function () {
-                        function cleanText(text: string) {
-                            return text.replace(/\s+/g, ' ').trim();
+                    // Use string evaluation to avoid tsx injection of helper functions
+                    const extractionCode = `(() => {
+                        function cleanText(t) { return (t || '').replace(/\\s+/g, ' ').trim(); }
+                        
+                        function getMetadataValue(labelKeywords) {
+                             const items = Array.from(document.querySelectorAll('.metadata__item'));
+                             for (const item of items) {
+                                 const titleEl = item.querySelector('.item__title');
+                                 if (titleEl) {
+                                     const titleText = cleanText(titleEl.textContent);
+                                     if (labelKeywords.some(k => titleText.includes(k))) {
+                                         const fullText = cleanText(item.textContent);
+                                         return fullText.replace(titleText, '').trim();
+                                     }
+                                 }
+                             }
+                             return '';
+                        }
+                        
+                        let director = '';
+                        const staffs = Array.from(document.querySelectorAll('.staff'));
+                        for (const staff of staffs) {
+                            const titleEl = staff.querySelector('.staff__title');
+                            if (titleEl && cleanText(titleEl.textContent).includes('감독')) {
+                                const nameEl = staff.querySelector('.names__name');
+                                if (nameEl) director = cleanText(nameEl.textContent);
+                                break;
+                            }
                         }
 
-                        // Helper to find value by label in metadata list
-                        function getMetadataValue(labelKeywords: string[]) {
-                            const items = Array.from(document.querySelectorAll('.metadata__item'));
-                            for (const item of items) {
-                                const titleEl = item.querySelector('.item__title');
-                                if (titleEl) {
-                                    const titleText = cleanText(titleEl.textContent || '');
-                                    let found = false;
-                                    for (const k of labelKeywords) {
-                                        if (titleText.includes(k)) {
-                                            found = true;
-                                            break;
-                                        }
-                                    }
-                                    if (found) {
-                                        const fullText = cleanText(item.textContent || '');
-                                        return fullText.replace(titleText, '').trim();
-                                    }
-                                }
-                            }
-                            return '';
-                        }
-
-                        function getDirector() {
-                            const staffs = Array.from(document.querySelectorAll('.staff'));
-                            for (const staff of staffs) {
-                                const titleEl = staff.querySelector('.staff__title');
-                                if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
-                                    const nameEl = staff.querySelector('.names__name');
-                                    return nameEl ? cleanText(nameEl.textContent || '') : '';
-                                }
-                            }
-                            return '';
-                        }
-
-                        function getCast() {
-                            const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
-                            const results = [];
-                            for (let i = 0; i < actors.length && i < 5; i++) {
-                                const text = cleanText(actors[i].textContent || '');
-                                if (text) results.push(text);
-                            }
-                            return results;
-                        }
+                        const cast = Array.from(document.querySelectorAll('[id^="actorList-"] .name'))
+                            .slice(0, 5)
+                            .map(el => cleanText(el.textContent))
+                            .filter(Boolean);
 
                         const genre = getMetadataValue(['장르']);
                         const runtime = getMetadataValue(['러닝타임']);
                         const date = getMetadataValue(['방영일', '개봉일', '첫 방영일', '방영 시작일']);
                         const grade = getMetadataValue(['연령등급']);
 
-                        // Fallback: Header Date (often contains Year or full YYYY.MM.DD)
                         const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
-                        const headerDate = headerDateEl ? cleanText(headerDateEl.textContent || '') : '';
+                        const headerDate = headerDateEl ? cleanText(headerDateEl.textContent) : '';
 
-                        // Fallback: Header Grade Badge
                         const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
-                        const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent || '') : '';
-
+                        const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent) : '';
+                        
                         return {
                             movieInfo: [genre, runtime].filter(Boolean).join(' / '),
                             grade: grade || headerGrade,
-                            director: getDirector(),
-                            cast: getCast(),
-                            detailDate: headerDate || date // Prioritize header date as it's usually the "Release" info
+                            director: director,
+                            cast: cast,
+                            detailDate: headerDate || date 
                         };
-                    });
+                    })()`;
+
+                    const details = await newPage.evaluate(extractionCode) as any;
 
                     let finalDate = item.date;
                     if (details.detailDate) {
@@ -312,9 +301,55 @@ async function scrapeOTT() {
         console.log(`Scraped ${processedItems.length} items with details.`);
 
         // Save
+        // Save
         const outputPath = path.resolve(process.cwd(), 'src/data/ott.json');
-        fs.writeFileSync(outputPath, JSON.stringify(processedItems, null, 2));
-        console.log(`Saved to ${outputPath}`);
+
+        // Load existing data for persistence
+        let existingItems: OTTPerformance[] = [];
+        if (fs.existsSync(outputPath)) {
+            try {
+                const fileContent = fs.readFileSync(outputPath, 'utf-8');
+                existingItems = JSON.parse(fileContent);
+                console.log(`Loaded ${existingItems.length} existing items for merging.`);
+            } catch (e) {
+                console.error('Error loading existing data:', e);
+            }
+        }
+
+        // Create a map of existing items by ID
+        const itemMap = new Map<string, OTTPerformance>();
+        existingItems.forEach(item => itemMap.set(item.id, item));
+
+        // Merge new items: Existing items take precedence to preserve manual edits
+        processedItems.forEach(newItem => {
+            if (itemMap.has(newItem.id)) {
+                const existing = itemMap.get(newItem.id)!;
+                // Preserve manual edits, BUT overwrite if existing contains default/bad data
+                const merged = { ...newItem, ...existing };
+
+                // If existing genre is 'ott' (default) and new genre is valid, use new genre
+                if ((!existing.genre || existing.genre.toLowerCase() === 'ott') && newItem.genre && newItem.genre.toLowerCase() !== 'ott') {
+                    merged.genre = newItem.genre;
+                    // Also update movieInfo if it was just based on 'ott'
+                    if (newItem.movieInfo && newItem.movieInfo.length > (existing.movieInfo?.length || 0)) {
+                        merged.movieInfo = newItem.movieInfo;
+                    }
+                }
+                // If existing grade is empty/bad and new grade is good, use new
+                if ((!existing.grade || existing.grade === 'OTT') && newItem.grade) {
+                    merged.grade = newItem.grade;
+                }
+
+                itemMap.set(newItem.id, merged);
+            } else {
+                itemMap.set(newItem.id, newItem);
+            }
+        });
+
+        const finalItems = Array.from(itemMap.values());
+
+        fs.writeFileSync(outputPath, JSON.stringify(finalItems, null, 2));
+        console.log(`Saved ${finalItems.length} items to ${outputPath} (Merged with existing data)`);
 
     } catch (error) {
         console.error('Error in OTT Scraper:', error);

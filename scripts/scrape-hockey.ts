@@ -192,8 +192,35 @@ async function scrapeHockey() {
         }
 
         const outputPath = path.resolve(process.cwd(), 'src/data/hockey.json');
-        fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
-        console.log(`Saved items to ${outputPath}`);
+
+        // Load existing data for persistence
+        let existingItems: any[] = [];
+        if (fs.existsSync(outputPath)) {
+            try {
+                const fileContent = fs.readFileSync(outputPath, 'utf-8');
+                existingItems = JSON.parse(fileContent);
+                console.log(`Loaded ${existingItems.length} existing items for merging.`);
+            } catch (e) {
+                console.error('Error loading existing data:', e);
+            }
+        }
+
+        // Create a map of existing items by ID
+        const itemMap = new Map<string, any>();
+        existingItems.forEach(item => itemMap.set(item.id, item));
+
+        // Merge new items: Existing items take precedence to preserve manual edits
+        data.forEach(newItem => {
+            if (itemMap.has(newItem.id)) {
+                itemMap.set(newItem.id, { ...newItem, ...itemMap.get(newItem.id) });
+            } else {
+                itemMap.set(newItem.id, newItem);
+            }
+        });
+
+        const finalItems = Array.from(itemMap.values());
+        fs.writeFileSync(outputPath, JSON.stringify(finalItems, null, 2));
+        console.log(`Saved ${finalItems.length} items to ${outputPath} (Merged with existing data)`);
 
     } catch (error) {
         console.error('Scraping failed:', error);

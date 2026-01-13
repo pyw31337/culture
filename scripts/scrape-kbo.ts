@@ -407,7 +407,35 @@ async function scrapeKBO() {
     }
 
     console.log(`Total collected: ${allPerformances.length}`);
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allPerformances, null, 2));
+
+    // Load existing data for persistence
+    let existingItems: any[] = [];
+    if (fs.existsSync(OUTPUT_PATH)) {
+        try {
+            const fileContent = fs.readFileSync(OUTPUT_PATH, 'utf-8');
+            existingItems = JSON.parse(fileContent);
+            console.log(`Loaded ${existingItems.length} existing items for merging.`);
+        } catch (e) {
+            console.error('Error loading existing data:', e);
+        }
+    }
+
+    // Create a map of existing items by ID
+    const itemMap = new Map<string, any>();
+    existingItems.forEach(item => itemMap.set(item.id, item));
+
+    // Merge new items: Existing items take precedence to preserve manual edits
+    allPerformances.forEach(newItem => {
+        if (itemMap.has(newItem.id)) {
+            itemMap.set(newItem.id, { ...newItem, ...itemMap.get(newItem.id) });
+        } else {
+            itemMap.set(newItem.id, newItem);
+        }
+    });
+
+    const finalItems = Array.from(itemMap.values());
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalItems, null, 2));
+    console.log(`Saved ${finalItems.length} items to ${OUTPUT_PATH} (Merged with existing data)`);
     await browser.close();
 }
 

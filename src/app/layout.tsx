@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
+import ProgressBarProvider from "@/components/ProgressBarProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,7 +85,9 @@ export default function RootLayout({
             gtag('config', 'G-5GWFPEPEW5');
           `}
         </Script>
-        {children}
+        <ProgressBarProvider>
+          {children}
+        </ProgressBarProvider>
         <Script
           id="kakao-map-script"
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services,clusterer"
