@@ -87,6 +87,7 @@ function mapPlatform(className: string): string | null {
             if (key.includes('apple')) return 'apple';
             if (key.includes('laftel')) return 'laftel';
             if (key.includes('amazon') || key.includes('prime')) return 'amazon';
+            if (key.includes('mobiletv')) return 'uplus';
             if (key.includes('u+') || key.includes('uplus') || key.includes('lgu')) return 'uplus';
 
             console.warn(`Unknown platform key: ${key}`);
