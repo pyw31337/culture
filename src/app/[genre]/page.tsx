@@ -23,6 +23,7 @@ import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
 import mochaclassData from '@/data/mochaclass.json';
+import mommomData from '@/data/mommom.json';
 import venueData from '@/data/venues.json';
 
 import { VALID_GENRE_SLUGS, SPORTS_GENRES, GENRES } from '@/lib/constants';
@@ -83,6 +84,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const classes = classData as unknown as any[];
     const umclasses = umclassData as unknown as any[];
     const mochaclasses = mochaclassData as unknown as any[];
+    const mommoms = mommomData as unknown as any[];
     const ott = ottData as unknown as any[];
     const seoulCulture = (seoulData as unknown as any[]).map(p => ({
         ...p,
@@ -110,6 +112,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
         ...classes,
         ...umclasses,
         ...mochaclasses,
+        ...mommoms,
         ...seoulCulture,
     ].map(p => ({
         ...p,
