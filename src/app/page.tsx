@@ -17,7 +17,7 @@ import classData from '@/data/sssd-class.json';
 import ottData from '@/data/ott.json';
 
 import handballData from '@/data/handball.json';
-import hockeyData from '@/data/hockey.json';
+// import hockeyData from '@/data/hockey.json'; // Removed
 import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
 
@@ -69,7 +69,7 @@ async function getPerformances() {
     const basketball = kblData as unknown as any[];
     const baseball = kboData as unknown as any[];
     const handball = handballData as unknown as any[];
-    const hockey = hockeyData as unknown as any[];
+    // const hockey = hockeyData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -99,7 +99,7 @@ async function getPerformances() {
         ...basketball, // KBL
         ...baseball, // KBO
         ...handball, // Handball
-        ...hockey,   // Hockey
+        // ...hockey,   // Hockey - Removed
         ...ott.map(p => ({ ...p, venue: 'OTT' })),      // OTT
         ...movies,   // Movies
         ...travels, // Travel
@@ -141,14 +141,11 @@ async function getPerformances() {
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        // Explicit Hockey Filter: Only show matches at '안양 종합운동장 실내빙상장'
-        if (p.genre === 'hockey') {
-            if (p.venue !== '안양 종합운동장 실내빙상장') return false;
-        }
+        // Hockey filter removed
 
-        // Sports: Strict Region Filter (Seoul, Gyeonggi, Incheon only for existing/ticket-based ones, but expanding for handball)
-        // Actually, let's allow all regions for collected sports if valid
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
+
+        // Sports: Strict Region Filter
+        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball') {
             // Allow verified regions
             if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) return false;
         }

@@ -20,7 +20,7 @@ export const GENRES = [
     { id: 'baseball', label: '야구' },
     { id: 'soccer', label: '축구' },
     { id: 'handball', label: '핸드볼' },
-    { id: 'hockey', label: '아이스하키' },
+    { id: 'museum', label: '박물관/체험관' },
 ];
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
@@ -42,7 +42,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-700', twActivebg: 'bg-blue-800' },
     'soccer': { hex: '#dc2626', twText: 'text-red-700', twBg: 'bg-red-700', twBorder: 'border-red-500', twActivebg: 'bg-red-600' },
     'handball': { hex: '#d97706', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
-    'hockey': { hex: '#0284c7', twText: 'text-sky-700', twBg: 'bg-sky-700', twBorder: 'border-sky-500', twActivebg: 'bg-sky-600' },
+    'museum': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' }, // Emerald for Museum
     'hotdeal': { hex: '#e11d48', twText: 'text-rose-600', twBg: 'bg-rose-600', twBorder: 'border-rose-500', twActivebg: 'bg-rose-500' },
     'all': { hex: '#4b5563', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };

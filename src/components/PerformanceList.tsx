@@ -1816,11 +1816,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
         // Search Filter
         if (searchText) {
-            const lowerSearch = searchText.toLowerCase();
+            const lowerSearch = searchText.toLowerCase().normalize('NFC');
             filtered = filtered.filter(p =>
-                p.title.toLowerCase().includes(lowerSearch) ||
-                p.venue.toLowerCase().includes(lowerSearch) ||
-                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).toLowerCase().includes(lowerSearch))
+                p.title.toLowerCase().normalize('NFC').includes(lowerSearch) ||
+                p.venue.toLowerCase().normalize('NFC').includes(lowerSearch) ||
+                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).toLowerCase().normalize('NFC').includes(lowerSearch))
             );
         }
 
@@ -1930,6 +1930,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Sorting (Keyword Match desc with shuffle, then Date asc)
     const sortedPerformances = useMemo(() => {
+        // Sports: Strict Date ASC Sort (Nearest First)
+        if (['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(selectedGenre)) {
+            return [...basePerformances].sort((a, b) => {
+                // Remove (Time) or ~ range for comparison
+                const dateA = a.date.split('(')[0].split('~')[0].trim();
+                const dateB = b.date.split('(')[0].split('~')[0].trim();
+                return dateA.localeCompare(dateB);
+            });
+        }
+
         // Create a seeded random value based on keywords to ensure consistent shuffle within a template cycle
         // but different shuffle when template/keywords change
         const shuffleSeed = contextKeywords.join(',');
@@ -2209,6 +2219,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'volleyball': return 'V-리그 프로배구 일정';
                                     case 'soccer': return 'K-리그 축구 일정';
                                     case 'hockey': return '아시아리그 아이스하키';
+                                    case 'museum': return '박물관/체험관';
                                     case 'handball': return '핸드볼 H리그 일정';
                                     case 'musical': return '뮤지컬 공연 정보';
                                     case 'concert': return '콘서트 공연 정보';
@@ -2218,7 +2229,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'activity': return '액티비티 체험';
                                     case 'leisure': return '레저 · 테마파크';
                                     case 'hotdeal': return '🔥 오늘의 핫딜 특가';
-                                    default: return '서울 · 경기 · 인천 통합 문화 검색';
+                                    default: return '전국 통합 문화 검색';
                                 }
                             })()}
                         </span>

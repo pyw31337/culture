@@ -8,7 +8,8 @@ import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
 import kboData from '@/data/kbo.json';
 import handballData from '@/data/handball.json';
-import hockeyData from '@/data/hockey.json';
+// import hockeyData from '@/data/hockey.json'; // Removed
+import museumData from '@/data/museum.json'; // Added
 import travelData from '@/data/travel.json';
 import festivalsData from '@/data/festivals.json';
 import yes24Data from '@/data/yes24.json';
@@ -74,7 +75,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const basketball = kblData as unknown as any[];
     const baseball = kboData as unknown as any[];
     const handball = handballData as unknown as any[];
-    const hockey = hockeyData as unknown as any[];
+    // const hockey = hockeyData as unknown as any[];
+    const museums = museumData as unknown as any[];
     const festivals = festivalsData as unknown as any[];
     const yes24 = yes24Data as unknown as any[];
     const timeticket = timeticketData as unknown as any[];
@@ -103,8 +105,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
         ...volleyball,
         ...basketball,
         ...baseball,
-        ...handball,
-        ...hockey,
+        ...handball, // Handball
+        // ...hockey,   // Hockey - Removed
         ...ott,
         ...movies,
         ...travels,
@@ -135,16 +137,29 @@ async function getPerformances(genreFilter: string | string[] | null) {
             return false;
         }
 
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott') return true;
+        // Movies & Travel & Kids & Class & Leisure: Always show regardless of region/date logic (mostly)
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'leisure' || p.genre === 'museum') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball' || p.genre === 'hockey') {
-            // Updated to allowed regions including 'other' if needed, or remove check entirely. 
-            // For now, removing the restriction to allow all regions.
-            // if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) {
-            //    return false;
-            // }
+        // Sports: Strict Region Filter & Past Game Filter
+        if (['volleyball', 'basketball', 'baseball', 'handball', 'soccer', 'hockey'].includes(p.genre)) {
+            // Region check
+            if (!['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'].includes(p.region)) return false;
+
+            // Strict Date check: Hide if game date is strictly before today (Yesterday or older)
+            // Note: 'now' is build time.
+            try {
+                const gameDate = new Date(p.date.split('(')[0]); // Remove time info like (17:00)
+                // Reset time to 00:00:00 for comparison
+                const todayMidnight = new Date(now);
+                todayMidnight.setHours(0, 0, 0, 0);
+                gameDate.setHours(0, 0, 0, 0);
+
+                if (gameDate < todayMidnight) return false;
+            } catch (e) {
+                // If date parse fails, keep it (safety)
+            }
         }
 
         // if (!validRegions.includes(p.region)) {
@@ -162,9 +177,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
         //     return false;
         // }
 
-        if (p.genre === 'hockey') {
-            // console.log(`[Hockey Check] ${p.title} | Region: ${p.region} | ValidRegions: ${validRegions.includes(p.region)} | Blocklist: ${BLOCKLIST.some(b => p.venue.includes(b))}`);
-        }
+        // Hockey filter removed
+
 
         if (p.venue === '예매하기') return false;
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
@@ -182,10 +196,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
             }
         }
 
-        // Explicit Hockey Filter: Only show matches at '안양 종합운동장 실내빙상장'
-        if (p.genre === 'hockey') {
-            if (p.venue !== '안양 종합운동장 실내빙상장') return false;
-        }
+        // Hockey explicit venue filter removed
+
 
         if (venues[p.venue]) {
             const addr = venues[p.venue].address;
@@ -201,8 +213,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
     });
 
     // console.log(`[Debug] Post-Filter Count: ${filtered.length}`);
-    const hockeyFiltered = filtered.filter(p => p.genre === 'hockey');
-    // console.log(`[Debug] Post-Filter Hockey: ${hockeyFiltered.length}`);
+    // Hockey debug removed
+
 
     // Apply genre filter
     // Apply genre filter - Already done in main filter loop above
@@ -215,7 +227,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
     genreFiltered.forEach(p => {
         let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
 
-        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'hockey'].includes(p.genre)) {
+        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(p.genre)) {
             key += `_${p.date}`;
         }
 

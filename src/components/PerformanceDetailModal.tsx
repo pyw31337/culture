@@ -103,7 +103,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         className="object-cover"
                                     />
                                     {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                                    {['volleyball', 'basketball', 'baseball', 'handball', 'hockey'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
+                                    {['volleyball', 'basketball', 'baseball', 'handball'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
                                         <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
                                             <div className="flex flex-col items-center gap-1">
                                                 <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
