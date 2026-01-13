@@ -12,7 +12,7 @@ import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venues.json';
-import { GENRES, GENRE_STYLES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
@@ -3828,11 +3828,11 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
                     {/* Sports Team Logos Overlay (List View) */}
-                    {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeamLogo && perf.awayTeamLogo && (
+                    {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-1.5 items-center z-20 pointer-events-none">
-                            <img src={perf.homeTeamLogo} alt={perf.homeTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
+                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
                             <div className="text-white/90 font-black text-[10px] italic bg-black/40 px-1 rounded backdrop-blur-[1px]">VS</div>
-                            <img src={perf.awayTeamLogo} alt={perf.awayTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
+                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-8 h-8 object-contain drop-shadow-md bg-white/10 rounded-full" />
                         </div>
                     )}
 
@@ -4503,11 +4503,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
                             {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                            {['volleyball', 'basketball', 'baseball', 'handball', 'hockey'].includes(perf.genre) && perf.homeTeamLogo && perf.awayTeamLogo && (
+                            {['volleyball', 'basketball', 'baseball', 'handball', 'hockey'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                                 <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-6 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
-                                    <img src={perf.homeTeamLogo} alt={perf.homeTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
+                                    <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
                                     <div className="text-white/90 font-black text-xl italic bg-black/30 px-3 py-1 rounded-full backdrop-blur-[1px]">VS</div>
-                                    <img src={perf.awayTeamLogo} alt={perf.awayTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
+                                    <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
                                 </div>
                             )}
 
