@@ -2955,7 +2955,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             <input
                                 type="text"
                                 className="block w-full pl-10 pr-3 py-2.5 bg-gray-900/50 light:bg-gray-100 border border-white/10 light:border-gray-200 rounded-full leading-5 text-gray-300 light:text-gray-900 placeholder-gray-600 focus:outline-none focus:bg-gray-900 focus:border-[#a78bfa]/50 transition-all text-sm font-medium"
-                                placeholder={activeLocation ? `현 위치 주변 검색...` : "공연, 배우, 장소 검색..."}
+                                placeholder={searchLocation?.name || userAddress ? `${searchLocation?.name || userAddress} 주변 검색...` : "공연, 배우, 장소 검색..."}
                                 value={searchText}
                                 onChange={handleSearchTextChange}
                                 onKeyDown={handleKeyDown}
