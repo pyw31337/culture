@@ -132,33 +132,44 @@ async function scrapeMomMom() {
     try {
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        // Scroll to load lazy images? User didn't specify infinite scroll, but usually hotdeal sites might need it.
-        // Let's scroll a bit just in case.
+        // Infinite Scroll to load all items
         await page.evaluate(async () => {
             await new Promise<void>((resolve) => {
                 let totalHeight = 0;
-                const distance = 100;
+                let noChangeCount = 0;
+                const distance = 300; // Scroll distance
+
                 const timer = setInterval(() => {
                     const scrollHeight = document.body.scrollHeight;
                     window.scrollBy(0, distance);
                     totalHeight += distance;
-                    if (totalHeight >= scrollHeight || totalHeight > 3000) {
+
+                    // If we reached bottom (or close to it)
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+                        // Check if height increased
+                        if (document.body.scrollHeight > scrollHeight) {
+                            noChangeCount = 0; // Reset if new content loaded
+                        } else {
+                            noChangeCount++;
+                        }
+                    }
+
+                    // Stop if no change for multiple iterations (end of list) or timeout safety
+                    if (noChangeCount > 20 || totalHeight > 100000) {
                         clearInterval(timer);
                         resolve();
                     }
-                }, 100);
+                }, 200); // 200ms interval
             });
         });
-        await new Promise(r => setTimeout(r, 2000)); // Wait for lazy load
+
+        // Wait a bit more for final lazy loads
+        await new Promise(r => setTimeout(r, 3000));
 
         const items = await page.evaluate(() => {
             const results: any[] = [];
-            // Wrapper: div.sc-58f6879c-0.fjlsoj > div > div (list loop)
-            // Selector might be specific to current build, try to be general if possible, but use user's path.
-            // "div.sc..." usually implies styled-components, which change class hash.
-            // User provided "div.sc-58f6879c-0.fjlsoj", we will try querySelectorAll on the container.
 
-            // Let's try finding the container that has children looking like products.
+            // Selector: specific container as requested
             const containers = document.querySelectorAll('div.sc-58f6879c-0.fjlsoj > div > div');
 
             containers.forEach((el) => {
@@ -168,8 +179,6 @@ async function scrapeMomMom() {
                 const title = titleEl.textContent?.trim() || '';
 
                 // Image
-                // User said: .image-container > div.sc-fd2f9237-3.repRa > div
-                // Often styled-components use background-image on div.
                 const imgContainer = el.querySelector('.image-container');
                 let image = '';
                 if (imgContainer) {
@@ -189,33 +198,27 @@ async function scrapeMomMom() {
                 const rateEl = el.querySelector('.price > p > span.rate');
                 const priceEl = el.querySelector('.price > p > span:nth-child(2)');
 
-                // Parse rate
                 const rateText = rateEl?.textContent?.replace('%', '').trim() || '0';
                 const rate = parseInt(rateText, 10) || 0;
 
-                // Parse Price (Discounted)
                 const priceText = priceEl?.textContent?.replace(/[^0-9]/g, '') || '0';
                 const price = parseInt(priceText, 10);
 
                 // Calculate Original
-                // original = price / (1 - rate/100)
                 let originalPrice = price;
                 if (rate > 0 && rate < 100) {
                     originalPrice = price / (1 - (rate / 100));
-                    // Round to nearest 100
                     originalPrice = Math.round(originalPrice / 100) * 100;
                 }
 
                 // Region / Category info
-                // User said: div.sc-fd2f9237-47.cHQTQn
                 const infoEl = el.querySelector('div.sc-fd2f9237-47.cHQTQn');
                 const infoText = infoEl?.textContent?.trim() || '';
 
-                // Link (Clickable area usually wraps it)
+                // Link
                 const linkEl = el.querySelector('a');
                 let link = linkEl ? linkEl.href : '';
                 if (!link) {
-                    // Try to finding 'onclick' or parent anchor
                     const parentA = el.closest('a');
                     if (parentA) link = parentA.href;
                 }

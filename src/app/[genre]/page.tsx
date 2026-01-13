@@ -125,6 +125,16 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
+        // Special logic for 'hotdeal': Show matching genre OR discounted MomMom items
+        if (genreFilter === 'hotdeal') {
+            const isHotDealGenre = p.genre === 'hotdeal';
+            const isDiscountedMomMom = p.platform === 'mommom' && (p.rate > 0 || p.originalPrice > p.price);
+            if (!isHotDealGenre && !isDiscountedMomMom) return false;
+        } else if (genreFilter && p.genre !== genreFilter) {
+            // Standard genre filtering
+            return false;
+        }
+
         if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
@@ -195,15 +205,9 @@ async function getPerformances(genreFilter: string | string[] | null) {
     // console.log(`[Debug] Post-Filter Hockey: ${hockeyFiltered.length}`);
 
     // Apply genre filter
+    // Apply genre filter - Already done in main filter loop above
     let genreFiltered = filtered;
-    if (genreFilter) {
-        if (genreFilter === 'hotdeal') {
-            genreFiltered = filtered.filter(p => !!p.discount || !!p.discountRate);
-        } else {
-            const genresToInclude = Array.isArray(genreFilter) ? genreFilter : [genreFilter];
-            genreFiltered = filtered.filter(p => genresToInclude.includes(p.genre));
-        }
-    }
+    // Redundant block removed
 
     // Deduplication
     const uniqueMap = new Map<string, any>();

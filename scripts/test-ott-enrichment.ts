@@ -1,7 +1,6 @@
-
 import puppeteer from 'puppeteer';
 
-const TARGET_URL = 'https://m.kinolights.com/title/149368';
+const TEST_URL = 'https://m.kinolights.com/title/148455'; // Use ID 148455 (Expected: Netflix)
 const TARGET_TITLE = '개와 늑대의 시간 시즌 2';
 
 (async () => {
@@ -14,78 +13,94 @@ const TARGET_TITLE = '개와 늑대의 시간 시즌 2';
     await page.setViewport({ width: 390, height: 844 });
 
     try {
-        console.log(`Navigating to ${TARGET_URL}...`);
-        await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 20000 });
+        console.log(`Navigating to ${TEST_URL}...`);
+        await page.goto(TEST_URL, { waitUntil: 'networkidle2' });
 
-        const details = await page.evaluate(function () {
-            function cleanText(text: string) {
-                return text.replace(/\s+/g, ' ').trim();
-            }
+        // Use string evaluation to avoid tsx/esbuild injecting __name helpers
+        const extractionCode = `
+            (() => {
+                const cleanText = (t) => (t || '').replace(/\\s+/g, ' ').trim();
 
-            // Helper to find value by label in metadata list
-            function getMetadataValue(labelKeywords: string[]) {
                 const items = Array.from(document.querySelectorAll('.metadata__item'));
-                for (const item of items) {
-                    const titleEl = item.querySelector('.item__title');
-                    if (titleEl) {
-                        const titleText = cleanText(titleEl.textContent || '');
-                        if (labelKeywords.some(function (k) { return titleText.includes(k); })) {
-                            const fullText = cleanText(item.textContent || '');
-                            return fullText.replace(titleText, '').trim();
+                const getMeta = (keys) => {
+                    for (const item of items) {
+                        const titleEl = item.querySelector('.item__title');
+                        if (titleEl) {
+                            const t = cleanText(titleEl.textContent);
+                            if (keys.some(k => t.includes(k))) {
+                                return cleanText(item.textContent).replace(t, '').trim();
+                            }
                         }
                     }
-                }
-                return '';
-            }
+                    return '';
+                };
 
-            function getDirector() {
+                let director = '';
                 const staffs = Array.from(document.querySelectorAll('.staff'));
                 for (const staff of staffs) {
                     const titleEl = staff.querySelector('.staff__title');
-                    if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
+                    if (titleEl && cleanText(titleEl.textContent).includes('감독')) {
                         const nameEl = staff.querySelector('.names__name');
-                        return nameEl ? cleanText(nameEl.textContent || '') : '';
+                        if (nameEl) director = cleanText(nameEl.textContent);
+                        break;
                     }
                 }
-                return '';
-            }
 
-            function getCast() {
-                const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
-                return actors.slice(0, 5).map(function (el) { return cleanText(el.textContent || ''); }).filter(Boolean);
-            }
+                const cast = Array.from(document.querySelectorAll('[id^="actorList-"] .name'))
+                    .slice(0, 5)
+                    .map(el => cleanText(el.textContent))
+                    .filter(Boolean);
 
-            const genre = getMetadataValue(['장르']);
-            const runtime = getMetadataValue(['러닝타임']);
-            const date = getMetadataValue(['방영일', '개봉일']);
-            const grade = getMetadataValue(['연령등급']);
-
-            // Try to find header year/date fallback
-            const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
-            const headerDate = headerDateEl ? cleanText(headerDateEl.textContent || '') : '';
-
-            // Try to find header grade fallback
-            const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
-            const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent || '') : '';
-
-            return {
-                movieInfo: [genre, runtime].filter(Boolean).join(' / '),
-                grade: grade,
-                director: getDirector(),
-                cast: getCast(),
-                detailDate: date,
-                debug: {
-                    genreRaw: genre,
-                    dateRaw: date,
-                    gradeRaw: grade,
-                    headerDate: headerDate,
-                    headerGrade: headerGrade
+                const platforms = [];
+                const providerMap = {
+                    'netflix.com': 'netflix',
+                    'tving.com': 'tving',
+                    'wavve.com': 'wavve',
+                    'watcha.com': 'watcha',
+                    'disneyplus.com': 'disney',
+                    'coupangplay.com': 'coupang',
+                    'tv.apple.com': 'apple'
+                };
+                const links = Array.from(document.querySelectorAll('a'));
+                for (const link of links) {
+                    const href = link.href;
+                    for (const domain in providerMap) {
+                        if (href.includes(domain)) {
+                            const key = providerMap[domain];
+                            if (platforms.indexOf(key) === -1) platforms.push(key);
+                        }
+                    }
                 }
-            };
-        });
 
-        console.log('--- Enrichment Results ---');
-        console.log('Title:', TARGET_TITLE);
+                const genre = getMeta(['장르']);
+                const runtime = getMeta(['러닝타임']);
+                const date = getMeta(['방영일', '개봉일']);
+                const grade = getMeta(['연령등급']);
+
+                const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
+                const headerDate = headerDateEl ? cleanText(headerDateEl.textContent) : '';
+
+                const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
+                const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent) : '';
+
+                return {
+                    movieInfo: [genre, runtime].filter(Boolean).join(' / '),
+                    grade: grade,
+                    director: director,
+                    cast: cast,
+                    detailDate: date,
+                    platforms: platforms,
+                    debug: {
+                        genre, date, grade, headerDate, headerGrade
+                    }
+                };
+            })()
+        `;
+
+        const details = await page.evaluate(extractionCode) as any;
+
+        console.log(`[Enrichment Test] Starting...`);
+        console.log(`Target URL: ${TEST_URL}`);
         console.log('Details:', JSON.stringify(details, null, 2));
 
     } catch (e) {
