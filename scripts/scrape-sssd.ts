@@ -22,8 +22,7 @@ const CATEGORIES = [
     { name: '액티비티', midx: '8' },
     { name: '정규', midx: '11' },
     { name: '음악', midx: '7' },
-    { name: '라이프스타일', midx: '5' },
-    { name: '키즈', midx: '10' }
+    { name: '라이프스타일', midx: '5' }
 ];
 
 async function setupKoreanLocale(page: any) {
@@ -125,15 +124,11 @@ async function extractListItems(page: any, listSelector: string) {
     }, listSelector);
 }
 
-async function scrapeDetailPage(browser: any, item: any, setupLocale: (page: any) => Promise<void>) {
-    const detailPage = await browser.newPage();
-    await detailPage.setUserAgent(USER_AGENT);
-    await detailPage.setViewport({ width: 1920, height: 1080 });
-    await setupLocale(detailPage);
-
+async function scrapeDetailPage(detailPage: any, item: any) {
     try {
-        await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 });
-        await new Promise(r => setTimeout(r, 2000));
+        await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 90000 });
+        // wait for a bit to be sure dynamic content is there
+        await new Promise(r => setTimeout(r, 1000));
 
         const detailInfo = await detailPage.evaluate(() => {
             let location = '';
@@ -208,10 +203,8 @@ async function scrapeDetailPage(browser: any, item: any, setupLocale: (page: any
             return { location, parking, time, capacity, discountRate, originalPrice, finalPrice, detailImage };
         });
 
-        await detailPage.close();
         return detailInfo;
     } catch (err) {
-        await detailPage.close();
         throw err;
     }
 }
@@ -265,12 +258,21 @@ async function scrape() {
             await page.setViewport({ width: 1920, height: 1080 });
             await setupKoreanLocale(page);
 
-            let retries = 3;
+            await page.setRequestInterception(true);
+            page.on('request', (req) => {
+                if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
+                    req.abort();
+                } else {
+                    req.continue();
+                }
+            });
+
+            let retries = 2;
             let success = false;
 
             while (retries > 0 && !success) {
                 try {
-                    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+                    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
                     try {
                         await page.waitForSelector(listSelector, { timeout: 15000 });
@@ -320,6 +322,13 @@ async function scrape() {
 
         // Detail scraping
         console.log('Starting detail scraping...');
+
+        // Create a single page for detail scraping to avoid overhead
+        const detailPage = await browser.newPage();
+        await detailPage.setUserAgent(USER_AGENT);
+        await detailPage.setViewport({ width: 1920, height: 1080 });
+        await setupKoreanLocale(detailPage);
+
         for (let i = 0; i < itemsArray.length; i++) {
             const item = itemsArray[i];
             const progress = `[${i + 1}/${itemsArray.length}]`;
@@ -330,22 +339,13 @@ async function scrape() {
             // INCREMENTAL SCRAPING OPTIMIZATION:
             if (existingDataMap.has(item.link)) {
                 const existing = existingDataMap.get(item.link);
-                // Trust existing details (venue, price, etc.) for speed. 
-                // We rely on list page info (title, image) which is already fresh in `item` if we wanted to update it,
-                // but `item` from list page has limited info. 
-                // Let's use the EXISTING object fully to preserve detailed fields.
-                // NOTE: If price changed, we might miss it if we don't re-scrape detail.
-                // Ideally we should scrape detail if "modified", but we don't know.
-                // For "Daily Update", assuming immutable class details is risky but acceptable for huge speedup.
-                // Compromise: Use existing data.
-
                 results.push(existing);
                 process.stdout.write(` [Skipped - Exists] \r`);
                 continue;
             }
 
             try {
-                const detailInfo = await scrapeDetailPage(browser, item, setupKoreanLocale);
+                const detailInfo = await scrapeDetailPage(detailPage, item);
 
                 const tags = [
                     detailInfo.parking,
@@ -378,6 +378,8 @@ async function scrape() {
                 console.error(`\nError scraping ${item.link}:`, err);
             }
         }
+
+        await detailPage.close();
 
         console.log(`\n\nScraping complete! Saved ${results.length} items to ${OUTPUT_FILE}`);
 
