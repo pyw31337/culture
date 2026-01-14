@@ -108,7 +108,7 @@ export default function BottomNavSheet({
             {/* Backdrop */}
             <div
                 className={clsx(
-                    "fixed inset-0 bg-black/60 backdrop-blur-sm z-[9980] transition-opacity duration-300",
+                    "fixed inset-0 bg-black/60 backdrop-blur-sm z-[4980] transition-opacity duration-300",
                     activeMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 )}
                 onClick={onClose}
@@ -117,7 +117,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-0 left-0 right-0 z-[9985] bg-black/95 light:bg-white/95 backdrop-blur-xl border-t-2 border-purple-400/60 light:border-purple-600/30 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-20 animate-purple-shimmer",
+                    "fixed bottom-0 left-0 right-0 z-[4990] bg-black/95 light:bg-white/95 backdrop-blur-xl border-t-2 border-purple-400/60 light:border-purple-600/30 rounded-t-3xl transition-transform duration-300 ease-out max-h-[75vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-20 animate-purple-shimmer",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50"
                 )}
             >
