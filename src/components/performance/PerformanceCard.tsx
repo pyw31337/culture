@@ -364,11 +364,19 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
                             {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                            {['volleyball', 'basketball', 'baseball', 'handball', 'hockey'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-6 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
-                                    <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
-                                    <div className="text-white/90 font-black text-xl italic bg-black/30 px-3 py-1 rounded-full backdrop-blur-[1px]">VS</div>
-                                    <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-24 h-24 object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]" />
+                            {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                    <img
+                                        src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
+                                        alt={perf.homeTeam}
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+                                    />
+                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-[1px]">VS</div>
+                                    <img
+                                        src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
+                                        alt={perf.awayTeam}
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+                                    />
                                 </div>
                             )}
 
