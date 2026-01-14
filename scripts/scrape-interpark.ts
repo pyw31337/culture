@@ -282,7 +282,7 @@ async function scrapeDetails(browser: any, items: Performance[]) {
         enriched.push(...results);
     }
 
-    return [...enriched, ...others];
+    return enriched;
 }
 
 (async () => {

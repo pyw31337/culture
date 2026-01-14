@@ -304,8 +304,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
-                                {/* Musical/Concert Specific: Time / Age / Info */}
-                                {(perf.genre === 'musical' || perf.genre === 'concert') && (perf.runningTime || perf.ageRating || perf.price) && (
+                                {/* Interpark Scraped Details: Time / Age / Info */}
+                                {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 mt-1.5 space-y-1">
                                         {(perf.runningTime || perf.ageRating) && (
                                             <div className="flex gap-2 text-xs">
