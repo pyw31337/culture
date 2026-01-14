@@ -227,73 +227,74 @@ async function scrapeUmClass() {
             // Address: ... > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span 
 
             // Helper
-            const txt = (sel: string) => document.querySelector(sel)?.textContent?.trim() || '';
+            const detailData = await page.evaluate(() => {
+                const txt = (sel: string) => document.querySelector(sel)?.textContent?.trim() || '';
 
-            const duration = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
-            const people = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
-            const totalCount = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
+                const duration = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
+                const people = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
+                const totalCount = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
 
-            const discount = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
-            const originPrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
-            const salePrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
+                const discount = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
+                const originPrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
+                const salePrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
 
-            const useTime = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
-            const rawAddress = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
+                const useTime = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
+                const rawAddress = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
 
-            return {
-                rawAddress,
-                duration,
-                people,
-                totalCount,
-                discount,
-                originPrice,
-                salePrice,
-                useTime
-            };
-        });
+                return {
+                    rawAddress,
+                    duration,
+                    people,
+                    totalCount,
+                    discount,
+                    originPrice,
+                    salePrice,
+                    useTime
+                };
+            });
 
-        // Parse Venue from Address (Last word logic)
-        let venue = '솜씨당 클래스';
-        let address = detailData.rawAddress || '서울';
+            // Parse Venue from Address (Last word logic)
+            let venue = '솜씨당 클래스';
+            let address = detailData.rawAddress || '서울';
 
-        if (detailData.rawAddress) {
-            const tokens = detailData.rawAddress.split(/\s+/);
-            if (tokens.length > 1) {
-                venue = tokens[tokens.length - 1];
-                // Clean venue if needed (remove trailing brackets etc)
+            if (detailData.rawAddress) {
+                const tokens = detailData.rawAddress.split(/\s+/);
+                if (tokens.length > 1) {
+                    venue = tokens[tokens.length - 1];
+                    // Clean venue if needed (remove trailing brackets etc)
+                }
             }
+
+            allItems.push({
+                id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
+                title: item.title,
+                date: detailData.duration || '2024-01-01', // Fallback or scraped data
+                venue: venue,
+                image: item.image,
+                link: item.link,
+                genre: 'class',
+                region: address, // Extracted region
+                runningTime: detailData.useTime || detailData.duration,
+                viewCount: detailData.totalCount, // abusing viewCount for capacity/count
+                originalPrice: detailData.originPrice,
+                price: detailData.salePrice || detailData.originPrice,
+                discount: detailData.discount,
+                casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}` // Combine extra info
+            });
+
+        } catch (e) {
+            console.error(`    Failed to scrape details for ${item.title}: ${e}`);
         }
 
-        allItems.push({
-            id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
-            title: item.title,
-            date: detailData.duration || '2024-01-01', // Fallback or scraped data
-            venue: venue,
-            image: item.image,
-            link: item.link,
-            genre: 'class',
-            region: address, // Extracted region
-            runningTime: detailData.useTime || detailData.duration,
-            viewCount: detailData.totalCount, // abusing viewCount for capacity/count
-            originalPrice: detailData.originPrice,
-            price: detailData.salePrice || detailData.originPrice,
-            discount: detailData.discount,
-            casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}` // Combine extra info
-        });
-
-    } catch (e) {
-        console.error(`    Failed to scrape details for ${item.title}: ${e}`);
+        processedCount++;
+        progressBar.update(processedCount);
     }
 
-    processedCount++;
-    progressBar.update(processedCount);
-}
+    progressBar.finish();
+    console.log(`\nCompleted! Total collected: ${allItems.length}`);
+    await browser.close();
 
-progressBar.finish();
-console.log(`\nCompleted! Total collected: ${allItems.length}`);
-await browser.close();
-
-saveData(allItems);
+    saveData(allItems);
 }
 
 scrapeUmClass().catch(console.error);
