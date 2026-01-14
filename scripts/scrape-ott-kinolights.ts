@@ -46,61 +46,90 @@ interface OTTPerformance {
     movieInfo?: string; // Mapped from Genre
     cast?: string[];
     director?: string;
+    runningTime?: string;
+    ageRating?: string;
 }
 
 // --- Helper Functions ---
 
 // Helper for browser context (must not use external variables)
-function extractOTTDetails() {
-    const getText = (selector: string) => {
-        const el = document.querySelector(selector);
-        return el ? el.textContent?.trim() || '' : '';
+// We use a string constant to avoid transpilation artifacts (ReferenceError: __name is not defined)
+const EXTRACT_CODE = `
+(() => {
+    // 1. Parse Metadata Items (Running Time, Original Title, Genre, etc.)
+    const metadata = {
+        runningTime: '',
+        originalTitle: '',
+        genre: '',
+        grade: '',
+        country: '',
+        year: ''
     };
 
-    // User provided selectors:
-    // Original Title: #contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1)
-    // Genre: li:nth-child(2)
-    // Grade: li:nth-child(7)
-    // Country: li:nth-child(8)
-    // Year: li:nth-child(9)
+    const items = document.querySelectorAll('.metadata__item');
+    items.forEach(item => {
+        const title = item.querySelector('.item__title')?.textContent?.trim() || '';
+        const value = item.querySelector('.item__body')?.textContent?.trim() || '';
+        
+        if (title.includes('러닝타임')) metadata.runningTime = value;
+        else if (title.includes('원제')) metadata.originalTitle = value;
+        else if (title.includes('장르')) metadata.genre = value;
+        else if (title.includes('등급') || title.includes('관람가')) metadata.grade = value; // Sometimes matches '15세 이상 관람가'
+        else if (title.includes('국가')) metadata.country = value;
+        else if (title.includes('개봉') || title.includes('방영') || title.includes('공개')) {
+             // Often '2023' or '2023.01.01'
+             const yearMatch = value.match(/\\d{4}/);
+             if (yearMatch) metadata.year = yearMatch[0];
+        }
+    });
 
-    const baseSelector = '#contents > div.info.tab-item > section:nth-child(1) > ul';
-    const originalTitle = getText(`${baseSelector} > li:nth-child(1) .desc`) || getText(`${baseSelector} > li:nth-child(1)`);
-    const genre = getText(`${baseSelector} > li:nth-child(2) .desc`) || getText(`${baseSelector} > li:nth-child(2)`);
-    const runningTime = getText(`${baseSelector} > li:nth-child(3) .desc`) || getText(`${baseSelector} > li:nth-child(3)`);
-    const grade = getText(`${baseSelector} > li:nth-child(7) .desc`) || getText(`${baseSelector} > li:nth-child(7)`);
-    const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
-    const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
-
-    // Scrape Cast & Director
-    let director = '';
-    let cast: string[] = [];
-
-    // Strategy 1: Look for people section
-    const peopleCards = document.querySelectorAll('.people-card, .person-card, .actor-item');
-    if (peopleCards.length > 0) {
-        peopleCards.forEach((card: any) => {
-            const role = card.querySelector('.role, .type')?.textContent?.trim() || '';
-            const name = card.querySelector('.name, .title')?.textContent?.trim() || '';
-            if (!name) return;
-
-            if (role.includes('감독')) {
-                director = name;
-            } else if (role.includes('주연') || role.includes('출연') || role === '' || role.includes('Actor')) {
-                if (cast.length < 5) cast.push(name);
-            }
-        });
-    } else {
-        // Fallback: list items logic?
-        const potentialNames = document.querySelectorAll('.cast-wrap .name, .staff-wrap .name');
-        potentialNames.forEach((el, idx) => {
-            if (idx === 0 && !director) director = el.textContent?.trim() || '';
-            else if (cast.length < 5) cast.push(el.textContent?.trim() || '');
-        });
+    // Fallback for Grade (often an icon elsewhere)
+    if (!metadata.grade) {
+         const gradeEl = document.querySelector('i.grade-icon');
+         if (gradeEl) {
+             const c = gradeEl.className;
+             if (c.includes('19')) metadata.grade = '19세';
+             else if (c.includes('15')) metadata.grade = '15세';
+             else if (c.includes('12')) metadata.grade = '12세';
+             else if (c.includes('all')) metadata.grade = '전체';
+         }
     }
 
-    return { originalTitle, genre, runningTime, grade, country, year, director, cast };
-}
+    // 2. Parse Cast & Director
+    let director = '';
+    const cast = [];
+
+    // Cast
+    const actorEls = document.querySelectorAll('a[id^="actorList-"]');
+    actorEls.forEach(el => {
+        if (cast.length >= 5) return;
+        const name = el.querySelector('div:nth-child(2) > div:nth-child(1)')?.textContent?.trim();
+        if (name) cast.push(name);
+    });
+
+    // Director (Staff)
+    const staffEls = document.querySelectorAll('a[id^="staffList-"]');
+    staffEls.forEach(el => {
+        if (director) return;
+        const name = el.querySelector('div:nth-child(2) > div:nth-child(1)')?.textContent?.trim();
+        const role = el.querySelector('div:nth-child(2) > div:nth-child(2)')?.textContent?.trim() || '';
+        if (role.includes('감독') || role.includes('Direct') || role === '') {
+             if (name) director = name;
+        }
+    });
+
+    return { 
+        originalTitle: metadata.originalTitle, 
+        genre: metadata.genre, 
+        runningTime: metadata.runningTime, 
+        grade: metadata.grade, 
+        country: metadata.country, 
+        year: metadata.year, 
+        director, 
+        cast 
+    };
+})()
+`;
 
 function normalizeDate(dateStr: string): string {
     const now = new Date();
@@ -349,16 +378,16 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                     const link = item.link.startsWith('http') ? item.link : `https://m.kinolights.com${item.link}`;
                     // console.log(`Scraping detail: ${item.title} (${link})`);
 
-                    await newPage.goto(link, { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    await newPage.goto(link, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
                     // Wait for metadata section
                     try {
-                        await newPage.waitForSelector('#contents > div.info.tab-item', { timeout: 5000 });
+                        await newPage.waitForSelector('#contents > div.info.tab-item', { timeout: 10000 });
                     } catch (e) {
                         // ignore
                     }
 
-                    const details = await newPage.evaluate(extractOTTDetails);
+                    const details: any = await newPage.evaluate(EXTRACT_CODE);
 
                     // Map platform from list item
                     let platform = mapPlatform(item.platformClass) || 'other';
@@ -413,6 +442,15 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
         }
 
         console.log(`Enriched ${enrichedPerformances.length} items.`);
+
+        // Fill the rest with basic info to avoid dropping items
+        // We handle items from 60 onwards
+        if (allItems.length > MAX_ENRICH_ITEMS) {
+            const remainingItems = allItems.slice(MAX_ENRICH_ITEMS);
+            console.log(`Adding ${remainingItems.length} non-enriched items...`);
+            const remainingPerformances = transformToPerformances(remainingItems);
+            enrichedPerformances.push(...remainingPerformances);
+        }
 
         // 4. Save with Accumulation Logic
         let finalPerformances = enrichedPerformances;
