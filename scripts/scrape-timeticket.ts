@@ -345,113 +345,108 @@ async function scrapeTimeTicket() {
             await new Promise(r => setTimeout(r, 500)); // Minimal wait for stability
 
             const detailData = await page.evaluate(() => {
+                // Selectors provided by user
+                // Date: body > div:nth-child(5) > div > div:nth-child(2) > div:nth-child(6) > div > div.openrun > p:nth-child(1)
+                // Time: .run_info
+                // Age: :nth-child(3)
+                // Discount: .sale_p
+                // Origin: span.origin_price
+                // Sale: span.sale_price
+
+                // Note: The nth-child selectors might be brittle if layout changes slightly, but we follow user request.
+                // We will try robust classes first if available matching the intent.
+
+                const openRunDiv = document.querySelector('.openrun');
+                let date = '';
                 let runningTime = '';
                 let ageLimit = '';
-                let originalPrice = '';
-                let venue = '';
-                let date = '';
+
+                if (openRunDiv) {
+                    // The user specified nth-childs relative to .openrun P tags
+                    // p:1 -> Date (Period)
+                    // p.run_info -> Time
+                    // p:3 -> Age
+
+                    const pTags = openRunDiv.querySelectorAll('p');
+                    if (pTags.length >= 1) date = pTags[0].textContent?.trim() || '';
+
+                    const runInfoP = openRunDiv.querySelector('.run_info');
+                    if (runInfoP) runningTime = runInfoP.textContent?.trim() || '';
+
+                    // If p:3 exists and is not date/time
+                    if (pTags.length >= 3) ageLimit = pTags[2].textContent?.trim() || '';
+                }
+
+                // Prices
+                const originEl = document.querySelector('.price_info .origin_price');
+                const saleEl = document.querySelector('.price_info .sale_price');
+                const discountEl = document.querySelector('.sale_info .sale_p');
+
+                let originalPrice = originEl ? originEl.textContent?.trim() : '';
+                let salePrice = saleEl ? saleEl.textContent?.trim() : '';
+                let discount = discountEl ? discountEl.textContent?.trim() : '';
+
+                // Text Boxes for Extra Info & Address
+                // #ajaxcontentarea > div > div:nth-child(3) > div.viewpage_text.radius_box -> Info (Adult Price?)
+                // #ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box -> Address
+
+                // Helper to find box by content if structure varies, or use strict index if stable.
+                // The user gave strict indices.
+
                 let address = '';
 
-                const bodyText = document.body.innerText;
+                // We'll search all radius boxes to be safe, or specific if layout matches
+                const radiusBoxes = document.querySelectorAll('.viewpage_text.radius_box');
 
-                // Improved Venue & Address Parsing from specific container(s)
-                const infoBoxes = document.querySelectorAll('.viewpage_text.radius_box');
-                infoBoxes.forEach(infoBox => {
-                    const text = infoBox.textContent || '';
-
-                    // 1. Try to extract specific lines if they exist as <p> tags
-                    const pTags = infoBox.querySelectorAll('p');
-                    pTags.forEach(p => {
-                        const pText = p.textContent?.trim() || '';
-                        if (pText.includes('장소') && !pText.includes('티켓배부')) {
-                            const part = pText.split('장소')[1]?.replace(/[:\·]/g, '').trim();
-                            if (part && part !== '문의' && part !== '환불규정') venue = part;
-                        }
-                        if (pText.includes('주소')) {
-                            const part = pText.split('주소')[1]?.replace(/[:\·]/g, '').trim();
-                            if (part) address = part;
-                        }
-                    });
-
-                    // 2. Fallback: Regex on full text if p tags didn't help (or format is different)
-                    if (!venue) {
-                        // Excluding '티켓배부장소' which is often '입구 티켓박스'
-                        const vMatch = text.match(/(?<!배부)장소\s*[:\·]?\s*([^\n\/·]+)/);
-                        if (vMatch) {
-                            const v = vMatch[1].trim();
-                            if (v !== '문의' && v !== '환불규정') venue = v;
-                        }
+                // Try to find Adult Price in the first text box (usually info)
+                if (radiusBoxes.length > 0) {
+                    const infoText = radiusBoxes[0].textContent || '';
+                    if (!salePrice) {
+                        // Try to find price in text if not found above
+                        // "성인 ... 000원"
+                        const match = infoText.match(/성인\s*[:]?\s*([\d,]+)원/);
+                        if (match) salePrice = match[1] + '원';
                     }
-                    if (!address) {
-                        const aMatch = text.match(/주소\s*[:\·]?\s*([^\n]+)/);
-                        if (aMatch) address = aMatch[1].trim();
+                }
+
+                // Address - User said 7th div (which might be the 2nd radius box visually?)
+                // Let's look for "주소" in any radius box or specifically the 2nd one found.
+                // The provided selector was complex: #ajaxcontentarea > div > div:nth-child(7) ...
+                // Let's iterate all boxes to find "주소"
+                radiusBoxes.forEach(box => {
+                    const text = box.innerText;
+                    if (text.includes('주소')) {
+                        const parts = text.split('주소');
+                        if (parts[1]) {
+                            const candidate = parts[1].split('\n')[0].replace(/[:]/g, '').trim();
+                            if (candidate) address = candidate;
+                        }
                     }
                 });
 
-                // Clean Venue Name (Remove " / 총 00석" etc)
-                if (venue.includes('/')) {
-                    venue = venue.split('/')[0].trim();
-                }
-
-                // Fallback structure (Old logic)
-                if (!venue) {
-                    const allElements = document.body.getElementsByTagName('*');
-                    for (let i = 0; i < allElements.length; i++) {
-                        const el = allElements[i] as HTMLElement;
-                        const text = el.innerText || '';
-                        if (!venue && text.includes('장소 :') && text.length < 100 && !text.includes('공연정보')) {
-                            const parts = text.split('장소 :');
-                            if (parts.length > 1) {
-                                const candidate = parts[1].trim().split('\n')[0];
-                                if (candidate && candidate !== '환불규정' && candidate !== '문의' && !candidate.includes('티켓박스')) {
-                                    venue = candidate;
-                                }
-                            }
+                // Fallback for venue/address if still empty
+                let venue = '대학로'; // Default
+                if (address) {
+                    // Try to extract venue name from address or nearby text?
+                    // Often venue name is not explicitly in the address box but defined elsewhere.
+                    // We'll trust the list scraping for Venue Name usually, but can look for "장소" here too.
+                    radiusBoxes.forEach(box => {
+                        if (box.innerText.includes('장소')) {
+                            const v = box.innerText.split('장소')[1].split('\n')[0].replace(/[:]/g, '').trim();
+                            if (v) venue = v;
                         }
-                    }
-                }
-
-                // Final cleanups
-                if (venue.includes('티켓박스') || venue.includes('매표소')) {
-                    // Try to find a better venue name if the current one is just a meeting point
-                    // Often the title contains the venue or it's unparseable. 
-                    // Keep as is if no better option, but the above logic prioritizes the infoBox which usually has the real venue.
-                }
-
-                // Running Time
-                const runTimeMatch = bodyText.match(/이용시간\s*[:]?\s*약?\s*(\d+분)/);
-                if (runTimeMatch) runningTime = runTimeMatch[1];
-
-                // Age Limit (Simple extraction, taking first meaningful match)
-                const ageMatch = bodyText.match(/이용등급\s*[:]?\s*([^\n]+)/);
-                if (ageMatch) {
-                    let age = ageMatch[1].trim();
-                    if (age.includes('·')) age = age.split('·')[0].trim();
-                    ageLimit = age;
-                }
-
-                // Date
-                const dateMatch = bodyText.match(/(?:진행)?기간\s*[:]?\s*([^\n·]{5,})/);
-                if (dateMatch) date = dateMatch[1].trim();
-
-                // Scrape Price Info using user-provided selectors
-                // Primary: User reported path or simpler unique class
-                const originPriceEl = document.querySelector('span.origin_price') || document.querySelector('.origin_price');
-                if (originPriceEl) {
-                    originalPrice = originPriceEl.textContent?.trim() || '';
-                }
-
-                let salePrice = '';
-                const salePriceEl = document.querySelector('.sale_price');
-                if (salePriceEl) {
-                    salePrice = salePriceEl.textContent?.trim() || '';
+                    });
+                } else {
+                    // Check common structure for address
+                    const mapDiv = document.querySelector('#map');
+                    // sometimes address is near map?
                 }
 
                 return {
                     runningTime,
                     ageLimit,
                     date: date || 'OPEN RUN',
-                    venue: venue || '대학로',
+                    venue,
                     originalPrice,
                     salePrice,
                     address,

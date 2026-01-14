@@ -12,6 +12,9 @@ interface ScrapedEvent {
     poster: string;
     time?: string;
     cost?: string;
+    runningTime?: string;
+    ageRating?: string;
+    price?: string;
     genre: string;
     source: 'seoul-culture';
     link: string;
@@ -129,16 +132,31 @@ async function scrape() {
             try {
                 await detailPage.goto(item.link, { waitUntil: 'domcontentloaded' });
                 const details = await detailPage.evaluate(() => {
-                    const time = document.querySelector('.intro-top .type-box ul li:nth-child(3) .type-td span')?.textContent?.trim() || '';
-                    const cost = document.querySelector('.intro-top .type-box ul li:nth-child(5) .type-td span')?.textContent?.trim() || '';
-                    return { time, cost };
+                    const ul = document.querySelector('#print > div.intro-top.clearfix > div.txt-box > div.type-box > ul');
+                    if (!ul) return {};
+
+                    const getDesc = (n: number) => ul.querySelector(`li:nth-child(${n}) .type-td`)?.textContent?.trim() || '';
+
+                    return {
+                        placeDetail: getDesc(1), // Place
+                        period: getDesc(2),  // Period
+                        time: getDesc(3),    // Time
+                        target: getDesc(4),  // Target (Age)
+                        cost: getDesc(5)     // Price
+                    };
                 });
                 collectedEvents.push({
                     id: `seoul-culture-${Math.random().toString(36).substr(2, 9)}`,
                     title: item.title,
                     date: item.date,
-                    place: item.place,
+                    // Prefer detail page info if available
+                    place: details.placeDetail || item.place,
                     poster: item.poster,
+                    date: details.period || item.date,
+                    // Standardize fields for UI
+                    runningTime: details.time,
+                    ageRating: details.target, // "Target" usually maps to Age Rating
+                    price: details.cost,
                     time: details.time,
                     cost: details.cost,
                     genre,
