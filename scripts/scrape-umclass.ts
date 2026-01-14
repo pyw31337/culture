@@ -280,6 +280,8 @@ async function scrapeUmClass() {
                 originalPrice: detailData.originPrice,
                 price: detailData.salePrice || detailData.originPrice,
                 discount: detailData.discount,
+                ageLimit: 'all',
+                address: address,
                 casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}` // Combine extra info
             });
 
