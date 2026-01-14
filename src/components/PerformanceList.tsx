@@ -2650,16 +2650,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 </Portal>
 
                 {/* Fixed Bottom Navigation Bar */}
-                <BottomNav
-                    activeMenu={activeBottomMenu}
-                    onMenuClick={handleMenuClick}
-                    currentViewMode={viewMode}
-                    onLikePerfClick={handleLikePerfClick}
-                    onLikeVenueClick={handleLikeVenueClick}
-                    likeCount={likedPerformances.length}
-                    venueCount={favoriteVenues.length}
-                    selectedGenre={selectedGenre}
-                />
+                <Portal>
+                    <BottomNav
+                        activeMenu={activeBottomMenu}
+                        onMenuClick={handleMenuClick}
+                        currentViewMode={viewMode}
+                        onLikePerfClick={handleLikePerfClick}
+                        onLikeVenueClick={handleLikeVenueClick}
+                        likeCount={likedPerformances.length}
+                        venueCount={favoriteVenues.length}
+                        selectedGenre={selectedGenre}
+                    />
+                </Portal>
 
 
                 <FavoriteVenuesModal
