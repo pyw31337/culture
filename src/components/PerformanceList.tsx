@@ -2617,35 +2617,37 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
                 {/* Bottom Navigation Sheet */}
-                <BottomNavSheet
-                    activeMenu={activeBottomMenu}
-                    onClose={() => setActiveBottomMenu(null)}
-                    viewMode={viewMode}
-                    onViewModeChange={handleViewModeChange}
-                    selectedGenre={selectedGenre}
-                    onGenreSelect={handleGenreSelect}
-                    searchText={searchText}
-                    onSearchChange={(text) => {
-                        setSearchText(text);
-                        if (text && selectedGenre !== 'all') {
-                            setSelectedGenre('all');
-                        }
-                    }}
-                    selectedRegion={selectedRegion}
-                    onRegionSelect={handleRegionSelect}
-                    selectedDistrict={selectedDistrict}
-                    onDistrictSelect={handleDistrictSelect}
-                    keywords={contextKeywords}
-                    onKeywordAdd={handleKeywordAdd}
-                    onKeywordRemove={handleKeywordRemove}
-                    districts={districts}
-                    availableVenues={availableVenues}
-                    selectedVenue={selectedVenue}
-                    onVenueSelect={(v) => {
-                        setSelectedVenue(v);
-                        scrollToTop();
-                    }}
-                />
+                <Portal>
+                    <BottomNavSheet
+                        activeMenu={activeBottomMenu}
+                        onClose={() => setActiveBottomMenu(null)}
+                        viewMode={viewMode}
+                        onViewModeChange={handleViewModeChange}
+                        selectedGenre={selectedGenre}
+                        onGenreSelect={handleGenreSelect}
+                        searchText={searchText}
+                        onSearchChange={(text) => {
+                            setSearchText(text);
+                            if (text && selectedGenre !== 'all') {
+                                setSelectedGenre('all');
+                            }
+                        }}
+                        selectedRegion={selectedRegion}
+                        onRegionSelect={handleRegionSelect}
+                        selectedDistrict={selectedDistrict}
+                        onDistrictSelect={handleDistrictSelect}
+                        keywords={contextKeywords}
+                        onKeywordAdd={handleKeywordAdd}
+                        onKeywordRemove={handleKeywordRemove}
+                        districts={districts}
+                        availableVenues={availableVenues}
+                        selectedVenue={selectedVenue}
+                        onVenueSelect={(v) => {
+                            setSelectedVenue(v);
+                            scrollToTop();
+                        }}
+                    />
+                </Portal>
 
                 {/* Fixed Bottom Navigation Bar */}
                 <BottomNav
