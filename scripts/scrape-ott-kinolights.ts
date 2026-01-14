@@ -383,7 +383,7 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                 existingData.forEach(item => itemMap.set(item.id, item));
 
                 // Merge new items (Overwrite existing if ID matches to update details)
-                performances.forEach(item => {
+                enrichedPerformances.forEach(item => {
                     if (itemMap.has(item.id)) {
                         // Optional: Carefully merge fields if needed, but for now update is safe
                         // assuming scraper is source of truth for current state.
