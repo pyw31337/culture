@@ -6,6 +6,7 @@ import ImageWithFallback from './ImageWithFallback';
 import { getOptimizedUrl } from '@/lib/utils';
 import { OTT_PLATFORMS } from '@/lib/constants';
 import Image from 'next/image';
+import Portal from './ui/Portal';
 
 interface PerformanceDetailModalProps {
     performance: Performance;
@@ -56,252 +57,256 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
     };
 
     return (
-        <AnimatePresence>
-            {isOpen && (
-                <>
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100000] flex items-center justify-center p-4 sm:p-6"
-                    />
 
-                    {/* Modal Content */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed z-[100001] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
-                    >
-                        {/* Close Button (Mobile Absolute) */}
-                        <button
+        <Portal>
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                             onClick={onClose}
-                            className="absolute top-4 right-4 z-[110] p-2 bg-black/50 rounded-full text-white/80 hover:bg-white hover:text-black transition-all md:hidden"
-                        >
-                            <X size={20} />
-                        </button>
+                            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100000] flex items-center justify-center p-4 sm:p-6"
+                        />
 
-                        {/* Left: Image Section */}
-                        <div className="w-full md:w-2/5 h-64 md:h-auto relative bg-black/50">
-                            <div className="absolute inset-0">
-                                <ImageWithFallback
-                                    src={getOptimizedUrl(performance.image, 800)}
-                                    alt={performance.title}
-                                    fill
-                                    className="object-cover opacity-80"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1b1e] via-transparent to-transparent md:bg-gradient-to-r" />
-                            </div>
-                            <div className="relative z-10 h-full flex items-center justify-center p-6">
-                                <div className="relative aspect-[3/4] w-48 md:w-64 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
+                        {/* Modal Content */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            className="fixed z-[100001] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
+                        >
+                            {/* Close Button (Mobile Absolute) */}
+                            <button
+                                onClick={onClose}
+                                className="absolute top-4 right-4 z-[110] p-2 bg-black/50 rounded-full text-white/80 hover:bg-white hover:text-black transition-all md:hidden"
+                            >
+                                <X size={20} />
+                            </button>
+
+                            {/* Left: Image Section */}
+                            <div className="w-full md:w-2/5 h-64 md:h-auto relative bg-black/50">
+                                <div className="absolute inset-0">
                                     <ImageWithFallback
-                                        src={getOptimizedUrl(performance.image, 600)}
+                                        src={getOptimizedUrl(performance.image, 800)}
                                         alt={performance.title}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover opacity-80"
                                     />
-                                    {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                                    {['volleyball', 'basketball', 'baseball', 'handball'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
-                                        <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
-                                            <div className="flex flex-col items-center gap-1">
-                                                <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
-                                                    <img src={performance.homeTeamLogo} alt={performance.homeTeam} className="w-full h-full object-contain" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1b1e] via-transparent to-transparent md:bg-gradient-to-r" />
+                                </div>
+                                <div className="relative z-10 h-full flex items-center justify-center p-6">
+                                    <div className="relative aspect-[3/4] w-48 md:w-64 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
+                                        <ImageWithFallback
+                                            src={getOptimizedUrl(performance.image, 600)}
+                                            alt={performance.title}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
+                                        {['volleyball', 'basketball', 'baseball', 'handball'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
+                                            <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
+                                                <div className="flex flex-col items-center gap-1">
+                                                    <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
+                                                        <img src={performance.homeTeamLogo} alt={performance.homeTeam} className="w-full h-full object-contain" />
+                                                    </div>
+                                                    <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
                                                 </div>
-                                                <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
-                                            </div>
-                                            <div className="mt-8 text-white/90 font-black text-2xl italic bg-black/30 px-4 py-1 rounded-full backdrop-blur-[1px]">VS</div>
-                                            <div className="flex flex-col items-center gap-1">
-                                                <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
-                                                    <img src={performance.awayTeamLogo} alt={performance.awayTeam} className="w-full h-full object-contain" />
+                                                <div className="mt-8 text-white/90 font-black text-2xl italic bg-black/30 px-4 py-1 rounded-full backdrop-blur-[1px]">VS</div>
+                                                <div className="flex flex-col items-center gap-1">
+                                                    <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
+                                                        <img src={performance.awayTeamLogo} alt={performance.awayTeam} className="w-full h-full object-contain" />
+                                                    </div>
+                                                    <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
                                                 </div>
-                                                <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
                                             </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right: Info Section */}
-                        <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col h-full overflow-y-auto custom-scrollbar">
-                            {/* Header */}
-                            <div className="flex justify-between items-start mb-6">
-                                <div>
-                                    <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-bold mb-3 border border-white/5">
-                                        {performance.genre.toUpperCase()}
-                                    </span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2 break-keep">
-                                        {performance.title}
-                                    </h2>
-
-
-                                </div>
-                                <button
-                                    onClick={onClose}
-                                    className="hidden md:block p-2 text-gray-400 hover:text-white transition-colors"
-                                >
-                                    <X size={24} />
-                                </button>
-                            </div>
-
-                            {/* Details Grid */}
-                            <div className="grid gap-4 mb-8">
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <Calendar className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">일정</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.date}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">장소</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.venue}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                    <Clock className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
-                                    <div>
-                                        <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                        <p className="text-sm text-gray-200 font-medium">{performance.price || '무료'}</p>
+                                        )}
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Detailed Metadata Section: Director, Cast, Provider, Info */}
-                            {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
-                                <div className="mb-6 space-y-4">
-                                    {/* Director */}
-                                    {performance.director && (
-                                        <div>
-                                            <h3 className="text-gray-400 text-xs font-bold mb-2">감독</h3>
-                                            <div className="flex flex-wrap gap-2">
-                                                <a
-                                                    href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(performance.director.replace('더보기', '').trim())}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
-                                                >
-                                                    {performance.director.replace('더보기', '').trim()}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
+                            {/* Right: Info Section */}
+                            <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col h-full overflow-y-auto custom-scrollbar">
+                                {/* Header */}
+                                <div className="flex justify-between items-start mb-6">
+                                    <div>
+                                        <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-bold mb-3 border border-white/5">
+                                            {performance.genre.toUpperCase()}
+                                        </span>
+                                        <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2 break-keep">
+                                            {performance.title}
+                                        </h2>
 
-                                    {/* Cast */}
-                                    {performance.cast && performance.cast.length > 0 && (
-                                        <div>
-                                            <h3 className="text-gray-400 text-xs font-bold mb-2">출연</h3>
-                                            <div className="flex flex-wrap gap-2">
-                                                {performance.cast.map((actor: string, idx: number) => {
-                                                    const cleanName = actor.replace('더보기', '').trim();
-                                                    if (!cleanName) return null;
-                                                    return (
-                                                        <a
-                                                            key={idx}
-                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
-                                                        >
-                                                            {cleanName}
-                                                        </a>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-                                    )}
 
-                                    {/* Provider (OTT only) */}
-                                    {/* Debug Log (Hidden in UI) */}
-                                    {(() => { console.log('[PerformanceDetailModal] Rendering platforms:', performance.platforms); return null; })()}
-
-                                    {performance.platforms && performance.platforms.length > 0 && (
-                                        <div>
-                                            <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
-                                            <div className="flex flex-wrap gap-2">
-                                                {performance.platforms.map((p: string, idx: number) => {
-                                                    // Direct mapping, assuming p is string as validated
-                                                    let key = typeof p === 'string' ? p.toLowerCase() : String(p);
-
-                                                    const platform = OTT_PLATFORMS[key];
-
-                                                    if (!platform) {
-                                                        console.warn(`[PerformanceDetailModal] Unknown platform key: ${key}`);
-                                                        return null;
-                                                    }
-
-                                                    const label = platform.label;
-                                                    const color = platform.color;
-                                                    const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
-
-                                                    return (
-                                                        <a
-                                                            key={`${key}-${idx}`}
-                                                            href={url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className={`px-3 py-1.5 rounded-lg ${color} hover:brightness-110 transition-all text-sm text-white flex items-center gap-1.5 shadow-lg`}
-                                                        >
-                                                            {label}
-                                                            <ExternalLink size={12} className="opacity-70" />
-                                                        </a>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {/* Movie Info (Genre/Runtime/Rating) */}
-                                    {performance.movieInfo && (
-                                        <div>
-                                            <h3 className="text-gray-400 text-xs font-bold mb-2">정보</h3>
-                                            <p className="text-sm text-gray-300 leading-relaxed">
-                                                {performance.movieInfo}
-                                            </p>
-                                        </div>
-                                    )}
+                                    </div>
+                                    <button
+                                        onClick={onClose}
+                                        className="hidden md:block p-2 text-gray-400 hover:text-white transition-colors"
+                                    >
+                                        <X size={24} />
+                                    </button>
                                 </div>
-                            )}
 
-                            {/* Actions */}
-                            <div className="mt-auto grid grid-cols-2 gap-3">
-                                <button
-                                    onClick={onShare}
-                                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
-                                >
-                                    <Share2 size={18} />
-                                    공유하기
-                                </button>
-                                <button
-                                    onClick={generateICS}
-                                    className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
-                                >
-                                    <Download size={18} />
-                                    캘린더 저장
-                                </button>
-                                <button
-                                    onClick={onBooking}
-                                    className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
-                                >
-                                    <ExternalLink size={20} />
-                                    예매처 바로가기
-                                </button>
-                            </div>
+                                {/* Details Grid */}
+                                <div className="grid gap-4 mb-8">
+                                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <Calendar className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
+                                        <div>
+                                            <p className="text-xs text-gray-400 mb-0.5">일정</p>
+                                            <p className="text-sm text-gray-200 font-medium">{performance.date}</p>
+                                        </div>
+                                    </div>
 
-                            {/* Footer Info */}
-                            <div className="mt-6 text-center text-[10px] text-gray-500">
-                                데이터 출처: {performance.link.includes('interpark') ? '인터파크' : '서울문화포털'} 외
+                                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
+                                        <div>
+                                            <p className="text-xs text-gray-400 mb-0.5">장소</p>
+                                            <p className="text-sm text-gray-200 font-medium">{performance.venue}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <Clock className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                                        <div>
+                                            <p className="text-xs text-gray-400 mb-0.5">가격</p>
+                                            <p className="text-sm text-gray-200 font-medium">{performance.price || '무료'}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Detailed Metadata Section: Director, Cast, Provider, Info */}
+                                {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
+                                    <div className="mb-6 space-y-4">
+                                        {/* Director */}
+                                        {performance.director && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-bold mb-2">감독</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <a
+                                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(performance.director.replace('더보기', '').trim())}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
+                                                    >
+                                                        {performance.director.replace('더보기', '').trim()}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Cast */}
+                                        {performance.cast && performance.cast.length > 0 && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-bold mb-2">출연</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {performance.cast.map((actor: string, idx: number) => {
+                                                        const cleanName = actor.replace('더보기', '').trim();
+                                                        if (!cleanName) return null;
+                                                        return (
+                                                            <a
+                                                                key={idx}
+                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
+                                                            >
+                                                                {cleanName}
+                                                            </a>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Provider (OTT only) */}
+                                        {/* Debug Log (Hidden in UI) */}
+                                        {(() => { console.log('[PerformanceDetailModal] Rendering platforms:', performance.platforms); return null; })()}
+
+                                        {performance.platforms && performance.platforms.length > 0 && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {performance.platforms.map((p: string, idx: number) => {
+                                                        // Direct mapping, assuming p is string as validated
+                                                        let key = typeof p === 'string' ? p.toLowerCase() : String(p);
+
+                                                        const platform = OTT_PLATFORMS[key];
+
+                                                        if (!platform) {
+                                                            console.warn(`[PerformanceDetailModal] Unknown platform key: ${key}`);
+                                                            return null;
+                                                        }
+
+                                                        const label = platform.label;
+                                                        const color = platform.color;
+                                                        const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
+
+                                                        return (
+                                                            <a
+                                                                key={`${key}-${idx}`}
+                                                                href={url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className={`px-3 py-1.5 rounded-lg ${color} hover:brightness-110 transition-all text-sm text-white flex items-center gap-1.5 shadow-lg`}
+                                                            >
+                                                                {label}
+                                                                <ExternalLink size={12} className="opacity-70" />
+                                                            </a>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Movie Info (Genre/Runtime/Rating) */}
+                                        {performance.movieInfo && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-bold mb-2">정보</h3>
+                                                <p className="text-sm text-gray-300 leading-relaxed">
+                                                    {performance.movieInfo}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* Actions */}
+                                <div className="mt-auto grid grid-cols-2 gap-3">
+                                    <button
+                                        onClick={onShare}
+                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                    >
+                                        <Share2 size={18} />
+                                        공유하기
+                                    </button>
+                                    <button
+                                        onClick={generateICS}
+                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                    >
+                                        <Download size={18} />
+                                        캘린더 저장
+                                    </button>
+                                    <button
+                                        onClick={onBooking}
+                                        className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
+                                    >
+                                        <ExternalLink size={20} />
+                                        예매처 바로가기
+                                    </button>
+                                </div>
+
+                                {/* Footer Info */}
+                                <div className="mt-6 text-center text-[10px] text-gray-500">
+                                    데이터 출처: {performance.link.includes('interpark') ? '인터파크' : '서울문화포털'} 외
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </Portal>
     );
+
 }

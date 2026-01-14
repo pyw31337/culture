@@ -17,6 +17,7 @@ import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 import { safeStorage } from '@/lib/safeStorage';
 import { motion, AnimatePresence } from 'framer-motion';
 import LZString from 'lz-string';
+import Portal from './ui/Portal';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
 import { getGenreIcon } from '@/components/GenreIcons';
@@ -1988,106 +1989,92 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
             {/* 🎁 Shared Item Layer Popup (Dimmed Background) */}
-            <AnimatePresence>
-                {sharedPerformanceId && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[99999] bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
-                        onClick={() => setSharedPerformanceId(null)} // Close on background click
-                    >
-                        {(() => {
-                            const sharedItem = initialPerformances.find(p => p.id === sharedPerformanceId);
-                            if (!sharedItem) return (
-                                <div className="text-white text-xl font-bold flex flex-col items-center">
-                                    <span className="mb-2">⚠️</span>
-                                    찾을 수 없는 공연입니다. (ID: {sharedPerformanceId})
-                                </div>
-                            );
-
-                            return (
-                                <motion.div
-                                    initial={{ scale: 0.9, opacity: 0 }}
-                                    animate={{ scale: 1, opacity: 1 }}
-                                    exit={{ scale: 0.9, opacity: 0 }}
-                                    className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] border border-white/20 relative flex flex-col md:flex-row max-h-[90vh]"
-                                    onClick={e => e.stopPropagation()}
-                                >
-                                    {/* Neon Stroke Effect for Popup */}
-                                    <div className="absolute inset-[-2px] z-[-1] rounded-[17px] animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
-                                    {/* Close Button */}
-                                    <button
-                                        onClick={() => setSharedPerformanceId(null)}
-                                        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-white hover:text-black transition-colors"
-                                    >
-                                        <X className="w-6 h-6" />
-                                    </button>
-
-                                    {/* Image Section */}
-                                    <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
-                                        <ImageWithFallback
-                                            src={sharedItem.image}
-                                            optimizationWidth={800}
-                                            alt={sharedItem.title}
-                                            fill
-                                            className="object-contain md:object-cover"
-                                            referrerPolicy="no-referrer"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
-
-                                        {/* Ribbon for Shared View */}
-                                        <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
-                                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
-                                                추천 공연
-                                            </div>
-                                        </div>
+            <Portal>
+                <AnimatePresence>
+                    {sharedPerformanceId && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[99999] bg-black/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+                            onClick={() => setSharedPerformanceId(null)} // Close on background click
+                        >
+                            {(() => {
+                                const sharedItem = initialPerformances.find(p => p.id === sharedPerformanceId);
+                                if (!sharedItem) return (
+                                    <div className="text-white text-xl font-bold flex flex-col items-center">
+                                        <span className="mb-2">⚠️</span>
+                                        찾을 수 없는 공연입니다. (ID: {sharedPerformanceId})
                                     </div>
+                                );
 
-                                    {/* Content Section */}
-                                    <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900">
-                                        <div className="flex flex-col gap-4">
-                                            {/* Header */}
-                                            <div>
-                                                <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
-                                                <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
-                                                    {sharedItem.title}
-                                                </h2>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
-                                                        {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
-                                                    </span>
-                                                    <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
-                                                        <Calendar className="w-3 h-3" />
-                                                        {sharedItem.date}
-                                                    </span>
+                                return (
+                                    <motion.div
+                                        initial={{ scale: 0.9, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        exit={{ scale: 0.9, opacity: 0 }}
+                                        className="bg-gray-900 w-full max-w-5xl rounded-[15px] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] border border-white/20 relative flex flex-col md:flex-row max-h-[90vh]"
+                                        onClick={e => e.stopPropagation()}
+                                    >
+                                        {/* Neon Stroke Effect for Popup */}
+                                        <div className="absolute inset-[-2px] z-[-1] rounded-[17px] animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
+                                        {/* Close Button */}
+                                        <button
+                                            onClick={() => setSharedPerformanceId(null)}
+                                            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-white hover:text-black transition-colors"
+                                        >
+                                            <X className="w-6 h-6" />
+                                        </button>
+
+                                        {/* Image Section */}
+                                        <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto bg-black">
+                                            <ImageWithFallback
+                                                src={sharedItem.image}
+                                                optimizationWidth={800}
+                                                alt={sharedItem.title}
+                                                fill
+                                                className="object-contain md:object-cover"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-gray-900" />
+
+                                            {/* Ribbon for Shared View */}
+                                            <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
+                                                <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
+                                                    추천 공연
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            {/* Details Grid */}
-                                            <div className="grid grid-cols-1 gap-4 py-6 border-t border-white/10 border-b">
-                                                <div className="flex items-start gap-3">
-                                                    <MapPin className="w-5 h-5 text-gray-400 mt-1" />
-                                                    <div>
-                                                        <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
-                                                            onClick={() => {
-                                                                // Open Map Modal over this popup
-                                                                // Ensure KakaoMapModal Z-Index is > 99999
-                                                                if (venues[sharedItem.venue]?.lat) {
-                                                                    setSearchLocation({
-                                                                        lat: venues[sharedItem.venue].lat!,
-                                                                        lng: venues[sharedItem.venue].lng!,
-                                                                        name: sharedItem.venue
-                                                                    });
-                                                                    setViewMode('map');
-                                                                }
-                                                            }}
-                                                        >
-                                                            {sharedItem.venue}
-                                                        </div>
-                                                        {venues[sharedItem.venue]?.address && (
-                                                            <div className="text-gray-500 text-sm mt-1 cursor-pointer hover:text-gray-300 transition-colors"
+                                        {/* Content Section */}
+                                        <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col overflow-y-auto bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900">
+                                            <div className="flex flex-col gap-4">
+                                                {/* Header */}
+                                                <div>
+                                                    <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
+                                                    <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
+                                                        {sharedItem.title}
+                                                    </h2>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
+                                                            {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
+                                                        </span>
+                                                        <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
+                                                            <Calendar className="w-3 h-3" />
+                                                            {sharedItem.date}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                {/* Details Grid */}
+                                                <div className="grid grid-cols-1 gap-4 py-6 border-t border-white/10 border-b">
+                                                    <div className="flex items-start gap-3">
+                                                        <MapPin className="w-5 h-5 text-gray-400 mt-1" />
+                                                        <div>
+                                                            <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
                                                                 onClick={() => {
+                                                                    // Open Map Modal over this popup
+                                                                    // Ensure KakaoMapModal Z-Index is > 99999
                                                                     if (venues[sharedItem.venue]?.lat) {
                                                                         setSearchLocation({
                                                                             lat: venues[sharedItem.venue].lat!,
@@ -2098,102 +2085,120 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                                     }
                                                                 }}
                                                             >
-                                                                {venues[sharedItem.venue].address}
+                                                                {sharedItem.venue}
                                                             </div>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                                {(sharedItem.price || sharedItem.discount) && (
-                                                    <div className="flex items-start gap-3">
-                                                        <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
-                                                        <div>
-
-                                                            <div className="flex items-baseline gap-2">
-                                                                {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
-                                                                {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
-                                                            </div>
+                                                            {venues[sharedItem.venue]?.address && (
+                                                                <div className="text-gray-500 text-sm mt-1 cursor-pointer hover:text-gray-300 transition-colors"
+                                                                    onClick={() => {
+                                                                        if (venues[sharedItem.venue]?.lat) {
+                                                                            setSearchLocation({
+                                                                                lat: venues[sharedItem.venue].lat!,
+                                                                                lng: venues[sharedItem.venue].lng!,
+                                                                                name: sharedItem.venue
+                                                                            });
+                                                                            setViewMode('map');
+                                                                        }
+                                                                    }}
+                                                                >
+                                                                    {venues[sharedItem.venue].address}
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
-                                                )}
-                                            </div>
+                                                    {(sharedItem.price || sharedItem.discount) && (
+                                                        <div className="flex items-start gap-3">
+                                                            <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
+                                                            <div>
 
-                                            {/* Action Button */}
-                                            <div className="mt-auto pt-6">
-                                                <a
-                                                    href={sharedItem.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
-                                                >
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shine_1s_ease-in-out_infinite]" />
-                                                    예매하러 가기
-                                                </a>
-                                                <p className="text-center text-gray-500 text-xs mt-3">
-                                                    * 예매처로 이동합니다.
-                                                </p>
+                                                                <div className="flex items-baseline gap-2">
+                                                                    {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
+                                                                    {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                {/* Action Button */}
+                                                <div className="mt-auto pt-6">
+                                                    <a
+                                                        href={sharedItem.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
+                                                    >
+                                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shine_1s_ease-in-out_infinite]" />
+                                                        예매하러 가기
+                                                    </a>
+                                                    <p className="text-center text-gray-500 text-xs mt-3">
+                                                        * 예매처로 이동합니다.
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            );
-                        })()}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                    </motion.div>
+                                );
+                            })()}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </Portal>
 
             {/* Favorite Venues List Modal */}
-            {
-                showFavoriteListModal && (
-                    <div
-                        className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-                        onClick={() => setShowFavoriteListModal(false)}
-                    >
+            <Portal>
+                {
+                    showFavoriteListModal && (
                         <div
-                            className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
-                            onClick={e => e.stopPropagation()}
+                            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                            onClick={() => setShowFavoriteListModal(false)}
                         >
-                            {/* Modal Header */}
-                            <div className="p-4 border-b border-gray-800 flex justify-between items-center">
-                                <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
-                                    <BuildingStadium className="w-5 h-5" />
-                                    찜한 공연장 목록
-                                </h3>
-                                <button
-                                    onClick={() => setShowFavoriteListModal(false)}
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
-                            </div>
+                            <div
+                                className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
+                                onClick={e => e.stopPropagation()}
+                            >
+                                {/* Modal Header */}
+                                <div className="p-4 border-b border-gray-800 flex justify-between items-center">
+                                    <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
+                                        <BuildingStadium className="w-5 h-5" />
+                                        찜한 공연장 목록
+                                    </h3>
+                                    <button
+                                        onClick={() => setShowFavoriteListModal(false)}
+                                        className="text-gray-400 hover:text-white transition-colors"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                </div>
 
-                            {/* Modal Body: List */}
-                            <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2 scrollbar-hide">
-                                {favoriteVenues.length === 0 ? (
-                                    <p className="text-center text-gray-500 py-4">찜한 공연장이 없습니다.</p>
-                                ) : (
-                                    favoriteVenues.map((venueName) => (
-                                        <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
-                                            <div className="flex flex-col">
-                                                <span className="text-sm font-bold text-gray-200">{venueName}</span>
-                                                {venues[venueName]?.address && (
-                                                    <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
-                                                )}
+                                {/* Modal Body: List */}
+                                <div className="p-4 max-h-[60vh] overflow-y-auto space-y-2 scrollbar-hide">
+                                    {favoriteVenues.length === 0 ? (
+                                        <p className="text-center text-gray-500 py-4">찜한 공연장이 없습니다.</p>
+                                    ) : (
+                                        favoriteVenues.map((venueName) => (
+                                            <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
+                                                <div className="flex flex-col">
+                                                    <span className="text-sm font-bold text-gray-200">{venueName}</span>
+                                                    {venues[venueName]?.address && (
+                                                        <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
+                                                    )}
+                                                </div>
+                                                <button
+                                                    onClick={() => toggleFavoriteVenue(venueName)}
+                                                    className="p-1.5 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/10 transition-colors"
+                                                    title="삭제"
+                                                >
+                                                    <X className="w-4 h-4" />
+                                                </button>
                                             </div>
-                                            <button
-                                                onClick={() => toggleFavoriteVenue(venueName)}
-                                                className="p-1.5 rounded-full text-gray-500 hover:text-red-500 hover:bg-red-500/10 transition-colors"
-                                                title="삭제"
-                                            >
-                                                <X className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    ))
-                                )}
+                                        ))
+                                    )}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-            }
+                    )
+                }
+            </Portal>
 
             {/* Liked Performances Section (Above Keywords) - Visible if Toggled */}
             {
@@ -2523,79 +2528,81 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 )}
 
                 {/* 🔔 New Matches Notification Modal */}
-                <AnimatePresence>
-                    {showNewMatchesModal && newMatches.length > 0 && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-[100000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-                            onClick={handleCloseNotification}
-                        >
+                <Portal>
+                    <AnimatePresence>
+                        {showNewMatchesModal && newMatches.length > 0 && (
                             <motion.div
-                                initial={{ scale: 0.9, y: 20 }}
-                                animate={{ scale: 1, y: 0 }}
-                                exit={{ scale: 0.9, y: 20 }}
-                                className="bg-gray-900 border border-yellow-500/50 rounded-2xl w-full max-w-md overflow-hidden shadow-[0_0_50px_rgba(234,179,8,0.3)] relative"
-                                onClick={e => e.stopPropagation()}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="fixed inset-0 z-[100000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+                                onClick={handleCloseNotification}
                             >
-                                {/* Header */}
-                                <div className="bg-yellow-500/10 p-5 flex items-start gap-4 border-b border-yellow-500/20">
-                                    <div className="p-3 bg-yellow-500 rounded-full text-black shadow-lg shadow-yellow-500/20">
-                                        <Bell className="w-6 h-6 fill-black" />
+                                <motion.div
+                                    initial={{ scale: 0.9, y: 20 }}
+                                    animate={{ scale: 1, y: 0 }}
+                                    exit={{ scale: 0.9, y: 20 }}
+                                    className="bg-gray-900 border border-yellow-500/50 rounded-2xl w-full max-w-md overflow-hidden shadow-[0_0_50px_rgba(234,179,8,0.3)] relative"
+                                    onClick={e => e.stopPropagation()}
+                                >
+                                    {/* Header */}
+                                    <div className="bg-yellow-500/10 p-5 flex items-start gap-4 border-b border-yellow-500/20">
+                                        <div className="p-3 bg-yellow-500 rounded-full text-black shadow-lg shadow-yellow-500/20">
+                                            <Bell className="w-6 h-6 fill-black" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white mb-1">새로운 공연 알림</h3>
+                                            <p className="text-gray-400 text-sm">
+                                                설정하신 키워드({keywords.length}개)에 해당하는 <br />
+                                                <span className="text-yellow-400 font-bold">{newMatches.length}개</span>의 새로운 공연이 발견되었습니다!
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-white mb-1">새로운 공연 알림</h3>
-                                        <p className="text-gray-400 text-sm">
-                                            설정하신 키워드({keywords.length}개)에 해당하는 <br />
-                                            <span className="text-yellow-400 font-bold">{newMatches.length}개</span>의 새로운 공연이 발견되었습니다!
-                                        </p>
-                                    </div>
-                                </div>
 
-                                {/* List */}
-                                <div className="p-4 max-h-[50vh] overflow-y-auto space-y-3 custom-scrollbar">
-                                    {newMatches.slice(0, 5).map(perf => (
-                                        <div key={perf.id} className="flex gap-3 bg-black/40 p-3 rounded-xl border border-white/5 hover:border-yellow-500/30 transition-colors">
-                                            <div className="relative w-16 h-20 bg-gray-800 rounded-lg overflow-hidden shrink-0">
-                                                <ImageWithFallback
-                                                    src={perf.image}
-                                                    optimizationWidth={100}
-                                                    alt={perf.title}
-                                                    fill
-                                                    className="object-cover"
-                                                    referrerPolicy="no-referrer"
-                                                />
-                                            </div>
-                                            <div className="flex-1 min-w-0 py-1">
-                                                <div className="text-xs text-yellow-500 font-bold mb-1">
-                                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    {/* List */}
+                                    <div className="p-4 max-h-[50vh] overflow-y-auto space-y-3 custom-scrollbar">
+                                        {newMatches.slice(0, 5).map(perf => (
+                                            <div key={perf.id} className="flex gap-3 bg-black/40 p-3 rounded-xl border border-white/5 hover:border-yellow-500/30 transition-colors">
+                                                <div className="relative w-16 h-20 bg-gray-800 rounded-lg overflow-hidden shrink-0">
+                                                    <ImageWithFallback
+                                                        src={perf.image}
+                                                        optimizationWidth={100}
+                                                        alt={perf.title}
+                                                        fill
+                                                        className="object-cover"
+                                                        referrerPolicy="no-referrer"
+                                                    />
                                                 </div>
-                                                <h4 className="text-white font-bold text-sm truncate leading-tight mb-1">{perf.title}</h4>
-                                                <p className="text-gray-500 text-xs truncate">{perf.venue} • {perf.date}</p>
+                                                <div className="flex-1 min-w-0 py-1">
+                                                    <div className="text-xs text-yellow-500 font-bold mb-1">
+                                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                                    </div>
+                                                    <h4 className="text-white font-bold text-sm truncate leading-tight mb-1">{perf.title}</h4>
+                                                    <p className="text-gray-500 text-xs truncate">{perf.venue} • {perf.date}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                    {newMatches.length > 5 && (
-                                        <div className="text-center py-2 text-gray-500 text-sm">
-                                            외 {newMatches.length - 5}개의 공연이 더 있습니다.
-                                        </div>
-                                    )}
-                                </div>
+                                        ))}
+                                        {newMatches.length > 5 && (
+                                            <div className="text-center py-2 text-gray-500 text-sm">
+                                                외 {newMatches.length - 5}개의 공연이 더 있습니다.
+                                            </div>
+                                        )}
+                                    </div>
 
-                                {/* Footer */}
-                                <div className="p-4 border-t border-white/10 flex gap-3">
-                                    <button
-                                        onClick={handleCloseNotification}
-                                        className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl transition-all shadow-lg shadow-yellow-500/10"
-                                    >
-                                        확인했습니다
-                                    </button>
-                                </div>
+                                    {/* Footer */}
+                                    <div className="p-4 border-t border-white/10 flex gap-3">
+                                        <button
+                                            onClick={handleCloseNotification}
+                                            className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl transition-all shadow-lg shadow-yellow-500/10"
+                                        >
+                                            확인했습니다
+                                        </button>
+                                    </div>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                        )}
+                    </AnimatePresence>
+                </Portal>
 
 
 

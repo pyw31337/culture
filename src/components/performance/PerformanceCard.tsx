@@ -385,30 +385,20 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
 
                             <div
-                                className="absolute inset-x-0 bottom-0 z-[70] rounded-[15px]"
+                                className={clsx(
+                                    "absolute inset-x-0 bottom-0 z-[70] flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
+                                    enableActions
+                                        ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0")
+                                        : "translate-y-0"
+                                )}
                                 style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                             >
+                                {/* Text Content */}
+                                <div className="relative z-20 w-full">
+                                    {/* Gradient Background - moves with text */}
+                                    <div className="absolute inset-0 -top-24 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
-                                <div className={clsx(
-                                    "relative transition-transform duration-300 ease-out flex flex-col justify-end",
-                                    enableActions
-                                        ? (showActions ? "-translate-y-[90px]" : "translate-y-0 group-hover:-translate-y-[90px]")
-                                        : ""
-                                )}>
-                                    {/* Discount Badge - Only specific variants or if high discount. Hide if no discount */}
-                                    {perf.discountRate && perf.originalPrice && perf.originalPrice !== perf.price && (
-                                        <div className="absolute top-2 right-2 z-40 bg-black/80 text-red-500 border border-red-500/30 px-2 py-1 rounded-full text-xs font-black shadow-lg flex items-center gap-1 backdrop-blur-sm"
-                                            style={{ transform: 'translateZ(20px)' }}>
-                                            <Tag className="w-3 h-3 fill-red-500" />
-                                            {perf.discountRate}
-                                        </div>
-                                    )}
-                                    {/* Gradient Background Layer - spans full height of content */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
-
-                                    {/* Performance Info - Lifted up */}
-                                    <div className="relative z-10 p-4 pb-4">
-
+                                    <div className="relative z-10 p-4 pb-2">
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(
@@ -422,13 +412,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <Calendar className="w-3.5 h-3.5" />
                                                     {(() => {
                                                         let dateStr = perf.date;
-                                                        // Normalize YYYY-MM-DD to YYYY.MM.DD
                                                         dateStr = dateStr.replace(/-/g, '.');
-
                                                         const parts = dateStr.split('~').map((s: string) => s.trim());
                                                         return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : dateStr;
                                                     })()}
-                                                    {/* Platform Icons (Default Variant) */}
                                                     {perf.platforms && perf.platforms.length > 0 && (
                                                         <div className="flex gap-1 ml-2 border-l border-white/20 pl-2">
                                                             {perf.platforms.map((p: string) => {
@@ -437,31 +424,15 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                     "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-md border border-white/10",
                                                                     platformInfo ? platformInfo.color : "bg-gray-600"
                                                                 );
-
-                                                                // If platform info exists, make it a link
                                                                 if (platformInfo) {
                                                                     const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
                                                                     return (
-                                                                        <a
-                                                                            key={p}
-                                                                            href={url}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            className={clsx(badgeClass, "text-white no-underline")}
-                                                                            onClick={(e) => e.stopPropagation()}
-                                                                            title={`${platformInfo.label}에서 검색`}
-                                                                        >
+                                                                        <a key={p} href={url} target="_blank" rel="noopener noreferrer" className={clsx(badgeClass, "text-white no-underline")} onClick={(e) => e.stopPropagation()} title={`${platformInfo.label}에서 검색`}>
                                                                             {platformInfo.label.substring(0, 1).toUpperCase()}
                                                                         </a>
                                                                     );
                                                                 }
-
-                                                                // Fallback for unknown platforms
-                                                                return (
-                                                                    <span key={p} className={clsx(badgeClass, "text-white")}>
-                                                                        {p.substring(0, 1).toUpperCase()}
-                                                                    </span>
-                                                                );
+                                                                return <span key={p} className={clsx(badgeClass, "text-white")}>{p.substring(0, 1).toUpperCase()}</span>;
                                                             })}
                                                         </div>
                                                     )}
@@ -469,13 +440,14 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}
                                         </div>
 
+                                        {/* Title */}
                                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
                                             <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
                                                 {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                             </h3>
                                         </a>
 
-                                        {/* Provider Text (Lower Body) */}
+                                        {/* Platforms Text */}
                                         {perf.platforms && perf.platforms.length > 0 && (
                                             <div className="flex gap-1 items-center mb-1 text-[11px] text-gray-400 font-medium relative z-[101]">
                                                 <span className="text-gray-500 font-bold shrink-0">[제공]</span>
@@ -486,13 +458,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
                                                         return (
                                                             <span key={idx} className="flex items-center">
-                                                                <a
-                                                                    href={url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    className="hover:text-white hover:underline transition-colors"
-                                                                    onClick={(e) => e.stopPropagation()}
-                                                                >
+                                                                <a href={url} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>
                                                                     {platformInfo.label}
                                                                 </a>
                                                                 {idx < perf.platforms.length - 1 && <span className="mr-0.5">,</span>}
@@ -503,6 +469,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             </div>
                                         )}
 
+                                        {/* Venue/Grade Info */}
                                         <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
                                             {perf.genre === 'movie' || perf.genre === 'ott' ? (
                                                 <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
@@ -523,38 +490,25 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 </div>
                                             ) : (
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        if (onLocationClick) {
-                                                            onLocationClick({
-                                                                lat: venueInfo?.lat || 0,
-                                                                lng: venueInfo?.lng || 0,
-                                                                name: perf.venue || 'Online'
-                                                            });
-                                                        }
-                                                    }}
-                                                    className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full"
-                                                >
+                                                <button onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    if (onLocationClick) {
+                                                        onLocationClick({ lat: venueInfo?.lat || 0, lng: venueInfo?.lng || 0, name: perf.venue || 'Online' });
+                                                    }
+                                                }} className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full">
                                                     <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
                                                     <span className="truncate">{perf.venue || 'Online'}</span>
                                                 </button>
                                             )}
                                         </div>
 
-                                        {/* Movie Metadata (Director, Cast, Info) for Grid View */}
+                                        {/* Movie Info (Director/Cast) */}
                                         {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo) && (
                                             <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">
                                                         <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                                        <a
-                                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]"
-                                                            onClick={e => e.stopPropagation()}
-                                                        >
+                                                        <a href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]" onClick={e => e.stopPropagation()}>
                                                             {perf.director.replace('더보기', '').trim()}
                                                         </a>
                                                     </div>
@@ -568,56 +522,52 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             </div>
                                         )}
                                     </div>
-
-                                    {/* Action Buttons (Slide Up from Bottom) */}
-                                    {enableActions && (
-                                        <div className={clsx(
-                                            "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between transition-transform duration-300 ease-out",
-                                            "translate-y-[100%] group-hover:translate-y-0"
-                                        )}>
-                                            <button
-                                                onClick={async (e) => {
-                                                    e.stopPropagation();
-                                                    if (onShare) {
-                                                        const usedClipboard = await onShare();
-                                                        if (usedClipboard) {
-                                                            setIsCopied(true);
-                                                            setTimeout(() => setIsCopied(false), 2000);
-                                                        }
-                                                    }
-                                                }}
-                                                className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
-                                                aria-label="공유하기"
-                                            >
-                                                <Share2 className="w-5 h-5" />
-                                                <AnimatePresence>
-                                                    {isCopied && (
-                                                        <motion.div
-                                                            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
-                                                        >
-                                                            <span className="text-emerald-400">✓</span> 복사됨!
-                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </button>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (onDetail) onDetail();
-                                                }}
-                                                className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
-                                            >
-                                                자세히 보기
-                                                <Search className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    )}
-
                                 </div>
+
+                                {/* Actions Area (Height approx 82px) */}
+                                {enableActions && (
+                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between">
+                                        <button
+                                            onClick={async (e) => {
+                                                e.stopPropagation();
+                                                if (onShare) {
+                                                    const usedClipboard = await onShare();
+                                                    if (usedClipboard) {
+                                                        setIsCopied(true);
+                                                        setTimeout(() => setIsCopied(false), 2000);
+                                                    }
+                                                }
+                                            }}
+                                            className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
+                                            aria-label="공유하기"
+                                        >
+                                            <Share2 className="w-5 h-5" />
+                                            <AnimatePresence>
+                                                {isCopied && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                                        exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
+                                                    >
+                                                        <span className="text-emerald-400">✓</span> 복사됨!
+                                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </button>
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (onDetail) onDetail();
+                                            }}
+                                            className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
+                                        >
+                                            자세히 보기
+                                            <Search className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     )}
