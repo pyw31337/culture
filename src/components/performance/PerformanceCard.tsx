@@ -78,7 +78,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     return (
         <div
-            className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[9999]"
+            className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[2000]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={handleCardClick}
@@ -398,7 +398,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     {/* Gradient Background - moves with text */}
                                     <div className="absolute inset-0 -top-24 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
-                                    <div className="relative z-10 p-4 pb-2">
+                                    <div className="relative z-10 p-4 pb-8">
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
                                             <span className={clsx(

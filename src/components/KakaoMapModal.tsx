@@ -8,6 +8,8 @@ import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils';
 
+import Portal from './ui/Portal';
+
 interface Venue {
     name: string;
     address: string;
@@ -410,96 +412,98 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     // replacing `export default function ... {` with `export default function ... { const [mapInstance, setMapInstance] = useState<any>(null);`
 
     return (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-            <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-[100] p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition"
-                >
-                    <X className="w-6 h-6" />
-                </button>
+        <Portal>
+            <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+                <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
+                    {/* Close Button */}
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 z-[100] p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
 
-                <div ref={mapRef} className="w-full h-full bg-gray-800" />
+                    <div ref={mapRef} className="w-full h-full bg-gray-800" />
 
-                {/* Bottom List for Multiple Venues */}
-                {uniqueVenues.length > 0 && (
-                    <div className="absolute bottom-4 left-0 right-0 z-[90] px-4 pointer-events-none">
-                        <div
-                            ref={scrollRef}
-                            className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                            onMouseDown={onMouseDown}
-                            onMouseLeave={onMouseLeave}
-                            onMouseUp={onMouseUp}
-                            onMouseMove={onMouseMove}
-                        >
-                            {uniqueVenues.map((v: any) => {
-                                const isFavorite = favoriteVenues.includes(v.venueName);
-                                const isSelected = selectedVenue === v.venueName;
-                                return (
-                                    <button
-                                        type="button"
-                                        key={v.venueName}
-                                        data-venue-name={v.venueName}
-                                        style={{ pointerEvents: 'auto' }}
-                                        onClick={(e) => {
-                                            if (mapInstance && v.lat && v.lng) {
-                                                if (isSelected) {
-                                                    // Close
-                                                    const overlay = overlaysRef.current[v.venueName];
-                                                    if (overlay) overlay.setMap(null);
-                                                    setSelectedVenue(null);
+                    {/* Bottom List for Multiple Venues */}
+                    {uniqueVenues.length > 0 && (
+                        <div className="absolute bottom-4 left-0 right-0 z-[90] px-4 pointer-events-none">
+                            <div
+                                ref={scrollRef}
+                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                onMouseDown={onMouseDown}
+                                onMouseLeave={onMouseLeave}
+                                onMouseUp={onMouseUp}
+                                onMouseMove={onMouseMove}
+                            >
+                                {uniqueVenues.map((v: any) => {
+                                    const isFavorite = favoriteVenues.includes(v.venueName);
+                                    const isSelected = selectedVenue === v.venueName;
+                                    return (
+                                        <button
+                                            type="button"
+                                            key={v.venueName}
+                                            data-venue-name={v.venueName}
+                                            style={{ pointerEvents: 'auto' }}
+                                            onClick={(e) => {
+                                                if (mapInstance && v.lat && v.lng) {
+                                                    if (isSelected) {
+                                                        // Close
+                                                        const overlay = overlaysRef.current[v.venueName];
+                                                        if (overlay) overlay.setMap(null);
+                                                        setSelectedVenue(null);
+                                                    } else {
+                                                        // Open
+                                                        const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                        mapInstance.setLevel(3);
+                                                        mapInstance.setCenter(moveLatLon); // Force center
+
+                                                        Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
+                                                        const overlay = overlaysRef.current[v.venueName];
+                                                        if (overlay) overlay.setMap(mapInstance);
+                                                        setSelectedVenue(v.venueName);
+                                                    }
                                                 } else {
-                                                    // Open
-                                                    const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                    mapInstance.setLevel(3);
-                                                    mapInstance.setCenter(moveLatLon); // Force center
-
-                                                    Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
-                                                    const overlay = overlaysRef.current[v.venueName];
-                                                    if (overlay) overlay.setMap(mapInstance);
-                                                    setSelectedVenue(v.venueName);
+                                                    console.warn('Map click failed: missing instance or coords', { mapInstance: !!mapInstance, lat: v.lat, lng: v.lng });
                                                 }
-                                            } else {
-                                                console.warn('Map click failed: missing instance or coords', { mapInstance: !!mapInstance, lat: v.lat, lng: v.lng });
-                                            }
-                                        }}
-                                        className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300
-                                            ${isSelected
-                                                ? 'ring-4 ring-blue-500 scale-[1.02] z-10'
-                                                : 'border hover:scale-[1.01]'
-                                            }
-                                            ${isFavorite
-                                                ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
-                                                : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
-                                            }`}
-                                    >
-                                        <div className="flex justify-between items-start w-full">
-                                            <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    onToggleFavorite(v.venueName);
-                                                }}
-                                                className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
-                                            >
-                                                <Star
-                                                    className={`w-4 h-4 ${isFavorite ? 'text-white fill-white' : 'text-gray-400'}`}
-                                                />
-                                            </button>
-                                        </div>
-                                        <p className={`text-xs truncate ${isFavorite ? 'text-emerald-100' : 'text-gray-600'}`}>{v.address || '주소 정보 없음'}</p>
-                                        <div className="mt-1 flex items-center justify-between text-xs">
-                                            <span className={`font-bold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
-                                            {/* Distance could be calculated if we have centerLocation */}
-                                        </div>
-                                    </button>
-                                );
-                            })}
+                                            }}
+                                            className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300
+                                                ${isSelected
+                                                    ? 'ring-4 ring-blue-500 scale-[1.02] z-10'
+                                                    : 'border hover:scale-[1.01]'
+                                                }
+                                                ${isFavorite
+                                                    ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
+                                                    : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
+                                                }`}
+                                        >
+                                            <div className="flex justify-between items-start w-full">
+                                                <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onToggleFavorite(v.venueName);
+                                                    }}
+                                                    className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
+                                                >
+                                                    <Star
+                                                        className={`w-4 h-4 ${isFavorite ? 'text-white fill-white' : 'text-gray-400'}`}
+                                                    />
+                                                </button>
+                                            </div>
+                                            <p className={`text-xs truncate ${isFavorite ? 'text-emerald-100' : 'text-gray-600'}`}>{v.address || '주소 정보 없음'}</p>
+                                            <div className="mt-1 flex items-center justify-between text-xs">
+                                                <span className={`font-bold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
+                                                {/* Distance could be calculated if we have centerLocation */}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
-        </div>
+        </Portal>
     );
 }

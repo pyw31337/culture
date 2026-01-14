@@ -9,6 +9,8 @@ import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
 
+import Portal from './ui/Portal';
+
 // Remove local GENRE_COLORS map
 
 interface CalendarModalProps {
@@ -66,7 +68,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
         : selectedDateEvents.filter(p => p.genre === selectedPopupGenre);
 
     return (
-        <>
+        <Portal>
             <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
                 <div className="bg-gray-900 w-full max-w-[1700px] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-800">
                     {/* Header */}
@@ -234,6 +236,6 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     </div>
                 </div>
             )}
-        </>
+        </Portal>
     );
 }

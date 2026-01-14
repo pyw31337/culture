@@ -76,7 +76,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
     return (
         <div
-            className="perspective-1000 group relative hover:z-[9999]"
+            className="perspective-1000 group relative hover:z-[2000]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}

@@ -371,7 +371,7 @@ export default function HeroSection({
     return (
         <div className={clsx(
             "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8",
-            (isDropdownOpen && activeSearchSource === 'hero') ? "z-[120]" : "z-[60]"
+            (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
             <div className="text-left flex-1 min-w-0 z-10">
                 {selectedGenre !== 'movie' && selectedGenre !== 'ott' && (
@@ -538,7 +538,7 @@ export default function HeroSection({
             </div>
 
             {/* Hero Search Bar */}
-            <div className="w-full lg:w-auto relative group z-[60]">
+            <div className="w-full lg:w-auto relative group z-[30]">
                 {/* Light Mode: Subtle Purple Glow Behind Search Bar */}
                 <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
                 <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]">
@@ -594,7 +594,7 @@ export default function HeroSection({
 
                 {/* Search Results Dropdown (Attached to Hero Input) */}
                 {isDropdownOpen && activeSearchSource === 'hero' && searchResults.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[120] overflow-hidden max-h-80 overflow-y-auto">
+                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
                         {searchResults.map((result, idx) => {
                             const addressParts = result.address ? result.address.split(' ') : [];
                             const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
