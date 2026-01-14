@@ -369,13 +369,13 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     <img
                                         src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
                                         alt={perf.homeTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />
                                     <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-[1px]">VS</div>
                                     <img
                                         src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
                                         alt={perf.awayTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />
                                 </div>
                             )}

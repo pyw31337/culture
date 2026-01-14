@@ -123,13 +123,13 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             <img
                                 src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
                                 alt={perf.homeTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                                className="w-[35%] max-w-[64px] aspect-square object-contain"
                             />
                             <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded backdrop-blur-[2px]">VS</div>
                             <img
                                 src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
                                 alt={perf.awayTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                                className="w-[35%] max-w-[64px] aspect-square object-contain"
                             />
                         </div>
                     )}
