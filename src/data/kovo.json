@@ -10,8 +10,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251019_VIXTORM_우리WON",
@@ -24,8 +24,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251020_블루팡스_읏맨",
@@ -38,8 +38,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251020_PEPPERS_하이패스",
@@ -52,8 +52,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251021_스카이워커스_스타즈",
@@ -66,8 +66,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251021_핑크스파이더스_힐스테이트",
@@ -80,8 +80,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251022_점보스_VIXTORM",
@@ -94,8 +94,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251022_레드스파크스_서울Kixx",
@@ -108,8 +108,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251023_우리WON_읏맨",
@@ -122,8 +122,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251023_알토스_PEPPERS",
@@ -136,8 +136,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251024_블루팡스_스카이워커스",
@@ -150,8 +150,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251024_하이패스_핑크스파이더스",
@@ -164,8 +164,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251025_스타즈_점보스",
@@ -178,8 +178,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251025_힐스테이트_레드스파크스",
@@ -192,8 +192,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251026_우리WON_블루팡스",
@@ -206,8 +206,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251026_알토스_하이패스",
@@ -220,8 +220,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251028_VIXTORM_스카이워커스",
@@ -234,8 +234,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251028_서울Kixx_핑크스파이더스",
@@ -248,8 +248,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251029_스타즈_읏맨",
@@ -262,8 +262,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251029_PEPPERS_힐스테이트",
@@ -276,8 +276,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251030_점보스_우리WON",
@@ -290,8 +290,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251030_레드스파크스_알토스",
@@ -304,8 +304,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251031_VIXTORM_블루팡스",
@@ -318,8 +318,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251031_서울Kixx_하이패스",
@@ -332,8 +332,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251101_스카이워커스_읏맨",
@@ -346,8 +346,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251101_핑크스파이더스_PEPPERS",
@@ -360,8 +360,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251102_스타즈_우리WON",
@@ -374,8 +374,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251102_힐스테이트_알토스",
@@ -388,8 +388,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251104_블루팡스_점보스",
@@ -402,8 +402,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251104_하이패스_레드스파크스",
@@ -416,8 +416,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251105_VIXTORM_읏맨",
@@ -430,8 +430,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251105_PEPPERS_서울Kixx",
@@ -444,8 +444,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251106_스카이워커스_우리WON",
@@ -458,8 +458,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251106_알토스_핑크스파이더스",
@@ -472,8 +472,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251107_블루팡스_스타즈",
@@ -486,8 +486,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251107_하이패스_힐스테이트",
@@ -500,8 +500,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251108_읏맨_점보스",
@@ -514,8 +514,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251108_레드스파크스_PEPPERS",
@@ -528,8 +528,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251109_스타즈_VIXTORM",
@@ -542,8 +542,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251109_힐스테이트_서울Kixx",
@@ -556,8 +556,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251111_점보스_블루팡스",
@@ -570,8 +570,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251111_레드스파크스_하이패스",
@@ -584,8 +584,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251112_읏맨_스카이워커스",
@@ -598,8 +598,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251112_PEPPERS_핑크스파이더스",
@@ -612,8 +612,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251113_우리WON_VIXTORM",
@@ -626,8 +626,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251113_알토스_서울Kixx",
@@ -640,8 +640,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251114_블루팡스_스타즈",
@@ -654,8 +654,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251114_하이패스_힐스테이트",
@@ -668,8 +668,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251115_스카이워커스_점보스",
@@ -682,8 +682,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251115_핑크스파이더스_레드스파크스",
@@ -696,8 +696,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251116_읏맨_스타즈",
@@ -710,8 +710,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251116_PEPPERS_힐스테이트",
@@ -724,8 +724,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251118_우리WON_블루팡스",
@@ -738,8 +738,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251118_알토스_하이패스",
@@ -752,8 +752,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251119_스카이워커스_VIXTORM",
@@ -766,8 +766,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251119_핑크스파이더스_서울Kixx",
@@ -780,8 +780,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251120_점보스_읏맨",
@@ -794,8 +794,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251120_레드스파크스_PEPPERS",
@@ -808,8 +808,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251121_스타즈_우리WON",
@@ -822,8 +822,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251121_알토스_힐스테이트",
@@ -836,8 +836,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251122_블루팡스_VIXTORM",
@@ -850,8 +850,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251122_하이패스_서울Kixx",
@@ -864,8 +864,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251123_점보스_스타즈",
@@ -878,8 +878,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251123_레드스파크스_힐스테이트",
@@ -892,8 +892,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251125_우리WON_스카이워커스",
@@ -906,8 +906,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251125_알토스_핑크스파이더스",
@@ -920,8 +920,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251126_읏맨_블루팡스",
@@ -934,8 +934,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251126_하이패스_PEPPERS",
@@ -948,8 +948,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251127_VIXTORM_점보스",
@@ -962,8 +962,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251127_서울Kixx_레드스파크스",
@@ -976,8 +976,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251128_스타즈_스카이워커스",
@@ -990,8 +990,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251128_힐스테이트_핑크스파이더스",
@@ -1004,8 +1004,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251129_읏맨_우리WON",
@@ -1018,8 +1018,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251129_PEPPERS_알토스",
@@ -1032,8 +1032,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251130_스타즈_VIXTORM",
@@ -1046,8 +1046,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251130_힐스테이트_서울Kixx",
@@ -1060,8 +1060,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251202_스카이워커스_블루팡스",
@@ -1074,8 +1074,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251202_핑크스파이더스_하이패스",
@@ -1088,8 +1088,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251203_우리WON_점보스",
@@ -1102,8 +1102,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251203_알토스_레드스파크스",
@@ -1116,8 +1116,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251204_VIXTORM_읏맨",
@@ -1130,8 +1130,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251204_서울Kixx_PEPPERS",
@@ -1144,8 +1144,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251205_스카이워커스_스타즈",
@@ -1158,8 +1158,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251205_핑크스파이더스_힐스테이트",
@@ -1172,8 +1172,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251206_점보스_블루팡스",
@@ -1186,8 +1186,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251206_레드스파크스_하이패스",
@@ -1200,8 +1200,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251207_읏맨_스타즈",
@@ -1214,8 +1214,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251207_힐스테이트_PEPPERS",
@@ -1228,8 +1228,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251209_VIXTORM_우리WON",
@@ -1242,8 +1242,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251209_서울Kixx_알토스",
@@ -1256,8 +1256,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251210_블루팡스_스카이워커스",
@@ -1270,8 +1270,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251210_하이패스_핑크스파이더스",
@@ -1284,8 +1284,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251211_읏맨_점보스",
@@ -1298,8 +1298,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251211_PEPPERS_레드스파크스",
@@ -1312,8 +1312,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251212_VIXTORM_스타즈",
@@ -1326,8 +1326,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251212_서울Kixx_힐스테이트",
@@ -1340,8 +1340,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251213_블루팡스_우리WON",
@@ -1354,8 +1354,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251213_하이패스_알토스",
@@ -1368,8 +1368,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251214_점보스_스카이워커스",
@@ -1382,8 +1382,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251214_레드스파크스_핑크스파이더스",
@@ -1396,8 +1396,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251216_읏맨_우리WON",
@@ -1410,8 +1410,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251216_PEPPERS_알토스",
@@ -1424,8 +1424,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251217_스타즈_블루팡스",
@@ -1438,8 +1438,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251217_힐스테이트_하이패스",
@@ -1452,8 +1452,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251218_점보스_VIXTORM",
@@ -1466,8 +1466,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251218_레드스파크스_서울Kixx",
@@ -1480,8 +1480,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251219_스카이워커스_읏맨",
@@ -1494,8 +1494,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251219_핑크스파이더스_PEPPERS",
@@ -1508,8 +1508,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251220_우리WON_스타즈",
@@ -1522,8 +1522,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251220_알토스_힐스테이트",
@@ -1536,8 +1536,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251221_VIXTORM_블루팡스",
@@ -1550,8 +1550,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251221_서울Kixx_하이패스",
@@ -1564,8 +1564,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251223_스카이워커스_우리WON",
@@ -1578,8 +1578,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251223_핑크스파이더스_알토스",
@@ -1592,8 +1592,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251224_스타즈_점보스",
@@ -1606,8 +1606,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251224_힐스테이트_레드스파크스",
@@ -1620,8 +1620,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251225_블루팡스_읏맨",
@@ -1634,8 +1634,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251225_하이패스_PEPPERS",
@@ -1648,8 +1648,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251226_VIXTORM_스카이워커스",
@@ -1662,8 +1662,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251226_서울Kixx_핑크스파이더스",
@@ -1676,8 +1676,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251227_우리WON_점보스",
@@ -1690,8 +1690,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251227_알토스_레드스파크스",
@@ -1704,8 +1704,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251228_읏맨_VIXTORM",
@@ -1718,8 +1718,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251228_PEPPERS_서울Kixx",
@@ -1732,8 +1732,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251230_스카이워커스_스타즈",
@@ -1746,8 +1746,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251230_핑크스파이더스_힐스테이트",
@@ -1760,8 +1760,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251231_점보스_블루팡스",
@@ -1774,8 +1774,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251231_레드스파크스_하이패스",
@@ -1788,8 +1788,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260101_읏맨_우리WON",
@@ -1802,8 +1802,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260101_PEPPERS_알토스",
@@ -1816,8 +1816,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260102_스타즈_VIXTORM",
@@ -1830,8 +1830,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260102_힐스테이트_서울Kixx",
@@ -1844,8 +1844,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260103_점보스_스카이워커스",
@@ -1858,8 +1858,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260103_레드스파크스_핑크스파이더스",
@@ -1872,8 +1872,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260104_VIXTORM_읏맨",
@@ -1886,8 +1886,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260104_서울Kixx_PEPPERS",
@@ -1900,8 +1900,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260106_블루팡스_스타즈",
@@ -1914,8 +1914,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260106_하이패스_힐스테이트",
@@ -1928,8 +1928,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260107_우리WON_점보스",
@@ -1942,8 +1942,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260107_알토스_레드스파크스",
@@ -1956,8 +1956,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260108_읏맨_스카이워커스",
@@ -1970,8 +1970,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260108_PEPPERS_핑크스파이더스",
@@ -1984,8 +1984,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260109_블루팡스_VIXTORM",
@@ -1998,8 +1998,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260109_하이패스_서울Kixx",
@@ -2012,8 +2012,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260110_우리WON_스타즈",
@@ -2026,8 +2026,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260110_알토스_힐스테이트",
@@ -2040,8 +2040,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260111_점보스_읏맨",
@@ -2054,8 +2054,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260111_레드스파크스_PEPPERS",
@@ -2068,8 +2068,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260113_스카이워커스_블루팡스",
@@ -2082,8 +2082,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260113_핑크스파이더스_하이패스",
@@ -2096,8 +2096,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260114_VIXTORM_우리WON",
@@ -2110,8 +2110,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260114_서울Kixx_알토스",
@@ -2124,8 +2124,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260115_스타즈_점보스",
@@ -2138,8 +2138,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260115_힐스테이트_레드스파크스",
@@ -2152,8 +2152,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260116_읏맨_블루팡스",
@@ -2166,8 +2166,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260116_PEPPERS_하이패스",
@@ -2180,8 +2180,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260117_우리WON_스카이워커스",
@@ -2194,8 +2194,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260117_알토스_핑크스파이더스",
@@ -2208,8 +2208,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260118_VIXTORM_점보스",
@@ -2222,8 +2222,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260118_서울Kixx_레드스파크스",
@@ -2236,8 +2236,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260120_스타즈_읏맨",
@@ -2250,8 +2250,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260120_힐스테이트_PEPPERS",
@@ -2264,8 +2264,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260121_블루팡스_우리WON",
@@ -2278,8 +2278,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260121_하이패스_알토스",
@@ -2292,8 +2292,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260122_스카이워커스_VIXTORM",
@@ -2306,8 +2306,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260122_핑크스파이더스_서울Kixx",
@@ -2320,8 +2320,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260123_VIXTORM_스카이워커스",
@@ -2334,8 +2334,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260123_서울Kixx_핑크스파이더스",
@@ -2348,8 +2348,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260129_우리WON_블루팡스",
@@ -2362,8 +2362,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260129_알토스_하이패스",
@@ -2376,8 +2376,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260130_점보스_스타즈",
@@ -2390,8 +2390,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260130_레드스파크스_힐스테이트",
@@ -2404,8 +2404,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260131_스카이워커스_읏맨",
@@ -2418,8 +2418,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260131_핑크스파이더스_PEPPERS",
@@ -2432,8 +2432,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260201_우리WON_VIXTORM",
@@ -2446,8 +2446,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260201_알토스_서울Kixx",
@@ -2460,8 +2460,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260202_블루팡스_점보스",
@@ -2474,8 +2474,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260202_하이패스_레드스파크스",
@@ -2488,8 +2488,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260203_읏맨_스타즈",
@@ -2502,8 +2502,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260203_PEPPERS_힐스테이트",
@@ -2516,8 +2516,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260204_우리WON_스카이워커스",
@@ -2530,8 +2530,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260204_핑크스파이더스_알토스",
@@ -2544,8 +2544,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260206_점보스_VIXTORM",
@@ -2558,8 +2558,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260206_레드스파크스_서울Kixx",
@@ -2572,8 +2572,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260207_읏맨_블루팡스",
@@ -2586,8 +2586,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260207_PEPPERS_하이패스",
@@ -2600,8 +2600,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260208_스타즈_스카이워커스",
@@ -2614,8 +2614,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260208_힐스테이트_핑크스파이더스",
@@ -2628,8 +2628,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260209_점보스_우리WON",
@@ -2642,8 +2642,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260209_레드스파크스_알토스",
@@ -2656,8 +2656,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260210_읏맨_VIXTORM",
@@ -2670,8 +2670,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260210_서울Kixx_PEPPERS",
@@ -2684,8 +2684,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260211_스타즈_블루팡스",
@@ -2698,8 +2698,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260211_힐스테이트_하이패스",
@@ -2712,8 +2712,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260213_스카이워커스_점보스",
@@ -2726,8 +2726,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260213_핑크스파이더스_레드스파크스",
@@ -2740,8 +2740,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260214_우리WON_읏맨",
@@ -2754,8 +2754,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260214_알토스_PEPPERS",
@@ -2768,8 +2768,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260215_VIXTORM_스타즈",
@@ -2782,8 +2782,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260215_서울Kixx_힐스테이트",
@@ -2796,8 +2796,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260216_블루팡스_스카이워커스",
@@ -2810,8 +2810,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260216_하이패스_핑크스파이더스",
@@ -2824,8 +2824,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260217_점보스_읏맨",
@@ -2838,8 +2838,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260217_PEPPERS_레드스파크스",
@@ -2852,8 +2852,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260218_블루팡스_VIXTORM",
@@ -2866,8 +2866,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260218_하이패스_서울Kixx",
@@ -2880,8 +2880,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260220_스타즈_우리WON",
@@ -2894,8 +2894,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260220_힐스테이트_알토스",
@@ -2908,8 +2908,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260221_점보스_스카이워커스",
@@ -2922,8 +2922,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260221_레드스파크스_핑크스파이더스",
@@ -2936,8 +2936,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260222_스타즈_블루팡스",
@@ -2950,8 +2950,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260222_힐스테이트_하이패스",
@@ -2964,8 +2964,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260224_우리WON_읏맨",
@@ -2978,8 +2978,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260224_알토스_PEPPERS",
@@ -2992,8 +2992,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260225_스카이워커스_VIXTORM",
@@ -3006,8 +3006,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260225_핑크스파이더스_서울Kixx",
@@ -3020,8 +3020,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260226_블루팡스_점보스",
@@ -3034,8 +3034,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260226_하이패스_레드스파크스",
@@ -3048,8 +3048,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260227_우리WON_스타즈",
@@ -3062,8 +3062,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260227_힐스테이트_알토스",
@@ -3076,8 +3076,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260228_읏맨_스카이워커스",
@@ -3090,8 +3090,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260228_PEPPERS_핑크스파이더스",
@@ -3104,8 +3104,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260301_VIXTORM_점보스",
@@ -3118,8 +3118,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260301_서울Kixx_레드스파크스",
@@ -3132,8 +3132,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260302_블루팡스_읏맨",
@@ -3146,8 +3146,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260302_하이패스_PEPPERS",
@@ -3160,8 +3160,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260304_스타즈_스카이워커스",
@@ -3174,8 +3174,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260304_힐스테이트_핑크스파이더스",
@@ -3188,8 +3188,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260305_점보스_우리WON",
@@ -3202,8 +3202,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260305_레드스파크스_알토스",
@@ -3216,8 +3216,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260306_VIXTORM_블루팡스",
@@ -3230,8 +3230,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260306_서울Kixx_하이패스",
@@ -3244,8 +3244,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260307_스타즈_읏맨",
@@ -3258,8 +3258,8 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260307_힐스테이트_PEPPERS",
@@ -3272,8 +3272,8 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260308_스카이워커스_우리WON",
@@ -3286,8 +3286,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260308_핑크스파이더스_알토스",
@@ -3300,8 +3300,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260310_읏맨_VIXTORM",
@@ -3314,8 +3314,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260310_PEPPERS_서울Kixx",
@@ -3328,8 +3328,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260311_점보스_스타즈",
@@ -3342,8 +3342,8 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260311_레드스파크스_힐스테이트",
@@ -3356,8 +3356,8 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260312_스카이워커스_블루팡스",
@@ -3370,8 +3370,8 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260312_핑크스파이더스_하이패스",
@@ -3384,8 +3384,8 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260313_우리WON_VIXTORM",
@@ -3398,8 +3398,8 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260313_알토스_서울Kixx",
@@ -3412,8 +3412,8 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260314_읏맨_점보스",
@@ -3426,8 +3426,8 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260314_PEPPERS_레드스파크스",
@@ -3440,8 +3440,8 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260315_블루팡스_우리WON",
@@ -3454,8 +3454,8 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260315_하이패스_알토스",
@@ -3468,8 +3468,8 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260317_VIXTORM_스타즈",
@@ -3482,8 +3482,8 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260317_서울Kixx_힐스테이트",
@@ -3496,8 +3496,8 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260318_스카이워커스_점보스",
@@ -3510,7 +3510,7 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
   }
 ]

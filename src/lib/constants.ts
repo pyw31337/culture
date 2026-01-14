@@ -102,16 +102,17 @@ export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: 
 };
 
 // Futures League Team Logos (emblemF versions for minor league / development teams)
+// Futures League Team Logos (Using high-quality local SVGs where available)
 export const FUTURES_TEAM_LOGOS: Record<string, string> = {
-    "한화": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_HH.png",
-    "LG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_LG.png",
-    "SSG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_SK.png",
-    "두산": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_OB.png",
-    "고양": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_WO.png",
-    "상무": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_SM.png",
-    "KT": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_KT.png",
-    "NC": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_NC.png",
-    "롯데": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_LT.png",
-    "삼성": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_SS.png",
-    "KIA": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/emblemF_HT.png"
+    "한화": "/culture/images/logos/kbo/hanwha.svg",
+    "LG": "/culture/images/logos/kbo/lg.svg",
+    "SSG": "/culture/images/logos/kbo/ssg.svg",
+    "두산": "/culture/images/logos/kbo/doosan.svg",
+    "고양": "/culture/images/logos/kbo/kiwoom.svg", // Using Kiwoom logo for Goyang Heroes
+    "상무": "/culture/images/logos/kbl/sangmu.svg", // Sharing Sangmu Phoenix logo from KBL
+    "KT": "/culture/images/logos/kbo/kt.svg",
+    "NC": "/culture/images/logos/kbo/nc.svg",
+    "롯데": "/culture/images/logos/kbo/lotte.svg",
+    "삼성": "/culture/images/logos/kbo/samsung.svg",
+    "KIA": "/culture/images/logos/kbo/kia.svg"
 };
