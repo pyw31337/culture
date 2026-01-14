@@ -89,108 +89,117 @@ async function scrapeUmClass() {
     const allItems: UmClassItem[] = [];
     const seenTitles = new Set<string>();
 
-    const MAX_PAGES = 50; // Deep scrape
 
     let pendingItems: { link: string, title: string, image: string, discount: string, price: string }[] = [];
 
-    // Iterate over more area codes (1-16 covers most of Korea)
-    const AREAS = Array.from({ length: 16 }, (_, i) => i + 1);
-    for (const area of AREAS) {
-        let currentPage = 1;
-        let hasNextPage = true;
-        console.log(`\nPhase 1: Collecting class links for area ${area}...`);
-        while (hasNextPage && currentPage <= MAX_PAGES) {
-            const url = `https://www.umclass.com/plan/29?page=${currentPage}&area=${area}`;
-            console.log(`  Visiting Page ${currentPage} (area ${area}): ${url}`);
+    // Scrape "All" list from main class page
+    // URL provided by user: https://www.umclass.com/class?page=1
+    let currentPage = 1;
+    let hasNextPage = true;
+    const MAX_PAGES = 100; // Increased limit for full scrape
+
+    console.log(`\nPhase 1: Collecting all classes (All Regions / All Categories)...`);
+
+    while (hasNextPage && currentPage <= MAX_PAGES) {
+        const url = `https://www.umclass.com/class?page=${currentPage}`;
+        console.log(`  Visiting Page ${currentPage}: ${url}`);
+
+        try {
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+            // Wait for list container - selector might differ on main class page vs plan page
+            // Plan page used .classPlan-contents-list. Main class page might use .class-list-wrapper or similar.
+            // Let's use a generic wait or check if the previous selector works.
+            // If the user says https://www.umclass.com/class?page=1, checking generic list items.
             try {
-                await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-                await page.waitForSelector('.classPlan-contents-list', { timeout: 5000 });
+                await page.waitForSelector('a[href*="/classInfo/"]', { timeout: 5000 });
             } catch (e) {
-                console.log(`    No list container found on page ${currentPage}. Ending.`);
+                console.log(`    No items found on page ${currentPage} (Timeout). Ending.`);
                 break;
             }
 
-            try {
-                const pageItems = await page.evaluate(() => {
-                    // Try multiple selectors for robustness
-                    let listItems = document.querySelectorAll('.classPlan-contents-list a[href*="/classInfo/"]');
-                    if (listItems.length === 0) {
-                        listItems = document.querySelectorAll('a[href*="/classInfo/"]');
+            const pageItems = await page.evaluate(() => {
+                // Generic selector for class items
+                const anchors = document.querySelectorAll('a[href*="/classInfo/"]');
+                const results: any[] = [];
+
+                anchors.forEach((anchor) => {
+                    const link = (anchor as HTMLAnchorElement).href;
+                    if (!link.includes('/classInfo/')) return;
+
+                    // Title extraction
+                    const titleElem = anchor.querySelector('.class-subject') ||
+                        anchor.querySelector('.list-subject') ||
+                        anchor.querySelector('[class*="subject"]') ||
+                        anchor.querySelector('[class*="title"]');
+
+                    let title = titleElem ? titleElem.textContent?.trim() : '';
+
+                    if (!title) {
+                        const text = anchor.textContent?.trim() || '';
+                        const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 5);
+                        title = lines[0] || '';
                     }
 
-                    const results: any[] = [];
+                    if (!title) return;
 
-                    if (listItems.length === 0) return [];
-
-                    listItems.forEach((anchor) => {
-                        const link = (anchor as HTMLAnchorElement).href;
-                        const titleElem = anchor.querySelector('.list-subject') ||
-                            anchor.querySelector('[class*="subject"]') ||
-                            anchor.querySelector('[class*="title"]');
-                        let title = titleElem ? titleElem.textContent?.trim() : '';
-
-                        // Fallback: get text from anchor if no title element
-                        if (!title) {
-                            const text = anchor.textContent?.trim() || '';
-                            // Extract class name from text (usually the longest line)
-                            const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 10);
-                            title = lines.find(l => l.includes('클래스') || l.includes('[')) || lines[0] || '';
+                    // Image extraction
+                    let image = '';
+                    const imgDiv = anchor.querySelector('[class*="img"]');
+                    if (imgDiv) {
+                        const style = window.getComputedStyle(imgDiv);
+                        const bgImage = style.backgroundImage;
+                        if (bgImage && bgImage !== 'none') {
+                            image = bgImage.slice(4, -1).replace(/"/g, '');
                         }
+                    }
+                    if (!image) {
+                        const imgTag = anchor.querySelector('img');
+                        if (imgTag) image = imgTag.src;
+                    }
 
-                        if (!title || !link || !link.includes('/classInfo/')) return;
+                    // Price extraction
+                    const priceElem = anchor.querySelector('[class*="price"]');
+                    const discountElem = anchor.querySelector('[class*="discount"]');
+                    const price = priceElem ? priceElem.textContent?.trim() || '' : '';
+                    const discount = discountElem ? discountElem.textContent?.trim() || '' : '';
 
-                        // Image
-                        const imgDiv = anchor.querySelector('[class*="img"]');
-                        let image = '';
-                        if (imgDiv) {
-                            const style = window.getComputedStyle(imgDiv);
-                            const bgImage = style.backgroundImage;
-                            if (bgImage && bgImage !== 'none') {
-                                image = bgImage.slice(4, -1).replace(/"/g, '');
-                            }
-                        }
-                        // Fallback: check for img tag
-                        if (!image) {
-                            const imgTag = anchor.querySelector('img');
-                            if (imgTag) image = imgTag.src;
-                        }
-
-                        // Discount and Price
-                        const discountElem = anchor.querySelector('[class*="discount"]');
-                        const priceElem = anchor.querySelector('[class*="price"]');
-
-                        const discount = discountElem ? discountElem.textContent?.trim().replace(/[^0-9%]/g, '') || '' : '';
-                        const price = priceElem ? priceElem.textContent?.trim() || '' : '';
-
-                        results.push({
-                            title,
-                            link,
-                            image,
-                            discount,
-                            price
-                        });
+                    results.push({
+                        title,
+                        link,
+                        image,
+                        price,
+                        discount
                     });
-                    return results;
                 });
+                return results;
+            });
 
-                if (pageItems.length === 0) {
-                    console.log(`    No items found on page ${currentPage}. Stopping.`);
-                    hasNextPage = false;
-                } else {
-                    console.log(`    Found ${pageItems.length} items.`);
-                    for (const item of pageItems) {
-                        if (!seenTitles.has(item.title)) {
-                            seenTitles.add(item.title);
-                            pendingItems.push(item);
-                        }
+            if (pageItems.length === 0) {
+                console.log(`    No items found on page ${currentPage}. Stopping.`);
+                hasNextPage = false;
+            } else {
+                let newItems = 0;
+                for (const item of pageItems) {
+                    if (!seenTitles.has(item.title)) {
+                        seenTitles.add(item.title);
+                        pendingItems.push(item);
+                        newItems++;
                     }
-                    currentPage++;
                 }
-            } catch (e) {
-                console.error(`    Error on page ${currentPage} (area ${area}): ${e}`);
-                // If an error occurs, try to continue to the next page or area, but stop current page processing.
-                hasNextPage = false; // Stop processing pages for this area if an error occurs
+                console.log(`    Found ${pageItems.length} items (${newItems} new).`);
+
+                // If page had items but all were duplicates, we still continue because order isn't guaranteed unique across pages?
+                // Or maybe we stop? Safer to continue a bit.
+                if (pageItems.length < 5) {
+                    // Start calling it quits if very few items
+                }
+
+                currentPage++;
             }
+
+        } catch (e) {
+            console.error(`    Error on page ${currentPage}: ${e}`);
+            hasNextPage = false;
         }
     }
 

@@ -12,17 +12,7 @@ const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
 
 // All main categories from SSSD
 const CATEGORIES = [
-    { name: '전체', midx: 'all' },
-    { name: '요리', midx: '1' },
-    { name: '수공예', midx: '2' },
-    { name: '미술', midx: '3' },
-    { name: '플라워', midx: '4' },
-    { name: '뷰티', midx: '12' },
-    { name: '모임', midx: '13' },
-    { name: '액티비티', midx: '8' },
-    { name: '정규', midx: '11' },
-    { name: '음악', midx: '7' },
-    { name: '라이프스타일', midx: '5' }
+    { name: '전체', midx: 'all' }
 ];
 
 async function setupKoreanLocale(page: any) {

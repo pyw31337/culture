@@ -88,133 +88,125 @@ async function scrapeMochaClass() {
     const allItems: MochaClassItem[] = [];
     const seenTitles = new Set<string>();
 
-    // We target "Region Seoul" (area=2 equivalent, or location=%EC%84%9C%EC%9A%B8)
-    // URL from user: https://mochaclass.com/Search?page=1&is_online_class=false&where=list&course=원데이&sort=거리순&location=서울
-    // Need to encode params properly or use exact string.
+    // We target ALL locations and ALL categories
+    // URL: https://mochaclass.com/Search?page=${page}&where=list&sort=거리순
+    // Removing 'location' and 'is_online_class' params to get everything.
+
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 50; // Increased limit for maximum collection
-    const LOCATIONS = ['서울', '경기', '인천', '부산', '대구', '광주', '대전', '울산']; // Iterate top locations to be thorough
+    const MAX_PAGES = 100; // Deep scrape
 
-    console.log(`\nPhase 1: Collecting class links...`);
+    console.log(`\nPhase 1: Collecting all class links...`);
 
     let pendingItems: { link: string, title: string, image: string, price: string, originalPrice: string }[] = [];
 
-    // Iterate locations to avoid 10k limit on single search
-    for (const loc of LOCATIONS) {
-        let currentPage = 1;
-        let hasNextPage = true;
-        console.log(`\n  Scraping Location: ${loc}`);
+    while (hasNextPage && currentPage <= MAX_PAGES) {
+        const url = `https://mochaclass.com/Search?page=${currentPage}&where=list&sort=%EA%B1%B0%EB%A6%AC%EC%88%9C`;
+        console.log(`    Visiting Page ${currentPage}: ${url}`);
 
-        while (hasNextPage && currentPage <= MAX_PAGES) {
-            // Removed 'course' filter to get all types. Removed 'location' hardcoding.
-            const url = `https://mochaclass.com/Search?page=${currentPage}&is_online_class=false&where=list&sort=%EA%B1%B0%EB%A6%AC%EC%88%9C&location=${encodeURIComponent(loc)}`;
-            console.log(`    Visiting Page ${currentPage} (${loc}): ${url}`);
+        try {
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 
             try {
-                await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+                // Wait for grid container
+                await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
+            } catch (e) {
+                console.log(`    No list container found on page ${currentPage}. Ending or Timeout.`);
+                break;
+            }
 
-                try {
-                    // Wait for grid container
-                    await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
-                } catch (e) {
-                    console.log(`    No list container found on page ${currentPage}. Ending or Timeout.`);
-                    break;
-                }
-
-                const pageItems = await page.evaluate(() => {
-                    const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
-                    let targetGrid: Element | null = null;
-                    // Simple heuristic: find the grid with the most 'a' children
-                    grids.forEach((g: any) => {
-                        if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
-                            targetGrid = g;
-                        }
-                    });
-
-                    if (!targetGrid) return [];
-
-                    const anchors = (targetGrid as Element).querySelectorAll('a');
-                    const results: any[] = [];
-
-                    anchors.forEach((anchor: any) => {
-                        const link = anchor.href;
-                        if (!link || !link.includes('/class/')) return; // Ensure it's a class link
-
-                        // Title
-                        const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
-                        const title = titleElem ? titleElem.textContent?.trim() : '';
-                        if (!title) return;
-
-                        // Image
-                        const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
-                        const image = imgElem ? imgElem.getAttribute('src') || '' : '';
-
-                        // Price Logic Update
-                        const priceContainer = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v');
-                        let price = '';
-                        let originalPrice = '';
-
-                        if (priceContainer) {
-                            // Collect text content of all children, filtering out '포인트'
-                            const allTexts = Array.from(priceContainer.querySelectorAll('p, span, div'))
-                                .map((el: any) => el.textContent?.trim() || '')
-                                .filter((t: string) => t.length > 0 && !t.includes('포인트') && !t.includes('적립'));
-
-                            // Find price-like strings (e.g. "30,000원")
-                            const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t));
-
-                            // Parse values to compare
-                            const values = priceLike.map((t: string) => {
-                                return { text: t, val: parseInt(t.replace(/[^0-9]/g, '')) || 0 };
-                            }).filter((v: any) => v.val > 0);
-
-                            if (values.length >= 2) {
-                                // Assuming larger is original, smaller is current
-                                values.sort((a: any, b: any) => b.val - a.val);
-                                originalPrice = values[0].text;
-                                price = values[values.length - 1].text;
-                            } else if (values.length === 1) {
-                                price = values[0].text;
-                                originalPrice = price; // Same
-                            }
-                        }
-
-                        results.push({
-                            title,
-                            link,
-                            image,
-                            price,
-                            originalPrice
-                        });
-                    });
-                    return results;
+            const pageItems = await page.evaluate(() => {
+                const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
+                let targetGrid: Element | null = null;
+                // Simple heuristic: find the grid with the most 'a' children
+                grids.forEach((g: any) => {
+                    if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
+                        targetGrid = g;
+                    }
                 });
 
-                if (pageItems.length === 0) {
-                    console.log(`    No items found on page ${currentPage}. Stopping.`);
-                    hasNextPage = false;
-                } else {
-                    console.log(`    Found ${pageItems.length} items.`);
-                    let newItemsCount = 0;
-                    for (const item of pageItems) {
-                        if (!seenTitles.has(item.title)) {
-                            seenTitles.add(item.title);
-                            pendingItems.push(item);
-                            newItemsCount++;
+                if (!targetGrid) return [];
+
+                const anchors = (targetGrid as Element).querySelectorAll('a');
+                const results: any[] = [];
+
+                anchors.forEach((anchor: any) => {
+                    const link = anchor.href;
+                    if (!link || !link.includes('/class/')) return; // Ensure it's a class link
+
+                    // Title
+                    const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
+                    const title = titleElem ? titleElem.textContent?.trim() : '';
+                    if (!title) return;
+
+                    // Image
+                    const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
+                    const image = imgElem ? imgElem.getAttribute('src') || '' : '';
+
+                    // Price Logic Update
+                    const priceContainer = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v');
+                    let price = '';
+                    let originalPrice = '';
+
+                    if (priceContainer) {
+                        // Collect text content of all children, filtering out '포인트'
+                        const allTexts = Array.from(priceContainer.querySelectorAll('p, span, div'))
+                            .map((el: any) => el.textContent?.trim() || '')
+                            .filter((t: string) => t.length > 0 && !t.includes('포인트') && !t.includes('적립'));
+
+                        // Find price-like strings (e.g. "30,000원")
+                        const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t));
+
+                        // Parse values to compare
+                        const values = priceLike.map((t: string) => {
+                            return { text: t, val: parseInt(t.replace(/[^0-9]/g, '')) || 0 };
+                        }).filter((v: any) => v.val > 0);
+
+                        if (values.length >= 2) {
+                            // Assuming larger is original, smaller is current
+                            values.sort((a: any, b: any) => b.val - a.val);
+                            originalPrice = values[0].text;
+                            price = values[values.length - 1].text;
+                        } else if (values.length === 1) {
+                            price = values[0].text;
+                            originalPrice = price; // Same
                         }
                     }
-                    if (newItemsCount === 0) {
-                        // If all items on this page are duplicates, we might be looping or done.
-                        // But maybe user wants deep scrape. Let's continue until empty or max.
-                    }
-                    currentPage++;
-                }
 
-            } catch (error) {
-                console.error(`    Error on page ${currentPage}: ${error}`);
+                    results.push({
+                        title,
+                        link,
+                        image,
+                        price,
+                        originalPrice
+                    });
+                });
+                return results;
+            });
+
+            if (pageItems.length === 0) {
+                console.log(`    No items found on page ${currentPage}. Stopping.`);
                 hasNextPage = false;
+            } else {
+                console.log(`    Found ${pageItems.length} items.`);
+                let newItemsCount = 0;
+                for (const item of pageItems) {
+                    if (!seenTitles.has(item.title)) {
+                        seenTitles.add(item.title);
+                        pendingItems.push(item);
+                        newItemsCount++;
+                    }
+                }
+                if (newItemsCount === 0 && pageItems.length > 0) {
+                    // If we found items but all are duplicates, we might be looping.
+                    // But assume deep scrape is okay for now.
+                }
+                currentPage++;
             }
+
+        } catch (error) {
+            console.error(`    Error on page ${currentPage}: ${error}`);
+            hasNextPage = false;
         }
     }
 

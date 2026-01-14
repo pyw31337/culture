@@ -393,13 +393,13 @@ export default function HeroSection({
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
                             className="text-white light:text-black border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
                         >
-                            {(activeLocation && selectedRegion === 'all' && selectedVenue === 'all')
-                                ? (searchLocation ? searchLocation.name : (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)'))
-                                : (
-                                    (selectedRegion !== 'all' || selectedVenue !== 'all')
-                                        ? `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
-                                        : '전체 지역'
-                                )
+                            {(selectedRegion === 'all' && selectedVenue === 'all')
+                                ? (searchLocation?.name
+                                    ? searchLocation.name
+                                    : (activeLocation
+                                        ? (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)')
+                                        : '전체 지역'))
+                                : `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
                             }
                         </span>
 
