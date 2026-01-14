@@ -20,4 +20,9 @@ export type Performance = {
     awayTeam?: string;
     homeTeamLogo?: string;
     awayTeamLogo?: string;
+    runningTime?: string;
+    ageRating?: string;
+    originalTitle?: string;
+    productionCountry?: string;
+    productionYear?: string;
 };

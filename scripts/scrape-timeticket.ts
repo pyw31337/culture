@@ -18,7 +18,7 @@ export interface Performance {
     originalPrice: string;
     discount: string;
     runningTime: string;
-    ageLimit: string;
+    ageRating: string;
     casting: string;
     address?: string;
 }
@@ -444,7 +444,7 @@ async function scrapeTimeTicket() {
 
                 return {
                     runningTime,
-                    ageLimit,
+                    ageRating: ageLimit, // Map to ageRating for consistency
                     date: date || 'OPEN RUN',
                     venue,
                     originalPrice,
@@ -452,6 +452,18 @@ async function scrapeTimeTicket() {
                     address,
                 };
             });
+
+            // HOT DEAL VALIDATION:
+            // User requirement: "Hot deal is not a hot deal if there is no discount rate."
+            // We filter out items with no discount or 0% discount.
+            const hasDiscount = item.discount && item.discount !== '' && item.discount !== '0%';
+
+            if (!hasDiscount) {
+                // console.log(`Skipping ${item.title} - No discount (Not a Hot Deal)`);
+                processedCount++;
+                progressBar.update(processedCount);
+                continue;
+            }
 
             // Use LIST image strictly as requested by user (thist is more reliable correctly)
             const finalImage = item.image;
@@ -469,7 +481,7 @@ async function scrapeTimeTicket() {
                 originalPrice: detailData.originalPrice || '', // Prefer detail origin price, do not fallback to discounted price
                 discount: item.discount,
                 runningTime: detailData.runningTime,
-                ageLimit: detailData.ageLimit,
+                ageRating: detailData.ageRating,
                 casting: '',
                 address: detailData.address
             });
