@@ -135,16 +135,16 @@ async function scrapeKBO() {
 
     // Team Logo Map (Extracted from Probe)
     const TEAM_LOGOS: Record<string, string> = {
-        "LG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_LG.png",
-        "한화": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_HH.png",
-        "SSG": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_SK.png",
-        "삼성": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_SS.png",
-        "NC": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_NC.png",
-        "KT": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_KT.png",
-        "롯데": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_LT.png",
-        "KIA": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_HT.png",
-        "두산": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_OB.png",
-        "키움": "https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/emblem/regular/2026/initial_WO.png"
+        "LG": "https://i.namu.wiki/i/V1_M2KFcbdnu91BOaj4FMm50BFbDmTZCmI2JP-sZmAAsCTlt9O4LGPM3BMN-T8lfRhwlHLYZEBWxf7HOIraAD5H7UR8AMQ1NjUg2VxogFYZ20JQLEk7NMo4DhZO9VvsC68Ox8Ayt-6_zem_y7TPJaA.svg",
+        "한화": "https://i.namu.wiki/i/tmiT0Z6d_oyD7qfRU4xVwst4cqE-4m618Yyyx5SCNRMJY29tK9mAgkLHLOwRJxus2qi59Ev1AtWI8ZUsHOwWoQ.svg",
+        "SSG": "https://i.namu.wiki/i/KL91ZG75SuPcqHtfJ_u1gBHFVtTUvmzgBL5D8vuRou7QDMFrKFK7INGSYQY9VwKyKEmYlnHfwz1f3surtIPRDshGS20PKwDgaVUzEs6-CjeOcMl6FR3xwtjrMx3jNir0P62Z9pZCYetFrSC4_KtcJg.svg",
+        "삼성": "https://i.namu.wiki/i/5w4kt1MLsKsEJFzyUViJp8QSvj-tOSUHjnYy461G8g7aAXsCn6ZJLm13riwrTO30ehNvTdwENrRwPyiyyOOkYfx1-pu0L4zN2oY_2KrteMMCehxDvDMgG9-guNFhWAfqlnlZ1g4ldgWm-90iueCnxQ.svg",
+        "NC": "https://i.namu.wiki/i/DO4XVgl0nXy35vg5A8BrJkuzR-MN27Ug7u_GEz5WIGDIjqq8wmlrswygiiI-OBzK-GsGxZxQ4lOMnbZIqPsCnmX97YIKhxj4wsqTqWfOQQdNSA5j2x0Tm8Ia1bR35o4rGhNXMac13ZWWqHHSk5w_3g.svg",
+        "KT": "https://i.namu.wiki/i/uinN8tqsN8QaP4xurP7fATaqWX8IoBfVZiCGNylD7PNpZgv1PMzry6w3LQ1-Uc94smAtxzzD7PSEIKhlXE6i0g.svg",
+        "롯데": "https://i.namu.wiki/i/AsXhmq9w1I1Q1wP9GVlDZxrzubrW3W4zkf56ZpfuMW5hQAXd_8SuyxaKdVw2LVgLXRb2tl28QoMye6HZfoKX0znooyb8-ei0pQ4niEqnwRA-qL2dh1Z-OzzrcgiPtGxcWDjHoFHmZUQRgSvQs_KbrA.svg",
+        "KIA": "https://i.namu.wiki/i/518CZu9BmSdzON-SYVGRFdOMS3sIk1-9MeGZU2XepH3tdAf0-20tS4X2JM1RWCH0Dv-4fXKHdzztmazY0ft2ENai1OXNTcSvrTehlbnN7Msk96FYU5XOYGqb-UA6YSFZrHyk7kR9uLn7sQITe_6BhQ.svg",
+        "두산": "https://i.namu.wiki/i/2SADa39ykHjGkNtbN4kcr3elMjjtMBL_8YslwH-Tl9B4QxiTZ5oiein44Y8h94tbpZkApxRAtGuE_M-D8psyiep_-MIqg00EV4g6jQMOo4zmVUhbENSbzo8IpW9sZv1gVvABH5W2j5ud0OimM1kKFQ.svg",
+        "키움": "https://i.namu.wiki/i/1OPD7zvQ6rLpMk2Cba0zLDpwhUh1Hs83LhzwCc2uSIta7C76nGaJ0ISFybC4DUEozVK-T-MzjwIQitrguaoP5g4_P37znjdqMdlY9tGECm74vA5FnQ3kjfNId80zi9kQO9X87WeVg-nGZFPZl4BFqw.svg"
     };
 
     // Futures League Team Logos (emblemF versions)
