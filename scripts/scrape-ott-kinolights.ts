@@ -204,7 +204,9 @@ async function scrapeList(page: any, url: string): Promise<OTTItemRaw[]> {
         date: normalizeDate(item.dateRaw),
         platform: mapPlatform(item.platformClass) || 'other',
         poster: item.poster,
-        grade: item.grade
+        grade: item.grade,
+        platformClass: item.platformClass,
+        dateRaw: item.dateRaw
     }));
 }
 
