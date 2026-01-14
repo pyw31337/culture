@@ -43,7 +43,9 @@
     "productionCountry": "한국",
     "productionYear": "2022",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "title": "혼자는 못 해",
@@ -85,7 +87,16 @@
     "link": "https://m.kinolights.com/title/148817",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_신의손_2026-01-13_tving",
@@ -99,7 +110,16 @@
     "link": "https://m.kinolights.com/title/148875",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_메간_20_2026-01-13_coupang",
@@ -113,7 +133,16 @@
     "link": "https://m.kinolights.com/title/118363",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_담뽀뽀_2026-01-13_coupang",
@@ -128,7 +157,16 @@
     "link": "https://m.kinolights.com/title/13854",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_매직_로드_2026-01-13_coupang",
@@ -143,7 +181,16 @@
     "link": "https://m.kinolights.com/title/97096",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_위니_2026-01-13_coupang",
@@ -158,7 +205,16 @@
     "link": "https://m.kinolights.com/title/122012",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_더_피트_시즌_2_2026-01-13_coupang",
@@ -172,7 +228,16 @@
     "link": "https://m.kinolights.com/title/149423",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_내게_거짓말을_해봐_시즌_3_2026-01-13_disney",
@@ -186,7 +251,16 @@
     "link": "https://m.kinolights.com/title/149383",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_정반대의_너와_나_2026-01-13_watcha",
@@ -200,7 +274,16 @@
     "link": "https://m.kinolights.com/title/147709",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_데드_어카운트_2026-01-13_watcha",
@@ -214,7 +297,16 @@
     "link": "https://m.kinolights.com/title/147674",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_경제사모임_2026-01-13_watcha",
@@ -228,7 +320,16 @@
     "link": "https://m.kinolights.com/title/149403",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_영생인_2026-01-13_watcha",
@@ -242,7 +343,16 @@
     "link": "https://m.kinolights.com/title/123841",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_고스트라이트_2026-01-13_watcha",
@@ -256,7 +366,16 @@
     "link": "https://m.kinolights.com/title/129760",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_금월령_2026-01-13_watcha",
@@ -270,7 +389,16 @@
     "link": "https://m.kinolights.com/title/148598",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_헬_모드_파고들기_좋아하는_게이머는_폐급_설정_이세계에서_무쌍한다_2026-01-13_watcha",
@@ -285,7 +413,16 @@
     "link": "https://m.kinolights.com/title/147940",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_레전드_오브_갱스터_2026-01-13_watcha",
@@ -299,7 +436,16 @@
     "link": "https://m.kinolights.com/title/101416",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_걸작_2026-01-13_watcha",
@@ -313,7 +459,16 @@
     "link": "https://m.kinolights.com/title/74293",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_후계자_2026-01-13_apple",
@@ -326,7 +481,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202406/13/bc0a208e-be31-40d9-a391-91dde14bfd99.webp",
     "link": "https://m.kinolights.com/title/122985",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_봉황무쌍_천루의_전설_2026-01-13_uplus",
@@ -340,7 +505,16 @@
     "link": "https://m.kinolights.com/title/90773",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_탐욕에_눈먼_자들_2026-01-13_uplus",
@@ -354,7 +528,16 @@
     "link": "https://m.kinolights.com/title/144618",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_천국은_없다_2026-01-13_uplus",
@@ -368,7 +551,16 @@
     "link": "https://m.kinolights.com/title/135154",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_악의_도시_2026-01-13_uplus",
@@ -382,7 +574,16 @@
     "link": "https://m.kinolights.com/title/143335",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아내의_외출_2026-01-13_uplus",
@@ -396,7 +597,16 @@
     "link": "https://m.kinolights.com/title/144619",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_랜드맨_2026-01-12_netflix",
@@ -409,7 +619,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202504/17/42d5eff9-791e-4d16-8841-0c1c8d2db987.webp",
     "link": "https://m.kinolights.com/title/142806",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_첫입에_반하다_2026-01-12_netflix",
@@ -422,7 +642,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/23/2875c1d7-8f07-4775-8f49-6fd95148e8d0.webp",
     "link": "https://m.kinolights.com/title/149008",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_기묘한_이야기_5_메이킹_마지막_모험_2026-01-12_netflix",
@@ -435,7 +665,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/08/32328db5-1f32-4b67-9e9b-1dbab43180fa.webp",
     "link": "https://m.kinolights.com/title/149359",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_지옥락_2기_2026-01-12_netflix",
@@ -448,7 +688,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202503/04/e25b5734-6429-4ff5-a3e4-3054ed15fcf9.webp",
     "link": "https://m.kinolights.com/title/124822",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_트라이건_스타게이즈_2026-01-12_tving",
@@ -462,7 +712,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/13/309f35fb-1476-48e8-932f-e0797f910f06.webp",
     "link": "https://m.kinolights.com/title/147939",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_야구기인_임찬규_2026-01-12_tving",
@@ -475,7 +735,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/23/d7b342db-bc30-49b5-a146-df9f127239a9.webp",
     "link": "https://m.kinolights.com/title/149042",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_카야는_무섭지_않아_2026-01-12_tving",
@@ -490,7 +760,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202511/18/a6dd4303-a125-4b46-83a6-3d26a8f0e75c.webp",
     "link": "https://m.kinolights.com/title/147937",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_정반대의_너와_나_2026-01-12_tving",
@@ -530,7 +810,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/1116cec9-733b-4bc9-b7d7-b4a5cecb3f7e.webp",
     "link": "https://m.kinolights.com/title/149400",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_2026_호주_오픈_2026-01-12_tving",
@@ -543,7 +833,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/08/90817e94-a9cb-4726-bcd6-ac08cba4fa97.webp",
     "link": "https://m.kinolights.com/title/149343",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_채널A_특별기획_영양_배달부_알부민을_지켜라_2026-01-12_tving",
@@ -556,7 +856,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/b3ad4fb7-2904-4ca7-906b-62cc14533264.webp",
     "link": "https://m.kinolights.com/title/149402",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_오은영_리포트_결혼_지옥_2026-01-12_tving",
@@ -569,7 +879,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/bfad9693-db8a-4b31-959c-bc51425273e7.webp",
     "link": "https://m.kinolights.com/title/105678",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_탐사기획_스트레이트_2026-01-12_tving",
@@ -582,7 +902,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/82930e56-bdbc-4f88-aa6f-9a0dbb58fe6c.webp",
     "link": "https://m.kinolights.com/title/94464",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사운드_오브_폴링_2026-01-12_coupang",
@@ -596,7 +926,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202511/17/07455c6d-3468-449b-8643-0d2248cd0352.webp",
     "link": "https://m.kinolights.com/title/142679",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_영생인_2026-01-12_coupang",
@@ -624,7 +964,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/8cb7b96a-0732-4c4b-b2e7-e5baaa97447f.webp",
     "link": "https://m.kinolights.com/title/149399",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_금월령_2026-01-12_wavve",
@@ -650,7 +1000,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/e7d04412-54cd-4a56-ada2-686dd30dcffe.webp",
     "link": "https://m.kinolights.com/title/147941",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_노맨스랜드_2026-01-12_watcha",
@@ -663,7 +1023,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/31/39f6e465-9fe1-413a-8775-0e2458a83c45.webp",
     "link": "https://m.kinolights.com/title/149184",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아직_지나지_않은_여름_2026-01-12_watcha",
@@ -676,7 +1046,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/1e38894f-a6ae-469a-bbff-4dbbc80a660e.webp",
     "link": "https://m.kinolights.com/title/78378",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_외계침공_2026-01-12_watcha",
@@ -689,7 +1069,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202501/08/49a335d2-2569-4f8f-bd6e-489cbf5cc02a.webp",
     "link": "https://m.kinolights.com/title/87238",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_야당_2026-01-12_mobiletv",
@@ -702,7 +1092,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202504/02/2860d716-33d8-4f9a-b499-23b34023f7ca.webp",
     "link": "https://m.kinolights.com/title/123772",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_쉬리_2026-01-12_mobiletv",
@@ -715,7 +1115,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/0a7056c5-bee5-49e1-90c2-8a718427db01.webp",
     "link": "https://m.kinolights.com/title/8388",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_구원자_2026-01-12_mobiletv",
@@ -728,7 +1138,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202509/30/5380b636-16ec-4bd9-8535-260d047f528c.webp",
     "link": "https://m.kinolights.com/title/141907",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_고스트라이트_2026-01-12_mobiletv",
@@ -754,7 +1174,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202503/26/a4708ecb-8071-4936-872a-5524157db91c.webp",
     "link": "https://m.kinolights.com/title/139325",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_엔시티_드림_미스터리_랩_드림_이스케이프_인_시네마_2026-01-12_mobiletv",
@@ -767,7 +1197,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202411/22/014ca749-f4f0-4946-b575-de01d66199b7.webp",
     "link": "https://m.kinolights.com/title/138840",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_미이라_귀문관의_전설_2026-01-12_mobiletv",
@@ -780,7 +1220,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202507/25/32b2ec14-4fa7-4182-8b6e-82a39d6415e3.webp",
     "link": "https://m.kinolights.com/title/145281",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_금도무쌍_2026-01-12_mobiletv",
@@ -793,7 +1243,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202507/08/942cffbb-8da7-4899-bdaa-d79d8d5dc4a5.webp",
     "link": "https://m.kinolights.com/title/144728",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_수연의_선율_2026-01-12_mobiletv",
@@ -806,7 +1266,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202507/14/dd80f7ac-08a7-4906-ba2f-2f1f7734a6a3.webp",
     "link": "https://m.kinolights.com/title/137155",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_SBS_아트멘터리_이상한데_좋은_2026-01-12_mobiletv",
@@ -819,7 +1289,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/897c4f9d-6a86-4caa-a84d-d02315daa954.webp",
     "link": "https://m.kinolights.com/title/149413",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_태용_티와이_트랙_인_시네마_2026-01-12_mobiletv",
@@ -832,7 +1312,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202409/23/18c45cf0-eeb4-441a-8cf6-1482265d375f.webp",
     "link": "https://m.kinolights.com/title/137417",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_내_아내의_여자_2026-01-12_mobiletv",
@@ -845,7 +1335,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202508/25/a67db847-040a-4a30-a2b7-cb08858403aa.webp",
     "link": "https://m.kinolights.com/title/146185",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_촉산전기_2_2026-01-12_mobiletv",
@@ -858,7 +1358,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/bfe966a1-2045-4a05-ac96-c0213b39e5d1.webp",
     "link": "https://m.kinolights.com/title/90633",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_DARK_MOON_달의_제단_2026-01-11_wavve",
@@ -901,7 +1411,16 @@
     "link": "https://m.kinolights.com/title/149410",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_캐리와_장난감_친구들_숨바꼭질_2024_크리스마스_특집_2026-01-11_wavve",
@@ -915,7 +1434,16 @@
     "link": "https://m.kinolights.com/title/149409",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_달려라_캐리_2024_크리스마스_특집_2026-01-11_wavve",
@@ -929,7 +1457,16 @@
     "link": "https://m.kinolights.com/title/149406",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_트라이건_스타게이즈_2026-01-11_laftel",
@@ -957,7 +1494,16 @@
     "link": "https://m.kinolights.com/title/147672",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_데드_어카운트_2026-01-11_laftel",
@@ -985,7 +1531,16 @@
     "link": "https://m.kinolights.com/title/147935",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_콘크리트_마켓_2026-01-11_apple",
@@ -999,7 +1554,16 @@
     "link": "https://m.kinolights.com/title/116424",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_당신이_아픈_사이_2026-01-11_uplus",
@@ -1041,7 +1605,16 @@
     "link": "https://m.kinolights.com/title/149411",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_주술회전_사멸회유_전편_2026-01-10_tving",
@@ -1055,7 +1628,16 @@
     "link": "https://m.kinolights.com/title/140756",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_서투른_짝사랑들_2026-01-10_tving",
@@ -1069,7 +1651,16 @@
     "link": "https://m.kinolights.com/title/148378",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사망_유희로_밥을_먹는다_2026-01-10_tving",
@@ -1083,7 +1674,16 @@
     "link": "https://m.kinolights.com/title/147876",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_셰프와_사냥꾼_2026-01-10_tving",
@@ -1097,7 +1697,16 @@
     "link": "https://m.kinolights.com/title/149355",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_검은뱀_2026-01-10_tving",
@@ -1111,7 +1720,16 @@
     "link": "https://m.kinolights.com/title/146857",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_DARK_MOON_달의_제단_2026-01-10_tving",
@@ -1140,7 +1758,16 @@
     "link": "https://m.kinolights.com/title/147659",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_콜걸의_인생_2026-01-10_tving",
@@ -1154,7 +1781,16 @@
     "link": "https://m.kinolights.com/title/135221",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_섹스_인_더_트럭_2026-01-10_tving",
@@ -1168,7 +1804,16 @@
     "link": "https://m.kinolights.com/title/147576",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_터치_오브_헤븐_2026-01-10_tving",
@@ -1182,7 +1827,16 @@
     "link": "https://m.kinolights.com/title/78942",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_봉황무쌍_천루의_전설_2026-01-10_tving",
@@ -1211,7 +1865,16 @@
     "link": "https://m.kinolights.com/title/147637",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_혈검록_2026-01-10_tving",
@@ -1225,7 +1888,16 @@
     "link": "https://m.kinolights.com/title/147730",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_어페어_2026-01-10_tving",
@@ -1239,7 +1911,16 @@
     "link": "https://m.kinolights.com/title/77932",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_어차피_사랑하고_만다_시즌_2_2026-01-10_tving",
@@ -1253,7 +1934,16 @@
     "link": "https://m.kinolights.com/title/147915",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아르네의_사건부_2026-01-10_tving",
@@ -1267,7 +1957,16 @@
     "link": "https://m.kinolights.com/title/147633",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_악어섬_포식자의_늪_2026-01-10_tving",
@@ -1281,7 +1980,16 @@
     "link": "https://m.kinolights.com/title/147515",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_강연배틀쇼_사기꾼들_2026-01-10_tving",
@@ -1296,7 +2004,16 @@
     "link": "https://m.kinolights.com/title/149375",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_현대카드_슈퍼매치_14_야닉_시너_VS_카를로스_알카라스_2026-01-10_tving",
@@ -1310,7 +2027,16 @@
     "link": "https://m.kinolights.com/title/149183",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_당근과_캐롯_시즌_8_2026-01-10_wavve",
@@ -1324,7 +2050,16 @@
     "link": "https://m.kinolights.com/title/149412",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_노맨스랜드_2026-01-10_watcha",
@@ -1352,7 +2087,16 @@
     "link": "https://m.kinolights.com/title/29030",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_변금련_2026-01-10_watcha",
@@ -1366,7 +2110,16 @@
     "link": "https://m.kinolights.com/title/48017",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_닌자정사_2026-01-10_watcha",
@@ -1380,7 +2133,16 @@
     "link": "https://m.kinolights.com/title/34249",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_악인들_지옥전선_2026-01-10_watcha",
@@ -1394,7 +2156,16 @@
     "link": "https://m.kinolights.com/title/149379",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_패니_힐_2026-01-10_watcha",
@@ -1408,7 +2179,16 @@
     "link": "https://m.kinolights.com/title/114516",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_은밀한_교육_2026-01-10_watcha",
@@ -1422,7 +2202,16 @@
     "link": "https://m.kinolights.com/title/27221",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_변금련_2_2026-01-10_watcha",
@@ -1436,7 +2225,16 @@
     "link": "https://m.kinolights.com/title/47031",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_리턴_2차_세계대전_2026-01-10_watcha",
@@ -1450,7 +2248,16 @@
     "link": "https://m.kinolights.com/title/115002",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_불사조_봉황정령의_부활_2026-01-10_watcha",
@@ -1464,7 +2271,16 @@
     "link": "https://m.kinolights.com/title/147561",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_히든_에셋_시즌_3_2026-01-10_watcha",
@@ -1478,7 +2294,16 @@
     "link": "https://m.kinolights.com/title/149201",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_다리_밑_도영_2026-01-10_watcha",
@@ -1492,7 +2317,16 @@
     "link": "https://m.kinolights.com/title/136630",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_봉신연의_뇌진자_2026-01-10_watcha",
@@ -1506,7 +2340,16 @@
     "link": "https://m.kinolights.com/title/149378",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_래브라도_경장_안전_지킴이_2026-01-10_watcha",
@@ -1520,7 +2363,16 @@
     "link": "https://m.kinolights.com/title/149371",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_히스토리야_시즌_5_2026-01-10_watcha",
@@ -1534,7 +2386,16 @@
     "link": "https://m.kinolights.com/title/149418",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_이스트_오브_더_마운틴스_2026-01-10_watcha",
@@ -1548,7 +2409,16 @@
     "link": "https://m.kinolights.com/title/115176",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_당신이_있는_그곳_오페라_하우스_시즌_3_2026-01-10_watcha",
@@ -1562,7 +2432,16 @@
     "link": "https://m.kinolights.com/title/149417",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_티라노가_온다_2026-01-10_watcha",
@@ -1599,7 +2478,16 @@
     "link": "https://m.kinolights.com/title/149407",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_너_따위가_마왕을_이길_수_있다고_생각하지_마라며_용사_파티에서_추방되었으니_왕도에서_멋대_2026-01-10_laftel",
@@ -1613,7 +2501,16 @@
     "link": "https://m.kinolights.com/title/143148",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_에리스의_성배_2026-01-10_laftel",
@@ -1627,7 +2524,16 @@
     "link": "https://m.kinolights.com/title/149310",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_정보원_2026-01-10_apple",
@@ -1641,7 +2547,16 @@
     "link": "https://m.kinolights.com/title/146124",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "우리의 열 번째 여름",
@@ -1684,7 +2599,16 @@
     "link": "https://m.kinolights.com/title/45363",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_파브리치오_코로나_파파라치_킹_2026-01-09_netflix",
@@ -1698,7 +2622,16 @@
     "link": "https://m.kinolights.com/title/149115",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_가필드_2026-01-09_netflix",
@@ -1712,7 +2645,16 @@
     "link": "https://m.kinolights.com/title/42055",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "요즘 남자들 시즌 4",
@@ -1755,7 +2697,16 @@
     "link": "https://m.kinolights.com/title/28038",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_가필드_2_2026-01-09_netflix",
@@ -1769,7 +2720,16 @@
     "link": "https://m.kinolights.com/title/31900",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_노미오와_줄리엣_2026-01-09_netflix",
@@ -1783,7 +2743,16 @@
     "link": "https://m.kinolights.com/title/49977",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_데저트_이스케이프_2026-01-09_tving",
@@ -1799,7 +2768,16 @@
     "link": "https://m.kinolights.com/title/147703",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_귀족_전생_축복받은_태생으로_최강의_힘을_손에_넣다_2026-01-09_tving",
@@ -1814,7 +2792,16 @@
     "link": "https://m.kinolights.com/title/147827",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_하우스_시즌_3_2026-01-09_coupang",
@@ -1828,7 +2815,16 @@
     "link": "https://m.kinolights.com/title/88664",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_악인들_지옥전선_2026-01-09_coupang",
@@ -1919,7 +2915,16 @@
     "link": "https://m.kinolights.com/title/142777",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_신세기_에반게리온_2026-01-09_wavve",
@@ -1933,7 +2938,16 @@
     "link": "https://m.kinolights.com/title/83607",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_셰프와_사냥꾼_2026-01-09_wavve",
@@ -1977,7 +2991,16 @@
     "link": "https://m.kinolights.com/title/123863",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_봉황무쌍_천루의_전설_2026-01-09_wavve",
@@ -2006,7 +3029,16 @@
     "link": "https://m.kinolights.com/title/103072",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_한밤중_하트튠_2026-01-09_wavve",
@@ -2020,7 +3052,16 @@
     "link": "https://m.kinolights.com/title/147631",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_셀럽_남자는_감당할_수_없어_2026-01-09_wavve",
@@ -2034,7 +3075,16 @@
     "link": "https://m.kinolights.com/title/130361",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_노_웨이_홈_2026-01-09_wavve",
@@ -2048,7 +3098,16 @@
     "link": "https://m.kinolights.com/title/131571",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_개와_늑대의_시간_시즌_2_2026-01-09_wavve",
@@ -2062,7 +3121,16 @@
     "link": "https://m.kinolights.com/title/149368",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_끝사랑_2026-01-09_wavve",
@@ -2076,7 +3144,16 @@
     "link": "https://m.kinolights.com/title/135669",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_47_미터_2_2026-01-09_wavve",
@@ -2090,7 +3167,16 @@
     "link": "https://m.kinolights.com/title/70804",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아는_외고_2026-01-09_wavve",
@@ -2133,7 +3219,16 @@
     "link": "https://m.kinolights.com/title/105778",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_더_파이팅_스페셜_챔피언_로드_2026-01-09_wavve",
@@ -2146,7 +3241,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202511/10/60f638f1-048e-4f6b-a285-490f141614c1.webp",
     "link": "https://m.kinolights.com/title/147747",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_노크_더_하우스_2026-01-09_wavve",
@@ -2159,7 +3264,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202309/05/66337e26-eb75-42b8-b4ad-67c93323681b.webp",
     "link": "https://m.kinolights.com/title/124665",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_잃어버린_지구_속으로_2026-01-09_wavve",
@@ -2196,7 +3311,16 @@
     "link": "https://m.kinolights.com/title/145497",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_손님_2026-01-09_watcha",
@@ -2210,7 +3334,16 @@
     "link": "https://m.kinolights.com/title/8372",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사망_유희로_밥을_먹는다_2026-01-09_watcha",
@@ -2271,7 +3404,16 @@
     "link": "https://m.kinolights.com/title/148964",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_섹스_인_더_트럭_2026-01-09_watcha",
@@ -2299,7 +3441,16 @@
     "link": "https://m.kinolights.com/title/11047",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_선녀단식원_2026-01-09_watcha",
@@ -2313,7 +3464,16 @@
     "link": "https://m.kinolights.com/title/149364",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_혈검록_2026-01-09_watcha",
@@ -2341,7 +3501,16 @@
     "link": "https://m.kinolights.com/title/105495",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_어차피_사랑하고_만다_시즌_2_2026-01-09_watcha",
@@ -2370,7 +3539,16 @@
     "link": "https://m.kinolights.com/title/148803",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사건_2026-01-09_watcha",
@@ -2384,7 +3562,16 @@
     "link": "https://m.kinolights.com/title/148900",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_60_오판대책실_2026-01-09_watcha",
@@ -2398,7 +3585,16 @@
     "link": "https://m.kinolights.com/title/148842",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_그림자도_없다_2026-01-09_watcha",
@@ -2412,7 +3608,16 @@
     "link": "https://m.kinolights.com/title/27214",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_삼합회_여보스의_귀환_2026-01-09_watcha",
@@ -2469,7 +3674,16 @@
     "link": "https://m.kinolights.com/title/32484",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_카쿠리요의_여관밥_2026-01-09_laftel",
@@ -2483,7 +3697,16 @@
     "link": "https://m.kinolights.com/title/99938",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_온화한_귀족의_휴가의_권장_2026-01-09_laftel",
@@ -2497,7 +3720,16 @@
     "link": "https://m.kinolights.com/title/147917",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_테헤란_시즌_3_2026-01-09_apple",
@@ -2511,7 +3743,16 @@
     "link": "https://m.kinolights.com/title/149395",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_미나리_2026-01-09_apple",
@@ -2525,7 +3766,16 @@
     "link": "https://m.kinolights.com/title/76584",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_퀴즈왕_2026-01-09_apple",
@@ -2539,7 +3789,16 @@
     "link": "https://m.kinolights.com/title/13362",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_S파트너_2026-01-09_uplus",
@@ -2553,7 +3812,16 @@
     "link": "https://m.kinolights.com/title/144568",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_강연배틀쇼_사기꾼들_2026-01-09_uplus",
@@ -2581,7 +3849,16 @@
     "link": "https://m.kinolights.com/title/141137",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_킬러는_메이드사마_에브리데이_2026-01-09_uplus",
@@ -2595,7 +3872,16 @@
     "link": "https://m.kinolights.com/title/138705",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사랑_기억_그리고_향기_2026-01-09_uplus",
@@ -2609,7 +3895,16 @@
     "link": "https://m.kinolights.com/title/144582",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_그_사람은_아내가_있습니다_2026-01-09_uplus",
@@ -2623,7 +3918,16 @@
     "link": "https://m.kinolights.com/title/145041",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_Qros의_여자_특종이라는_이름의_광기_2026-01-09_uplus",
@@ -2637,7 +3941,16 @@
     "link": "https://m.kinolights.com/title/149408",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_69_도시남녀의_속사정_2026-01-09_uplus",
@@ -2651,7 +3964,16 @@
     "link": "https://m.kinolights.com/title/149405",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_가시나무새_2026-01-09_uplus",
@@ -2679,7 +4001,16 @@
     "link": "https://m.kinolights.com/title/148866",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_사망_유희로_밥을_먹는다_2026-01-08_netflix",
@@ -2721,7 +4052,16 @@
     "link": "https://m.kinolights.com/title/147873",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_개와_늑대의_시간_시즌_2_2026-01-08_netflix",
@@ -2765,7 +4105,16 @@
     "link": "https://m.kinolights.com/title/149274",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "차가네",
@@ -2823,7 +4172,16 @@
     "link": "https://m.kinolights.com/title/149320",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_더_파이팅_스페셜_챔피언_로드_2026-01-08_tving",
@@ -2866,7 +4224,16 @@
     "link": "https://m.kinolights.com/title/87759",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_소문_2026-01-08_tving",
@@ -2880,7 +4247,16 @@
     "link": "https://m.kinolights.com/title/149352",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_우리가_함께한_시간_2026-01-08_tving",
@@ -2894,7 +4270,16 @@
     "link": "https://m.kinolights.com/title/149345",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_미스트롯4_미공개_스페셜_2026-01-08_tving",
@@ -2909,7 +4294,16 @@
     "link": "https://m.kinolights.com/title/149322",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_글을_적다_2026-01-08_tving",
@@ -2923,7 +4317,16 @@
     "link": "https://m.kinolights.com/title/149351",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_양해부탁드립니다_2026-01-08_tving",
@@ -2937,7 +4340,16 @@
     "link": "https://m.kinolights.com/title/149347",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_여행길_2026-01-08_tving",
@@ -2951,7 +4363,16 @@
     "link": "https://m.kinolights.com/title/149350",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_12평_원룸_2026-01-08_tving",
@@ -2965,7 +4386,16 @@
     "link": "https://m.kinolights.com/title/149348",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_주니토니_지식_돋보기_공룡_친구들_영어_2026-01-08_tving",
@@ -2979,7 +4409,16 @@
     "link": "https://m.kinolights.com/title/116362",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_래브라도_경장_안전_지킴이_2026-01-08_tving",
@@ -3008,7 +4447,16 @@
     "link": "https://m.kinolights.com/title/94463",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_100분_토론_2026-01-08_tving",
@@ -3022,7 +4470,16 @@
     "link": "https://m.kinolights.com/title/108554",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_시수_복수의_길_2026-01-08_coupang",
@@ -3067,7 +4524,16 @@
     "link": "https://m.kinolights.com/title/149376",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_얼리맨_2026-01-08_coupang",
@@ -3081,7 +4547,16 @@
     "link": "https://m.kinolights.com/title/63011",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_판타지아_2026-01-08_coupang",
@@ -3095,7 +4570,16 @@
     "link": "https://m.kinolights.com/title/60779",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_부르고뉴_와인에서_찾은_인생_2026-01-08_coupang",
@@ -3109,7 +4593,16 @@
     "link": "https://m.kinolights.com/title/62791",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_싱잉_인_마이_슬립_2026-01-08_coupang",
@@ -3124,7 +4617,16 @@
     "link": "https://m.kinolights.com/title/149362",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_콘크리트_마켓_2026-01-08_watcha",
@@ -3152,7 +4654,16 @@
     "link": "https://m.kinolights.com/title/147869",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_타몬_군_지금_어느_쪽_2026-01-08_watcha",
@@ -3166,7 +4677,16 @@
     "link": "https://m.kinolights.com/title/147938",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_적인걸_궤진유혼_2026-01-08_watcha",
@@ -3180,7 +4700,16 @@
     "link": "https://m.kinolights.com/title/146326",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_신빨토크쇼_귀묘한_이야기_2_2026-01-08_watcha",
@@ -3194,7 +4723,16 @@
     "link": "https://m.kinolights.com/title/149324",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_미씽_시그널_2026-01-08_watcha",
@@ -3208,7 +4746,16 @@
     "link": "https://m.kinolights.com/title/149318",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_특촬_희극_오키_유조_인생_최대의_결전_2026-01-08_watcha",
@@ -3222,7 +4769,16 @@
     "link": "https://m.kinolights.com/title/149317",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_용사_파티에_귀여운_애가_있어서_고백해봤다_2026-01-08_watcha",
@@ -3236,7 +4792,16 @@
     "link": "https://m.kinolights.com/title/147629",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_귀족_전생_축복받은_태생으로_최강의_힘을_손에_넣다_2026-01-08_laftel",
@@ -3264,7 +4829,16 @@
     "link": "https://m.kinolights.com/title/98659",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_무사태평_영주의_즐거운_영지_방어_생산계_마술로_이름도_없는_마을을_최강의_성채_도시로_2026-01-08_laftel",
@@ -3278,7 +4852,16 @@
     "link": "https://m.kinolights.com/title/147872",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_고당도_2026-01-08_apple",
@@ -3292,7 +4875,16 @@
     "link": "https://m.kinolights.com/title/147847",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_동의_2026-01-08_uplus",
@@ -3306,7 +4898,16 @@
     "link": "https://m.kinolights.com/title/135121",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_지구_종말_VS_사랑_2026-01-08_uplus",
@@ -3334,7 +4935,16 @@
     "link": "https://m.kinolights.com/title/106080",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아야카는_히로코_선배를_사랑하고_있다_2026-01-08_uplus",
@@ -3348,7 +4958,16 @@
     "link": "https://m.kinolights.com/title/135427",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_풀_2026-01-08_uplus",
@@ -3362,7 +4981,16 @@
     "link": "https://m.kinolights.com/title/138229",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_수학영재_형주_2026-01-08_uplus",
@@ -3376,7 +5004,16 @@
     "link": "https://m.kinolights.com/title/132889",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_히트맨_라스트_미션_2026-01-08_uplus",
@@ -3390,7 +5027,16 @@
     "link": "https://m.kinolights.com/title/148284",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_영제적공주_2026-01-08_uplus",
@@ -3404,7 +5050,16 @@
     "link": "https://m.kinolights.com/title/103977",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_말하는_몸_2026-01-08_uplus",
@@ -3418,7 +5073,16 @@
     "link": "https://m.kinolights.com/title/149373",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_아마란스_가장_완벽한_낙원_2026-01-08_cinefox",
@@ -3432,7 +5096,16 @@
     "link": "https://m.kinolights.com/title/79537",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_카운티_라인_2026-01-08_cinefox",
@@ -3446,7 +5119,16 @@
     "link": "https://m.kinolights.com/title/79119",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_손님_2026-01-07_netflix",
@@ -6423,7 +8105,16 @@
     "link": "https://m.kinolights.com/title/149253",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_언젠가_무중력의_하늘에서_2026-01-05_uplus",
@@ -6693,7 +8384,16 @@
     "link": "https://m.kinolights.com/title/149242",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_타몬_군_지금_어느_쪽_2026-01-04_tving",
@@ -11035,7 +12735,16 @@
     "link": "https://m.kinolights.com/title/149204",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_클래시파이드_2026-01-01_tving",
@@ -14505,7 +16214,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202511/24/38cbb835-4c83-4ec5-898c-e5d359b9eb22.webp",
     "link": "https://m.kinolights.com/title/148115",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_최애의_아이_3기_목요일_netflix",
@@ -14520,7 +16239,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202410/07/11117c25-11d3-4d70-a1e9-fc64a4187c5c.webp",
     "link": "https://m.kinolights.com/title/137691",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_프리즘_윤무곡_목요일_netflix",
@@ -14533,7 +16262,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/01/4ebb6b14-5073-48f7-a308-2da11925f7e9.webp",
     "link": "https://m.kinolights.com/title/148365",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_이별도_사랑이라_목요일_netflix",
@@ -14546,7 +16285,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/16/0161ce99-5725-4f74-a656-44074f5f9304.webp",
     "link": "https://m.kinolights.com/title/148886",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_우리는_업쇼_패밀리_파트_7_목요일_netflix",
@@ -14559,7 +16308,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/08/e6c1ebc4-4e54-4803-bff3-a9617a5ecbc4.webp",
     "link": "https://m.kinolights.com/title/149360",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_우리는_업쇼_패밀리_파트_1_목요일_netflix",
@@ -14572,7 +16331,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202307/12/2e5c6e13-3afc-49dc-9519-b8bb7b653c5a.webp",
     "link": "https://m.kinolights.com/title/96408",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_쇼_미_더_머니_12_목요일_tving",
@@ -14585,7 +16354,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202601/12/adf6dcf2-89b6-4959-8611-f6bd0c029428.webp",
     "link": "https://m.kinolights.com/title/149398",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_익스트랙션_리벤지_목요일_coupang",
@@ -14598,7 +16377,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/11/7832ec3b-cf4a-42b5-8fe1-74e3ace4b973.webp",
     "link": "https://m.kinolights.com/title/148617",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_내게_너무_사랑스러운_그녀_목요일_coupang",
@@ -14611,7 +16400,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202512/19/ab32b1ac-b899-415b-b641-e78253cf5a0c.webp",
     "link": "https://m.kinolights.com/title/148957",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_밀리_바닐리_희대의_립싱크_사기_사건_목요일_coupang",
@@ -14624,7 +16423,17 @@
     "image": "https://file.kinolights.com/m/content_poster/202511/12/6352fd62-5326-446b-9099-4bcd1adf9c0f.webp",
     "link": "https://m.kinolights.com/title/147801",
     "genre": "ott",
-    "region": "all"
+    "region": "all",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_이_사랑_통역_되나요_금요일_netflix",
@@ -14638,7 +16447,16 @@
     "link": "https://m.kinolights.com/title/133909",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_오늘부터_인간입니다만_금요일_netflix",
@@ -14652,7 +16470,16 @@
     "link": "https://m.kinolights.com/title/138833",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_더_립_금요일_netflix",
@@ -14666,7 +16493,16 @@
     "link": "https://m.kinolights.com/title/146951",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_소림축구_금요일_netflix",
@@ -14680,7 +16516,16 @@
     "link": "https://m.kinolights.com/title/45021",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_말리와_나_2_금요일_netflix",
@@ -14694,7 +16539,16 @@
     "link": "https://m.kinolights.com/title/149361",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_마술_아카데미_금요일_netflix",
@@ -14708,7 +16562,16 @@
     "link": "https://m.kinolights.com/title/84308",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_여름날_우리_금요일_watcha",
@@ -14722,7 +16585,16 @@
     "link": "https://m.kinolights.com/title/98028",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_레이니_데이_인_뉴욕_금요일_watcha",
@@ -14736,7 +16608,16 @@
     "link": "https://m.kinolights.com/title/68269",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_존_윅_3_파라벨룸_금요일_watcha",
@@ -14750,7 +16631,16 @@
     "link": "https://m.kinolights.com/title/69971",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_육사오_금요일_watcha",
@@ -14764,7 +16654,16 @@
     "link": "https://m.kinolights.com/title/106896",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_컴백홈_금요일_watcha",
@@ -14778,7 +16677,16 @@
     "link": "https://m.kinolights.com/title/112059",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_야노_군의_평범한_나날_금요일_watcha",
@@ -14792,7 +16700,16 @@
     "link": "https://m.kinolights.com/title/146239",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_제대로_빨지_못하는_흡혈귀_짱_금요일_watcha",
@@ -14806,7 +16723,16 @@
     "link": "https://m.kinolights.com/title/146304",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_둘이서_솔로_캠프_금요일_watcha",
@@ -14820,7 +16746,16 @@
     "link": "https://m.kinolights.com/title/141656",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_모브사이코_100_3기_금요일_watcha",
@@ -14834,7 +16769,16 @@
     "link": "https://m.kinolights.com/title/112663",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_무직의_영웅_스킬_따위는_별로_필요하지_않았다만_금요일_watcha",
@@ -14848,7 +16792,16 @@
     "link": "https://m.kinolights.com/title/146316",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_비탄의_망령은_은퇴하고_싶다_2쿨_금요일_watcha",
@@ -14862,7 +16815,16 @@
     "link": "https://m.kinolights.com/title/146314",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_언더커버_미쓰홍_토요일_netflix",
@@ -14877,7 +16839,16 @@
     "link": "https://m.kinolights.com/title/148864",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_어느_꼬인_날_토요일_netflix",
@@ -14891,7 +16862,16 @@
     "link": "https://m.kinolights.com/title/149346",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_장송의_프리렌_2기_2026-01-19_watcha",
@@ -14905,7 +16885,16 @@
     "link": "https://m.kinolights.com/title/147664",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_솔로지옥_5_2026-01-20_netflix",
@@ -14919,7 +16908,16 @@
     "link": "https://m.kinolights.com/title/141132",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_영화_코바야시네_메이드래곤_외로움쟁이_용_2026-01-21_netflix",
@@ -14933,7 +16931,16 @@
     "link": "https://m.kinolights.com/title/144797",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_퀴어_아이_시즌_10_2026-01-21_netflix",
@@ -14947,7 +16954,16 @@
     "link": "https://m.kinolights.com/title/149374",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_납치된_아이_엘리자베스_스마트_2026-01-21_netflix",
@@ -14961,7 +16977,16 @@
     "link": "https://m.kinolights.com/title/148869",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_스타_서치_2026-01-21_netflix",
@@ -14975,7 +17000,16 @@
     "link": "https://m.kinolights.com/title/148336",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_세븐킹덤의_기사_2026-01-21_coupang",
@@ -14989,7 +17023,16 @@
     "link": "https://m.kinolights.com/title/147107",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_킹_오브_킹스_2026-01-21_disney",
@@ -15003,7 +17046,16 @@
     "link": "https://m.kinolights.com/title/143095",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_초_가구야_공주_2026-01-22_netflix",
@@ -15017,7 +17069,16 @@
     "link": "https://m.kinolights.com/title/147702",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_버트에게_자유를_2026-01-22_netflix",
@@ -15031,7 +17092,16 @@
     "link": "https://m.kinolights.com/title/149117",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_잿더미_속에서_구덩이_2026-01-22_netflix",
@@ -15045,7 +17115,16 @@
     "link": "https://m.kinolights.com/title/149118",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_더_뷰티_2026-01-22_disney",
@@ -15059,7 +17138,16 @@
     "link": "https://m.kinolights.com/title/149277",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_빅_페이크_2026-01-23_netflix",
@@ -15073,7 +17161,16 @@
     "link": "https://m.kinolights.com/title/148512",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_콰이어트_플레이스_첫째_날_2026-01-24_netflix",
@@ -15087,7 +17184,16 @@
     "link": "https://m.kinolights.com/title/131217",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_메달리스트_2기_2026-01-25_disney",
@@ -15101,7 +17207,16 @@
     "link": "https://m.kinolights.com/title/147679",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_부고니아_2026-01-26_netflix",
@@ -15115,7 +17230,16 @@
     "link": "https://m.kinolights.com/title/134544",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_테이크_댓_2026-01-27_netflix",
@@ -15129,7 +17253,16 @@
     "link": "https://m.kinolights.com/title/149177",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_보스_2026-01-28_disney",
@@ -15143,7 +17276,16 @@
     "link": "https://m.kinolights.com/title/117036",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_어쩔수가없다_2026-01-29_netflix",
@@ -15157,7 +17299,16 @@
     "link": "https://m.kinolights.com/title/136358",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_브리저튼_시즌_4_파트_1_2026-01-29_netflix",
@@ -15171,7 +17322,16 @@
     "link": "https://m.kinolights.com/title/148112",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_내_젊은_날에_보내는_편지_2026-01-29_netflix",
@@ -15185,7 +17345,16 @@
     "link": "https://m.kinolights.com/title/149337",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_테러맨_2026-01-29_tving",
@@ -15199,7 +17368,16 @@
     "link": "https://m.kinolights.com/title/121324",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_미스_페레그린과_이상한_아이들의_집_2026-01-30_netflix",
@@ -15213,7 +17391,16 @@
     "link": "https://m.kinolights.com/title/6980",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_96분_2026-01-30_netflix",
@@ -15227,7 +17414,16 @@
     "link": "https://m.kinolights.com/title/144128",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "헬 모드 ~파고들기 좋아하는 게이머는 폐급 설정 이세계에서 무쌍한다~",
@@ -15394,7 +17590,9 @@
       "야닉 시너",
       "카를로스 알카라스"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_경성유랑극단",
@@ -15418,7 +17616,9 @@
     "cast": [
       "박도욱"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_비상계엄",
@@ -15442,7 +17642,9 @@
     "cast": [
       "안내상"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_터널",
@@ -15576,7 +17778,9 @@
       "이중옥",
       "박충선"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_잔챙이",
@@ -15602,7 +17806,9 @@
       "임채영",
       "허건영"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_생명의은인",
@@ -15628,7 +17834,9 @@
       "송선미",
       "허정도"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_태양의정복자메흐메드",
@@ -15764,7 +17972,9 @@
     "productionCountry": "인도",
     "productionYear": "2016",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_미쳤대도여자야구",
@@ -15845,7 +18055,9 @@
       "아미타브 밧찬",
       "파티마 사나 샤이크"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_파괴적사랑",
@@ -15867,7 +18079,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_카불익스프레스",
@@ -15889,7 +18103,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_둠",
@@ -15911,7 +18127,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_엑타타이거",
@@ -15933,7 +18151,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_타이거는살아있다",
@@ -15955,7 +18175,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_디텍티브브욤케쉬바쉬",
@@ -15977,7 +18199,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_파라다이스",
@@ -15999,7 +18223,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_로켓싱:세일즈맨오브더이어",
@@ -16021,7 +18247,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_베피크레",
@@ -16043,7 +18271,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_배드마쉬컴퍼니",
@@ -16065,7 +18295,9 @@
     "productionCountry": "",
     "productionYear": "",
     "cast": [],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260113_더킹덤",
@@ -16079,7 +18311,16 @@
     "link": "https://m.kinolights.com/title/149443",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_빌리브:더얼티밋배틀",
@@ -16093,7 +18334,16 @@
     "link": "https://m.kinolights.com/title/149440",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_PanjiTengkorak",
@@ -16107,7 +18357,16 @@
     "link": "https://m.kinolights.com/title/149438",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_아리안",
@@ -16121,7 +18380,16 @@
     "link": "https://m.kinolights.com/title/149437",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_교양사아:눈부시게빛나는햇살",
@@ -16135,7 +18403,16 @@
     "link": "https://m.kinolights.com/title/149235",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_2026호주오픈하이라이트",
@@ -16149,7 +18426,16 @@
     "link": "https://m.kinolights.com/title/149441",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_백야삼생연",
@@ -16163,7 +18449,16 @@
     "link": "https://m.kinolights.com/title/149439",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260113_어느밤,그녀는새벽을생각한다",
@@ -16191,7 +18486,16 @@
     "link": "https://m.kinolights.com/title/149003",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_20260115_애거사크리스티의세븐다이얼스",
@@ -16345,7 +18649,16 @@
     "link": "https://m.kinolights.com/title/149442",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "볼룸에 오신 것을 환영합니다",
@@ -16598,7 +18911,9 @@
       "김신영",
       "김동현"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_벌거벗은세계사",
@@ -16624,7 +18939,9 @@
       "존박",
       "이혜성"
     ],
-    "director": ""
+    "director": "",
+    "runtime": "",
+    "detailDate": ""
   },
   {
     "id": "ott_20260114_담뽀뽀",
@@ -16752,7 +19069,16 @@
     "link": "https://m.kinolights.com/title/147886",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_몬스터즈_일백삼정_비룡시극_2026-01-13_laftel",
@@ -17277,7 +19603,16 @@
     "link": "https://m.kinolights.com/title/149082",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "id": "ott_소문_2026-01-09_wavve",
@@ -17670,7 +20005,16 @@
     "link": "https://m.kinolights.com/title/115923",
     "genre": "ott",
     "region": "all",
-    "grade": "전체"
+    "grade": "전체",
+    "movieInfo": "",
+    "runtime": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "제대로 빨지 못하는 흡혈귀 짱",
@@ -25567,7 +27911,17 @@
     ],
     "region": "ott",
     "venue": "OTT",
-    "id": "ott_20260114_쿵푸팬더"
+    "id": "ott_20260114_쿵푸팬더",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "쿵푸 팬더 3",
@@ -25580,7 +27934,17 @@
     ],
     "region": "ott",
     "venue": "OTT",
-    "id": "ott_20260114_쿵푸팬더3"
+    "id": "ott_20260114_쿵푸팬더3",
+    "movieInfo": "",
+    "runtime": "",
+    "grade": "",
+    "director": "",
+    "cast": [],
+    "detailDate": "",
+    "originalTitle": "",
+    "productionCountry": "",
+    "productionYear": "",
+    "runningTime": ""
   },
   {
     "title": "스펜서",
