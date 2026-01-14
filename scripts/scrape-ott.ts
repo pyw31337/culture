@@ -161,25 +161,54 @@ async function scrapeOTT() {
 
         console.log(`Total items found before deduplication: ${allBasicItems.length}`);
 
-        // Deduplication
+        // Load existing data for enrichment
+        const jsonPath = path.resolve(process.cwd(), 'src/data/ott.json');
+        let existingItemsDetails: any[] = [];
+        if (fs.existsSync(jsonPath)) {
+            try {
+                const fileContent = fs.readFileSync(jsonPath, 'utf-8');
+                existingItemsDetails = JSON.parse(fileContent);
+                console.log(`Loaded ${existingItemsDetails.length} existing items.`);
+            } catch (e) {
+                console.error('Error loading existing data:', e);
+            }
+        }
+
+        // Identify incomplete items that need re-enrichment
+        const incompleteItems = existingItemsDetails.filter(item =>
+            (!item.runningTime || !item.originalTitle || !item.grade || item.grade === 'OTT') &&
+            item.link // Must have a link to scrape
+        );
+        console.log(`Found ${incompleteItems.length} existing items needing enrichment.`);
+
+        // Add incomplete items to the processing list
+        // We use the uniqueItemsMap to merge them.
         const uniqueItemsMap = new Map();
+
+        // 1. Add scraped new items
         allBasicItems.forEach(item => {
-            const key = `${item.title}_${item.date}`;
+            const key = item.link; // Use link as unique key for scraping efficiency
+            uniqueItemsMap.set(key, item);
+        });
+
+        // 2. Add incomplete existing items (if not already found in new scrape)
+        incompleteItems.forEach(item => {
+            const key = item.link;
             if (!uniqueItemsMap.has(key)) {
                 uniqueItemsMap.set(key, item);
-            } else {
-                // Merge platforms if same item exists
-                const existing = uniqueItemsMap.get(key);
-                const mergedPlatforms = Array.from(new Set([...existing.platforms, ...item.platforms]));
-                uniqueItemsMap.set(key, { ...existing, platforms: mergedPlatforms });
             }
         });
+
         const basicItems = Array.from(uniqueItemsMap.values());
-        console.log(`Unique items to process: ${basicItems.length}`);
+        console.log(`Unique items to process (New + Incomplete): ${basicItems.length}`);
 
         // 2. Enrich with Details (Director, Cast, Runtime, Grade, Genre)
-        const enrichedItems: any[] = [];
-        const CONCURRENCY = 5;
+        const CONCURRENCY = 5; // Reduced from 10 for stability
+
+        // Initialize a map to hold the latest state of all items
+        // We start with the basic items. As we enrich them, we update this map.
+        const currentProgressMap = new Map();
+        basicItems.forEach(item => currentProgressMap.set(item.link, item));
 
         // Chunk array for parallel processing
         for (let i = 0; i < basicItems.length; i += CONCURRENCY) {
@@ -187,174 +216,188 @@ async function scrapeOTT() {
             console.log(`Processing chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(basicItems.length / CONCURRENCY)}...`);
 
             const promises = chunk.map(async (item) => {
-                const newPage = await browser.newPage();
-                // Set User-Agent for each page
-                await newPage.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1');
-                await newPage.setViewport({ width: 390, height: 844 });
+                const retryCount = 2; // Reduced retry count
+                for (let attempt = 1; attempt <= retryCount; attempt++) {
+                    const newPage = await browser.newPage();
+                    // Block images/fonts/css for speed
+                    await newPage.setRequestInterception(true);
+                    newPage.on('request', (req) => {
+                        const resourceType = req.resourceType();
+                        if (['image', 'media', 'font', 'stylesheet'].includes(resourceType)) {
+                            req.abort();
+                        } else {
+                            req.continue();
+                        }
+                    });
 
-                try {
-                    // console.log(`Enriching: ${item.title}`);
-                    await newPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
+                    // Set User-Agent for each page
+                    await newPage.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1');
+                    await newPage.setViewport({ width: 390, height: 844 });
 
                     try {
-                        await newPage.waitForSelector('.metadata__item', { timeout: 3000 });
-                    } catch (e) {
-                        // Ignore
-                    }
+                        // console.log(`Enriching: ${item.title} (Attempt ${attempt})`);
+                        await newPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 }); // Reduced timeout
 
-                    // Use string evaluation to avoid tsx injection of helper functions
-                    const extractionCode = `(() => {
-                        function cleanText(t) { return (t || '').replace(/\\s+/g, ' ').trim(); }
-                        
-                        function getMetadataValue(labelKeywords) {
-                             const items = Array.from(document.querySelectorAll('.metadata__item'));
-                             for (const item of items) {
-                                 const titleEl = item.querySelector('.item__title');
-                                 if (titleEl) {
-                                     const titleText = cleanText(titleEl.textContent);
-                                     if (labelKeywords.some(k => titleText.includes(k))) {
-                                         const fullText = cleanText(item.textContent);
-                                         return fullText.replace(titleText, '').trim();
+                        try {
+                            await newPage.waitForSelector('.metadata__item', { timeout: 3000 });
+                        } catch (e) {
+                            // Ignore
+                        }
+
+                        // Use string evaluation to avoid tsx injection of helper functions
+                        const extractionCode = `(() => {
+                            function cleanText(t) { return (t || '').replace(/\\s+/g, ' ').trim(); }
+                            
+                            function getMetadataValue(labelKeywords) {
+                                 const items = Array.from(document.querySelectorAll('.metadata__item'));
+                                 for (const item of items) {
+                                     const titleEl = item.querySelector('.item__title');
+                                     if (titleEl) {
+                                         const titleText = cleanText(titleEl.textContent);
+                                         if (labelKeywords.some(k => titleText.includes(k))) {
+                                             const fullText = cleanText(item.textContent);
+                                             return fullText.replace(titleText, '').trim();
+                                         }
                                      }
                                  }
-                             }
-                             return '';
-                        }
-                        
-                        let director = '';
-                        const staffs = Array.from(document.querySelectorAll('.staff'));
-                        for (const staff of staffs) {
-                            const titleEl = staff.querySelector('.staff__title');
-                            if (titleEl && cleanText(titleEl.textContent).includes('감독')) {
-                                const nameEl = staff.querySelector('.names__name');
-                                if (nameEl) director = cleanText(nameEl.textContent);
-                                break;
+                                 return '';
+                            }
+                            
+                            let director = '';
+                            const staffs = Array.from(document.querySelectorAll('.staff'));
+                            for (const staff of staffs) {
+                                const titleEl = staff.querySelector('.staff__title');
+                                if (titleEl && cleanText(titleEl.textContent).includes('감독')) {
+                                    const nameEl = staff.querySelector('.names__name');
+                                    if (nameEl) director = cleanText(nameEl.textContent);
+                                    break;
+                                }
+                            }
+
+                            const cast = Array.from(document.querySelectorAll('[id^="actorList-"] .name'))
+                                .slice(0, 5)
+                                .map(el => cleanText(el.textContent))
+                                .filter(Boolean);
+
+                            // New fields
+                            const genre = getMetadataValue(['장르']);
+                            const runtime = getMetadataValue(['러닝타임']);
+                            const dateRaw = getMetadataValue(['방영일', '개봉일', '첫 방영일', '방영 시작일']);
+                            const grade = getMetadataValue(['연령등급']);
+                            const originalTitle = getMetadataValue(['원제']); 
+                            const productionCountry = getMetadataValue(['제작국가']);
+                            const productionYear = getMetadataValue(['제작연도']);
+
+                            const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
+                            const headerDate = headerDateEl ? cleanText(headerDateEl.textContent) : '';
+
+                            const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
+                            const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent) : '';
+                            
+                            return {
+                                movieInfo: [genre, runtime].filter(Boolean).join(' / '),
+                                genre: genre,
+                                runtime: runtime, // explicitly return runtime
+                                grade: grade || headerGrade,
+                                director: director,
+                                cast: cast,
+                                detailDate: headerDate || dateRaw,
+                                originalTitle,
+                                productionCountry,
+                                productionYear,
+                                runningTime: runtime // consistent naming
+                            };
+                        })()`;
+
+                        const details = await newPage.evaluate(extractionCode) as any;
+
+                        // Improved Date Parsing
+                        let finalDate = item.date;
+                        if (details.detailDate) {
+                            // Matches "YYYY년 MM월 DD일" or "YYYY. MM. DD" or similar
+                            const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
+                            if (match) {
+                                const y = match[1];
+                                const m = match[2].padStart(2, '0');
+                                const d = match[3].padStart(2, '0');
+                                finalDate = `${y}-${m}-${d}`;
                             }
                         }
 
-                        const cast = Array.from(document.querySelectorAll('[id^="actorList-"] .name'))
-                            .slice(0, 5)
-                            .map(el => cleanText(el.textContent))
-                            .filter(Boolean);
-
-                        const genre = getMetadataValue(['장르']);
-                        const runtime = getMetadataValue(['러닝타임']);
-                        const date = getMetadataValue(['방영일', '개봉일', '첫 방영일', '방영 시작일']);
-                        const grade = getMetadataValue(['연령등급']);
-
-                        const headerDateEl = document.querySelector('.movie-header-area .title-area .year');
-                        const headerDate = headerDateEl ? cleanText(headerDateEl.textContent) : '';
-
-                        const headerGradeEl = document.querySelector('.movie-header-area .title-area .age');
-                        const headerGrade = headerGradeEl ? cleanText(headerGradeEl.textContent) : '';
-                        
+                        await newPage.close();
                         return {
-                            movieInfo: [genre, runtime].filter(Boolean).join(' / '),
-                            grade: grade || headerGrade,
-                            director: director,
-                            cast: cast,
-                            detailDate: headerDate || date 
+                            ...item,
+                            ...details,
+                            date: finalDate,
                         };
-                    })()`;
 
-                    const details = await newPage.evaluate(extractionCode) as any;
-
-                    let finalDate = item.date;
-                    if (details.detailDate) {
-                        const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
-                        if (match) {
-                            finalDate = `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
+                    } catch (e) {
+                        console.error(`Error enriching ${item.title} (Attempt ${attempt}):`, e);
+                        await newPage.close();
+                        if (attempt === retryCount) {
+                            console.error(`Failed to enrich ${item.title} after ${retryCount} attempts.`);
+                            return item; // Return basic item on failure
                         }
+                        // Wait before retry
+                        await new Promise(r => setTimeout(r, 2000));
                     }
-
-                    return {
-                        ...item,
-                        ...details,
-                        date: finalDate,
-                    };
-
-                } catch (e) {
-                    console.error(`Failed to enrich ${item.title}:`, e);
-                    return item; // Return basic item on failure
-                } finally {
-                    await newPage.close();
                 }
+                return item;
             });
 
             const results = await Promise.all(promises);
-            enrichedItems.push(...results);
-        }
 
+            // Update the map with enriched items
+            results.forEach(res => currentProgressMap.set(res.link, res));
 
-        // Post-process items
-        const processedItems: OTTPerformance[] = enrichedItems.map((p: any) => {
-            const mappedPlatforms = p.platforms.map((raw: string) => mapPlatform(raw)).filter((Boolean) as any as (x: any) => x is string);
-            const uniquePlatforms = Array.from(new Set(mappedPlatforms)) as string[];
+            // Incremental Save Logic
+            const currentEnrichedItems = Array.from(currentProgressMap.values());
 
-            return {
-                ...p,
-                id: `ott_${p.date.replace(/-/g, '')}_${p.title.replace(/\s/g, '')}`,
-                platforms: uniquePlatforms
-            };
-        });
+            // Post-process items
+            const processedItems = currentEnrichedItems.map((p: any) => {
+                const mappedPlatforms = (p.platforms || []).map((raw: string) => mapPlatform(raw)).filter((x: any) => x !== null) as string[];
+                const uniquePlatforms = Array.from(new Set(mappedPlatforms));
 
-        console.log(`Scraped ${processedItems.length} items with details.`);
+                return {
+                    ...p,
+                    id: p.id || `ott_${p.date.replace(/-/g, '')}_${p.title.replace(/\s/g, '')}`,
+                    platforms: uniquePlatforms
+                };
+            });
 
-        // Save
-        // Save
-        const outputPath = path.resolve(process.cwd(), 'src/data/ott.json');
+            // Merge with existing items
+            const itemMap = new Map();
+            existingItemsDetails.forEach((item: any) => itemMap.set(item.id, item));
 
-        // Load existing data for persistence
-        let existingItems: OTTPerformance[] = [];
-        if (fs.existsSync(outputPath)) {
-            try {
-                const fileContent = fs.readFileSync(outputPath, 'utf-8');
-                existingItems = JSON.parse(fileContent);
-                console.log(`Loaded ${existingItems.length} existing items for merging.`);
-            } catch (e) {
-                console.error('Error loading existing data:', e);
-            }
-        }
+            processedItems.forEach((newItem: any) => {
+                if (itemMap.has(newItem.id)) {
+                    const existing = itemMap.get(newItem.id);
+                    const merged = { ...newItem, ...existing };
 
-        // Create a map of existing items by ID
-        const itemMap = new Map<string, OTTPerformance>();
-        existingItems.forEach(item => itemMap.set(item.id, item));
-
-        // Merge new items: Existing items take precedence to preserve manual edits
-        // strategy: ACCUMULATION
-        // We load existing items first, then overlay new scraped data.
-        // Items that are no longer present in the scrape source (e.g. older movies dropped from "New Releases")
-        // will RETAIN their presence in the file because they are in 'existingItems'.
-        // This ensures the database grows over time as requested.
-        processedItems.forEach(newItem => {
-            if (itemMap.has(newItem.id)) {
-                const existing = itemMap.get(newItem.id)!;
-                // Preserve manual edits, BUT overwrite if existing contains default/bad data
-                const merged = { ...newItem, ...existing };
-
-                // If existing genre is 'ott' (default) and new genre is valid, use new genre
-                if ((!existing.genre || existing.genre.toLowerCase() === 'ott') && newItem.genre && newItem.genre.toLowerCase() !== 'ott') {
-                    merged.genre = newItem.genre;
-                    // Also update movieInfo if it was just based on 'ott'
-                    if (newItem.movieInfo && newItem.movieInfo.length > (existing.movieInfo?.length || 0)) {
-                        merged.movieInfo = newItem.movieInfo;
+                    if ((!existing.genre || existing.genre.toLowerCase() === 'ott') && newItem.genre && newItem.genre.toLowerCase() !== 'ott') {
+                        merged.genre = newItem.genre;
+                        if (newItem.movieInfo && newItem.movieInfo.length > (existing.movieInfo?.length || 0)) {
+                            merged.movieInfo = newItem.movieInfo;
+                        }
                     }
+                    if ((!existing.grade || existing.grade === 'OTT') && newItem.grade) {
+                        merged.grade = newItem.grade;
+                    }
+                    if (!existing.runningTime && newItem.runningTime) merged.runningTime = newItem.runningTime;
+                    if (!existing.originalTitle && newItem.originalTitle) merged.originalTitle = newItem.originalTitle;
+                    if (!existing.productionCountry && newItem.productionCountry) merged.productionCountry = newItem.productionCountry;
+
+
+                    itemMap.set(newItem.id, merged);
+                } else {
+                    itemMap.set(newItem.id, newItem);
                 }
-                // If existing grade is empty/bad and new grade is good, use new
-                if ((!existing.grade || existing.grade === 'OTT') && newItem.grade) {
-                    merged.grade = newItem.grade;
-                }
+            });
 
-                itemMap.set(newItem.id, merged);
-            } else {
-                itemMap.set(newItem.id, newItem);
-            }
-        });
-
-        const finalItems = Array.from(itemMap.values());
-
-        fs.writeFileSync(outputPath, JSON.stringify(finalItems, null, 2));
-        console.log(`Saved ${finalItems.length} items to ${outputPath} (Merged with existing data)`);
+            const finalItems = Array.from(itemMap.values());
+            fs.writeFileSync(jsonPath, JSON.stringify(finalItems, null, 2));
+            console.log(`[Incremental] Saved ${finalItems.length} items.`);
+        }
 
     } catch (error) {
         console.error('Error in OTT Scraper:', error);
