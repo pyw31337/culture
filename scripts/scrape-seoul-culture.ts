@@ -148,7 +148,6 @@ async function scrape() {
                 collectedEvents.push({
                     id: `seoul-culture-${Math.random().toString(36).substr(2, 9)}`,
                     title: item.title,
-                    date: item.date,
                     // Prefer detail page info if available
                     place: details.placeDetail || item.place,
                     poster: item.poster,
