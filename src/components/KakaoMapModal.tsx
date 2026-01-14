@@ -83,14 +83,47 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
             window.kakao.maps.load(() => {
                 if (!mapRef.current) return;
 
+                const defaultCenter = new window.kakao.maps.LatLng(37.554648, 126.972559);
                 const options = {
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
-                        : new window.kakao.maps.LatLng(37.554648, 126.972559),
-                    level: centerLocation ? 3 : 8 // Start zoomed out a bit more for clustering effect (3 = 100m)
+                        : defaultCenter,
+                    level: centerLocation ? 3 : 8
                 };
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
+
+                // If no centerLocation provided, try to get user's current position
+                if (!centerLocation && navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lng = position.coords.longitude;
+                            const loc = new window.kakao.maps.LatLng(lat, lng);
+                            map.setCenter(loc);
+                            map.setLevel(5); // Zoom in closer for user location
+
+                            // Add a marker for "My Location"
+                            const content = document.createElement('div');
+                            content.className = 'custom-overlay-me';
+                            content.innerHTML = `
+                                <div style="background-color:#3b82f6;width:24px;height:24px;border-radius:50%;border:3px solid white;box-shadow:0 0 10px rgba(59,130,246,0.5);display:flex;align-items:center;justify-content:center;">
+                                    <div style="width:8px;height:8px;background:white;border-radius:50%;"></div>
+                                </div>
+                            `;
+                            new window.kakao.maps.CustomOverlay({
+                                map: map,
+                                position: loc,
+                                content: content,
+                                yAnchor: 0.5,
+                                zIndex: 3
+                            });
+                        },
+                        (err) => {
+                            console.log("Geolocation failed or denied:", err);
+                        }
+                    );
+                }
 
                 // Initialize Clusterer Safely
                 let clusterer: any = null;
