@@ -179,7 +179,7 @@
     "homeTeam": "상무",
     "awayTeam": "KT",
     "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/kt.svg"
   },
   {
     "id": "kbl_20260106_28_57",
@@ -192,8 +192,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "정관장",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc.svg"
   },
   {
     "id": "kbl_20260106_10_60",
@@ -221,7 +221,7 @@
     "homeTeam": "홍콩 이스턴",
     "awayTeam": "서울SK",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hke.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/sk.svg"
   },
   {
     "id": "kbl_20260107_50_35",
@@ -248,8 +248,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "KCC",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc.svg"
   },
   {
     "id": "kbl_20260108_67_29",
@@ -472,8 +472,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis.svg"
   },
   {
     "id": "kbl_20260116_29_26",
@@ -487,7 +487,7 @@
     "homeTeam": "상무",
     "awayTeam": "삼성",
     "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung.svg"
   },
   {
     "id": "kbl_20260117_4A_5A",
@@ -528,8 +528,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "정관장",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc.svg"
   },
   {
     "id": "kbl_20260119_26_68",
@@ -542,8 +542,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas.svg"
   },
   {
     "id": "kbl_20260120_31_67",
@@ -556,7 +556,7 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "소노",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sono.svg"
   },
   {
@@ -570,8 +570,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas.svg"
   },
   {
     "id": "kbl_20260121_50_691",
@@ -584,7 +584,7 @@
     "genre": "basketball",
     "homeTeam": "창원LG",
     "awayTeam": "알바크 도쿄",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-at.svg"
   },
   {
@@ -781,7 +781,7 @@
     "homeTeam": "상무",
     "awayTeam": "삼성",
     "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung.svg"
   },
   {
     "id": "kbl_20260127_24_57",
@@ -794,8 +794,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "정관장",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc.svg"
   },
   {
     "id": "kbl_20260127_66_10",
@@ -822,7 +822,7 @@
     "genre": "basketball",
     "homeTeam": "서울SK",
     "awayTeam": "타이베이 푸본 브레이브스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/sk.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tfb.svg"
   },
   {
@@ -851,7 +851,7 @@
     "homeTeam": "소노",
     "awayTeam": "KT",
     "homeTeamLogo": "/culture/images/logos/kbl/sono.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/kt.svg"
   },
   {
     "id": "kbl_20260129_31_24",
@@ -864,8 +864,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "KCC",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc.svg"
   },
   {
     "id": "kbl_20260129_70_35",
@@ -1004,8 +1004,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "DB",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db.svg"
   },
   {
     "id": "kbl_20260203_26_29",
@@ -1018,7 +1018,7 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "상무",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
@@ -1060,7 +1060,7 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "상무",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/db.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
@@ -1074,8 +1074,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "KT",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt.svg"
   },
   {
     "id": "kbl_20260205_35_50",
@@ -1214,7 +1214,7 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "상무",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
@@ -1228,8 +1228,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis.svg"
   },
   {
     "id": "kbl_20260210_64_50",
@@ -1270,8 +1270,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "DB",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db.svg"
   },
   {
     "id": "kbl_20260212_29_36",
@@ -1285,7 +1285,7 @@
     "homeTeam": "상무",
     "awayTeam": "LG",
     "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/lg.svg"
   },
   {
     "id": "kbl_20260212_10_35",
@@ -1522,8 +1522,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "KT",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt.svg"
   },
   {
     "id": "kbl_20260220_31_57",
@@ -1536,8 +1536,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "정관장",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc.svg"
   },
   {
     "id": "kbl_20260221_26_24",
@@ -1550,8 +1550,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "KCC",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc.svg"
   },
   {
     "id": "kbl_20260221_36_19",
@@ -1564,8 +1564,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "SK",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk.svg"
   },
   {
     "id": "kbl_20260226_68_31",
@@ -1578,8 +1578,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis.svg"
   },
   {
     "id": "kbl_20260226_36_67",
@@ -1592,7 +1592,7 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "소노",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sono.svg"
   },
   {
@@ -1606,8 +1606,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "SK",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk.svg"
   },
   {
     "id": "kbl_20260227_68_36",
@@ -1620,8 +1620,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "LG",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg.svg"
   },
   {
     "id": "kbl_20260228_57_26",
@@ -1634,8 +1634,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "삼성",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung.svg"
   },
   {
     "id": "kbl_20260228_24_67",
@@ -1648,7 +1648,7 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "소노",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sono.svg"
   },
   {
@@ -1662,8 +1662,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas.svg"
   },
   {
     "id": "kbl_20260302_67_19",
@@ -1677,7 +1677,7 @@
     "homeTeam": "소노",
     "awayTeam": "SK",
     "homeTeamLogo": "/culture/images/logos/kbl/sono.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/sk.svg"
   },
   {
     "id": "kbl_20260303_57_68",
@@ -1690,8 +1690,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas.svg"
   },
   {
     "id": "kbl_20260303_28_36",
@@ -1704,8 +1704,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "LG",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg.svg"
   },
   {
     "id": "kbl_20260304_26_19",
@@ -1718,8 +1718,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "SK",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk.svg"
   },
   {
     "id": "kbl_20260304_36_31",
@@ -1732,8 +1732,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis.svg"
   },
   {
     "id": "kbl_20260305_66_70",
@@ -1900,8 +1900,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "DB",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db.svg"
   },
   {
     "id": "kbl_20260310_68_29",
@@ -1914,7 +1914,7 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "상무",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
