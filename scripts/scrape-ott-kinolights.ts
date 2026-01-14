@@ -68,16 +68,20 @@ function normalizeDate(dateStr: string): string {
         return d.toISOString().split('T')[0];
     }
 
-    // Handle "MM.DD" -> determine correct year (handle year boundary)
-    const match = dateStr.match(/(\d{2})\.(\d{2})/);
-    if (match) {
-        const month = parseInt(match[1], 10);
-        const day = parseInt(match[2], 10);
+    // Handle "1월 14일 (화)" or "1월 14일"
+    const koreanMatch = dateStr.match(/(\d{1,2})월\s*(\d{1,2})일/);
+    if (koreanMatch) {
+        const month = String(koreanMatch[1]).padStart(2, '0');
+        const day = String(koreanMatch[2]).padStart(2, '0');
+        return `${currentYear}-${month}-${day}`;
+    }
 
-        // If month is far in the future (e.g. Dec when now is Jan), it might be last year
-        // For upcoming: if month is less than current month, it's next year
-        // Simplification: just use current year for now
-        return `${currentYear}-${match[1]}-${match[2]}`;
+    // Handle "MM.DD"
+    const dotMatch = dateStr.match(/(\d{1,2})\.(\d{1,2})/);
+    if (dotMatch) {
+        const month = String(dotMatch[1]).padStart(2, '0');
+        const day = String(dotMatch[2]).padStart(2, '0');
+        return `${currentYear}-${month}-${day}`;
     }
 
     return dateStr;
@@ -318,11 +322,12 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                         const baseSelector = '#contents > div.info.tab-item > section:nth-child(1) > ul';
                         const originalTitle = getText(`${baseSelector} > li:nth-child(1) .desc`) || getText(`${baseSelector} > li:nth-child(1)`);
                         const genre = getText(`${baseSelector} > li:nth-child(2) .desc`) || getText(`${baseSelector} > li:nth-child(2)`);
+                        const runningTime = getText(`${baseSelector} > li:nth-child(3) .desc`) || getText(`${baseSelector} > li:nth-child(3)`);
                         const grade = getText(`${baseSelector} > li:nth-child(7) .desc`) || getText(`${baseSelector} > li:nth-child(7)`);
                         const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
                         const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
 
-                        return { originalTitle, genre, grade, country, year };
+                        return { originalTitle, genre, runningTime, grade, country, year };
                     });
 
                     // Map platform from list item
@@ -342,11 +347,13 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                         genre: 'ott', // This will be displayed as "Movie/Show" but mapped to OTT category
                         region: 'all',
                         grade: details.grade || item.grade,
+                        ageRating: details.grade || item.grade,
                         movieInfo: details.genre, // Store genre in movieInfo for display parity
+                        runningTime: details.runningTime,
                         originalTitle: details.originalTitle,
                         productionCountry: details.country,
                         productionYear: details.year,
-                        cast: [], // Could extract cast if needed, but user didn't explicitly ask for it here, kept simple
+                        cast: [],
                         director: ''
                     } as OTTPerformance;
 
