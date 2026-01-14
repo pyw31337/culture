@@ -91,6 +91,23 @@ async function scrapeHandball() {
             }
 
             // Extract Teams and Logos from Content Cell
+            const HANDBALL_LOGOS = {
+                "두산": "https://www.koreahandball.com/static/images/logo_api/logo_m_1.png",
+                "SK호크스": "https://www.koreahandball.com/static/images/logo_api/logo_m_6.png",
+                "하남시청": "https://www.koreahandball.com/static/images/logo_api/logo_m_5.png",
+                "상무 피닉스": "https://www.koreahandball.com/static/images/logo_api/logo_m_2.png",
+                "충남도청": "https://www.koreahandball.com/static/images/logo_api/logo_m_3.png",
+                "인천도시공사": "https://www.koreahandball.com/static/images/logo_api/logo_m_4.png",
+                "SK슈가글라이더즈": "https://www.koreahandball.com/static/images/logo_api/logo_w_7.png",
+                "광주도시공사": "https://www.koreahandball.com/static/images/logo_api/logo_w_9.png",
+                "서울시청": "https://www.koreahandball.com/static/images/logo_api/logo_w_13.png",
+                "인천광역시청": "https://www.koreahandball.com/static/images/logo_api/logo_w_14.png",
+                "부산시설공단": "https://www.koreahandball.com/static/images/logo_api/logo_w_11.png",
+                "경남개발공사": "https://www.koreahandball.com/static/images/logo_api/logo_w_8.png",
+                "삼척시청": "https://www.koreahandball.com/static/images/logo_api/logo_w_12.png",
+                "대구광역시청": "https://www.koreahandball.com/static/images/logo_api/logo_w_10.png"
+            };
+
             let homeTeam = '';
             let awayTeam = '';
             let homeTeamLogo = '';
@@ -99,13 +116,12 @@ async function scrapeHandball() {
             if (contentCell) {
                 const homeEl = contentCell.querySelector('.team.home .name');
                 const awayEl = contentCell.querySelector('.team.away .name');
-                const homeLogoEl = contentCell.querySelector('.team.home img');
-                const awayLogoEl = contentCell.querySelector('.team.away img');
 
                 if (homeEl) homeTeam = (homeEl as HTMLElement).innerText.trim();
                 if (awayEl) awayTeam = (awayEl as HTMLElement).innerText.trim();
-                if (homeLogoEl) homeTeamLogo = (homeLogoEl as HTMLImageElement).src;
-                if (awayLogoEl) awayTeamLogo = (awayLogoEl as HTMLImageElement).src;
+
+                homeTeamLogo = (HANDBALL_LOGOS as any)[homeTeam] || '';
+                awayTeamLogo = (HANDBALL_LOGOS as any)[awayTeam] || '';
             }
 
             if (homeTeam && awayTeam) {

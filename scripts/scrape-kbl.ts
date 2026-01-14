@@ -7,6 +7,21 @@ const KBL_POSTER = '/culture/images/kbl_poster.png';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
 
 async function scrapeKbl() {
+    const KBL_LOGOS: Record<string, string> = {
+        "서울 SK": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sk.svg",
+        "원주 DB": "https://www.kbl.or.kr/assets/img/ico/logo/ic-db.svg",
+        "울산 현대모비스": "https://www.kbl.or.kr/assets/img/ico/logo/ic-hd.svg",
+        "서울 삼성": "https://www.kbl.or.kr/assets/img/ico/logo/ic-ss.svg",
+        "고양 소노": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+        "대구 한국가스공사": "https://www.kbl.or.kr/assets/img/ico/logo/ic-pega.svg",
+        "안양 정관장": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kgc.svg",
+        "창원 LG": "https://www.kbl.or.kr/assets/img/ico/logo/ic-lg.svg",
+        "수원 KT": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kt.svg",
+        "부산 KCC": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+        "상무": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kaf.svg",
+        "소노": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
+    };
+
     console.log(`Starting KBL Scraper (UI Interaction)...`);
 
     const browser = await puppeteer.launch({
@@ -90,8 +105,8 @@ async function scrapeKbl() {
 
         // Logo Construction
         // Pattern: https://www.kbl.or.kr/assets/img/ico/logo/ic-{logoCode}.svg
-        const homeLogoUrl = match.logoH ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoH}.svg` : '';
-        const awayLogoUrl = match.logoA ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoA}.svg` : '';
+        const homeLogoUrl = KBL_LOGOS[match.tnameH] || (match.logoH ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoH}.svg` : '');
+        const awayLogoUrl = KBL_LOGOS[match.tnameA] || (match.logoA ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoA}.svg` : '');
 
         allPerformances.push({
             id,

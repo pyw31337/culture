@@ -48,24 +48,30 @@ async function scrapeKovo() {
             console.log(`Navigating to ${KOVO_SCHEDULE_URL}...`);
             await page.goto(KOVO_SCHEDULE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-            try {
-                await page.waitForSelector('.MuiBox-root', { timeout: 10000 });
-            } catch (e) {
-                console.log('Timeout waiting for selector, proceeding...');
-            }
-
             // Auto Scroll
             await autoScroll(page);
 
             const scrapedItems = await page.evaluate(() => {
-                const results: any[] = [];
-                const TEAMS = [
-                    '대한항공', '현대캐피탈', '한국전력', '우리카드', 'OK저축은행', '삼성화재', 'KB손해보험',
-                    '현대건설', '흥국생명', '정관장', 'IBK기업은행', 'GS칼텍스', '한국도로공사', '페퍼저축은행'
-                ];
+                const KOVO_LOGOS = {
+                    "서울Kixx": "https://cdn.dev.kovo.co.kr/emblems/kixx.svg",
+                    "알토스": "https://cdn.dev.kovo.co.kr/emblems/altos.svg",
+                    "VIXTORM": "https://cdn.dev.kovo.co.kr/emblems/vixtorm.svg",
+                    "우리WON": "https://cdn.dev.kovo.co.kr/emblems/wooriwon.svg",
+                    "블루팡스": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+                    "읏맨": "https://cdn.dev.kovo.co.kr/emblems/okman.svg",
+                    "PEPPERS": "https://cdn.dev.kovo.co.kr/emblems/aipeppers.svg",
+                    "하이패스": "https://cdn.dev.kovo.co.kr/emblems/hipass.svg",
+                    "스카이워커스": "https://cdn.dev.kovo.co.kr/emblems/skywalkers.svg",
+                    "스타즈": "https://cdn.dev.kovo.co.kr/emblems/stars.svg",
+                    "핑크스파이더스": "https://cdn.dev.kovo.co.kr/emblems/pinkspiders.svg",
+                    "힐스테이트": "https://cdn.dev.kovo.co.kr/emblems/hillstate.svg",
+                    "점보스": "https://cdn.dev.kovo.co.kr/emblems/jumbos.svg",
+                    "레드스파크스": "https://cdn.dev.kovo.co.kr/emblems/redsparks.svg"
+                };
+
+                const TEAMS = Object.keys(KOVO_LOGOS);
 
                 // Strategy: Find Time elements (most stable anchor based on format or class)
-                // Use specific class from inspection if available, else fallback to span search
                 let timeElements = Array.from(document.querySelectorAll('span.css-hwx9jd'));
 
                 if (timeElements.length === 0) {
@@ -73,36 +79,31 @@ async function scrapeKovo() {
                     timeElements = Array.from(document.querySelectorAll('span')).filter(s => /^\d{2}:\d{2}$/.test((s as HTMLElement).innerText.trim()));
                 }
 
-                console.log(`Found ${timeElements.length} time elements`);
+                const results: any[] = [];
 
                 timeElements.forEach(timeEl => {
                     try {
                         const time = (timeEl as HTMLElement).innerText.trim();
-                        // Find the row container. It's an ancestor.
-                        let row = timeEl.parentElement;
-                        let foundImgs: HTMLImageElement[] = [];
-                        let depth = 0;
+                        let row = timeEl.closest('.MuiBox-root') || timeEl.parentElement;
+                        if (!row) return;
 
-                        // Traverse up until we find a container that has at least 2 team-like images
-                        while (row && depth < 10) {
-                            const imgs = Array.from(row.querySelectorAll('img')).filter((img: HTMLImageElement) =>
-                                img.src.includes('cdn') || img.src.includes('kovo') || img.src.includes('svg')
-                            );
-                            if (imgs.length >= 2) {
-                                foundImgs = imgs as HTMLImageElement[];
-                                break;
-                            }
-                            row = row.parentElement;
-                            depth++;
-                        }
+                        const text = (row as HTMLElement).innerText;
+                        const teamsFound = TEAMS.filter(t => text.includes(t));
 
-                        if (!row || foundImgs.length < 2) return;
+                        if (teamsFound.length < 2) return;
 
-                        // Now find Date (Traverse deeper/higher/siblings from the Row)
+                        const sortedTeams = teamsFound.sort((a, b) => text.indexOf(a) - text.indexOf(b));
+
+                        const home = sortedTeams[0];
+                        const away = sortedTeams[1];
+
+                        if (!home || !away) return;
+
+                        const homeLogo = (KOVO_LOGOS as any)[home] || '';
+                        const awayLogo = (KOVO_LOGOS as any)[away] || '';
+
+                        // Date logic (reused from previous)
                         let currentDate = '';
-                        // Strategy: Look for the closest preceding date structure
-                        // 1. Previous Sibling of Row?
-                        // 2. Previous Sibling of Row's Parent?
                         let dateCandidate = row.previousElementSibling;
                         let steps = 0;
                         while (dateCandidate && steps < 10) {
@@ -113,8 +114,6 @@ async function scrapeKovo() {
                             dateCandidate = dateCandidate.previousElementSibling;
                             steps++;
                         }
-
-                        // If not found, try going up one level and checking siblings
                         if (!currentDate && row.parentElement) {
                             let parentPrev = row.parentElement.previousElementSibling;
                             while (parentPrev && steps < 20) {
@@ -125,40 +124,14 @@ async function scrapeKovo() {
                                     break;
                                 }
                                 parentPrev = parentPrev.previousElementSibling;
-                                steps++; // Shared step counter limits infinite search
+                                steps++;
                             }
                         }
 
                         if (!currentDate) return;
 
-                        const homeImg = foundImgs[0];
-                        const awayImg = foundImgs[1];
-
-                        const homeLogo = homeImg.src;
-                        let homeTeam = (homeImg.alt || '').split(' ').pop() || '';
-
-                        const awayLogo = awayImg.src;
-                        let awayTeam = (awayImg.alt || '').split(' ').pop() || '';
-
-                        const text = (row as HTMLElement).innerText;
-
-                        // Team Name Fallback
-                        if (!TEAMS.includes(homeTeam)) {
-                            const foundHome = TEAMS.find(t => text.includes(t));
-                            if (foundHome) homeTeam = foundHome;
-                        }
-                        if (!TEAMS.includes(awayTeam)) {
-                            // Try to find away team by removing home team
-                            const remaining = text.replace(homeTeam, '');
-                            const foundAway = TEAMS.find(t => remaining.includes(t));
-                            if (foundAway) awayTeam = foundAway;
-                        }
-
-                        if (!homeTeam || !awayTeam) return;
-
                         // Venue Extraction
                         let venue = '정보없음';
-                        // Try specific venue class if possible
                         const venueEl = row.querySelector('.css-1og2kxg');
                         if (venueEl) {
                             venue = (venueEl as HTMLElement).innerText.trim();
@@ -167,30 +140,29 @@ async function scrapeKovo() {
                             if (venueMatch) venue = venueMatch[0].trim();
                         }
 
-                        // Fallback Mappings
                         if (venue === '정보없음' || venue.length < 2) {
-                            if (homeTeam.includes('현대건설')) venue = '수원실내체육관';
-                            else if (homeTeam.includes('흥국생명')) venue = '인천삼산월드체육관';
-                            else if (homeTeam.includes('정관장')) venue = '대전충무체육관';
-                            else if (homeTeam.includes('IBK')) venue = '화성종합경기타운';
-                            else if (homeTeam.includes('GS')) venue = '장충체육관';
-                            else if (homeTeam.includes('도로공사')) venue = '김천실내체육관';
-                            else if (homeTeam.includes('페퍼')) venue = '페퍼스타디움';
-                            else if (homeTeam.includes('대한항공')) venue = '계양체육관';
-                            else if (homeTeam.includes('현대캐피탈')) venue = '천안유관순체육관';
-                            else if (homeTeam.includes('한국전력')) venue = '수원실내체육관';
-                            else if (homeTeam.includes('우리카드')) venue = '장충체육관';
-                            else if (homeTeam.includes('OK')) venue = '안산상록수체육관';
-                            else if (homeTeam.includes('삼성화재')) venue = '대전충무체육관';
-                            else if (homeTeam.includes('KB')) venue = '의정부체육관';
+                            if (home.includes('현대건설')) venue = '수원실내체육관';
+                            else if (home.includes('흥국생명')) venue = '인천삼산월드체육관';
+                            else if (home.includes('정관장')) venue = '대전충무체육관';
+                            else if (home.includes('IBK')) venue = '화성종합경기타운';
+                            else if (home.includes('GS')) venue = '장충체육관';
+                            else if (home.includes('도로공사')) venue = '김천실내체육관';
+                            else if (home.includes('페퍼')) venue = '페퍼스타디움';
+                            else if (home.includes('대한항공')) venue = '계양체육관';
+                            else if (home.includes('현대캐피탈')) venue = '천안유관순체육관';
+                            else if (home.includes('한국전력')) venue = '수원실내체육관';
+                            else if (home.includes('우리카드')) venue = '장충체육관';
+                            else if (home.includes('OK')) venue = '안산상록수체육관';
+                            else if (home.includes('삼성화재')) venue = '대전충무체육관';
+                            else if (home.includes('KB')) venue = '의정부체육관';
                         }
                         if (venue === '삼산체육관') venue = '인천삼산월드체육관';
 
                         results.push({
                             date: currentDate.replace(/\./g, '-'),
                             time,
-                            homeTeam,
-                            awayTeam,
+                            homeTeam: home,
+                            awayTeam: away,
                             homeLogo,
                             awayLogo,
                             venue,
