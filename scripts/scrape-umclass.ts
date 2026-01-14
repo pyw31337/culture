@@ -22,6 +22,7 @@ interface UmClassItem {
     ageLimit: string;
     casting: string;
     address: string;
+    viewCount?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/umclass.json');
