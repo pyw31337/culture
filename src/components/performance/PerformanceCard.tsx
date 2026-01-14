@@ -385,14 +385,14 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
 
                             <div
-                                className="absolute inset-x-0 bottom-0 z-[70] overflow-hidden rounded-[15px]"
+                                className="absolute inset-x-0 bottom-0 z-[70] rounded-[15px]"
                                 style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                             >
 
                                 <div className={clsx(
                                     "relative transition-transform duration-300 ease-out flex flex-col justify-end",
                                     enableActions
-                                        ? (showActions ? "-translate-y-[80px]" : "translate-y-0 group-hover:-translate-y-[80px]")
+                                        ? (showActions ? "-translate-y-[90px]" : "translate-y-0 group-hover:-translate-y-[90px]")
                                         : ""
                                 )}>
                                     {/* Discount Badge - Only specific variants or if high discount. Hide if no discount */}
