@@ -397,9 +397,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 )}>
                                     {/* Discount Badge - Only specific variants or if high discount. Hide if no discount */}
                                     {perf.discountRate && perf.originalPrice && perf.originalPrice !== perf.price && (
-                                        <div className="absolute top-2 right-2 z-40 bg-black/80 text-emerald-400 border border-emerald-400/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
+                                        <div className="absolute top-2 right-2 z-40 bg-black/80 text-red-500 border border-red-500/30 px-2 py-1 rounded-full text-xs font-black shadow-lg flex items-center gap-1 backdrop-blur-sm"
                                             style={{ transform: 'translateZ(20px)' }}>
-                                            <Tag className="w-3 h-3 fill-emerald-400" />
+                                            <Tag className="w-3 h-3 fill-red-500" />
                                             {perf.discountRate}
                                         </div>
                                     )}

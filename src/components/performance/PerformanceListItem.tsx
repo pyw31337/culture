@@ -368,7 +368,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         {(perf.price || perf.discount) && (
                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
                                 <div className="flex flex-col justify-end">
-                                    {perf.discount && <span className="text-rose-500 font-extrabold text-lg">{perf.discount}</span>}
+                                    {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
                                     {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-600 text-xs line-through">{perf.originalPrice}</span>}
                                 </div>
                                 <div className="flex items-baseline gap-1.5">
