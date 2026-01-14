@@ -431,8 +431,8 @@ async function scrapeTimeTicket() {
                     // Often venue name is not explicitly in the address box but defined elsewhere.
                     // We'll trust the list scraping for Venue Name usually, but can look for "장소" here too.
                     radiusBoxes.forEach(box => {
-                        if (box.innerText.includes('장소')) {
-                            const v = box.innerText.split('장소')[1].split('\n')[0].replace(/[:]/g, '').trim();
+                        if ((box as HTMLElement).innerText.includes('장소')) {
+                            const v = (box as HTMLElement).innerText.split('장소')[1].split('\n')[0].replace(/[:]/g, '').trim();
                             if (v) venue = v;
                         }
                     });
