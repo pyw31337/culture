@@ -50,6 +50,58 @@ interface OTTPerformance {
 
 // --- Helper Functions ---
 
+// Helper for browser context (must not use external variables)
+function extractOTTDetails() {
+    const getText = (selector: string) => {
+        const el = document.querySelector(selector);
+        return el ? el.textContent?.trim() || '' : '';
+    };
+
+    // User provided selectors:
+    // Original Title: #contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1)
+    // Genre: li:nth-child(2)
+    // Grade: li:nth-child(7)
+    // Country: li:nth-child(8)
+    // Year: li:nth-child(9)
+
+    const baseSelector = '#contents > div.info.tab-item > section:nth-child(1) > ul';
+    const originalTitle = getText(`${baseSelector} > li:nth-child(1) .desc`) || getText(`${baseSelector} > li:nth-child(1)`);
+    const genre = getText(`${baseSelector} > li:nth-child(2) .desc`) || getText(`${baseSelector} > li:nth-child(2)`);
+    const runningTime = getText(`${baseSelector} > li:nth-child(3) .desc`) || getText(`${baseSelector} > li:nth-child(3)`);
+    const grade = getText(`${baseSelector} > li:nth-child(7) .desc`) || getText(`${baseSelector} > li:nth-child(7)`);
+    const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
+    const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
+
+    // Scrape Cast & Director
+    let director = '';
+    let cast: string[] = [];
+
+    // Strategy 1: Look for people section
+    const peopleCards = document.querySelectorAll('.people-card, .person-card, .actor-item');
+    if (peopleCards.length > 0) {
+        peopleCards.forEach((card: any) => {
+            const role = card.querySelector('.role, .type')?.textContent?.trim() || '';
+            const name = card.querySelector('.name, .title')?.textContent?.trim() || '';
+            if (!name) return;
+
+            if (role.includes('감독')) {
+                director = name;
+            } else if (role.includes('주연') || role.includes('출연') || role === '' || role.includes('Actor')) {
+                if (cast.length < 5) cast.push(name);
+            }
+        });
+    } else {
+        // Fallback: list items logic?
+        const potentialNames = document.querySelectorAll('.cast-wrap .name, .staff-wrap .name');
+        potentialNames.forEach((el, idx) => {
+            if (idx === 0 && !director) director = el.textContent?.trim() || '';
+            else if (cast.length < 5) cast.push(el.textContent?.trim() || '');
+        });
+    }
+
+    return { originalTitle, genre, runningTime, grade, country, year, director, cast };
+}
+
 function normalizeDate(dateStr: string): string {
     const now = new Date();
     const currentYear = now.getFullYear();
@@ -306,58 +358,7 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                         // ignore
                     }
 
-                    const details = await newPage.evaluate(() => {
-                        const getText = (selector: string) => {
-                            const el = document.querySelector(selector);
-                            return el ? el.textContent?.trim() || '' : '';
-                        };
-
-                        // User provided selectors:
-                        // Original Title: #contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1)
-                        // Genre: li:nth-child(2)
-                        // Grade: li:nth-child(7)
-                        // Country: li:nth-child(8)
-                        // Year: li:nth-child(9)
-
-                        const baseSelector = '#contents > div.info.tab-item > section:nth-child(1) > ul';
-                        const originalTitle = getText(`${baseSelector} > li:nth-child(1) .desc`) || getText(`${baseSelector} > li:nth-child(1)`);
-                        const genre = getText(`${baseSelector} > li:nth-child(2) .desc`) || getText(`${baseSelector} > li:nth-child(2)`);
-                        const runningTime = getText(`${baseSelector} > li:nth-child(3) .desc`) || getText(`${baseSelector} > li:nth-child(3)`);
-                        const grade = getText(`${baseSelector} > li:nth-child(7) .desc`) || getText(`${baseSelector} > li:nth-child(7)`);
-                        const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
-                        const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
-
-                        // Scrape Cast & Director
-                        let director = '';
-                        let cast: string[] = [];
-
-                        // Strategy 1: Look for people section
-                        // Usually subsequent sections in the tab-item
-                        const peopleCards = document.querySelectorAll('.people-card, .person-card, .actor-item');
-                        if (peopleCards.length > 0) {
-                            peopleCards.forEach(card => {
-                                const role = card.querySelector('.role, .type')?.textContent?.trim() || '';
-                                const name = card.querySelector('.name, .title')?.textContent?.trim() || '';
-                                if (!name) return;
-
-                                if (role.includes('감독')) {
-                                    director = name;
-                                } else if (role.includes('주연') || role.includes('출연') || role === '' || role.includes('Actor')) {
-                                    if (cast.length < 5) cast.push(name);
-                                }
-                            });
-                        } else {
-                            // Fallback: list items logic?
-                            // Try generic .name in common containers
-                            const potentialNames = document.querySelectorAll('.cast-wrap .name, .staff-wrap .name');
-                            potentialNames.forEach((el, idx) => {
-                                if (idx === 0 && !director) director = el.textContent?.trim() || '';
-                                else if (cast.length < 5) cast.push(el.textContent?.trim() || '');
-                            });
-                        }
-
-                        return { originalTitle, genre, runningTime, grade, country, year, director, cast };
-                    });
+                    const details = await newPage.evaluate(extractOTTDetails);
 
                     // Map platform from list item
                     let platform = mapPlatform(item.platformClass) || 'other';
