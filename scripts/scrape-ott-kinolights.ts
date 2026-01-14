@@ -38,6 +38,12 @@ interface OTTPerformance {
     genre: string;
     region: string;
     grade: string;
+    originalTitle?: string;
+    productionCountry?: string;
+    productionYear?: string;
+    movieInfo?: string; // Mapped from Genre
+    cast?: string[];
+    director?: string;
 }
 
 // --- Helper Functions ---
@@ -261,12 +267,109 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
         const allItems = [...newItems, ...upcomingItems];
         console.log(`Total raw items: ${allItems.length}`);
 
-        // 3. Transform (no enrichment, using list data only)
-        const performances = transformToPerformances(allItems);
-        console.log(`Transformed to ${performances.length} unique performances.`);
+        // 3. Enrich with Details (Visit each link)
+        const enrichedPerformances: OTTPerformance[] = [];
+        const CONCURRENCY = 3; // Lower concurrency to be polite and avoid blocks
+
+        for (let i = 0; i < allItems.length; i += CONCURRENCY) {
+            const chunk = allItems.slice(i, i + CONCURRENCY);
+            console.log(`Processing chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(allItems.length / CONCURRENCY)}...`);
+
+            const promises = chunk.map(async (item) => {
+                const newPage = await browser.newPage();
+                await newPage.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1');
+                await newPage.setViewport({ width: 390, height: 844 });
+
+                try {
+                    const link = item.link.startsWith('http') ? item.link : `https://m.kinolights.com${item.link}`;
+                    // console.log(`Scraping detail: ${item.title} (${link})`);
+
+                    await newPage.goto(link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+                    // Wait for metadata section
+                    try {
+                        await newPage.waitForSelector('#contents > div.info.tab-item', { timeout: 5000 });
+                    } catch (e) {
+                        // ignore
+                    }
+
+                    const details = await newPage.evaluate(() => {
+                        const getText = (selector: string) => {
+                            const el = document.querySelector(selector);
+                            return el ? el.textContent?.trim() || '' : '';
+                        };
+
+                        // User provided selectors:
+                        // Original Title: #contents > div.info.tab-item > section:nth-child(1) > ul > li:nth-child(1)
+                        // Genre: li:nth-child(2)
+                        // Grade: li:nth-child(7)
+                        // Country: li:nth-child(8)
+                        // Year: li:nth-child(9)
+
+                        const baseSelector = '#contents > div.info.tab-item > section:nth-child(1) > ul';
+                        const originalTitle = getText(`${baseSelector} > li:nth-child(1) .desc`) || getText(`${baseSelector} > li:nth-child(1)`);
+                        const genre = getText(`${baseSelector} > li:nth-child(2) .desc`) || getText(`${baseSelector} > li:nth-child(2)`);
+                        const grade = getText(`${baseSelector} > li:nth-child(7) .desc`) || getText(`${baseSelector} > li:nth-child(7)`);
+                        const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
+                        const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
+
+                        return { originalTitle, genre, grade, country, year };
+                    });
+
+                    // Map platform from list item
+                    let platform = mapPlatform(item.platformClass) || 'other';
+
+                    // Create ID based on Title, Date, Platform
+                    const uniqueId = `ott_${item.date.replace(/-/g, '')}_${item.title.replace(/\s+/g, '')}`;
+
+                    return {
+                        id: uniqueId,
+                        title: item.title,
+                        date: normalizeDate(item.dateRaw),
+                        venue: 'OTT',
+                        platforms: [platform],
+                        image: item.poster || '/culture/images/placeholder.jpg',
+                        link: link,
+                        genre: 'ott', // This will be displayed as "Movie/Show" but mapped to OTT category
+                        region: 'all',
+                        grade: details.grade || item.grade,
+                        movieInfo: details.genre, // Store genre in movieInfo for display parity
+                        originalTitle: details.originalTitle,
+                        productionCountry: details.country,
+                        productionYear: details.year,
+                        cast: [], // Could extract cast if needed, but user didn't explicitly ask for it here, kept simple
+                        director: ''
+                    } as OTTPerformance;
+
+                } catch (e) {
+                    console.error(`Failed to enrich ${item.title}:`, e);
+                    // Fallback to basic info
+                    const simplifiedId = `ott_${normalizeDate(item.dateRaw).replace(/-/g, '')}_${item.title.replace(/\s+/g, '')}`;
+                    return {
+                        id: simplifiedId,
+                        title: item.title,
+                        date: normalizeDate(item.dateRaw),
+                        venue: 'OTT',
+                        platforms: [mapPlatform(item.platformClass) || 'other'],
+                        image: item.poster || '/culture/images/placeholder.jpg',
+                        link: item.link.startsWith('http') ? item.link : `https://m.kinolights.com${item.link}`,
+                        genre: 'ott',
+                        region: 'all',
+                        grade: item.grade
+                    } as OTTPerformance;
+                } finally {
+                    await newPage.close();
+                }
+            });
+
+            const results = await Promise.all(promises);
+            enrichedPerformances.push(...results);
+        }
+
+        console.log(`Enriched ${enrichedPerformances.length} items.`);
 
         // 4. Save with Accumulation Logic
-        let finalPerformances = performances;
+        let finalPerformances = enrichedPerformances;
         if (fs.existsSync(TARGET_FILE)) {
             try {
                 const existingData = JSON.parse(fs.readFileSync(TARGET_FILE, 'utf-8')) as OTTPerformance[];

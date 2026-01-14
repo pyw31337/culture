@@ -512,8 +512,21 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </div>
 
                                         {/* Movie Info (Director/Cast) */}
-                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo) && (
+                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear) && (
                                             <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
+                                                {/* OTT Specific: Original Title */}
+                                                {perf.originalTitle && perf.originalTitle !== perf.title && (
+                                                    <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
+                                                )}
+                                                {/* OTT Specific: Country / Year */}
+                                                {(perf.productionCountry || perf.productionYear) && (
+                                                    <div className="flex gap-1 items-center mb-0.5 text-gray-500">
+                                                        {perf.productionCountry && <span>{perf.productionCountry}</span>}
+                                                        {perf.productionCountry && perf.productionYear && <span className="text-gray-600">•</span>}
+                                                        {perf.productionYear && <span>{perf.productionYear}</span>}
+                                                    </div>
+                                                )}
+
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">
                                                         <span className="text-gray-500 font-bold shrink-0">감독</span>
