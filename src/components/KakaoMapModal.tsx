@@ -6,7 +6,7 @@ import { X, Star } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 
 import Portal from './ui/Portal';
 
@@ -308,7 +308,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
         return () => clearInterval(checkInterval);
     }, [performances, centerLocation]);
 
-    // Group performances for the list view
+    // Group performances for the list view and SORT
     const uniqueVenues = Object.values(performances.reduce((acc, perf) => {
         if (!acc[perf.venue]) {
             acc[perf.venue] = {
@@ -319,7 +319,21 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
         }
         acc[perf.venue].performances.push(perf);
         return acc;
-    }, {} as Record<string, any>));
+    }, {} as Record<string, any>)).sort((a, b) => {
+        // 1. Priority: Exact name match with searched location
+        if (centerLocation) {
+            if (a.venueName === centerLocation.name) return -1;
+            if (b.venueName === centerLocation.name) return 1;
+
+            // 2. Priority: Distance from center
+            if (a.lat && a.lng && b.lat && b.lng) {
+                const distA = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, a.lat, a.lng);
+                const distB = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, b.lat, b.lng);
+                return distA - distB;
+            }
+        }
+        return 0;
+    });
 
     const moveToVenue = (venueName: string) => {
         const venue = venues[venueName];

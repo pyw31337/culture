@@ -16,8 +16,8 @@ export const TypingHero = ({
     paused: boolean
 }) => {
     const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
-    // Start from TYPE phase with progress 0 for typing animation on initial mount
-    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE'>('TYPE');
+    // Phases: TYPE (writing), WAIT (holding text), DELETE (erasing), CYCLING (waiting for new prop)
+    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE' | 'CYCLING'>('TYPE');
     const [progress, setProgress] = useState(0);
 
     // Calculate segment lengths
@@ -30,26 +30,26 @@ export const TypingHero = ({
 
     // React to template updates from parent
     useEffect(() => {
-        // Only update if actually different to avoid loops
-        if (template !== displayedTemplate) {
-            setDisplayedTemplate(template);
+        // Only update if actually different content/reference
+        // We compare content because in override modes, we might get new ref but identical content.
+        // If content matches, we normally wouldn't restart, BUT if we are stuck in CYCLING phase,
+        // we MUST restart (or show full text) to get out of empty state.
 
-            if (phase === 'DELETE') {
-                // We were deleting and just got new text -> Start Typing
-                setPhase('TYPE');
-                setProgress(0);
-            } else {
-                // Template changed during WAIT or TYPE -> Start typing the new one
-                setPhase('TYPE');
-                setProgress(0);
-            }
+        const isContentDifferent =
+            template.line1 !== displayedTemplate.line1 ||
+            template.highlight !== displayedTemplate.highlight;
+
+        if (template !== displayedTemplate || isContentDifferent) {
+            setDisplayedTemplate(template);
+            setPhase('TYPE');
+            setProgress(0);
         }
-    }, [template, displayedTemplate, phase]); // Added displayedTemplate and phase to dependencies
+    }, [template, displayedTemplate]);
 
     useEffect(() => {
         // If paused, do NOT schedule next tick.
-        // When unpaused, this effect will re-run and schedule based on current phase.
         if (paused) return;
+        if (phase === 'CYCLING') return; // Idle while waiting for parent
 
         let timeout: NodeJS.Timeout;
 
@@ -57,7 +57,6 @@ export const TypingHero = ({
             // Wait 5 seconds before deleting
             timeout = setTimeout(() => {
                 setPhase('DELETE');
-                setProgress(totalLen); // Start deleting from true end
             }, 5000);
         } else if (phase === 'DELETE') {
             // Delete backwards
@@ -65,8 +64,9 @@ export const TypingHero = ({
                 setProgress(prev => {
                     const next = prev - 1;
                     if (next < 0) {
+                        setPhase('CYCLING'); // Stop loop
                         onCycle(); // Request new template
-                        return 0; // Wait for prop update to switch phase
+                        return 0;
                     }
                     return next;
                 });
@@ -104,13 +104,16 @@ export const TypingHero = ({
     // Determine active segment for cursor placement
     let cursorSegment: 'line1' | 'bold' | 'line2Pre' | 'hl' | 'suffix' | null = null;
 
-    // Only show cursor if we are actively typing/deleting or waiting
-    // But precise placement:
-    if (progress <= len1) cursorSegment = 'line1';
-    else if (progress <= len1 + lenBold) cursorSegment = 'bold';
-    else if (progress <= len1 + lenBold + len2Pre) cursorSegment = 'line2Pre';
-    else if (progress <= len1 + lenBold + len2Pre + lenHl) cursorSegment = 'hl';
-    else cursorSegment = 'suffix';
+    // Show cursor during typing, deletion, or cycling (at start)
+    if (phase === 'TYPE' || phase === 'DELETE' || phase === 'CYCLING') {
+        if (progress <= len1) cursorSegment = 'line1';
+        else if (progress <= len1 + lenBold) cursorSegment = 'bold';
+        else if (progress <= len1 + lenBold + len2Pre) cursorSegment = 'line2Pre';
+        else if (progress <= len1 + lenBold + len2Pre + lenHl) cursorSegment = 'hl';
+        else cursorSegment = 'suffix';
+    }
+    // In WAIT phase, we usually hide cursor or blink at end. Let's blink at end.
+    if (phase === 'WAIT') cursorSegment = 'suffix';
 
     return (
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
