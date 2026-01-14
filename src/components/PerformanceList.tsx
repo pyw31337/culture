@@ -1418,12 +1418,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Sorting (Keyword Match desc with shuffle, then Date asc)
     const sortedPerformances = useMemo(() => {
         // Sports: Strict Date ASC Sort (Nearest First)
-        if (['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(selectedGenre)) {
+        if (['volleyball', 'basketball', 'baseball', 'handball', 'soccer', 'hockey'].includes(selectedGenre)) {
             return [...basePerformances].sort((a, b) => {
                 // Remove (Time) or ~ range for comparison
                 const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
                 const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
                 return dateA.localeCompare(dateB);
+            });
+        }
+
+        // Movie/OTT: Strict Date DESC Sort (Newest First)
+        if (selectedGenre === 'movie' || selectedGenre === 'ott') {
+            return [...basePerformances].sort((a, b) => {
+                const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
+                const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
+                // Descending: B - A
+                return dateB.localeCompare(dateA);
             });
         }
 

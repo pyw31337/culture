@@ -265,9 +265,38 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
         const performances = transformToPerformances(allItems);
         console.log(`Transformed to ${performances.length} unique performances.`);
 
-        // 4. Save
-        fs.writeFileSync(TARGET_FILE, JSON.stringify(performances, null, 2));
-        console.log(`Saved ${performances.length} OTT performances to ${TARGET_FILE}`);
+        // 4. Save with Accumulation Logic
+        let finalPerformances = performances;
+        if (fs.existsSync(TARGET_FILE)) {
+            try {
+                const existingData = JSON.parse(fs.readFileSync(TARGET_FILE, 'utf-8')) as OTTPerformance[];
+                console.log(`Loaded ${existingData.length} existing items.`);
+
+                const itemMap = new Map<string, OTTPerformance>();
+                existingData.forEach(item => itemMap.set(item.id, item));
+
+                // Merge new items (Overwrite existing if ID matches to update details)
+                performances.forEach(item => {
+                    if (itemMap.has(item.id)) {
+                        // Optional: Carefully merge fields if needed, but for now update is safe
+                        // assuming scraper is source of truth for current state.
+                        // However, we want to KEEP old items that are NOT in new scrape.
+                        const existing = itemMap.get(item.id)!;
+                        itemMap.set(item.id, { ...existing, ...item });
+                    } else {
+                        itemMap.set(item.id, item);
+                    }
+                });
+
+                finalPerformances = Array.from(itemMap.values());
+                console.log(`Merged into ${finalPerformances.length} total items.`);
+            } catch (e) {
+                console.error("Error reading existing file for merge, overwriting...", e);
+            }
+        }
+
+        fs.writeFileSync(TARGET_FILE, JSON.stringify(finalPerformances, null, 2));
+        console.log(`Saved ${finalPerformances.length} OTT performances to ${TARGET_FILE}`);
 
     } catch (err) {
         console.error('Error scraping OTT data:', err);

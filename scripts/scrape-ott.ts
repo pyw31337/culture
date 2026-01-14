@@ -321,6 +321,11 @@ async function scrapeOTT() {
         existingItems.forEach(item => itemMap.set(item.id, item));
 
         // Merge new items: Existing items take precedence to preserve manual edits
+        // strategy: ACCUMULATION
+        // We load existing items first, then overlay new scraped data.
+        // Items that are no longer present in the scrape source (e.g. older movies dropped from "New Releases")
+        // will RETAIN their presence in the file because they are in 'existingItems'.
+        // This ensures the database grows over time as requested.
         processedItems.forEach(newItem => {
             if (itemMap.has(newItem.id)) {
                 const existing = itemMap.get(newItem.id)!;
