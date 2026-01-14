@@ -327,7 +327,36 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                         const country = getText(`${baseSelector} > li:nth-child(8) .desc`) || getText(`${baseSelector} > li:nth-child(8)`);
                         const year = getText(`${baseSelector} > li:nth-child(9) .desc`) || getText(`${baseSelector} > li:nth-child(9)`);
 
-                        return { originalTitle, genre, runningTime, grade, country, year };
+                        // Scrape Cast & Director
+                        let director = '';
+                        let cast: string[] = [];
+
+                        // Strategy 1: Look for people section
+                        // Usually subsequent sections in the tab-item
+                        const peopleCards = document.querySelectorAll('.people-card, .person-card, .actor-item');
+                        if (peopleCards.length > 0) {
+                            peopleCards.forEach(card => {
+                                const role = card.querySelector('.role, .type')?.textContent?.trim() || '';
+                                const name = card.querySelector('.name, .title')?.textContent?.trim() || '';
+                                if (!name) return;
+
+                                if (role.includes('감독')) {
+                                    director = name;
+                                } else if (role.includes('주연') || role.includes('출연') || role === '' || role.includes('Actor')) {
+                                    if (cast.length < 5) cast.push(name);
+                                }
+                            });
+                        } else {
+                            // Fallback: list items logic?
+                            // Try generic .name in common containers
+                            const potentialNames = document.querySelectorAll('.cast-wrap .name, .staff-wrap .name');
+                            potentialNames.forEach((el, idx) => {
+                                if (idx === 0 && !director) director = el.textContent?.trim() || '';
+                                else if (cast.length < 5) cast.push(el.textContent?.trim() || '');
+                            });
+                        }
+
+                        return { originalTitle, genre, runningTime, grade, country, year, director, cast };
                     });
 
                     // Map platform from list item
@@ -353,8 +382,8 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                         originalTitle: details.originalTitle,
                         productionCountry: details.country,
                         productionYear: details.year,
-                        cast: [],
-                        director: ''
+                        cast: details.cast || [],
+                        director: details.director || ''
                     } as OTTPerformance;
 
                 } catch (e) {
