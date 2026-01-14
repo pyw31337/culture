@@ -131,67 +131,58 @@ async function scrapeDetailPage(detailPage: any, item: any) {
         await new Promise(r => setTimeout(r, 1000));
 
         const detailInfo = await detailPage.evaluate(() => {
+            // User Provided Selectors:
+            // Address: #placeCopy (data-clipboard-text) OR #class_info ... .info-address-text-area > span
+            // Duration: .class-detail-summery-area > div:nth-child(3) > div
+            // People: .class-detail-summery-area > div:nth-child(4) > div
+            // Discount: #price-bar ... .discount_rate
+            // Origin: #price-bar ... .base_price
+            // Sale: #price-bar ... .detail_txt.col-xs-6 > div (this might return text including span, need clean)
+
+            const txt = (s: string) => document.querySelector(s)?.textContent?.trim() || '';
+
+            // 1. Location
             let location = '';
-            const locationEl = document.querySelector('#placeCopy');
-
-            if (locationEl) {
-                const clipboardText = locationEl.getAttribute('data-clipboard-text');
-                if (clipboardText &&
-                    clipboardText.trim().length > 0 &&
-                    !clipboardText.startsWith('http') &&
-                    clipboardText !== 'Copy Address' &&
-                    clipboardText !== '주소복사') {
-                    location = clipboardText.trim();
-                }
-            }
+            const clipEl = document.querySelector('#placeCopy');
+            if (clipEl) location = clipEl.getAttribute('data-clipboard-text') || '';
 
             if (!location) {
+                // Fallback selector
+                location = txt('#class_info > div.address-info-box.info-area.p-t-30.p-l-15.p-r-15.m-b-30 > div > div.info-address-text-area > span');
+            }
+            if (!location) {
+                // Old fallback
                 const detailPlace = document.querySelector('.detail-place');
-                if (detailPlace) {
-                    const text = (detailPlace as HTMLElement).innerText.trim();
-                    if (text && text.length > 2) {
-                        location = text;
-                    }
-                }
+                if (detailPlace) location = (detailPlace as HTMLElement).innerText.trim();
             }
 
-            if (!location) {
-                const bodyText = document.body.innerText;
-                const addressMatch = bodyText.match(/(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)[^\n]{5,50}/);
-                if (addressMatch) {
-                    location = addressMatch[0].trim();
-                }
-            }
+            // 2. Info
+            const time = txt('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(3) > div');
+            const capacity = txt('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(4) > div');
 
-            if (!location) location = '상세페이지 참조';
+            // 3. Price
+            const discountRate = txt('#price-bar > div.row > div.detail_txt.col-xs-6 > span.discount_rate');
+            const originalPrice = txt('#price-bar > div.row > div.detail_txt.col-xs-6 > span.base_price');
 
-            let discountRate = '';
-            let originalPrice = '';
+            // Sale price is inside the div but outside the spans technically? Structure: <div> <span class="discount"></span> <span class="base"></span> 30,000원 </div>
+            // We need to be careful to extract just the price text.
+            const priceContainer = document.querySelector('#price-bar > div.row > div.detail_txt.col-xs-6');
             let finalPrice = '';
-
-            const discountEl = document.querySelector('.discount_rate');
-            const baseEl = document.querySelector('.base_price');
-            const priceEl = document.querySelector('.price01');
-
-            if (discountEl) discountRate = (discountEl as HTMLElement).innerText.trim();
-            if (baseEl) originalPrice = (baseEl as HTMLElement).innerText.trim();
-            if (priceEl) {
-                const listPrice = document.querySelector('.list-price');
-                if (listPrice) finalPrice = (listPrice as HTMLElement).innerText.trim();
-                else finalPrice = (priceEl as HTMLElement).innerText.trim() + '원';
+            if (priceContainer) {
+                // Clone to avoid modifying DOM? Or just iterate nodes.
+                // Simplest: regex on innerText, knowing that discount/base are there.
+                // OR: remove children text from total text?
+                // Let's get full text and parse. e.g. "30% 50,000원 35,000원"
+                // Usually the LAST number is the sale price.
+                const fullText = (priceContainer as HTMLElement).innerText;
+                const numbers = fullText.match(/[\d,]+원/g);
+                if (numbers && numbers.length > 0) {
+                    finalPrice = numbers[numbers.length - 1]; // Last one usually
+                } else {
+                    // Try just text content?
+                    finalPrice = fullText;
+                }
             }
-
-            let parking = '';
-            let time = '';
-            let capacity = '';
-
-            const parkingEl = document.querySelector('.detail-car');
-            const timeEl = document.querySelector('.detail-time');
-            const peopleEl = document.querySelector('.detail-people');
-
-            if (parkingEl) parking = (parkingEl as HTMLElement).innerText.trim();
-            if (timeEl) time = (timeEl as HTMLElement).innerText.trim();
-            if (peopleEl) capacity = (peopleEl as HTMLElement).innerText.trim();
 
             let detailImage = '';
             const mainImg = document.querySelector('.class-detail-img img, .swiper-slide img');
@@ -200,7 +191,20 @@ async function scrapeDetailPage(detailPage: any, item: any) {
                     (mainImg as HTMLElement).getAttribute('data-src') || '';
             }
 
-            return { location, parking, time, capacity, discountRate, originalPrice, finalPrice, detailImage };
+            // Parking? Old selector: .detail-car. We can keep it or skip if not requested.
+            // keeping for richness if it exists alongside new selectors
+            const parking = txt('.detail-car');
+
+            return {
+                location: location || '상세페이지 참조',
+                time,
+                capacity,
+                discountRate,
+                originalPrice,
+                finalPrice,
+                detailImage,
+                parking
+            };
         });
 
         return detailInfo;

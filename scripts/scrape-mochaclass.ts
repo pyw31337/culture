@@ -237,11 +237,31 @@ async function scrapeMochaClass() {
             await new Promise(r => setTimeout(r, 800)); // Minimal wait
 
             const detailData = await page.evaluate(() => {
-                const el = document.querySelector('#topleft > div:nth-child(10) > div > p');
+                // Selectors provided:
+                // Address: #topleft > div:nth-child(10) > div > p.MuiTypography-root...
+                // Time: #topleft > div:nth-child(11) > section
+                // Price: #topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7
+
+                const addressEl = document.querySelector('#topleft > div:nth-child(10) > div > p.MuiTypography-root');
+                const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
+                // The price selector seems specific to a layout variant. We'll try it, and fallback if needed.
+                const priceEl = document.querySelector('#topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7');
+
                 return {
-                    rawAddress: el ? el.textContent?.trim() || '' : ''
+                    rawAddress: addressEl ? addressEl.textContent?.trim() || '' : '',
+                    time: timeEl ? timeEl.innerText?.trim() || '' : '',
+                    detailPrice: priceEl ? priceEl.innerText?.trim() || '' : ''
                 };
             });
+
+            // If detail price is found, use it (might need cleaning)
+            let detailPrice = detailData.detailPrice;
+            if (detailPrice) {
+                // Formatting "30,000원..."
+                // Extract digits and "원"
+                const match = detailPrice.match(/[\d,]+원/);
+                if (match) detailPrice = match[0];
+            }
 
             const address = detailData.rawAddress || '서울';
 
@@ -272,12 +292,12 @@ async function scrapeMochaClass() {
                 venue: venue,
                 link: item.link,
 
-                region: address.includes('서울') ? 'seoul' : 'gyeonggi', // Simple fallback, or detect better
+                region: address.includes('서울') ? 'seoul' : 'gyeonggi',
                 genre: 'class',
-                price: item.price,
+                price: detailPrice || item.price,
                 originalPrice: item.originalPrice,
-                discount: '', // Calculate if needed later
-                runningTime: '예약페이지 참조',
+                discount: '',
+                runningTime: detailData.time || '예약페이지 참조',
                 ageLimit: '전체',
                 casting: '',
                 address: address

@@ -216,64 +216,61 @@ async function scrapeUmClass() {
             // Wait a small bit for content
             await new Promise(r => setTimeout(r, 500));
 
-            const detailData = await page.evaluate(() => {
-                // Address selector provided by user:
-                // #um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(14) > div:nth-child(2) > span
+            // Selectors provided:
+            // Duration: .voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)
+            // People: ... > div:nth-child(2) > span:nth-child(2)
+            // Total Count: ... > div:nth-child(3) > span:nth-child(2)
+            // Discount: .pc-payment-btn-area ... span:nth-child(1)
+            // Origin Price: ... span:nth-child(2)
+            // Sale Price: ... span:nth-child(3)
+            // Use Time: ... > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span
+            // Address: ... > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span 
 
-                let rawAddress = '';
-                const addressEl = document.querySelector('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(14) > div:nth-child(2) > span');
-                if (addressEl) {
-                    rawAddress = addressEl.textContent?.trim() || '';
-                } else {
-                    // Fallback search for "주소" text
-                    const elements = document.querySelectorAll('span, p, div');
-                    for (const el of elements) {
-                        if (el.textContent?.includes('주소') && el.textContent.length < 100) {
-                            // This is risky, depends on structure.
-                            // But umclass seems to have a specific layout.
-                            // Let's rely on the selector mostly.
-                        }
-                    }
-                }
+            // Helper
+            const txt = (sel: string) => document.querySelector(sel)?.textContent?.trim() || '';
 
-                return { rawAddress };
-            });
+            const duration = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
+            const people = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
+            const totalCount = txt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
 
-            // Parse Venue from Address (Last word logic)
-            let venue = '솜씨당 클래스';
-            let address = detailData.rawAddress || '서울';
+            const discount = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
+            const originPrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
+            const salePrice = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
 
-            if (detailData.rawAddress) {
-                const tokens = detailData.rawAddress.split(/\s+/);
-                if (tokens.length > 1) {
-                    venue = tokens[tokens.length - 1];
-                    // Clean venue if needed (remove trailing brackets etc)
-                }
+            const useTime = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
+            const rawAddress = txt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
+
+            return {
+                rawAddress,
+                duration,
+                people,
+                totalCount,
+                discount,
+                originPrice,
+                salePrice,
+                useTime
+            };
+        });
+
+        // Parse Venue from Address (Last word logic)
+        let venue = '솜씨당 클래스';
+        let address = detailData.rawAddress || '서울';
+
+        if (detailData.rawAddress) {
+            const tokens = detailData.rawAddress.split(/\s+/);
+            if (tokens.length > 1) {
+                venue = tokens[tokens.length - 1];
+                // Clean venue if needed (remove trailing brackets etc)
             }
+        }
 
-            allItems.push({
-                id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
-                title: item.title,
-                image: item.image,
-                date: 'OPEN RUN', // Classes are usually ongoing
-                venue: venue,
-                link: item.link,
-                region: address.includes('서울') ? 'seoul' : 'gyeonggi',
-                genre: 'class',
-                price: item.price,
-                originalPrice: item.price, // Can calculate from discount if needed, but simplicity first
-                discount: item.discount,
-                runningTime: '옵션 참조',
-                ageLimit: '전체',
-                casting: '',
-                address: address
-            });
-
-        } catch (e) {
+        allItems.push({
+            id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
+            title: item.title,
             // console.error(`    Failed to details for ${item.title}: ${e}`);
         }
 
-        processedCount++;
+    processedCount++;
         progressBar.update(processedCount);
     }
 
