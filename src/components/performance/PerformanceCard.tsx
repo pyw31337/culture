@@ -527,8 +527,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
-                                                {/* Musical Specific: Time / Age / Info */}
-                                                {perf.genre === 'musical' && (perf.runningTime || perf.ageRating || perf.price) && (
+                                                {/* Musical/Concert Specific: Time / Age / Info */}
+                                                {(perf.genre === 'musical' || perf.genre === 'concert') && (perf.runningTime || perf.ageRating || perf.price) && (
                                                     <div className="text-gray-400 mt-1 mb-1 space-y-0.5">
                                                         {(perf.runningTime || perf.ageRating) && (
                                                             <div className="flex gap-2 text-[10px]">
