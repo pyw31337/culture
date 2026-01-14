@@ -272,12 +272,17 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
         console.log(`Total raw items: ${allItems.length}`);
 
         // 3. Enrich with Details (Visit each link)
+        // Optimization: Only enrich the top 60 items to prevent CI timeout
+        const MAX_ENRICH_ITEMS = 60;
+        const targetItems = allItems.slice(0, MAX_ENRICH_ITEMS);
+        console.log(`Enriching top ${targetItems.length} items (Limit: ${MAX_ENRICH_ITEMS})...`);
+
         const enrichedPerformances: OTTPerformance[] = [];
         const CONCURRENCY = 3; // Lower concurrency to be polite and avoid blocks
 
-        for (let i = 0; i < allItems.length; i += CONCURRENCY) {
-            const chunk = allItems.slice(i, i + CONCURRENCY);
-            console.log(`Processing chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(allItems.length / CONCURRENCY)}...`);
+        for (let i = 0; i < targetItems.length; i += CONCURRENCY) {
+            const chunk = targetItems.slice(i, i + CONCURRENCY);
+            console.log(`Processing chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(targetItems.length / CONCURRENCY)}...`);
 
             const promises = chunk.map(async (item) => {
                 const newPage = await browser.newPage();
@@ -288,7 +293,7 @@ function transformToPerformances(items: OTTItemRaw[]): OTTPerformance[] {
                     const link = item.link.startsWith('http') ? item.link : `https://m.kinolights.com${item.link}`;
                     // console.log(`Scraping detail: ${item.title} (${link})`);
 
-                    await newPage.goto(link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                    await newPage.goto(link, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
                     // Wait for metadata section
                     try {
