@@ -1,17 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Performance } from '@/types';
-import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths, parseISO, isWithinInterval } from 'date-fns';
+import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { X, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils'; // Import centralized helper
-
+import { getOptimizedUrl } from '@/lib/utils';
 import Portal from './ui/Portal';
-
-// Remove local GENRE_COLORS map
 
 interface CalendarModalProps {
     performances: Performance[];
@@ -38,19 +35,13 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
             if (dateStr.includes('~')) {
                 const [startRaw, endRaw] = dateStr.split('~').map(s => s.trim());
                 if (startRaw && endRaw) {
-                    // Replace dots with dashes for easier parsing if needed, but simple string comparison works if format is YYYY.MM.DD
-                    // Standardize to YYYY-MM-DD
                     const standardStart = startRaw.replace(/\./g, '-');
-                    const standardEnd = endRaw.replace(/\./g, '-'); // Warning: endRaw might have extra text? Usually not for simple ranges.
-
-                    // Simple lex comparison for "YYYY-MM-DD" works wonderfully
+                    const standardEnd = endRaw.replace(/\./g, '-');
                     return dayStr >= standardStart && dayStr <= standardEnd;
                 }
             }
 
             // Case 2: Single Date "2024.12.10(Tue) 19:30" or "2024-12-10"
-            // Extract the date part (first 10 chars usually if YYYY.MM.DD or YYYY-MM-DD)
-            // Kovo/KBL data might use dots or dashes.
             const normalizedDate = dateStr.replace(/\./g, '-').substring(0, 10);
             return normalizedDate === dayStr;
         });
@@ -66,6 +57,35 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     const filteredDateEvents = selectedPopupGenre === 'all'
         ? selectedDateEvents
         : selectedDateEvents.filter(p => p.genre === selectedPopupGenre);
+
+    // Drag to scroll logic
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const onMouseDown = (e: React.MouseEvent) => {
+        if (!scrollRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const onMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll-fast
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     return (
         <Portal>
@@ -128,7 +148,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         )}
                                     </div>
 
-                                    {/* PC View: List (Max 2) - No internal scroll, hidden overflow */}
+                                    {/* PC View: List (Max 2) */}
                                     <div className="hidden sm:flex flex-col gap-1 overflow-hidden">
                                         {dayEvents.slice(0, 2).map(perf => (
                                             <div
@@ -148,7 +168,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     setSelectedDate(day);
-                                                    setSelectedPopupGenre('all'); // Reset filter when opening
+                                                    setSelectedPopupGenre('all');
                                                 }}
                                             >
                                                 +{dayEvents.length - 2} more
@@ -178,15 +198,26 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             </button>
                         </div>
 
-                        {/* Genre Tabs */}
-                        <div className="w-full px-4 py-3 bg-black/50 border-b border-gray-700 overflow-x-auto scrollbar-hide shrink-0">
-                            <div className="flex gap-2 w-max">
+                        {/* Genre Tabs - Draggable */}
+                        <div
+                            ref={scrollRef}
+                            className={`w-full px-4 py-3 bg-black/50 border-b border-gray-700 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                            onMouseDown={onMouseDown}
+                            onMouseLeave={onMouseLeave}
+                            onMouseUp={onMouseUp}
+                            onMouseMove={onMouseMove}
+                        >
+                            <div className="flex gap-2 w-max pointer-events-none">
                                 {GENRES.filter(g => g.id !== 'hotdeal').map(g => (
                                     <button
                                         key={g.id}
-                                        onClick={() => setSelectedPopupGenre(g.id)}
+                                        onClick={(e) => {
+                                            if (isDragging) e.preventDefault();
+                                            setSelectedPopupGenre(g.id);
+                                        }}
+                                        style={{ pointerEvents: 'auto' }}
                                         className={clsx(
-                                            "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-colors border",
+                                            "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-colors border select-none",
                                             selectedPopupGenre === g.id
                                                 ? "bg-white text-black border-white"
                                                 : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500 hover:text-gray-200"

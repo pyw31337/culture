@@ -79,9 +79,9 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     }, [centerLocation]);
 
     useEffect(() => {
-        const scriptId = 'kakao-map-script';
-
         const initializeMap = () => {
+            if (!window.kakao || !window.kakao.maps) return;
+
             window.kakao.maps.load(() => {
                 if (!mapRef.current) return;
 
@@ -92,6 +92,10 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         : defaultCenter,
                     level: centerLocation ? 3 : 8
                 };
+
+                // Clear container before initializing (React Strict Mode safety)
+                mapRef.current.innerHTML = '';
+
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
 
@@ -103,9 +107,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                             const lng = position.coords.longitude;
                             const loc = new window.kakao.maps.LatLng(lat, lng);
                             map.setCenter(loc);
-                            map.setLevel(5); // Zoom in closer for user location
+                            map.setLevel(5);
 
-                            // Add a marker for "My Location"
                             const content = document.createElement('div');
                             content.className = 'custom-overlay-me';
                             content.innerHTML = `
@@ -121,9 +124,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                 zIndex: 3
                             });
                         },
-                        (err) => {
-                            console.log("Geolocation failed or denied:", err);
-                        }
+                        (err) => console.log("Geolocation failed:", err)
                     );
                 }
 
@@ -134,17 +135,15 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         clusterer = new window.kakao.maps.MarkerClusterer({
                             map: map,
                             averageCenter: true,
-                            minLevel: 6, // Venues spread at level 5
+                            minLevel: 6,
                             disableClickZoom: false,
                             styles: [{
                                 width: '50px', height: '50px',
-                                background: 'rgba(37, 99, 235, 0.9)', // Blue-600
+                                background: 'rgba(37, 99, 235, 0.9)',
                                 borderRadius: '50%',
                                 color: 'white',
-                                textAlign: 'center',
-                                lineHeight: '50px',
-                                fontWeight: 'bold',
-                                fontSize: '14px',
+                                textAlign: 'center', lineHeight: '50px',
+                                fontWeight: 'bold', fontSize: '14px',
                                 boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                                 border: '2px solid rgba(255,255,255,0.8)'
                             }]
@@ -154,10 +153,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     console.warn('Failed to initialize MarkerClusterer:', e);
                 }
 
-                // Force layout update
-                setTimeout(() => { map.relayout(); map.setCenter(options.center); }, 100);
-
-                overlaysRef.current = {}; // Reset overlays
+                overlaysRef.current = {};
                 const venueGroups = performances.reduce((acc, perf) => {
                     if (!acc[perf.venue]) acc[perf.venue] = [];
                     acc[perf.venue].push(perf);
@@ -166,95 +162,65 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
 
                 const markers: any[] = [];
                 const overlays: any[] = [];
-
-                // Bounds Logic
                 const bounds = new window.kakao.maps.LatLngBounds();
+
+                // 1. Search Pin (If active)
                 if (centerLocation) {
                     bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
-
-                    // Add Search Pin (Static)
-                    // ... Search Pin Logic (Same as before) ...
                     const searchPos = new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng);
                     const searchContent = document.createElement('div');
-                    searchContent.className = 'custom-overlay-search';
+                    searchContent.className = 'custom-overlay-search'; // Ensure this class exists or use inline styles heavily
                     searchContent.innerHTML = `<div style="background-color:#ef4444;width:32px;height:32px;border-radius:50%;border:3px solid white;box-shadow:0 4px 6px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:white;animation:bounce 0.5s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:white;padding:2px 6px;border-radius:4px;font-size:10px;white-space:nowrap;">${centerLocation.name}</div>`;
 
                     new window.kakao.maps.CustomOverlay({
                         position: searchPos,
                         content: searchContent,
                         map: map,
-                        yAnchor: 0.5
+                        yAnchor: 0.5,
+                        zIndex: 20
                     });
                 }
 
-
+                // 2. Venue Pins
                 Object.entries(venueGroups).forEach(([venueName, perfs]) => {
                     const venueInfo = venues[venueName];
                     if (!venueInfo?.lat || !venueInfo?.lng) return;
 
                     const position = new window.kakao.maps.LatLng(venueInfo.lat, venueInfo.lng);
                     bounds.extend(position);
-
                     const primaryGenre = perfs[0].genre;
                     const color = GENRE_STYLES[primaryGenre]?.hex || '#9ca3af';
 
-                    // 1. Create Invisible Marker for Clusterer
-                    // Use a 1px transparent image or just relying on CustomOverlay? 
-                    // Clusterer NEEDS a Marker.
                     const marker = new window.kakao.maps.Marker({
                         position: position,
-                        // Transparent image to make it invisible but clickable/clusterable
                         image: new window.kakao.maps.MarkerImage(
                             'data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3C/svg%3E',
-                            new window.kakao.maps.Size(1, 1) // Tiny size
+                            new window.kakao.maps.Size(1, 1)
                         )
                     });
-
-                    // Attach metadata to marker for syncing
                     (marker as any).venueName = venueName;
                     markers.push(marker);
 
-                    // 2. Create Custom Overlay (The Visual Badge)
                     const content = document.createElement('div');
-                    content.style.cssText = `
-                        background-color: ${color};
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 50%;
-                        border: 2px solid white;
-                        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                        cursor: pointer;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        font-weight: bold;
-                        font-size: 10px;
-                    `;
+                    content.style.cssText = `background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 10px;`;
                     content.innerText = perfs.length.toString();
 
                     const customOverlay = new window.kakao.maps.CustomOverlay({
                         position: position,
                         content: content,
-                        // map: map, // Do NOT set map initially, let sync logic handle it
                         yAnchor: 1
                     });
-
-                    // Store for syncing
                     overlays.push({ marker, overlay: customOverlay });
 
-                    // InfoWindow Logic (Same as before)
+                    // InfoWindow Logic
                     const infoContent = document.createElement('div');
                     infoContent.className = 'info-window bg-white text-black p-3 rounded-lg shadow-xl border border-gray-200 min-w-[250px] max-w-[300px] text-left relative';
-                    infoContent.style.cssText = "bottom: 35px; position: relative; z-index: 100;"; // Positioning above marker
+                    infoContent.style.cssText = "bottom: 35px; position: relative; z-index: 100;";
 
-                    // Close button
                     const closeBtn = document.createElement('button');
                     closeBtn.innerHTML = '×';
                     closeBtn.className = 'absolute top-1 right-2 text-xl font-bold text-gray-500 hover:text-black';
-                    closeBtn.onclick = () => {
-                        popupOverlay.setMap(null);
-                    };
+                    closeBtn.onclick = () => popupOverlay.setMap(null);
 
                     const title = document.createElement('h3');
                     title.className = 'font-bold text-sm mb-2 pr-4';
@@ -280,11 +246,13 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         const pDate = document.createElement('p');
                         pDate.className = 'text-[10px] text-gray-500 mt-0.5';
                         pDate.innerText = p.date;
+
                         const link = document.createElement('a');
                         link.href = p.link;
                         link.target = '_blank';
                         link.className = 'inline-block mt-1 px-2 py-0.5 bg-blue-600 text-white text-[10px] rounded hover:bg-blue-700 font-bold';
                         link.innerText = '예매하기';
+
                         details.appendChild(pTitle);
                         details.appendChild(pDate);
                         details.appendChild(link);
@@ -315,60 +283,29 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     };
                 });
 
-                // Add markers to clusterer or map
-                if (clusterer) {
-                    clusterer.addMarkers(markers);
-                } else {
-                    markers.forEach(m => m.setMap(map));
-                }
+                if (clusterer) clusterer.addMarkers(markers);
+                else markers.forEach(m => m.setMap(map));
 
-                // Sync Function
                 const syncOverlays = () => {
                     overlays.forEach(({ marker, overlay }) => {
-                        // If marker is on map (not clustered), show overlay
-                        if (marker.getMap()) {
-                            overlay.setMap(map);
-                        } else {
-                            overlay.setMap(null);
-                        }
+                        if (marker.getMap()) overlay.setMap(map);
+                        else overlay.setMap(null);
                     });
                 };
-
-                // Listeners
                 window.kakao.maps.event.addListener(map, 'idle', syncOverlays);
-                // Initial Sync (Wait a bit for clusterer)
                 setTimeout(syncOverlays, 100);
             });
         };
 
-        if (document.getElementById(scriptId)) {
-            if (window.kakao && window.kakao.maps && window.kakao.maps.MarkerClusterer) {
+        // Wait for global SDK
+        const checkInterval = setInterval(() => {
+            if (window.kakao && window.kakao.maps) {
+                clearInterval(checkInterval);
                 initializeMap();
-            } else {
-                let retryCount = 0;
-                const checkInterval = setInterval(() => {
-                    retryCount++;
-                    if (window.kakao && window.kakao.maps && window.kakao.maps.MarkerClusterer) {
-                        clearInterval(checkInterval);
-                        initializeMap();
-                    } else if (retryCount > 20) { // Fallback after ~2s
-                        clearInterval(checkInterval);
-                        console.warn('MarkerClusterer not found after timeout. Initializing map without clustering.');
-                        initializeMap();
-                    }
-                }, 100);
             }
-            return;
-        }
+        }, 100);
 
-        const script = document.createElement('script');
-        script.id = scriptId;
-        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services,clusterer`;
-        script.async = true;
-        script.onload = initializeMap;
-        document.head.appendChild(script);
-
-        return () => { };
+        return () => clearInterval(checkInterval);
     }, [performances, centerLocation]);
 
     // Group performances for the list view
