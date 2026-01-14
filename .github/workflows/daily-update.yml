@@ -2,8 +2,8 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: '0 20 * * *' # 05:00 KST (20:00 UTC previous day)
-    - cron: '0 3 * * *'  # 12:00 KST (03:00 UTC)
+    - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Main daily run
+    - cron: '0 10 * * *' # 19:00 KST (10:00 UTC) - Retry if previous run failed
   workflow_dispatch:
   push:
     branches:
@@ -44,15 +44,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
 
-      - name: Check Retry Condition (Skip if 12:00 PM and prev run success)
+      - name: Check Retry Condition (Skip 19:00 KST run if previous 23:00 KST run was successful)
         id: check_retry
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           current_hour=$(date -u +%H)
-          # 03 UTC is 12 KST.
-          if [ "$current_hour" -eq "03" ]; then
-            echo "Time is 12:00 PM KST (03:00 UTC). Checking if previous run succeeded..."
+          # 10 UTC is 19:00 KST (retry time)
+          if [ "$current_hour" -eq "10" ]; then
+            echo "Time is 19:00 KST (10:00 UTC). Checking if previous run succeeded..."
             # Get status of the last COMPLETED run for this workflow
             last_status=$(gh run list --workflow daily-update.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion')
             echo "Last run status: $last_status"
@@ -65,7 +65,7 @@ jobs:
               echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
             fi
           else
-            echo "Regular schedule. Proceeding."
+            echo "Regular schedule (23:00 KST). Proceeding."
             echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
           fi
 
