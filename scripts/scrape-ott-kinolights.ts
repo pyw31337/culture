@@ -22,9 +22,11 @@ interface OTTItemRaw {
     title: string;
     link: string;
     date: string;
-    platform: string;
+    platform: string; // Used for normalized platform
+    platformClass: string; // Used for raw class extraction
     poster: string;
     grade: string;
+    dateRaw: string; // Also missing based on usage in line 182
 }
 
 interface OTTPerformance {
