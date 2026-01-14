@@ -414,7 +414,7 @@ async function scrapeTimeTicket() {
                 // The provided selector was complex: #ajaxcontentarea > div > div:nth-child(7) ...
                 // Let's iterate all boxes to find "주소"
                 radiusBoxes.forEach(box => {
-                    const text = box.innerText;
+                    const text = (box as HTMLElement).innerText;
                     if (text.includes('주소')) {
                         const parts = text.split('주소');
                         if (parts[1]) {
