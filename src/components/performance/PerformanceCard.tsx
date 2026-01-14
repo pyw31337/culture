@@ -407,7 +407,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
                                     {/* Performance Info - Lifted up */}
-                                    <div className="relative z-10 p-4 pb-[72px]">
+                                    <div className="relative z-10 p-4 pb-[100px]">
 
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
