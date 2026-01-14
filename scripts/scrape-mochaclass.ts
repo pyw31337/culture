@@ -249,8 +249,8 @@ async function scrapeMochaClass() {
 
                 return {
                     rawAddress: addressEl ? addressEl.textContent?.trim() || '' : '',
-                    time: timeEl ? timeEl.innerText?.trim() || '' : '',
-                    detailPrice: priceEl ? priceEl.innerText?.trim() || '' : ''
+                    time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
+                    detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : ''
                 };
             });
 

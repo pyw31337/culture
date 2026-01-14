@@ -267,18 +267,33 @@ async function scrapeUmClass() {
         allItems.push({
             id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
             title: item.title,
-            // console.error(`    Failed to details for ${item.title}: ${e}`);
-        }
+            date: detailData.duration || '2024-01-01', // Fallback or scraped data
+            venue: venue,
+            image: item.image,
+            link: item.link,
+            genre: 'class',
+            region: address, // Extracted region
+            runningTime: detailData.useTime || detailData.duration,
+            viewCount: detailData.totalCount, // abusing viewCount for capacity/count
+            originalPrice: detailData.originPrice,
+            price: detailData.salePrice || detailData.originPrice,
+            discount: detailData.discount,
+            casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}` // Combine extra info
+        });
 
-    processedCount++;
-        progressBar.update(processedCount);
+    } catch (e) {
+        console.error(`    Failed to scrape details for ${item.title}: ${e}`);
     }
 
-    progressBar.finish();
-    console.log(`\nCompleted! Total collected: ${allItems.length}`);
-    await browser.close();
+    processedCount++;
+    progressBar.update(processedCount);
+}
 
-    saveData(allItems);
+progressBar.finish();
+console.log(`\nCompleted! Total collected: ${allItems.length}`);
+await browser.close();
+
+saveData(allItems);
 }
 
 scrapeUmClass().catch(console.error);
