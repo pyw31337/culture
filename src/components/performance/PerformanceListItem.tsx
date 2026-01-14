@@ -304,6 +304,27 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
+                                {/* Musical Specific: Time / Age / Info */}
+                                {perf.genre === 'musical' && (perf.runningTime || perf.ageRating || perf.price) && (
+                                    <div className="text-gray-400 mt-1.5 space-y-1">
+                                        {(perf.runningTime || perf.ageRating) && (
+                                            <div className="flex gap-2 text-xs">
+                                                {perf.runningTime && <span className="flex items-center gap-1">🕒 {perf.runningTime}</span>}
+                                                {perf.ageRating && <span className="flex items-center gap-1">🔞 {perf.ageRating}</span>}
+                                            </div>
+                                        )}
+                                        {perf.price && (
+                                            <div className="text-xs font-medium text-emerald-400">
+                                                🎟️ {perf.price.split('원')[0]}원
+                                                {/* Heuristic for discount if text contains % */}
+                                                {perf.price.includes('%') && (
+                                                    <span className="ml-1 text-red-500 text-[10px]">{perf.price.match(/\d+%/)?.[0]}</span>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
                                 {/* Director */}
                                 {perf.director && (
                                     <div className="flex gap-2 items-start">

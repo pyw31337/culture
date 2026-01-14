@@ -527,6 +527,26 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
+                                                {/* Musical Specific: Time / Age / Info */}
+                                                {perf.genre === 'musical' && (perf.runningTime || perf.ageRating || perf.price) && (
+                                                    <div className="text-gray-400 mt-1 mb-1 space-y-0.5">
+                                                        {(perf.runningTime || perf.ageRating) && (
+                                                            <div className="flex gap-2 text-[10px]">
+                                                                {perf.runningTime && <span className="flex items-center gap-0.5">🕒 {perf.runningTime}</span>}
+                                                                {perf.ageRating && <span className="flex items-center gap-0.5">🔞 {perf.ageRating}</span>}
+                                                            </div>
+                                                        )}
+                                                        {perf.price && (
+                                                            <div className="text-[10px] font-medium text-emerald-400">
+                                                                🎟️ {perf.price.split('원')[0]}원
+                                                                {perf.price.includes('%') && (
+                                                                    <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
+                                                                )}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                )}
+
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">
                                                         <span className="text-gray-500 font-bold shrink-0">감독</span>
