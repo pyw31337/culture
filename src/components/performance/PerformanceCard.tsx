@@ -449,11 +449,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </div>
 
                                         {/* Title */}
-                                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link relative z-[100]" onClick={e => e.stopPropagation()}>
-                                            <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg group-hover/link:text-[#a78bfa] transition-colors">
+                                        {/* Title (Link Removed per request) */}
+                                        <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
+                                            <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
                                                 {perf.title.replace(/^\[야구\]\s*/, '').trim()}
                                             </h3>
-                                        </a>
+                                        </div>
 
                                         {/* Platforms Text */}
                                         {perf.platforms && perf.platforms.length > 0 && (
@@ -519,6 +520,30 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         <a href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 truncate hover:text-white hover:underline transition-colors relative z-[100]" onClick={e => e.stopPropagation()}>
                                                             {perf.director.replace('더보기', '').trim()}
                                                         </a>
+                                                    </div>
+                                                )}
+                                                {/* Cast (Added for parity with List View) */}
+                                                {perf.cast && perf.cast.length > 0 && (
+                                                    <div className="flex gap-1 items-start">
+                                                        <span className="text-gray-500 font-bold shrink-0">출연</span>
+                                                        <div className="flex flex-wrap gap-x-1 leading-snug">
+                                                            {perf.cast.slice(0, 3).map((actor: string, idx: number) => {
+                                                                const cleanName = actor.replace('더보기', '').trim();
+                                                                if (!cleanName) return null;
+                                                                return (
+                                                                    <a
+                                                                        key={idx}
+                                                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="text-gray-300 hover:text-white hover:underline transition-colors relative z-[100]"
+                                                                        onClick={e => e.stopPropagation()}
+                                                                    >
+                                                                        {cleanName}{idx < Math.min(perf.cast.length, 3) - 1 ? ',' : ''}
+                                                                    </a>
+                                                                );
+                                                            })}
+                                                        </div>
                                                     </div>
                                                 )}
                                                 {perf.movieInfo && (
