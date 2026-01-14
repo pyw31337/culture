@@ -487,6 +487,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setIsStorageLoaded(true);
         // Delay to allow content to render before removing skeleton
         setTimeout(() => setIsInitialLoading(false), 100);
+
+        // Check for Kakao SDK availability
+        const checkSdk = setInterval(() => {
+            if (window.kakao && window.kakao.maps) {
+                setIsSdkLoaded(true);
+                clearInterval(checkSdk);
+            }
+        }, 500);
+        return () => clearInterval(checkSdk);
     }, []);
 
     useEffect(() => {
@@ -1106,7 +1115,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             lng: candidate.lng,
             name: candidate.name
         });
-        setSearchText(candidate.name); // Update input to selected name? User might want to refine.
+        setSearchText(''); // Clear text filter to allow radius search to show all nearby items
         setIsDropdownOpen(false);
         setHighlightedIndex(-1);
 

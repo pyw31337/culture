@@ -569,7 +569,7 @@ export default function HeroSection({
                             onChange={(e) => setSearchText(e.target.value)}
                             onKeyDown={handleKeyDown}
                             className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
-                            placeholder={activeLocation ? "주변 공연장 검색..." : "공연명, 장소, 지역 검색..."}
+                            placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "공연명, 장소, 지역 검색..."}
                         />
 
                         {/* Reset Button */}
