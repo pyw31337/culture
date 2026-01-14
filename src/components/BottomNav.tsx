@@ -142,7 +142,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
 
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 z-[90] pb-safe">
+        <nav className="fixed bottom-0 left-0 right-0 z-[5000] pb-safe">
             {/* Main bar container with notch */}
             <div className="relative max-w-7xl mx-auto px-2">
 

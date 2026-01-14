@@ -52,21 +52,21 @@ async function scrapeKovo() {
             await autoScroll(page);
 
             const scrapedItems = await page.evaluate(() => {
-                const KOVO_LOGOS = {
-                    "서울Kixx": "https://cdn.dev.kovo.co.kr/emblems/kixx.svg",
-                    "알토스": "https://cdn.dev.kovo.co.kr/emblems/altos.svg",
-                    "VIXTORM": "https://cdn.dev.kovo.co.kr/emblems/vixtorm.svg",
-                    "우리WON": "https://cdn.dev.kovo.co.kr/emblems/wooriwon.svg",
-                    "블루팡스": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-                    "읏맨": "https://cdn.dev.kovo.co.kr/emblems/okman.svg",
-                    "PEPPERS": "https://cdn.dev.kovo.co.kr/emblems/aipeppers.svg",
-                    "하이패스": "https://cdn.dev.kovo.co.kr/emblems/hipass.svg",
-                    "스카이워커스": "https://cdn.dev.kovo.co.kr/emblems/skywalkers.svg",
-                    "스타즈": "https://cdn.dev.kovo.co.kr/emblems/stars.svg",
-                    "핑크스파이더스": "https://cdn.dev.kovo.co.kr/emblems/pinkspiders.svg",
-                    "힐스테이트": "https://cdn.dev.kovo.co.kr/emblems/hillstate.svg",
-                    "점보스": "https://cdn.dev.kovo.co.kr/emblems/jumbos.svg",
-                    "레드스파크스": "https://cdn.dev.kovo.co.kr/emblems/redsparks.svg"
+                const KOVO_LOGOS: Record<string, string> = {
+                    "서울Kixx": "/images/logos/kovo/kixx.svg",
+                    "알토스": "/images/logos/kovo/altos.svg",
+                    "VIXTORM": "/images/logos/kovo/vixtorm.svg",
+                    "우리WON": "/images/logos/kovo/wooriwon.svg",
+                    "블루팡스": "/images/logos/kovo/bluefangs.svg",
+                    "읏맨": "/images/logos/kovo/okman.svg",
+                    "PEPPERS": "/images/logos/kovo/aipeppers.svg",
+                    "하이패스": "/images/logos/kovo/hipass.svg",
+                    "스카이워커스": "/images/logos/kovo/skywalkers.svg",
+                    "스타즈": "/images/logos/kovo/stars.svg",
+                    "핑크스파이더스": "/images/logos/kovo/pinkspiders.svg",
+                    "힐스테이트": "/images/logos/kovo/hillstate.svg",
+                    "점보스": "/images/logos/kovo/jumbos.svg",
+                    "레드스파크스": "/images/logos/kovo/redsparks.svg"
                 };
 
                 const TEAMS = Object.keys(KOVO_LOGOS);
