@@ -392,7 +392,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 <div className={clsx(
                                     "relative transition-transform duration-300 ease-out flex flex-col justify-end",
                                     enableActions
-                                        ? (showActions ? "-translate-y-[10px]" : "translate-y-0 group-hover:-translate-y-[10px]")
+                                        ? (showActions ? "-translate-y-[80px]" : "translate-y-0 group-hover:-translate-y-[80px]")
                                         : ""
                                 )}>
                                     {/* Discount Badge - Only specific variants or if high discount. Hide if no discount */}
@@ -407,7 +407,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
                                     {/* Performance Info - Lifted up */}
-                                    <div className="relative z-10 p-4 pb-[100px]">
+                                    <div className="relative z-10 p-4 pb-4">
 
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5">
