@@ -319,19 +319,19 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 {perf.subGenre && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">장르:</span>
-                                                        <span className="text-gray-400 light:text-gray-900 font-medium">{perf.subGenre}</span>
+                                                        <span className="text-gray-400 light:text-gray-900">{perf.subGenre}</span>
                                                     </div>
                                                 )}
                                                 {perf.productionCountry && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">제작국가:</span>
-                                                        <span className="light:text-gray-900 font-medium">{perf.productionCountry}</span>
+                                                        <span className="light:text-gray-900">{perf.productionCountry}</span>
                                                     </div>
                                                 )}
                                                 {perf.productionYear && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">제작년도:</span>
-                                                        <span className="light:text-gray-900 font-medium">{perf.productionYear}</span>
+                                                        <span className="light:text-gray-900">{perf.productionYear}</span>
                                                     </div>
                                                 )}
                                             </div>
@@ -341,7 +341,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {perf.director && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">감독</span>
-                                                <span className="text-gray-300 light:text-black light:font-bold line-clamp-1">
+                                                <span className="text-gray-300 light:text-black line-clamp-1">
                                                     {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
@@ -364,7 +364,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">출연</span>
-                                                <span className="text-gray-300 light:text-black light:font-bold line-clamp-1">
+                                                <span className="text-gray-300 light:text-black line-clamp-1">
                                                     {perf.cast.map((c: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
@@ -387,7 +387,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {perf.platforms && perf.platforms.length > 0 && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">제공</span>
-                                                <span className="text-gray-400 light:text-gray-900 light:font-bold line-clamp-1">
+                                                <span className="text-gray-400 light:text-gray-900 line-clamp-1">
                                                     {perf.platforms.map((p: string) => {
                                                         const info = OTT_PLATFORMS[p];
                                                         return info ? info.label : p;
@@ -406,7 +406,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 {perf.runningTime && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">플레이타임:</span>
-                                                        <span className="light:font-bold">{perf.runningTime}</span>
+                                                        <span className="light:text-black">{perf.runningTime}</span>
                                                     </div>
                                                 )}
                                                 {/* Note: AgeRating is already shown in the header for OTT/Movies, but we keep it here for others if needed, or suppress it to avoid duplication. 
@@ -451,7 +451,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 {perf.ageRating && perf.genre === 'ott' && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">등급:</span>
-                                                        <span className="light:font-bold">{perf.ageRating}</span>
+                                                        <span className="light:text-black">{perf.ageRating}</span>
                                                     </div>
                                                 )}
                                             </div>
