@@ -162,8 +162,9 @@ async function scrapeHybrid() {
                         const title = img?.getAttribute('alt') || a?.innerText.trim();
                         const link = a?.getAttribute('href') || '';
 
-                        // Valid Poster from JW (fallback)
+                        // Valid Poster from JW (fallback) - Force High Res
                         let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
+                        poster = poster.replace('/s166/', '/s592/');
 
                         if (title && link) {
                             list.push({
