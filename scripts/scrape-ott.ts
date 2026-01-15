@@ -239,6 +239,14 @@ async function scrapeHybrid() {
 
         processed++;
 
+        // Incremental Save (Every 5 items to prevent data loss on stop)
+        if (processed % 5 === 0) {
+            try {
+                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(filteredItems, null, 2));
+                // console.log(`   [Autosave] Saved progress to ${OUTPUT_FILE}`); 
+            } catch (e) { }
+        }
+
         try {
             // Search Query: "[Title] 정보" or just "[Title]"
             // E.g. "오징어 게임 시즌2 정보"
