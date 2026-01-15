@@ -257,7 +257,11 @@ async function scrapeHybrid() {
                         // Also get simple text for standard fields
                         const vText = dt.nextElementSibling?.textContent?.trim() || '';
 
-                        if (k === '등급') res.ageRating = vText;
+                        if (k === '등급') {
+                            res.ageRating = vText;
+                            if (res.ageRating.match(/^\d+세$/)) res.ageRating += ' 관람가';
+                            if (res.ageRating === '전체') res.ageRating = '전체 관람가';
+                        }
                         if (k === '장르') res.subGenre = vText;
                         if (k === '국가') res.productionCountry = vText;
                         if (k === '러닝타임') res.runningTime = vText;

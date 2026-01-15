@@ -446,8 +446,20 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
                                                     ) : (
                                                         <>
-                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                            {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
+                                                            {/* OTT: Only show Age Rating if present, do not fallback to venue */}
+                                                            {perf.genre === 'ott' ? (
+                                                                perf.ageRating && (
+                                                                    <>
+                                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                                        <span className="text-gray-300">{perf.ageRating}</span>
+                                                                    </>
+                                                                )
+                                                            ) : (
+                                                                <>
+                                                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                                    {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
+                                                                </>
+                                                            )}
                                                         </>
                                                     )}
                                                 </div>
@@ -480,21 +492,46 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 )}
 
                                                 {/* Country / Year / SubGenre */}
+                                                {/* Country / Year / SubGenre */}
                                                 {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                                    <div className="flex flex-wrap gap-1 items-center mb-0.5 text-gray-500 text-[10px]">
-                                                        {perf.productionCountry && <span>{perf.productionCountry}</span>}
-                                                        {perf.productionCountry && perf.productionYear && <span className="text-gray-600">•</span>}
-                                                        {perf.productionYear && <span>{perf.productionYear}</span>}
-                                                        {(perf.productionCountry || perf.productionYear) && perf.subGenre && <span className="text-gray-600">•</span>}
-                                                        {perf.subGenre && <span className="text-gray-400">{perf.subGenre}</span>}
+                                                    <div className="flex flex-col gap-0.5 text-gray-500 text-[10px]">
+                                                        {perf.subGenre && (
+                                                            <div>
+                                                                <span className="text-gray-500 mr-1">장르:</span>
+                                                                <span className="text-gray-400">{perf.subGenre}</span>
+                                                            </div>
+                                                        )}
+                                                        {perf.productionCountry && (
+                                                            <div>
+                                                                <span className="text-gray-500 mr-1">제작국가:</span>
+                                                                <span>{perf.productionCountry}</span>
+                                                            </div>
+                                                        )}
+                                                        {perf.productionYear && (
+                                                            <div>
+                                                                <span className="text-gray-500 mr-1">제작년도:</span>
+                                                                <span>{perf.productionYear}</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 )}
 
                                                 {/* Runtime / Age */}
+                                                {/* Runtime / Age */}
                                                 {(perf.runningTime || perf.ageRating) && (
-                                                    <div className="flex gap-2 text-[10px] text-gray-400">
-                                                        {perf.runningTime && <span className="flex items-center gap-0.5">🕒 {perf.runningTime}</span>}
-                                                        {perf.ageRating && <span className="flex items-center gap-0.5">🔞 {perf.ageRating}</span>}
+                                                    <div className="flex flex-col gap-0.5 text-[10px] text-gray-400 mt-0.5">
+                                                        {perf.runningTime && (
+                                                            <div>
+                                                                <span className="text-gray-500 mr-1">플레이타임:</span>
+                                                                <span>{perf.runningTime}</span>
+                                                            </div>
+                                                        )}
+                                                        {perf.ageRating && perf.genre === 'ott' && (
+                                                            <div>
+                                                                <span className="text-gray-500 mr-1">등급:</span>
+                                                                <span>{perf.ageRating}</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 )}
 

@@ -1,0 +1,9 @@
+Starting Scrape at Thu Jan 15 09:56:37 KST 2026
+Starting OTT Scraper (Playwright/Firefox - Headful)...
+Navigating to https://m.kinolights.com/new...
+CRITICAL: Access to https://m.kinolights.com/new blocked (403 Forbidden).
+Navigating to https://m.kinolights.com/new?tab=upcoming...
+CRITICAL: Access to https://m.kinolights.com/new?tab=upcoming blocked (403 Forbidden).
+Total unique items to process: 696
+Saved 1264 items to /Users/pyw31337/Library/Mobile Documents/com~apple~CloudDocs/Antigravity/CultureFlow/src/data/ott.json
+Finished Scrape at Thu Jan 15 09:59:45 KST 2026
