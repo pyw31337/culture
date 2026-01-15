@@ -99,6 +99,9 @@ export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: 
     'apple': { label: 'Apple TV+', color: 'bg-gray-800', url: 'https://tv.apple.com/kr/search?term={title}' },
     'uplus': { label: 'U+모바일tv', color: 'bg-pink-500', url: 'https://www.lguplus.com/search?query={title}' },
     'laftel': { label: 'Laftel', color: 'bg-purple-600', url: 'https://laftel.net/search?keyword={title}' },
+    'amazon': { label: 'Amazon Prime', color: 'bg-blue-400', url: 'https://www.primevideo.com/search/ref=atv_nb_sr?phrase={title}' },
+    'google': { label: 'Google Play', color: 'bg-red-500', url: 'https://play.google.com/store/search?q={title}&c=movies' },
+    'naver': { label: 'Naver Series', color: 'bg-green-500', url: 'https://serieson.naver.com/v2/search?query={title}' },
 };
 
 // Futures League Team Logos (emblemF versions for minor league / development teams)

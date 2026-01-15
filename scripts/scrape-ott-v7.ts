@@ -26,6 +26,13 @@ const PLATFORM_MAP: Record<string, string> = {
 
 // --- HELPER: Normalize ---
 const cleanText = (s: string) => s.replace(/\s+/g, ' ').trim();
+const sanitizeRuntime = (s: string) => {
+    if (!s) return null;
+    const num = parseInt(s.replace(/[^0-9]/g, ''));
+    // If > 400 minutes, likely invalid or season sum.
+    if (!isNaN(num) && num > 400) return null;
+    return s;
+};
 
 // --- TIER 2: TMDB SCRAPER (Reused) ---
 async function fetchTMDBData(page: any, title: string) {
@@ -124,8 +131,8 @@ async function fetchJWDetail(page: any, url: string) {
 
     await page.goto(JW_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-    // Scroll
-    for (let i = 0; i < 8; i++) {
+    // Scroll (Increased to 20 to catch more items like Hello Carbot)
+    for (let i = 0; i < 20; i++) {
         await page.mouse.wheel(0, 1500);
         await page.waitForTimeout(1000);
     }
@@ -265,16 +272,33 @@ async function fetchJWDetail(page: any, url: string) {
         progressBar.update(processedCount);
 
         // Resume Check: If we have this item in existingData with good metadata, copy it
+        // Resume Check: If we have this item in existingData with good metadata, copy it
         const cached = existingData.find(e => e.id === item.id);
-        if (cached && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
-            // Already enriched
-            Object.assign(item, cached);
-            // Ensure poster is high res if it was old low res
-            if (item.poster && item.poster.includes('/s166/')) {
-                item.poster = item.poster.replace('/s166/', '/s592/');
+        if (cached) {
+            // Check if cached data is "good enough"
+            // Good means: Has (Director OR Runtime) AND (Image OR Poster)
+            // AND Runtime is valid (< 400 mins)
+            const validRuntime = cached.runningTime ? sanitizeRuntime(cached.runningTime) : null;
+            const isBadRuntime = cached.runningTime && !validRuntime; // Has text but failed sanitization
+
+            if (!isBadRuntime && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
+                Object.assign(item, cached);
+                if (item.poster && item.poster.includes('/s166/')) {
+                    item.poster = item.poster.replace('/s166/', '/s592/');
+                }
+                if (!item.image && item.poster) item.image = item.poster;
+                continue;
             }
-            if (!item.image && item.poster) item.image = item.poster;
-            continue;
+
+            // If bad runtime, keep cached data BUT reset runtime to try again
+            if (isBadRuntime) {
+                console.log(`[Re-Enrich] Invalid runtime detected for ${item.title}: ${cached.runningTime}`);
+                Object.assign(item, cached);
+                item.runningTime = undefined; // Force re-fetch
+            } else {
+                // Partial data, copy what we have and enrich the rest
+                Object.assign(item, cached);
+            }
         }
 
         // TIER 1: Naver (Reuse existing strategy, simplified here)
@@ -283,8 +307,15 @@ async function fetchJWDetail(page: any, url: string) {
         // BUT user liked Naver data (Korean cast names).
         // I will implement a lightweight Naver Title Search here.
 
+        // Normalize Title for Naver Search (Remove " - Season X", " - Part Y")
+        // Example: "Hello Carbot - Season 11" -> "헬로카봇 시즌11" (Naver prefers no spaces or specific formats)
+        // Simplest: "Hello Carbot" + "11" ? 
+        // Let's try removing " - " and spaces?
+        // Better: Remove " - " and keep the rest. Or just search the raw title without " - ".
+        const searchTitle = item.title.replace(/\s*-\s*시즌\s*/, ' 시즌').replace(/\s*-\s*/, ' ').trim();
+
         try {
-            await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
+            await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(searchTitle)}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
             const naverData = await naverPage.evaluate(() => {
                 // Info area
                 const infoArea = document.querySelector('.cm_info_box');
@@ -305,6 +336,14 @@ async function fetchJWDetail(page: any, url: string) {
                     if (label?.includes('국가')) res.productionCountry = val;
                     if (label?.includes('러닝타임')) res.runningTime = val;
                 });
+
+                // Fix "79671분" bug - cap at 400 mins (6h) or check format
+                if (res.runningTime) {
+                    const num = parseInt(res.runningTime.replace(/[^0-9]/g, ''));
+                    // If > 400, reject (likely season runtime or error)
+                    if (num > 400) res.runningTime = null;
+                }
+
                 return res;
             });
 
@@ -317,7 +356,7 @@ async function fetchJWDetail(page: any, url: string) {
                 if (naverData.ageRating) item.ageRating = naverData.ageRating;
                 if (naverData.subGenre) item.subGenre = naverData.subGenre;
                 if (naverData.productionCountry) item.productionCountry = naverData.productionCountry;
-                if (naverData.runningTime) item.runningTime = naverData.runningTime;
+                if (naverData.runningTime) item.runningTime = sanitizeRuntime(naverData.runningTime);
             }
         } catch (e) { }
 
@@ -326,7 +365,7 @@ async function fetchJWDetail(page: any, url: string) {
             const tmdb = await fetchTMDBData(tmdbPage, item.title);
             if (tmdb) {
                 if (tmdb.poster && !item.image) item.image = tmdb.poster;
-                if (tmdb.runningTime && !item.runningTime) item.runningTime = tmdb.runningTime;
+                if (tmdb.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(tmdb.runningTime);
                 if (tmdb.subGenre && !item.subGenre) item.subGenre = tmdb.subGenre;
             }
         }
@@ -336,7 +375,7 @@ async function fetchJWDetail(page: any, url: string) {
             const jwData = await fetchJWDetail(jwPage, item.link);
             if (jwData) {
                 if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
-                if (jwData.runningTime && !item.runningTime) item.runningTime = jwData.runningTime;
+                if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
                 if (jwData.director && !item.director) item.director = jwData.director;
                 if (jwData.cast && !item.cast) item.cast = jwData.cast;
                 if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;

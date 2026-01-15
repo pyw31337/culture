@@ -388,10 +388,25 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">제공</span>
                                                 <span className="text-gray-400 light:text-gray-900 line-clamp-1">
-                                                    {perf.platforms.map((p: string) => {
+                                                    {perf.platforms.map((p: string, idx: number) => {
                                                         const info = OTT_PLATFORMS[p];
-                                                        return info ? info.label : p;
-                                                    }).join(', ')}
+                                                        const url = info ? info.url.replace('{title}', encodeURIComponent(perf.title)) : '#';
+                                                        return (
+                                                            <span key={p}>
+                                                                {idx > 0 && ', '}
+                                                                <a
+                                                                    href={url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    onClick={(e) => e.stopPropagation()}
+                                                                    className="hover:underline hover:text-black hover:font-bold transition-colors"
+                                                                    title={`${info?.label || p}에서 검색`}
+                                                                >
+                                                                    {info ? info.label : p}
+                                                                </a>
+                                                            </span>
+                                                        );
+                                                    })}
                                                 </span>
                                             </div>
                                         )}
