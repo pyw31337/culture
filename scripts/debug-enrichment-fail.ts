@@ -36,9 +36,9 @@ async function debugEnrichment() {
                 hasInfoBox: !!infoBox,
                 hasDetailInfo: !!detailInfo,
                 hasKnowledge: !!knowledge,
-                infoBoxText: infoBox?.innerText.substring(0, 100),
-                firstDt: document.querySelector('dt')?.innerText,
-                firstDd: document.querySelector('dd')?.innerText,
+                infoBoxText: infoBox?.textContent?.substring(0, 100),
+                firstDt: document.querySelector('dt')?.textContent,
+                firstDd: document.querySelector('dd')?.textContent,
             };
         });
         console.log('Result:', result);
