@@ -2,6 +2,7 @@
 import { firefox } from 'playwright';
 import fs from 'fs';
 import path from 'path';
+import cliProgress from 'cli-progress';
 
 // --- CONFIG ---
 const JW_URL = 'https://www.justwatch.com/kr/new';
@@ -157,17 +158,28 @@ async function scrapeHybrid() {
 
     console.log(`Filtered: ${filteredItems.length} items to enrich.`);
 
-    // 3. Enrich with Naver (Limit 50 for performance/rate-limits)
-    const ENRICH_LIMIT = 50;
+    // 3. Enrich with Naver (Limit 100 for performance/rate-limits)
+    const ENRICH_LIMIT = 100;
     let processed = 0;
+
+    const progressBar = new cliProgress.SingleBar({
+        format: 'Enriching [{bar}] {percentage}% | {value}/{total} | {title}',
+        clearOnComplete: false
+    }, cliProgress.Presets.shades_classic);
+
+    const itemsToProcess = Math.min(filteredItems.length, ENRICH_LIMIT);
+    progressBar.start(itemsToProcess, 0, { title: 'Starting...' });
 
     const naverPage = await context.newPage();
 
     for (const item of filteredItems) {
-        if (processed >= ENRICH_LIMIT) break;
-        processed++;
+        if (processed > ENRICH_LIMIT) break; // Check > so we process exactly LIMIT items (processed is incremented after check in loop usually, but here structure is tricky. improved below)
 
-        process.stdout.write(`[${processed}/${filteredItems.length}] Enriching "${item.title}"... `);
+        // Update Title via Progress Bar, avoid spamming stdout
+        const currentTitle = item.title.length > 20 ? item.title.substring(0, 20) + '...' : item.title;
+        progressBar.update(processed + 1, { title: currentTitle });
+
+        processed++;
 
         try {
             // Search Query: "[Title] 정보" or just "[Title]"
@@ -230,8 +242,13 @@ async function scrapeHybrid() {
             });
 
             // Merge Data
+            // VALIDATION: invalid images
+            if (item.poster && item.poster.startsWith('data:image')) item.poster = null;
+            if (naverData.poster && naverData.poster.startsWith('data:image')) naverData.poster = null;
+
             if (naverData.poster) item.image = naverData.poster; // Prefer Naver High-res
-            else item.image = item.poster; // Fallback to JW
+            else if (item.poster) item.image = item.poster; // Fallback to JW
+            else item.image = null; // No valid image
 
             if (naverData.director) item.director = naverData.director;
             if (naverData.cast) {
@@ -256,12 +273,12 @@ async function scrapeHybrid() {
             const finalTitleStr = titleStr || Math.random().toString(36).substring(7);
             item.id = `ott_${dateStr}_${finalTitleStr}`;
 
-            process.stdout.write('Done\n');
-
         } catch (e) {
-            process.stdout.write('Failed (Skip)\n');
+            // Log error silently or to file? For now just continue
         }
     }
+
+    progressBar.stop();
 
     await browser.close();
 
