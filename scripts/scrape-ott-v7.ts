@@ -71,7 +71,7 @@ async function fetchTMDBData(page: any, title: string) {
 // --- TIER 3: JW DETAIL SCRAPER (Fallback) ---
 async function fetchJWDetail(page: any, url: string) {
     try {
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 5000 });
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 8000 });
 
         return await page.evaluate(() => {
             const res: any = {};
@@ -91,6 +91,16 @@ async function fetchJWDetail(page: any, url: string) {
                 if (runtimeMatch) res.runningTime = runtimeMatch[1];
             }
 
+            // Sidebar Poster (Fallback if list page poster missing)
+            const sidebarPoster = document.querySelector('.title-sidebar__title-with-poster__poster img, .title-poster img');
+            if (sidebarPoster) {
+                let posterSrc = sidebarPoster.getAttribute('src') || sidebarPoster.getAttribute('data-src');
+                if (posterSrc) {
+                    posterSrc = posterSrc.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
+                    res.sidebarPoster = posterSrc;
+                }
+            }
+
             // Sidebar (Director, Genre)
             document.querySelectorAll('.poster-detail.poster-detail--below > div').forEach(row => {
                 const label = row.querySelector('.detail-infos__subheading')?.textContent?.trim();
@@ -101,9 +111,27 @@ async function fetchJWDetail(page: any, url: string) {
                 }
             });
 
-            // Cast
-            const cast = Array.from(document.querySelectorAll('.credits .title-credit-name')).map(n => n.textContent?.trim());
-            if (cast.length > 0) res.cast = cast.slice(0, 5);
+            // Cast with Links
+            const castItems = document.querySelectorAll('.title-credits .title-credit');
+            const castWithLinks: { name: string; link: string }[] = [];
+            castItems.forEach((item, idx) => {
+                if (idx >= 5) return; // Max 5 cast members
+                const link = item.querySelector('a');
+                const nameEl = item.querySelector('.title-credit-name');
+                if (nameEl) {
+                    const name = nameEl.textContent?.trim() || '';
+                    const href = link ? link.getAttribute('href') : null;
+                    castWithLinks.push({
+                        name,
+                        link: href ? `https://www.justwatch.com${href}` : ''
+                    });
+                }
+            });
+            if (castWithLinks.length > 0) res.castWithLinks = castWithLinks;
+
+            // Legacy cast array for backward compatibility
+            const cast = castWithLinks.map(c => c.name);
+            if (cast.length > 0) res.cast = cast;
 
             return res;
         });
@@ -111,6 +139,7 @@ async function fetchJWDetail(page: any, url: string) {
         return null;
     }
 }
+
 
 // --- MAIN ---
 (async () => {
@@ -370,15 +399,20 @@ async function fetchJWDetail(page: any, url: string) {
             }
         }
 
-        // TIER 3: JW DETAIL (Fallback)
-        if (!item.runningTime || !item.director) {
+        // TIER 3: JW DETAIL (Fallback for poster, runtime, director, cast)
+        if (!item.image || !item.runningTime || !item.director || !item.castWithLinks) {
             const jwData = await fetchJWDetail(jwPage, item.link);
             if (jwData) {
                 if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
                 if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
                 if (jwData.director && !item.director) item.director = jwData.director;
+                if (jwData.castWithLinks && !item.castWithLinks) item.castWithLinks = jwData.castWithLinks;
                 if (jwData.cast && !item.cast) item.cast = jwData.cast;
                 if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
+                // Use sidebar poster as fallback if no image yet
+                if (jwData.sidebarPoster && !item.image) {
+                    item.image = jwData.sidebarPoster;
+                }
             }
         }
 
