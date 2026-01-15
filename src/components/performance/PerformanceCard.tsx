@@ -426,6 +426,37 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     })()}
                                                 </span>
                                             )}
+                                            {/* Platform Badges */}
+                                            {perf.platforms && perf.platforms.length > 0 && (
+                                                <div className="flex gap-1">
+                                                    {perf.platforms.map((p: string) => {
+                                                        const platformInfo = OTT_PLATFORMS[p];
+                                                        if (platformInfo) {
+                                                            const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                            return (
+                                                                <a
+                                                                    key={p}
+                                                                    href={url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    onClick={(e) => e.stopPropagation()}
+                                                                    className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
+                                                                        platformInfo.color
+                                                                    )}
+                                                                    title={`${platformInfo.label}에서 검색`}
+                                                                >
+                                                                    {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                                </a>
+                                                            );
+                                                        }
+                                                        return (
+                                                            <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter bg-gray-600 text-white">
+                                                                {p.substring(0, 1).toUpperCase()}
+                                                            </span>
+                                                        );
+                                                    })}
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Title */}
