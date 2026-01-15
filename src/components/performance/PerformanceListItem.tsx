@@ -316,7 +316,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 min-w-[24px]">감독</span>
                                                 <span className="text-gray-400 line-clamp-1">
-                                                    {perf.director.split(',').map((d, i, arr) => (
+                                                    {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
                                                                 href={`https://search.naver.com/search.naver?query=${encodeURIComponent(d.trim())}`}
@@ -339,7 +339,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 min-w-[24px]">출연</span>
                                                 <span className="text-gray-400 line-clamp-1">
-                                                    {perf.cast.map((c, i, arr) => (
+                                                    {perf.cast.map((c: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
                                                                 href={`https://search.naver.com/search.naver?query=${encodeURIComponent(c.trim())}`}
@@ -370,7 +370,9 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             </div>
                                         )}
                                     </div>
-                                )}* Interpark Scraped Details: Time / Age / Info */}
+                                )}
+
+                                {/* Interpark Scraped Details: Time / Age / Info */}
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 mt-1.5 space-y-1">
                                         {(perf.runningTime || perf.ageRating) && (

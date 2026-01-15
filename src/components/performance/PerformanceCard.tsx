@@ -503,7 +503,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">감독</span>
                                                         <span className="text-gray-300 line-clamp-1">
-                                                            {perf.director.split(',').map((d, i, arr) => (
+                                                            {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
                                                                 <span key={i}>
                                                                     <a
                                                                         href={`https://search.naver.com/search.naver?query=${encodeURIComponent(d.trim())}`}
@@ -526,7 +526,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">출연</span>
                                                         <span className="text-gray-300 line-clamp-2 leading-tight">
-                                                            {perf.cast.map((c, i, arr) => (
+                                                            {perf.cast.map((c: string, i: number, arr: string[]) => (
                                                                 <span key={i}>
                                                                     <a
                                                                         href={`https://search.naver.com/search.naver?query=${encodeURIComponent(c.trim())}`}
