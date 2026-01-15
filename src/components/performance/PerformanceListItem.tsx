@@ -296,44 +296,81 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
                                 )}
-                                {/* OTT Specific: Country / Year / SubGenre */}
-                                {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                    <div className="flex flex-wrap gap-2 items-center mb-1 text-gray-400">
-                                        {perf.productionCountry && <span>{perf.productionCountry}</span>}
-                                        {perf.productionCountry && perf.productionYear && <span className="text-gray-600">•</span>}
-                                        {perf.productionYear && <span>{perf.productionYear}</span>}
-                                        {(perf.productionCountry || perf.productionYear) && perf.subGenre && <span className="text-gray-600">•</span>}
-                                        {perf.subGenre && <span className="text-gray-500">{perf.subGenre}</span>}
-                                    </div>
-                                )}
+                                {/* Detailed Metadata (Synced with Card) */}
+                                {(perf.subGenre || perf.director || perf.cast || (perf.platforms && perf.platforms.length > 0)) && (
+                                    <div className="mt-2 space-y-1 text-xs text-gray-400">
 
-                                {perf.director && (
-                                    <div className="flex items-start gap-1 text-gray-400">
-                                        <span className="text-gray-500 min-w-[24px]">감독</span>
-                                        <span className="text-gray-400 line-clamp-1">{perf.director}</span>
-                                    </div>
-                                )}
-                                {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
-                                    <div className="flex items-start gap-1 text-gray-400">
-                                        <span className="text-gray-500 min-w-[24px]">출연</span>
-                                        <span className="text-gray-400 line-clamp-1">
-                                            {perf.cast.join(', ')}
-                                        </span>
-                                    </div>
-                                )}
-                                {perf.platforms && perf.platforms.length > 0 && (
-                                    <div className="flex items-start gap-1 text-gray-400">
-                                        <span className="text-gray-500 min-w-[24px]">제공</span>
-                                        <span className="text-gray-400 line-clamp-1">
-                                            {perf.platforms.map((p: string) => {
-                                                const info = OTT_PLATFORMS[p];
-                                                return info ? info.label : p;
-                                            }).join(', ')}
-                                        </span>
-                                    </div>
-                                )}
+                                        {/* Country / Year / SubGenre */}
+                                        {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                                            <div className="flex flex-wrap gap-1 items-center mb-1 text-gray-500">
+                                                {perf.productionCountry && <span>{perf.productionCountry}</span>}
+                                                {perf.productionCountry && (perf.productionYear || perf.subGenre) && <span className="text-gray-700">|</span>}
+                                                {perf.productionYear && <span>{perf.productionYear}</span>}
+                                                {perf.productionYear && perf.subGenre && <span className="text-gray-700">|</span>}
+                                                {perf.subGenre && <span className="text-emerald-400">{perf.subGenre}</span>}
+                                            </div>
+                                        )}
 
-                                {/* Interpark Scraped Details: Time / Age / Info */}
+                                        {/* Director */}
+                                        {perf.director && (
+                                            <div className="flex items-start gap-1">
+                                                <span className="text-gray-500 min-w-[24px]">감독</span>
+                                                <span className="text-gray-400 line-clamp-1">
+                                                    {perf.director.split(',').map((d, i, arr) => (
+                                                        <span key={i}>
+                                                            <a
+                                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(d.trim())}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="hover:text-white hover:underline decoration-white/30"
+                                                                onClick={(e) => e.stopPropagation()}
+                                                            >
+                                                                {d.trim()}
+                                                            </a>
+                                                            {i < arr.length - 1 && ', '}
+                                                        </span>
+                                                    ))}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        {/* Cast */}
+                                        {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
+                                            <div className="flex items-start gap-1">
+                                                <span className="text-gray-500 min-w-[24px]">출연</span>
+                                                <span className="text-gray-400 line-clamp-1">
+                                                    {perf.cast.map((c, i, arr) => (
+                                                        <span key={i}>
+                                                            <a
+                                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(c.trim())}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="hover:text-white hover:underline decoration-white/30"
+                                                                onClick={(e) => e.stopPropagation()}
+                                                            >
+                                                                {c.trim()}
+                                                            </a>
+                                                            {i < arr.length - 1 && ', '}
+                                                        </span>
+                                                    ))}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        {/* Provider (Text) */}
+                                        {perf.platforms && perf.platforms.length > 0 && (
+                                            <div className="flex items-start gap-1">
+                                                <span className="text-gray-500 min-w-[24px]">제공</span>
+                                                <span className="text-gray-400 line-clamp-1">
+                                                    {perf.platforms.map((p: string) => {
+                                                        const info = OTT_PLATFORMS[p];
+                                                        return info ? info.label : p;
+                                                    }).join(', ')}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}* Interpark Scraped Details: Time / Age / Info */}
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 mt-1.5 space-y-1">
                                         {(perf.runningTime || perf.ageRating) && (

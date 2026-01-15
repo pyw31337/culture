@@ -499,10 +499,25 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 )}
 
                                                 {/* Director */}
-                                                {perf.director && (
+                                                {(perf.director) && (
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">감독</span>
-                                                        <span className="text-gray-300 line-clamp-1">{perf.director}</span>
+                                                        <span className="text-gray-300 line-clamp-1">
+                                                            {perf.director.split(',').map((d, i, arr) => (
+                                                                <span key={i}>
+                                                                    <a
+                                                                        href={`https://search.naver.com/search.naver?query=${encodeURIComponent(d.trim())}`}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="hover:text-white hover:underline decoration-white/30"
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                    >
+                                                                        {d.trim()}
+                                                                    </a>
+                                                                    {i < arr.length - 1 && ', '}
+                                                                </span>
+                                                            ))}
+                                                        </span>
                                                     </div>
                                                 )}
 
@@ -511,7 +526,20 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">출연</span>
                                                         <span className="text-gray-300 line-clamp-2 leading-tight">
-                                                            {perf.cast.join(', ')}
+                                                            {perf.cast.map((c, i, arr) => (
+                                                                <span key={i}>
+                                                                    <a
+                                                                        href={`https://search.naver.com/search.naver?query=${encodeURIComponent(c.trim())}`}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="hover:text-white hover:underline decoration-white/30"
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                    >
+                                                                        {c.trim()}
+                                                                    </a>
+                                                                    {i < arr.length - 1 && ', '}
+                                                                </span>
+                                                            ))}
                                                         </span>
                                                     </div>
                                                 )}
