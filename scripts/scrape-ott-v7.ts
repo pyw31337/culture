@@ -1,0 +1,360 @@
+
+import { firefox } from 'playwright';
+import fs from 'fs';
+import path from 'path';
+import cliProgress from 'cli-progress';
+
+// --- CONFIG ---
+const JW_URL = 'https://www.justwatch.com/kr/new';
+const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
+
+// Platforms
+const ALLOWLIST = ['Netflix', 'Disney Plus', 'wavve', 'TVING', 'Watcha', 'Coupang Play', 'Amazon Prime Video', 'Apple TV Plus', 'Apple TV', 'Naver Store', 'Google Play Movies'];
+const PLATFORM_MAP: Record<string, string> = {
+    'Netflix': 'netflix',
+    'Disney Plus': 'disney',
+    'wavve': 'wavve',
+    'TVING': 'tving',
+    'Watcha': 'watcha',
+    'Coupang Play': 'coupang',
+    'Amazon Prime Video': 'amazon',
+    'Apple TV Plus': 'apple',
+    'Apple TV': 'apple',
+    'Naver Store': 'naver',
+    'Google Play Movies': 'google'
+};
+
+// --- HELPER: Normalize ---
+const cleanText = (s: string) => s.replace(/\s+/g, ' ').trim();
+
+// --- TIER 2: TMDB SCRAPER (Reused) ---
+async function fetchTMDBData(page: any, title: string) {
+    try {
+        const searchUrl = `https://www.themoviedb.org/search?query=${encodeURIComponent(title)}`;
+        await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+        const firstResult = await page.$('.card.v4.tight a.result');
+        if (!firstResult) return null;
+
+        const detailUrl = await firstResult.getAttribute('href');
+        await page.goto(`https://www.themoviedb.org${detailUrl}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+        return await page.evaluate(() => {
+            const res: any = {};
+            // Poster
+            const img = document.querySelector('div.image_content img.poster');
+            if (img) {
+                const src = img.getAttribute('src');
+                if (src) res.poster = `https://www.themoviedb.org${src}`;
+            }
+            // Runtime
+            const runtimeEl = document.querySelector('.facts .runtime');
+            if (runtimeEl) res.runningTime = runtimeEl.textContent?.trim();
+            // Genre
+            const genres = Array.from(document.querySelectorAll('.facts .genres a')).map(a => a.textContent?.trim());
+            if (genres.length > 0) res.subGenre = genres.join(', ');
+
+            return res;
+        });
+    } catch (e) {
+        return null;
+    }
+}
+
+// --- TIER 3: JW DETAIL SCRAPER (Fallback) ---
+async function fetchJWDetail(page: any, url: string) {
+    try {
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+        return await page.evaluate(() => {
+            const res: any = {};
+
+            // Hero Details (Rating, Runtime)
+            const hero = document.querySelector('#title-detail-hero-details');
+            if (hero) {
+                const text = hero.textContent || '';
+                // Age Rating (Simple regex for common KR ratings)
+                if (text.includes('19')) res.ageRating = '19세 이상 관람가';
+                else if (text.includes('15')) res.ageRating = '15세 이상 관람가';
+                else if (text.includes('12')) res.ageRating = '12세 이상 관람가';
+                else if (text.includes('전체')) res.ageRating = '전체 관람가';
+
+                // Runtime
+                const runtimeMatch = text.match(/(\d+시간\s*\d+분|\d+분)/);
+                if (runtimeMatch) res.runningTime = runtimeMatch[1];
+            }
+
+            // Sidebar (Director, Genre)
+            document.querySelectorAll('.poster-detail.poster-detail--below > div').forEach(row => {
+                const label = row.querySelector('.detail-infos__subheading')?.textContent?.trim();
+                const value = row.querySelector('.detail-infos__value')?.textContent?.trim();
+                if (label && value) {
+                    if (label.includes('감독')) res.director = value;
+                    if (label.includes('장르')) res.subGenre = value;
+                }
+            });
+
+            // Cast
+            const cast = Array.from(document.querySelectorAll('.credits .title-credit-name')).map(n => n.textContent?.trim());
+            if (cast.length > 0) res.cast = cast.slice(0, 5);
+
+            return res;
+        });
+    } catch (e) {
+        return null;
+    }
+}
+
+// --- MAIN ---
+(async () => {
+    console.log('Starting OTT Scraper V7 (JustWatch-First Hybrid)...');
+
+    // Resume Logic
+    let existingData: any[] = [];
+    if (fs.existsSync(OUTPUT_FILE)) {
+        try { existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8')); } catch (e) { }
+    }
+    console.log(`Loaded ${existingData.length} existing items.`);
+
+    const browser = await firefox.launch({ headless: true });
+
+    // 1. List Scraping
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto(JW_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+
+    // Scroll
+    for (let i = 0; i < 8; i++) {
+        await page.mouse.wheel(0, 1500);
+        await page.waitForTimeout(1000);
+    }
+
+    const scannedItems = await page.evaluate(() => {
+        const list: any[] = [];
+        const timeframes = document.querySelectorAll('.timeline__timeframe');
+
+        timeframes.forEach(frame => {
+            // Date
+            let dateStr = '';
+            // Try user selector first: span > span > span inside frame?
+            // Actually usually timeframe has a date header.
+            // .timeline__date-header span ? 
+            // In JW new, it's often in the class name or a header.
+            // Let's use the robust class extraction used in debug script
+            if (frame.className.match(/(\d{4}-\d{2}-\d{2})/)) {
+                dateStr = frame.className.match(/(\d{4}-\d{2}-\d{2})/)?.[1] || '';
+            } else {
+                // Fallback: try text
+                const textSpan = frame.querySelector('span > span > span');
+                if (textSpan) {
+                    // "오늘", "어제" needs mapping.
+                    const t = textSpan.textContent?.trim();
+                    const today = new Date();
+                    if (t === '오늘') dateStr = today.toISOString().split('T')[0];
+                    else if (t === '어제') {
+                        const y = new Date(today); y.setDate(y.getDate() - 1);
+                        dateStr = y.toISOString().split('T')[0];
+                    }
+                }
+            }
+            if (!dateStr) return; // Skip if no date
+
+            frame.querySelectorAll('.timeline__provider-block').forEach(block => {
+                // Provider
+                const icon = block.querySelector('.provider-timeline img');
+                const providerName = icon ? (icon.getAttribute('alt') || icon.getAttribute('title')) : '';
+                if (!providerName) return;
+
+                block.querySelectorAll('.horizontal-title-list__item').forEach(item => {
+                    const a = item.querySelector('a');
+                    const img = item.querySelector('img');
+                    const title = img?.getAttribute('alt') || a?.textContent?.trim();
+                    const link = a?.getAttribute('href');
+                    let poster = img?.getAttribute('data-src') || img?.getAttribute('src') || '';
+
+                    // Force High Res
+                    poster = poster.replace('/s166/', '/s592/');
+
+                    if (title && link) {
+                        list.push({
+                            title,
+                            date: dateStr,
+                            link: 'https://www.justwatch.com' + link,
+                            platform: providerName,
+                            poster
+                        });
+                    }
+                });
+            });
+        });
+        return list;
+    });
+
+    console.log(`Scanned ${scannedItems.length} raw items.`);
+
+    // 2. Aggregate & ID Assignment
+    const aggregated: Record<string, any> = {};
+    for (const it of scannedItems) {
+        const key = it.title + '|' + it.date;
+        if (!aggregated[key]) {
+            aggregated[key] = {
+                ...it,
+                platforms: [],
+                genre: 'ott',
+                venue: 'OTT',
+                region: 'ott',
+                // Generate ID
+                id: `ott_${it.date.replace(/-/g, '')}_${it.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '')}`
+            };
+        }
+        // Map Platform
+        const match = ALLOWLIST.find(p => it.platform.includes(p));
+        if (match) {
+            const code = PLATFORM_MAP[match];
+            if (!aggregated[key].platforms.includes(code)) {
+                aggregated[key].platforms.push(code);
+            }
+        }
+    }
+
+    // MERGE: Existing Items + New Scanned Items (Deduplicate by ID)
+    const mergedMap = new Map<string, any>();
+
+    // 1. Add Existing
+    existingData.forEach(e => mergedMap.set(e.id, e));
+
+    // 2. Overwrite/Add New
+    Object.values(aggregated).filter(i => i.platforms.length > 0).forEach(newItem => {
+        // If exists, merged properties? 
+        // We generally trust the NEW scan for 'platforms' but trust OLD enrichment for metadata.
+        // Actually, we want to KEEP the enriched data if it exists.
+        if (mergedMap.has(newItem.id)) {
+            const old = mergedMap.get(newItem.id);
+            // Update platforms, date, link if changed?
+            // Keep old metadata (director, cast, etc)
+            mergedMap.set(newItem.id, { ...newItem, ...old, platforms: newItem.platforms }); // Prefer new platform list? or merge?
+            // Actually, keep old enriched data primarily.
+            const merged = { ...newItem, ...old };
+            // Update poster if new is high res and old was low res?
+            if (newItem.poster && newItem.poster.includes('/s592/') && old.poster && old.poster.includes('/s166/')) {
+                merged.poster = newItem.poster;
+                if (merged.image === old.poster) merged.image = newItem.poster;
+            }
+            mergedMap.set(newItem.id, merged);
+        } else {
+            mergedMap.set(newItem.id, newItem);
+        }
+    });
+
+    const finalItems = Array.from(mergedMap.values()).sort((a, b) => b.date.localeCompare(a.date)); // Sort by date desc
+    console.log(`Merged Total: ${finalItems.length} items (Existing: ${existingData.length}, Valid New: ${Object.values(aggregated).length}).`);
+
+    // 3. Enrichment Loop
+    const naverPage = await context.newPage();
+    const tmdbPage = await context.newPage();
+    const jwPage = await context.newPage();
+
+    const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+    progressBar.start(finalItems.length, 0);
+
+    let processedCount = 0;
+
+    for (const item of finalItems) {
+        processedCount++;
+        progressBar.update(processedCount);
+
+        // Resume Check: If we have this item in existingData with good metadata, copy it
+        const cached = existingData.find(e => e.id === item.id);
+        if (cached && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
+            // Already enriched
+            Object.assign(item, cached);
+            // Ensure poster is high res if it was old low res
+            if (item.poster && item.poster.includes('/s166/')) {
+                item.poster = item.poster.replace('/s166/', '/s592/');
+            }
+            if (!item.image && item.poster) item.image = item.poster;
+            continue;
+        }
+
+        // TIER 1: Naver (Reuse existing strategy, simplified here)
+        // For brevity/soundness, let's skip Naver *Full Scraping* implementation here
+        // and focus on the user's request: JW Detail Page Fallback + TMDB.
+        // BUT user liked Naver data (Korean cast names).
+        // I will implement a lightweight Naver Title Search here.
+
+        try {
+            await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
+            const naverData = await naverPage.evaluate(() => {
+                // Info area
+                const infoArea = document.querySelector('.cm_info_box');
+                if (!infoArea) return null;
+                const res: any = {};
+                // Poster
+                const img = infoArea.querySelector('.detail_info img');
+                if (img) res.poster = img.getAttribute('src');
+                // Details
+                const details = Array.from(infoArea.querySelectorAll('.info_group'));
+                details.forEach(d => {
+                    const label = d.querySelector('dt')?.textContent?.trim();
+                    const val = d.querySelector('dd')?.textContent?.trim();
+                    if (label?.includes('감독')) res.director = val;
+                    if (label?.includes('출연')) res.cast = val; // String
+                    if (label?.includes('등급')) res.ageRating = val;
+                    if (label?.includes('장르')) res.subGenre = val;
+                    if (label?.includes('국가')) res.productionCountry = val;
+                    if (label?.includes('러닝타임')) res.runningTime = val;
+                });
+                return res;
+            });
+
+            if (naverData) {
+                if (naverData.poster) item.image = naverData.poster;
+                if (!item.image && item.poster) item.image = item.poster; // Fallback to JW HighRes
+
+                if (naverData.director) item.director = naverData.director;
+                if (naverData.cast) item.cast = naverData.cast.split(',').map((s: string) => s.trim());
+                if (naverData.ageRating) item.ageRating = naverData.ageRating;
+                if (naverData.subGenre) item.subGenre = naverData.subGenre;
+                if (naverData.productionCountry) item.productionCountry = naverData.productionCountry;
+                if (naverData.runningTime) item.runningTime = naverData.runningTime;
+            }
+        } catch (e) { }
+
+        // TIER 2: TMDB (If Poster/Runtime missing)
+        if (!item.image || !item.runningTime) {
+            const tmdb = await fetchTMDBData(tmdbPage, item.title);
+            if (tmdb) {
+                if (tmdb.poster && !item.image) item.image = tmdb.poster;
+                if (tmdb.runningTime && !item.runningTime) item.runningTime = tmdb.runningTime;
+                if (tmdb.subGenre && !item.subGenre) item.subGenre = tmdb.subGenre;
+            }
+        }
+
+        // TIER 3: JW DETAIL (Fallback)
+        if (!item.runningTime || !item.director) {
+            const jwData = await fetchJWDetail(jwPage, item.link);
+            if (jwData) {
+                if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
+                if (jwData.runningTime && !item.runningTime) item.runningTime = jwData.runningTime;
+                if (jwData.director && !item.director) item.director = jwData.director;
+                if (jwData.cast && !item.cast) item.cast = jwData.cast;
+                if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
+            }
+        }
+
+        // Final fallback for image
+        if (!item.image) item.image = item.poster;
+
+        // Auto Save
+        if (processedCount % 5 === 0) {
+            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
+        }
+    }
+
+    progressBar.stop();
+    await browser.close();
+
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
+    console.log('Done.');
+})();
