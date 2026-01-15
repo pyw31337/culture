@@ -289,18 +289,21 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         </div>
 
                         {/* Movie & OTT Metadata (Cast, Director, Info) */}
-                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear) && (
+                        {/* Movie & OTT Metadata (Cast, Director, Info) */}
+                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
                             <div className="mt-2 text-xs text-gray-400 light:text-gray-700 space-y-1 border-t border-white/5 light:border-black/5 pt-2">
                                 {/* OTT Specific: Original Title */}
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
                                 )}
-                                {/* OTT Specific: Country / Year */}
-                                {(perf.productionCountry || perf.productionYear) && (
-                                    <div className="flex gap-2 items-center mb-1 text-gray-400">
+                                {/* OTT Specific: Country / Year / SubGenre */}
+                                {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                                    <div className="flex flex-wrap gap-2 items-center mb-1 text-gray-400">
                                         {perf.productionCountry && <span>{perf.productionCountry}</span>}
                                         {perf.productionCountry && perf.productionYear && <span className="text-gray-600">•</span>}
                                         {perf.productionYear && <span>{perf.productionYear}</span>}
+                                        {(perf.productionCountry || perf.productionYear) && perf.subGenre && <span className="text-gray-600">•</span>}
+                                        {perf.subGenre && <span className="text-gray-500">{perf.subGenre}</span>}
                                     </div>
                                 )}
 

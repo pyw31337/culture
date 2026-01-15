@@ -512,40 +512,61 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </div>
 
                                         {/* Movie Info (Director/Cast) */}
-                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear) && (
+                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                             <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
                                                 {/* OTT Specific: Original Title */}
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
                                                 )}
-                                                {/* OTT Specific: Country / Year */}
-                                                {(perf.productionCountry || perf.productionYear) && (
-                                                    <div className="flex gap-1 items-center mb-0.5 text-gray-500">
+                                                
+                                                {/* Country / Year / SubGenre */}
+                                                {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                                                    <div className="flex flex-wrap gap-1 items-center mb-0.5 text-gray-500 text-[10px]">
                                                         {perf.productionCountry && <span>{perf.productionCountry}</span>}
                                                         {perf.productionCountry && perf.productionYear && <span className="text-gray-600">•</span>}
                                                         {perf.productionYear && <span>{perf.productionYear}</span>}
+                                                        {(perf.productionCountry || perf.productionYear) && perf.subGenre && <span className="text-gray-600">•</span>}
+                                                        {perf.subGenre && <span className="text-gray-400">{perf.subGenre}</span>}
                                                     </div>
                                                 )}
 
-                                                {/* Interpark Scraped Details: Time / Age / Info */}
-                                                {(perf.runningTime || perf.ageRating || perf.price) && (
-                                                    <div className="text-gray-400 mt-1 mb-1 space-y-0.5">
-                                                        {(perf.runningTime || perf.ageRating) && (
-                                                            <div className="flex gap-2 text-[10px]">
-                                                                {perf.runningTime && <span className="flex items-center gap-0.5">🕒 {perf.runningTime}</span>}
-                                                                {perf.ageRating && <span className="flex items-center gap-0.5">🔞 {perf.ageRating}</span>}
-                                                            </div>
-                                                        )}
-                                                        {perf.price && (
-                                                            <div className="text-[10px] font-medium text-emerald-400">
-                                                                🎟️ {perf.price.split('원')[0]}원
-                                                                {perf.price.includes('%') && (
-                                                                    <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
-                                                                )}
-                                                            </div>
+                                                {/* Runtime / Age */}
+                                                {(perf.runningTime || perf.ageRating) && (
+                                                    <div className="flex gap-2 text-[10px] text-gray-400">
+                                                        {perf.runningTime && <span className="flex items-center gap-0.5">🕒 {perf.runningTime}</span>}
+                                                        {perf.ageRating && <span className="flex items-center gap-0.5">🔞 {perf.ageRating}</span>}
+                                                    </div>
+                                                )}
+
+                                                {/* Director */}
+                                                {perf.director && (
+                                                    <div className="flex items-start gap-1">
+                                                        <span className="text-gray-500 min-w-[24px]">감독</span>
+                                                        <span className="text-gray-300 line-clamp-1">{perf.director}</span>
+                                                    </div>
+                                                )}
+
+                                                {/* Cast */}
+                                                {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
+                                                    <div className="flex items-start gap-1">
+                                                        <span className="text-gray-500 min-w-[24px]">출연</span>
+                                                        <span className="text-gray-300 line-clamp-2 leading-tight">
+                                                            {perf.cast.join(', ')}
+                                                        </span>
+                                                    </div>
+                                                )}
+
+                                                {/* Prices (Interpark) */}
+                                                {perf.price && (
+                                                    <div className="text-[10px] font-medium text-emerald-400 mt-1">
+                                                        🎟️ {perf.price.split('원')[0]}원
+                                                        {perf.price.includes('%') && (
+                                                            <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
                                                         )}
                                                     </div>
                                                 )}
+                                            </div>
+                                        )}
 
                                                 {perf.director && (
                                                     <div className="flex gap-1 items-start">
