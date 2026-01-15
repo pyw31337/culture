@@ -59,8 +59,6 @@ async function scrapeJustWatch() {
                         const title = img?.getAttribute('alt') || '';
                         const image = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
 
-                        // JustWatch groups by provider in the timeline often, OR icons are on the card
-                        // If the timeframe has '--nfx' suffix, it might be specific. But let's look for icons on card.
                         const providerIcons = card.querySelectorAll('.monetization-icon img');
                         const platforms: string[] = [];
 
@@ -177,10 +175,19 @@ async function scrapeJustWatch() {
                 }
             }
 
-            // ID Gen
+            // ID Gen (Fix: Do not strip Korean)
             const dateStr = item.date ? item.date.replace(/-/g, '') : '00000000';
-            const titleStr = item.title ? item.title.replace(/[\s\W]/g, '') : 'unknown';
-            item.id = `ott_${dateStr}_${titleStr}`;
+            // Remove ONLY spaces and special punctuation, keep non-ascii
+            // \w matches [a-zA-Z0-9_]. We want to keep Korean, so we use negation of "not allowed".
+            // Allowed: \w (alphanum), Korean characters (\uAC00-\uD7A3 ...)
+            // Easier: just remove whitespace and simple punctuation.
+            // Replace spaces with nothing. Replace / [ ] ( ) with nothing.
+            const titleStr = item.title ? item.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '') : 'unknown';
+
+            // If titleStr is empty (e.g. only symbols), allow numeric fallback
+            const finalTitleStr = titleStr || Math.random().toString(36).substring(7);
+
+            item.id = `ott_${dateStr}_${finalTitleStr}`;
 
             detailedItems.push(item);
         }
