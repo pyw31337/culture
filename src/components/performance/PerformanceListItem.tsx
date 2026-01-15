@@ -325,9 +325,9 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     <div className="flex items-start gap-1 text-gray-400">
                                         <span className="text-gray-500 min-w-[24px]">제공</span>
                                         <span className="text-gray-400 line-clamp-1">
-                                            {perf.platforms.map(p => {
-                                                 const info = OTT_PLATFORMS[p];
-                                                 return info ? info.label : p;
+                                            {perf.platforms.map((p: string) => {
+                                                const info = OTT_PLATFORMS[p];
+                                                return info ? info.label : p;
                                             }).join(', ')}
                                         </span>
                                     </div>

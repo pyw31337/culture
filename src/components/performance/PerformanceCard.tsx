@@ -478,7 +478,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
                                                 )}
-                                                
+
                                                 {/* Country / Year / SubGenre */}
                                                 {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                                     <div className="flex flex-wrap gap-1 items-center mb-0.5 text-gray-500 text-[10px]">
@@ -521,9 +521,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">제공</span>
                                                         <span className="text-gray-300 line-clamp-1">
-                                                            {perf.platforms.map(p => {
-                                                                 const info = OTT_PLATFORMS[p];
-                                                                 return info ? info.label : p;
+                                                            {perf.platforms.map((p: string) => {
+                                                                const info = OTT_PLATFORMS[p];
+                                                                return info ? info.label : p;
                                                             }).join(', ')}
                                                         </span>
                                                     </div>
