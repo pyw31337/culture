@@ -78,10 +78,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     return (
         <div
-            className="sm:perspective-1000 cursor-pointer group h-full relative hover:z-[2000]"
+            className="sm:perspective-1000 group h-full relative hover:z-[2000]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onClick={handleCardClick}
         >
             {/* New Gold Shimmer Wrapper Structure */}
             <div

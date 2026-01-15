@@ -266,7 +266,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 perf.ageRating && (
                                                     <>
                                                         <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                        <span className="text-gray-300">{perf.ageRating}</span>
+                                                        <span className="text-gray-300 light:text-gray-900">{perf.ageRating}</span>
                                                     </>
                                                 )
                                             ) : (
@@ -379,34 +379,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                             {i < arr.length - 1 && ', '}
                                                         </span>
                                                     ))}
-                                                </span>
-                                            </div>
-                                        )}
-
-                                        {/* Provider (Text) */}
-                                        {perf.platforms && perf.platforms.length > 0 && (
-                                            <div className="flex items-start gap-1">
-                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">제공</span>
-                                                <span className="text-gray-400 light:text-gray-900 line-clamp-1">
-                                                    {perf.platforms.map((p: string, idx: number) => {
-                                                        const info = OTT_PLATFORMS[p];
-                                                        const url = info ? info.url.replace('{title}', encodeURIComponent(perf.title)) : '#';
-                                                        return (
-                                                            <span key={p}>
-                                                                {idx > 0 && ', '}
-                                                                <a
-                                                                    href={url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    onClick={(e) => e.stopPropagation()}
-                                                                    className="hover:underline hover:text-black hover:font-bold transition-colors"
-                                                                    title={`${info?.label || p}에서 검색`}
-                                                                >
-                                                                    {info ? info.label : p}
-                                                                </a>
-                                                            </span>
-                                                        );
-                                                    })}
                                                 </span>
                                             </div>
                                         )}
