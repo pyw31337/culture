@@ -440,7 +440,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     onClick={(e) => e.stopPropagation()}
-                                                                    className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
+                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[11px] font-extrabold uppercase text-white hover:opacity-80 transition-opacity",
                                                                         platformInfo.color
                                                                     )}
                                                                     title={`${platformInfo.label}에서 검색`}
@@ -450,7 +450,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                             );
                                                         }
                                                         return (
-                                                            <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter bg-gray-600 text-white">
+                                                            <span key={p} className="w-5 h-5 flex items-center justify-center rounded-md text-[11px] font-extrabold uppercase bg-gray-600 text-white">
                                                                 {p.substring(0, 1).toUpperCase()}
                                                             </span>
                                                         );
@@ -525,7 +525,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 {/* Country / Year / SubGenre */}
                                                 {/* Country / Year / SubGenre */}
                                                 {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                                    <div className="flex flex-col gap-0.5 text-gray-500 text-[10px]">
+                                                    <div className="flex flex-col gap-0.5 text-gray-500 text-xs">
                                                         {perf.subGenre && (
                                                             <div>
                                                                 <span className="text-gray-500 mr-1">장르:</span>
@@ -549,20 +549,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                                 {/* Runtime / Age */}
                                                 {/* Runtime / Age */}
-                                                {(perf.runningTime || perf.ageRating) && (
-                                                    <div className="flex flex-col gap-0.5 text-[10px] text-gray-400 mt-0.5">
-                                                        {perf.runningTime && (
-                                                            <div>
-                                                                <span className="text-gray-500 mr-1">플레이타임:</span>
-                                                                <span>{perf.runningTime}</span>
-                                                            </div>
-                                                        )}
-                                                        {perf.ageRating && perf.genre === 'ott' && (
-                                                            <div>
-                                                                <span className="text-gray-500 mr-1">등급:</span>
-                                                                <span>{perf.ageRating}</span>
-                                                            </div>
-                                                        )}
+                                                {perf.runningTime && (
+                                                    <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
+                                                        <div>
+                                                            <span className="text-gray-500 mr-1">플레이타임:</span>
+                                                            <span>{perf.runningTime}</span>
+                                                        </div>
                                                     </div>
                                                 )}
 
@@ -612,9 +604,19 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
-                                                {/* Provider (Text) */}
+                                                {/* Prices (Interpark) */}
+                                                {perf.price && (
+                                                    <div className="text-xs font-medium text-emerald-400 mt-1">
+                                                        🎟️ {perf.price.split('원')[0]}원
+                                                        {perf.price.includes('%') && (
+                                                            <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
+                                                        )}
+                                                    </div>
+                                                )}
+
+                                                {/* Provider (Text) - Moved to bottom */}
                                                 {perf.platforms && perf.platforms.length > 0 && (
-                                                    <div className="flex items-start gap-1">
+                                                    <div className="flex items-start gap-1 mt-1">
                                                         <span className="text-gray-500 min-w-[24px]">제공</span>
                                                         <span className="text-gray-300 line-clamp-1">
                                                             {perf.platforms.map((p: string) => {
@@ -622,16 +624,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                 return info ? info.label : p;
                                                             }).join(', ')}
                                                         </span>
-                                                    </div>
-                                                )}
-
-                                                {/* Prices (Interpark) */}
-                                                {perf.price && (
-                                                    <div className="text-[10px] font-medium text-emerald-400 mt-1">
-                                                        🎟️ {perf.price.split('원')[0]}원
-                                                        {perf.price.includes('%') && (
-                                                            <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
-                                                        )}
                                                     </div>
                                                 )}
                                             </div>

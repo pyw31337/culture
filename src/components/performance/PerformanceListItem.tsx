@@ -315,7 +315,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {/* Country / Year / SubGenre */}
                                         {/* Country / Year / SubGenre */}
                                         {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                            <div className="flex flex-col gap-0.5 text-gray-500 text-[10px]">
+                                            <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 {perf.subGenre && (
                                                     <div>
                                                         <span className="text-gray-500 light:text-gray-600 mr-1">장르:</span>
@@ -416,15 +416,15 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 {/* Interpark Scraped Details: Time / Age / Info */}
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 light:text-gray-900 mt-1.5 space-y-1">
-                                        {(perf.runningTime || perf.ageRating) && (
-                                            <div className="flex flex-col gap-0.5 text-[10px] text-gray-400">
-                                                {perf.runningTime && (
-                                                    <div>
-                                                        <span className="text-gray-500 light:text-gray-600 mr-1">플레이타임:</span>
-                                                        <span className="light:text-black">{perf.runningTime}</span>
-                                                    </div>
-                                                )}
-                                                {/* Note: AgeRating is already shown in the header for OTT/Movies, but we keep it here for others if needed, or suppress it to avoid duplication. 
+                                        {perf.runningTime && (
+                                            <div className="flex flex-col gap-0.5 text-xs text-gray-400">
+                                                <div>
+                                                    <span className="text-gray-500 light:text-gray-600 mr-1">플레이타임:</span>
+                                                    <span className="light:text-black">{perf.runningTime}</span>
+                                                </div>
+                                            </div>
+                                        )}
+                                        {/* Note: AgeRating is already shown in the header for OTT/Movies, but we keep it here for others if needed, or suppress it to avoid duplication. 
                                                     Currently, Card View shows it in the body. The Header one in List View is prominent. 
                                                     Let's follow Card View: Card view shows it in BODY. 
                                                     Wait, List view has a "Header" grade section (lines 258-268). 
@@ -463,20 +463,40 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                     I will add the labels to the BODY area here (lines 376).
                                                     And I will mirror the text-only style.
                                                 */}
-                                                {perf.ageRating && perf.genre === 'ott' && (
-                                                    <div>
-                                                        <span className="text-gray-500 light:text-gray-600 mr-1">등급:</span>
-                                                        <span className="light:text-black">{perf.ageRating}</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
                                         {perf.price && (
                                             <div className="text-xs font-medium text-emerald-400">
                                                 🎟️ {perf.price.split('원')[0]}원
                                                 {perf.price.includes('%') && (
                                                     <span className="ml-1 text-red-500 text-[10px]">{perf.price.match(/\d+%/)?.[0]}</span>
                                                 )}
+                                            </div>
+                                        )}
+
+                                        {/* Provider (Text) - Moved to bottom */}
+                                        {perf.platforms && perf.platforms.length > 0 && (
+                                            <div className="flex items-start gap-1">
+                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">제공</span>
+                                                <span className="text-gray-400 light:text-gray-900 line-clamp-1">
+                                                    {perf.platforms.map((p: string, idx: number) => {
+                                                        const info = OTT_PLATFORMS[p];
+                                                        const url = info ? info.url.replace('{title}', encodeURIComponent(perf.title)) : '#';
+                                                        return (
+                                                            <span key={p}>
+                                                                {idx > 0 && ', '}
+                                                                <a
+                                                                    href={url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    onClick={(e) => e.stopPropagation()}
+                                                                    className="hover:underline hover:text-black hover:font-bold transition-colors"
+                                                                    title={`${info?.label || p}에서 검색`}
+                                                                >
+                                                                    {info ? info.label : p}
+                                                                </a>
+                                                            </span>
+                                                        );
+                                                    })}
+                                                </span>
                                             </div>
                                         )}
                                     </div>
