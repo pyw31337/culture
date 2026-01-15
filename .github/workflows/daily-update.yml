@@ -84,7 +84,8 @@ jobs:
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-travel.ts || true
           node scripts/scrape-movies.js || true
-          npx tsx scripts/scrape-ott-kinolights.ts || true
+          node scripts/scrape-movies.js || true
+          # npx tsx scripts/scrape-ott.ts || true (Disabled: Requires local run for Naver IP access)
           node scripts/scrape-myrealtrip.js || true
           npx tsx scripts/scrape-umclass.ts || true
           npx tsx scripts/scrape-sssd.ts || true
