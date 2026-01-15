@@ -83,6 +83,7 @@ async function scrapeJustWatch() {
                                 image,
                                 link: `https://www.justwatch.com${link}`,
                                 platforms: platforms,
+                                genre: 'ott', // CRITICAL: Frontend filters by this
                                 id: ''
                             });
                         }
@@ -154,7 +155,7 @@ async function scrapeJustWatch() {
                             if (label && val) {
                                 if (label.includes('감독')) res.director = val;
                                 if (label.includes('출연')) res.cast = val.split(',').map(s => s.trim());
-                                if (label.includes('장르')) res.genre = val;
+                                if (label.includes('장르')) res.subGenre = val; // Store as subGenre
                                 if (label.includes('재생 시간')) res.runningTime = val;
                                 if (label.includes('원제')) res.originalTitle = val;
                             }
@@ -167,24 +168,22 @@ async function scrapeJustWatch() {
                         return res;
                     });
 
+                    // Don't overwrite 'genre': 'ott'
                     Object.assign(item, details);
-                    console.log('Done');
+
+                    process.stdout.write('Done\n');
                     await p.close();
                 } catch (e) {
-                    console.log('Skip (Error)');
+                    process.stdout.write('Skip (Error)\n');
                 }
+            } else {
+                // For items NOT enriched, they still need genre: 'ott' (already set above)
             }
 
             // ID Gen (Fix: Do not strip Korean)
             const dateStr = item.date ? item.date.replace(/-/g, '') : '00000000';
             // Remove ONLY spaces and special punctuation, keep non-ascii
-            // \w matches [a-zA-Z0-9_]. We want to keep Korean, so we use negation of "not allowed".
-            // Allowed: \w (alphanum), Korean characters (\uAC00-\uD7A3 ...)
-            // Easier: just remove whitespace and simple punctuation.
-            // Replace spaces with nothing. Replace / [ ] ( ) with nothing.
             const titleStr = item.title ? item.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '') : 'unknown';
-
-            // If titleStr is empty (e.g. only symbols), allow numeric fallback
             const finalTitleStr = titleStr || Math.random().toString(36).substring(7);
 
             item.id = `ott_${dateStr}_${finalTitleStr}`;
