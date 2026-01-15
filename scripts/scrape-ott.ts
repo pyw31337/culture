@@ -26,6 +26,63 @@ const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 // --- HELPER: Normalize Strings ---
 const cleanText = (s: string) => s.replace(/\s+/g, ' ').trim();
 
+// --- TMDB SCRAPER (Fallback) ---
+// Scrapes TMDB search results for Poster and Metadata
+// Scrapes TMDB search results for Poster and Metadata using reused page
+async function fetchTMDBData(page: any, title: string) {
+
+    try {
+        // Search
+        const searchUrl = `https://www.themoviedb.org/search?query=${encodeURIComponent(title)}`;
+        await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+        // Click first result (Movie or TV)
+        const firstResult = await page.$('.card.v4.tight a.result');
+        if (!firstResult) {
+            return null;
+        }
+
+        const detailUrl = await firstResult.getAttribute('href');
+        await page.goto(`https://www.themoviedb.org${detailUrl}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
+
+        // Extract Data
+        const data = await page.evaluate(() => {
+            const res: any = {};
+
+            // Poster
+            const img = document.querySelector('div.image_content img.poster');
+            if (img) {
+                const src = img.getAttribute('src');
+                if (src) res.poster = `https://www.themoviedb.org${src}`;
+            } else {
+                // Fallback for some layouts
+                const img2 = document.querySelector('.poster img');
+                if (img2) {
+                    const src = img2.getAttribute('src');
+                    if (src) res.poster = `https://www.themoviedb.org${src}`;
+                }
+            }
+
+            // Runtime (usually in .facts)
+            const runtimeEl = document.querySelector('.facts .runtime');
+            if (runtimeEl) res.runningTime = runtimeEl.textContent?.trim();
+
+            // Genre (in .facts .genres)
+            const genres = Array.from(document.querySelectorAll('.facts .genres a')).map(a => a.textContent?.trim());
+            if (genres.length > 0) res.subGenre = genres.join(', ');
+
+            // Country/General info handling is complex on TMDB, but Runtime/Poster/Genre are critical
+
+            return res;
+        });
+
+        return data;
+    } catch (e) {
+        // console.error(`TMDB Error for ${title}:`, e);
+        return null;
+    }
+}
+
 // --- MAIN SCRAPER ---
 async function scrapeHybrid() {
     console.log('Starting Hybrid OTT Scraper (V6 - JustWatch List + Naver Enrichment)...');
@@ -171,6 +228,7 @@ async function scrapeHybrid() {
     progressBar.start(itemsToProcess, 0, { title: 'Starting...' });
 
     const naverPage = await context.newPage();
+    const tmdbPage = await context.newPage(); // Reuse this page
 
     for (const item of filteredItems) {
         if (processed > ENRICH_LIMIT) break; // Check > so we process exactly LIMIT items (processed is incremented after check in loop usually, but here structure is tricky. improved below)
@@ -354,9 +412,36 @@ async function scrapeHybrid() {
             if (item.poster && item.poster.startsWith('data:image')) item.poster = null;
             if (naverData.poster && naverData.poster.startsWith('data:image')) naverData.poster = null;
 
-            if (naverData.poster) item.image = naverData.poster; // Prefer Naver High-res
-            else if (item.poster) item.image = item.poster; // Fallback to JW
-            else item.image = null; // No valid image
+            // --- TMDB FALLBACK (If Poster or Critical Metadata Missing) ---
+            const missingPoster = !naverData.poster && !item.poster;
+            const missingMetadata = !naverData.runningTime || !naverData.subGenre;
+
+            if (missingPoster || missingMetadata) {
+                // If data missing from Naver/JW, try TMDB
+                console.log(`   > ${missingPoster ? 'Poster' : 'Metadata'} missing for "${item.title}". Trying TMDB...`);
+
+                // We opened 'browser' for JustWatch (closed now?) No, we closed the page, not the browser.
+                // We reuse 'tmdbPage'.
+                const tmdbData = await fetchTMDBData(tmdbPage, item.title);
+                if (tmdbData) {
+                    if (tmdbData.poster) {
+                        console.log(`   > TMDB Poster Found!`);
+                        item.image = tmdbData.poster;
+                    }
+                    if (tmdbData.runningTime && !naverData.runningTime) item.runningTime = tmdbData.runningTime;
+                    if (tmdbData.subGenre && !naverData.subGenre) item.subGenre = tmdbData.subGenre;
+                }
+            } else {
+                // Normal Logic
+                if (naverData.poster) item.image = naverData.poster;
+                else if (item.poster) item.image = item.poster;
+                else item.image = null;
+            }
+
+            // Ensure image is set if we skipped the else block above
+            if (!item.image && naverData.poster) item.image = naverData.poster;
+            else if (!item.image && item.poster) item.image = item.poster;
+
 
             if (naverData.director) item.director = naverData.director;
             if (naverData.cast) {

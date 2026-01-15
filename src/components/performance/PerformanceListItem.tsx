@@ -303,7 +303,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         {/* Movie & OTT Metadata (Cast, Director, Info) */}
                         {/* Movie & OTT Metadata (Cast, Director, Info) */}
                         {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                            <div className="mt-2 text-xs text-gray-400 light:text-gray-700 space-y-1 border-t border-white/5 light:border-black/5 pt-2">
+                            <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
                                 {/* OTT Specific: Original Title */}
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
@@ -341,7 +341,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {perf.director && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 min-w-[24px]">감독</span>
-                                                <span className="text-gray-400 line-clamp-1">
+                                                <span className="text-gray-300 line-clamp-1">
                                                     {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
@@ -364,7 +364,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 min-w-[24px]">출연</span>
-                                                <span className="text-gray-400 line-clamp-1">
+                                                <span className="text-gray-300 line-clamp-1">
                                                     {perf.cast.map((c: string, i: number, arr: string[]) => (
                                                         <span key={i}>
                                                             <a
@@ -467,75 +467,16 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
-                                {/* Director */}
                                 {perf.director && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">감독</span>
-                                        <a
-                                            href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(perf.director.replace('더보기', '').trim())}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-300 light:text-black truncate hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
-                                            onClick={e => e.stopPropagation()}
-                                        >
-                                            {perf.director.replace('더보기', '').trim()}
-                                        </a>
-                                    </div>
+                                    <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
                                 )}
-                                {/* Cast */}
                                 {perf.cast && perf.cast.length > 0 && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">출연</span>
-                                        <div className="flex flex-wrap gap-x-1 leading-snug">
-                                            {perf.cast.slice(0, 5).map((actor: string, idx: number) => {
-                                                const cleanName = actor.replace('더보기', '').trim();
-                                                if (!cleanName) return null;
-                                                return (
-                                                    <a
-                                                        key={idx}
-                                                        href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="text-gray-300 light:text-black hover:text-white light:hover:text-purple-600 hover:underline transition-colors"
-                                                        onClick={e => e.stopPropagation()}
-                                                    >
-                                                        {cleanName}{idx < Math.min(perf.cast.length, 5) - 1 ? ',' : ''}
-                                                    </a>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
+                                    <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
                                 )}
                                 {/* Provider (OTT) */}
+                                {/* Provider (OTT) - Removed duplicate icon block */}
                                 {perf.platforms && perf.platforms.length > 0 && (
-                                    <div className="flex gap-2 items-center">
-                                        <span className="text-gray-500 font-bold shrink-0">제공</span>
-                                        <div className="flex flex-wrap gap-1">
-                                            {perf.platforms.map((p: string, idx: number) => {
-                                                const key = typeof p === 'string' ? p.toLowerCase() : String(p);
-                                                const platform = OTT_PLATFORMS[key];
-                                                if (!platform) return null;
-
-                                                const url = platform.url.replace('{title}', encodeURIComponent(perf.title));
-                                                return (
-                                                    <a
-                                                        key={idx}
-                                                        href={url}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className={clsx(
-                                                            "h-5 flex items-center justify-center rounded text-[9px] font-bold uppercase hover:scale-105 transition-transform shadow-sm text-white border border-white/10 px-1 w-auto",
-                                                            platform.color
-                                                        )}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                        title={platform.label}
-                                                    >
-                                                        {platform.label}
-                                                    </a>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
+                                    <div className="hidden"></div>
                                 )}
 
                                 {/* Info */}
