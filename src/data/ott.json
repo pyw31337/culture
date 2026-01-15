@@ -8,13 +8,22 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260115_최애의아이시즌3",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260106_35%2F1767680672419ieyP1_JPEG%2F57_40498218_poster_image_1767680672409.jpg",
     "subGenre": "애니메이션",
-    "productionCountry": "일본"
+    "productionCountry": "일본",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "23분",
+    "cast": [
+      "Takeo Otsuka",
+      "Yurie Igoma",
+      "Megumi Han",
+      "Rumi Okubo",
+      "Manaka Iwami"
+    ]
   },
   {
     "title": "메이크 어 걸",
@@ -25,9 +34,9 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260115_메이크어걸",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250821_123%2F17557668852743Tj3h_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "subGenre": "멜로/로맨스",
@@ -43,9 +52,9 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260115_비밀일수밖에",
     "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250822_47%2F1755848538328Jz8pr_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "ageRating": "12세 이상 관람가",
@@ -62,11 +71,20 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260115_귀족전생축복받은태생으로최강의힘을손에넣다시즌1",
-    "image": "https://images.justwatch.com/poster/340659363/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/340659363/s592/시즌-1",
+    "ageRating": "12세 이상 관람가",
+    "runningTime": "14123분",
+    "cast": [
+      "Karin Nanami",
+      "Saki Miyashita",
+      "Iori Saeki",
+      "Yui Ishikawa",
+      "Misaki Watada"
+    ]
   },
   {
     "title": "WWE NXT - 시즌 20",
@@ -77,11 +95,20 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_WWENXT시즌20",
-    "image": "https://images.justwatch.com/poster/321617366/s592/시즌-20"
+    "image": "https://images.justwatch.com/poster/321617366/s592/시즌-20",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 50분",
+    "cast": [
+      "Stuart Bennett",
+      "Stuart Bennett",
+      "Victor Travagliante",
+      "Victor Travagliante",
+      "Darren Matthews"
+    ]
   },
   {
     "title": "타스카리: 밀수와의 전쟁 - 시즌 1",
@@ -92,12 +119,20 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_타스카리밀수와의전쟁시즌1",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABX3tKW7-WbXkdC4QUtrpPJdnr8p02dVJhhc3inkxkqW4oHXwwex8IhEWHsCy0Flk_xRKhJPIFjkETxk63z7iFjRTGp_FChc3BG1k6rbUKamTcyqoQjD6Vtllk-sGTPjvMHNwew.jpg%3Fr%3D97d",
-    "productionCountry": "해외"
+    "productionCountry": "해외",
+    "runningTime": "45분",
+    "cast": [
+      "Emraan Hashmi",
+      "Sharad Kelkar",
+      "Zoya Afroz",
+      "Freddy Daruwala",
+      "Anurag Sinha"
+    ]
   },
   {
     "title": "현역가왕 - 시즌 1",
@@ -108,11 +143,13 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_현역가왕시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251124_282%2F1763951206681bAgua_JPEG%2Fc8700f7a97a1e3efe431e5858d1f5135.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251124_282%2F1763951206681bAgua_JPEG%2Fc8700f7a97a1e3efe431e5858d1f5135.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "2시간 32분"
   },
   {
     "title": "연우영안 - 시즌 1",
@@ -124,13 +161,21 @@
       "wavve",
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_연우영안시즌1",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251021_257%2F1761031750755ynA6y_JPEG%2Fe1a1a5175d476afb2a9919f0049d055b.jpg",
     "subGenre": "32부작",
-    "productionCountry": "중국"
+    "productionCountry": "중국",
+    "runningTime": "41분",
+    "cast": [
+      "Wang Yinglu",
+      "Li Yunrui",
+      "Chang Long",
+      "Feng Jiayi",
+      "Sui Junbo"
+    ]
   },
   {
     "title": "여의전 - 시즌 1",
@@ -142,13 +187,22 @@
       "wavve",
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_여의전시즌1",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250911_150%2F1757560612722Da6hl_JPEG%2F57_5557588_poster_image_1534911061528.jpg",
     "subGenre": "87부작",
-    "productionCountry": "중국"
+    "productionCountry": "중국",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "45분",
+    "cast": [
+      "Zhou Xun",
+      "Wallace Huo",
+      "Ning Chang",
+      "Dong Jie",
+      "Xin Zhilei"
+    ]
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -160,12 +214,21 @@
       "wavve",
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_일소수가시즌1",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250708_227%2F1751958372805onOmj_JPEG%2F1768f518e259c04cb3c62301535da9f2.jpg",
-    "productionCountry": "중국"
+    "productionCountry": "중국",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "46분",
+    "cast": [
+      "Li Qin",
+      "Chen Zheyuan",
+      "Xia Meng",
+      "Chen Heyi",
+      "Zuo Ye"
+    ]
   },
   {
     "title": "고스트 닥터 - 시즌 1",
@@ -176,11 +239,20 @@
     "platforms": [
       "wavve"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_고스트닥터시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20211210_12%2F1639100528467jQkCv_JPEG%2F02e282ad012e54b139ae0e5602683b8d.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20211210_12%2F1639100528467jQkCv_JPEG%2F02e282ad012e54b139ae0e5602683b8d.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 5분",
+    "cast": [
+      "Rain",
+      "Kim Bum",
+      "Uee",
+      "Son Na-eun",
+      "Kim Jae-yong"
+    ]
   },
   {
     "title": "에드워드리의 컨츄리쿡 - 시즌 1",
@@ -191,11 +263,20 @@
     "platforms": [
       "wavve"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_에드워드리의컨츄리쿡시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250115_274%2F1736940561984Rxg5V_JPEG%2F458421522f6147613794312d59095ae7.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250115_274%2F1736940561984Rxg5V_JPEG%2F458421522f6147613794312d59095ae7.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 30분",
+    "cast": [
+      "Edward Lee",
+      "Byun Yo-han",
+      "Ko A-sung",
+      "Shin Sia",
+      "Yoon Doo-joon"
+    ]
   },
   {
     "title": "첫 번째 남자 - 시즌 1",
@@ -206,11 +287,19 @@
     "platforms": [
       "wavve"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_첫번째남자시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_63%2F1765416645066Kwt3b_JPEG%2F231c006d13d55a0ff93aaca0dbca4e90.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_63%2F1765416645066Kwt3b_JPEG%2F231c006d13d55a0ff93aaca0dbca4e90.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "28분",
+    "cast": [
+      "Hahm Eun-jung",
+      "Oh Hyun-kyung",
+      "Yoon Sun-woo",
+      "Park Geon-il"
+    ]
   },
   {
     "title": "'하이재킹' - Hijack - 시즌 2",
@@ -222,11 +311,20 @@
       "apple",
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_하이재킹Hijack시즌2",
-    "image": "https://images.justwatch.com/poster/340406731/s592/시즌-2"
+    "image": "https://images.justwatch.com/poster/340406731/s592/시즌-2",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "46분",
+    "cast": [
+      "Idris Elba",
+      "Neil Maskell",
+      "Eve Myles",
+      "Christine Adams",
+      "Max Beesley"
+    ]
   },
   {
     "title": "'하이재킹' - Hijack - 시즌 1",
@@ -237,11 +335,20 @@
     "platforms": [
       "apple"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_하이재킹Hijack시즌1",
-    "image": "https://images.justwatch.com/poster/305536090/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/305536090/s592/시즌-1",
+    "ageRating": "19세 이상 관람가",
+    "runningTime": "47분",
+    "cast": [
+      "Idris Elba",
+      "Neil Maskell",
+      "Eve Myles",
+      "Christine Adams",
+      "Max Beesley"
+    ]
   },
   {
     "title": "'팜 로얄: 신분 상승의 사다리' - Palm Royale - 시즌 2",
@@ -253,11 +360,20 @@
       "apple",
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_팜로얄신분상승의사다리PalmRoyale시즌2",
-    "image": "https://images.justwatch.com/poster/338975290/s592/시즌-2"
+    "image": "https://images.justwatch.com/poster/338975290/s592/시즌-2",
+    "ageRating": "19세 이상 관람가",
+    "runningTime": "55분",
+    "cast": [
+      "Kristen Wiig",
+      "Ricky Martin",
+      "Josh Lucas",
+      "Leslie Bibb",
+      "Amber Chardae Robinson"
+    ]
   },
   {
     "title": "한밤중 하트튠 - 시즌 1",
@@ -268,9 +384,9 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_한밤중하트튠시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260106_220%2F17676846125749YXea_JPEG%2F57_40533574_poster_image_1767684612555.jpg",
     "productionCountry": "일본"
@@ -284,12 +400,21 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_가치아쿠타시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250703_178%2F1751513600686dFo0t_JPEG%2F57_poster_image_1751513600670.jpg",
-    "productionCountry": "일본"
+    "productionCountry": "일본",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "24분",
+    "cast": [
+      "Aoi Ichikawa",
+      "Katsuyuki Konishi",
+      "Yumiri Hanamori",
+      "Miku Ito",
+      "Toshiyuki Morikawa"
+    ]
   },
   {
     "title": "친구 여동생이 나한테만 짜증나게 군다 - 시즌 1",
@@ -300,12 +425,21 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_친구여동생이나한테만짜증나게군다시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250908_217%2F1757299417266wcHg8_JPEG%2F57_poster_image_1757299417259.jpg",
-    "productionCountry": "일본"
+    "productionCountry": "일본",
+    "ageRating": "19세 이상 관람가",
+    "runningTime": "23분",
+    "cast": [
+      "Haruki Ishiya",
+      "Sayumi Suzushiro",
+      "Tomori Kusunoki",
+      "Soma Saito",
+      "Kana Hanazawa"
+    ]
   },
   {
     "title": "한문철의 블랙박스 리뷰 - 시즌 1",
@@ -316,11 +450,19 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_한문철의블랙박스리뷰시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220927_94%2F1664245158802OTEos_JPEG%2F57_28670435_poster_image_1664245158747.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220927_94%2F1664245158802OTEos_JPEG%2F57_28670435_poster_image_1664245158747.jpg",
+    "runningTime": "79671시간 33분",
+    "cast": [
+      "Cho Kyu-hyun",
+      "Han Moon-chul",
+      "Lee Su-geun",
+      "Guillaume Patry",
+      "Han Bo-reum"
+    ]
   },
   {
     "title": "공주님 “고문”의 시간입니다 - 시즌 2",
@@ -331,11 +473,94 @@
     "platforms": [
       "tving"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260114_공주님고문의시간입니다시즌2",
     "image": "https://images.justwatch.com/poster/338356677/s592/시즌-2"
+  },
+  {
+    "title": "다윈 사변 - 시즌 1",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/dawin-sabyeon/시즌-1",
+    "platform": "Amazon Prime Video",
+    "poster": "https://images.justwatch.com/poster/340505057/s592/시즌-1",
+    "platforms": [
+      "amazon"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_다윈사변시즌1",
+    "image": "https://images.justwatch.com/poster/340505057/s592/시즌-1"
+  },
+  {
+    "title": "비스트 게임 - 시즌 2",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/beast-games/시즌-2",
+    "platform": "Amazon Prime Video",
+    "poster": "https://images.justwatch.com/poster/340563549/s592/시즌-2",
+    "platforms": [
+      "amazon"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_비스트게임시즌2",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "56분",
+    "cast": [
+      "Jimmy Donaldson",
+      "Chandler Hallow",
+      "Karl Jacobs",
+      "Nolan Hansen",
+      "Tareq Salameh"
+    ],
+    "image": "https://images.justwatch.com/poster/340563549/s592/시즌-2"
+  },
+  {
+    "title": "Good Sports with Kevin Hart and Kenan Thompson - 시즌 1",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/good-sports-with-kevin-hart-and-kenan-thompson/시즌-1",
+    "platform": "Amazon Prime Video",
+    "poster": "https://images.justwatch.com/poster/338949386/s592/시즌-1",
+    "platforms": [
+      "amazon"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_GoodSportswithKevinHartandKenanThompson시즌1",
+    "runningTime": "35분",
+    "cast": [
+      "Kevin Hart",
+      "Kenan Thompson"
+    ],
+    "image": "https://images.justwatch.com/poster/338949386/s592/시즌-1"
+  },
+  {
+    "title": "폴아웃 - 시즌 2",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/fallout/시즌-2",
+    "platform": "Amazon Prime Video",
+    "poster": "https://images.justwatch.com/poster/334553656/s592/시즌-2",
+    "platforms": [
+      "amazon"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_폴아웃시즌2",
+    "ageRating": "19세 이상 관람가",
+    "runningTime": "57분",
+    "cast": [
+      "Ella Purnell",
+      "Aaron Moten",
+      "Moisés Arias",
+      "Frances Turner",
+      "Kyle MacLachlan"
+    ],
+    "image": "https://images.justwatch.com/poster/334553656/s592/시즌-2"
   },
   {
     "title": "더 보이프렌드 - 시즌 2",
@@ -346,9 +571,9 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_더보이프렌드시즌2",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260105_15%2F1767580419425huoV6_JPEG%2F55c49a9caaf78bae3bf6b43a0fcb5191.jpg",
     "subGenre": "6부작",
@@ -363,13 +588,22 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_흑백요리사요리계급전쟁시즌2",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_241%2F1764669640671yKKFU_JPEG%2F4563869417366e58fdb07cbaac8d7876.jpg",
     "subGenre": "13부작",
-    "productionCountry": "한국"
+    "productionCountry": "한국",
+    "ageRating": "12세 이상 관람가",
+    "runningTime": "1시간 18분",
+    "cast": [
+      "Paik Jong-won",
+      "Sung Anh",
+      "Nam Doh-hyeong",
+      "Kim Do-yun",
+      "Roi Choi"
+    ]
   },
   {
     "title": "WWE 먼데이 나잇 로우 - 시즌 34",
@@ -380,11 +614,20 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_WWE먼데이나잇로우시즌34",
-    "image": "https://images.justwatch.com/poster/327354552/s592/시즌-34"
+    "image": "https://images.justwatch.com/poster/327354552/s592/시즌-34",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "2시간 15분",
+    "cast": [
+      "Michael Coulthard",
+      "Michael Coulthard",
+      "Randy Orton",
+      "Randy Orton",
+      "Randy Orton"
+    ]
   },
   {
     "title": "틈만나면, - 시즌 4",
@@ -395,11 +638,20 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_틈만나면시즌4",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_61%2F17646378401839k6Vb_JPEG%2Ff91ffafad093d39ed4bdec5a1951412e.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_61%2F17646378401839k6Vb_JPEG%2Ff91ffafad093d39ed4bdec5a1951412e.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 31분",
+    "cast": [
+      "Yoo Jae-suk",
+      "Yoo Yeon-seok",
+      "Lee Kwang-soo",
+      "AN YUJIN",
+      "Ahn Bo-hyun"
+    ]
   },
   {
     "title": "A-i-dor A-i - 시즌 1",
@@ -410,9 +662,9 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_AidorAi시즌1",
     "image": "https://images.justwatch.com/poster/339130198/s592/시즌-1"
   },
@@ -425,9 +677,9 @@
     "platforms": [
       "netflix"
     ],
+    "genre": "ott",
     "venue": "OTT",
     "region": "ott",
-    "genre": "ott",
     "id": "ott_20260113_헬로카봇시즌11",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240624_228%2F1719208480005g8Coq_JPEG%2F3f4ee694eada9f4ac788131b27fc1146.jpg"
   },
@@ -446,7 +698,16 @@
     "genre": "ott",
     "id": "ott_20260113_스프링피버시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251203_281%2F1764723364749DnB4z_JPEG%2F8330f153aec53cb3b6e79eb848581a33.jpg",
-    "subGenre": "드라마"
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 1분",
+    "cast": [
+      "Ahn Bo-hyun",
+      "Lee Ju-bin",
+      "Cha Seo-won",
+      "Cho Jun-young",
+      "Lee Jae-in"
+    ]
   },
   {
     "title": "더 리슨 - 시즌 1",
@@ -461,7 +722,16 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_더리슨시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251013_65%2F1760337133557W1M3O_JPEG%2F3e77b818412649c0be70e7b8cf25211f.jpg"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251013_65%2F1760337133557W1M3O_JPEG%2F3e77b818412649c0be70e7b8cf25211f.jpg",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "57분",
+    "cast": [
+      "Heo Sol-ji",
+      "Kim Na-young",
+      "Hyun Seung-hee",
+      "Hynn",
+      "김소연"
+    ]
   },
   {
     "title": "봄이 되면 - 시즌 1",
@@ -477,7 +747,16 @@
     "genre": "ott",
     "id": "ott_20260113_봄이되면시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240115_168%2F1705290476671gHjXv_JPEG%2F57_32746413_poster_image_1705290476646.jpg",
-    "productionCountry": "일본"
+    "productionCountry": "일본",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "46분",
+    "cast": [
+      "Nao",
+      "Noritake Kinashi",
+      "Gaku Hamada",
+      "Tatsuya Fukazawa",
+      "Ai Mikami"
+    ]
   },
   {
     "title": "불구선량적아문 - 시즌 1",
@@ -492,7 +771,15 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_불구선량적아문시즌1",
-    "image": "https://images.justwatch.com/poster/333808381/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/333808381/s592/시즌-1",
+    "runningTime": "52분",
+    "cast": [
+      "Ariel Lin",
+      "Tiffany Hsu Wei-Ning",
+      "Mike He",
+      "Kai Ko",
+      "Lu Yi-ching"
+    ]
   },
   {
     "title": "개뼈다귀 - 시즌 1",
@@ -507,7 +794,14 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_개뼈다귀시즌1",
-    "image": "https://images.justwatch.com/poster/240271231/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/240271231/s592/시즌-1",
+    "runningTime": "1411시간 10분",
+    "cast": [
+      "Kim Gu-ra",
+      "Park Myung-soo",
+      "Lee Sung-jae",
+      "Ji Sang-ryeol"
+    ]
   },
   {
     "title": "절대 BL이 되는 세계 VS 절대 BL이 되고 싶지 않은 남자​ - 시즌 3",
@@ -524,7 +818,16 @@
     "id": "ott_20260113_절대BL이되는세계VS절대BL이되고싶지않은남자시즌3",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251105_151%2F1762310981353pXNaC_JPEG%2F57_poster_image_1762310981334.jpg",
     "subGenre": "애니메이션",
-    "productionCountry": "일본"
+    "productionCountry": "일본",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "14분",
+    "cast": [
+      "Atsuhiro Inukai",
+      "Yutaro",
+      "Asahi Ito",
+      "Hayate Wada",
+      "Akihisa Shiono"
+    ]
   },
   {
     "title": "백야 삼생연 - 시즌 1",
@@ -554,7 +857,13 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_잡동산시즌1",
-    "image": "https://images.justwatch.com/poster/244290350/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/244290350/s592/시즌-1",
+    "runningTime": "726959분",
+    "cast": [
+      "Eunhyuk",
+      "Kang Ho-dong",
+      "Seungkwan"
+    ]
   },
   {
     "title": "종채여신 - 시즌 1",
@@ -569,7 +878,15 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_종채여신시즌1",
-    "image": "https://images.justwatch.com/poster/340127174/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/340127174/s592/시즌-1",
+    "runningTime": "46분",
+    "cast": [
+      "Jasper Liu",
+      "Annie Chen",
+      "Hsieh Ying-shiuan",
+      "Lee Chien-Na",
+      "Liao Hui-jen"
+    ]
   },
   {
     "title": "신빨토크쇼 귀묘한 이야기 - 시즌 2",
@@ -584,7 +901,13 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_신빨토크쇼귀묘한이야기시즌2",
-    "image": "https://images.justwatch.com/poster/340823932/s592/시즌-2"
+    "image": "https://images.justwatch.com/poster/340823932/s592/시즌-2",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 15분",
+    "cast": [
+      "Yoon Tae-jin",
+      "Kim Young-hee"
+    ]
   },
   {
     "title": "장안적려지 - 시즌 1",
@@ -599,7 +922,15 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_장안적려지시즌1",
-    "image": "https://images.justwatch.com/poster/340568308/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/340568308/s592/시즌-1",
+    "runningTime": "75545분",
+    "cast": [
+      "Lei Jiayin",
+      "Yue Yunpeng",
+      "Nashi",
+      "Vivienne Tien",
+      "Lü Liang"
+    ]
   },
   {
     "title": "원펀맨 - 시즌 3",
@@ -629,7 +960,16 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260113_언젠가무중력하늘에서시즌1",
-    "image": "https://images.justwatch.com/poster/336747868/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/336747868/s592/시즌-1",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "515분",
+    "cast": [
+      "Mai Kiryu",
+      "Misato Morita",
+      "Yuki Katayama",
+      "Marika Ito",
+      "Daiken Okudaira"
+    ]
   },
   {
     "title": "달의 요정 세일러문 - 시즌 1",
@@ -703,7 +1043,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260113_만지지마세요코테사시군시즌1"
+    "id": "ott_20260113_만지지마세요코테사시군시즌1",
+    "image": null
   },
   {
     "title": "야노 군의 평범한 나날 - 시즌 1",
@@ -717,7 +1058,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260113_야노군의평범한나날시즌1"
+    "id": "ott_20260113_야노군의평범한나날시즌1",
+    "image": null
   },
   {
     "title": "랜드맨 - 시즌 1",
@@ -731,7 +1073,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_랜드맨시즌1"
+    "id": "ott_20260112_랜드맨시즌1",
+    "image": null
   },
   {
     "title": "첫입에 반하다 - 시즌 1",
@@ -745,7 +1088,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_첫입에반하다시즌1"
+    "id": "ott_20260112_첫입에반하다시즌1",
+    "image": null
   },
   {
     "title": "모범택시 - 시즌 3",
@@ -759,7 +1103,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_모범택시시즌3"
+    "id": "ott_20260112_모범택시시즌3",
+    "image": null
   },
   {
     "title": "Magik Rompak",
@@ -790,7 +1135,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_화려한날들시즌1"
+    "id": "ott_20260112_화려한날들시즌1",
+    "image": null
   },
   {
     "title": "킬 토니: 텍사스에서 터졌다",
@@ -837,7 +1183,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_프로보노시즌1"
+    "id": "ott_20260112_프로보노시즌1",
+    "image": null
   },
   {
     "title": "은애하는 도적님아 - 시즌 1",
@@ -851,7 +1198,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260112_은애하는도적님아시즌1"
+    "id": "ott_20260112_은애하는도적님아시즌1",
+    "image": null
   },
   {
     "title": "마르다니",
