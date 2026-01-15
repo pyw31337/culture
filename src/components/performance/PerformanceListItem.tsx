@@ -106,7 +106,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                 {/* Image (Left) */}
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0">
                     <ImageWithFallback
-                        src={perf.image}
+                        src={perf.image || perf.poster}
                         optimizationWidth={200}
                         alt={perf.title}
                         fill

@@ -178,7 +178,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                             <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                 <div className="absolute inset-0 z-0">
                                     <ImageWithFallback
-                                        src={perf.image}
+                                        src={perf.image || perf.poster}
                                         optimizationWidth={400}
                                         alt={perf.title}
                                         fill
@@ -352,7 +352,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
                         <div className="relative h-full w-full">
                             <ImageWithFallback
-                                src={perf.image}
+                                src={perf.image || perf.poster}
                                 optimizationWidth={400}
                                 alt={perf.title}
                                 fill
