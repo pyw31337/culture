@@ -210,6 +210,17 @@ async function scrapeHybrid() {
 
         if (validPlatforms.length === 0) return false;
         item.platforms = validPlatforms;
+
+        // Assign Default Metadata & ID EARLY to ensure visibility even if enrichment fails/skipped
+        item.venue = 'OTT';
+        item.region = 'ott';
+        item.genre = 'ott';
+
+        const dateStr = item.date ? item.date.replace(/-/g, '') : '00000000';
+        const titleStr = item.title ? item.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '') : 'unknown';
+        const finalTitleStr = titleStr || Math.random().toString(36).substring(7);
+        item.id = `ott_${dateStr}_${finalTitleStr}`;
+
         return true;
     });
 
@@ -217,6 +228,16 @@ async function scrapeHybrid() {
 
     // 3. Enrich with Naver (Limit 100 for performance/rate-limits)
     const ENRICH_LIMIT = 100;
+
+    // Resume Logic: Read existing data to skip already enriched items
+    let existingData: any[] = [];
+    try {
+        if (fs.existsSync(OUTPUT_FILE)) {
+            existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            console.log(`Loaded ${existingData.length} existing items for resume check.`);
+        }
+    } catch (e) { }
+
     let processed = 0;
 
     const progressBar = new cliProgress.SingleBar({
@@ -238,6 +259,28 @@ async function scrapeHybrid() {
         progressBar.update(processed + 1, { title: currentTitle });
 
         processed++;
+
+        // RESUME CHECK: If item already has good data (Image OR TMDB Poster) + Metadata
+        const match = existingData.find(e => e.title === item.title && e.date === item.date);
+        // Check if enriched (has subGenre or runningTime AND (image or tmdb poster))
+        // JustWatch poster usually exists, so check for Naver Image or TMDB-specific poster or just specific metadata
+        if (match && (match.image || (match.poster && match.poster.includes('themoviedb'))) && (match.subGenre || match.runningTime)) {
+            Object.assign(item, match);
+            // console.log(`   [Skipped] Already enriched: ${item.title}`);
+            // If we skip, we still count as processed for progress bar, but we don't scrape
+            // We continue to next loop, but we MUST ensure ID is generated? 
+            // Ah, ID generation happens at the END of the loop (line 463).
+            // If we continue here, we skip ID generation?
+            // NO, we need to skip the SCRAPING part (lines 242-456) but keep ID gen?
+            // Actually, ID is part of 'match' usually.
+            // Let's just Continue AFTER copying 'id'.
+            // Best way: Wrap the Scraping logic in an "if (!enriched) { ... }" block?
+            // Or just continue and let the end-of-loop logic handle it?
+            // The end of loop logic generates ID if missing.
+            // If we copy match, we copy ID.
+            // So we can just continue.
+            continue;
+        }
 
         // Incremental Save (Every 5 items to prevent data loss on stop)
         if (processed % 5 === 0) {
@@ -463,16 +506,8 @@ async function scrapeHybrid() {
             if (naverData.productionCountry) item.productionCountry = naverData.productionCountry;
             if (naverData.runningTime) item.runningTime = naverData.runningTime;
 
-            // Generate IDs and common fields
-            item.venue = 'OTT';
-            item.region = 'ott';
-            item.genre = 'ott'; // Internal genre key
+            // ID and default fields already assigned during filtering
 
-            // Final ID
-            const dateStr = item.date ? item.date.replace(/-/g, '') : '00000000';
-            const titleStr = item.title ? item.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '') : 'unknown';
-            const finalTitleStr = titleStr || Math.random().toString(36).substring(7);
-            item.id = `ott_${dateStr}_${finalTitleStr}`;
 
         } catch (e) {
             // Log error silently or to file? For now just continue
