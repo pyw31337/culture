@@ -184,14 +184,59 @@ async function scrapeHybrid() {
         try {
             // Search Query: "[Title] 정보" or just "[Title]"
             // E.g. "오징어 게임 시즌2 정보"
-            const query = `${item.title.replace(/\s-\s.*$/, '')} 정보`; // Remove " - Season 1" suffix for better search?
-            // Actually, keeping Season info is sometimes good, sometimes bad. Naver usually understands "Season 2"
-
-            const searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(item.title + ' 정보')}`;
+            let query = `${item.title.replace(/\s-\s.*$/, '')} 정보`;
+            let searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(query)}`;
 
             await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
-            const naverData = await naverPage.evaluate(() => {
+            let naverData: any = await naverPage.evaluate(() => {
+                const infoBox = document.querySelector('.cm_info_box');
+                const detailInfo = document.querySelector('.detail_info');
+
+                // Check if we have director/cast info visible roughly
+                // This is a rough check to trigger deep search if missing
+                let hasDirector = false;
+                let hasCast = false;
+
+                const dts = document.querySelectorAll('dt');
+                dts.forEach(dt => {
+                    const txt = dt.textContent?.trim();
+                    if (txt === '감독') hasDirector = true;
+                    if (txt === '출연' || txt === '성우') hasCast = true;
+                });
+
+                return { hasInfo: !!infoBox || !!detailInfo, hasDirector, hasCast };
+            });
+
+            // RETRY LOGIC: 
+            // 1. If no info box, try stripped title without subtitles (e.g., "Main Title")
+            // 2. [NEW] If info box exists BUT missing critical metadata (Director/Cast), try stripping "Season X" suffix
+            //    Reason: "Season 3" page often lacks cast, but parent page "Main Title" has it.
+            let deepSearch = false;
+            if (!naverData.hasInfo) {
+                const simpleTitle = item.title.split(/[:\-–]/)[0].trim();
+                if (simpleTitle.length >= 2 && simpleTitle !== item.title) {
+                    query = `${simpleTitle} 정보`;
+                    searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(query)}`;
+                    await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    deepSearch = true;
+                }
+            } else if (!naverData.hasDirector && !naverData.hasCast) {
+                // If we found info, but no Cast/Director, it might be a specific Season page with sparse info.
+                // Try searching parent title (remove " - Season N" or "Season N")
+                const parentTitle = item.title.replace(/\s-\s시즌\s\d+.*$/, '').replace(/\s시즌\s\d+.*$/, '').trim();
+                // console.log(`DEBUG: Checking Deep Search for '${item.title}' -> '${parentTitle}' | HasInfo: ${naverData.hasInfo} Dir: ${naverData.hasDirector} Cast: ${naverData.hasCast}`);
+
+                if (parentTitle !== item.title && parentTitle.length > 1) {
+                    console.log(`   > Deep Search: Retrying with parent title "${parentTitle}"...`);
+                    query = `${parentTitle} 정보`;
+                    searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(query)}`;
+                    await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+                    deepSearch = true;
+                }
+            }
+
+            naverData = await naverPage.evaluate(() => {
                 const res: any = {};
 
                 // 1. Info Box (.cm_info_box) - Rating, Genre, Country, Runtime
@@ -199,13 +244,45 @@ async function scrapeHybrid() {
                 if (infoBox) {
                     const dts = infoBox.querySelectorAll('dt');
                     dts.forEach(dt => {
-                        const k = dt.textContent?.trim();
-                        const v = dt.nextElementSibling?.textContent?.trim();
-                        if (k === '개봉' || k === '방영') { /* Date already from JW */ }
-                        if (k === '등급') res.ageRating = v;
-                        if (k === '장르') res.subGenre = v;
-                        if (k === '국가') res.productionCountry = v;
-                        if (k === '러닝타임') res.runningTime = v;
+                        const k = dt.textContent?.trim() || '';
+
+                        // Use innerHTML to preserve structural separators like <span class="cm_bar_info"></span>
+                        // Example: "멜로/로맨스<span class="cm_bar_info"></span>일본<span class="cm_bar_info"></span>92분"
+                        // Replace common separators with " | " for clean splitting
+                        let vHtml = dt.nextElementSibling?.innerHTML || '';
+                        vHtml = vHtml.replace(/<span[^>]*class="cm_bar_info"[^>]*>.*?<\/span>/g, ' | ');
+                        vHtml = vHtml.replace(/<[^>]+>/g, ''); // Strip remaining tags
+                        const v = vHtml.trim();
+
+                        // Also get simple text for standard fields
+                        const vText = dt.nextElementSibling?.textContent?.trim() || '';
+
+                        if (k === '등급') res.ageRating = vText;
+                        if (k === '장르') res.subGenre = vText;
+                        if (k === '국가') res.productionCountry = vText;
+                        if (k === '러닝타임') res.runningTime = vText;
+
+                        // [NEW] Parse "개요" (Overview) with separators
+                        if (k === '개요') {
+                            const parts = v.split('|').map(s => s.trim()).filter(Boolean);
+                            // Heuristics:
+                            // "92분" -> Runtime
+                            // "일본", "미국" -> Country
+                            // Others -> Genre
+
+                            parts.forEach(part => {
+                                if (part.match(/\d+분/)) {
+                                    res.runningTime = part;
+                                } else if (['한국', '미국', '일본', '중국', '영국', '프랑스', '독일'].some(c => part.includes(c)) && part.length < 10) {
+                                    res.productionCountry = part;
+                                } else {
+                                    // Make sure it's not a date (2025.09.10)
+                                    if (!part.match(/\d{4}\.\d{2}\.\d{2}/)) {
+                                        res.subGenre = part;
+                                    }
+                                }
+                            });
+                        }
                     });
                 }
 
@@ -224,7 +301,7 @@ async function scrapeHybrid() {
                     if (txt === '감독') {
                         res.director = dt.nextElementSibling?.textContent?.trim();
                     }
-                    if (txt === '출연') {
+                    if (txt === '출연' || txt === '성우') { // [NEW] Support "Voice Actor"
                         res.cast = dt.nextElementSibling?.textContent?.trim();
                     }
                 });
