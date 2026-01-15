@@ -261,8 +261,20 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
-                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            {/* OTT: Only show Age Rating if present, do not fallback to venue */}
+                                            {perf.genre === 'ott' ? (
+                                                perf.ageRating && (
+                                                    <>
+                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                        <span className="text-gray-300">{perf.ageRating}</span>
+                                                    </>
+                                                )
+                                            ) : (
+                                                <>
+                                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                    {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                                </>
+                                            )}
                                         </>
                                     )}
                                 </div>
@@ -301,13 +313,27 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     <div className="mt-2 space-y-1 text-xs text-gray-400">
 
                                         {/* Country / Year / SubGenre */}
+                                        {/* Country / Year / SubGenre */}
                                         {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                            <div className="flex flex-wrap gap-1 items-center mb-1 text-gray-500">
-                                                {perf.productionCountry && <span>{perf.productionCountry}</span>}
-                                                {perf.productionCountry && (perf.productionYear || perf.subGenre) && <span className="text-gray-700">|</span>}
-                                                {perf.productionYear && <span>{perf.productionYear}</span>}
-                                                {perf.productionYear && perf.subGenre && <span className="text-gray-700">|</span>}
-                                                {perf.subGenre && <span className="text-emerald-400">{perf.subGenre}</span>}
+                                            <div className="flex flex-col gap-0.5 text-gray-500 text-[10px]">
+                                                {perf.subGenre && (
+                                                    <div>
+                                                        <span className="text-gray-500 mr-1">장르:</span>
+                                                        <span className="text-gray-400">{perf.subGenre}</span>
+                                                    </div>
+                                                )}
+                                                {perf.productionCountry && (
+                                                    <div>
+                                                        <span className="text-gray-500 mr-1">제작국가:</span>
+                                                        <span>{perf.productionCountry}</span>
+                                                    </div>
+                                                )}
+                                                {perf.productionYear && (
+                                                    <div>
+                                                        <span className="text-gray-500 mr-1">제작년도:</span>
+                                                        <span>{perf.productionYear}</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         )}
 
@@ -376,15 +402,63 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 mt-1.5 space-y-1">
                                         {(perf.runningTime || perf.ageRating) && (
-                                            <div className="flex gap-2 text-xs">
-                                                {perf.runningTime && <span className="flex items-center gap-1">🕒 {perf.runningTime}</span>}
-                                                {perf.ageRating && <span className="flex items-center gap-1">🔞 {perf.ageRating}</span>}
+                                            <div className="flex flex-col gap-0.5 text-[10px] text-gray-400">
+                                                {perf.runningTime && (
+                                                    <div>
+                                                        <span className="text-gray-500 mr-1">플레이타임:</span>
+                                                        <span>{perf.runningTime}</span>
+                                                    </div>
+                                                )}
+                                                {/* Note: AgeRating is already shown in the header for OTT/Movies, but we keep it here for others if needed, or suppress it to avoid duplication. 
+                                                    Currently, Card View shows it in the body. The Header one in List View is prominent. 
+                                                    Let's follow Card View: Card view shows it in BODY. 
+                                                    Wait, List view has a "Header" grade section (lines 258-268). 
+                                                    Card view ALSO has a "Header" grade section (lines 276-286).
+                                                    In Card view, I moved OTT rating to the BODY (lines 450).
+                                                    So I should potentially HIDE it from the Header in List View for OTT too?
+                                                    Actually, in Card View I implemented:
+                                                    Header: {perf.genre === 'ott' ? (perf.ageRating && ...) : ...} 
+                                                    Body: {perf.ageRating && perf.genre === 'ott' && ...}
+                                                    
+                                                    Wait, in Card View I replaced the Header rating with specific logic.
+                                                    Let's check lines 276-286 of Card View I just edited?
+                                                    Actually I edited the HEADER part in Card View? 
+                                                    No, I edited the BODY (lines 443-499 in previous turn). 
+                                                    Let's check the HEADER part of Card View again.
+                                                    Lines 276-286 in `PerformanceCard` (current file content):
+                                                    It seems I did NOT edit the header in Card View in the previous step? 
+                                                    Wait, let's look at the diff. 
+                                                    I edited lines 446 (which was in Body? No, 446 inside `div className="text-gray-400 ..."`).
+                                                    Actually, `PerformanceCard` has TWO places for grade?
+                                                    One in `isInterestVariant` (Yellow/Pink) -> Header (lines 276).
+                                                    One in `Default` variant -> Body (lines 443).
+                                                    The user's "Make a Girl" is likely Default variant (OTT).
+                                                    So I updated the Default variant body.
+                                                    
+                                                    In `PerformanceListItem`, the structure is:
+                                                    Image (Left)
+                                                    Content (Right) -> Header (Badges, Grade) -> Body (Metadata).
+                                                    
+                                                    The user said "Put the info from OTT thumbnail view exactly into list view".
+                                                    So I should render these details in the BODY of the List item.
+                                                    And potentially hide the Grade from the Header if it's duplicated?
+                                                    In Card (Default), the Grade is ONLY in the body (that overlay text area).
+                                                    In List, the Grade is in the Header (lines 258).
+                                                    
+                                                    I will add the labels to the BODY area here (lines 376).
+                                                    And I will mirror the text-only style.
+                                                */}
+                                                {perf.ageRating && perf.genre === 'ott' && (
+                                                    <div>
+                                                        <span className="text-gray-500 mr-1">등급:</span>
+                                                        <span>{perf.ageRating}</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         )}
                                         {perf.price && (
                                             <div className="text-xs font-medium text-emerald-400">
                                                 🎟️ {perf.price.split('원')[0]}원
-                                                {/* Heuristic for discount if text contains % */}
                                                 {perf.price.includes('%') && (
                                                     <span className="ml-1 text-red-500 text-[10px]">{perf.price.match(/\d+%/)?.[0]}</span>
                                                 )}

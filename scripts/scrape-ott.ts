@@ -189,50 +189,52 @@ async function scrapeHybrid() {
 
             await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
-            let naverData: any = await naverPage.evaluate(() => {
-                const infoBox = document.querySelector('.cm_info_box');
-                const detailInfo = document.querySelector('.detail_info');
+            // --- ENRICHMENT LOGIC ---
+            // Strategies:
+            // 1. Full Title + "정보"
+            // 2. Clean Title (no season/special chars) + "정보"
+            // 3. Clean Title + "영화" (if missing)
+            // 4. Clean Title + "드라마" (if missing)
+            // 5. Clean Title (just the name)
 
-                // Check if we have director/cast info visible roughly
-                // This is a rough check to trigger deep search if missing
-                let hasDirector = false;
-                let hasCast = false;
+            const cleanTitle = item.title
+                .split(/[:\–-]\s*시즌|[:\–-]\s*\d+기/)[0] // Remove " - Season X" or " - 2기"
+                .replace(/[:\–-]\s*Season\s*\d+/i, '')
+                .replace(/[【】\[\]()~^!]/g, ' ') // Remove brackets and special chars
+                .replace(/\s+/g, ' ')
+                .trim();
 
-                const dts = document.querySelectorAll('dt');
-                dts.forEach(dt => {
-                    const txt = dt.textContent?.trim();
-                    if (txt === '감독') hasDirector = true;
-                    if (txt === '출연' || txt === '성우') hasCast = true;
-                });
+            const queries = [
+                `${item.title} 정보`, // 1. Full Title
+                item.title !== cleanTitle ? `${cleanTitle} 정보` : null, // 2. Clean Title
+                `${cleanTitle} 영화`, // 3. Explicit Movie
+                `${cleanTitle} 드라마`, // 4. Explicit Drama
+                cleanTitle // 5. Just Title
+            ].filter(Boolean) as string[];
 
-                return { hasInfo: !!infoBox || !!detailInfo, hasDirector, hasCast };
-            });
+            // Deduplicate queries
+            const uniqueQueries = [...new Set(queries)];
 
-            // RETRY LOGIC: 
-            // 1. If no info box, try stripped title without subtitles (e.g., "Main Title")
-            // 2. [NEW] If info box exists BUT missing critical metadata (Director/Cast), try stripping "Season X" suffix
-            //    Reason: "Season 3" page often lacks cast, but parent page "Main Title" has it.
-            let deepSearch = false;
-            if (!naverData.hasInfo) {
-                const simpleTitle = item.title.split(/[:\-–]/)[0].trim();
-                if (simpleTitle.length >= 2 && simpleTitle !== item.title) {
-                    query = `${simpleTitle} 정보`;
-                    searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(query)}`;
-                    await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
-                    deepSearch = true;
-                }
-            } else if (!naverData.hasDirector && !naverData.hasCast) {
-                // If we found info, but no Cast/Director, it might be a specific Season page with sparse info.
-                // Try searching parent title (remove " - Season N" or "Season N")
-                const parentTitle = item.title.replace(/\s-\s시즌\s\d+.*$/, '').replace(/\s시즌\s\d+.*$/, '').trim();
-                // console.log(`DEBUG: Checking Deep Search for '${item.title}' -> '${parentTitle}' | HasInfo: ${naverData.hasInfo} Dir: ${naverData.hasDirector} Cast: ${naverData.hasCast}`);
+            let naverData: any = { hasInfo: false };
 
-                if (parentTitle !== item.title && parentTitle.length > 1) {
-                    console.log(`   > Deep Search: Retrying with parent title "${parentTitle}"...`);
-                    query = `${parentTitle} 정보`;
-                    searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(query)}`;
-                    await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
-                    deepSearch = true;
+            for (const q of uniqueQueries) {
+                // console.log(`   > Searching: "${q}"`); 
+                try {
+                    const searchUrl = `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${encodeURIComponent(q)}`;
+                    await naverPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 5000 }); // Fast timeout for retries
+
+                    // Check if we found info
+                    const found = await naverPage.evaluate(() => {
+                        return !!document.querySelector('.cm_info_box') || !!document.querySelector('.api_subject_bx .detail_info');
+                    });
+
+                    if (found) {
+                        naverData.hasInfo = true;
+                        // console.log(`   > Found info with query: "${q}"`);
+                        break;
+                    }
+                } catch (e) {
+                    continue;
                 }
             }
 
@@ -265,6 +267,31 @@ async function scrapeHybrid() {
                         if (k === '장르') res.subGenre = vText;
                         if (k === '국가') res.productionCountry = vText;
                         if (k === '러닝타임') res.runningTime = vText;
+                        if (k === '개봉') res.productionYear = vText.substring(0, 4);
+                        if (k === '방송') res.productionYear = vText.substring(0, 4);
+                        if (k === '원제') res.originalTitle = vText;
+
+                        // [NEW] Fallback parsing from '편성' (Broadcast info)
+                        if (k === '편성') {
+                            // Example: "일본 Tokyo MX 2026.01.14. ~ (수) 오후 11:00"
+                            if (!res.productionCountry) {
+                                if (vText.includes('일본')) res.productionCountry = '일본';
+                                if (vText.includes('미국')) res.productionCountry = '미국';
+                                if (vText.includes('한국')) res.productionCountry = '한국';
+                                if (vText.includes('중국')) res.productionCountry = '중국';
+                                if (vText.includes('영국')) res.productionCountry = '영국';
+                            }
+                            if (!res.productionYear) {
+                                const yearMatch = vText.match(/\d{4}/);
+                                if (yearMatch) res.productionYear = yearMatch[0];
+                            }
+                        }
+
+                        // [NEW] Fallback for Genre from '원작'
+                        if (k === '원작' && !res.subGenre) {
+                            if (vText.includes('만화') || vText.includes('웹툰')) res.subGenre = '애니메이션';
+                            if (vText.includes('소설')) res.subGenre = '드라마'; // Guess
+                        }
 
                         // [NEW] Parse "개요" (Overview) with separators
                         if (k === '개요') {
