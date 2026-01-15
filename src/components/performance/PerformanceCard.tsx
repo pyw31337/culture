@@ -424,26 +424,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         const parts = dateStr.split('~').map((s: string) => s.trim());
                                                         return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : dateStr;
                                                     })()}
-                                                    {perf.platforms && perf.platforms.length > 0 && (
-                                                        <div className="flex gap-1 ml-2 border-l border-white/20 pl-2">
-                                                            {perf.platforms.map((p: string) => {
-                                                                const platformInfo = OTT_PLATFORMS[p];
-                                                                const badgeClass = clsx(
-                                                                    "w-6 h-6 flex items-center justify-center rounded-md text-[10px] font-black uppercase cursor-pointer hover:scale-110 transition-transform shadow-md border border-white/10",
-                                                                    platformInfo ? platformInfo.color : "bg-gray-600"
-                                                                );
-                                                                if (platformInfo) {
-                                                                    const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                                    return (
-                                                                        <a key={p} href={url} target="_blank" rel="noopener noreferrer" className={clsx(badgeClass, "text-white no-underline")} onClick={(e) => e.stopPropagation()} title={`${platformInfo.label}에서 검색`}>
-                                                                            {platformInfo.label.substring(0, 1).toUpperCase()}
-                                                                        </a>
-                                                                    );
-                                                                }
-                                                                return <span key={p} className={clsx(badgeClass, "text-white")}>{p.substring(0, 1).toUpperCase()}</span>;
-                                                            })}
-                                                        </div>
-                                                    )}
                                                 </span>
                                             )}
                                         </div>
@@ -457,26 +437,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </div>
 
                                         {/* Platforms Text */}
-                                        {perf.platforms && perf.platforms.length > 0 && (
-                                            <div className="flex gap-1 items-center mb-1 text-[11px] text-gray-400 font-medium relative z-[101]">
-                                                <span className="text-gray-500 font-bold shrink-0">[제공]</span>
-                                                <div className="flex flex-wrap gap-1 leading-none">
-                                                    {perf.platforms.map((p: string, idx: number) => {
-                                                        const platformInfo = OTT_PLATFORMS[p];
-                                                        if (!platformInfo) return null;
-                                                        const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                        return (
-                                                            <span key={idx} className="flex items-center">
-                                                                <a href={url} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>
-                                                                    {platformInfo.label}
-                                                                </a>
-                                                                {idx < perf.platforms.length - 1 && <span className="mr-0.5">,</span>}
-                                                            </span>
-                                                        );
-                                                    })}
-                                                </div>
-                                            </div>
-                                        )}
 
                                         {/* Venue/Grade Info */}
                                         <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
@@ -552,6 +512,19 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         <span className="text-gray-500 min-w-[24px]">출연</span>
                                                         <span className="text-gray-300 line-clamp-2 leading-tight">
                                                             {perf.cast.join(', ')}
+                                                        </span>
+                                                    </div>
+                                                )}
+
+                                                {/* Provider (Text) */}
+                                                {perf.platforms && perf.platforms.length > 0 && (
+                                                    <div className="flex items-start gap-1">
+                                                        <span className="text-gray-500 min-w-[24px]">제공</span>
+                                                        <span className="text-gray-300 line-clamp-1">
+                                                            {perf.platforms.map(p => {
+                                                                 const info = OTT_PLATFORMS[p];
+                                                                 return info ? info.label : p;
+                                                            }).join(', ')}
                                                         </span>
                                                     </div>
                                                 )}

@@ -307,6 +307,32 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
+                                {perf.director && (
+                                    <div className="flex items-start gap-1 text-gray-400">
+                                        <span className="text-gray-500 min-w-[24px]">감독</span>
+                                        <span className="text-gray-400 line-clamp-1">{perf.director}</span>
+                                    </div>
+                                )}
+                                {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
+                                    <div className="flex items-start gap-1 text-gray-400">
+                                        <span className="text-gray-500 min-w-[24px]">출연</span>
+                                        <span className="text-gray-400 line-clamp-1">
+                                            {perf.cast.join(', ')}
+                                        </span>
+                                    </div>
+                                )}
+                                {perf.platforms && perf.platforms.length > 0 && (
+                                    <div className="flex items-start gap-1 text-gray-400">
+                                        <span className="text-gray-500 min-w-[24px]">제공</span>
+                                        <span className="text-gray-400 line-clamp-1">
+                                            {perf.platforms.map(p => {
+                                                 const info = OTT_PLATFORMS[p];
+                                                 return info ? info.label : p;
+                                            }).join(', ')}
+                                        </span>
+                                    </div>
+                                )}
+
                                 {/* Interpark Scraped Details: Time / Age / Info */}
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 mt-1.5 space-y-1">
@@ -400,12 +426,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 )}
 
                                 {/* Info */}
-                                {perf.movieInfo && (
-                                    <div className="flex gap-2 items-start">
-                                        <span className="text-gray-500 font-bold shrink-0">정보</span>
-                                        <span className="text-gray-300 light:text-black line-clamp-1">{perf.movieInfo}</span>
-                                    </div>
-                                )}
                             </div>
                         )}
 
