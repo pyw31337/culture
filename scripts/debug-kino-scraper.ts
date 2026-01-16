@@ -1,7 +1,7 @@
 
 import puppeteer from 'puppeteer';
 
-const TARGET_URL = 'https://m.kinolights.com/title/149368';
+const TARGET_URL = 'https://m.kinolights.com/content/new';
 
 (async () => {
     const browser = await puppeteer.launch({
@@ -11,51 +11,82 @@ const TARGET_URL = 'https://m.kinolights.com/title/149368';
     const page = await browser.newPage();
 
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.setExtraHTTPHeaders({
+        'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Referer': 'https://m.kinolights.com/',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-User': '?1'
+    });
 
     try {
         console.log(`Navigating to ${TARGET_URL}...`);
-        await page.goto(TARGET_URL, { waitUntil: 'networkidle2' });
+        await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        const content = await page.evaluate(function () {
-            function cleanText(text: string) {
-                return text.replace(/\s+/g, ' ').trim();
-            }
+        // Wait for *any* content to verify load
+        try {
+            await page.waitForSelector('body', { timeout: 10000 });
+            await new Promise(r => setTimeout(r, 3000)); // Wait for hydration
+        } catch (e) { }
 
-            const titleElement = document.querySelector('.movie-header-area .title-area h3');
-            const title = titleElement ? cleanText(titleElement.textContent || '') : 'Not Found';
-
-            // Extract all metadata items to see what's available
-            const metadataItems = Array.from(document.querySelectorAll('.metadata__item'));
-            const metadataLog = metadataItems.map(function (item) {
-                const titleEl = item.querySelector('.item__title');
-                const title = titleEl ? cleanText(titleEl.textContent || '') : 'No Title';
-                const fullText = cleanText(item.textContent || '');
-                const value = fullText.replace(title, '').trim();
-                return { title: title, value: value };
+        const debugInfo = await page.evaluate(() => {
+            // Get all unique classes to help identify structure
+            const classes = new Set();
+            document.querySelectorAll('*').forEach(el => {
+                el.classList.forEach(c => classes.add(c));
             });
 
-            // Extract tags/grade
-            const ageBadge = document.querySelector('.movie-header-area .title-area .age');
-            const grade = ageBadge ? cleanText(ageBadge.textContent || '') : 'Not Found';
-
-            // Extract Date specifically if possible
-            const releaseDateEl = document.querySelector('.movie-header-area .title-area .year');
-            const releaseDate = releaseDateEl ? cleanText(releaseDateEl.textContent || '') : 'Not Found';
+            // Get links
+            const links = Array.from(document.querySelectorAll('a')).map(a => ({
+                text: a.innerText.replace(/\n/g, ' ').trim().substring(0, 50),
+                href: a.href,
+                class: a.className
+            })).slice(0, 20);
 
             return {
-                title: title,
-                grade: grade,
-                releaseDate: releaseDate,
-                metadataLog: metadataLog,
-                htmlPreview: document.querySelector('.movie-header-area') ? document.querySelector('.movie-header-area')!.outerHTML.substring(0, 500) : 'No Header'
+                title: document.title,
+                classes: Array.from(classes).slice(0, 50),
+                links
             };
         });
 
-        console.log('--- Extraction Results ---');
-        console.log('Title:', content.title);
-        console.log('Grade (Header):', content.grade);
-        console.log('Release Date (Header):', content.releaseDate);
-        console.log('Metadata Log:', JSON.stringify(content.metadataLog, null, 2));
+        console.log('Page Title:', debugInfo.title);
+        console.log('Classes (First 50):', debugInfo.classes);
+        console.log('Links Sample:', JSON.stringify(debugInfo.links, null, 2));
+
+        const items = await page.evaluate(() => {
+            const results: any[] = [];
+            // Selectors might need adjustment. Based on common class names.
+            // Looking for generic list items.
+            // Try identifying by link structure if classes are obfuscated.
+            const candidates = document.querySelectorAll('a[href^="/title/"]');
+
+            candidates.forEach(a => {
+                const titleEl = a.querySelector('.name') || a.querySelector('.title');
+                const title = titleEl ? titleEl.textContent?.trim() : '';
+
+                // Usually an image inside
+                const img = a.querySelector('img');
+                const poster = img ? img.getAttribute('src') : '';
+
+                if (title) {
+                    results.push({
+                        title,
+                        link: a.getAttribute('href'),
+                        poster
+                    });
+                }
+            });
+            return results;
+        });
+
+        console.log(`Found ${items.length} items.`);
+        if (items.length > 0) {
+            console.log('Sample:', items.slice(0, 3));
+        }
 
     } catch (error) {
         console.error('Error during scraping:', error);
