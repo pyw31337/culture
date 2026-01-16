@@ -5,7 +5,8 @@ import path from 'path';
 import cliProgress from 'cli-progress';
 
 // --- CONFIG ---
-const JW_URL = 'https://www.justwatch.com/kr/new';
+// Filtered to: Netflix(nfx), Disney+(dnp), Wavve(wav), TVING(tva), Watcha(wac), Coupang(cpq)
+const JW_URL = 'https://www.justwatch.com/kr/new?providers=nfx,dnp,wav,tva,wac,cpq';
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 
 // Platforms
