@@ -107,7 +107,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0">
                     <ImageWithFallback
                         src={perf.image || perf.poster}
-                        optimizationWidth={200}
+                        optimizationWidth={400}
                         alt={perf.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
