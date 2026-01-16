@@ -39,7 +39,7 @@ async function scrapeList(context: any, platform: any, type: string) {
 
         while (pageNum <= MAX_PAGES) {
             // Extract Items from current page
-            const newItems = await page.evaluate((arg) => {
+            const newItems = await page.evaluate((arg: { pName: string, tType: string }) => {
                 const { pName, tType } = arg;
                 // Correct Selector: li.info_box (Movies) vs li.tab (Filters)
                 const els = document.querySelectorAll('#main_pack .cm_content_area ul li.info_box, .cs_common_module li.info_box');
@@ -161,14 +161,36 @@ async function scrapeList(context: any, platform: any, type: string) {
                     const firstDD = detailInfo.querySelector('div:nth-child(1) dd');
                     if (firstDD) {
                         const raw = firstDD.textContent?.trim() || '';
-                        const parts = raw.split('·').map(s => s.trim());
-                        parts.forEach(p => {
-                            if (p.endsWith('분')) res.runningTime = p;
-                            else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c)) || p.length < 5) res.productionCountry = p;
-                            else res.genre = p;
-                        });
-                        // Fallback
-                        if (!res.genre && parts.length > 0 && !parts[0].endsWith('분')) res.genre = parts[0];
+                        // Naver Format: "Genre · Country · Time" OR "GenreCountryTime"
+                        if (raw.includes('·')) {
+                            const parts = raw.split('·').map(s => s.trim());
+                            parts.forEach(p => {
+                                if (p.endsWith('분')) res.runningTime = p;
+                                else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c)) || p.length < 5) res.productionCountry = p;
+                                else res.genre = p;
+                            });
+                        } else {
+                            // Helper for Clumped Text
+                            let temp = raw;
+
+                            // 1. Time (e.g. 103분)
+                            const timeMatch = temp.match(/(\d+분)/);
+                            if (timeMatch) {
+                                res.runningTime = timeMatch[1];
+                                temp = temp.replace(timeMatch[1], '').trim();
+                            }
+
+                            // 2. Country
+                            const countryMatch = temp.match(/(한국|미국|일본|중국|영국|독일|프랑스|이탈리아|스페인|캐나다|홍콩|대만|인도|태국|베트남|대한민국)/);
+                            if (countryMatch) {
+                                res.productionCountry = countryMatch[1];
+                                if (res.productionCountry === '대한민국') res.productionCountry = '한국'; // Normalize
+                                temp = temp.replace(countryMatch[1], '').trim();
+                            }
+
+                            // 3. Genre (Remainder)
+                            if (temp.length > 0) res.genre = temp;
+                        }
                     }
 
                     const secondDD = detailInfo.querySelector('div:nth-child(2) dd');
