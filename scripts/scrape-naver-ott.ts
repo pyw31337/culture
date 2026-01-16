@@ -53,10 +53,15 @@ async function scrapeList(context: any, platform: any, type: string) {
                         let link = titleEl.getAttribute('href') || '';
                         if (link.startsWith('?')) link = `https://search.naver.com/search.naver${link}`;
 
-                        // Poster Quality Fix: Replace 'type=m...' or any resizing with 'type=w640' (Naver High Res)
+                        // Poster Quality Fix:
+                        // 'type=w640' failed for some (404).
+                        // 'type=o' is Original. Or just removing params.
+                        // Safe bet: Remove `size=...` and `type=...` to get original or default high res.
+                        // Or use 'type=o'.
                         let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
                         if (poster.includes('type=')) {
-                            poster = poster.replace(/type=[^&]+/, 'type=w640');
+                            // Try type=o (Original) and remove size
+                            poster = poster.replace(/type=[^&]+/, 'type=o').replace(/size=[^&]+&?/, '');
                         }
 
                         if (title && link && !link.includes('#')) {
@@ -188,11 +193,7 @@ async function scrapeList(context: any, platform: any, type: string) {
                         }
                     }
                     else if (label.includes('개봉') || label.includes('편성') || label.includes('방영')) {
-                        // Date Cleanup: Remove broadcaster prefix (e.g. "SBS ", "TV조선 ") and trailing info
-                        // Regex: Start with Date format (YYYY.MM.DD.), capture it, ignore the rest
-                        // Or strip known broadcasters if date is embedded
                         let cleanDate = value;
-                        // Match YYYY.MM.DD. pattern
                         const dateMatch = cleanDate.match(/(\d{4}\.\s*\d{1,2}\.\s*\d{1,2}\.?)/);
                         if (dateMatch) {
                             cleanDate = dateMatch[1];
@@ -216,8 +217,22 @@ async function scrapeList(context: any, platform: any, type: string) {
                 const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item');
                 const cast: string[] = [];
                 members.forEach(m => {
-                    const name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim();
-                    if (name) {
+                    // Drama: Name="Role Name 역", Sub="Actor"
+                    // Variety: Name="Actor", Sub="Role"
+                    // Summary Page usually has standard layout, but we apply separation logic anyway
+                    let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                    const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
+
+                    // Cast Separation Logic
+                    if (name.includes(' 역')) {
+                        // "Kim Do-gi 역" -> Actor is likely in SubText or this is just Role
+                        // On summary page, usually Name=Actor, Sub=Role. But check '역' to be safe.
+                        if (role) name = role;
+                        else name = name.split(' 역')[0];
+                    }
+                    // If Name has no '역', assume it is Actor Name (Standard)
+
+                    if (name && !name.includes('배역') && !name.includes('출연') && name.length < 20) {
                         const roleText = m.textContent || '';
                         if ((roleText.includes(' 감독') || roleText.includes('연출')) && !res.director) res.director = name;
                         else cast.push(name);
@@ -234,9 +249,25 @@ async function scrapeList(context: any, platform: any, type: string) {
             if ((!item.cast || item.cast.length === 0) && item.link.includes('search.naver.com')) {
                 try {
                     // Try to find Cast Tab OR Character Tab
-                    // 'a[href*="cast"]' covers both 'tab=cast' usually
-                    const castTabSelector = 'a[href*="cast"], a:has-text("출연진"), ._main_tab a:has-text("출연진"), a:has-text("등장인물")';
-                    const castTab = await page.$(castTabSelector);
+                    // Iterating multiple possible selectors to find the Tab Element
+                    const possibleTabs = [
+                        'a[href*="cast"]',
+                        'a[href*="tab=cast"]',
+                        '._main_tab a',
+                        '.tab[role="tab"]',
+                        'div[role="tablist"] > a'
+                    ];
+
+                    let castTab = null;
+                    const allLinks = await page.$$('a, div[role="tab"], ._main_tab a');
+                    for (const el of allLinks) {
+                        const txt = await el.innerText();
+                        // Strict check to avoid "Video" or seemingly unrelated tabs
+                        if (txt.includes('출연진') || txt.includes('등장인물')) {
+                            castTab = el;
+                            break;
+                        }
+                    }
 
                     if (castTab) {
                         try {
@@ -248,26 +279,45 @@ async function scrapeList(context: any, platform: any, type: string) {
                                 let director = '';
 
                                 // Relaxed selector for both Cast and Character layouts
-                                const members = document.querySelectorAll('.card_item, .area_link_box, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap ._text');
+                                const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
 
                                 members.forEach(m => {
-                                    // Robust name extraction
+                                    // HTML Structure:
+                                    // Drama: <strong class="name">Role 역</strong> <span class="sub_text">Actor</span>
+                                    // Variety: <strong class="name">Actor</strong> <span class="sub_text">Role</span>
+
                                     let name = '';
-                                    if (m.classList.contains('_text')) {
-                                        // Specific for 'Taxi Driver 3' character/cast list text nodes
-                                        // Need to filter out roles. Heuristic: Name is usually short, Role is descriptive? 
-                                        // Or check structure: Title > Name, Text > Role.
-                                        // For now, accept text content if seemingly a name (2-4 chars typical KR name)
-                                        // Actually, safer to rely on structure if possible.
-                                        name = m.textContent?.trim() || '';
+                                    let roleOrSub = '';
+
+                                    const nameEl = m.querySelector('strong.name, .name');
+                                    const subEl = m.querySelector('span.sub_text, .sub_text');
+
+                                    if (nameEl) {
+                                        let nameTxt = nameEl.textContent?.trim() || '';
+                                        let subTxt = subEl?.textContent?.trim() || '';
+
+                                        // Separation Logic
+                                        if (nameTxt.includes(' 역')) {
+                                            // Name is Role (e.g. "Kim Do-gi 역") -> Actor is Sub
+                                            name = subTxt;
+                                        } else {
+                                            // Name is Actor (e.g. "Ma Dong-seok") -> OK
+                                            name = nameTxt;
+                                        }
+                                        roleOrSub = subTxt;
                                     } else {
-                                        name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                                        // Fallback via text content or classes
+                                        // Specific to 'Taxi Driver 3' character/cast list text nodes in .item
+                                        if (m.classList.contains('_text')) {
+                                            name = m.textContent?.trim() || '';
+                                        } else {
+                                            name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                                        }
                                     }
 
-                                    const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
-
-                                    if (name && name.length < 10 && !name.includes('배역') && !name.includes('출연')) { // Basic noise filter
-                                        if (role.includes('감독') || role.includes('연출')) director = name;
+                                    // Filter garbage
+                                    if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
+                                        if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
                                         else newCast.push(name);
                                     }
                                 });
