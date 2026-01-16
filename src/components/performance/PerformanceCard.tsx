@@ -414,47 +414,43 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
+
+                                            {/* [OTT] [N] Date Format Logic */}
+                                            {perf.genre === 'ott' && perf.platforms && perf.platforms.length > 0 && (
+                                                <div className="flex gap-1 items-center">
+                                                    {perf.platforms.slice(0, 1).map((p: string) => {
+                                                        const platformInfo = OTT_PLATFORMS[p];
+                                                        if (platformInfo) {
+                                                            return (
+                                                                <span
+                                                                    key={p}
+                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase text-white shadow-sm",
+                                                                        platformInfo.color
+                                                                    )}
+                                                                >
+                                                                    {platformInfo.label.substring(0, 1).toUpperCase()}
+                                                                </span>
+                                                            );
+                                                        }
+                                                        return null;
+                                                    })}
+                                                </div>
+                                            )}
+
                                             {perf.date && (
                                                 <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
-                                                    <Calendar className="w-3.5 h-3.5" />
+                                                    {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
                                                     {(() => {
                                                         let dateStr = perf.date;
-                                                        dateStr = dateStr.replace(/-/g, '.');
+                                                        // Simplify date: remove 'YYYY.', remove trailing dots, remove anything non-numeric/dot
+                                                        // User req: "2025. 11. 21." or "2025.12.18"
+                                                        // Naver scraper already cleans it mostly.
+                                                        // Ensure format: YYYY. MM. DD. or YYYY.MM.DD
+                                                        dateStr = dateStr.replace(/-/g, '.').replace(/\.$/, '');
                                                         const parts = dateStr.split('~').map((s: string) => s.trim());
                                                         return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : dateStr;
                                                     })()}
                                                 </span>
-                                            )}
-                                            {/* Platform Badges */}
-                                            {perf.platforms && perf.platforms.length > 0 && (
-                                                <div className="flex gap-1">
-                                                    {perf.platforms.map((p: string) => {
-                                                        const platformInfo = OTT_PLATFORMS[p];
-                                                        if (platformInfo) {
-                                                            const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                            return (
-                                                                <a
-                                                                    key={p}
-                                                                    href={url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    onClick={(e) => e.stopPropagation()}
-                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[11px] font-extrabold uppercase text-white hover:opacity-80 transition-opacity",
-                                                                        platformInfo.color
-                                                                    )}
-                                                                    title={`${platformInfo.label}에서 검색`}
-                                                                >
-                                                                    {platformInfo.label.substring(0, 1).toUpperCase()}
-                                                                </a>
-                                                            );
-                                                        }
-                                                        return (
-                                                            <span key={p} className="w-5 h-5 flex items-center justify-center rounded-md text-[11px] font-extrabold uppercase bg-gray-600 text-white">
-                                                                {p.substring(0, 1).toUpperCase()}
-                                                            </span>
-                                                        );
-                                                    })}
-                                                </div>
                                             )}
                                         </div>
 
@@ -634,11 +630,26 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 {perf.platforms && perf.platforms.length > 0 && (
                                                     <div className="flex items-start gap-1 mt-1">
                                                         <span className="text-gray-500 min-w-[24px]">제공</span>
-                                                        <span className="text-gray-300 line-clamp-1">
-                                                            {perf.platforms.map((p: string) => {
+                                                        <span className="text-gray-300 line-clamp-1 flex gap-1">
+                                                            {perf.platforms.map((p: string, i: number) => {
                                                                 const info = OTT_PLATFORMS[p];
-                                                                return info ? info.label : p;
-                                                            }).join(', ')}
+                                                                if (info) {
+                                                                    const url = info.url.replace('{title}', encodeURIComponent(perf.title));
+                                                                    return (
+                                                                        <a
+                                                                            key={p}
+                                                                            href={url}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            onClick={(e) => e.stopPropagation()}
+                                                                            className="hover:text-white hover:underline decoration-white/30"
+                                                                        >
+                                                                            {info.label}{i < perf.platforms.length - 1 ? ', ' : ''}
+                                                                        </a>
+                                                                    );
+                                                                }
+                                                                return <span key={p}>{p}{i < perf.platforms.length - 1 ? ', ' : ''}</span>;
+                                                            })}
                                                         </span>
                                                     </div>
                                                 )}
