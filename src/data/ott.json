@@ -430,7 +430,9 @@
     "platform": "TVING",
     "poster": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
     "platforms": [
-      "tving"
+      "tving",
+      "wavve",
+      "watcha"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -466,7 +468,8 @@
       "Chang Long",
       "Feng Jiayi",
       "Sui Junbo"
-    ]
+    ],
+    "subGenre": "32부작"
   },
   {
     "title": "여의전 - 시즌 1",
@@ -475,7 +478,8 @@
     "platform": "TVING",
     "poster": "https://images.justwatch.com/poster/309203240/s592/시즌-1",
     "platforms": [
-      "tving"
+      "tving",
+      "wavve"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -512,7 +516,8 @@
       "Ning Chang",
       "Dong Jie",
       "Xin Zhilei"
-    ]
+    ],
+    "subGenre": "87부작"
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -521,7 +526,8 @@
     "platform": "TVING",
     "poster": "https://images.justwatch.com/poster/337703768/s592/시즌-1",
     "platforms": [
-      "tving"
+      "tving",
+      "wavve"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -835,151 +841,6 @@
     "runningTime": "2시간 32분"
   },
   {
-    "title": "연우영안 - 시즌 1",
-    "date": "2026-01-14",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/yeonuyeongan/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
-    "platforms": [
-      "wavve",
-      "tving"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260114_연우영안시즌1",
-    "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251021_257%2F1761031750755ynA6y_JPEG%2Fe1a1a5175d476afb2a9919f0049d055b.jpg",
-    "subGenre": "32부작",
-    "productionCountry": "중국",
-    "runningTime": "41분",
-    "cast": [
-      "Wang Yinglu",
-      "Li Yunrui",
-      "Chang Long",
-      "Feng Jiayi",
-      "Sui Junbo"
-    ],
-    "castWithLinks": [
-      {
-        "name": "Wang Yinglu",
-        "link": "https://www.justwatch.com/kr/검색?q=Wang%20Yinglu"
-      },
-      {
-        "name": "Li Yunrui",
-        "link": "https://www.justwatch.com/kr/검색?q=Li%20Yunrui"
-      },
-      {
-        "name": "Chang Long",
-        "link": "https://www.justwatch.com/kr/검색?q=Chang%20Long"
-      },
-      {
-        "name": "Feng Jiayi",
-        "link": "https://www.justwatch.com/kr/검색?q=Feng%20Jiayi"
-      },
-      {
-        "name": "Sui Junbo",
-        "link": "https://www.justwatch.com/kr/검색?q=Sui%20Junbo"
-      }
-    ]
-  },
-  {
-    "title": "여의전 - 시즌 1",
-    "date": "2026-01-14",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/yeoyijeon/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/309203240/s592/시즌-1",
-    "platforms": [
-      "wavve",
-      "tving"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260114_여의전시즌1",
-    "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250911_150%2F1757560612722Da6hl_JPEG%2F57_5557588_poster_image_1534911061528.jpg",
-    "subGenre": "87부작",
-    "productionCountry": "중국",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": "45분",
-    "cast": [
-      "Zhou Xun",
-      "Wallace Huo",
-      "Ning Chang",
-      "Dong Jie",
-      "Xin Zhilei"
-    ],
-    "castWithLinks": [
-      {
-        "name": "Zhou Xun",
-        "link": "https://www.justwatch.com/kr/검색?q=Zhou%20Xun"
-      },
-      {
-        "name": "Wallace Huo",
-        "link": "https://www.justwatch.com/kr/검색?q=Wallace%20Huo"
-      },
-      {
-        "name": "Ning Chang",
-        "link": "https://www.justwatch.com/kr/검색?q=Ning%20Chang"
-      },
-      {
-        "name": "Dong Jie",
-        "link": "https://www.justwatch.com/kr/검색?q=Dong%20Jie"
-      },
-      {
-        "name": "Xin Zhilei",
-        "link": "https://www.justwatch.com/kr/검색?q=Xin%20Zhilei"
-      }
-    ]
-  },
-  {
-    "title": "일소수가 - 시즌 1",
-    "date": "2026-01-14",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/ilsosuga/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/337703768/s592/시즌-1",
-    "platforms": [
-      "wavve",
-      "tving"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260114_일소수가시즌1",
-    "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250708_227%2F1751958372805onOmj_JPEG%2F1768f518e259c04cb3c62301535da9f2.jpg",
-    "productionCountry": "중국",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": "46분",
-    "cast": [
-      "Li Qin",
-      "Chen Zheyuan",
-      "Xia Meng",
-      "Chen Heyi",
-      "Zuo Ye"
-    ],
-    "castWithLinks": [
-      {
-        "name": "Li Qin",
-        "link": "https://www.justwatch.com/kr/검색?q=Li%20Qin"
-      },
-      {
-        "name": "Chen Zheyuan",
-        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Zheyuan"
-      },
-      {
-        "name": "Xia Meng",
-        "link": "https://www.justwatch.com/kr/검색?q=Xia%20Meng"
-      },
-      {
-        "name": "Chen Heyi",
-        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Heyi"
-      },
-      {
-        "name": "Zuo Ye",
-        "link": "https://www.justwatch.com/kr/검색?q=Zuo%20Ye"
-      }
-    ]
-  },
-  {
     "title": "고스트 닥터 - 시즌 1",
     "date": "2026-01-14",
     "link": "https://www.justwatch.com/kr/TV-프로그램/goseuteu-dagteo/시즌-1",
@@ -1215,7 +1076,8 @@
     "platform": "TVING",
     "poster": "https://images.justwatch.com/poster/340711713/s592/시즌-1",
     "platforms": [
-      "tving"
+      "tving",
+      "watcha"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -2084,7 +1946,8 @@
     "platform": "TVING",
     "poster": "https://images.justwatch.com/poster/336747868/s592/시즌-1",
     "platforms": [
-      "tving"
+      "tving",
+      "wavve"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -2310,9 +2173,10 @@
     "date": "2026-01-12",
     "link": "https://www.justwatch.com/kr/TV-프로그램/hwaryeohan-naldeul/시즌-1",
     "platform": "Netflix",
-    "poster": null,
+    "poster": "https://images.justwatch.com/poster/335444511/s592/시즌-1",
     "platforms": [
-      "netflix"
+      "netflix",
+      "wavve"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -2320,7 +2184,14 @@
     "id": "ott_20260112_화려한날들시즌1",
     "image": "https://images.justwatch.com/poster/335444511/s592/시즌-1",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "1시간 5분"
+    "runningTime": "1시간 5분",
+    "cast": [
+      "Jung In-sun",
+      "Jung Il-woo",
+      "Lee Tae-ran",
+      "Yoon Hyun-min",
+      "Cheon Ho-jin"
+    ]
   },
   {
     "title": "킬 토니: 텍사스에서 터졌다",
@@ -2362,24 +2233,35 @@
     "date": "2026-01-12",
     "link": "https://www.justwatch.com/kr/TV-프로그램/peurobono/시즌-1",
     "platform": "Netflix",
-    "poster": null,
+    "poster": "https://images.justwatch.com/poster/339001648/s592/시즌-1",
     "platforms": [
-      "netflix"
+      "netflix",
+      "tving"
     ],
     "genre": "ott",
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_프로보노시즌1",
-    "image": null
+    "image": "https://images.justwatch.com/poster/339001648/s592/시즌-1",
+    "cast": [
+      "Jung Kyung-ho",
+      "So Joo-yeon",
+      "Lee You-young",
+      "Yoon Na-moo",
+      "Kang Hyung-suk"
+    ],
+    "runningTime": "1시간 12분",
+    "ageRating": "15세 이상 관람가"
   },
   {
     "title": "은애하는 도적님아 - 시즌 1",
     "date": "2026-01-12",
     "link": "https://www.justwatch.com/kr/TV-프로그램/eunaehaneun-dojeognima/시즌-1",
     "platform": "Netflix",
-    "poster": null,
+    "poster": "https://images.justwatch.com/poster/340664899/s592/시즌-1",
     "platforms": [
-      "netflix"
+      "netflix",
+      "wavve"
     ],
     "genre": "ott",
     "venue": "OTT",
@@ -2387,7 +2269,14 @@
     "id": "ott_20260112_은애하는도적님아시즌1",
     "image": "https://images.justwatch.com/poster/340664899/s592/시즌-1",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "1시간 0분"
+    "runningTime": "1시간 0분",
+    "cast": [
+      "Nam Ji-hyun",
+      "Moon Sang-min",
+      "Hong Min-gi",
+      "Han So-eun",
+      "Kim Suk-hoon"
+    ]
   },
   {
     "title": "마르다니",
@@ -2488,23 +2377,6 @@
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F88%2F40%2F48%2F57_2884048_poster_image_1439169373759.jpg",
     "ageRating": "15세 이상 관람가",
     "runningTime": "47분"
-  },
-  {
-    "title": "언젠가, 무중력 하늘에서 - 시즌 1",
-    "date": "2026-01-12",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/eonjenga-mujungryeog-haneuleseo/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/336747868/s592/시즌-1",
-    "platforms": [
-      "wavve"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260112_언젠가무중력하늘에서시즌1",
-    "image": "https://images.justwatch.com/poster/336747868/s592/시즌-1",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": null
   },
   {
     "title": "웃는 세일즈맨 - 시즌 1",
@@ -2696,30 +2568,6 @@
     "image": "https://images.justwatch.com/poster/340633292/s592/시즌-1"
   },
   {
-    "title": "화려한 날들 - 시즌 1",
-    "date": "2026-01-11",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/hwaryeohan-naldeul/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/335444511/s592/시즌-1",
-    "platforms": [
-      "wavve"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260111_화려한날들시즌1",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": "1시간 5분",
-    "cast": [
-      "Jung In-sun",
-      "Jung Il-woo",
-      "Lee Tae-ran",
-      "Yoon Hyun-min",
-      "Cheon Ho-jin"
-    ],
-    "image": "https://images.justwatch.com/poster/335444511/s592/시즌-1"
-  },
-  {
     "title": "HPI - 시즌 1",
     "date": "2026-01-11",
     "link": "https://www.justwatch.com/kr/TV-프로그램/hpi-haut-potentiel-intellectuel/시즌-1",
@@ -2734,30 +2582,6 @@
     "id": "ott_20260111_HPI시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250102_163%2F1735799323996AYoyd_PNG%2Fa193b6f6c9fb7b0f255d56f6a0b1aac4.png",
     "runningTime": "51분"
-  },
-  {
-    "title": "은애하는 도적님아 - 시즌 1",
-    "date": "2026-01-11",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/eunaehaneun-dojeognima/시즌-1",
-    "platform": "wavve",
-    "poster": "https://images.justwatch.com/poster/340664899/s592/시즌-1",
-    "platforms": [
-      "wavve"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260111_은애하는도적님아시즌1",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": "1시간 0분",
-    "cast": [
-      "Nam Ji-hyun",
-      "Moon Sang-min",
-      "Hong Min-gi",
-      "Han So-eun",
-      "Kim Suk-hoon"
-    ],
-    "image": "https://images.justwatch.com/poster/340664899/s592/시즌-1"
   },
   {
     "title": "연애의 맛 - 시즌 3",
@@ -2925,30 +2749,6 @@
       "Koo Jun-yup",
       "Oh Chang-seok"
     ]
-  },
-  {
-    "title": "프로보노 - 시즌 1",
-    "date": "2026-01-11",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/peurobono/시즌-1",
-    "platform": "TVING",
-    "poster": "https://images.justwatch.com/poster/339001648/s592/시즌-1",
-    "platforms": [
-      "tving"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260111_프로보노시즌1",
-    "ageRating": "15세 이상 관람가",
-    "runningTime": "1시간 12분",
-    "cast": [
-      "Jung Kyung-ho",
-      "So Joo-yeon",
-      "Lee You-young",
-      "Yoon Na-moo",
-      "Kang Hyung-suk"
-    ],
-    "image": "https://images.justwatch.com/poster/339001648/s592/시즌-1"
   },
   {
     "title": "토지마 탄자부로는 가면라이더가 되고 싶어 - 시즌 1",
@@ -3375,23 +3175,6 @@
     "runningTime": "48분"
   },
   {
-    "title": "Jujutsu Kaisen - 시즌 3",
-    "date": "2026-01-10",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/jusulhoejeon/시즌-3",
-    "platform": "TVING",
-    "poster": "https://images.justwatch.com/poster/242881286/s592/시즌-3",
-    "platforms": [
-      "tving"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260110_JujutsuKaisen시즌3",
-    "image": "https://images.justwatch.com/poster/242881286/s592/시즌-3",
-    "ageRating": "19세 이상 관람가",
-    "runningTime": "23분"
-  },
-  {
     "title": "비밀의 아이프리 - 시즌 1",
     "date": "2026-01-10",
     "link": "https://www.justwatch.com/kr/TV-프로그램/bimilyi-aipeuri/시즌-1",
@@ -3409,29 +3192,6 @@
     "runningTime": "24분"
   },
   {
-    "title": "연우영안 - 시즌 1",
-    "date": "2026-01-09",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/yeonuyeongan/시즌-1",
-    "platform": "Watcha",
-    "poster": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
-    "platforms": [
-      "watcha"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260109_연우영안시즌1",
-    "runningTime": "41분",
-    "cast": [
-      "Wang Yinglu",
-      "Li Yunrui",
-      "Chang Long",
-      "Feng Jiayi",
-      "Sui Junbo"
-    ],
-    "image": "https://images.justwatch.com/poster/337641704/s592/시즌-1"
-  },
-  {
     "title": "히든 에셋 - 시즌 3",
     "date": "2026-01-09",
     "link": "https://www.justwatch.com/kr/TV-프로그램/hideun-eses/시즌-3",
@@ -3446,23 +3206,6 @@
     "id": "ott_20260109_히든에셋시즌3",
     "image": "https://images.justwatch.com/poster/340447741/s592/시즌-3",
     "runningTime": "49분"
-  },
-  {
-    "title": "한밤중 하트튠 - 시즌 1",
-    "date": "2026-01-09",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/hanbamjung-hateutyun/시즌-1",
-    "platform": "Watcha",
-    "poster": "https://images.justwatch.com/poster/340711713/s592/시즌-1",
-    "platforms": [
-      "watcha"
-    ],
-    "genre": "ott",
-    "venue": "OTT",
-    "region": "ott",
-    "id": "ott_20260109_한밤중하트튠시즌1",
-    "image": "https://images.justwatch.com/poster/340711713/s592/시즌-1",
-    "ageRating": "19세 이상 관람가",
-    "runningTime": "24분"
   },
   {
     "title": "타몬 군 지금 어느 쪽?! - 시즌 1",
