@@ -23,6 +23,28 @@
       "Megumi Han",
       "Rumi Okubo",
       "Manaka Iwami"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Takeo Otsuka",
+        "link": "https://www.justwatch.com/kr/검색?q=Takeo%20Otsuka"
+      },
+      {
+        "name": "Yurie Igoma",
+        "link": "https://www.justwatch.com/kr/검색?q=Yurie%20Igoma"
+      },
+      {
+        "name": "Megumi Han",
+        "link": "https://www.justwatch.com/kr/검색?q=Megumi%20Han"
+      },
+      {
+        "name": "Rumi Okubo",
+        "link": "https://www.justwatch.com/kr/검색?q=Rumi%20Okubo"
+      },
+      {
+        "name": "Manaka Iwami",
+        "link": "https://www.justwatch.com/kr/검색?q=Manaka%20Iwami"
+      }
     ]
   },
   {
@@ -41,7 +63,36 @@
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250821_123%2F17557668852743Tj3h_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "subGenre": "멜로/로맨스",
     "productionCountry": "일본",
-    "runningTime": "92분"
+    "runningTime": "92분",
+    "castWithLinks": [
+      {
+        "name": "Atsumi Tanezaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Atsumi%20Tanezaki"
+      },
+      {
+        "name": "Shun Horie",
+        "link": "https://www.justwatch.com/kr/검색?q=Shun%20Horie"
+      },
+      {
+        "name": "Toshiki Masuda",
+        "link": "https://www.justwatch.com/kr/검색?q=Toshiki%20Masuda"
+      },
+      {
+        "name": "Sora Amamiya",
+        "link": "https://www.justwatch.com/kr/검색?q=Sora%20Amamiya"
+      },
+      {
+        "name": "Kana Hanazawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Kana%20Hanazawa"
+      }
+    ],
+    "cast": [
+      "Atsumi Tanezaki",
+      "Shun Horie",
+      "Toshiki Masuda",
+      "Sora Amamiya",
+      "Kana Hanazawa"
+    ]
   },
   {
     "title": "비밀일 수밖에",
@@ -60,7 +111,36 @@
     "ageRating": "12세 이상 관람가",
     "subGenre": "드라마, 코미디",
     "productionCountry": "대한민국",
-    "runningTime": "113분"
+    "runningTime": "113분",
+    "castWithLinks": [
+      {
+        "name": "Jang Young-nam",
+        "link": "https://www.justwatch.com/kr/검색?q=Jang%20Young-nam"
+      },
+      {
+        "name": "Ryu Kyung-soo",
+        "link": "https://www.justwatch.com/kr/검색?q=Ryu%20Kyung-soo"
+      },
+      {
+        "name": "Stephanie Lee",
+        "link": "https://www.justwatch.com/kr/검색?q=Stephanie%20Lee"
+      },
+      {
+        "name": "Ok Ji-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Ok%20Ji-young"
+      },
+      {
+        "name": "Park Ji-il",
+        "link": "https://www.justwatch.com/kr/검색?q=Park%20Ji-il"
+      }
+    ],
+    "cast": [
+      "Jang Young-nam",
+      "Ryu Kyung-soo",
+      "Stephanie Lee",
+      "Ok Ji-young",
+      "Park Ji-il"
+    ]
   },
   {
     "title": "귀족 전생 ~축복받은 태생으로 최강의 힘을 손에 넣다~ - 시즌 1",
@@ -84,6 +164,28 @@
       "Iori Saeki",
       "Yui Ishikawa",
       "Misaki Watada"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Karin Nanami",
+        "link": "https://www.justwatch.com/kr/검색?q=Karin%20Nanami"
+      },
+      {
+        "name": "Saki Miyashita",
+        "link": "https://www.justwatch.com/kr/검색?q=Saki%20Miyashita"
+      },
+      {
+        "name": "Iori Saeki",
+        "link": "https://www.justwatch.com/kr/검색?q=Iori%20Saeki"
+      },
+      {
+        "name": "Yui Ishikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Yui%20Ishikawa"
+      },
+      {
+        "name": "Misaki Watada",
+        "link": "https://www.justwatch.com/kr/검색?q=Misaki%20Watada"
+      }
     ]
   },
   {
@@ -101,7 +203,26 @@
     "id": "ott_20260115_연애실험블라인드러브독일편시즌2",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABfZw9wEGQlDOwDFVD89jHNWhZKr1EV5eeQo_vv8xZT82fdHZaigTVJsSA2Okm9kH2sHx2SIYNjZlj8d7XPAY0q4s-ps6WWFNkK4y386BnJeb1D1BPXomRs6mesf6b-Ol1qeWEg.jpg%3Fr%3D527",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "57분"
+    "runningTime": "57분",
+    "castWithLinks": [
+      {
+        "name": "Steffi Brungs",
+        "link": "https://www.justwatch.com/kr/검색?q=Steffi%20Brungs"
+      },
+      {
+        "name": "Christian Wackert",
+        "link": "https://www.justwatch.com/kr/검색?q=Christian%20Wackert"
+      },
+      {
+        "name": "Alina Rothbauer",
+        "link": "https://www.justwatch.com/kr/검색?q=Alina%20Rothbauer"
+      }
+    ],
+    "cast": [
+      "Steffi Brungs",
+      "Christian Wackert",
+      "Alina Rothbauer"
+    ]
   },
   {
     "title": "애거사 크리스티의 세븐 다이얼스 - 시즌 1",
@@ -117,7 +238,36 @@
     "region": "ott",
     "id": "ott_20260115_애거사크리스티의세븐다이얼스시즌1",
     "runningTime": "54분",
-    "image": "https://images.justwatch.com/poster/340823516/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/340823516/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Mia McKenna-Bruce",
+        "link": "https://www.justwatch.com/kr/검색?q=Mia%20McKenna-Bruce"
+      },
+      {
+        "name": "Helena Bonham Carter",
+        "link": "https://www.justwatch.com/kr/검색?q=Helena%20Bonham%20Carter"
+      },
+      {
+        "name": "Martin Freeman",
+        "link": "https://www.justwatch.com/kr/검색?q=Martin%20Freeman"
+      },
+      {
+        "name": "Corey Mylchreest",
+        "link": "https://www.justwatch.com/kr/검색?q=Corey%20Mylchreest"
+      },
+      {
+        "name": "Edward Bluemel",
+        "link": "https://www.justwatch.com/kr/검색?q=Edward%20Bluemel"
+      }
+    ],
+    "cast": [
+      "Mia McKenna-Bruce",
+      "Helena Bonham Carter",
+      "Martin Freeman",
+      "Corey Mylchreest",
+      "Edward Bluemel"
+    ]
   },
   {
     "title": "이별도 사랑이라 - 시즌 1",
@@ -150,7 +300,36 @@
     "id": "ott_20260115_우리는업쇼패밀리시즌7",
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABRKUGLuMRmGVIpxlfaSVC6G41OhX1E0cKXc46yfJLc16m9CjVs2SjmvX7OIPE0Xd9vSVkWbpNw2Gm5gEiRhFpNAXarNYLJAQ6NXhk8PPj1En0gpazJchfdtoSiIDLlyeI1wh6w.jpg%3Fr%3D617",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "27분"
+    "runningTime": "27분",
+    "castWithLinks": [
+      {
+        "name": "Mike Epps",
+        "link": "https://www.justwatch.com/kr/검색?q=Mike%20Epps"
+      },
+      {
+        "name": "Kim Fields",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Fields"
+      },
+      {
+        "name": "Wanda Sykes",
+        "link": "https://www.justwatch.com/kr/검색?q=Wanda%20Sykes"
+      },
+      {
+        "name": "Diamond Lyons",
+        "link": "https://www.justwatch.com/kr/검색?q=Diamond%20Lyons"
+      },
+      {
+        "name": "Khali Spraggins",
+        "link": "https://www.justwatch.com/kr/검색?q=Khali%20Spraggins"
+      }
+    ],
+    "cast": [
+      "Mike Epps",
+      "Kim Fields",
+      "Wanda Sykes",
+      "Diamond Lyons",
+      "Khali Spraggins"
+    ]
   },
   {
     "title": "특수부대 사이보그 솔저",
@@ -167,7 +346,36 @@
     "id": "ott_20260115_특수부대사이보그솔저",
     "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/1sLNCOW7kTYE6FBME49gWiBI7Nq.jpg",
     "runningTime": "1h 25m",
-    "subGenre": "Action, Thriller, Science Fiction"
+    "subGenre": "Action, Thriller, Science Fiction",
+    "castWithLinks": [
+      {
+        "name": "Kristen Quintrall",
+        "link": "https://www.justwatch.com/kr/검색?q=Kristen%20Quintrall"
+      },
+      {
+        "name": "Dario Deak",
+        "link": "https://www.justwatch.com/kr/검색?q=Dario%20Deak"
+      },
+      {
+        "name": "Jason S. Gray",
+        "link": "https://www.justwatch.com/kr/검색?q=Jason%20S.%20Gray"
+      },
+      {
+        "name": "Rick Malambri",
+        "link": "https://www.justwatch.com/kr/검색?q=Rick%20Malambri"
+      },
+      {
+        "name": "Angela Vitale",
+        "link": "https://www.justwatch.com/kr/검색?q=Angela%20Vitale"
+      }
+    ],
+    "cast": [
+      "Kristen Quintrall",
+      "Dario Deak",
+      "Jason S. Gray",
+      "Rick Malambri",
+      "Angela Vitale"
+    ]
   },
   {
     "title": "Jujutsu Kaisen - 시즌 3",
@@ -184,7 +392,36 @@
     "id": "ott_20260115_JujutsuKaisen시즌3",
     "ageRating": "19세 이상 관람가",
     "runningTime": "23분",
-    "image": "https://images.justwatch.com/poster/242881286/s592/시즌-3"
+    "image": "https://images.justwatch.com/poster/242881286/s592/시즌-3",
+    "castWithLinks": [
+      {
+        "name": "Nobunaga Shimazaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Nobunaga%20Shimazaki"
+      },
+      {
+        "name": "Tomokazu Seki",
+        "link": "https://www.justwatch.com/kr/검색?q=Tomokazu%20Seki"
+      },
+      {
+        "name": "Mikako Komatsu",
+        "link": "https://www.justwatch.com/kr/검색?q=Mikako%20Komatsu"
+      },
+      {
+        "name": "Kenjiro Tsuda",
+        "link": "https://www.justwatch.com/kr/검색?q=Kenjiro%20Tsuda"
+      },
+      {
+        "name": "Shigeru Chiba",
+        "link": "https://www.justwatch.com/kr/검색?q=Shigeru%20Chiba"
+      }
+    ],
+    "cast": [
+      "Nobunaga Shimazaki",
+      "Tomokazu Seki",
+      "Mikako Komatsu",
+      "Kenjiro Tsuda",
+      "Shigeru Chiba"
+    ]
   },
   {
     "title": "연우영안 - 시즌 1",
@@ -200,7 +437,36 @@
     "region": "ott",
     "id": "ott_20260115_연우영안시즌1",
     "runningTime": "41분",
-    "image": "https://images.justwatch.com/poster/337641704/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Wang Yinglu",
+        "link": "https://www.justwatch.com/kr/검색?q=Wang%20Yinglu"
+      },
+      {
+        "name": "Li Yunrui",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Yunrui"
+      },
+      {
+        "name": "Chang Long",
+        "link": "https://www.justwatch.com/kr/검색?q=Chang%20Long"
+      },
+      {
+        "name": "Feng Jiayi",
+        "link": "https://www.justwatch.com/kr/검색?q=Feng%20Jiayi"
+      },
+      {
+        "name": "Sui Junbo",
+        "link": "https://www.justwatch.com/kr/검색?q=Sui%20Junbo"
+      }
+    ],
+    "cast": [
+      "Wang Yinglu",
+      "Li Yunrui",
+      "Chang Long",
+      "Feng Jiayi",
+      "Sui Junbo"
+    ]
   },
   {
     "title": "여의전 - 시즌 1",
@@ -217,7 +483,36 @@
     "id": "ott_20260115_여의전시즌1",
     "ageRating": "15세 이상 관람가",
     "runningTime": "45분",
-    "image": "https://images.justwatch.com/poster/309203240/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/309203240/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Zhou Xun",
+        "link": "https://www.justwatch.com/kr/검색?q=Zhou%20Xun"
+      },
+      {
+        "name": "Wallace Huo",
+        "link": "https://www.justwatch.com/kr/검색?q=Wallace%20Huo"
+      },
+      {
+        "name": "Ning Chang",
+        "link": "https://www.justwatch.com/kr/검색?q=Ning%20Chang"
+      },
+      {
+        "name": "Dong Jie",
+        "link": "https://www.justwatch.com/kr/검색?q=Dong%20Jie"
+      },
+      {
+        "name": "Xin Zhilei",
+        "link": "https://www.justwatch.com/kr/검색?q=Xin%20Zhilei"
+      }
+    ],
+    "cast": [
+      "Zhou Xun",
+      "Wallace Huo",
+      "Ning Chang",
+      "Dong Jie",
+      "Xin Zhilei"
+    ]
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -234,7 +529,36 @@
     "id": "ott_20260115_일소수가시즌1",
     "ageRating": "15세 이상 관람가",
     "runningTime": "46분",
-    "image": "https://images.justwatch.com/poster/337703768/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/337703768/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Li Qin",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Qin"
+      },
+      {
+        "name": "Chen Zheyuan",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Zheyuan"
+      },
+      {
+        "name": "Xia Meng",
+        "link": "https://www.justwatch.com/kr/검색?q=Xia%20Meng"
+      },
+      {
+        "name": "Chen Heyi",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Heyi"
+      },
+      {
+        "name": "Zuo Ye",
+        "link": "https://www.justwatch.com/kr/검색?q=Zuo%20Ye"
+      }
+    ],
+    "cast": [
+      "Li Qin",
+      "Chen Zheyuan",
+      "Xia Meng",
+      "Chen Heyi",
+      "Zuo Ye"
+    ]
   },
   {
     "title": "오디티",
@@ -252,7 +576,36 @@
     "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250924_266%2F1758707897621jBP1w_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 38m",
     "subGenre": "Horror, Mystery",
-    "ageRating": "15세 이상 관람가"
+    "ageRating": "15세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Carolyn Bracken",
+        "link": "https://www.justwatch.com/kr/검색?q=Carolyn%20Bracken"
+      },
+      {
+        "name": "Gwilym Lee",
+        "link": "https://www.justwatch.com/kr/검색?q=Gwilym%20Lee"
+      },
+      {
+        "name": "Steve Wall",
+        "link": "https://www.justwatch.com/kr/검색?q=Steve%20Wall"
+      },
+      {
+        "name": "Joe Rooney",
+        "link": "https://www.justwatch.com/kr/검색?q=Joe%20Rooney"
+      },
+      {
+        "name": "Tadhg Murphy",
+        "link": "https://www.justwatch.com/kr/검색?q=Tadhg%20Murphy"
+      }
+    ],
+    "cast": [
+      "Carolyn Bracken",
+      "Gwilym Lee",
+      "Steve Wall",
+      "Joe Rooney",
+      "Tadhg Murphy"
+    ]
   },
   {
     "title": "내가 너무 귀여운 걸 어쩌겠어! - 시즌 1",
@@ -269,7 +622,21 @@
     "id": "ott_20260115_내가너무귀여운걸어쩌겠어시즌1",
     "ageRating": "12세 이상 관람가",
     "runningTime": "23분",
-    "image": "https://images.justwatch.com/poster/338167291/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/338167291/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Aya Endo",
+        "link": "https://www.justwatch.com/kr/검색?q=Aya%20Endo"
+      },
+      {
+        "name": "Yuma Uchida",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuma%20Uchida"
+      }
+    ],
+    "cast": [
+      "Aya Endo",
+      "Yuma Uchida"
+    ]
   },
   {
     "title": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자. - 시즌 1",
@@ -285,7 +652,36 @@
     "region": "ott",
     "id": "ott_20260115_아빠는영웅엄마는정령딸인나는전생자시즌1",
     "runningTime": null,
-    "image": "https://images.justwatch.com/poster/336618373/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/336618373/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Seria Fukagawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Seria%20Fukagawa"
+      },
+      {
+        "name": "Kazuyuki Okitsu",
+        "link": "https://www.justwatch.com/kr/검색?q=Kazuyuki%20Okitsu"
+      },
+      {
+        "name": "Mai Nakahara",
+        "link": "https://www.justwatch.com/kr/검색?q=Mai%20Nakahara"
+      },
+      {
+        "name": "Misato Matsuoka",
+        "link": "https://www.justwatch.com/kr/검색?q=Misato%20Matsuoka"
+      },
+      {
+        "name": "Satomi Arai",
+        "link": "https://www.justwatch.com/kr/검색?q=Satomi%20Arai"
+      }
+    ],
+    "cast": [
+      "Seria Fukagawa",
+      "Kazuyuki Okitsu",
+      "Mai Nakahara",
+      "Misato Matsuoka",
+      "Satomi Arai"
+    ]
   },
   {
     "title": "더 라스트 보이",
@@ -320,7 +716,36 @@
     "id": "ott_20260115_120Bahadur",
     "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/fdxf02vUous6fty6O4nollyuo4m.jpg",
     "runningTime": "2h 17m",
-    "subGenre": "Action, War"
+    "subGenre": "Action, War",
+    "castWithLinks": [
+      {
+        "name": "Farhan Akhtar",
+        "link": "https://www.justwatch.com/kr/검색?q=Farhan%20Akhtar"
+      },
+      {
+        "name": "Raashii Khanna",
+        "link": "https://www.justwatch.com/kr/검색?q=Raashii%20Khanna"
+      },
+      {
+        "name": "Ankit Siwach",
+        "link": "https://www.justwatch.com/kr/검색?q=Ankit%20Siwach"
+      },
+      {
+        "name": "Vivan Bhatena",
+        "link": "https://www.justwatch.com/kr/검색?q=Vivan%20Bhatena"
+      },
+      {
+        "name": "Dhanveer Singh",
+        "link": "https://www.justwatch.com/kr/검색?q=Dhanveer%20Singh"
+      }
+    ],
+    "cast": [
+      "Farhan Akhtar",
+      "Raashii Khanna",
+      "Ankit Siwach",
+      "Vivan Bhatena",
+      "Dhanveer Singh"
+    ]
   },
   {
     "title": "WWE NXT - 시즌 20",
@@ -368,6 +793,28 @@
       "Zoya Afroz",
       "Freddy Daruwala",
       "Anurag Sinha"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Emraan Hashmi",
+        "link": "https://www.justwatch.com/kr/검색?q=Emraan%20Hashmi"
+      },
+      {
+        "name": "Sharad Kelkar",
+        "link": "https://www.justwatch.com/kr/검색?q=Sharad%20Kelkar"
+      },
+      {
+        "name": "Zoya Afroz",
+        "link": "https://www.justwatch.com/kr/검색?q=Zoya%20Afroz"
+      },
+      {
+        "name": "Freddy Daruwala",
+        "link": "https://www.justwatch.com/kr/검색?q=Freddy%20Daruwala"
+      },
+      {
+        "name": "Anurag Sinha",
+        "link": "https://www.justwatch.com/kr/검색?q=Anurag%20Sinha"
+      }
     ]
   },
   {
@@ -411,6 +858,28 @@
       "Chang Long",
       "Feng Jiayi",
       "Sui Junbo"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Wang Yinglu",
+        "link": "https://www.justwatch.com/kr/검색?q=Wang%20Yinglu"
+      },
+      {
+        "name": "Li Yunrui",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Yunrui"
+      },
+      {
+        "name": "Chang Long",
+        "link": "https://www.justwatch.com/kr/검색?q=Chang%20Long"
+      },
+      {
+        "name": "Feng Jiayi",
+        "link": "https://www.justwatch.com/kr/검색?q=Feng%20Jiayi"
+      },
+      {
+        "name": "Sui Junbo",
+        "link": "https://www.justwatch.com/kr/검색?q=Sui%20Junbo"
+      }
     ]
   },
   {
@@ -438,6 +907,28 @@
       "Ning Chang",
       "Dong Jie",
       "Xin Zhilei"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Zhou Xun",
+        "link": "https://www.justwatch.com/kr/검색?q=Zhou%20Xun"
+      },
+      {
+        "name": "Wallace Huo",
+        "link": "https://www.justwatch.com/kr/검색?q=Wallace%20Huo"
+      },
+      {
+        "name": "Ning Chang",
+        "link": "https://www.justwatch.com/kr/검색?q=Ning%20Chang"
+      },
+      {
+        "name": "Dong Jie",
+        "link": "https://www.justwatch.com/kr/검색?q=Dong%20Jie"
+      },
+      {
+        "name": "Xin Zhilei",
+        "link": "https://www.justwatch.com/kr/검색?q=Xin%20Zhilei"
+      }
     ]
   },
   {
@@ -464,6 +955,28 @@
       "Xia Meng",
       "Chen Heyi",
       "Zuo Ye"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Li Qin",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Qin"
+      },
+      {
+        "name": "Chen Zheyuan",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Zheyuan"
+      },
+      {
+        "name": "Xia Meng",
+        "link": "https://www.justwatch.com/kr/검색?q=Xia%20Meng"
+      },
+      {
+        "name": "Chen Heyi",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Heyi"
+      },
+      {
+        "name": "Zuo Ye",
+        "link": "https://www.justwatch.com/kr/검색?q=Zuo%20Ye"
+      }
     ]
   },
   {
@@ -535,6 +1048,24 @@
       "Oh Hyun-kyung",
       "Yoon Sun-woo",
       "Park Geon-il"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Hahm Eun-jung",
+        "link": "https://www.justwatch.com/kr/검색?q=Hahm%20Eun-jung"
+      },
+      {
+        "name": "Oh Hyun-kyung",
+        "link": "https://www.justwatch.com/kr/검색?q=Oh%20Hyun-kyung"
+      },
+      {
+        "name": "Yoon Sun-woo",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoon%20Sun-woo"
+      },
+      {
+        "name": "Park Geon-il",
+        "link": "https://www.justwatch.com/kr/검색?q=Park%20Geon-il"
+      }
     ]
   },
   {
@@ -560,6 +1091,28 @@
       "Eve Myles",
       "Christine Adams",
       "Max Beesley"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Idris Elba",
+        "link": "https://www.justwatch.com/kr/검색?q=Idris%20Elba"
+      },
+      {
+        "name": "Neil Maskell",
+        "link": "https://www.justwatch.com/kr/검색?q=Neil%20Maskell"
+      },
+      {
+        "name": "Eve Myles",
+        "link": "https://www.justwatch.com/kr/검색?q=Eve%20Myles"
+      },
+      {
+        "name": "Christine Adams",
+        "link": "https://www.justwatch.com/kr/검색?q=Christine%20Adams"
+      },
+      {
+        "name": "Max Beesley",
+        "link": "https://www.justwatch.com/kr/검색?q=Max%20Beesley"
+      }
     ]
   },
   {
@@ -584,6 +1137,28 @@
       "Eve Myles",
       "Christine Adams",
       "Max Beesley"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Idris Elba",
+        "link": "https://www.justwatch.com/kr/검색?q=Idris%20Elba"
+      },
+      {
+        "name": "Neil Maskell",
+        "link": "https://www.justwatch.com/kr/검색?q=Neil%20Maskell"
+      },
+      {
+        "name": "Eve Myles",
+        "link": "https://www.justwatch.com/kr/검색?q=Eve%20Myles"
+      },
+      {
+        "name": "Christine Adams",
+        "link": "https://www.justwatch.com/kr/검색?q=Christine%20Adams"
+      },
+      {
+        "name": "Max Beesley",
+        "link": "https://www.justwatch.com/kr/검색?q=Max%20Beesley"
+      }
     ]
   },
   {
@@ -609,6 +1184,28 @@
       "Josh Lucas",
       "Leslie Bibb",
       "Amber Chardae Robinson"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Kristen Wiig",
+        "link": "https://www.justwatch.com/kr/검색?q=Kristen%20Wiig"
+      },
+      {
+        "name": "Ricky Martin",
+        "link": "https://www.justwatch.com/kr/검색?q=Ricky%20Martin"
+      },
+      {
+        "name": "Josh Lucas",
+        "link": "https://www.justwatch.com/kr/검색?q=Josh%20Lucas"
+      },
+      {
+        "name": "Leslie Bibb",
+        "link": "https://www.justwatch.com/kr/검색?q=Leslie%20Bibb"
+      },
+      {
+        "name": "Amber Chardae Robinson",
+        "link": "https://www.justwatch.com/kr/검색?q=Amber%20Chardae%20Robinson"
+      }
     ]
   },
   {
@@ -634,7 +1231,29 @@
       "Sayumi Suzushiro",
       "Miku Ito"
     ],
-    "ageRating": "19세 이상 관람가"
+    "ageRating": "19세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Rikuya Yasuda",
+        "link": "https://www.justwatch.com/kr/검색?q=Rikuya%20Yasuda"
+      },
+      {
+        "name": "Momoko Seto",
+        "link": "https://www.justwatch.com/kr/검색?q=Momoko%20Seto"
+      },
+      {
+        "name": "Rumi Okubo",
+        "link": "https://www.justwatch.com/kr/검색?q=Rumi%20Okubo"
+      },
+      {
+        "name": "Sayumi Suzushiro",
+        "link": "https://www.justwatch.com/kr/검색?q=Sayumi%20Suzushiro"
+      },
+      {
+        "name": "Miku Ito",
+        "link": "https://www.justwatch.com/kr/검색?q=Miku%20Ito"
+      }
+    ]
   },
   {
     "title": "가치아쿠타 - 시즌 1",
@@ -659,6 +1278,28 @@
       "Yumiri Hanamori",
       "Miku Ito",
       "Toshiyuki Morikawa"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Aoi Ichikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Aoi%20Ichikawa"
+      },
+      {
+        "name": "Katsuyuki Konishi",
+        "link": "https://www.justwatch.com/kr/검색?q=Katsuyuki%20Konishi"
+      },
+      {
+        "name": "Yumiri Hanamori",
+        "link": "https://www.justwatch.com/kr/검색?q=Yumiri%20Hanamori"
+      },
+      {
+        "name": "Miku Ito",
+        "link": "https://www.justwatch.com/kr/검색?q=Miku%20Ito"
+      },
+      {
+        "name": "Toshiyuki Morikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Toshiyuki%20Morikawa"
+      }
     ]
   },
   {
@@ -684,6 +1325,28 @@
       "Tomori Kusunoki",
       "Soma Saito",
       "Kana Hanazawa"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Haruki Ishiya",
+        "link": "https://www.justwatch.com/kr/검색?q=Haruki%20Ishiya"
+      },
+      {
+        "name": "Sayumi Suzushiro",
+        "link": "https://www.justwatch.com/kr/검색?q=Sayumi%20Suzushiro"
+      },
+      {
+        "name": "Tomori Kusunoki",
+        "link": "https://www.justwatch.com/kr/검색?q=Tomori%20Kusunoki"
+      },
+      {
+        "name": "Soma Saito",
+        "link": "https://www.justwatch.com/kr/검색?q=Soma%20Saito"
+      },
+      {
+        "name": "Kana Hanazawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Kana%20Hanazawa"
+      }
     ]
   },
   {
@@ -707,6 +1370,28 @@
       "Lee Su-geun",
       "Guillaume Patry",
       "Han Bo-reum"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Cho Kyu-hyun",
+        "link": "https://www.justwatch.com/kr/검색?q=Cho%20Kyu-hyun"
+      },
+      {
+        "name": "Han Moon-chul",
+        "link": "https://www.justwatch.com/kr/검색?q=Han%20Moon-chul"
+      },
+      {
+        "name": "Lee Su-geun",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Su-geun"
+      },
+      {
+        "name": "Guillaume Patry",
+        "link": "https://www.justwatch.com/kr/검색?q=Guillaume%20Patry"
+      },
+      {
+        "name": "Han Bo-reum",
+        "link": "https://www.justwatch.com/kr/검색?q=Han%20Bo-reum"
+      }
     ]
   },
   {
@@ -731,6 +1416,28 @@
       "Shizuka Itoh",
       "Tessyo Genda",
       "Anna Nagase"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Haruka Shiraishi",
+        "link": "https://www.justwatch.com/kr/검색?q=Haruka%20Shiraishi"
+      },
+      {
+        "name": "Chikahiro Kobayashi",
+        "link": "https://www.justwatch.com/kr/검색?q=Chikahiro%20Kobayashi"
+      },
+      {
+        "name": "Shizuka Itoh",
+        "link": "https://www.justwatch.com/kr/검색?q=Shizuka%20Itoh"
+      },
+      {
+        "name": "Tessyo Genda",
+        "link": "https://www.justwatch.com/kr/검색?q=Tessyo%20Genda"
+      },
+      {
+        "name": "Anna Nagase",
+        "link": "https://www.justwatch.com/kr/검색?q=Anna%20Nagase"
+      }
     ]
   },
   {
@@ -755,6 +1462,28 @@
       "Akio Otsuka",
       "Toshiyuki Morikawa",
       "Rina Sato"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Atsumi Tanezaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Atsumi%20Tanezaki"
+      },
+      {
+        "name": "Mitsuho Kambe",
+        "link": "https://www.justwatch.com/kr/검색?q=Mitsuho%20Kambe"
+      },
+      {
+        "name": "Akio Otsuka",
+        "link": "https://www.justwatch.com/kr/검색?q=Akio%20Otsuka"
+      },
+      {
+        "name": "Toshiyuki Morikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Toshiyuki%20Morikawa"
+      },
+      {
+        "name": "Rina Sato",
+        "link": "https://www.justwatch.com/kr/검색?q=Rina%20Sato"
+      }
     ]
   },
   {
@@ -779,7 +1508,29 @@
       "Nolan Hansen",
       "Tareq Salameh"
     ],
-    "image": "https://images.justwatch.com/poster/340563549/s592/시즌-2"
+    "image": "https://images.justwatch.com/poster/340563549/s592/시즌-2",
+    "castWithLinks": [
+      {
+        "name": "Jimmy Donaldson",
+        "link": "https://www.justwatch.com/kr/검색?q=Jimmy%20Donaldson"
+      },
+      {
+        "name": "Chandler Hallow",
+        "link": "https://www.justwatch.com/kr/검색?q=Chandler%20Hallow"
+      },
+      {
+        "name": "Karl Jacobs",
+        "link": "https://www.justwatch.com/kr/검색?q=Karl%20Jacobs"
+      },
+      {
+        "name": "Nolan Hansen",
+        "link": "https://www.justwatch.com/kr/검색?q=Nolan%20Hansen"
+      },
+      {
+        "name": "Tareq Salameh",
+        "link": "https://www.justwatch.com/kr/검색?q=Tareq%20Salameh"
+      }
+    ]
   },
   {
     "title": "Good Sports with Kevin Hart and Kenan Thompson - 시즌 1",
@@ -799,7 +1550,17 @@
       "Kevin Hart",
       "Kenan Thompson"
     ],
-    "image": "https://images.justwatch.com/poster/338949386/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/338949386/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Kevin Hart",
+        "link": "https://www.justwatch.com/kr/검색?q=Kevin%20Hart"
+      },
+      {
+        "name": "Kenan Thompson",
+        "link": "https://www.justwatch.com/kr/검색?q=Kenan%20Thompson"
+      }
+    ]
   },
   {
     "title": "폴아웃 - 시즌 2",
@@ -2044,7 +2805,7 @@
       "Chung Chang-wook",
       "Lee Yeon-bok"
     ],
-    "image": "https://images.justwatch.com/poster/323069429/s592/시즌-1"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F08%2F07%2F59%2F57_2080759_poster_image_1465873559084.jpg"
   },
   {
     "title": "HPI - 시즌 2",
@@ -2990,7 +3751,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_드래곤길들이기",
-    "image": "https://images.justwatch.com/poster/101831179/s592/how-to-train-your-dragon",
+    "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250514_116%2F17471898410878x4Ud_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "subGenre": "Animation, Action & Adventure",
     "ageRating": "12세 이상 관람가",
     "runningTime": "1시간 38분"
@@ -3008,7 +3769,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_드래곤길들이기3",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg",
+    "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20190131_168%2F1548898773611USlT7_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 38m",
     "subGenre": "Fantasy, Adventure, Animation, Family"
   },
@@ -3025,7 +3786,9 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_드래곤길들이기2",
-    "image": "https://images.justwatch.com/poster/185359485/s592/how-to-train-your-dragon-2"
+    "image": "https://images.justwatch.com/poster/185359485/s592/how-to-train-your-dragon-2",
+    "runningTime": "1h 42m",
+    "subGenre": "Fantasy, Action, Adventure, Animation, Comedy, Family"
   },
   {
     "title": "WWF SmackDown! - 시즌 28",

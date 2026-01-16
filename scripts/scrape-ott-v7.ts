@@ -91,14 +91,24 @@ async function fetchJWDetail(page: any, url: string) {
                 if (runtimeMatch) res.runningTime = runtimeMatch[1];
             }
 
-            // Sidebar Poster (Fallback if list page poster missing)
-            // Correct selector from browser investigation: .title-sidebar picture img
-            const sidebarPoster = document.querySelector('.title-sidebar picture img, .title-sidebar__title-with-poster__poster img, .title-poster img');
-            if (sidebarPoster) {
-                let posterSrc = sidebarPoster.getAttribute('src') || sidebarPoster.getAttribute('data-src');
-                if (posterSrc) {
-                    posterSrc = posterSrc.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
-                    res.sidebarPoster = posterSrc;
+            // Sidebar Poster (Multiple fallback selectors)
+            // User confirmed poster exists at: .title-sidebar__title-with-poster__poster picture img
+            const posterSelectors = [
+                '.title-sidebar__title-with-poster__poster picture img',
+                '.title-sidebar__title-with-poster__poster img',
+                '.title-sidebar picture img',
+                '.title-poster img',
+                '.title-hero img'
+            ];
+            for (const sel of posterSelectors) {
+                const posterEl = document.querySelector(sel);
+                if (posterEl) {
+                    let posterSrc = posterEl.getAttribute('src') || posterEl.getAttribute('data-src');
+                    if (posterSrc && posterSrc.includes('justwatch.com')) {
+                        posterSrc = posterSrc.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
+                        res.sidebarPoster = posterSrc;
+                        break;
+                    }
                 }
             }
 
@@ -112,19 +122,27 @@ async function fetchJWDetail(page: any, url: string) {
                 }
             });
 
-            // Cast Names (JustWatch KR has NO profile links in HTML - JS-triggered only)
-            // Correct selector from browser investigation: .title-credits__actor with name in span.title-credit-name
+            // Cast Names with JustWatch Search Links
+            // JustWatch KR generates search URLs like: /kr/검색?q=Nam%20Ji-hyun
             const castItems = document.querySelectorAll('.title-credits__actor, .title-credits .title-credit');
-            const castNames: string[] = [];
+            const castWithLinks: { name: string; link: string }[] = [];
             castItems.forEach((item, idx) => {
                 if (idx >= 5) return; // Max 5 cast members
                 const nameEl = item.querySelector('span.title-credit-name, .title-credit-name');
                 if (nameEl) {
                     const name = nameEl.textContent?.trim() || '';
-                    if (name) castNames.push(name);
+                    if (name) {
+                        castWithLinks.push({
+                            name,
+                            link: `https://www.justwatch.com/kr/검색?q=${encodeURIComponent(name)}`
+                        });
+                    }
                 }
             });
-            if (castNames.length > 0) res.cast = castNames;
+            if (castWithLinks.length > 0) {
+                res.castWithLinks = castWithLinks;
+                res.cast = castWithLinks.map(c => c.name);
+            }
 
 
             return res;
@@ -299,12 +317,14 @@ async function fetchJWDetail(page: any, url: string) {
         const cached = existingData.find(e => e.id === item.id);
         if (cached) {
             // Check if cached data is "good enough"
-            // Good means: Has (Director OR Runtime) AND (Image OR Poster)
+            // Good means: Has (Director OR Runtime) AND (Image OR Poster) AND castWithLinks
             // AND Runtime is valid (< 400 mins)
             const validRuntime = cached.runningTime ? sanitizeRuntime(cached.runningTime) : null;
             const isBadRuntime = cached.runningTime && !validRuntime; // Has text but failed sanitization
+            const hasCastWithLinks = cached.castWithLinks && cached.castWithLinks.length > 0;
 
-            if (!isBadRuntime && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
+            // Only skip if we have complete data INCLUDING castWithLinks
+            if (!isBadRuntime && hasCastWithLinks && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
                 Object.assign(item, cached);
                 if (item.poster && item.poster.includes('/s166/')) {
                     item.poster = item.poster.replace('/s166/', '/s592/');
@@ -394,12 +414,13 @@ async function fetchJWDetail(page: any, url: string) {
         }
 
         // TIER 3: JW DETAIL (Fallback for poster, runtime, director, cast)
-        if (!item.image || !item.runningTime || !item.director || !item.cast) {
+        if (!item.image || !item.runningTime || !item.director || !item.cast || !item.castWithLinks) {
             const jwData = await fetchJWDetail(jwPage, item.link);
             if (jwData) {
                 if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
                 if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
                 if (jwData.director && !item.director) item.director = jwData.director;
+                if (jwData.castWithLinks && !item.castWithLinks) item.castWithLinks = jwData.castWithLinks;
                 if (jwData.cast && !item.cast) item.cast = jwData.cast;
                 if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
                 // Use sidebar poster as fallback if no image yet

@@ -581,24 +581,41 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 )}
 
                                                 {/* Cast */}
-                                                {perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0 && (
+                                                {((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) && (
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">출연</span>
                                                         <span className="text-gray-300 line-clamp-2 leading-tight">
-                                                            {perf.cast.map((c: string, i: number, arr: string[]) => (
-                                                                <span key={i}>
-                                                                    <a
-                                                                        href={`https://search.naver.com/search.naver?query=${encodeURIComponent(c.trim())}`}
-                                                                        target="_blank"
-                                                                        rel="noopener noreferrer"
-                                                                        className="hover:text-white hover:underline decoration-white/30"
-                                                                        onClick={(e) => e.stopPropagation()}
-                                                                    >
-                                                                        {c.trim()}
-                                                                    </a>
-                                                                    {i < arr.length - 1 && ', '}
-                                                                </span>
-                                                            ))}
+                                                            {perf.castWithLinks && perf.castWithLinks.length > 0 ? (
+                                                                perf.castWithLinks.map((c: { name: string; link: string }, i: number, arr: any[]) => (
+                                                                    <span key={i}>
+                                                                        <a
+                                                                            href={c.link}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="hover:text-white hover:underline decoration-white/30"
+                                                                            onClick={(e) => e.stopPropagation()}
+                                                                        >
+                                                                            {c.name}
+                                                                        </a>
+                                                                        {i < arr.length - 1 && ', '}
+                                                                    </span>
+                                                                ))
+                                                            ) : (
+                                                                perf.cast.map((c: string, i: number, arr: string[]) => (
+                                                                    <span key={i}>
+                                                                        <a
+                                                                            href={`https://www.justwatch.com/kr/검색?q=${encodeURIComponent(c.trim())}`}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="hover:text-white hover:underline decoration-white/30"
+                                                                            onClick={(e) => e.stopPropagation()}
+                                                                        >
+                                                                            {c.trim()}
+                                                                        </a>
+                                                                        {i < arr.length - 1 && ', '}
+                                                                    </span>
+                                                                ))
+                                                            )}
                                                         </span>
                                                     </div>
                                                 )}
