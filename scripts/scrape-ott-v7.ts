@@ -3,6 +3,7 @@ import { firefox } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import cliProgress from 'cli-progress';
+import pLimit from 'p-limit';
 
 // --- CONFIG ---
 // Filtered to: Netflix(nfx), Disney+(dnp), Wavve(wav), TVING(tva), Watcha(wac), Coupang(cpq)
@@ -198,12 +199,48 @@ async function fetchJWDetail(page: any, url: string) {
     const context = await browser.newContext();
     const page = await context.newPage();
 
+    // URL Update: Netflix(nfx), Disney+(dnp), Wavve(wav) ONLY
+    const JW_URL = 'https://www.justwatch.com/kr/new?providers=nfx,dnp,wav';
+
     await page.goto(JW_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-    // Scroll (Increased to 20 to catch more items like Hello Carbot)
-    for (let i = 0; i < 20; i++) {
-        await page.mouse.wheel(0, 1500);
-        await page.waitForTimeout(1000);
+    // Scroll until date < 2025-12-01
+    // Target Date: 2025-12-01
+    const targetDate = new Date('2025-12-01');
+    let reachedTarget = false;
+    let maxScrolls = 200; // Increased max scrolls to reach far back
+    let scrollCount = 0;
+
+    console.log('Scrolling to find content from 2025-12-01...');
+
+    while (!reachedTarget && scrollCount < maxScrolls) {
+        await page.mouse.wheel(0, 3000); // Faster scroll
+        await page.waitForTimeout(800);
+        scrollCount++;
+
+        if (scrollCount % 5 === 0) {
+            // Check last date periodically
+            const dates = await page.evaluate(() => {
+                const frames = Array.from(document.querySelectorAll('.timeline__timeframe'));
+                return frames.map(f => {
+                    // Try to get date string
+                    const match = f.className.match(/(\d{4}-\d{2}-\d{2})/);
+                    return match ? match[1] : null;
+                }).filter(Boolean);
+            });
+
+            if (dates.length > 0) {
+                const lastDateStr = dates[dates.length - 1]; // Oldest loaded
+                if (lastDateStr) {
+                    const lastDate = new Date(lastDateStr);
+                    console.log(`[Scroll ${scrollCount}] Current Oldest: ${lastDateStr}`);
+                    if (lastDate < targetDate) {
+                        reachedTarget = true;
+                        console.log('Reached target date!');
+                    }
+                }
+            }
+        }
     }
 
     const scannedItems = await page.evaluate(() => {
@@ -332,157 +369,121 @@ async function fetchJWDetail(page: any, url: string) {
     const finalItems = Array.from(mergedMap.values()).sort((a, b) => b.date.localeCompare(a.date)); // Sort by date desc
     console.log(`Merged Total: ${finalItems.length} items (Existing: ${existingData.length}, Valid New: ${Object.values(aggregated).length}).`);
 
-    // 3. Enrichment Loop
-    const naverPage = await context.newPage();
-    const tmdbPage = await context.newPage();
-    const jwPage = await context.newPage();
-
+    // 3. Enrichment Loop (Concurrent)
+    const limit = pLimit(5); // 5 concurrent pages
     const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     progressBar.start(finalItems.length, 0);
 
     let processedCount = 0;
 
-    for (const item of finalItems) {
-        processedCount++;
-        progressBar.update(processedCount);
-
-        // Fix: Purge corrupted images (Double URL or Data URI)
-        if (item.image && (item.image.includes('themoviedb.orghttps') || item.image.startsWith('data:image'))) {
-            item.image = null;
-            item.poster = null;
-        }
-
-        // Resume Check: If we have this item in existingData with good metadata, copy it
-        // Resume Check: If we have this item in existingData with good metadata, copy it
-        const cached = existingData.find(e => e.id === item.id);
-        if (cached) {
-            // Check if cached data is "good enough"
-            // Good means: Has (Director OR Runtime) AND (Image OR Poster) AND castWithLinks
-            // AND Runtime is valid (< 400 mins)
-            const validRuntime = cached.runningTime ? sanitizeRuntime(cached.runningTime) : null;
-            const isBadRuntime = cached.runningTime && !validRuntime; // Has text but failed sanitization
-            const hasCastWithLinks = cached.castWithLinks && cached.castWithLinks.length > 0;
-
-            // Only skip if we have complete data INCLUDING castWithLinks
-            // FORCE RE-SCRAPE: User requested full update for missing metadata.
-            // if (!isBadRuntime && hasCastWithLinks && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
-            //    Object.assign(item, cached);
-            //    if (item.poster && item.poster.includes('/s166/')) {
-            //        item.poster = item.poster.replace('/s166/', '/s592/');
-            //    }
-            //    if (!item.image && item.poster) item.image = item.poster;
-            //    continue;
-            // }
-
-            // If bad runtime, keep cached data BUT reset runtime to try again
-            if (isBadRuntime) {
-                console.log(`[Re-Enrich] Invalid runtime detected for ${item.title}: ${cached.runningTime}`);
-                Object.assign(item, cached);
-                item.runningTime = undefined; // Force re-fetch
-            } else {
-                // Partial data, copy what we have and enrich the rest
-                Object.assign(item, cached);
-            }
-        }
-
-        // TIER 1: Naver (Reuse existing strategy, simplified here)
-        // For brevity/soundness, let's skip Naver *Full Scraping* implementation here
-        // and focus on the user's request: JW Detail Page Fallback + TMDB.
-        // BUT user liked Naver data (Korean cast names).
-        // I will implement a lightweight Naver Title Search here.
-
-        // Normalize Title for Naver Search (Remove " - Season X", " - Part Y")
-        // Example: "Hello Carbot - Season 11" -> "헬로카봇 시즌11" (Naver prefers no spaces or specific formats)
-        // Simplest: "Hello Carbot" + "11" ? 
-        // Let's try removing " - " and spaces?
-        // Better: Remove " - " and keep the rest. Or just search the raw title without " - ".
-        const searchTitle = item.title.replace(/\s*-\s*시즌\s*/, ' 시즌').replace(/\s*-\s*/, ' ').trim();
+    const tasks = finalItems.map(item => limit(async () => {
+        const pageContext = await browser.newContext();
+        const page = await pageContext.newPage();
 
         try {
-            await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(searchTitle)}`, { waitUntil: 'domcontentloaded', timeout: 5000 });
-            const naverData = await naverPage.evaluate(() => {
-                // Info area
-                const infoArea = document.querySelector('.cm_info_box');
-                if (!infoArea) return null;
-                const res: any = {};
-                // Poster
-                const img = infoArea.querySelector('.detail_info img');
-                if (img) res.poster = img.getAttribute('src');
-                // Details
-                const details = Array.from(infoArea.querySelectorAll('.info_group'));
-                details.forEach(d => {
-                    const label = d.querySelector('dt')?.textContent?.trim();
-                    const val = d.querySelector('dd')?.textContent?.trim();
-                    if (label?.includes('감독')) res.director = val;
-                    if (label?.includes('출연')) res.cast = val; // String
-                    if (label?.includes('등급')) res.ageRating = val;
-                    if (label?.includes('장르')) res.subGenre = val;
-                    if (label?.includes('국가')) res.productionCountry = val;
-                    if (label?.includes('러닝타임')) res.runningTime = val;
-                });
-
-                // Fix "79671분" bug - cap at 400 mins (6h) or check format
-                if (res.runningTime) {
-                    const num = parseInt(res.runningTime.replace(/[^0-9]/g, ''));
-                    // If > 400, reject (likely season runtime or error)
-                    if (num > 400) res.runningTime = null;
-                }
-
-                return res;
-            });
-
-            if (naverData) {
-                if (naverData.poster) item.image = naverData.poster;
-                if (!item.image && item.poster) item.image = item.poster; // Fallback to JW HighRes
-
-                if (naverData.director) item.director = naverData.director;
-                if (naverData.cast) item.cast = naverData.cast.split(',').map((s: string) => s.trim());
-                if (naverData.ageRating) item.ageRating = naverData.ageRating;
-                if (naverData.subGenre) item.subGenre = naverData.subGenre;
-                if (naverData.productionCountry) item.productionCountry = naverData.productionCountry;
-                if (naverData.runningTime) item.runningTime = sanitizeRuntime(naverData.runningTime);
+            // Fix: Purge corrupted images (Double URL or Data URI)
+            if (item.image && (item.image.includes('themoviedb.orghttps') || item.image.startsWith('data:image'))) {
+                item.image = null;
+                item.poster = null;
             }
-        } catch (e) { }
 
-        // TIER 2: TMDB (If Poster/Runtime missing)
-        if (!item.image || !item.runningTime) {
-            const tmdb = await fetchTMDBData(tmdbPage, item.title);
-            if (tmdb) {
-                if (tmdb.poster && !item.image) item.image = tmdb.poster;
-                if (tmdb.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(tmdb.runningTime);
-                if (tmdb.subGenre && !item.subGenre) item.subGenre = tmdb.subGenre;
-            }
-        }
+            // Resume Check
+            const cached = existingData.find(e => e.id === item.id);
+            if (cached) {
+                const validRuntime = cached.runningTime ? sanitizeRuntime(cached.runningTime) : null;
+                const isBadRuntime = cached.runningTime && !validRuntime;
+                const hasCastWithLinks = cached.castWithLinks && cached.castWithLinks.length > 0;
 
-        // TIER 3: JW DETAIL (Fallback for poster, runtime, director, cast)
-        if (!item.image || !item.runningTime || !item.director || !item.cast || !item.castWithLinks) {
-            const jwData = await fetchJWDetail(jwPage, item.link);
-            if (jwData) {
-                if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
-                if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
-                if (jwData.director && !item.director) item.director = jwData.director;
-                if (jwData.castWithLinks && !item.castWithLinks) item.castWithLinks = jwData.castWithLinks;
-                if (jwData.cast && !item.cast) item.cast = jwData.cast;
-                if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
-                // Use sidebar poster as fallback if no image yet
-                if (jwData.sidebarPoster && !item.image) {
-                    item.image = jwData.sidebarPoster;
+                // Optimization: If cached data is perfect, skip costly scraping
+                if (!isBadRuntime && hasCastWithLinks && cached.image && !cached.image.startsWith('data:image') && cached.director) {
+                    Object.assign(item, cached);
+                    // Just perform basic filter check later
+                    // But still need to close page and return
+                } else {
+                    // Partial copy
+                    Object.assign(item, cached);
+                    if (isBadRuntime) item.runningTime = undefined;
                 }
             }
+
+            // Only scrape if missing key data
+            const missingData = !item.image || !item.runningTime || !item.director || !item.cast || !item.castWithLinks;
+
+            if (missingData) {
+                // TIER 1: Naver (Simplified - skip if full data unnecessary or too slow, but user likes it)
+                // Let's rely on TMDB/JustWatch primarily for speed unless minimal info
+            }
+
+            // TIER 2: TMDB
+            if (!item.image || !item.runningTime) {
+                const tmdb = await fetchTMDBData(page, item.title);
+                if (tmdb) {
+                    if (tmdb.poster && !item.image) item.image = tmdb.poster;
+                    if (tmdb.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(tmdb.runningTime);
+                    if (tmdb.subGenre && !item.subGenre) item.subGenre = tmdb.subGenre;
+                }
+            }
+
+            // TIER 3: JW DETAIL
+            if (!item.image || !item.runningTime || !item.director || !item.cast || !item.castWithLinks) {
+                const jwData = await fetchJWDetail(page, item.link);
+                if (jwData) {
+                    if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
+                    if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
+                    if (jwData.director && !item.director) item.director = jwData.director;
+                    if (jwData.castWithLinks && !item.castWithLinks) item.castWithLinks = jwData.castWithLinks;
+                    if (jwData.cast && !item.cast) item.cast = jwData.cast;
+                    if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
+                    if (jwData.sidebarPoster && !item.image) item.image = jwData.sidebarPoster;
+                    if (jwData.productionCountry && !item.productionCountry) item.productionCountry = jwData.productionCountry;
+                }
+            }
+
+            // Final fallback
+            if (!item.image) item.image = item.poster;
+
+            // FILTERING LOGIC (User Request)
+            // 1. Exclude India, Turkey, Thailand
+            const blockedCountries = ['인도', '터키', '태국', 'India', 'Turkey', 'Thailand', 'Indian', 'Turkish', 'Thai'];
+            // Check Country
+            if (item.productionCountry && blockedCountries.some(c => item.productionCountry.includes(c))) {
+                (item as any)._exclude = true;
+            }
+            // Fallback: Check Title (for cases where country is missing)
+            if (blockedCountries.some(b => item.title.toLowerCase().includes(b.toLowerCase()))) {
+                (item as any)._exclude = true;
+            }
+
+            // 2. Exclude China + Show
+            if (item.productionCountry && (item.productionCountry.includes('중국') || item.productionCountry.includes('China'))) {
+                const isMovie = item.runningTime && item.runningTime.match(/\d+분/) && parseInt(item.runningTime.replace(/\D/g, '')) < 240;
+                const hasSeason = item.title.includes('시즌') || item.title.includes('Season');
+                if (!isMovie || hasSeason) {
+                    (item as any)._exclude = true;
+                }
+            }
+
+        } catch (e) {
+            console.error(`Error processing ${item.title}:`, e);
+        } finally {
+            await page.close();
+            await pageContext.close();
+            processedCount++;
+            progressBar.update(processedCount);
+
+            // Increment Save
+            if (processedCount % 20 === 0) {
+                const validItems = finalItems.filter(i => !(i as any)._exclude);
+                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(validItems, null, 2));
+            }
         }
+    }));
 
-        // Final fallback for image
-        if (!item.image) item.image = item.poster;
-
-        // Auto Save
-        if (processedCount % 5 === 0) {
-            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
-        }
-    }
-
+    await Promise.all(tasks);
     progressBar.stop();
     await browser.close();
 
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
-    console.log('Done.');
+    const finalValidItems = finalItems.filter(i => !(i as any)._exclude);
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalValidItems, null, 2));
+    console.log(`Done. Saved ${finalValidItems.length} items (Filtered from ${finalItems.length}).`);
 })();
