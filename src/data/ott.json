@@ -12,22 +12,9 @@
       "netflix",
       "tving"
     ],
-    "genre": "JTBC  2025.12.19. ~ 12부작  (금) 오후 08:50",
+    "genre": "ott",
+    "description": "JTBC  2025.12.19. ~ 12부작  (금) 오후 08:50",
     "date": "JTBC  2025.12.19. ~ 12부작  (금) 오후 08:50"
-  },
-  {
-    "title": "경도를 기다리며",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36344374&qvt=0&query=%EA%B2%BD%EB%8F%84%EB%A5%BC%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251118_269%2F1763452944195aS3yF_JPEG%2F1ec45d29aafe83589a2d41de05c4fd5f.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_경도를기다리며",
-    "platforms": [
-      "coupang"
-    ],
-    "genre": "JTBC  2025.12.06. ~ 2026.01.11. 12부작  (토) 오후 10:40, (일) 오후 10:30",
-    "date": "JTBC  2025.12.06. ~ 2026.01.11. 12부작  (토) 오후 10:40, (일) 오후 10:30"
   },
   {
     "title": "얼굴",
@@ -42,7 +29,8 @@
     ],
     "runningTime": "103분",
     "productionCountry": "한국",
-    "genre": "미스터리",
+    "genre": "ott",
+    "description": "미스터리 | 한국 | 103분",
     "date": "미스터리대한민국103분"
   },
   {
@@ -59,8 +47,24 @@
       "tving",
       "wavve"
     ],
-    "genre": "ENA, SBS Plus  2021.07.14. ~  (수) 오후 10:30",
+    "genre": "ott",
+    "description": "ENA, SBS Plus  2021.07.14. ~  (수) 오후 10:30",
     "date": "ENA, SBS Plus  2021.07.14. ~  (수) 오후 10:30"
+  },
+  {
+    "title": "경도를 기다리며",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36344374&qvt=0&query=%EA%B2%BD%EB%8F%84%EB%A5%BC%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251118_269%2F1763452944195aS3yF_JPEG%2F1ec45d29aafe83589a2d41de05c4fd5f.jpg",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_경도를기다리며",
+    "platforms": [
+      "coupang"
+    ],
+    "genre": "ott",
+    "description": "JTBC  2025.12.06. ~ 2026.01.11. 12부작  (토) 오후 10:40, (일) 오후 10:30",
+    "date": "JTBC  2025.12.06. ~ 2026.01.11. 12부작  (토) 오후 10:40, (일) 오후 10:30"
   },
   {
     "title": "더 퍼스트 슬램덩크",
@@ -76,8 +80,24 @@
     ],
     "runningTime": "124분",
     "productionCountry": "일본",
-    "genre": "애니메이션",
+    "genre": "ott",
+    "description": "애니메이션 | 일본 | 124분",
     "date": "애니메이션일본124분"
+  },
+  {
+    "title": "슈퍼맨이 돌아왔다",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=675566&qvt=0&query=%EC%8A%88%ED%8D%BC%EB%A7%A8%EC%9D%B4%20%EB%8F%8C%EC%95%84%EC%99%94%EB%8B%A4",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_210%2F1764658206754ff5Mn_JPEG%2F57_675566_poster_image_1764658206735.jpg",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_슈퍼맨이돌아왔다",
+    "platforms": [
+      "coupang"
+    ],
+    "genre": "ott",
+    "description": "KBS2  2013.11.03. ~  (수) 오후 08:30",
+    "date": "KBS2  2013.11.03. ~  (수) 오후 08:30"
   },
   {
     "title": "태양의 후예",
@@ -90,7 +110,8 @@
     "platforms": [
       "coupang"
     ],
-    "genre": "KBS2  2016.02.24. ~ 2016.04.14. 16부작",
+    "genre": "ott",
+    "description": "KBS2  2016.02.24. ~ 2016.04.14. 16부작",
     "date": "KBS2  2016.02.24. ~ 2016.04.14. 16부작"
   },
   {
@@ -106,38 +127,9 @@
     ],
     "runningTime": "100분",
     "productionCountry": "일본",
-    "genre": "애니메이션",
+    "genre": "ott",
+    "description": "애니메이션 | 일본 | 100분",
     "date": "애니메이션일본100분"
-  },
-  {
-    "title": "위키드: 포 굿",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37041608&qvt=0&query=%EC%9C%84%ED%82%A4%EB%93%9C%20%ED%8F%AC%20%EA%B5%BF",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251203_165%2F1764752696788rBlfY_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_위키드:포굿",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "137분",
-    "productionCountry": "미국",
-    "genre": "판타지",
-    "date": "판타지미국137분"
-  },
-  {
-    "title": "슈퍼맨이 돌아왔다",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=675566&qvt=0&query=%EC%8A%88%ED%8D%BC%EB%A7%A8%EC%9D%B4%20%EB%8F%8C%EC%95%84%EC%99%94%EB%8B%A4",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_210%2F1764658206754ff5Mn_JPEG%2F57_675566_poster_image_1764658206735.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_슈퍼맨이돌아왔다",
-    "platforms": [
-      "coupang"
-    ],
-    "genre": "KBS2  2013.11.03. ~  (수) 오후 08:30",
-    "date": "KBS2  2013.11.03. ~  (수) 오후 08:30"
   },
   {
     "title": "콘크리트 마켓",
@@ -152,8 +144,26 @@
     ],
     "runningTime": "122분",
     "productionCountry": "한국",
-    "genre": "드라마",
+    "genre": "ott",
+    "description": "드라마 | 한국 | 122분",
     "date": "드라마대한민국122분"
+  },
+  {
+    "title": "위키드: 포 굿",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37041608&qvt=0&query=%EC%9C%84%ED%82%A4%EB%93%9C%20%ED%8F%AC%20%EA%B5%BF",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251203_165%2F1764752696788rBlfY_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_위키드:포굿",
+    "platforms": [
+      "coupang"
+    ],
+    "runningTime": "137분",
+    "productionCountry": "미국",
+    "genre": "ott",
+    "description": "판타지 | 미국 | 137분",
+    "date": "판타지미국137분"
   },
   {
     "title": "원 배틀 애프터 어나더",
@@ -168,8 +178,26 @@
     ],
     "runningTime": "162분",
     "productionCountry": "미국",
-    "genre": "범죄",
+    "genre": "ott",
+    "description": "범죄 | 미국 | 162분",
     "date": "범죄미국162분"
+  },
+  {
+    "title": "프레데터: 죽음의 땅",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=36831199&qvt=0&query=%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0%20%EC%A3%BD%EC%9D%8C%EC%9D%98%20%EB%95%85",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251105_63%2F176230967787630PaG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_프레데터:죽음의땅",
+    "platforms": [
+      "coupang"
+    ],
+    "runningTime": "107분",
+    "productionCountry": "미국",
+    "genre": "ott",
+    "description": "SF | 미국 | 107분",
+    "date": "SF미국107분"
   },
   {
     "title": "정보원",
@@ -184,7 +212,8 @@
     ],
     "runningTime": "103분",
     "productionCountry": "한국",
-    "genre": "코미디",
+    "genre": "ott",
+    "description": "코미디 | 한국 | 103분",
     "date": "코미디대한민국103분"
   },
   {
@@ -200,7 +229,8 @@
     ],
     "runningTime": "88분",
     "productionCountry": "한국",
-    "genre": "드라마",
+    "genre": "ott",
+    "description": "드라마 | 한국 | 88분",
     "date": "드라마대한민국88분"
   },
   {
@@ -216,24 +246,25 @@
     ],
     "runningTime": "104분",
     "productionCountry": "미국",
-    "genre": "공포",
+    "genre": "ott",
+    "description": "공포 | 미국 | 104분",
     "date": "공포미국104분"
   },
   {
-    "title": "프레데터: 죽음의 땅",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=36831199&qvt=0&query=%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0%20%EC%A3%BD%EC%9D%8C%EC%9D%98%20%EB%95%85",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251105_63%2F176230967787630PaG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
+    "title": "은애하는 도적님아",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36722037&qvt=0&query=%EC%9D%80%EC%95%A0%ED%95%98%EB%8A%94%20%EB%8F%84%EC%A0%81%EB%8B%98%EC%95%84",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_241%2F1765427476597L7h3r_JPEG%2F37433716e4480280845110867cd0bead.jpg",
+    "platform": "netflix",
+    "type": "추천",
     "source": "naver",
-    "id": "ott_naver_프레데터:죽음의땅",
+    "id": "ott_naver_은애하는도적님아",
     "platforms": [
-      "coupang"
+      "netflix",
+      "wavve"
     ],
-    "runningTime": "107분",
-    "productionCountry": "미국",
-    "genre": "SF",
-    "date": "SF미국107분"
+    "genre": "ott",
+    "description": "KBS2  2026.01.03. ~  (토, 일) 오후 09:20",
+    "date": "KBS2  2026.01.03. ~  (토, 일) 오후 09:20"
   },
   {
     "title": "미스트롯4",
@@ -248,23 +279,9 @@
       "tving",
       "wavve"
     ],
-    "genre": "TV조선  2025.12.18. ~  (목) 오후 10:00",
+    "genre": "ott",
+    "description": "TV조선  2025.12.18. ~  (목) 오후 10:00",
     "date": "TV조선  2025.12.18. ~  (목) 오후 10:00"
-  },
-  {
-    "title": "은애하는 도적님아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36722037&qvt=0&query=%EC%9D%80%EC%95%A0%ED%95%98%EB%8A%94%20%EB%8F%84%EC%A0%81%EB%8B%98%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_241%2F1765427476597L7h3r_JPEG%2F37433716e4480280845110867cd0bead.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_은애하는도적님아",
-    "platforms": [
-      "netflix",
-      "wavve"
-    ],
-    "genre": "KBS2  2026.01.03. ~  (토, 일) 오후 09:20",
-    "date": "KBS2  2026.01.03. ~  (토, 일) 오후 09:20"
   },
   {
     "title": "자식방생프로젝트 합숙 맞선",
@@ -277,23 +294,9 @@
     "platforms": [
       "netflix"
     ],
-    "genre": "SBS  2026.01.01. ~  (목) 오후 09:00",
+    "genre": "ott",
+    "description": "SBS  2026.01.01. ~  (목) 오후 09:00",
     "date": "SBS  2026.01.01. ~  (목) 오후 09:00"
-  },
-  {
-    "title": "언더커버 미쓰홍",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36656094&qvt=0&query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_88%2F1765759041258Liyba_JPEG%2F54b677e63b21f99e00ed5b64c94c65cf.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_언더커버미쓰홍",
-    "platforms": [
-      "netflix",
-      "tving"
-    ],
-    "genre": "tvN  2026.01.17. ~  (토, 일) 오후 09:10",
-    "date": "tvN  2026.01.17. ~  (토, 일) 오후 09:10"
   },
   {
     "title": "모범택시3",
@@ -306,7 +309,8 @@
     "platforms": [
       "netflix"
     ],
-    "genre": "SBS  2025.11.21. ~ 2026.01.10. 16부작  (금, 토) 오후 09:50",
+    "genre": "ott",
+    "description": "SBS  2025.11.21. ~ 2026.01.10. 16부작  (금, 토) 오후 09:50",
     "date": "SBS  2025.11.21. ~ 2026.01.10. 16부작  (금, 토) 오후 09:50"
   },
   {
@@ -321,7 +325,25 @@
       "netflix"
     ],
     "productionCountry": "한국",
+    "genre": "ott",
+    "description": "한국",
     "date": "한국"
+  },
+  {
+    "title": "언더커버 미쓰홍",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36656094&qvt=0&query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_88%2F1765759041258Liyba_JPEG%2F54b677e63b21f99e00ed5b64c94c65cf.jpg",
+    "platform": "netflix",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_언더커버미쓰홍",
+    "platforms": [
+      "netflix",
+      "tving"
+    ],
+    "genre": "ott",
+    "description": "tvN  2026.01.17. ~  (토, 일) 오후 09:10",
+    "date": "tvN  2026.01.17. ~  (토, 일) 오후 09:10"
   },
   {
     "title": "현역가왕3",
@@ -335,7 +357,8 @@
       "netflix",
       "wavve"
     ],
-    "genre": "MBN  2025.12.23. ~  (화) 오후 09:50",
+    "genre": "ott",
+    "description": "MBN  2025.12.23. ~  (화) 오후 09:50",
     "date": "MBN  2025.12.23. ~  (화) 오후 09:50"
   },
   {
@@ -349,36 +372,9 @@
     "platforms": [
       "netflix"
     ],
-    "genre": "SBS  2026.01.16. ~  (금, 토) 오후 09:50",
+    "genre": "ott",
+    "description": "SBS  2026.01.16. ~  (금, 토) 오후 09:50",
     "date": "SBS  2026.01.16. ~  (금, 토) 오후 09:50"
-  },
-  {
-    "title": "프리즘 윤무곡",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554725&qvt=0&query=%ED%94%84%EB%A6%AC%EC%A6%98%20%EC%9C%A4%EB%AC%B4%EA%B3%A1",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABe9KxV3ZaT7on_WXR1531b84EhqrIzJgwB5Bjz2fN03NXtj7nmIwj0ZBPCP5tgpVoz2Dblg94wzoycI3oQTdVCZGGZ829ITN0-O0UjfkNFnQWjIl9uzT7DuLK0Rpfrj-KpCGxA.jpg%3Fr%3Dc5b",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_프리즘윤무곡",
-    "platforms": [
-      "netflix"
-    ],
-    "productionCountry": "일본",
-    "date": "일본"
-  },
-  {
-    "title": "이별도 사랑이라",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554726&qvt=0&query=%EC%9D%B4%EB%B3%84%EB%8F%84%20%EC%82%AC%EB%9E%91%EC%9D%B4%EB%9D%BC",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABcTKso5-aGNEj1rU5ZegJk3-MyjG4Zv4F7UkYn_Erv66nlmRkAuHvvHNhqgwMBg9Y7qWIDcGtREHptyojFH2uZJS8WO5qPXpq6gJdYAllpDSNtiKqDz3TPb3m1V5zjGB0TRF6A.jpg%3Fr%3D62a",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_이별도사랑이라",
-    "platforms": [
-      "netflix"
-    ],
-    "genre": "해외",
-    "date": "해외"
   },
   {
     "title": "애거사 크리스티의 세븐 다이얼스",
@@ -392,7 +388,8 @@
       "netflix"
     ],
     "productionCountry": "영국",
-    "genre": "미스터리",
+    "genre": "ott",
+    "description": "미스터리 | 영국",
     "date": "영국미스터리"
   },
   {
@@ -408,7 +405,8 @@
     ],
     "runningTime": "87분",
     "productionCountry": "홍콩",
-    "genre": "코미디, 중국",
+    "genre": "ott",
+    "description": "코미디, 중국 | 홍콩 | 87분",
     "date": "코미디홍콩, 중국87분"
   },
   {
@@ -424,8 +422,55 @@
     ],
     "runningTime": "100분",
     "productionCountry": "한국",
-    "genre": "애니메이션",
+    "genre": "ott",
+    "description": "애니메이션 | 한국 | 100분",
     "date": "애니메이션대한민국100분"
+  },
+  {
+    "title": "프리즘 윤무곡",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554725&qvt=0&query=%ED%94%84%EB%A6%AC%EC%A6%98%20%EC%9C%A4%EB%AC%B4%EA%B3%A1",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABe9KxV3ZaT7on_WXR1531b84EhqrIzJgwB5Bjz2fN03NXtj7nmIwj0ZBPCP5tgpVoz2Dblg94wzoycI3oQTdVCZGGZ829ITN0-O0UjfkNFnQWjIl9uzT7DuLK0Rpfrj-KpCGxA.jpg%3Fr%3Dc5b",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_프리즘윤무곡",
+    "platforms": [
+      "netflix"
+    ],
+    "productionCountry": "일본",
+    "genre": "ott",
+    "description": "일본",
+    "date": "일본"
+  },
+  {
+    "title": "이별도 사랑이라",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554726&qvt=0&query=%EC%9D%B4%EB%B3%84%EB%8F%84%20%EC%82%AC%EB%9E%91%EC%9D%B4%EB%9D%BC",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABcTKso5-aGNEj1rU5ZegJk3-MyjG4Zv4F7UkYn_Erv66nlmRkAuHvvHNhqgwMBg9Y7qWIDcGtREHptyojFH2uZJS8WO5qPXpq6gJdYAllpDSNtiKqDz3TPb3m1V5zjGB0TRF6A.jpg%3Fr%3D62a",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_이별도사랑이라",
+    "platforms": [
+      "netflix"
+    ],
+    "genre": "ott",
+    "description": "해외",
+    "date": "해외"
+  },
+  {
+    "title": "I AM BOXER (아이 엠 복서)",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36905286&qvt=0&query=%EC%95%84%EC%9D%B4%20%EC%97%A0%20%EB%B3%B5%EC%84%9C",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251022_72%2F1761097086425iHr2m_JPEG%2F57_36905286_poster_image_1761097086304.jpg",
+    "platform": "disney",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_IAMBOXER(아이엠복서)",
+    "platforms": [
+      "disney"
+    ],
+    "genre": "ott",
+    "description": "tvN  2025.11.21. ~  (금) 오후 8:30",
+    "date": "tvN  2025.11.21. ~  (금) 오후 8:30"
   },
   {
     "title": "메이드 인 코리아",
@@ -439,37 +484,9 @@
       "disney"
     ],
     "productionCountry": "한국",
-    "genre": "6부작",
+    "genre": "ott",
+    "description": "6부작 | 한국",
     "date": "한국6부작"
-  },
-  {
-    "title": "I AM BOXER (아이 엠 복서)",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36905286&qvt=0&query=%EC%95%84%EC%9D%B4%20%EC%97%A0%20%EB%B3%B5%EC%84%9C",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251022_72%2F1761097086425iHr2m_JPEG%2F57_36905286_poster_image_1761097086304.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_IAMBOXER(아이엠복서)",
-    "platforms": [
-      "disney"
-    ],
-    "genre": "tvN  2025.11.21. ~  (금) 오후 8:30",
-    "date": "tvN  2025.11.21. ~  (금) 오후 8:30"
-  },
-  {
-    "title": "무빙",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=24884447&qvt=0&query=%EB%AC%B4%EB%B9%99",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230719_123%2F1689720497645PrIxg_JPEG%2Fe3dbd0018948d9018fd8dfdfe201e3ae.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_무빙",
-    "platforms": [
-      "disney"
-    ],
-    "productionCountry": "한국",
-    "genre": "액션20부작",
-    "date": "한국액션20부작"
   },
   {
     "title": "최악의 악",
@@ -483,8 +500,25 @@
       "disney"
     ],
     "productionCountry": "한국",
-    "genre": "액션12부작",
+    "genre": "ott",
+    "description": "액션12부작 | 한국",
     "date": "한국액션12부작"
+  },
+  {
+    "title": "무빙",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=24884447&qvt=0&query=%EB%AC%B4%EB%B9%99",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230719_123%2F1689720497645PrIxg_JPEG%2Fe3dbd0018948d9018fd8dfdfe201e3ae.jpg",
+    "platform": "disney",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_무빙",
+    "platforms": [
+      "disney"
+    ],
+    "productionCountry": "한국",
+    "genre": "ott",
+    "description": "액션20부작 | 한국",
+    "date": "한국액션20부작"
   },
   {
     "title": "조각도시",
@@ -498,7 +532,8 @@
       "disney"
     ],
     "productionCountry": "한국",
-    "genre": "액션12부작",
+    "genre": "ott",
+    "description": "액션12부작 | 한국",
     "date": "한국액션12부작"
   },
   {
@@ -512,7 +547,8 @@
     "platforms": [
       "disney"
     ],
-    "genre": "SBS  2023.04.28. ~ 2023.06.17. 16부작",
+    "genre": "ott",
+    "description": "SBS  2023.04.28. ~ 2023.06.17. 16부작",
     "date": "SBS  2023.04.28. ~ 2023.06.17. 16부작"
   },
   {
@@ -527,6 +563,8 @@
       "disney"
     ],
     "productionCountry": "한국",
+    "genre": "ott",
+    "description": "한국",
     "date": "한국"
   },
   {
@@ -542,39 +580,9 @@
     ],
     "runningTime": "114분",
     "productionCountry": "한국",
-    "genre": "코미디",
+    "genre": "ott",
+    "description": "코미디 | 한국 | 114분",
     "date": "코미디대한민국114분"
-  },
-  {
-    "title": "트론: 아레스",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1844962&qvt=0&query=%ED%8A%B8%EB%A1%A0%20%EC%95%84%EB%A0%88%EC%8A%A4",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251010_265%2F1760081304661PdTJo_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_트론:아레스",
-    "platforms": [
-      "disney"
-    ],
-    "runningTime": "119분",
-    "productionCountry": "미국",
-    "genre": "SF",
-    "date": "SF미국119분"
-  },
-  {
-    "title": "이게 맞아?! 시즌2",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40276830&qvt=0&query=%EC%9D%B4%EA%B2%8C%20%EB%A7%9E%EC%95%84%20%EC%8B%9C%EC%A6%8C2",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251126_54%2F1764142959238BX0CP_JPEG%2Fdcfc813205ffd105fa3e7eb6e5dc5a2c.jpg",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_이게맞아?!시즌2",
-    "platforms": [
-      "disney"
-    ],
-    "productionCountry": "한국",
-    "genre": "리얼리티8부작",
-    "date": "한국리얼리티8부작"
   },
   {
     "title": "더 로즈: 완벽한 이혼",
@@ -589,37 +597,26 @@
     ],
     "runningTime": "105분",
     "productionCountry": "미국",
-    "genre": "코미디",
+    "genre": "ott",
+    "description": "코미디 | 미국 | 105분",
     "date": "코미디미국105분"
   },
   {
-    "title": "환승연애4",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37585443&qvt=0&query=%ED%99%98%EC%8A%B9%EC%97%B0%EC%95%A04",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251127_262%2F17642208764231Mx33_JPEG%2F50f98735380c8de453160bef25080e88.jpg",
-    "platform": "tving",
-    "type": "추천",
+    "title": "트론: 아레스",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1844962&qvt=0&query=%ED%8A%B8%EB%A1%A0%20%EC%95%84%EB%A0%88%EC%8A%A4",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251010_265%2F1760081304661PdTJo_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "disney",
+    "type": "신작",
     "source": "naver",
-    "id": "ott_naver_환승연애4",
+    "id": "ott_naver_트론:아레스",
     "platforms": [
-      "tving"
+      "disney"
     ],
-    "productionCountry": "한국",
-    "genre": "리얼리티21부작",
-    "date": "한국리얼리티21부작"
-  },
-  {
-    "title": "Show Me The Money 12",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37305832&qvt=0&query=%EC%87%BC%EB%AF%B8%EB%8D%94%EB%A8%B8%EB%8B%88%2012",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260116_284%2F17684926672372RdHJ_JPEG%2Fd05ad26d255e342b5e5472762415cdae.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_ShowMeTheMoney12",
-    "platforms": [
-      "tving"
-    ],
-    "genre": "Mnet  2026.01.15. ~ 12부작  (목) 오후 09:20",
-    "date": "Mnet  2026.01.15. ~ 12부작  (목) 오후 09:20"
+    "runningTime": "119분",
+    "productionCountry": "미국",
+    "genre": "ott",
+    "description": "SF | 미국 | 119분",
+    "date": "SF미국119분"
   },
   {
     "title": "프랑켄슈타인 : 더 뮤지컬 라이브",
@@ -634,23 +631,56 @@
     ],
     "runningTime": "179분",
     "productionCountry": "한국",
-    "genre": "공연실황",
+    "genre": "ott",
+    "description": "공연실황 | 한국 | 179분",
     "date": "공연실황대한민국179분"
   },
   {
-    "title": "판사 이한영",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37140827&qvt=0&query=%ED%8C%90%EC%82%AC%20%EC%9D%B4%ED%95%9C%EC%98%81",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_81%2F17657619203160sKRJ_JPEG%2F6d8cb1301b4bd2c68dc6cf549f70d9dc.jpg",
+    "title": "환승연애4",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37585443&qvt=0&query=%ED%99%98%EC%8A%B9%EC%97%B0%EC%95%A04",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251127_262%2F17642208764231Mx33_JPEG%2F50f98735380c8de453160bef25080e88.jpg",
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_naver_판사이한영",
+    "id": "ott_naver_환승연애4",
     "platforms": [
-      "tving",
-      "wavve"
+      "tving"
     ],
-    "genre": "MBC  2026.01.02. ~  (금, 토) 오후 09:50",
-    "date": "MBC  2026.01.02. ~  (금, 토) 오후 09:50"
+    "productionCountry": "한국",
+    "genre": "ott",
+    "description": "리얼리티21부작 | 한국",
+    "date": "한국리얼리티21부작"
+  },
+  {
+    "title": "이게 맞아?! 시즌2",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40276830&qvt=0&query=%EC%9D%B4%EA%B2%8C%20%EB%A7%9E%EC%95%84%20%EC%8B%9C%EC%A6%8C2",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251126_54%2F1764142959238BX0CP_JPEG%2Fdcfc813205ffd105fa3e7eb6e5dc5a2c.jpg",
+    "platform": "disney",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_이게맞아?!시즌2",
+    "platforms": [
+      "disney"
+    ],
+    "productionCountry": "한국",
+    "genre": "ott",
+    "description": "리얼리티8부작 | 한국",
+    "date": "한국리얼리티8부작"
+  },
+  {
+    "title": "Show Me The Money 12",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37305832&qvt=0&query=%EC%87%BC%EB%AF%B8%EB%8D%94%EB%A8%B8%EB%8B%88%2012",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260116_284%2F17684926672372RdHJ_JPEG%2Fd05ad26d255e342b5e5472762415cdae.jpg",
+    "platform": "tving",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_ShowMeTheMoney12",
+    "platforms": [
+      "tving"
+    ],
+    "genre": "ott",
+    "description": "Mnet  2026.01.15. ~ 12부작  (목) 오후 09:20",
+    "date": "Mnet  2026.01.15. ~ 12부작  (목) 오후 09:20"
   },
   {
     "title": "스프링 피버",
@@ -664,23 +694,25 @@
       "tving",
       "wavve"
     ],
-    "genre": "tvN  2026.01.05. ~  (월, 화) 오후 08:50",
+    "genre": "ott",
+    "description": "tvN  2026.01.05. ~  (월, 화) 오후 08:50",
     "date": "tvN  2026.01.05. ~  (월, 화) 오후 08:50"
   },
   {
-    "title": "스윙어:금지된사랑",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=6007319&qvt=0&query=%EC%8A%A4%EC%9C%99%EC%96%B4%3A%EA%B8%88%EC%A7%80%EB%90%9C%EC%82%AC%EB%9E%91",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20170615_121%2F1497493531823wcOvO_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "title": "오디티",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=34119020&qvt=0&query=%EC%98%81%ED%99%94%20%EC%98%A4%EB%94%94%ED%8B%B0",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250924_266%2F1758707897621jBP1w_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_naver_스윙어:금지된사랑",
+    "id": "ott_naver_오디티",
     "platforms": [
       "tving"
     ],
-    "runningTime": "93분",
-    "genre": "멜로/로맨스덴마크",
-    "date": "멜로/로맨스덴마크93분"
+    "runningTime": "98분",
+    "genre": "ott",
+    "description": "공포아일랜드 | 98분",
+    "date": "공포아일랜드98분"
   },
   {
     "title": "첫 번째 남자",
@@ -694,8 +726,74 @@
       "tving",
       "wavve"
     ],
-    "genre": "MBC  2025.12.15. ~  (월~금) 오후 07:05",
+    "genre": "ott",
+    "description": "MBC  2025.12.15. ~  (월~금) 오후 07:05",
     "date": "MBC  2025.12.15. ~  (월~금) 오후 07:05"
+  },
+  {
+    "title": "판사 이한영",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37140827&qvt=0&query=%ED%8C%90%EC%82%AC%20%EC%9D%B4%ED%95%9C%EC%98%81",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_81%2F17657619203160sKRJ_JPEG%2F6d8cb1301b4bd2c68dc6cf549f70d9dc.jpg",
+    "platform": "tving",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_판사이한영",
+    "platforms": [
+      "tving",
+      "wavve"
+    ],
+    "genre": "ott",
+    "description": "MBC  2026.01.02. ~  (금, 토) 오후 09:50",
+    "date": "MBC  2026.01.02. ~  (금, 토) 오후 09:50"
+  },
+  {
+    "title": "쇼미더머니12: 야차의 세계",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40529562&qvt=0&query=%EC%87%BC%EB%AF%B8%EB%8D%94%EB%A8%B8%EB%8B%8812%20%EC%95%BC%EC%B0%A8%EC%9D%98%20%EC%84%B8%EA%B3%84",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260105_172%2F1767580027251MNKWM_JPEG%2F88e0c065d85365898ad6df4742f0e3fa.jpg",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_쇼미더머니12:야차의세계",
+    "platforms": [
+      "tving"
+    ],
+    "productionCountry": "한국",
+    "genre": "ott",
+    "description": "한국",
+    "date": "한국"
+  },
+  {
+    "title": "스윙어:금지된사랑",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=6007319&qvt=0&query=%EC%8A%A4%EC%9C%99%EC%96%B4%3A%EA%B8%88%EC%A7%80%EB%90%9C%EC%82%AC%EB%9E%91",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20170615_121%2F1497493531823wcOvO_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_스윙어:금지된사랑",
+    "platforms": [
+      "tving"
+    ],
+    "runningTime": "93분",
+    "genre": "ott",
+    "description": "멜로/로맨스덴마크 | 93분",
+    "date": "멜로/로맨스덴마크93분"
+  },
+  {
+    "title": "헤이트풀8",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1921668&qvt=0&query=%ED%97%A4%EC%9D%B4%ED%8A%B8%ED%92%808",
+    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20151210_247%2F1449735550913t3HDG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_헤이트풀8",
+    "platforms": [
+      "tving"
+    ],
+    "runningTime": "167분",
+    "productionCountry": "미국",
+    "genre": "ott",
+    "description": "서부 | 미국 | 167분",
+    "date": "서부미국167분"
   },
   {
     "title": "【최애의 아이】 3기",
@@ -709,7 +807,8 @@
       "tving"
     ],
     "productionCountry": "일본",
-    "genre": "Tokyo MX  2026.01.14. ~  (수) 오후 11:00",
+    "genre": "ott",
+    "description": "Tokyo MX  2026.01.14. ~  (수) 오후 11:00 | 일본",
     "date": "일본 Tokyo MX  2026.01.14. ~  (수) 오후 11:00"
   },
   {
@@ -725,55 +824,9 @@
     ],
     "runningTime": "91분",
     "productionCountry": "미국",
-    "genre": "드라마",
+    "genre": "ott",
+    "description": "드라마 | 미국 | 91분",
     "date": "드라마미국91분"
-  },
-  {
-    "title": "헤이트풀8",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1921668&qvt=0&query=%ED%97%A4%EC%9D%B4%ED%8A%B8%ED%92%808",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20151210_247%2F1449735550913t3HDG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_헤이트풀8",
-    "platforms": [
-      "tving"
-    ],
-    "runningTime": "167분",
-    "productionCountry": "미국",
-    "genre": "서부",
-    "date": "서부미국167분"
-  },
-  {
-    "title": "부산포니아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=6362657&qvt=0&query=%EB%B6%80%EC%82%B0%ED%8F%AC%EB%8B%88%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250923_291%2F1758610759158TrMHJ_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_부산포니아",
-    "platforms": [
-      "tving"
-    ],
-    "runningTime": "91분",
-    "productionCountry": "한국",
-    "genre": "드라마",
-    "date": "드라마대한민국91분"
-  },
-  {
-    "title": "더 라스트 보이",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=33775303&qvt=0&query=%EB%8D%94%20%EB%9D%BC%EC%8A%A4%ED%8A%B8%20%EB%B3%B4%EC%9D%B4",
-    "poster": "https://search.pstatic.net/common?type=f&size=138x200&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20240802_160%2F172257835596039wKA_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_더라스트보이",
-    "platforms": [
-      "tving"
-    ],
-    "runningTime": "96분",
-    "genre": "모험뉴질랜드, 아르헨티나",
-    "date": "모험뉴질랜드, 아르헨티나96분"
   },
   {
     "title": "친밀한 리플리",
@@ -786,7 +839,8 @@
     "platforms": [
       "wavve"
     ],
-    "genre": "KBS2  2025.09.22. ~  (월~금) 오후 07:50",
+    "genre": "ott",
+    "description": "KBS2  2025.09.22. ~  (월~금) 오후 07:50",
     "date": "KBS2  2025.09.22. ~  (월~금) 오후 07:50"
   }
 ]
