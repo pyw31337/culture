@@ -52,10 +52,12 @@ async function fetchTMDBData(page: any, title: string) {
             const img = document.querySelector('div.image_content img.poster');
             if (img) {
                 const src = img.getAttribute('src');
-                if (src) res.poster = `https://www.themoviedb.org${src}`;
+                if (src) {
+                    res.poster = src.startsWith('http') ? src : `https://www.themoviedb.org${src}`;
+                }
             }
-            // Runtime
-            const runtimeEl = document.querySelector('.facts .runtime');
+            // Runtime (Try multiple selectors)
+            const runtimeEl = document.querySelector('.facts .runtime, .runtime');
             if (runtimeEl) res.runningTime = runtimeEl.textContent?.trim();
             // Genre
             const genres = Array.from(document.querySelectorAll('.facts .genres a')).map(a => a.textContent?.trim());
@@ -112,15 +114,27 @@ async function fetchJWDetail(page: any, url: string) {
                 }
             }
 
-            // Sidebar (Director, Genre)
-            document.querySelectorAll('.poster-detail.poster-detail--below > div').forEach(row => {
-                const label = row.querySelector('.detail-infos__subheading')?.textContent?.trim();
-                const value = row.querySelector('.detail-infos__value')?.textContent?.trim();
+            // Sidebar (Director, Genre, Runtime, Country)
+            // Look in ALL poster-detail sections (above and below)
+            // Supports both .detail-infos and .poster-detail-infos
+            document.querySelectorAll('.poster-detail > div, .detail-infos, .poster-detail-infos').forEach(row => {
+                const label = row.querySelector('[class$="infos__subheading"]')?.textContent?.trim();
+                const value = row.querySelector('[class$="infos__value"]')?.textContent?.trim();
                 if (label && value) {
-                    if (label.includes('감독')) res.director = value;
-                    if (label.includes('장르')) res.subGenre = value;
+                    if (label.includes('감독') || label.toLowerCase().includes('director')) res.director = value;
+                    if (label.includes('장르') || label.toLowerCase().includes('genre')) res.subGenre = value;
+                    if (label.includes('재생시간') || label.toLowerCase().includes('runtime')) {
+                        const rt = value.match(/(\d+시간\s*\d+분|\d+분|\d+h\s*\d+m|\d+min)/);
+                        if (rt) res.runningTime = rt[0];
+                    }
+                    if (label.includes('제작국가') || label.toLowerCase().includes('production country')) res.productionCountry = value;
                 }
             });
+
+            // Fallback for Metadata (hidden in other structures)
+            if (!res.director) {
+                // Try looking for div with specific text content if label structure fails
+            }
 
             // Cast Names with JustWatch Search Links
             // JustWatch KR generates search URLs like: /kr/검색?q=Nam%20Ji-hyun
@@ -220,9 +234,11 @@ async function fetchJWDetail(page: any, url: string) {
                     const title = img?.getAttribute('alt') || a?.textContent?.trim();
                     const link = a?.getAttribute('href');
                     let poster = img?.getAttribute('data-src') || img?.getAttribute('src') || '';
+                    // 2024-01-16 Fix: Ignore placeholder data URIs
+                    if (poster.startsWith('data:image')) poster = '';
 
                     // Force High Res
-                    poster = poster.replace('/s166/', '/s592/');
+                    if (poster) poster = poster.replace('/s166/', '/s592/');
 
                     if (title && link) {
                         list.push({
@@ -284,10 +300,14 @@ async function fetchJWDetail(page: any, url: string) {
             mergedMap.set(newItem.id, { ...newItem, ...old, platforms: newItem.platforms }); // Prefer new platform list? or merge?
             // Actually, keep old enriched data primarily.
             const merged = { ...newItem, ...old };
-            // Update poster if new is high res and old was low res?
             if (newItem.poster && newItem.poster.includes('/s592/') && old.poster && old.poster.includes('/s166/')) {
                 merged.poster = newItem.poster;
                 if (merged.image === old.poster) merged.image = newItem.poster;
+            }
+            // Fix: Purge corrupted images
+            if (merged.image && (merged.image.includes('themoviedb.orghttps') || merged.image.startsWith('data:image'))) {
+                merged.image = null;
+                merged.poster = null;
             }
             mergedMap.set(newItem.id, merged);
         } else {
@@ -312,6 +332,12 @@ async function fetchJWDetail(page: any, url: string) {
         processedCount++;
         progressBar.update(processedCount);
 
+        // Fix: Purge corrupted images (Double URL or Data URI)
+        if (item.image && (item.image.includes('themoviedb.orghttps') || item.image.startsWith('data:image'))) {
+            item.image = null;
+            item.poster = null;
+        }
+
         // Resume Check: If we have this item in existingData with good metadata, copy it
         // Resume Check: If we have this item in existingData with good metadata, copy it
         const cached = existingData.find(e => e.id === item.id);
@@ -324,14 +350,15 @@ async function fetchJWDetail(page: any, url: string) {
             const hasCastWithLinks = cached.castWithLinks && cached.castWithLinks.length > 0;
 
             // Only skip if we have complete data INCLUDING castWithLinks
-            if (!isBadRuntime && hasCastWithLinks && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
-                Object.assign(item, cached);
-                if (item.poster && item.poster.includes('/s166/')) {
-                    item.poster = item.poster.replace('/s166/', '/s592/');
-                }
-                if (!item.image && item.poster) item.image = item.poster;
-                continue;
-            }
+            // FORCE RE-SCRAPE: User requested full update for missing metadata.
+            // if (!isBadRuntime && hasCastWithLinks && (cached.director || cached.runningTime) && (cached.image || cached.poster)) {
+            //    Object.assign(item, cached);
+            //    if (item.poster && item.poster.includes('/s166/')) {
+            //        item.poster = item.poster.replace('/s166/', '/s592/');
+            //    }
+            //    if (!item.image && item.poster) item.image = item.poster;
+            //    continue;
+            // }
 
             // If bad runtime, keep cached data BUT reset runtime to try again
             if (isBadRuntime) {

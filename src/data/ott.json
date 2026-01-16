@@ -45,7 +45,8 @@
         "name": "Manaka Iwami",
         "link": "https://www.justwatch.com/kr/검색?q=Manaka%20Iwami"
       }
-    ]
+    ],
+    "director": "Ryota Itoh, Daisuke Hiramaki, Ciao Nekotomi, Asami Nakatani, Kim Seong-min, Kouki Uchinomiya, Kuniyasu Nishina, Yasuhiro Irie, Yuji Tokuno 자세히 보기"
   },
   {
     "title": "메이크 어 걸",
@@ -140,7 +141,8 @@
       "Stephanie Lee",
       "Ok Ji-young",
       "Park Ji-il"
-    ]
+    ],
+    "director": "Kim Dae-hwan"
   },
   {
     "title": "귀족 전생 ~축복받은 태생으로 최강의 힘을 손에 넣다~ - 시즌 1",
@@ -186,7 +188,9 @@
         "name": "Misaki Watada",
         "link": "https://www.justwatch.com/kr/검색?q=Misaki%20Watada"
       }
-    ]
+    ],
+    "director": "Michio Fukuda",
+    "subGenre": "SF, 애니메이션, 액션"
   },
   {
     "title": "연애 실험: 블라인드 러브 독일편 - 시즌 2",
@@ -222,7 +226,8 @@
       "Steffi Brungs",
       "Christian Wackert",
       "Alina Rothbauer"
-    ]
+    ],
+    "subGenre": "Reality TV, 로맨스"
   },
   {
     "title": "애거사 크리스티의 세븐 다이얼스 - 시즌 1",
@@ -267,7 +272,9 @@
       "Martin Freeman",
       "Corey Mylchreest",
       "Edward Bluemel"
-    ]
+    ],
+    "director": "Chris Sweeney",
+    "subGenre": "스릴러, 드라마, 범죄"
   },
   {
     "title": "이별도 사랑이라 - 시즌 1",
@@ -283,7 +290,8 @@
     "region": "ott",
     "id": "ott_20260115_이별도사랑이라시즌1",
     "runningTime": "53분",
-    "image": "https://images.justwatch.com/poster/340646570/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/340646570/s592/시즌-1",
+    "subGenre": "드라마"
   },
   {
     "title": "우리는 업쇼 패밀리 - 시즌 7",
@@ -329,7 +337,9 @@
       "Wanda Sykes",
       "Diamond Lyons",
       "Khali Spraggins"
-    ]
+    ],
+    "director": "Phill Lewis, Ken Whittingham",
+    "subGenre": "코미디, 가족, 드라마"
   },
   {
     "title": "특수부대 사이보그 솔저",
@@ -344,7 +354,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260115_특수부대사이보그솔저",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/1sLNCOW7kTYE6FBME49gWiBI7Nq.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/1sLNCOW7kTYE6FBME49gWiBI7Nq.jpg",
     "runningTime": "1h 25m",
     "subGenre": "Action, Thriller, Science Fiction",
     "castWithLinks": [
@@ -375,7 +385,8 @@
       "Jason S. Gray",
       "Rick Malambri",
       "Angela Vitale"
-    ]
+    ],
+    "director": "Griff Furst"
   },
   {
     "title": "Jujutsu Kaisen - 시즌 3",
@@ -421,7 +432,9 @@
       "Mikako Komatsu",
       "Kenjiro Tsuda",
       "Shigeru Chiba"
-    ]
+    ],
+    "director": "Hironori Tanaka, Yui Umemoto, Ryohei Takeshita, Kakushi Ifuku, Hideaki Abe, Yosuke Takada, Eri Osada, Shota Goshozono, Ken Takahashi, Daisuke Chikushi, Masataka Akai, Chie Nishizawa, Masato Nakazono, Ryu Nakayama, Tomomi Kamiya, Naoki Miyajima, Arifumi Imai, Jun Nakagawa, Ryota Aikei, Youto, Hiroyuki Kitakubo, Teppei Okuda, Hayato Kurosaki, Shunsuke Okubo, Takumi Sunakohara, Kazuto Arai, Azure, Isuta, Fei Hung, Itsuki Tsuchigami, Hakuyu Go, Harumi Yamazaki, Yuji Tokuno, Tetsuya Akutsu, Sunghoo Park 자세히 보기",
+    "subGenre": "스릴러, 애니메이션, 액션, 판타지, SF"
   },
   {
     "title": "연우영안 - 시즌 1",
@@ -469,7 +482,8 @@
       "Feng Jiayi",
       "Sui Junbo"
     ],
-    "subGenre": "32부작"
+    "subGenre": "32부작",
+    "director": "Bai Yunmo"
   },
   {
     "title": "여의전 - 시즌 1",
@@ -517,7 +531,8 @@
       "Dong Jie",
       "Xin Zhilei"
     ],
-    "subGenre": "87부작"
+    "subGenre": "87부작",
+    "director": "Wang Jun"
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -564,7 +579,9 @@
       "Xia Meng",
       "Chen Heyi",
       "Zuo Ye"
-    ]
+    ],
+    "director": "Chu Yui-bun, Gu Zhiwei, Francis Nam, Grammy Chu",
+    "subGenre": "드라마, 역사, 로맨스"
   },
   {
     "title": "오디티",
@@ -611,7 +628,8 @@
       "Steve Wall",
       "Joe Rooney",
       "Tadhg Murphy"
-    ]
+    ],
+    "director": "Damian Mc Carthy"
   },
   {
     "title": "내가 너무 귀여운 걸 어쩌겠어! - 시즌 1",
@@ -642,7 +660,9 @@
     "cast": [
       "Aya Endo",
       "Yuma Uchida"
-    ]
+    ],
+    "director": "Kazuomi Koga",
+    "subGenre": "드라마, 코미디, 애니메이션, 로맨스"
   },
   {
     "title": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자. - 시즌 1",
@@ -687,7 +707,8 @@
       "Mai Nakahara",
       "Misato Matsuoka",
       "Satomi Arai"
-    ]
+    ],
+    "subGenre": "SF"
   },
   {
     "title": "더 라스트 보이",
@@ -705,7 +726,37 @@
     "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20240802_160%2F172257835596039wKA_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "subGenre": "Documentary",
     "ageRating": "19세 이상 관람가",
-    "runningTime": "1시간 37분"
+    "runningTime": "1시간 37분",
+    "director": "Nicolás Onetti",
+    "castWithLinks": [
+      {
+        "name": "Camilo Levigne",
+        "link": "https://www.justwatch.com/kr/검색?q=Camilo%20Levigne"
+      },
+      {
+        "name": "Hugo Quiril",
+        "link": "https://www.justwatch.com/kr/검색?q=Hugo%20Quiril"
+      },
+      {
+        "name": "Raymond E. Lee",
+        "link": "https://www.justwatch.com/kr/검색?q=Raymond%20E.%20Lee"
+      },
+      {
+        "name": "Paulo Vilela",
+        "link": "https://www.justwatch.com/kr/검색?q=Paulo%20Vilela"
+      },
+      {
+        "name": "Carole Brana",
+        "link": "https://www.justwatch.com/kr/검색?q=Carole%20Brana"
+      }
+    ],
+    "cast": [
+      "Camilo Levigne",
+      "Hugo Quiril",
+      "Raymond E. Lee",
+      "Paulo Vilela",
+      "Carole Brana"
+    ]
   },
   {
     "title": "120 Bahadur",
@@ -720,7 +771,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260115_120Bahadur",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/fdxf02vUous6fty6O4nollyuo4m.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/fdxf02vUous6fty6O4nollyuo4m.jpg",
     "runningTime": "2h 17m",
     "subGenre": "Action, War",
     "castWithLinks": [
@@ -751,7 +802,8 @@
       "Ankit Siwach",
       "Vivan Bhatena",
       "Dhanveer Singh"
-    ]
+    ],
+    "director": "Razneesh Ghai"
   },
   {
     "title": "WWE NXT - 시즌 20",
@@ -775,7 +827,30 @@
       "Victor Travagliante",
       "Victor Travagliante",
       "Darren Matthews"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Stuart Bennett",
+        "link": "https://www.justwatch.com/kr/검색?q=Stuart%20Bennett"
+      },
+      {
+        "name": "Stuart Bennett",
+        "link": "https://www.justwatch.com/kr/검색?q=Stuart%20Bennett"
+      },
+      {
+        "name": "Victor Travagliante",
+        "link": "https://www.justwatch.com/kr/검색?q=Victor%20Travagliante"
+      },
+      {
+        "name": "Victor Travagliante",
+        "link": "https://www.justwatch.com/kr/검색?q=Victor%20Travagliante"
+      },
+      {
+        "name": "Darren Matthews",
+        "link": "https://www.justwatch.com/kr/검색?q=Darren%20Matthews"
+      }
+    ],
+    "subGenre": "액션, 드라마, Reality TV, 스포츠"
   },
   {
     "title": "타스카리: 밀수와의 전쟁 - 시즌 1",
@@ -821,7 +896,9 @@
         "name": "Anurag Sinha",
         "link": "https://www.justwatch.com/kr/검색?q=Anurag%20Sinha"
       }
-    ]
+    ],
+    "director": "Raghav Jairath, Neeraj Pandey",
+    "subGenre": "범죄, 스릴러"
   },
   {
     "title": "현역가왕 - 시즌 1",
@@ -862,7 +939,31 @@
       "Uee",
       "Son Na-eun",
       "Kim Jae-yong"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Rain",
+        "link": "https://www.justwatch.com/kr/검색?q=Rain"
+      },
+      {
+        "name": "Kim Bum",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Bum"
+      },
+      {
+        "name": "Uee",
+        "link": "https://www.justwatch.com/kr/검색?q=Uee"
+      },
+      {
+        "name": "Son Na-eun",
+        "link": "https://www.justwatch.com/kr/검색?q=Son%20Na-eun"
+      },
+      {
+        "name": "Kim Jae-yong",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Jae-yong"
+      }
+    ],
+    "director": "Boo Seong-cheol",
+    "subGenre": "코미디, 드라마, SF, 판타지, 로맨스"
   },
   {
     "title": "에드워드리의 컨츄리쿡 - 시즌 1",
@@ -886,7 +987,31 @@
       "Ko A-sung",
       "Shin Sia",
       "Yoon Doo-joon"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Edward Lee",
+        "link": "https://www.justwatch.com/kr/검색?q=Edward%20Lee"
+      },
+      {
+        "name": "Byun Yo-han",
+        "link": "https://www.justwatch.com/kr/검색?q=Byun%20Yo-han"
+      },
+      {
+        "name": "Ko A-sung",
+        "link": "https://www.justwatch.com/kr/검색?q=Ko%20A-sung"
+      },
+      {
+        "name": "Shin Sia",
+        "link": "https://www.justwatch.com/kr/검색?q=Shin%20Sia"
+      },
+      {
+        "name": "Yoon Doo-joon",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoon%20Doo-joon"
+      }
+    ],
+    "director": "Kim Kwan-tae",
+    "subGenre": "Reality TV"
   },
   {
     "title": "첫 번째 남자 - 시즌 1",
@@ -927,7 +1052,9 @@
         "name": "Park Geon-il",
         "link": "https://www.justwatch.com/kr/검색?q=Park%20Geon-il"
       }
-    ]
+    ],
+    "director": "강태흠",
+    "subGenre": "드라마, 로맨스, 범죄"
   },
   {
     "title": "'하이재킹' - Hijack - 시즌 2",
@@ -974,7 +1101,9 @@
         "name": "Max Beesley",
         "link": "https://www.justwatch.com/kr/검색?q=Max%20Beesley"
       }
-    ]
+    ],
+    "director": "Mo Ali, Jim Field Smith",
+    "subGenre": "드라마, 스릴러"
   },
   {
     "title": "'하이재킹' - Hijack - 시즌 1",
@@ -1020,7 +1149,9 @@
         "name": "Max Beesley",
         "link": "https://www.justwatch.com/kr/검색?q=Max%20Beesley"
       }
-    ]
+    ],
+    "director": "Mo Ali, Jim Field Smith",
+    "subGenre": "드라마, 스릴러"
   },
   {
     "title": "'팜 로얄: 신분 상승의 사다리' - Palm Royale - 시즌 2",
@@ -1067,7 +1198,9 @@
         "name": "Amber Chardae Robinson",
         "link": "https://www.justwatch.com/kr/검색?q=Amber%20Chardae%20Robinson"
       }
-    ]
+    ],
+    "director": "Tate Taylor, Abe Sylvia, Stephanie Laing, Claire Scanlon",
+    "subGenre": "코미디, 드라마"
   },
   {
     "title": "한밤중 하트튠 - 시즌 1",
@@ -1115,7 +1248,8 @@
         "name": "Miku Ito",
         "link": "https://www.justwatch.com/kr/검색?q=Miku%20Ito"
       }
-    ]
+    ],
+    "subGenre": "애니메이션, 드라마, 코미디, 로맨스"
   },
   {
     "title": "가치아쿠타 - 시즌 1",
@@ -1162,7 +1296,9 @@
         "name": "Toshiyuki Morikawa",
         "link": "https://www.justwatch.com/kr/검색?q=Toshiyuki%20Morikawa"
       }
-    ]
+    ],
+    "director": "Daisuke Chikushi, Satoshi Nakagawa, Ikuro Sato, Nao Miyoshi, Masayuki Otsuki, Himari Tamagawa, Kenji Mizuhata, Yukihiko Asaki, Takanori Yano, Hitoyuki Matsui, Akira Toba 자세히 보기",
+    "subGenre": "애니메이션, 액션, 드라마, SF, 판타지"
   },
   {
     "title": "친구 여동생이 나한테만 짜증나게 군다 - 시즌 1",
@@ -1209,7 +1345,9 @@
         "name": "Kana Hanazawa",
         "link": "https://www.justwatch.com/kr/검색?q=Kana%20Hanazawa"
       }
-    ]
+    ],
+    "director": "Kazuomi Koga",
+    "subGenre": "코미디, 애니메이션, 로맨스"
   },
   {
     "title": "한문철의 블랙박스 리뷰 - 시즌 1",
@@ -1254,7 +1392,8 @@
         "name": "Han Bo-reum",
         "link": "https://www.justwatch.com/kr/검색?q=Han%20Bo-reum"
       }
-    ]
+    ],
+    "director": "민철기"
   },
   {
     "title": "공주님 “고문”의 시간입니다 - 시즌 2",
@@ -1300,7 +1439,8 @@
         "name": "Anna Nagase",
         "link": "https://www.justwatch.com/kr/검색?q=Anna%20Nagase"
       }
-    ]
+    ],
+    "subGenre": "애니메이션, 코미디, SF, 판타지"
   },
   {
     "title": "다윈 사변 - 시즌 1",
@@ -1346,7 +1486,9 @@
         "name": "Rina Sato",
         "link": "https://www.justwatch.com/kr/검색?q=Rina%20Sato"
       }
-    ]
+    ],
+    "director": "Naokatsu Tsuda",
+    "subGenre": "애니메이션, SF, 액션, 드라마, 로맨스, 스릴러"
   },
   {
     "title": "비스트 게임 - 시즌 2",
@@ -1392,7 +1534,8 @@
         "name": "Tareq Salameh",
         "link": "https://www.justwatch.com/kr/검색?q=Tareq%20Salameh"
       }
-    ]
+    ],
+    "subGenre": "Reality TV"
   },
   {
     "title": "Good Sports with Kevin Hart and Kenan Thompson - 시즌 1",
@@ -1446,7 +1589,31 @@
       "Frances Turner",
       "Kyle MacLachlan"
     ],
-    "image": "https://images.justwatch.com/poster/334553656/s592/시즌-2"
+    "image": "https://images.justwatch.com/poster/334553656/s592/시즌-2",
+    "castWithLinks": [
+      {
+        "name": "Ella Purnell",
+        "link": "https://www.justwatch.com/kr/검색?q=Ella%20Purnell"
+      },
+      {
+        "name": "Aaron Moten",
+        "link": "https://www.justwatch.com/kr/검색?q=Aaron%20Moten"
+      },
+      {
+        "name": "Moisés Arias",
+        "link": "https://www.justwatch.com/kr/검색?q=Mois%C3%A9s%20Arias"
+      },
+      {
+        "name": "Frances Turner",
+        "link": "https://www.justwatch.com/kr/검색?q=Frances%20Turner"
+      },
+      {
+        "name": "Kyle MacLachlan",
+        "link": "https://www.justwatch.com/kr/검색?q=Kyle%20MacLachlan"
+      }
+    ],
+    "director": "Liz Friedlander, Daniel Gray Longino, Clare Kilner, Stephen Williams, Wayne Che Yip, Fred Toye, Jonathan Nolan 자세히 보기",
+    "subGenre": "액션, SF, 드라마"
   },
   {
     "title": "형따라 마야로: 아홉 개의 열쇠 - 시즌 1",
@@ -1463,7 +1630,28 @@
     "id": "ott_20260114_형따라마야로아홉개의열쇠시즌1",
     "ageRating": "15세 이상 관람가",
     "runningTime": "1시간 31분",
-    "image": "https://images.justwatch.com/poster/306590983/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/306590983/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Cha Seung-won",
+        "link": "https://www.justwatch.com/kr/검색?q=Cha%20Seung-won"
+      },
+      {
+        "name": "Kim Sung-kyun",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Sung-kyun"
+      },
+      {
+        "name": "Juyeon",
+        "link": "https://www.justwatch.com/kr/검색?q=Juyeon"
+      }
+    ],
+    "cast": [
+      "Cha Seung-won",
+      "Kim Sung-kyun",
+      "Juyeon"
+    ],
+    "director": "Bang Geul-yi, 공대한",
+    "subGenre": "Reality TV"
   },
   {
     "title": "볼룸에 오신 것을 환영합니다 - 시즌 1",
@@ -1479,7 +1667,38 @@
     "region": "ott",
     "id": "ott_20260114_볼룸에오신것을환영합니다시즌1",
     "runningTime": "24분",
-    "image": "https://images.justwatch.com/poster/338867447/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/338867447/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Kentaro Tomita",
+        "link": "https://www.justwatch.com/kr/검색?q=Kentaro%20Tomita"
+      },
+      {
+        "name": "Toshiyuki Morikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Toshiyuki%20Morikawa"
+      },
+      {
+        "name": "Shimba Tsuchiya",
+        "link": "https://www.justwatch.com/kr/검색?q=Shimba%20Tsuchiya"
+      },
+      {
+        "name": "Ayane Sakura",
+        "link": "https://www.justwatch.com/kr/검색?q=Ayane%20Sakura"
+      },
+      {
+        "name": "Nobuhiko Okamoto",
+        "link": "https://www.justwatch.com/kr/검색?q=Nobuhiko%20Okamoto"
+      }
+    ],
+    "cast": [
+      "Kentaro Tomita",
+      "Toshiyuki Morikawa",
+      "Shimba Tsuchiya",
+      "Ayane Sakura",
+      "Nobuhiko Okamoto"
+    ],
+    "director": "Masako Sato, Yusuke Kamata, Kazuchika Kise",
+    "subGenre": "드라마, 코미디, 음악, 스포츠, 애니메이션"
   },
   {
     "title": "만남의 집",
@@ -1496,7 +1715,27 @@
     "id": "ott_20260114_만남의집",
     "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250923_214%2F1758592113611hXpVA_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "2h 3m",
-    "subGenre": "Drama"
+    "subGenre": "Drama",
+    "castWithLinks": [
+      {
+        "name": "Song Ji-hyo",
+        "link": "https://www.justwatch.com/kr/검색?q=Song%20Ji-hyo"
+      },
+      {
+        "name": "Do Yeong-seo",
+        "link": "https://www.justwatch.com/kr/검색?q=Do%20Yeong-seo"
+      },
+      {
+        "name": "Ok Ji-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Ok%20Ji-young"
+      }
+    ],
+    "cast": [
+      "Song Ji-hyo",
+      "Do Yeong-seo",
+      "Ok Ji-young"
+    ],
+    "director": "Cha Jeong-yoon"
   },
   {
     "title": "옷소매 붉은 끝동 - 시즌 1",
@@ -1513,7 +1752,181 @@
     "id": "ott_20260114_옷소매붉은끝동시즌1",
     "ageRating": "15세 이상 관람가",
     "runningTime": "1시간 14분",
-    "image": "https://images.justwatch.com/poster/255387928/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/255387928/s592/시즌-1",
+    "castWithLinks": [
+      {
+        "name": "Lee Jun-ho",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Jun-ho"
+      },
+      {
+        "name": "Lee Se-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Se-young"
+      },
+      {
+        "name": "Kang Hoon",
+        "link": "https://www.justwatch.com/kr/검색?q=Kang%20Hoon"
+      },
+      {
+        "name": "Lee Duck-hwa",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Duck-hwa"
+      },
+      {
+        "name": "Park Ji-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Park%20Ji-young"
+      }
+    ],
+    "cast": [
+      "Lee Jun-ho",
+      "Lee Se-young",
+      "Kang Hoon",
+      "Lee Duck-hwa",
+      "Park Ji-young"
+    ],
+    "director": "Song Yeon-hwa, Jung Ji-in",
+    "subGenre": "드라마"
+  },
+  {
+    "title": "연우영안 - 시즌 1",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/yeonuyeongan/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_연우영안시즌1",
+    "runningTime": "41분",
+    "castWithLinks": [
+      {
+        "name": "Wang Yinglu",
+        "link": "https://www.justwatch.com/kr/검색?q=Wang%20Yinglu"
+      },
+      {
+        "name": "Li Yunrui",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Yunrui"
+      },
+      {
+        "name": "Chang Long",
+        "link": "https://www.justwatch.com/kr/검색?q=Chang%20Long"
+      },
+      {
+        "name": "Feng Jiayi",
+        "link": "https://www.justwatch.com/kr/검색?q=Feng%20Jiayi"
+      },
+      {
+        "name": "Sui Junbo",
+        "link": "https://www.justwatch.com/kr/검색?q=Sui%20Junbo"
+      }
+    ],
+    "cast": [
+      "Wang Yinglu",
+      "Li Yunrui",
+      "Chang Long",
+      "Feng Jiayi",
+      "Sui Junbo"
+    ],
+    "image": "https://images.justwatch.com/poster/337641704/s592/시즌-1",
+    "director": "Bai Yunmo",
+    "subGenre": "드라마"
+  },
+  {
+    "title": "여의전 - 시즌 1",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/yeoyijeon/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/309203240/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_여의전시즌1",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "45분",
+    "castWithLinks": [
+      {
+        "name": "Zhou Xun",
+        "link": "https://www.justwatch.com/kr/검색?q=Zhou%20Xun"
+      },
+      {
+        "name": "Wallace Huo",
+        "link": "https://www.justwatch.com/kr/검색?q=Wallace%20Huo"
+      },
+      {
+        "name": "Ning Chang",
+        "link": "https://www.justwatch.com/kr/검색?q=Ning%20Chang"
+      },
+      {
+        "name": "Dong Jie",
+        "link": "https://www.justwatch.com/kr/검색?q=Dong%20Jie"
+      },
+      {
+        "name": "Xin Zhilei",
+        "link": "https://www.justwatch.com/kr/검색?q=Xin%20Zhilei"
+      }
+    ],
+    "cast": [
+      "Zhou Xun",
+      "Wallace Huo",
+      "Ning Chang",
+      "Dong Jie",
+      "Xin Zhilei"
+    ],
+    "image": "https://images.justwatch.com/poster/309203240/s592/시즌-1",
+    "director": "Wang Jun",
+    "subGenre": "드라마, 역사"
+  },
+  {
+    "title": "일소수가 - 시즌 1",
+    "date": "2026-01-14",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ilsosuga/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/337703768/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260114_일소수가시즌1",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "46분",
+    "castWithLinks": [
+      {
+        "name": "Li Qin",
+        "link": "https://www.justwatch.com/kr/검색?q=Li%20Qin"
+      },
+      {
+        "name": "Chen Zheyuan",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Zheyuan"
+      },
+      {
+        "name": "Xia Meng",
+        "link": "https://www.justwatch.com/kr/검색?q=Xia%20Meng"
+      },
+      {
+        "name": "Chen Heyi",
+        "link": "https://www.justwatch.com/kr/검색?q=Chen%20Heyi"
+      },
+      {
+        "name": "Zuo Ye",
+        "link": "https://www.justwatch.com/kr/검색?q=Zuo%20Ye"
+      }
+    ],
+    "cast": [
+      "Li Qin",
+      "Chen Zheyuan",
+      "Xia Meng",
+      "Chen Heyi",
+      "Zuo Ye"
+    ],
+    "image": "https://images.justwatch.com/poster/337703768/s592/시즌-1",
+    "director": "Chu Yui-bun, Gu Zhiwei, Francis Nam, Grammy Chu",
+    "subGenre": "드라마, 역사, 로맨스"
   },
   {
     "title": "더 보이프렌드 - 시즌 2",
@@ -1539,6 +1952,28 @@
       "Thelma Aoyama",
       "Durian Lollobrigida",
       "Yoshimi Tokui"
+    ],
+    "castWithLinks": [
+      {
+        "name": "MEGUMI",
+        "link": "https://www.justwatch.com/kr/검색?q=MEGUMI"
+      },
+      {
+        "name": "Chiaki Horan",
+        "link": "https://www.justwatch.com/kr/검색?q=Chiaki%20Horan"
+      },
+      {
+        "name": "Thelma Aoyama",
+        "link": "https://www.justwatch.com/kr/검색?q=Thelma%20Aoyama"
+      },
+      {
+        "name": "Durian Lollobrigida",
+        "link": "https://www.justwatch.com/kr/검색?q=Durian%20Lollobrigida"
+      },
+      {
+        "name": "Yoshimi Tokui",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoshimi%20Tokui"
+      }
     ]
   },
   {
@@ -1565,7 +2000,30 @@
       "Nam Doh-hyeong",
       "Kim Do-yun",
       "Roi Choi"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Paik Jong-won",
+        "link": "https://www.justwatch.com/kr/검색?q=Paik%20Jong-won"
+      },
+      {
+        "name": "Sung Anh",
+        "link": "https://www.justwatch.com/kr/검색?q=Sung%20Anh"
+      },
+      {
+        "name": "Nam Doh-hyeong",
+        "link": "https://www.justwatch.com/kr/검색?q=Nam%20Doh-hyeong"
+      },
+      {
+        "name": "Kim Do-yun",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Do-yun"
+      },
+      {
+        "name": "Roi Choi",
+        "link": "https://www.justwatch.com/kr/검색?q=Roi%20Choi"
+      }
+    ],
+    "director": "Kim Hak-min, Kim Eun-ji"
   },
   {
     "title": "WWE 먼데이 나잇 로우 - 시즌 34",
@@ -1589,7 +2047,31 @@
       "Randy Orton",
       "Randy Orton",
       "Randy Orton"
-    ]
+    ],
+    "director": "Kevin Dunn",
+    "castWithLinks": [
+      {
+        "name": "Michael Coulthard",
+        "link": "https://www.justwatch.com/kr/검색?q=Michael%20Coulthard"
+      },
+      {
+        "name": "Michael Coulthard",
+        "link": "https://www.justwatch.com/kr/검색?q=Michael%20Coulthard"
+      },
+      {
+        "name": "Randy Orton",
+        "link": "https://www.justwatch.com/kr/검색?q=Randy%20Orton"
+      },
+      {
+        "name": "Randy Orton",
+        "link": "https://www.justwatch.com/kr/검색?q=Randy%20Orton"
+      },
+      {
+        "name": "Randy Orton",
+        "link": "https://www.justwatch.com/kr/검색?q=Randy%20Orton"
+      }
+    ],
+    "subGenre": "액션, 스포츠, Reality TV"
   },
   {
     "title": "틈만나면, - 시즌 4",
@@ -1613,7 +2095,31 @@
       "Lee Kwang-soo",
       "AN YUJIN",
       "Ahn Bo-hyun"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Yoo Jae-suk",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoo%20Jae-suk"
+      },
+      {
+        "name": "Yoo Yeon-seok",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoo%20Yeon-seok"
+      },
+      {
+        "name": "Lee Kwang-soo",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Kwang-soo"
+      },
+      {
+        "name": "AN YUJIN",
+        "link": "https://www.justwatch.com/kr/검색?q=AN%20YUJIN"
+      },
+      {
+        "name": "Ahn Bo-hyun",
+        "link": "https://www.justwatch.com/kr/검색?q=Ahn%20Bo-hyun"
+      }
+    ],
+    "director": "Choi Bo-pil",
+    "subGenre": "Reality TV, 코미디"
   },
   {
     "title": "A-i-dor A-i - 시즌 1",
@@ -1637,7 +2143,31 @@
       "Choi Hee-jin",
       "Kim Hyun-jin",
       "Jeong Jae-kwang"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Sooyoung Choi",
+        "link": "https://www.justwatch.com/kr/검색?q=Sooyoung%20Choi"
+      },
+      {
+        "name": "Kim Jae-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Jae-young"
+      },
+      {
+        "name": "Choi Hee-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Choi%20Hee-jin"
+      },
+      {
+        "name": "Kim Hyun-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Hyun-jin"
+      },
+      {
+        "name": "Jeong Jae-kwang",
+        "link": "https://www.justwatch.com/kr/검색?q=Jeong%20Jae-kwang"
+      }
+    ],
+    "director": "Lee Gwang-young",
+    "subGenre": "코미디, 드라마, 로맨스, 스릴러"
   },
   {
     "title": "헬로카봇 - 시즌 11",
@@ -1656,7 +2186,15 @@
     "runningTime": "11분",
     "cast": [
       "Kim Bo-na"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Kim Bo-na",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Bo-na"
+      }
+    ],
+    "director": "Kim Jin-cheol",
+    "subGenre": "액션, 애니메이션, SF"
   },
   {
     "title": "스프링 피버 - 시즌 1",
@@ -1682,7 +2220,30 @@
       "Cha Seo-won",
       "Cho Jun-young",
       "Lee Jae-in"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Ahn Bo-hyun",
+        "link": "https://www.justwatch.com/kr/검색?q=Ahn%20Bo-hyun"
+      },
+      {
+        "name": "Lee Ju-bin",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Ju-bin"
+      },
+      {
+        "name": "Cha Seo-won",
+        "link": "https://www.justwatch.com/kr/검색?q=Cha%20Seo-won"
+      },
+      {
+        "name": "Cho Jun-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Cho%20Jun-young"
+      },
+      {
+        "name": "Lee Jae-in",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Jae-in"
+      }
+    ],
+    "director": "Park Won-gook"
   },
   {
     "title": "더 리슨 - 시즌 1",
@@ -1706,7 +2267,30 @@
       "Hyun Seung-hee",
       "Hynn",
       "김소연"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Heo Sol-ji",
+        "link": "https://www.justwatch.com/kr/검색?q=Heo%20Sol-ji"
+      },
+      {
+        "name": "Kim Na-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Na-young"
+      },
+      {
+        "name": "Hyun Seung-hee",
+        "link": "https://www.justwatch.com/kr/검색?q=Hyun%20Seung-hee"
+      },
+      {
+        "name": "Hynn",
+        "link": "https://www.justwatch.com/kr/검색?q=Hynn"
+      },
+      {
+        "name": "김소연",
+        "link": "https://www.justwatch.com/kr/검색?q=%EA%B9%80%EC%86%8C%EC%97%B0"
+      }
+    ],
+    "subGenre": "Reality TV"
   },
   {
     "title": "봄이 되면 - 시즌 1",
@@ -1731,7 +2315,31 @@
       "Gaku Hamada",
       "Tatsuya Fukazawa",
       "Ai Mikami"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Nao",
+        "link": "https://www.justwatch.com/kr/검색?q=Nao"
+      },
+      {
+        "name": "Noritake Kinashi",
+        "link": "https://www.justwatch.com/kr/검색?q=Noritake%20Kinashi"
+      },
+      {
+        "name": "Gaku Hamada",
+        "link": "https://www.justwatch.com/kr/검색?q=Gaku%20Hamada"
+      },
+      {
+        "name": "Tatsuya Fukazawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Tatsuya%20Fukazawa"
+      },
+      {
+        "name": "Ai Mikami",
+        "link": "https://www.justwatch.com/kr/검색?q=Ai%20Mikami"
+      }
+    ],
+    "director": "Mayu Akiyama, Kana Matsumoto",
+    "subGenre": "가족, 드라마"
   },
   {
     "title": "불구선량적아문 - 시즌 1",
@@ -1754,7 +2362,31 @@
       "Mike He",
       "Kai Ko",
       "Lu Yi-ching"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Ariel Lin",
+        "link": "https://www.justwatch.com/kr/검색?q=Ariel%20Lin"
+      },
+      {
+        "name": "Tiffany Hsu Wei-Ning",
+        "link": "https://www.justwatch.com/kr/검색?q=Tiffany%20Hsu%20Wei-Ning"
+      },
+      {
+        "name": "Mike He",
+        "link": "https://www.justwatch.com/kr/검색?q=Mike%20He"
+      },
+      {
+        "name": "Kai Ko",
+        "link": "https://www.justwatch.com/kr/검색?q=Kai%20Ko"
+      },
+      {
+        "name": "Lu Yi-ching",
+        "link": "https://www.justwatch.com/kr/검색?q=Lu%20Yi-ching"
+      }
+    ],
+    "director": "Mag Hsu",
+    "subGenre": "드라마"
   },
   {
     "title": "개뼈다귀 - 시즌 1",
@@ -1776,7 +2408,26 @@
       "Park Myung-soo",
       "Lee Sung-jae",
       "Ji Sang-ryeol"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Kim Gu-ra",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Gu-ra"
+      },
+      {
+        "name": "Park Myung-soo",
+        "link": "https://www.justwatch.com/kr/검색?q=Park%20Myung-soo"
+      },
+      {
+        "name": "Lee Sung-jae",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Sung-jae"
+      },
+      {
+        "name": "Ji Sang-ryeol",
+        "link": "https://www.justwatch.com/kr/검색?q=Ji%20Sang-ryeol"
+      }
+    ],
+    "director": "Kim Nam Ho, Yoon Hye Ji, Kim Bo Won, Kim Hye In, Lee Suk Jin"
   },
   {
     "title": "절대 BL이 되는 세계 VS 절대 BL이 되고 싶지 않은 남자​ - 시즌 3",
@@ -1802,7 +2453,30 @@
       "Asahi Ito",
       "Hayate Wada",
       "Akihisa Shiono"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Atsuhiro Inukai",
+        "link": "https://www.justwatch.com/kr/검색?q=Atsuhiro%20Inukai"
+      },
+      {
+        "name": "Yutaro",
+        "link": "https://www.justwatch.com/kr/검색?q=Yutaro"
+      },
+      {
+        "name": "Asahi Ito",
+        "link": "https://www.justwatch.com/kr/검색?q=Asahi%20Ito"
+      },
+      {
+        "name": "Hayate Wada",
+        "link": "https://www.justwatch.com/kr/검색?q=Hayate%20Wada"
+      },
+      {
+        "name": "Akihisa Shiono",
+        "link": "https://www.justwatch.com/kr/검색?q=Akihisa%20Shiono"
+      }
+    ],
+    "director": "Koichiro Miki"
   },
   {
     "title": "백야 삼생연 - 시즌 1",
@@ -1825,7 +2499,30 @@
       "Xiang Xin",
       "Chu Zijun",
       "Guo Xinyu"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Boogie Wang",
+        "link": "https://www.justwatch.com/kr/검색?q=Boogie%20Wang"
+      },
+      {
+        "name": "Qi Yuchen",
+        "link": "https://www.justwatch.com/kr/검색?q=Qi%20Yuchen"
+      },
+      {
+        "name": "Xiang Xin",
+        "link": "https://www.justwatch.com/kr/검색?q=Xiang%20Xin"
+      },
+      {
+        "name": "Chu Zijun",
+        "link": "https://www.justwatch.com/kr/검색?q=Chu%20Zijun"
+      },
+      {
+        "name": "Guo Xinyu",
+        "link": "https://www.justwatch.com/kr/검색?q=Guo%20Xinyu"
+      }
+    ],
+    "subGenre": "드라마"
   },
   {
     "title": "잡동산 - 시즌 1",
@@ -1846,7 +2543,22 @@
       "Kang Ho-dong",
       "Seungkwan"
     ],
-    "runningTime": null
+    "runningTime": null,
+    "castWithLinks": [
+      {
+        "name": "Eunhyuk",
+        "link": "https://www.justwatch.com/kr/검색?q=Eunhyuk"
+      },
+      {
+        "name": "Kang Ho-dong",
+        "link": "https://www.justwatch.com/kr/검색?q=Kang%20Ho-dong"
+      },
+      {
+        "name": "Seungkwan",
+        "link": "https://www.justwatch.com/kr/검색?q=Seungkwan"
+      }
+    ],
+    "director": "Cho Hyun-jung"
   },
   {
     "title": "종채여신 - 시즌 1",
@@ -1869,7 +2581,31 @@
       "Hsieh Ying-shiuan",
       "Lee Chien-Na",
       "Liao Hui-jen"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Jasper Liu",
+        "link": "https://www.justwatch.com/kr/검색?q=Jasper%20Liu"
+      },
+      {
+        "name": "Annie Chen",
+        "link": "https://www.justwatch.com/kr/검색?q=Annie%20Chen"
+      },
+      {
+        "name": "Hsieh Ying-shiuan",
+        "link": "https://www.justwatch.com/kr/검색?q=Hsieh%20Ying-shiuan"
+      },
+      {
+        "name": "Lee Chien-Na",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Chien-Na"
+      },
+      {
+        "name": "Liao Hui-jen",
+        "link": "https://www.justwatch.com/kr/검색?q=Liao%20Hui-jen"
+      }
+    ],
+    "director": "Ker Choon Hooi",
+    "subGenre": "드라마, 로맨스"
   },
   {
     "title": "신빨토크쇼 귀묘한 이야기 - 시즌 2",
@@ -1884,12 +2620,22 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260113_신빨토크쇼귀묘한이야기시즌2",
-    "image": "https://images.justwatch.com/poster/340823932/s592/시즌-2",
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260102_261%2F1767333991530Wy3s7_JPEG%2Fac4f76c8dce550bf4395906ad0618a51.jpg",
     "ageRating": "15세 이상 관람가",
     "runningTime": "1시간 15분",
     "cast": [
       "Yoon Tae-jin",
       "Kim Young-hee"
+    ],
+    "castWithLinks": [
+      {
+        "name": "Yoon Tae-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoon%20Tae-jin"
+      },
+      {
+        "name": "Kim Young-hee",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Young-hee"
+      }
     ]
   },
   {
@@ -1913,7 +2659,31 @@
       "Vivienne Tien",
       "Lü Liang"
     ],
-    "runningTime": null
+    "runningTime": null,
+    "castWithLinks": [
+      {
+        "name": "Lei Jiayin",
+        "link": "https://www.justwatch.com/kr/검색?q=Lei%20Jiayin"
+      },
+      {
+        "name": "Yue Yunpeng",
+        "link": "https://www.justwatch.com/kr/검색?q=Yue%20Yunpeng"
+      },
+      {
+        "name": "Nashi",
+        "link": "https://www.justwatch.com/kr/검색?q=Nashi"
+      },
+      {
+        "name": "Vivienne Tien",
+        "link": "https://www.justwatch.com/kr/검색?q=Vivienne%20Tien"
+      },
+      {
+        "name": "Lü Liang",
+        "link": "https://www.justwatch.com/kr/검색?q=L%C3%BC%20Liang"
+      }
+    ],
+    "director": "Cao Dun",
+    "subGenre": "드라마"
   },
   {
     "title": "원펀맨 - 시즌 3",
@@ -1937,7 +2707,31 @@
       "Hiroki Yasumoto",
       "Kazuhiro Yamaji",
       "Yuichi Nakamura"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Makoto Furukawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Makoto%20Furukawa"
+      },
+      {
+        "name": "Kaito Ishikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Kaito%20Ishikawa"
+      },
+      {
+        "name": "Hiroki Yasumoto",
+        "link": "https://www.justwatch.com/kr/검색?q=Hiroki%20Yasumoto"
+      },
+      {
+        "name": "Kazuhiro Yamaji",
+        "link": "https://www.justwatch.com/kr/검색?q=Kazuhiro%20Yamaji"
+      },
+      {
+        "name": "Yuichi Nakamura",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuichi%20Nakamura"
+      }
+    ],
+    "director": "Shingo Natsume, Shinichiro Ushijima, Nobuhiro Muto, Chikara Sakurai, Kozo Kaiho, Makoto Sokuza, Miyuki Ishida, Ryo Ando, Shuuji Miyazaki, Tomohiro Kamitani, Youhei Suzuki, Shigeki Awai, Yoshio Suzuki, Hiroyuki Okuno, Riki Fukushima, Ei Tanaka, Masahito Otani, Taiki Nishimura, Shinpei Nagai, Nana Fujiwara, Yousuke Hatta, Hideki Okamoto, Katsushi Sakurabi 자세히 보기",
+    "subGenre": "애니메이션, 액션, 코미디, 판타지, SF"
   },
   {
     "title": "언젠가, 무중력 하늘에서 - 시즌 1",
@@ -1962,7 +2756,31 @@
       "Marika Ito",
       "Daiken Okudaira"
     ],
-    "runningTime": null
+    "runningTime": null,
+    "castWithLinks": [
+      {
+        "name": "Mai Kiryu",
+        "link": "https://www.justwatch.com/kr/검색?q=Mai%20Kiryu"
+      },
+      {
+        "name": "Misato Morita",
+        "link": "https://www.justwatch.com/kr/검색?q=Misato%20Morita"
+      },
+      {
+        "name": "Yuki Katayama",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuki%20Katayama"
+      },
+      {
+        "name": "Marika Ito",
+        "link": "https://www.justwatch.com/kr/검색?q=Marika%20Ito"
+      },
+      {
+        "name": "Daiken Okudaira",
+        "link": "https://www.justwatch.com/kr/검색?q=Daiken%20Okudaira"
+      }
+    ],
+    "director": "Bonkobara Makoto",
+    "subGenre": "드라마"
   },
   {
     "title": "달의 요정 세일러문 - 시즌 1",
@@ -1978,7 +2796,38 @@
     "region": "ott",
     "id": "ott_20260113_달의요정세일러문시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F0%2F0%2F162%2F162853.jpg",
-    "runningTime": "24분"
+    "runningTime": "24분",
+    "castWithLinks": [
+      {
+        "name": "Kotono Mitsuishi",
+        "link": "https://www.justwatch.com/kr/검색?q=Kotono%20Mitsuishi"
+      },
+      {
+        "name": "Aya Hisakawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Aya%20Hisakawa"
+      },
+      {
+        "name": "Michie Tomizawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Michie%20Tomizawa"
+      },
+      {
+        "name": "Emi Shinohara",
+        "link": "https://www.justwatch.com/kr/검색?q=Emi%20Shinohara"
+      },
+      {
+        "name": "Rica Fukami",
+        "link": "https://www.justwatch.com/kr/검색?q=Rica%20Fukami"
+      }
+    ],
+    "cast": [
+      "Kotono Mitsuishi",
+      "Aya Hisakawa",
+      "Michie Tomizawa",
+      "Emi Shinohara",
+      "Rica Fukami"
+    ],
+    "director": "Kazuhisa Takenouchi, Takuya Igarashi, Harume Kosaka, Kunihiko Ikuhara, Junichi Sato, Yûji Endô, Takao Yoshizawa 자세히 보기",
+    "subGenre": "액션, 애니메이션, SF, 판타지, 로맨스, 코미디, 가족"
   },
   {
     "title": "제대로 빨지 못하는 흡혈귀 짱 - 시즌 1",
@@ -1995,7 +2844,38 @@
     "id": "ott_20260113_제대로빨지못하는흡혈귀짱시즌1",
     "image": "https://images.justwatch.com/poster/337634190/s592/시즌-1",
     "ageRating": "12세 이상 관람가",
-    "runningTime": "23분"
+    "runningTime": "23분",
+    "castWithLinks": [
+      {
+        "name": "Minami Tanaka",
+        "link": "https://www.justwatch.com/kr/검색?q=Minami%20Tanaka"
+      },
+      {
+        "name": "Kensho Ono",
+        "link": "https://www.justwatch.com/kr/검색?q=Kensho%20Ono"
+      },
+      {
+        "name": "Mao Ichimichi",
+        "link": "https://www.justwatch.com/kr/검색?q=Mao%20Ichimichi"
+      },
+      {
+        "name": "Ikumi Hasegawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Ikumi%20Hasegawa"
+      },
+      {
+        "name": "Katsumi Fukuhara",
+        "link": "https://www.justwatch.com/kr/검색?q=Katsumi%20Fukuhara"
+      }
+    ],
+    "cast": [
+      "Minami Tanaka",
+      "Kensho Ono",
+      "Mao Ichimichi",
+      "Ikumi Hasegawa",
+      "Katsumi Fukuhara"
+    ],
+    "director": "Yuri Pinzon",
+    "subGenre": "애니메이션, 코미디, SF, 판타지"
   },
   {
     "title": "악식 영애와 광혈 공작 ~그 마물, 제가 맛있게 먹겠습니다!~ - 시즌 1",
@@ -2015,7 +2895,19 @@
     "cast": [
       "Kanna Nakamura",
       "Taito Ban"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Kanna Nakamura",
+        "link": "https://www.justwatch.com/kr/검색?q=Kanna%20Nakamura"
+      },
+      {
+        "name": "Taito Ban",
+        "link": "https://www.justwatch.com/kr/검색?q=Taito%20Ban"
+      }
+    ],
+    "director": "Masahiko Watanabe, Takahiro Ootsuka, Akira Kato, Tsuyoshi Kabumoto, Shunji Yoshida",
+    "subGenre": "SF, 애니메이션, 판타지, 로맨스, 코미디"
   },
   {
     "title": "진범인 - 시즌 1",
@@ -2032,7 +2924,33 @@
     "id": "ott_20260113_진범인시즌1",
     "image": "https://images.justwatch.com/poster/141544678/s592/시즌-1",
     "ageRating": "12세 이상 관람가",
-    "runningTime": "49분"
+    "runningTime": "49분",
+    "castWithLinks": [
+      {
+        "name": "Takaya Kamikawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Takaya%20Kamikawa"
+      },
+      {
+        "name": "Kotaro Koizumi",
+        "link": "https://www.justwatch.com/kr/검색?q=Kotaro%20Koizumi"
+      },
+      {
+        "name": "Yuki Uchida",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuki%20Uchida"
+      },
+      {
+        "name": "Masanobu Takashima",
+        "link": "https://www.justwatch.com/kr/검색?q=Masanobu%20Takashima"
+      }
+    ],
+    "cast": [
+      "Takaya Kamikawa",
+      "Kotaro Koizumi",
+      "Yuki Uchida",
+      "Masanobu Takashima"
+    ],
+    "director": "Shosuke Murakami",
+    "subGenre": "스릴러, 범죄, 드라마"
   },
   {
     "title": "만지지 마세요 코테사시군 - 시즌 1",
@@ -2049,7 +2967,37 @@
     "id": "ott_20260113_만지지마세요코테사시군시즌1",
     "image": "https://images.justwatch.com/poster/338347796/s592/시즌-1",
     "ageRating": "19세 이상 관람가",
-    "runningTime": "12분"
+    "runningTime": "12분",
+    "castWithLinks": [
+      {
+        "name": "Rikuya Yasuda",
+        "link": "https://www.justwatch.com/kr/검색?q=Rikuya%20Yasuda"
+      },
+      {
+        "name": "Hina Suguta",
+        "link": "https://www.justwatch.com/kr/검색?q=Hina%20Suguta"
+      },
+      {
+        "name": "Yu Serizawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Yu%20Serizawa"
+      },
+      {
+        "name": "Saya Aizawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Saya%20Aizawa"
+      },
+      {
+        "name": "Manatsu Murakami",
+        "link": "https://www.justwatch.com/kr/검색?q=Manatsu%20Murakami"
+      }
+    ],
+    "cast": [
+      "Rikuya Yasuda",
+      "Hina Suguta",
+      "Yu Serizawa",
+      "Saya Aizawa",
+      "Manatsu Murakami"
+    ],
+    "subGenre": "애니메이션, 코미디, 로맨스, 스포츠"
   },
   {
     "title": "야노 군의 평범한 나날 - 시즌 1",
@@ -2065,7 +3013,38 @@
     "region": "ott",
     "id": "ott_20260113_야노군의평범한나날시즌1",
     "image": "https://images.justwatch.com/poster/338574661/s592/시즌-1",
-    "runningTime": null
+    "runningTime": null,
+    "castWithLinks": [
+      {
+        "name": "Kohei Amasaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Kohei%20Amasaki"
+      },
+      {
+        "name": "Yuka Nukui",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuka%20Nukui"
+      },
+      {
+        "name": "Atsumi Tanezaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Atsumi%20Tanezaki"
+      },
+      {
+        "name": "Taito Ban",
+        "link": "https://www.justwatch.com/kr/검색?q=Taito%20Ban"
+      },
+      {
+        "name": "Rie Takahashi",
+        "link": "https://www.justwatch.com/kr/검색?q=Rie%20Takahashi"
+      }
+    ],
+    "cast": [
+      "Kohei Amasaki",
+      "Yuka Nukui",
+      "Atsumi Tanezaki",
+      "Taito Ban",
+      "Rie Takahashi"
+    ],
+    "director": "Hiroki Negishi, Toko Koike, Toshiyuki Sone, Shinpei Matsuo, Takahide Ogata, Hidekazu Oka, Michita Shiraishi 자세히 보기",
+    "subGenre": "애니메이션, 코미디"
   },
   {
     "title": "Dhandoraa",
@@ -2083,7 +3062,84 @@
     "image": "https://images.justwatch.com/poster/340825137/s592/dhandoraa",
     "runningTime": "2h 16m",
     "subGenre": "Romance, Drama",
-    "ageRating": "15세 이상 관람가"
+    "ageRating": "15세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Sivaji Sontineni",
+        "link": "https://www.justwatch.com/kr/검색?q=Sivaji%20Sontineni"
+      },
+      {
+        "name": "Navdeep",
+        "link": "https://www.justwatch.com/kr/검색?q=Navdeep"
+      },
+      {
+        "name": "Bindu Madhavi",
+        "link": "https://www.justwatch.com/kr/검색?q=Bindu%20Madhavi"
+      },
+      {
+        "name": "Ravi Krishna",
+        "link": "https://www.justwatch.com/kr/검색?q=Ravi%20Krishna"
+      },
+      {
+        "name": "Mounika Reddy",
+        "link": "https://www.justwatch.com/kr/검색?q=Mounika%20Reddy"
+      }
+    ],
+    "cast": [
+      "Sivaji Sontineni",
+      "Navdeep",
+      "Bindu Madhavi",
+      "Ravi Krishna",
+      "Mounika Reddy"
+    ]
+  },
+  {
+    "title": "가화만사성 - 시즌 1",
+    "date": "2026-01-13",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/happy-home/시즌-1",
+    "platform": "TVING",
+    "poster": "https://images.justwatch.com/poster/306867425/s592/시즌-1",
+    "platforms": [
+      "tving"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260113_가화만사성시즌1",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 10분",
+    "castWithLinks": [
+      {
+        "name": "Kim So-yeon",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20So-yeon"
+      },
+      {
+        "name": "Lee Sang-woo",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Sang-woo"
+      },
+      {
+        "name": "Lee Pil-mo",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Pil-mo"
+      },
+      {
+        "name": "Kim Yeong-cheol",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Yeong-cheol"
+      },
+      {
+        "name": "Kang Yi-eun",
+        "link": "https://www.justwatch.com/kr/검색?q=Kang%20Yi-eun"
+      }
+    ],
+    "cast": [
+      "Kim So-yeon",
+      "Lee Sang-woo",
+      "Lee Pil-mo",
+      "Kim Yeong-cheol",
+      "Kang Yi-eun"
+    ],
+    "image": "https://images.justwatch.com/poster/306867425/s592/시즌-1",
+    "director": "Lee Dong-yoon",
+    "subGenre": "가족, 드라마, 음악, 로맨스"
   },
   {
     "title": "랜드맨 - 시즌 1",
@@ -2107,7 +3163,31 @@
       "Ali Larter",
       "Jacob Lofland",
       "Michelle Randolph"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Billy Bob Thornton",
+        "link": "https://www.justwatch.com/kr/검색?q=Billy%20Bob%20Thornton"
+      },
+      {
+        "name": "Demi Moore",
+        "link": "https://www.justwatch.com/kr/검색?q=Demi%20Moore"
+      },
+      {
+        "name": "Ali Larter",
+        "link": "https://www.justwatch.com/kr/검색?q=Ali%20Larter"
+      },
+      {
+        "name": "Jacob Lofland",
+        "link": "https://www.justwatch.com/kr/검색?q=Jacob%20Lofland"
+      },
+      {
+        "name": "Michelle Randolph",
+        "link": "https://www.justwatch.com/kr/검색?q=Michelle%20Randolph"
+      }
+    ],
+    "director": "Michael Friedman, Stephen Kay, Taylor Sheridan",
+    "subGenre": "드라마"
   },
   {
     "title": "첫입에 반하다 - 시즌 1",
@@ -2122,7 +3202,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_첫입에반하다시즌1",
-    "image": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "image": null,
     "ageRating": "12세 이상 관람가",
     "runningTime": "38분",
     "cast": [
@@ -2131,7 +3211,31 @@
       "Moon Ji-hoo",
       "Mai Fukagawa",
       "Rin Kataoka"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Eiji Akaso",
+        "link": "https://www.justwatch.com/kr/검색?q=Eiji%20Akaso"
+      },
+      {
+        "name": "Kang Hye-won",
+        "link": "https://www.justwatch.com/kr/검색?q=Kang%20Hye-won"
+      },
+      {
+        "name": "Moon Ji-hoo",
+        "link": "https://www.justwatch.com/kr/검색?q=Moon%20Ji-hoo"
+      },
+      {
+        "name": "Mai Fukagawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Mai%20Fukagawa"
+      },
+      {
+        "name": "Rin Kataoka",
+        "link": "https://www.justwatch.com/kr/검색?q=Rin%20Kataoka"
+      }
+    ],
+    "director": "Ryōta Koyama, Miyuki Hatanaka, Hirokawa Hayashida",
+    "subGenre": "드라마, 로맨스"
   },
   {
     "title": "모범택시 - 시즌 3",
@@ -2148,7 +3252,38 @@
     "id": "ott_20260112_모범택시시즌3",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251105_124%2F1762326712784wog7W_JPEG%2Fbdadfa7aca6180e5094120f9556633ad.jpg",
     "ageRating": "19세 이상 관람가",
-    "runningTime": "1시간 6분"
+    "runningTime": "1시간 6분",
+    "castWithLinks": [
+      {
+        "name": "Lee Je-hoon",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Je-hoon"
+      },
+      {
+        "name": "Esom",
+        "link": "https://www.justwatch.com/kr/검색?q=Esom"
+      },
+      {
+        "name": "Kim Eui-sung",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Eui-sung"
+      },
+      {
+        "name": "Pyo Ye-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Pyo%20Ye-jin"
+      },
+      {
+        "name": "Shin Jae-ha",
+        "link": "https://www.justwatch.com/kr/검색?q=Shin%20Jae-ha"
+      }
+    ],
+    "cast": [
+      "Lee Je-hoon",
+      "Esom",
+      "Kim Eui-sung",
+      "Pyo Ye-jin",
+      "Shin Jae-ha"
+    ],
+    "director": "Lee Dan, Kang Bo-seung, Park Joon-woo",
+    "subGenre": "드라마, 스릴러, 액션, 범죄"
   },
   {
     "title": "Magik Rompak",
@@ -2163,10 +3298,40 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_MagikRompak",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/cbTPVx1TtYpSGkaMBa5fnQC3utV.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/cbTPVx1TtYpSGkaMBa5fnQC3utV.jpg",
     "runningTime": "2h 14m",
     "subGenre": "Action, Crime, Thriller",
-    "ageRating": "15세 이상 관람가"
+    "ageRating": "15세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Zul Ariffin",
+        "link": "https://www.justwatch.com/kr/검색?q=Zul%20Ariffin"
+      },
+      {
+        "name": "Sharnaaz Ahmad",
+        "link": "https://www.justwatch.com/kr/검색?q=Sharnaaz%20Ahmad"
+      },
+      {
+        "name": "Amelia Henderson",
+        "link": "https://www.justwatch.com/kr/검색?q=Amelia%20Henderson"
+      },
+      {
+        "name": "Nadhir Nasar",
+        "link": "https://www.justwatch.com/kr/검색?q=Nadhir%20Nasar"
+      },
+      {
+        "name": "Tay Ping-Hui",
+        "link": "https://www.justwatch.com/kr/검색?q=Tay%20Ping-Hui"
+      }
+    ],
+    "cast": [
+      "Zul Ariffin",
+      "Sharnaaz Ahmad",
+      "Amelia Henderson",
+      "Nadhir Nasar",
+      "Tay Ping-Hui"
+    ],
+    "director": "Adrian Teh"
   },
   {
     "title": "화려한 날들 - 시즌 1",
@@ -2191,7 +3356,31 @@
       "Lee Tae-ran",
       "Yoon Hyun-min",
       "Cheon Ho-jin"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Jung In-sun",
+        "link": "https://www.justwatch.com/kr/검색?q=Jung%20In-sun"
+      },
+      {
+        "name": "Jung Il-woo",
+        "link": "https://www.justwatch.com/kr/검색?q=Jung%20Il-woo"
+      },
+      {
+        "name": "Lee Tae-ran",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20Tae-ran"
+      },
+      {
+        "name": "Yoon Hyun-min",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoon%20Hyun-min"
+      },
+      {
+        "name": "Cheon Ho-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Cheon%20Ho-jin"
+      }
+    ],
+    "director": "Kim Hyung-suk",
+    "subGenre": "드라마, 가족, 코미디"
   },
   {
     "title": "킬 토니: 텍사스에서 터졌다",
@@ -2206,9 +3395,39 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_킬토니텍사스에서터졌다",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/kepiMVDrjSvNM9afWewWxlWXXK6.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/kepiMVDrjSvNM9afWewWxlWXXK6.jpg",
     "subGenre": "Comedy",
-    "ageRating": "12세 이상 관람가"
+    "ageRating": "12세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Tony Hinchcliffe",
+        "link": "https://www.justwatch.com/kr/검색?q=Tony%20Hinchcliffe"
+      },
+      {
+        "name": "Brian Redban",
+        "link": "https://www.justwatch.com/kr/검색?q=Brian%20Redban"
+      },
+      {
+        "name": "Gabriel Iglesias",
+        "link": "https://www.justwatch.com/kr/검색?q=Gabriel%20Iglesias"
+      },
+      {
+        "name": "Harland Williams",
+        "link": "https://www.justwatch.com/kr/검색?q=Harland%20Williams"
+      },
+      {
+        "name": "Carrot Top",
+        "link": "https://www.justwatch.com/kr/검색?q=Carrot%20Top"
+      }
+    ],
+    "cast": [
+      "Tony Hinchcliffe",
+      "Brian Redban",
+      "Gabriel Iglesias",
+      "Harland Williams",
+      "Carrot Top"
+    ],
+    "director": "Anthony Giordano"
   },
   {
     "title": "기묘한 이야기 5 메이킹: 마지막 모험",
@@ -2223,10 +3442,40 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_기묘한이야기5메이킹마지막모험",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/aZhrAx5CevLfjXcGIG3wBXxDiAL.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/aZhrAx5CevLfjXcGIG3wBXxDiAL.jpg",
     "runningTime": "2h 3m",
     "subGenre": "Documentary",
-    "ageRating": "19세 이상 관람가"
+    "ageRating": "19세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Ross Duffer",
+        "link": "https://www.justwatch.com/kr/검색?q=Ross%20Duffer"
+      },
+      {
+        "name": "Matt Duffer",
+        "link": "https://www.justwatch.com/kr/검색?q=Matt%20Duffer"
+      },
+      {
+        "name": "Paul Dichter",
+        "link": "https://www.justwatch.com/kr/검색?q=Paul%20Dichter"
+      },
+      {
+        "name": "Kate Trefry",
+        "link": "https://www.justwatch.com/kr/검색?q=Kate%20Trefry"
+      },
+      {
+        "name": "Caitlin Schneiderhan",
+        "link": "https://www.justwatch.com/kr/검색?q=Caitlin%20Schneiderhan"
+      }
+    ],
+    "cast": [
+      "Ross Duffer",
+      "Matt Duffer",
+      "Paul Dichter",
+      "Kate Trefry",
+      "Caitlin Schneiderhan"
+    ],
+    "director": "Martina Radwan"
   },
   {
     "title": "프로보노 - 시즌 1",
@@ -2251,7 +3500,31 @@
       "Kang Hyung-suk"
     ],
     "runningTime": "1시간 12분",
-    "ageRating": "15세 이상 관람가"
+    "ageRating": "15세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Jung Kyung-ho",
+        "link": "https://www.justwatch.com/kr/검색?q=Jung%20Kyung-ho"
+      },
+      {
+        "name": "So Joo-yeon",
+        "link": "https://www.justwatch.com/kr/검색?q=So%20Joo-yeon"
+      },
+      {
+        "name": "Lee You-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Lee%20You-young"
+      },
+      {
+        "name": "Yoon Na-moo",
+        "link": "https://www.justwatch.com/kr/검색?q=Yoon%20Na-moo"
+      },
+      {
+        "name": "Kang Hyung-suk",
+        "link": "https://www.justwatch.com/kr/검색?q=Kang%20Hyung-suk"
+      }
+    ],
+    "director": "Kim Seong-yoon",
+    "subGenre": "드라마, 코미디"
   },
   {
     "title": "은애하는 도적님아 - 시즌 1",
@@ -2276,7 +3549,31 @@
       "Hong Min-gi",
       "Han So-eun",
       "Kim Suk-hoon"
-    ]
+    ],
+    "castWithLinks": [
+      {
+        "name": "Nam Ji-hyun",
+        "link": "https://www.justwatch.com/kr/검색?q=Nam%20Ji-hyun"
+      },
+      {
+        "name": "Moon Sang-min",
+        "link": "https://www.justwatch.com/kr/검색?q=Moon%20Sang-min"
+      },
+      {
+        "name": "Hong Min-gi",
+        "link": "https://www.justwatch.com/kr/검색?q=Hong%20Min-gi"
+      },
+      {
+        "name": "Han So-eun",
+        "link": "https://www.justwatch.com/kr/검색?q=Han%20So-eun"
+      },
+      {
+        "name": "Kim Suk-hoon",
+        "link": "https://www.justwatch.com/kr/검색?q=Kim%20Suk-hoon"
+      }
+    ],
+    "director": "Ham Young-geol",
+    "subGenre": "SF, 코미디, 역사, 로맨스"
   },
   {
     "title": "마르다니",
@@ -2291,9 +3588,39 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_마르다니",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/mI77x6LZ9IHpHjTjvgNeC4Uxfsa.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/mI77x6LZ9IHpHjTjvgNeC4Uxfsa.jpg",
     "runningTime": "1h 53m",
-    "subGenre": "Action, Crime, Drama, Thriller"
+    "subGenre": "Action, Crime, Drama, Thriller",
+    "castWithLinks": [
+      {
+        "name": "Rani Mukerji",
+        "link": "https://www.justwatch.com/kr/검색?q=Rani%20Mukerji"
+      },
+      {
+        "name": "Tahir Raj Bhasin",
+        "link": "https://www.justwatch.com/kr/검색?q=Tahir%20Raj%20Bhasin"
+      },
+      {
+        "name": "Jisshu Sengupta",
+        "link": "https://www.justwatch.com/kr/검색?q=Jisshu%20Sengupta"
+      },
+      {
+        "name": "Sanjay Taneja",
+        "link": "https://www.justwatch.com/kr/검색?q=Sanjay%20Taneja"
+      },
+      {
+        "name": "Mona Ambegaonkar",
+        "link": "https://www.justwatch.com/kr/검색?q=Mona%20Ambegaonkar"
+      }
+    ],
+    "cast": [
+      "Rani Mukerji",
+      "Tahir Raj Bhasin",
+      "Jisshu Sengupta",
+      "Sanjay Taneja",
+      "Mona Ambegaonkar"
+    ],
+    "director": "Pradeep Sarkar"
   },
   {
     "title": "친구야, 집밥 먹자! - 시즌 1",
@@ -2309,7 +3636,38 @@
     "region": "ott",
     "id": "ott_20260112_친구야집밥먹자시즌1",
     "image": "https://images.justwatch.com/poster/269924987/s592/시즌-1",
-    "runningTime": null
+    "runningTime": null,
+    "director": "Chinese TV",
+    "castWithLinks": [
+      {
+        "name": "spin tao",
+        "link": "https://www.justwatch.com/kr/검색?q=spin%20tao"
+      },
+      {
+        "name": "puff",
+        "link": "https://www.justwatch.com/kr/검색?q=puff"
+      },
+      {
+        "name": "Danhwang Pie",
+        "link": "https://www.justwatch.com/kr/검색?q=Danhwang%20Pie"
+      },
+      {
+        "name": "一对",
+        "link": "https://www.justwatch.com/kr/검색?q=%E4%B8%80%E5%AF%B9"
+      },
+      {
+        "name": "胃酸",
+        "link": "https://www.justwatch.com/kr/검색?q=%E8%83%83%E9%85%B8"
+      }
+    ],
+    "cast": [
+      "spin tao",
+      "puff",
+      "Danhwang Pie",
+      "一对",
+      "胃酸"
+    ],
+    "subGenre": "다큐멘터리"
   },
   {
     "title": "픽서 - 시즌 3",
@@ -2325,7 +3683,37 @@
     "region": "ott",
     "id": "ott_20260112_픽서시즌3",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230913_63%2F1694568775129pMYAl_JPEG%2F57_32032806_poster_image_1694568775094.jpg",
-    "runningTime": "47분"
+    "runningTime": "47분",
+    "castWithLinks": [
+      {
+        "name": "Toshiaki Karasawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Toshiaki%20Karasawa"
+      },
+      {
+        "name": "Keita Machida",
+        "link": "https://www.justwatch.com/kr/검색?q=Keita%20Machida"
+      },
+      {
+        "name": "Kotaro Koizumi",
+        "link": "https://www.justwatch.com/kr/검색?q=Kotaro%20Koizumi"
+      },
+      {
+        "name": "Yuki Uchida",
+        "link": "https://www.justwatch.com/kr/검색?q=Yuki%20Uchida"
+      },
+      {
+        "name": "Jun Kaname",
+        "link": "https://www.justwatch.com/kr/검색?q=Jun%20Kaname"
+      }
+    ],
+    "cast": [
+      "Toshiaki Karasawa",
+      "Keita Machida",
+      "Kotaro Koizumi",
+      "Yuki Uchida",
+      "Jun Kaname"
+    ],
+    "subGenre": "드라마"
   },
   {
     "title": "아재's 러브 - 시즌 1",
@@ -2342,7 +3730,38 @@
     "id": "ott_20260112_아재s러브시즌1",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F69%2F41%2F29%2F57_7694129_poster_image_1526025167276.jpg",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "47분"
+    "runningTime": "47분",
+    "director": "Toichiro Ruto, Yuki Saito, Daisuke Yamamoto",
+    "castWithLinks": [
+      {
+        "name": "Kei Tanaka",
+        "link": "https://www.justwatch.com/kr/검색?q=Kei%20Tanaka"
+      },
+      {
+        "name": "Kento Hayashi",
+        "link": "https://www.justwatch.com/kr/검색?q=Kento%20Hayashi"
+      },
+      {
+        "name": "Kotaro Yoshida",
+        "link": "https://www.justwatch.com/kr/검색?q=Kotaro%20Yoshida"
+      },
+      {
+        "name": "Arata Iura",
+        "link": "https://www.justwatch.com/kr/검색?q=Arata%20Iura"
+      },
+      {
+        "name": "Shohei Miura",
+        "link": "https://www.justwatch.com/kr/검색?q=Shohei%20Miura"
+      }
+    ],
+    "cast": [
+      "Kei Tanaka",
+      "Kento Hayashi",
+      "Kotaro Yoshida",
+      "Arata Iura",
+      "Shohei Miura"
+    ],
+    "subGenre": "코미디, 드라마, 로맨스"
   },
   {
     "title": "오메르타 - 시즌 1",
@@ -2359,7 +3778,38 @@
     "id": "ott_20260112_오메르타시즌1",
     "image": "https://images.justwatch.com/poster/300561951/s592/시즌-1",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "41분"
+    "runningTime": "41분",
+    "director": "Aku Louhimies",
+    "castWithLinks": [
+      {
+        "name": "Jasper Pääkkönen",
+        "link": "https://www.justwatch.com/kr/검색?q=Jasper%20P%C3%A4%C3%A4kk%C3%B6nen"
+      },
+      {
+        "name": "Nanna Blondell",
+        "link": "https://www.justwatch.com/kr/검색?q=Nanna%20Blondell"
+      },
+      {
+        "name": "Sverrir Gudnason",
+        "link": "https://www.justwatch.com/kr/검색?q=Sverrir%20Gudnason"
+      },
+      {
+        "name": "Cathy Belton",
+        "link": "https://www.justwatch.com/kr/검색?q=Cathy%20Belton"
+      },
+      {
+        "name": "Nika Savolainen",
+        "link": "https://www.justwatch.com/kr/검색?q=Nika%20Savolainen"
+      }
+    ],
+    "cast": [
+      "Jasper Pääkkönen",
+      "Nanna Blondell",
+      "Sverrir Gudnason",
+      "Cathy Belton",
+      "Nika Savolainen"
+    ],
+    "subGenre": "범죄, 액션, 스릴러"
   },
   {
     "title": "휴먼스 - 시즌 2",
@@ -2376,7 +3826,38 @@
     "id": "ott_20260112_휴먼스시즌2",
     "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F88%2F40%2F48%2F57_2884048_poster_image_1439169373759.jpg",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "47분"
+    "runningTime": "47분",
+    "director": "Lewis Arnold, China Moo-Young, Daniel Nettheim, Richard Senior, Ben A. Williams, Al Mackay, Mark Brozel, Jill Robertson, Sam Donovan, Francesca Gregorini, Carl Tibbetts 자세히 보기",
+    "castWithLinks": [
+      {
+        "name": "Katherine Parkinson",
+        "link": "https://www.justwatch.com/kr/검색?q=Katherine%20Parkinson"
+      },
+      {
+        "name": "Gemma Chan",
+        "link": "https://www.justwatch.com/kr/검색?q=Gemma%20Chan"
+      },
+      {
+        "name": "Colin Morgan",
+        "link": "https://www.justwatch.com/kr/검색?q=Colin%20Morgan"
+      },
+      {
+        "name": "Tom Goodman-Hill",
+        "link": "https://www.justwatch.com/kr/검색?q=Tom%20Goodman-Hill"
+      },
+      {
+        "name": "Lucy Carless",
+        "link": "https://www.justwatch.com/kr/검색?q=Lucy%20Carless"
+      }
+    ],
+    "cast": [
+      "Katherine Parkinson",
+      "Gemma Chan",
+      "Colin Morgan",
+      "Tom Goodman-Hill",
+      "Lucy Carless"
+    ],
+    "subGenre": "SF, 드라마"
   },
   {
     "title": "웃는 세일즈맨 - 시즌 1",
@@ -2393,7 +3874,18 @@
     "id": "ott_20260112_웃는세일즈맨시즌1",
     "image": "https://images.justwatch.com/poster/329418572/s592/시즌-1",
     "ageRating": "15세 이상 관람가",
-    "runningTime": "10분"
+    "runningTime": "10분",
+    "director": "Kunitoshi Shroishi, Yoshitomo Yonetani",
+    "castWithLinks": [
+      {
+        "name": "Tōru Ōhira",
+        "link": "https://www.justwatch.com/kr/검색?q=T%C5%8Dru%20%C5%8Chira"
+      }
+    ],
+    "cast": [
+      "Tōru Ōhira"
+    ],
+    "subGenre": "애니메이션, 드라마, 공포, 코미디, 스릴러"
   },
   {
     "title": "플레이리스트 - 시즌 1",
@@ -2417,7 +3909,31 @@
       "Ulf Stenberg",
       "Severija Janušauskaitė"
     ],
-    "image": "https://images.justwatch.com/poster/333577136/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/333577136/s592/시즌-1",
+    "director": "Per-Olav Sørensen",
+    "castWithLinks": [
+      {
+        "name": "Edvin Endre",
+        "link": "https://www.justwatch.com/kr/검색?q=Edvin%20Endre"
+      },
+      {
+        "name": "Gizem Erdogan",
+        "link": "https://www.justwatch.com/kr/검색?q=Gizem%20Erdogan"
+      },
+      {
+        "name": "Christian Hillborg",
+        "link": "https://www.justwatch.com/kr/검색?q=Christian%20Hillborg"
+      },
+      {
+        "name": "Ulf Stenberg",
+        "link": "https://www.justwatch.com/kr/검색?q=Ulf%20Stenberg"
+      },
+      {
+        "name": "Severija Janušauskaitė",
+        "link": "https://www.justwatch.com/kr/검색?q=Severija%20Janu%C5%A1auskait%C4%97"
+      }
+    ],
+    "subGenre": "드라마, 음악"
   },
   {
     "title": "Nunan Naege Yojaya - 시즌 1",
@@ -2434,7 +3950,32 @@
     "id": "ott_20260112_NunanNaegeYojaya시즌1",
     "image": "https://images.justwatch.com/poster/338302617/s592/시즌-1",
     "ageRating": "19세 이상 관람가",
-    "runningTime": "1시간 17분"
+    "runningTime": "1시간 17분",
+    "castWithLinks": [
+      {
+        "name": "Hwang Woo-seul-hye",
+        "link": "https://www.justwatch.com/kr/검색?q=Hwang%20Woo-seul-hye"
+      },
+      {
+        "name": "Han Hye-jin",
+        "link": "https://www.justwatch.com/kr/검색?q=Han%20Hye-jin"
+      },
+      {
+        "name": "Jang Woo-young",
+        "link": "https://www.justwatch.com/kr/검색?q=Jang%20Woo-young"
+      },
+      {
+        "name": "Soobin",
+        "link": "https://www.justwatch.com/kr/검색?q=Soobin"
+      }
+    ],
+    "cast": [
+      "Hwang Woo-seul-hye",
+      "Han Hye-jin",
+      "Jang Woo-young",
+      "Soobin"
+    ],
+    "subGenre": "Reality TV, 로맨스"
   },
   {
     "title": "휴먼스 - 시즌 1",
@@ -2458,7 +3999,31 @@
       "Tom Goodman-Hill",
       "Lucy Carless"
     ],
-    "image": "https://images.justwatch.com/poster/70562249/s592/시즌-1"
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F47%2F25%2F36%2F57_2472536_poster_image_1483954538222.jpg",
+    "director": "Lewis Arnold, China Moo-Young, Daniel Nettheim, Richard Senior, Ben A. Williams, Al Mackay, Mark Brozel, Jill Robertson, Sam Donovan, Francesca Gregorini, Carl Tibbetts 자세히 보기",
+    "castWithLinks": [
+      {
+        "name": "Katherine Parkinson",
+        "link": "https://www.justwatch.com/kr/검색?q=Katherine%20Parkinson"
+      },
+      {
+        "name": "Gemma Chan",
+        "link": "https://www.justwatch.com/kr/검색?q=Gemma%20Chan"
+      },
+      {
+        "name": "Colin Morgan",
+        "link": "https://www.justwatch.com/kr/검색?q=Colin%20Morgan"
+      },
+      {
+        "name": "Tom Goodman-Hill",
+        "link": "https://www.justwatch.com/kr/검색?q=Tom%20Goodman-Hill"
+      },
+      {
+        "name": "Lucy Carless",
+        "link": "https://www.justwatch.com/kr/검색?q=Lucy%20Carless"
+      }
+    ],
+    "subGenre": "SF, 드라마"
   },
   {
     "title": "SI-VIS: The Sound of Heroes - 시즌 1",
@@ -2481,7 +4046,31 @@
       "Soma Saito",
       "Akari Kito"
     ],
-    "image": "https://images.justwatch.com/poster/336694387/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/336694387/s592/시즌-1",
+    "ageRating": "19세 이상 관람가",
+    "castWithLinks": [
+      {
+        "name": "Anan Furuya",
+        "link": "https://www.justwatch.com/kr/검색?q=Anan%20Furuya"
+      },
+      {
+        "name": "Nobunaga Shimazaki",
+        "link": "https://www.justwatch.com/kr/검색?q=Nobunaga%20Shimazaki"
+      },
+      {
+        "name": "Ayane Sakura",
+        "link": "https://www.justwatch.com/kr/검색?q=Ayane%20Sakura"
+      },
+      {
+        "name": "Soma Saito",
+        "link": "https://www.justwatch.com/kr/검색?q=Soma%20Saito"
+      },
+      {
+        "name": "Akari Kito",
+        "link": "https://www.justwatch.com/kr/검색?q=Akari%20Kito"
+      }
+    ],
+    "subGenre": "SF, 애니메이션, 액션, 음악"
   },
   {
     "title": "디지몬 비트브레이크 - 시즌 1",
@@ -2505,7 +4094,31 @@
       "Mutsumi Tamura",
       "Arisa Sekine"
     ],
-    "image": "https://images.justwatch.com/poster/336519950/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/336519950/s592/시즌-1",
+    "director": "Yuichi Tsuzuki, Mashiro, Hiroaki Miyamoto, Tohru Ishida",
+    "castWithLinks": [
+      {
+        "name": "Miyu Irino",
+        "link": "https://www.justwatch.com/kr/검색?q=Miyu%20Irino"
+      },
+      {
+        "name": "Megumi Han",
+        "link": "https://www.justwatch.com/kr/검색?q=Megumi%20Han"
+      },
+      {
+        "name": "Tomoyo Kurosawa",
+        "link": "https://www.justwatch.com/kr/검색?q=Tomoyo%20Kurosawa"
+      },
+      {
+        "name": "Mutsumi Tamura",
+        "link": "https://www.justwatch.com/kr/검색?q=Mutsumi%20Tamura"
+      },
+      {
+        "name": "Arisa Sekine",
+        "link": "https://www.justwatch.com/kr/검색?q=Arisa%20Sekine"
+      }
+    ],
+    "subGenre": "애니메이션, 액션, SF, 스릴러, 가족, 판타지"
   },
   {
     "title": "페이트/스트레인지 페이크 - 시즌 1",
@@ -2545,6 +4158,21 @@
     "id": "ott_20260112_BeibeulleideuX시즌2",
     "image": "https://images.justwatch.com/poster/333273432/s592/시즌-2",
     "runningTime": "22분"
+  },
+  {
+    "title": "언젠가, 무중력 하늘에서 - 시즌 1",
+    "date": "2026-01-12",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/eonjenga-mujungryeog-haneuleseo/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/336747868/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260112_언젠가무중력하늘에서시즌1",
+    "image": "https://images.justwatch.com/poster/336747868/s592/시즌-1"
   },
   {
     "title": "취미는 과학 - 시즌 1",
@@ -2910,6 +4538,51 @@
     "image": "https://images.justwatch.com/poster/340288899/s592/시즌-2"
   },
   {
+    "title": "화려한 날들 - 시즌 1",
+    "date": "2026-01-11",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/hwaryeohan-naldeul/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/335444511/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260111_화려한날들시즌1",
+    "image": "https://images.justwatch.com/poster/335444511/s592/시즌-1"
+  },
+  {
+    "title": "은애하는 도적님아 - 시즌 1",
+    "date": "2026-01-11",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/eunaehaneun-dojeognima/시즌-1",
+    "platform": "wavve",
+    "poster": "https://images.justwatch.com/poster/340664899/s592/시즌-1",
+    "platforms": [
+      "wavve"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260111_은애하는도적님아시즌1",
+    "image": "https://images.justwatch.com/poster/340664899/s592/시즌-1"
+  },
+  {
+    "title": "프로보노 - 시즌 1",
+    "date": "2026-01-11",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/peurobono/시즌-1",
+    "platform": "TVING",
+    "poster": "https://images.justwatch.com/poster/339001648/s592/시즌-1",
+    "platforms": [
+      "tving"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260111_프로보노시즌1",
+    "image": "https://images.justwatch.com/poster/339001648/s592/시즌-1"
+  },
+  {
     "title": "Good Night, and Good Luck",
     "date": "2026-01-10",
     "link": "https://www.justwatch.com/kr/영화/good-night-and-good-luck",
@@ -2947,7 +4620,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260110_PanjiTengkorak",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/7Eq5mcSKVXBhclnaFNA4880mqOX.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/7Eq5mcSKVXBhclnaFNA4880mqOX.jpg",
     "runningTime": "1h 34m",
     "subGenre": "Animation, Action, Adventure, Fantasy, Thriller"
   },
@@ -2989,7 +4662,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260110_DepecheModeM",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/qz0EgfYwfrqhC2yTIqNkSY4P2Jo.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/qz0EgfYwfrqhC2yTIqNkSY4P2Jo.jpg",
     "runningTime": "1h 35m",
     "subGenre": "Documentary, Music",
     "ageRating": "12세 이상 관람가",
@@ -3055,7 +4728,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260110_Homebound",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/8ceAveKWI7PoYGGOFz2WW7xjtYF.jpg",
+    "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20150410_82%2F1428654879898NTGT6_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 11m",
     "subGenre": "Mystery, Thriller, Drama, Horror",
     "ageRating": "15세 이상 관람가",
@@ -3105,7 +4778,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260110_아칸다2탄다바",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/jo9efbQSGDZNQ6xMocyD1prFjdF.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/jo9efbQSGDZNQ6xMocyD1prFjdF.jpg",
     "runningTime": "2h 44m",
     "subGenre": "Action",
     "cast": [
@@ -3187,9 +4860,25 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260110_비밀의아이프리시즌1",
-    "image": "https://images.justwatch.com/poster/335003765/s592/시즌-1",
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240419_94%2F1713497980644dOrJT_JPEG%2F57_poster_image_1713497980631.jpg",
     "ageRating": "12세 이상 관람가",
     "runningTime": "24분"
+  },
+  {
+    "title": "Haq",
+    "date": "2026-01-10",
+    "link": "https://www.justwatch.com/kr/영화/haq",
+    "platform": "Netflix",
+    "poster": "https://images.justwatch.com/poster/337813962/s592/haq",
+    "platforms": [
+      "netflix"
+    ],
+    "genre": "ott",
+    "venue": "OTT",
+    "region": "ott",
+    "id": "ott_20260110_Haq",
+    "image": "https://images.justwatch.com/poster/337813962/s592/haq",
+    "runningTime": "1h 30m"
   },
   {
     "title": "히든 에셋 - 시즌 3",
@@ -3329,7 +5018,7 @@
     "date": "2026-01-09",
     "link": "https://www.justwatch.com/kr/영화/byeongeumryeon",
     "platform": "Watcha",
-    "poster": "https://images.justwatch.com/poster/305107862/s592/byeongeumryeon",
+    "poster": null,
     "platforms": [
       "watcha"
     ],
@@ -3337,7 +5026,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_변금련",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/wwF4ExC6jIGUSG5h3qKwxroU0Va.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/wwF4ExC6jIGUSG5h3qKwxroU0Va.jpg",
     "runningTime": "1h 54m",
     "subGenre": "Romance",
     "ageRating": "19세 이상 관람가",
@@ -3437,7 +5126,7 @@
     "date": "2026-01-09",
     "link": "https://www.justwatch.com/kr/영화/uriyi-yeol-beonjjae-yeoreum",
     "platform": "Netflix",
-    "poster": "https://images.justwatch.com/poster/340775053/s592/uriyi-yeol-beonjjae-yeoreum",
+    "poster": null,
     "platforms": [
       "netflix"
     ],
@@ -3445,7 +5134,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_우리의열번째여름",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/kOrJqRyt1pklNgDwJMjzN1GuNXS.jpg",
+    "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20260105_45%2F1767592680557CgDqr_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 56m",
     "subGenre": "Romance, Comedy, Drama",
     "ageRating": "15세 이상 관람가",
@@ -3529,7 +5218,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_드래곤길들이기2",
-    "image": "https://images.justwatch.com/poster/185359485/s592/how-to-train-your-dragon-2",
+    "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20140708_11%2F1404782835780MO3FQ_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 42m",
     "subGenre": "Fantasy, Action, Adventure, Animation, Comedy, Family"
   },
@@ -3555,7 +5244,7 @@
     "date": "2026-01-09",
     "link": "https://www.justwatch.com/kr/영화/nomiowa-julries",
     "platform": "Netflix",
-    "poster": "https://images.justwatch.com/poster/185098012/s592/nomiowa-julries",
+    "poster": null,
     "platforms": [
       "netflix"
     ],
@@ -3563,7 +5252,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_노미오와줄리엣",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/rVBXvZDdCLR7qxrgPNBWcReOFap.jpg",
+    "image": "https://media.themoviedb.org/t/p/w300_and_h450_face/rVBXvZDdCLR7qxrgPNBWcReOFap.jpg",
     "runningTime": "1h 40m",
     "subGenre": "Comedy"
   }
