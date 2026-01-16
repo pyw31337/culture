@@ -93,6 +93,7 @@ jobs:
           npx tsx scripts/scrape-seoul-culture.ts || true
           npx tsx scripts/build-venues.ts || true
           npx tsx scripts/validate-data.ts
+          npx tsx scripts/verify-links.ts || true
 
       - name: Commit and Push changes
         if: env.SKIP_EXECUTION != 'true'

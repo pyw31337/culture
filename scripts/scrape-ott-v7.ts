@@ -109,7 +109,20 @@ async function fetchJWDetail(page: any, url: string) {
                     if (posterSrc && posterSrc.includes('justwatch.com')) {
                         posterSrc = posterSrc.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
                         res.sidebarPoster = posterSrc;
+                        posterSrc = posterSrc.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
+                        res.sidebarPoster = posterSrc;
                         break;
+                    }
+                }
+            }
+
+            // Fallback: Check .title-sidebar__title-with-poster__poster (User reported layout)
+            if (!res.sidebarPoster) {
+                const specialPoster = document.querySelector('.title-sidebar__title-with-poster__poster img');
+                if (specialPoster) {
+                    let src = specialPoster.getAttribute('src') || specialPoster.getAttribute('data-src');
+                    if (src && !src.startsWith('data:image')) {
+                        res.sidebarPoster = src.replace('/s166/', '/s592/').replace('/s276/', '/s592/');
                     }
                 }
             }
