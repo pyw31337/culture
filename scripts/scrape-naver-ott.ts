@@ -38,10 +38,8 @@ async function scrapeList(context: any, platform: any, type: string) {
         let pageNum = 1;
 
         while (pageNum <= MAX_PAGES) {
-            // Extract Items from current page
             const newItems = await page.evaluate((arg: { pName: string, tType: string }) => {
                 const { pName, tType } = arg;
-                // Correct Selector: li.info_box (Movies) vs li.tab (Filters)
                 const els = document.querySelectorAll('#main_pack .cm_content_area ul li.info_box, .cs_common_module li.info_box');
                 const list: any[] = [];
                 els.forEach(el => {
@@ -53,14 +51,8 @@ async function scrapeList(context: any, platform: any, type: string) {
                         let link = titleEl.getAttribute('href') || '';
                         if (link.startsWith('?')) link = `https://search.naver.com/search.naver${link}`;
 
-                        // Poster Quality Fix:
-                        // 'type=w640' failed for some (404).
-                        // 'type=o' is Original. Or just removing params.
-                        // Safe bet: Remove `size=...` and `type=...` to get original or default high res.
-                        // Or use 'type=o'.
                         let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
                         if (poster.includes('type=')) {
-                            // Try type=o (Original) and remove size
                             poster = poster.replace(/type=[^&]+/, 'type=o').replace(/size=[^&]+&?/, '');
                         }
 
@@ -82,8 +74,7 @@ async function scrapeList(context: any, platform: any, type: string) {
             items.push(...newItems);
             console.log(`   ${platform.name} (${type}) Page ${pageNum}: Found ${newItems.length} items.`);
 
-            // Next Page
-            const nextBtn = await page.$('a.pg_next.on'); // Must have 'on' class
+            const nextBtn = await page.$('a.pg_next.on');
             if (nextBtn) {
                 await nextBtn.click();
                 await page.waitForTimeout(1500 + Math.random() * 1000);
@@ -104,10 +95,9 @@ async function scrapeList(context: any, platform: any, type: string) {
 (async () => {
     console.log('Starting Naver OTT Scraper...');
     const browser = await chromium.launch({ headless: true });
-    const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    });
 
+    // --- Scrape List (Phase 1) ---
+    const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
     const limit = pLimit(2);
     const tasks = [];
 
@@ -120,10 +110,8 @@ async function scrapeList(context: any, platform: any, type: string) {
     const results = await Promise.all(tasks);
     const flatResults = results.flat();
 
-    // Dedup by Title
     const dedupedCtx: Record<string, any> = {};
     for (const it of flatResults) {
-        // ID generation
         const id = `ott_naver_${it.title.replace(/\s+/g, '')}`;
         if (!dedupedCtx[id]) {
             dedupedCtx[id] = { ...it, id, platforms: [it.platform] };
@@ -141,11 +129,13 @@ async function scrapeList(context: any, platform: any, type: string) {
     await browser.close();
     console.log('Phase 1 Done. Starting Phase 2 (Enrichment)...');
 
-    // Phase 2: Enrichment
+    // --- Enrichment (Phase 2) ---
     const enrichedItems: any[] = [];
     const browser2 = await chromium.launch({ headless: true });
+    // Use slightly taller viewport for NamuWiki scrolling
     const context2 = await browser2.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        viewport: { width: 1280, height: 1080 }
     });
 
     const limitEnrich = pLimit(5);
@@ -158,8 +148,10 @@ async function scrapeList(context: any, platform: any, type: string) {
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
             await sleep(500 + Math.random() * 1000);
 
-            const detail = await page.evaluate(() => {
+            const detail = await page.evaluate(async () => {
                 const res: any = {};
+
+                // 1. Basic Info Parsing using Iteration (Robust)
                 const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
                 let realGenre = '';
 
@@ -180,61 +172,50 @@ async function scrapeList(context: any, platform: any, type: string) {
                                 else realGenre = p;
                             });
                         } else {
-                            let temp = value;
-                            const timeMatch = temp.match(/(\d+분)/);
-                            if (timeMatch) { res.runningTime = timeMatch[1]; temp = temp.replace(timeMatch[1], '').trim(); }
-                            const countryMatch = temp.match(/(한국|미국|일본|중국|영국|독일|프랑스|이탈리아|스페인|캐나다|홍콩|대만|인도|태국|베트남|대한민국)/);
-                            if (countryMatch) {
-                                res.productionCountry = countryMatch[1];
-                                if (res.productionCountry === '대한민국') res.productionCountry = '한국';
-                                temp = temp.replace(countryMatch[1], '').trim();
+                            if (!value.match(/(\d+분)/) && !value.match(/(한국|미국|일본|중국|영국|독일|프랑스)/)) {
+                                realGenre = value;
                             }
-                            if (temp.length > 0) realGenre = temp;
                         }
                     }
-                    else if (label.includes('개봉') || label.includes('편성') || label.includes('방영')) {
-                        let cleanDate = value;
-                        const dateMatch = cleanDate.match(/(\d{4}\.\s*\d{1,2}\.\s*\d{1,2}\.?)/);
-                        if (dateMatch) {
-                            cleanDate = dateMatch[1];
-                        }
-                        res.date = cleanDate.replace(/\.$/, '').trim();
-                    }
-                    else if (label.includes('등급')) {
-                        res.ageRating = value;
-                    }
+                    if (label === '등급') res.ageRating = value;
+                    if (label === '국가') res.productionCountry = value;
+                    if (label === '러닝타임') res.runningTime = value;
                 });
 
+                if (!res.date) {
+                    const groups = Array.from(document.querySelectorAll('.info_group'));
+                    for (const g of groups) {
+                        const dt = g.querySelector('dt');
+                        const dd = g.querySelector('dd');
+                        if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영'))) {
+                            res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '');
+                            break;
+                        }
+                    }
+                }
+
                 if (!realGenre) {
-                    const subGenre = document.querySelector('.sub_title span.txt, .title_area + .item_info span, .cm_top_wrap .item_info span');
+                    const subGenre = document.querySelector('.sub_title span.txt');
                     if (subGenre) realGenre = subGenre.textContent?.trim() || '';
                 }
 
                 res.genre = 'ott';
                 res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
 
-                // --- 2. Cast Extraction (Summary) ---
+                // 2. Cast Parsing
                 const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item');
                 const cast: string[] = [];
                 members.forEach(m => {
-                    // Drama: Name="Role Name 역", Sub="Actor"
-                    // Variety: Name="Actor", Sub="Role"
-                    // Summary Page usually has standard layout, but we apply separation logic anyway
                     let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
                     const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
 
-                    // Cast Separation Logic
                     if (name.includes(' 역')) {
-                        // "Kim Do-gi 역" -> Actor is likely in SubText or this is just Role
-                        // On summary page, usually Name=Actor, Sub=Role. But check '역' to be safe.
                         if (role) name = role;
                         else name = name.split(' 역')[0];
                     }
-                    // If Name has no '역', assume it is Actor Name (Standard)
 
                     if (name && !name.includes('배역') && !name.includes('출연') && name.length < 20) {
-                        const roleText = m.textContent || '';
-                        if ((roleText.includes(' 감독') || roleText.includes('연출')) && !res.director) res.director = name;
+                        if (role.includes('감독') || role.includes('연출')) res.director = name;
                         else cast.push(name);
                     }
                 });
@@ -245,96 +226,101 @@ async function scrapeList(context: any, platform: any, type: string) {
 
             if (detail) Object.assign(item, detail);
 
-            // --- 3. Interactive Cast Fallback (Clicking '출연진' OR '등장인물') ---
+            // --- 3. Interactive Cast Fallback ---
             if ((!item.cast || item.cast.length === 0) && item.link.includes('search.naver.com')) {
                 try {
-                    // Try to find Cast Tab OR Character Tab
-                    // Iterating multiple possible selectors to find the Tab Element
-                    const possibleTabs = [
-                        'a[href*="cast"]',
-                        'a[href*="tab=cast"]',
-                        '._main_tab a',
-                        '.tab[role="tab"]',
-                        'div[role="tablist"] > a'
-                    ];
+                    const foundTab = await page.evaluate(() => {
+                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
+                        const t = tabs.find(el => el.textContent?.includes('출연진') || el.textContent?.includes('등장인물'));
+                        if (t) { (t as HTMLElement).click(); return true; }
+                        return false;
+                    });
 
-                    let castTab = null;
-                    const allLinks = await page.$$('a, div[role="tab"], ._main_tab a');
-                    for (const el of allLinks) {
-                        const txt = await el.innerText();
-                        // Strict check to avoid "Video" or seemingly unrelated tabs
-                        if (txt.includes('출연진') || txt.includes('등장인물')) {
-                            castTab = el;
-                            break;
-                        }
-                    }
-
-                    if (castTab) {
-                        try {
-                            await castTab.click({ timeout: 2000 });
-                            await page.waitForTimeout(1000);
-
-                            const newCastData = await page.evaluate(() => {
-                                const newCast: string[] = [];
-                                let director = '';
-
-                                // Relaxed selector for both Cast and Character layouts
-                                const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
-
-                                members.forEach(m => {
-                                    // HTML Structure:
-                                    // Drama: <strong class="name">Role 역</strong> <span class="sub_text">Actor</span>
-                                    // Variety: <strong class="name">Actor</strong> <span class="sub_text">Role</span>
-
-                                    let name = '';
-                                    let roleOrSub = '';
-
-                                    const nameEl = m.querySelector('strong.name, .name');
-                                    const subEl = m.querySelector('span.sub_text, .sub_text');
-
-                                    if (nameEl) {
-                                        let nameTxt = nameEl.textContent?.trim() || '';
-                                        let subTxt = subEl?.textContent?.trim() || '';
-
-                                        // Separation Logic
-                                        if (nameTxt.includes(' 역')) {
-                                            // Name is Role (e.g. "Kim Do-gi 역") -> Actor is Sub
-                                            name = subTxt;
-                                        } else {
-                                            // Name is Actor (e.g. "Ma Dong-seok") -> OK
-                                            name = nameTxt;
-                                        }
-                                        roleOrSub = subTxt;
-                                    } else {
-                                        // Fallback via text content or classes
-                                        // Specific to 'Taxi Driver 3' character/cast list text nodes in .item
-                                        if (m.classList.contains('_text')) {
-                                            name = m.textContent?.trim() || '';
-                                        } else {
-                                            name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
-                                        }
-                                    }
-
-                                    // Filter garbage
-                                    if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
-                                        if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
-                                        else newCast.push(name);
-                                    }
-                                });
-                                // Unique Names only
-                                const uniqueCast = Array.from(new Set(newCast));
-                                return { cast: uniqueCast.slice(0, 5), director };
+                    if (foundTab) {
+                        await page.waitForTimeout(1000);
+                        const newCastData = await page.evaluate(() => {
+                            const newCast: string[] = [];
+                            let director = '';
+                            const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
+                            members.forEach(m => {
+                                let name = '';
+                                let roleOrSub = '';
+                                const nameEl = m.querySelector('strong.name, .name');
+                                const subEl = m.querySelector('span.sub_text, .sub_text');
+                                if (nameEl) {
+                                    let nameTxt = nameEl.textContent?.trim() || '';
+                                    let subTxt = subEl?.textContent?.trim() || '';
+                                    if (nameTxt.includes(' 역')) name = subTxt;
+                                    else name = nameTxt;
+                                    roleOrSub = subTxt;
+                                } else {
+                                    if (m.classList.contains('_text')) name = m.textContent?.trim() || '';
+                                    else name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                                }
+                                if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
+                                    if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
+                                    else newCast.push(name);
+                                }
                             });
+                            return { cast: Array.from(new Set(newCast)).slice(0, 5), director };
+                        });
+                        if (newCastData.cast.length > 0) item.cast = newCastData.cast;
+                        if (newCastData.director && !item.director) item.director = newCastData.director;
+                    }
+                } catch (err) { }
+            }
 
-                            if (newCastData.cast.length > 0) item.cast = newCastData.cast;
-                            if (newCastData.director && !item.director) item.director = newCastData.director;
+            // --- 4. NamuWiki Poster Fallback ---
+            const isInvalidPoster = !item.poster || item.poster.length < 50 || item.poster.startsWith('data:');
+            const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
 
-                        } catch (clickErr) {
-                            // Click fail or timeout
+            if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !item.posterSource) {
+                try {
+                    await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    await sleep(2000);
+
+                    // Check for Search Result Page
+                    const searchResultLink = await page.$('.search-item a, .search-result-list a');
+                    if (searchResultLink) {
+                        const txt = await searchResultLink.innerText();
+                        if (!txt.includes('User:') && !txt.includes('Talk:') && !txt.includes('사용자:') && !txt.includes('토론:')) {
+                            await searchResultLink.click();
+                            await page.waitForTimeout(2000);
                         }
                     }
-                } catch (err) {
-                    // finding cast tab failed
+
+                    // Scroll and Wait for Image
+                    await page.evaluate(() => window.scrollTo(0, 800));
+                    await page.waitForTimeout(1000);
+
+                    const namuPoster = await page.evaluate(() => {
+                        // 1. Try Table/Infobox
+                        const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
+                        let candidate = imgs.find(img => {
+                            const el = img as HTMLImageElement;
+                            // Width > 150 (relaxed)
+                            return el.width > 150 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
+                        });
+
+                        // 2. Global fallback
+                        if (!candidate) {
+                            const allImgs = Array.from(document.querySelectorAll('img'));
+                            candidate = allImgs.find(img => {
+                                const el = img as HTMLImageElement;
+                                return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
+                            });
+                        }
+
+                        return candidate ? (candidate as HTMLImageElement).src : null;
+                    });
+
+                    if (namuPoster) {
+                        item.poster = namuPoster;
+                        item.posterSource = 'namuwiki';
+                        console.log(`[NamuWiki] Found poster for ${item.title}: ${namuPoster}`);
+                    }
+                } catch (namuErr) {
+                    // Fail silently
                 }
             }
 

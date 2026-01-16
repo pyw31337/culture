@@ -4,31 +4,34 @@ import fs from 'fs';
 import path from 'path';
 
 const TARGETS = [
-    { title: '모범택시3', link: 'https://search.naver.com/search.naver?query=%EB%AA%A8%EB%B2%94%ED%83%9D%EC%8B%9C3' },
+    { title: '영화 좀비딸', link: 'https://search.naver.com/search.naver?query=%EC%98%81%ED%99%94%20%EC%A2%80%EB%B9%84%EB%94%B8%20%EC%A0%95%EB%B3%B4' },
+    { title: '프랑켄슈타인: 더 뮤지컬 라이브', link: 'https://search.naver.com/search.naver?query=%ED%94%84%EB%9E%91%EC%BC%8A%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EB%8D%94%20%EB%AE%A4%EC%A7%80%EC%BB%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C' },
     { title: '언더커버 미쓰홍', link: 'https://search.naver.com/search.naver?query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D' },
-    { title: '아이 엠 복서', link: 'https://search.naver.com/search.naver?query=%EC%95%84%EC%9D%B4%20%EC%97%A0%20%EB%B3%B5%EC%84%9C' },
-    { title: '미스트롯4', link: 'https://search.naver.com/search.naver?query=%EB%AF%B8%EC%8A%A4%ED%8A%B8%EB%A1%AF4' },
-    { title: 'Predator: Badlands', link: 'https://search.naver.com/search.naver?query=%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0%20%EB%B0%B0%EB%93%9C%EB%9E%9C%EB%93%9C' },
-    { title: '동네멋집', link: 'https://search.naver.com/search.naver?query=%EB%8F%99%EB%84%A4%EB%A9%8B%EC%A7%91' }
+    { title: '모범택시3', link: 'https://search.naver.com/search.naver?query=%EB%AA%A8%EB%B2%94%ED%83%9D%EC%8B%9C3' }
 ];
 
 (async () => {
     console.log('Starting Targeted Verification Scrape...');
     const browser = await chromium.launch({ headless: true });
+
+    // Taller viewport for scrolling test
     const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        viewport: { width: 1280, height: 1000 }
     });
     const page = await context.newPage();
     const results: any[] = [];
 
+    const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+
     for (const item of TARGETS) {
         console.log(`Checking ${item.title}...`);
         await page.goto(item.link, { waitUntil: 'domcontentloaded' });
-        await page.waitForTimeout(1000);
+        await sleep(1000);
 
-        // --- ENRICHMENT LOGIC (COPIED FROM scrape-naver-ott.ts) ---
         const detail = await page.evaluate(async () => {
             const res: any = {};
+            // 1. Basic Info Parsing (Refined)
             const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
             let realGenre = '';
 
@@ -49,30 +52,31 @@ const TARGETS = [
                             else realGenre = p;
                         });
                     } else {
-                        let temp = value;
-                        const timeMatch = temp.match(/(\d+분)/);
-                        if (timeMatch) { res.runningTime = timeMatch[1]; temp = temp.replace(timeMatch[1], '').trim(); }
-                        const countryMatch = temp.match(/(한국|미국|일본|중국|영국|독일|프랑스|이탈리아|스페인|캐나다|홍콩|대만|인도|태국|베트남|대한민국)/);
-                        if (countryMatch) {
-                            res.productionCountry = countryMatch[1];
-                            if (res.productionCountry === '대한민국') res.productionCountry = '한국';
-                            temp = temp.replace(countryMatch[1], '').trim();
+                        if (!value.match(/(\d+분)/) && !value.match(/(한국|미국|일본|중국|영국|독일|프랑스)/)) {
+                            realGenre = value;
                         }
-                        if (temp.length > 0) realGenre = temp;
                     }
                 }
-                else if (label.includes('개봉') || label.includes('편성') || label.includes('방영')) {
-                    let cleanDate = value;
-                    const dateMatch = cleanDate.match(/(\d{4}\.\s*\d{1,2}\.\s*\d{1,2}\.?)/);
-                    if (dateMatch) {
-                        cleanDate = dateMatch[1];
-                    }
-                    res.date = cleanDate.replace(/\.$/, '').trim();
+
+                if (label === '개봉' || label === '방영') {
+                    res.date = value.replace(/\(.*\)/, '').trim().replace(/\.$/, '');
                 }
-                else if (label.includes('등급')) {
-                    res.ageRating = value;
-                }
+                if (label === '등급') res.ageRating = value;
+                if (label === '국가') res.productionCountry = value;
+                if (label === '러닝타임') res.runningTime = value;
             });
+
+            if (!res.date) {
+                const groups = Array.from(document.querySelectorAll('.info_group'));
+                for (const g of groups) {
+                    const dt = g.querySelector('dt');
+                    const dd = g.querySelector('dd');
+                    if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영'))) {
+                        res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '');
+                        break;
+                    }
+                }
+            }
 
             if (!realGenre) {
                 const subGenre = document.querySelector('.sub_title span.txt, .title_area + .item_info span, .cm_top_wrap .item_info span');
@@ -82,7 +86,7 @@ const TARGETS = [
             res.genre = 'ott';
             res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
 
-            // --- 2. Cast Extraction (Summary) ---
+            // 2. Cast Parsing
             const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item');
             const cast: string[] = [];
             members.forEach(m => {
@@ -95,14 +99,12 @@ const TARGETS = [
                 }
 
                 if (name && !name.includes('배역') && !name.includes('출연') && name.length < 20) {
-                    const roleText = m.textContent || '';
-                    if ((roleText.includes(' 감독') || roleText.includes('연출')) && !res.director) res.director = name;
+                    if (role.includes('감독') || role.includes('연출')) res.director = name;
                     else cast.push(name);
                 }
             });
             if (cast.length > 0) res.cast = cast.slice(0, 5);
 
-            // Poster
             const img = document.querySelector('a.thumb img') || document.querySelector('.detail_info a.thumb img');
             let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
             if (poster.includes('type=')) {
@@ -113,72 +115,61 @@ const TARGETS = [
             return res;
         });
 
-        // --- Interactive Fallback ---
-        if (!detail.cast || detail.cast.length === 0) {
-            try {
-                const possibleTabs = [
-                    'a[href*="cast"]',
-                    'a[href*="tab=cast"]',
-                    '._main_tab a',
-                    '.tab[role="tab"]',
-                    'div[role="tablist"] > a'
-                ];
+        // --- NamuWiki Fallback Logic ---
+        const isInvalidPoster = !detail.poster || detail.poster.length < 50 || detail.poster.startsWith('data:');
+        const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
 
-                let castTab = null;
-                const allLinks = await page.$$('a, div[role="tab"], ._main_tab a');
-                for (const el of allLinks) {
-                    const txt = await el.innerText();
-                    if (txt.includes('출연진') || txt.includes('등장인물')) {
-                        castTab = el;
-                        break;
+        if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !detail.posterSource) {
+            try {
+                console.log(`[NamuWiki] Searching poster for ${item.title}...`);
+                await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                await sleep(2000);
+
+                // Check for Search Result Page
+                const searchResultLink = await page.$('.search-item a, .search-result-list a');
+                if (searchResultLink) {
+                    const txt = await searchResultLink.innerText();
+                    // Ensure it's not a wiki meta page
+                    if (!txt.includes('User:') && !txt.includes('Talk:') && !txt.includes('사용자:') && !txt.includes('토론:')) {
+                        console.log('[NamuWiki] Found search results, clicking first item...');
+                        await searchResultLink.click();
+                        await page.waitForTimeout(2000);
                     }
                 }
 
-                if (castTab) {
-                    await castTab.click({ timeout: 2000 });
-                    await new Promise(r => setTimeout(r, 1000));
+                // Scroll and Wait for Image
+                await page.evaluate(() => window.scrollTo(0, 800));
+                await page.waitForTimeout(1000);
 
-                    const newCastData = await page.evaluate(() => {
-                        const newCast: string[] = [];
-                        let director = '';
-                        const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
-
-                        members.forEach(m => {
-                            let name = '';
-                            let roleOrSub = '';
-
-                            const nameEl = m.querySelector('strong.name, .name');
-                            const subEl = m.querySelector('span.sub_text, .sub_text');
-
-                            if (nameEl) {
-                                let nameTxt = nameEl.textContent?.trim() || '';
-                                let subTxt = subEl?.textContent?.trim() || '';
-                                if (nameTxt.includes(' 역')) {
-                                    name = subTxt;
-                                } else {
-                                    name = nameTxt;
-                                }
-                                roleOrSub = subTxt;
-                            } else {
-                                if (m.classList.contains('_text')) {
-                                    name = m.textContent?.trim() || '';
-                                } else {
-                                    name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
-                                }
-                            }
-
-                            if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
-                                if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
-                                else newCast.push(name);
-                            }
-                        });
-                        const uniqueCast = Array.from(new Set(newCast));
-                        return { cast: uniqueCast.slice(0, 5), director };
+                const namuPoster = await page.evaluate(() => {
+                    // 1. Try Table/Infobox
+                    const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
+                    // Width > 150 (relaxed)
+                    let candidate = imgs.find(img => {
+                        const el = img as HTMLImageElement;
+                        return el.width > 200 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
                     });
-                    if (newCastData.cast.length > 0) detail.cast = newCastData.cast;
-                    if (newCastData.director) detail.director = newCastData.director;
+
+                    // 2. Global fallback
+                    if (!candidate) {
+                        const allImgs = Array.from(document.querySelectorAll('img'));
+                        candidate = allImgs.find(img => {
+                            const el = img as HTMLImageElement;
+                            return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
+                        });
+                    }
+
+                    return candidate ? (candidate as HTMLImageElement).src : null;
+                });
+
+                if (namuPoster) {
+                    detail.poster = namuPoster;
+                    detail.posterSource = 'namuwiki';
+                    console.log(`[NamuWiki] Found poster: ${namuPoster}`);
                 }
-            } catch (e) { }
+            } catch (e) {
+                console.log(`[NamuWiki] Failed: ${e}`);
+            }
         }
 
         console.log(`[${item.title}] Result:`, JSON.stringify(detail, null, 2));
