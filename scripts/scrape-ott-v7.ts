@@ -92,7 +92,8 @@ async function fetchJWDetail(page: any, url: string) {
             }
 
             // Sidebar Poster (Fallback if list page poster missing)
-            const sidebarPoster = document.querySelector('.title-sidebar__title-with-poster__poster img, .title-poster img');
+            // Correct selector from browser investigation: .title-sidebar picture img
+            const sidebarPoster = document.querySelector('.title-sidebar picture img, .title-sidebar__title-with-poster__poster img, .title-poster img');
             if (sidebarPoster) {
                 let posterSrc = sidebarPoster.getAttribute('src') || sidebarPoster.getAttribute('data-src');
                 if (posterSrc) {
@@ -111,27 +112,20 @@ async function fetchJWDetail(page: any, url: string) {
                 }
             });
 
-            // Cast with Links
-            const castItems = document.querySelectorAll('.title-credits .title-credit');
-            const castWithLinks: { name: string; link: string }[] = [];
+            // Cast Names (JustWatch KR has NO profile links in HTML - JS-triggered only)
+            // Correct selector from browser investigation: .title-credits__actor with name in span.title-credit-name
+            const castItems = document.querySelectorAll('.title-credits__actor, .title-credits .title-credit');
+            const castNames: string[] = [];
             castItems.forEach((item, idx) => {
                 if (idx >= 5) return; // Max 5 cast members
-                const link = item.querySelector('a');
-                const nameEl = item.querySelector('.title-credit-name');
+                const nameEl = item.querySelector('span.title-credit-name, .title-credit-name');
                 if (nameEl) {
                     const name = nameEl.textContent?.trim() || '';
-                    const href = link ? link.getAttribute('href') : null;
-                    castWithLinks.push({
-                        name,
-                        link: href ? `https://www.justwatch.com${href}` : ''
-                    });
+                    if (name) castNames.push(name);
                 }
             });
-            if (castWithLinks.length > 0) res.castWithLinks = castWithLinks;
+            if (castNames.length > 0) res.cast = castNames;
 
-            // Legacy cast array for backward compatibility
-            const cast = castWithLinks.map(c => c.name);
-            if (cast.length > 0) res.cast = cast;
 
             return res;
         });
@@ -400,13 +394,12 @@ async function fetchJWDetail(page: any, url: string) {
         }
 
         // TIER 3: JW DETAIL (Fallback for poster, runtime, director, cast)
-        if (!item.image || !item.runningTime || !item.director || !item.castWithLinks) {
+        if (!item.image || !item.runningTime || !item.director || !item.cast) {
             const jwData = await fetchJWDetail(jwPage, item.link);
             if (jwData) {
                 if (jwData.ageRating && !item.ageRating) item.ageRating = jwData.ageRating;
                 if (jwData.runningTime && !item.runningTime) item.runningTime = sanitizeRuntime(jwData.runningTime);
                 if (jwData.director && !item.director) item.director = jwData.director;
-                if (jwData.castWithLinks && !item.castWithLinks) item.castWithLinks = jwData.castWithLinks;
                 if (jwData.cast && !item.cast) item.cast = jwData.cast;
                 if (jwData.subGenre && !item.subGenre) item.subGenre = jwData.subGenre;
                 // Use sidebar poster as fallback if no image yet

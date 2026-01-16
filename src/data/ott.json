@@ -335,7 +335,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260114_WWENXT시즌20",
-    "image": "https://images.justwatch.com/poster/321617366/s592/시즌-20",
+    "image": "https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABYob6lE7FY0GyzY8EBqa7GcvxYB7ttURFdBVlsVETBpy2H4onJT5BLVXV1dMuYM47u2nCEOVPn5Hy0p1IJkHAKjeb47kGmk1tIqr.jpg%3Fr%3D8b7",
     "ageRating": "15세 이상 관람가",
     "runningTime": "1시간 50분",
     "cast": [
@@ -383,7 +383,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260114_현역가왕시즌1",
-    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251124_282%2F1763951206681bAgua_JPEG%2Fc8700f7a97a1e3efe431e5858d1f5135.jpg",
+    "image": "https://search.pstatic.net/common?type=f&size=176x244&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20231102_162%2F16989212337600zMA4_JPEG%2F1602eaa019858f7070d2edfe5e9c8f5a.jpg",
     "ageRating": "15세 이상 관람가",
     "runningTime": "2시간 32분"
   },
@@ -633,7 +633,8 @@
       "Rumi Okubo",
       "Sayumi Suzushiro",
       "Miku Ito"
-    ]
+    ],
+    "ageRating": "19세 이상 관람가"
   },
   {
     "title": "가치아쿠타 - 시즌 1",
@@ -1405,7 +1406,9 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260113_진범인시즌1",
-    "image": "https://images.justwatch.com/poster/141544678/s592/시즌-1"
+    "image": "https://images.justwatch.com/poster/141544678/s592/시즌-1",
+    "ageRating": "12세 이상 관람가",
+    "runningTime": "49분"
   },
   {
     "title": "만지지 마세요 코테사시군 - 시즌 1",
@@ -1455,7 +1458,8 @@
     "id": "ott_20260113_Dhandoraa",
     "image": "https://images.justwatch.com/poster/340825137/s592/dhandoraa",
     "runningTime": "2h 16m",
-    "subGenre": "Romance, Drama"
+    "subGenre": "Romance, Drama",
+    "ageRating": "15세 이상 관람가"
   },
   {
     "title": "랜드맨 - 시즌 1",
@@ -1537,7 +1541,8 @@
     "id": "ott_20260112_MagikRompak",
     "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/cbTPVx1TtYpSGkaMBa5fnQC3utV.jpg",
     "runningTime": "2h 14m",
-    "subGenre": "Action, Crime, Thriller"
+    "subGenre": "Action, Crime, Thriller",
+    "ageRating": "15세 이상 관람가"
   },
   {
     "title": "화려한 날들 - 시즌 1",
@@ -1570,7 +1575,8 @@
     "region": "ott",
     "id": "ott_20260112_킬토니텍사스에서터졌다",
     "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/kepiMVDrjSvNM9afWewWxlWXXK6.jpg",
-    "subGenre": "Comedy"
+    "subGenre": "Comedy",
+    "ageRating": "12세 이상 관람가"
   },
   {
     "title": "기묘한 이야기 5 메이킹: 마지막 모험",
@@ -1587,7 +1593,8 @@
     "id": "ott_20260112_기묘한이야기5메이킹마지막모험",
     "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/aZhrAx5CevLfjXcGIG3wBXxDiAL.jpg",
     "runningTime": "2h 3m",
-    "subGenre": "Documentary"
+    "subGenre": "Documentary",
+    "ageRating": "19세 이상 관람가"
   },
   {
     "title": "프로보노 - 시즌 1",
@@ -1617,7 +1624,9 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260112_은애하는도적님아시즌1",
-    "image": null
+    "image": "https://images.justwatch.com/poster/340664899/s592/시즌-1",
+    "ageRating": "15세 이상 관람가",
+    "runningTime": "1시간 0분"
   },
   {
     "title": "마르다니",
@@ -2957,7 +2966,7 @@
     "venue": "OTT",
     "region": "ott",
     "id": "ott_20260109_내사랑플리카",
-    "image": "https://www.themoviedb.orghttps://media.themoviedb.org/t/p/w300_and_h450_face/nhJlXSmiHnlVxea5J5l3wfuATwY.jpg",
+    "image": "https://search.pstatic.net/common?type=o&size=176x264&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111222_101%2F1324536893615xzIq9_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "runningTime": "1h 35m",
     "subGenre": "Family, Drama",
     "cast": [
