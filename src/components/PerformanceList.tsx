@@ -1299,6 +1299,30 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const filteredPerformances = useMemo(() => {
         let filtered = initialPerformances;
 
+        // [OTT Filter] Hide foreign series (not KR/JP/US) if "Season" in title or Genre is Drama
+        filtered = filtered.filter(p => {
+            if (p.genre !== 'ott') return true;
+
+            // Allow if country is KR/JP/US (or unknown/empty, to be safe? No, user said "if NOT... hide")
+            // Actually, if country is missing, we usually shouldn't hide unless we are sure.
+            // But let's follow strict instruction: "If production country is NOT..."
+            const country = p.productionCountry ? p.productionCountry.replace(/\s+/g, '') : '';
+            const allowList = ['한국', '대한민국', '일본', '미국'];
+            const isMajorCountry = allowList.some(c => country.includes(c));
+
+            if (isMajorCountry) return true;
+
+            // It is a "foreign" (non-major) item.
+            // Hide if: Title has "Season" OR Genre/SubGenre is "Drama"
+            const titleHasSeason = p.title.includes('시즌') || p.title.toLowerCase().includes('season');
+            const isDrama = p.subGenre === '드라마' || (p.genre === 'drama'); // ott items usually have genre='ott'
+
+            if (titleHasSeason || isDrama) {
+                return false; // Hide
+            }
+            return true;
+        });
+
         // Search Filter
         if (searchText) {
             console.log(`[Search Debug] Searching for: ${searchText}`);

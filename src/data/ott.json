@@ -1048,7 +1048,7 @@
     "id": "ott_20260116_스코어",
     "image": "/images/posters/스코어.webp",
     "runningTime": "2h 4m",
-    "subGenre": "제조업"
+    "subGenre": "액션, 범죄, 스릴러, 드라마"
   },
   {
     "title": "WWF SmackDown! - 시즌 28",
@@ -1232,7 +1232,9 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_차가네시즌1"
+    "id": "ott_20260116_차가네시즌1",
+    "subGenre": "예능",
+    "productionCountry": "한국"
   },
   {
     "title": "맨 vs 차일드 코리아 - 시즌 1",
@@ -1241,12 +1243,16 @@
     "platform": "wavve",
     "poster": "/images/posters/맨_vs_차일드_코리아___시즌_1.webp",
     "platforms": [
-      "wavve"
+      "wavve",
+      "discovery_plus"
     ],
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_맨vs차일드코리아시즌1"
+    "id": "ott_20260116_맨vs차일드코리아시즌1",
+    "image": "/images/posters/맨_vs_차일드_코리아___시즌_1.webp",
+    "subGenre": "예능",
+    "productionCountry": "한국"
   },
   {
     "title": "아이돌 트럭 - 시즌 1\n시즌 1\n새 에피소드",
