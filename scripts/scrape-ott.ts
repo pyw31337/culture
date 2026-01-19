@@ -292,8 +292,19 @@ async function scrapeHybrid() {
         // Incremental Save (Every 5 items to prevent data loss on stop)
         if (processed % 5 === 0) {
             try {
-                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(filteredItems, null, 2));
-                // console.log(`   [Autosave] Saved progress to ${OUTPUT_FILE}`); 
+                // [Autosave] Merge and Save (Cumulative)
+                let saveData = filteredItems;
+                if (existingData && existingData.length > 0) {
+                    const idMap = new Map<string, any>();
+                    existingData.forEach(item => idMap.set(item.id, item));
+                    filteredItems.forEach(item => idMap.set(item.id, item));
+                    saveData = Array.from(idMap.values());
+                }
+
+                // Sort Descending
+                saveData.sort((a, b) => (a.date > b.date ? -1 : 1));
+
+                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(saveData, null, 2));
             } catch (e) { }
         }
 
@@ -571,8 +582,34 @@ async function scrapeHybrid() {
     await browser.close();
 
     // Save
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(filteredItems, null, 2));
-    console.log(`Saved ${filteredItems.length} items to ${OUTPUT_FILE}`);
+    // Save with Cumulative Merge (Keep history)
+    let finalData = filteredItems;
+
+    if (existingData && existingData.length > 0) {
+        const idMap = new Map<string, any>();
+
+        // 1. Add existing (history)
+        existingData.forEach(item => {
+            if (item.id) idMap.set(item.id, item);
+        });
+
+        // 2. Overwrite/Add new filtered items
+        filteredItems.forEach(item => {
+            if (item.id) idMap.set(item.id, item);
+        });
+
+        finalData = Array.from(idMap.values());
+    }
+
+    // Sort by Date (Descending) for "Newest First" view
+    finalData.sort((a, b) => {
+        if (a.date > b.date) return -1;
+        if (a.date < b.date) return 1;
+        return 0;
+    });
+
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalData, null, 2));
+    console.log(`Saved ${finalData.length} items to ${OUTPUT_FILE} (Cumulative)`);
 }
 
 scrapeHybrid();
