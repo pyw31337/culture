@@ -232,22 +232,24 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     } // If 0, no bar needed?
 
     // Concurrency
-    const CONCURRENCY = 15;
+    const CONCURRENCY = 5;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
             try {
-                // Optimize: Block images/fonts
+                // Optimize: Block heavy media only (Allow styles/fonts for correct rendering)
+                /*
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
-                    if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
+                    if (['image', 'media'].includes(req.resourceType())) {
                         req.abort();
                     } else {
                         req.continue();
                     }
                 });
+                */
 
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
@@ -256,9 +258,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const goodsId = item.id;
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
-                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
                 try {
-                    await page.waitForSelector('ul.info', { timeout: 2000 });
+                    await page.waitForSelector('ul.info', { timeout: 10000 });
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
@@ -266,23 +268,27 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     const list = document.querySelector('div.summaryBody > ul');
                     if (!list) return {};
 
-                    const getDescByLabel = (labelIn: string) => {
-                        const items = Array.from(list.querySelectorAll('li.infoItem'));
-                        const match = items.find(li => li.querySelector('.infoLabel')?.textContent?.includes(labelIn));
-                        if (match) {
-                            // If just text in p.infoText
-                            const p = match.querySelector('.infoDesc .infoText');
-                            if (p) return p.textContent?.trim();
-                            // If just text node
-                            return match.querySelector('.infoDesc')?.textContent?.trim();
-                        }
-                        return null;
-                    };
+                    const items = Array.from(list.querySelectorAll('li.infoItem'));
 
-                    const runningTime = getDescByLabel('공연시간');
-                    const ageRating = getDescByLabel('관람연령');
+                    // Running Time
+                    let runningTime = '';
+                    const timeLi = items.find((li) => li.querySelector('.infoLabel')?.textContent?.includes('공연시간'));
+                    if (timeLi) {
+                        const p = timeLi.querySelector('.infoDesc .infoText');
+                        if (p) runningTime = p.textContent?.trim() || '';
+                        else runningTime = timeLi.querySelector('.infoDesc')?.textContent?.trim() || '';
+                    }
 
-                    // Base Price (Initial Attempt from main list)
+                    // Age Rating
+                    let ageRating = '';
+                    const ageLi = items.find((li) => li.querySelector('.infoLabel')?.textContent?.includes('관람연령'));
+                    if (ageLi) {
+                        const p = ageLi.querySelector('.infoDesc .infoText');
+                        if (p) ageRating = p.textContent?.trim() || '';
+                        else ageRating = ageLi.querySelector('.infoDesc')?.textContent?.trim() || '';
+                    }
+
+                    // Base Price
                     const priceListItems = Array.from(list.querySelectorAll('.infoItem.infoPrice .infoPriceList .infoPriceItem'));
                     let price = '';
 
@@ -291,7 +297,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         const name = li.querySelector('.name')?.textContent?.trim();
                         const val = li.querySelector('.price')?.textContent?.trim();
                         if (val) {
-                            price = val; // Take first found
+                            price = val;
                             break;
                         }
                     }
@@ -366,6 +372,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 };
 
             } catch (e) {
+                console.error(`Failed to enrich ${item.id}:`, e);
                 return item;
             } finally {
                 await page.close();

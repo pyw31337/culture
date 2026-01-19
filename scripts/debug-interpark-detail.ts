@@ -7,8 +7,9 @@ puppeteer.use(StealthPlugin());
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    const url = 'https://tickets.interpark.com/goods/21001949';
-    // const url = 'https://tickets.interpark.com/goods/24017373'; // Another example if needed
+    // const url = 'https://tickets.interpark.com/goods/21001949';
+    // const url = 'https://tickets.interpark.com/goods/24017373'; // Original
+    const url = 'https://tickets.interpark.com/goods/25018267'; // User reported failure // Another example if needed
 
     console.log(`Navigating to ${url}...`);
     await page.goto(url, { waitUntil: 'domcontentloaded' });

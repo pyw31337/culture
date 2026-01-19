@@ -520,15 +520,14 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}
                                         </div>
 
-                                        {/* Movie Info (Director/Cast) */}
-                                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                                        {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
+                                        {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating) && (
                                             <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
                                                 {/* OTT Specific: Original Title */}
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
                                                 )}
 
-                                                {/* Country / Year / SubGenre */}
                                                 {/* Country / Year / SubGenre */}
                                                 {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                                     <div className="flex flex-col gap-0.5 text-gray-500 text-xs">
@@ -553,13 +552,22 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
-                                                {/* Runtime / Age */}
-                                                {/* Runtime / Age */}
+                                                {/* Runtime */}
                                                 {perf.runningTime && (
                                                     <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
                                                         <div>
                                                             <span className="text-gray-500 mr-1">플레이타임:</span>
                                                             <span>{perf.runningTime}</span>
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {/* Age Rating (For non-Movie/OTT which show it in header) */}
+                                                {perf.ageRating && !['movie', 'ott'].includes(perf.genre) && (
+                                                    <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
+                                                        <div>
+                                                            <span className="text-gray-500 mr-1">관람연령:</span>
+                                                            <span>{perf.ageRating}</span>
                                                         </div>
                                                     </div>
                                                 )}
@@ -627,7 +635,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
-                                                {/* Prices (Interpark) */}
+                                                {/* Prices (Interpark/Seoul) */}
                                                 {perf.price && (
                                                     <div className="text-xs font-medium text-emerald-400 mt-1">
                                                         🎟️ {perf.price.split('원')[0]}원
