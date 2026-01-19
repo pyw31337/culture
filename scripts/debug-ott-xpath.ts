@@ -13,20 +13,11 @@ async function debugOTTXPath() {
     await page.goto(targetUrl, { waitUntil: 'networkidle2' });
 
     const data = await page.evaluate(() => {
-        const getText = (label: string) => {
-            // Find an element containing the label, then get the text of the next sibling or close element
-            // This is a heuristic based on the text dump (Label \n Value)
-            const allDivs = Array.from(document.querySelectorAll('div, span, dt, h4'));
-            const labelEl = allDivs.find(el => el.textContent?.trim() === label);
-            if (!labelEl) return 'LABEL_NOT_FOUND';
-
-            // Try next sibling
-            if (labelEl.nextElementSibling) return labelEl.nextElementSibling.textContent?.trim();
-            // Try parent's next sibling (if label is wrapped)
-            if (labelEl.parentElement?.nextElementSibling) return labelEl.parentElement.nextElementSibling.textContent?.trim();
-
-            return 'VALUE_NOT_FOUND';
-        };
+        function getText(label: string) {
+            const dts = Array.from(document.querySelectorAll('dt'));
+            const targetDt = dts.find(dt => dt.textContent?.includes(label));
+            return targetDt?.nextElementSibling?.textContent?.trim() || '';
+        }
 
         const getCast = () => {
             // Find "출연진/제작진" section

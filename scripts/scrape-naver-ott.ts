@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import cliProgress from 'cli-progress';
+import { processImage } from './utils/image-processor';
 
 // --- CONFIG ---
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver.json');
@@ -315,9 +316,10 @@ async function scrapeList(context: any, platform: any, type: string) {
                     });
 
                     if (namuPoster) {
-                        item.poster = namuPoster;
+                        // Use smart image processor to download/convert if needed
+                        item.poster = await processImage(namuPoster, item.title);
                         item.posterSource = 'namuwiki';
-                        console.log(`[NamuWiki] Found poster for ${item.title}: ${namuPoster}`);
+                        console.log(`[NamuWiki] Found poster for ${item.title}: ${item.poster}`);
                     }
                 } catch (namuErr) {
                     // Fail silently

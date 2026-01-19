@@ -129,7 +129,9 @@ async function scrapeDetailPage(detailPage: any, item: any) {
             // Origin: #price-bar ... .base_price
             // Sale: #price-bar ... .detail_txt.col-xs-6 > div (this might return text including span, need clean)
 
-            const txt = (s: string) => document.querySelector(s)?.textContent?.trim() || '';
+            function txt(s: string) {
+                return document.querySelector(s)?.textContent?.trim() || '';
+            }
 
             // 1. Location
             let location = '';

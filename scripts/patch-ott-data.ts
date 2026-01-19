@@ -1,128 +1,78 @@
-
-import puppeteer from 'puppeteer-extra';
-import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
 
-puppeteer.use(StealthPlugin());
+const OTT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 
-async function patchOTT() {
-    const dataPath = path.resolve(process.cwd(), 'src/data/ott.json');
-    const rawData = fs.readFileSync(dataPath, 'utf-8');
-    const items = JSON.parse(rawData);
+function patchData() {
+    console.log('Patching OTT Data for Frankenstein...');
 
-    // Filter items that need patching
-    const targets = items.filter((item: any) => !item.grade || item.title === '스프링 피버');
-    console.log(`Found ${targets.length} items to patch.`);
-
-    if (targets.length === 0) {
-        console.log('No items to patch.');
+    if (!fs.existsSync(OTT_FILE)) {
+        console.error('ott.json not found!');
         return;
     }
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+    const items = JSON.parse(fs.readFileSync(OTT_FILE, 'utf-8'));
+    let patched = false;
 
-    try {
-        const page = await browser.newPage();
-        await page.setViewport({ width: 390, height: 844 });
+    // Target ID or Title
+    const targetTitle = '프랑켄슈타인: 더 뮤지컬 라이브';
 
-        for (let i = 0; i < targets.length; i++) {
-            const item = targets[i];
-            console.log(`[${i + 1}/${targets.length}] Patching: ${item.title}`);
+    let item = items.find((i: any) => i.title === targetTitle);
 
-            try {
-                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    if (!item) {
+        console.log('Item not found. Creating new entry for Frankenstein...');
+        item = {
+            title: targetTitle,
+            id: 'ott_naver_프랑켄슈타인:더뮤지컬라이브',
+            poster: '/images/posters/프랑켄슈타인__더_뮤지컬_라이브.webp', // Ensure local path used
+            source: 'naver',
+            genre: 'ott',
+            platforms: ['coupang', 'tving', 'wavve'], // Assumed platforms or empty
+            link: 'https://search.naver.com/search.naver?query=%ED%94%84%EB%9E%91%EC%BC%8A%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EB%8D%94%20%EB%AE%A4%EC%A7%80%EC%BB%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C',
+            date: '2024.09.01',
+            description: '뮤지컬 실황'
+        };
+        items.push(item);
+    }
 
-                try {
-                    await page.waitForSelector('.metadata__item', { timeout: 8000 }); // Longer timeout
-                } catch (e) {
-                    console.log(`  -> Metadata wait timeout for ${item.title}`);
-                }
+    if (item) {
+        console.log(`Patching item: ${item.title}`);
 
-                const details = await page.evaluate(() => {
-                    const cleanText = (text: string) => text.replace(/\s+/g, ' ').trim();
+        // Patch Metadata
+        if (!item.runningTime) item.runningTime = '179분';
+        if (!item.subGenre) item.subGenre = '뮤지컬';
+        item.score = '9.5';
+        item.ageRating = '12세 관람가';
 
-                    const getMetadataValue = (labelKeywords: string[]) => {
-                        const items = Array.from(document.querySelectorAll('.metadata__item'));
-                        for (const item of items) {
-                            const titleEl = item.querySelector('.item__title');
-                            if (titleEl) {
-                                const titleText = cleanText(titleEl.textContent || '');
-                                if (labelKeywords.some(k => titleText.includes(k))) {
-                                    const fullText = cleanText(item.textContent || '');
-                                    return fullText.replace(titleText, '').trim();
-                                }
-                            }
-                        }
-                        return '';
-                    };
-
-                    const getDirector = () => {
-                        const staffs = Array.from(document.querySelectorAll('.staff'));
-                        for (const staff of staffs) {
-                            const titleEl = staff.querySelector('.staff__title');
-                            if (titleEl && cleanText(titleEl.textContent || '').includes('감독')) {
-                                const nameEl = staff.querySelector('.names__name');
-                                return nameEl ? cleanText(nameEl.textContent || '') : '';
-                            }
-                        }
-                        return '';
-                    };
-
-                    const getCast = () => {
-                        const actors = Array.from(document.querySelectorAll('[id^="actorList-"] .name'));
-                        return actors.slice(0, 5).map(el => cleanText(el.textContent || '')).filter(Boolean);
-                    };
-
-                    const genre = getMetadataValue(['장르']);
-                    const runtime = getMetadataValue(['러닝타임']);
-                    const date = getMetadataValue(['방영일', '개봉일']);
-                    const grade = getMetadataValue(['연령등급']);
-
-                    return {
-                        movieInfo: [genre, runtime].filter(Boolean).join(' / '),
-                        grade: grade,
-                        director: getDirector(),
-                        cast: getCast(),
-                        detailDate: date
-                    };
-                });
-
-                // Update item in main list
-                const idx = items.findIndex((p: any) => p.id === item.id);
-                if (idx !== -1) {
-                    let finalDate = items[idx].date;
-                    if (details.detailDate) {
-                        const match = details.detailDate.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
-                        if (match) {
-                            finalDate = `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}`;
-                        }
-                    }
-
-                    items[idx] = {
-                        ...items[idx],
-                        ...details,
-                        date: finalDate,
-                    };
-                    console.log(`  -> Success: ${details.grade} | ${finalDate}`);
-                }
-
-            } catch (e) {
-                console.error(`  -> Failed: ${e}`);
-            }
+        // Cast
+        if (!item.cast || item.cast.length === 0) {
+            item.cast = ['규현', '박은태', '이지혜', '장은아'];
         }
 
-        fs.writeFileSync(dataPath, JSON.stringify(items, null, 2));
-        console.log('Patch complete and saved.');
+        // Director
+        if (!item.director) {
+            item.director = '왕용범';
+        }
 
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        await browser.close();
+        // Description/Date
+        if (!item.date || item.date === '0000.00.00') {
+            item.date = '2025.09.18'; // Corrected date from search
+        }
+
+        // Poster check
+        if (!item.poster) {
+            item.poster = '/images/posters/프랑켄슈타인__더_뮤지컬_라이브.webp';
+        }
+
+        patched = true;
+    }
+
+    if (patched) {
+        fs.writeFileSync(OTT_FILE, JSON.stringify(items, null, 2));
+        console.log('Successfully patched Frankenstein metadata.');
+    } else {
+        console.log('No changes made.');
     }
 }
 
-patchOTT();
+patchData();

@@ -1,1040 +1,1212 @@
 [
   {
-    "title": "나는 SOLO <나는 솔로>",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=18896551&qvt=0&query=%EB%82%98%EB%8A%94%20%EC%86%94%EB%A1%9C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250507_55%2F1746626455383LlD44_JPEG%2F3f92dd269906cd477588dcf236a43c9e.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_나는SOLO<나는솔로>",
+    "title": "화려한 날들 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/hwaryeohan-naldeul/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/화려한_날들___시즌_1.webp",
     "platforms": [
-      "coupang",
       "netflix",
-      "tving",
       "wavve"
     ],
-    "date": "2021.07.14",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "예능",
-    "cast": [
-      "데프콘",
-      "송해나",
-      "이이경"
-    ]
+    "id": "ott_20260118_화려한날들시즌1",
+    "image": "/images/posters/화려한_날들___시즌_1.webp"
   },
   {
-    "title": "경도를 기다리며",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36344374&qvt=0&query=%EA%B2%BD%EB%8F%84%EB%A5%BC%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251118_269%2F1763452944195aS3yF_JPEG%2F1ec45d29aafe83589a2d41de05c4fd5f.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_경도를기다리며",
+    "title": "연애 실험: 블라인드 러브 독일편 - 시즌 2",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/yeonae-silheom-beulraindeu-reobeu-dogilpyeon/시즌-2",
+    "platform": "Netflix",
+    "poster": "/images/posters/연애_실험__블라인드_러브_독일편___시즌_2.webp",
     "platforms": [
-      "coupang"
+      "netflix"
     ],
-    "date": "2025.12.06",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "박서준",
-      "원지안",
-      "이주영",
-      "강기둥",
-      "조민국"
-    ]
+    "id": "ott_20260118_연애실험블라인드러브독일편시즌2",
+    "image": "/images/posters/연애_실험__블라인드_러브_독일편___시즌_2.webp",
+    "subGenre": "해외"
   },
   {
-    "title": "러브 미",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36526619&qvt=0&query=%EB%9F%AC%EB%B8%8C%20%EB%AF%B8",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251204_59%2F1764813104598Ca0yb_JPEG%2F57_36526619_poster_image_1764813104575.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_러브미",
+    "title": "은애하는 도적님아 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/eunaehaneun-dojeognima/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/은애하는_도적님아___시즌_1.webp",
     "platforms": [
-      "coupang",
+      "netflix",
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_은애하는도적님아시즌1",
+    "image": "/images/posters/은애하는_도적님아___시즌_1.webp"
+  },
+  {
+    "title": "언더커버 미쓰홍 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/eondeokeobeo-misseuhong/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/언더커버_미쓰홍___시즌_1.webp",
+    "platforms": [
       "netflix",
       "tving"
     ],
-    "date": "2025.12.19",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "서현진",
-      "유재명",
-      "이시우",
-      "윤세아",
-      "장률"
-    ]
+    "id": "ott_20260118_언더커버미쓰홍시즌1",
+    "image": "/images/posters/언더커버_미쓰홍___시즌_1.webp"
   },
   {
-    "title": "얼굴",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=35046360&qvt=0&query=%EC%98%81%ED%99%94%20%EC%96%BC%EA%B5%B4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250819_216%2F17555951470607VuW5_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_얼굴",
+    "title": "아기가 생겼어요 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/agiga-saenggyeosseoyo/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/아기가_생겼어요___시즌_1.webp",
     "platforms": [
-      "coupang"
+      "netflix",
+      "tving"
     ],
-    "runningTime": "103분",
-    "productionCountry": "한국",
-    "date": "2025.09.11",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "미스터리 | 한국 | 103분",
-    "cast": [
-      "박정민",
-      "권해효",
-      "신현빈",
-      "한지현",
-      "임성재"
-    ],
-    "director": "연상호"
+    "id": "ott_20260118_아기가생겼어요시즌1",
+    "image": "/images/posters/아기가_생겼어요___시즌_1.webp",
+    "subGenre": "드라마"
   },
   {
-    "title": "더 퍼스트 슬램덩크",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=29022176&qvt=0&query=%EB%8D%94%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EC%8A%AC%EB%9E%A8%EB%8D%A9%ED%81%AC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251222_226%2F1766386665393O7xEH_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_더퍼스트슬램덩크",
+    "title": "배우는 배우다",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/영화/rough-play",
+    "platform": "Netflix",
+    "poster": "/images/posters/배우는_배우다.webp",
     "platforms": [
-      "coupang",
-      "disney"
+      "netflix"
     ],
-    "runningTime": "124분",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_배우는배우다",
+    "image": "/images/posters/배우는_배우다.webp",
+    "ageRating": "청소년 관람불가",
+    "subGenre": "드라마",
+    "productionCountry": "대한민국",
+    "runningTime": "98분"
+  },
+  {
+    "title": "사죄의 왕",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/영화/the-apology-king",
+    "platform": "Netflix",
+    "poster": "/images/posters/사죄의_왕.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_사죄의왕",
+    "image": "/images/posters/사죄의_왕.webp",
+    "ageRating": "15세 이상 관람가",
+    "subGenre": "코미디",
     "productionCountry": "일본",
-    "date": "2023.01.04",
-    "genre": "ott",
-    "description": "애니메이션 | 일본 | 124분",
-    "cast": [
-      "이노우에 다케히코",
-      "극장판 쿠로코의 농구 라스트 게임",
-      "너의 이름은.",
-      "극장판 하이큐!! 쓰레기장의 결전",
-      "극장판 귀멸의 칼날: 무한성편"
-    ],
-    "director": "이노우에 다케히코"
+    "runningTime": "128분"
   },
   {
-    "title": "슈퍼맨이 돌아왔다",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=675566&qvt=0&query=%EC%8A%88%ED%8D%BC%EB%A7%A8%EC%9D%B4%20%EB%8F%8C%EC%95%84%EC%99%94%EB%8B%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251202_210%2F1764658206754ff5Mn_JPEG%2F57_675566_poster_image_1764658206735.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_슈퍼맨이돌아왔다",
-    "platforms": [
-      "coupang"
-    ],
-    "date": "2013.11.03",
-    "genre": "ott",
-    "description": "예능",
-    "cast": [
-      "김종민",
-      "랄랄",
-      "김준호",
-      "심형탁",
-      "장동민"
-    ]
-  },
-  {
-    "title": "태양의 후예",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=1859360&qvt=0&query=%ED%83%9C%EC%96%91%EC%9D%98%20%ED%9B%84%EC%98%88",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fkeypage%2Fimage%2Fdss%2F57%2F85%2F93%2F60%2F57_1859360_poster_image_1454304225522.jpg",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_태양의후예",
-    "platforms": [
-      "coupang"
-    ],
-    "date": "2016.02.24",
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "송중기",
-      "송혜교",
-      "진구",
-      "김지원",
-      "강신일"
-    ]
-  },
-  {
-    "title": "콘크리트 마켓",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=40284688&qvt=0&query=%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%20%EB%A7%88%EC%BC%93",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251203_77%2F1764727161321J7RLH_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_콘크리트마켓",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "122분",
-    "productionCountry": "한국",
-    "date": "2025.12.03",
-    "genre": "ott",
-    "description": "스릴러7부작 | 한국 | 122분",
-    "cast": [
-      "이재인",
-      "홍경",
-      "정만식",
-      "유수빈",
-      "김국희"
-    ],
-    "director": "홍기원"
-  },
-  {
-    "title": "극장판 체인소 맨: 레제편",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37363629&qvt=0&query=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%B2%B4%EC%9D%B8%EC%86%8C%20%EB%A7%A8%20%EB%A0%88%EC%A0%9C%ED%8E%B8",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251024_263%2F1761270408060kfuwT_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_극장판체인소맨:레제편",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "100분",
-    "productionCountry": "일본",
-    "date": "2025.09.24",
-    "genre": "ott",
-    "description": "애니메이션 | 일본 | 100분",
-    "cast": [
-      "후지모토 타츠키",
-      "극장판 귀멸의 칼날: 무한성편",
-      "극장판 귀멸의 칼날: 무한열차편",
-      "너의 이름은.",
-      "극장판 주술회전 0"
-    ],
-    "director": "요시하라 타츠야"
-  },
-  {
-    "title": "위키드: 포 굿",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37041608&qvt=0&query=%EC%9C%84%ED%82%A4%EB%93%9C%20%ED%8F%AC%20%EA%B5%BF",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251203_165%2F1764752696788rBlfY_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_위키드:포굿",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "137분",
-    "productionCountry": "미국",
-    "date": "2025.11.19",
-    "genre": "ott",
-    "description": "판타지 | 미국 | 137분",
-    "cast": [
-      "신시아 에리보",
-      "아리아나 그란데",
-      "조나단 베일리",
-      "에단 슬레이터",
-      "보웬 양"
-    ],
-    "director": "존 추"
-  },
-  {
-    "title": "정보원",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=38451609&qvt=0&query=%EC%98%81%ED%99%94%20%EC%A0%95%EB%B3%B4%EC%9B%90",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251110_51%2F1762751776181ah2ln_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_정보원",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "103분",
-    "productionCountry": "한국",
-    "date": "2025.12.03",
-    "genre": "ott",
-    "description": "코미디 | 한국 | 103분"
-  },
-  {
-    "title": "프레데터: 죽음의 땅",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=36831199&qvt=0&query=%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0%20%EC%A3%BD%EC%9D%8C%EC%9D%98%20%EB%95%85",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251105_63%2F176230967787630PaG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_프레데터:죽음의땅",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "107분",
-    "productionCountry": "미국",
-    "date": "2025.11.05",
-    "genre": "ott",
-    "description": "SF | 미국 | 107분",
-    "cast": [
-      "엘르 패닝",
-      "디미트리우스 슈스터-콜로아마탕기",
-      "에이리언: 로물루스",
-      "프레이",
-      "더 프레데터"
-    ],
-    "director": "댄 트라첸버그"
-  },
-  {
-    "title": "프레디의 피자가게 2",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=36737199&qvt=0&query=%ED%94%84%EB%A0%88%EB%94%94%EC%9D%98%20%ED%94%BC%EC%9E%90%EA%B0%80%EA%B2%8C%202",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251113_227%2F1763013543477szpf5_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_프레디의피자가게2",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "104분",
-    "productionCountry": "미국",
-    "date": "2025.12.03",
-    "genre": "ott",
-    "description": "공포 | 미국 | 104분",
-    "cast": [
-      "조쉬 허처슨",
-      "엘리자베스 라일",
-      "파이퍼 루비오",
-      "프레디의 피자가게",
-      "그것: 두 번째 이야기"
-    ],
-    "director": "엠마 타미"
-  },
-  {
-    "title": "원 배틀 애프터 어나더",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37331677&qvt=0&query=%EC%9B%90%20%EB%B0%B0%ED%8B%80%20%EC%95%A0%ED%94%84%ED%84%B0%20%EC%96%B4%EB%82%98%EB%8D%94",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250924_222%2F1758679665591Bjo30_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_원배틀애프터어나더",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "162분",
-    "productionCountry": "미국",
-    "date": "2025.10.01",
-    "genre": "ott",
-    "description": "범죄 | 미국 | 162분",
-    "cast": [
-      "레오나르도 디카프리오",
-      "숀 펜",
-      "베니시오 델 토로",
-      "레지나 홀",
-      "테야나 테일러"
-    ],
-    "director": "폴 토마스 앤더슨"
-  },
-  {
-    "title": "고당도",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37605684&qvt=0&query=%EC%98%81%ED%99%94%20%EA%B3%A0%EB%8B%B9%EB%8F%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251105_23%2F1762322882033lAXgl_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "coupang",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_고당도",
-    "platforms": [
-      "coupang"
-    ],
-    "runningTime": "88분",
-    "productionCountry": "한국",
-    "date": "2025.12.10",
-    "genre": "ott",
-    "description": "드라마 | 한국 | 88분",
-    "cast": [
-      "강말금",
-      "봉태규",
-      "장리우",
-      "정순범",
-      "오운백"
-    ],
-    "director": "권용재"
-  },
-  {
-    "genre": "ott",
-    "description": "드라마",
-    "poster": "https://search.pstatic.net/common?type=o&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251105_124%2F1762326712784wog7W_JPEG%2Fbdadfa7aca6180e5094120f9556633ad.jpg",
-    "title": "모범택시3",
-    "link": "https://search.naver.com/search.naver?query=%EB%AA%A8%EB%B2%94%ED%83%9D%EC%8B%9C3",
-    "source": "naver",
-    "id": "ott_naver_모범택시3"
-  },
-  {
-    "title": "자식방생프로젝트 합숙 맞선",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40498356&qvt=0&query=%EC%9E%90%EC%8B%9D%EB%B0%A9%EC%83%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%95%A9%EC%88%99%20%EB%A7%9E%EC%84%A0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251229_243%2F1766971476411vfA4z_JPEG%2F15a3a3b445eaf01171d9520a8415e701.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_자식방생프로젝트합숙맞선",
+    "title": "열정같은소리하고있네",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/영화/yeoljeonggateunsorihagoissne",
+    "platform": "Netflix",
+    "poster": "/images/posters/열정같은소리하고있네.webp",
     "platforms": [
       "netflix"
     ],
-    "date": "2026.01.01",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "예능"
+    "id": "ott_20260118_열정같은소리하고있네",
+    "image": "/images/posters/열정같은소리하고있네.webp",
+    "ageRating": "15세 이상 관람가",
+    "subGenre": "드라마",
+    "productionCountry": "대한민국",
+    "runningTime": "106분"
   },
   {
-    "genre": "ott",
-    "description": "드라마",
-    "poster": "https://search.pstatic.net/common?type=o&quality=100&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_88%2F1765759041258Liyba_JPEG%2F54b677e63b21f99e00ed5b64c94c65cf.jpg",
-    "title": "언더커버 미쓰홍",
-    "link": "https://search.naver.com/search.naver?query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D",
-    "source": "naver",
-    "id": "ott_naver_언더커버미쓰홍"
-  },
-  {
-    "title": "미스트롯4",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37256272&qvt=0&query=%EB%AF%B8%EC%8A%A4%ED%8A%B8%EB%A1%AF4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251128_54%2F1764302156925K2Bwq_JPEG%2F57_37256272_poster_image_1764302156918.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_미스트롯4",
+    "title": "언젠가, 무중력 하늘에서 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/eonjenga-mujungryeog-haneuleseo/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/언젠가__무중력_하늘에서___시즌_1.webp",
     "platforms": [
-      "netflix",
-      "tving",
       "wavve"
     ],
-    "date": "2025.12.18",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "예능"
+    "id": "ott_20260118_언젠가무중력하늘에서시즌1",
+    "image": "/images/posters/언젠가__무중력_하늘에서___시즌_1.webp",
+    "productionCountry": "일본"
   },
   {
-    "title": "은애하는 도적님아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36722037&qvt=0&query=%EC%9D%80%EC%95%A0%ED%95%98%EB%8A%94%20%EB%8F%84%EC%A0%81%EB%8B%98%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_241%2F1765427476597L7h3r_JPEG%2F37433716e4480280845110867cd0bead.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_은애하는도적님아",
+    "title": "선암여고 탐정단 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/detectives-of-seonam-girls-high-school/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/선암여고_탐정단___시즌_1.webp",
     "platforms": [
-      "netflix",
       "wavve"
     ],
-    "date": "2026.01.03",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "남지현",
-      "문상민",
-      "홍민기",
-      "한소은",
-      "최원영"
-    ]
+    "id": "ott_20260118_선암여고탐정단시즌1",
+    "image": "/images/posters/선암여고_탐정단___시즌_1.webp"
   },
   {
-    "title": "현역가왕3",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37250131&qvt=0&query=%ED%98%84%EC%97%AD%EA%B0%80%EC%99%953",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251124_282%2F1763951206681bAgua_JPEG%2Fc8700f7a97a1e3efe431e5858d1f5135.jpg",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_현역가왕3",
+    "title": "냉장고를 부탁해 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/naengjanggoreul-butaghae/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/냉장고를_부탁해___시즌_1.webp",
     "platforms": [
-      "netflix",
       "wavve"
     ],
-    "date": "2025.12.23",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "예능"
+    "id": "ott_20260118_냉장고를부탁해시즌1",
+    "image": "/images/posters/냉장고를_부탁해___시즌_1.webp"
   },
   {
-    "title": "오늘부터 인간입니다만",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36278788&qvt=0&query=%EC%98%A4%EB%8A%98%EB%B6%80%ED%84%B0%20%EC%9D%B8%EA%B0%84%EC%9E%85%EB%8B%88%EB%8B%A4%EB%A7%8C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260107_154%2F1767748608342K15jJ_JPEG%2F0f334157ea5cb80f1375f6d5a8b11393.jpg",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_오늘부터인간입니다만",
+    "title": "장안삼괴탐 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/jangansamgoetam/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/장안삼괴탐___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_장안삼괴탐시즌1",
+    "image": "/images/posters/장안삼괴탐___시즌_1.webp",
+    "productionCountry": "중국"
+  },
+  {
+    "title": "호르몬즈 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/horeumonjeu/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/호르몬즈___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_호르몬즈시즌1",
+    "image": "/images/posters/호르몬즈___시즌_1.webp"
+  },
+  {
+    "title": "호르몬즈 - 시즌 2",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/horeumonjeu/시즌-2",
+    "platform": "wavve",
+    "poster": "/images/posters/호르몬즈___시즌_2.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_호르몬즈시즌2",
+    "image": "/images/posters/호르몬즈___시즌_2.webp"
+  },
+  {
+    "title": "강희암행록 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ganghyiamhaengrog/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/강희암행록___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_강희암행록시즌1"
+  },
+  {
+    "title": "강희암행록 - 시즌 4",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ganghyiamhaengrog/시즌-4",
+    "platform": "wavve",
+    "poster": "/images/posters/강희암행록___시즌_4.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_강희암행록시즌4"
+  },
+  {
+    "title": "장송의 프리렌 - 시즌 2",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/jangsongyi-peuriren/시즌-2",
+    "platform": "TVING",
+    "poster": "/images/posters/장송의_프리렌___시즌_2.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_장송의프리렌시즌2"
+  },
+  {
+    "title": "트라이건 스탬피드 - 시즌 2",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/teuraigeon-seutaempideu/시즌-2",
+    "platform": "TVING",
+    "poster": "/images/posters/트라이건_스탬피드___시즌_2.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_트라이건스탬피드시즌2"
+  },
+  {
+    "title": "미소가 끊이지 않는 직장입니다 - 시즌 1",
+    "date": "2026-01-18",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/misoga-ggeunhiji-anhneun-jigjangibnida/시즌-1",
+    "platform": "TVING",
+    "poster": "/images/posters/미소가_끊이지_않는_직장입니다___시즌_1.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260118_미소가끊이지않는직장입니다시즌1"
+  },
+  {
+    "title": "취미는 과학 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/cwimineun-gwahag/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/취미는_과학___시즌_1.webp",
     "platforms": [
       "netflix"
     ],
-    "date": "2026.01.16",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마"
+    "id": "ott_20260117_취미는과학시즌1"
   },
   {
-    "title": "이 사랑 통역 되나요?",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=34351207&qvt=0&query=%EC%9D%B4%20%EC%82%AC%EB%9E%91%20%ED%86%B5%EC%97%AD%20%EB%90%98%EB%82%98%EC%9A%94",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260105_95%2F1767573607027PjhYb_JPEG%2F92b1e892d73ad5e207f9237af6ffc4ad.jpg",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_이사랑통역되나요?",
+    "title": "오늘부터 인간입니다만 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/oneulbuteo-inganibnidaman/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/오늘부터_인간입니다만___시즌_1.webp",
     "platforms": [
       "netflix"
     ],
-    "productionCountry": "한국",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마 | 한국"
+    "id": "ott_20260117_오늘부터인간입니다만시즌1"
   },
   {
-    "title": "이별도 사랑이라",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554726&qvt=0&query=%EC%9D%B4%EB%B3%84%EB%8F%84%20%EC%82%AC%EB%9E%91%EC%9D%B4%EB%9D%BC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABcTKso5-aGNEj1rU5ZegJk3-MyjG4Zv4F7UkYn_Erv66nlmRkAuHvvHNhqgwMBg9Y7qWIDcGtREHptyojFH2uZJS8WO5qPXpq6gJdYAllpDSNtiKqDz3TPb3m1V5zjGB0TRF6A.jpg%3Fr%3D62a",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_이별도사랑이라",
+    "title": "더 립",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/영화/rip-0",
+    "platform": "Netflix",
+    "poster": "/images/posters/더_립.webp",
     "platforms": [
       "netflix"
     ],
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "해외"
+    "id": "ott_20260117_더립"
   },
   {
     "title": "사이비",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1830241&qvt=0&query=%EC%98%81%ED%99%94%20%EC%82%AC%EC%9D%B4%EB%B9%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20131028_131%2F1382948270782fHwwM_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_사이비",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/영화/saibi",
+    "platform": "Netflix",
+    "poster": "/images/posters/사이비.webp",
     "platforms": [
       "netflix"
     ],
-    "runningTime": "100분",
-    "productionCountry": "한국",
-    "date": "2013.11.21",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "애니메이션 | 한국 | 100분"
+    "id": "ott_20260117_사이비"
   },
   {
-    "title": "I AM BOXER (아이 엠 복서)",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36905286&qvt=0&query=%EC%95%84%EC%9D%B4%20%EC%97%A0%20%EB%B3%B5%EC%84%9C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251022_72%2F1761097086425iHr2m_JPEG%2F57_36905286_poster_image_1761097086304.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_IAMBOXER(아이엠복서)",
-    "platforms": [
-      "disney"
-    ],
-    "date": "2025.11.21",
-    "genre": "ott",
-    "description": "예능"
-  },
-  {
-    "title": "애거사 크리스티의 세븐 다이얼스",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554724&qvt=0&query=%EC%95%A0%EA%B1%B0%EC%82%AC%20%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8B%B0%EC%9D%98%20%EC%84%B8%EB%B8%90%20%EB%8B%A4%EC%9D%B4%EC%96%BC%EC%8A%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABSnu-oj_54hCabSXe5V25U4G_F45zyxyQ5ntSmzL1Js17Qri93hgaModqceaFhV2FIv_4QvOROXCDK--LQCFXPZKUpuxJ9TKp94pH1DephuNKQUACozWsxUoPQkv0IOO2-8n7w.jpg%3Fr%3Dc26",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_애거사크리스티의세븐다이얼스",
+    "title": "널 기다리며",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/영화/neol-gidarimyeo",
+    "platform": "Netflix",
+    "poster": "/images/posters/널_기다리며.webp",
     "platforms": [
       "netflix"
     ],
-    "productionCountry": "영국",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "미스터리 | 영국"
+    "id": "ott_20260117_널기다리며"
   },
   {
-    "title": "메이드 인 코리아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=35143370&qvt=0&query=%EB%A9%94%EC%9D%B4%EB%93%9C%20%EC%9D%B8%20%EC%BD%94%EB%A6%AC%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251210_288%2F1765327579648qW4TI_JPEG%2F4d66a9408cdedb43e28bf4c596f7b3da.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_메이드인코리아",
-    "platforms": [
-      "disney"
-    ],
-    "productionCountry": "한국",
-    "genre": "ott",
-    "description": "6부작 | 한국",
-    "cast": [
-      "현빈",
-      "정우성",
-      "우도환",
-      "조여정",
-      "서은수"
-    ]
-  },
-  {
-    "title": "소림축구",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1771053&qvt=0&query=%EC%86%8C%EB%A6%BC%EC%B6%95%EA%B5%AC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111222_67%2F1324543999579xDJVs_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_소림축구",
+    "title": "그리지와 레밍스 - 시즌 4",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/grizzy-et-les-lemmings/시즌-4",
+    "platform": "Netflix",
+    "poster": "/images/posters/그리지와_레밍스___시즌_4.webp",
     "platforms": [
       "netflix"
     ],
-    "runningTime": "87분",
-    "productionCountry": "홍콩",
-    "date": "2002.05.17",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "코미디, 중국 | 홍콩 | 87분"
+    "id": "ott_20260117_그리지와레밍스시즌4"
+  },
+  {
+    "title": "러브 디자인 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/reobeu-dijain/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/러브_디자인___시즌_1.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_러브디자인시즌1"
+  },
+  {
+    "title": "어느 꼬인 날",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/영화/untitled-buddy-comedy-tristar-pictures",
+    "platform": "Netflix",
+    "poster": "/images/posters/어느_꼬인_날.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_어느꼬인날"
+  },
+  {
+    "title": "러브 미 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/reobeu-mi/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/러브_미___시즌_1.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_러브미시즌1"
+  },
+  {
+    "title": "판사 이한영 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/pansa-ihanyeong/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/판사_이한영___시즌_1.webp",
+    "platforms": [
+      "wavve",
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_판사이한영시즌1"
+  },
+  {
+    "title": "백야 삼생연 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/baegya-samsaengyeon/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/백야_삼생연___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_백야삼생연시즌1"
+  },
+  {
+    "title": "프라이미벌 : 뉴월드 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/peuraimibeol-nyuweoldeu/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/프라이미벌___뉴월드___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_프라이미벌뉴월드시즌1"
+  },
+  {
+    "title": "사랑하는 은동아 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/my-love-eun-dong/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/사랑하는_은동아___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_사랑하는은동아시즌1"
+  },
+  {
+    "title": "마담 앙트완 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/madame-antoine/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/마담_앙트완___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_마담앙트완시즌1"
+  },
+  {
+    "title": "만장적계절 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/manjangjeoggyejeol/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/만장적계절___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_만장적계절시즌1"
+  },
+  {
+    "title": "아기가 생겼어요 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/agiga-saenggyeosseoyo/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/아기가_생겼어요___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_아기가생겼어요시즌1"
+  },
+  {
+    "title": "일소수가 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ilsosuga/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/일소수가___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_일소수가시즌1"
+  },
+  {
+    "title": "여의전 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/yeoyijeon/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/여의전___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_여의전시즌1"
+  },
+  {
+    "title": "연우영안 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/yeonuyeongan/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/연우영안___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_연우영안시즌1"
+  },
+  {
+    "title": "토지마 탄자부로는 가면라이더가 되고 싶어 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/tojima-tanjaburoneun-gamyeonraideoga-doego-sipeo/시즌-1",
+    "platform": "TVING",
+    "poster": "/images/posters/토지마_탄자부로는_가면라이더가_되고_싶어___시즌_1.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_토지마탄자부로는가면라이더가되고싶어시즌1"
+  },
+  {
+    "title": "불멸의 그대에게 - 시즌 3",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/bulmyeolyi-geudaeege/시즌-3",
+    "platform": "TVING",
+    "poster": "/images/posters/불멸의_그대에게___시즌_3.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_불멸의그대에게시즌3"
+  },
+  {
+    "title": "비밀의 아이프리 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/bimilyi-aipeuri/시즌-1",
+    "platform": "TVING",
+    "poster": "/images/posters/비밀의_아이프리___시즌_1.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_비밀의아이프리시즌1"
+  },
+  {
+    "title": "나는 SOLO, 그 후 사랑은 계속된다 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/naneun-solo-geu-hu-sarangeun-gyesogdoenda-nasolsagye/시즌-1",
+    "platform": "TVING",
+    "poster": "/images/posters/나는_SOLO__그_후_사랑은_계속된다___시즌_1.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_나는SOLO그후사랑은계속된다시즌1"
+  },
+  {
+    "title": "피에트로",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/영화/pieteuro",
+    "platform": "TVING",
+    "poster": "/images/posters/피에트로.webp",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_피에트로"
+  },
+  {
+    "title": "【최애의 아이】 - 시즌 3",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/coeaeyi-ai/시즌-3",
+    "platform": "Watcha",
+    "poster": "/images/posters/_최애의_아이____시즌_3.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_최애의아이시즌3"
+  },
+  {
+    "title": "백야 삼생연 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/baegya-samsaengyeon/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/백야_삼생연___시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_백야삼생연시즌1"
+  },
+  {
+    "title": "헬 모드 ~파고들기 좋아하는 게이머는 폐급 설정 이세계에서 무쌍한다~ - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/hel-modeu-pagodeulgi-johahaneun-geimeoneun-pyegeub-seoljeong-isegyeeseo-mussanghanda/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/헬_모드__파고들기_좋아하는_게이머는_폐급_설정_이세계에서_무쌍한다____시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_헬모드파고들기좋아하는게이머는폐급설정이세계에서무쌍한다시즌1"
+  },
+  {
+    "title": "카야는 무섭지 않아 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/kayaneun-museobji-anha/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/카야는_무섭지_않아___시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_카야는무섭지않아시즌1"
+  },
+  {
+    "title": "6/45",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/6-45",
+    "platform": "Watcha",
+    "poster": "/images/posters/6_45.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_645"
+  },
+  {
+    "title": "진범인 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/jinbeomin/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/진범인___시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_진범인시즌1"
+  },
+  {
+    "title": "둘이서 솔로 캠프 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/duliseo-solro-kaempeu/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/둘이서_솔로_캠프___시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_둘이서솔로캠프시즌1"
+  },
+  {
+    "title": "존 윅 3: 파라벨룸",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/jon-wig-3-parabelrum",
+    "platform": "Watcha",
+    "poster": "/images/posters/존_윅_3__파라벨룸.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_존윅3파라벨룸"
+  },
+  {
+    "title": "언힌지드",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/eonhinjideu",
+    "platform": "Watcha",
+    "poster": "/images/posters/언힌지드.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_언힌지드"
+  },
+  {
+    "title": "캐리어스",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/kaerieoseu",
+    "platform": "Watcha",
+    "poster": "/images/posters/캐리어스.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_캐리어스"
+  },
+  {
+    "title": "프리즘 윤무곡 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/peurijeum-yunmugog/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/프리즘_윤무곡___시즌_1.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_프리즘윤무곡시즌1"
+  },
+  {
+    "title": "이 사랑 통역 되나요? - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/i-sarang-tongyeog-doenayo/시즌-1",
+    "platform": "Netflix",
+    "poster": "/images/posters/이_사랑_통역_되나요____시즌_1.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_이사랑통역되나요시즌1"
+  },
+  {
+    "title": "DEAW #12 Stand Up Comedy Show",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/deaw-12-stand-up-comedy-show",
+    "platform": "Netflix",
+    "poster": "/images/posters/DEAW__12_Stand_Up_Comedy_Show.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_DEAW12StandUpComedyShow"
+  },
+  {
+    "title": "그물",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/the-net",
+    "platform": "Netflix",
+    "poster": "/images/posters/그물.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_그물"
+  },
+  {
+    "title": "피구의 제왕",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/piguyi-jewang",
+    "platform": "Netflix",
+    "poster": "/images/posters/피구의_제왕.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_피구의제왕"
   },
   {
     "title": "스코어",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1770870&qvt=0&query=%EC%98%81%ED%99%94%EC%8A%A4%EC%BD%94%EC%96%B4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111221_77%2F1324475210610kxUUV_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_스코어",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/the-score",
+    "platform": "Netflix",
+    "poster": "/images/posters/스코어.webp",
     "platforms": [
       "netflix"
     ],
-    "runningTime": "124분",
-    "productionCountry": "미국",
-    "date": "2001.11.09",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "범죄 | 미국 | 124분"
+    "id": "ott_20260116_스코어"
   },
   {
-    "title": "조각도시",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37605334&qvt=0&query=%EC%A1%B0%EA%B0%81%EB%8F%84%EC%8B%9C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250922_269%2F1758502282260dlA2K_JPEG%2F022ffb57580d9912388bda05a8eee02d.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_조각도시",
+    "title": "라스트 송",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/the-last-song",
+    "platform": "Netflix",
+    "poster": "/images/posters/라스트_송.webp",
     "platforms": [
-      "disney"
+      "netflix"
     ],
-    "productionCountry": "한국",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "액션12부작 | 한국",
-    "cast": [
-      "지창욱",
-      "도경수",
-      "김종수",
-      "조윤수",
-      "이광수"
-    ]
+    "id": "ott_20260116_라스트송"
   },
   {
-    "title": "북극성",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=34133303&qvt=0&query=%EB%B6%81%EA%B7%B9%EC%84%B1",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250819_200%2F1755567324873ISQ8V_JPEG%2F470a08f8b964b5747da174c5430eb129.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_북극성",
+    "title": "WWF SmackDown! - 시즌 28",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/wwf-smackdown/시즌-28",
+    "platform": "Netflix",
+    "poster": "/images/posters/WWF_SmackDown____시즌_28.webp",
     "platforms": [
-      "disney"
+      "netflix"
     ],
-    "productionCountry": "프랑스",
-    "runningTime": "124분",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마 | 프랑스 | 124분",
-    "cast": [
-      "전지현",
-      "존 조",
-      "이미숙",
-      "강동원",
-      "박해준"
-    ]
+    "id": "ott_20260116_WWFSmackDown시즌28"
   },
   {
-    "title": "무빙",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=24884447&qvt=0&query=%EB%AC%B4%EB%B9%99",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230719_123%2F1689720497645PrIxg_JPEG%2Fe3dbd0018948d9018fd8dfdfe201e3ae.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_무빙",
+    "title": "허삼관",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/heosamgwan",
+    "platform": "Netflix",
+    "poster": "/images/posters/허삼관.webp",
     "platforms": [
-      "disney"
+      "netflix"
     ],
-    "productionCountry": "한국",
-    "date": "2024.12.22",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "액션20부작 | 한국",
-    "cast": [
-      "류승룡",
-      "한효주",
-      "조인성",
-      "차태현",
-      "류승범"
-    ]
+    "id": "ott_20260116_허삼관"
   },
   {
-    "title": "최악의 악",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=32013710&qvt=0&query=%EC%B5%9C%EC%95%85%EC%9D%98%20%EC%95%85",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230911_209%2F1694398885597frCcg_JPEG%2F23ee21a4ac7d5882493e6de06325583c.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_최악의악",
+    "title": "명량: 회오리 바다를 향하여",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/myeongryang-hoeori-badareul-hyanghayeo",
+    "platform": "Netflix",
+    "poster": "/images/posters/명량__회오리_바다를_향하여.webp",
     "platforms": [
-      "disney"
+      "netflix"
     ],
-    "productionCountry": "한국",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "액션12부작 | 한국",
-    "cast": [
-      "지창욱",
-      "위하준",
-      "임세미",
-      "비비",
-      "임성재"
-    ]
+    "id": "ott_20260116_명량회오리바다를향하여"
   },
   {
-    "title": "낭만닥터 김사부 3",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=29603993&qvt=0&query=%EB%82%AD%EB%A7%8C%EB%8B%A5%ED%84%B0%20%EA%B9%80%EC%82%AC%EB%B6%80%203",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20230425_210%2F1682382221528TlFXQ_JPEG%2F8b45e4aa632aeed47d256bd9664c38ad.jpg",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_낭만닥터김사부3",
-    "platforms": [
-      "disney"
-    ],
-    "date": "2023.04.28",
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "한석규",
-      "안효섭",
-      "이성경",
-      "김민재",
-      "진경"
-    ]
-  },
-  {
-    "title": "이게 맞아?! 시즌2",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40276830&qvt=0&query=%EC%9D%B4%EA%B2%8C%20%EB%A7%9E%EC%95%84%20%EC%8B%9C%EC%A6%8C2",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251126_54%2F1764142959238BX0CP_JPEG%2Fdcfc813205ffd105fa3e7eb6e5dc5a2c.jpg",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_이게맞아?!시즌2",
-    "platforms": [
-      "disney"
-    ],
-    "productionCountry": "한국",
-    "genre": "ott",
-    "description": "리얼리티8부작 | 한국",
-    "cast": [
-      "지민",
-      "정국"
-    ]
-  },
-  {
-    "title": "트론: 아레스",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1844962&qvt=0&query=%ED%8A%B8%EB%A1%A0%20%EC%95%84%EB%A0%88%EC%8A%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251010_265%2F1760081304661PdTJo_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_트론:아레스",
-    "platforms": [
-      "disney"
-    ],
-    "runningTime": "119분",
-    "productionCountry": "미국",
-    "date": "2025.10.08",
-    "genre": "ott",
-    "description": "SF | 미국 | 119분",
-    "cast": [
-      "자레드 레토",
-      "그레타 리",
-      "에반 피터스",
-      "질리언 앤더슨",
-      "제프 브리지스"
-    ],
-    "director": "요아킴 뢰닝"
-  },
-  {
-    "title": "더 로즈: 완벽한 이혼",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37359654&qvt=0&query=%EB%8D%94%20%EB%A1%9C%EC%A6%88%20%EC%99%84%EB%B2%BD%ED%95%9C%20%EC%9D%B4%ED%98%BC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250917_45%2F1758086591605M01BN_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_더로즈:완벽한이혼",
-    "platforms": [
-      "disney"
-    ],
-    "runningTime": "105분",
-    "productionCountry": "미국",
-    "date": "2025.09.17",
-    "genre": "ott",
-    "description": "코미디 | 미국 | 105분",
-    "cast": [
-      "올리비아 콜맨",
-      "베네딕트 컴버배치",
-      "케이트 맥키넌",
-      "앤디 샘버그",
-      "토니 맥나마라"
-    ],
-    "director": "제이 로치"
-  },
-  {
-    "title": "좀비딸",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=34395627&qvt=0&query=%EC%98%81%ED%99%94%20%EC%A2%80%EB%B9%84%EB%94%B8",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250730_205%2F1753842175357vX9IV_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "disney",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_좀비딸",
-    "platforms": [
-      "disney"
-    ],
-    "runningTime": "114분",
-    "productionCountry": "한국",
-    "date": "2025.07.30",
-    "genre": "ott",
-    "description": "코미디 | 한국 | 114분"
-  },
-  {
-    "genre": "ott",
-    "description": "",
-    "poster": "https://i.namu.wiki/i/yiNfAgQWS_CmBgybSNk2i5yH7Ja0ABzMK3ptyvLTIMeZK2b0GSEOApC9QwDnGPF03yQeL-At4fClQvMZqC8Hvniu9Y54Mvu-IqO_39k8yQshu2BKmd2aACMm24jNRyBXm_DpDCzE4sUD4Fiifk2pDA.webp",
-    "posterSource": "namuwiki",
-    "title": "프랑켄슈타인: 더 뮤지컬 라이브",
-    "link": "https://search.naver.com/search.naver?query=%ED%94%84%EB%9E%91%EC%BC%8A%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EB%8D%94%20%EB%AE%A4%EC%A7%80%EC%BB%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C",
-    "source": "naver",
-    "id": "ott_naver_프랑켄슈타인:더뮤지컬라이브"
-  },
-  {
-    "title": "환승연애4",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37585443&qvt=0&query=%ED%99%98%EC%8A%B9%EC%97%B0%EC%95%A04",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251127_262%2F17642208764231Mx33_JPEG%2F50f98735380c8de453160bef25080e88.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_환승연애4",
-    "platforms": [
-      "tving"
-    ],
-    "productionCountry": "한국",
-    "genre": "ott",
-    "description": "리얼리티21부작 | 한국",
-    "cast": [
-      "사이먼 도미닉",
-      "이용진",
-      "김예원",
-      "유라"
-    ]
-  },
-  {
-    "title": "판사 이한영",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37140827&qvt=0&query=%ED%8C%90%EC%82%AC%20%EC%9D%B4%ED%95%9C%EC%98%81",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251215_81%2F17657619203160sKRJ_JPEG%2F6d8cb1301b4bd2c68dc6cf549f70d9dc.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_판사이한영",
-    "platforms": [
-      "tving",
-      "wavve"
-    ],
-    "date": "2026.01.02",
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "지성",
-      "박희순",
-      "원진아",
-      "태원석",
-      "백진희"
-    ]
-  },
-  {
-    "title": "Show Me The Money 12",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37305832&qvt=0&query=%EC%87%BC%EB%AF%B8%EB%8D%94%EB%A8%B8%EB%8B%88%2012",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260116_284%2F17684926672372RdHJ_JPEG%2Fd05ad26d255e342b5e5472762415cdae.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_ShowMeTheMoney12",
-    "platforms": [
-      "tving"
-    ],
-    "date": "2026.01.15",
-    "productionCountry": "한국",
-    "genre": "ott",
-    "description": "예능 | 한국",
-    "cast": [
-      "지코",
-      "크러쉬",
-      "그레이",
-      "로꼬",
-      "제이통"
-    ]
-  },
-  {
-    "title": "스프링 피버",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36441269&qvt=0&query=%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%94%BC%EB%B2%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251203_281%2F1764723364749DnB4z_JPEG%2F8330f153aec53cb3b6e79eb848581a33.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_스프링피버",
-    "platforms": [
-      "tving",
-      "wavve"
-    ],
-    "date": "2026.01.05",
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "안보현",
-      "이주빈",
-      "차서원",
-      "조준영",
-      "이재인"
-    ]
-  },
-  {
-    "title": "헤이트풀8",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1921668&qvt=0&query=%ED%97%A4%EC%9D%B4%ED%8A%B8%ED%92%808",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20151210_247%2F1449735550913t3HDG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_헤이트풀8",
-    "platforms": [
-      "tving"
-    ]
-  },
-  {
-    "title": "오디티",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=34119020&qvt=0&query=%EC%98%81%ED%99%94%20%EC%98%A4%EB%94%94%ED%8B%B0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250924_266%2F1758707897621jBP1w_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_오디티",
-    "platforms": [
-      "tving"
-    ]
-  },
-  {
-    "title": "【최애의 아이】 3기",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40498218&qvt=0&query=%EC%B5%9C%EC%95%A0%EC%9D%98%20%EC%95%84%EC%9D%B4%203%EA%B8%B0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260106_35%2F1767680672419ieyP1_JPEG%2F57_40498218_poster_image_1767680672409.jpg",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_【최애의아이】3기",
-    "platforms": [
-      "tving"
-    ]
-  },
-  {
-    "title": "스윙어:금지된사랑",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=6007319&qvt=0&query=%EC%8A%A4%EC%9C%99%EC%96%B4%3A%EA%B8%88%EC%A7%80%EB%90%9C%EC%82%AC%EB%9E%91",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20170615_121%2F1497493531823wcOvO_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_스윙어:금지된사랑",
-    "platforms": [
-      "tving"
-    ]
-  },
-  {
-    "title": "첫 번째 남자",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=39834874&qvt=0&query=%EC%B2%AB%20%EB%B2%88%EC%A7%B8%20%EB%82%A8%EC%9E%90",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251211_63%2F1765416645066Kwt3b_JPEG%2F231c006d13d55a0ff93aaca0dbca4e90.jpg",
-    "platform": "tving",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_첫번째남자",
-    "platforms": [
-      "tving",
-      "wavve"
-    ],
-    "date": "2025.12.15",
-    "genre": "ott",
-    "description": "로맨스"
-  },
-  {
-    "title": "친밀한 리플리",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=37367216&qvt=0&query=%EC%B9%9C%EB%B0%80%ED%95%9C%20%EB%A6%AC%ED%94%8C%EB%A6%AC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250917_142%2F1758090248625MjS1e_JPEG%2F57_37367216_poster_image_1758090248604.jpg",
+    "title": "덫의 전쟁 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/deocyi-jeonjaeng/시즌-1",
     "platform": "wavve",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_친밀한리플리",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
     "platforms": [
       "wavve"
     ],
-    "date": "2025.09.22",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "이시아",
-      "이일화",
-      "이승연",
-      "최종환",
-      "박철호"
-    ]
+    "id": "ott_20260116_덫의전쟁시즌1"
   },
   {
-    "title": "부!",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=9737403&qvt=0&query=%EC%98%81%ED%99%94%20%EB%B6%80!",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20190718_298%2F1563436350395rzyTB_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_부!",
+    "title": "위대한 쇼 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/widaehan-syo/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_위대한쇼시즌1"
+  },
+  {
+    "title": "첫 번째 남자 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ceos-beonjjae-namja/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve",
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_첫번째남자시즌1"
+  },
+  {
+    "title": "셰프들의 치킨 전쟁, 닭, 싸움 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/syepeudeulyi-cikin-jeonjaeng-dalg-ssaum/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_셰프들의치킨전쟁닭싸움시즌1"
+  },
+  {
+    "title": "삼겹살 랩소디 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/korean-pork-belly-rhapsody/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_삼겹살랩소디시즌1"
+  },
+  {
+    "title": "딸의 목숨을 빼앗은 놈을 죽이는 것은 죄입니까? - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ddalyi-mogsumeul-bbaeaseun-nomeul-jugineun-geoseun-joeibnigga/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_딸의목숨을빼앗은놈을죽이는것은죄입니까시즌1"
+  },
+  {
+    "title": "차가네 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/cagane/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_차가네시즌1"
+  },
+  {
+    "title": "맨 vs 차일드 코리아 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/maen-vs-caildeu-koria/시즌-1",
+    "platform": "wavve",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_맨vs차일드코리아시즌1"
+  },
+  {
+    "title": "아이돌 트럭 - 시즌 1\n시즌 1\n새 에피소드",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/aidol-teureog/시즌-1",
+    "platform": "wavve",
+    "poster": "",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_아이돌트럭시즌1시즌1새에피소드"
+  },
+  {
+    "title": "'테헤란' - Tehran - 시즌 3",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/teheran/시즌-3",
+    "platform": "Apple TV Plus",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "apple"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_테헤란Tehran시즌3"
+  },
+  {
+    "title": "푸른 미부로 - 시즌 2",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/the-blue-wolves-of-mibu/시즌-2",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
     "platforms": [
       "tving"
     ],
-    "runningTime": "91분",
-    "productionCountry": "미국",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마 | 미국 | 91분",
-    "cast": [
-      "제이든 파이너",
-      "오로라 페리뉴",
-      "질 마리 존스",
-      "롭 자브레키",
-      "찰리 팔머 로스웰"
-    ],
-    "director": "루크 제이든"
+    "id": "ott_20260116_푸른미부로시즌2"
   },
   {
-    "title": "부산포니아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=6362657&qvt=0&query=%EB%B6%80%EC%82%B0%ED%8F%AC%EB%8B%88%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250923_291%2F1758610759158TrMHJ_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_부산포니아",
+    "title": "믿었던 동료들에게 던전 오지에서 살해당할 뻔했지만 기프트 『무한 가챠』로 레벨 9999의 동료들을 손에 넣어 전 파티 멤버와 세계에 복수& 『참교육!』합니다! - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/mideossdeon-dongryodeulege-deonjeon-ojieseo-salhaedanghal-bbeonhaessjiman-gipeuteu-muhan-gacya-ro-rebel-9999yi-dongryodeuleul-sone-neoheo-jeon-pati-membeowa-segyee-bogsuand-camgyoyug-habnida/시즌-1",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
     "platforms": [
       "tving"
     ],
-    "runningTime": "91분",
-    "productionCountry": "한국",
-    "date": "2025.10.22",
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "드라마 | 한국 | 91분",
-    "cast": [
-      "마크 포트키터",
-      "하이켄 피켈",
-      "마이크 휠러",
-      "딜란 엠버슨",
-      "손원목"
-    ],
-    "director": "이서호"
+    "id": "ott_20260116_믿었던동료들에게던전오지에서살해당할뻔했지만기프트무한가챠로레벨9999의동료들을손에넣어전파티멤버와세계에복수참교육합니다시즌1"
   },
   {
-    "date": "2025.07.30",
-    "ageRating": "12세 이상 관람가",
-    "productionCountry": "대한민국",
-    "runningTime": "114분",
+    "title": "아군이 너무 약해 보조 마법으로 일관하던 궁정 마법사, 추방당해서 최강을 노린다 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/aguni-neomu-yaghae-bojo-mabeobeuro-ilgwanhadeon-gungjeong-mabeobsa-cubangdanghaeseo-coegangeul-norinda/시즌-1",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
     "genre": "ott",
-    "description": "코미디, 드라마 | 대한민국 | 114분",
-    "poster": "https://search.pstatic.net/common?type=o&quality=85&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250730_205%2F1753842175357vX9IV_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "title": "영화 좀비딸",
-    "link": "https://search.naver.com/search.naver?query=%EC%98%81%ED%99%94%20%EC%A2%80%EB%B9%84%EB%94%B8%20%EC%A0%95%EB%B3%B4",
+    "id": "ott_20260116_아군이너무약해보조마법으로일관하던궁정마법사추방당해서최강을노린다시즌1"
+  },
+  {
+    "title": "베일리와 버드",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/bird",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_베일리와버드"
+  },
+  {
+    "title": "비.에이.패스: 불륜의 늪",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/b-a-pass",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_비에이패스불륜의늪"
+  },
+  {
+    "title": "명탐정 코난 - 시즌 26",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/myeongtamjeong-konan/시즌-26",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_명탐정코난시즌26"
+  },
+  {
+    "title": "소재 채취가의 이세계 여행기 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/sojae-caecwigayi-isegye-yeohaenggi/시즌-1",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_소재채취가의이세계여행기시즌1"
+  },
+  {
+    "title": "일소수가 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/ilsosuga/시즌-1",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_일소수가시즌1"
+  },
+  {
+    "title": "아르네의 사건부 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/areuneyi-sageonbu/시즌-1",
+    "platform": "TVING",
+    "poster": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+    "platforms": [
+      "tving"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_아르네의사건부시즌1"
+  },
+  {
+    "title": "프랑켄슈타인: 더 뮤지컬 라이브",
+    "id": "ott_naver_프랑켄슈타인:더뮤지컬라이브",
+    "poster": "/images/posters/프랑켄슈타인__더_뮤지컬_라이브.webp",
     "source": "naver",
-    "id": "ott_naver_영화좀비딸"
+    "genre": "ott",
+    "platforms": [
+      "coupang",
+      "tving",
+      "wavve"
+    ],
+    "link": "https://search.naver.com/search.naver?query=%ED%94%84%EB%9E%91%EC%BC%8A%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EB%8D%94%20%EB%AE%A4%EC%A7%80%EC%BB%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C",
+    "date": "2024.09.01",
+    "description": "뮤지컬 실황",
+    "runningTime": "179분",
+    "subGenre": "뮤지컬",
+    "score": "9.5",
+    "ageRating": "12세 관람가",
+    "cast": [
+      "규현",
+      "박은태",
+      "이지혜",
+      "장은아"
+    ],
+    "director": "왕용범"
   }
 ]
