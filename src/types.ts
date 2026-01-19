@@ -25,4 +25,5 @@ export type Performance = {
     originalTitle?: string;
     productionCountry?: string;
     productionYear?: string;
+    subGenre?: string;
 };

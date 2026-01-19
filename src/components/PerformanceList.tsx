@@ -1307,15 +1307,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             // Actually, if country is missing, we usually shouldn't hide unless we are sure.
             // But let's follow strict instruction: "If production country is NOT..."
             const country = p.productionCountry ? p.productionCountry.replace(/\s+/g, '') : '';
-            const allowList = ['한국', '대한민국', '일본', '미국'];
-            const isMajorCountry = allowList.some(c => country.includes(c));
+
+            // [Denylist] Explicitly hide works from China, Thailand, India, Brazil
+            const denylist = ['중국', 'China', '태국', 'Thailand', '인도', 'India', '브라질', 'Brazil'];
+            const isDeniedCountry = denylist.some(c => country.includes(c));
+            if (isDeniedCountry) return false;
+
+            // [Allowlist] Allow if country is KR/JP/US
+            const allowlist = ['한국', '대한민국', '일본', '미국', 'UnitedStates'];
+            const isMajorCountry = allowlist.some(c => country.includes(c));
 
             if (isMajorCountry) return true;
 
-            // It is a "foreign" (non-major) item.
-            // Hide if: Title has "Season" OR Genre/SubGenre is "Drama"
+            // [Fallback] Hide other foreign series if "Season" in title or Genre/SubGenre is "Drama"
             const titleHasSeason = p.title.includes('시즌') || p.title.toLowerCase().includes('season');
-            const isDrama = p.subGenre === '드라마' || (p.genre === 'drama'); // ott items usually have genre='ott'
+            const isDrama = p.subGenre === '드라마';
 
             if (titleHasSeason || isDrama) {
                 return false; // Hide
