@@ -189,7 +189,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_심야카페시즌1"
+    "id": "ott_20260118_심야카페시즌1",
+    "image": "/images/posters/심야카페___시즌_1.webp",
+    "subGenre": "로맨스",
+    "productionCountry": "한국"
   },
   {
     "title": "냉장고를 부탁해 - 시즌 1",
@@ -203,7 +206,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_냉장고를부탁해시즌1"
+    "id": "ott_20260118_냉장고를부탁해시즌1",
+    "image": "/images/posters/냉장고를_부탁해___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "장안삼괴탐 - 시즌 1",
@@ -217,7 +223,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_장안삼괴탐시즌1"
+    "id": "ott_20260118_장안삼괴탐시즌1",
+    "image": "/images/posters/장안삼괴탐___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "중국"
   },
   {
     "title": "호르몬즈 - 시즌 1",
@@ -231,7 +240,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_호르몬즈시즌1"
+    "id": "ott_20260118_호르몬즈시즌1",
+    "image": "/images/posters/호르몬즈___시즌_1.webp"
   },
   {
     "title": "호르몬즈 - 시즌 2",
@@ -245,7 +255,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_호르몬즈시즌2"
+    "id": "ott_20260118_호르몬즈시즌2",
+    "image": "/images/posters/호르몬즈___시즌_2.webp"
   },
   {
     "title": "강희암행록 - 시즌 1",
@@ -259,7 +270,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_강희암행록시즌1"
+    "id": "ott_20260118_강희암행록시즌1",
+    "image": "/images/posters/강희암행록___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "중국"
   },
   {
     "title": "장송의 프리렌 - 시즌 2",
@@ -273,7 +287,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_장송의프리렌시즌2"
+    "id": "ott_20260118_장송의프리렌시즌2",
+    "image": "/images/posters/장송의_프리렌___시즌_2.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "트라이건 스탬피드 - 시즌 2",
@@ -287,7 +304,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_트라이건스탬피드시즌2"
+    "id": "ott_20260118_트라이건스탬피드시즌2",
+    "image": "/images/posters/트라이건_스탬피드___시즌_2.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "미소가 끊이지 않는 직장입니다 - 시즌 1",
@@ -301,7 +321,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_미소가끊이지않는직장입니다시즌1"
+    "id": "ott_20260118_미소가끊이지않는직장입니다시즌1",
+    "image": "/images/posters/미소가_끊이지_않는_직장입니다___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "취미는 과학 - 시즌 1",
@@ -315,7 +338,9 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_취미는과학시즌1"
+    "id": "ott_20260117_취미는과학시즌1",
+    "image": "/images/posters/취미는_과학___시즌_1.webp",
+    "subGenre": "드라마"
   },
   {
     "title": "더 립",
@@ -329,7 +354,14 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_더립"
+    "id": "ott_20260117_더립",
+    "image": "/images/posters/더_립.webp",
+    "cast": [
+      "안나 푸렌모"
+    ],
+    "subGenre": "영화",
+    "productionCountry": "스웨덴",
+    "runningTime": "13분"
   },
   {
     "title": "오늘부터 인간입니다만 - 시즌 1",
@@ -343,7 +375,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_오늘부터인간입니다만시즌1"
+    "id": "ott_20260117_오늘부터인간입니다만시즌1",
+    "image": "/images/posters/오늘부터_인간입니다만___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "러브 디자인 - 시즌 1",
@@ -357,7 +392,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_러브디자인시즌1"
+    "id": "ott_20260117_러브디자인시즌1",
+    "image": "/images/posters/러브_디자인___시즌_1.webp"
   },
   {
     "title": "러브 미 - 시즌 1",
@@ -371,7 +407,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_러브미시즌1"
+    "id": "ott_20260117_러브미시즌1",
+    "image": "/images/posters/러브_미___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "널 기다리며",
@@ -385,7 +424,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_널기다리며"
+    "id": "ott_20260117_널기다리며",
+    "image": "/images/posters/널_기다리며.webp",
+    "cast": [
+      "모홍진",
+      "심은경",
+      "윤제문",
+      "김성오",
+      "오태경",
+      "정해균"
+    ],
+    "ageRating": "청소년 관람불가",
+    "subGenre": "스릴러",
+    "productionCountry": "대한민국",
+    "runningTime": "108분"
   },
   {
     "title": "사이비",
@@ -399,7 +451,11 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_사이비"
+    "id": "ott_20260117_사이비",
+    "image": "/images/posters/사이비.webp",
+    "runningTime": "1h 41m",
+    "ageRating": "미분류",
+    "subGenre": "어드벤처"
   },
   {
     "title": "어느 꼬인 날",
@@ -413,7 +469,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_어느꼬인날"
+    "id": "ott_20260117_어느꼬인날",
+    "image": "/images/posters/어느_꼬인_날.webp",
+    "runningTime": "1h 37m",
+    "subGenre": "Comedy"
   },
   {
     "title": "그리지와 레밍스 - 시즌 4",
@@ -427,7 +486,9 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_그리지와레밍스시즌4"
+    "id": "ott_20260117_그리지와레밍스시즌4",
+    "image": "/images/posters/그리지와_레밍스___시즌_4.webp",
+    "subGenre": "드라마"
   },
   {
     "title": "아기가 생겼어요 - 시즌 1",
@@ -441,7 +502,9 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_아기가생겼어요시즌1"
+    "id": "ott_20260117_아기가생겼어요시즌1",
+    "image": "/images/posters/아기가_생겼어요___시즌_1.webp",
+    "subGenre": "드라마"
   },
   {
     "title": "판사 이한영 - 시즌 1",
@@ -456,7 +519,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_판사이한영시즌1"
+    "id": "ott_20260117_판사이한영시즌1",
+    "image": "/images/posters/판사_이한영___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "백야 삼생연 - 시즌 1",
@@ -470,7 +536,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_백야삼생연시즌1"
+    "id": "ott_20260117_백야삼생연시즌1",
+    "image": "/images/posters/백야_삼생연___시즌_1.webp",
+    "subGenre": "24부작",
+    "productionCountry": "중국"
   },
   {
     "title": "프라이미벌 : 뉴월드 - 시즌 1",
@@ -484,7 +553,9 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_프라이미벌뉴월드시즌1"
+    "id": "ott_20260117_프라이미벌뉴월드시즌1",
+    "image": "/images/posters/프라이미벌___뉴월드___시즌_1.webp",
+    "subGenre": "드라마"
   },
   {
     "title": "사랑하는 은동아 - 시즌 1",
@@ -498,7 +569,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_사랑하는은동아시즌1"
+    "id": "ott_20260117_사랑하는은동아시즌1",
+    "image": "/images/posters/사랑하는_은동아___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "마담 앙트완 - 시즌 1",
@@ -512,7 +586,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_마담앙트완시즌1"
+    "id": "ott_20260117_마담앙트완시즌1",
+    "image": "/images/posters/마담_앙트완___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "만장적계절 - 시즌 1",
@@ -526,7 +603,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_만장적계절시즌1"
+    "id": "ott_20260117_만장적계절시즌1",
+    "image": "/images/posters/만장적계절___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "중국"
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -540,7 +620,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_일소수가시즌1"
+    "id": "ott_20260117_일소수가시즌1",
+    "image": "/images/posters/일소수가___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "중국"
   },
   {
     "title": "여의전 - 시즌 1",
@@ -554,7 +637,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_여의전시즌1"
+    "id": "ott_20260117_여의전시즌1",
+    "image": "/images/posters/여의전___시즌_1.webp",
+    "subGenre": "87부작",
+    "productionCountry": "중국"
   },
   {
     "title": "연우영안 - 시즌 1",
@@ -596,7 +682,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_불멸의그대에게시즌3"
+    "id": "ott_20260117_불멸의그대에게시즌3",
+    "image": "/images/posters/불멸의_그대에게___시즌_3.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "비밀의 아이프리 - 시즌 1",
@@ -610,7 +699,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_비밀의아이프리시즌1"
+    "id": "ott_20260117_비밀의아이프리시즌1",
+    "image": "/images/posters/비밀의_아이프리___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "나는 SOLO, 그 후 사랑은 계속된다 - 시즌 1",
@@ -624,7 +716,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_나는SOLO그후사랑은계속된다시즌1"
+    "id": "ott_20260117_나는SOLO그후사랑은계속된다시즌1",
+    "image": "/images/posters/나는_SOLO__그_후_사랑은_계속된다___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "피에트로",
@@ -638,7 +733,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260117_피에트로"
+    "id": "ott_20260117_피에트로",
+    "image": "/images/posters/피에트로.webp",
+    "subGenre": "브라질",
+    "runningTime": "15분"
   },
   {
     "title": "【최애의 아이】 - 시즌 3",
@@ -652,7 +750,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_최애의아이시즌3"
+    "id": "ott_20260116_최애의아이시즌3",
+    "image": "/images/posters/_최애의_아이____시즌_3.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "진범인 - 시즌 1",
@@ -666,7 +767,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_진범인시즌1"
+    "id": "ott_20260116_진범인시즌1",
+    "image": "/images/posters/진범인___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "캐리어스",
@@ -680,7 +784,11 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_캐리어스"
+    "id": "ott_20260116_캐리어스",
+    "image": "/images/posters/캐리어스.webp",
+    "subGenre": "공포",
+    "productionCountry": "미국",
+    "runningTime": "84분"
   },
   {
     "title": "백야 삼생연 - 시즌 1",
@@ -694,7 +802,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_백야삼생연시즌1"
+    "id": "ott_20260116_백야삼생연시즌1",
+    "image": "/images/posters/백야_삼생연___시즌_1.webp",
+    "subGenre": "24부작",
+    "productionCountry": "중국"
   },
   {
     "title": "노크: 더 하우스",
@@ -708,7 +819,17 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_노크더하우스"
+    "id": "ott_20260116_노크더하우스",
+    "image": "/images/posters/노크__더_하우스.webp",
+    "cast": [
+      "사무엘 보딘",
+      "리지 캐플란",
+      "안토니 스타"
+    ],
+    "ageRating": "15세 이상 관람가",
+    "subGenre": "공포, 스릴러",
+    "productionCountry": "미국",
+    "runningTime": "88분"
   },
   {
     "title": "헬 모드 ~파고들기 좋아하는 게이머는 폐급 설정 이세계에서 무쌍한다~ - 시즌 1",
@@ -722,7 +843,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_헬모드파고들기좋아하는게이머는폐급설정이세계에서무쌍한다시즌1"
+    "id": "ott_20260116_헬모드파고들기좋아하는게이머는폐급설정이세계에서무쌍한다시즌1",
+    "image": "/images/posters/헬_모드__파고들기_좋아하는_게이머는_폐급_설정_이세계에서_무쌍한다____시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "카야는 무섭지 않아 - 시즌 1",
@@ -750,7 +874,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_645"
+    "id": "ott_20260116_645",
+    "image": "/images/posters/6_45.webp",
+    "subGenre": "대한민국",
+    "runningTime": "113분"
   },
   {
     "title": "트래저디 걸스",
@@ -764,7 +891,11 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_트래저디걸스"
+    "id": "ott_20260116_트래저디걸스",
+    "image": "/images/posters/트래저디_걸스.webp",
+    "subGenre": "코미디",
+    "productionCountry": "미국",
+    "runningTime": "94분"
   },
   {
     "title": "둘이서 솔로 캠프 - 시즌 1",
@@ -778,7 +909,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_둘이서솔로캠프시즌1"
+    "id": "ott_20260116_둘이서솔로캠프시즌1",
+    "image": "/images/posters/둘이서_솔로_캠프___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "프리즘 윤무곡 - 시즌 1",
@@ -792,7 +926,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_프리즘윤무곡시즌1"
+    "id": "ott_20260116_프리즘윤무곡시즌1",
+    "image": "/images/posters/프리즘_윤무곡___시즌_1.webp",
+    "subGenre": "애니메이션",
+    "productionCountry": "일본"
   },
   {
     "title": "그물",
@@ -806,7 +943,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_그물"
+    "id": "ott_20260116_그물",
+    "image": "/images/posters/그물.webp",
+    "subGenre": "대한민국",
+    "runningTime": "114분"
   },
   {
     "title": "이 사랑 통역 되나요? - 시즌 1",
@@ -820,7 +960,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_이사랑통역되나요시즌1"
+    "id": "ott_20260116_이사랑통역되나요시즌1",
+    "image": "/images/posters/이_사랑_통역_되나요____시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "DEAW #12 Stand Up Comedy Show",
@@ -848,7 +991,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_소림축구"
+    "id": "ott_20260116_소림축구",
+    "image": "/images/posters/소림축구.webp",
+    "cast": [
+      "주성치",
+      "주성치",
+      "자오웨이",
+      "오맹달",
+      "황일비",
+      "막미림"
+    ],
+    "ageRating": "15세 이상 관람가",
+    "subGenre": "코미디, 액션",
+    "productionCountry": "홍콩, 중국",
+    "runningTime": "87분"
   },
   {
     "title": "피구의 제왕",
@@ -862,7 +1018,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_피구의제왕"
+    "id": "ott_20260116_피구의제왕",
+    "image": "/images/posters/피구의_제왕.webp",
+    "cast": [
+      "로슨 마샬 터버",
+      "빈스 본",
+      "벤 스틸러",
+      "크리스틴 타일러",
+      "게리 콜",
+      "립 톤"
+    ],
+    "ageRating": "12세 이상 관람가",
+    "subGenre": "코미디",
+    "productionCountry": "미국",
+    "runningTime": "93분"
   },
   {
     "title": "스코어",
@@ -876,7 +1045,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_스코어"
+    "id": "ott_20260116_스코어",
+    "image": "/images/posters/스코어.webp",
+    "runningTime": "2h 4m",
+    "subGenre": "제조업"
   },
   {
     "title": "WWF SmackDown! - 시즌 28",
@@ -890,7 +1062,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_WWFSmackDown시즌28"
+    "id": "ott_20260116_WWFSmackDown시즌28",
+    "image": "/images/posters/WWF_SmackDown____시즌_28.webp"
   },
   {
     "title": "라스트 송",
@@ -904,7 +1077,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_라스트송"
+    "id": "ott_20260116_라스트송",
+    "image": "/images/posters/라스트_송.webp",
+    "cast": [
+      "줄리 앤 로빈슨",
+      "마일리 사이러스",
+      "리암 헴스워스",
+      "그렉 키니어",
+      "보비 콜먼",
+      "핼록 빌즈"
+    ],
+    "ageRating": "12세 이상 관람가",
+    "subGenre": "드라마",
+    "productionCountry": "미국",
+    "runningTime": "107분"
   },
   {
     "title": "인간중독",
@@ -918,7 +1104,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_인간중독"
+    "id": "ott_20260116_인간중독",
+    "image": "/images/posters/인간중독.webp",
+    "cast": [
+      "김대우",
+      "송승헌",
+      "임지연",
+      "조여정",
+      "온주완",
+      "유해진"
+    ],
+    "ageRating": "청소년 관람불가",
+    "subGenre": "드라마, 멜로/로맨스",
+    "productionCountry": "대한민국",
+    "runningTime": "132분"
   },
   {
     "title": "덫의 전쟁 - 시즌 1",
@@ -932,7 +1131,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_덫의전쟁시즌1"
+    "id": "ott_20260116_덫의전쟁시즌1",
+    "image": "/images/posters/덫의_전쟁___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "일본"
   },
   {
     "title": "위대한 쇼 - 시즌 1",
@@ -946,7 +1148,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_위대한쇼시즌1"
+    "id": "ott_20260116_위대한쇼시즌1",
+    "image": "/images/posters/위대한_쇼___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "첫 번째 남자 - 시즌 1",
@@ -961,7 +1166,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_첫번째남자시즌1"
+    "id": "ott_20260116_첫번째남자시즌1",
+    "image": "/images/posters/첫_번째_남자___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "셰프들의 치킨 전쟁, 닭, 싸움 - 시즌 1",
@@ -975,7 +1183,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_셰프들의치킨전쟁닭싸움시즌1"
+    "id": "ott_20260116_셰프들의치킨전쟁닭싸움시즌1",
+    "image": "/images/posters/셰프들의_치킨_전쟁__닭__싸움___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "삼겹살 랩소디 - 시즌 1",
@@ -989,7 +1200,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_삼겹살랩소디시즌1"
+    "id": "ott_20260116_삼겹살랩소디시즌1",
+    "image": "/images/posters/삼겹살_랩소디___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "딸의 목숨을 빼앗은 놈을 죽이는 것은 죄입니까? - 시즌 1",
@@ -1003,7 +1217,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_딸의목숨을빼앗은놈을죽이는것은죄입니까시즌1"
+    "id": "ott_20260116_딸의목숨을빼앗은놈을죽이는것은죄입니까시즌1",
+    "image": "/images/posters/딸의_목숨을_빼앗은_놈을_죽이는_것은_죄입니까____시즌_1.webp"
   },
   {
     "title": "차가네 - 시즌 1",
@@ -1129,7 +1344,10 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_비에이패스불륜의늪"
+    "id": "ott_20260116_비에이패스불륜의늪",
+    "image": "/images/posters/비_에이_패스__불륜의_늪.webp",
+    "runningTime": "1h 35m",
+    "subGenre": "Drama"
   },
   {
     "title": "명탐정 코난 - 시즌 26",
@@ -1143,7 +1361,20 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_명탐정코난시즌26"
+    "id": "ott_20260116_명탐정코난시즌26",
+    "image": "/images/posters/명탐정_코난___시즌_26.webp",
+    "cast": [
+      "시게하라 카츠야",
+      "김선혜",
+      "강수진",
+      "이정구",
+      "현경수",
+      "김율"
+    ],
+    "ageRating": "12세 이상 관람가",
+    "subGenre": "애니메이션",
+    "productionCountry": "일본",
+    "runningTime": "110분"
   },
   {
     "title": "소재 채취가의 이세계 여행기 - 시즌 1",
@@ -1157,7 +1388,8 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_소재채취가의이세계여행기시즌1"
+    "id": "ott_20260116_소재채취가의이세계여행기시즌1",
+    "image": "/images/posters/소재_채취가의_이세계_여행기___시즌_1.webp"
   },
   {
     "title": "일소수가 - 시즌 1",
