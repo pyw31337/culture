@@ -41,7 +41,7 @@ import { chromium } from 'playwright';
 
         // Try Extraction
         const cast = await page.evaluate(() => {
-            const newCast = [];
+            const newCast: string[] = [];
             // Try very broad selector
             const members = document.querySelectorAll('.cm_content_area .item, .cm_content_area .card_item');
             members.forEach(m => {
