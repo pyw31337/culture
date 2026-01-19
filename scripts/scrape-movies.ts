@@ -1,297 +1,207 @@
-
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-// Naver Mobile Search - "Current Movies"
-const SCRAPE_URL = 'https://m.search.naver.com/search.naver?query=%ED%98%84%EC%9E%AC%EC%83%81%EC%98%81%EC%98%84%ED%99%94';
+// KOBIS Daily Box Office
+const SCRAPE_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
 
 async function scrapeMovies() {
-    console.log('Starting Naver Movie Scraper (Mobile)...');
+    console.log('Starting KOBIS Movie Scraper...');
     const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true, // Set to false for debugging if needed
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,800']
     });
     const page = await browser.newPage();
-    // Forward logs (keep validation if needed, but remove if confident)
-    // page.on('console', msg => console.log('PAGE:', msg.text()));
 
-    const MOBILE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
-    const DESKTOP_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-
-    // Set Mobile UA for Naver List
-    await page.setUserAgent(MOBILE_UA);
+    // Set Desktop UA
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.setViewport({ width: 1280, height: 800 });
 
     try {
-        await page.setViewport({ width: 390, height: 844 });
+        console.log(`Navigating to ${SCRAPE_URL}...`);
         await page.goto(SCRAPE_URL, { waitUntil: 'networkidle2' });
 
-        console.log('Page loaded. waiting for movie list...');
+        // Wait for table to load
+        await page.waitForSelector('.rst_sch');
 
-        // Debug screenshot
-        await page.screenshot({ path: 'debug_naver_mobile.png' });
-
-        // Selector based on debug HTML analysis: .card_content .card_item
-        const listSelector = '.card_content .card_item';
-
-        try {
-            await page.waitForSelector(listSelector, { timeout: 10000 });
-            // Wait for lazy-loaded images
-            await new Promise(r => setTimeout(r, 2000));
-        } catch (e) {
-            console.log('Mobile list selector not found. Flushing debug HTML...');
-            await page.screenshot({ path: 'naver_scrape_error_mobile.png' });
-            fs.writeFileSync('debug_html_mobile_error.txt', await page.content());
-            throw e;
-        }
-
-        // Initial Load
-        let totalMovies: any[] = [];
-        let pageNum = 1;
-        const MAX_PAGES = 5; // Safety limit
-
-        while (pageNum <= MAX_PAGES) {
-            console.log(`Scraping page ${pageNum}...`);
-
-            // Extract items from current view
-            const newItems = await page.evaluate(() => {
-                const items = document.querySelectorAll('.card_content .card_item');
-                const data: any[] = [];
-                items.forEach((item, idx) => {
-                    try {
-                        const titleEl = item.querySelector('.data_box .this_text') || item.querySelector('strong.this_text');
-                        const imageEl = item.querySelector('.img_box img');
-                        const linkEl = item.querySelector('a.data_area');
-                        const dateEl = item.querySelector('.info_group dd');
-
-                        // Try to find grade in list
-                        // Common selectors: .ico_grade, or inside .info_group text
-                        let grade = '';
-                        const gradeEl = item.querySelector('.ico_grade') || item.querySelector('.c_grade'); // hypothetical selectors
-                        if (gradeEl) grade = gradeEl.textContent?.trim() || '';
-
-                        // Capture debug HTML for the first item
-                        let debugHtml = '';
-                        if (idx === 0) debugHtml = item.outerHTML;
-
-                        if (titleEl && linkEl) {
-                            let title = titleEl.textContent?.trim() || '';
-                            title = title.replace(/^\[영화\]\s*/, '');
-                            let image = imageEl?.getAttribute('src') || '';
-                            let link = linkEl.getAttribute('href') || '';
-                            let date = dateEl?.textContent?.trim() || '';
-
-                            if (link && !link.startsWith('http')) {
-                                if (link.startsWith('/')) {
-                                    link = 'https://m.search.naver.com' + link;
-                                } else if (link.startsWith('?')) {
-                                    // Relative query string, usually for search.naver
-                                    link = 'https://m.search.naver.com/search.naver' + link;
-                                } else {
-                                    link = 'https://m.search.naver.com/' + link;
-                                }
-                            }
-                            data.push({ title, image, link, date, grade, debugHtml });
-                        }
-                    } catch (e) { }
-                });
-                return data;
-            }) as any[];
-
-            console.log(`Found ${newItems.length} items on page ${pageNum}`);
-
-            // Save debug HTML if available
-            if (newItems.length > 0 && newItems[0].debugHtml) {
-                fs.writeFileSync('debug_list_item.html', newItems[0].debugHtml);
-            }
-
-            // Add unique items
-            for (const item of newItems) {
-                if (!totalMovies.find(m => m.title === item.title)) {
-                    totalMovies.push(item);
-                }
-            }
-
-            // Check for Next Button
-            const nextBtn = await page.$('.pg_next.on'); // 'on' class usually means active
-            if (!nextBtn) {
-                console.log('No more pages (next button not active).');
-                break;
-            }
-
-            console.log('Clicking Next page...');
-            await nextBtn.click();
-            await new Promise(r => setTimeout(r, 2000)); // Wait for load
-            pageNum++;
-        }
-
-        const rawMovies = totalMovies;
-
-        console.log(`Found ${rawMovies.length} movies. Processing details...`);
-
-        if (rawMovies.length === 0) {
-            fs.writeFileSync('debug_html_empty_list.txt', await page.content());
-        }
-
-        const movies = [];
-        const MAX_ITEMS = 20;
-
-        function cleanGrade(g: string): string {
-            if (!g) return "등급 미정";
-            g = g.replace("관람등급", "").trim();
-            if (g.includes("12세")) return "12세 관람가";
-            if (g.includes("15세")) return "15세 관람가";
-            if (g.includes("청소년") || g.includes("불가")) return "청소년 관람불가";
-            if (g.includes("전체")) return "전체 관람가";
-            return "등급 미정";
-        }
-
-        for (let i = 0; i < Math.min(rawMovies.length, MAX_ITEMS); i++) {
-            const raw = rawMovies[i];
-            console.log(`[${i + 1}/${Math.min(rawMovies.length, MAX_ITEMS)}] Processing: ${raw.title}`);
-
-            // Use list-scraped grade if available, otherwise default to unknown
-            let grade = raw.grade || "등급 미정";
-
-            // Try to fetch detail page for Grade if missed
-            // ---------------------------
-            // 2. Fetch Daum Metadata (Cast, Director, Info) & Fallback Grade
-            // ---------------------------
-            let daumCast: string[] = [];
-            let daumDirector = "";
-            let daumInfo = "";
-
+        // Click "Load More" button (#btn_0) to ensure we see enough items (usually top 10 is shown, button loads more)
+        const loadMoreBtn = await page.$('#btn_0');
+        if (loadMoreBtn) {
+            console.log('Clicking "Load More" button...');
             try {
-                // Switch to Desktop UA for robust Daum scraping
-                await page.setUserAgent(DESKTOP_UA);
-
-                const daumUrl = `https://search.daum.net/search?w=tot&q=${encodeURIComponent(raw.title + ' 영화')}`;
-                // console.log(`Fetching Daum metadata for: ${raw.title}`);
-
-                await page.goto(daumUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
-                try { await page.waitForSelector('dt', { timeout: 3000 }); } catch (e) { console.log('Wait for dt timeout'); }
-
-                const daumData = await page.evaluate(() => {
-                    const result: any = { cast: [], director: '', info: '', grade: '' };
-
-                    const dts = Array.from(document.querySelectorAll('dt'));
-                    // Debug: Log all DTs
-                    console.log('Available DTs: ' + dts.map(d => d.textContent?.trim()).join(', '));
-
-                    // Helper to find DD (Use arrow function to avoid tsx __name injection)
-                    const getDDText = (key: string) => {
-                        // @ts-ignore
-                        const target = dts.find(dt => dt.textContent && dt.textContent.indexOf(key) !== -1);
-                        if (target && target.nextElementSibling && target.nextElementSibling.tagName === 'DD') {
-                            return target.nextElementSibling;
-                        }
-                        return null;
-                    };
-
-                    const castEl = getDDText('출연');
-                    if (castEl) {
-                        // Desktop structure usually contains anchors
-                        const anchors = Array.from(castEl.querySelectorAll('a'));
-                        if (anchors.length > 0) {
-                            result.cast = anchors.map(a => a.textContent?.trim() || '')
-                                .filter(s => s && s !== '더보기' && s !== '확장하기');
-                        } else {
-                            // Trim garbage (commas etc if just text)
-                            result.cast = (castEl.textContent?.trim() || '').split(',').map(s => s.trim()).filter(Boolean);
-                        }
-                    }
-
-                    const dirEl = getDDText('감독');
-                    if (dirEl) {
-                        result.director = dirEl.textContent?.trim() || '';
-                    }
-
-                    // Info: "미국액션 외112분12세이상 관람가"
-                    const infoEl = getDDText('개요');
-                    if (infoEl) {
-                        let fullText = infoEl.textContent?.trim() || '';
-                        // Remove Rating first
-                        fullText = fullText.replace(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/, '').trim();
-
-                        // Split by Duration (e.g. 112분)
-                        // This regex looks for digits+분
-                        const timeMatch = fullText.match(/([0-9]+분)/);
-                        if (timeMatch) {
-                            const timePart = timeMatch[0];
-                            const parts = fullText.split(timePart);
-                            // parts[0] is Country/Genre, parts[1] is empty or whatever
-                            // Daum "미국액션 외" -> "미국", "액션 외".
-                            // Assume space means split or just leave it.
-                            // Better: "미국 / 액션 외 / 112분"
-                            const front = parts[0].trim();
-                            // If front has spaces, maybe replace with slashes?
-                            // Naive: just trust text.
-                            result.info = `${front} / ${timePart}`;
-                        } else {
-                            result.info = fullText;
-                        }
-                    }
-
-                    const bodyText = document.body.innerText;
-                    const match = bodyText.match(/(전체|12세|15세|청소년)\s*(?:이상)?\s*(관람가|관람불가)/);
-                    if (match) result.grade = match[0];
-
-                    return result;
-                });
-
-                if (daumData.cast) daumCast = daumData.cast;
-                if (daumData.director) daumDirector = daumData.director;
-                if (daumData.info) daumInfo = daumData.info;
-
-                if (grade === "등급 미정" && daumData.grade) {
-                    grade = cleanGrade(daumData.grade);
-                    console.log(`Found grade on Daum: ${grade}`);
-                }
-
+                // Ensure button is visible/clickable
+                await page.evaluate((btn) => btn.click(), loadMoreBtn);
+                // Wait for potential network request or DOM update.
+                // KOBIS often just reveals rows or does a quick fetch. 
+                // Let's rely on waiting for network idle or a short pause.
+                await new Promise(r => setTimeout(r, 2000));
             } catch (e) {
-                console.log(`Daum metadata failed: ${e}`);
-            } finally {
-                // Always restore Mobile UA for next Naver steps
-                await page.setUserAgent(MOBILE_UA);
+                console.log('Error clicking load more:', e);
+            }
+        } else {
+            console.log('"Load More" button not found, checking if list is already expanded...');
+        }
+
+        // Get list of movies
+        // Selector: #tbody_0 > tr
+        const rows = await page.$$('#tbody_0 > tr');
+        console.log(`Found ${rows.length} rows in the list.`);
+
+        const movies: any[] = [];
+        const MAX_ITEMS = 30; // User requested ~30 items
+
+        // Phase 1: Iterate through rows to extract basic info and movie codes
+        for (let i = 0; i < Math.min(rows.length, MAX_ITEMS); i++) {
+            const currentRow = (await page.$$('#tbody_0 > tr'))[i];
+            if (!currentRow) continue;
+
+            const titleLink = await currentRow.$('td.tal > span.ellip.per90 > a');
+            if (!titleLink) {
+                console.log(`No title link found for row ${i}. Skipping.`);
+                continue;
             }
 
-            // High-res Image (Keep existing logic)
-            // Extract the real 'src' from the query param if wrapped
-            // e.g. https://search.pstatic.net/common?src=https%3A%2F%2F...&type=...
-            let highResImage = raw.image;
-            try {
-                const urlObj = new URL(raw.image);
-                const realSrc = urlObj.searchParams.get('src');
-                if (realSrc) {
-                    highResImage = decodeURIComponent(realSrc);
-                    highResImage = highResImage.split('?')[0];
-                } else {
-                    highResImage = highResImage.split('?')[0];
+            const title = await page.evaluate(el => el.textContent?.trim(), titleLink);
+            const rankText = await currentRow.$eval('td:nth-child(1)', el => el.textContent?.trim());
+            const openDateRaw = await currentRow.$eval('td:nth-child(2)', el => el.textContent?.trim());
+
+            // Extract Movie Code from "onclick" or "href"
+            // Example: <a href="#" onclick="mstView('movie','20247693');return false;">...</a>
+            // Or: <a href="javascript:voild(0)" onclick="jeongboView('20247693')">...</a>
+            const attr = await page.evaluate(el => {
+                return el.getAttribute('onclick') || el.getAttribute('href');
+            }, titleLink);
+
+            let movieCode = '';
+            if (attr) {
+                // Try to match 'movie', '123456' or similar
+                const match = attr.match(/['"]([0-9]{8})['"]/); // Match 8 digit code usually
+                if (match) {
+                    movieCode = match[1];
                 }
-            } catch (e) {
-                highResImage = highResImage.split('?')[0];
             }
 
-            // Construct final movie object
-            const id = `movie_${raw.date.replace(/[\.\s]/g, '')}_${raw.title.replace(/[\s\(\)]/g, '_').substring(0, 10)}`;
+            if (!movieCode) {
+                console.log(`Could not extract movie code from attribute: ${attr}. Skipping ${title}.`);
+                continue;
+            }
 
-            movies.push({
-                id: id,
-                title: raw.title,
-                image: highResImage,
-                date: raw.date,
-                venue: grade,
-                gradeIcon: null,
-                link: `https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(raw.title + ' 영화')}`,
-                region: '전국',
-                genre: 'movie',
-                cast: daumCast.length > 0 ? daumCast : undefined,
-                director: daumDirector || undefined,
-                movieInfo: daumInfo || undefined
+            console.log(`Found Movie Code: ${movieCode}. Preparing for detail scrape...`);
+
+            // Open detail in a new tab or same tab?
+            // Since we need to go back to list, maybe new page is better?
+            // Actually, we can just construct the URL and visit it.
+            // But we have the list loop. 
+            // Better strategy: Collect all codes first, then visit them one by one.
+            // This avoids "stale element" issues if we navigate away and back.
+            movies.push({ // Temporary push to store code
+                tempCode: movieCode,
+                title: title,
+                rank: rankText,
+                openDateRaw: openDateRaw
             });
         }
 
-        // Save
+        // Phase 2: Visit each movie detail page
+        const finalMovies = [];
+        for (const m of movies) {
+            if (!m.tempCode) continue;
+
+            console.log(`Scraping details for ${m.title} (${m.tempCode})...`);
+            try {
+                // Direct Detail URL
+                // https://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieDtl.do?code=20247693
+                const detailUrl = `https://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieDtl.do?code=${m.tempCode}`;
+
+                await page.goto(detailUrl, { waitUntil: 'domcontentloaded' });
+                await page.waitForSelector('.ovf.info.info1', { timeout: 5000 });
+
+                const details = await page.evaluate(() => {
+                    const infoContainer = document.querySelector('.ovf.info.info1');
+                    if (!infoContainer) return null;
+
+                    // Image selector: try .thumb_img img, or just any img in the left side
+                    let imageEl = infoContainer.querySelector('.thumb_img img');
+                    if (!imageEl) imageEl = infoContainer.querySelector('a.thumb_img img');
+
+                    const poster = imageEl ? imageEl.getAttribute('src') : '';
+
+                    const data: any = {};
+
+                    // Parse DL/DT/DD
+                    const dts = Array.from(infoContainer.querySelectorAll('dl > dt'));
+                    dts.forEach(dt => {
+                        const key = dt.textContent?.trim();
+                        const dd = dt.nextElementSibling;
+                        if (dd && dd.tagName === 'DD') {
+                            const val = dd.innerText.trim();
+                            if (key?.includes('요약정보')) data.summary = val;
+                            if (key?.includes('개봉일')) data.openDate = val;
+                            if (key?.includes('등급')) data.grade = val;
+                        }
+                    });
+
+                    return { poster, ...data };
+                });
+
+                if (details) {
+                    // Normalize
+                    let normalizedDate = details.openDate || m.openDateRaw || '';
+                    normalizedDate = normalizedDate.replace(/-/g, '.').replace(/[^\d\.]/g, '');
+                    if (!normalizedDate.endsWith('.') && normalizedDate.length > 0) normalizedDate += '.';
+
+                    // Clean Poster
+                    let image = details.poster || '';
+                    if (image && !image.startsWith('http')) {
+                        image = 'https://www.kobis.or.kr' + image;
+                    }
+                    if (image.includes('common/point_icon')) image = ''; // Avoid collecting rating icons as poster
+
+                    // Grade fallback from summary
+                    // Summary text example: "장편 | 일반영화 | 멜로/로맨스 | 114분 37초 | 15세이상관람가 | 한국"
+                    let grade = details.grade || '';
+                    if (!grade && details.summary) {
+                        if (details.summary.includes('15세')) grade = '15세 관람가';
+                        else if (details.summary.includes('12세')) grade = '12세 관람가';
+                        else if (details.summary.includes('전체')) grade = '전체 관람가';
+                        else if (details.summary.includes('청소년') || details.summary.includes('불가')) grade = '청소년 관람불가';
+                    }
+
+                    // Standardize Grade
+                    if (grade.includes('15세')) grade = '15세 관람가';
+                    else if (grade.includes('12세')) grade = '12세 관람가';
+                    else if (grade.includes('전체')) grade = '전체 관람가';
+                    else if (grade.includes('청소년') || grade.includes('불가')) grade = '청소년 관람불가';
+                    else grade = '등급 미정';
+
+                    const id = `movie_${normalizedDate.replace(/[\.\s]/g, '')}_${m.title?.replace(/[\s\(\)]/g, '_')}`;
+
+                    finalMovies.push({
+                        id,
+                        title: m.title || '',
+                        image,
+                        date: normalizedDate,
+                        venue: grade,
+                        gradeIcon: null,
+                        link: detailUrl,
+                        region: '전국',
+                        genre: 'movie',
+                        movieInfo: details.summary || ''
+                    });
+                }
+            } catch (e) {
+                console.log(`Failed to scrape detail for ${m.title}: ${e}`);
+                // Add basic info if detail fails?
+            }
+            // Small delay
+            await new Promise(r => setTimeout(r, 500));
+        }
+
+        // Replace movies array with finalMovies for saving
+        movies.length = 0;
+        movies.push(...finalMovies);
+
+        // Save Data
         const outputDir = path.join(process.cwd(), 'src', 'data');
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
