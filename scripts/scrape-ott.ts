@@ -422,7 +422,7 @@ async function scrapeHybrid() {
                             parts.forEach(part => {
                                 if (part.match(/\d+분/)) {
                                     res.runningTime = part;
-                                } else if (['한국', '미국', '일본', '중국', '영국', '프랑스', '독일'].some(c => part.includes(c)) && part.length < 10) {
+                                } else if (['한국', '대한민국', '미국', '일본', '중국', '영국', '프랑스', '독일'].some(c => part.includes(c)) && part.length < 10) {
                                     res.productionCountry = part;
                                 } else {
                                     // Make sure it's not a date (2025.09.10)
@@ -439,6 +439,17 @@ async function scrapeHybrid() {
                 if (!res.subGenre) {
                     const subTitle = document.querySelector('.sub_title .txt');
                     if (subTitle) res.subGenre = subTitle.textContent?.trim();
+                }
+
+                // [Fallback] Age Rating from Body if missing
+                if (!res.ageRating) {
+                    const bodyText = document.body.innerText;
+                    const ratingMatch = bodyText.match(/(?:제한|전체|12세|15세|18세|19세)(?:\s*이상)?\s*관람가/);
+                    if (ratingMatch) {
+                        res.ageRating = ratingMatch[0];
+                    } else if (bodyText.includes('청소년 관람불가')) {
+                        res.ageRating = '청소년 관람불가';
+                    }
                 }
 
                 // 2. Poster (.detail_info a.thumb img OR .cm_content_area .thumb img)

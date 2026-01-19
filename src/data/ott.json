@@ -876,7 +876,9 @@
     "genre": "ott",
     "id": "ott_20260116_645",
     "image": "/images/posters/6_45.webp",
-    "subGenre": "대한민국",
+    "subGenre": "코미디",
+    "productionCountry": "대한민국",
+    "ageRating": "12세 관람가",
     "runningTime": "113분"
   },
   {
@@ -945,7 +947,9 @@
     "genre": "ott",
     "id": "ott_20260116_그물",
     "image": "/images/posters/그물.webp",
-    "subGenre": "대한민국",
+    "subGenre": "드라마",
+    "productionCountry": "대한민국",
+    "ageRating": "15세 관람가",
     "runningTime": "114분"
   },
   {
