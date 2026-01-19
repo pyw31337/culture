@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/culture' : '',
+  },
 };
 
 export default withPWA(nextConfig);

@@ -6,7 +6,15 @@ export const getOptimizedUrl = (url: string, width: number = 400) => {
     // Seoul Culture might be unstable with proxy, skipping to be safe
     if (url.includes('culture.seoul.go.kr')) return url;
     // Skip external optimization for local images (relative paths)
-    if (url.startsWith('/')) return url;
+    if (url.startsWith('/')) {
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        // If basePath is set and url doesn't start with it (and isn't just a slash if basePath is empty?), prepend it.
+        // Also avoid double-slash if basePath ends with / (it shouldn't based on config)
+        if (basePath && !url.startsWith(basePath)) {
+            return `${basePath}${url}`;
+        }
+        return url;
+    }
 
     try {
         // use wsrv.nl for image optimization
