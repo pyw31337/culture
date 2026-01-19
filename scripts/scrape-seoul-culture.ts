@@ -20,6 +20,7 @@ interface ScrapedEvent {
     genre: string;
     source: 'seoul-culture';
     link: string;
+    lastEnriched?: string;
 }
 
 const TARGET_URL = 'https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=2026-01-01&edate=2026-12-31';
@@ -146,12 +147,23 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
     const todo: ScrapedEvent[] = [];
     const done: ScrapedEvent[] = [];
 
+    // Helper: Check if item was enriched recently (e.g., within 7 days)
+    const isRecentlyEnriched = (ex: ScrapedEvent) => {
+        if (!ex.lastEnriched) return false;
+        try {
+            const last = new Date(ex.lastEnriched);
+            const now = new Date();
+            const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
+            return diffDays < 7;
+        } catch (e) { return false; }
+    };
+
     items.forEach(item => {
         if (existingMap.has(item.id)) {
             const ex = existingMap.get(item.id)!;
-            // Check if enriched fields exist
-            if (ex.price || ex.ageRating || ex.runningTime) {
-                done.push({ ...item, ...ex }); // keep fresher list info but old details
+            // Check if enriched fields exist or recently checked
+            if ((ex.price || ex.ageRating || ex.runningTime) || isRecentlyEnriched(ex)) {
+                done.push({ ...item, ...ex });
             } else {
                 todo.push(item);
             }
@@ -160,7 +172,7 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
         }
     });
 
-    console.log(`Total: ${items.length}. Cached: ${done.length}. To Enrich: ${todo.length}.`);
+    console.log(`Total: ${items.length}. Cached/Skipped: ${done.length}. To Enrich: ${todo.length}.`);
 
     const enrichedResults = [...done];
     if (todo.length === 0) return enrichedResults;
@@ -168,14 +180,14 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     bar.start(todo.length, 0);
 
-    const CONCURRENCY = 15;
+    const CONCURRENCY = 5;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
             try {
-                // Optimization
+                // ... setup ...
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
                     if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
@@ -200,8 +212,12 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                     };
                 });
 
+                let result = {
+                    ...item,
+                    lastEnriched: new Date().toISOString()
+                };
+
                 if (details) {
-                    // "R석 77,000원 / S석 ..." -> "R석 77,000원"
                     let price = details.cost;
                     if (price.includes('/')) {
                         price = price.split('/')[0].trim();
@@ -210,9 +226,9 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                         price = price.split('\n')[0].trim();
                     }
 
-                    return {
-                        ...item,
-                        date: details.period || item.date, // Update date with period if available
+                    result = {
+                        ...result,
+                        date: details.period || item.date,
                         runningTime: details.time,
                         time: details.time,
                         ageRating: details.target,
@@ -220,7 +236,7 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                         cost: price
                     };
                 }
-                return item;
+                return result;
             } catch (e) {
                 return item;
             } finally {

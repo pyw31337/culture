@@ -26,6 +26,7 @@ interface Performance {
     price?: string;
     originalPrice?: string;
     discount?: string;
+    lastEnriched?: string; // ISO Date string
 }
 
 const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
@@ -206,13 +207,26 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     const alreadyDone: Performance[] = [];
     const todo: Performance[] = [];
 
+    // Helper: Check if item was enriched recently (e.g., within 7 days)
+    const isRecentlyEnriched = (ex: Performance) => {
+        if (!ex.lastEnriched) return false;
+        try {
+            const last = new Date(ex.lastEnriched);
+            const now = new Date();
+            const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
+            return diffDays < 7;
+        } catch (e) { return false; }
+    };
+
     candidates.forEach(c => {
         if (existingEnriched.has(c.id)) {
             const ex = existingEnriched.get(c.id)!;
-            // Consider it done if it has runningTime OR price (and date hasn't moved too far?)
-            // Just use ID match and existence of details.
-            if (ex.runningTime || ex.price || ex.ageRating) {
-                alreadyDone.push({ ...c, ...ex }); // Merge to keep fresh list info but old details
+
+            // Criteria for skipping:
+            // 1. Has important details (runningTime OR price) 
+            // 2. OR was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
+            if ((ex.runningTime || ex.price || ex.ageRating) || isRecentlyEnriched(ex)) {
+                alreadyDone.push({ ...c, ...ex });
             } else {
                 todo.push(c);
             }
@@ -221,7 +235,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
         }
     });
 
-    console.log(`Total Candidates: ${candidates.length}. Already cached: ${alreadyDone.length}. To enrich: ${todo.length}.`);
+    console.log(`Total Candidates: ${candidates.length}. Smart Skip: ${alreadyDone.length}. To Enrich: ${todo.length}.`);
 
     const enrichedResult: Performance[] = [...alreadyDone];
 
@@ -229,9 +243,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     if (todo.length > 0) {
         bar.start(todo.length, 0);
-    } // If 0, no bar needed?
+    }
 
-    // Concurrency
+    // Concurrency: Reduced to 5 to prevent timeouts on CI
     const CONCURRENCY = 5;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
@@ -240,7 +254,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const page = await browser.newPage();
             try {
                 // Optimize: Block heavy media only (Allow styles/fonts for correct rendering)
-                /*
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
                     if (['image', 'media'].includes(req.resourceType())) {
@@ -249,7 +262,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         req.continue();
                     }
                 });
-                */
 
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
@@ -368,7 +380,8 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     ageRating,
                     price,
                     originalPrice,
-                    discount
+                    discount,
+                    lastEnriched: new Date().toISOString()
                 };
 
             } catch (e) {
