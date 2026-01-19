@@ -232,13 +232,23 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     } // If 0, no bar needed?
 
     // Concurrency
-    const CONCURRENCY = 5;
+    const CONCURRENCY = 15;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
             try {
+                // Optimize: Block images/fonts
+                await page.setRequestInterception(true);
+                page.on('request', (req: any) => {
+                    if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
+                        req.abort();
+                    } else {
+                        req.continue();
+                    }
+                });
+
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
 
@@ -246,9 +256,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const goodsId = item.id;
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
-                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
                 try {
-                    await page.waitForSelector('ul.info', { timeout: 3000 });
+                    await page.waitForSelector('ul.info', { timeout: 2000 });
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
