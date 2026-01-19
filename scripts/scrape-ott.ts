@@ -387,7 +387,7 @@ async function scrapeHybrid() {
                             if (!res.productionCountry) {
                                 if (vText.includes('일본')) res.productionCountry = '일본';
                                 if (vText.includes('미국')) res.productionCountry = '미국';
-                                if (vText.includes('한국')) res.productionCountry = '한국';
+                                if (vText.includes('한국') || vText.match(/(KBS|SBS|MBC|tvN|JTBC|MBN|ENA)/i)) res.productionCountry = '한국';
                                 if (vText.includes('중국')) res.productionCountry = '중국';
                                 if (vText.includes('영국')) res.productionCountry = '영국';
                             }
@@ -395,6 +395,8 @@ async function scrapeHybrid() {
                                 const yearMatch = vText.match(/\d{4}/);
                                 if (yearMatch) res.productionYear = yearMatch[0];
                             }
+                            // If it has broadcast info, it's likely a Drama/Show
+                            if (!res.subGenre) res.subGenre = '드라마';
                         }
 
                         // [NEW] Fallback for Genre from '원작'
@@ -425,6 +427,12 @@ async function scrapeHybrid() {
                             });
                         }
                     });
+                }
+
+                // Header Fallback for Genre (e.g. .sub_title .txt: "드라마")
+                if (!res.subGenre) {
+                    const subTitle = document.querySelector('.sub_title .txt');
+                    if (subTitle) res.subGenre = subTitle.textContent?.trim();
                 }
 
                 // 2. Poster (.detail_info a.thumb img OR .cm_content_area .thumb img)
@@ -458,6 +466,32 @@ async function scrapeHybrid() {
 
                 return res;
             });
+
+            // 3. Cast Tab Navigation (if missing)
+            if (!naverData.cast) {
+                // Try finding the tab
+                const castTabSelector = 'li[data-tab-name="cast"] a, a[href*="cast"], a:has-text("출연"), a:has-text("등장인물")';
+                try {
+                    const castTab = await naverPage.$(castTabSelector);
+                    if (castTab) {
+                        // console.log('   > Clicking Cast Tab...');
+                        await castTab.click();
+                        await naverPage.waitForTimeout(1000);
+
+                        const castList = await naverPage.evaluate(() => {
+                            const names: string[] = [];
+                            // Standard Cast List
+                            document.querySelectorAll('.cast_box .name, .detail_list .name').forEach(el => {
+                                const n = el.textContent?.trim();
+                                if (n) names.push(n);
+                            });
+                            return names.slice(0, 6).join(', ');
+                        });
+
+                        if (castList) naverData.cast = castList;
+                    }
+                } catch (e) { }
+            }
 
             // Merge Data
             // VALIDATION: invalid images

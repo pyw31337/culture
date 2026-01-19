@@ -13,7 +13,9 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260118_화려한날들시즌1",
-    "image": "/images/posters/화려한_날들___시즌_1.webp"
+    "image": "/images/posters/화려한_날들___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "연애 실험: 블라인드 러브 독일편 - 시즌 2",
@@ -45,7 +47,9 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260118_은애하는도적님아시즌1",
-    "image": "/images/posters/은애하는_도적님아___시즌_1.webp"
+    "image": "/images/posters/은애하는_도적님아___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "언더커버 미쓰홍 - 시즌 1",
@@ -61,7 +65,9 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260118_언더커버미쓰홍시즌1",
-    "image": "/images/posters/언더커버_미쓰홍___시즌_1.webp"
+    "image": "/images/posters/언더커버_미쓰홍___시즌_1.webp",
+    "subGenre": "드라마",
+    "productionCountry": "한국"
   },
   {
     "title": "아기가 생겼어요 - 시즌 1",
@@ -151,6 +157,7 @@
     "genre": "ott",
     "id": "ott_20260118_언젠가무중력하늘에서시즌1",
     "image": "/images/posters/언젠가__무중력_하늘에서___시즌_1.webp",
+    "subGenre": "드라마",
     "productionCountry": "일본"
   },
   {
@@ -165,8 +172,7 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_선암여고탐정단시즌1",
-    "image": "/images/posters/선암여고_탐정단___시즌_1.webp"
+    "id": "ott_20260118_선암여고탐정단시즌1"
   },
   {
     "title": "냉장고를 부탁해 - 시즌 1",
@@ -180,8 +186,7 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_냉장고를부탁해시즌1",
-    "image": "/images/posters/냉장고를_부탁해___시즌_1.webp"
+    "id": "ott_20260118_냉장고를부탁해시즌1"
   },
   {
     "title": "장안삼괴탐 - 시즌 1",
@@ -195,9 +200,7 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_장안삼괴탐시즌1",
-    "image": "/images/posters/장안삼괴탐___시즌_1.webp",
-    "productionCountry": "중국"
+    "id": "ott_20260118_장안삼괴탐시즌1"
   },
   {
     "title": "호르몬즈 - 시즌 1",
@@ -211,8 +214,7 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_호르몬즈시즌1",
-    "image": "/images/posters/호르몬즈___시즌_1.webp"
+    "id": "ott_20260118_호르몬즈시즌1"
   },
   {
     "title": "호르몬즈 - 시즌 2",
@@ -226,8 +228,7 @@
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260118_호르몬즈시즌2",
-    "image": "/images/posters/호르몬즈___시즌_2.webp"
+    "id": "ott_20260118_호르몬즈시즌2"
   },
   {
     "title": "강희암행록 - 시즌 1",
@@ -426,6 +427,20 @@
     "id": "ott_20260117_러브미시즌1"
   },
   {
+    "title": "아기가 생겼어요 - 시즌 1",
+    "date": "2026-01-17",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/agiga-saenggyeosseoyo/시즌-1",
+    "platform": "wavve",
+    "poster": "/images/posters/아기가_생겼어요___시즌_1.webp",
+    "platforms": [
+      "wavve"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260117_아기가생겼어요시즌1"
+  },
+  {
     "title": "판사 이한영 - 시즌 1",
     "date": "2026-01-17",
     "link": "https://www.justwatch.com/kr/TV-프로그램/pansa-ihanyeong/시즌-1",
@@ -509,20 +524,6 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260117_만장적계절시즌1"
-  },
-  {
-    "title": "아기가 생겼어요 - 시즌 1",
-    "date": "2026-01-17",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/agiga-saenggyeosseoyo/시즌-1",
-    "platform": "wavve",
-    "poster": "/images/posters/아기가_생겼어요___시즌_1.webp",
-    "platforms": [
-      "wavve"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "id": "ott_20260117_아기가생겼어요시즌1"
   },
   {
     "title": "일소수가 - 시즌 1",
@@ -651,6 +652,34 @@
     "id": "ott_20260116_최애의아이시즌3"
   },
   {
+    "title": "진범인 - 시즌 1",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/TV-프로그램/jinbeomin/시즌-1",
+    "platform": "Watcha",
+    "poster": "/images/posters/진범인___시즌_1.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_진범인시즌1"
+  },
+  {
+    "title": "캐리어스",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/kaerieoseu",
+    "platform": "Watcha",
+    "poster": "/images/posters/캐리어스.webp",
+    "platforms": [
+      "watcha"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_캐리어스"
+  },
+  {
     "title": "백야 삼생연 - 시즌 1",
     "date": "2026-01-16",
     "link": "https://www.justwatch.com/kr/TV-프로그램/baegya-samsaengyeon/시즌-1",
@@ -707,18 +736,18 @@
     "id": "ott_20260116_645"
   },
   {
-    "title": "진범인 - 시즌 1",
+    "title": "트래저디 걸스",
     "date": "2026-01-16",
-    "link": "https://www.justwatch.com/kr/TV-프로그램/jinbeomin/시즌-1",
+    "link": "https://www.justwatch.com/kr/영화/teuraejeodi-geolseu",
     "platform": "Watcha",
-    "poster": "/images/posters/진범인___시즌_1.webp",
+    "poster": "/images/posters/트래저디_걸스.webp",
     "platforms": [
       "watcha"
     ],
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
-    "id": "ott_20260116_진범인시즌1"
+    "id": "ott_20260116_트래저디걸스"
   },
   {
     "title": "둘이서 솔로 캠프 - 시즌 1",
@@ -735,20 +764,6 @@
     "id": "ott_20260116_둘이서솔로캠프시즌1"
   },
   {
-    "title": "존 윅 3: 파라벨룸",
-    "date": "2026-01-16",
-    "link": "https://www.justwatch.com/kr/영화/jon-wig-3-parabelrum",
-    "platform": "Watcha",
-    "poster": "/images/posters/존_윅_3__파라벨룸.webp",
-    "platforms": [
-      "watcha"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "id": "ott_20260116_존윅3파라벨룸"
-  },
-  {
     "title": "언힌지드",
     "date": "2026-01-16",
     "link": "https://www.justwatch.com/kr/영화/eonhinjideu",
@@ -761,20 +776,6 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260116_언힌지드"
-  },
-  {
-    "title": "캐리어스",
-    "date": "2026-01-16",
-    "link": "https://www.justwatch.com/kr/영화/kaerieoseu",
-    "platform": "Watcha",
-    "poster": "/images/posters/캐리어스.webp",
-    "platforms": [
-      "watcha"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "id": "ott_20260116_캐리어스"
   },
   {
     "title": "프리즘 윤무곡 - 시즌 1",
@@ -833,6 +834,20 @@
     "id": "ott_20260116_그물"
   },
   {
+    "title": "소림축구",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/shaolin-soccer",
+    "platform": "Netflix",
+    "poster": "/images/posters/소림축구.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_소림축구"
+  },
+  {
     "title": "피구의 제왕",
     "date": "2026-01-16",
     "link": "https://www.justwatch.com/kr/영화/piguyi-jewang",
@@ -861,20 +876,6 @@
     "id": "ott_20260116_스코어"
   },
   {
-    "title": "라스트 송",
-    "date": "2026-01-16",
-    "link": "https://www.justwatch.com/kr/영화/the-last-song",
-    "platform": "Netflix",
-    "poster": "/images/posters/라스트_송.webp",
-    "platforms": [
-      "netflix"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "id": "ott_20260116_라스트송"
-  },
-  {
     "title": "WWF SmackDown! - 시즌 28",
     "date": "2026-01-16",
     "link": "https://www.justwatch.com/kr/TV-프로그램/wwf-smackdown/시즌-28",
@@ -889,6 +890,20 @@
     "id": "ott_20260116_WWFSmackDown시즌28"
   },
   {
+    "title": "라스트 송",
+    "date": "2026-01-16",
+    "link": "https://www.justwatch.com/kr/영화/the-last-song",
+    "platform": "Netflix",
+    "poster": "/images/posters/라스트_송.webp",
+    "platforms": [
+      "netflix"
+    ],
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "id": "ott_20260116_라스트송"
+  },
+  {
     "title": "허삼관",
     "date": "2026-01-16",
     "link": "https://www.justwatch.com/kr/영화/heosamgwan",
@@ -901,20 +916,6 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260116_허삼관"
-  },
-  {
-    "title": "명량: 회오리 바다를 향하여",
-    "date": "2026-01-16",
-    "link": "https://www.justwatch.com/kr/영화/myeongryang-hoeori-badareul-hyanghayeo",
-    "platform": "Netflix",
-    "poster": "/images/posters/명량__회오리_바다를_향하여.webp",
-    "platforms": [
-      "netflix"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "id": "ott_20260116_명량회오리바다를향하여"
   },
   {
     "title": "덫의 전쟁 - 시즌 1",
@@ -1182,31 +1183,5 @@
     "region": "ott",
     "genre": "ott",
     "id": "ott_20260116_아르네의사건부시즌1"
-  },
-  {
-    "title": "프랑켄슈타인: 더 뮤지컬 라이브",
-    "id": "ott_naver_프랑켄슈타인:더뮤지컬라이브",
-    "poster": "/images/posters/프랑켄슈타인__더_뮤지컬_라이브.webp",
-    "source": "naver",
-    "genre": "ott",
-    "platforms": [
-      "coupang",
-      "tving",
-      "wavve"
-    ],
-    "link": "https://search.naver.com/search.naver?query=%ED%94%84%EB%9E%91%EC%BC%8A%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EB%8D%94%20%EB%AE%A4%EC%A7%80%EC%BB%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C",
-    "date": "2024.09.01",
-    "description": "뮤지컬 실황",
-    "runningTime": "179분",
-    "subGenre": "뮤지컬",
-    "score": "9.5",
-    "ageRating": "12세 관람가",
-    "cast": [
-      "규현",
-      "박은태",
-      "이지혜",
-      "장은아"
-    ],
-    "director": "왕용범"
   }
 ]
