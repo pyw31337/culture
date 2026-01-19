@@ -417,7 +417,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                             {/* [OTT] [N] Date Format Logic */}
                                             {perf.genre === 'ott' && perf.platforms && perf.platforms.length > 0 && (
-                                                <div className="flex gap-1 items-center">
+                                                <div className="flex gap-1 items-center relative z-[200]" style={{ transform: 'translateZ(100px)' }}>
                                                     {perf.platforms.map((p: string) => {
                                                         const platformInfo = OTT_PLATFORMS[p];
                                                         if (platformInfo) {
@@ -429,11 +429,15 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                     href={url}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
-                                                                    onClick={(e) => e.stopPropagation()}
-                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase text-white shadow-sm hover:opacity-80 hover:scale-110 transition-all",
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        // e.nativeEvent.stopImmediatePropagation(); // Stronger stop
+                                                                    }}
+                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase text-white shadow-sm hover:opacity-80 hover:scale-110 transition-all cursor-pointer pointer-events-auto relative",
                                                                         platformInfo.color
                                                                     )}
                                                                     title={`${platformInfo.label} 보러가기`}
+                                                                    style={{ zIndex: 201 }} // Explicit inline Z-index to force top
                                                                 >
                                                                     {platformInfo.label.substring(0, 1).toUpperCase()}
                                                                 </a>
