@@ -421,8 +421,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     {perf.platforms.map((p: string) => {
                                                         const platformInfo = OTT_PLATFORMS[p];
                                                         if (platformInfo) {
-                                                            // Use perf.link (JustWatch) if available, otherwise fallback to platform search
-                                                            const url = perf.link || platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
+                                                            // Use platform specific search URL
+                                                            const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
                                                             return (
                                                                 <a
                                                                     key={p}
