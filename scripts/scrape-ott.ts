@@ -163,7 +163,22 @@ async function scrapeHybrid() {
                         const link = a?.getAttribute('href') || '';
 
                         // Valid Poster from JW (fallback) - Force High Res
-                        let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
+                        let poster = img?.getAttribute('data-src') || img?.getAttribute('src') || '';
+
+                        // Handle lazy-loaded srcset if available
+                        if (!poster || poster.startsWith('data:')) {
+                            const srcset = img?.getAttribute('data-srcset') || img?.getAttribute('srcset');
+                            if (srcset) {
+                                // Take the last URL in srcset (usually largest)
+                                const parts = srcset.split(',').map(s => s.trim().split(' ')[0]);
+                                poster = parts[parts.length - 1];
+                            }
+                        }
+
+                        // Reject data URIs or empty placeholders
+                        if (poster.startsWith('data:')) poster = '';
+
+                        // Upgrade resolution
                         poster = poster.replace('/s166/', '/s592/');
 
                         if (title && link) {
@@ -263,23 +278,14 @@ async function scrapeHybrid() {
 
         // RESUME CHECK: If item already has good data (Image OR TMDB Poster) + Metadata
         const match = existingData.find(e => e.title === item.title && e.date === item.date);
+
         // Check if enriched (has subGenre or runningTime AND (image or tmdb poster))
-        // JustWatch poster usually exists, so check for Naver Image or TMDB-specific poster or just specific metadata
-        if (match && (match.image || (match.poster && match.poster.includes('themoviedb'))) && (match.subGenre || match.runningTime)) {
+        // [UPDATE] Also check if poster is NOT a data URI
+        const hasValidPoster = (match?.image && !match.image.startsWith('data:')) || (match?.poster && !match.poster.startsWith('data:'));
+        const hasMetadata = match?.subGenre || match?.runningTime;
+
+        if (match && hasValidPoster && hasMetadata) {
             Object.assign(item, match);
-            // console.log(`   [Skipped] Already enriched: ${item.title}`);
-            // If we skip, we still count as processed for progress bar, but we don't scrape
-            // We continue to next loop, but we MUST ensure ID is generated? 
-            // Ah, ID generation happens at the END of the loop (line 463).
-            // If we continue here, we skip ID generation?
-            // NO, we need to skip the SCRAPING part (lines 242-456) but keep ID gen?
-            // Actually, ID is part of 'match' usually.
-            // Let's just Continue AFTER copying 'id'.
-            // Best way: Wrap the Scraping logic in an "if (!enriched) { ... }" block?
-            // Or just continue and let the end-of-loop logic handle it?
-            // The end of loop logic generates ID if missing.
-            // If we copy match, we copy ID.
-            // So we can just continue.
             continue;
         }
 
