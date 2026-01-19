@@ -7,6 +7,7 @@ import path from 'path';
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
+import cliProgress from 'cli-progress';
 
 puppeteer.use(StealthPlugin());
 
@@ -23,7 +24,11 @@ interface Performance {
     runningTime?: string;
     ageRating?: string;
     price?: string;
+    originalPrice?: string;
+    discount?: string;
 }
+
+const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
 
 const REGIONS = {
     seoul: '42001',
@@ -192,86 +197,165 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
     }
 }
 
-async function scrapeDetails(browser: any, items: Performance[]) {
-    const enriched: Performance[] = [];
-    // Only scrape musicals
-    const targets = items.filter(i => i.genre === 'musical');
-    const others = items.filter(i => i.genre !== 'musical');
+async function scrapeDetails(browser: any, items: Performance[], existingEnriched: Map<string, Performance>) {
+    // Only target relevant genres
+    const candidates = items.filter(i => ['musical', 'play', 'concert', 'classic'].includes(i.genre));
+    const others = items.filter(i => !['musical', 'play', 'concert', 'classic'].includes(i.genre));
+
+    // Split candidates into 'already done' vs 'todo'
+    const alreadyDone: Performance[] = [];
+    const todo: Performance[] = [];
+
+    candidates.forEach(c => {
+        if (existingEnriched.has(c.id)) {
+            const ex = existingEnriched.get(c.id)!;
+            // Consider it done if it has runningTime OR price (and date hasn't moved too far?)
+            // Just use ID match and existence of details.
+            if (ex.runningTime || ex.price || ex.ageRating) {
+                alreadyDone.push({ ...c, ...ex }); // Merge to keep fresh list info but old details
+            } else {
+                todo.push(c);
+            }
+        } else {
+            todo.push(c);
+        }
+    });
+
+    console.log(`Total Candidates: ${candidates.length}. Already cached: ${alreadyDone.length}. To enrich: ${todo.length}.`);
+
+    const enrichedResult: Performance[] = [...alreadyDone];
+
+    // Progress bar for ToDo
+    const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+    if (todo.length > 0) {
+        bar.start(todo.length, 0);
+    } // If 0, no bar needed?
 
     // Concurrency
     const CONCURRENCY = 5;
-    for (let i = 0; i < targets.length; i += CONCURRENCY) {
-        const chunk = targets.slice(i, i + CONCURRENCY);
-        console.log(`Enriching Musicals: Chunk ${Math.floor(i / CONCURRENCY) + 1}/${Math.ceil(targets.length / CONCURRENCY)}...`);
+    for (let i = 0; i < todo.length; i += CONCURRENCY) {
+        const chunk = todo.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
-            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-            await page.setViewport({ width: 1280, height: 800 });
-
             try {
+                await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+                await page.setViewport({ width: 1280, height: 800 });
+
                 // Determine 
                 const goodsId = item.id;
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
                 await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
                 try {
-                    await page.waitForSelector('ul.info', { timeout: 3000 }); // Try waiting for info list
+                    await page.waitForSelector('ul.info', { timeout: 3000 });
                 } catch (e) { }
 
-                const details = await page.evaluate(() => {
-                    // Selectors:
-                    // #container > div.contents > div.productWrapper > div.productMain > div.productMainTop > div > div.summaryBody > ul > li:nth-child(3) -> Time
-                    // ... :nth-child(4) -> Age
-                    // ... li.infoItem.infoPrice -> Price
-
-                    // The structure seems to be: 
-                    // div.summaryBody > ul.info > li.infoItem
-
+                // 1. Basic Info & Base Price
+                const basicInfo = await page.evaluate(() => {
                     const list = document.querySelector('div.summaryBody > ul');
                     if (!list) return {};
 
-                    const timeEl = list.querySelector('li:nth-child(3) .desc');
-                    const ageEl = list.querySelector('li:nth-child(4) .desc');
-                    const priceEl = list.querySelector('li.infoItem.infoPrice .desc');
+                    const getDescByLabel = (labelIn: string) => {
+                        const items = Array.from(list.querySelectorAll('li.infoItem'));
+                        const match = items.find(li => li.querySelector('.infoLabel')?.textContent?.includes(labelIn));
+                        if (match) {
+                            // If just text in p.infoText
+                            const p = match.querySelector('.infoDesc .infoText');
+                            if (p) return p.textContent?.trim();
+                            // If just text node
+                            return match.querySelector('.infoDesc')?.textContent?.trim();
+                        }
+                        return null;
+                    };
 
-                    let priceText = '';
-                    if (priceEl) {
-                        // Get first price if multiple? 
-                        // "VIP석 77,000원 R석 ..."
-                        // Look for structure inside price
-                        // Usually: <ul class="priceList"> <li> <div class="name">VIP</div> <div class="price">77,000원</div> ...
-                        // If complex, just grab text.
-                        // Or check specific structure inside infoPrice
+                    const runningTime = getDescByLabel('공연시간');
+                    const ageRating = getDescByLabel('관람연령');
 
-                        const priceItems = priceEl.querySelectorAll('.priceItem');
-                        if (priceItems.length > 0) {
-                            const first = priceItems[0];
-                            const name = first.querySelector('.name')?.textContent || '';
-                            const val = first.querySelector('.price')?.textContent || '';
-                            const dc = first.querySelector('.discount')?.textContent || ''; // if any
-                            priceText = `${name} ${val} ${dc}`.trim();
-                        } else {
-                            priceText = priceEl.textContent?.trim() || '';
-                            // Naive formatting if just text
-                            const parts = priceText.split('원');
-                            if (parts.length > 1) {
-                                priceText = parts[0] + '원';
-                            }
+                    // Base Price (Initial Attempt from main list)
+                    const priceListItems = Array.from(list.querySelectorAll('.infoItem.infoPrice .infoPriceList .infoPriceItem'));
+                    let price = '';
+
+                    for (const li of priceListItems) {
+                        if (li.classList.contains('is-largePrice')) continue;
+                        const name = li.querySelector('.name')?.textContent?.trim();
+                        const val = li.querySelector('.price')?.textContent?.trim();
+                        if (val) {
+                            price = val; // Take first found
+                            break;
                         }
                     }
 
-                    return {
-                        runningTime: timeEl?.textContent?.trim(),
-                        ageRating: ageEl?.textContent?.trim(),
-                        price: priceText
-                    };
+                    return { runningTime, ageRating, price };
                 });
 
-                return { ...item, ...details };
+                let { runningTime, ageRating, price } = basicInfo;
+                let originalPrice = undefined;
+                let discount = undefined;
+
+                // 2. Click Price Popup for Discounts
+                const priceBtn = await page.$('a[data-popup="info-price"]');
+                if (priceBtn) {
+                    await priceBtn.click();
+                    try {
+                        await page.waitForSelector('.popPriceTable', { visible: true, timeout: 2000 });
+
+                        const discountInfo = await page.evaluate(() => {
+                            const rows = Array.from(document.querySelectorAll('.popPriceTable tbody tr'));
+                            let stdPriceVal = 0;
+                            let stdPriceStr = '';
+                            let bookingPriceVal = 0;
+
+                            rows.forEach(tr => {
+                                const name = tr.querySelector('.name')?.textContent?.trim() || '';
+                                const tds = tr.querySelectorAll('td');
+                                const valStr = tds[tds.length - 1]?.textContent?.trim() || '';
+                                const val = parseInt(valStr.replace(/[^0-9]/g, ''), 10);
+                                if (isNaN(val)) return;
+
+                                // Identify "General" (Standard) Price
+                                if (name.includes('일반') || name === '전석' || (tr.querySelector('.category')?.textContent?.includes('전석') && name.includes('일반'))) {
+                                    if (val > stdPriceVal) {
+                                        stdPriceVal = val;
+                                        stdPriceStr = valStr;
+                                    }
+                                }
+
+                                // Identify "Booking" Discount ("예매 할인")
+                                if (name.includes('예매 할인') || name.includes('예매할인')) {
+                                    bookingPriceVal = val;
+                                }
+                            });
+
+                            return { stdPriceVal, stdPriceStr, bookingPriceVal };
+                        });
+
+                        // Use standard price if missing
+                        if (!price && discountInfo.stdPriceStr) {
+                            price = discountInfo.stdPriceStr;
+                        }
+
+                        // Apply Discount Logic
+                        if (discountInfo.bookingPriceVal > 0 && discountInfo.stdPriceVal > 0 && discountInfo.bookingPriceVal < discountInfo.stdPriceVal) {
+                            originalPrice = discountInfo.stdPriceStr;
+                            price = discountInfo.bookingPriceVal.toLocaleString() + '원';
+                            const rate = Math.round((1 - (discountInfo.bookingPriceVal / discountInfo.stdPriceVal)) * 100);
+                            discount = `${rate}%`;
+                        }
+
+                    } catch (e) { }
+                }
+
+                return {
+                    ...item,
+                    runningTime,
+                    ageRating,
+                    price,
+                    originalPrice,
+                    discount
+                };
 
             } catch (e) {
-                // console.error(`Failed to scrape detail for ${item.title}:`);
                 return item;
             } finally {
                 await page.close();
@@ -279,14 +363,38 @@ async function scrapeDetails(browser: any, items: Performance[]) {
         });
 
         const results = await Promise.all(promises);
-        enriched.push(...results);
-    }
+        enrichedResult.push(...results);
+        if (todo.length > 0) bar.increment(results.length);
 
-    return enriched;
+        // Autosave every 20 items (4 chunks)
+        if (i % 20 === 0 || i + CONCURRENCY >= todo.length) {
+            const currentSave = [...enrichedResult, ...others];
+            // Note: 'others' might have items that are in 'existingEnriched' but we filtered 'others' by genre.
+            // If non-musical items were in 'existing', they are not in 'targets'. They are in 'others'.
+            // So we just save 'enrichedResult' + 'others'.
+            fs.writeFileSync(outputPath, JSON.stringify(currentSave, null, 2));
+        }
+    }
+    if (todo.length > 0) bar.stop();
+
+    // Final merge
+    const finalItems = [...enrichedResult, ...others];
+    return finalItems;
 }
 
 (async () => {
-    console.log('Starting Interpark Scraper (TS)...');
+    console.log('Starting Interpark Scraper (TS) with Resume...');
+
+    // 0. Load existing data
+    const existingMap = new Map<string, Performance>();
+    if (fs.existsSync(outputPath)) {
+        try {
+            const raw = fs.readFileSync(outputPath, 'utf-8');
+            const data = JSON.parse(raw) as Performance[];
+            data.forEach(d => existingMap.set(d.id, d));
+            console.log(`Loaded ${data.length} existing items for resume check.`);
+        } catch (e) { console.log('No existing data or parse error.'); }
+    }
 
     // 1. Fetch Regions & List
     const regions = await getRegions();
@@ -303,30 +411,18 @@ async function scrapeDetails(browser: any, items: Performance[]) {
     const itemMap = new Map<string, Performance>();
     allItems.forEach(i => itemMap.set(i.id, i));
     const uniqueItems = Array.from(itemMap.values());
-    console.log(`Found ${uniqueItems.length} total items. Enriching Musicals...`);
+    console.log(`Found ${uniqueItems.length} total items. Enriching Items...`);
 
-    // 2. Enrich Details using Puppeteer
+    // 2. Enrich Details
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     try {
-        const finalItems = await scrapeDetails(browser, uniqueItems);
+        const finalItems = await scrapeDetails(browser, uniqueItems, existingMap);
 
-        // 3. Save
-        const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
-
-        // Merge with existing if needed for accumulation? 
-        // User didn't request accumulation for Interpark specifically, but let's be safe.
-        // Actually, for Interpark list scraping, we get fresh data every time for the list. 
-        // If we want to keep old items that might have expired, we can.
-        // But typically list scraping implies 'current' availability.
-        // Let's stick to overwriting for now unless accumulation is requested, 
-        // OR Accumulate IF genre is musical to save scraping time? No, we scrape fresh.
-        // The user only asked for data accumulation for Movie and OTT. "OTT 카테고리도 영화카테고리처럼...". 
-        // Did not explicitly say for Musical.
-
+        // 3. Final Save
         fs.writeFileSync(outputPath, JSON.stringify(finalItems, null, 2));
         console.log(`Saved ${finalItems.length} items to ${outputPath}`);
 

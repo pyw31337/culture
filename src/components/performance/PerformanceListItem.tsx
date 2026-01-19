@@ -413,53 +413,15 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 </div>
                                             </div>
                                         )}
-                                        {/* Note: AgeRating is already shown in the header for OTT/Movies, but we keep it here for others if needed, or suppress it to avoid duplication. 
-                                                    Currently, Card View shows it in the body. The Header one in List View is prominent. 
-                                                    Let's follow Card View: Card view shows it in BODY. 
-                                                    Wait, List view has a "Header" grade section (lines 258-268). 
-                                                    Card view ALSO has a "Header" grade section (lines 276-286).
-                                                    In Card view, I moved OTT rating to the BODY (lines 450).
-                                                    So I should potentially HIDE it from the Header in List View for OTT too?
-                                                    Actually, in Card View I implemented:
-                                                    Header: {perf.genre === 'ott' ? (perf.ageRating && ...) : ...} 
-                                                    Body: {perf.ageRating && perf.genre === 'ott' && ...}
-                                                    
-                                                    Wait, in Card View I replaced the Header rating with specific logic.
-                                                    Let's check lines 276-286 of Card View I just edited?
-                                                    Actually I edited the HEADER part in Card View? 
-                                                    No, I edited the BODY (lines 443-499 in previous turn). 
-                                                    Let's check the HEADER part of Card View again.
-                                                    Lines 276-286 in `PerformanceCard` (current file content):
-                                                    It seems I did NOT edit the header in Card View in the previous step? 
-                                                    Wait, let's look at the diff. 
-                                                    I edited lines 446 (which was in Body? No, 446 inside `div className="text-gray-400 ..."`).
-                                                    Actually, `PerformanceCard` has TWO places for grade?
-                                                    One in `isInterestVariant` (Yellow/Pink) -> Header (lines 276).
-                                                    One in `Default` variant -> Body (lines 443).
-                                                    The user's "Make a Girl" is likely Default variant (OTT).
-                                                    So I updated the Default variant body.
-                                                    
-                                                    In `PerformanceListItem`, the structure is:
-                                                    Image (Left)
-                                                    Content (Right) -> Header (Badges, Grade) -> Body (Metadata).
-                                                    
-                                                    The user said "Put the info from OTT thumbnail view exactly into list view".
-                                                    So I should render these details in the BODY of the List item.
-                                                    And potentially hide the Grade from the Header if it's duplicated?
-                                                    In Card (Default), the Grade is ONLY in the body (that overlay text area).
-                                                    In List, the Grade is in the Header (lines 258).
-                                                    
-                                                    I will add the labels to the BODY area here (lines 376).
-                                                    And I will mirror the text-only style.
-                                                */}
-                                        {perf.price && (
-                                            <div className="text-xs font-medium text-emerald-400">
-                                                🎟️ {perf.price.split('원')[0]}원
-                                                {perf.price.includes('%') && (
-                                                    <span className="ml-1 text-red-500 text-[10px]">{perf.price.match(/\d+%/)?.[0]}</span>
-                                                )}
+                                        {perf.ageRating && (
+                                            <div className="flex flex-col gap-0.5 text-xs text-gray-400">
+                                                <div>
+                                                    <span className="text-gray-500 light:text-gray-600 mr-1">관람연령:</span>
+                                                    <span className="light:text-black">{perf.ageRating}</span>
+                                                </div>
                                             </div>
                                         )}
+
 
                                         {/* Provider (Text) - Moved to bottom */}
                                         {perf.platforms && perf.platforms.length > 0 && (
