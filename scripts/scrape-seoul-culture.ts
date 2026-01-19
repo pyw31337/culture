@@ -2,6 +2,8 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
+import cliProgress from 'cli-progress';
 
 // Types
 interface ScrapedEvent {
@@ -21,6 +23,7 @@ interface ScrapedEvent {
 }
 
 const TARGET_URL = 'https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=2026-01-01&edate=2026-12-31';
+const OutputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
 
 async function mapCategory(title: string): Promise<string> {
     const t = title.toLowerCase();
@@ -34,52 +37,30 @@ async function mapCategory(title: string): Promise<string> {
     return 'unknown';
 }
 
-async function scrape() {
-    console.log('🚀 Starting Seoul Culture Scraper (2026) - URL Params Strategy...');
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,800']
-    });
+async function scrapeList(browser: any) {
+    console.log('🚀 Starting Seoul Culture List Scraper...');
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
 
-    // Set User Agent
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-
-    // 1. Initial Navigation with Search Params
+    // 1. Initial Navigation
     await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded' });
-    console.log('   Page Loaded via URL Params.');
 
-    // Check if dates are set in inputs (verification)
-    const inputs = await page.evaluate(() => {
-        const i1 = document.getElementById('datepicker01') as HTMLInputElement;
-        const i2 = document.getElementById('datepicker02') as HTMLInputElement;
-        return { start: i1?.value, end: i2?.value };
-    });
-    console.log('   Inputs Verification:', inputs);
-
-    // Wait for list items to ensure content is there
+    // Wait for list
     try {
         await page.waitForSelector('#dataList > li', { timeout: 10000 });
     } catch (e) {
-        console.log('   No list items found on initial load. Dumping info...');
-        const body = await page.evaluate(() => document.body.innerHTML);
-        const text = await page.evaluate(() => document.body.innerText);
-        console.log('--- BODY INNER TEXT (First 1000 chars) ---');
-        console.log(text.substring(0, 1000));
-        await browser.close();
-        return;
+        console.log('No list items found.');
+        return [];
     }
 
-    let collectedEvents: ScrapedEvent[] = [];
+    const collectedEvents: ScrapedEvent[] = [];
     let hasNext = true;
     let pageNum = 1;
-    let lastFirstId = '';
-
+    let lastFirstLink = '';
     const MAX_PAGES = 50;
 
     while (hasNext && pageNum <= MAX_PAGES) {
-        console.log(`📄 Scraping Page ${pageNum}...`);
+        process.stdout.write(`\r📄 Scraping List Page ${pageNum}... `);
 
         // Wait slightly
         if (pageNum > 1) {
@@ -88,11 +69,10 @@ async function scrape() {
             } catch (e) { }
         }
 
-        // Extract Items
         const listItems = await page.evaluate(() => {
             const items: any[] = [];
             const rows = document.querySelectorAll('#dataList > li');
-            rows.forEach((row, index) => {
+            rows.forEach((row) => {
                 const linkEl = row.querySelector('a');
                 if (!linkEl) return;
                 const link = linkEl.href;
@@ -103,73 +83,35 @@ async function scrape() {
                 const date = dateDiv?.textContent?.trim().replace(/\s+/g, ' ') || '';
                 const absoluteImg = img ? (img.startsWith('http') ? img : `https://culture.seoul.go.kr${img}`) : '';
 
-                // Generate a pseudo-ID based on title + date to track duplication
-                const pseudoId = title + '_' + date;
-
-                items.push({ title, link, poster: absoluteImg, place, date, pseudoId });
+                items.push({ title, link, poster: absoluteImg, place, date });
             });
             return items;
         });
 
-        // Check for stagnation
-        if (listItems.length > 0) {
-            if (listItems[0].pseudoId === lastFirstId) {
-                console.log('   ⚠️ Detected Page Stagnation (Same content). Stopping.');
-                break;
-            }
-            lastFirstId = listItems[0].pseudoId;
-        } else {
-            console.log('   No items on this page. Stopping.');
+        if (listItems.length === 0) break;
+        if (listItems[0].link === lastFirstLink) {
+            console.log('   ⚠️ Detected Page Stagnation. Stopping.');
             break;
         }
+        lastFirstLink = listItems[0].link;
 
-        console.log(`   Found ${listItems.length} items.`);
-
-        // Process Details
         for (const item of listItems) {
-            let genre = await mapCategory(item.title);
-            const detailPage = await browser.newPage();
-            try {
-                await detailPage.goto(item.link, { waitUntil: 'domcontentloaded' });
-                const details = await detailPage.evaluate(() => {
-                    const ul = document.querySelector('#print > div.intro-top.clearfix > div.txt-box > div.type-box > ul');
-                    if (!ul) return {};
-
-                    const getDesc = (n: number) => ul.querySelector(`li:nth-child(${n}) .type-td`)?.textContent?.trim() || '';
-
-                    return {
-                        placeDetail: getDesc(1), // Place
-                        period: getDesc(2),  // Period
-                        time: getDesc(3),    // Time
-                        target: getDesc(4),  // Target (Age)
-                        cost: getDesc(5)     // Price
-                    };
-                });
-                collectedEvents.push({
-                    id: `seoul-culture-${Math.random().toString(36).substr(2, 9)}`,
-                    title: item.title,
-                    // Prefer detail page info if available
-                    place: details.placeDetail || item.place,
-                    poster: item.poster,
-                    date: details.period || item.date,
-                    // Standardize fields for UI
-                    runningTime: details.time,
-                    ageRating: details.target, // "Target" usually maps to Age Rating
-                    price: details.cost,
-                    time: details.time,
-                    cost: details.cost,
-                    genre,
-                    source: 'seoul-culture',
-                    link: item.link
-                });
-            } catch (e: any) {
-                console.error(`   Failed details for ${item.title}`);
-            } finally { await detailPage.close(); }
+            const id = crypto.createHash('md5').update(item.link).digest('hex');
+            const genre = await mapCategory(item.title);
+            collectedEvents.push({
+                id,
+                title: item.title,
+                date: item.date,
+                place: item.place,
+                poster: item.poster,
+                genre,
+                source: 'seoul-culture',
+                link: item.link
+            });
         }
 
-        // Pagination: Click Next
-        // Use initPageData if available for consistency
-        const nextResult = await page.evaluate((pNum) => {
+        // Next Page
+        const nextResult = await page.evaluate((pNum: number) => {
             // @ts-ignore
             if (typeof initPageData === 'function') {
                 // @ts-ignore
@@ -180,49 +122,153 @@ async function scrape() {
         }, pageNum);
 
         if (nextResult) {
-            console.log(`   Calling initPageData(${pageNum + 1})...`);
-            await new Promise(r => setTimeout(r, 2000));
-            try {
-                await page.waitForNetworkIdle({ timeout: 2000 }).catch(() => { });
-            } catch (e) { }
+            await new Promise(r => setTimeout(r, 1500));
+            try { await page.waitForNetworkIdle({ timeout: 2000 }).catch(() => { }); } catch (e) { }
         } else {
-            console.log('   initPageData not found for pagination? Attempting click...');
+            // Click fallback
             const hasNextBtn = await page.$('.paging .next > a');
             if (!hasNextBtn) {
-                console.log('   No Next Button found. Reached end.');
                 hasNext = false;
             } else {
-                console.log('   Clicking Next Page...');
-                await page.evaluate(() => {
-                    const btn = document.querySelector('.paging .next > a') as HTMLElement;
-                    if (btn) btn.click();
-                });
-                await new Promise(r => setTimeout(r, 2000));
-                try {
-                    await page.waitForNetworkIdle({ timeout: 2000 }).catch(() => { });
-                } catch (e) { }
+                await page.click('.paging .next > a');
+                await new Promise(r => setTimeout(r, 1500));
             }
         }
-
         pageNum++;
     }
-
-    await browser.close();
-
-    const outputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
-    // Final check for duplicates based on title+date
-    const uniqueEvents = [];
-    const seen = new Set();
-    for (const e of collectedEvents) {
-        const key = e.title + e.date;
-        if (!seen.has(key)) {
-            uniqueEvents.push(e);
-            seen.add(key);
-        }
-    }
-
-    fs.writeFileSync(outputPath, JSON.stringify(uniqueEvents, null, 2));
-    console.log(`✅ Scrape Complete! Saved ${uniqueEvents.length} unique events to ${outputPath}`);
+    console.log(`\nFound ${collectedEvents.length} items.`);
+    await page.close();
+    return collectedEvents;
 }
 
-scrape().catch(console.error);
+async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map<string, ScrapedEvent>) {
+    // Determine TODO
+    const todo: ScrapedEvent[] = [];
+    const done: ScrapedEvent[] = [];
+
+    items.forEach(item => {
+        if (existingMap.has(item.id)) {
+            const ex = existingMap.get(item.id)!;
+            // Check if enriched fields exist
+            if (ex.price || ex.ageRating || ex.runningTime) {
+                done.push({ ...item, ...ex }); // keep fresher list info but old details
+            } else {
+                todo.push(item);
+            }
+        } else {
+            todo.push(item);
+        }
+    });
+
+    console.log(`Total: ${items.length}. Cached: ${done.length}. To Enrich: ${todo.length}.`);
+
+    const enrichedResults = [...done];
+    if (todo.length === 0) return enrichedResults;
+
+    const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+    bar.start(todo.length, 0);
+
+    const CONCURRENCY = 15;
+    for (let i = 0; i < todo.length; i += CONCURRENCY) {
+        const chunk = todo.slice(i, i + CONCURRENCY);
+
+        const promises = chunk.map(async (item) => {
+            const page = await browser.newPage();
+            try {
+                // Optimization
+                await page.setRequestInterception(true);
+                page.on('request', (req: any) => {
+                    if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
+                        req.abort();
+                    } else {
+                        req.continue();
+                    }
+                });
+
+                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+                const details = await page.evaluate(() => {
+                    const ul = document.querySelector('.type-box > ul');
+                    if (!ul) return null;
+                    const getDesc = (n: number) => ul.querySelector(`li:nth-child(${n}) .type-td`)?.textContent?.trim() || '';
+
+                    return {
+                        period: getDesc(2).replace(/\s+/g, ' '),
+                        time: getDesc(3),
+                        target: getDesc(4),
+                        cost: getDesc(5)
+                    };
+                });
+
+                if (details) {
+                    // "R석 77,000원 / S석 ..." -> "R석 77,000원"
+                    let price = details.cost;
+                    if (price.includes('/')) {
+                        price = price.split('/')[0].trim();
+                    }
+                    if (price.includes('\n')) {
+                        price = price.split('\n')[0].trim();
+                    }
+
+                    return {
+                        ...item,
+                        date: details.period || item.date, // Update date with period if available
+                        runningTime: details.time,
+                        time: details.time,
+                        ageRating: details.target,
+                        price: price,
+                        cost: price
+                    };
+                }
+                return item;
+            } catch (e) {
+                return item;
+            } finally {
+                await page.close();
+            }
+        });
+
+        const results = await Promise.all(promises);
+        enrichedResults.push(...results);
+        bar.increment(results.length);
+
+        // Autosave
+        if (i % 20 === 0) {
+            fs.writeFileSync(OutputPath, JSON.stringify(enrichedResults, null, 2));
+        }
+    }
+    bar.stop();
+    return enrichedResults;
+}
+
+(async () => {
+    // Load existing
+    const existingMap = new Map<string, ScrapedEvent>();
+    if (fs.existsSync(OutputPath)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(OutputPath, 'utf-8'));
+            data.forEach((d: ScrapedEvent) => existingMap.set(d.id, d));
+        } catch (e) { }
+    }
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+
+    try {
+        const listItems = await scrapeList(browser);
+
+        // Enrich
+        const finalItems = await enrichItems(browser, listItems, existingMap);
+
+        // Final Save
+        fs.writeFileSync(OutputPath, JSON.stringify(finalItems, null, 2));
+        console.log(`✅ Saved ${finalItems.length} items to ${OutputPath}`);
+
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await browser.close();
+    }
+})();
