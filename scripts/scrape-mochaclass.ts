@@ -22,6 +22,7 @@ interface MochaClassItem {
     ageLimit: string;
     casting: string;
     address: string;
+    lastEnriched?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/mochaclass.json');
@@ -77,6 +78,17 @@ async function scrapeMochaClass() {
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 
+    // Load existing items
+    const existingMap = new Map<string, MochaClassItem>();
+    if (fs.existsSync(OUTPUT_PATH)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8'));
+            data.forEach((item: MochaClassItem) => existingMap.set(item.link, item));
+        } catch (e) {
+            console.log('No existing data or parse error.');
+        }
+    }
+
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
 
@@ -88,13 +100,9 @@ async function scrapeMochaClass() {
     const allItems: MochaClassItem[] = [];
     const seenTitles = new Set<string>();
 
-    // We target ALL locations and ALL categories
-    // URL: https://mochaclass.com/Search?page=${page}&where=list&sort=거리순
-    // Removing 'location' and 'is_online_class' params to get everything.
-
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 100; // Deep scrape
+    const MAX_PAGES = 100;
 
     console.log(`\nPhase 1: Collecting all class links...`);
 
@@ -108,7 +116,6 @@ async function scrapeMochaClass() {
             await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 
             try {
-                // Wait for grid container
                 await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
             } catch (e) {
                 console.log(`    No list container found on page ${currentPage}. Ending or Timeout.`);
@@ -118,7 +125,6 @@ async function scrapeMochaClass() {
             const pageItems = await page.evaluate(() => {
                 const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
                 let targetGrid: Element | null = null;
-                // Simple heuristic: find the grid with the most 'a' children
                 grids.forEach((g: any) => {
                     if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
                         targetGrid = g;
@@ -132,44 +138,36 @@ async function scrapeMochaClass() {
 
                 anchors.forEach((anchor: any) => {
                     const link = anchor.href;
-                    if (!link || !link.includes('/class/')) return; // Ensure it's a class link
+                    if (!link || !link.includes('/class/')) return;
 
-                    // Title
                     const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
                     const title = titleElem ? titleElem.textContent?.trim() : '';
                     if (!title) return;
 
-                    // Image
                     const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
                     const image = imgElem ? imgElem.getAttribute('src') || '' : '';
 
-                    // Price Logic Update
                     const priceContainer = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v');
                     let price = '';
                     let originalPrice = '';
 
                     if (priceContainer) {
-                        // Collect text content of all children, filtering out '포인트'
                         const allTexts = Array.from(priceContainer.querySelectorAll('p, span, div'))
                             .map((el: any) => el.textContent?.trim() || '')
                             .filter((t: string) => t.length > 0 && !t.includes('포인트') && !t.includes('적립'));
 
-                        // Find price-like strings (e.g. "30,000원")
                         const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t));
-
-                        // Parse values to compare
                         const values = priceLike.map((t: string) => {
                             return { text: t, val: parseInt(t.replace(/[^0-9]/g, '')) || 0 };
                         }).filter((v: any) => v.val > 0);
 
                         if (values.length >= 2) {
-                            // Assuming larger is original, smaller is current
                             values.sort((a: any, b: any) => b.val - a.val);
                             originalPrice = values[0].text;
                             price = values[values.length - 1].text;
                         } else if (values.length === 1) {
                             price = values[0].text;
-                            originalPrice = price; // Same
+                            originalPrice = price;
                         }
                     }
 
@@ -197,10 +195,6 @@ async function scrapeMochaClass() {
                         newItemsCount++;
                     }
                 }
-                if (newItemsCount === 0 && pageItems.length > 0) {
-                    // If we found items but all are duplicates, we might be looping.
-                    // But assume deep scrape is okay for now.
-                }
                 currentPage++;
             }
 
@@ -211,99 +205,136 @@ async function scrapeMochaClass() {
     }
 
     console.log(`  Total unique classes found: ${pendingItems.length}`);
+    await page.close();
 
     // Phase 2: Details
-    console.log(`\nPhase 2: Scraping details (Address)...`);
-    const progressBar = new ProgressBar(pendingItems.length);
-    let processedCount = 0;
+    console.log(`\nPhase 2: Scraping details (Smart Incremental - Parallel)...`);
 
-    process.on('SIGINT', () => {
-        console.log('\nProcess interrupted! Saving collected data...');
-        saveData(allItems);
-        process.exit();
-    });
+    // Filter
+    const todo: typeof pendingItems = [];
+    const done: MochaClassItem[] = [];
+
+    const isRecentlyEnriched = (ex: MochaClassItem) => {
+        if (!ex.lastEnriched) return false;
+        try {
+            const last = new Date(ex.lastEnriched);
+            const now = new Date();
+            const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
+            return diffDays < 7;
+        } catch (e) { return false; }
+    };
 
     for (const item of pendingItems) {
-        try {
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
-            await new Promise(r => setTimeout(r, 800)); // Minimal wait
-
-            const detailData = await page.evaluate(() => {
-                // Selectors provided:
-                // Address: #topleft > div:nth-child(10) > div > p.MuiTypography-root...
-                // Time: #topleft > div:nth-child(11) > section
-                // Price: #topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7
-
-                const addressEl = document.querySelector('#topleft > div:nth-child(10) > div > p.MuiTypography-root');
-                const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
-                // The price selector seems specific to a layout variant. We'll try it, and fallback if needed.
-                const priceEl = document.querySelector('#topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7');
-
-                return {
-                    rawAddress: addressEl ? addressEl.textContent?.trim() || '' : '',
-                    time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
-                    detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : ''
-                };
-            });
-
-            // If detail price is found, use it (might need cleaning)
-            let detailPrice = detailData.detailPrice;
-            if (detailPrice) {
-                // Formatting "30,000원..."
-                // Extract digits and "원"
-                const match = detailPrice.match(/[\d,]+원/);
-                if (match) detailPrice = match[0];
-            }
-
-            const address = detailData.rawAddress || '서울';
-
-            // Extract District (Gu) for Venue Name
-            // e.g. "대한민국 서울특별시 서초구 잠원동..." -> "서초구"
-            let district = '';
-            const districtMatch = address.match(/(\w+[구])/);
-            if (districtMatch) {
-                district = districtMatch[1];
-            } else {
-                // Try finding typical Seoul districts
-                const parts = address.split(' ');
-                for (const p of parts) {
-                    if (p.endsWith('구')) {
-                        district = p;
-                        break;
-                    }
-                }
-            }
-
-            const venue = district ? `모카클래스 (${district})` : '모카클래스';
-
-            allItems.push({
-                id: `mochaclass_${Math.random().toString(36).substr(2, 9)}`,
+        const existing = existingMap.get(item.link);
+        if (existing && isRecentlyEnriched(existing)) {
+            done.push({
+                ...existing,
                 title: item.title,
                 image: item.image,
-                date: 'OPEN RUN',
-                venue: venue,
-                link: item.link,
-
-                region: address.includes('서울') ? 'seoul' : 'gyeonggi',
-                genre: 'class',
-                price: detailPrice || item.price,
-                originalPrice: item.originalPrice,
-                discount: '',
-                runningTime: detailData.time || '예약페이지 참조',
-                ageLimit: '전체',
-                casting: '',
-                address: address
+                price: item.price || existing.price,
+                originalPrice: item.originalPrice || existing.originalPrice
             });
-
-        } catch (e) {
-            // console.error(`    Failed to details for ${item.title}: ${e}`);
+        } else {
+            todo.push(item);
         }
-
-        processedCount++;
-        progressBar.update(processedCount);
     }
 
-    progressBar.finish();
+    console.log(`Skipped: ${done.length}. To Enrich: ${todo.length}`);
+    allItems.push(...done);
+
+    if (todo.length > 0) {
+        const progressBar = new ProgressBar(todo.length);
+        let processedCount = 0;
+        const CONCURRENCY = 5;
+
+        for (let i = 0; i < todo.length; i += CONCURRENCY) {
+            const chunk = todo.slice(i, i + CONCURRENCY);
+            const promises = chunk.map(async (item) => {
+                const p = await browser.newPage();
+                try {
+                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+                    const detailData = await p.evaluate(() => {
+                        const addressEl = document.querySelector('#topleft > div:nth-child(10) > div > p.MuiTypography-root');
+                        const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
+                        const priceEl = document.querySelector('#topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7');
+
+                        return {
+                            rawAddress: addressEl ? addressEl.textContent?.trim() || '' : '',
+                            time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
+                            detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : ''
+                        };
+                    });
+
+                    let detailPrice = detailData.detailPrice;
+                    if (detailPrice) {
+                        const match = detailPrice.match(/[\d,]+원/);
+                        if (match) detailPrice = match[0];
+                    }
+
+                    const address = detailData.rawAddress || '서울';
+                    let district = '';
+                    const districtMatch = address.match(/(\w+[구])/);
+                    if (districtMatch) {
+                        district = districtMatch[1];
+                    } else {
+                        const parts = address.split(' ');
+                        for (const part of parts) {
+                            if (part.endsWith('구')) {
+                                district = part;
+                                break;
+                            }
+                        }
+                    }
+
+                    const venue = district ? `모카클래스 (${district})` : '모카클래스';
+
+                    // Stable ID hash
+                    let id = existingMap.get(item.link)?.id;
+                    if (!id) {
+                        let hash = 0;
+                        for (let i = 0; i < item.link.length; i++) {
+                            hash = ((hash << 5) - hash) + item.link.charCodeAt(i);
+                            hash |= 0;
+                        }
+                        id = `mochaclass_${Math.abs(hash)}`;
+                    }
+
+                    return {
+                        id,
+                        title: item.title,
+                        image: item.image,
+                        date: 'OPEN RUN',
+                        venue: venue,
+                        link: item.link,
+                        region: address.includes('서울') ? 'seoul' : 'gyeonggi',
+                        genre: 'class',
+                        price: detailPrice || item.price,
+                        originalPrice: item.originalPrice,
+                        discount: '',
+                        runningTime: detailData.time || '예약페이지 참조',
+                        ageLimit: '전체',
+                        casting: '',
+                        address: address,
+                        lastEnriched: new Date().toISOString()
+                    };
+                } catch (e) {
+                    return null;
+                } finally {
+                    await p.close();
+                }
+            });
+
+            const results = await Promise.all(promises);
+            results.forEach(r => { if (r) allItems.push(r); });
+            processedCount += results.length;
+            progressBar.update(processedCount);
+
+            if (i % 20 === 0) saveData(allItems);
+        }
+        progressBar.finish();
+    }
+
     console.log(`\nCompleted! Total collected: ${allItems.length}`);
     await browser.close();
 

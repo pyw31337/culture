@@ -23,6 +23,7 @@ interface UmClassItem {
     casting: string;
     address: string;
     viewCount?: string;
+    lastEnriched?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/umclass.json');
@@ -77,6 +78,17 @@ async function scrapeUmClass() {
         ],
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
+
+    // Load existing items
+    const existingMap = new Map<string, UmClassItem>();
+    if (fs.existsSync(OUTPUT_PATH)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8'));
+            data.forEach((item: UmClassItem) => existingMap.set(item.link, item));
+        } catch (e) {
+            console.log('No existing data found or parse error.');
+        }
+    }
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
@@ -206,104 +218,151 @@ async function scrapeUmClass() {
 
 
     console.log(`  Total unique classes found: ${pendingItems.length}`);
+    await page.close(); // Close list page
 
     // Phase 2: Details
-    console.log(`\nPhase 2: Scraping details (Address & Venue)...`);
-    const progressBar = new ProgressBar(pendingItems.length);
-    let processedCount = 0;
+    console.log(`\nPhase 2: Scraping details (Smart Incremental - Parallel)...`);
 
-    // Trap SIGINT
-    process.on('SIGINT', () => {
-        console.log('\nProcess interrupted! Saving collected data...');
-        saveData(allItems);
-        process.exit();
-    });
+    // Filter what needs enrichment
+    const todo: typeof pendingItems = [];
+    const done: UmClassItem[] = [];
+
+    const isRecentlyEnriched = (ex: UmClassItem) => {
+        if (!ex.lastEnriched) return false;
+        try {
+            const last = new Date(ex.lastEnriched);
+            const now = new Date();
+            const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
+            return diffDays < 7;
+        } catch (e) { return false; }
+    };
 
     for (const item of pendingItems) {
-        try {
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
-
-            // Wait a small bit for content
-            await new Promise(r => setTimeout(r, 500));
-
-            // Selectors provided:
-            // Duration: .voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)
-            // People: ... > div:nth-child(2) > span:nth-child(2)
-            // Total Count: ... > div:nth-child(3) > span:nth-child(2)
-            // Discount: .pc-payment-btn-area ... span:nth-child(1)
-            // Origin Price: ... span:nth-child(2)
-            // Sale Price: ... span:nth-child(3)
-            // Use Time: ... > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span
-            // Address: ... > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span 
-
-            const detailData = await page.evaluate(() => {
-                function getTxt(sel: string) {
-                    return document.querySelector(sel)?.textContent?.trim() || '';
-                }
-
-                const duration = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
-                const people = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
-                const totalCount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
-
-                const discount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
-                const originPrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
-                const salePrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
-
-                const useTime = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
-                const rawAddress = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
-
-                return {
-                    rawAddress,
-                    duration,
-                    people,
-                    totalCount,
-                    discount,
-                    originPrice,
-                    salePrice,
-                    useTime
-                };
-            });
-
-            // Parse Venue from Address (Last word logic)
-            let venue = '솜씨당 클래스';
-            let address = detailData.rawAddress || '서울';
-
-            if (detailData.rawAddress) {
-                const tokens = detailData.rawAddress.split(/\s+/);
-                if (tokens.length > 1) {
-                    venue = tokens[tokens.length - 1];
-                    // Clean venue if needed (remove trailing brackets etc)
-                }
-            }
-
-            allItems.push({
-                id: `umclass_${Math.random().toString(36).substr(2, 9)}`,
-                title: item.title,
-                date: detailData.duration || '2024-01-01', // Fallback or scraped data
-                venue: venue,
+        const existing = existingMap.get(item.link);
+        if (existing && isRecentlyEnriched(existing)) {
+            // Updated basic info from list if needed, but keep detail info?
+            // Usually list partial info is fresher (discount/price) but detail info is heavy.
+            // We'll trust existing full record.
+            done.push({
+                ...existing,
+                title: item.title, // Update mutable fields from list
                 image: item.image,
-                link: item.link,
-                genre: 'class',
-                region: address, // Extracted region
-                runningTime: detailData.useTime || detailData.duration,
-                viewCount: detailData.totalCount, // abusing viewCount for capacity/count
-                originalPrice: detailData.originPrice,
-                price: detailData.salePrice || detailData.originPrice,
-                discount: detailData.discount,
-                ageLimit: 'all',
-                address: address,
-                casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}` // Combine extra info
+                price: item.price || existing.price,
+                discount: item.discount || existing.discount
             });
-
-        } catch (e) {
-            console.error(`    Failed to scrape details for ${item.title}: ${e}`);
+        } else {
+            todo.push(item);
         }
-
-        processedCount++;
-        progressBar.update(processedCount);
     }
 
-    progressBar.finish();
+    console.log(`Skipped (Recently Enriched): ${done.length}. To Enrich: ${todo.length}`);
+    allItems.push(...done);
+
+    if (todo.length > 0) {
+        const progressBar = new ProgressBar(todo.length);
+        let processedCount = 0;
+        const CONCURRENCY = 5;
+
+        // Trap SIGINT
+        process.on('SIGINT', () => {
+            console.log('\nProcess interrupted! Saving collected data...');
+            saveData(allItems);
+            process.exit();
+        });
+
+        for (let i = 0; i < todo.length; i += CONCURRENCY) {
+            const chunk = todo.slice(i, i + CONCURRENCY);
+            const promises = chunk.map(async (item) => {
+                const p = await browser.newPage();
+                try {
+                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    // await new Promise(r => setTimeout(r, 500)); // Remove wait for speed
+
+                    const detailData = await p.evaluate(() => {
+                        function getTxt(sel: string) {
+                            return document.querySelector(sel)?.textContent?.trim() || '';
+                        }
+                        const duration = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
+                        const people = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
+                        const totalCount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
+                        const discount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
+                        const originPrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
+                        const salePrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
+                        const useTime = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
+                        const rawAddress = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
+                        return { rawAddress, duration, people, totalCount, discount, originPrice, salePrice, useTime };
+                    });
+
+                    let venue = '솜씨당 클래스';
+                    let address = detailData.rawAddress || '서울';
+
+                    if (detailData.rawAddress) {
+                        const tokens = detailData.rawAddress.split(/\s+/);
+                        if (tokens.length > 1) {
+                            venue = tokens[tokens.length - 1];
+                        }
+                    }
+
+                    // Preserve ID if existing, else regenerate (Note: Regenerating per run is bad practice, but following legacy for now. Ideally should hash URL)
+                    // Better: Hash the link to make ID stable
+                    // const crypto = require('crypto'); // Need to import
+                    // Simple hash for now or keep random if simpler to avoid import errors right now.
+                    // Let's use simple hash of link
+                    let id = existingMap.get(item.link)?.id;
+                    if (!id) {
+                        // Simple string hash
+                        let hash = 0;
+                        for (let i = 0; i < item.link.length; i++) {
+                            hash = ((hash << 5) - hash) + item.link.charCodeAt(i);
+                            hash |= 0;
+                        }
+                        id = `umclass_${Math.abs(hash)}`;
+                    }
+
+                    return {
+                        id,
+                        title: item.title,
+                        date: detailData.duration || '2024-01-01',
+                        venue: venue,
+                        image: item.image,
+                        link: item.link,
+                        genre: 'class',
+                        region: address,
+                        runningTime: detailData.useTime || detailData.duration,
+                        viewCount: detailData.totalCount,
+                        originalPrice: detailData.originPrice,
+                        price: detailData.salePrice || detailData.originPrice,
+                        discount: detailData.discount,
+                        ageLimit: 'all',
+                        address: address,
+                        casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}`,
+                        lastEnriched: new Date().toISOString()
+                    };
+
+                } catch (e) {
+                    // console.error(e);
+                    return null;
+                } finally {
+                    await p.close();
+                }
+            });
+
+            const results = await Promise.all(promises);
+            results.forEach(r => {
+                if (r) allItems.push(r);
+                else {
+                    // Failed to scrape details? Add fallback or skip
+                    // Add basic item?
+                }
+            });
+            processedCount += results.length;
+            progressBar.update(processedCount);
+
+            if (i % 20 === 0) saveData(allItems);
+        }
+        progressBar.finish();
+    }
+
     console.log(`\nCompleted! Total collected: ${allItems.length}`);
     await browser.close();
 

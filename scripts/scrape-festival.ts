@@ -27,87 +27,13 @@ const REGION_MAP: Record<string, string> = {
 
 interface FestivalItem {
     id: string; title: string; image: string; date: string; venue: string; region: string; link: string; genre: string;
+    lastEnriched?: string;
 }
 
-interface ListItem {
-    id: string; title: string; thumbnailImage: string; urlParams?: { cat1: string, cat2: string, areacode: string };
-}
-
-function parseRegion(address: string): string {
-    if (!address) return 'etc';
-    for (const [prefix, regionId] of Object.entries(REGION_MAP)) {
-        if (address.startsWith(prefix)) return regionId;
-    }
-    return 'etc';
-}
-
-// Sequential List Scraping + Parallel Detail Scraping
-async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> {
-    // We assume the page is already at the correct location or we will navigate to it relative to current state.
-    // However, for pure sequential scraping, we just need to "get current items".
-    // AND then "go to next page" at the end of the loop.
-    // So this function just extracts items from CURRENT page.
-
-    return page.evaluate(() => {
-        const results: ListItem[] = [];
-        const listItems = document.querySelectorAll('ul.list_thumType > li');
-        listItems.forEach((li) => {
-            const titleLink = li.querySelector('.area_txt .tit a') as HTMLAnchorElement;
-            const img = li.querySelector('.area_img img') as HTMLImageElement;
-            if (titleLink) {
-                const onclick = titleLink.getAttribute('onclick') || '';
-                const match = onclick.match(/goDetail\(([^)]+)\)/);
-                if (match) {
-                    const args = match[1].split(',').map(s => s.trim().replace(/['"]/g, ''));
-                    if (args.length >= 4) {
-                        const [id, cat1, cat2, areacode] = args;
-                        results.push({ id, title: titleLink.innerText.trim(), thumbnailImage: img?.src || '', urlParams: { cat1, cat2, areacode } });
-                    } else if (args.length >= 1) {
-                        results.push({ id: args[0], title: titleLink.innerText.trim(), thumbnailImage: img?.src || '' });
-                    }
-                }
-            }
-        });
-        return results;
-    });
-}
-
-// Helper to navigate to next page from current state
-async function goToNextPage(page: Page, targetPageNum: number): Promise<boolean> {
-    const navigationPromise = page.waitForResponse(response =>
-        response.url().includes('list/travelinfo.do') && response.status() === 200
-        , { timeout: 10000 }).catch(() => null);
-
-    const clicked = await page.evaluate((targetNum) => {
-        // 1. Try clicking specific page number ID first (e.g., "11")
-        const directLink = document.querySelector(`.page_box a[id="${targetNum}"]`) as HTMLElement;
-        if (directLink) {
-            directLink.click();
-            return true;
-        }
-
-        // 2. If not found, try clicking "Next" button (.btn_next)
-        // Check if btn_next exists and looks like it advances us (optimization: sometimes btn_next id is targetNum)
-        const nextBtn = document.querySelector('.btn_next') as HTMLElement;
-        if (nextBtn) {
-            nextBtn.click();
-            return true;
-        }
-
-        return false;
-    }, targetPageNum);
-
-    if (clicked) {
-        await navigationPromise;
-        // Small stability wait
-        await new Promise(r => setTimeout(r, 500));
-        return true;
-    }
-
-    return false;
-}
+// ...
 
 async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalItem | null> {
+    // ... existing implementation ...
     let url = '';
     if (item.urlParams) {
         url = `${DETAIL_BASE_URL}?cotid=${item.id}&big_category=${item.urlParams.cat1}&mid_category=${item.urlParams.cat2}&big_area=${item.urlParams.areacode}`;
@@ -164,6 +90,7 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
             region: parseRegion(details.venue),
             link: url,
             genre: 'festival',
+            lastEnriched: new Date().toISOString()
         };
     } catch (error) {
         console.error(`Failed to scrape detail for ID ${item.id}:`, error);
@@ -176,13 +103,13 @@ async function main() {
     console.log(`Target Concurrency: ${CONCURRENCY}`);
 
     let existingItems: FestivalItem[] = [];
-    const existingIds = new Set<string>();
+    const existingMap = new Map<string, FestivalItem>();
 
     if (fs.existsSync(OUTPUT_FILE)) {
         try {
             const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
             existingItems = loaded.filter((item: FestivalItem) => item.date && item.venue);
-            existingItems.forEach(item => existingIds.add(item.id));
+            existingItems.forEach(item => existingMap.set(item.id, item));
             console.log(`Loaded ${existingItems.length} valid existing items.`);
         } catch (e) {
             console.error('Failed to load existing data:', e);
@@ -239,18 +166,45 @@ async function main() {
         await listPage.close();
         console.log(`Found ${uniqueListItems.size} unique festivals in list.`);
 
-        const newItems = Array.from(uniqueListItems.values()).filter(item => !existingIds.has(item.id));
-        console.log(`New items to scrape details: ${newItems.length}`);
+        // Smart Incremental Filtering
+        const newItems: ListItem[] = [];
+        const skippedItems: FestivalItem[] = [];
+
+        const isRecentlyEnriched = (ex: FestivalItem) => {
+            if (!ex.lastEnriched) return false;
+            try {
+                const last = new Date(ex.lastEnriched);
+                const now = new Date();
+                const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
+                return diffDays < 7;
+            } catch (e) { return false; }
+        };
+
+        for (const item of uniqueListItems.values()) {
+            const existing = existingMap.get(item.id);
+            if (existing && isRecentlyEnriched(existing)) {
+                skippedItems.push(existing);
+            } else {
+                newItems.push(item);
+            }
+        }
+
+        console.log(`Skipped (Recent): ${skippedItems.length}. To Enrich: ${newItems.length}`);
 
         if (newItems.length === 0) {
-            console.log('No new items. Done.');
+            console.log('No new items to enrich. Done.');
+            // Save skipped items just in case order changed or something, but essentially no change.
+            // Actually we should save skippedItems + any other existing items not in list?
+            // Usually we only save what's currently active.
+            // Let's save `skippedItems` + `results` from newItems.
+            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(skippedItems, null, 2));
             await browser.close();
             return;
         }
 
         // PARALLEL DETAIL SCRAPING
         console.log('Starting Parallel Detail Scraping...');
-        const results = [...existingItems];
+        const results = [...skippedItems]; // Start with skipped items
         let processedCount = 0;
         let lastSaveCount = 0;
         const detailQueue = [...newItems];
