@@ -173,6 +173,35 @@ async function scrapeJWDetail(page: any, url: string) {
                 }
             }
 
+            // Fallback 1.5: New JustWatch Layout (2025/2026)
+            if (castItems.length === 0) {
+                const newCards = document.querySelectorAll('.title-credits__actor');
+                newCards.forEach(card => {
+                    // Try to find the name specifically. 
+                    // Often it's a direct text node or inside a specific hidden span, but let's try getting the text excluding role.
+                    // Based on debug: Text is "ActorNameRoleName". 
+                    // Valid names usually don't have " / " (role often does).
+                    // Let's look for a strong tag or similar if available, otherwise just strict split?
+                    // Actually, usually the image alt tag holds the name too!
+                    const img = card.querySelector('img');
+                    const nameFromImg = img?.getAttribute('alt') || img?.getAttribute('title');
+
+                    if (nameFromImg) {
+                        castItems.push({ name: nameFromImg, url: '' });
+                    } else {
+                        // Fallback to text parsing
+                        const text = card.textContent?.trim() || '';
+                        // Heuristic: If we have "RoleName" element, remove it from total text
+                        const roleEl = card.querySelector('.title-credits__actor--role');
+                        let name = text;
+                        if (roleEl && roleEl.textContent) {
+                            name = name.replace(roleEl.textContent, '').trim();
+                        }
+                        if (name) castItems.push({ name, url: '' });
+                    }
+                });
+            }
+
             // Fallback 2: Apollo State
             try {
                 const state = (window as any).__APOLLO_STATE__;
@@ -528,14 +557,18 @@ async function scrapeHybrid() {
                 });
 
                 if (!nData.cast) {
-                    const castTabSelector = 'li[data-tab-name="cast"] a, a[href*="cast"]';
-                    const castTab = await naverPage.$(castTabSelector);
+                    // Enhanced Tab Selector
+                    const castTab = await naverPage.evaluateHandle(() => {
+                        const links = Array.from(document.querySelectorAll('.tab_area a, .api_subject_bx a, .menu_group a'));
+                        return links.find(a => a.textContent?.includes('출연') || a.textContent?.includes('제작'));
+                    });
+
                     if (castTab) {
-                        await castTab.click();
-                        await naverPage.waitForTimeout(1000);
+                        await castTab.asElement()?.click();
+                        await naverPage.waitForTimeout(2000); // Increased wait
                         nData.cast = await naverPage.evaluate(() => {
                             const names: string[] = [];
-                            document.querySelectorAll('.cast_box .name').forEach(el => {
+                            document.querySelectorAll('.cast_box .name, .detail_info .name').forEach(el => {
                                 const n = el.textContent?.trim();
                                 if (n) names.push(n);
                             });
