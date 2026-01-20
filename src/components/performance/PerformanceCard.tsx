@@ -501,50 +501,52 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                         {/* Platforms Text */}
 
-                                        {/* Venue/Grade Info */}
-                                        <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
-                                            {perf.genre === 'movie' || perf.genre === 'ott' ? (
-                                                <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                                    {perf.gradeIcon ? (
-                                                        <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
-                                                    ) : (
-                                                        <>
-                                                            {/* OTT: Only show Age Rating if present, do not fallback to venue */}
-                                                            {perf.genre === 'ott' ? (
-                                                                perf.ageRating && (
+                                        {/* Venue/Grade Info - Hide for non-movie/ott when no detail info */}
+                                        {(perf.genre === 'movie' || perf.genre === 'ott' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
+                                            <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
+                                                {perf.genre === 'movie' || perf.genre === 'ott' ? (
+                                                    <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
+                                                        {perf.gradeIcon ? (
+                                                            <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
+                                                        ) : (
+                                                            <>
+                                                                {/* OTT: Only show Age Rating if present, do not fallback to venue */}
+                                                                {perf.genre === 'ott' ? (
+                                                                    perf.ageRating && (
+                                                                        <>
+                                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                                            <span className="text-gray-300">{perf.ageRating}</span>
+                                                                        </>
+                                                                    )
+                                                                ) : (
                                                                     <>
                                                                         <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                        <span className="text-gray-300">{perf.ageRating}</span>
+                                                                        {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
                                                                     </>
-                                                                )
-                                                            ) : (
-                                                                <>
-                                                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                    {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
-                                                                </>
-                                                            )}
-                                                        </>
-                                                    )}
-                                                </div>
-                                            ) : perf.genre === 'travel' ? (
-                                                <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
-                                                    <div className="flex items-center gap-1 font-bold text-sky-400">
-                                                        <Plane className="w-3.5 h-3.5" />
-                                                        {perf.venue.split('|')[0]?.trim()}
+                                                                )}
+                                                            </>
+                                                        )}
                                                     </div>
-                                                </div>
-                                            ) : (
-                                                <button onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (onLocationClick) {
-                                                        onLocationClick({ lat: venueInfo?.lat || 0, lng: venueInfo?.lng || 0, name: perf.venue || 'Online' });
-                                                    }
-                                                }} className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full">
-                                                    <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
-                                                    <span className="truncate">{perf.venue || 'Online'}</span>
-                                                </button>
-                                            )}
-                                        </div>
+                                                ) : perf.genre === 'travel' ? (
+                                                    <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
+                                                        <div className="flex items-center gap-1 font-bold text-sky-400">
+                                                            <Plane className="w-3.5 h-3.5" />
+                                                            {perf.venue.split('|')[0]?.trim()}
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <button onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        if (onLocationClick) {
+                                                            onLocationClick({ lat: venueInfo?.lat || 0, lng: venueInfo?.lng || 0, name: perf.venue || 'Online' });
+                                                        }
+                                                    }} className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full">
+                                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
+                                                        <span className="truncate">{perf.venue || 'Online'}</span>
+                                                    </button>
+                                                )}
+                                            </div>
+                                        )}
 
                                         {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
                                         {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating) && (
