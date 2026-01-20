@@ -28,10 +28,10 @@ const cleanText = (s: string) => s.replace(/\s+/g, ' ').trim();
 // --- SCERAPER HELPERS ---
 async function scrapeJWDetail(page: any, url: string) {
     try {
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
-        await page.waitForTimeout(2000); // Hydration wait
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        try { await page.waitForSelector('.title-block, .detail-infos', { timeout: 5000 }); } catch (e) { }
 
-        // Scroll to trigger lazy loading (essential for cast)
+        // Scroll to trigger lazy loading
         await page.mouse.wheel(0, 1000);
         await page.waitForTimeout(500);
 
@@ -39,11 +39,11 @@ async function scrapeJWDetail(page: any, url: string) {
             const res: any = {};
 
             // 1. Hero Details (Age, Runtime)
-            const heroDivs = Array.from(document.querySelectorAll('#title-detail-hero-details > div > div > div'));
+            const heroDivs = Array.from(document.querySelectorAll('#title-detail-hero-details > div > div > div, .title-info > div'));
             heroDivs.forEach(div => {
                 const text = div.textContent?.trim() || '';
-                // Age Logic: Relaxed check
-                if (text === 'ALL' || text === '전체' || text === 'G' || text === 'All') res.ageRating = '전체 관람가';
+                // Age Logic
+                if (['ALL', '전체', 'G', 'All'].includes(text)) res.ageRating = '전체 관람가';
                 else if (text.match(/^\d+$/)) {
                     const num = parseInt(text);
                     if (num > 0 && num < 20) res.ageRating = `${num}세 관람가`;
@@ -80,13 +80,13 @@ async function scrapeJWDetail(page: any, url: string) {
                     else res.ageRating = value;
                 }
                 if (label?.includes('original title') || label?.includes('원제')) {
-                    res.originalTitle = value; // Corrected: value is the sibling
+                    const sibling = h.nextElementSibling;
+                    if (sibling) res.originalTitle = sibling.textContent?.trim();
                 }
             });
 
-            // 3. Cast (Multiple Selectors + Scroll worked in subagent)
+            // 3. Cast
             let castItems: any[] = [];
-
             const cards = document.querySelectorAll('.title-credits__actors .presentation-actor-card, .credits .credits__actor-item');
             if (cards.length > 0) {
                 cards.forEach(card => {
@@ -107,7 +107,7 @@ async function scrapeJWDetail(page: any, url: string) {
                 }
             }
 
-            // Fallback 2: Apollo State (Hidden Data)
+            // Fallback 2: Apollo State
             try {
                 const state = (window as any).__APOLLO_STATE__;
                 if (state) {
@@ -125,12 +125,9 @@ async function scrapeJWDetail(page: any, url: string) {
                         }
                     }
                 }
-            } catch (e) {
-                // ignore
-            }
+            } catch (e) { }
 
             if (castItems.length > 0) {
-                // Dedupe
                 const unique = new Map();
                 castItems.forEach(c => unique.set(c.name, c));
                 res.cast = Array.from(unique.values()).slice(0, 10).map((c: any) => ({
@@ -139,10 +136,20 @@ async function scrapeJWDetail(page: any, url: string) {
                 }));
             }
 
+            // 4. Poster (High Res)
+            const posterImg = document.querySelector('picture > img, .title-poster img');
+            if (posterImg) {
+                let src = posterImg.getAttribute('data-src') || posterImg.getAttribute('src');
+                // Try to get highest res
+                if (src) {
+                    // Replace /s166/ or similar with /s718/ (High Quality)
+                    res.poster = src.replace(/\/s\d+\//, '/s718/');
+                }
+            }
+
             return res;
         });
     } catch (e) {
-        // console.error(`JW Detail Error for ${url}:`, e);
         return {};
     }
 }
@@ -308,7 +315,7 @@ async function scrapeHybrid() {
 
     // Filter Items
     const filteredItems = items.filter(item => {
-        item.platforms = [...new Set(item.platforms)];
+        item.platforms = Array.from(new Set(item.platforms));
         const validPlatforms = item.platforms.map((p: string) => {
             const match = ALLOWLIST.find(a => p.toLowerCase().includes(a.toLowerCase()));
             return match ? PLATFORM_MAP[match] : null;
@@ -514,7 +521,8 @@ async function scrapeHybrid() {
 
         // Final cleanup
         if (!item.image && item.poster) item.image = item.poster;
-        if (!item.subGenre) item.subGenre = 'OTT';
+        // Removed default 'OTT' subGenre to encourage correct scraping or empty display
+        // if (!item.subGenre) item.subGenre = 'OTT';
 
     }
 
