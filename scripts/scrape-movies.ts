@@ -30,7 +30,7 @@ async function scrapeMovies() {
             console.log('Clicking "Load More" button...');
             try {
                 // Ensure button is visible/clickable
-                await page.evaluate((btn) => btn.click(), loadMoreBtn);
+                await page.evaluate((btn) => (btn as HTMLElement).click(), loadMoreBtn);
                 // Wait for potential network request or DOM update.
                 // KOBIS often just reveals rows or does a quick fetch. 
                 // Let's rely on waiting for network idle or a short pause.
@@ -134,7 +134,7 @@ async function scrapeMovies() {
                         const key = dt.textContent?.trim();
                         const dd = dt.nextElementSibling;
                         if (dd && dd.tagName === 'DD') {
-                            const val = dd.innerText.trim();
+                            const val = (dd as HTMLElement).innerText.trim();
                             if (key?.includes('요약정보')) data.summary = val;
                             if (key?.includes('개봉일')) data.openDate = val;
                             if (key?.includes('등급')) data.grade = val;
