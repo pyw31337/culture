@@ -47,18 +47,22 @@ export const TypingHero = ({
     }, [template, displayedTemplate]);
 
     useEffect(() => {
-        // If paused, do NOT schedule next tick.
-        if (paused) return;
         if (phase === 'CYCLING') return; // Idle while waiting for parent
 
         let timeout: NodeJS.Timeout;
 
         if (phase === 'WAIT') {
+            // Key Fix: If paused, stay in WAIT phase (hold the completed sentence).
+            if (paused) return;
+
             // Wait 5 seconds before deleting
             timeout = setTimeout(() => {
                 setPhase('DELETE');
             }, 5000);
         } else if (phase === 'DELETE') {
+            // If paused during delete, freeze state.
+            if (paused) return;
+
             // Delete backwards
             timeout = setTimeout(() => {
                 setProgress(prev => {
@@ -72,6 +76,7 @@ export const TypingHero = ({
                 });
             }, 50);
         } else if (phase === 'TYPE') {
+            // Key Fix: Ignore 'paused' prop during TYPE phase to ensure sentence finishes.
             // Type forwards
             timeout = setTimeout(() => {
                 setProgress(prev => {

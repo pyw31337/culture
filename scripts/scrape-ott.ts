@@ -107,6 +107,28 @@ async function scrapeJWDetail(page: any, url: string) {
                 }
             }
 
+            // Fallback 2: Apollo State (Hidden Data)
+            try {
+                const state = (window as any).__APOLLO_STATE__;
+                if (state) {
+                    const source = state.defaultClient || state;
+                    for (const key in source) {
+                        if (key.includes('Credit') || key.includes('Person')) {
+                            const item = source[key];
+                            if (item.name && (item.personId || item.id)) {
+                                const pid = item.personId || item.id;
+                                castItems.push({
+                                    name: item.name,
+                                    url: `/검색?q=${encodeURIComponent(item.name)}&person_id=${pid}`
+                                });
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                // ignore
+            }
+
             if (castItems.length > 0) {
                 // Dedupe
                 const unique = new Map();

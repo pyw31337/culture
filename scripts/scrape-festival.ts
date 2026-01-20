@@ -30,10 +30,81 @@ interface FestivalItem {
     lastEnriched?: string;
 }
 
-// ...
+interface ListItem {
+    id: string;
+    title: string;
+    thumbnailImage: string;
+    date?: string;
+    venue?: string;
+    urlParams?: {
+        cat1: string;
+        cat2: string;
+        areacode: string;
+    };
+}
+
+function parseRegion(address: string): string {
+    for (const [k, v] of Object.entries(REGION_MAP)) {
+        if (address.includes(k)) return v;
+    }
+    return 'etc';
+}
+
+async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> {
+    try {
+        return await page.evaluate(() => {
+            const items: ListItem[] = [];
+            const lis = document.querySelectorAll('.list_thum_type > li');
+            lis.forEach((el) => {
+                const titleEl = el.querySelector('.tit a');
+                const title = titleEl?.textContent?.replace(/<!--.*?-->/g, '').trim() || '';
+
+                const imgEl = el.querySelector('.photo img');
+                const thumbnailImage = (imgEl as HTMLImageElement)?.src || '';
+
+                const onclick = titleEl?.getAttribute('onclick');
+                let id = '';
+                let urlParams;
+
+                if (onclick) {
+                    // fn_detail('COTID', 'CAT1', 'CAT2', 'AREA') or goDetail
+                    // Found variations like goDetail('2816781', '', '', '35')
+                    const match = onclick.match(/['"]([0-9]+)['"]\s*,\s*['"](.*?)['"]\s*,\s*['"](.*?)['"]\s*,\s*['"](.*?)['"]/);
+                    if (match) {
+                        id = match[1];
+                        urlParams = { cat1: match[2], cat2: match[3], areacode: match[4] };
+                    }
+                }
+
+                if (id) {
+                    items.push({ id, title, thumbnailImage, urlParams });
+                }
+            });
+            return items;
+        });
+    } catch (e) {
+        return [];
+    }
+}
+
+async function goToNextPage(page: Page, targetPage: number): Promise<boolean> {
+    try {
+        // Try executing the script directly which is more reliable than clicking
+        await page.evaluate((p) => {
+            if (typeof (window as any).fn_link_page === 'function') {
+                (window as any).fn_link_page(p);
+            }
+        }, targetPage);
+
+        // Wait for network/content update
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
 
 async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalItem | null> {
-    // ... existing implementation ...
     let url = '';
     if (item.urlParams) {
         url = `${DETAIL_BASE_URL}?cotid=${item.id}&big_category=${item.urlParams.cat1}&mid_category=${item.urlParams.cat2}&big_area=${item.urlParams.areacode}`;
@@ -59,7 +130,7 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
                 date = (dataIcon.nextElementSibling.textContent || '').replace(/\s+/g, ' ').trim();
             }
             if (!date) {
-                const allInfoContents = document.querySelectorAll('.info_content');
+                const allInfoContents = Array.from(document.querySelectorAll('.info_content'));
                 for (const el of allInfoContents) {
                     const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
                     if (text.includes('~') || text.match(/\d{4}\.\d{2}/)) { date = text; break; }
@@ -70,7 +141,7 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
             const locIcon = document.querySelector('.info_ico.location');
             if (locIcon && locIcon.nextElementSibling) venue = locIcon.nextElementSibling.textContent?.trim() || '';
             if (!venue) {
-                const allInfoContents = document.querySelectorAll('.info_content');
+                const allInfoContents = Array.from(document.querySelectorAll('.info_content'));
                 for (const el of allInfoContents) {
                     const text = el.textContent?.trim() || '';
                     if (text.includes('도 ') || text.includes('시 ') || text.includes('군 ') || text.includes('구 ')) { venue = text; break; }
@@ -97,6 +168,11 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
         return null;
     }
 }
+// ... (main function continues)
+
+// inside main loop:
+// for (const item of Array.from(uniqueListItems.values())) { ... }
+
 
 async function main() {
     console.log('Starting VisitKorea Festival Scraper (Sequential List / Parallel Details)...');
@@ -180,7 +256,7 @@ async function main() {
             } catch (e) { return false; }
         };
 
-        for (const item of uniqueListItems.values()) {
+        for (const item of Array.from(uniqueListItems.values())) {
             const existing = existingMap.get(item.id);
             if (existing && isRecentlyEnriched(existing)) {
                 skippedItems.push(existing);
