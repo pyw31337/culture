@@ -6,30 +6,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251231_만약에_우리.jpg",
-    "venue": "15세이상관람가",
-    "runningTime": "114분",
-    "director": "김도영",
-    "cast": [
-      "구교환",
-      "문가영",
-      "신정근"
-    ],
-    "castLinks": [
-      {
-        "name": "구교환",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=804444&spId=804444&q=%EA%B5%AC%EA%B5%90%ED%99%98"
-      },
-      {
-        "name": "문가영",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=21247&spId=21247&q=%EB%AC%B8%EA%B0%80%EC%98%81"
-      },
-      {
-        "name": "신정근",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=472225&spId=472225&q=%EC%8B%A0%EC%A0%95%EA%B7%BC"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%A7%8C%EC%95%BD%EC%97%90%20%EC%9A%B0%EB%A6%AC%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%A7%8C%EC%95%BD%EC%97%90%20%EC%9A%B0%EB%A6%AC%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251231_신의악단",
@@ -38,35 +15,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251231_신의악단.jpg",
-    "venue": "15세이상관람가",
-    "runningTime": "110분",
-    "director": "김형협",
-    "cast": [
-      "박시후",
-      "정진운",
-      "태항호",
-      "서동원"
-    ],
-    "castLinks": [
-      {
-        "name": "박시후",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=24363&spId=24363&q=%EB%B0%95%EC%8B%9C%ED%9B%84"
-      },
-      {
-        "name": "정진운",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=188709&spId=188709&q=%EC%A0%95%EC%A7%84%EC%9A%B4"
-      },
-      {
-        "name": "태항호",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=880488&spId=880488&q=%ED%83%9C%ED%95%AD%ED%98%B8"
-      },
-      {
-        "name": "서동원",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=18451&spId=18451&q=%EC%84%9C%EB%8F%99%EC%9B%90"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%8B%A0%EC%9D%98%EC%95%85%EB%8B%A8%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%8B%A0%EC%9D%98%EC%95%85%EB%8B%A8%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251217_아바타:_불과_재",
@@ -75,35 +24,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251217_아바타:_불과_재.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "197분",
-    "director": "제임스 카메론",
-    "cast": [
-      "샘 워싱턴",
-      "조 샐다나",
-      "시고니 위버",
-      "브리테인 돌턴"
-    ],
-    "castLinks": [
-      {
-        "name": "샘 워싱턴",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=71519&spId=71519&q=%EC%83%98%20%EC%9B%8C%EC%8B%B1%ED%84%B4"
-      },
-      {
-        "name": "조 샐다나",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=23589&spId=23589&q=%EC%A1%B0%20%EC%83%90%EB%8B%A4%EB%82%98"
-      },
-      {
-        "name": "시고니 위버",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=25899&spId=25899&q=%EC%8B%9C%EA%B3%A0%EB%8B%88%20%EC%9C%84%EB%B2%84"
-      },
-      {
-        "name": "브리테인 돌턴",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1732155&spId=1732155&q=%EB%B8%8C%EB%A6%AC%ED%85%8C%EC%9D%B8%20%EB%8F%8C%ED%84%B4"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%95%84%EB%B0%94%ED%83%80%3A%20%EB%B6%88%EA%B3%BC%20%EC%9E%AC%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%95%84%EB%B0%94%ED%83%80%3A%20%EB%B6%88%EA%B3%BC%20%EC%9E%AC%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_하트맨",
@@ -112,35 +33,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_하트맨.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "99분",
-    "director": "최원섭",
-    "cast": [
-      "권상우",
-      "문채원",
-      "김서헌",
-      "박지환"
-    ],
-    "castLinks": [
-      {
-        "name": "권상우",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=19423&spId=19423&q=%EA%B6%8C%EC%83%81%EC%9A%B0"
-      },
-      {
-        "name": "문채원",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=71445&spId=71445&q=%EB%AC%B8%EC%B1%84%EC%9B%90"
-      },
-      {
-        "name": "김서헌",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2383234&spId=2383234&q=%EA%B9%80%EC%84%9C%ED%97%8C"
-      },
-      {
-        "name": "박지환",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=863130&spId=863130&q=%EB%B0%95%EC%A7%80%ED%99%98"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%ED%95%98%ED%8A%B8%EB%A7%A8%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%ED%95%98%ED%8A%B8%EB%A7%A8%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251126_주토피아_2",
@@ -149,35 +42,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251126_주토피아_2.jpg",
-    "venue": "전체관람가",
-    "runningTime": "108분",
-    "director": "자레드 부시 더보기",
-    "cast": [
-      "지니퍼 굿윈",
-      "제이슨 베이트먼",
-      "키 호이 콴",
-      "포춘 페임스터"
-    ],
-    "castLinks": [
-      {
-        "name": "지니퍼 굿윈",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=25168&spId=25168&q=%EC%A7%80%EB%8B%88%ED%8D%BC%20%EA%B5%BF%EC%9C%88"
-      },
-      {
-        "name": "제이슨 베이트먼",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=30624&spId=30624&q=%EC%A0%9C%EC%9D%B4%EC%8A%A8%20%EB%B2%A0%EC%9D%B4%ED%8A%B8%EB%A8%BC"
-      },
-      {
-        "name": "키 호이 콴",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=65808&spId=65808&q=%ED%82%A4%20%ED%98%B8%EC%9D%B4%20%EC%BD%B4"
-      },
-      {
-        "name": "포춘 페임스터",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1637709&spId=1637709&q=%ED%8F%AC%EC%B6%98%20%ED%8E%98%EC%9E%84%EC%8A%A4%ED%84%B0"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84%202%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84%202%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_신비아파트_10주년_극장판:_한_번_더,_소환",
@@ -186,30 +51,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_신비아파트_10주년_극장판:_한_번_더,_소환.jpg",
-    "venue": "전체관람가",
-    "runningTime": "86분",
-    "director": "최우석",
-    "cast": [
-      "김영은",
-      "조현정",
-      "신용우"
-    ],
-    "castLinks": [
-      {
-        "name": "김영은",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=886099&spId=886099&q=%EA%B9%80%EC%98%81%EC%9D%80"
-      },
-      {
-        "name": "조현정",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=721373&spId=721373&q=%EC%A1%B0%ED%98%84%EC%A0%95"
-      },
-      {
-        "name": "신용우",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=847631&spId=847631&q=%EC%8B%A0%EC%9A%A9%EC%9A%B0"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%8B%A0%EB%B9%84%EC%95%84%ED%8C%8C%ED%8A%B8%2010%EC%A3%BC%EB%85%84%20%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%ED%95%9C%20%EB%B2%88%20%EB%8D%94%2C%20%EC%86%8C%ED%99%98%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%8B%A0%EB%B9%84%EC%95%84%ED%8C%8C%ED%8A%B8%2010%EC%A3%BC%EB%85%84%20%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%ED%95%9C%20%EB%B2%88%20%EB%8D%94%2C%20%EC%86%8C%ED%99%98%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251224_오늘_밤,_세계에서_이_사랑이_사라진다_해도",
@@ -218,35 +60,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251224_오늘_밤,_세계에서_이_사랑이_사라진다_해도.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "106분",
-    "director": "김혜영",
-    "cast": [
-      "추영우",
-      "신시아",
-      "조유정",
-      "진호은"
-    ],
-    "castLinks": [
-      {
-        "name": "추영우",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2229369&spId=2229369&q=%EC%B6%94%EC%98%81%EC%9A%B0"
-      },
-      {
-        "name": "신시아",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2228114&spId=2228114&q=%EC%8B%A0%EC%8B%9C%EC%95%84"
-      },
-      {
-        "name": "조유정",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2148099&spId=2148099&q=%EC%A1%B0%EC%9C%A0%EC%A0%95"
-      },
-      {
-        "name": "진호은",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2207418&spId=2207418&q=%EC%A7%84%ED%98%B8%EC%9D%80"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%98%A4%EB%8A%98%20%EB%B0%A4%2C%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260121_슈가",
@@ -255,35 +69,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260121_슈가.png",
-    "venue": "전체관람가",
-    "runningTime": "105분",
-    "director": "최신춘",
-    "cast": [
-      "최지우",
-      "민진웅",
-      "고동하",
-      "김영성"
-    ],
-    "castLinks": [
-      {
-        "name": "최지우",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=18576&spId=18576&q=%EC%B5%9C%EC%A7%80%EC%9A%B0"
-      },
-      {
-        "name": "민진웅",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1713143&spId=1713143&q=%EB%AF%BC%EC%A7%84%EC%9B%85"
-      },
-      {
-        "name": "고동하",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2371393&spId=2371393&q=%EA%B3%A0%EB%8F%99%ED%95%98"
-      },
-      {
-        "name": "김영성",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1764562&spId=1764562&q=%EA%B9%80%EC%98%81%EC%84%B1"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%8A%88%EA%B0%80%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%8A%88%EA%B0%80%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251224_극장판_짱구는_못말려:_초화려!_작열하는_떡잎마을_댄서즈",
@@ -292,35 +78,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251224_극장판_짱구는_못말려:_초화려!_작열하는_떡잎마을_댄서즈.jpg",
-    "venue": "전체관람가",
-    "runningTime": "105분",
-    "director": "하시모토 마사카즈",
-    "cast": [
-      "박영남",
-      "소연",
-      "김환진",
-      "정유정"
-    ],
-    "castLinks": [
-      {
-        "name": "박영남",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=40682&spId=40682&q=%EB%B0%95%EC%98%81%EB%82%A8"
-      },
-      {
-        "name": "소연",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=41593&spId=41593&q=%EC%86%8C%EC%97%B0"
-      },
-      {
-        "name": "김환진",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=39456&spId=39456&q=%EA%B9%80%ED%99%98%EC%A7%84"
-      },
-      {
-        "name": "정유정",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1391115&spId=1391115&q=%EC%A0%95%EC%9C%A0%EC%A0%95"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%A7%B1%EA%B5%AC%EB%8A%94%20%EB%AA%BB%EB%A7%90%EB%A0%A4%3A%20%EC%B4%88%ED%99%94%EB%A0%A4!%20%EC%9E%91%EC%97%B4%ED%95%98%EB%8A%94%20%EB%96%A1%EC%9E%8E%EB%A7%88%EC%9D%84%20%EB%8C%84%EC%84%9C%EC%A6%88%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%A7%B1%EA%B5%AC%EB%8A%94%20%EB%AA%BB%EB%A7%90%EB%A0%A4%3A%20%EC%B4%88%ED%99%94%EB%A0%A4!%20%EC%9E%91%EC%97%B4%ED%95%98%EB%8A%94%20%EB%96%A1%EC%9E%8E%EB%A7%88%EC%9D%84%20%EB%8C%84%EC%84%9C%EC%A6%88%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20230104_더_퍼스트_슬램덩크",
@@ -329,35 +87,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20230104_더_퍼스트_슬램덩크.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "125분",
-    "director": "이노우에 다케히코",
-    "cast": [
-      "강수진",
-      "신용우",
-      "엄상현",
-      "장민혁"
-    ],
-    "castLinks": [
-      {
-        "name": "강수진",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=28050&spId=28050&q=%EA%B0%95%EC%88%98%EC%A7%84"
-      },
-      {
-        "name": "신용우",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=847631&spId=847631&q=%EC%8B%A0%EC%9A%A9%EC%9A%B0"
-      },
-      {
-        "name": "엄상현",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=747913&spId=747913&q=%EC%97%84%EC%83%81%ED%98%84"
-      },
-      {
-        "name": "장민혁",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=77089&spId=77089&q=%EC%9E%A5%EB%AF%BC%ED%98%81"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%8D%94%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EC%8A%AC%EB%9E%A8%EB%8D%A9%ED%81%AC%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%8D%94%20%ED%8D%BC%EC%8A%A4%ED%8A%B8%20%EC%8A%AC%EB%9E%A8%EB%8D%A9%ED%81%AC%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251231_파더_마더_시스터_브라더",
@@ -366,35 +96,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251231_파더_마더_시스터_브라더.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "110분",
-    "director": "짐 자무쉬",
-    "cast": [
-      "톰 웨이츠",
-      "아담 드라이버",
-      "메임 비알릭",
-      "샬롯 램플링"
-    ],
-    "castLinks": [
-      {
-        "name": "톰 웨이츠",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=34492&spId=34492&q=%ED%86%B0%20%EC%9B%A8%EC%9D%B4%EC%B8%A0"
-      },
-      {
-        "name": "아담 드라이버",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1362029&spId=1362029&q=%EC%95%84%EB%8B%B4%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84"
-      },
-      {
-        "name": "메임 비알릭",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=749533&spId=749533&q=%EB%A9%94%EC%9E%84%20%EB%B9%84%EC%95%8C%EB%A6%AD"
-      },
-      {
-        "name": "샬롯 램플링",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=25900&spId=25900&q=%EC%83%AC%EB%A1%AF%20%EB%9E%A8%ED%94%8C%EB%A7%81"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%ED%8C%8C%EB%8D%94%20%EB%A7%88%EB%8D%94%20%EC%8B%9C%EC%8A%A4%ED%84%B0%20%EB%B8%8C%EB%9D%BC%EB%8D%94%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%ED%8C%8C%EB%8D%94%20%EB%A7%88%EB%8D%94%20%EC%8B%9C%EC%8A%A4%ED%84%B0%20%EB%B8%8C%EB%9D%BC%EB%8D%94%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260101_부흥",
@@ -403,11 +105,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260101_부흥.jpg",
-    "venue": "전체관람가",
-    "runningTime": "90분",
-    "director": "윤학렬",
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%B6%80%ED%9D%A5%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%B6%80%ED%9D%A5%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_보이",
@@ -416,35 +114,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_보이.jpg",
-    "venue": "15세이상관람가",
-    "runningTime": "90분",
-    "director": "이상덕",
-    "cast": [
-      "조병규",
-      "유인수",
-      "지니",
-      "서인국"
-    ],
-    "castLinks": [
-      {
-        "name": "조병규",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=1981368&spId=1981368&q=%EC%A1%B0%EB%B3%91%EA%B7%9C"
-      },
-      {
-        "name": "유인수",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2149689&spId=2149689&q=%EC%9C%A0%EC%9D%B8%EC%88%98"
-      },
-      {
-        "name": "지니",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2267335&spId=2267335&q=%EC%A7%80%EB%8B%88"
-      },
-      {
-        "name": "서인국",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=495384&spId=495384&q=%EC%84%9C%EC%9D%B8%EA%B5%AD"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%B3%B4%EC%9D%B4%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%B3%B4%EC%9D%B4%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_송_썽_블루",
@@ -453,35 +123,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_송_썽_블루.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "133분",
-    "director": "크레이그 브루어",
-    "cast": [
-      "휴 잭맨",
-      "케이트 허드슨",
-      "마이클 임페리올리",
-      "피셔 스티븐스"
-    ],
-    "castLinks": [
-      {
-        "name": "휴 잭맨",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=16556&spId=16556&q=%ED%9C%B4%20%EC%9E%AD%EB%A7%A8"
-      },
-      {
-        "name": "케이트 허드슨",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=16540&spId=16540&q=%EC%BC%80%EC%9D%B4%ED%8A%B8%20%ED%97%88%EB%93%9C%EC%8A%A8"
-      },
-      {
-        "name": "마이클 임페리올리",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=38009&spId=38009&q=%EB%A7%88%EC%9D%B4%ED%81%B4%20%EC%9E%84%ED%8E%98%EB%A6%AC%EC%98%AC%EB%A6%AC"
-      },
-      {
-        "name": "피셔 스티븐스",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=38537&spId=38537&q=%ED%94%BC%EC%85%94%20%EC%8A%A4%ED%8B%B0%EB%B8%90%EC%8A%A4"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%86%A1%20%EC%8D%BD%20%EB%B8%94%EB%A3%A8%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%86%A1%20%EC%8D%BD%20%EB%B8%94%EB%A3%A8%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_고고다이노_극장판:_곤충세계_대모험",
@@ -490,11 +132,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_고고다이노_극장판:_곤충세계_대모험.jpg",
-    "venue": "전체관람가",
-    "runningTime": "65분",
-    "director": "이선명",
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EA%B3%A0%EA%B3%A0%EB%8B%A4%EC%9D%B4%EB%85%B8%20%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%EA%B3%A4%EC%B6%A9%EC%84%B8%EA%B3%84%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EA%B3%A0%EA%B3%A0%EB%8B%A4%EC%9D%B4%EB%85%B8%20%EA%B7%B9%EC%9E%A5%ED%8C%90%3A%20%EA%B3%A4%EC%B6%A9%EC%84%B8%EA%B3%84%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251231_화양연화_특별판",
@@ -503,35 +141,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251231_화양연화_특별판.jpg",
-    "venue": "15세이상관람가",
-    "runningTime": "108분",
-    "director": "왕가위",
-    "cast": [
-      "장만옥",
-      "양조위",
-      "소병림",
-      "반적화"
-    ],
-    "castLinks": [
-      {
-        "name": "장만옥",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=16739&spId=16739&q=%EC%9E%A5%EB%A7%8C%EC%98%A5"
-      },
-      {
-        "name": "양조위",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=16033&spId=16033&q=%EC%96%91%EC%A1%B0%EC%9C%84"
-      },
-      {
-        "name": "소병림",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=835636&spId=835636&q=%EC%86%8C%EB%B3%91%EB%A6%BC"
-      },
-      {
-        "name": "반적화",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=768910&spId=768910&q=%EB%B0%98%EC%A0%81%ED%99%94"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%ED%99%94%EC%96%91%EC%97%B0%ED%99%94%20%ED%8A%B9%EB%B3%84%ED%8C%90%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%ED%99%94%EC%96%91%EC%97%B0%ED%99%94%20%ED%8A%B9%EB%B3%84%ED%8C%90%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20251211_뽀로로_극장판_스위트캐슬_대모험",
@@ -540,35 +150,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20251211_뽀로로_극장판_스위트캐슬_대모험.jpg",
-    "venue": "전체관람가",
-    "runningTime": "67분",
-    "director": "천유림",
-    "cast": [
-      "이선",
-      "이미자",
-      "김현지",
-      "홍소영"
-    ],
-    "castLinks": [
-      {
-        "name": "이선",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=39474&spId=39474&q=%EC%9D%B4%EC%84%A0"
-      },
-      {
-        "name": "이미자",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=39469&spId=39469&q=%EC%9D%B4%EB%AF%B8%EC%9E%90"
-      },
-      {
-        "name": "김현지",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=829958&spId=829958&q=%EA%B9%80%ED%98%84%EC%A7%80"
-      },
-      {
-        "name": "홍소영",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=168267&spId=168267&q=%ED%99%8D%EC%86%8C%EC%98%81"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%BD%80%EB%A1%9C%EB%A1%9C%20%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%8A%A4%EC%9C%84%ED%8A%B8%EC%BA%90%EC%8A%AC%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%BD%80%EB%A1%9C%EB%A1%9C%20%EA%B7%B9%EC%9E%A5%ED%8C%90%20%EC%8A%A4%EC%9C%84%ED%8A%B8%EC%BA%90%EC%8A%AC%20%EB%8C%80%EB%AA%A8%ED%97%98%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260204_왕과_사는_남자",
@@ -577,35 +159,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260204_왕과_사는_남자.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "116분",
-    "director": "장항준",
-    "cast": [
-      "유해진",
-      "박지훈",
-      "유지태",
-      "전미도"
-    ],
-    "castLinks": [
-      {
-        "name": "유해진",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=19123&spId=19123&q=%EC%9C%A0%ED%95%B4%EC%A7%84"
-      },
-      {
-        "name": "박지훈",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=2112292&spId=2112292&q=%EB%B0%95%EC%A7%80%ED%9B%88"
-      },
-      {
-        "name": "유지태",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=18968&spId=18968&q=%EC%9C%A0%EC%A7%80%ED%83%9C"
-      },
-      {
-        "name": "전미도",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=223667&spId=223667&q=%EC%A0%84%EB%AF%B8%EB%8F%84"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%99%95%EA%B3%BC%20%EC%82%AC%EB%8A%94%20%EB%82%A8%EC%9E%90%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%99%95%EA%B3%BC%20%EC%82%AC%EB%8A%94%20%EB%82%A8%EC%9E%90%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20260114_끝이_없는_스칼렛",
@@ -614,35 +168,7 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20260114_끝이_없는_스칼렛.jpg",
-    "venue": "12세이상관람가",
-    "runningTime": "111분",
-    "director": "호소다 마모루",
-    "cast": [
-      "아시다 마나",
-      "오카다 마사키",
-      "야쿠쇼 코지",
-      "야마지 카즈히로"
-    ],
-    "castLinks": [
-      {
-        "name": "아시다 마나",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=769157&spId=769157&q=%EC%95%84%EC%8B%9C%EB%8B%A4%20%EB%A7%88%EB%82%98"
-      },
-      {
-        "name": "오카다 마사키",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=75065&spId=75065&q=%EC%98%A4%EC%B9%B4%EB%8B%A4%20%EB%A7%88%EC%82%AC%ED%82%A4"
-      },
-      {
-        "name": "야쿠쇼 코지",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=19945&spId=19945&q=%EC%95%BC%EC%BF%A0%EC%87%BC%20%EC%BD%94%EC%A7%80"
-      },
-      {
-        "name": "야마지 카즈히로",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=871188&spId=871188&q=%EC%95%BC%EB%A7%88%EC%A7%80%20%EC%B9%B4%EC%A6%88%ED%9E%88%EB%A1%9C"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EB%81%9D%EC%9D%B4%20%EC%97%86%EB%8A%94%20%EC%8A%A4%EC%B9%BC%EB%A0%9B%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EB%81%9D%EC%9D%B4%20%EC%97%86%EB%8A%94%20%EC%8A%A4%EC%B9%BC%EB%A0%9B%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   },
   {
     "id": "movie_20000204_철도원",
@@ -651,34 +177,6 @@
     "region": "전국",
     "genre": "movie",
     "image": "/images/posters/movies/movie_20000204_철도원.jpg",
-    "venue": "전체관람가",
-    "runningTime": "112분",
-    "director": "후루하타 야스오",
-    "cast": [
-      "히로스에 료코",
-      "다카쿠라 켄",
-      "오타케 시노부",
-      "안도 마사노부"
-    ],
-    "castLinks": [
-      {
-        "name": "히로스에 료코",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=31434&spId=31434&q=%ED%9E%88%EB%A1%9C%EC%8A%A4%EC%97%90%20%EB%A3%8C%EC%BD%94"
-      },
-      {
-        "name": "다카쿠라 켄",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=25173&spId=25173&q=%EB%8B%A4%EC%B9%B4%EC%BF%A0%EB%9D%BC%20%EC%BC%84"
-      },
-      {
-        "name": "오타케 시노부",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=38534&spId=38534&q=%EC%98%A4%ED%83%80%EC%BC%80%20%EC%8B%9C%EB%85%B8%EB%B6%80"
-      },
-      {
-        "name": "안도 마사노부",
-        "link": "?w=tot&DA=EM1&rtmaxcoll=PRF&ppkey=16745&spId=16745&q=%EC%95%88%EB%8F%84%20%EB%A7%88%EC%82%AC%EB%85%B8%EB%B6%80"
-      }
-    ],
-    "timeLink": "https://search.daum.net/search?w=tot&q=%EC%B2%A0%EB%8F%84%EC%9B%90%20%EC%98%81%ED%99%94",
-    "detailLink": "https://search.daum.net/search?w=tot&q=%EC%B2%A0%EB%8F%84%EC%9B%90%20%EC%98%81%ED%99%94"
+    "venue": "등급 미정"
   }
 ]
