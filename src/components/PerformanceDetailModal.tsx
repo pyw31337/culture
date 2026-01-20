@@ -201,13 +201,17 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                             <div>
                                                 <h3 className="text-gray-400 text-xs font-bold mb-2">출연</h3>
                                                 <div className="flex flex-wrap gap-2">
-                                                    {performance.cast.map((actor: string, idx: number) => {
-                                                        const cleanName = actor.replace('더보기', '').trim();
+                                                    {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
+                                                        const isObj = typeof actor === 'object';
+                                                        const rawName = isObj ? actor.name : actor as string;
+                                                        const url = isObj && actor.url ? actor.url : `https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(rawName.replace('더보기', '').trim())}`;
+                                                        const cleanName = rawName.replace('더보기', '').trim();
+
                                                         if (!cleanName) return null;
                                                         return (
                                                             <a
                                                                 key={idx}
-                                                                href={`https://m.search.daum.net/search?w=tot&q=${encodeURIComponent(cleanName)}`}
+                                                                href={url}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                                 className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"

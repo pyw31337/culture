@@ -13,7 +13,7 @@ export type Performance = {
     price?: string;
     gradeIcon?: string;
     platforms?: string[];
-    cast?: string[];
+    cast?: (string | { name: string; url?: string })[];
     director?: string;
     movieInfo?: string;
     homeTeam?: string;
