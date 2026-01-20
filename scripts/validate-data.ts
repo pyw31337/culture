@@ -75,11 +75,34 @@ async function validate() {
         console.log('No changes needed for ott.json');
     }
 
-    // 2. Validate Other Files (simple checks)
+    // 2. Validate Movies
     const movies = load('movies.json');
     console.log(`Checked ${movies.length} movies.`);
-    // Add logic if needed
+    let movieMod = 0;
 
+    // Naver Fallback helpers could go here if we want to auto-enrich validation failures immediately.
+    // For now, let's just flag them or try rudimentary cleanups.
+    // If user wants "auto-correct", we might need to hook up a searcher.
+    // Given the request "Collect correctly", let's just report or try to clean.
+
+    const newMovies = movies.map((m: any) => {
+        let changed = false;
+
+        // Rule 1: Check if poster is missing or 404 (we can't check 404 easily without fetch, but we can check empty)
+        if (!m.image || m.image.trim() === '') {
+            console.warn(`[Warning] Movie ${m.title} has no poster.`);
+        }
+
+        // Rule 2: Check for details
+        if (!m.director && !m.movieInfo) {
+            console.warn(`[Warning] Movie ${m.title} missing details.`);
+        }
+
+        return m;
+    });
+
+    // For now, we are just reporting on movies as the scraper update should fix it on next run.
+    console.log('Movie validation complete.');
 }
 
 validate();
