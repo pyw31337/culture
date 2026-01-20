@@ -84,7 +84,7 @@ jobs:
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-travel.ts || true
           npx tsx scripts/scrape-movies.ts || true
-          npx tsx scripts/scrape-movies.ts || true
+
           npx tsx scripts/scrape-ott.ts || true
           node scripts/scrape-myrealtrip.js || true
           npx tsx scripts/scrape-umclass.ts || true
