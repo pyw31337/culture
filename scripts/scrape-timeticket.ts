@@ -368,13 +368,49 @@ async function scrapeTimeTicket() {
                     // p:3 -> Age
 
                     const pTags = openRunDiv.querySelectorAll('p');
-                    if (pTags.length >= 1) date = pTags[0].textContent?.trim() || '';
 
+                    // Iterate through p tags to identify content by keywords
+                    pTags.forEach(p => {
+                        const text = p.textContent?.trim() || '';
+                        if (!text) return;
+
+                        // Date usually contains ~ or numbers with dots
+                        if (text.match(/\d{4}\.\d{2}\.\d{2}/) && !date) {
+                            date = text;
+                        }
+
+                        // Running time usually contains '분'
+                        if (text.includes('분') && !runningTime) {
+                            runningTime = text;
+                        }
+
+                        // Age rating usually contains '세' or '관람' or '가'
+                        if ((text.includes('세') || text.includes('관람') || text.includes('전체')) && !text.includes('분') && !text.match(/\d{4}\./) && !ageLimit) {
+                            ageLimit = text;
+                        }
+                    });
+
+                    // Fallback: Specific class check if available
                     const runInfoP = openRunDiv.querySelector('.run_info');
-                    if (runInfoP) runningTime = runInfoP.textContent?.trim() || '';
+                    if (runInfoP && !runningTime) runningTime = runInfoP.textContent?.trim() || '';
+                }
 
-                    // If p:3 exists and is not date/time
-                    if (pTags.length >= 3) ageLimit = pTags[2].textContent?.trim() || '';
+                // Fallback: Check radius boxes for explicit labels if still missing
+                if (!ageLimit || !runningTime) {
+                    const radiusBoxes = document.querySelectorAll('.viewpage_text.radius_box');
+                    radiusBoxes.forEach(box => {
+                        const text = (box.textContent || '').trim();
+
+                        if (!ageLimit && text.includes('이용등급')) {
+                            const match = text.match(/이용등급\s*[:]?\s*(.*?)(\n|$)/);
+                            if (match) ageLimit = match[1].trim();
+                        }
+
+                        if (!runningTime && text.includes('이용시간')) {
+                            const match = text.match(/이용시간\s*[:]?\s*(.*?)(\n|$)/);
+                            if (match) runningTime = match[1].trim();
+                        }
+                    });
                 }
 
                 // Prices
