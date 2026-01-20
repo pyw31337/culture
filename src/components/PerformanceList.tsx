@@ -2414,7 +2414,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         <span className="truncate max-w-[150px] sm:max-w-xs">
                                             {searchLocation ? `'${searchLocation.name}'` : (userAddress || '내 위치')}
                                         </span>
-                                        <span className="text-base sm:text-xl shrink-0">주변 ({displayPerformances.length})</span>
+                                        <span className="text-base sm:text-xl shrink-0">{searchLocation ? '공연장 주변' : '주변'} ({displayPerformances.length})</span>
                                         <button
                                             onClick={() => {
                                                 setSearchLocation(null);
@@ -2561,6 +2561,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             favoriteVenues={favoriteVenues}
                             onToggleFavorite={toggleFavoriteVenue}
                             onClose={() => setIsMapOpen(false)}
+                            onVenueLocationChange={(venueName, lat, lng) => {
+                                setSearchLocation({ lat, lng, name: venueName });
+                                setIsMapOpen(false);
+                            }}
                         />
                     )
                 }

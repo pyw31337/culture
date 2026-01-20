@@ -9,7 +9,8 @@ puppeteer.use(StealthPlugin());
     const page = await browser.newPage();
     // const url = 'https://tickets.interpark.com/goods/21001949';
     // const url = 'https://tickets.interpark.com/goods/24017373'; // Original
-    const url = 'https://tickets.interpark.com/goods/25018267'; // User reported failure // Another example if needed
+    // const url = 'https://tickets.interpark.com/goods/25018267'; // User reported failure
+    const url = 'https://tickets.interpark.com/goods/25018451'; // User reported missing price (Package)
 
     console.log(`Navigating to ${url}...`);
     await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -22,22 +23,31 @@ puppeteer.use(StealthPlugin());
         await new Promise(r => setTimeout(r, 3000));
     }
 
-    const priceBtn = await page.$('a[data-popup="info-price"]');
-    if (priceBtn) {
-        console.log('Clicking Price Button...');
-        await priceBtn.click();
-        await new Promise(r => setTimeout(r, 1000)); // Wait for popup
-
-        // Dump Price Popup
-        const pricePopup = await page.evaluate(() => {
-            const popup = document.querySelector('#popup-info-price');
-            return popup ? popup.innerHTML : 'Price Popup Not Found';
+    // Search for any "Price" related buttons if standard one fails
+    console.log('Searching for Price buttons...');
+    const buttons = await page.evaluate(() => {
+        const candidates: { tag: string; text: string; class: string; outerHTML: string }[] = [];
+        const all = document.querySelectorAll('button, a, .btn');
+        all.forEach(el => {
+            const txt = el.textContent?.trim() || '';
+            if (txt.includes('전체가격') || txt.includes('가격') || txt.includes('자세히')) {
+                candidates.push({
+                    tag: el.tagName,
+                    text: txt,
+                    class: el.className,
+                    outerHTML: el.outerHTML
+                });
+            }
         });
-        console.log('--- Price Popup HTML ---');
-        console.log(pricePopup);
-    } else {
-        console.log('Price Button Not Found');
-    }
+        return candidates;
+    });
+    console.log('--- Potential Price Buttons ---');
+    console.log(JSON.stringify(buttons, null, 2));
+
+    // Try to find 140,000 again globally
+    const bodyText = await page.evaluate(() => document.body.innerText);
+    console.log(`Body text contains '140,000': ${bodyText.includes('140,000')}`);
+    console.log(`Body text contains '패키지': ${bodyText.includes('패키지')}`);
 
     // Scroll down to check for Discount Info
     await page.evaluate(() => window.scrollTo(0, 1000));
@@ -47,16 +57,28 @@ puppeteer.use(StealthPlugin());
         // Look for "할인정보" text or header
         const headers = Array.from(document.querySelectorAll('h3, strong, div.title'));
         const discountHeader = headers.find(h => h.textContent?.includes('할인정보') || h.textContent?.includes('할인'));
-        if (discountHeader) {
-            // Try to get content below it
-            return {
-                found: true,
-                text: (discountHeader.parentElement as HTMLElement)?.innerText || 'Header found but no context'
-            };
+
+        // Search for specific text user mentioned
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+        let node;
+        const priceNodes = [];
+        while (node = walker.nextNode()) {
+            if (node.textContent?.includes('140,000')) {
+                priceNodes.push({
+                    text: node.textContent,
+                    parentClass: node.parentElement?.className,
+                    grandParentClass: node.parentElement?.parentElement?.className,
+                    html: node.parentElement?.outerHTML
+                });
+            }
         }
-        return { found: false };
+
+        return {
+            found: !!discountHeader,
+            priceNodes
+        };
     });
-    console.log('--- Discount Info ---');
+    console.log('--- Text Search Info ---');
     console.log(JSON.stringify(discountInfo, null, 2));
 
     const data = await page.evaluate(() => {

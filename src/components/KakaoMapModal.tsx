@@ -25,9 +25,10 @@ interface KakaoMapModalProps {
     centerLocation?: { lat: number; lng: number; name: string } | null;
     favoriteVenues: string[];
     onToggleFavorite: (venueName: string) => void;
+    onVenueLocationChange?: (venueName: string, lat: number, lng: number) => void;
 }
 
-export default function KakaoMapModal({ performances, onClose, centerLocation, favoriteVenues, onToggleFavorite }: KakaoMapModalProps) {
+export default function KakaoMapModal({ performances, onClose, centerLocation, favoriteVenues, onToggleFavorite, onVenueLocationChange }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
@@ -447,6 +448,20 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 <span className={`font-bold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
                                                 {/* Distance could be calculated if we have centerLocation */}
                                             </div>
+                                            {onVenueLocationChange && v.lat && v.lng && (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onVenueLocationChange(v.venueName, v.lat, v.lng);
+                                                    }}
+                                                    className={`w-full mt-2 py-1.5 px-3 text-xs rounded-lg font-medium transition-colors ${isFavorite
+                                                            ? 'bg-white/20 hover:bg-white/30 text-white'
+                                                            : 'bg-blue-600 hover:bg-blue-700 text-white'
+                                                        }`}
+                                                >
+                                                    이 공연장 주변보기
+                                                </button>
+                                            )}
                                         </button>
                                     );
                                 })}
