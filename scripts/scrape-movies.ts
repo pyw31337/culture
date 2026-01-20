@@ -395,11 +395,12 @@ async function scrapeMovies() {
             } else if (daumData.castStr && !item.cast) {
                 item.cast = [daumData.castStr];
             }
-            if (daumData.detailLink) item.timeLink = daumData.detailLink; // Using 'timeLink' (or create new 'daumLink'?) - User asked for detail link.
-            // Typically 'timeLink' is used for booking/detail in other scrapers, or we can add `detailLink` property.
-            // Let's stick to adding a new property if schema allows, or map to 'link' / 'timeLink'.
-            // KOBIS scraper didn't seem to have a main link.
-            item.detailLink = daumData.detailLink;
+            if (daumData.detailLink) {
+                item.timeLink = daumData.detailLink;
+                // Standardize 'link' for UI components (PerformanceList, PerformanceListItem)
+                item.link = daumData.detailLink;
+                item.detailLink = daumData.detailLink;
+            }
 
             // Fallbacks
             if (!item.venue) item.venue = '등급 미정';
