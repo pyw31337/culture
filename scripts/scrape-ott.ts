@@ -25,6 +25,72 @@ const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 // --- HELPER: Normalize Strings ---
 const cleanText = (s: string) => s.replace(/\s+/g, ' ').trim();
 
+// --- VALIDATION & CLEANING [NEW] ---
+const MANUAL_GRADES: Record<string, string> = {
+    '은애하는 도적님아': '15세 이상 관람가',
+    '은애하는 도적님아 - 시즌 1': '15세 이상 관람가',
+    '언더커버 미쓰홍': '15세 이상 관람가',
+    '언더커버 미쓰홍 - 시즌 1': '15세 이상 관람가',
+    '화려한 날들': '15세 이상 관람가',
+    '화려한 날들 - 시즌 1': '15세 이상 관람가',
+    '사죄의 왕': '15세 이상 관람가'
+};
+
+function normalizeAgeRating(rating: string): string | null {
+    if (!rating) return null;
+    const r = rating.trim();
+
+    // 1. Standardize known patterns
+    if (['ALL', 'All', 'all', '전체', 'G', '전체관람가'].some(k => r.includes(k))) return '전체 관람가';
+    if (r.includes('12') && (r.includes('세') || r.includes('+') || r.includes('연령'))) return '12세 이상 관람가';
+    if (r.includes('15') && (r.includes('세') || r.includes('+') || r.includes('연령'))) return '15세 이상 관람가';
+    if (r.includes('18') || r.includes('19') || r.includes('청불') || r.includes('청소년')) return '청소년 관람불가';
+
+    // 2. Strict whitelist check
+    const validSet = ['전체 관람가', '12세 이상 관람가', '15세 이상 관람가', '청소년 관람불가'];
+    if (validSet.includes(r)) return r;
+
+    // 3. Fallback: Parse "12세 이상 관람가" exact format
+    if (/^\d+세 이상 관람가$/.test(r)) return r;
+
+    // Discard garbage like "7.9 (550)"
+    return null;
+}
+
+function cleanOTTItem(item: any) {
+    // 1. Clean Age Rating
+    if (item.title && MANUAL_GRADES[item.title]) {
+        item.ageRating = MANUAL_GRADES[item.title];
+    } else {
+        const validGrade = normalizeAgeRating(item.ageRating);
+        if (validGrade) {
+            item.ageRating = validGrade;
+        } else {
+            // Remove invalid/garbage rating
+            delete item.ageRating;
+        }
+    }
+
+    // 2. Clean Original Title
+    if (item.originalTitle) {
+        let ot = item.originalTitle.trim();
+        // Remove simple runtime "42분"
+        if (/^\d{1,3}분$/.test(ot)) delete item.originalTitle;
+        // Remove simple year "2024"
+        else if (/^\d{4}$/.test(ot)) delete item.originalTitle;
+        // Remove massive garbage strings "30.-286.3 (456)..."
+        else if (ot.length > 20 && (/[\d\.\+\-\(\)]+/.test(ot) && ot.includes('연령') || ot.includes('분'))) {
+            delete item.originalTitle;
+        }
+        // Remove if identical to Title
+        else if (ot === item.title) delete item.originalTitle;
+    }
+
+    // 3. Clean SubGenre
+    if (item.subGenre === 'OTT') delete item.subGenre;
+}
+
+
 // --- SCERAPER HELPERS ---
 async function scrapeJWDetail(page: any, url: string) {
     try {
@@ -142,7 +208,6 @@ async function scrapeJWDetail(page: any, url: string) {
                 let src = posterImg.getAttribute('data-src') || posterImg.getAttribute('src');
                 // Try to get highest res
                 if (src) {
-                    // Replace /s166/ or similar with /s718/ (High Quality)
                     res.poster = src.replace(/\/s\d+\//, '/s718/');
                 }
             }
@@ -198,8 +263,6 @@ async function fetchTMDBData(page: any, title: string) {
             const genres = Array.from(document.querySelectorAll('.facts .genres a')).map(a => a.textContent?.trim());
             if (genres.length > 0) res.subGenre = genres.join(', ');
 
-            // Country/General info handling is complex on TMDB, but Runtime/Poster/Genre are critical
-
             return res;
         });
 
@@ -212,7 +275,7 @@ async function fetchTMDBData(page: any, title: string) {
 
 // --- MAIN SCRAPER ---
 async function scrapeHybrid() {
-    console.log('Starting Hybrid OTT Scraper (V7 - JustWatch Detail + Naver Enrichment)...');
+    console.log('Starting Hybrid OTT Scraper (V8 - Cleaner & Validator Added)...');
 
     // 1. Scrape JustWatch List
     const browser = await firefox.launch({ headless: true });
@@ -295,7 +358,6 @@ async function scrapeHybrid() {
             return list;
         });
 
-        // Aggregation
         const aggregated: Record<string, any> = {};
         for (const it of scrapedList) {
             const key = it.title + '|' + (it.date || '');
@@ -326,7 +388,7 @@ async function scrapeHybrid() {
 
         item.venue = 'OTT';
         item.region = 'ott';
-        item.genre = 'ott'; // Will be updated
+        item.genre = 'ott';
 
         const dateStr = item.date ? item.date.replace(/-/g, '') : '00000000';
         const titleStr = item.title ? item.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '') : 'unknown';
@@ -356,7 +418,7 @@ async function scrapeHybrid() {
     const itemsToProcess = Math.min(filteredItems.length, ENRICH_LIMIT);
     progressBar.start(itemsToProcess, 0, { title: 'Starting...' });
 
-    const jwPage = await context.newPage(); // For Detail scraping
+    const jwPage = await context.newPage();
     const naverPage = await context.newPage();
     const tmdbPage = await context.newPage();
 
@@ -374,7 +436,7 @@ async function scrapeHybrid() {
             // Check Exclusion (Thailand)
             if (jwData.productionCountry && (jwData.productionCountry.includes('Thailand') || jwData.productionCountry.includes('태국'))) {
                 console.log(`   > Skipping ${item.title} (Country: ${jwData.productionCountry})`);
-                continue; // Skip this item entirely
+                continue;
             }
 
             // Merge JW Data
@@ -391,25 +453,24 @@ async function scrapeHybrid() {
         // Resume Check (Enhanced: Check if we have essential data)
         const match = existingData.find(e => e.title === item.title && e.date === item.date);
         if (match && match.subGenre && match.image && !match.image.startsWith('data:')) {
-            // Smart Merge: Updated Missing/Better info
+            // Apply Smart Merge even on resume, to fix missing/bad data in existing items
             if (!match.ageRating && item.ageRating) match.ageRating = item.ageRating;
             if (!match.runningTime && item.runningTime) match.runningTime = item.runningTime;
             if (!match.cast && item._jwCast) match.cast = item._jwCast;
-            // Specific Fix: Prioritize 'Documentary' over 'Drama'
             if (item.subGenre === '다큐멘터리' && match.subGenre !== '다큐멘터리') match.subGenre = item.subGenre;
-            // Specific Fix: Prioritize 'Reality TV' or '예능' if matched
             if (item.subGenre === '예능' && match.subGenre !== '예능') match.subGenre = item.subGenre;
 
             Object.assign(item, match);
-            delete item._jwCast; // cleanup
+            delete item._jwCast;
+
+            // Apply Cleaner here too! (For existing data)
+            cleanOTTItem(item);
+
             continue;
         }
 
         // 2. Naver Enrichment (Korean Metadata)
-        // ... (Existing Naver Logic) ...
         try {
-            // Search Query: Use Original Title if available for better result? 
-            // Or just Title. Naver handles English titles well.
             const queryRaw = item.title.replace(/\s-\s.*$/, '');
             const queries = [
                 `${queryRaw} 정보`,
@@ -431,7 +492,6 @@ async function scrapeHybrid() {
             }
 
             if (naverData.hasInfo) {
-                // ... (Existing Parsing Logic, copied/adapted) ...
                 const nData = await naverPage.evaluate(() => {
                     const res: any = {};
                     const infoBox = document.querySelector('.cm_info_box');
@@ -441,33 +501,32 @@ async function scrapeHybrid() {
                             const k = dt.textContent?.trim() || '';
                             let vText = dt.nextElementSibling?.textContent?.trim() || '';
 
-                            if (k === '등급') {
+                            // Expanded Selectors
+                            if (k.includes('등급') || k.includes('관람')) {
                                 res.ageRating = vText;
                                 if (res.ageRating.match(/^\d+세$/)) res.ageRating += ' 관람가';
                                 if (res.ageRating === '전체') res.ageRating = '전체 관람가';
                             }
-                            if (k === '장르') res.subGenre = vText;
-                            if (k === '국가') res.productionCountry = vText;
-                            if (k === '러닝타임') res.runningTime = vText;
-                            if (k === '개봉' || k === '방송') res.productionYear = vText.substring(0, 4);
-                            if (k === '원제') res.originalTitle = vText;
-                            if (k === '감독') res.director = vText;
+                            if (k.includes('장르')) res.subGenre = vText;
+                            if (k.includes('국가')) res.productionCountry = vText;
+                            if (k.includes('러닝타임') || k.includes('재생시간')) res.runningTime = vText;
+                            if (k.includes('개봉') || k.includes('방송')) res.productionYear = vText.substring(0, 4);
+                            if (k.includes('원제')) res.originalTitle = vText;
+                            if (k.includes('감독')) res.director = vText;
                         });
                     }
 
                     const posterImg = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img');
                     if (posterImg) res.poster = posterImg.getAttribute('src');
 
-                    // Cast
                     const castBox = document.querySelector('.cast_box');
                     if (castBox) {
                         const names = Array.from(castBox.querySelectorAll('.name')).map(n => n.textContent?.trim()).slice(0, 6);
-                        if (names.length > 0) res.cast = names; // String array
+                        if (names.length > 0) res.cast = names;
                     }
                     return res;
                 });
 
-                // Check Cast Tab if missing
                 if (!nData.cast) {
                     const castTabSelector = 'li[data-tab-name="cast"] a, a[href*="cast"]';
                     const castTab = await naverPage.$(castTabSelector);
@@ -485,30 +544,26 @@ async function scrapeHybrid() {
                     }
                 }
 
-                // MERGE Naver Data (Overwriting JW where Naver is better/korean)
                 if (nData.poster && !nData.poster.startsWith('data:')) item.image = nData.poster;
                 if (nData.ageRating) item.ageRating = nData.ageRating;
                 if (nData.subGenre) item.subGenre = nData.subGenre;
                 if (nData.director) item.director = nData.director;
 
-                // Cast Priority: Naver (String[]) > JW (Object[])
                 if (nData.cast && nData.cast.length > 0) {
-                    item.cast = nData.cast; // Use Korean strings
+                    item.cast = nData.cast;
                 } else if (!item.cast && item._jwCast) {
-                    item.cast = item._jwCast; // Fallback to JW objects
+                    item.cast = item._jwCast;
                 }
 
                 if (nData.runningTime) item.runningTime = nData.runningTime;
                 if (nData.productionCountry) item.productionCountry = nData.productionCountry;
             } else {
-                // Naver failed
-                // Use JW Cast if available
                 if (item._jwCast) item.cast = item._jwCast;
             }
 
-            delete item._jwCast; // Cleanup internal field
+            delete item._jwCast;
 
-            // 3. TMDB Fallback (if still missing critical bits)
+            // 3. TMDB Fallback 
             if (!item.image && !item.poster) {
                 const tmdb = await fetchTMDBData(tmdbPage, item.title);
                 if (tmdb?.poster) item.image = tmdb.poster;
@@ -519,11 +574,11 @@ async function scrapeHybrid() {
             // console.error(e);
         }
 
-        // Final cleanup
+        // Final cleanup & validation
         if (!item.image && item.poster) item.image = item.poster;
-        // Removed default 'OTT' subGenre to encourage correct scraping or empty display
-        // if (!item.subGenre) item.subGenre = 'OTT';
 
+        // --- CLEAN & VALIDATE ---
+        cleanOTTItem(item);
     }
 
     progressBar.stop();
@@ -533,7 +588,11 @@ async function scrapeHybrid() {
     let finalData = filteredItems;
     if (existingData.length > 0) {
         const idMap = new Map<string, any>();
-        existingData.forEach(item => idMap.set(item.id, item));
+        existingData.forEach(item => {
+            // Clean existing data too!
+            cleanOTTItem(item);
+            idMap.set(item.id, item);
+        });
         filteredItems.forEach(item => idMap.set(item.id, item));
         finalData = Array.from(idMap.values());
     }
