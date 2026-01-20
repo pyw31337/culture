@@ -676,7 +676,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                                 {/* Price & Discount (Unified Style) */}
                                                 {(perf.price || perf.discount) && (
-                                                    <div className={clsx("flex justify-between items-end mt-2 w-full pt-2", hasOtherDetails ? "border-t border-white/10" : "")}>
+                                                    <div className={clsx("flex justify-between items-end mt-2 w-full pt-2", (hasOtherDetails || perf.genre === 'travel') ? "border-t border-white/10" : "")}>
                                                         <div className="flex flex-col justify-end leading-none">
                                                             {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
                                                         </div>

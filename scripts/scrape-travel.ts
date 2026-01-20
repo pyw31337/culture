@@ -220,6 +220,15 @@ async function scrapeTravel() {
             // "date": Period
             // "price": item.price
 
+            let discount = item.discount;
+            const priceVal = parseInt((item.price || '0').replace(/[^0-9]/g, ''), 10);
+            const originalPriceVal = item.originalPrice ? parseInt(item.originalPrice.replace(/[^0-9]/g, ''), 10) : 0;
+
+            if (!discount && originalPriceVal > priceVal && originalPriceVal > 0) {
+                const rate = Math.round(((originalPriceVal - priceVal) / originalPriceVal) * 100);
+                if (rate > 0) discount = `${rate}%`;
+            }
+
             return {
                 id: `travel_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
                 title: item.title,
@@ -230,7 +239,7 @@ async function scrapeTravel() {
                 genre: 'travel',
                 price: item.price + '원',
                 originalPrice: item.originalPrice ? item.originalPrice + '원' : undefined,
-                discount: item.discount,
+                discount: discount,
                 region: 'overseas'
             };
         });
