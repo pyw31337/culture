@@ -272,68 +272,76 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
                 try {
-                    await page.waitForSelector('ul.info', { timeout: 10000 });
+                    await page.waitForSelector('.infoList', { timeout: 10000 });
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
                 const basicInfo = await page.evaluate(() => {
-                    const list = document.querySelector('div.summaryBody > ul');
-                    if (!list) return {};
+                    // Helper to get text safely
+                    const getText = (selector: string, parent: Element | Document = document) =>
+                        parent.querySelector(selector)?.textContent?.trim() || '';
 
-                    const items = Array.from(list.querySelectorAll('li.infoItem'));
-
-                    // Running Time
+                    // 1. Info Items (Runtime, Age)
                     let runningTime = '';
-                    const timeLi = items.find((li) => li.querySelector('.infoLabel')?.textContent?.includes('공연시간'));
-                    if (timeLi) {
-                        const p = timeLi.querySelector('.infoDesc .infoText');
-                        if (p) runningTime = p.textContent?.trim() || '';
-                        else runningTime = timeLi.querySelector('.infoDesc')?.textContent?.trim() || '';
-                    }
-
-                    // Age Rating
                     let ageRating = '';
-                    const ageLi = items.find((li) => li.querySelector('.infoLabel')?.textContent?.includes('관람연령'));
-                    if (ageLi) {
-                        const p = ageLi.querySelector('.infoDesc .infoText');
-                        if (p) ageRating = p.textContent?.trim() || '';
-                        else ageRating = ageLi.querySelector('.infoDesc')?.textContent?.trim() || '';
+
+                    // Try finding .infoList items first (New Structure)
+                    const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem'));
+                    if (infoItems.length > 0) {
+                        infoItems.forEach(item => {
+                            const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
+                            const text = item.querySelector('.infoText')?.textContent?.trim() || '';
+
+                            if (label.includes('공연시간') || label.includes('관람시간')) runningTime = text;
+                            if (label.includes('관람연령') || label.includes('이용등급')) ageRating = text;
+                        });
                     }
 
-                    // Base Price
-                    const priceListItems = Array.from(list.querySelectorAll('.infoItem.infoPrice .infoPriceList .infoPriceItem'));
+                    // Fallback to old structure (dl > dd) if not found
+                    if (!runningTime || !ageRating) {
+                        const items = Array.from(document.querySelectorAll('li.infoItem, dl > div, dl > .item'));
+                        items.forEach(item => {
+                            const label = item.querySelector('.infoLabel, dt')?.textContent?.trim() || '';
+                            const text = getText('.infoDesc .infoText, dd', item);
+
+                            if (!runningTime && (label.includes('공연시간') || label.includes('관람시간'))) runningTime = text;
+                            if (!ageRating && (label.includes('관람연령') || label.includes('이용등급'))) ageRating = text;
+                        });
+                    }
+
+                    // 2. Price Info
                     let price = '';
+                    let originalPrice = '';
+                    let discount = '';
 
-                    for (const li of priceListItems) {
-                        if (li.classList.contains('is-largePrice')) continue;
+                    // Strategy: Find all price items, pick the best one (usually the one with sale price or the first one)
+                    const priceItems = Array.from(document.querySelectorAll('.infoPriceItem'));
+                    if (priceItems.length > 0) {
+                        // Try to find an item with a sale price first
+                        let targetItem = priceItems.find(item => item.querySelector('.sale')) || priceItems[0];
 
-                        // Case A: Standard (.name, .price)
-                        const name = li.querySelector('.name')?.textContent?.trim();
-                        const val = li.querySelector('.price')?.textContent?.trim();
-                        if (val) {
-                            price = val;
-                            break;
-                        }
+                        if (targetItem) {
+                            price = targetItem.querySelector('.sale')?.textContent?.trim() ||
+                                targetItem.querySelector('.price')?.textContent?.trim() || '';
 
-                        // Case B: Package/Detail List (.prdPriceDetail)
-                        // Structure: .prdPriceDetail > div > ul > li (Text: "VIP석 ... 140,000원")
-                        const detailLis = li.querySelectorAll('.prdPriceDetail li');
-                        if (detailLis.length > 0) {
-                            const firstText = detailLis[0].textContent?.trim() || '';
-                            // Extract "140,000원" pattern
-                            const match = firstText.match(/([0-9,]+원)/);
-                            if (match) {
-                                price = match[1];
-                                break;
-                            } else if (firstText) {
-                                // Fallback: just take the whole text if no "Won" found, or first number?
-                                price = firstText.replace(/\s+/g, ' ');
-                                break;
+                            // If we found a sale price, look for original price and rate
+                            if (targetItem.querySelector('.sale')) {
+                                originalPrice = targetItem.querySelector('.price')?.textContent?.trim() || '';
+                                discount = targetItem.querySelector('.rate')?.textContent?.trim() || '';
                             }
                         }
+                    } else {
+                        // Fallback: Old structure or simple text
+                        // Try finding any price text
+                        const priceText = getText('.infoItem.infoPrice .infoDesc');
+                        if (priceText) {
+                            const match = priceText.match(/([0-9,]+원)/);
+                            if (match) price = match[1];
+                            else price = priceText;
+                        }
                     }
 
-                    return { runningTime, ageRating, price };
+                    return { runningTime, ageRating, price, originalPrice, discount };
                 });
 
                 let { runningTime, ageRating, price } = basicInfo;
