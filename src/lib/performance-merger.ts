@@ -1,11 +1,26 @@
 
 export function processAndMergePerformances(items: any[]): any[] {
     const uniqueMap = new Map<string, any>();
+    const VIDEO_GENRES = ['movie', 'ott'];
+    const LIVE_GENRES = ['musical', 'play', 'classic', 'opera', 'concert', 'exhibition', 'festival', 'museum', 'dance', 'korean_music'];
 
     items.forEach(p => {
         // 1. Generate Key
         // Normalize title: remove spaces, special chars, lowercase to match duplicates
-        let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+        const normalizedTitle = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+
+        // Determine Merge Group to prevent cross-type merging (e.g. Musical "Wicked" vs Movie "Wicked")
+        let groupPrefix = 'misc_';
+        if (VIDEO_GENRES.includes(p.genre)) {
+            groupPrefix = 'video_';
+        } else if (LIVE_GENRES.includes(p.genre)) {
+            groupPrefix = 'live_';
+        } else {
+            // Keep others separate by genre (e.g. sports, travel, class, etc.)
+            groupPrefix = p.genre + '_';
+        }
+
+        let key = `${groupPrefix}${normalizedTitle}`;
 
         // Exception for Travel & Sports: Include Date in key to allow same title with different dates
         if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'hockey'].includes(p.genre)) {
