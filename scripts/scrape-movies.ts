@@ -7,6 +7,95 @@ import https from 'https';
 const SCRAPE_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'movies');
 
+// Helper: Enrich with Daum
+async function enrichWithDaum(page: any, title: string): Promise<any> {
+    try {
+        const q = `${title} 영화`;
+        const daumUrl = `https://search.daum.net/search?w=tot&q=${encodeURIComponent(q)}`;
+        // console.log(`   > Searching Daum: ${daumUrl}`);
+        await page.goto(daumUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+
+        return await page.evaluate(() => {
+            const res: any = {};
+            res.detailLink = document.location.href;
+
+            // Helper to find DD based on DT text
+            function getDDText(key: string) {
+                const dts = Array.from(document.querySelectorAll('dt'));
+                const target = dts.find(dt => dt.textContent && dt.textContent.includes(key));
+                if (target && target.nextElementSibling && target.nextElementSibling.tagName === 'DD') {
+                    return target.nextElementSibling;
+                }
+                return null;
+            }
+
+            // 1. Overview (Rating, Runtime, Genre, Country)
+            // Example: "이탈리아 외 110분 15세이상관람가" or "일본 애니메이션 외 105분 전체관람가"
+            const infoEl = getDDText('개요');
+            if (infoEl) {
+                const text = infoEl.textContent?.trim() || '';
+                res.infoRaw = text;
+
+                // Extract Rating
+                if (text.includes('전체관람가')) res.ageRating = '전체관람가';
+                else if (text.includes('12세')) res.ageRating = '12세이상관람가';
+                else if (text.includes('15세')) res.ageRating = '15세이상관람가';
+                else if (text.includes('청소년관람불가') || text.includes('19세')) res.ageRating = '청소년관람불가';
+
+                // Extract Runtime
+                const timeMatch = text.match(/(\d+)분/);
+                if (timeMatch) res.runningTime = `${timeMatch[1]}분`;
+            }
+
+            // 2. Release Date
+            const openEl = getDDText('개봉');
+            if (openEl) {
+                res.openDate = openEl.textContent?.trim();
+            }
+
+            // 3. Director
+            const dirEl = getDDText('감독');
+            if (dirEl) {
+                res.director = dirEl.textContent?.trim();
+                // Link?
+                const dirLink = dirEl.querySelector('a');
+                if (dirLink) {
+                    // Make absolute if relative? Daum usually absolute or relative to host
+                    // For now just get href
+                    res.directorLink = dirLink.getAttribute('href');
+                }
+            }
+
+            // 4. Cast
+            const castEl = getDDText('출연');
+            if (castEl) {
+                res.castStr = castEl.textContent?.trim(); // "Name, Name, Name ..."
+                const links = Array.from(castEl.querySelectorAll('a'));
+                res.castList = links.map((a: any) => ({
+                    name: a.textContent?.trim(),
+                    link: a.getAttribute('href')
+                })).filter((c: any) => c.name !== '더보기');
+            }
+
+            // 5. Poster (Validation/Fallback if needed, though KOBIS/Naver might be primary)
+            // c-thumb usually
+            const posterImg = document.querySelector('c-thumb img');
+            if (posterImg) {
+                res.poster = posterImg.getAttribute('src');
+            } else {
+                const legacyImg = document.querySelector('.thumb_img');
+                if (legacyImg) res.poster = legacyImg.getAttribute('src');
+            }
+
+            return res;
+        });
+
+    } catch (e) {
+        console.log(`   > Daum enrichment failed for ${title}:`, e);
+        return {};
+    }
+}
+
 // Helper: Download Image
 async function downloadImage(url: string, filename: string): Promise<string | null> {
     if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
@@ -19,7 +108,7 @@ async function downloadImage(url: string, filename: string): Promise<string | nu
         url = url.replace('http:', 'https:');
     }
 
-    const dir = path.join(__dirname, '../public/images/posters/movies');
+    // const dir = path.join(__dirname, '../public/images/posters/movies'); // Removed redundant/error-prone line
     const filepath = path.join(IMAGE_DIR, filename);
 
 
@@ -156,7 +245,16 @@ async function scrapeMovies() {
             // Start with placeholders
             let naverData: any = {};
 
-            // NAVER ENRICHMENT
+            // DAUM ENRICHMENT (Priority for Details)
+            let daumData: any = {};
+            try {
+                // Reuse naverPage or create new one? reusing naverPage for Daum is fine as we do it sequentially
+                daumData = await enrichWithDaum(naverPage, m.title);
+            } catch (e) {
+                console.log('   > Daum enrichment error:', e);
+            }
+
+            // NAVER ENRICHMENT (Secondary/Poster)
             try {
                 // console.log(`   > Searching Naver...`);
                 const q = `${m.title} 영화`; // Changed query to just 'Movie' for broader hit
@@ -165,35 +263,38 @@ async function scrapeMovies() {
                 // Allow some time for hydration
                 // await naverPage.waitForTimeout(500);
 
-                naverData = await naverPage.evaluate(() => {
+                naverData = await naverPage.evaluate(async () => {
                     const res: any = {};
 
+                    // 1. MAIN VIEW EXTRACTION (Compact or Standard)
                     const infoBox = document.querySelector('.cm_info_box');
                     if (infoBox) {
-                        // Director
+                        const text = infoBox.textContent || '';
+
+                        // Rating Badge Search (e.g. 12, 15, all)
+                        const ratingBadge = infoBox.querySelector('.ico_rating_12, .ico_rating_15, .ico_rating_18, .ico_rating_all, .area_badge .badge');
+                        if (ratingBadge) res.grade = ratingBadge.textContent?.trim();
+
+                        // Director/Cast/Intro from DLs if available (Standard View)
                         const dts = Array.from(infoBox.querySelectorAll('dt'));
                         const dirDt = dts.find((dt: any) => dt.textContent?.includes('감독'));
                         if (dirDt) res.director = dirDt.nextElementSibling?.textContent?.trim();
 
-                        // Grade
                         const gradeDt = dts.find((dt: any) => dt.textContent?.includes('등급'));
-                        if (gradeDt) res.grade = gradeDt.nextElementSibling?.textContent?.trim();
+                        if (gradeDt && !res.grade) res.grade = gradeDt.nextElementSibling?.textContent?.trim(); // Use badge if found
 
-                        // Cast Str
                         const castDt = dts.find((dt: any) => dt.textContent?.includes('출연'));
                         if (castDt) res.castStr = castDt.nextElementSibling?.textContent?.trim();
 
-                        // Intro
                         const introDt = dts.find((dt: any) => dt.textContent?.includes('소개') || dt.textContent?.includes('줄거리'));
                         if (introDt) res.intro = introDt.nextElementSibling?.textContent?.trim();
                     }
 
-                    // Poster
+                    // Poster from Main View (works for both)
                     const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
                     if (img) {
                         let src = img.getAttribute('src');
                         if (src) {
-                            // If it's a proxied image, extract the real source
                             if (src.includes('search.pstatic.net') && src.includes('src=')) {
                                 try {
                                     const urlObj = new URL(src, 'https://search.naver.com');
@@ -201,23 +302,59 @@ async function scrapeMovies() {
                                     if (realSrc) src = decodeURIComponent(realSrc);
                                 } catch (e) { }
                             }
-                            // Only strip query if it's NOT a critical part of the URL structure
-                            // But usually safe to keep query for Naver images as they contain sizing
-                            // src = src.split('?')[0]; 
                             res.poster = src;
                         }
                     }
 
-                    // Cast Array
-                    const castNames: string[] = [];
-                    document.querySelectorAll('.cast_box .name, .people_list .name').forEach((el: any) => {
-                        const n = el.textContent?.trim();
-                        if (n) castNames.push(n);
-                    });
-                    if (castNames.length > 0) res.cast = castNames.slice(0, 8);
+                    // 2. CHECK IF MISSING DETAILS & CLICK TAB
+                    // If director is missing, it's likely a Compact view. Try clicking '출연/제작진' tab.
+                    if (!res.director) {
+                        const tabs = Array.from(document.querySelectorAll('.tab_list .tab, .tab_menu .tab'));
+                        const castTab = tabs.find((t: any) => t.textContent.includes('출연/제작진') || t.textContent.includes('출연'));
+
+                        if (castTab) {
+                            (castTab as HTMLElement).click();
+                            return { ...res, _idx: 'needs_wait' };
+                        }
+                    }
 
                     return res;
                 });
+
+                // 3. IF TAB CLICKED, WAIT & RESCRAPE
+                if ((naverData as any)?._idx === 'needs_wait') {
+                    // Wait for tab content hydration
+                    await new Promise(r => setTimeout(r, 1000));
+
+                    const tabData = await naverPage.evaluate(() => {
+                        const res: any = {};
+                        // Strategy 1: Look for Director in specific containers
+                        // Often inside .people_list or .cast_box
+                        // Elements might have .role '감독' and .name 'Name'
+
+                        const members = Array.from(document.querySelectorAll('.cast_box li, .people_list li, .detail_list li'));
+                        const castNames: string[] = [];
+
+                        members.forEach((m: any) => {
+                            const role = m.querySelector('.sub_text, .role')?.textContent?.trim() || '';
+                            const name = m.querySelector('.name, .col_title')?.textContent?.trim() || '';
+
+                            if (role.includes('감독')) {
+                                res.director = name;
+                            } else if (name) {
+                                // Assume others are cast if not director
+                                castNames.push(name);
+                            }
+                        });
+
+                        if (castNames.length > 0) res.cast = castNames.slice(0, 8);
+                        return res;
+                    });
+
+                    // Merge
+                    if (tabData.director) naverData.director = tabData.director;
+                    if (tabData.cast) naverData.cast = tabData.cast;
+                }
 
             } catch (e) {
                 console.log('   > Naver enrichment failed:', e);
@@ -247,6 +384,22 @@ async function scrapeMovies() {
                 else if (naverData.grade.includes('청소년')) item.venue = '청소년 관람불가';
                 else item.venue = naverData.grade;
             }
+
+            // Merge Daum Data (Overwrite/Fill if available)
+            if (daumData.ageRating) item.venue = daumData.ageRating; // Override with Daum if found
+            if (daumData.runningTime) item.runningTime = daumData.runningTime;
+            if (daumData.director) item.director = daumData.director; // Prefer Daum? Naver might be cleaner, but Daum requested.
+            if (daumData.castList && daumData.castList.length > 0) {
+                item.cast = daumData.castList.map((c: any) => c.name);
+                item.castLinks = daumData.castList; // Store structured cast with links if needed later
+            } else if (daumData.castStr && !item.cast) {
+                item.cast = [daumData.castStr];
+            }
+            if (daumData.detailLink) item.timeLink = daumData.detailLink; // Using 'timeLink' (or create new 'daumLink'?) - User asked for detail link.
+            // Typically 'timeLink' is used for booking/detail in other scrapers, or we can add `detailLink` property.
+            // Let's stick to adding a new property if schema allows, or map to 'link' / 'timeLink'.
+            // KOBIS scraper didn't seem to have a main link.
+            item.detailLink = daumData.detailLink;
 
             // Fallbacks
             if (!item.venue) item.venue = '등급 미정';
