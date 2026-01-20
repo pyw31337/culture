@@ -1910,6 +1910,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     userAddress={userAddress}
                     radius={radius}
                     lastUpdated={lastUpdated}
+                    searchLocation={searchLocation}
                     searchText={searchText}
                     searchResults={searchResults}
                     isDropdownOpen={isDropdownOpen}
