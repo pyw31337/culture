@@ -76,8 +76,12 @@ function mergeItems(a: any, b: any): any {
     }
 
     // Platforms (OTT Providers)
-    if ((!merged.platforms || merged.platforms.length === 0) && (loser.platforms && loser.platforms.length > 0)) {
-        merged.platforms = loser.platforms;
+    // Platforms: Union Strategy
+    const platformsA = Array.isArray(merged.platforms) ? merged.platforms : [];
+    const platformsB = Array.isArray(loser.platforms) ? loser.platforms : [];
+    const combinedPlatforms = Array.from(new Set([...platformsA, ...platformsB])).filter(Boolean);
+    if (combinedPlatforms.length > 0) {
+        merged.platforms = combinedPlatforms;
     }
 
     // Metadata (Cast, Director, Runtime, etc.)
