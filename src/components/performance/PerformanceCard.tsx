@@ -600,37 +600,26 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex items-start gap-1">
                                                         <span className="text-gray-500 min-w-[24px]">출연</span>
                                                         <span className="text-gray-300 line-clamp-2 leading-tight">
-                                                            {perf.castWithLinks && perf.castWithLinks.length > 0 ? (
-                                                                perf.castWithLinks.map((c: { name: string; link: string }, i: number, arr: any[]) => (
+                                                            {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
+                                                                const isObj = typeof c === 'object' && c !== null;
+                                                                const name = isObj ? c.name : c;
+                                                                const url = isObj && c.url ? c.url : `https://www.justwatch.com/kr/검색?q=${encodeURIComponent(name.trim())}`;
+
+                                                                return (
                                                                     <span key={i}>
                                                                         <a
-                                                                            href={c.link}
+                                                                            href={url}
                                                                             target="_blank"
                                                                             rel="noopener noreferrer"
                                                                             className="hover:text-white hover:underline decoration-white/30"
                                                                             onClick={(e) => e.stopPropagation()}
                                                                         >
-                                                                            {c.name}
+                                                                            {name.trim()}
                                                                         </a>
                                                                         {i < arr.length - 1 && ', '}
                                                                     </span>
-                                                                ))
-                                                            ) : (
-                                                                perf.cast.map((c: string, i: number, arr: string[]) => (
-                                                                    <span key={i}>
-                                                                        <a
-                                                                            href={`https://www.justwatch.com/kr/검색?q=${encodeURIComponent(c.trim())}`}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            className="hover:text-white hover:underline decoration-white/30"
-                                                                            onClick={(e) => e.stopPropagation()}
-                                                                        >
-                                                                            {c.trim()}
-                                                                        </a>
-                                                                        {i < arr.length - 1 && ', '}
-                                                                    </span>
-                                                                ))
-                                                            )}
+                                                                );
+                                                            })}
                                                         </span>
                                                     </div>
                                                 )}

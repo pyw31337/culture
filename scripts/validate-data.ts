@@ -88,9 +88,15 @@ async function validate() {
     const newMovies = movies.map((m: any) => {
         let changed = false;
 
-        // Rule 1: Check if poster is missing or 404 (we can't check 404 easily without fetch, but we can check empty)
+        // Rule 1: Check if poster is missing or 404
         if (!m.image || m.image.trim() === '') {
             console.warn(`[Warning] Movie ${m.title} has no poster.`);
+        } else if (m.image.startsWith('/images/')) {
+            // Local file check
+            const localPath = path.join(process.cwd(), 'public', m.image);
+            if (!fs.existsSync(localPath)) {
+                console.warn(`[Warning] Movie ${m.title} has invalid local poster: ${m.image} (file not found)`);
+            }
         }
 
         // Rule 2: Check for details

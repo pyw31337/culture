@@ -1,18 +1,85 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
 
 // KOBIS Daily Box Office
 const SCRAPE_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
+const IMAGE_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'movies');
+
+// Helper: Download Image
+async function downloadImage(url: string, filename: string): Promise<string | null> {
+    if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
+
+    // If invalid URL, skip
+    if (!url || !url.startsWith('http')) return null;
+
+    // Force HTTPS
+    if (url.startsWith('http:')) {
+        url = url.replace('http:', 'https:');
+    }
+
+    const dir = path.join(__dirname, '../public/images/posters/movies');
+    const filepath = path.join(IMAGE_DIR, filename);
+
+
+    return new Promise((resolve) => {
+        const file = fs.createWriteStream(filepath);
+        const request = https.get(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': 'https://search.naver.com/'
+            }
+        }, (response) => {
+            if (response.statusCode === 200) {
+                response.pipe(file);
+                file.on('finish', () => {
+                    file.close();
+                    resolve(`/images/posters/movies/${filename}`); // Return web path
+                });
+            } else {
+                fs.unlink(filepath, () => { }); // Delete partial
+                resolve(null);
+            }
+        });
+
+        request.on('error', (err) => {
+            fs.unlink(filepath, () => { });
+            resolve(null);
+        });
+    });
+}
+
+// Helper: Clean old images
+function cleanImages(validIds: string[]) {
+    if (!fs.existsSync(IMAGE_DIR)) return;
+    const files = fs.readdirSync(IMAGE_DIR);
+    let deleted = 0;
+    files.forEach(file => {
+        // Filename format: [id].jpg (approx) or just match id in filename
+        // My implementation uses `[id].jpg`
+        const id = path.parse(file).name;
+        if (!validIds.includes(id)) {
+            try {
+                fs.unlinkSync(path.join(IMAGE_DIR, file));
+                deleted++;
+            } catch (e) { }
+        }
+    });
+    console.log(`[Cleanup] Deleted ${deleted} old movie posters.`);
+}
 
 async function scrapeMovies() {
-    console.log('Starting KOBIS Movie Scraper (+ Naver Enrichment)...');
+    console.log('Starting KOBIS Movie Scraper (Local Images + Robust Enrichment)...');
+
+    // Ensure Image Dir Exists
+    if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
+
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
-    // Context for Naver
     const naverPage = await browser.newPage();
     await naverPage.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
@@ -50,7 +117,7 @@ async function scrapeMovies() {
 
             const title = await page.evaluate(el => el.textContent?.trim(), titleLink);
             const rankText = await row.$eval('td:nth-child(1)', el => el.textContent?.trim());
-            const openDateRaw = await row.$eval('td:nth-child(3)', el => el.textContent?.trim());
+            const openDateRaw = await row.$eval('td:nth-child(3)', el => el.textContent?.trim()); // Column 3 verified
             const attr = await page.evaluate(el => el.getAttribute('onclick') || el.getAttribute('href'), titleLink);
 
             let movieCode = '';
@@ -60,131 +127,144 @@ async function scrapeMovies() {
             }
 
             if (movieCode) {
-                movies.push({ tempCode: movieCode, title, openDateRaw });
+                movies.push({ tempCode: movieCode, title, openDateRaw, rank: rankText });
             }
         }
 
         const finalMovies = [];
+        const validIds: string[] = [];
+
         for (const m of movies) {
             console.log(`Processing ${m.title}...`);
+
             let date = m.openDateRaw || '';
-            // Ensure YYYY.MM.DD format
-            if (date.match(/^\d{4}-\d{2}-\d{2}$/)) {
-                date = date.replace(/-/g, '.') + '.';
-            } else if (date.match(/^\d{4}\.\d{2}\.\d{2}$/)) {
-                date = date + '.';
-            }
+            if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
+            else if (date.match(/^\d{4}\.\d{2}\.\d{2}$/)) date = date + '.';
+
+            // ID generation
+            const id = `movie_${date.replace(/[\.\s]/g, '')}_${m.title?.replace(/[\s\(\)]/g, '_')}`;
+            validIds.push(id);
 
             let item: any = {
+                id,
                 title: m.title,
                 date: date,
                 region: '전국',
                 genre: 'movie'
             };
 
-            // KOBIS Detail for Summary/Grade (Fast check)
-            try {
-                const detailUrl = `https://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieDtl.do?code=${m.tempCode}`;
-                item.link = detailUrl;
-
-                // We skip checking KOBIS detail for Poster/Director since it failed. 
-                // We rely on Naver. But we might need minimal info like Grade if Naver fails.
-
-                // Go to KOBIS just for Summary/Grade check? 
-                // It adds time. Let's try Naver FIRST. If Naver succeeds, we might not need KOBIS detail?
-                // But KOBIS has the "official" grade and summary often.
-                // Let's do a quick KOBIS extraction for summary/grade only.
-                await page.goto(detailUrl, { waitUntil: 'domcontentloaded' });
-                try {
-                    await page.waitForSelector('.ovf.info.info1', { timeout: 3000 });
-                    const kobisData = await page.evaluate(() => {
-                        const res: any = {};
-                        const dts = Array.from(document.querySelectorAll('.ovf.info.info1 dl > dt'));
-                        dts.forEach(dt => {
-                            const k = dt.textContent;
-                            const v = (dt.nextElementSibling as HTMLElement)?.innerText?.trim();
-                            if (k?.includes('요약정보')) res.summary = v;
-                            if (k?.includes('등급')) res.grade = v;
-                        });
-                        const img = document.querySelector('.ovf.info.info1 a.thumb img');
-                        if (img) res.poster = img.getAttribute('src');
-                        return res;
-                    });
-
-                    if (kobisData.summary) item.movieInfo = kobisData.summary;
-                    if (kobisData.grade) item.venue = kobisData.grade; // Temporary venue holder
-                    if (kobisData.poster && !kobisData.poster.includes('noimage')) {
-                        item.image = 'https://www.kobis.or.kr' + kobisData.poster;
-                    }
-
-                } catch (e) { }
-            } catch (e) { }
+            // Start with placeholders
+            let naverData: any = {};
 
             // NAVER ENRICHMENT
             try {
-                console.log(`   > Searching Naver for ${m.title}...`);
-                const q = `${m.title} 영화 정보`;
+                // console.log(`   > Searching Naver...`);
+                const q = `${m.title} 영화`; // Changed query to just 'Movie' for broader hit
                 await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}`, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
-                const found = await naverPage.evaluate(() => !!document.querySelector('.cm_info_box') || !!document.querySelector('.api_subject_bx .detail_info'));
-                if (found) {
-                    const nData = await naverPage.evaluate(() => {
-                        const res: any = {};
-                        // Poster
-                        const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img');
-                        if (img) res.poster = img.getAttribute('src');
+                // Allow some time for hydration
+                // await naverPage.waitForTimeout(500);
 
-                        // Info Box
-                        const infoBox = document.querySelector('.cm_info_box');
-                        if (infoBox) {
-                            infoBox.querySelectorAll('dt').forEach(dt => {
-                                const k = dt.textContent?.trim();
-                                const v = dt.nextElementSibling?.textContent?.trim();
-                                if (k === '감독') res.director = v;
-                                if (k === '등급') res.grade = v; // Naver grade is usually easier to read
-                                if (k === '출연') res.castStr = v;
-                            });
-                        }
+                naverData = await naverPage.evaluate(() => {
+                    const res: any = {};
 
-                        // Separate Cast Section check
-                        const castBox = document.querySelector('.cast_box');
-                        if (castBox) {
-                            res.cast = Array.from(castBox.querySelectorAll('.name')).map(el => el.textContent?.trim()).slice(0, 8);
-                        }
-                        return res;
-                    });
+                    const infoBox = document.querySelector('.cm_info_box');
+                    if (infoBox) {
+                        // Director
+                        const dts = Array.from(infoBox.querySelectorAll('dt'));
+                        const dirDt = dts.find((dt: any) => dt.textContent?.includes('감독'));
+                        if (dirDt) res.director = dirDt.nextElementSibling?.textContent?.trim();
 
-                    if (nData.poster) item.image = nData.poster; // Naver poster is usually better
-                    if (nData.director) item.director = nData.director;
-                    if (nData.cast) item.cast = nData.cast;
+                        // Grade
+                        const gradeDt = dts.find((dt: any) => dt.textContent?.includes('등급'));
+                        if (gradeDt) res.grade = gradeDt.nextElementSibling?.textContent?.trim();
 
-                    // Grade normalization
-                    if (nData.grade) {
-                        if (nData.grade.includes('전체')) item.venue = '전체 관람가';
-                        else if (nData.grade.includes('12')) item.venue = '12세 관람가';
-                        else if (nData.grade.includes('15')) item.venue = '15세 관람가';
-                        else if (nData.grade.includes('청소년')) item.venue = '청소년 관람불가';
+                        // Cast Str
+                        const castDt = dts.find((dt: any) => dt.textContent?.includes('출연'));
+                        if (castDt) res.castStr = castDt.nextElementSibling?.textContent?.trim();
+
+                        // Intro
+                        const introDt = dts.find((dt: any) => dt.textContent?.includes('소개') || dt.textContent?.includes('줄거리'));
+                        if (introDt) res.intro = introDt.nextElementSibling?.textContent?.trim();
                     }
-                }
+
+                    // Poster
+                    const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
+                    if (img) {
+                        let src = img.getAttribute('src');
+                        if (src) {
+                            // If it's a proxied image, extract the real source
+                            if (src.includes('search.pstatic.net') && src.includes('src=')) {
+                                try {
+                                    const urlObj = new URL(src, 'https://search.naver.com');
+                                    const realSrc = urlObj.searchParams.get('src');
+                                    if (realSrc) src = decodeURIComponent(realSrc);
+                                } catch (e) { }
+                            }
+                            // Only strip query if it's NOT a critical part of the URL structure
+                            // But usually safe to keep query for Naver images as they contain sizing
+                            // src = src.split('?')[0]; 
+                            res.poster = src;
+                        }
+                    }
+
+                    // Cast Array
+                    const castNames: string[] = [];
+                    document.querySelectorAll('.cast_box .name, .people_list .name').forEach((el: any) => {
+                        const n = el.textContent?.trim();
+                        if (n) castNames.push(n);
+                    });
+                    if (castNames.length > 0) res.cast = castNames.slice(0, 8);
+
+                    return res;
+                });
+
             } catch (e) {
                 console.log('   > Naver enrichment failed:', e);
             }
 
-            // Fallbacks & Cleanup
-            if (!item.venue) item.venue = '등급 미정';
-            if (item.venue.includes('15세') && !item.venue.includes('관람가')) item.venue = '15세 관람가';
-            if (item.venue.includes('12세') && !item.venue.includes('관람가')) item.venue = '12세 관람가';
+            // Merge Naver Data
+            if (naverData.poster) {
+                // DOWNLOAD IMAGE
+                let posterUrl = naverData.poster;
+                let ext = path.extname(posterUrl.split('?')[0]) || '.jpg';
+                // Handle cases where extension might be missing or invalid
+                if (!['.jpg', '.jpeg', '.png', '.webp'].includes(ext.toLowerCase())) ext = '.jpg';
 
-            item.id = `movie_${item.date.replace(/[\.\s]/g, '')}_${m.title?.replace(/[\s\(\)]/g, '_')}`;
+                const filename = `${id}${ext}`;
+                const localPath = await downloadImage(posterUrl, filename);
+                if (localPath) item.image = localPath;
+            }
+
+            if (naverData.director) item.director = naverData.director;
+            if (naverData.cast && naverData.cast.length > 0) item.cast = naverData.cast;
+            else if (naverData.castStr) item.cast = [naverData.castStr]; // Fallback to string
+
+            if (naverData.grade) {
+                if (naverData.grade.includes('전체')) item.venue = '전체 관람가';
+                else if (naverData.grade.includes('12')) item.venue = '12세 관람가';
+                else if (naverData.grade.includes('15')) item.venue = '15세 관람가';
+                else if (naverData.grade.includes('청소년')) item.venue = '청소년 관람불가';
+                else item.venue = naverData.grade;
+            }
+
+            // Fallbacks
+            if (!item.venue) item.venue = '등급 미정';
+            if (!item.movieInfo && naverData.intro) item.movieInfo = naverData.intro;
+
             finalMovies.push(item);
-            await new Promise(r => setTimeout(r, 500));
+            await new Promise(r => setTimeout(r, 200));
         }
 
-        // Save
+        // Save Data
         const outputDir = path.join(process.cwd(), 'src', 'data');
         if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+
         fs.writeFileSync(path.join(outputDir, 'movies.json'), JSON.stringify(finalMovies, null, 2));
         console.log(`Saved ${finalMovies.length} movies.`);
+
+        // Final Verification & Cleanup
+        cleanImages(validIds);
 
     } catch (error) {
         console.error('Fatal Error:', error);
