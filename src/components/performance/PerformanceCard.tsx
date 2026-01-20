@@ -5,6 +5,7 @@ import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { extractFirstPrice } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
 interface PerformanceCardProps {
@@ -302,12 +303,35 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         <span className="truncate">{perf.venue}</span>
                                     </button>
                                 )}
-                                <div className="mt-auto mb-2">
-                                    <div className="flex items-center gap-1.5 w-full">
-                                        {perf.discount && <span className="text-rose-700 text-xl font-extrabold">{perf.discount}</span>}
-                                        {perf.price && <span className="text-black text-xl font-black tracking-tighter">{perf.price}</span>}
-                                        {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-700/60 text-xs line-through">{perf.originalPrice}</span>}
-                                    </div>
+                                {/* Price Section (Unified Style) */}
+                                <div className="mt-auto mb-2 w-full">
+                                    {(perf.price || perf.discount) && (
+                                        <div className="flex justify-between items-end w-full border-t border-black/10 pt-2">
+                                            <div className="flex flex-col justify-end leading-none">
+                                                {perf.discount && <span className="text-red-600 font-black text-lg">{perf.discount}</span>}
+                                                {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-black/50 text-[10px] line-through">{perf.originalPrice}</span>}
+                                            </div>
+                                            <div className="flex items-baseline gap-1.5">
+                                                {perf.price && (() => {
+                                                    const extracted = extractFirstPrice(perf.price);
+                                                    if (!extracted) return <span className="text-black font-black text-lg tracking-tighter text-right">{perf.price}</span>;
+                                                    return (
+                                                        <div className="text-black leading-none text-right">
+                                                            {extracted.price === '무료' ? (
+                                                                <span className="text-lg font-extrabold">무료</span>
+                                                            ) : (
+                                                                <>
+                                                                    {extracted.label && <span className="text-[10px] text-black/60 mr-1">{extracted.label}</span>}
+                                                                    <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
+                                                                    <span className="text-xs font-bold ml-0.5">원</span>
+                                                                </>
+                                                            )}
+                                                        </div>
+                                                    );
+                                                })()}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
                                     <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
@@ -624,13 +648,32 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </div>
                                                 )}
 
-                                                {/* Prices (Interpark/Seoul) */}
-                                                {perf.price && (
-                                                    <div className="text-xs font-medium text-emerald-400 mt-1">
-                                                        🎟️ {perf.price.split('원')[0]}원
-                                                        {perf.price.includes('%') && (
-                                                            <span className="ml-1 text-red-500">{perf.price.match(/\d+%/)?.[0]}</span>
-                                                        )}
+                                                {/* Price & Discount (Unified Style) */}
+                                                {(perf.price || perf.discount) && (
+                                                    <div className="flex justify-between items-end mt-2 w-full border-t border-white/10 pt-2">
+                                                        <div className="flex flex-col justify-end leading-none">
+                                                            {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
+                                                            {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through">{perf.originalPrice}</span>}
+                                                        </div>
+                                                        <div className="flex items-baseline gap-1.5">
+                                                            {perf.price && (() => {
+                                                                const extracted = extractFirstPrice(perf.price);
+                                                                if (!extracted) return <span className="text-white font-black text-lg tracking-tighter text-right">{perf.price}</span>;
+                                                                return (
+                                                                    <div className="text-white drop-shadow-md leading-none text-right">
+                                                                        {extracted.price === '무료' ? (
+                                                                            <span className="text-lg font-extrabold">무료</span>
+                                                                        ) : (
+                                                                            <>
+                                                                                {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                                                <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
+                                                                                <span className="text-xs font-light ml-0.5">원</span>
+                                                                            </>
+                                                                        )}
+                                                                    </div>
+                                                                );
+                                                            })()}
+                                                        </div>
                                                     </div>
                                                 )}
 
