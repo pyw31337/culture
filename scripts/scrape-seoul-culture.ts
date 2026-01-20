@@ -202,14 +202,22 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                 const details = await page.evaluate(() => {
                     const ul = document.querySelector('.type-box > ul');
                     if (!ul) return null;
-                    const getDesc = (n: number) => ul.querySelector(`li:nth-child(${n}) .type-td`)?.textContent?.trim() || '';
 
-                    return {
-                        period: getDesc(2).replace(/\s+/g, ' '),
-                        time: getDesc(3),
-                        target: getDesc(4),
-                        cost: getDesc(5)
-                    };
+                    const res: any = {};
+                    ul.querySelectorAll('li').forEach(li => {
+                        const txt = li.textContent || '';
+                        if (txt.includes('기간')) {
+                            res.period = li.querySelector('.type-td')?.textContent?.trim() || '';
+                        } else if (txt.includes('시간')) {
+                            res.time = li.querySelector('.type-td')?.textContent?.trim() || '';
+                        } else if (txt.includes('대상') || txt.includes('연령')) {
+                            res.target = li.querySelector('.type-td')?.textContent?.trim() || '';
+                        } else if (txt.includes('요금') || txt.includes('비용')) {
+                            res.cost = li.querySelector('.type-td')?.textContent?.trim() || '';
+                        }
+                    });
+
+                    return res;
                 });
 
                 let result = {
@@ -218,21 +226,24 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                 };
 
                 if (details) {
-                    let price = details.cost;
+                    let price = details.cost || '';
                     if (price.includes('/')) {
                         price = price.split('/')[0].trim();
                     }
-                    if (price.includes('\n')) {
-                        price = price.split('\n')[0].trim();
+                    if (price.includes('(')) {
+                        // Keep (reservation required) if needed, but strictly price usually doesn't have it
                     }
+                    // Clean newlines
+                    price = price.replace(/\n/g, ' ').trim();
+
+                    let timeInfo = details.time ? `[시간] ${details.time}` : '';
 
                     result = {
                         ...result,
-                        date: details.period || item.date,
-                        runningTime: details.time,
-                        time: details.time,
+                        date: details.period ? details.period.replace(/\s+/g, ' ') : item.date,
+                        runningTime: timeInfo, // Map detailed time string here
                         ageRating: details.target,
-                        price: price,
+                        price: price, // Keep full price string
                         cost: price
                     };
                 }

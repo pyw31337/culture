@@ -306,11 +306,30 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     for (const li of priceListItems) {
                         if (li.classList.contains('is-largePrice')) continue;
+
+                        // Case A: Standard (.name, .price)
                         const name = li.querySelector('.name')?.textContent?.trim();
                         const val = li.querySelector('.price')?.textContent?.trim();
                         if (val) {
                             price = val;
                             break;
+                        }
+
+                        // Case B: Package/Detail List (.prdPriceDetail)
+                        // Structure: .prdPriceDetail > div > ul > li (Text: "VIP석 ... 140,000원")
+                        const detailLis = li.querySelectorAll('.prdPriceDetail li');
+                        if (detailLis.length > 0) {
+                            const firstText = detailLis[0].textContent?.trim() || '';
+                            // Extract "140,000원" pattern
+                            const match = firstText.match(/([0-9,]+원)/);
+                            if (match) {
+                                price = match[1];
+                                break;
+                            } else if (firstText) {
+                                // Fallback: just take the whole text if no "Won" found, or first number?
+                                price = firstText.replace(/\s+/g, ' ');
+                                break;
+                            }
                         }
                     }
 
