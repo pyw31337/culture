@@ -196,7 +196,7 @@ export const HERO_TEMPLATES = {
             { line1: "버저비터의 짜릿함!", line2Pre: "0.1초의 승부, ", highlight: "농구 직관", suffix: "의 묘미를 느껴보세요.", keywords: ["농구", "basketball", "KBL"] },
             { line1: "슬램덩크 좋아하세요?", line2Pre: "현실에서 펼쳐지는 ", highlight: "박진감 넘치는 경기", suffix: "가 기다립니다.", keywords: ["농구", "basketball"] },
             { line1: "코트 위를 지배하라,", line2Pre: "선수들의 뜨거운 열정, ", highlight: "농구장", suffix: "에서 확인하세요.", keywords: ["농구", "열정"] },
-            { line1: "겨울 실내 스포츠의 꽃,", line2Pre: "추위도 잊게 만드는 ", highlight: "뜨거운 함성", suffix: " 속으로!", keywords: ["농구", "겨울"] },
+            { line1: "겨울 실내 스포츠의 꽃,", line2Pre: "추위도 잊게 만드는 ", highlight: "뜨거운 함성", suffix: " 속으로!", keywords: ["농구"] },
             { line1: "마이클 조던 빙의?", line2Pre: "화려한 개인기와 ", highlight: "멋진 덩크슛", suffix: "을 눈앞에서!", keywords: ["농구", "덩크"] }
         ],
         soccer: [
