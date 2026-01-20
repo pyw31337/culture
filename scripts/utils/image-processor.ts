@@ -26,6 +26,18 @@ export async function processImage(url: string, filenameBase: string): Promise<s
     if (url.startsWith('data:')) return url; // Skip data URIs
 
     try {
+        if (url.includes('search.pstatic.net')) {
+            // Clean Naver Image URL
+            // Keep only 'src', remove 'type', 'quality'
+            try {
+                const u = new URL(url);
+                const src = u.searchParams.get('src');
+                if (src) {
+                    url = decodeURIComponent(src); // Use the direct source URL
+                }
+            } catch (e) { }
+        }
+
         const urlObj = new URL(url);
         const shouldDownload = DOWNLOAD_DOMAINS.some(d => urlObj.hostname.includes(d));
 

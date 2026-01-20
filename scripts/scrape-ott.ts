@@ -380,6 +380,21 @@ async function searchJustWatch(context: any, title: string) {
     await browser2.close();
     await browser.close();
 
+    // --- Image Processing (Phase 3) ---
+    console.log('Phase 3: Downloading Images...');
+    const imageLimit = pLimit(10); // Concurrent downloads
+    await Promise.all(finalRaw.map(item => imageLimit(async () => {
+        if (item.image) {
+            try {
+                // Use ID or Title as filename base
+                const filename = item.id || `ott_${item.title.replace(/\s+/g, '')}`;
+                item.image = await processImage(item.image, filename);
+            } catch (e) {
+                // console.error(`Failed (Image): ${item.title}`);
+            }
+        }
+    })));
+
     // Final Sort
     finalRaw.sort((a, b) => (a.date > b.date ? -1 : 1));
 
