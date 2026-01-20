@@ -1349,6 +1349,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (selectedGenre !== 'all') {
             if (selectedGenre === 'hotdeal') {
                 filtered = filtered.filter(p => p.discount && p.discount !== '' && p.discount !== '0');
+            } else if (selectedGenre === 'ott') {
+                // Include items with 'ott' genre OR items that have platform info (merged movies)
+                filtered = filtered.filter(p => p.genre === 'ott' || (p.platforms && p.platforms.length > 0));
             } else {
                 filtered = filtered.filter(p => p.genre === selectedGenre);
             }
