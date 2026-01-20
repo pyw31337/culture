@@ -309,26 +309,28 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         <div className="flex justify-between items-end w-full border-t border-black/10 pt-2">
                                             <div className="flex flex-col justify-end leading-none">
                                                 {perf.discount && <span className="text-red-600 font-black text-lg">{perf.discount}</span>}
-                                                {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-black/50 text-[10px] line-through">{perf.originalPrice}</span>}
                                             </div>
-                                            <div className="flex items-baseline gap-1.5">
-                                                {perf.price && (() => {
-                                                    const extracted = extractFirstPrice(perf.price);
-                                                    if (!extracted) return <span className="text-black font-black text-lg tracking-tighter text-right">{perf.price}</span>;
-                                                    return (
-                                                        <div className="text-black leading-none text-right">
-                                                            {extracted.price === '무료' ? (
-                                                                <span className="text-lg font-extrabold">무료</span>
-                                                            ) : (
-                                                                <>
-                                                                    {extracted.label && <span className="text-[10px] text-black/60 mr-1">{extracted.label}</span>}
-                                                                    <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
-                                                                    <span className="text-xs font-bold ml-0.5">원</span>
-                                                                </>
-                                                            )}
-                                                        </div>
-                                                    );
-                                                })()}
+                                            <div className="flex flex-col items-end leading-none">
+                                                {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-black/40 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
+                                                <div className="flex items-baseline gap-1.5">
+                                                    {perf.price && (() => {
+                                                        const extracted = extractFirstPrice(perf.price);
+                                                        if (!extracted) return <span className="text-black font-black text-lg tracking-tighter text-right">{perf.price}</span>;
+                                                        return (
+                                                            <div className="text-black leading-none text-right">
+                                                                {extracted.price === '무료' ? (
+                                                                    <span className="text-lg font-extrabold">무료</span>
+                                                                ) : (
+                                                                    <>
+                                                                        {extracted.label && <span className="text-[10px] text-black/60 mr-1">{extracted.label}</span>}
+                                                                        <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
+                                                                        <span className="text-xs font-bold ml-0.5">원</span>
+                                                                    </>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                </div>
                                             </div>
                                         </div>
                                     )}
@@ -653,26 +655,28 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <div className="flex justify-between items-end mt-2 w-full border-t border-white/10 pt-2">
                                                         <div className="flex flex-col justify-end leading-none">
                                                             {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
-                                                            {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through">{perf.originalPrice}</span>}
                                                         </div>
-                                                        <div className="flex items-baseline gap-1.5">
-                                                            {perf.price && (() => {
-                                                                const extracted = extractFirstPrice(perf.price);
-                                                                if (!extracted) return <span className="text-white font-black text-lg tracking-tighter text-right">{perf.price}</span>;
-                                                                return (
-                                                                    <div className="text-white drop-shadow-md leading-none text-right">
-                                                                        {extracted.price === '무료' ? (
-                                                                            <span className="text-lg font-extrabold">무료</span>
-                                                                        ) : (
-                                                                            <>
-                                                                                {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                                                <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
-                                                                                <span className="text-xs font-light ml-0.5">원</span>
-                                                                            </>
-                                                                        )}
-                                                                    </div>
-                                                                );
-                                                            })()}
+                                                        <div className="flex flex-col items-end leading-none">
+                                                            {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
+                                                            <div className="flex items-baseline gap-1.5">
+                                                                {perf.price && (() => {
+                                                                    const extracted = extractFirstPrice(perf.price);
+                                                                    if (!extracted) return <span className="text-white font-black text-lg tracking-tighter text-right">{perf.price}</span>;
+                                                                    return (
+                                                                        <div className="text-white drop-shadow-md leading-none text-right">
+                                                                            {extracted.price === '무료' ? (
+                                                                                <span className="text-lg font-extrabold">무료</span>
+                                                                            ) : (
+                                                                                <>
+                                                                                    {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                                                    <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
+                                                                                    <span className="text-xs font-light ml-0.5">원</span>
+                                                                                </>
+                                                                            )}
+                                                                        </div>
+                                                                    );
+                                                                })()}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 )}
