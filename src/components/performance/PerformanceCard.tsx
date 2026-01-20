@@ -479,13 +479,22 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
                                                     {(() => {
                                                         let dateStr = perf.date;
-                                                        // Simplify date: remove 'YYYY.', remove trailing dots, remove anything non-numeric/dot
-                                                        // User req: "2025. 11. 21." or "2025.12.18"
-                                                        // Naver scraper already cleans it mostly.
-                                                        // Ensure format: YYYY. MM. DD. or YYYY.MM.DD
-                                                        dateStr = dateStr.replace(/-/g, '.').replace(/\.$/, '');
-                                                        const parts = dateStr.split('~').map((s: string) => s.trim());
-                                                        return (parts.length === 2 && parts[0] === parts[1]) ? parts[0] : dateStr;
+                                                        // Clean up date string:
+                                                        // 1. Remove tags like [얼리버드], [유효기간:~xxxx.xx.xx], etc.
+                                                        dateStr = dateStr.replace(/\[(?:얼리버드|유효기간[:\s～~]*[^\\]]*|[^\]]*)\]/g, '');
+                                                        // 2. Remove orphan brackets
+                                                        dateStr = dateStr.replace(/[\[\]]/g, '');
+                                                        // 3. Normalize dashes to dots, remove trailing dots
+                                                        dateStr = dateStr.replace(/-/g, '.').replace(/\.+$/, '').trim();
+                                                        // 4. If date is like "~2026.03.02 ~2026.03.02", take just one
+                                                        const parts = dateStr.split('~').map((s: string) => s.trim()).filter(Boolean);
+                                                        if (parts.length === 2 && parts[0] === parts[1]) {
+                                                            return parts[0];
+                                                        } else if (parts.length >= 1 && dateStr.startsWith('~')) {
+                                                            // Format: "~2026.03.02" - just return the clean end date
+                                                            return `~${parts[parts.length - 1]}`;
+                                                        }
+                                                        return dateStr;
                                                     })()}
                                                 </span>
                                             )}
