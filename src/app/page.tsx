@@ -1,6 +1,7 @@
 import { fetchPerformances } from '@/lib/interpark';
 import { safeArray, safePerformanceList } from '@/lib/data-safety';
 import PerformanceList from '@/components/PerformanceList';
+import { processAndMergePerformances } from '@/lib/performance-merger';
 import { Suspense } from 'react';
 
 import interparkData from '@/data/interpark.json';
@@ -205,57 +206,9 @@ async function getPerformances() {
         return true;
     });
 
-    // 4. Deduplication Logic (Normalize Title & Prioritize Price)
-    const uniqueMap = new Map<string, any>();
-
-    filtered.forEach(p => {
-        // Normalize title: remove spaces, special chars, lowercase
-        let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
-
-        // Exception for Travel: Include Date in key to allow same title with different dates
-        if (p.genre === 'travel') {
-            key += `_${p.date}`;
-        }
-
-        if (uniqueMap.has(key)) {
-            const existing = uniqueMap.get(key);
-            // Prioritize the one with price/discount info
-            if (!existing.price && p.price) {
-                uniqueMap.set(key, p);
-            }
-            // If both have price (unlikely for now) or neither, keep existing or overwrite?
-            // TimeTicket usually comes last in spread, so later items might be TimeTicket.
-            // If existing is TimeTicket (has price), keep it.
-            // If new is TimeTicket (has price), take it (covered by if above).
-        } else {
-            uniqueMap.set(key, p);
-        }
-    });
-
-
-
-
-    // 5. Assign Stable IDs based on Normalized Title (Key)
-    // This ensures Deep Links allow sharing even if source ID changes or provider shifts
-    // Warn: This will invalidate existing localStorage likes if they used source IDs.
-    // Given the stage (Development), this is acceptable for consistency.
-    const stablePerformances = Array.from(uniqueMap.entries()).map(([key, p]) => {
-        // Simple hash function for ID
-        let hash = 0;
-        const str = key + (p.date?.split('~')[0] || ''); // Combine title + start date for collision resistance
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash;
-        }
-        const stableId = `perf_${Math.abs(hash).toString(16)}`; // Hex format
-
-        return {
-            ...p,
-            id: stableId,
-            originalId: p.id // Keep original for reference
-        };
-    });
+    // 4. Deduplication & Stable ID Logic (Unified via Utility)
+    // This prioritizes richer metadata (OTT info) while merging price/discount if available.
+    const stablePerformances = processAndMergePerformances(filtered);
 
     return safePerformanceList(stablePerformances);
 }

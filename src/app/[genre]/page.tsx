@@ -1,5 +1,6 @@
 import { fetchPerformances } from '@/lib/interpark';
 import PerformanceList from '@/components/PerformanceList';
+import { processAndMergePerformances } from '@/lib/performance-merger';
 import { Suspense } from 'react';
 import { notFound, redirect } from 'next/navigation';
 
@@ -221,43 +222,8 @@ async function getPerformances(genreFilter: string | string[] | null) {
     let genreFiltered = filtered;
     // Redundant block removed
 
-    // Deduplication
-    const uniqueMap = new Map<string, any>();
-
-    genreFiltered.forEach(p => {
-        let key = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
-
-        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(p.genre)) {
-            key += `_${p.date}`;
-        }
-
-        if (uniqueMap.has(key)) {
-            const existing = uniqueMap.get(key);
-            if (!existing.price && p.price) {
-                uniqueMap.set(key, p);
-            }
-        } else {
-            uniqueMap.set(key, p);
-        }
-    });
-
-    // Assign Stable IDs
-    const stablePerformances = Array.from(uniqueMap.entries()).map(([key, p]) => {
-        let hash = 0;
-        const str = key + (p.date?.split('~')[0] || '');
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash;
-        }
-        const stableId = `perf_${Math.abs(hash).toString(16)}`;
-
-        return {
-            ...p,
-            id: stableId,
-            originalId: p.id
-        };
-    });
+    // Deduplication & Hash ID Generation
+    const stablePerformances = processAndMergePerformances(genreFiltered);
 
     return stablePerformances;
 }
