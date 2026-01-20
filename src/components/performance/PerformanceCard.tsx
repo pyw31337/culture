@@ -179,7 +179,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 <div className="absolute inset-0 z-0">
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
-                                        optimizationWidth={800}
+                                        optimizationWidth={1000}
                                         alt={perf.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -378,7 +378,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         <div className="relative h-full w-full">
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
-                                optimizationWidth={800}
+                                optimizationWidth={1000}
                                 alt={perf.title}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
