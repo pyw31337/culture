@@ -77,6 +77,19 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
+    // Calculate if there are details other than price/discount to manage borders
+    const hasOtherDetails = !!(
+        (perf.originalTitle && perf.originalTitle !== perf.title) ||
+        perf.productionCountry ||
+        perf.productionYear ||
+        perf.subGenre ||
+        perf.runningTime ||
+        (perf.ageRating && !['movie', 'ott'].includes(perf.genre)) ||
+        perf.director ||
+        ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
+        (perf.platforms && perf.platforms.length > 0)
+    );
+
     return (
         <div
             className="sm:perspective-1000 group h-full relative hover:z-[2000]"
@@ -558,8 +571,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         )}
 
                                         {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
-                                        {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating) && (
-                                            <div className="mt-2 text-xs text-gray-400 space-y-0.5 border-t border-white/10 pt-2">
+                                        {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
+                                            <div className="mt-2 text-xs text-gray-400 space-y-0.5 pt-2">
                                                 {/* OTT Specific: Original Title */}
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
@@ -663,7 +676,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                                 {/* Price & Discount (Unified Style) */}
                                                 {(perf.price || perf.discount) && (
-                                                    <div className="flex justify-between items-end mt-2 w-full border-t border-white/10 pt-2">
+                                                    <div className={clsx("flex justify-between items-end mt-2 w-full pt-2", hasOtherDetails ? "border-t border-white/10" : "")}>
                                                         <div className="flex flex-col justify-end leading-none">
                                                             {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
                                                         </div>
