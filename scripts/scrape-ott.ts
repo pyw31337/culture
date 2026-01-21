@@ -322,19 +322,40 @@ async function searchJustWatch(context: any, title: string) {
                         const newCastData = await page.evaluate(() => {
                             const newCast: string[] = [];
                             let director = '';
-                            // Expanded selectors for interactive content
-                            const members = document.querySelectorAll('.card_item, .area_link_box li, .list_info .item, .cast_box .name, .detail_info .name');
-                            members.forEach(m => {
-                                let name = m.querySelector('strong.name, .name')?.textContent?.trim() || '';
-                                const sub = m.querySelector('span.sub_text, .sub_text')?.textContent?.trim() || '';
-                                if (!name && m.classList.contains('_text')) name = m.textContent?.trim() || '';
-                                if (!name && !m.querySelector('.name')) name = m.textContent?.trim() || '';
+                            // 1. Specific User-Requested Pattern (Broadcast/Drama cast list)
+                            const broadcastItems = document.querySelectorAll('.cm_content_wrap._broadcast_normal_total ul li, .cs_common_module .cm_content_wrap ul li');
+                            if (broadcastItems.length > 0) {
+                                broadcastItems.forEach(li => {
+                                    const aTag = li.querySelector('div > div > span > a');
+                                    let name = '';
+                                    if (aTag) name = aTag.textContent?.trim() || '';
+                                    if (!name) {
+                                        const nameEl = li.querySelector('strong, .name') || li.querySelector('a');
+                                        name = nameEl?.textContent?.trim() || '';
+                                    }
+                                    if (name && name.length < 20 && !name.endsWith(' 역') && !name.includes('더보기')) {
+                                        newCast.push(name);
+                                    }
+                                });
+                            }
 
-                                if (name && name.length < 20 && !name.includes('더보기')) {
-                                    if (sub.includes('감독')) director = name;
-                                    else newCast.push(name);
-                                }
-                            });
+                            // 2. Standard Fallback
+                            if (newCast.length === 0) {
+                                const members = document.querySelectorAll('.card_item, .area_link_box li, .list_info .item, .cast_box .name, .detail_info .name');
+                                members.forEach(m => {
+                                    let name = m.querySelector('strong.name, .name')?.textContent?.trim() || '';
+                                    const sub = m.querySelector('span.sub_text, .sub_text')?.textContent?.trim() || '';
+                                    if (!name && m.classList.contains('_text')) name = m.textContent?.trim() || '';
+                                    if (!name && !m.querySelector('.name')) name = m.textContent?.trim() || '';
+
+                                    if (name && name.length < 20 && !name.includes('더보기')) {
+                                        if (name.includes(' 역')) name = name.split(' 역')[0].trim();
+
+                                        if (sub.includes('감독')) director = name;
+                                        else if (!name.endsWith(' 역')) newCast.push(name);
+                                    }
+                                });
+                            }
                             return { cast: Array.from(new Set(newCast)).slice(0, 8), director };
                         });
                         if (newCastData.cast.length > 0) item.cast = newCastData.cast;
