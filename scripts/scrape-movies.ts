@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor.ts';
+import { processImage } from './utils/image-processor';
 
 // KOBIS Daily Box Office
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';

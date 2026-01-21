@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import cliProgress from 'cli-progress';
-import { processImage } from './utils/image-processor.ts';
+import { processImage } from './utils/image-processor';
 
 // --- CONFIG ---
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');

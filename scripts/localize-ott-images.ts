@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor.ts';
+import { processImage } from './utils/image-processor';
 
 const OTT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 

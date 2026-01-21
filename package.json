@@ -7,10 +7,13 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "scrape:movies": "npx ts-node scripts/scrape-movies.ts",
-    "scrape:class": "npx ts-node scripts/scrape-umclass.ts",
-    "scrape:mochaclass": "npx ts-node scripts/scrape-mochaclass.ts",
-    "scrape:kbo": "npx ts-node scripts/scrape-kbo.ts"
+    "scrape:movies": "npx tsx scripts/scrape-movies.ts",
+    "scrape:class": "npx tsx scripts/scrape-umclass.ts",
+    "scrape:mochaclass": "npx tsx scripts/scrape-mochaclass.ts",
+    "scrape:kbo": "npx tsx scripts/scrape-kbo.ts",
+    "scrape:ott": "npx tsx scripts/scrape-ott.ts",
+    "localize:ott": "npx tsx scripts/localize-ott-images.ts",
+    "validate:images": "npx tsx scripts/validate-images.ts"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

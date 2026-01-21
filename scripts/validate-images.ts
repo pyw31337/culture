@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-import { processImage } from './utils/image-processor.ts';
+import { processImage } from './utils/image-processor';
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
