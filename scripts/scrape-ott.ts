@@ -293,9 +293,26 @@ async function scrapeOTT() {
                     else if (res.ageRating.includes('세')) res.ageRating += ' 관람가';
                 }
 
-                // Extract Cast (Robust)
-                const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item, .cast_box .name, .detail_info .name');
+                // Extract Release Date (오픈/개봉)
+                const infoGroups = document.querySelectorAll('.info_group');
+                infoGroups.forEach(g => {
+                    const dt = g.querySelector('dt');
+                    const dd = g.querySelector('dd');
+                    if (dt && dd) {
+                        const label = dt.textContent?.trim() || '';
+                        if (label === '오픈' || label === '개봉') {
+                            const raw = dd.textContent?.trim() || '';
+                            const match = raw.match(/(\d{4})\.(\d{2})\.(\d{2})/);
+                            if (match) res.releaseDate = `${match[1]}-${match[2]}-${match[3]}`;
+                        }
+                    }
+                });
+
+                // Extract Cast (Robust) - Multiple selector strategies
                 const cast: string[] = [];
+
+                // Strategy 1: Standard selectors
+                const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item, .cast_box .name, .detail_info .name');
                 members.forEach(m => {
                     let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || m.textContent?.trim() || '';
                     const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
@@ -306,6 +323,31 @@ async function scrapeOTT() {
                         else cast.push(name);
                     }
                 });
+
+                // Strategy 2: Movie "a.inner" structure (for 출연/제작진 tab only)
+                if (cast.length === 0) {
+                    // Only select a.inner within cast-related content areas
+                    const castContainers = document.querySelectorAll('.cm_content_area._cast_area, .cm_content_area[data-tab="cast"], .sec_scroll_cast_member, .api_subject_bx');
+                    castContainers.forEach(container => {
+                        container.querySelectorAll('a.inner').forEach(a => {
+                            const name = a.querySelector('strong span')?.textContent?.trim() ||
+                                a.querySelector('strong')?.textContent?.trim() ||
+                                a.querySelector('.name')?.textContent?.trim();
+                            const role = a.querySelector('.sub_text span')?.textContent?.trim() ||
+                                a.querySelector('.sub_text')?.textContent?.trim() || '';
+
+                            // Filter out likely content titles (longer strings with spaces)
+                            const looksLikeTitle = name && name.length > 8 && name.includes(' ') && /^[가-힣]+\s+[가-힣]+/.test(name);
+                            const looksLikePerson = name && name.length <= 10 && !name.includes('?') && !name.includes('!');
+
+                            if (name && looksLikePerson && !looksLikeTitle && !name.includes('더보기')) {
+                                if (role.includes('감독') || role.includes('연출')) res.director = name;
+                                else cast.push(name);
+                            }
+                        });
+                    });
+                }
+
                 if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
 
                 return res;
@@ -353,6 +395,10 @@ async function scrapeOTT() {
                         if (newDetail.productionCountry) item.productionCountry = newDetail.productionCountry;
                         if (newDetail.subGenre) item.subGenre = newDetail.subGenre;
                         if (newDetail.originalTitle) item.originalTitle = newDetail.originalTitle;
+                        // ADD: Also merge releaseDate, director, and cast
+                        if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
+                        if (newDetail.director) item.director = newDetail.director;
+                        if (newDetail.cast && newDetail.cast.length > 0) item.cast = newDetail.cast;
                     }
                 } catch (e) { }
             }
@@ -455,7 +501,9 @@ async function scrapeOTT() {
         item.venue = 'OTT';
         item.region = 'ott';
         if (!item.genre) item.genre = 'ott';
-        item.date = new Date().toISOString().slice(0, 10);
+        // Use extracted release date if available, otherwise use today's date
+        if (!item.date && item.releaseDate) item.date = item.releaseDate;
+        else if (!item.date) item.date = new Date().toISOString().slice(0, 10);
     });
 
     // Phase 3: Images
