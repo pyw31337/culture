@@ -308,26 +308,50 @@ async function scrapeOTT() {
                     }
                 });
 
-                // Extract Cast (Robust) - Multiple selector strategies
+                // Extract Cast (Robust) - Scope to "출연진" container only
                 const cast: string[] = [];
 
-                // Strategy 1: Standard selectors
-                const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item, .cast_box .name, .detail_info .name');
-                members.forEach(m => {
-                    let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || m.textContent?.trim() || '';
-                    const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
-                    if (name.includes(' 역')) name = name.split(' 역')[0];
-
-                    if (name && name.length < 20 && !name.includes('출연') && !name.includes('더보기')) {
-                        if (role.includes('감독') || role.includes('연출')) res.director = name;
-                        else cast.push(name);
-                    }
+                // Strategy 1: Find the "출연진" (Cast) container and extract only items with role labels
+                const allContentAreas = Array.from(document.querySelectorAll('.cm_content_area, .api_subject_bx'));
+                const castContainer = allContentAreas.find(area => {
+                    const title = area.querySelector('h2, h3, .cm_title')?.textContent?.trim();
+                    return title && (title.includes('출연진') || title.includes('출연') || title.includes('제작진'));
                 });
 
-                // Strategy 2: Movie "a.inner" structure (for 출연/제작진 tab only)
+                if (castContainer) {
+                    // Look for items inside the cast container
+                    castContainer.querySelectorAll('.card_item, .area_card, li, a.inner, .item').forEach(el => {
+                        const fullText = el.textContent?.trim() || '';
+
+                        // Only process if it has a role label (출연, 감독, 연출)
+                        if (fullText.includes('출연') || fullText.includes('감독') || fullText.includes('연출')) {
+                            // Try to extract name
+                            const nameEl = el.querySelector('.name, strong span, strong, a._text');
+                            let name = nameEl?.textContent?.trim() || '';
+
+                            // Fallback: get first link or text before role label
+                            if (!name) {
+                                const link = el.querySelector('a:not(.area_link_box)');
+                                name = link?.textContent?.trim() || '';
+                            }
+
+                            // Clean name
+                            if (name.includes(' 역')) name = name.split(' 역')[0];
+                            if (name.includes('출연')) name = '';  // Skip if name contains role word
+                            if (name.includes('감독')) name = '';
+
+                            if (name && name.length < 15 && !name.includes('더보기') && !name.includes('?')) {
+                                const isDirector = fullText.includes('감독') || fullText.includes('연출');
+                                if (isDirector && !res.director) res.director = name;
+                                else if (!isDirector) cast.push(name);
+                            }
+                        }
+                    });
+                }
+
+                // Strategy 2: Movie "a.inner" structure (for 출연/제작진 tab only, as fallback)
                 if (cast.length === 0) {
-                    // Only select a.inner within cast-related content areas
-                    const castContainers = document.querySelectorAll('.cm_content_area._cast_area, .cm_content_area[data-tab="cast"], .sec_scroll_cast_member, .api_subject_bx');
+                    const castContainers = document.querySelectorAll('.cm_content_area._cast_area, .cm_content_area[data-tab="cast"], .sec_scroll_cast_member');
                     castContainers.forEach(container => {
                         container.querySelectorAll('a.inner').forEach(a => {
                             const name = a.querySelector('strong span')?.textContent?.trim() ||
@@ -336,7 +360,7 @@ async function scrapeOTT() {
                             const role = a.querySelector('.sub_text span')?.textContent?.trim() ||
                                 a.querySelector('.sub_text')?.textContent?.trim() || '';
 
-                            // Filter out likely content titles (longer strings with spaces)
+                            // Filter out likely content titles
                             const looksLikeTitle = name && name.length > 8 && name.includes(' ') && /^[가-힣]+\s+[가-힣]+/.test(name);
                             const looksLikePerson = name && name.length <= 10 && !name.includes('?') && !name.includes('!');
 

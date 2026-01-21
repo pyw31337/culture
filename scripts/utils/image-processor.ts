@@ -81,9 +81,15 @@ export async function processImage(url: string, filenameBase: string): Promise<s
 
         return relativePath;
 
-    } catch (error) {
+    } catch (error: any) {
+        // Handle specific HTTP errors
+        const statusCode = error?.response?.status;
+        if (statusCode === 404) {
+            console.warn(`[Image] 404 Not Found: ${url} - using empty fallback`);
+            return ''; // Return empty to use frontend placeholder
+        }
         console.error(`[Image] Failed to process ${url}:`, error instanceof Error ? error.message : String(error));
-        // Fallback to original URL if processing fails
-        return url;
+        // Return empty string instead of broken URL for better UX
+        return '';
     }
 }
