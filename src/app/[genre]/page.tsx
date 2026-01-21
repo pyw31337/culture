@@ -102,6 +102,7 @@ export default async function GenrePage({ params }: PageProps) {
                     initialPerformances={performances}
                     lastUpdated={lastUpdated}
                     initialGenre={initialGenre}
+                    isCategoryPage={true}
                 />
             </Suspense>
         </main>
