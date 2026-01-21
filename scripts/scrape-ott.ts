@@ -392,14 +392,35 @@ async function scrapeOTT() {
                         await page.waitForTimeout(1500);
                         const newCastData = await page.evaluate(() => {
                             const newCast: string[] = [];
-                            const members = document.querySelectorAll('.cast_box .name, .detail_info .name, ._actor_wrap .card_item');
-                            members.forEach(m => {
-                                let name = m.textContent?.trim() || '';
-                                if (m.querySelector('.name')) name = m.querySelector('.name')?.textContent?.trim() || '';
-                                // Fix: Clean '역' suffix instead of discarding
-                                if (name.includes(' 역')) name = name.split(' 역')[0];
-                                if (name && name.length < 20 && !name.includes('출연') && !name.includes('더보기')) newCast.push(name);
+
+                            // 1. Drama/Variety: .list_image_info structure (e.g., 러브 미, 나는 SOLO)
+                            const dramaItems = document.querySelectorAll('.list_image_info._content .item, .list_image_info .item');
+                            dramaItems.forEach(item => {
+                                const titleBox = item.querySelector('.title_box');
+                                if (titleBox) {
+                                    const links = Array.from(titleBox.querySelectorAll('a._text'));
+                                    // Second a._text is usually the actor name
+                                    if (links.length >= 2) {
+                                        const name = links[1].textContent?.trim() || '';
+                                        if (name && name.length < 20) newCast.push(name);
+                                    } else if (links.length === 1) {
+                                        const name = links[0].textContent?.trim() || '';
+                                        if (name && name.length < 20 && !name.includes('역')) newCast.push(name);
+                                    }
+                                }
                             });
+
+                            // 2. Movie: existing selectors
+                            if (newCast.length === 0) {
+                                const members = document.querySelectorAll('.cast_box .name, .detail_info .name, ._actor_wrap .card_item, .area_card .name, .area_card .title');
+                                members.forEach(m => {
+                                    let name = m.textContent?.trim() || '';
+                                    if (m.querySelector('.name')) name = m.querySelector('.name')?.textContent?.trim() || '';
+                                    if (name.includes(' 역')) name = name.split(' 역')[0];
+                                    if (name && name.length < 20 && !name.includes('출연') && !name.includes('더보기')) newCast.push(name);
+                                });
+                            }
+
                             return newCast;
                         });
                         if (newCastData.length > 0) item.cast = [...new Set(newCastData)].slice(0, 8);
