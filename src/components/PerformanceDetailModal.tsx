@@ -204,24 +204,9 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                     {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
                                                         const isObj = typeof actor === 'object';
                                                         const rawName = isObj ? actor.name : actor as string;
-                                                        // Fallback logic for JustWatch links or any other non-naver links: force Naver for Movie/OTT
-                                                        // BUT, user explicitly said "JustWatch로 연결되는 모든 링크는... 네이버 링크로 변경해줘"
-                                                        // We can simply force Naver search for all cast in this modal context if we want to be safe, 
-                                                        // OR specifically check if it's JustWatch. 
-                                                        // Given the prompt "JustWatch ... 모든 링크는 ... 네이버 링크로", 
-                                                        // and since we are in a detail modal that might serve multiple types, 
-                                                        // let's default to Naver Search for robustness if it's movie/ott or just generally. 
-                                                        // Previous code defaulted to Daum. So replacing Daum with Naver is the main goal.
-                                                        // However, the `url` variable logic below prioritizes `actor.url` (which might be JW).
-                                                        // We should override `url` if it's a JustWatch link, OR just always generate a search link.
-                                                        // Let's safe-guard: if `actor.url` exists but looks like a JW link, ignore it.
 
-                                                        let url = isObj && actor.url ? actor.url : '';
-
-                                                        // Override logic: if it's JustWatch or empty, use Naver Search
-                                                        if (!url || url.includes('justwatch.com')) {
-                                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(rawName.replace('더보기', '').trim())}`;
-                                                        }
+                                                        // Always use Naver Search Link
+                                                        const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(rawName.replace('더보기', '').trim())}`;
 
                                                         const cleanName = rawName.replace('더보기', '').trim();
 

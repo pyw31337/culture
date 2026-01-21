@@ -388,7 +388,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                     </span>
                                     {dDay && (
-                                        <span className="text-white text-xs font-bold bg-red-600 px-2 py-1 rounded whitespace-nowrap">
+                                        <span className="text-white text-[10px] font-bold bg-transparent border border-white/30 px-2 py-0.5 rounded-full whitespace-nowrap">
                                             {dDay}
                                         </span>
                                     )}
@@ -494,9 +494,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
 
-                                            {/* D-Day Badge (Movie Only) */}
+                                            {/* D-Day Badge (Movie Only) - Style Updated */}
                                             {dDay && (
-                                                <span className="px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all text-white bg-red-600/80 border-red-500/50">
+                                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold backdrop-blur-md border border-white/30 text-white bg-transparent">
                                                     {dDay}
                                                 </span>
                                             )}
