@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import cliProgress from 'cli-progress';
-import { processImage } from './utils/image-processor';
+import { processImage } from './utils/image-processor.ts';
 
 // --- CONFIG ---
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
@@ -63,6 +63,27 @@ function cleanOTTItem(item: any) {
         else if (ot === item.title) delete item.originalTitle;
     }
     if (item.subGenre === 'OTT') delete item.subGenre;
+
+    // Strict Cast Validation (Final Guard)
+    if (item.cast && Array.isArray(item.cast)) {
+        item.cast = item.cast.filter((name: string) => {
+            if (!name) return false;
+
+            const isKorean = /[가-힣]/.test(name);
+            if (isKorean && name.length > 6) return false;
+            if (!isKorean && name.length > 15) return false;
+
+            const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체'];
+            if (garbage.some(g => name.includes(g))) return false;
+
+            if (/[0-9?!%*]/.test(name)) return false;
+            if (name === item.title) return false;
+            if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return false;
+
+            return true;
+        });
+        if (item.cast.length === 0) delete item.cast;
+    }
 }
 
 async function scrapeList(context: any, platform: any, type: string) {
@@ -340,7 +361,15 @@ async function scrapeOTT() {
                             if (name.includes('출연')) name = '';  // Skip if name contains role word
                             if (name.includes('감독')) name = '';
 
-                            if (name && name.length < 15 && !name.includes('더보기') && !name.includes('?')) {
+                            // STRICT NAME VALIDATION
+                            // 1. Length Check
+                            if (name.length > 15) name = '';
+
+                            // 2. Keyword Check (Titles often contain these)
+                            if (name.includes('시즌')) name = '';
+                            if (/[0-9?!]/.test(name)) name = ''; // No numbers or punctuation in names mostly
+
+                            if (name && !name.includes('더보기')) {
                                 const isDirector = fullText.includes('감독') || fullText.includes('연출');
                                 if (isDirector && !res.director) res.director = name;
                                 else if (!isDirector) cast.push(name);
@@ -353,6 +382,9 @@ async function scrapeOTT() {
                 if (cast.length === 0) {
                     const castContainers = document.querySelectorAll('.cm_content_area._cast_area, .cm_content_area[data-tab="cast"], .sec_scroll_cast_member');
                     castContainers.forEach(container => {
+                        // Double check we are not in a recommendation section
+                        if (container.querySelector('h2')?.textContent?.includes('추천') || container.querySelector('h2')?.textContent?.includes('비슷한')) return;
+
                         container.querySelectorAll('a.inner').forEach(a => {
                             const name = a.querySelector('strong span')?.textContent?.trim() ||
                                 a.querySelector('strong')?.textContent?.trim() ||
@@ -360,15 +392,52 @@ async function scrapeOTT() {
                             const role = a.querySelector('.sub_text span')?.textContent?.trim() ||
                                 a.querySelector('.sub_text')?.textContent?.trim() || '';
 
-                            // Filter out likely content titles
-                            const looksLikeTitle = name && name.length > 8 && name.includes(' ') && /^[가-힣]+\s+[가-힣]+/.test(name);
-                            const looksLikePerson = name && name.length <= 10 && !name.includes('?') && !name.includes('!');
+                            // STRICT FILTERING
+                            if (!name) return;
 
-                            if (name && looksLikePerson && !looksLikeTitle && !name.includes('더보기')) {
-                                if (role.includes('감독') || role.includes('연출')) res.director = name;
-                                else cast.push(name);
-                            }
+                            // 1. Length Check (Korean names usually 2-4 chars, Foreign < 15)
+                            if (name.length > 15) return; // Too long -> likely a title
+
+                            // 2. Garbage Check
+                            if (/[0-9?!%*]/.test(name)) return; // Contains numbers or garbage
+                            if (name.includes('시즌')) return; // "Season" in name -> Title
+                            if (name.includes('더보기')) return;
+                            if (name === '출연') return;
+
+                            // 3. Known Bad Strings (Titles leaking in)
+                            if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return; // Heuristic based on user report
+
+                            if (role.includes('감독') || role.includes('연출')) res.director = name;
+                            else cast.push(name);
                         });
+                    });
+                }
+
+                // Strategy 4: SDS Modern UI (e.g. Idol Eyes) - Fallback for new layouts
+                if (cast.length === 0) {
+                    // Look for text content in links (actors are usually clickable)
+                    const sdsItems = document.querySelectorAll('.sds-comps-text-content, .sds-comps-text');
+                    sdsItems.forEach(el => {
+                        const txt = el.textContent?.trim() || '';
+                        const parentA = el.closest('a');
+
+                        if (txt && parentA) {
+                            const name = txt;
+
+                            // STRICT VALIDATION for Heuristic Extraction
+                            const isKorean = /[가-힣]/.test(name);
+                            // Korean names are short (2-4). Allow 6 for odd cases.
+                            if (isKorean && name.length > 6) return;
+                            if (!isKorean && name.length > 15) return;
+
+                            const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
+                            if (garbage.some(g => name.includes(g))) return;
+
+                            if (/[0-9?!%*]/.test(name)) return;
+                            if (name === '출연' || name === '등장인물') return;
+
+                            if (!cast.includes(name)) cast.push(name);
+                        }
                     });
                 }
 
@@ -401,10 +470,19 @@ async function scrapeOTT() {
                 try {
                     const clicked = await page.evaluate(() => {
                         const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
-                        const t = tabs.find(el => {
-                            const txt = el.textContent?.trim();
-                            return txt === '기본정보' || txt === '정보';
+                        // Prioritize "Cast" tabs over "Basic Info"
+                        let t = tabs.find(el => {
+                            const txt = el.textContent?.trim() || '';
+                            return txt.length < 10 && (txt === '출연/제작' || txt === '등장인물' || txt === '출연');
                         });
+
+                        if (!t) {
+                            t = tabs.find(el => {
+                                const txt = el.textContent?.trim() || '';
+                                return txt.length < 10 && (txt === '기본정보' || txt === '정보');
+                            });
+                        }
+
                         if (t) { (t as HTMLElement).click(); return true; }
                         return false;
                     });
@@ -453,7 +531,8 @@ async function scrapeOTT() {
                         // Fix: Ensure tab text is short (< 10 chars) to avoid clicking news links
                         const t = tabs.find(el => {
                             const txt = el.textContent?.trim() || '';
-                            return txt.length < 15 && (txt.includes('출연') || txt.includes('등장인물') || txt.includes('제작') || txt.includes('참가'));
+                            // Stricter check: must be short and contain keywords
+                            return txt.length < 15 && (txt === '출연/제작' || txt === '등장인물' || txt === '출연' || txt === '제작진');
                         });
                         if (t) { (t as HTMLElement).click(); return true; }
                         return false;
@@ -469,16 +548,56 @@ async function scrapeOTT() {
                                 const titleBox = item.querySelector('.title_box');
                                 if (titleBox) {
                                     const links = Array.from(titleBox.querySelectorAll('a._text'));
+                                    let name = '';
                                     // Second a._text is usually the actor name
                                     if (links.length >= 2) {
-                                        const name = links[1].textContent?.trim() || '';
-                                        if (name && name.length < 20) newCast.push(name);
+                                        name = links[1].textContent?.trim() || '';
                                     } else if (links.length === 1) {
-                                        const name = links[0].textContent?.trim() || '';
-                                        if (name && name.length < 20 && !name.includes('역')) newCast.push(name);
+                                        name = links[0].textContent?.trim() || '';
+                                    }
+
+                                    if (name) {
+                                        if (name.includes(' 역')) name = name.split(' 역')[0];
+
+                                        // STRICT VALIDATION
+                                        const isKorean = /[가-힣]/.test(name);
+                                        if (isKorean && name.length > 6) return;
+                                        if (!isKorean && name.length > 15) return;
+
+                                        const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
+                                        if (garbage.some(g => name.includes(g))) return;
+
+                                        if (/[0-9?!%*]/.test(name)) return;
+                                        if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return;
+
+                                        newCast.push(name);
                                     }
                                 }
                             });
+
+                            // Strategy 4: SDS Modern UI (Interactive)
+                            if (newCast.length === 0) {
+                                const sdsItems = document.querySelectorAll('.sds-comps-text-content, .sds-comps-text');
+                                sdsItems.forEach(el => {
+                                    const txt = el.textContent?.trim() || '';
+                                    const parentA = el.closest('a');
+
+                                    if (txt && parentA) {
+                                        const name = txt;
+                                        const isKorean = /[가-힣]/.test(name);
+                                        if (isKorean && name.length > 6) return;
+                                        if (!isKorean && name.length > 15) return;
+
+                                        const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
+                                        if (garbage.some(g => name.includes(g))) return;
+
+                                        if (/[0-9?!%*]/.test(name)) return;
+                                        if (name === '출연' || name === '등장인물') return;
+
+                                        if (!newCast.includes(name)) newCast.push(name);
+                                    }
+                                });
+                            }
 
                             // 2. Movie: existing selectors
                             if (newCast.length === 0) {
@@ -535,7 +654,10 @@ async function scrapeOTT() {
     const imageLimit = pLimit(10);
     await Promise.all(itemsToProcess.map(item => imageLimit(async () => {
         if (item.poster) {
-            item.image = await processImage(item.poster, item.id);
+            // Use stable filename: ott_Title
+            const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
+            const stableFilename = `ott_${safeTitle}`;
+            item.image = await processImage(item.poster, stableFilename);
         }
     })));
 

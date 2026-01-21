@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor';
+import { processImage } from './utils/image-processor.ts';
 
 const OTT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 
@@ -26,17 +26,13 @@ async function localizeImages() {
 
         if (isRemote && !isAlreadyLocal) {
             try {
-                // Determine filename base from title
-                // Use ID if available for uniqueness, or Title
-                const filenameBase = item.title;
+                // Use stable filename logic
+                const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
+                const filenameBase = `ott_${safeTitle}`;
                 const localPath = await processImage(item.poster, filenameBase);
 
-                if (localPath && localPath !== item.poster) {
-                    item.poster = localPath;
-                    // Also update 'image' field if it exists and matches
-                    if (item.image && item.image.startsWith('http')) {
-                        item.image = localPath;
-                    }
+                if (localPath) {
+                    item.image = localPath;
                     updatedCount++;
                     process.stdout.write('.');
                 }

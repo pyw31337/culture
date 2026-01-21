@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor';
+import { processImage } from './utils/image-processor.ts';
 
 // KOBIS Daily Box Office
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
@@ -290,7 +290,10 @@ async function scrapeMovies() {
 
             // Image Processing
             if (item.poster) {
-                const localPath = await processImage(item.poster, item.id);
+                // Use stable filename: movie_Title
+                const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
+                const stableFilename = `movie_${safeTitle}`;
+                const localPath = await processImage(item.poster, stableFilename);
                 if (localPath) item.image = localPath;
             } else {
                 item.image = '';
