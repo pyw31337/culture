@@ -255,57 +255,69 @@ async function searchJustWatch(context: any, title: string) {
             const detail = await page.evaluate(async () => {
                 const res: any = {};
 
-                // 1. Basic Info
-                const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
+                // Unified Metadata Extraction (Header + Basic Info + Pattern Matching)
+                const metadataSources = [
+                    ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), // Headers
+                    ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd')) // Details
+                ];
+
+                const patterns = {
+                    age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
+                    runtime: /(\d{1,3}분)/,
+                    country: /(한국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
+                    genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르)/
+                };
+
                 let realGenre = '';
 
-                // 0. Header Parsing (Broadcast/Drama priority)
-                const headerSpans = document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span');
-                headerSpans.forEach(span => {
-                    const text = span.textContent?.trim() || '';
-                    const link = span.querySelector('a');
+                metadataSources.forEach(el => {
+                    const text = el.textContent?.trim() || '';
+                    if (!text) return;
 
-                    // Genre (usually in <a> tag)
-                    if (link && !res.subGenre) {
-                        const linkText = link.textContent?.trim();
-                        if (linkText && !linkText.includes('회')) res.subGenre = linkText;
+                    // 1. Explicit Parsing (DT/DD structure if parent exists)
+                    const dt = el.previousElementSibling?.tagName === 'DT' ? el.previousElementSibling : null;
+                    const label = dt?.textContent?.trim() || '';
+
+                    if (label === '등급') res.ageRating = text;
+                    if (label === '국가') res.productionCountry = text;
+                    if (label === '러닝타임') res.runningTime = text;
+                    if (label === '장르' || label === '개요') realGenre = text;
+                    if (label === '원제') res.originalTitle = text;
+
+                    // 2. Pattern Matching (Fallback & Header)
+                    if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)![0];
+                    if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
+                    if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
+                    if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
+                        // Exclude cases where "12세" might be matched as generic text
+                        if (patterns.genre.test(text)) res.subGenre = text;
                     }
 
-                    // Age Rating
-                    if (text.includes('세') || text.includes('전체') || text.includes('청소년')) {
-                        if (text.includes('관람') || text.includes('시청') || text.includes('이상') || text.includes('불가') || text === '전체') {
-                            res.ageRating = text;
-                        }
+                    // Use Link Text for Genre (common in Naver headers)
+                    const link = el.querySelector('a');
+                    if (link && !res.subGenre && patterns.genre.test(link.textContent || '')) {
+                        res.subGenre = link.textContent?.trim();
                     }
                 });
 
-                infoGroups.forEach(group => {
-                    const dt = group.querySelector('dt');
-                    const dd = group.querySelector('dd');
-                    if (!dt || !dd) return;
-
-                    const label = dt.textContent?.trim() || '';
-                    const value = dd.textContent?.trim() || '';
-
-                    if (label.includes('개요') || label.includes('장르')) {
-                        if (value.includes('·')) {
-                            const parts = value.split('·').map(s => s.trim());
-                            parts.forEach(p => {
-                                if (p.endsWith('분')) res.runningTime = p;
-                                else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c))) res.productionCountry = p;
-                                else realGenre = p;
-                            });
-                        } else {
-                            if (!value.match(/(\d+분)/)) realGenre = value;
-                        }
+                // Refine Genre from Basic Info if Pattern failed
+                if (realGenre && !res.subGenre) {
+                    if (realGenre.includes('·')) {
+                        // Split logic
+                        realGenre.split('·').forEach(p => {
+                            p = p.trim();
+                            if (patterns.genre.test(p)) res.subGenre = p;
+                        });
+                    } else {
+                        res.subGenre = realGenre;
                     }
-                    if (label === '등급') res.ageRating = value;
-                    if (label === '국가') res.productionCountry = value;
-                    if (label === '러닝타임') res.runningTime = value;
-                    if (label === '원제') res.originalTitle = value;
-                });
+                }
 
-                if (realGenre) res.subGenre = realGenre;
+                // Final Cleanups
+                if (res.ageRating && !res.ageRating.includes('관람가') && !res.ageRating.includes('불가') && !res.ageRating.includes('시청가')) {
+                    if (res.ageRating === '전체') res.ageRating = '전체 관람가';
+                    else if (res.ageRating.includes('세')) res.ageRating += ' 관람가';
+                }
 
                 // 2. Cast (Robust Selectors)
                 const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item, .cast_box .name, .detail_info .name');
