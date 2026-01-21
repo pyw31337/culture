@@ -2,20 +2,21 @@
 import fs from 'fs';
 import path from 'path';
 
-const ottPath = path.resolve(process.cwd(), 'src/data/ott.json');
-const data = JSON.parse(fs.readFileSync(ottPath, 'utf8'));
+const file = path.resolve(process.cwd(), 'src/data/ott.json');
+const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
 
-// Check for entries with missing critical metadata after the scrape
-const incomplete = data.filter((item: any) =>
-    (!item.runningTime || item.runningTime === '') &&
-    (!item.originalTitle || item.originalTitle === '') &&
-    (!item.grade || item.grade === '' || item.grade === 'OTT' || item.grade === '전체')
-);
+console.log(`Total Items: ${data.length}`);
 
-console.log(`Total items: ${data.length}`);
-console.log(`Items missing RunTime AND OriginalTitle AND Grade: ${incomplete.length}`);
-
-// Sample incomplete items to see if they are just minor things or major failures
-if (incomplete.length > 0) {
-    console.log('Sample incomplete items:', incomplete.slice(0, 5).map((i: any) => i.title));
+const missingAge = data.filter((i: any) => !i.ageRating);
+console.log(`Items missing ageRating: ${missingAge.length}`);
+if (missingAge.length > 0) {
+    console.log('Sample missing:', missingAge.slice(0, 3).map((i: any) => i.title));
 }
+
+const face = data.find((i: any) => i.title === '얼굴');
+console.log('\nChecking "얼굴":');
+console.log(face ? face : 'Not found');
+
+const maze = data.find((i: any) => i.title.includes('스코치 트라이얼'));
+console.log('\nChecking "메이즈 러너: 스코치 트라이얼":');
+console.log(maze ? maze : 'Not found');

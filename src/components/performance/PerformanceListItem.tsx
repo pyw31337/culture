@@ -255,26 +255,21 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
 
-                            {perf.genre === 'movie' || perf.genre === 'ott' ? (
+                            {perf.genre === 'ott' ? (
+                                perf.ageRating && (
+                                    <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
+                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                        <span className="text-gray-300 light:text-black font-medium">{perf.ageRating}</span>
+                                    </div>
+                                )
+                            ) : perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
-                                            {/* OTT: Only show Age Rating if present, do not fallback to venue */}
-                                            {perf.genre === 'ott' ? (
-                                                perf.ageRating && (
-                                                    <>
-                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                        <span className="text-gray-300 light:text-gray-900">{perf.ageRating}</span>
-                                                    </>
-                                                )
-                                            ) : (
-                                                <>
-                                                    <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                    {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
-                                                </>
-                                            )}
+                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                         </>
                                     )}
                                 </div>

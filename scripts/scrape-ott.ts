@@ -149,36 +149,25 @@ async function searchJustWatch(context: any, title: string) {
             return null;
         }
 
-        // Extract Data
-        const jwData = await page.evaluate(() => {
+        const data = await page.evaluate(() => {
             const res: any = {};
-            // Cast Fallback
-            const newCards = document.querySelectorAll('.title-credits__actor');
-            const cast: any[] = [];
-            newCards.forEach(card => {
-                const img = card.querySelector('img');
-                const nameFromImg = img?.getAttribute('alt') || img?.getAttribute('title');
-                if (nameFromImg) {
-                    cast.push({ name: nameFromImg });
-                } else {
-                    let text = card.textContent?.trim() || '';
-                    const roleEl = card.querySelector('.title-credits__actor--role');
-                    if (roleEl && roleEl.textContent) {
-                        text = text.replace(roleEl.textContent, '').trim();
-                    }
-                    if (text) cast.push({ name: text });
-                }
-            });
-            if (cast.length > 0) res.cast = cast.slice(0, 8).map(c => c.name);
+            // Grade
+            const ageEl = document.querySelector('.detail-infos__value .sc-16o0t-1');
+            if (ageEl && ageEl.textContent?.includes('세')) res.ageRating = ageEl.textContent.trim();
 
-            // Director Fallback
-            const dirHeader = Array.from(document.querySelectorAll('h3')).find(h => h.textContent?.includes('감독') || h.textContent?.includes('Director'));
-            if (dirHeader && dirHeader.nextElementSibling) {
-                res.director = dirHeader.nextElementSibling.textContent?.trim();
-            }
+            // Cast
+            const castEls = document.querySelectorAll('.title-credits__actor-name');
+            const cast: string[] = [];
+            castEls.forEach(c => cast.push(c.textContent?.trim() || ''));
+            if (cast.length > 0) res.cast = cast.slice(0, 8);
+
+            // Director
+            const dirEl = document.querySelector('.title-credits__director-name');
+            if (dirEl) res.director = dirEl.textContent?.trim();
+
             return res;
         });
-        return jwData;
+        return data;
 
     } catch (e) {
         return null;
@@ -187,85 +176,66 @@ async function searchJustWatch(context: any, title: string) {
     }
 }
 
-// --- MAIN ---
-(async () => {
-    console.log('Starting Naver-First OTT Scraper...');
+async function scrapeOTT() {
     const browser = await chromium.launch({ headless: true });
-
-    // --- Scrape List (Phase 1) ---
-    const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
-    const limit = pLimit(3);
-    const tasks = [];
-
-    for (const p of PLATFORMS) {
-        for (const t of TYPES) {
-            tasks.push(limit(() => scrapeList(context, p, t)));
-        }
-    }
-
-    const results = await Promise.all(tasks);
-    const flatResults = results.flat();
-
-    const dedupedCtx: Record<string, any> = {};
-    for (const it of flatResults) {
-        // Clean Title for ID
-        const dateStr = new Date().toISOString().split('T')[0].replace(/-/g, '');
-        const titleStr = it.title.replace(/\s+/g, '').replace(/[^\w\uAC00-\uD7A3]/g, '');
-        const id = `ott_${dateStr}_${titleStr}`;
-
-        if (!dedupedCtx[id]) {
-            dedupedCtx[id] = {
-                ...it,
-                id,
-                platforms: [it.platform],
-                venue: 'OTT',
-                region: 'ott',
-                genre: 'ott',
-                date: new Date().toISOString().split('T')[0]
-            };
-        } else {
-            if (!dedupedCtx[id].platforms.includes(it.platform)) {
-                dedupedCtx[id].platforms.push(it.platform);
-            }
-        }
-    }
-
-    const finalRaw = Object.values(dedupedCtx);
-    console.log(`Phase 1 Complete. ${finalRaw.length} unique items to enrich.`);
-
-    // --- Enrichment (Phase 2) ---
-    const browser2 = await chromium.launch({ headless: true });
-    // Use slightly larger viewport
-    const context2 = await browser2.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        viewport: { width: 1440, height: 1024 }
+    // Keep generic context
+    const context = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
     });
 
-    const limitEnrich = pLimit(5);
-    const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    progressBar.start(finalRaw.length, 0);
+    console.log('Starting Naver-First OTT Scraper...');
 
-    const enrichTasks = finalRaw.map(item => limitEnrich(async () => {
-        const page = await context2.newPage();
+    let allItems: any[] = [];
+
+    // Phase 1: Scrape Lists
+    for (const p of PLATFORMS) {
+        for (const t of TYPES) {
+            const items = await scrapeList(context, p, t);
+            allItems.push(...items);
+        }
+    }
+
+    // Dedup
+    const uniqueItems = new Map();
+    allItems.forEach(i => {
+        if (!uniqueItems.has(i.title)) {
+            i.platforms = [i.platform];
+            uniqueItems.set(i.title, i);
+        } else {
+            const existing = uniqueItems.get(i.title);
+            if (!existing.platforms.includes(i.platform)) existing.platforms.push(i.platform);
+        }
+    });
+
+    let itemsToProcess = Array.from(uniqueItems.values());
+
+    console.log(`Phase 1 Complete. ${itemsToProcess.length} unique items to enrich.`);
+
+    const limit = pLimit(5);
+    const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+    progressBar.start(itemsToProcess.length, 0);
+
+    // Phase 2: Enrichment (Naver Detail > Tab Click Fallback > JustWatch/Namu)
+    await Promise.all(itemsToProcess.map(item => limit(async () => {
+        const page = await context.newPage();
         try {
-            // A. NAVER ENRICHMENT
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
             await sleep(500 + Math.random() * 500);
 
-            const detail = await page.evaluate(async () => {
+            // --- Enforce Strict Metadata Extraction Logic ---
+            const extractMetadata = () => {
                 const res: any = {};
-
                 // Unified Metadata Extraction (Header + Basic Info + Pattern Matching)
                 const metadataSources = [
                     ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), // Headers
-                    ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd')) // Details
+                    ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd, .intro_box .intro_desc')) // Details
                 ];
 
                 const patterns = {
                     age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
                     runtime: /(\d{1,3}분)/,
                     country: /(한국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
-                    genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르)/
+                    genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
                 };
 
                 let realGenre = '';
@@ -289,7 +259,6 @@ async function searchJustWatch(context: any, title: string) {
                     if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
                     if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
                     if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
-                        // Exclude cases where "12세" might be matched as generic text
                         if (patterns.genre.test(text)) res.subGenre = text;
                     }
 
@@ -303,23 +272,27 @@ async function searchJustWatch(context: any, title: string) {
                 // Refine Genre from Basic Info if Pattern failed
                 if (realGenre && !res.subGenre) {
                     if (realGenre.includes('·')) {
-                        // Split logic
                         realGenre.split('·').forEach(p => {
                             p = p.trim();
                             if (patterns.genre.test(p)) res.subGenre = p;
                         });
                     } else {
-                        res.subGenre = realGenre;
+                        const match = realGenre.match(patterns.genre);
+                        if (match) {
+                            res.subGenre = match[0];
+                        } else {
+                            res.subGenre = realGenre;
+                        }
                     }
                 }
 
-                // Final Cleanups
+                // Final Cleanups for Age Rating
                 if (res.ageRating && !res.ageRating.includes('관람가') && !res.ageRating.includes('불가') && !res.ageRating.includes('시청가')) {
                     if (res.ageRating === '전체') res.ageRating = '전체 관람가';
                     else if (res.ageRating.includes('세')) res.ageRating += ' 관람가';
                 }
 
-                // 2. Cast (Robust Selectors)
+                // Extract Cast (Robust)
                 const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item, .cast_box .name, .detail_info .name');
                 const cast: string[] = [];
                 members.forEach(m => {
@@ -335,11 +308,58 @@ async function searchJustWatch(context: any, title: string) {
                 if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
 
                 return res;
-            });
+            };
 
+            // 1. Initial Extraction
+            let detail = await page.evaluate(extractMetadata);
             if (detail) Object.assign(item, detail);
 
-            // B. INTERACTIVE CAST FALLBACK (Naver)
+            // 2. Fallback: If Age Rating is missing, try clicking '기본정보' or '정보' tab
+            // This is the validation loop the user requested
+            if (!item.ageRating) {
+                try {
+                    const clicked = await page.evaluate(() => {
+                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
+                        const t = tabs.find(el => {
+                            const txt = el.textContent?.trim();
+                            return txt === '기본정보' || txt === '정보';
+                        });
+                        if (t) { (t as HTMLElement).click(); return true; }
+                        return false;
+                    });
+
+                    if (clicked) {
+                        await page.waitForTimeout(1500); // Wait for Tab Content
+                        // Re-run the EXACT SAME extraction logic to capture everything revealed by the tab
+                        const newDetail = await page.evaluate(extractMetadata);
+                        // Merge new details, preferring new values if they exist
+                        if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
+                        if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
+                        if (newDetail.productionCountry) item.productionCountry = newDetail.productionCountry;
+                        if (newDetail.subGenre) item.subGenre = newDetail.subGenre;
+                        if (newDetail.originalTitle) item.originalTitle = newDetail.originalTitle;
+                    }
+                } catch (e) { }
+            }
+
+            // 3. Last Resort: Regex scan on Body Text (if still missing)
+            if (!item.ageRating) {
+                const bodyAge = await page.evaluate(() => {
+                    const patterns = {
+                        age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/
+                    };
+                    const match = document.body.innerText.match(patterns.age);
+                    return match ? match[0] : null;
+                });
+                if (bodyAge) {
+                    item.ageRating = bodyAge;
+                    // Cleanup
+                    if (item.ageRating === '전체') item.ageRating = '전체 관람가';
+                    else if (item.ageRating.includes('세') && !item.ageRating.includes('관람가')) item.ageRating += ' 관람가';
+                }
+            }
+
+            // B. INTERACTIVE CAST FALLBACK (Generic)
             if (!item.cast || item.cast.length === 0) {
                 try {
                     const foundTab = await page.evaluate(() => {
@@ -353,104 +373,61 @@ async function searchJustWatch(context: any, title: string) {
                         await page.waitForTimeout(1500);
                         const newCastData = await page.evaluate(() => {
                             const newCast: string[] = [];
-                            let director = '';
-                            // 1. Specific User-Requested Pattern (Broadcast/Drama cast list)
-                            const broadcastItems = document.querySelectorAll('.cm_content_wrap._broadcast_normal_total ul li, .cs_common_module .cm_content_wrap ul li');
-                            if (broadcastItems.length > 0) {
-                                broadcastItems.forEach(li => {
-                                    const aTag = li.querySelector('div > div > span > a');
-                                    let name = '';
-                                    if (aTag) name = aTag.textContent?.trim() || '';
-                                    if (!name) {
-                                        const nameEl = li.querySelector('strong, .name') || li.querySelector('a');
-                                        name = nameEl?.textContent?.trim() || '';
-                                    }
-                                    if (name && name.length < 20 && !name.endsWith(' 역') && !name.includes('더보기')) {
-                                        newCast.push(name);
-                                    }
-                                });
-                            }
-
-                            // 2. Standard Fallback
-                            if (newCast.length === 0) {
-                                const members = document.querySelectorAll('.card_item, .area_link_box li, .list_info .item, .cast_box .name, .detail_info .name');
-                                members.forEach(m => {
-                                    let name = m.querySelector('strong.name, .name')?.textContent?.trim() || '';
-                                    const sub = m.querySelector('span.sub_text, .sub_text')?.textContent?.trim() || '';
-                                    if (!name && m.classList.contains('_text')) name = m.textContent?.trim() || '';
-                                    if (!name && !m.querySelector('.name')) name = m.textContent?.trim() || '';
-
-                                    if (name && name.length < 20 && !name.includes('더보기')) {
-                                        if (name.includes(' 역')) name = name.split(' 역')[0].trim();
-
-                                        if (sub.includes('감독')) director = name;
-                                        else if (!name.endsWith(' 역')) newCast.push(name);
-                                    }
-                                });
-                            }
-                            return { cast: Array.from(new Set(newCast)).slice(0, 8), director };
+                            const members = document.querySelectorAll('.cast_box .name, .detail_info .name, ._actor_wrap .card_item');
+                            members.forEach(m => {
+                                let name = m.textContent?.trim() || '';
+                                if (m.querySelector('.name')) name = m.querySelector('.name')?.textContent?.trim() || '';
+                                if (name && !name.includes('역') && name.length < 20) newCast.push(name);
+                            });
+                            return newCast;
                         });
-                        if (newCastData.cast.length > 0) item.cast = newCastData.cast;
-                        if (newCastData.director) item.director = newCastData.director;
+                        if (newCastData.length > 0) item.cast = [...new Set(newCastData)].slice(0, 8);
                     }
                 } catch (e) { }
             }
 
-            // C. JUSTWATCH FALLBACK (Only if missing Cast)
-            if (!item.cast || item.cast.length === 0) {
-                const jwRes = await searchJustWatch(context2, item.title);
-                if (jwRes) {
-                    if (jwRes.cast) item.cast = jwRes.cast;
-                    if (jwRes.director && !item.director) item.director = jwRes.director;
-                }
-            }
+            cleanOTTItem(item);
 
-            // D. NAMUWIKI FALLBACK (Posters)
-            const isInvalidPoster = !item.poster || item.poster.length < 50 || item.poster.startsWith('data:');
-            if ((isInvalidPoster) && !item.posterSource) {
-                try {
-                    await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-                    await sleep(1000);
-                } catch (e) { }
+            // Fallback to JustWatch if critical info missing
+            if (!item.ageRating && !item.cast) {
+                const jwData = await searchJustWatch(context, item.title);
+                if (jwData) Object.assign(item, jwData);
             }
 
         } catch (e) {
-            // console.error(`Error enriching ${item.title}`, e);
+            console.error(`Error enriching ${item.title}:`, e);
         } finally {
             await page.close();
             progressBar.increment();
         }
+    })));
 
-        // Final Clean
-        cleanOTTItem(item);
-        if (!item.image && item.poster) item.image = item.poster;
-
-        return item;
-    }));
-
-    await Promise.all(enrichTasks);
     progressBar.stop();
-    await browser2.close();
-    await browser.close();
 
-    // --- Image Processing (Phase 3) ---
+    // Generate IDs and Image Paths
+    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    itemsToProcess.forEach(item => {
+        // Create ID: ott_YYYYMMDD_Title(sanitized)
+        const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
+        item.id = `ott_${today}_${safeTitle}`;
+        item.venue = 'OTT';
+        item.region = 'ott';
+        if (!item.genre) item.genre = 'ott';
+        item.date = new Date().toISOString().slice(0, 10);
+    });
+
+    // Phase 3: Images
     console.log('Phase 3: Downloading Images...');
-    const imageLimit = pLimit(10); // Concurrent downloads
-    await Promise.all(finalRaw.map(item => imageLimit(async () => {
-        if (item.image) {
-            try {
-                // Use ID or Title as filename base
-                const filename = item.id || `ott_${item.title.replace(/\s+/g, '')}`;
-                item.image = await processImage(item.image, filename);
-            } catch (e) {
-                // console.error(`Failed (Image): ${item.title}`);
-            }
+    const imageLimit = pLimit(10);
+    await Promise.all(itemsToProcess.map(item => imageLimit(async () => {
+        if (item.poster) {
+            item.image = await processImage(item.poster, item.id);
         }
     })));
 
-    // Final Sort
-    finalRaw.sort((a, b) => (a.date > b.date ? -1 : 1));
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(itemsToProcess, null, 2));
+    console.log(`Done. Saved ${itemsToProcess.length} items to ${OUTPUT_FILE}`);
+    await browser.close();
+}
 
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalRaw, null, 2));
-    console.log(`Done. Saved ${finalRaw.length} items to ${OUTPUT_FILE}`);
-})();
+scrapeOTT();

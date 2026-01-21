@@ -526,26 +526,21 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {/* Venue/Grade Info - Hide for non-movie/ott when no detail info */}
                                         {(perf.genre === 'movie' || perf.genre === 'ott' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
                                             <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
-                                                {perf.genre === 'movie' || perf.genre === 'ott' ? (
+                                                {perf.genre === 'ott' ? (
+                                                    perf.ageRating && (
+                                                        <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
+                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                            <span className="text-gray-300">{perf.ageRating}</span>
+                                                        </div>
+                                                    )
+                                                ) : perf.genre === 'movie' ? (
                                                     <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                         {perf.gradeIcon ? (
                                                             <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
                                                         ) : (
                                                             <>
-                                                                {/* OTT: Only show Age Rating if present, do not fallback to venue */}
-                                                                {perf.genre === 'ott' ? (
-                                                                    perf.ageRating && (
-                                                                        <>
-                                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                            <span className="text-gray-300">{perf.ageRating}</span>
-                                                                        </>
-                                                                    )
-                                                                ) : (
-                                                                    <>
-                                                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                        {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
-                                                                    </>
-                                                                )}
+                                                                <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                                {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
                                                             </>
                                                         )}
                                                     </div>

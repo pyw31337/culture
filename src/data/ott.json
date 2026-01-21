@@ -6,25 +6,17 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_러브미",
     "platforms": [
       "coupang",
       "tving"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_러브미",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "순정",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "서현진",
-      "유재명",
-      "이시우",
-      "윤세아",
-      "장률",
-      "다현"
-    ],
     "image": "/images/posters/ott_20260121_러브미.webp"
   },
   {
@@ -34,25 +26,29 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_이터널선샤인",
     "platforms": [
       "coupang",
       "wavve"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "107분",
+    "productionCountry": "미국",
+    "subGenre": "멜로/로맨스",
+    "ageRating": "15세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "미셸 공드리",
       "짐 캐리",
       "케이트 윈슬렛",
       "커스틴 던스트",
       "마크 러팔로",
-      "일라이저 우드"
+      "일라이저 우드",
+      "톰 윌킨슨",
+      "제인 아담스"
     ],
+    "id": "ott_20260121_이터널선샤인",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_이터널선샤인.webp"
   },
   {
@@ -62,26 +58,16 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_경도를기다리며",
     "platforms": [
       "coupang"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_경도를기다리며",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "박서준",
-      "원지안",
-      "이주영",
-      "강기둥",
-      "조민국",
-      "이엘",
-      "남기애",
-      "김우형"
-    ],
     "image": "/images/posters/ott_20260121_경도를기다리며.webp"
   },
   {
@@ -91,26 +77,15 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_야구여왕",
     "platforms": [
       "coupang"
     ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_야구여왕",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "박세리",
-      "추신수",
-      "윤석민",
-      "이대형",
-      "김동영",
-      "김주현",
-      "박재홍",
-      "이광용"
-    ],
     "image": "/images/posters/ott_20260121_야구여왕.webp"
   },
   {
@@ -120,24 +95,28 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_천공의성라퓨타",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "124분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션",
+    "ageRating": "전체 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "미야자키 하야오",
       "타나카 마유미",
       "요코자와 케이코",
       "하츠이 코토에",
       "테라다 미노리",
-      "토키타 후지오"
+      "토키타 후지오",
+      "나가이 이치로",
+      "이토 히로시"
     ],
+    "id": "ott_20260121_천공의성라퓨타",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_천공의성라퓨타.webp"
   },
   {
@@ -147,21 +126,15 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_나는SOLO나는솔로",
     "platforms": [
       "coupang"
     ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_나는SOLO나는솔로",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "데프콘",
-      "송해나",
-      "이이경"
-    ],
     "image": "/images/posters/ott_20260121_나는SOLO나는솔로.webp"
   },
   {
@@ -171,17 +144,14 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_얼굴",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "103분",
+    "subGenre": "미스터리",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
-      "감독/배우",
-      "제작진",
       "연상호",
       "박정민",
       "권해효",
@@ -189,6 +159,11 @@
       "한지현",
       "임성재"
     ],
+    "id": "ott_20260121_얼굴",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_얼굴.webp"
   },
   {
@@ -198,20 +173,22 @@
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_더퍼스트슬램덩크",
     "platforms": [
       "coupang",
       "disney"
     ],
+    "runningTime": "124분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션",
+    "ageRating": "12세 이상 관람가",
+    "cast": [
+      "이노우에 다케히코"
+    ],
+    "id": "ott_20260121_더퍼스트슬램덩크",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "cast": [
-      "감독/배우",
-      "제작진",
-      "이노우에 다케히코"
-    ],
     "image": "/images/posters/ott_20260121_더퍼스트슬램덩크.webp"
   },
   {
@@ -221,19 +198,21 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_극장판체인소맨레제편",
     "platforms": [
       "coupang"
     ],
+    "runningTime": "100분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션, 액션, 모험",
+    "ageRating": "15세 이상 관람가",
+    "cast": [
+      "요시하라 타츠야"
+    ],
+    "id": "ott_20260121_극장판체인소맨레제편",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "cast": [
-      "감독/배우",
-      "제작진",
-      "요시하라 타츠야"
-    ],
     "image": "/images/posters/ott_20260121_극장판체인소맨레제편.webp"
   },
   {
@@ -243,24 +222,28 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_위키드포굿",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "137분",
+    "productionCountry": "미국",
+    "subGenre": "판타지, 뮤지컬, 모험",
+    "ageRating": "전체 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "존 추",
       "신시아 에리보",
       "아리아나 그란데",
       "조나단 베일리",
       "에단 슬레이터",
-      "보웬 양"
+      "보웬 양",
+      "마리사 보데",
+      "양자경"
     ],
+    "id": "ott_20260121_위키드포굿",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_위키드포굿.webp"
   },
   {
@@ -270,25 +253,27 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_콘크리트마켓",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
-    "subGenre": "한국스릴러7부작",
+    "subGenre": "드라마",
+    "runningTime": "122분",
+    "productionCountry": "한국",
+    "ageRating": "15세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "홍기원",
       "이재인",
       "홍경",
       "정만식",
       "유수빈",
-      "김국희"
+      "김국희",
+      "최정운"
     ],
+    "id": "ott_20260121_콘크리트마켓",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_콘크리트마켓.webp"
   },
   {
@@ -298,14 +283,13 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_원배틀애프터어나더",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "162분",
+    "productionCountry": "미국",
+    "subGenre": "범죄, 액션",
+    "ageRating": "15세 이상 관람가",
     "cast": [
       "폴 토마스 앤더슨",
       "레오나르도 디카프리오",
@@ -315,6 +299,11 @@
       "테야나 테일러",
       "체이스 인피니티"
     ],
+    "id": "ott_20260121_원배틀애프터어나더",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_원배틀애프터어나더.webp"
   },
   {
@@ -324,20 +313,24 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_정보원",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "103분",
+    "subGenre": "코미디, 범죄",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
       "김석",
       "허성태",
       "조복래",
       "서민주"
     ],
+    "id": "ott_20260121_정보원",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_정보원.webp"
   },
   {
@@ -347,19 +340,23 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_프레데터죽음의땅",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "107분",
+    "productionCountry": "미국",
+    "subGenre": "SF, 액션",
+    "ageRating": "15세 이상 관람가",
     "cast": [
       "댄 트라첸버그",
       "엘르 패닝",
       "디미트리우스 슈스..."
     ],
+    "id": "ott_20260121_프레데터죽음의땅",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_프레데터죽음의땅.webp"
   },
   {
@@ -369,14 +366,13 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_고백하지마",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "68분",
+    "subGenre": "드라마",
+    "ageRating": "12세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
       "류현경",
       "김충길",
@@ -385,6 +381,11 @@
       "김오키",
       "한양희"
     ],
+    "id": "ott_20260121_고백하지마",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_고백하지마.webp"
   },
   {
@@ -394,14 +395,13 @@
     "platform": "coupang",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_퍼스트라이드",
     "platforms": [
       "coupang"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "116분",
+    "subGenre": "코미디, 드라마",
+    "ageRating": "12세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
       "남대중",
       "강하늘",
@@ -410,6 +410,11 @@
       "강영석",
       "한선화"
     ],
+    "id": "ott_20260121_퍼스트라이드",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_퍼스트라이드.webp"
   },
   {
@@ -419,23 +424,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_이사랑통역되나요",
     "platforms": [
       "netflix"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "한국",
+    "id": "ott_20260121_이사랑통역되나요",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국12부작",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "김선호",
-      "고윤정",
-      "후쿠시 소타",
-      "이이담",
-      "최우성"
-    ],
     "image": "/images/posters/ott_20260121_이사랑통역되나요.webp"
   },
   {
@@ -445,27 +444,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_언더커버미쓰홍",
     "platforms": [
       "netflix",
       "tving"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_언더커버미쓰홍",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "박신혜",
-      "고경표",
-      "하윤경",
-      "조한결",
-      "최지수",
-      "강채영",
-      "이덕화",
-      "김도현"
-    ],
     "image": "/images/posters/ott_20260121_언더커버미쓰홍.webp"
   },
   {
@@ -475,27 +464,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_은애하는도적님아",
     "platforms": [
       "netflix",
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_은애하는도적님아",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "남지현",
-      "문상민",
-      "홍민기",
-      "한소은",
-      "최원영",
-      "하석진",
-      "김정난",
-      "김석훈"
-    ],
     "image": "/images/posters/ott_20260121_은애하는도적님아.webp"
   },
   {
@@ -505,22 +484,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_현역가왕3",
     "platforms": [
       "netflix",
       "tving",
       "wavve"
     ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_현역가왕3",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "신동엽",
-      "린"
-    ],
     "image": "/images/posters/ott_20260121_현역가왕3.webp"
   },
   {
@@ -530,25 +504,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_아이돌아이",
     "platforms": [
       "netflix"
     ],
+    "subGenre": "드라마",
+    "productionCountry": "한국",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_아이돌아이",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국12부작",
-    "cast": [
-      "수영",
-      "김재영",
-      "정재광",
-      "최희진",
-      "김현진",
-      "김원해",
-      "정만식",
-      "안우연"
-    ],
     "image": "/images/posters/ott_20260121_아이돌아이.webp"
   },
   {
@@ -558,25 +524,15 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_오늘부터인간입니다만",
     "platforms": [
       "netflix"
     ],
+    "subGenre": "드라마",
+    "id": "ott_20260121_오늘부터인간입니다만",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "cast": [
-      "김혜윤",
-      "로몬",
-      "이시우",
-      "장동주",
-      "김태우",
-      "최승윤",
-      "인교진",
-      "이승준"
-    ],
     "image": "/images/posters/ott_20260121_오늘부터인간입니다만.webp"
   },
   {
@@ -586,23 +542,17 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_솔로지옥시즌5",
     "platforms": [
       "netflix"
     ],
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "한국",
+    "subGenre": "한국",
+    "id": "ott_20260121_솔로지옥시즌5",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "동영상 바로재생 LIVE 04:06",
-      "동영상 바로재생 LIVE 01:31",
-      "동영상 바로재생 LIVE 01:03",
-      "바로보기",
-      "작품 홈 바로가기"
-    ],
     "image": "/images/posters/ott_20260121_솔로지옥시즌5.webp"
   },
   {
@@ -612,21 +562,15 @@
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_자식방생프로젝트합숙맞선",
     "platforms": [
       "netflix"
     ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_자식방생프로젝트합숙맞선",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "서장훈",
-      "이요원",
-      "김요한"
-    ],
     "image": "/images/posters/ott_20260121_자식방생프로젝트합숙맞선.webp"
   },
   {
@@ -636,73 +580,18 @@
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_스타서치",
     "platforms": [
       "netflix"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
-    "subGenre": "미국리얼리티",
     "ageRating": "전체 관람가",
-    "cast": [
-      "젤리 롤 모턴",
-      "사라 미셸 겔러",
-      "크리시 티건",
-      "안소니 앤더슨"
-    ],
+    "productionCountry": "미국",
+    "subGenre": "미국리얼리티",
+    "id": "ott_20260121_스타서치",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_스타서치.webp"
-  },
-  {
-    "title": "메이즈 러너",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1838055&qvt=0&query=%EB%A9%94%EC%9D%B4%EC%A6%88%20%EB%9F%AC%EB%84%88%201",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20140826_116%2F1409028835652AHMXd_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_20260121_메이즈러너",
-    "platforms": [
-      "netflix"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
-    "cast": [
-      "감독/배우",
-      "제작진",
-      "웨스 볼",
-      "딜런 오브라이언",
-      "카야 스코델라리오",
-      "윌 폴터",
-      "토마스 생스터",
-      "이기홍"
-    ],
-    "image": "/images/posters/ott_20260121_메이즈러너.webp"
-  },
-  {
-    "title": "영화 코바야시네 메이드래곤 외로움쟁이 용",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37214636&qvt=0&query=%EC%98%81%ED%99%94%20%EC%BD%94%EB%B0%94%EC%95%BC%EC%8B%9C%EB%84%A4%20%EB%A9%94%EC%9D%B4%EB%93%9C%EB%9E%98%EA%B3%A4%20%EC%99%B8%EB%A1%9C%EC%9B%80%EC%9F%81%EC%9D%B4%20%EC%9A%A9",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250704_132%2F1751619836951CQLiw_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_20260121_영화코바야시네메이드래곤외로움쟁이용",
-    "platforms": [
-      "netflix"
-    ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
-    "cast": [
-      "이시하라 타츠야",
-      "나가나와 마리아",
-      "타무라 무츠미",
-      "쿠와하라 유우키"
-    ],
-    "image": "/images/posters/ott_20260121_영화코바야시네메이드래곤외로움쟁이용.webp"
   },
   {
     "title": "어 싸우전드 워즈",
@@ -711,24 +600,28 @@
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_어싸우전드워즈",
     "platforms": [
       "netflix"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "91분",
+    "productionCountry": "미국",
+    "subGenre": "코미디, 드라마",
+    "ageRating": "15세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "브라이언 로빈스",
       "에디 머피",
       "케리 워싱턴",
       "클리프 커티스",
       "클락 듀크",
-      "에마뉴엘 렉스데일"
+      "에마뉴엘 렉스데일",
+      "앨리슨 제니",
+      "루비 디"
     ],
+    "id": "ott_20260121_어싸우전드워즈",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_어싸우전드워즈.webp"
   },
   {
@@ -738,43 +631,25 @@
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_초가구야공주",
     "platforms": [
       "netflix"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "142분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션, SF, 판타지, 드라마",
+    "ageRating": "15세 이상 관람가",
     "cast": [
       "야마시타 신고",
       "나츠요시 유코",
       "나가세 안나",
       "하야미 사오리"
     ],
-    "image": "/images/posters/ott_20260121_초가구야공주.webp"
-  },
-  {
-    "title": "너만의 엣지를 찾아",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554958&qvt=0&query=%EB%84%88%EB%A7%8C%EC%9D%98%20%EC%97%A3%EC%A7%80%EB%A5%BC%20%EC%B0%BE%EC%95%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABRTzKHF5S1Y-lAzHg0VLYBXHjHhd6V8S8Eqm274U7VuECF3hKu6Uf3p4fOkmRQrLoLQbPYNKFfEoRcXg6Ir4JhgXsYxzj-ncmCfE-KLiE1m1kf781igp8Sd25eHHhRmIYpHmPg.jpg%3Fr%3Da88",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_20260121_너만의엣지를찾아",
-    "platforms": [
-      "netflix"
-    ],
+    "id": "ott_20260121_초가구야공주",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "해외",
-    "ageRating": "12세 이상 관람가",
-    "cast": [
-      "바로보기"
-    ],
-    "image": "https://dnm.nflximg.net/api/v6/OXOysnqzq1gUn-x48CWxvRjH7rk/AAAABRTzKHF5S1Y-lAzHg0VLYBXHjHhd6V8S8Eqm274U7VuECF3hKu6Uf3p4fOkmRQrLoLQbPYNKFfEoRcXg6Ir4JhgXsYxzj-ncmCfE-KLiE1m1kf781igp8Sd25eHHhRmIYpHmPg.jpg?r=a88"
+    "image": "/images/posters/ott_20260121_초가구야공주.webp"
   },
   {
     "title": "메이즈 러너: 데스 큐어",
@@ -783,24 +658,28 @@
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_메이즈러너데스큐어",
     "platforms": [
       "netflix"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "143분",
+    "productionCountry": "미국",
+    "subGenre": "액션, SF, 스릴러",
+    "ageRating": "12세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "웨스 볼",
       "딜런 오브라이언",
       "토마스 생스터",
       "카야 스코델라리오",
       "이기홍",
-      "로사 살라자르"
+      "로사 살라자르",
+      "지안카를로 에스포지토",
+      "에이단 길렌"
     ],
+    "id": "ott_20260121_메이즈러너데스큐어",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_메이즈러너데스큐어.webp"
   },
   {
@@ -810,25 +689,119 @@
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_더브레이브",
     "platforms": [
       "netflix"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "110분",
+    "productionCountry": "미국",
+    "subGenre": "모험, 드라마, 서부",
+    "ageRating": "15세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "에단 코엔",
       "조엘 코엔",
       "맷 데이먼",
       "제프 브리지스",
       "조슈 브롤린",
-      "배리 페퍼"
+      "배리 페퍼",
+      "헤일리 스테인펠드",
+      "데이킨 매튜스"
     ],
+    "id": "ott_20260121_더브레이브",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_더브레이브.webp"
+  },
+  {
+    "title": "메이즈 러너",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1838055&qvt=0&query=%EB%A9%94%EC%9D%B4%EC%A6%88%20%EB%9F%AC%EB%84%88%201",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20140826_116%2F1409028835652AHMXd_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "platforms": [
+      "netflix"
+    ],
+    "runningTime": "113분",
+    "productionCountry": "미국",
+    "subGenre": "액션, 미스터리, SF, 스릴러",
+    "ageRating": "12세 이상 관람가",
+    "cast": [
+      "웨스 볼",
+      "딜런 오브라이언",
+      "카야 스코델라리오",
+      "윌 폴터",
+      "토마스 생스터",
+      "이기홍",
+      "에멜 아민",
+      "패트리시아 클락슨"
+    ],
+    "id": "ott_20260121_메이즈러너",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
+    "image": "/images/posters/ott_20260121_메이즈러너.webp"
+  },
+  {
+    "title": "영화 코바야시네 메이드래곤 외로움쟁이 용",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=37214636&qvt=0&query=%EC%98%81%ED%99%94%20%EC%BD%94%EB%B0%94%EC%95%BC%EC%8B%9C%EB%84%A4%20%EB%A9%94%EC%9D%B4%EB%93%9C%EB%9E%98%EA%B3%A4%20%EC%99%B8%EB%A1%9C%EC%9B%80%EC%9F%81%EC%9D%B4%20%EC%9A%A9",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250704_132%2F1751619836951CQLiw_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "platforms": [
+      "netflix"
+    ],
+    "runningTime": "105분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션",
+    "ageRating": "12세 이상 관람가",
+    "originalTitle": "Miss Kobayashi's Dragon Maid: A Lonely Dragon Wants to Be Loved",
+    "cast": [
+      "이시하라 타츠야",
+      "나가나와 마리아",
+      "타무라 무츠미",
+      "쿠와하라 유우키"
+    ],
+    "id": "ott_20260121_영화코바야시네메이드래곤외로움쟁이용",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
+    "image": "/images/posters/ott_20260121_영화코바야시네메이드래곤외로움쟁이용.webp"
+  },
+  {
+    "title": "메이즈 러너: 스코치 트라이얼",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=2064210&qvt=0&query=%EB%A9%94%EC%9D%B4%EC%A6%88%20%EB%9F%AC%EB%84%88%3A%20%EC%8A%A4%EC%BD%94%EC%B9%98%20%ED%8A%B8%EB%9D%BC%EC%9D%B4%EC%96%BC",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20150916_299%2F1442373452613ecrKE_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "platforms": [
+      "netflix"
+    ],
+    "runningTime": "132분",
+    "productionCountry": "미국",
+    "subGenre": "액션, SF, 스릴러",
+    "ageRating": "12세 이상 관람가",
+    "cast": [
+      "웨스 볼",
+      "딜런 오브라이언",
+      "토마스 생스터",
+      "카야 스코델라리오",
+      "이기홍",
+      "지안카를로 에스포지토",
+      "나탈리 엠마뉴엘",
+      "캐서린 맥나마라"
+    ],
+    "id": "ott_20260121_메이즈러너스코치트라이얼",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
+    "image": "/images/posters/ott_20260121_메이즈러너스코치트라이얼.webp"
   },
   {
     "title": "메이드 인 코리아",
@@ -837,26 +810,17 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_메이드인코리아",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "한국",
+    "id": "ott_20260121_메이드인코리아",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국6부작",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "현빈",
-      "정우성",
-      "우도환",
-      "조여정",
-      "서은수",
-      "원지안",
-      "정성일",
-      "강길우"
-    ],
     "image": "/images/posters/ott_20260121_메이드인코리아.webp"
   },
   {
@@ -866,26 +830,17 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_무빙",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "ageRating": "청소년 관람불가",
+    "productionCountry": "한국",
+    "id": "ott_20260121_무빙",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국액션20부작",
-    "ageRating": "청소년 관람불가",
-    "cast": [
-      "류승룡",
-      "한효주",
-      "조인성",
-      "차태현",
-      "류승범",
-      "김성균",
-      "김희원",
-      "문성근"
-    ],
     "image": "/images/posters/ott_20260121_무빙.webp"
   },
   {
@@ -895,22 +850,17 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_폭군",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "ageRating": "청소년 관람불가",
+    "productionCountry": "한국",
+    "id": "ott_20260121_폭군",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국액션4부작",
-    "ageRating": "청소년 관람불가",
-    "cast": [
-      "차승원",
-      "김선호",
-      "김강우",
-      "조윤수"
-    ],
     "image": "/images/posters/ott_20260121_폭군.webp"
   },
   {
@@ -920,26 +870,17 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_조명가게",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "한국",
+    "id": "ott_20260121_조명가게",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국공포8부작",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "주지훈",
-      "박보영",
-      "김설현",
-      "배성우",
-      "엄태구",
-      "이정은",
-      "김민하",
-      "박혁권"
-    ],
     "image": "/images/posters/ott_20260121_조명가게.webp"
   },
   {
@@ -949,26 +890,15 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_IAMBOXER아이엠복서",
     "platforms": [
       "disney"
     ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_IAMBOXER아이엠복서",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "마동석",
-      "김종국",
-      "덱스",
-      "김민욱",
-      "김동회",
-      "국승준",
-      "이채현",
-      "장혁"
-    ],
     "image": "/images/posters/ott_20260121_IAMBOXER아이엠복서.webp"
   },
   {
@@ -978,22 +908,16 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_조각도시",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "productionCountry": "한국",
+    "id": "ott_20260121_조각도시",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국액션12부작",
-    "cast": [
-      "지창욱",
-      "도경수",
-      "김종수",
-      "조윤수",
-      "이광수"
-    ],
     "image": "/images/posters/ott_20260121_조각도시.webp"
   },
   {
@@ -1003,25 +927,15 @@
     "platform": "disney",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_낭만닥터김사부3",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "id": "ott_20260121_낭만닥터김사부3",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "cast": [
-      "한석규",
-      "안효섭",
-      "이성경",
-      "김민재",
-      "진경",
-      "임원희",
-      "변우민",
-      "김주헌"
-    ],
     "image": "/images/posters/ott_20260121_낭만닥터김사부3.webp"
   },
   {
@@ -1031,24 +945,28 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_좀비딸",
     "platforms": [
       "disney"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "114분",
+    "subGenre": "코미디, 드라마",
+    "ageRating": "12세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
-      "감독/배우",
-      "제작진",
       "필감성",
       "조정석",
       "이정은",
       "조여정",
       "윤경호",
-      "최유리"
+      "최유리",
+      "금동",
+      "전수지"
     ],
+    "id": "ott_20260121_좀비딸",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_좀비딸.webp"
   },
   {
@@ -1058,14 +976,13 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_트론아레스",
     "platforms": [
       "disney"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "119분",
+    "productionCountry": "미국",
+    "subGenre": "액션, SF",
+    "ageRating": "12세 이상 관람가",
     "cast": [
       "요아킴 뢰닝",
       "자레드 레토",
@@ -1074,6 +991,11 @@
       "질리언 앤더슨",
       "제프 브리지스"
     ],
+    "id": "ott_20260121_트론아레스",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_트론아레스.webp"
   },
   {
@@ -1083,23 +1005,25 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_더로즈완벽한이혼",
     "platforms": [
       "disney"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "105분",
+    "productionCountry": "미국",
+    "subGenre": "코미디, 드라마",
+    "ageRating": "15세 이상 관람가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "제이 로치",
       "올리비아 콜맨",
       "베네딕트 컴버배치",
       "케이트 맥키넌",
       "앤디 샘버그"
     ],
+    "id": "ott_20260121_더로즈완벽한이혼",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_더로즈완벽한이혼.webp"
   },
   {
@@ -1109,14 +1033,13 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_프랑켄슈타인더뮤지컬라이브",
     "platforms": [
       "disney"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "179분",
+    "subGenre": "공연실황",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
       "박재석",
       "규현",
@@ -1127,6 +1050,11 @@
       "신재희",
       "서만석"
     ],
+    "id": "ott_20260121_프랑켄슈타인더뮤지컬라이브",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_프랑켄슈타인더뮤지컬라이브.webp"
   },
   {
@@ -1136,20 +1064,17 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_이게맞아시즌2",
     "platforms": [
       "disney"
     ],
+    "ageRating": "12세 이상 관람가",
+    "productionCountry": "한국",
+    "subGenre": "한국리얼리티8부작",
+    "id": "ott_20260121_이게맞아시즌2",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국리얼리티8부작",
-    "ageRating": "12세 이상 관람가",
-    "cast": [
-      "지민",
-      "정국"
-    ],
     "image": "/images/posters/ott_20260121_이게맞아시즌2.webp"
   },
   {
@@ -1159,25 +1084,16 @@
     "platform": "disney",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_내게거짓말을해봐시즌3",
     "platforms": [
       "disney"
     ],
+    "subGenre": "드라마",
+    "productionCountry": "미국",
+    "id": "ott_20260121_내게거짓말을해봐시즌3",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "미국",
-    "cast": [
-      "바로보기",
-      "내게 거짓말을 해봐 시즌2",
-      "프릭스 시즌 1",
-      "레고 픽사: 브릭툰즈",
-      "불릿/불릿",
-      "당신의 친절한 이웃 스파이더맨",
-      "레고 마블 어벤져스: SNS 대전",
-      "이와주"
-    ],
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v1/disney/disco/general/019bb5f4-e282-7189-9773-89863b083e70/compose?label=_071_hd"
   },
   {
@@ -1187,27 +1103,17 @@
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_스프링피버",
     "platforms": [
       "tving",
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_스프링피버",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "안보현",
-      "이주빈",
-      "차서원",
-      "조준영",
-      "이재인",
-      "진경",
-      "배정남",
-      "오만석"
-    ],
     "image": "/images/posters/ott_20260121_스프링피버.webp"
   },
   {
@@ -1217,22 +1123,17 @@
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_환승연애4",
     "platforms": [
       "tving"
     ],
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "한국",
+    "subGenre": "한국리얼리티21부작",
+    "id": "ott_20260121_환승연애4",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국리얼리티21부작",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "사이먼 도미닉",
-      "이용진",
-      "김예원",
-      "유라"
-    ],
     "image": "/images/posters/ott_20260121_환승연애4.webp"
   },
   {
@@ -1242,27 +1143,17 @@
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_판사이한영",
     "platforms": [
       "tving",
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_판사이한영",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "지성",
-      "박희순",
-      "원진아",
-      "태원석",
-      "백진희",
-      "오세영",
-      "황희",
-      "김태우"
-    ],
     "image": "/images/posters/ott_20260121_판사이한영.webp"
   },
   {
@@ -1272,27 +1163,17 @@
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_첫번째남자",
     "platforms": [
       "tving",
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_첫번째남자",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "함은정",
-      "오현경",
-      "윤선우",
-      "박건일",
-      "김민설",
-      "정소영",
-      "김학선",
-      "이기창"
-    ],
     "image": "/images/posters/ott_20260121_첫번째남자.webp"
   },
   {
@@ -1302,26 +1183,16 @@
     "platform": "tving",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_아기가생겼어요",
     "platforms": [
       "tving"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_아기가생겼어요",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "최진혁",
-      "오연서",
-      "홍종현",
-      "김다솜",
-      "손병호",
-      "김선경",
-      "백은혜",
-      "장여빈"
-    ],
     "image": "/images/posters/ott_20260121_아기가생겼어요.webp"
   },
   {
@@ -1331,24 +1202,28 @@
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_무서운이야기3화성에서온소녀",
     "platforms": [
       "tving"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "94분",
+    "subGenre": "공포",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "대한민국",
     "cast": [
-      "감독/배우",
-      "제작진",
       "김곡",
       "김선",
       "백승빈",
       "민규동",
       "임슬옹",
-      "경수진"
+      "경수진",
+      "박정민",
+      "홍은희"
     ],
+    "id": "ott_20260121_무서운이야기3화성에서온소녀",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
     "image": "/images/posters/ott_20260121_무서운이야기3화성에서온소녀.webp"
   },
   {
@@ -1358,52 +1233,29 @@
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_모멘텀",
     "platforms": [
       "tving"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "92분",
+    "productionCountry": "남아프리카공화국, 미국",
+    "subGenre": "액션, 스릴러",
+    "ageRating": "청소년 관람불가",
     "cast": [
-      "감독/배우",
-      "제작진",
       "스티븐 S. 캄파넬리",
       "올가 쿠릴렌코",
       "제임스 퓨어포이",
       "모건 프리먼",
       "제나 사라스",
-      "사빈 팔피"
+      "사빈 팔피",
+      "칼 타닝",
+      "리 라비브"
     ],
-    "image": "/images/posters/ott_20260121_모멘텀.webp"
-  },
-  {
-    "title": "호텔 도깨비",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40422556&qvt=0&query=%ED%98%B8%ED%85%94%20%EB%8F%84%EA%B9%A8%EB%B9%84",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251230_185%2F1767060770870ljMU0_JPEG%2F57_40422556_poster_image_1767060770850.jpg",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_20260121_호텔도깨비",
-    "platforms": [
-      "tving"
-    ],
+    "id": "ott_20260121_모멘텀",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "예능",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "고두심",
-      "권율",
-      "손나은",
-      "김동준",
-      "이대휘",
-      "전성곤"
-    ],
-    "image": "/images/posters/ott_20260121_호텔도깨비.webp"
+    "image": "/images/posters/ott_20260121_모멘텀.webp"
   },
   {
     "title": "더 레이크",
@@ -1412,47 +1264,40 @@
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_더레이크",
     "platforms": [
       "tving"
     ],
-    "venue": "OTT",
-    "region": "ott",
-    "genre": "ott",
-    "date": "2026-01-21",
+    "runningTime": "108분",
+    "subGenre": "알바니아108분",
+    "ageRating": "15세 이상 관람가",
+    "productionCountry": "알바니아",
     "cast": [
       "게르그기 쿠바니"
     ],
-    "image": "/images/posters/ott_20260121_더레이크.webp"
-  },
-  {
-    "title": "DREAM STAGE",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40232854&qvt=0&query=%EB%93%9C%EB%A6%BC%20%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%A7%80",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260116_19%2F1768531244844vLi9z_JPEG%2F57_40232854_poster_image_1768531244836.jpg",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_20260121_DREAMSTAGE",
-    "platforms": [
-      "tving"
-    ],
+    "id": "ott_20260121_더레이크",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "일본드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "나카무라 토모야",
-      "이케다 에라이자",
-      "하연수",
-      "카이세이",
-      "윤기",
-      "아토",
-      "턴",
-      "유야"
+    "image": "/images/posters/ott_20260121_더레이크.webp"
+  },
+  {
+    "title": "호텔 도깨비",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40422556&qvt=0&query=%ED%98%B8%ED%85%94%20%EB%8F%84%EA%B9%A8%EB%B9%84",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20251230_185%2F1767060770870ljMU0_JPEG%2F57_40422556_poster_image_1767060770850.jpg",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "platforms": [
+      "tving"
     ],
-    "image": "/images/posters/ott_20260121_DREAMSTAGE.webp"
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_호텔도깨비",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
+    "image": "/images/posters/ott_20260121_호텔도깨비.webp"
   },
   {
     "title": "승천중, 방해 사절",
@@ -1461,22 +1306,17 @@
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_승천중방해사절",
     "platforms": [
       "tving"
     ],
+    "subGenre": "드라마",
+    "ageRating": "12세 이상 관람가",
+    "productionCountry": "중국",
+    "id": "ott_20260121_승천중방해사절",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "중국32부작",
-    "ageRating": "12세 이상 관람가",
-    "cast": [
-      "리홍이",
-      "육정옥",
-      "쉬쟈치",
-      "장지호"
-    ],
     "image": "/images/posters/ott_20260121_승천중방해사절.webp"
   },
   {
@@ -1486,26 +1326,35 @@
     "platform": "tving",
     "type": "신작",
     "source": "naver",
-    "id": "ott_20260121_쇼미더머니12야차의세계",
     "platforms": [
       "tving"
     ],
+    "productionCountry": "한국",
+    "subGenre": "한국",
+    "id": "ott_20260121_쇼미더머니12야차의세계",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "한국",
-    "cast": [
-      "바로보기",
-      "작품 홈 바로가기",
-      "공양간의 셰프들",
-      "RAP:PUBLIC (랩:퍼블릭)",
-      "야구기인 임찬규",
-      "슈퍼레이스 프리스타일",
-      "노엑싯게임룸",
-      "더 보이프렌드 시즌2"
-    ],
     "image": "/images/posters/ott_20260121_쇼미더머니12야차의세계.webp"
+  },
+  {
+    "title": "예스맨",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40497928&qvt=0&query=%EC%98%88%EC%8A%A4%EB%A7%A8",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260113_182%2F1768261591791uUmOL_JPEG%2F57_40497928_poster_image_1768261591780.jpg",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "platforms": [
+      "tving"
+    ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_예스맨",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-21",
+    "image": "/images/posters/ott_20260121_예스맨.webp"
   },
   {
     "title": "친밀한 리플리",
@@ -1514,26 +1363,16 @@
     "platform": "wavve",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_친밀한리플리",
     "platforms": [
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_친밀한리플리",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "이시아",
-      "이일화",
-      "이승연",
-      "최종환",
-      "박철호",
-      "설정환",
-      "한기웅",
-      "이효나"
-    ],
     "image": "/images/posters/ott_20260121_친밀한리플리.webp"
   },
   {
@@ -1543,26 +1382,16 @@
     "platform": "wavve",
     "type": "추천",
     "source": "naver",
-    "id": "ott_20260121_화려한날들",
     "platforms": [
       "wavve"
     ],
+    "subGenre": "드라마",
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260121_화려한날들",
     "venue": "OTT",
     "region": "ott",
     "genre": "ott",
     "date": "2026-01-21",
-    "subGenre": "드라마",
-    "ageRating": "15세 이상 관람가",
-    "cast": [
-      "정일우",
-      "정인선",
-      "윤현민",
-      "천호진",
-      "이태란",
-      "반효정",
-      "윤주상",
-      "김희정"
-    ],
     "image": "/images/posters/ott_20260121_화려한날들.webp"
   }
 ]
