@@ -92,20 +92,24 @@ const extractMetadata = () => {
     if (castContainer) {
         castContainer.querySelectorAll('.card_item, .area_card, li, a.inner, .item').forEach(el => {
             const fullText = el.textContent?.trim() || '';
-            if (fullText.includes('출연') || fullText.includes('감독') || fullText.includes('연출')) {
-                const nameEl = el.querySelector('.name, strong span, strong, a._text');
-                let name = nameEl?.textContent?.trim() || '';
-                if (!name) {
-                    const link = el.querySelector('a:not(.area_link_box)');
-                    name = link?.textContent?.trim() || '';
+            const nameEl = el.querySelector('.name, strong span, strong, a._text');
+            let name = nameEl?.textContent?.trim() || '';
+
+            if (!name) {
+                const link = el.querySelector('a:not(.area_link_box)');
+                name = link?.textContent?.trim() || '';
+            }
+
+            if (name) {
+                if (name.includes(' 역')) name = name.split(' 역')[0];
+
+                // Director check
+                if (fullText.includes('감독') || fullText.includes('연출')) {
+                    if (!res.director) res.director = name;
                 }
-                if (name) {
-                    if (name.includes(' 역')) name = name.split(' 역')[0];
-                    if (fullText.includes('감독') || fullText.includes('연출')) {
-                        if (!res.director) res.director = name;
-                    } else {
-                        cast.push(name);
-                    }
+                // Cast check - if it's in the cast container, assume it's cast unless it's director
+                else {
+                    cast.push(name);
                 }
             }
         });
@@ -149,12 +153,17 @@ async function scrapeMovies() {
         await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
         await kobisPage.waitForSelector('.rst_sch');
 
-        // Initial Load More
+        // Load More (Click twice to get 30+ items)
         const loadMoreBtn = await kobisPage.$('#btn_0');
         if (loadMoreBtn) {
             try {
                 await loadMoreBtn.click();
-                await sleep(2000);
+                await sleep(1500);
+                const loadMoreBtn2 = await kobisPage.$('#btn_0');
+                if (loadMoreBtn2) {
+                    await loadMoreBtn2.click();
+                    await sleep(1500);
+                }
             } catch (e) { }
         }
 
@@ -201,17 +210,19 @@ async function scrapeMovies() {
         if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
         const id = `movie_${date.replace(/[\.\s]/g, '')}_${m.title.replace(/[\s\(\)]/g, '_')}`;
 
+        const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
+
         const item: any = {
             id,
             title: m.title,
             date: date, // Will update with precise date if found
             region: '전국', // Default
-            genre: 'movie'
+            genre: 'movie',
+            link: searchUrl // Add Link
         };
 
         try {
-            const q = `${m.title} 영화`;
-            await page.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}`, { waitUntil: 'domcontentloaded' });
+            await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
 
             // Initial Extraction
             let detail = await page.evaluate(extractMetadata);

@@ -256,7 +256,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                if (onDetail) onDetail();
+                                                if ((perf.genre === 'movie' || perf.genre === 'ott') && perf.link) {
+                                                    window.open(perf.link, '_blank', 'noopener,noreferrer');
+                                                } else if (onDetail) {
+                                                    onDetail();
+                                                }
                                             }}
                                             className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
                                         >
@@ -278,7 +282,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     className="block group/link relative z-[100] text-left w-full"
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        if (onDetail) onDetail();
+                                        if ((perf.genre === 'movie' || perf.genre === 'ott') && perf.link) {
+                                            window.open(perf.link, '_blank', 'noopener,noreferrer');
+                                        } else if (onDetail) {
+                                            onDetail();
+                                        }
                                     }}
                                 >
                                     <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
