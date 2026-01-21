@@ -48,7 +48,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
             if (diffDays === 0) return 'D-Day';
             if (diffDays > 0) return `D-${diffDays}`;
-            if (diffDays < 0) return `D+${Math.abs(diffDays)}`;
+            if (diffDays < 0) {
+                // If more than 100 days have passed (D+100), hide the badge
+                if (diffDays < -100) return null;
+                return `D+${Math.abs(diffDays)}`;
+            }
             return null;
         } catch (e) {
             return null;
@@ -73,6 +77,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
     };
+
+    // ... (keeping existing handlers omitted for brevity usually, but replace_file_content needs contiguous block? 
+    // Wait, I can't skip lines in replacement content. I must match target content exactly or replace a small block.
+    // I will do TWO separate replaces to be safe and clean.)
+
+    // SKIP replacement here. I will do separate calls.
 
     const handleMouseLeave = () => {
         if (!cardRef.current || !glareRef.current) return;
@@ -486,7 +496,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                     <div className="relative z-10 p-4 pb-8">
                                         {/* Tags/Badges */}
-                                        <div className="flex flex-wrap gap-2 mb-1.5">
+                                        <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                             <span className={clsx(
                                                 "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all text-white",
                                                 GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
