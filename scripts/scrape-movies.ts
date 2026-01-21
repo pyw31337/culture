@@ -1,431 +1,312 @@
-import puppeteer from 'puppeteer';
+import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
+import { processImage } from './utils/image-processor';
 
 // KOBIS Daily Box Office
-const SCRAPE_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
-const IMAGE_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'movies');
+const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
+const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 
-// Helper: Enrich with Daum
-async function enrichWithDaum(page: any, title: string): Promise<any> {
-    try {
-        const q = `${title} 영화`;
-        const daumUrl = `https://search.daum.net/search?w=tot&q=${encodeURIComponent(q)}`;
-        // console.log(`   > Searching Daum: ${daumUrl}`);
-        await page.goto(daumUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+// --- Helper: Sleep ---
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
-        return await page.evaluate(() => {
-            const res: any = {};
-            res.detailLink = document.location.href;
+// --- Shared Metadata Extraction Logic (From scrape-ott.ts) ---
+// This function runs INSIDE the browser context
+const extractMetadata = () => {
+    const res: any = {};
+    // Unified Metadata Extraction (Header + Basic Info + Pattern Matching)
+    const metadataSources = [
+        ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), // Headers
+        ...Array.from(document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt')), // Headers (new)
+        ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd, .intro_box .intro_desc')) // Details
+    ];
 
-            // Helper to find DD based on DT text
-            function getDDText(key: string) {
-                const dts = Array.from(document.querySelectorAll('dt'));
-                const target = dts.find(dt => dt.textContent && dt.textContent.includes(key));
-                if (target && target.nextElementSibling && target.nextElementSibling.tagName === 'DD') {
-                    return target.nextElementSibling;
-                }
-                return null;
-            }
+    const patterns = {
+        age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*이상|\d{1,2}세이상|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
+        runtime: /(\d{1,3}분)/,
+        country: /(한국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
+        genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
+    };
 
-            // 1. Overview (Rating, Runtime, Genre, Country)
-            // Example: "이탈리아 외 110분 15세이상관람가" or "일본 애니메이션 외 105분 전체관람가"
-            const infoEl = getDDText('개요');
-            if (infoEl) {
-                const text = infoEl.textContent?.trim() || '';
-                res.infoRaw = text;
+    let realGenre = '';
 
-                // Extract Rating
-                if (text.includes('전체관람가')) res.ageRating = '전체관람가';
-                else if (text.includes('12세')) res.ageRating = '12세이상관람가';
-                else if (text.includes('15세')) res.ageRating = '15세이상관람가';
-                else if (text.includes('청소년관람불가') || text.includes('19세')) res.ageRating = '청소년관람불가';
+    metadataSources.forEach(el => {
+        const text = el.textContent?.trim() || '';
+        if (!text) return;
 
-                // Extract Runtime
-                const timeMatch = text.match(/(\d+)분/);
-                if (timeMatch) res.runningTime = `${timeMatch[1]}분`;
-            }
+        // 1. Explicit Parsing (DT/DD)
+        const dt = el.previousElementSibling?.tagName === 'DT' ? el.previousElementSibling : null;
+        const label = dt?.textContent?.trim() || '';
 
-            // 2. Release Date
-            const openEl = getDDText('개봉');
-            if (openEl) {
-                res.openDate = openEl.textContent?.trim();
-            }
+        if (label === '등급') res.ageRating = text;
+        if (label === '국가') res.productionCountry = text;
+        if (label === '러닝타임') res.runningTime = text;
+        if (label === '장르' || label === '개요') realGenre = text;
+        if (label === '원제') res.originalTitle = text;
 
-            // 3. Director
-            const dirEl = getDDText('감독');
-            if (dirEl) {
-                res.director = dirEl.textContent?.trim();
-                // Link?
-                const dirLink = dirEl.querySelector('a');
-                if (dirLink) {
-                    // Make absolute if relative? Daum usually absolute or relative to host
-                    // For now just get href
-                    res.directorLink = dirLink.getAttribute('href');
-                }
-            }
-
-            // 4. Cast
-            const castEl = getDDText('출연');
-            if (castEl) {
-                res.castStr = castEl.textContent?.trim(); // "Name, Name, Name ..."
-                const links = Array.from(castEl.querySelectorAll('a'));
-                res.castList = links.map((a: any) => ({
-                    name: a.textContent?.trim(),
-                    link: a.getAttribute('href')
-                })).filter((c: any) => c.name !== '더보기');
-            }
-
-            // 5. Poster (Validation/Fallback if needed, though KOBIS/Naver might be primary)
-            // c-thumb usually
-            const posterImg = document.querySelector('c-thumb img');
-            if (posterImg) {
-                res.poster = posterImg.getAttribute('src');
-            } else {
-                const legacyImg = document.querySelector('.thumb_img');
-                if (legacyImg) res.poster = legacyImg.getAttribute('src');
-            }
-
-            return res;
-        });
-
-    } catch (e) {
-        console.log(`   > Daum enrichment failed for ${title}:`, e);
-        return {};
-    }
-}
-
-// Helper: Download Image
-async function downloadImage(url: string, filename: string): Promise<string | null> {
-    if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
-
-    // If invalid URL, skip
-    if (!url || !url.startsWith('http')) return null;
-
-    // Force HTTPS
-    if (url.startsWith('http:')) {
-        url = url.replace('http:', 'https:');
-    }
-
-    // const dir = path.join(__dirname, '../public/images/posters/movies'); // Removed redundant/error-prone line
-    const filepath = path.join(IMAGE_DIR, filename);
-
-
-    return new Promise((resolve) => {
-        const file = fs.createWriteStream(filepath);
-        const request = https.get(url, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://search.naver.com/'
-            }
-        }, (response) => {
-            if (response.statusCode === 200) {
-                response.pipe(file);
-                file.on('finish', () => {
-                    file.close();
-                    resolve(`/images/posters/movies/${filename}`); // Return web path
-                });
-            } else {
-                fs.unlink(filepath, () => { }); // Delete partial
-                resolve(null);
-            }
-        });
-
-        request.on('error', (err) => {
-            fs.unlink(filepath, () => { });
-            resolve(null);
-        });
-    });
-}
-
-// Helper: Clean old images
-function cleanImages(validIds: string[]) {
-    if (!fs.existsSync(IMAGE_DIR)) return;
-    const files = fs.readdirSync(IMAGE_DIR);
-    let deleted = 0;
-    files.forEach(file => {
-        // Filename format: [id].jpg (approx) or just match id in filename
-        // My implementation uses `[id].jpg`
-        const id = path.parse(file).name;
-        if (!validIds.includes(id)) {
-            try {
-                fs.unlinkSync(path.join(IMAGE_DIR, file));
-                deleted++;
-            } catch (e) { }
+        // 2. Pattern Matching
+        if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)![0];
+        if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
+        if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
+        if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
+            if (patterns.genre.test(text)) res.subGenre = text;
         }
     });
-    console.log(`[Cleanup] Deleted ${deleted} old movie posters.`);
-}
 
-async function scrapeMovies() {
-    console.log('Starting KOBIS Movie Scraper (Local Images + Robust Enrichment)...');
+    // Refine Genre
+    if (realGenre && !res.subGenre) {
+        if (realGenre.includes('·')) {
+            const parts = realGenre.split('·');
+            const match = parts.find(p => patterns.genre.test(p.trim()));
+            if (match) res.subGenre = match.trim();
+            else res.subGenre = parts[0].trim();
+        } else {
+            const match = realGenre.match(patterns.genre);
+            res.subGenre = match ? match[0] : realGenre;
+        }
+    }
 
-    // Ensure Image Dir Exists
-    if (!fs.existsSync(IMAGE_DIR)) fs.mkdirSync(IMAGE_DIR, { recursive: true });
-
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    // Release Date (오픈/개봉)
+    const infoGroups = document.querySelectorAll('.info_group');
+    infoGroups.forEach(g => {
+        const dt = g.querySelector('dt');
+        const dd = g.querySelector('dd');
+        if (dt && dd) {
+            const label = dt.textContent?.trim() || '';
+            if (label === '오픈' || label === '개봉') {
+                const raw = dd.textContent?.trim() || '';
+                const match = raw.match(/(\d{4})\.(\d{2})\.(\d{2})/);
+                if (match) res.releaseDate = `${match[1]}-${match[2]}-${match[3]}`;
+            }
+        }
     });
 
-    const naverPage = await browser.newPage();
-    await naverPage.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    // Cast Extraction
+    const cast: string[] = [];
+    const allContentAreas = Array.from(document.querySelectorAll('.cm_content_area, .api_subject_bx'));
+    const castContainer = allContentAreas.find(area => {
+        const title = area.querySelector('h2, h3, .cm_title')?.textContent?.trim();
+        return title && (title.includes('출연진') || title.includes('출연') || title.includes('제작진'));
+    });
 
-    const page = await browser.newPage();
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-    await page.setViewport({ width: 1280, height: 800 });
+    if (castContainer) {
+        castContainer.querySelectorAll('.card_item, .area_card, li, a.inner, .item').forEach(el => {
+            const fullText = el.textContent?.trim() || '';
+            if (fullText.includes('출연') || fullText.includes('감독') || fullText.includes('연출')) {
+                const nameEl = el.querySelector('.name, strong span, strong, a._text');
+                let name = nameEl?.textContent?.trim() || '';
+                if (!name) {
+                    const link = el.querySelector('a:not(.area_link_box)');
+                    name = link?.textContent?.trim() || '';
+                }
+                if (name) {
+                    if (name.includes(' 역')) name = name.split(' 역')[0];
+                    if (fullText.includes('감독') || fullText.includes('연출')) {
+                        if (!res.director) res.director = name;
+                    } else {
+                        cast.push(name);
+                    }
+                }
+            }
+        });
+    }
+
+    if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
+
+    // Poster
+    const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
+    if (img) {
+        let src = img.getAttribute('src');
+        if (src && src.includes('search.pstatic.net') && src.includes('src=')) {
+            try {
+                const urlObj = new URL(src, 'https://search.naver.com');
+                const realSrc = urlObj.searchParams.get('src');
+                if (realSrc) src = decodeURIComponent(realSrc);
+            } catch (e) { }
+        }
+        res.poster = src;
+    }
+
+    return res;
+};
+
+// --- Scraper Class ---
+async function scrapeMovies() {
+    console.log('Starting KOBIS -> Naver Movie Scraper (Playwright)...');
+
+    // Ensure data directory
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+    const browser = await chromium.launch({ headless: true });
+
+    // 1. Scrape KOBIS List
+    const kobisContext = await browser.newContext();
+    const kobisPage = await kobisContext.newPage();
+    let movies: any[] = [];
 
     try {
-        console.log(`Navigating to ${SCRAPE_URL}...`);
-        await page.goto(SCRAPE_URL, { waitUntil: 'networkidle2' });
-        await page.waitForSelector('.rst_sch');
+        console.log(`Navigating to KOBIS: ${KOBIS_URL}`);
+        await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
+        await kobisPage.waitForSelector('.rst_sch');
 
-        // Load More
-        const loadMoreBtn = await page.$('#btn_0');
+        // Initial Load More
+        const loadMoreBtn = await kobisPage.$('#btn_0');
         if (loadMoreBtn) {
             try {
-                await page.evaluate((btn) => (btn as HTMLElement).click(), loadMoreBtn);
-                await new Promise(r => setTimeout(r, 2000));
+                await loadMoreBtn.click();
+                await sleep(2000);
             } catch (e) { }
         }
 
-        // Get List
-        const rows = await page.$$('#tbody_0 > tr');
-        console.log(`Found ${rows.length} rows.`);
-
-        const movies: any[] = [];
-        const MAX_ITEMS = 30;
-
-        for (let i = 0; i < Math.min(rows.length, MAX_ITEMS); i++) {
-            const row = (await page.$$('#tbody_0 > tr'))[i];
-            if (!row) continue;
-
-            const titleLink = await row.$('td.tal > span.ellip.per90 > a');
-            if (!titleLink) continue;
-
-            const title = await page.evaluate(el => el.textContent?.trim(), titleLink);
-            const rankText = await row.$eval('td:nth-child(1)', el => el.textContent?.trim());
-            const openDateRaw = await row.$eval('td:nth-child(3)', el => el.textContent?.trim()); // Column 3 verified
-            const attr = await page.evaluate(el => el.getAttribute('onclick') || el.getAttribute('href'), titleLink);
-
-            let movieCode = '';
-            if (attr) {
-                const match = attr.match(/['"]([0-9]{8})['"]/);
-                if (match) movieCode = match[1];
-            }
-
-            if (movieCode) {
-                movies.push({ tempCode: movieCode, title, openDateRaw, rank: rankText });
-            }
-        }
-
-        const finalMovies = [];
-        const validIds: string[] = [];
-
-        for (const m of movies) {
-            console.log(`Processing ${m.title}...`);
-
-            let date = m.openDateRaw || '';
-            if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
-            else if (date.match(/^\d{4}\.\d{2}\.\d{2}$/)) date = date + '.';
-
-            // ID generation
-            const id = `movie_${date.replace(/[\.\s]/g, '')}_${m.title?.replace(/[\s\(\)]/g, '_')}`;
-            validIds.push(id);
-
-            let item: any = {
-                id,
-                title: m.title,
-                date: date,
-                region: '전국',
-                genre: 'movie'
-            };
-
-            // Start with placeholders
-            let naverData: any = {};
-
-            // DAUM ENRICHMENT (Priority for Details)
-            let daumData: any = {};
-            try {
-                // Reuse naverPage or create new one? reusing naverPage for Daum is fine as we do it sequentially
-                daumData = await enrichWithDaum(naverPage, m.title);
-            } catch (e) {
-                console.log('   > Daum enrichment error:', e);
-            }
-
-            // NAVER ENRICHMENT (Secondary/Poster)
-            try {
-                // console.log(`   > Searching Naver...`);
-                const q = `${m.title} 영화`; // Changed query to just 'Movie' for broader hit
-                await naverPage.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-
-                // Allow some time for hydration
-                // await naverPage.waitForTimeout(500);
-
-                naverData = await naverPage.evaluate(async () => {
-                    const res: any = {};
-
-                    // 1. MAIN VIEW EXTRACTION (Compact or Standard)
-                    const infoBox = document.querySelector('.cm_info_box');
-                    if (infoBox) {
-                        const text = infoBox.textContent || '';
-
-                        // Rating Badge Search (e.g. 12, 15, all)
-                        const ratingBadge = infoBox.querySelector('.ico_rating_12, .ico_rating_15, .ico_rating_18, .ico_rating_all, .area_badge .badge');
-                        if (ratingBadge) res.grade = ratingBadge.textContent?.trim();
-
-                        // Director/Cast/Intro from DLs if available (Standard View)
-                        const dts = Array.from(infoBox.querySelectorAll('dt'));
-                        const dirDt = dts.find((dt: any) => dt.textContent?.includes('감독'));
-                        if (dirDt) res.director = dirDt.nextElementSibling?.textContent?.trim();
-
-                        const gradeDt = dts.find((dt: any) => dt.textContent?.includes('등급'));
-                        if (gradeDt && !res.grade) res.grade = gradeDt.nextElementSibling?.textContent?.trim(); // Use badge if found
-
-                        const castDt = dts.find((dt: any) => dt.textContent?.includes('출연'));
-                        if (castDt) res.castStr = castDt.nextElementSibling?.textContent?.trim();
-
-                        const introDt = dts.find((dt: any) => dt.textContent?.includes('소개') || dt.textContent?.includes('줄거리'));
-                        if (introDt) res.intro = introDt.nextElementSibling?.textContent?.trim();
+        movies = await kobisPage.evaluate(() => {
+            const rows = document.querySelectorAll('#tbody_0 > tr');
+            const list: any[] = [];
+            rows.forEach((row, idx) => {
+                if (idx >= 30) return; // Limit to 30
+                const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
+                if (titleLink) {
+                    const title = titleLink.textContent?.trim() || '';
+                    const dateRaw = row.querySelector('td:nth-child(3)')?.textContent?.trim();
+                    const rank = row.querySelector('td:nth-child(1)')?.textContent?.trim();
+                    if (title) {
+                        list.push({ title, dateRaw, rank });
                     }
-
-                    // Poster from Main View (works for both)
-                    const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
-                    if (img) {
-                        let src = img.getAttribute('src');
-                        if (src) {
-                            if (src.includes('search.pstatic.net') && src.includes('src=')) {
-                                try {
-                                    const urlObj = new URL(src, 'https://search.naver.com');
-                                    const realSrc = urlObj.searchParams.get('src');
-                                    if (realSrc) src = decodeURIComponent(realSrc);
-                                } catch (e) { }
-                            }
-                            res.poster = src;
-                        }
-                    }
-
-                    // 2. CHECK IF MISSING DETAILS & CLICK TAB
-                    // If director is missing, it's likely a Compact view. Try clicking '출연/제작진' tab.
-                    if (!res.director) {
-                        const tabs = Array.from(document.querySelectorAll('.tab_list .tab, .tab_menu .tab'));
-                        const castTab = tabs.find((t: any) => t.textContent.includes('출연/제작진') || t.textContent.includes('출연'));
-
-                        if (castTab) {
-                            (castTab as HTMLElement).click();
-                            return { ...res, _idx: 'needs_wait' };
-                        }
-                    }
-
-                    return res;
-                });
-
-                // 3. IF TAB CLICKED, WAIT & RESCRAPE
-                if ((naverData as any)?._idx === 'needs_wait') {
-                    // Wait for tab content hydration
-                    await new Promise(r => setTimeout(r, 1000));
-
-                    const tabData = await naverPage.evaluate(() => {
-                        const res: any = {};
-                        // Strategy 1: Look for Director in specific containers
-                        // Often inside .people_list or .cast_box
-                        // Elements might have .role '감독' and .name 'Name'
-
-                        const members = Array.from(document.querySelectorAll('.cast_box li, .people_list li, .detail_list li'));
-                        const castNames: string[] = [];
-
-                        members.forEach((m: any) => {
-                            const role = m.querySelector('.sub_text, .role')?.textContent?.trim() || '';
-                            const name = m.querySelector('.name, .col_title')?.textContent?.trim() || '';
-
-                            if (role.includes('감독')) {
-                                res.director = name;
-                            } else if (name) {
-                                // Assume others are cast if not director
-                                castNames.push(name);
-                            }
-                        });
-
-                        if (castNames.length > 0) res.cast = castNames.slice(0, 8);
-                        return res;
-                    });
-
-                    // Merge
-                    if (tabData.director) naverData.director = tabData.director;
-                    if (tabData.cast) naverData.cast = tabData.cast;
                 }
+            });
+            return list;
+        });
+        console.log(`Found ${movies.length} movies from KOBIS.`);
 
-            } catch (e) {
-                console.log('   > Naver enrichment failed:', e);
+    } catch (e) {
+        console.error('KOBIS Scraping Error:', e);
+        await browser.close();
+        return;
+    } finally {
+        await kobisPage.close();
+    }
+
+    // 2. Enrich with Naver (Sequential with context reuse)
+    const context = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+    });
+
+    const finalMovies: any[] = [];
+
+    for (const m of movies) {
+        console.log(`Processing: ${m.title}`);
+        const page = await context.newPage();
+
+        // Base Item
+        let date = m.dateRaw || '';
+        if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
+        const id = `movie_${date.replace(/[\.\s]/g, '')}_${m.title.replace(/[\s\(\)]/g, '_')}`;
+
+        const item: any = {
+            id,
+            title: m.title,
+            date: date, // Will update with precise date if found
+            region: '전국', // Default
+            genre: 'movie'
+        };
+
+        try {
+            const q = `${m.title} 영화`;
+            await page.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}`, { waitUntil: 'domcontentloaded' });
+
+            // Initial Extraction
+            let detail = await page.evaluate(extractMetadata);
+            Object.assign(item, detail);
+
+            // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
+            if (!item.ageRating || !item.releaseDate) {
+                try {
+                    const clicked = await page.evaluate(() => {
+                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
+                        const t = tabs.find(el => {
+                            const txt = el.textContent?.trim();
+                            return txt === '기본정보' || txt === '정보';
+                        });
+                        if (t) { (t as HTMLElement).click(); return true; }
+                        return false;
+                    });
+                    if (clicked) {
+                        await page.waitForTimeout(1000);
+                        const newDetail = await page.evaluate(extractMetadata);
+                        if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
+                        if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
+                        if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
+                        if (newDetail.director) item.director = newDetail.director;
+                        if (newDetail.cast) item.cast = newDetail.cast;
+                        if (newDetail.poster && !item.poster) item.poster = newDetail.poster;
+                    }
+                } catch (e) { }
             }
 
-            // Merge Naver Data
-            if (naverData.poster) {
-                // DOWNLOAD IMAGE
-                let posterUrl = naverData.poster;
-                let ext = path.extname(posterUrl.split('?')[0]) || '.jpg';
-                // Handle cases where extension might be missing or invalid
-                if (!['.jpg', '.jpeg', '.png', '.webp'].includes(ext.toLowerCase())) ext = '.jpg';
+            // Tab Click Fallback (Cast) - for Cast/Director
+            if (!item.cast || item.cast.length === 0) {
+                try {
+                    const clicked = await page.evaluate(() => {
+                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
+                        const t = tabs.find(el => {
+                            const txt = el.textContent?.trim() || '';
+                            return txt.includes('출연') || txt.includes('등장인물');
+                        });
+                        if (t) { (t as HTMLElement).click(); return true; }
+                        return false;
+                    });
+                    if (clicked) {
+                        await page.waitForTimeout(1000);
+                        const newDetail = await page.evaluate(extractMetadata);
+                        if (newDetail.director) item.director = newDetail.director;
+                        if (newDetail.cast) item.cast = newDetail.cast;
+                    }
+                } catch (e) { }
+            }
 
-                const filename = `${id}${ext}`;
-                const localPath = await downloadImage(posterUrl, filename);
+            // Final Data Mapping
+            if (item.releaseDate) item.date = item.releaseDate; // Prefer precise release date
+
+            // Map ageRating to venue (standard convention in this project)
+            if (item.ageRating) {
+                if (item.ageRating.includes('전체')) item.venue = '전체 관람가';
+                else if (item.ageRating.includes('12')) item.venue = '12세 관람가';
+                else if (item.ageRating.includes('15')) item.venue = '15세 관람가';
+                else if (item.ageRating.includes('청소년')) item.venue = '청소년 관람불가';
+                else item.venue = item.ageRating;
+            } else {
+                item.venue = '등급 미정';
+            }
+
+            // Image Processing
+            if (item.poster) {
+                const localPath = await processImage(item.poster, item.id);
                 if (localPath) item.image = localPath;
+            } else {
+                item.image = '';
             }
 
-            if (naverData.director) item.director = naverData.director;
-            if (naverData.cast && naverData.cast.length > 0) item.cast = naverData.cast;
-            else if (naverData.castStr) item.cast = [naverData.castStr]; // Fallback to string
-
-            if (naverData.grade) {
-                if (naverData.grade.includes('전체')) item.venue = '전체 관람가';
-                else if (naverData.grade.includes('12')) item.venue = '12세 관람가';
-                else if (naverData.grade.includes('15')) item.venue = '15세 관람가';
-                else if (naverData.grade.includes('청소년')) item.venue = '청소년 관람불가';
-                else item.venue = naverData.grade;
-            }
-
-            // Merge Daum Data (Overwrite/Fill if available)
-            if (daumData.ageRating) item.venue = daumData.ageRating; // Override with Daum if found
-            if (daumData.runningTime) item.runningTime = daumData.runningTime;
-            if (daumData.director) item.director = daumData.director; // Prefer Daum? Naver might be cleaner, but Daum requested.
-            if (daumData.castList && daumData.castList.length > 0) {
-                item.cast = daumData.castList.map((c: any) => c.name);
-                item.castLinks = daumData.castList; // Store structured cast with links if needed later
-            } else if (daumData.castStr && !item.cast) {
-                item.cast = [daumData.castStr];
-            }
-            if (daumData.detailLink) {
-                item.timeLink = daumData.detailLink;
-                // Standardize 'link' for UI components (PerformanceList, PerformanceListItem)
-                item.link = daumData.detailLink;
-                item.detailLink = daumData.detailLink;
-            }
-
-            // Fallbacks
-            if (!item.venue) item.venue = '등급 미정';
-            if (!item.movieInfo && naverData.intro) item.movieInfo = naverData.intro;
+            // Cleanup internal fields
+            delete item.poster;
+            delete item.releaseDate;
+            delete item.originalTitle; // Optional: keep if needed, but OTT scraper deletes it often
+            delete item.ageRating;     // Mapped to venue
 
             finalMovies.push(item);
-            await new Promise(r => setTimeout(r, 200));
+            await sleep(300);
+
+        } catch (e) {
+            console.error(`Error processing ${m.title}:`, e);
+            finalMovies.push(item); // Push basic info even if failed
+        } finally {
+            await page.close();
         }
-
-        // Save Data
-        const outputDir = path.join(process.cwd(), 'src', 'data');
-        if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
-
-        fs.writeFileSync(path.join(outputDir, 'movies.json'), JSON.stringify(finalMovies, null, 2));
-        console.log(`Saved ${finalMovies.length} movies.`);
-
-        // Final Verification & Cleanup
-        cleanImages(validIds);
-
-    } catch (error) {
-        console.error('Fatal Error:', error);
-        process.exit(1);
-    } finally {
-        await browser.close();
     }
+
+    await browser.close();
+
+    // Save
+    fs.writeFileSync(path.join(DATA_DIR, 'movies.json'), JSON.stringify(finalMovies, null, 2));
+    console.log(`Saved ${finalMovies.length} movies to movies.json`);
 }
 
 scrapeMovies();
