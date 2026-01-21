@@ -30,6 +30,33 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
+    // D-Day Calculation Helper
+    const getDDay = (dateStr: string) => {
+        if (!dateStr) return null;
+        try {
+            // Standardize YYYY-MM-DD or YYYY.MM.DD
+            const cleanDate = dateStr.replace(/\./g, '-').split('~')[0].trim();
+            const target = new Date(cleanDate);
+            const now = new Date();
+
+            // Reset hours to compare dates only
+            target.setHours(0, 0, 0, 0);
+            now.setHours(0, 0, 0, 0);
+
+            const diffTime = target.getTime() - now.getTime();
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays === 0) return 'D-Day';
+            if (diffDays > 0) return `D-${diffDays}`;
+            if (diffDays < 0) return `D+${Math.abs(diffDays)}`;
+            return null;
+        } catch (e) {
+            return null;
+        }
+    };
+
+    const dDay = perf.genre === 'movie' ? getDDay(perf.date) : null;
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
         const rect = cardRef.current.getBoundingClientRect();
@@ -360,6 +387,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
                                         {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                     </span>
+                                    {dDay && (
+                                        <span className="text-white text-xs font-bold bg-red-600 px-2 py-1 rounded whitespace-nowrap">
+                                            {dDay}
+                                        </span>
+                                    )}
                                     <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
                                     {perf.platforms && perf.platforms.length > 0 && (
                                         <div className="flex gap-1 ml-2">
@@ -461,6 +493,13 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
+
+                                            {/* D-Day Badge (Movie Only) */}
+                                            {dDay && (
+                                                <span className="px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all text-white bg-red-600/80 border-red-500/50">
+                                                    {dDay}
+                                                </span>
+                                            )}
 
                                             {/* [OTT] [N] Date Format Logic */}
                                             {perf.genre === 'ott' && perf.platforms && perf.platforms.length > 0 && (
