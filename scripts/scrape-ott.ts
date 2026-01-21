@@ -259,6 +259,26 @@ async function searchJustWatch(context: any, title: string) {
                 const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
                 let realGenre = '';
 
+                // 0. Header Parsing (Broadcast/Drama priority)
+                const headerSpans = document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span');
+                headerSpans.forEach(span => {
+                    const text = span.textContent?.trim() || '';
+                    const link = span.querySelector('a');
+
+                    // Genre (usually in <a> tag)
+                    if (link && !res.subGenre) {
+                        const linkText = link.textContent?.trim();
+                        if (linkText && !linkText.includes('회')) res.subGenre = linkText;
+                    }
+
+                    // Age Rating
+                    if (text.includes('세') || text.includes('전체') || text.includes('청소년')) {
+                        if (text.includes('관람') || text.includes('시청') || text.includes('이상') || text.includes('불가') || text === '전체') {
+                            res.ageRating = text;
+                        }
+                    }
+                });
+
                 infoGroups.forEach(group => {
                     const dt = group.querySelector('dt');
                     const dd = group.querySelector('dd');
