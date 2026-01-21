@@ -11,6 +11,38 @@ export interface Performance {
   link: string;
   region: string;
   genre: string;
+
+  // Optional fields
+  description?: string;
+  discount?: string;
+  originalPrice?: string;
+  price?: string;
+  gradeIcon?: string;
+
+  // OTT/Movie metadata
+  ageRating?: string;
+  subGenre?: string;
+  runningTime?: string;
+  originalTitle?: string;
+  productionCountry?: string;
+  productionYear?: string;
+
+  // Arrays
+  platforms?: string[];
+  cast?: string[];
+  castWithLinks?: { name: string; url?: string }[];
+
+  // Sports
+  homeTeam?: string;
+  awayTeam?: string;
+  homeTeamLogo?: string;
+  awayTeamLogo?: string;
+
+  // Other
+  director?: string;
+  movieInfo?: string;
+  grade?: string;
+  poster?: string;
 }
 
 const REGIONS: Record<string, string> = {

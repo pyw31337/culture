@@ -47,6 +47,14 @@ export function safePerformance(data: any): Performance | null {
         price: typeof data.price === 'string' ? data.price : undefined,
         gradeIcon: typeof data.gradeIcon === 'string' ? data.gradeIcon : undefined,
 
+        // OTT/Movie metadata fields
+        ageRating: typeof data.ageRating === 'string' ? data.ageRating : undefined,
+        subGenre: typeof data.subGenre === 'string' ? data.subGenre : undefined,
+        runningTime: typeof data.runningTime === 'string' ? data.runningTime : undefined,
+        originalTitle: typeof data.originalTitle === 'string' ? data.originalTitle : undefined,
+        productionCountry: typeof data.productionCountry === 'string' ? data.productionCountry : undefined,
+        productionYear: typeof data.productionYear === 'string' || typeof data.productionYear === 'number' ? String(data.productionYear) : undefined,
+
         // Arrays
         platforms: Array.isArray(data.platforms) ? data.platforms.filter((p: any) => typeof p === 'string') : [],
         cast: Array.isArray(data.cast) ? data.cast.filter((c: any) => typeof c === 'string') : [],
