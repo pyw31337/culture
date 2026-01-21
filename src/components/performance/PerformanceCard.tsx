@@ -695,7 +695,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                             {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
                                                                 const isObj = typeof c === 'object' && c !== null;
                                                                 const name = isObj ? c.name : c;
-                                                                const url = isObj && c.url ? c.url : `https://www.justwatch.com/kr/검색?q=${encodeURIComponent(name.trim())}`;
+                                                                const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name.replace('더보기', '').trim())}`;
 
                                                                 return (
                                                                     <span key={i}>
