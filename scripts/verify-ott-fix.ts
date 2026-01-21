@@ -47,7 +47,7 @@ async function verifyFixes() {
         const castTab = links.find(a => a.textContent?.includes('출연') || a.textContent?.includes('제작'));
 
         if (castTab) {
-            castTab.click();
+            (castTab as HTMLElement).click();
             // We can't wait in evaluate easily without a promise wrapper or setTimeout logic, 
             // but for this test we'll assume click triggers.
             return 'CLICKED_TAB';
