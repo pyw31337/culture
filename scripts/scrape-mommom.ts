@@ -216,68 +216,90 @@ async function scrapeMomMom() {
                         else req.continue();
                     });
 
-                    await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                    await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 30000 });
 
-                    // Scrape Details
+                    // Wait for dynamic content to hydrate
+                    await detailPage.waitForSelector('p.value', { timeout: 5000 }).catch(() => { });
+
+                    // Scrape Details using correct selectors
                     const details = await detailPage.evaluate(() => {
-                        // Title (if missing) causes we looked for H1/H2
+                        // Title from H1/H2
                         const pageTitle = document.querySelector('h1')?.textContent?.trim() ||
                             document.querySelector('h2')?.textContent?.trim() || '';
 
-                        // User provided specific selectors context
-                        // Address: usually 1st LI in top UL?
-                        const listItems = Array.from(document.querySelectorAll('.main-container li, ul.info-list li'));
-
+                        // Address: Find p.key with "주소" and get its sibling p.value
                         let address = '';
-                        let closedDay = '';
-
-                        listItems.forEach(li => {
-                            let text = li.textContent?.trim() || '';
+                        const allKeyElements = Array.from(document.querySelectorAll('p.key'));
+                        const addressKey = allKeyElements.find(el => el.textContent?.trim() === '주소');
+                        if (addressKey && addressKey.nextElementSibling) {
+                            address = addressKey.nextElementSibling.textContent?.trim() || '';
                             // Clean common artifacts
-                            text = text.replace('지도보기', '').trim();
-
-                            if (text.includes('주소') || /([가-힣]+[시도])\s+([가-힣]+[시구군])/.test(text)) {
-                                if (!address && text.length > 5 && (text.includes('시') || text.includes('도'))) {
-                                    address = text;
-                                }
-                            }
-                            if (text.includes('휴무') || text.includes('영업시간')) {
-                                if (text.includes('정기휴무')) {
-                                    // Extract just the holiday part if possible. e.g. "월요일 정기휴무"
-                                    // Remove '영업시간' blindly first
-                                    const cleanText = text.replace('영업시간', '').trim();
-                                    const match = cleanText.match(/([가-힣, ]+정기휴무)/);
-                                    if (match) closedDay = match[1];
-                                    else closedDay = cleanText;
-                                }
-                            }
-                        });
-
-                        if (!address) {
-                            const firstLi = document.querySelector('.main-container section ul li:nth-child(1)');
-                            if (firstLi) address = firstLi.textContent?.replace('지도보기', '').trim() || '';
+                            address = address.replace('지도보기', '').trim();
                         }
 
-                        // Price
+                        // Operating Hours: Find p.key with "영업시간" and get content
+                        let closedDay = '';
+                        let hasHoliday = false;
+                        const hoursKey = allKeyElements.find(el => el.textContent?.trim() === '영업시간');
+                        if (hoursKey && hoursKey.parentElement) {
+                            const hoursContainer = hoursKey.parentElement;
+                            const hoursText = hoursContainer.textContent || '';
+
+                            // Check for holiday patterns
+                            if (hoursText.includes('정기휴무')) {
+                                hasHoliday = true;
+                                // Extract specific holiday days
+                                const holidayMatch = hoursText.match(/([가-힣]+요일[가-힣]*정기휴무)/g);
+                                if (holidayMatch) {
+                                    closedDay = holidayMatch.join(' ');
+                                } else {
+                                    // Fallback: extract any text with 정기휴무
+                                    const matches = hoursText.match(/[가-힣]+정기휴무/g);
+                                    if (matches) closedDay = matches.join(' ');
+                                }
+                            }
+
+                            // If no holiday mentioned but hours exist, it's "연중무휴"
+                            if (!hasHoliday && hoursText.length > 10 && (hoursText.includes('월요일') || hoursText.includes('매일'))) {
+                                closedDay = '연중무휴';
+                            }
+                        }
+
+                        // Price: Find section with h2 containing "요금"
                         let price = '';
-                        const sections = Array.from(document.querySelectorAll('.main-container section'));
-                        for (const sec of sections) {
-                            const text = sec.textContent || '';
-                            if ((text.includes('요금') || text.includes('가격') || text.includes('원')) && text.length < 500) {
-                                const match = text.match(/([0-9,]+)원/);
-                                if (match) {
-                                    const lines = (sec.textContent || '').split('\n');
-                                    const line = lines.find((l: string) => l.includes(match[0]));
-                                    price = line?.trim() || match[0];
-                                    break;
+                        const sections = Array.from(document.querySelectorAll('section'));
+                        for (const section of sections) {
+                            const h2 = section.querySelector('h2');
+                            if (h2 && h2.textContent?.includes('요금')) {
+                                const listItems = Array.from(section.querySelectorAll('li'));
+                                for (const li of listItems) {
+                                    const text = li.textContent?.trim() || '';
+                                    // Skip section headers like "[요금]"
+                                    if (text === '[요금]') continue;
+                                    // Look for price patterns
+                                    if (text.includes('원') || text.includes('무료')) {
+                                        price = text;
+                                        break;
+                                    }
                                 }
+                                break;
                             }
                         }
 
-                        // Image (if missing in list)
+                        // Fallback for price: Look for 무료 anywhere
+                        if (!price) {
+                            const bodyText = document.body.innerText;
+                            if (bodyText.includes('입장료: 무료') || bodyText.includes('입장료 무료')) {
+                                price = '무료';
+                            }
+                        }
+
+                        // Image from swiper or og:image
                         let detailImage = '';
+                        const ogImg = document.querySelector('meta[property="og:image"]');
+                        if (ogImg) detailImage = ogImg.getAttribute('content') || '';
                         if (!detailImage) {
-                            const firstImg = document.querySelector('.swiper-slide img, .main-image img');
+                            const firstImg = document.querySelector('.swiper-slide img, img');
                             if (firstImg) detailImage = (firstImg as HTMLImageElement).src;
                         }
 
