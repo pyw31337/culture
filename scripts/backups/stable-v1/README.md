@@ -8,6 +8,7 @@ This directory contains a snapshot of the stable crawling algorithms for Movies 
 - `utils/image-processor.ts`: Core image processing utility (WebP conversion, hash checking).
 - `localize-ott-images.ts`: Migration script for stabilizing existing OTT images.
 - `validate-images.ts`: Validation script to ensure all image links are valid.
+- `scrape-festival.ts`: Festival crawler with improved stealth, atomic saving, and high-res image fetching.
 
 ## Restoration
 To restore these versions, simply copy them back to the `scripts/` directory:
