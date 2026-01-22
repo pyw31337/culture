@@ -77,6 +77,8 @@ interface MomMomItem {
     date: string; // Will store "Closed Day" info or "Open Run"
     genre: string;
     region: string;
+    venue: string;
+    address: string;
     latitude: number;
     longitude: number;
     originalPrice: number | string;
