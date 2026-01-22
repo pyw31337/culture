@@ -62,6 +62,45 @@ function isJapaneseAddress(address: string): boolean {
     return japanKeywords.some(k => address.includes(k));
 }
 
+// Extract date from title patterns like "(~26/03/28)", "(26/02/22)", "(~2026.03.28)"
+function extractDateFromTitle(title: string): { dateStr: string, endDate: Date | null } {
+    // Pattern 1: (~YY/MM/DD) or (~YYYY/MM/DD)
+    const pattern1 = /\(~?(\d{2,4})[\/.](\d{1,2})[\/.](\d{1,2})\)/;
+    // Pattern 2: YYYY.MM.DD ~ YYYY.MM.DD
+    const pattern2 = /(\d{4}\.\d{2}\.\d{2})\s*~\s*(\d{4}\.\d{2}\.\d{2})/;
+
+    let match = title.match(pattern1);
+    if (match) {
+        let year = parseInt(match[1]);
+        if (year < 100) year += 2000; // YY -> 20YY
+        const month = parseInt(match[2]);
+        const day = parseInt(match[3]);
+        const dateStr = `~${year}.${String(month).padStart(2, '0')}.${String(day).padStart(2, '0')}`;
+        const endDate = new Date(year, month - 1, day);
+        endDate.setHours(23, 59, 59, 999);
+        return { dateStr, endDate };
+    }
+
+    match = title.match(pattern2);
+    if (match) {
+        const dateStr = `${match[1]} ~ ${match[2]}`;
+        const endParts = match[2].split('.').map(Number);
+        const endDate = new Date(endParts[0], endParts[1] - 1, endParts[2]);
+        endDate.setHours(23, 59, 59, 999);
+        return { dateStr, endDate };
+    }
+
+    return { dateStr: '상시운영', endDate: null };
+}
+
+// Check if event is expired
+function isExpired(endDate: Date | null): boolean {
+    if (!endDate) return false;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return endDate < today;
+}
+
 async function scrapeExhibitions() {
     console.log('Starting Mom-Mom Exhibition Scraper (Improved)...');
     const browser = await puppeteer.launch({
@@ -223,17 +262,29 @@ async function scrapeDetail(browser: any, item: { title: string, link: string, i
         // Filter Japan
         if (isJapaneseAddress(address)) return null;
 
-        // Expired Check
-        let date = data.closedDay || data.dateRange;
-        if (date.includes('~')) {
-            const parts = date.split('~');
-            const endStr = parts[1].trim();
-            const endDate = new Date(endStr.replace(/\./g, '-'));
-            if (!isNaN(endDate.getTime())) {
-                const today = new Date();
-                today.setHours(0, 0, 0, 0);
-                if (endDate < today) return null; // Expired
+        // Extract date from title first, fallback to detail page data
+        const titleDateInfo = extractDateFromTitle(finalTitle);
+        let date = titleDateInfo.dateStr;
+        let endDate = titleDateInfo.endDate;
+
+        // If no date in title, try detail page data
+        if (date === '상시운영' && data.dateRange) {
+            date = data.closedDay || data.dateRange;
+            if (date.includes('~')) {
+                const parts = date.split('~');
+                const endStr = parts[1].trim();
+                const parsed = new Date(endStr.replace(/\./g, '-'));
+                if (!isNaN(parsed.getTime())) {
+                    endDate = parsed;
+                    endDate.setHours(23, 59, 59, 999);
+                }
             }
+        }
+
+        // Expired Check
+        if (isExpired(endDate)) {
+            console.log(`Skipping expired: ${finalTitle}`);
+            return null;
         }
 
         const genre = determineGenre(finalTitle);
