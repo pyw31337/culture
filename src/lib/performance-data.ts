@@ -12,8 +12,6 @@ import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
-import soccerData from '@/data/soccer.json';
-
 import ottData from '@/data/ott.json';
 
 import handballData from '@/data/handball.json';
@@ -24,7 +22,7 @@ import seoulData from '@/data/seoul-culture.json';
 import mochaclassData from '@/data/mochaclass.json';
 import mommomData from '@/data/mommom.json';
 import museumData from '@/data/museum.json';
-import musicalData from '@/data/musical.json';
+// import musicalData from '@/data/musical.json';
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string }>;
@@ -75,7 +73,20 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
 
 export function getAllPerformances() {
     // 1. Safe Arrays
-    const interpark = safeArray<any>(interparkData);
+    const REGION_MAP: Record<string, string> = {
+        '서울': 'seoul', '경기': 'gyeonggi', '인천': 'incheon',
+        '부산': 'busan', '대구': 'daegu', '광주': 'gwangju',
+        '대전': 'etc', '울산': 'etc', '세종': 'etc',
+        '강원': 'etc', '충북': 'etc', '충남': 'etc',
+        '전북': 'etc', '전남': 'etc', '경북': 'etc',
+        '경남': 'etc', '제주': 'etc'
+    };
+
+    const interpark = safeArray<any>(interparkData).map((p: any) => ({
+        ...p,
+        // Map Korean region to English key if valid, or default to 'etc' if unknown but not empty
+        region: REGION_MAP[p.region] || (p.region ? 'etc' : 'unknown')
+    }));
     const volleyball = safeArray<any>(kovoData);
     const basketball = safeArray<any>(kblData);
     const baseball = safeArray<any>(kboData);
@@ -92,7 +103,7 @@ export function getAllPerformances() {
     const ott = safeArray<any>(ottData);
     const mommom = safeArray<any>(mommomData);
     const museum = safeArray<any>(museumData);
-    const musical = safeArray<any>(musicalData);
+    // const musical = safeArray<any>(musicalData);
 
     const seoulCulture = safeArray<any>(seoulData).map((p: any) => ({
         ...p,
@@ -113,7 +124,7 @@ export function getAllPerformances() {
         ...basketball,
         ...baseball,
         ...handball,
-        ...soccerData,
+        // ...soccerData,
         ...ott.map(p => ({ ...p, venue: 'OTT' })),
         ...movies,
         ...travels,
@@ -124,7 +135,7 @@ export function getAllPerformances() {
         ...seoulCulture,
         ...mommom,
         ...museum,
-        ...musical,
+        // ...musical,
     ].map(p => ({
         ...p,
         id: String(p.id)
