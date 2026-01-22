@@ -1,78 +1,62 @@
 
 import fs from 'fs';
 import path from 'path';
-import axios from 'axios';
-import { processImage } from './utils/image-processor';
+import { fileURLToPath } from 'url';
 
-const DATA_DIR = path.join(process.cwd(), 'src/data');
-const PUBLIC_DIR = path.join(process.cwd(), 'public');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 
-const TARGETS = [
-    { file: 'ott.json', type: 'ott' },
-    { file: 'movies.json', type: 'movie' }
-];
+const DATA_DIR = path.join(PROJECT_ROOT, 'src/data');
+const PUBLIC_DIR = path.join(PROJECT_ROOT, 'public');
 
-async function validateImages() {
-    console.log('Starting Image Validation...');
-    let totalIssues = 0;
+const filesToCheck = ['handball.json', 'kbl.json'];
 
-    for (const target of TARGETS) {
-        const filePath = path.join(DATA_DIR, target.file);
+function checkImages() {
+    let hasErrors = false;
+
+    for (const file of filesToCheck) {
+        const filePath = path.join(DATA_DIR, file);
         if (!fs.existsSync(filePath)) {
-            console.warn(`File not found: ${target.file}`);
+            console.error(`File not found: ${filePath}`);
             continue;
         }
 
-        console.log(`\nChecking ${target.file}...`);
-        const items = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        let changed = false;
+        console.log(`Checking ${file}...`);
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-        for (const item of items) {
-            // Check if item has a local image path
-            if (item.image && item.image.startsWith('/images/posters/')) {
-                const localPath = path.join(PUBLIC_DIR, item.image);
+        data.forEach((item, index) => {
+            const logos = [item.homeTeamLogo, item.awayTeamLogo];
 
-                if (!fs.existsSync(localPath)) {
-                    console.log(`[Missing] ${item.title} -> ${item.image} not found.`);
+            logos.forEach(logo => {
+                if (!logo) return;
 
-                    // Attempt to recover if source poster URL is available
-                    if (item.poster && item.poster.startsWith('http')) {
-                        console.log(`   Attempting recovery from: ${item.poster}`);
-                        try {
-                            // Use stable filename logic matches the new scraper logic
-                            const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-                            const stableFilename = `${target.type}_${safeTitle}`;
-
-                            const newPath = await processImage(item.poster, stableFilename);
-                            if (newPath && newPath !== item.image) {
-                                item.image = newPath;
-                                changed = true;
-                                console.log(`   -> Recovered: ${newPath}`);
-                            } else if (!newPath) {
-                                console.log(`   -> Recovery failed (download error).`);
-                                item.image = ''; // Clear broken link
-                                changed = true;
-                            }
-                        } catch (e) {
-                            console.error(`   -> Recovery error:`, e);
-                        }
-                    } else {
-                        console.log(`   -> No recovery source. Clearing image.`);
-                        item.image = '';
-                        changed = true;
-                    }
-                    totalIssues++;
+                // Skip external URLs
+                if (logo.startsWith('http')) {
+                    console.log(`[SKIP] External URL: ${logo}`);
+                    return;
                 }
-            }
-        }
 
-        if (changed) {
-            console.log(`Saving updates to ${target.file}...`);
-            fs.writeFileSync(filePath, JSON.stringify(items, null, 2));
-        }
+                // Remove /culture prefix if present to map to filesystem
+                const relativePath = logo.startsWith('/culture') ? logo.replace('/culture', '') : logo;
+                const fullPath = path.join(PUBLIC_DIR, relativePath);
+
+                if (!fs.existsSync(fullPath)) {
+                    console.error(`[MISSING] File: ${file}, Item Index: ${index}, ID: ${item.id}`);
+                    console.error(`  - Image URL: ${logo}`);
+                    console.error(`  - Expected Path: ${fullPath}`);
+                    hasErrors = true;
+                }
+            });
+        });
     }
 
-    console.log(`\nValidation complete. Total issues found & addressed: ${totalIssues}`);
+    if (hasErrors) {
+        console.error('\nValidation FAILED: Missing images found.');
+        process.exit(1);
+    } else {
+        console.log('\nValidation PASSED: All images exist.');
+    }
 }
 
-validateImages();
+checkImages();
