@@ -398,7 +398,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 </div>
                                             </div>
                                         )}
-                                        {perf.ageRating && (
+                                        {perf.ageRating && perf.genre !== 'ott' && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 <div>
                                                     <span className="text-gray-500 light:text-gray-600 mr-1">관람연령:</span>
@@ -438,9 +438,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
-                                {perf.director && (
-                                    <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
-                                )}
+
                                 {perf.cast && perf.cast.length > 0 && (
                                     <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
                                 )}
