@@ -231,19 +231,53 @@ async function scrapeMomMom() {
                         let address = '';
                         const allKeyElements = Array.from(document.querySelectorAll('p.key'));
                         const addressKey = allKeyElements.find(el => el.textContent?.trim() === '주소');
-                        if (addressKey && addressKey.nextElementSibling) {
-                            address = addressKey.nextElementSibling.textContent?.trim() || '';
+                        if (addressKey) {
+                            // Try nextElementSibling first
+                            let valueEl = addressKey.nextElementSibling;
+                            if (valueEl && valueEl.classList.contains('value')) {
+                                address = valueEl.textContent?.trim() || '';
+                            }
+                            // Fallback: check parent for p.value
+                            if (!address && addressKey.parentElement) {
+                                const parentValue = addressKey.parentElement.querySelector('p.value');
+                                if (parentValue) {
+                                    address = parentValue.textContent?.trim() || '';
+                                }
+                            }
                             // Clean common artifacts
                             address = address.replace('지도보기', '').trim();
+                        }
+
+                        // Fallback: Look for address pattern in page content
+                        if (!address) {
+                            const allText = document.body.innerText;
+                            const addrMatch = allText.match(/([가-힣]+(시|도)\s+[가-힣]+(시|군|구)\s+[가-힣0-9\s\-]+)/);
+                            if (addrMatch) {
+                                address = addrMatch[1].split('\n')[0].trim();
+                            }
                         }
 
                         // Operating Hours: Find p.key with "영업시간" and get content
                         let closedDay = '';
                         let hasHoliday = false;
+                        let daysWithHours = 0;
                         const hoursKey = allKeyElements.find(el => el.textContent?.trim() === '영업시간');
                         if (hoursKey && hoursKey.parentElement) {
                             const hoursContainer = hoursKey.parentElement;
                             const hoursText = hoursContainer.textContent || '';
+
+                            // Count how many days have operating hours
+                            const dayPatterns = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+                            dayPatterns.forEach(day => {
+                                if (hoursText.includes(day)) {
+                                    // Check if this day has hours (not just "정기휴무")
+                                    const dayIndex = hoursText.indexOf(day);
+                                    const afterDay = hoursText.substring(dayIndex, dayIndex + 30);
+                                    if (afterDay.includes(':') && !afterDay.includes('정기휴무')) {
+                                        daysWithHours++;
+                                    }
+                                }
+                            });
 
                             // Check for holiday patterns
                             if (hoursText.includes('정기휴무')) {
@@ -255,19 +289,24 @@ async function scrapeMomMom() {
                                     const days = dayMatches.map(m => m.replace('정기휴무', '').trim());
                                     closedDay = days.join('/') + ' 정기휴무';
                                 } else {
-                                    // Fallback: just note there's a holiday
                                     closedDay = '정기휴무';
                                 }
                             }
 
-                            // If no holiday mentioned but hours exist, it's "연중무휴"
-                            if (!hasHoliday && hoursText.length > 10 && (hoursText.includes('월요일') || hoursText.includes('매일'))) {
+                            // If no holiday and we found days with hours, it's "연중무휴"
+                            if (!hasHoliday && daysWithHours >= 5) {
+                                closedDay = '연중무휴';
+                            }
+                            // Also check for "매일" pattern
+                            if (!hasHoliday && hoursText.includes('매일')) {
                                 closedDay = '연중무휴';
                             }
                         }
 
-                        // Price: Find section with h2 containing "요금"
+                        // Price: Enhanced extraction with regex patterns
                         let price = '';
+
+                        // Method 1: Find section with h2 containing "요금"
                         const sections = Array.from(document.querySelectorAll('section'));
                         for (const section of sections) {
                             const h2 = section.querySelector('h2');
@@ -275,10 +314,14 @@ async function scrapeMomMom() {
                                 const listItems = Array.from(section.querySelectorAll('li'));
                                 for (const li of listItems) {
                                     const text = li.textContent?.trim() || '';
-                                    // Skip section headers like "[요금]"
                                     if (text === '[요금]') continue;
-                                    // Look for price patterns
-                                    if (text.includes('원') || text.includes('무료')) {
+                                    // Enhanced regex: "X - Y원" or "X: Y원" or "X Y원"
+                                    const priceMatch = text.match(/(.+?[\-:\s]?\s*[\d,]+원)/);
+                                    if (priceMatch) {
+                                        price = priceMatch[1].trim();
+                                        break;
+                                    }
+                                    if (text.includes('무료')) {
                                         price = text;
                                         break;
                                     }
@@ -287,15 +330,35 @@ async function scrapeMomMom() {
                             }
                         }
 
-                        // Fallback for price: Look for 무료 anywhere
+                        // Method 2: Look for price patterns in page content
                         if (!price) {
                             const bodyText = document.body.innerText;
-                            if (bodyText.includes('입장료: 무료') || bodyText.includes('입장료 무료')) {
+                            // Pattern: "성인: 17,000원" or "대소공통 1인 입장권 - 12,500원"
+                            const pricePatterns = [
+                                /성인[:\s]*[\d,]+원/,
+                                /일반[^:]*[:\-]\s*[\d,]+원/,
+                                /입장[료권][^:]*[:\-]\s*[\d,]+원/,
+                                /대소공통[^:]*[:\-]\s*[\d,]+원/,
+                                /어른[:\s]*[\d,]+원/
+                            ];
+                            for (const pattern of pricePatterns) {
+                                const match = bodyText.match(pattern);
+                                if (match) {
+                                    price = match[0];
+                                    break;
+                                }
+                            }
+                        }
+
+                        // Method 3: Look for 무료
+                        if (!price) {
+                            const bodyText = document.body.innerText;
+                            if (bodyText.includes('입장료: 무료') || bodyText.includes('입장료 무료') || bodyText.includes('무료 이용')) {
                                 price = '무료';
                             }
                         }
 
-                        // Image from swiper or og:image
+                        // Image from og:image or swiper
                         let detailImage = '';
                         const ogImg = document.querySelector('meta[property="og:image"]');
                         if (ogImg) detailImage = ogImg.getAttribute('content') || '';
