@@ -155,22 +155,29 @@ export function getAllPerformances() {
         if (!isPerformanceActive(p.date, now)) return false;
 
         // Region Check Exemptions (Nationwide content that expires)
-        if (p.genre === 'festival' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
+        // Region Check Exemptions (Now practically everything is nationwide)
+        // if (p.genre === 'festival' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 
-        // Sports: Strict Region Filter
-        if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball') {
-            if (!validRegions.includes(p.region)) return false;
-        }
+        // Sports: Strict Region Filter -> Relaxed to Nationwide? 
+        // User said: "movie/OTT excluded, expand others to nationwide". 
+        // Sports were strictly filtered. Let's allow them too if that's the intent, or keep them for now?
+        // "나머지 서울/경기/인천 지역 한정을 전국단위로 범위를 확장했기 때문에, 지역 필터를 사용해서 비노출 시키는 컨텐츠는 없도록 해줘."
+        // This implies NO content should be hidden by region filter.
 
-        if (!validRegions.includes(p.region)) return false;
+        // if (p.genre === 'volleyball' || p.genre === 'basketball' || p.genre === 'baseball' || p.genre === 'handball') {
+        //     if (!validRegions.includes(p.region)) return false;
+        // }
+
+        // if (!validRegions.includes(p.region)) return false;
 
         // Filter out bad venues
         if (p.venue === '예매하기') return false;
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
 
-        // Address-based Filtering
+        // Address-based Filtering (Service Area Check) -> Disable for nationwide
+        /*
         if (venues[p.venue]) {
             const addr = venues[p.venue].address;
             if (addr && addr !== '정보 없음') {
@@ -179,6 +186,7 @@ export function getAllPerformances() {
                 if (!isServiceArea && !validRegions.includes(p.region)) return false;
             }
         }
+        */
 
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;

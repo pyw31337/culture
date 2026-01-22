@@ -501,8 +501,13 @@ async function scrapeTimeTicket() {
                 continue;
             }
 
-            // Use LIST image strictly as requested by user (thist is more reliable correctly)
-            const finalImage = item.image;
+            // Use LIST image but upgrade quality (remove /thn/ and thn_)
+            let finalImage = item.image;
+            if (finalImage) {
+                // Example: /upload/product/thn/thn_20240101_12345.jpg -> /upload/product/20240101_12345.jpg
+                finalImage = finalImage.replace('/thn/thn_', '/');
+                finalImage = finalImage.replace('/thn/', '/'); // Just in case
+            }
 
             allItems.push({
                 id: `timeticket_${Math.random().toString(36).substr(2, 9)}`,
