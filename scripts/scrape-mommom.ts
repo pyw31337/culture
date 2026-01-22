@@ -197,16 +197,45 @@ async function scrapeMomMom() {
 
         console.log(`Found ${listItems.length} items to process.`);
 
+        // Load existing data to minimize server load
+        const DATA_PATH = path.join(__dirname, '../src/data/mommom.json');
+        let existingData: Record<string, MomMomItem> = {};
+        if (fs.existsSync(DATA_PATH)) {
+            try {
+                const raw = fs.readFileSync(DATA_PATH, 'utf-8');
+                const parsed = JSON.parse(raw);
+                parsed.forEach((item: MomMomItem) => {
+                    // Normalize link to use as key
+                    existingData[item.link] = item;
+                });
+                console.log(`Loaded ${Object.keys(existingData).length} existing items for incremental update.`);
+            } catch (e) {
+                console.warn('Failed to load existing data, starting fresh.', e);
+            }
+        }
+
         // Detail Scraping
         const finalItems: MomMomItem[] = [];
         const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
         bar.start(listItems.length, 0);
 
         // Batch processing to respect resources
-        const CHUNK_SIZE = 5;
+        const CHUNK_SIZE = 10;
         for (let i = 0; i < listItems.length; i += CHUNK_SIZE) {
             const chunk = listItems.slice(i, i + CHUNK_SIZE);
             const promises = chunk.map(async (item) => {
+                // Check if we already have valid data for this item
+                const existing = existingData[item.link];
+                if (existing && existing.description && existing.address && existing.address.length > 5 && existing.price) {
+                    // Data is complete, skip scraping
+                    // Ensure we update title/image from list if they were missing or improved
+                    return {
+                        ...existing,
+                        title: (item.title && item.title !== 'Pending') ? item.title : existing.title,
+                        image: (item.image) ? item.image : existing.image
+                    };
+                }
+
                 const detailPage = await browser.newPage();
                 try {
                     // Block images on detail to speed up
@@ -367,7 +396,76 @@ async function scrapeMomMom() {
                             if (firstImg) detailImage = (firstImg as HTMLImageElement).src;
                         }
 
-                        return { address, closedDay, price, pageTitle, detailImage };
+                        // === NEW: Extract 특징, 대상, 운영 for detailed description ===
+
+                        // 특징 (Feature): Usually the first paragraph under article
+                        let feature = '';
+                        const articleP = document.querySelector('article > div > p');
+                        if (articleP) {
+                            feature = articleP.textContent?.trim() || '';
+                        }
+                        if (!feature) {
+                            const firstP = document.querySelector('article p');
+                            if (firstP) feature = firstP.textContent?.trim() || '';
+                        }
+
+                        // 대상 (Target Audience): Look for text containing "인기" and "개월"
+                        let target = '';
+                        const allDivs = Array.from(document.querySelectorAll('div, p, span'));
+                        const targetEl = allDivs.find(el => {
+                            const text = el.textContent || '';
+                            return text.includes('인기') && text.includes('개월') && text.length < 50;
+                        });
+                        if (targetEl) {
+                            target = targetEl.textContent?.replace(/\n/g, ' ').trim() || '';
+                            // Remove "YYYY.MM.DD 업데이트" suffix
+                            target = target.replace(/\d{4}\.\d{2}\.\d{2}.*업데이트.*/, '').trim();
+                        }
+
+                        // 운영 (Operating Hours Summary): From the hours section
+                        let operatingHours = '';
+                        if (hoursKey && hoursKey.parentElement) {
+                            const hoursContainer = hoursKey.parentElement;
+                            // Extract abbreviated operating hours
+                            const hourLines: string[] = [];
+                            const dayPatterns = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+                            const hoursText = hoursContainer.textContent || '';
+
+                            // Try to extract first day with hours as sample
+                            for (const day of dayPatterns) {
+                                const idx = hoursText.indexOf(day);
+                                if (idx !== -1) {
+                                    const afterDay = hoursText.substring(idx);
+                                    const timeMatch = afterDay.match(/(\d{1,2}:\d{2}\s*~\s*\d{1,2}:\d{2})/);
+                                    if (timeMatch) {
+                                        // Check if it's the same for all days (simplified)
+                                        const dayAbbrev = day.replace('요일', '');
+                                        hourLines.push(`${dayAbbrev}: ${timeMatch[1]}`);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            // Simplified operating hours string
+                            if (hourLines.length > 0) {
+                                if (daysWithHours >= 7) {
+                                    operatingHours = `매일 ${hourLines[0].split(': ')[1]}`;
+                                } else if (daysWithHours >= 6) {
+                                    operatingHours = `화-일 ${hourLines[0].split(': ')[1]}`;
+                                } else {
+                                    operatingHours = hourLines.join(', ');
+                                }
+                            }
+                        }
+
+                        // Build description combining all fields
+                        let description = '';
+                        if (feature) description += `[특징] ${feature}\n`;
+                        if (target) description += `[대상] ${target}\n`;
+                        if (operatingHours) description += `[운영] ${operatingHours}`;
+                        description = description.trim();
+
+                        return { address, closedDay, price, pageTitle, detailImage, description };
                     });
 
                     // Resolve Title
