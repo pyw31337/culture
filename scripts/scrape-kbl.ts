@@ -8,18 +8,29 @@ const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
 
 async function scrapeKbl() {
     const KBL_LOGOS: Record<string, string> = {
-        "서울 SK": "/images/logos/kbl/sk.svg",
-        "원주 DB": "/images/logos/kbl/db.svg",
-        "울산 현대모비스": "/images/logos/kbl/mobis.svg",
-        "서울 삼성": "/images/logos/kbl/samsung.svg",
-        "고양 소노": "/images/logos/kbl/sono.svg",
-        "대구 한국가스공사": "/images/logos/kbl/kogas.svg",
-        "안양 정관장": "/images/logos/kbl/kgc.svg",
-        "창원 LG": "/images/logos/kbl/lg.svg",
-        "수원 KT": "/images/logos/kbl/kt.svg",
-        "부산 KCC": "/images/logos/kbl/kcc.svg",
-        "상무": "/images/logos/kbl/sangmu.svg",
-        "소노": "/images/logos/kbl/sono.svg"
+        "서울 SK": "/images/logos/kbl/sk_official.svg",
+        "서울SK": "/images/logos/kbl/sk_official.svg",
+        "SK": "/images/logos/kbl/sk_official.svg",
+        "원주 DB": "/images/logos/kbl/db_official.svg",
+        "DB": "/images/logos/kbl/db_official.svg",
+        "울산 현대모비스": "/images/logos/kbl/mobis_official.svg",
+        "현대모비스": "/images/logos/kbl/mobis_official.svg",
+        "서울 삼성": "/images/logos/kbl/samsung_official.svg",
+        "삼성": "/images/logos/kbl/samsung_official.svg",
+        "고양 소노": "/images/logos/kbl/sono_official.svg",
+        "소노": "/images/logos/kbl/sono_official.svg",
+        "대구 한국가스공사": "/images/logos/kbl/kogas_official.svg",
+        "한국가스공사": "/images/logos/kbl/kogas_official.svg",
+        "안양 정관장": "/images/logos/kbl/kgc_official.svg",
+        "정관장": "/images/logos/kbl/kgc_official.svg",
+        "창원 LG": "/images/logos/kbl/lg_official.svg",
+        "창원LG": "/images/logos/kbl/lg_official.svg",
+        "LG": "/images/logos/kbl/lg_official.svg",
+        "수원 KT": "/images/logos/kbl/kt_official.svg",
+        "KT": "/images/logos/kbl/kt_official.svg",
+        "부산 KCC": "/images/logos/kbl/kcc_official.svg",
+        "KCC": "/images/logos/kbl/kcc_official.svg",
+        "상무": "/images/logos/kbl/sangmu.svg"
     };
 
     console.log(`Starting KBL Scraper (UI Interaction)...`);
