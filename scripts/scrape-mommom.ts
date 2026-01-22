@@ -248,14 +248,15 @@ async function scrapeMomMom() {
                             // Check for holiday patterns
                             if (hoursText.includes('정기휴무')) {
                                 hasHoliday = true;
-                                // Extract specific holiday days
-                                const holidayMatch = hoursText.match(/([가-힣]+요일[가-힣]*정기휴무)/g);
-                                if (holidayMatch) {
-                                    closedDay = holidayMatch.join(' ');
+                                // Extract day names that have 정기휴무
+                                const dayMatches = hoursText.match(/([월화수목금토일]요일)\s*정기휴무/g);
+                                if (dayMatches) {
+                                    // Extract just the day names
+                                    const days = dayMatches.map(m => m.replace('정기휴무', '').trim());
+                                    closedDay = days.join('/') + ' 정기휴무';
                                 } else {
-                                    // Fallback: extract any text with 정기휴무
-                                    const matches = hoursText.match(/[가-힣]+정기휴무/g);
-                                    if (matches) closedDay = matches.join(' ');
+                                    // Fallback: just note there's a holiday
+                                    closedDay = '정기휴무';
                                 }
                             }
 
