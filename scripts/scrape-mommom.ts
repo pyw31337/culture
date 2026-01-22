@@ -85,6 +85,7 @@ interface MomMomItem {
     price: number | string; // Store text if format varies
     rate: number;
     platform: string;
+    description?: string;
 }
 
 async function scrapeMomMom() {
