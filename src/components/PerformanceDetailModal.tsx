@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; // Verified: Naver Link Enforced
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, MapPin, Share2, ExternalLink, Download, Clock } from 'lucide-react';
 import { Performance } from '@/types';

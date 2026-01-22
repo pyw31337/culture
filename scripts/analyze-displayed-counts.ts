@@ -116,7 +116,7 @@ SOURCES.forEach(source => {
             // --- Filter Logic ---
 
             // 1. Exempt Genres
-            if (['movie', 'travel', 'kids', 'class', 'ott', 'museum', 'leisure', 'hotdeal'].includes(genre)) return true;
+            if (['movie', 'travel', 'kids', 'class', 'ott', 'museum', 'leisure', 'hotdeal', 'festival'].includes(genre)) return true;
 
             // 2. Date Filter
             if (!isPerformanceActive(date, now)) return false;
@@ -170,11 +170,19 @@ SOURCES.forEach(source => {
             });
         }
 
+        const stats = fs.statSync(filePath);
+        const lastUpdated = stats.mtime;
+
+        // Calculate relative time (e.g. "2 hours ago")
+        const diffMs = now.getTime() - lastUpdated.getTime();
+        const diffHrs = Math.round(diffMs / (1000 * 60 * 60));
+        const timeAgo = diffHrs < 1 ? 'Just now' : `${diffHrs}h ago`;
 
         results.push({
             source: source.name,
             collected: collectedCount,
-            displayed: finalDisplayed.length
+            displayed: finalDisplayed.length,
+            lastUpdated: timeAgo
         });
 
     } catch (e: any) {

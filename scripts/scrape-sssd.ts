@@ -129,32 +129,27 @@ async function scrapeDetailPage(detailPage: any, item: any) {
             // Origin: #price-bar ... .base_price
             // Sale: #price-bar ... .detail_txt.col-xs-6 > div (this might return text including span, need clean)
 
-            function txt(s: string) {
-                return document.querySelector(s)?.textContent?.trim() || '';
-            }
-
             // 1. Location
             let location = '';
             const clipEl = document.querySelector('#placeCopy');
             if (clipEl) location = clipEl.getAttribute('data-clipboard-text') || '';
 
             if (!location) {
-                // Fallback selector
-                location = txt('#class_info > div.address-info-box.info-area.p-t-30.p-l-15.p-r-15.m-b-30 > div > div.info-address-text-area > span');
+                location = document.querySelector('#class_info > div.address-info-box.info-area.p-t-30.p-l-15.p-r-15.m-b-30 > div > div.info-address-text-area > span')?.textContent?.trim() || '';
             }
             if (!location) {
-                // Old fallback
                 const detailPlace = document.querySelector('.detail-place');
                 if (detailPlace) location = (detailPlace as HTMLElement).innerText.trim();
             }
 
             // 2. Info
-            const time = txt('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(3) > div');
-            const capacity = txt('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(4) > div');
+            const time = document.querySelector('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(3) > div')?.textContent?.trim() || '';
+            const capacity = document.querySelector('body > div.content.opened > div.container.no-lr-padding > div.class-detail-summery-area > div:nth-child(4) > div')?.textContent?.trim() || '';
 
             // 3. Price
-            const discountRate = txt('#price-bar > div.row > div.detail_txt.col-xs-6 > span.discount_rate');
-            const originalPrice = txt('#price-bar > div.row > div.detail_txt.col-xs-6 > span.base_price');
+            const discountRate = document.querySelector('#price-bar > div.row > div.detail_txt.col-xs-6 > span.discount_rate')?.textContent?.trim() || '';
+            const originalPrice = document.querySelector('#price-bar > div.row > div.detail_txt.col-xs-6 > span.base_price')?.textContent?.trim() || '';
+
 
             // Sale price is inside the div but outside the spans technically? Structure: <div> <span class="discount"></span> <span class="base"></span> 30,000원 </div>
             // We need to be careful to extract just the price text.
@@ -185,7 +180,7 @@ async function scrapeDetailPage(detailPage: any, item: any) {
 
             // Parking? Old selector: .detail-car. We can keep it or skip if not requested.
             // keeping for richness if it exists alongside new selectors
-            const parking = txt('.detail-car');
+            const parking = document.querySelector('.detail-car')?.textContent?.trim() || '';
 
             return {
                 location: location || '상세페이지 참조',

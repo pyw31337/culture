@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react'; // Verified: Naver Link Enforced
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';

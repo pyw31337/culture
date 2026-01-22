@@ -92,20 +92,20 @@ async function scrapeHandball() {
 
             // Extract Teams and Logos from Content Cell
             const HANDBALL_LOGOS = {
-                "두산": "/images/logos/handball/doosan_official.png",
-                "SK호크스": "/images/logos/handball/sk_hawks_official.png",
-                "하남시청": "/images/logos/handball/hanam_official.png",
-                "상무 피닉스": "/images/logos/handball/sangmu_official.png",
-                "충남도청": "/images/logos/handball/chungnam_official.png",
-                "인천도시공사": "/images/logos/handball/incheon_official.png",
-                "SK슈가글라이더즈": "/images/logos/handball/sk_sugar_official.png",
-                "광주도시공사": "/images/logos/handball/gwangju_official.png",
-                "서울시청": "/images/logos/handball/seoul_official.png",
-                "인천광역시청": "/images/logos/handball/incheon_city_official.png",
-                "부산시설공단": "/images/logos/handball/busan_official.png",
-                "경남개발공사": "/images/logos/handball/gyeongnam_official.png",
-                "삼척시청": "/images/logos/handball/samcheok_official.png",
-                "대구광역시청": "/images/logos/handball/daegu_official.png"
+                "두산": "/culture/images/logos/handball/doosan_official.png",
+                "SK호크스": "/culture/images/logos/handball/sk_hawks_official.png",
+                "하남시청": "/culture/images/logos/handball/hanam_official.png",
+                "상무 피닉스": "/culture/images/logos/handball/sangmu_official.png",
+                "충남도청": "/culture/images/logos/handball/chungnam_official.png",
+                "인천도시공사": "/culture/images/logos/handball/incheon_official.png",
+                "SK슈가글라이더즈": "/culture/images/logos/handball/sk_sugar_official.png",
+                "광주도시공사": "/culture/images/logos/handball/gwangju_official.png",
+                "서울시청": "/culture/images/logos/handball/seoul_official.png",
+                "인천광역시청": "/culture/images/logos/handball/incheon_city_official.png",
+                "부산시설공단": "/culture/images/logos/handball/busan_official.png",
+                "경남개발공사": "/culture/images/logos/handball/gyeongnam_official.png",
+                "삼척시청": "/culture/images/logos/handball/samcheok_official.png",
+                "대구광역시청": "/culture/images/logos/handball/daegu_official.png"
             };
 
             let homeTeam = '';

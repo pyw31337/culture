@@ -12,6 +12,7 @@
     "scrape:mochaclass": "npx tsx scripts/scrape-mochaclass.ts",
     "scrape:kbo": "npx tsx scripts/scrape-kbo.ts",
     "scrape:ott": "npx tsx scripts/scrape-ott.ts",
+    "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
     "localize:ott": "npx tsx scripts/localize-ott-images.ts",
     "validate:images": "npx tsx scripts/validate-images.ts"
   },
