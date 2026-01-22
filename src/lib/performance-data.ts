@@ -137,8 +137,14 @@ export function getAllPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
-        // Always show specific genres
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal' || p.genre === 'festival') return true;
+        // Always show specific genres (Bypass Date & Region)
+        if (p.genre === 'movie' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal') return true;
+
+        // Date Check (Enforced for everything else)
+        if (!isPerformanceActive(p.date, now)) return false;
+
+        // Region Check Exemptions (Nationwide content that expires)
+        if (p.genre === 'festival' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 

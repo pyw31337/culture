@@ -73,7 +73,11 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 const title = titleEl?.textContent?.trim() || '';
 
                 const imgEl = el.querySelector('.other_festival_img img');
-                const thumbnailImage = (imgEl as HTMLImageElement)?.src || '';
+                let thumbnailImage = (imgEl as HTMLImageElement)?.src || '';
+                // Upgrade image quality by using original instead of 300_ thumbnail
+                if (thumbnailImage.includes('/300_')) {
+                    thumbnailImage = thumbnailImage.replace('/300_', '/');
+                }
 
                 const dateEl = el.querySelector('.date');
                 const date = dateEl?.textContent?.trim() || '';
@@ -232,6 +236,10 @@ async function main() {
         for (const item of Array.from(uniqueListItems.values())) {
             const existing = existingMap.get(item.id);
             if (existing && isRecentlyEnriched(existing)) {
+                // Force update image from list (high-res)
+                if (item.thumbnailImage) {
+                    existing.image = item.thumbnailImage;
+                }
                 skippedItems.push(existing);
             } else {
                 newItems.push(item);
