@@ -7,7 +7,7 @@ import cliProgress from 'cli-progress';
 
 puppeteer.use(StealthPlugin());
 
-const TARGET_URL = 'https://mom-mom.net/travel';
+const TARGET_URL = 'https://mom-mom.net/search?q=%EB%B0%95%EB%AC%BC%EA%B4%80/%EC%B2%B4%ED%97%98%EA%B4%80&hl=places'; // Search: 박물관/체험관
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom.json');
 
 // Helper to clean address
@@ -104,11 +104,34 @@ async function scrapeMomMom() {
         // Infinite Scroll
         console.log('Loading list...');
         await page.evaluate(async () => {
-            // Scroll down a bit more aggressively
-            for (let i = 0; i < 5; i++) {
-                window.scrollBy(0, 1000);
-                await new Promise(r => setTimeout(r, 1000));
-            }
+            await new Promise<void>((resolve) => {
+                let totalHeight = 0;
+                let noChangeCount = 0;
+                const distance = 500;
+                const timer = setInterval(() => {
+                    const scrollHeight = document.body.scrollHeight;
+                    window.scrollBy(0, distance);
+                    totalHeight += distance;
+
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+                        // Reached bottom
+                        if (document.body.scrollHeight > scrollHeight) {
+                            noChangeCount = 0;
+                        } else {
+                            noChangeCount++;
+                        }
+                    } else {
+                        // Still scrolling
+                        noChangeCount = 0;
+                    }
+
+                    // Stop if no change for 50 ticks (5 seconds) or extremely long scroll
+                    if (noChangeCount > 50 || totalHeight > 500000) {
+                        clearInterval(timer);
+                        resolve();
+                    }
+                }, 100);
+            });
         });
 
         // Debug: Screenshot
@@ -209,7 +232,10 @@ async function scrapeMomMom() {
                         let closedDay = '';
 
                         listItems.forEach(li => {
-                            const text = li.textContent?.trim() || '';
+                            let text = li.textContent?.trim() || '';
+                            // Clean common artifacts
+                            text = text.replace('지도보기', '').trim();
+
                             if (text.includes('주소') || /([가-힣]+[시도])\s+([가-힣]+[시구군])/.test(text)) {
                                 if (!address && text.length > 5 && (text.includes('시') || text.includes('도'))) {
                                     address = text;
@@ -217,16 +243,19 @@ async function scrapeMomMom() {
                             }
                             if (text.includes('휴무') || text.includes('영업시간')) {
                                 if (text.includes('정기휴무')) {
-                                    const match = text.match(/([가-힣]+)\s*정기휴무/);
-                                    if (match) closedDay = match[0];
-                                    else if (text.includes('정기휴무')) closedDay = text.split('\n').find(l => l.includes('정기휴무')) || '정기휴무 있음';
+                                    // Extract just the holiday part if possible. e.g. "월요일 정기휴무"
+                                    // Remove '영업시간' blindly first
+                                    const cleanText = text.replace('영업시간', '').trim();
+                                    const match = cleanText.match(/([가-힣, ]+정기휴무)/);
+                                    if (match) closedDay = match[1];
+                                    else closedDay = cleanText;
                                 }
                             }
                         });
 
                         if (!address) {
                             const firstLi = document.querySelector('.main-container section ul li:nth-child(1)');
-                            if (firstLi) address = firstLi.textContent?.trim() || '';
+                            if (firstLi) address = firstLi.textContent?.replace('지도보기', '').trim() || '';
                         }
 
                         // Price
@@ -283,6 +312,7 @@ async function scrapeMomMom() {
                     };
 
                 } catch (e) {
+                    console.error(`Failed to scrape ${item.link}:`, e);
                     return null;
                 } finally {
                     await detailPage.close();
