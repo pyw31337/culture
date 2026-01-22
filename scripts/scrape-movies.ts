@@ -2,10 +2,12 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { processImage } from './utils/image-processor';
+import pLimit from 'p-limit'; // Add pLimit for parallelism control if needed, though KOBIS is small.
 
 // KOBIS Daily Box Office
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
+const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');
 
 // --- Helper: Sleep ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
@@ -136,22 +138,47 @@ const extractMetadata = () => {
 
 // --- Scraper Class ---
 async function scrapeMovies() {
-    console.log('Starting KOBIS -> Naver Movie Scraper (Playwright)...');
+    console.log('Starting KOBIS -> Naver Movie Scraper (Stealth Playwright)...');
 
     // Ensure data directory
     if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-    const browser = await chromium.launch({ headless: true });
+    // ANTI-BLOCKING: Disable Automation Controls
+    const browser = await chromium.launch({
+        headless: true,
+        args: [
+            '--disable-blink-features=AutomationControlled',
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
+
+    // 0. Load Existing Data for Incremental Check
+    const existingMap = new Map<string, any>();
+    if (fs.existsSync(OUTPUT_FILE)) {
+        try {
+            const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            loaded.forEach((m: any) => existingMap.set(m.title, m));
+            console.log(`Loaded ${loaded.length} existing movies.`);
+        } catch (e) {
+            console.error('Failed to load existing movies:', e);
+        }
+    }
 
     // 1. Scrape KOBIS List
-    const kobisContext = await browser.newContext();
+    const kobisContext = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+    });
     const kobisPage = await kobisContext.newPage();
+    // Stealth
+    await kobisPage.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+
     let movies: any[] = [];
 
     try {
         console.log(`Navigating to KOBIS: ${KOBIS_URL}`);
         await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
-        await kobisPage.waitForSelector('.rst_sch');
+        await kobisPage.waitForSelector('.rst_sch', { timeout: 30000 });
 
         // Load More (Click twice to get 30+ items)
         const loadMoreBtn = await kobisPage.$('#btn_0');
@@ -195,15 +222,35 @@ async function scrapeMovies() {
     }
 
     // 2. Enrich with Naver (Sequential with context reuse)
+    // Filter out movies that already have good data
+    const moviesToEnrich: any[] = [];
+
+    // Create Final List Order based on KOBIS rank, but populate with Existing data if available
+    const finalMovies: any[] = [];
+
+    for (const m of movies) {
+        const existing = existingMap.get(m.title);
+        if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
+            // If we have comprehensive data, reuse it but update volatile fields like Rank (if we stored rank, but we don't usually)
+            // We just need to ensure the ID/Title/Date match.
+            finalMovies.push(existing);
+            // Maybe update date if KOBIS has a new release date? Usually assume existing is better/enriched.
+        } else {
+            // Needs enrichment
+            moviesToEnrich.push(m);
+        }
+    }
+
+    console.log(`Skipped ${finalMovies.length} movies (Already have data). Enriching ${moviesToEnrich.length}...`);
+
     const context = await browser.newContext({
         userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
     });
 
-    const finalMovies: any[] = [];
-
-    for (const m of movies) {
+    for (const m of moviesToEnrich) {
         console.log(`Processing: ${m.title}`);
         const page = await context.newPage();
+        await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 
         // Base Item
         let date = m.dateRaw || '';
@@ -223,6 +270,7 @@ async function scrapeMovies() {
 
         try {
             await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
+            await sleep(500 + Math.random() * 500); // Throttling
 
             // Initial Extraction
             let detail = await page.evaluate(extractMetadata);
@@ -318,9 +366,15 @@ async function scrapeMovies() {
 
     await browser.close();
 
-    // Save
-    fs.writeFileSync(path.join(DATA_DIR, 'movies.json'), JSON.stringify(finalMovies, null, 2));
-    console.log(`Saved ${finalMovies.length} movies to movies.json`);
+    // Atomic Save
+    if (finalMovies.length > 0) {
+        const tempFile = `${OUTPUT_FILE}.temp`;
+        fs.writeFileSync(tempFile, JSON.stringify(finalMovies, null, 2));
+        fs.renameSync(tempFile, OUTPUT_FILE);
+        console.log(`Saved ${finalMovies.length} movies to movies.json`);
+    } else {
+        console.warn('Scraper found 0 movies. Aborting save.');
+    }
 }
 
 scrapeMovies();

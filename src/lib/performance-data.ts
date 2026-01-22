@@ -138,7 +138,7 @@ export function getAllPerformances() {
 
     const filtered = allPerformances.filter(p => {
         // Always show specific genres
-        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal') return true;
+        if (p.genre === 'movie' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal' || p.genre === 'festival') return true;
 
         if (!isPerformanceActive(p.date, now)) return false;
 

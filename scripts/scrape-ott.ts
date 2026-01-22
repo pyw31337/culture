@@ -88,6 +88,13 @@ function cleanOTTItem(item: any) {
 
 async function scrapeList(context: any, platform: any, type: string) {
     const page = await context.newPage();
+    // Stealth: Remove webdriver pattern
+    await page.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', {
+            get: () => undefined,
+        });
+    });
+
     const query = `${platform.keyword} ${type}`;
     const url = `https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkdJ&qvt=0&query=${encodeURIComponent(query)}`;
 
@@ -101,6 +108,9 @@ async function scrapeList(context: any, platform: any, type: string) {
         let pageNum = 1;
 
         while (pageNum <= MAX_PAGES) {
+            // Throttling List Pages
+            await sleep(Math.random() * 1000 + 500);
+
             const newItems = await page.evaluate((arg: { pName: string, tType: string }) => {
                 const { pName, tType } = arg;
                 const els = document.querySelectorAll('#main_pack .cm_content_area ul li.info_box, .cs_common_module li.info_box, .cm_content_area .card_item');
@@ -156,6 +166,7 @@ async function scrapeList(context: any, platform: any, type: string) {
 // JustWatch Search Fallback
 async function searchJustWatch(context: any, title: string) {
     const page = await context.newPage();
+    await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
     try {
         const sUrl = `https://www.justwatch.com/kr/검색?q=${encodeURIComponent(title)}`;
         await page.goto(sUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
@@ -198,19 +209,42 @@ async function searchJustWatch(context: any, title: string) {
 }
 
 async function scrapeOTT() {
-    const browser = await chromium.launch({ headless: true });
+    // ANTI-BLOCKING: Disable Automation Controls
+    const browser = await chromium.launch({
+        headless: true,
+        args: [
+            '--disable-blink-features=AutomationControlled',
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     // Keep generic context
     const context = await browser.newContext({
         userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
     });
 
-    console.log('Starting Naver-First OTT Scraper...');
+    console.log('Starting Naver-First OTT Scraper (Stealth & Incremental)...');
+
+    // Load Existing Data
+    let existingData: any[] = [];
+    const existingMap = new Map<string, any>();
+    if (fs.existsSync(OUTPUT_FILE)) {
+        try {
+            existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            existingData.forEach(item => existingMap.set(item.title, item));
+            console.log(`Loaded ${existingData.length} existing items.`);
+        } catch (e) {
+            console.error('Failed to load existing data:', e);
+        }
+    }
 
     let allItems: any[] = [];
 
     // Phase 1: Scrape Lists
     for (const p of PLATFORMS) {
         for (const t of TYPES) {
+            // Intelligent Throttling
+            await sleep(2000 + Math.random() * 2000);
             const items = await scrapeList(context, p, t);
             allItems.push(...items);
         }
@@ -228,9 +262,29 @@ async function scrapeOTT() {
         }
     });
 
-    let itemsToProcess = Array.from(uniqueItems.values());
+    // INCREMENTAL LOGIC: Filter items to process
+    let itemsToProcess: any[] = [];
+    let skippedCount = 0;
 
-    console.log(`Phase 1 Complete. ${itemsToProcess.length} unique items to enrich.`);
+    for (const newItem of Array.from(uniqueItems.values())) {
+        const existing = existingMap.get(newItem.title);
+        // Skip enrichment if:
+        // 1. Item exists
+        // 2. Item has critical data (ageRating, director, cast, or it's 'All' rating which is often static)
+        // 3. (Optional) Check timestamp if we added one (not yet, but good for future)
+        if (existing && existing.ageRating && existing.cast) {
+            // Merge platforms just in case
+            newItem.platforms.forEach((p: string) => {
+                if (!existing.platforms.includes(p)) existing.platforms.push(p);
+            });
+            // Update existing map
+            skippedCount++;
+        } else {
+            itemsToProcess.push(newItem);
+        }
+    }
+
+    console.log(`Phase 1 Complete. Found ${uniqueItems.size} items. Skipped ${skippedCount} (Good Data). Enriching ${itemsToProcess.length} new/incomplete items.`);
 
     const limit = pLimit(5);
     const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
@@ -239,9 +293,12 @@ async function scrapeOTT() {
     // Phase 2: Enrichment (Naver Detail > Tab Click Fallback > JustWatch/Namu)
     await Promise.all(itemsToProcess.map(item => limit(async () => {
         const page = await context.newPage();
+        // Stealth Injection
+        await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+
         try {
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
-            await sleep(500 + Math.random() * 500);
+            await sleep(1000 + Math.random() * 1000); // Throttling
 
             // --- Enforce Strict Metadata Extraction Logic ---
             const extractMetadata = () => {
@@ -635,12 +692,27 @@ async function scrapeOTT() {
 
     progressBar.stop();
 
+    // Re-merge itemsToProcess into existingMap (to handle updates)
+    itemsToProcess.forEach(item => {
+        existingMap.set(item.title, item);
+    });
+
+    // Generate Final List from Map
+    const finalItems = Array.from(existingMap.values());
+
     // Generate IDs and Image Paths
     const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    itemsToProcess.forEach(item => {
+    finalItems.forEach(item => {
         // Create ID: ott_YYYYMMDD_Title(sanitized)
         const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-        item.id = `ott_${today}_${safeTitle}`;
+        // Only generate ID if missing (Should be stable if we want persistence, but current logic uses daily IDs?
+        // Wait, current logic was `ott_${today}_${safeTitle}`.
+        // If we upsert, we should probably Keep the ID if it exists?
+        // But if we re-scrape, maybe we want new IDs?
+        // Actually, preventing ID churn is better.
+        if (!item.id) {
+            item.id = `ott_${today}_${safeTitle}`;
+        }
         item.venue = 'OTT';
         item.region = 'ott';
         if (!item.genre) item.genre = 'ott';
@@ -652,7 +724,7 @@ async function scrapeOTT() {
     // Phase 3: Images
     console.log('Phase 3: Downloading Images...');
     const imageLimit = pLimit(10);
-    await Promise.all(itemsToProcess.map(item => imageLimit(async () => {
+    await Promise.all(finalItems.map(item => imageLimit(async () => {
         if (item.poster) {
             // Use stable filename: ott_Title
             const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
@@ -661,8 +733,16 @@ async function scrapeOTT() {
         }
     })));
 
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(itemsToProcess, null, 2));
-    console.log(`Done. Saved ${itemsToProcess.length} items to ${OUTPUT_FILE}`);
+    // ATOMIC SAVE (Safety)
+    if (finalItems.length > 0) {
+        const tempFile = `${OUTPUT_FILE}.temp`;
+        fs.writeFileSync(tempFile, JSON.stringify(finalItems, null, 2));
+        fs.renameSync(tempFile, OUTPUT_FILE);
+        console.log(`Done. Saved ${finalItems.length} items to ${OUTPUT_FILE}`);
+    } else {
+        console.warn('Scraper found 0 items. Aborting save.');
+    }
+
     await browser.close();
 }
 
