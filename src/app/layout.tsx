@@ -24,13 +24,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pyw31337.github.io/culture"),
-  title: "Culture Flow 서울 · 경기 · 인천 통합 공연 검색",
-  description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
+  title: "Culture Flow - 전국 통합 문화 검색",
+  description: "전국 모든 문화 정보를 한눈에 확인하세요.",
   openGraph: {
     title: "Culture Flow",
     siteName: "Culture Flow",
     url: "https://pyw31337.github.io/culture/",
-    description: "서울, 경기, 인천 지역의 모든 공연 정보를 한눈에 확인하세요.",
+    description: "전국 모든 문화 정보를 한눈에 확인하세요.",
     images: [
       {
         url: "/culture/images/og-image.jpg",

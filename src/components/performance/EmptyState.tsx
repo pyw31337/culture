@@ -61,7 +61,7 @@ export default function EmptyState({
                     <h3 className="text-xl font-bold text-gray-300 mb-2">
                         {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
                             ? '현재 경기 일정이 없습니다.'
-                            : '조건에 맞는 공연이 없습니다.'}
+                            : '조건에 맞는 문화 정보가 없습니다.'}
                     </h3>
                     <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
                     <div className="flex flex-col gap-3 items-center">

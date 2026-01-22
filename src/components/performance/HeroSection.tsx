@@ -358,7 +358,7 @@ export default function HeroSection({
                     selectedVenue !== 'all' ? selectedVenue : ''
                 ].filter(Boolean).join(' ')}`,
                 line2Pre: "에서 진행중인 ",
-                highlight: "공연",
+                highlight: "문화 정보",
                 suffix: "들을 찾아줄게요.",
                 keywords: []
             } as HeroTemplate;
@@ -398,8 +398,8 @@ export default function HeroSection({
                                     ? searchLocation.name
                                     : (activeLocation
                                         ? (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)')
-                                        : '전체 지역'))
-                                : `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전체 지역'
+                                        : '전국'))
+                                : `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전국'
                             }
                         </span>
 
@@ -569,7 +569,7 @@ export default function HeroSection({
                             onChange={(e) => setSearchText(e.target.value)}
                             onKeyDown={handleKeyDown}
                             className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
-                            placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "공연명, 장소, 지역 검색..."}
+                            placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "문화 정보, 장소, 지역 검색..."}
                         />
 
                         {/* Reset Button */}
