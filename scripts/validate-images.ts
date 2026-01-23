@@ -12,6 +12,13 @@ const PUBLIC_DIR = path.join(PROJECT_ROOT, 'public');
 
 const filesToCheck = ['handball.json', 'kbl.json'];
 
+interface GameData {
+    id: string;
+    homeTeamLogo: string;
+    awayTeamLogo: string;
+    [key: string]: any; // Allow other properties
+}
+
 function checkImages() {
     let hasErrors = false;
 
@@ -23,7 +30,7 @@ function checkImages() {
         }
 
         console.log(`Checking ${file}...`);
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        const data: GameData[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
         data.forEach((item, index) => {
             const logos = [item.homeTeamLogo, item.awayTeamLogo];
