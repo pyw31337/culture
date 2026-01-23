@@ -1,31 +1,25 @@
-
 import React from 'react';
 import { clsx } from 'clsx';
-
-// Skeleton Loading Component for Grid View
-const SkeletonCard = () => (
-    <div className="relative rounded-xl overflow-hidden bg-gray-800/50 animate-pulse">
-        {/* Image Placeholder */}
-        <div className="aspect-[3/4] bg-gray-700/50" />
-        {/* Content Placeholder */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
-            <div className="h-3 bg-gray-600/30 rounded w-2/3" />
-        </div>
-    </div>
-);
-
+import SkeletonCard from './SkeletonCard';
 
 // Skeleton Loading Component for List View
+// Skeleton Loading Component for List View
 const SkeletonListItem = () => (
-    <div className="flex gap-4 p-4 rounded-xl bg-gray-800/50 animate-pulse">
+    <div className="flex gap-4 p-4 rounded-xl bg-gray-900/50 light:bg-white/50 border border-gray-800 light:border-gray-200 animate-pulse">
         {/* Image Placeholder */}
-        <div className="w-24 h-32 rounded-lg bg-gray-700/50 flex-shrink-0" />
+        <div className="w-24 h-32 rounded-lg bg-gray-800 light:bg-gray-300 flex-shrink-0" />
+
         {/* Content Placeholder */}
-        <div className="flex-1 flex flex-col justify-center gap-2">
-            <div className="h-5 bg-gray-600/50 rounded w-3/4" />
-            <div className="h-4 bg-gray-600/30 rounded w-1/2" />
-            <div className="h-4 bg-gray-600/30 rounded w-2/3" />
-            <div className="h-4 bg-gray-600/30 rounded w-1/3" />
+        <div className="flex-1 flex flex-col justify-center gap-3">
+            <div className="flex gap-2 mb-1">
+                <div className="w-16 h-4 bg-gray-700 light:bg-gray-300 rounded-full" />
+            </div>
+            <div className="h-5 bg-gray-700 light:bg-gray-400 rounded w-3/4" />
+            <div className="h-4 bg-gray-800 light:bg-gray-300 rounded w-1/2" />
+
+            <div className="mt-2 flex gap-2">
+                <div className="h-4 bg-gray-800 light:bg-gray-300 rounded w-1/4" />
+            </div>
         </div>
     </div>
 );

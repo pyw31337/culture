@@ -77,8 +77,8 @@ Object.keys(data).forEach(key => {
     const venue = data[key];
     const addr = venue.address || '';
 
-    // Enrich district if missing
-    if (!venue.district) {
+    // Enrich district if missing or auto-filled
+    if (!venue.district || venue.district === 'auto-filled') {
         const district = extractDistrict(addr);
         if (district) {
             venue.district = district;
@@ -86,8 +86,8 @@ Object.keys(data).forEach(key => {
         }
     }
 
-    // Also set mapped_region_id if not set
-    if (!venue.mapped_region_id) {
+    // Also set mapped_region_id if not set or auto-filled
+    if (!venue.mapped_region_id || venue.mapped_region_id === 'auto-filled') {
         const region = getRegion(addr);
         if (region) {
             venue.mapped_region_id = region;
