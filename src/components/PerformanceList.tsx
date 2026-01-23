@@ -764,8 +764,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (searchQuery) {
             setSearchText(searchQuery);
             setSelectedGenre('all'); // Force global search context
-            setIsSearching(true);
-            setIsDropdownOpen(true);
+            setIsSearching(false); // Done effectively
+            setIsDropdownOpen(false); // Do not auto-open dropdown for deep links
 
             // Trigger local search logic immediately for the param
             const lowerSearch = searchQuery.toLowerCase().normalize('NFC');
