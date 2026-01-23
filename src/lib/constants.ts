@@ -1,7 +1,16 @@
+export const GENRE_GROUPS = [
+    { id: 'all', label: '전체', genres: ['all', 'hotdeal'] },
+    { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic'] },
+    { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
+    { id: 'activity', label: '액티비티', genres: ['festival', 'activity', 'leisure', 'travel', 'kids', 'class'] },
+    { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
+    { id: 'life', label: '라이프', genres: ['movie', 'ott', 'food'] },
+];
+
 export const GENRES = [
     { id: 'all', label: '전체' },
     { id: 'hotdeal', label: '🔥 핫딜' },
-    { id: 'movie', label: '영화' }, // Icon removed
+    { id: 'movie', label: '영화' },
     { id: 'ott', label: 'OTT' },
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
@@ -9,10 +18,9 @@ export const GENRES = [
     { id: 'classic', label: '클래식/무용' },
     { id: 'exhibition', label: '전시/행사' },
     { id: 'activity', label: '액티비티' },
-    { id: 'class', label: '클래스' }, // New Class category
+    { id: 'class', label: '클래스' },
     { id: 'travel', label: '여행' },
     { id: 'festival', label: '축제' },
-    // { id: 'leisure', label: '레저' }, // Removed or commented out if not used? Keeping consistency with view_file
     { id: 'leisure', label: '레저' },
     { id: 'kids', label: '키즈' },
     { id: 'museum', label: '박물관/체험관' },
