@@ -13,6 +13,55 @@ puppeteer.use(StealthPlugin());
 const TARGET_URL = 'https://mom-mom.net/shop/categories/1102241';
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom-products.json');
 
+// Smart genre classification based on title keywords
+function classifyGenre(title: string): string {
+    const t = title.toLowerCase();
+
+    // Travel
+    if (t.includes('호텔') || t.includes('리조트') || t.includes('펜션') ||
+        t.includes('숙박') || t.includes('스테이') || t.includes('글램핑') ||
+        t.includes('캠핑') || t.includes('풀빌라')) {
+        return 'travel';
+    }
+
+    // Kids - specific kids places
+    if (t.includes('키즈') || t.includes('어린이') || t.includes('유아') ||
+        t.includes('아이랑') || t.includes('베이비') || t.includes('놀이터') ||
+        t.includes('키카')) {
+        return 'kids';
+    }
+
+    // Leisure - water/outdoor activities  
+    if (t.includes('워터파크') || t.includes('수영') || t.includes('스파') ||
+        t.includes('온천') || t.includes('찜질') || t.includes('사우나') ||
+        t.includes('스키') || t.includes('스노우') || t.includes('썰매')) {
+        return 'leisure';
+    }
+
+    // Museum/Experience
+    if (t.includes('박물관') || t.includes('과학관') || t.includes('미술관') ||
+        t.includes('전시') || t.includes('아쿠아리움') || t.includes('수족관') ||
+        t.includes('동물원') || t.includes('식물원') || t.includes('테마파크')) {
+        return 'museum';
+    }
+
+    // Class - educational experiences
+    if (t.includes('클래스') || t.includes('체험') || t.includes('만들기') ||
+        t.includes('공방') || t.includes('쿠킹') || t.includes('베이킹') ||
+        t.includes('도자기') || t.includes('공예')) {
+        return 'class';
+    }
+
+    // Food
+    if (t.includes('식당') || t.includes('레스토랑') || t.includes('카페') ||
+        t.includes('맛집') || t.includes('뷔페') || t.includes('브런치')) {
+        return 'food';
+    }
+
+    // Default to activity for general experiences
+    return 'activity';
+}
+
 async function scrapeProducts() {
     console.log('Starting Mom-Mom Product Scraper...');
     const browser = await puppeteer.launch({
@@ -54,34 +103,45 @@ async function scrapeProducts() {
             }
         });
 
-        // Extract Items using data-id
+        // Extract Items using h4 titles (data-id only exists on 4 featured items)
         const listItems = await page.evaluate(() => {
             const results: any[] = [];
+            const seenTitles = new Set();
 
-            const cards = document.querySelectorAll('div[data-id][role="button"]');
+            const h4s = document.querySelectorAll('h4');
+            console.log('Found h4 elements:', h4s.length);
 
-            cards.forEach(card => {
-                const id = card.getAttribute('data-id');
-                if (!id) return;
+            h4s.forEach(h4 => {
+                const title = h4.textContent?.trim() || '';
+                if (!title || seenTitles.has(title)) return;
+                seenTitles.add(title);
 
-                // Title is sibling
-                const parent = card.parentElement;
+                // Find the parent card container
+                let card = h4.closest('.sc-fd2f9237-27') || h4.parentElement?.parentElement;
+                if (!card) return;
 
-                let title = 'Unknown Title';
-                const titleEl = parent?.querySelector('.product-name') || parent?.querySelector('h4');
-                if (titleEl) title = titleEl.textContent?.trim() || 'Unknown Title';
-
+                // Get image
                 const imgEl = card.querySelector('img');
                 const image = imgEl?.src || '';
 
-                const priceEl = Array.from(parent?.querySelectorAll('div, span, p') || []).find(el => el.textContent?.includes('원'));
+                // Get price
+                const priceEl = card.querySelector('p span:last-child');
                 const price = priceEl?.textContent?.trim() || '';
 
+                // Get brand name if available
+                const brandEl = card.querySelector('.brand-name');
+                const brand = brandEl?.textContent?.trim() || '';
+
+                // Generate ID from title (since data-id not available)
+                const safeTitle = title.replace(/[^\w가-힣]/g, '').slice(0, 20);
+                const id = `mommom_shop_${safeTitle}`;
+
                 results.push({
-                    id: `mommom_product_${id}`,
+                    id,
                     title,
+                    brand,
                     image,
-                    link: `https://mom-mom.net/events/${id}`, // CORRECT URL
+                    link: '', // Will need to click to get actual link
                     priceRaw: price
                 });
             });
@@ -99,7 +159,7 @@ async function scrapeProducts() {
             const newItem = {
                 ...item,
                 date: '상시',
-                genre: 'kids',
+                genre: classifyGenre(item.title),
                 region: 'unknown',
                 venue: 'unknown',
                 address: '',
