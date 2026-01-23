@@ -1,8 +1,7 @@
-
 import React from 'react';
-import { Heart, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Heart, Star, Search, Filter, Calendar, Zap, Music, Ticket, Palmtree } from 'lucide-react';
 import { clsx } from 'clsx';
+import { motion } from 'framer-motion';
 
 interface EmptyStateProps {
     viewMode: string;
@@ -23,60 +22,126 @@ export default function EmptyState({
     setUserLocation,
     setIsMapOpen
 }: EmptyStateProps) {
+
+    // Floating Animation Variant
+    const floatVariant = {
+        animate: {
+            y: [0, -15, 0],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }
+        }
+    };
+
+    const RecommendationChip = ({ icon: Icon, label, onClick }: { icon: any, label: string, onClick: () => void }) => (
+        <button
+            onClick={onClick}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gray-800/50 light:bg-gray-100 hover:bg-gray-700 light:hover:bg-gray-200 border border-gray-700 light:border-gray-300 transition-all transform hover:scale-105"
+        >
+            <Icon size={14} className="text-purple-400 light:text-purple-600" />
+            <span className="text-sm font-bold text-gray-300 light:text-gray-700">{label}</span>
+        </button>
+    );
+
+    const handleRedirect = (genre: string) => {
+        // Simple redirect via window location (or we could expose setGenre prop)
+        // Since PerformanceList manages genre via URL usually, we can just link to it
+        window.location.href = `/culture/${genre}`;
+    };
+
     return (
-        <div className="flex flex-col items-center justify-center py-10 text-gray-500 w-full text-center px-4">
+        <div className="flex flex-col items-center justify-center py-20 text-center w-full min-h-[50vh]">
             {viewMode === 'likes-perf' ? (
                 <>
-                    <div className="w-20 h-20 rounded-full bg-pink-500/10 flex items-center justify-center mb-6">
-                        <Heart className="w-10 h-10 text-pink-500/50" />
-                    </div>
-                    <h3 className="text-xl font-bold text-pink-400 mb-2">좋아요한 컨텐츠가 없네요</h3>
-                    <p className="text-gray-500">마음에 드는 컨텐츠에 하트를 눌러보세요!</p>
+                    <motion.div
+                        variants={floatVariant}
+                        animate="animate"
+                        className="w-24 h-24 rounded-full bg-pink-500/10 flex items-center justify-center mb-6 relative"
+                    >
+                        <Heart className="w-12 h-12 text-pink-500/60 fill-pink-500/10" />
+                        <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-pink-500 animate-pulse" />
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-pink-500 mb-2">좋아요한 공연이 없어요</h3>
+                    <p className="text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed">
+                        마음에 드는 공연이나 전시를 발견하면 하트를 눌러보세요.<br />
+                        나만의 문화 리스트가 만들어집니다! 💝
+                    </p>
+                    <a href="/culture/" className="px-8 py-3 rounded-xl bg-pink-500 text-white font-bold hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-500/30">
+                        공연 둘러보기
+                    </a>
                 </>
             ) : viewMode === 'likes-venue' ? (
                 <>
-                    <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6">
-                        <Star className="w-10 h-10 text-emerald-500/50" />
-                    </div>
-                    <h3 className="text-xl font-bold text-emerald-400 mb-2">찜한 공연장이 없네요</h3>
-                    <p className="text-gray-500 mb-6">자주 가는 공연장을 등록하고 일정을 확인해보세요.</p>
+                    <motion.div
+                        variants={floatVariant}
+                        animate="animate"
+                        className="w-24 h-24 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 relative"
+                    >
+                        <Star className="w-12 h-12 text-emerald-500/60 fill-emerald-500/10" />
+                        <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-emerald-500 mb-2">찜한 공연장이 없어요</h3>
+                    <p className="text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed">
+                        자주 가는 공연장이나 관심 있는 장소를 찜해보세요.<br />
+                        주변 맛집이나 티켓 오픈 소식을 더 빠르게 확인할 수 있습니다. 🏟️
+                    </p>
                     <button
                         onClick={() => setIsMapOpen(true)}
-                        className="px-6 py-2.5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-black transition-all"
+                        className="px-8 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/30 flex items-center gap-2 mx-auto"
                     >
+                        <Search size={18} />
                         지도에서 찾기
                     </button>
                 </>
             ) : (
                 <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 mb-6 opacity-20 icon icon-tabler icons-tabler-outline icon-tabler-calendar-time">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-                        <path d="M14 18a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                        <path d="M15 3v4" />
-                        <path d="M7 3v4" />
-                        <path d="M3 11h16" />
-                        <path d="M18 16.496v1.504l1 1" />
-                    </svg>
-                    <h3 className="text-xl font-bold text-gray-300 mb-2">
+                    {/* General Empty State (Search/Filter) */}
+                    <motion.div
+                        variants={floatVariant}
+                        animate="animate"
+                        className="mb-8 opacity-80"
+                    >
+                        {selectedGenre === 'baseball' || selectedGenre === 'soccer' ? (
+                            <Calendar className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
+                        ) : (
+                            <Filter className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
+                        )}
+                    </motion.div>
+
+                    <h3 className="text-2xl font-extrabold text-white light:text-gray-900 mb-2">
                         {(selectedGenre === 'baseball' || selectedGenre === 'soccer')
-                            ? '현재 경기 일정이 없습니다.'
-                            : '조건에 맞는 문화 정보가 없습니다.'}
+                            ? '예정된 경기 일정이 없습니다 🏖️'
+                            : '조건에 맞는 결과가 없네요 😢'}
                     </h3>
-                    <p className="text-gray-500 mb-6">다른 검색어나 필터를 사용해보세요.</p>
-                    <div className="flex flex-col gap-3 items-center">
+                    <p className="text-gray-400 light:text-gray-500 mb-8 text-sm">
+                        필터 조건을 변경하거나 다른 검색어로 시도해보세요.
+                    </p>
+
+                    <div className="flex gap-3 mb-12">
                         <button onClick={() => {
                             setSelectedRegion('all');
                             setSelectedDistrict('all');
                             setSearchText('');
                             setUserLocation(null);
-                            // Keep selectedGenre unchanged
-                        }} className="px-6 py-2.5 rounded-full bg-blue-500/20 text-blue-400 font-bold hover:bg-blue-500 hover:text-white transition-all">
+                        }} className="px-6 py-2.5 rounded-full bg-gray-800 light:bg-white text-gray-300 light:text-gray-700 font-bold border border-gray-700 light:border-gray-300 hover:border-purple-500 hover:text-purple-400 light:hover:text-purple-600 transition-all flex items-center gap-2">
+                            <Zap size={16} />
                             필터 초기화
                         </button>
-                        <a href="/culture/" className="px-6 py-2.5 rounded-full bg-gray-500/20 text-gray-400 font-bold hover:bg-gray-500 hover:text-white transition-all">
-                            홈으로 가기
-                        </a>
+                    </div>
+
+                    {/* Smart Recommendations */}
+                    <div className="flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                        <span className="text-xs font-bold text-gray-500 uppercase tracking-widest bg-gray-900/50 light:bg-gray-100 px-3 py-1 rounded-full">
+                            이런 카테고리는 어때요?
+                        </span>
+                        <div className="flex flex-wrap justify-center gap-3">
+                            <RecommendationChip icon={Palmtree} label="전국축제" onClick={() => handleRedirect('festival')} />
+                            <RecommendationChip icon={Ticket} label="뮤지컬" onClick={() => handleRedirect('musical')} />
+                            <RecommendationChip icon={Music} label="콘서트" onClick={() => handleRedirect('concert')} />
+                            <RecommendationChip icon={Star} label="팝업스토어" onClick={() => handleRedirect('exhibition')} />
+                        </div>
                     </div>
                 </>
             )}
