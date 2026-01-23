@@ -17,53 +17,49 @@ const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom-products.json')
 function classifyGenre(title: string): string {
     const t = title.toLowerCase();
 
-    // Travel
     if (t.includes('호텔') || t.includes('리조트') || t.includes('펜션') ||
         t.includes('숙박') || t.includes('스테이') || t.includes('글램핑') ||
-        t.includes('캠핑') || t.includes('풀빌라')) {
-        return 'travel';
-    }
-
-    // Kids - specific kids places
+        t.includes('캠핑') || t.includes('풀빌라')) return 'travel';
     if (t.includes('키즈') || t.includes('어린이') || t.includes('유아') ||
-        t.includes('아이랑') || t.includes('베이비') || t.includes('놀이터') ||
-        t.includes('키카')) {
-        return 'kids';
-    }
-
-    // Leisure - water/outdoor activities  
+        t.includes('아이랑') || t.includes('베이비') || t.includes('놀이터')) return 'kids';
     if (t.includes('워터파크') || t.includes('수영') || t.includes('스파') ||
         t.includes('온천') || t.includes('찜질') || t.includes('사우나') ||
-        t.includes('스키') || t.includes('스노우') || t.includes('썰매')) {
-        return 'leisure';
-    }
-
-    // Museum/Experience
+        t.includes('스키') || t.includes('스노우') || t.includes('썰매')) return 'leisure';
     if (t.includes('박물관') || t.includes('과학관') || t.includes('미술관') ||
         t.includes('전시') || t.includes('아쿠아리움') || t.includes('수족관') ||
-        t.includes('동물원') || t.includes('식물원') || t.includes('테마파크')) {
-        return 'museum';
-    }
-
-    // Class - educational experiences
+        t.includes('동물원') || t.includes('식물원') || t.includes('테마파크')) return 'museum';
     if (t.includes('클래스') || t.includes('체험') || t.includes('만들기') ||
-        t.includes('공방') || t.includes('쿠킹') || t.includes('베이킹') ||
-        t.includes('도자기') || t.includes('공예')) {
-        return 'class';
-    }
-
-    // Food
+        t.includes('공방') || t.includes('쿠킹') || t.includes('베이킹')) return 'class';
     if (t.includes('식당') || t.includes('레스토랑') || t.includes('카페') ||
-        t.includes('맛집') || t.includes('뷔페') || t.includes('브런치')) {
-        return 'food';
-    }
-
-    // Default to activity for general experiences
+        t.includes('맛집') || t.includes('뷔페')) return 'food';
     return 'activity';
 }
 
+// Extract region from address or title
+function extractRegion(text: string): string {
+    if (text.includes('서울')) return 'seoul';
+    if (text.includes('경기') || text.includes('일산') || text.includes('킨텍스') ||
+        text.includes('수원') || text.includes('용인') || text.includes('성남')) return 'gyeonggi';
+    if (text.includes('인천')) return 'incheon';
+    if (text.includes('부산')) return 'busan';
+    if (text.includes('대구')) return 'daegu';
+    if (text.includes('광주')) return 'gwangju';
+    if (text.includes('대전')) return 'daejeon';
+    if (text.includes('울산')) return 'ulsan';
+    if (text.includes('세종')) return 'sejong';
+    if (text.includes('강원') || text.includes('춘천') || text.includes('강릉')) return 'gangwon';
+    if (text.includes('제주')) return 'jeju';
+    if (text.includes('충북') || text.includes('청주')) return 'chungbuk';
+    if (text.includes('충남') || text.includes('천안')) return 'chungnam';
+    if (text.includes('전북') || text.includes('전주')) return 'jeonbuk';
+    if (text.includes('전남') || text.includes('여수') || text.includes('광양')) return 'jeonnam';
+    if (text.includes('경북') || text.includes('포항') || text.includes('경주')) return 'gyeongbuk';
+    if (text.includes('경남') || text.includes('창원') || text.includes('김해')) return 'gyeongnam';
+    return 'etc';
+}
+
 async function scrapeProducts() {
-    console.log('Starting Mom-Mom Product Scraper...');
+    console.log('Starting Mom-Mom Product Scraper (Enhanced)...');
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -76,7 +72,7 @@ async function scrapeProducts() {
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
         console.log('Page loaded.');
 
-        // Robust Load Logic: Scroll + Click "More"
+        // Scroll to load all items
         await page.evaluate(async () => {
             const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
             let lastHeight = 0;
@@ -86,7 +82,6 @@ async function scrapeProducts() {
                 window.scrollTo(0, document.body.scrollHeight);
                 await delay(1000);
 
-                // Click More if exists
                 const buttons = Array.from(document.querySelectorAll('button'));
                 const moreBtn = buttons.find(b => b.textContent?.includes('더보기'));
                 if (moreBtn) {
@@ -103,36 +98,59 @@ async function scrapeProducts() {
             }
         });
 
-        // Extract Items using h4 titles (data-id only exists on 4 featured items)
+        // Extract Items with full details from list page
         const listItems = await page.evaluate(() => {
             const results: any[] = [];
             const seenTitles = new Set();
 
-            const h4s = document.querySelectorAll('h4');
-            console.log('Found h4 elements:', h4s.length);
+            // Use class selector for product cards (more specific)
+            const cards = document.querySelectorAll('div[class*="sc-fd2f9237"]');
+            console.log('Found cards:', cards.length);
 
-            h4s.forEach(h4 => {
+            cards.forEach(card => {
+                // Get title from h4
+                const h4 = card.querySelector('h4');
+                if (!h4) return;
+
                 const title = h4.textContent?.trim() || '';
                 if (!title || seenTitles.has(title)) return;
                 seenTitles.add(title);
-
-                // Find the parent card container
-                let card = h4.closest('.sc-fd2f9237-27') || h4.parentElement?.parentElement;
-                if (!card) return;
 
                 // Get image
                 const imgEl = card.querySelector('img');
                 const image = imgEl?.src || '';
 
-                // Get price
-                const priceEl = card.querySelector('p span:last-child');
-                const price = priceEl?.textContent?.trim() || '';
-
-                // Get brand name if available
+                // Get brand name
                 const brandEl = card.querySelector('.brand-name');
                 const brand = brandEl?.textContent?.trim() || '';
 
-                // Generate ID from title (since data-id not available)
+                // Get prices - look for spans with discount and price
+                let discount = '';
+                let price = '';
+                let originalPrice = '';
+
+                // Find p element containing price info
+                const priceContainer = card.querySelector('p');
+                if (priceContainer) {
+                    const spans = priceContainer.querySelectorAll('span');
+                    spans.forEach(span => {
+                        const text = span.textContent?.trim() || '';
+                        if (text.includes('%')) {
+                            discount = text; // e.g., "35%"
+                        } else if (text.includes('원')) {
+                            if (!price) price = text; // First price is discounted price
+                            else originalPrice = text;
+                        }
+                    });
+                }
+
+                // Also check for del element (original price struck through)
+                const delEl = card.querySelector('del');
+                if (delEl && delEl.textContent?.includes('원')) {
+                    originalPrice = delEl.textContent.trim();
+                }
+
+                // Generate ID from title
                 const safeTitle = title.replace(/[^\w가-힣]/g, '').slice(0, 20);
                 const id = `mommom_shop_${safeTitle}`;
 
@@ -141,8 +159,9 @@ async function scrapeProducts() {
                     title,
                     brand,
                     image,
-                    link: '', // Will need to click to get actual link
-                    priceRaw: price
+                    price,
+                    originalPrice,
+                    discount
                 });
             });
             return results;
@@ -150,81 +169,128 @@ async function scrapeProducts() {
 
         console.log(`Found ${listItems.length} products to process.`);
 
+        // Create a separate page for address search
+        const searchPage = await browser.newPage();
+        await searchPage.setRequestInterception(true);
+        searchPage.on('request', (req) => {
+            if (['image', 'media', 'font', 'stylesheet'].includes(req.resourceType())) req.abort();
+            else req.continue();
+        });
+
         const finalItems: any[] = [];
         const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
         bar.start(listItems.length, 0);
 
-        // Detail Scraping
+        // Process each item
         for (const item of listItems) {
-            const newItem = {
-                ...item,
-                date: '상시',
+            const newItem: any = {
+                id: item.id,
+                title: item.title,
+                image: item.image,
+                link: `https://mom-mom.net/shop/categories/1102241`, // Link to category page
+                date: '상시운영',
                 genre: classifyGenre(item.title),
-                region: 'unknown',
-                venue: 'unknown',
+                region: extractRegion(item.title + ' ' + item.brand),
+                venue: item.brand || item.title,
                 address: '',
                 latitude: 0,
                 longitude: 0,
+                price: item.price || '',
+                originalPrice: item.originalPrice || '',
+                rate: 0,
+                discount: item.discount || '',
                 platform: 'mommom',
-                originalPrice: '',
-                description: '',
-                rate: 0
+                description: ''
             };
 
-            try {
-                const detailPage = await browser.newPage();
-                await detailPage.setRequestInterception(true);
-                detailPage.on('request', (req) => {
-                    if (['image', 'media', 'font'].includes(req.resourceType())) req.abort();
-                    else req.continue();
-                });
-
-                await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
-
-                // Scrape extra details + Title Fallback
-                const detailInfo = await detailPage.evaluate(() => {
-                    const text = document.body.innerText;
-
-                    const pageTitle = document.querySelector('h1')?.textContent?.trim() ||
-                        document.querySelector('h2')?.textContent?.trim() || '';
-
-                    const addrMatch = text.match(/주소\s*[:]?\s*([가-힣0-9\s\-]+(시|도)\s[가-힣0-9\s\-]+(구|군|시))/);
-                    const address = addrMatch ? addrMatch[1].trim() : '';
-
-                    // Try to finding date text too
-                    // "기간: 2024.12.01 ~ 2025.03.01"
-                    // const dateMatch = text.match(/기간\s*[:]?\s*([0-9\.\s~]+)/);
-                    // let date = dateMatch ? dateMatch[1].trim() : '';
-
-                    return { address, pageTitle };
-                });
-
-                if (newItem.title === 'Unknown Title' && detailInfo.pageTitle) {
-                    newItem.title = detailInfo.pageTitle;
+            // Parse discount rate
+            if (item.discount) {
+                const rateMatch = item.discount.match(/(\d+)/);
+                if (rateMatch) {
+                    newItem.rate = parseInt(rateMatch[1], 10);
                 }
+            }
 
-                if (detailInfo.address) {
-                    newItem.address = detailInfo.address;
-                    if (newItem.address.includes('서울')) newItem.region = 'seoul';
-                    else if (newItem.address.includes('경기')) newItem.region = 'gyeonggi';
-                    else if (newItem.address.includes('부산')) newItem.region = 'busan';
-                    else if (newItem.address.includes('인천')) newItem.region = 'incheon';
-                    else if (newItem.address.includes('대구')) newItem.region = 'daegu';
-                    else if (newItem.address.includes('광주')) newItem.region = 'gwangju';
-                    else if (newItem.address.includes('대전')) newItem.region = 'daejeon';
-                    else if (newItem.address.includes('울산')) newItem.region = 'ulsan';
-                    else newItem.region = 'etc';
-                    newItem.venue = newItem.address.split(' ').slice(2).join(' ') || newItem.title;
-                } else {
-                    if (newItem.title.includes('서울')) newItem.region = 'seoul';
-                    else if (newItem.title.includes('부산')) newItem.region = 'busan';
-                    else if (newItem.title.includes('인천')) newItem.region = 'incheon';
-                    else if (newItem.title.includes('일산') || newItem.title.includes('킨텍스')) newItem.region = 'gyeonggi';
+            // Search for address using brand name (progressive word removal)
+            const searchTerm = item.brand || item.title;
+            if (searchTerm) {
+                const words = searchTerm.split(/\s+/).filter((w: string) => w.length > 1);
+
+                for (let i = words.length; i > 0; i--) {
+                    const query = words.slice(0, i).join(' ');
+                    if (query.length < 3) continue;
+
+                    try {
+                        const searchUrl = `https://search.naver.com/search.naver?where=nexearch&query=${encodeURIComponent(query + ' 주소')}`;
+                        await searchPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+
+                        // Try to extract address and coordinates from Naver
+                        const result = await searchPage.evaluate(() => {
+                            // Method 1: Look for __APOLLO_STATE__ JSON
+                            const scripts = Array.from(document.querySelectorAll('script'));
+                            for (const script of scripts) {
+                                const text = script.textContent || '';
+                                if (text.includes('__APOLLO_STATE__')) {
+                                    const match = text.match(/"roadAddress"\s*:\s*"([^"]+)"/);
+                                    const latMatch = text.match(/"y"\s*:\s*"?([\d.]+)"?/);
+                                    const lngMatch = text.match(/"x"\s*:\s*"?([\d.]+)"?/);
+
+                                    if (match && latMatch && lngMatch) {
+                                        return {
+                                            address: match[1],
+                                            lat: parseFloat(latMatch[1]),
+                                            lng: parseFloat(lngMatch[1])
+                                        };
+                                    }
+                                }
+                            }
+
+                            // Method 2: Look for address in visible text
+                            const addrPatterns = [
+                                /([가-힣]+(?:시|도)\s+[가-힣]+(?:시|구|군)\s+[가-힣0-9\s\-]+)/
+                            ];
+                            const bodyText = document.body.innerText;
+                            for (const pattern of addrPatterns) {
+                                const match = bodyText.match(pattern);
+                                if (match) {
+                                    return { address: match[1].trim(), lat: 0, lng: 0 };
+                                }
+                            }
+
+                            // Method 3: Look for map link with coordinates
+                            const mapLinks = Array.from(document.querySelectorAll('a[href*="map.naver"]'));
+                            for (const link of mapLinks) {
+                                const href = (link as HTMLAnchorElement).href;
+                                const latMatch = href.match(/lat=([\d.]+)/);
+                                const lngMatch = href.match(/lng=([\d.]+)/);
+                                if (latMatch && lngMatch) {
+                                    return {
+                                        address: '',
+                                        lat: parseFloat(latMatch[1]),
+                                        lng: parseFloat(lngMatch[1])
+                                    };
+                                }
+                            }
+
+                            return null;
+                        });
+
+                        if (result && (result.address || result.lat)) {
+                            if (result.address) newItem.address = result.address;
+                            if (result.lat) newItem.latitude = result.lat;
+                            if (result.lng) newItem.longitude = result.lng;
+
+                            // Update region based on address
+                            if (result.address) {
+                                newItem.region = extractRegion(result.address);
+                            }
+
+                            break; // Found address, stop searching
+                        }
+                    } catch (e) {
+                        // Continue to next shorter query
+                    }
                 }
-
-                await detailPage.close();
-            } catch (e) {
-                // Ignore
             }
 
             finalItems.push(newItem);
@@ -232,8 +298,19 @@ async function scrapeProducts() {
         }
         bar.stop();
 
+        await searchPage.close();
+
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
         console.log(`Saved ${finalItems.length} products to ${OUTPUT_FILE}`);
+
+        // Print genre summary
+        const genreSummary: Record<string, number> = {};
+        finalItems.forEach(i => genreSummary[i.genre] = (genreSummary[i.genre] || 0) + 1);
+        console.log('Genre distribution:', genreSummary);
+
+        // Print address coverage
+        const withAddress = finalItems.filter(i => i.address).length;
+        console.log(`Address coverage: ${withAddress}/${finalItems.length} (${(withAddress / finalItems.length * 100).toFixed(1)}%)`);
 
     } catch (e) {
         console.error('Error:', e);
