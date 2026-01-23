@@ -5,6 +5,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import cliProgress from 'cli-progress';
 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 puppeteer.use(StealthPlugin());
 
 const TARGET_URL = 'https://mom-mom.net/search?q=%EB%B0%95%EB%AC%BC%EA%B4%80/%EC%B2%B4%ED%97%98%EA%B4%80&hl=places'; // Search: 박물관/체험관
@@ -228,7 +233,8 @@ async function scrapeMomMom() {
             const promises = chunk.map(async (item) => {
                 // Check if we already have valid data for this item
                 const existing = existingData[item.link];
-                if (existing && existing.description && existing.address && existing.address.length > 5 && existing.price) {
+                // Force update if description is missing or short
+                if (existing && existing.description && existing.description.length > 10 && existing.address && existing.address.length > 5 && existing.price) {
                     // Data is complete, skip scraping
                     // Ensure we update title/image from list if they were missing or improved
                     return {
@@ -400,27 +406,31 @@ async function scrapeMomMom() {
 
                         // === NEW: Extract 특징, 대상, 운영 for detailed description ===
 
-                        // 특징 (Feature): Usually the first paragraph under article
+                        // 특징 (Feature): Use class .item-description if available
                         let feature = '';
-                        const articleP = document.querySelector('article > div > p');
-                        if (articleP) {
-                            feature = articleP.textContent?.trim() || '';
+                        const descP = document.querySelector('p.item-description');
+                        if (descP) {
+                            feature = descP.textContent?.trim() || '';
                         }
                         if (!feature) {
-                            const firstP = document.querySelector('article p');
-                            if (firstP) feature = firstP.textContent?.trim() || '';
+                            // Fallback to first paragraph in article div
+                            const articleP = document.querySelector('article > div > p');
+                            if (articleP) feature = articleP.textContent?.trim() || '';
                         }
 
-                        // 대상 (Target Audience): Look for text containing "인기" and "개월"
+                        // 대상 (Target Audience): Look for paragraphs containing indicators
                         let target = '';
-                        const allDivs = Array.from(document.querySelectorAll('div, p, span'));
-                        const targetEl = allDivs.find(el => {
+                        const allPs = Array.from(document.querySelectorAll('article p'));
+                        const targetEl = allPs.find(el => {
                             const text = el.textContent || '';
-                            return text.includes('인기') && text.includes('개월') && text.length < 50;
+                            return (text.includes('인기') && text.includes('개월')) ||
+                                (text.includes('세') && text.includes('이상')) ||
+                                (text.includes('모두') && text.includes('추천'));
                         });
+
                         if (targetEl) {
                             target = targetEl.textContent?.replace(/\n/g, ' ').trim() || '';
-                            // Remove "YYYY.MM.DD 업데이트" suffix
+                            // Remove "YYYY.MM.DD 업데이트" suffix if it somehow got attached (though unlikely if separate p)
                             target = target.replace(/\d{4}\.\d{2}\.\d{2}.*업데이트.*/, '').trim();
                         }
 
@@ -440,10 +450,11 @@ async function scrapeMomMom() {
                                     const afterDay = hoursText.substring(idx);
                                     const timeMatch = afterDay.match(/(\d{1,2}:\d{2}\s*~\s*\d{1,2}:\d{2})/);
                                     if (timeMatch) {
+                                        const timeStr = timeMatch[1];
                                         // Check if it's the same for all days (simplified)
                                         const dayAbbrev = day.replace('요일', '');
-                                        hourLines.push(`${dayAbbrev}: ${timeMatch[1]}`);
-                                        break;
+                                        hourLines.push(`${dayAbbrev}: ${timeStr}`);
+                                        break; // Take the first one found as representative
                                     }
                                 }
                             }
@@ -452,8 +463,8 @@ async function scrapeMomMom() {
                             if (hourLines.length > 0) {
                                 if (daysWithHours >= 7) {
                                     operatingHours = `매일 ${hourLines[0].split(': ')[1]}`;
-                                } else if (daysWithHours >= 6) {
-                                    operatingHours = `화-일 ${hourLines[0].split(': ')[1]}`;
+                                } else if (daysWithHours >= 5) { // Assuming mostly weekdays+
+                                    operatingHours = `월-일 ${hourLines[0].split(': ')[1]}`; // User example style
                                 } else {
                                     operatingHours = hourLines.join(', ');
                                 }

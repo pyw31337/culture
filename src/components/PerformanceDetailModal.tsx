@@ -276,6 +276,15 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 </p>
                                             </div>
                                         )}
+                                        {/* Description (MomMom) */}
+                                        {performance.description && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-bold mb-2">상세 정보</h3>
+                                                <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-white/5 p-4 rounded-xl border border-white/5">
+                                                    {performance.description}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
 
