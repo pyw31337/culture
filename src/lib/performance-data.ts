@@ -22,6 +22,7 @@ import seoulData from '@/data/seoul-culture.json';
 import mochaclassData from '@/data/mochaclass.json';
 import mommomData from '@/data/mommom.json';
 import mommomFoodData from '@/data/mommom-food.json';
+import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
 import venueData from '@/data/venues.json';
@@ -104,6 +105,7 @@ export function getAllPerformances() {
     const ott = safeArray<any>(ottData);
     const mommom = safeArray<any>(mommomData);
     const mommomFood = safeArray<any>(mommomFoodData);
+    const mommomProduct = safeArray<any>(mommomProductData);
     const museum = safeArray<any>(museumData);
     // const musical = safeArray<any>(musicalData);
 
@@ -137,6 +139,7 @@ export function getAllPerformances() {
         ...seoulCulture,
         ...mommom,
         ...mommomFood,
+        ...mommomProduct,
         ...museum,
         // ...musical,
     ].map(p => ({

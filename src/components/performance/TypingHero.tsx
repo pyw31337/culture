@@ -31,15 +31,25 @@ export const TypingHero = ({
     // React to template updates from parent
     useEffect(() => {
         // Only update if actually different content/reference
-        // We compare content because in override modes, we might get new ref but identical content.
-        // If content matches, we normally wouldn't restart, BUT if we are stuck in CYCLING phase,
-        // we MUST restart (or show full text) to get out of empty state.
+
+        const isStructureSame =
+            template.line1 === displayedTemplate.line1 &&
+            template.line2Pre === displayedTemplate.line2Pre &&
+            template.suffix === displayedTemplate.suffix;
 
         const isContentDifferent =
             template.line1 !== displayedTemplate.line1 ||
             template.highlight !== displayedTemplate.highlight;
 
         if (template !== displayedTemplate || isContentDifferent) {
+            // Smart Update: If only highlight changed (e.g. user typing in search), 
+            // update the content but DO NOT reset the typing phase.
+            // AND ensure we don't restart progress or phase.
+            if (isStructureSame && template.highlight !== displayedTemplate.highlight) {
+                setDisplayedTemplate(prev => ({ ...prev, highlight: template.highlight }));
+                return;
+            }
+
             setDisplayedTemplate(template);
             setPhase('TYPE');
             setProgress(0);

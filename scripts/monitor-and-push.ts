@@ -44,7 +44,7 @@ async function monitorAndPush() {
                 // Run Git commands
                 try {
                     console.log('Adding files...');
-                    await execAsync('git add src/data/mommom.json src/data/mommom-food.json src/lib/performance-data.ts src/lib/constants.ts src/components/GenreIcons.tsx src/app/page.tsx scripts/scrape-mommom-food.ts scripts/monitor-and-push.ts scripts/scrape-mommom.ts');
+                    await execAsync('git add src/data/mommom.json src/data/mommom-food.json src/data/mommom-products.json src/lib/performance-data.ts src/lib/constants.ts src/components/GenreIcons.tsx src/app/page.tsx scripts/scrape-mommom-food.ts scripts/scrape-mommom-products.ts scripts/monitor-and-push.ts scripts/scrape-mommom.ts');
 
                     console.log('Committing...');
                     await execAsync('git commit -m "Auto: Update Mom-Mom data and Food category"');
