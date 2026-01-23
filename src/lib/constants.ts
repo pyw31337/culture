@@ -16,6 +16,7 @@ export const GENRES = [
     { id: 'leisure', label: '레저' },
     { id: 'kids', label: '키즈' },
     { id: 'museum', label: '박물관/체험관' },
+    { id: 'food', label: '식당/카페' },
     { id: 'volleyball', label: '배구' },
     { id: 'basketball', label: '농구' },
     { id: 'baseball', label: '야구' },
@@ -43,6 +44,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'soccer': { hex: '#dc2626', twText: 'text-red-700', twBg: 'bg-red-700', twBorder: 'border-red-500', twActivebg: 'bg-red-600' },
     'handball': { hex: '#d97706', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
     'museum': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' }, // Emerald for Museum
+    'food': { hex: '#65a30d', twText: 'text-lime-600', twBg: 'bg-lime-600', twBorder: 'border-lime-500', twActivebg: 'bg-lime-500' }, // Lime for Food
     'hotdeal': { hex: '#e11d48', twText: 'text-rose-600', twBg: 'bg-rose-600', twBorder: 'border-rose-500', twActivebg: 'bg-rose-500' },
     'all': { hex: '#4b5563', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };
@@ -85,7 +87,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
     'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'exhibition',
-    'activity', 'class', 'travel', 'festival', 'leisure', 'kids', 'museum',
+    'activity', 'class', 'travel', 'festival', 'leisure', 'kids', 'museum', 'food',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
 

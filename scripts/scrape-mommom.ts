@@ -231,17 +231,34 @@ async function scrapeMomMom() {
         for (let i = 0; i < listItems.length; i += CHUNK_SIZE) {
             const chunk = listItems.slice(i, i + CHUNK_SIZE);
             const promises = chunk.map(async (item) => {
-                // Check if we already have valid data for this item
+                // Filter existing items based on criteria:
                 const existing = existingData[item.link];
-                // Force update if description is missing or short
-                if (existing && existing.description && existing.description.length > 10 && existing.address && existing.address.length > 5 && existing.price) {
-                    // Data is complete, skip scraping
-                    // Ensure we update title/image from list if they were missing or improved
-                    return {
-                        ...existing,
-                        title: (item.title && item.title !== 'Pending') ? item.title : existing.title,
-                        image: (item.image) ? item.image : existing.image
-                    };
+
+                // Case 1: New Item -> Scrape
+                if (!existing) {
+                    // fall through
+                }
+                // Case 2: Incomplete Data -> Scrape
+                else if (!existing.description || existing.description.length < 10 || !existing.price) {
+                    // fall through
+                }
+                // Case 3: Permanent/OpenRun items -> Skip (Efficiency)
+                // If date suggests permanence and we have good description, skip.
+                else {
+                    const isPermanent = existing.date.includes('오픈런') ||
+                        existing.date.includes('상시') ||
+                        existing.date.includes('연중무휴') ||
+                        existing.date.includes('매일') ||
+                        !existing.date.match(/\d{4}\.\d{2}\.\d{2}/);
+
+                    if (isPermanent) {
+                        // Ensure list data (title/image) is synced
+                        return {
+                            ...existing,
+                            title: (item.title && item.title !== 'Pending') ? item.title : existing.title,
+                            image: (item.image) ? item.image : existing.image
+                        };
+                    }
                 }
 
                 const detailPage = await browser.newPage();

@@ -177,7 +177,18 @@ export const KayakIcon = ({ size = 16 }: { size?: number }) => (
 // Hockey Icon removed
 export const MuseumIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 18v-7" /><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z" /><path d="M14 18v-7" /><path d="M18 18v-7" /><path d="M3 22h18" /><path d="M6 18v-7" />
+    </svg>
+);
+
+// Food: Salad (User Provided)
+export const SaladIcon = ({ size = 16 }: { size?: number }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 11h16a1 1 0 0 1 1 1v.5c0 1.5 -2.517 5.573 -4 6.5v1a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-1c-1.687 -1.054 -4 -5 -4 -6.5v-.5a1 1 0 0 1 1 -1" />
+        <path d="M18.5 11c.351 -1.017 .426 -2.236 .5 -3.714v-1.286h-2.256c-2.83 0 -4.616 .804 -5.64 2.076" />
+        <path d="M5.255 11.008a12.204 12.204 0 0 1 -.255 -2.008v-1h1.755c.98 0 1.801 .124 2.479 .35" />
+        <path d="M8 8l1 -4l4 2.5" />
+        <path d="M13 11v-.5a2.5 2.5 0 1 0 -5 0v.5" />
     </svg>
 );
 
@@ -215,6 +226,7 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'handball': return <HandballIcon size={size} />;
         case 'hockey': return <MuseumIcon size={size} />; // Hockey was removed from constants, but just in case of stale usage mapping, we might want to be careful. Ideally remove this case.
         case 'museum': return <MuseumIcon size={size} />;
+        case 'food': return <SaladIcon size={size} />;
         case 'ott': return <OttIcon size={size} />;
         default: return <LayoutGrid size={size} />;
     }
