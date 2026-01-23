@@ -759,6 +759,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             console.log(`[DeepLink] Activated category: ${targetGenre}`);
         }
 
+        // 1.5 Check for Search Query (search= or q=)
+        const searchQuery = params.get('search') || params.get('q');
+        if (searchQuery) {
+            setSearchText(searchQuery);
+            setSelectedGenre('all'); // Force global search context
+            setIsSearching(true);
+            setIsDropdownOpen(true);
+
+            // Trigger local search logic immediately for the param
+            const lowerSearch = searchQuery.toLowerCase().normalize('NFC');
+            const matches = initialPerformances.filter(p =>
+                p.title.toLowerCase().normalize('NFC').includes(lowerSearch) ||
+                p.venue.toLowerCase().normalize('NFC').includes(lowerSearch) ||
+                (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).toLowerCase().normalize('NFC').includes(lowerSearch))
+            ).slice(0, 10);
+            setSearchResults(matches);
+        }
+
         // 2. Hash Change Handler for Share Data (#s=) and Performance Popup (#p=)
         const handleHashCheck = () => {
             const hash = window.location.hash;
@@ -938,6 +956,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             if (viewMode === 'likes-perf' || viewMode === 'likes-venue') {
                 setViewMode('grid');
             }
+            // User Request: Reset category to 'all' when searching to show global results
+            // (Works fully on Home page where data is complete)
             if (selectedGenre !== 'all') {
                 setSelectedGenre('all');
             }
@@ -957,10 +977,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
         if (val) setIsDropdownOpen(true);
         setHighlightedIndex(-1); // Reset highlight on typing
+
         // Close dropdown if text is cleared
         if (!val) {
             setIsDropdownOpen(false);
             setSearchResults([]);
+            setIsSearching(false);
         }
     };
 
