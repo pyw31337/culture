@@ -10,7 +10,7 @@ puppeteer.use(StealthPlugin());
     // const url = 'https://tickets.interpark.com/goods/21001949';
     // const url = 'https://tickets.interpark.com/goods/24017373'; // Original
     // const url = 'https://tickets.interpark.com/goods/25018267'; // User reported failure
-    const url = 'https://tickets.interpark.com/goods/25018451'; // User reported missing price (Package)
+    const url = 'https://tickets.interpark.com/goods/Y3001605'; // User reported missing price details
 
     console.log(`Navigating to ${url}...`);
     await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -97,6 +97,43 @@ puppeteer.use(StealthPlugin());
 
     console.log('--- Inspector Output ---');
     console.log(JSON.stringify(data, null, 2));
+
+    // Click Price Popup if it exists
+    console.log('Attempting to click Price Popup...');
+    try {
+        const priceBtn = await page.$('[data-popup="info-price"]');
+        if (priceBtn) {
+            await priceBtn.click();
+            console.log('Clicked Price Button. Waiting for popup...');
+            await page.waitForSelector('.popPriceTable', { visible: true, timeout: 5000 });
+
+            const popupHtml = await page.evaluate(() => {
+                const popup = document.querySelector('.popPriceTable');
+                return popup ? popup.outerHTML : 'Popup found but element missing?';
+            });
+            console.log('--- Price Popup HTML ---');
+            console.log(popupHtml);
+        } else {
+            console.log('Price Button [data-popup="info-price"] not found.');
+        }
+    } catch (e) {
+        console.error('Error clicking/reading price popup:', e);
+    }
+
+    // Inspect Main Page Price List Structure
+    console.log('--- Main Page Price List Analysis ---');
+    const priceListInfo = await page.evaluate(() => {
+        const items = Array.from(document.querySelectorAll('.infoList .infoItem .infoDesc .priceList .priceItem, .infoPriceItem'));
+        return items.map(item => ({
+            html: item.outerHTML,
+            sale: item.querySelector('.sale')?.textContent?.trim(),
+            original: item.querySelector('.original')?.textContent?.trim(),
+            rate: item.querySelector('.rate')?.textContent?.trim(),
+            price: item.querySelector('.price')?.textContent?.trim(),
+            text: item.textContent?.trim()
+        }));
+    });
+    console.log(JSON.stringify(priceListInfo, null, 2));
 
     await browser.close();
 })();

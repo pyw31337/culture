@@ -314,27 +314,39 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     let originalPrice = '';
                     let discount = '';
 
-                    // Strategy: Find all price items, pick the best one (usually the one with sale price or the first one)
-                    const priceItems = Array.from(document.querySelectorAll('.infoPriceItem'));
+                    // Strategy A: Main Page Price List (New Structure)
+                    const priceItems = Array.from(document.querySelectorAll('.infoList .infoItem .infoDesc .priceList .priceItem, .infoPriceItem'));
                     if (priceItems.length > 0) {
-                        // Try to find an item with a sale price first
-                        let targetItem = priceItems.find(item => item.querySelector('.sale')) || priceItems[0];
+                        // Find item with most detail (sale + original + rate)
+                        let bestItem = priceItems.find(i => i.querySelector('.sale') && i.querySelector('.original'));
+                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.price')); // Fallback
+                        if (!bestItem) bestItem = priceItems[0];
 
-                        if (targetItem) {
-                            price = targetItem.querySelector('.sale')?.textContent?.trim() ||
-                                targetItem.querySelector('.price')?.textContent?.trim() || '';
+                        if (bestItem) {
+                            // Helper to extract clean text
+                            const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
 
-                            // If we found a sale price, look for original price and rate
-                            if (targetItem.querySelector('.sale')) {
-                                originalPrice = targetItem.querySelector('.price')?.textContent?.trim() || '';
-                                discount = targetItem.querySelector('.rate')?.textContent?.trim() || '';
+                            // Structure 1: .sale, .original, .rate
+                            const sale = getVal('.sale');
+                            const original = getVal('.original');
+                            const rate = getVal('.rate');
+                            const plainPrice = getVal('.price');
+
+                            if (sale) {
+                                price = sale;
+                                originalPrice = original;
+                                discount = rate;
+                            } else if (plainPrice) {
+                                price = plainPrice;
                             }
                         }
-                    } else {
-                        // Fallback: Old structure or simple text
-                        // Try finding any price text
+                    }
+
+                    // Strategy B: Old Structure text parsing
+                    if (!price) {
                         const priceText = getText('.infoItem.infoPrice .infoDesc');
                         if (priceText) {
+                            // Check for "50,000원 -> 45,000원" pattern if text based
                             const match = priceText.match(/([0-9,]+원)/);
                             if (match) price = match[1];
                             else price = priceText;
@@ -344,61 +356,52 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     return { runningTime, ageRating, price, originalPrice, discount };
                 });
 
-                let { runningTime, ageRating, price } = basicInfo;
-                let originalPrice = undefined;
-                let discount = undefined;
+                let { runningTime, ageRating, price, originalPrice, discount } = basicInfo;
 
-                // 2. Click Price Popup for Discounts
-                const priceBtn = await page.$('a[data-popup="info-price"]');
-                if (priceBtn) {
-                    await priceBtn.click();
-                    try {
-                        await page.waitForSelector('.popPriceTable', { visible: true, timeout: 2000 });
+                // 3. Click Price Popup for Detailed Breakdown if basic info is insufficient
+                // Only try if we don't have a discount but suspect there is one, or just to get the base General price.
+                try {
+                    // Update selector to support button or a tag
+                    const priceBtn = await page.$('[data-popup="info-price"]');
+                    if (priceBtn && (!price || !originalPrice)) {
+                        await priceBtn.click();
+                        await page.waitForSelector('.popPriceTable', { visible: true, timeout: 3000 });
 
-                        const discountInfo = await page.evaluate(() => {
+                        const popupData = await page.evaluate(() => {
                             const rows = Array.from(document.querySelectorAll('.popPriceTable tbody tr'));
-                            let stdPriceVal = 0;
-                            let stdPriceStr = '';
-                            let bookingPriceVal = 0;
+                            let prices: number[] = [];
 
                             rows.forEach(tr => {
-                                const name = tr.querySelector('.name')?.textContent?.trim() || '';
                                 const tds = tr.querySelectorAll('td');
                                 const valStr = tds[tds.length - 1]?.textContent?.trim() || '';
                                 const val = parseInt(valStr.replace(/[^0-9]/g, ''), 10);
-                                if (isNaN(val)) return;
-
-                                // Identify "General" (Standard) Price
-                                if (name.includes('일반') || name === '전석' || (tr.querySelector('.category')?.textContent?.includes('전석') && name.includes('일반'))) {
-                                    if (val > stdPriceVal) {
-                                        stdPriceVal = val;
-                                        stdPriceStr = valStr;
-                                    }
-                                }
-
-                                // Identify "Booking" Discount ("예매 할인")
-                                if (name.includes('예매 할인') || name.includes('예매할인')) {
-                                    bookingPriceVal = val;
-                                }
+                                if (!isNaN(val) && val > 0) prices.push(val);
                             });
 
-                            return { stdPriceVal, stdPriceStr, bookingPriceVal };
+                            // Simple logic: Max price = Original, Min price (if different) = Discounted
+                            // This assumes the table lists BOTH standard and discounted prices.
+                            // If it only lists the final price, we can't derive discount here.
+                            if (prices.length > 0) {
+                                const max = Math.max(...prices);
+                                const min = Math.min(...prices);
+                                return { max, min, hasDiff: max !== min };
+                            }
+                            return null;
                         });
 
-                        // Use standard price if missing
-                        if (!price && discountInfo.stdPriceStr) {
-                            price = discountInfo.stdPriceStr;
-                        }
+                        if (popupData) {
+                            if (!price) price = popupData.min.toLocaleString() + '원';
 
-                        // Apply Discount Logic
-                        if (discountInfo.bookingPriceVal > 0 && discountInfo.stdPriceVal > 0 && discountInfo.bookingPriceVal < discountInfo.stdPriceVal) {
-                            originalPrice = discountInfo.stdPriceStr;
-                            price = discountInfo.bookingPriceVal.toLocaleString() + '원';
-                            const rate = Math.round((1 - (discountInfo.bookingPriceVal / discountInfo.stdPriceVal)) * 100);
-                            discount = `${rate}%`;
+                            // Only infer discount if we found a spread and didn't have specific discount info yet
+                            if (popupData.hasDiff && !originalPrice) {
+                                originalPrice = popupData.max.toLocaleString() + '원';
+                                const rateVal = Math.round((1 - (popupData.min / popupData.max)) * 100);
+                                discount = `${rateVal}%`;
+                            }
                         }
-
-                    } catch (e) { }
+                    }
+                } catch (e) {
+                    // Ignore popup errors
                 }
 
                 return {

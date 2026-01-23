@@ -360,6 +360,25 @@ async function scrapeMomMom() {
                         // Price: Enhanced extraction with regex patterns
                         let price = '';
 
+                        // Helper: Extract the actual price number from text
+                        // Handles: "성인(20세이상): 9,000원" -> extracts "9,000원"
+                        const extractPrice = (text: string): string | null => {
+                            // Remove parenthetical content first to avoid matching ages
+                            const cleaned = text.replace(/\([^)]*\)/g, '');
+
+                            // Pattern 1: Number followed by 원 at end or with space
+                            const priceMatch = cleaned.match(/([\d,]+)\s*원/);
+                            if (priceMatch) {
+                                const numStr = priceMatch[1].replace(/,/g, '');
+                                const num = parseInt(numStr, 10);
+                                // Validate: Prices below 500원 are suspicious (except for free)
+                                if (num >= 500 || text.includes('무료')) {
+                                    return priceMatch[1] + '원';
+                                }
+                            }
+                            return null;
+                        };
+
                         // Method 1: Find section with h2 containing "요금"
                         const sections = Array.from(document.querySelectorAll('section'));
                         for (const section of sections) {
@@ -369,14 +388,23 @@ async function scrapeMomMom() {
                                 for (const li of listItems) {
                                     const text = li.textContent?.trim() || '';
                                     if (text === '[요금]') continue;
-                                    // Enhanced regex: "X - Y원" or "X: Y원" or "X Y원"
-                                    const priceMatch = text.match(/(.+?[\-:\s]?\s*[\d,]+원)/);
-                                    if (priceMatch) {
-                                        price = priceMatch[1].trim();
+
+                                    // Check for 무료 first
+                                    if (text.includes('무료') && !text.includes('이상')) {
+                                        price = text;
                                         break;
                                     }
-                                    if (text.includes('무료')) {
-                                        price = text;
+
+                                    // Extract price using helper
+                                    const extracted = extractPrice(text);
+                                    if (extracted) {
+                                        // Include context (adult/child label) if available
+                                        const labelMatch = text.match(/^([가-힣]+)\s*[\(\-:]/);
+                                        if (labelMatch) {
+                                            price = labelMatch[1] + ': ' + extracted;
+                                        } else {
+                                            price = extracted;
+                                        }
                                         break;
                                     }
                                 }
@@ -387,19 +415,23 @@ async function scrapeMomMom() {
                         // Method 2: Look for price patterns in page content
                         if (!price) {
                             const bodyText = document.body.innerText;
-                            // Pattern: "성인: 17,000원" or "대소공통 1인 입장권 - 12,500원"
+                            // Pattern: "성인: 17,000원" or "일반 - 12,500원"
                             const pricePatterns = [
-                                /성인[:\s]*[\d,]+원/,
-                                /일반[^:]*[:\-]\s*[\d,]+원/,
-                                /입장[료권][^:]*[:\-]\s*[\d,]+원/,
-                                /대소공통[^:]*[:\-]\s*[\d,]+원/,
-                                /어른[:\s]*[\d,]+원/
+                                /성인[^:]*[:\-]\s*([\d,]+원)/,
+                                /일반[^:]*[:\-]\s*([\d,]+원)/,
+                                /입장[료권][^:]*[:\-]\s*([\d,]+원)/,
+                                /대소공통[^:]*[:\-]\s*([\d,]+원)/,
+                                /어른[^:]*[:\-]\s*([\d,]+원)/
                             ];
                             for (const pattern of pricePatterns) {
                                 const match = bodyText.match(pattern);
-                                if (match) {
-                                    price = match[0];
-                                    break;
+                                if (match && match[1]) {
+                                    const numStr = match[1].replace(/[^0-9]/g, '');
+                                    const num = parseInt(numStr, 10);
+                                    if (num >= 500) {
+                                        price = match[1];
+                                        break;
+                                    }
                                 }
                             }
                         }
