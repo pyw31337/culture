@@ -1,5 +1,16 @@
 [
   {
+    "id": "535c28f4-598f-4b47-ba58-8d104dcfb813",
+    "title": "무안 겨울 숭어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/535c28f4-598f-4b47-ba58-8d104dcfb813_1.png",
+    "date": "2026.01.24~2026.01.25",
+    "venue": "전라남도 무안군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=535c28f4-598f-4b47-ba58-8d104dcfb813",
+    "genre": "festival",
+    "lastEnriched": "2026-01-22T00:16:01.567Z"
+  },
+  {
     "id": "9088a057-90d7-4e39-a86d-1fc0d99ccf05",
     "title": "단양 겨울놀이 축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9088a057-90d7-4e39-a86d-1fc0d99ccf05_16.jpg",
@@ -112,7 +123,7 @@
   {
     "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
     "title": "양평빙송어축제",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
     "date": "2025.12.06~2026.03.02",
     "venue": "경기도 양평군",
     "region": "gyeonggi",
@@ -130,17 +141,6 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd3921dc-baf4-4033-a3f3-acc739585872",
     "genre": "festival",
     "lastEnriched": "2026-01-22T00:12:34.886Z"
-  },
-  {
-    "id": "535c28f4-598f-4b47-ba58-8d104dcfb813",
-    "title": "무안 겨울 숭어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/535c28f4-598f-4b47-ba58-8d104dcfb813_1.png",
-    "date": "2026.01.24~2026.01.25",
-    "venue": "전라남도 무안군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=535c28f4-598f-4b47-ba58-8d104dcfb813",
-    "genre": "festival",
-    "lastEnriched": "2026-01-22T00:16:01.567Z"
   },
   {
     "id": "c34e66ec-0b3d-48be-96eb-c0ffbb6436ec",

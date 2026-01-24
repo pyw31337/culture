@@ -5,7 +5,7 @@
     "date": "수업 하루 전 오전 10시까지 집결장소 및 예습동영상을 문자로 발송해 드립니다!  <확정대기> =최소인원에 도달하지 못하여 확정불가 상태를 의미합니다.",
     "venue": "국립중앙박물관 상설전시관 (서울특별시 용산구 서빙고로 137 국립중앙박물관)",
     "price": "32,900원~",
-    "image": "",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/46jK/y607Wp7zmw.jpg",
     "link": "https://experiences.myrealtrip.com/products/3880363",
     "genre": "kids",
     "source": "myrealtrip",
@@ -96,18 +96,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3886103",
-    "title": "[키즈][겨울방학 얼리버드] 초등 세종충무공이야기로 모여라!",
-    "date": "오전 11시 / 오후 14시 30분",
-    "venue": "광화문 광장 세종대왕 동상 앞",
-    "price": "149,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/01/9Tdk/8LGOr9pbLY.png",
-    "link": "https://experiences.myrealtrip.com/products/3886103",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4320612",
     "title": "[키즈][경기/수원] [아이와함께] 화성행궁 가이드 역사 투어",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -115,6 +103,18 @@
     "price": "19,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/14/Bbx3/iaLPzrZvI8.jpg",
     "link": "https://experiences.myrealtrip.com/products/4320612",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3886103",
+    "title": "[키즈][겨울방학 얼리버드] 초등 세종충무공이야기로 모여라!",
+    "date": "오전 11시 / 오후 14시 30분",
+    "venue": "광화문 광장 세종대왕 동상 앞",
+    "price": "149,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/01/9Tdk/8LGOr9pbLY.png",
+    "link": "https://experiences.myrealtrip.com/products/3886103",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -264,18 +264,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3896370",
-    "title": "[키즈][겨울방학 얼리버드]예비초 그리스가 로마에게 로마가 그리스에게 - 국립중앙박물관",
-    "date": "오전 11시 / 오후 14시 30분",
-    "venue": "국립중앙박물관",
-    "price": "28,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/04/6Etw/MTx6A9Avwu.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3896370",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3828441",
     "title": "[키즈][서울/종로] 세종 충무공이야기, 역사의 절정속으로!",
     "date": "매주 토/일 10시, 13시",
@@ -307,6 +295,18 @@
     "price": "34,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/cWIY/QRorGEtTL4.jpg",
     "link": "https://experiences.myrealtrip.com/products/3880367",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3896370",
+    "title": "[키즈][겨울방학 얼리버드]예비초 그리스가 로마에게 로마가 그리스에게 - 국립중앙박물관",
+    "date": "오전 11시 / 오후 14시 30분",
+    "venue": "국립중앙박물관",
+    "price": "28,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/04/6Etw/MTx6A9Avwu.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3896370",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -360,18 +360,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4165719",
-    "title": "[키즈][서울/종로] 초등 근현대사! 한국사 특강 끝났다면 대한민국역사박물관으로 모여라!",
-    "date": "오전 10시 30분 / 오후 14시",
-    "venue": "대한민국역사박물관(서울 종로구 세종대로 198)",
-    "price": "34,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/01/10/kfIg/mwGdRq45WS.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4165719",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3887650",
     "title": "[키즈][서울/용산] 함께늘봄 국립중앙박물관 초등한국사 4회 완성!",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -408,13 +396,13 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3880359",
-    "title": "[키즈] 경복궁으로 떠나는 조선 한국사 초등 역사체험",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "서울시 종로구 효자로 12 국립고궁박물관",
+    "id": "mrt-4165719",
+    "title": "[키즈][서울/종로] 초등 근현대사! 한국사 특강 끝났다면 대한민국역사박물관으로 모여라!",
+    "date": "오전 10시 30분 / 오후 14시",
+    "venue": "대한민국역사박물관(서울 종로구 세종대로 198)",
     "price": "34,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/4BGv/ZaHsLcIujH.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3880359",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/01/10/kfIg/mwGdRq45WS.jpg",
+    "link": "https://experiences.myrealtrip.com/products/4165719",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -427,6 +415,18 @@
     "price": "28,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/30/awbY/N3fxxbTWq8.jpg",
     "link": "https://experiences.myrealtrip.com/products/3896364",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3880359",
+    "title": "[키즈] 경복궁으로 떠나는 조선 한국사 초등 역사체험",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "서울시 종로구 효자로 12 국립고궁박물관",
+    "price": "34,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/4BGv/ZaHsLcIujH.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3880359",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -648,6 +648,18 @@
     "status": "OPEN"
   },
   {
+    "id": "mrt-3828457",
+    "title": "[키즈][대전] 국립중앙과학관(한국과학기술사관)_우리나라 과학과 인류사를 한번에!",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "국립중앙과학관 한국과학기술사관",
+    "price": "45,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/27/nKFs/Ub3hCHC3nG.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3828457",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
     "id": "mrt-3828450",
     "title": "[키즈][대전] 대전 조폐공사에서 만나는 화폐박물관",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -696,18 +708,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4678472",
-    "title": "[키즈] [국립대구박물관] 옷으로 읽는 우리 역사 이야기",
-    "date": "오전 10시, 오후 1시",
-    "venue": "국립대구박물관",
-    "price": "45,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/07/01/qoJz/YU22P7B2Is.jpeg",
-    "link": "https://experiences.myrealtrip.com/products/4678472",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4678470",
     "title": "[키즈] [국립대구과학관] 인류와 세상을 잇는 과학의 실마리",
     "date": "오전 10시, 오후 1시",
@@ -720,13 +720,13 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3828458",
-    "title": "[키즈] [인천] 문명의 시작, 문자의 모든 것! 국립세계문자박물관",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "국립세계문자박물관",
+    "id": "mrt-4678472",
+    "title": "[키즈] [국립대구박물관] 옷으로 읽는 우리 역사 이야기",
+    "date": "오전 10시, 오후 1시",
+    "venue": "국립대구박물관",
     "price": "45,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/iAjh/8pXU7G5y6p.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3828458",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/07/01/qoJz/YU22P7B2Is.jpeg",
+    "link": "https://experiences.myrealtrip.com/products/4678472",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -739,6 +739,18 @@
     "price": "149,000원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/04/fM4m/Io2HblsZrR.jpg",
     "link": "https://experiences.myrealtrip.com/products/3896540",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3828458",
+    "title": "[키즈] [인천] 문명의 시작, 문자의 모든 것! 국립세계문자박물관",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "국립세계문자박물관",
+    "price": "45,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/iAjh/8pXU7G5y6p.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3828458",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -907,18 +919,6 @@
     "price": "150,000원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/02/13/nPUv/e4t5Dsdy0D.jpg",
     "link": "https://experiences.myrealtrip.com/products/4234525",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
-    "id": "mrt-3828457",
-    "title": "[키즈][대전] 국립중앙과학관(한국과학기술사관)_우리나라 과학과 인류사를 한번에!",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "국립중앙과학관 한국과학기술사관",
-    "price": "45,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/12/27/nKFs/Ub3hCHC3nG.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3828457",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1164,18 +1164,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885194",
-    "title": "[서울/중구 가족체험] 술술 풀리는 덕수궁 달빛 나들이 with 청사초롱",
-    "date": "18:20",
-    "venue": "덕수궁 내(담당 강사님 안내 메세지 확인 부탁드립니다.)",
-    "price": "12,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/MYbq/7p733ItwsV.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885194",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3851384",
     "title": "[가을특가]국립고궁박물관에서 조선시대로 떠나는 역사 시간여행! | 조선의 궁궐과 왕실이야기",
     "date": "날짜에 따라 열려있는 수업시간이 다르니 신청 전에 꼭 확인해주세요!",
@@ -1183,6 +1171,18 @@
     "price": "29,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/15/IGH3/bPUJ8gTUln.jpg",
     "link": "https://experiences.myrealtrip.com/products/3851384",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885194",
+    "title": "[서울/중구 가족체험] 술술 풀리는 덕수궁 달빛 나들이 with 청사초롱",
+    "date": "18:20",
+    "venue": "덕수궁 내(담당 강사님 안내 메세지 확인 부탁드립니다.)",
+    "price": "12,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/MYbq/7p733ItwsV.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885194",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1224,18 +1224,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3924478",
-    "title": "[라라클래스] 국립중앙박물관 선사시대 초등저학년 \"Premium\" 역사탐험대 Season3",
-    "date": "상품 상세페이지 참고해 주세요",
-    "venue": "국립중앙박물관 1층 뮤지엄샵 앞",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/25/MqMz/5f50Ao6UMq.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3924478",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3924477",
     "title": "[라라클래스] 국립중앙박물관 삼국시대 초등저학년 \"Premium\" 역사탐험대 Season3",
     "date": "상품 상세페이지 참고해 주세요",
@@ -1243,6 +1231,18 @@
     "price": "59,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/25/PbPV/UPkIWpq56C.jpg",
     "link": "https://experiences.myrealtrip.com/products/3924477",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3924478",
+    "title": "[라라클래스] 국립중앙박물관 선사시대 초등저학년 \"Premium\" 역사탐험대 Season3",
+    "date": "상품 상세페이지 참고해 주세요",
+    "venue": "국립중앙박물관 1층 뮤지엄샵 앞",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/03/25/MqMz/5f50Ao6UMq.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3924478",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
