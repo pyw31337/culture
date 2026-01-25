@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from 'next/script';
 import ProgressBarProvider from "@/components/ProgressBarProvider";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import InstallApp from "@/components/InstallApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,14 @@ export const metadata: Metadata = {
     apple: '/culture/icon.png',
   },
   manifest: '/culture/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Culture Flow',
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -89,6 +98,7 @@ export default function RootLayout({
         <ProgressBarProvider>
           <ErrorBoundary>
             {children}
+            <InstallApp />
           </ErrorBoundary>
         </ProgressBarProvider>
         <Script

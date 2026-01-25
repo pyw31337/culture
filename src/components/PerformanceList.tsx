@@ -68,11 +68,7 @@ interface PerformanceListProps {
 // Line 2: line2Pre + <Highlight> + suffix
 
 export default function PerformanceList({ initialPerformances, lastUpdated, initialGenre = 'all', isCategoryPage = false, categoryLabel }: PerformanceListProps) {
-    // Debug first few OTT items
-    useEffect(() => {
-        const ottItems = initialPerformances.filter(p => p.genre === 'ott').slice(0, 3);
-        console.log('[PerformanceList] Initial OTT Sample:', ottItems.map(p => ({ title: p.title, platforms: p.platforms })));
-    }, [initialPerformances]);
+
 
 
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
@@ -108,16 +104,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [isMapOpen, setIsMapOpen] = useState(false); // Map Modal State
 
     // Debug Logging
-    useEffect(() => {
-        if (initialPerformances.length > 0 && initialPerformances[0].genre === 'volleyball') {
-            console.log('[PerformanceList Debug] Received Volleyball Performances:', initialPerformances.length);
-            console.log('[PerformanceList Debug] First Item Genre:', initialPerformances[0].genre);
-            console.log('[PerformanceList Debug] Selected Region:', selectedRegion);
-            console.log('[PerformanceList Debug] Selected Genre:', selectedGenre);
-        } else if (initialGenre === 'volleyball') {
-            console.log('[PerformanceList Debug] Genre is volleyball but initialPerformances is:', initialPerformances.length);
-        }
-    }, [initialPerformances, selectedRegion, initialGenre, selectedGenre]);
+    // Debug logging moved to end of logic chain
 
     // Debug logging moved to end of logic chain
 
@@ -482,7 +469,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Debug Data Availability
     useEffect(() => {
-        console.log(`[PerformanceList] Initial Count: ${initialPerformances.length}, Last Updated: ${lastUpdated}`);
+        // console.log(`[PerformanceList] Initial Count: ${initialPerformances.length}, Last Updated: ${lastUpdated}`);
     }, [initialPerformances, lastUpdated]);
 
     // Search State

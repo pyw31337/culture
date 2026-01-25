@@ -125,7 +125,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                 zIndex: 3
                             });
                         },
-                        (err) => console.log("Geolocation failed:", err)
+                        (err) => { /* console.log("Geolocation failed:", err) */ }
                     );
                 }
 
@@ -455,8 +455,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                         onVenueLocationChange(v.venueName, v.lat, v.lng);
                                                     }}
                                                     className={`w-full mt-2 py-1.5 px-3 text-xs rounded-lg font-medium transition-colors ${isFavorite
-                                                            ? 'bg-white/20 hover:bg-white/30 text-white'
-                                                            : 'bg-blue-600 hover:bg-blue-700 text-white'
+                                                        ? 'bg-white/20 hover:bg-white/30 text-white'
+                                                        : 'bg-blue-600 hover:bg-blue-700 text-white'
                                                         }`}
                                                 >
                                                     이 공연장 주변보기

@@ -32,7 +32,16 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                 initial={{ scale: 0.95, opacity: 0, y: 20 }}
                                 animate={{ scale: 1, opacity: 1, y: 0 }}
                                 exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                                className="bg-gray-900 border border-white/10 rounded-3xl w-full max-w-md shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[80vh]"
+                                drag="y"
+                                dragControls={undefined}
+                                dragConstraints={{ top: 0, bottom: 0 }}
+                                dragElastic={{ top: 0, bottom: 0.2 }}
+                                onDragEnd={(e, info) => {
+                                    if (info.offset.y > 100 || info.velocity.y > 500) {
+                                        onClose();
+                                    }
+                                }}
+                                className="bg-gray-900 border border-white/10 rounded-3xl w-full max-w-md shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[80vh] cursor-grab active:cursor-grabbing"
                             >
                                 {/* Header */}
                                 <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/20">

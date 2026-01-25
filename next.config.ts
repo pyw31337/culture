@@ -24,6 +24,34 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'file.kinolights.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ticketimage.interpark.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'ticketimage.interpark.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'image.toast.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ticketlink.co.kr',
+      },
+      {
+        protocol: 'https',
+        hostname: 'image.yes24.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'tkfile.yes24.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdnticket.melon.co.kr',
+      },
     ],
   },
   env: {

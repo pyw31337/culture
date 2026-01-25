@@ -1,20 +1,32 @@
 {
-    "name": "Culture Flow",
+    "name": "Culture Flow - 맞춤형 문화생활 가이드",
     "short_name": "Culture Flow",
-    "start_url": "/culture/",
+    "description": "뮤지컬, 콘서트, 전시회 정보를 한눈에! 나만의 문화생활 큐레이션",
+    "background_color": "#0a0a0a",
+    "theme_color": "#0a0a0a",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "orientation": "portrait",
+    "start_url": "/culture/",
+    "scope": "/culture/",
+    "lang": "ko-KR",
+    "categories": [
+        "entertainment",
+        "lifestyle",
+        "music",
+        "events"
+    ],
     "icons": [
         {
             "src": "/culture/icon.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
             "src": "/culture/icon.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }

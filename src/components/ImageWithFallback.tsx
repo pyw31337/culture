@@ -49,8 +49,11 @@ export default function ImageWithFallback({
             src={imgSrc || fallbackSrc} // Ensure src is never empty
             alt={alt}
             onError={handleError}
-            // Ensure unoptimized is true if we are falling back to original to avoid next/image server errors if domain not configured
             unoptimized={hasError}
+            width={optimizationWidth}
+            height={Math.floor(optimizationWidth * 1.4)}
+            className={props.className}
+            quality={75}
         />
     );
 }

@@ -19,7 +19,6 @@ interface PerformanceDetailModalProps {
 export default function PerformanceDetailModal({ performance, isOpen, onClose, onShare, onBooking }: PerformanceDetailModalProps) {
     if (!isOpen) return null;
 
-    console.log('[PerformanceDetailModal] Platforms:', JSON.stringify(performance.platforms));
 
 
     // Helper to generate ICS file content
@@ -76,7 +75,16 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="fixed z-[100001] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]"
+                            drag="y"
+                            dragControls={undefined}
+                            dragConstraints={{ top: 0, bottom: 0 }}
+                            dragElastic={{ top: 0, bottom: 0.2 }}
+                            onDragEnd={(e, info) => {
+                                if (info.offset.y > 100 || info.velocity.y > 500) {
+                                    onClose();
+                                }
+                            }}
+                            className="fixed z-[100001] w-full max-w-4xl bg-[#1a1b1e] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] cursor-grab active:cursor-grabbing"
                         >
                             {/* Close Button (Mobile Absolute) */}
                             <button
@@ -229,7 +237,6 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
 
                                         {/* Provider (OTT only) */}
                                         {/* Debug Log (Hidden in UI) */}
-                                        {(() => { console.log('[PerformanceDetailModal] Rendering platforms:', performance.platforms); return null; })()}
 
                                         {performance.platforms && performance.platforms.length > 0 && (
                                             <div>
