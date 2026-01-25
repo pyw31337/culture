@@ -2047,15 +2047,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 </div>
             )}
 
-            {/* Recommendation Section (Visible only in 'all' genre or if explicit items exist) */}
-            {viewMode === 'grid' && searchText === '' && selectedGenre === 'all' && (
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-                    <RecommendedSection
-                        recommendedItems={recommendedItems}
-                        onDetail={handleDetailOpen}
-                    />
-                </div>
-            )}
+
 
             {/* Favorite Venues Section (Highest Priority) - Visible if Toggled */}
             {
