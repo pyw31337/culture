@@ -21,6 +21,11 @@ import Portal from './ui/Portal';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
 import { getGenreIcon } from '@/components/GenreIcons';
+import { isChoseongMatch } from '@/lib/hangul'; // Choseong Search Utility
+import { useUserActivity } from '@/hooks/useUserActivity';
+import { useRecommendation } from '@/hooks/useRecommendation';
+import RecommendedSection from './performance/RecommendedSection';
+
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
@@ -28,7 +33,7 @@ const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'),
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 import { useSearchParams, useRouter } from 'next/navigation';
 import HeroSection from './performance/HeroSection';
-import FilterBar from './performance/FilterBar';
+
 import SkeletonGrid from './performance/SkeletonGrid';
 import PerformanceGrid from './performance/PerformanceGrid';
 import EmptyState from './performance/EmptyState';
@@ -86,7 +91,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setShuffleSeed(Math.random());
     }, []);
 
+
+
+
+
     const [contextKeywords, setContextKeywords] = useState<string[]>([]);
+
+    // 🧠 Recommendation Engine Logic
+
+
+
 
     // Bottom Navigation State
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
@@ -127,6 +141,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const searchParams = useSearchParams();
     const router = useRouter();
 
+    // 🧠 Recommendation Engine Logic
+    const { trackGenreView, trackItemView } = useUserActivity();
+    const { recommendedItems } = useRecommendation({
+        allPerformances: initialPerformances,
+        likedIds,
+        recentSearches: savedKeywords
+    });
+
+    // Track initial genre
+    useEffect(() => {
+        if (selectedGenre !== 'all') {
+            trackGenreView(selectedGenre);
+        }
+    }, [selectedGenre]);
     // Deep Linking Effect
     useEffect(() => {
         if (!initialPerformances || initialPerformances.length === 0) return;
@@ -468,7 +496,38 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [isSdkLoaded, setIsSdkLoaded] = useState(false);         // New: Track SDK Load Status
     const [highlightedIndex, setHighlightedIndex] = useState(-1);  // New: Keyboard Navigation
 
-    // Keyword Notification System
+    // Search History State
+    const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+    // Load recent searches
+    useEffect(() => {
+        if (!isStorageLoaded) return;
+        setRecentSearches(safeStorage.get<string[]>('culture_recent_searches', []));
+    }, [isStorageLoaded]);
+
+    const addRecentSearch = (term: string) => {
+        if (!term.trim()) return;
+        setRecentSearches(prev => {
+            const updated = [term.trim(), ...prev.filter(t => t !== term.trim())].slice(0, 10);
+            safeStorage.set('culture_recent_searches', updated);
+            return updated;
+        });
+    };
+
+    const removeRecentSearch = (term: string) => {
+        setRecentSearches(prev => {
+            const updated = prev.filter(t => t !== term);
+            safeStorage.set('culture_recent_searches', updated);
+            return updated;
+        });
+    };
+
+    const clearRecentSearches = () => {
+        setRecentSearches([]);
+        safeStorage.set('culture_recent_searches', []);
+    };
+
+    // Keyword Notification System (kept as is)
     const [keywords, setKeywords] = useState<string[]>([]);
     const [showKeywordInput, setShowKeywordInput] = useState(false);
     const [newKeyword, setNewKeyword] = useState('');
@@ -1041,6 +1100,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     };
 
     // Handle Search (Enter / Button -> Location Search)
+    const handleKeywordSelect = (keyword: string) => {
+        setSearchText(keyword);
+        addRecentSearch(keyword);
+        setIsDropdownOpen(false);
+    };
+
     const handleSearch = async () => {
         if (!searchText.trim()) {
             setSearchLocation(null);
@@ -1052,6 +1117,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setSearchLocation(null); // Reset previous location
         setSearchResults([]);    // Reset previous results
         setIsDropdownOpen(false);
+
+        // Save to History if typed
+        if (searchText.trim()) {
+            addRecentSearch(searchText);
+        }
 
         const candidates: any[] = [];
 
@@ -1354,16 +1424,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         // Search Filter
         if (searchText) {
             console.log(`[Search Debug] Searching for: ${searchText}`);
-            const lowerSearch = searchText.toLowerCase().normalize('NFC');
             filtered = filtered.filter(p => {
-                if (p.title.includes('상상체험')) {
-                    const titleTitle = p.title.toLowerCase().normalize('NFC');
-                    const match = titleTitle.includes(lowerSearch);
-                    console.log(`[Search Debug] Checking Item: ${p.title} (${p.genre}) -> Match? ${match}`);
-                }
-                return p.title.toLowerCase().normalize('NFC').includes(lowerSearch) ||
-                    p.venue.toLowerCase().normalize('NFC').includes(lowerSearch) ||
-                    (p.cast && (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast).toLowerCase().normalize('NFC').includes(lowerSearch))
+                const lowerSearch = searchText.toLowerCase().normalize('NFC');
+
+                // 1. Title Match (Choseong supported)
+                if (isChoseongMatch(p.title, searchText)) return true;
+
+                // 2. Cast Match (Choseong)
+                const castStr = p.cast ? (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast) : '';
+                if (isChoseongMatch(castStr, searchText)) return true;
+
+                // 3. Venue Match
+                if (p.venue.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+
+                return false;
             });
         }
 
@@ -1960,6 +2034,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
                     availableVenues={availableVenues}
                     districts={districts}
+
+                    recentKeywords={recentSearches}
+                    onKeywordSelect={handleKeywordSelect}
+                    onRemoveRecent={removeRecentSearch}
+                    onClearRecent={clearRecentSearches}
                 />
             </ErrorBoundary>
 
@@ -1970,6 +2049,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
             {/* Sticky feature removed as per user request */}
+
+            {/* Recommendation Section (Visible only in 'all' genre or if explicit items exist) */}
+            {viewMode === 'grid' && searchText === '' && selectedGenre === 'all' && (
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+                    <RecommendedSection
+                        recommendedItems={recommendedItems}
+                        onDetail={handleDetailOpen}
+                    />
+                </div>
+            )}
+
+            {/* Recommendation Section (Visible only in 'all' genre or if explicit items exist) */}
+            {viewMode === 'grid' && searchText === '' && selectedGenre === 'all' && (
+                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+                    <RecommendedSection
+                        recommendedItems={recommendedItems}
+                        onDetail={handleDetailOpen}
+                    />
+                </div>
+            )}
 
             {/* Favorite Venues Section (Highest Priority) - Visible if Toggled */}
             {

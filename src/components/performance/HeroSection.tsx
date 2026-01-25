@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from 'react';
 import { clsx } from 'clsx';
-import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
 import { TypingHero } from './TypingHero';
 import { HeroTemplate, HERO_TEMPLATES } from '../../lib/hero-templates';
 import { REGIONS, RADIUS_OPTIONS } from '../../lib/constants';
@@ -46,6 +46,12 @@ interface HeroSectionProps {
     // Data
     availableVenues: string[];
     districts: string[];
+
+    // New Props for Search History
+    recentKeywords: string[];
+    onKeywordSelect: (keyword: string) => void;
+    onRemoveRecent: (keyword: string) => void;
+    onClearRecent: () => void;
 }
 
 export default function HeroSection({
@@ -83,7 +89,11 @@ export default function HeroSection({
     handleKeyDown,
     handleCurrentLocationClick,
     availableVenues,
-    districts
+    districts,
+    recentKeywords,
+    onKeywordSelect,
+    onRemoveRecent,
+    onClearRecent
 }: HeroSectionProps) {
     const heroRef = useRef<HTMLDivElement>(null);
 
@@ -593,34 +603,121 @@ export default function HeroSection({
                 </div>
 
                 {/* Search Results Dropdown (Attached to Hero Input) */}
-                {isDropdownOpen && activeSearchSource === 'hero' && searchResults.length > 0 && (
+                {isDropdownOpen && activeSearchSource === 'hero' && (
                     <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
-                        {searchResults.map((result, idx) => {
-                            const addressParts = result.address ? result.address.split(' ') : [];
-                            const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
 
-                            return (
-                                <div
-                                    key={`search-hero-${idx}`}
-                                    onClick={() => handleSelectResult(result)}
-                                    className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-3 min-w-0">
-                                        <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
-                                            {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                        {/* Case 1: Search Text Exists -> Show Results */}
+                        {searchText ? (
+                            searchResults.length > 0 ? (
+                                searchResults.map((result, idx) => {
+                                    const addressParts = result.address ? result.address.split(' ') : [];
+                                    const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
+
+                                    return (
+                                        <div
+                                            key={`search-hero-${idx}`}
+                                            onClick={() => handleSelectResult(result)}
+                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                                }`}
+                                        >
+                                            <div className="flex items-center gap-3 min-w-0">
+                                                <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
+                                                    {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                                                </div>
+                                                <div className="text-white text-base font-bold truncate">
+                                                    {result.name}
+                                                </div>
+                                            </div>
+
+                                            <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
+                                                {shortAddress}
+                                            </div>
                                         </div>
-                                        <div className="text-white text-base font-bold truncate">
-                                            {result.name}
-                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <div className="p-8 text-center text-gray-400">
+                                    검색 결과가 없습니다.
+                                </div>
+                            )
+                        ) : (
+                            /* Case 2: No Search Text -> Show Recent/Popular Keywords */
+                            <div className="p-4 bg-[#1a0b2e]/95 backdrop-blur-3xl">
+                                {/* Recent Keywords */}
+                                <div className="mb-6">
+                                    <div className="flex items-center justify-between mb-3 px-1">
+                                        <h4 className="text-sm font-bold text-gray-400 flex items-center gap-2">
+                                            <Clock className="w-3.5 h-3.5" /> 최근 검색어
+                                        </h4>
+                                        {recentKeywords.length > 0 && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    onClearRecent();
+                                                }}
+                                                className="text-xs text-gray-500 hover:text-red-400 transition-colors"
+                                            >
+                                                전체 삭제
+                                            </button>
+                                        )}
                                     </div>
 
-                                    <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
-                                        {shortAddress}
+                                    {recentKeywords.length === 0 ? (
+                                        <div className="text-center py-4 text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
+                                            최근 검색 내역이 없습니다.
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-wrap gap-2">
+                                            {recentKeywords.map((keyword, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full cursor-pointer transition-all"
+                                                    onClick={() => onKeywordSelect(keyword)}
+                                                >
+                                                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{keyword}</span>
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            onRemoveRecent(keyword);
+                                                        }}
+                                                        className="text-gray-500 hover:text-red-400 p-0.5 rounded-full hover:bg-white/10 transition-colors"
+                                                    >
+                                                        <X className="w-3 h-3" />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Popular Keywords */}
+                                <div>
+                                    <h4 className="text-sm font-bold text-gray-400 flex items-center gap-2 mb-3 px-1">
+                                        <TrendingUp className="w-3.5 h-3.5 text-red-400" /> 인기 검색어
+                                    </h4>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {[
+                                            '뮤지컬', '콘서트', '서울', '전시회',
+                                            '아이브', '임영웅', '싸이', '모네',
+                                            '예술의전당', '세종문화회관'
+                                        ].map((keyword, idx) => (
+                                            <div
+                                                key={idx}
+                                                onClick={() => onKeywordSelect(keyword)}
+                                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors"
+                                            >
+                                                <span className={`text-sm font-bold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
+                                                    {idx + 1}
+                                                </span>
+                                                <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                                                    {keyword}
+                                                </span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                            );
-                        })}
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
