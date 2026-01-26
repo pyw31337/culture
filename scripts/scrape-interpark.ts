@@ -309,6 +309,24 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         });
                     }
 
+                    // 3. Fallback: Regex Search on Body Text (for cases like 26001154 where structural markup might differ or be hidden)
+                    if (!runningTime || !ageRating) {
+                        const bodyText = document.body.innerText;
+
+                        if (!runningTime) {
+                            // Match "공연시간" followed by newline/spaces and then likely "XXX분"
+                            const timeMatch = bodyText.match(/공연시간\s*\n*([0-9]+분)/);
+                            if (timeMatch) runningTime = timeMatch[1];
+                        }
+
+                        if (!ageRating) {
+                            // Match "관람연령" followed by newline/spaces and then text ending in "관람가능" or "이상"
+                            // E.g. "관람연령\n24개월이상 관람가능"
+                            const ageMatch = bodyText.match(/관람연령\s*\n*(.*?관람가능|.*?\s이상)/);
+                            if (ageMatch) ageRating = ageMatch[1].trim();
+                        }
+                    }
+
                     // 2. Price Info
                     let price = '';
                     let originalPrice = '';
@@ -317,7 +335,49 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     // Strategy A: Main Page Price List (New Structure)
                     // Added .infoPriceList .infoPriceItem based on Y5000131 debugging
                     const priceItems = Array.from(document.querySelectorAll('.infoList .infoItem .infoDesc .priceList .priceItem, .infoPriceList .infoPriceItem, .infoPriceItem'));
-                    if (priceItems.length > 0) {
+
+                    // 1. Try finding detailed text list first (e.g., "전석 (정상가) 66,000원")
+                    // This is common in newer Interpark pages (e.g. 25018004)
+                    const detailContainer = document.querySelector('.prdPriceDetail');
+                    if (detailContainer) {
+                        const text = detailContainer.textContent || '';
+                        // Extract all "Label Price" pairs
+                        // Regex to match "Sort (Type) 00,000원"
+                        // Handle multiline
+                        const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+                        let normalPrice = 0;
+                        let salePrice = 0;
+
+                        lines.forEach(line => {
+                            const match = line.match(/(.*?)\s*([0-9,]+)원/);
+                            if (match) {
+                                const label = match[1];
+                                const val = parseInt(match[2].replace(/,/g, ''), 10);
+
+                                if (label.includes('정상가')) {
+                                    normalPrice = val;
+                                } else if (label.includes('예매가') || label.includes('할인가')) {
+                                    salePrice = val;
+                                } else if (!salePrice && !normalPrice) {
+                                    // If no specific keyword, assume it's the main price
+                                    salePrice = val;
+                                }
+                            }
+                        });
+
+                        if (normalPrice > 0 && salePrice > 0) {
+                            originalPrice = normalPrice.toLocaleString() + '원';
+                            price = salePrice.toLocaleString() + '원';
+                            const rateVal = Math.round((1 - (salePrice / normalPrice)) * 100);
+                            discount = `${rateVal}%`;
+                        } else if (salePrice > 0) {
+                            price = salePrice.toLocaleString() + '원';
+                        }
+                    }
+
+                    // 2. If Detail Text Failed, try structured elements (.sale, .price)
+                    if (!price && priceItems.length > 0) {
                         // Find item with most detail (sale + original + rate)
                         let bestItem = priceItems.find(i => i.querySelector('.sale') && i.querySelector('.price'));
                         if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.sale'));
@@ -329,8 +389,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
 
                             // Structure 1: .sale, .original, .rate
-                            // Structure 1: .sale (Discounted/Final), .price (Original), .rate (Discount %)
-                            // Note: In Y5000131, .price is "18,000" (original) and .sale is "12,000" (final).
                             const sale = getVal('.sale');
                             const priceVal = getVal('.price'); // Can be original price in discount context
                             const rate = getVal('.rate');

@@ -67,3 +67,10 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
 
     return null;
 }
+
+// Clean up title by removing leading bracketed text e.g. "[키즈][서대문] Title" -> "Title"
+export function cleanTitle(title: string): string {
+    if (!title) return '';
+    // Regex matches one or more groups of brackets at the start of the string, optionally followed by space
+    return title.replace(/^(\[[^\]]+\]\s*)+/, '').trim();
+}

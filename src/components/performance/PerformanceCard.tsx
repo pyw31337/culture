@@ -5,7 +5,7 @@ import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { extractFirstPrice } from '@/lib/utils';
+import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
 interface PerformanceCardProps {
@@ -63,6 +63,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
+
+        // Disable transition during movement for instant response
+        cardRef.current.style.transition = 'none';
+
         const rect = cardRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -78,14 +82,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         glareRef.current.style.opacity = '1';
     };
 
-    // ... (keeping existing handlers omitted for brevity usually, but replace_file_content needs contiguous block? 
-    // Wait, I can't skip lines in replacement content. I must match target content exactly or replace a small block.
-    // I will do TWO separate replaces to be safe and clean.)
-
-    // SKIP replacement here. I will do separate calls.
-
     const handleMouseLeave = () => {
         if (!cardRef.current || !glareRef.current) return;
+
+        // Enable transition for smooth reset
+        cardRef.current.style.transition = 'transform 0.3s ease-out';
+
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
     };
@@ -138,7 +140,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform duration-100 ease-out sm:transform-style-3d shadow-xl light:shadow-none group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-none h-full rounded-[15px]",
+                        "relative transition-transform ease-out sm:transform-style-3d shadow-xl light:shadow-none group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-none h-full rounded-[15px] will-change-transform",
                         variant === 'default' ? "gold-shimmer-wrapper aspect-[3/4]" : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
@@ -328,7 +330,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     }}
                                 >
                                     <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
-                                        {perf.title.replace(/^\[야구\]\s*/, '').trim()}
+                                        {cleanTitle(perf.title)}
                                     </h3>
                                 </button>
 
@@ -576,7 +578,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {/* Title (Link Removed per request) */}
                                         <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
                                             <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
-                                                {perf.title.replace(/^\[야구\]\s*/, '').trim()}
+                                                {cleanTitle(perf.title)}
                                             </h3>
                                         </div>
 
