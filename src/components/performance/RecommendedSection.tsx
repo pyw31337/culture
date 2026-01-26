@@ -63,7 +63,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-4 overflow-x-auto pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
+                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
@@ -73,17 +73,17 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
-                        className="relative group flex-shrink-0 w-[160px] md:w-[200px] h-[220px] md:h-[280px] cursor-pointer"
+                        className="relative group flex-shrink-0 w-[200px] md:w-[260px] h-[280px] md:h-[360px] cursor-pointer"
                         onClick={() => window.open(perf.link, '_blank')}
                         title={cleanTitle(perf.title)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
-                        <div className="absolute -left-2 md:-left-4 bottom-0 z-0 h-full flex items-end">
+                        <div className="absolute -left-4 md:-left-8 bottom-0 z-0 h-full flex items-end">
                             <span
-                                className="text-[9rem] md:text-[11rem] font-black leading-none tracking-tighter text-black light:text-white transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
+                                className="text-[10rem] md:text-[13rem] font-black leading-none tracking-tighter text-transparent transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
                                 style={{
-                                    WebkitTextStroke: '4px #585858', // Darker gray stroke for visibility
-                                    textShadow: '0 0 20px rgba(168,85,247,0.2)' // Subtle purple glow behind number
+                                    WebkitTextStroke: '4px #6b7280', // Gray-500 stroke for visibility
+                                    // textShadow: '0 0 20px rgba(168,85,247,0.2)' // Optional subtle glow
                                 }}
                             >
                                 {idx + 1}
@@ -91,7 +91,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         </div>
 
                         {/* 2. Poster Image (Right/Top - Overlapping) */}
-                        <div className="absolute right-0 top-0 bottom-2 w-[110px] md:w-[140px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-bottom">
+                        <div className="absolute right-0 top-0 bottom-4 w-[160px] md:w-[200px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-bottom">
                             <div className="w-full h-full rounded-lg overflow-hidden shadow-xl shadow-black/50 border border-white/10 relative bg-gray-800">
                                 <img
                                     src={perf.image}
@@ -101,10 +101,6 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 />
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-
-                                {/* Info Button (Subtle hint) */}
-                                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                </div>
                             </div>
                         </div>
                     </div>
