@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { extractFirstPrice } from '@/lib/utils';
+import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
 interface PerformanceListItemProps {
@@ -250,7 +250,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 "text-lg sm:text-xl font-bold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
                                 variant === 'yellow' ? "text-white light:text-black light:font-extrabold" : "text-white light:text-black"
                             )}>
-                                {perf.title.replace(/^\[야구\]\s*/, '').trim()}
+                                {cleanTitle(perf.title) || '제목 없음'}
                             </h3>
                         </a>
 

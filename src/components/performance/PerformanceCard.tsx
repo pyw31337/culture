@@ -578,7 +578,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {/* Title (Link Removed per request) */}
                                         <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
                                             <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
-                                                {cleanTitle(perf.title)}
+                                                {cleanTitle(perf.title) || '제목 없음'}
                                             </h3>
                                         </div>
 
