@@ -1,230 +1,98 @@
-import fs from 'fs';
-import path from 'path';
-import puppeteer from 'puppeteer-extra';
-import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
-puppeteer.use(StealthPlugin());
+import * as fs from 'fs';
+import * as path from 'path';
 
-const VENUES_PATH = path.resolve(process.cwd(), 'src/data/venues.json');
-const AUDIT_PATH = path.resolve(process.cwd(), 'venue_audit.csv');
+const venuePath = path.resolve(process.cwd(), 'src/data/venues.json');
+const venueData = JSON.parse(fs.readFileSync(venuePath, 'utf-8'));
 
-// Load existing venues
-let venueData: Record<string, any> = {};
-if (fs.existsSync(VENUES_PATH)) {
-    venueData = JSON.parse(fs.readFileSync(VENUES_PATH, 'utf-8'));
+// 1. Hardcoded Landmarks (For Top Missing)
+// Coordinates sourced from standard maps
+const LANDMARKS: Record<string, { lat: number, lng: number, address?: string }> = {
+    "롯데월드 민속박물관": { lat: 37.5113, lng: 127.0982, address: "서울 송파구 올림픽로 240" },
+    "서울공예박물관": { lat: 37.5772, lng: 126.9836, address: "서울 종로구 율곡로3길 4" },
+    "국립고궁박물관": { lat: 37.5764, lng: 126.9749, address: "서울 종로구 효자로 12" },
+    "독립기념관": { lat: 36.7836, lng: 127.2234, address: "충남 천안시 동남구 목천읍 독립기념관로 1" },
+    "국립해양박물관": { lat: 35.0787, lng: 129.0805, address: "부산 영도구 해양로301번길 45" },
+    "국립중앙과학관": { lat: 36.3773, lng: 127.3826, address: "대전 유성구 대덕대로 481" },
+    "국립세계문자박물관": { lat: 37.3915, lng: 126.6375, address: "인천 연수구 센트럴로 217" },
+    "복천박물관": { lat: 35.2078, lng: 129.0911, address: "부산 동래구 복천로 63" },
+    "수원시립만석전시관": { lat: 37.3005, lng: 126.9959, address: "경기 수원시 장안구 송정로 19" },
+    "경남문화예술회관": { lat: 35.1843, lng: 128.0934, address: "경남 진주시 강남로 215" }
+};
+
+interface Venue {
+    name: string;
+    address: string;
+    district?: string;
+    lat: number;
+    lng: number;
+    mapped_region_id?: string;
 }
 
-async function saveVenues() {
-    fs.writeFileSync(VENUES_PATH, JSON.stringify(venueData, null, 2), 'utf-8');
-}
+let fixedAddressCount = 0;
+let fixedCoordsCount = 0;
 
-async function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+// Regex for extracting address from Name
+// e.g. "부산 북구 상리로 65 (만덕동) ..." -> "부산 북구 상리로 65"
+// Matches Start with Region -> City/District -> Road/Lot -> Number
+const ADDRESS_IN_NAME_REGEX = /((?:서울|경기|부산|대구|인천|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)[a-zA-Z가-힣0-9\s,.-]+(?:로|길|동|가|읍|면|리)\s*\d+(?:-\d+)?)/;
 
-async function scrapeAddressAndCoords(browser: any, venueName: string): Promise<{ address: string, lat?: number, lng?: number, foundName?: string } | null> {
-    const page = await browser.newPage();
-    let result: { address: string, lat?: number, lng?: number, foundName?: string } | null = null;
+Object.entries(venueData).forEach(([key, value]) => {
+    const v = value as Venue;
+    let modified = false;
 
-    try {
-        let searchName = venueName;
-        const maxRetries = 3;
-        let attempts = 0;
+    if (!v.address || v.address.length < 2 || v.address === '주소 정보 없음' || v.address.includes('상세페이지')) {
+        // Try relaxed regex (Allow parens)
+        const simpleAddress = key.match(/((서울|경기|부산|대구|인천|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주).+?(동|읍|면|가|리|로|길)\s*\d+(?:-\d+)?)/);
 
-        while (attempts <= maxRetries) {
-            console.log(`Searching for: ${searchName} (Attempt ${attempts + 1})`);
+        if (simpleAddress && simpleAddress[1]) {
+            v.address = simpleAddress[1].trim();
+            modified = true;
+            fixedAddressCount++;
 
-            // Append " 주소" to trigger the specific place/address card more reliably
-            // Wait for networkidle2 to ensure hydration scripts run
-            await page.goto(`https://search.naver.com/search.naver?query=${encodeURIComponent(searchName + ' 주소')}`, { waitUntil: 'networkidle2' });
-
-            // Strategy 1: Extract from JSON (__APOLLO_STATE__)
-            const jsonResult = await page.evaluate(() => {
-                let bestMatch = null;
-                let state = null;
-
-                try {
-                    // Try global access
-                    // @ts-ignore
-                    if (window.__APOLLO_STATE__) state = window.__APOLLO_STATE__;
-                    // @ts-ignore
-                    else if (window.naver && window.naver.search && window.naver.search.ext && window.naver.search.ext.loc && window.naver.search.ext.loc.salt && window.naver.search.ext.loc.salt.__APOLLO_STATE__) {
-                        // @ts-ignore
-                        state = window.naver.search.ext.loc.salt.__APOLLO_STATE__;
-                    }
-
-                    // Fallback: Regex scripts
-                    if (!state) {
-                        const scripts = document.querySelectorAll('script');
-                        for (const s of Array.from(scripts)) {
-                            const content = s.textContent || '';
-                            const match = content.match(/__APOLLO_STATE__\s*=\s*({.+?});/);
-                            if (match) {
-                                state = JSON.parse(match[1]);
-                                break;
-                            }
-                        }
-                    }
-
-                    if (state) {
-                        const placeKeys = Object.keys(state).filter(k => k.startsWith('PlaceSummary'));
-                        // Filter logic: In strict mode we might want to check name similarity, 
-                        // but Naver Search already filtered by our query.
-                        // The top result is usually the best.
-
-                        // Sort keys by numerical ID if necessary? No, just take first valid one.
-                        for (const k of placeKeys) {
-                            const p = state[k];
-                            if (p.fullAddress && p.x && p.y) {
-                                bestMatch = {
-                                    address: p.fullAddress,
-                                    lat: parseFloat(p.y), // Naver uses y for lat? Yes (37.x)
-                                    lng: parseFloat(p.x), // x for lng (127.x)
-                                    foundName: p.name ? p.name.replace(/<[^>]*>/g, '') : ''
-                                };
-                                break; // Take first valid
-                            }
-                        }
-                    }
-                } catch (e) {
-                    // console.error(e);
-                }
-                return bestMatch;
-            });
-
-            if (jsonResult) {
-                console.log(`Found Data via JSON: ${jsonResult.address} (${jsonResult.lat}, ${jsonResult.lng})`);
-                result = jsonResult;
-                break;
+            const distMatch = v.address.match(/\s(\S+구|\S+시|\S+군)\s/);
+            if (distMatch) {
+                v.district = distMatch[1];
             }
+        } else if (key.length > 5 && !v.address) {
+            // Debug print for potential misses
+            console.log(`[Missed Candidate] ${key}`);
+        }
+    }
 
-            // Strategy 2: Fallback DOM Scraping (Previous Logic)
-            const scrapedData = await page.evaluate(() => {
-                let addr = null;
-                let mapUrl = null;
-
-                // 1. Address via .pz7wy
-                const el = document.querySelector('.pz7wy');
-                if (el && el.textContent) addr = el.textContent.trim();
-
-                // 2. Fallback Address via "주소" label
-                if (!addr) {
-                    const labels = Array.from(document.querySelectorAll('.place_blind'));
-                    const addrLabel = labels.find(l => l.textContent === '주소');
-                    if (addrLabel) {
-                        const container = addrLabel.closest('.O8qbU');
-                        if (container) {
-                            const content = container.querySelector('.vV_z_');
-                            if (content && content.textContent) addr = content.textContent.trim();
-                        }
-                    }
+    // 2. Fix Missing Coordinates using Landmarks
+    if (v.lat === 0 || v.lng === 0 || !v.lat) {
+        // Exact match
+        if (LANDMARKS[key]) {
+            v.lat = LANDMARKS[key].lat;
+            v.lng = LANDMARKS[key].lng;
+            if (!v.address) v.address = LANDMARKS[key].address || "";
+            modified = true;
+            fixedCoordsCount++;
+        }
+        // Partial match for famous museums (if safe)
+        else {
+            for (const [mark, info] of Object.entries(LANDMARKS)) {
+                if (key.includes(mark) && key.length < mark.length + 5) {
+                    v.lat = info.lat;
+                    v.lng = info.lng;
+                    if (!v.address) v.address = info.address || "";
+                    modified = true;
+                    fixedCoordsCount++;
+                    break;
                 }
-
-                // 3. Find Map Link for coordinates
-                const links = Array.from(document.querySelectorAll('a[href*="map.naver.com"]'));
-                for (const link of links) {
-                    const href = link.getAttribute('href');
-                    if (href && (href.includes('lng=') || href.includes('x='))) {
-                        mapUrl = href;
-                        break;
-                    }
-                }
-
-                return { addr, mapUrl };
-            });
-
-            if (scrapedData.addr) {
-                console.log(`Found Address (DOM): ${scrapedData.addr}`);
-                result = { address: scrapedData.addr, foundName: searchName };
-
-                if (scrapedData.mapUrl) {
-                    console.log(`Found Map Link: ${scrapedData.mapUrl}`);
-                    const lngMatch = scrapedData.mapUrl.match(/lng=([0-9.]+)/);
-                    const latMatch = scrapedData.mapUrl.match(/lat=([0-9.]+)/);
-                    if (lngMatch && latMatch) {
-                        result.lng = parseFloat(lngMatch[1]);
-                        result.lat = parseFloat(latMatch[1]);
-                    }
-                }
-                break;
             }
-
-            // Retry logic
-            const parts = searchName.split(' ');
-            if (parts.length <= 1) break;
-            parts.pop();
-            searchName = parts.join(' ');
-            attempts++;
-            await delay(1000);
         }
-
-    } catch (e) {
-        console.error(`Error scraping ${venueName}:`, e);
-    } finally {
-        await page.close();
     }
 
-    return result;
-}
-
-async function run() {
-    if (!fs.existsSync(AUDIT_PATH)) {
-        console.error("Audit file not found. Run audit-venues.ts first.");
-        return;
+    if (modified) {
+        venueData[key] = v;
     }
+});
 
-    const csvContent = fs.readFileSync(AUDIT_PATH, 'utf-8');
-    const rows = csvContent.split('\n').map(r => r.split(','));
+fs.writeFileSync(venuePath, JSON.stringify(venueData, null, 2));
 
-    // Filter target venues
-    const targets = rows.slice(1).filter(r => {
-        const name = r[0]?.replace(/"/g, '');
-        const status = r[1];
-        if (!name || status === 'OK' || !status) return false;
-
-        // Skip already processed/complete venues in JSON
-        if (venueData[name] && venueData[name].lat && venueData[name].lng && venueData[name].address) return false;
-
-        return true;
-    }).map(r => r[0].replace(/"/g, ''));
-
-    console.log(`Found ${targets.length} venues to process.`);
-
-    const browser = await puppeteer.launch({ headless: true });
-
-    let processed = 0;
-    // Process in smaller batches due to potential instability? 
-    // Naver might block if too fast.
-    for (const name of targets) {
-        if (processed >= 1000) {
-            console.log("Batch limit reached (1000). Stopping for review.");
-            break;
-        }
-
-        console.log(`Processing [${processed + 1}/${targets.length}]: ${name}`);
-        const data = await scrapeAddressAndCoords(browser, name);
-
-        if (data && data.address) {
-            venueData[name] = {
-                name: name,
-                address: data.address,
-                district: data.address.split(' ')[1] || '',
-                lat: data.lat || 0,
-                lng: data.lng || 0,
-                mapped_region_id: 'auto-filled'
-            };
-            console.log(`Saved: ${name} -> ${data.address} (${data.lat}, ${data.lng})`);
-            await saveVenues();
-        } else {
-            console.log(`Failed to find data for: ${name}`);
-        }
-
-        processed++;
-        await delay(2000 + Math.random() * 2000);
-    }
-
-    await browser.close();
-    console.log("Done.");
-}
-
-run().catch(console.error);
+console.log(`[Venue Fixer] Report`);
+console.log(`- Fixed addresses extracted from name: ${fixedAddressCount}`);
+console.log(`- Fixed coordinates using landmarks: ${fixedCoordsCount}`);
+console.log(`- Total Venues processed: ${Object.keys(venueData).length}`);
