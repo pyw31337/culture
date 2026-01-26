@@ -285,8 +285,8 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     let runningTime = '';
                     let ageRating = '';
 
-                    // Try finding .infoList items first (New Structure)
-                    const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem'));
+                    // Try finding .infoList items first, or just .infoItem globally if .infoList class is missing
+                    const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem'));
                     if (infoItems.length > 0) {
                         infoItems.forEach(item => {
                             const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
@@ -315,11 +315,13 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     let discount = '';
 
                     // Strategy A: Main Page Price List (New Structure)
-                    const priceItems = Array.from(document.querySelectorAll('.infoList .infoItem .infoDesc .priceList .priceItem, .infoPriceItem'));
+                    // Added .infoPriceList .infoPriceItem based on Y5000131 debugging
+                    const priceItems = Array.from(document.querySelectorAll('.infoList .infoItem .infoDesc .priceList .priceItem, .infoPriceList .infoPriceItem, .infoPriceItem'));
                     if (priceItems.length > 0) {
                         // Find item with most detail (sale + original + rate)
-                        let bestItem = priceItems.find(i => i.querySelector('.sale') && i.querySelector('.original'));
-                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.price')); // Fallback
+                        let bestItem = priceItems.find(i => i.querySelector('.sale') && i.querySelector('.price'));
+                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.sale'));
+                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.price')); // Fallback (sometimes .price is the final price if no discount)
                         if (!bestItem) bestItem = priceItems[0];
 
                         if (bestItem) {
@@ -327,17 +329,21 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
 
                             // Structure 1: .sale, .original, .rate
+                            // Structure 1: .sale (Discounted/Final), .price (Original), .rate (Discount %)
+                            // Note: In Y5000131, .price is "18,000" (original) and .sale is "12,000" (final).
                             const sale = getVal('.sale');
-                            const original = getVal('.original');
+                            const priceVal = getVal('.price'); // Can be original price in discount context
                             const rate = getVal('.rate');
-                            const plainPrice = getVal('.price');
 
-                            if (sale) {
+                            if (sale && priceVal && rate) {
+                                // Discount Case
                                 price = sale;
-                                originalPrice = original;
+                                originalPrice = priceVal;
                                 discount = rate;
-                            } else if (plainPrice) {
-                                price = plainPrice;
+                            } else if (sale) {
+                                price = sale;
+                            } else if (priceVal) {
+                                price = priceVal;
                             }
                         }
                     }
