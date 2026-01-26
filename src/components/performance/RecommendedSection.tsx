@@ -6,7 +6,7 @@ import { cleanTitle } from '@/lib/utils'; // Ensure cleanliness
 interface RecommendedSectionProps {
     recommendedItems: any[];
     onLocationClick: (loc: any) => void;
-    onToggleLike: (e: React.MouseEvent, id: string) => void;
+    onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
     onDetail: (perf: any) => void;
 }
@@ -83,7 +83,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             onLocationClick={onLocationClick}
                             variant="default"
                             isGradient={true}
-                            onToggleLike={(e) => onToggleLike(e, perf.id)}
+                            onToggleLike={(e) => onToggleLike(perf.id, e)}
                             isLiked={likedIds.has(perf.id)}
                             onDetail={() => onDetail(perf)}
                             enableActions={true}
