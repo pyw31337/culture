@@ -1,53 +1,56 @@
 
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const VENUE_FILE = path.join(process.cwd(), 'src/data/venues.json');
-const OUTPUT_FILE = path.join(process.cwd(), 'venue_audit_report.md');
+// Artifact Path (Adjust this to the correct absolute path provided in context or just use relative if running locally, but for the agent I should use the absolute path of the brain dir if possible, OR just write to project and move it? 
+// The user context gives Artifact Directory Path: /Users/pyw31337/.gemini/antigravity/brain/71031629-3fe1-402a-b5a9-abad374c4e84
+// I will write to a local file first then copy or write directly if I can hardcode it. 
+// Hardcoding is brittle. I'll output to `venue_report.md` in root and let the agent move it or just tell user its there. 
+// actually, I'll write to the specific artifact path.
+
+const ARTIFACT_DIR = '/Users/pyw31337/.gemini/antigravity/brain/71031629-3fe1-402a-b5a9-abad374c4e84';
+const VENUE_PATH = path.resolve(process.cwd(), 'src/data/venues.json');
+const OUTPUT_PATH = path.join(ARTIFACT_DIR, 'venue_report.md');
+
+const venueData = JSON.parse(fs.readFileSync(VENUE_PATH, 'utf-8'));
 
 interface Venue {
     name: string;
     address: string;
     district?: string;
+    city?: string; // Sometimes inferred
+    lat?: number;
+    lng?: number;
+    mapped_region_id?: string;
 }
 
-if (!fs.existsSync(VENUE_FILE)) {
-    console.error('Venue file not found');
-    process.exit(1);
-}
+const venues = Object.values(venueData) as Venue[];
 
-const venues: Record<string, Venue> = JSON.parse(fs.readFileSync(VENUE_FILE, 'utf-8'));
-const grouped: Record<string, Venue[]> = {};
+// Sort: Region -> District -> Name
+venues.sort((a, b) => {
+    const regionA = a.mapped_region_id || 'z_unknown';
+    const regionB = b.mapped_region_id || 'z_unknown';
+    if (regionA !== regionB) return regionA.localeCompare(regionB);
 
-// Group by district
-for (const key of Object.keys(venues)) {
-    const v = venues[key];
-    const district = v.district || '(No District)';
-    if (!grouped[district]) {
-        grouped[district] = [];
-    }
-    grouped[district].push(v);
-}
+    const distA = a.district || '';
+    const distB = b.district || '';
+    if (distA !== distB) return distA.localeCompare(distB);
 
-// Generate Markdown
-let md = '# Venue Data Audit Report\n\n';
-md += `Total Venues: ${Object.keys(venues).length}\n\n`;
+    return a.name.localeCompare(b.name);
+});
 
-const sortedDistricts = Object.keys(grouped).sort();
+let mdContent = `# Venue Report (${venues.length} items)\n\n`;
+mdContent += `Generated on ${new Date().toLocaleString()}\n\n`;
+mdContent += `| Region | District | Name | Address | Coords |\n`;
+mdContent += `|---|---|---|---|---|\n`;
 
-for (const dist of sortedDistricts) {
-    md += `## ${dist} (${grouped[dist].length})\n`;
-    md += '| Venue Name | Address |\n';
-    md += '|---|---|\n';
+venues.forEach(v => {
+    const hasCoords = (v.lat && v.lat !== 0) ? '✅' : '❌';
+    const cleanAddress = v.address ? v.address.replace(/\|/g, ',') : '❌ No Address';
+    const district = v.district || '-';
 
-    // Sort venues by name
-    const sortedVenues = grouped[dist].sort((a, b) => a.name.localeCompare(b.name));
+    mdContent += `| ${v.mapped_region_id || '?'} | ${district} | **${v.name}** | ${cleanAddress} | ${hasCoords} |\n`;
+});
 
-    for (const v of sortedVenues) {
-        md += `| ${v.name} | ${v.address} |\n`;
-    }
-    md += '\n';
-}
-
-fs.writeFileSync(OUTPUT_FILE, md);
-console.log(`Report generated at ${OUTPUT_FILE}`);
+fs.writeFileSync(OUTPUT_PATH, mdContent);
+console.log(`Report generated at: ${OUTPUT_PATH}`);

@@ -503,7 +503,7 @@ export default function HeroSection({
                 </div>
 
                 {/* Mobile: Dynamic (Simplified Layout) */}
-                <h2 className="text-3xl font-light text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
+                <h2 className="text-4xl font-light text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
                     {currentTemplate.line1}<br />
                     {currentTemplate.boldPrefix && (
                         <>

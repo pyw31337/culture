@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
-// Trigger rebuild for deployment
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, getLowResUrl } from '@/lib/utils';
+import { clsx } from 'clsx';
 
 interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
     src: string;
@@ -24,12 +24,17 @@ export default function ImageWithFallback({
 
     const [imgSrc, setImgSrc] = useState<string>('');
     const [errorStage, setErrorStage] = useState(0); // 0: Initial, 1: Backup/Retry, 2: Fallback
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [lowResSrc, setLowResSrc] = useState<string | null>(null);
 
     useEffect(() => {
         // Reset state when src changes
         setErrorStage(0);
+        setIsLoaded(false);
         // Start with optimized URL or local path
         setImgSrc(getOptimizedUrl(src, optimizationWidth));
+        // Generate Low Res URL
+        setLowResSrc(getLowResUrl(src));
     }, [src, optimizationWidth]);
 
     const handleError = () => {
@@ -54,16 +59,37 @@ export default function ImageWithFallback({
     const isUnoptimized = errorStage >= 1 || src.startsWith('/'); // Local or Backup usually unoptimized
 
     return (
-        <Image
-            {...props}
-            src={imgSrc || fallbackSrc} // Ensure src is never empty
-            alt={alt}
-            onError={handleError}
-            unoptimized={isUnoptimized}
-            width={optimizationWidth}
-            height={Math.floor(optimizationWidth * 1.4)}
-            className={props.className}
-            quality={75}
-        />
+        <>
+            {/* Low Res Placeholder (Blur Up) */}
+            {lowResSrc && !isLoaded && errorStage === 0 && (
+                <img
+                    src={lowResSrc}
+                    alt=""
+                    className={clsx(
+                        props.className,
+                        "absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-70 transition-opacity duration-300 pointer-events-none"
+                    )}
+                    style={{ zIndex: 0 }}
+                />
+            )}
+
+            <Image
+                {...props}
+                src={imgSrc || fallbackSrc} // Ensure src is never empty
+                alt={alt}
+                onError={handleError}
+                onLoad={() => setIsLoaded(true)}
+                unoptimized={isUnoptimized}
+                width={optimizationWidth}
+                height={Math.floor(optimizationWidth * 1.4)}
+                className={clsx(
+                    props.className,
+                    "transition-opacity duration-500",
+                    isLoaded ? "opacity-100" : "opacity-0"
+                )}
+                quality={75}
+                style={{ zIndex: 1 }}
+            />
+        </>
     );
 }

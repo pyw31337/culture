@@ -16,7 +16,7 @@ const TARGET_COUNT = 3247;
 
 // Helper to clean address
 function cleanAddress(addr: string): string {
-    return addr.replace('주소', '').trim();
+    return addr.replace('주소', '').replace('지도보기', '').trim();
 }
 
 function classifyRegion(address: string): string {
@@ -31,12 +31,12 @@ function classifyRegion(address: string): string {
     if (address.includes('대전')) return 'daejeon';
     if (address.includes('울산')) return 'ulsan';
     if (address.includes('세종')) return 'sejong';
-    if (address.includes('충북')) return 'chungbuk';
-    if (address.includes('충남')) return 'chungnam';
-    if (address.includes('전북')) return 'jeonbuk';
-    if (address.includes('전남')) return 'jeonnam';
-    if (address.includes('경북')) return 'gyeongbuk';
-    if (address.includes('경남')) return 'gyeongnam';
+    if (address.includes('충북') || address.includes('충청북')) return 'chungbuk';
+    if (address.includes('충남') || address.includes('충청남')) return 'chungnam';
+    if (address.includes('전북') || address.includes('전라북')) return 'jeonbuk';
+    if (address.includes('전남') || address.includes('전라남')) return 'jeonnam';
+    if (address.includes('경북') || address.includes('경상북')) return 'gyeongbuk';
+    if (address.includes('경남') || address.includes('경상남')) return 'gyeongnam';
     return 'etc';
 }
 
@@ -148,7 +148,7 @@ async function scrapeMomMomFood() {
         // Extract Links
         const listItems = await page.evaluate(() => {
             const results: { title: string, link: string, image: string }[] = [];
-            const anchors = Array.from(document.querySelectorAll('a[href*="/travel/places/"], a[href*="places"]'));
+            const anchors = Array.from(document.querySelectorAll('a[href*="/travel/places/"]'));
             const seen = new Set();
 
             anchors.forEach((a: any) => {

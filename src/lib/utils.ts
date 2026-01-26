@@ -74,3 +74,42 @@ export function cleanTitle(title: string): string {
     // Regex matches one or more groups of brackets at the start of the string, optionally followed by space
     return title.replace(/^(\[[^\]]+\]\s*)+/, '').trim();
 }
+
+export function getLowResUrl(url: string): string | null {
+    if (!url) return null;
+    if (url.startsWith('/')) return null; // Local images handled by Next.js
+
+    // Mom-Mom Specific
+    if (url.includes('image.mom-mom.net')) {
+        try {
+            // Extract base64 part
+            const matches = url.match(/image\.mom-mom\.net\/([^?#]+)/);
+            if (matches && matches[1]) {
+                // Determine if we need to decode first (some might be raw, but usually base64)
+                // Mom-Mom uses straightforward base64 encoded JSON
+                const decodedStr = typeof atob === 'function' ? atob(matches[1]) : Buffer.from(matches[1], 'base64').toString();
+                const decoded = JSON.parse(decodedStr);
+
+                if (decoded.edits && decoded.edits.resize) {
+                    decoded.edits.resize.width = 40; // Tiny width
+                    // Ensure withoutEnlargement is true if present
+                } else {
+                    decoded.edits = { resize: { width: 40, fit: 'cover' } };
+                }
+
+                const encodedStr = typeof btoa === 'function' ? btoa(JSON.stringify(decoded)) : Buffer.from(JSON.stringify(decoded)).toString('base64');
+                return `https://image.mom-mom.net/${encodedStr}`;
+            }
+        } catch (e) { return null; }
+    }
+
+    // Skip blocked or specific domains for wsrv
+    if (url.includes('timeticket.co.kr') || url.includes('culture.seoul.go.kr')) return null;
+
+    // Use wsrv.nl for low-res blur
+    const encodedUrl = encodeURIComponent(url);
+    // w=20: Tiny width
+    // blur=5: Apply blur on server side
+    // q=20: Low quality
+    return `https://wsrv.nl/?url=${encodedUrl}&w=20&blur=5&q=20&output=webp`;
+}
