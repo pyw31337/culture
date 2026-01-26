@@ -89,25 +89,21 @@ export function getAllPerformances() {
         // Map Korean region to English key if valid, or default to 'etc' if unknown but not empty
         region: REGION_MAP[p.region] || (p.region ? 'etc' : 'unknown')
     }));
-    const volleyball = safeArray<any>(kovoData);
-    const basketball = safeArray<any>(kblData);
-    const baseball = safeArray<any>(kboData);
-    const handball = safeArray<any>(handballData);
-    const festivals = safeArray<any>(festivalsData);
-    const yes24 = safeArray<any>(yes24Data);
-    const timeticket = safeArray<any>(timeticketData);
-    const movies = safeArray<any>(moviesData);
-    const travels = safeArray<any>(travelData);
-    const kids = safeArray<any>(kidsData);
-    const classes = safeArray<any>(classData);
-    const umclasses = safeArray<any>(umclassData);
-    const mochaclasses = safeArray<any>(mochaclassData);
-    const ott = safeArray<any>(ottData);
-    const mommom = safeArray<any>(mommomData);
-    const mommomFood = safeArray<any>(mommomFoodData);
-    const mommomProduct = safeArray<any>(mommomProductData);
-    const museum = safeArray<any>(museumData);
-    // const musical = safeArray<any>(musicalData);
+
+    function inferSeoulGenre(title: string, venue: string, originalSubject: string): string {
+        const text = (title + ' ' + venue + ' ' + originalSubject).toLowerCase();
+
+        if (text.includes('콘서트') || text.includes('음악회') || text.includes('연주회') || text.includes('교향악단') || text.includes('리사이틀') || text.includes('앙상블') || text.includes('오케스트라') || text.includes('독창회') || text.includes('독주회') || text.includes('클래식') || text.includes('내한')) return 'classic';
+        if (text.includes('전시') || text.includes('특별전') || text.includes('초대전') || text.includes('갤러리') || text.includes('미술관') || text.includes('박물관') || text.includes('비엔날레') || text.includes('도슨트') || text.includes('개인전') || text.includes('기획전') || text.includes('과학관') || text.includes('기념관') || text.includes('조각전') || text.includes('책보고')) return 'exhibition';
+        if (text.includes('국악') || text.includes('판소리') || text.includes('마당놀이') || text.includes('전통') || text.includes('무형문화재') || text.includes('풍물') || text.includes('굿')) return 'korean_music';
+        if (text.includes('강좌') || text.includes('교육') || text.includes('체험') || text.includes('아카데미') || text.includes('워크숍') || text.includes('교실') || text.includes('특강') || text.includes('도서관') || text.includes('캠프')) return 'class';
+        if (text.includes('축제') || text.includes('페스티벌') || text.includes('행사') || text.includes('스케이트장') || text.includes('눈썰매장')) return 'festival';
+        if (text.includes('뮤지컬')) return 'musical';
+        if (text.includes('연극')) return 'play';
+        if (text.includes('무용') || text.includes('발레')) return 'classic';
+
+        return 'etc';
+    }
 
     const seoulCulture = safeArray<any>(seoulData).map((p: any) => ({
         ...p,
@@ -115,7 +111,8 @@ export function getAllPerformances() {
         region: 'seoul',
         image: p.poster, // Map 'poster' from JSON to 'image'
         price: p.cost,   // Map 'cost' from JSON to 'price'
-        date: p.time ? `${p.date} (${p.time})` : p.date // Append time to date
+        date: p.time ? `${p.date} (${p.time})` : p.date, // Append time to date
+        genre: inferSeoulGenre(p.title || '', p.place || '', p.codename || '')
     }));
 
     // 2. Aggregate

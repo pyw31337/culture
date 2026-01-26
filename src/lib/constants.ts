@@ -1,6 +1,6 @@
 export const GENRE_GROUPS = [
     { id: 'all', label: '전체', genres: ['all', 'hotdeal'] },
-    { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic'] },
+    { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic', 'korean_music'] },
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'activity', label: '액티비티', genres: ['festival', 'activity', 'leisure', 'travel', 'kids', 'class'] },
     { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
@@ -16,6 +16,7 @@ export const GENRES = [
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
     { id: 'classic', label: '클래식/무용' },
+    { id: 'korean_music', label: '국악/전통' },
     { id: 'exhibition', label: '전시/행사' },
     { id: 'activity', label: '액티비티' },
     { id: 'class', label: '클래스' },
@@ -39,6 +40,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'concert': { hex: '#2563eb', twText: 'text-blue-700', twBg: 'bg-blue-700', twBorder: 'border-blue-500', twActivebg: 'bg-blue-600' },
     'play': { hex: '#16a34a', twText: 'text-green-700', twBg: 'bg-green-700', twBorder: 'border-green-500', twActivebg: 'bg-green-600' },
     'classic': { hex: '#ca8a04', twText: 'text-yellow-700', twBg: 'bg-yellow-700', twBorder: 'border-yellow-500', twActivebg: 'bg-yellow-600' },
+    'korean_music': { hex: '#78350f', twText: 'text-amber-900', twBg: 'bg-amber-900', twBorder: 'border-amber-700', twActivebg: 'bg-amber-800' },
     'exhibition': { hex: '#9333ea', twText: 'text-purple-700', twBg: 'bg-purple-700', twBorder: 'border-purple-500', twActivebg: 'bg-purple-600' },
     'activity': { hex: '#0891b2', twText: 'text-cyan-700', twBg: 'bg-cyan-700', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-600' },
     'class': { hex: '#6366f1', twText: 'text-indigo-600', twBg: 'bg-indigo-600', twBorder: 'border-indigo-500', twActivebg: 'bg-indigo-500' }, // Indigo for Class
@@ -94,7 +96,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
-    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'exhibition',
+    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'korean_music', 'exhibition',
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids', 'museum', 'food',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
