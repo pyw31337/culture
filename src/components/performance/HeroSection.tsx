@@ -379,6 +379,30 @@ export default function HeroSection({
     })();
 
 
+    // Close filter panel when clicking outside
+    const filterRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (filterRef.current && !filterRef.current.contains(event.target as Node)) {
+                // Also check if the toggle button was clicked (avoid immediate re-open)
+                // We can't easily check the button ref here unless we pass it or use a shared parent.
+                // But the toggle button usually stops propagation or we just check closest.
+                // Simple fix: Check if target is inside the toggle button.
+                const target = event.target as Element;
+                if (target.closest('button[title="지역 설정 열기"]') || target.closest('button[title="지역 설정 닫기"]')) {
+                    return;
+                }
+                setIsHeroFilterExpanded(false);
+            }
+        }
+        if (isHeroFilterExpanded) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isHeroFilterExpanded, setIsHeroFilterExpanded]);
+
     return (
         <div className={clsx(
             "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8",
@@ -408,7 +432,7 @@ export default function HeroSection({
                                 ? (searchLocation?.name
                                     ? searchLocation.name
                                     : (activeLocation
-                                        ? (userAddress ? `${userAddress} (GPS)` : '내 위치 (GPS)')
+                                        ? (userAddress || '내 위치 (GPS)')
                                         : '전국'))
                                 : `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전국'
                             }
@@ -445,7 +469,7 @@ export default function HeroSection({
 
                 {/* Inline Filter Panel (Toggle) */}
                 {isHeroFilterExpanded && (
-                    <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl z-[60]">
+                    <div ref={filterRef} className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl z-[60]">
                         <div className="flex flex-col gap-4 p-6">
                             <LocationSelector
                                 selectedRegion={selectedRegion}
@@ -500,9 +524,15 @@ export default function HeroSection({
 
             {/* Hero Search Bar */}
             <div className="w-full lg:w-auto relative group z-[30]">
-                {/* Light Mode: Subtle Purple Glow Behind Search Bar */}
+                {/* Rotating Neon Border (The requested "Rotating Glow") */}
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#a855f7_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300" />
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#f472b6_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] blur-md transition-opacity duration-300" />
+
+                {/* Light Mode Static Glow */}
                 <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
-                <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)] transition-all duration-300 focus-within:shadow-[0_0_15px_rgba(167,139,250,0.5),0_0_30px_rgba(244,114,182,0.3)] focus-within:scale-[1.01]">
+
+                {/* Main Container */}
+                <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)] transition-all duration-300 relative">
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
                         {/* Radius Select for Hero */}
                         {activeLocation && (
@@ -527,7 +557,16 @@ export default function HeroSection({
                             type="text"
                             value={searchText}
                             onFocus={() => setActiveSearchSource('hero')}
-                            onChange={(e) => setSearchText(e.target.value)}
+                            onChange={(e) => {
+                                const val = e.target.value;
+                                setSearchText(val);
+                                // Reset location filters when user starts typing search
+                                if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
+                                    setSelectedRegion('all');
+                                    setSelectedDistrict('all');
+                                    setSelectedVenue('all');
+                                }
+                            }}
                             onKeyDown={handleKeyDown}
                             className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                             placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "문화 정보, 장소, 지역 검색..."}
