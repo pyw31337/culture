@@ -47,7 +47,13 @@ export function isChoseongMatch(target: string, query: string): boolean {
     // 1. Exact/Substring Match
     if (t.includes(q)) return true;
 
-    // 2. Choseong Match
+    // 2. Choseong Match Logic
+    // Only apply Choseong match if the query actually contains standalone Jamo (e.g. 'ㄱ', 'ㄴ')
+    // If the query is fully formed Hangul syllables (e.g. '주토피아'), we essentially require a substring match (checked above).
+    // This prevents "주토피아" (zootopia) matching "강아지 토피어리" (puppy topiary) solely because '지' ends with 'ㅈ' and '토' starts with 'ㅌ'.
+    const hasJamo = /[ㄱ-ㅎ]/.test(q);
+    if (!hasJamo) return false;
+
     const tCho = getChoseong(t);
     const qCho = getChoseong(q); // Convert query to choseong too (handles mixed '뮤지ㅋ' -> 'ㅁㅈㅋ')
 

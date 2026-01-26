@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
 import { TypingHero } from './TypingHero';
+import { LocationSelector } from '../LocationSelector';
 import { HeroTemplate, HERO_TEMPLATES } from '../../lib/hero-templates';
 import { REGIONS, RADIUS_OPTIONS } from '../../lib/constants';
 
@@ -446,75 +447,25 @@ export default function HeroSection({
                 {isHeroFilterExpanded && (
                     <div className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl z-[60]">
                         <div className="flex flex-col gap-4 p-6">
-
-                            {/* Region Selection (Top Level) */}
-                            <div className="flex flex-wrap gap-2 justify-start">
-                                {REGIONS.map(r => (
-                                    <button
-                                        key={r.id}
-                                        onClick={() => {
-                                            setSelectedRegion(r.id);
-                                            setSelectedDistrict('all');
-                                            setSelectedVenue('all');
-                                        }}
-                                        className={clsx(
-                                            'px-4 py-2 rounded-xl text-sm font-medium transition-all text-center border',
-                                            selectedRegion === r.id
-                                                ? 'bg-white light:bg-white text-black light:text-purple-700 font-bold shadow-lg border-transparent'
-                                                : 'bg-gray-900/50 light:bg-gray-100 border-white/10 light:border-black/5 text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-gray-800 light:hover:bg-gray-200'
-                                        )}
-                                    >
-                                        {r.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Divider if Region Selected */}
-                            {(selectedRegion !== 'all' || availableVenues.length > 0) && (
-                                <div className="h-px w-full bg-white/10 light:bg-black/5" />
-                            )}
-
-                            {/* Secondary Filters: Distrct & Venue */}
-                            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
-                                {/* District Select (Only applicable if region selected) */}
-                                {selectedRegion !== 'all' && districts.length > 0 && (
-                                    <div className="relative w-full sm:w-auto min-w-[160px]">
-                                        <select
-                                            value={selectedDistrict}
-                                            onChange={(e) => {
-                                                setSelectedDistrict(e.target.value);
-                                                setSelectedVenue('all');
-                                            }}
-                                            className="w-full appearance-none bg-purple-900/20 light:bg-purple-50 border border-purple-500/20 light:border-purple-200 text-gray-200 light:text-purple-900 text-sm rounded-xl focus:bg-gray-800 light:focus:bg-white focus:border-white/20 block p-3 pr-10 transition-colors font-medium cursor-pointer hover:bg-purple-900/30"
-                                        >
-                                            <option value="all">전체 지역구</option>
-                                            {districts.map(d => (
-                                                <option key={d} value={d} className="bg-gray-900 text-white light:bg-white light:text-black">{d}</option>
-                                            ))}
-                                        </select>
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                                            <ChevronDown className="w-4 h-4 text-gray-400" />
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Venue Select */}
-                                <div className="relative w-full sm:w-auto min-w-[200px]">
-                                    <select
-                                        value={selectedVenue}
-                                        onChange={(e) => setSelectedVenue(e.target.value)}
-                                        className="w-full appearance-none bg-purple-900/20 light:bg-purple-50 border border-purple-500/20 light:border-purple-200 text-gray-200 light:text-purple-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-3 pr-10 transition-colors font-medium cursor-pointer hover:bg-purple-900/30"
-                                    >
-                                        <option value="all">전체 공연장</option>
-                                        {availableVenues.map(v => (
-                                            <option key={v} value={v} className="bg-gray-900 text-white light:bg-white light:text-black">{v}</option>
-                                        ))}
-                                    </select>
-                                    <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                                        <ChevronDown className="w-4 h-4 text-gray-400" />
-                                    </div>
-                                </div>
-                            </div>
+                            <LocationSelector
+                                selectedRegion={selectedRegion}
+                                onRegionSelect={(r) => {
+                                    setSelectedRegion(r);
+                                    if (r !== selectedRegion) {
+                                        setSelectedDistrict('all');
+                                        setSelectedVenue('all');
+                                    }
+                                }}
+                                selectedDistrict={selectedDistrict}
+                                onDistrictSelect={(d) => {
+                                    setSelectedDistrict(d);
+                                    if (d !== selectedDistrict) setSelectedVenue('all');
+                                }}
+                                selectedVenue={selectedVenue}
+                                onVenueSelect={setSelectedVenue}
+                                districts={districts}
+                                availableVenues={availableVenues}
+                            />
                         </div>
                     </div>
                 )}

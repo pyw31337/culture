@@ -4,7 +4,7 @@
     "title": "아빠와 딸",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6627/6627-00-251208e9-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "세우아트센터 2관",
+    "venue": "세우아트센터",
     "link": "https://timeticket.co.kr/product/6627",
     "region": "seoul",
     "genre": "kids",
@@ -14,7 +14,7 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 49 , 4층"
+    "address": "서울 종로구 대학로12길 49 , 4층"
   },
   {
     "id": "timeticket_ofhqlefss",
@@ -31,7 +31,7 @@
     "runningTime": "60분",
     "ageLimit": "만 3세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 145 , 3층 스케치홀"
+    "address": "서울 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
     "id": "timeticket_8ls8lu0l0",
@@ -48,7 +48,7 @@
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "서울특별시 종로구 성균관로 25-2 , 성균관대학교 새천년홀"
+    "address": "서울 종로구 성균관로 25-2 , 성균관대학교 새천년홀"
   },
   {
     "id": "timeticket_gohsgpffk",
@@ -82,7 +82,7 @@
     "runningTime": "80분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로 128 , 21세기빌딩 5층"
+    "address": "서울 종로구 대학로 128 , 21세기빌딩 5층"
   },
   {
     "id": "timeticket_33in0tx5p",
@@ -116,7 +116,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로 116 , 공공일호 건물 지하 2층"
+    "address": "서울 종로구 대학로 116 , 공공일호 건물 지하 2층"
   },
   {
     "id": "timeticket_0k9et3b2a",
@@ -133,7 +133,7 @@
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로 258-9 , 지하 1층"
+    "address": "서울 종로구 창경궁로 258-9 , 지하 1층"
   },
   {
     "id": "timeticket_53tc1j8z6",
@@ -150,7 +150,7 @@
     "runningTime": "60분",
     "ageLimit": "만 2세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로10길 12 3층"
+    "address": "서울 종로구 대학로10길 12 3층"
   },
   {
     "id": "timeticket_4aiwq1062",
@@ -184,7 +184,7 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
     "id": "timeticket_oj72rxcq9",
@@ -201,7 +201,7 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
     "id": "timeticket_mf5hpwqge",
@@ -218,7 +218,7 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
     "id": "timeticket_ezc216bwv",
@@ -235,7 +235,7 @@
     "runningTime": "50분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로14길 18-2 , 지하 1층"
+    "address": "서울 종로구 대학로14길 18-2 , 지하 1층"
   },
   {
     "id": "timeticket_qmxw62mw9",
@@ -259,7 +259,7 @@
     "title": "뷰티풀 라이프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/13/1734079269-61-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN 아트홀 4관",
+    "venue": "JTN 아트홀",
     "link": "https://timeticket.co.kr/product/3471",
     "region": "seoul",
     "genre": "play",
@@ -286,14 +286,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 25"
+    "address": "서울 종로구 동숭길 25"
   },
   {
     "id": "timeticket_od96m6lv9",
     "title": "과속스캔들",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/31/1753949053-71-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "나인진홀 2관",
+    "venue": "나인진홀",
     "link": "https://timeticket.co.kr/product/5778",
     "region": "seoul",
     "genre": "play",
@@ -303,7 +303,7 @@
     "runningTime": "90분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 47 , 지하 1층"
+    "address": "서울 종로구 동숭길 47 , 지하 1층"
   },
   {
     "id": "timeticket_454uqj6d4",
@@ -320,7 +320,7 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 72"
+    "address": "서울 종로구 이화장길 72"
   },
   {
     "id": "timeticket_3t4x6upoq",
@@ -337,14 +337,14 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로10길 12 , 지하 1층"
+    "address": "서울 종로구 대학로10길 12 , 지하 1층"
   },
   {
     "id": "timeticket_o9wdjc0td",
     "title": "오 마이 갓",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621557313-62-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "오마이갓 전용관",
+    "venue": "오마이갓",
     "link": "https://timeticket.co.kr/product/3121",
     "region": "seoul",
     "genre": "play",
@@ -354,7 +354,7 @@
     "runningTime": "75분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 68 , 지하 1층"
+    "address": "서울 종로구 동숭길 68 , 지하 1층"
   },
   {
     "id": "timeticket_f1y8yhix6",
@@ -371,14 +371,14 @@
     "runningTime": "90분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로11길 23 대학로 스타시티"
+    "address": "서울 종로구 대학로11길 23 대학로 스타시티"
   },
   {
     "id": "timeticket_rkfd279uw",
     "title": "써니텐",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/30/1751244656-13-_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN아트홀 1관",
+    "venue": "JTN아트홀",
     "link": "https://timeticket.co.kr/product/5496",
     "region": "seoul",
     "genre": "musical",
@@ -388,7 +388,7 @@
     "runningTime": "100분",
     "ageLimit": "10세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 26 JTN아트홀 1관"
+    "address": "서울 종로구 이화장길 26 JTN아트홀 1관"
   },
   {
     "id": "timeticket_nmcvzzcbq",
@@ -405,7 +405,7 @@
     "runningTime": "130분",
     "ageLimit": "20세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 63 , 지하2층"
+    "address": "서울 종로구 대학로12길 63 , 지하2층"
   },
   {
     "id": "timeticket_tv5sc3znm",
@@ -456,7 +456,7 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8길 25"
+    "address": "서울 종로구 대학로8길 25"
   },
   {
     "id": "timeticket_yxunoqqr7",
@@ -473,7 +473,7 @@
     "runningTime": "120분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로 144 , 지하 2층"
+    "address": "서울 종로구 대학로 144 , 지하 2층"
   },
   {
     "id": "timeticket_00kgpb7jd",
@@ -490,14 +490,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 63 지하2층"
+    "address": "서울 종로구 대학로12길 63 지하2층"
   },
   {
     "id": "timeticket_l3cbmymld",
     "title": "2호선 세입자",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2021/12/29/1640756550-51-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "바탕골 소극장",
+    "venue": "바탕골",
     "link": "https://timeticket.co.kr/product/4706",
     "region": "seoul",
     "genre": "play",
@@ -514,7 +514,7 @@
     "title": "오백에 삼십",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/06/28/1719534331-75-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "JTN 아트홀 3관",
+    "venue": "JTN 아트홀",
     "link": "https://timeticket.co.kr/product/5462",
     "region": "seoul",
     "genre": "play",
@@ -524,7 +524,7 @@
     "runningTime": "100분",
     "ageLimit": "14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 26 JTN 아트홀 3관"
+    "address": "서울 종로구 이화장길 26 JTN 아트홀 3관"
   },
   {
     "id": "timeticket_rj5xx65h5",
@@ -558,7 +558,7 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 86-11"
+    "address": "서울 종로구 이화장길 86-11"
   },
   {
     "id": "timeticket_cyddcv72u",
@@ -575,7 +575,7 @@
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 30 3층"
+    "address": "서울 종로구 대학로8가길 30 3층"
   },
   {
     "id": "timeticket_gvom67nl3",
@@ -599,7 +599,7 @@
     "title": "보물찾기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5900/5905/5905-00-251209b6-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "아트포레스트 2관",
+    "venue": "아트포레스트",
     "link": "https://timeticket.co.kr/product/5905",
     "region": "seoul",
     "genre": "play",
@@ -609,7 +609,7 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 22 , 5층 아트포레스트"
+    "address": "서울 종로구 대학로12길 22 , 5층 아트포레스트"
   },
   {
     "id": "timeticket_qmgevaknh",
@@ -626,7 +626,7 @@
     "runningTime": "90분",
     "ageLimit": "만 18세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 41 , 지하 1층"
+    "address": "서울 종로구 동숭길 41 , 지하 1층"
   },
   {
     "id": "timeticket_j3yoqye4z",
@@ -660,7 +660,7 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로10길 26 , 지하 1층"
+    "address": "서울 종로구 대학로10길 26 , 지하 1층"
   },
   {
     "id": "timeticket_98gsvy5a0",
@@ -677,7 +677,7 @@
     "runningTime": "70분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 50 , 지하1층"
+    "address": "서울 종로구 대학로12길 50 , 지하1층"
   },
   {
     "id": "timeticket_hk7g7fvo2",
@@ -711,7 +711,7 @@
     "runningTime": "90분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 30 , 4층"
+    "address": "서울 종로구 대학로8가길 30 , 4층"
   },
   {
     "id": "timeticket_qn34wp6v9",
@@ -728,14 +728,14 @@
     "runningTime": "100분",
     "ageLimit": "만 15세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 78 , 지하 1층"
+    "address": "서울 종로구 동숭길 78 , 지하 1층"
   },
   {
     "id": "timeticket_p2nmo0duf",
     "title": "늘근도둑이야기",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/02/21/1645407531-84-0_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "아트포레스트 1관",
+    "venue": "아트포레스트",
     "link": "https://timeticket.co.kr/product/4721",
     "region": "seoul",
     "genre": "play",
@@ -762,14 +762,14 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로10길 24 , 3층"
+    "address": "서울 종로구 대학로10길 24 , 3층"
   },
   {
     "id": "timeticket_luy7o0jr0",
     "title": "남사친 여사친",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/05/27/1716786736-92-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "세우아트센터 2관",
+    "venue": "세우아트센터",
     "link": "https://timeticket.co.kr/product/5438",
     "region": "seoul",
     "genre": "play",
@@ -779,7 +779,7 @@
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 49 , 4층"
+    "address": "서울 종로구 대학로12길 49 , 4층"
   },
   {
     "id": "timeticket_4tslwunzb",
@@ -796,14 +796,14 @@
     "runningTime": "110분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로14길 29 , 링크아트센터 벅스홀"
+    "address": "서울 종로구 대학로14길 29 , 링크아트센터 벅스홀"
   },
   {
     "id": "timeticket_ruxxxgjs3",
     "title": "미드나잇 : 액터뮤지션",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6769/6769-00-251210a2-255x357.jpg",
     "date": "2025.12.13~2026.03.15",
-    "venue": "예스24 아트원 1관",
+    "venue": "예스24 아트원",
     "link": "https://timeticket.co.kr/product/6769",
     "region": "seoul",
     "genre": "musical",
@@ -813,7 +813,7 @@
     "runningTime": "100분",
     "ageLimit": "중학생 이상 관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 83 , 예스24아트원 1관"
+    "address": "서울 종로구 대학로12길 83 , 예스24아트원 1관"
   },
   {
     "id": "timeticket_j4r5gf726",
@@ -830,14 +830,14 @@
     "runningTime": "110분",
     "ageLimit": "14세 이상 관람가",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 126 , 동덕여대 공연예술 연구소 지하 4층"
+    "address": "서울 종로구 동숭길 126 , 동덕여대 공연예술 연구소 지하 4층"
   },
   {
     "id": "timeticket_rjjk14axj",
     "title": "시지프스",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6796/6796-00-251223de-255x357.jpg",
     "date": "2025.12.16~2026.03.08",
-    "venue": "예스24스테이지 2관",
+    "venue": "예스24스테이지",
     "link": "https://timeticket.co.kr/product/6796",
     "region": "seoul",
     "genre": "musical",
@@ -847,14 +847,14 @@
     "runningTime": "100분",
     "ageLimit": "만 10세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 21 , 예스24스테이지 2관"
+    "address": "서울 종로구 대학로12길 21 , 예스24스테이지 2관"
   },
   {
     "id": "timeticket_jl438u8ax",
     "title": "은하철도의 밤",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6837/6837-00-260109c9-255x357.jpg",
     "date": "2026.01.12~2026.02.01",
-    "venue": "예스24스테이지 1관",
+    "venue": "예스24스테이지",
     "link": "https://timeticket.co.kr/product/6837",
     "region": "seoul",
     "genre": "musical",
@@ -864,14 +864,14 @@
     "runningTime": "100분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 21 , 예스24스테이지 1관"
+    "address": "서울 종로구 대학로12길 21 , 예스24스테이지 1관"
   },
   {
     "id": "timeticket_sgh1wy2lc",
     "title": "나르치스와 골드문트",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6686/6686-00-25111898-255x357.jpg",
     "date": "2025.12.23~2026.03.22",
-    "venue": "예스24 아트원 2관",
+    "venue": "예스24 아트원",
     "link": "https://timeticket.co.kr/product/6686",
     "region": "seoul",
     "genre": "musical",
@@ -881,14 +881,14 @@
     "runningTime": "100분",
     "ageLimit": "만 11세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 83 , 예스24 아트원 2관"
+    "address": "서울 종로구 대학로12길 83 , 예스24 아트원 2관"
   },
   {
     "id": "timeticket_bdhmajcqu",
     "title": "이터니티",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6826/6826-00-2601058b-255x357.jpg",
     "date": "2026.01.08~2026.02.01",
-    "venue": "NOL 유니플렉스 1관",
+    "venue": "NOL 유니플렉스",
     "link": "https://timeticket.co.kr/product/6826",
     "region": "seoul",
     "genre": "musical",
@@ -898,7 +898,7 @@
     "runningTime": "100분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭동 1-94 , NOL 유니플렉스 1관"
+    "address": "서울 종로구 동숭동 1-94 , NOL 유니플렉스 1관"
   },
   {
     "id": "timeticket_ql78qfy7c",
@@ -915,14 +915,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 혜화로 17 , et theatre 1 (이티 씨어터 원)"
+    "address": "서울 종로구 혜화로 17 , et theatre 1 (이티 씨어터 원)"
   },
   {
     "id": "timeticket_nafuia1b3",
     "title": "그때도 오늘2: 꽃신",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6682/6682-00-2511143d-255x357.jpg",
     "date": "2025.12.16~2026.02.22",
-    "venue": "NOL 서경스퀘어 스콘 2관",
+    "venue": "NOL 서경스퀘어 스콘",
     "link": "https://timeticket.co.kr/product/6682",
     "region": "seoul",
     "genre": "play",
@@ -932,14 +932,14 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 148"
+    "address": "서울 종로구 동숭길 148"
   },
   {
     "id": "timeticket_tyw17dse6",
     "title": "로빈",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6709/6709-00-251124d9-255x357.jpg",
     "date": "2025.12.01~2026.03.01",
-    "venue": "대학로 TOM(티오엠) 1관",
+    "venue": "대학로 TOM(티오엠)",
     "link": "https://timeticket.co.kr/product/6709",
     "region": "seoul",
     "genre": "musical",
@@ -949,14 +949,14 @@
     "runningTime": "100분",
     "ageLimit": "8세 이상 관람가",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 85"
+    "address": "서울 종로구 대학로8가길 85"
   },
   {
     "id": "timeticket_xm71xh4bn",
     "title": "라이어 1탄",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/17/1734412288-15-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "상명아트홀 1관",
+    "venue": "상명아트홀",
     "link": "https://timeticket.co.kr/product/6072",
     "region": "seoul",
     "genre": "play",
@@ -966,7 +966,7 @@
     "runningTime": "100분",
     "ageLimit": "중학생 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 133 , 상명아트홀 1관"
+    "address": "서울 종로구 동숭길 133 , 상명아트홀 1관"
   },
   {
     "id": "timeticket_cd6mx3jlo",
@@ -983,7 +983,7 @@
     "runningTime": "80분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 성균관로4길 42"
+    "address": "서울 종로구 성균관로4길 42"
   },
   {
     "id": "timeticket_24s3ylecs",
@@ -1000,7 +1000,7 @@
     "runningTime": "90분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 145 , 3층"
+    "address": "서울 종로구 동숭길 145 , 3층"
   },
   {
     "id": "timeticket_xh7lu1cnd",
@@ -1017,7 +1017,7 @@
     "runningTime": "90분",
     "ageLimit": "8세(초등생) 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 79 , 지하 1층"
+    "address": "서울 종로구 대학로8가길 79 , 지하 1층"
   },
   {
     "id": "timeticket_xdkuzqabs",
@@ -1034,7 +1034,7 @@
     "runningTime": "110분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로10길 15-11 4층, 하마씨어터"
+    "address": "서울 종로구 대학로10길 15-11 4층, 하마씨어터"
   },
   {
     "id": "timeticket_45lti9r49",
@@ -1051,7 +1051,7 @@
     "runningTime": "90분",
     "ageLimit": "14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로35길 26"
+    "address": "서울 종로구 창경궁로35길 26"
   },
   {
     "id": "timeticket_p3r1hnq0q",
@@ -1085,7 +1085,7 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 52 , 3층"
+    "address": "서울 종로구 대학로8가길 52 , 3층"
   },
   {
     "id": "timeticket_7boypdb31",
@@ -1102,7 +1102,7 @@
     "runningTime": "100분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로 132"
+    "address": "서울 종로구 대학로 132"
   },
   {
     "id": "timeticket_ussrsfi44",
@@ -1119,7 +1119,7 @@
     "runningTime": "90분",
     "ageLimit": "만 19세 이상 (여성)",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 15 , 지하 2층"
+    "address": "서울 종로구 대학로12길 15 , 지하 2층"
   },
   {
     "id": "timeticket_eh64ilxvy",
@@ -1136,14 +1136,14 @@
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 54 , 지하 1층"
+    "address": "서울 종로구 이화장길 54 , 지하 1층"
   },
   {
     "id": "timeticket_2krcbr23w",
     "title": "택시안에서",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/03/25/1711352214-89-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "OPEN RUN",
-    "venue": "해바라기 소극장",
+    "venue": "해바라기",
     "link": "https://timeticket.co.kr/product/4450",
     "region": "seoul",
     "genre": "play",
@@ -1170,7 +1170,7 @@
     "runningTime": "180분",
     "ageLimit": "중학생 이상 관람가",
     "casting": "",
-    "address": "서울특별시 종로구 성균관로3길 23"
+    "address": "서울 종로구 성균관로3길 23"
   },
   {
     "id": "timeticket_3ajwjvlde",
@@ -1187,7 +1187,7 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 이화장길 54 , 지하 1층 에이치씨어터"
+    "address": "서울 종로구 이화장길 54 , 지하 1층 에이치씨어터"
   },
   {
     "id": "timeticket_94c1xr8g4",
@@ -1204,7 +1204,7 @@
     "runningTime": "75분",
     "ageLimit": "만 11세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로12길 63 , 석마빌딩 3층, 소극장 혜화당"
+    "address": "서울 종로구 대학로12길 63 , 석마빌딩 3층, 소극장 혜화당"
   },
   {
     "id": "timeticket_q2qay7sv7",
@@ -1221,7 +1221,7 @@
     "runningTime": "110분",
     "ageLimit": "만 16세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 혜화로5길 5 , 선돌극장"
+    "address": "서울 종로구 혜화로5길 5 , 선돌극장"
   },
   {
     "id": "timeticket_u7cv45nyg",
@@ -1245,7 +1245,7 @@
     "title": "헤어지는 기쁨",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6758/6758-00-251231a9-255x357.jpg",
     "date": "2025.11.12~2025.12.31",
-    "venue": "봄날 아트홀 1관",
+    "venue": "봄날 아트홀",
     "link": "https://timeticket.co.kr/product/6758",
     "region": "seoul",
     "genre": "play",
@@ -1255,14 +1255,14 @@
     "runningTime": "80분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 39 , 지하 2층 봄날 아트홀"
+    "address": "서울 종로구 동숭길 39 , 지하 2층 봄날 아트홀"
   },
   {
     "id": "timeticket_v9k6x1lcm",
     "title": "크리미널 시즌5",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5100/5140/5140-00-25101036-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "봄날아트홀 2관",
+    "venue": "봄날아트홀",
     "link": "https://timeticket.co.kr/product/5140",
     "region": "seoul",
     "genre": "play",
@@ -1279,7 +1279,7 @@
     "title": "크리미널 시즌4",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/3000/3800/3895/3895-00-251010f1-255x357.jpg",
     "date": "OPEN RUN",
-    "venue": "봄날아트홀 1관",
+    "venue": "봄날아트홀",
     "link": "https://timeticket.co.kr/product/3895",
     "region": "seoul",
     "genre": "play",
@@ -1306,7 +1306,7 @@
     "runningTime": "80분",
     "ageLimit": "14세 이상 관람가",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 78 , 지하 1층 코델아트홀"
+    "address": "서울 종로구 동숭길 78 , 지하 1층 코델아트홀"
   },
   {
     "id": "timeticket_ag4o6cenf",
@@ -1323,14 +1323,14 @@
     "runningTime": "80분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대명1길 7 , 3층"
+    "address": "서울 종로구 대명1길 7 , 3층"
   },
   {
     "id": "timeticket_ytgbyupur",
     "title": "예술? 니 똥이다!",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6794/6794-00-251229a9-255x357.jpg",
     "date": "2026.01.20~2026.01.25",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀",
     "link": "https://timeticket.co.kr/product/6794",
     "region": "seoul",
     "genre": "play",
@@ -1340,7 +1340,7 @@
     "runningTime": "65분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 47 , 나인진홀 1관"
+    "address": "서울 종로구 동숭길 47 , 나인진홀 1관"
   },
   {
     "id": "timeticket_o468g8mqy",
@@ -1350,14 +1350,14 @@
     "venue": "매직라이브펍",
     "link": "https://timeticket.co.kr/product/6411",
     "region": "seoul",
-    "genre": "musical",
+    "genre": "concert",
     "price": "29,500원",
     "originalPrice": "29,500원",
     "discount": "51%",
     "runningTime": "70분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로26길 41-3 , 지하 1층"
+    "address": "서울 종로구 창경궁로26길 41-3 , 지하 1층"
   },
   {
     "id": "timeticket_ciyv74ryk",
@@ -1374,7 +1374,7 @@
     "runningTime": "100분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로 116 시윤아트홀 지하 1층"
+    "address": "서울 종로구 대학로 116 시윤아트홀 지하 1층"
   },
   {
     "id": "timeticket_uprwrvmpr",
@@ -1391,7 +1391,7 @@
     "runningTime": "100분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로34길 24-6 , 지하 1층"
+    "address": "서울 종로구 창경궁로34길 24-6 , 지하 1층"
   },
   {
     "id": "timeticket_4frzz2eip",
@@ -1408,14 +1408,14 @@
     "runningTime": "90분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭4길 16-3"
+    "address": "서울 종로구 동숭4길 16-3"
   },
   {
     "id": "timeticket_bb5pu2rl3",
     "title": "당근",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6830/6830-00-260107dc-255x357.jpg",
     "date": "2026.02.10~2026.02.15",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀",
     "link": "https://timeticket.co.kr/product/6830",
     "region": "seoul",
     "genre": "play",
@@ -1425,7 +1425,7 @@
     "runningTime": "70분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 47 ,나인진홀 1관"
+    "address": "서울 종로구 동숭길 47 ,나인진홀 1관"
   },
   {
     "id": "timeticket_8a03e90em",
@@ -1442,14 +1442,14 @@
     "runningTime": "100분",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 50 , B1 플레이더씨어터"
+    "address": "서울 종로구 동숭길 50 , B1 플레이더씨어터"
   },
   {
     "id": "timeticket_5w42ntn8b",
     "title": "구원은 셀프",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6803/6803-00-2601055a-255x357.jpg",
     "date": "2026.02.03~2026.02.08",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀",
     "link": "https://timeticket.co.kr/product/6803",
     "region": "seoul",
     "genre": "play",
@@ -1459,14 +1459,14 @@
     "runningTime": "70분",
     "ageLimit": "만 11세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 47 ,나인진홀 1관"
+    "address": "서울 종로구 동숭길 47 ,나인진홀 1관"
   },
   {
     "id": "timeticket_ojhnrrucw",
     "title": "완벽한 가족",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6797/6797-00-251223d1-255x357.jpg",
     "date": "2026.01.27~2026.02.01",
-    "venue": "나인진홀 1관",
+    "venue": "나인진홀",
     "link": "https://timeticket.co.kr/product/6797",
     "region": "seoul",
     "genre": "play",
@@ -1476,7 +1476,7 @@
     "runningTime": "70분",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 47 ,나인진홀 1관"
+    "address": "서울 종로구 동숭길 47 ,나인진홀 1관"
   },
   {
     "id": "timeticket_vvc8dmqki",
@@ -1493,7 +1493,7 @@
     "runningTime": "90분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 동숭길 145 , 3층 스케치홀"
+    "address": "서울 종로구 동숭길 145 , 3층 스케치홀"
   },
   {
     "id": "timeticket_gucjrhsie",
@@ -1527,7 +1527,7 @@
     "runningTime": "90분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 30 , 4층"
+    "address": "서울 종로구 대학로8가길 30 , 4층"
   },
   {
     "id": "timeticket_awvi5qg5j",
@@ -1544,7 +1544,7 @@
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
     "casting": "",
-    "address": "서울특별시 중구 명동길 26 , 유네스코회관 3층"
+    "address": "서울 중구 명동길 26 , 유네스코회관 3층"
   },
   {
     "id": "timeticket_fwzsg5pk2",
@@ -1561,7 +1561,7 @@
     "runningTime": "90분",
     "ageLimit": "만 12개월 이상 관람가",
     "casting": "",
-    "address": "서울특별시 마포구 양화로16길 29 ,옐로우다이아몬드 지하2층 , 지하3층"
+    "address": "서울 마포구 양화로16길 29 ,옐로우다이아몬드 지하2층 , 지하3층"
   },
   {
     "id": "timeticket_h7gnca9rv",
@@ -1578,7 +1578,7 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "서울특별시 마포구 양화로 45 , 메세나폴리스 2층"
+    "address": "서울 마포구 양화로 45 , 메세나폴리스 2층"
   },
   {
     "id": "timeticket_xobi9d8c0",
@@ -1595,7 +1595,7 @@
     "runningTime": "75분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 중구 정동길 3 , 경향아트힐"
+    "address": "서울 중구 정동길 3 , 경향아트힐"
   },
   {
     "id": "timeticket_stkkpuhov",
@@ -1612,14 +1612,14 @@
     "runningTime": "80분",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "서울특별시 중구 마른내로 47 , 명보아트홀 지하 3층"
+    "address": "서울 중구 마른내로 47 , 명보아트홀 지하 3층"
   },
   {
     "id": "timeticket_gbfjc0lj6",
     "title": "장수탕 선녀님",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2023/12/28/1703725025-99-3_wonbon_N_7_255x357_70_2.jpg",
     "date": "2021.09.16~2026.02.08",
-    "venue": "서울숲 씨어터 2관",
+    "venue": "서울숲 씨어터",
     "link": "https://timeticket.co.kr/product/5402",
     "region": "seoul",
     "genre": "kids",
@@ -1629,14 +1629,14 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "서울특별시 성동구 서울숲2길 32-14 , G층"
+    "address": "서울 성동구 서울숲2길 32-14 , G층"
   },
   {
     "id": "timeticket_axjtnlx06",
     "title": "알사탕",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/04/14/1744614534-92-_wonbon_N_7_255x357_70_2.jpg",
     "date": "2025.04.18~2026.02.08",
-    "venue": "서울숲 씨어터 1관",
+    "venue": "서울숲 씨어터",
     "link": "https://timeticket.co.kr/product/5401",
     "region": "seoul",
     "genre": "kids",
@@ -1646,7 +1646,7 @@
     "runningTime": "60분",
     "ageLimit": "12개월 이상",
     "casting": "",
-    "address": "서울특별시 성동구 서울숲2길 32-14 , G층"
+    "address": "서울 성동구 서울숲2길 32-14 , G층"
   },
   {
     "id": "timeticket_rmzt0cldg",
@@ -1663,7 +1663,7 @@
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "서울특별시 송파구 올림픽로 424"
+    "address": "서울 송파구 올림픽로 424"
   },
   {
     "id": "timeticket_z22a2xvfr",
@@ -1680,7 +1680,7 @@
     "runningTime": "75분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "서울특별시 송파구 올림픽로 424 , 올림픽공원 내 우리금융아트홀"
+    "address": "서울 송파구 올림픽로 424 , 올림픽공원 내 우리금융아트홀"
   },
   {
     "id": "timeticket_1zdrzdhi2",
@@ -1697,7 +1697,7 @@
     "runningTime": "65분",
     "ageLimit": "20개월 이상",
     "casting": "",
-    "address": "서울특별시 광진구 능동로 216 , 서울상상나라 B1"
+    "address": "서울 광진구 능동로 216 , 서울상상나라 B1"
   },
   {
     "id": "timeticket_vprldbz6a",
@@ -1714,7 +1714,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 중구 퇴계로 387"
+    "address": "서울 중구 퇴계로 387"
   },
   {
     "id": "timeticket_zccy26aba",
@@ -1731,7 +1731,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 강서구 하늘길 38 , 롯데몰 김포공항점 1층 전시홀"
+    "address": "서울 강서구 하늘길 38 , 롯데몰 김포공항점 1층 전시홀"
   },
   {
     "id": "timeticket_iq45wd2ec",
@@ -1748,7 +1748,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 송파구 올림픽로 240 , 키자니아"
+    "address": "서울 송파구 올림픽로 240 , 키자니아"
   },
   {
     "id": "timeticket_g5rrsuzgq",
@@ -1765,7 +1765,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 송파구 충민로 66 , 현대시티몰 가든파이브점 몰관 4층"
+    "address": "서울 송파구 충민로 66 , 현대시티몰 가든파이브점 몰관 4층"
   },
   {
     "id": "timeticket_npu4yaikm",
@@ -1782,7 +1782,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 종로구 인사동길 12 , 지하 1층"
+    "address": "서울 종로구 인사동길 12 , 지하 1층"
   },
   {
     "id": "timeticket_mx09fieek",
@@ -1799,7 +1799,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 송파구 송파대로 111 , 202동 지하 1층"
+    "address": "서울 송파구 송파대로 111 , 202동 지하 1층"
   },
   {
     "id": "timeticket_4czj37b59",
@@ -1816,7 +1816,7 @@
     "runningTime": "",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "서울특별시 강남구 삼성로 212 , 은마상가 A블럭 306-1, 306-2 (대치동 316)"
+    "address": "서울 강남구 삼성로 212 , 은마상가 A블럭 306-1, 306-2 (대치동 316)"
   },
   {
     "id": "timeticket_g1le8xzbx",
@@ -1833,7 +1833,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 영등포구 영중로 15 , 타임스퀘어 4층 매표소, 5층 입구"
+    "address": "서울 영등포구 영중로 15 , 타임스퀘어 4층 매표소, 5층 입구"
   },
   {
     "id": "timeticket_a0q2ppehv",
@@ -1850,7 +1850,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 은평구 통일로 1050 , 롯데몰 은평점 3층"
+    "address": "서울 은평구 통일로 1050 , 롯데몰 은평점 3층"
   },
   {
     "id": "timeticket_y7b16v3fs",
@@ -1867,7 +1867,7 @@
     "runningTime": "",
     "ageLimit": "만 8세 이상",
     "casting": "",
-    "address": "서울특별시 동대문구 답십리로 209 , 2층 롤러장"
+    "address": "서울 동대문구 답십리로 209 , 2층 롤러장"
   },
   {
     "id": "timeticket_t6fzk5vm3",
@@ -1884,7 +1884,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 영등포구 여의도한강공원길 231 , 여의도유람선터미널"
+    "address": "서울 영등포구 여의도한강공원길 231 , 여의도유람선터미널"
   },
   {
     "id": "timeticket_5zeuaigsq",
@@ -1901,7 +1901,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 영등포구 여의도한강공원길 231 , 여의도유람선터미널"
+    "address": "서울 영등포구 여의도한강공원길 231 , 여의도유람선터미널"
   },
   {
     "id": "timeticket_w6jfvdsxo",
@@ -1986,7 +1986,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 율곡로 99"
+    "address": "서울 종로구 율곡로 99"
   },
   {
     "id": "timeticket_w0eepsjca",
@@ -2003,7 +2003,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 사직로 161"
+    "address": "서울 종로구 사직로 161"
   },
   {
     "id": "timeticket_1km4rlf4y",
@@ -2020,7 +2020,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 중구 세종대로 99"
+    "address": "서울 중구 세종대로 99"
   },
   {
     "id": "timeticket_smhx4v9f8",
@@ -2037,7 +2037,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 새문안로 45"
+    "address": "서울 종로구 새문안로 45"
   },
   {
     "id": "timeticket_6ibmi41c4",
@@ -2054,7 +2054,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로 185"
+    "address": "서울 종로구 창경궁로 185"
   },
   {
     "id": "timeticket_q0gnxdqje",
@@ -2071,7 +2071,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 종로구 창경궁로 185"
+    "address": "서울 종로구 창경궁로 185"
   },
   {
     "id": "timeticket_31ddzecdm",
@@ -2088,7 +2088,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 중구 세종대로 99 , 덕수궁"
+    "address": "서울 중구 세종대로 99 , 덕수궁"
   },
   {
     "id": "timeticket_iin6mvis2",
@@ -2105,7 +2105,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 종로구 북촌로 15 , 헌법재판소"
+    "address": "서울 종로구 북촌로 15 , 헌법재판소"
   },
   {
     "id": "timeticket_q76qpv0xa",
@@ -2122,7 +2122,7 @@
     "runningTime": "110분",
     "ageLimit": "만 5세 이상",
     "casting": "",
-    "address": "서울특별시 종로구 율곡로 지하 62 , 3호선 안국역 4번 출구 앞"
+    "address": "서울 종로구 율곡로 지하 62 , 3호선 안국역 4번 출구 앞"
   },
   {
     "id": "timeticket_4asvwr7wf",
@@ -2139,7 +2139,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 종로구 사직로 161 , 경복궁 매표소 앞"
+    "address": "서울 종로구 사직로 161 , 경복궁 매표소 앞"
   },
   {
     "id": "timeticket_s3si1igmf",
@@ -2156,7 +2156,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 서대문구 통일로 251"
+    "address": "서울 서대문구 통일로 251"
   },
   {
     "id": "timeticket_b0bk8ciec",
@@ -2173,7 +2173,7 @@
     "runningTime": "90분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 용산구 서빙고로 137"
+    "address": "서울 용산구 서빙고로 137"
   },
   {
     "id": "timeticket_vi1lchxr2",
@@ -2190,7 +2190,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 효자로 12"
+    "address": "서울 종로구 효자로 12"
   },
   {
     "id": "timeticket_ezl8350nz",
@@ -2207,7 +2207,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 강남구 선릉로100길 1"
+    "address": "서울 강남구 선릉로100길 1"
   },
   {
     "id": "timeticket_6fh4a9ba1",
@@ -2224,7 +2224,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 종로구 새문안로 55"
+    "address": "서울 종로구 새문안로 55"
   },
   {
     "id": "timeticket_345n7f38m",
@@ -2241,7 +2241,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 용산구 서빙고로 137"
+    "address": "서울 용산구 서빙고로 137"
   },
   {
     "id": "timeticket_6lwc5qj2d",
@@ -2258,7 +2258,7 @@
     "runningTime": "120분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 용산구 서빙고로 137"
+    "address": "서울 용산구 서빙고로 137"
   },
   {
     "id": "timeticket_0k1ojrm9j",
@@ -2309,7 +2309,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 종로구 사직로 지하 130 , 경복궁 역 4번 출구 밖"
+    "address": "서울 종로구 사직로 지하 130 , 경복궁 역 4번 출구 밖"
   },
   {
     "id": "timeticket_wyg7di3p9",
@@ -2326,7 +2326,7 @@
     "runningTime": "120분",
     "ageLimit": "전연령 이용가능",
     "casting": "",
-    "address": "서울특별시 중구 서소문로 지하 127 , 시청역 1번 출구 밖"
+    "address": "서울 중구 서소문로 지하 127 , 시청역 1번 출구 밖"
   },
   {
     "id": "timeticket_lstzxzwwu",
@@ -2360,7 +2360,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 용산구 남산공원길 105"
+    "address": "서울 용산구 남산공원길 105"
   },
   {
     "id": "timeticket_riuchodoc",
@@ -2377,7 +2377,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 영등포구 여의동로 252 , 한강 파라다이스"
+    "address": "서울 영등포구 여의동로 252 , 한강 파라다이스"
   },
   {
     "id": "timeticket_n4lv5bffs",
@@ -2394,7 +2394,7 @@
     "runningTime": "60분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 영등포구 여의동로 252 , 한강 파라다이스"
+    "address": "서울 영등포구 여의동로 252 , 한강 파라다이스"
   },
   {
     "id": "timeticket_x9mmx0apq",
@@ -2411,7 +2411,7 @@
     "runningTime": "",
     "ageLimit": "만 14세 이상",
     "casting": "",
-    "address": "서울특별시 양천구 안양천로 939"
+    "address": "서울 양천구 안양천로 939"
   },
   {
     "id": "timeticket_g5acqa5xf",
@@ -2428,7 +2428,7 @@
     "runningTime": "",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "서울특별시 마포구 양화로 140 , H-CUBE 지하 2층"
+    "address": "서울 마포구 양화로 140 , H-CUBE 지하 2층"
   },
   {
     "id": "timeticket_w5psk9roo",
@@ -2445,7 +2445,7 @@
     "runningTime": "",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "서울특별시 중구 명동8가길 27 , 션샤인빌딩 2층"
+    "address": "서울 중구 명동8가길 27 , 션샤인빌딩 2층"
   },
   {
     "id": "timeticket_hjijhizbm",
@@ -2462,7 +2462,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "서울특별시 광진구 능동로 163 , 지하 1층"
+    "address": "서울 광진구 능동로 163 , 지하 1층"
   },
   {
     "id": "timeticket_6pyo9lqlp",
@@ -2479,7 +2479,7 @@
     "runningTime": "100분",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "서울특별시 중구 장충단로 59 , 국립극장 달오름극장"
+    "address": "서울 중구 장충단로 59 , 국립극장 달오름극장"
   },
   {
     "id": "timeticket_13jcb1prz",
@@ -2496,7 +2496,7 @@
     "runningTime": "110분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 서초구 남부순환로 2406 , 예술의전당 자유소극장"
+    "address": "서울 서초구 남부순환로 2406 , 예술의전당 자유소극장"
   },
   {
     "id": "timeticket_uljisov7v",
@@ -2513,7 +2513,7 @@
     "runningTime": "90분",
     "ageLimit": "8세 이상",
     "casting": "",
-    "address": "서울특별시 중구 퇴계로 387 , 중극장 블랙"
+    "address": "서울 중구 퇴계로 387 , 중극장 블랙"
   },
   {
     "id": "timeticket_cge0b75u9",
@@ -2530,14 +2530,14 @@
     "runningTime": "110분",
     "ageLimit": "초등학생 이상",
     "casting": "",
-    "address": "서울특별시 강남구 테헤란로113길 7 , 백암아트홀"
+    "address": "서울 강남구 테헤란로113길 7 , 백암아트홀"
   },
   {
     "id": "timeticket_hodp1j8og",
     "title": "와일드 와일드",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2025/07/01/1751348408-0-_wonbon_N_7_255x357_70_2.jpg",
     "date": "~2026.01.31",
-    "venue": "와일드 와일드 전용관",
+    "venue": "와일드 와일드",
     "link": "https://timeticket.co.kr/product/5743",
     "region": "seoul",
     "genre": "musical",
@@ -2547,7 +2547,7 @@
     "runningTime": "75분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "서울특별시 중구 마른내로 47 , 명보아트홀 지하 1층"
+    "address": "서울 중구 마른내로 47 , 명보아트홀 지하 1층"
   },
   {
     "id": "timeticket_ohnlrpi4d",
@@ -2564,7 +2564,7 @@
     "runningTime": "90분",
     "ageLimit": "만 13세 이상",
     "casting": "",
-    "address": "서울특별시 마포구 와우산로 147-1"
+    "address": "서울 마포구 와우산로 147-1"
   },
   {
     "id": "timeticket_oy5xpto7g",
@@ -2615,7 +2615,7 @@
     "runningTime": "150분",
     "ageLimit": "만 19세 이상",
     "casting": "",
-    "address": "서울특별시 중구 을지로38길 9-4 , 4층"
+    "address": "서울 중구 을지로38길 9-4 , 4층"
   },
   {
     "id": "timeticket_3bk68wu1t",
@@ -2649,7 +2649,7 @@
     "runningTime": "80분",
     "ageLimit": "만 7세 이상",
     "casting": "",
-    "address": "서울특별시 성동구 성덕정길 135-1 , 지하 1층"
+    "address": "서울 성동구 성덕정길 135-1 , 지하 1층"
   },
   {
     "id": "timeticket_de4ccqfuh",
@@ -2666,7 +2666,7 @@
     "runningTime": "100분",
     "ageLimit": "48개월 이상",
     "casting": "",
-    "address": "서울특별시 노원구 중계로 181 , 대공연장"
+    "address": "서울 노원구 중계로 181 , 대공연장"
   },
   {
     "id": "timeticket_c1hkfjkvp",
@@ -2683,7 +2683,7 @@
     "runningTime": "",
     "ageLimit": "15세 이상",
     "casting": "",
-    "address": "서울특별시 영등포구 영중로 15"
+    "address": "서울 영등포구 영중로 15"
   },
   {
     "id": "timeticket_gzb4uvbzu",
@@ -2700,7 +2700,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 강서구 공항대로 165 , 원그로브 C동 2층 W213호"
+    "address": "서울 강서구 공항대로 165 , 원그로브 C동 2층 W213호"
   },
   {
     "id": "timeticket_cyfnw1buy",
@@ -2717,7 +2717,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 강남구 테헤란로 518 , 섬유센터빌딩 지하 1층"
+    "address": "서울 강남구 테헤란로 518 , 섬유센터빌딩 지하 1층"
   },
   {
     "id": "timeticket_sdroxn0xw",
@@ -2734,7 +2734,7 @@
     "runningTime": "",
     "ageLimit": "취학 아동부터 가능",
     "casting": "",
-    "address": "서울특별시 중구 서소문로 116 , 유원빌딩 1601호"
+    "address": "서울 중구 서소문로 116 , 유원빌딩 1601호"
   },
   {
     "id": "timeticket_qgu7fa72b",
@@ -2751,7 +2751,7 @@
     "runningTime": "",
     "ageLimit": "만 3세 이상",
     "casting": "",
-    "address": "서울특별시 강남구 선릉로 807 , K현대미술관 3층~5층"
+    "address": "서울 강남구 선릉로 807 , K현대미술관 3층~5층"
   },
   {
     "id": "timeticket_2k0xebirg",
@@ -2768,7 +2768,7 @@
     "runningTime": "",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "서울특별시 강남구 선릉로 807 , 지하 1층"
+    "address": "서울 강남구 선릉로 807 , 지하 1층"
   },
   {
     "id": "timeticket_iy59nb6si",
@@ -2785,7 +2785,7 @@
     "runningTime": "",
     "ageLimit": "취학 아동부터 가능",
     "casting": "",
-    "address": "서울특별시 중구 서소문로 116 , 1601호 라이크디즈 1601"
+    "address": "서울 중구 서소문로 116 , 1601호 라이크디즈 1601"
   },
   {
     "id": "timeticket_oeydzuv9d",
@@ -2802,7 +2802,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 송파구 잠실로 209 , 소피텔 앰배서더 서울 호텔 3층"
+    "address": "서울 송파구 잠실로 209 , 소피텔 앰배서더 서울 호텔 3층"
   },
   {
     "id": "timeticket_sprf1mv3d",
@@ -2819,7 +2819,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 강남구 영동대로 513 , 코액스 C홀"
+    "address": "서울 강남구 영동대로 513 , 코액스 C홀"
   },
   {
     "id": "timeticket_vumfvprv7",
@@ -2836,7 +2836,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "서울특별시 성동구 아차산로 33 , 지하 1층"
+    "address": "서울 성동구 아차산로 33 , 지하 1층"
   },
   {
     "id": "timeticket_d83gtcsrw",
@@ -2887,7 +2887,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 부천시 원미구 송내대로265번길 67 , 7층 (월드컵타운)"
+    "address": "경기도 부천시 원미구 송내대로265번길 67 , 7층 (월드컵타운)"
   },
   {
     "id": "timeticket_4052w3udy",
@@ -2904,7 +2904,7 @@
     "runningTime": "50분",
     "ageLimit": "24개월 이상",
     "casting": "",
-    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기도 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
     "id": "timeticket_xtvzzj2d2",
@@ -2921,7 +2921,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 AK ARTHALL"
+    "address": "경기도 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 AK ARTHALL"
   },
   {
     "id": "timeticket_h2udnghqd",
@@ -2938,7 +2938,7 @@
     "runningTime": "50분",
     "ageLimit": "18개월 이상",
     "casting": "",
-    "address": "경기 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 내"
+    "address": "경기도 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 내"
   },
   {
     "id": "timeticket_vn0wxmkd3",
@@ -2955,7 +2955,7 @@
     "runningTime": "55분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 성남시 분당구 성남대로 808 , 성남아트센터"
+    "address": "경기도 성남시 분당구 성남대로 808 , 성남아트센터"
   },
   {
     "id": "timeticket_x2a3m7r4g",
@@ -2972,7 +2972,7 @@
     "runningTime": "55분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 평택시 경기대로 1366 , 소공연장"
+    "address": "경기도 평택시 경기대로 1366 , 소공연장"
   },
   {
     "id": "timeticket_6cinprmza",
@@ -3023,7 +3023,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 용인시 기흥구 신고매로 59"
+    "address": "경기도 용인시 기흥구 신고매로 59"
   },
   {
     "id": "timeticket_hqq9d9odl",
@@ -3057,7 +3057,7 @@
     "runningTime": "",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "경기 고양시 덕양구 고양대로 1955 , 3층 매직플로우"
+    "address": "경기도 고양시 덕양구 고양대로 1955 , 3층 매직플로우"
   },
   {
     "id": "timeticket_u9kip5fmi",
@@ -3074,7 +3074,7 @@
     "runningTime": "120분",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "경기 과천시 대공원광장로 80 , 종합안내소"
+    "address": "경기도 과천시 대공원광장로 80 , 종합안내소"
   },
   {
     "id": "timeticket_hqgmtqo4h",
@@ -3091,7 +3091,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 고양시 일산서구 한류월드로 282"
+    "address": "경기도 고양시 일산서구 한류월드로 282"
   },
   {
     "id": "timeticket_tngjfkpiz",
@@ -3108,7 +3108,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 수원시 영통구 광교호수공원로 300 , 갤러리아 광교 파사쥬 지하 1층"
+    "address": "경기도 수원시 영통구 광교호수공원로 300 , 갤러리아 광교 파사쥬 지하 1층"
   },
   {
     "id": "timeticket_z2i4wka89",
@@ -3159,7 +3159,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 고양시 일산서구 한류월드로 300"
+    "address": "경기도 고양시 일산서구 한류월드로 300"
   },
   {
     "id": "timeticket_myy5t9f1h",
@@ -3176,7 +3176,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 화성시 동탄대로5길 21 , 라크몽 A동 4~5층"
+    "address": "경기도 화성시 동탄대로5길 21 , 라크몽 A동 4~5층"
   },
   {
     "id": "timeticket_xrcslc78n",
@@ -3193,7 +3193,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 부천시 원미구 조마루로 2"
+    "address": "경기도 부천시 원미구 조마루로 2"
   },
   {
     "id": "timeticket_clixqniod",
@@ -3210,7 +3210,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 화성시 팔탄면 시청로 888"
+    "address": "경기도 화성시 팔탄면 시청로 888"
   },
   {
     "id": "timeticket_tyg13af1t",
@@ -3227,7 +3227,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 의정부시 장곡로 22"
+    "address": "경기도 의정부시 장곡로 22"
   },
   {
     "id": "timeticket_aqp575pl1",
@@ -3244,7 +3244,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 하남시 미사대로 750 , 스타필드 하남 3층"
+    "address": "경기도 하남시 미사대로 750 , 스타필드 하남 3층"
   },
   {
     "id": "timeticket_t1bv1b3rc",
@@ -3261,7 +3261,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 고양시 덕양구 고양대로 1955 , 스타필드 고양 4층"
+    "address": "경기도 고양시 덕양구 고양대로 1955 , 스타필드 고양 4층"
   },
   {
     "id": "timeticket_k5ick1k4s",
@@ -3278,7 +3278,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 안성시 공도읍 서동대로 3930-39 , 스타필드 안성 3층"
+    "address": "경기도 안성시 공도읍 서동대로 3930-39 , 스타필드 안성 3층"
   },
   {
     "id": "timeticket_11eg4iodv",
@@ -3295,7 +3295,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 의정부시 장곡로 22"
+    "address": "경기도 의정부시 장곡로 22"
   },
   {
     "id": "timeticket_jr1cjozln",
@@ -3312,7 +3312,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 가평군 청평면 호반로 1063"
+    "address": "경기도 가평군 청평면 호반로 1063"
   },
   {
     "id": "timeticket_cqurhfyrh",
@@ -3329,7 +3329,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 안성시 공도읍 대신두길 28"
+    "address": "경기도 안성시 공도읍 대신두길 28"
   },
   {
     "id": "timeticket_n2m8tsdup",
@@ -3346,7 +3346,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 용인시 처인구 포곡읍 마성리 72-17"
+    "address": "경기도 용인시 처인구 포곡읍 마성리 72-17"
   },
   {
     "id": "timeticket_y8m6czcpv",
@@ -3363,7 +3363,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 용인시 기흥구 민속촌로 90"
+    "address": "경기도 용인시 기흥구 민속촌로 90"
   },
   {
     "id": "timeticket_v77oqoywf",
@@ -3380,7 +3380,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 화성시 동탄대로5길 21 , 라크몽 B동 3층 매표소, 4층 입구"
+    "address": "경기도 화성시 동탄대로5길 21 , 라크몽 B동 3층 매표소, 4층 입구"
   },
   {
     "id": "timeticket_lkozgj9uw",
@@ -3397,7 +3397,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 하남시 하남유니온로 120 , 주렁주렁 하남점"
+    "address": "경기도 하남시 하남유니온로 120 , 주렁주렁 하남점"
   },
   {
     "id": "timeticket_mry8boncq",
@@ -3414,7 +3414,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 부천시 원미구 조마루로 2 , 웅진플레이도시 2층 볼베어파크"
+    "address": "경기도 부천시 원미구 조마루로 2 , 웅진플레이도시 2층 볼베어파크"
   },
   {
     "id": "timeticket_9haq6jlrs",
@@ -3431,7 +3431,7 @@
     "runningTime": "",
     "ageLimit": "8세 이하",
     "casting": "",
-    "address": "경기 고양시 일산서구 한류월드로 300 , 1층 1248호"
+    "address": "경기도 고양시 일산서구 한류월드로 300 , 1층 1248호"
   },
   {
     "id": "timeticket_scv4ns9t5",
@@ -3448,7 +3448,7 @@
     "runningTime": "",
     "ageLimit": "8세 이하",
     "casting": "",
-    "address": "경기 김포시 태장로 802 , 1층 108호"
+    "address": "경기도 김포시 태장로 802 , 1층 108호"
   },
   {
     "id": "timeticket_1nq57csqu",
@@ -3465,7 +3465,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 하남시 미사강변중앙로 223 , 111호, 112호"
+    "address": "경기도 하남시 미사강변중앙로 223 , 111호, 112호"
   },
   {
     "id": "timeticket_cdqqobi2o",
@@ -3482,7 +3482,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 하남시 위례대로 350 , 위례풍경채어바니티 2층"
+    "address": "경기도 하남시 위례대로 350 , 위례풍경채어바니티 2층"
   },
   {
     "id": "timeticket_1osr5999y",
@@ -3516,7 +3516,7 @@
     "runningTime": "",
     "ageLimit": "이용정보 확인",
     "casting": "",
-    "address": "경기 동두천시 탑동가산로 1 , 동두천 놀자숲"
+    "address": "경기도 동두천시 탑동가산로 1 , 동두천 놀자숲"
   },
   {
     "id": "timeticket_pk778ahuh",
@@ -3533,7 +3533,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 용인시 기흥구 중부대로 184 , 힉스유타워 상가동 B181호"
+    "address": "경기도 용인시 기흥구 중부대로 184 , 힉스유타워 상가동 B181호"
   },
   {
     "id": "timeticket_z5sep5hr8",
@@ -3550,7 +3550,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 남양주시 다산중앙로123번길 22-74 , 9층"
+    "address": "경기도 남양주시 다산중앙로123번길 22-74 , 9층"
   },
   {
     "id": "timeticket_g411w5ivh",
@@ -3567,7 +3567,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 하남시 미사강변동로 73 , 12층"
+    "address": "경기도 하남시 미사강변동로 73 , 12층"
   },
   {
     "id": "timeticket_ezk72ggj4",
@@ -3584,7 +3584,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 파주시 문발로 233 , B1층 1~25호(문발동, 은하관)"
+    "address": "경기도 파주시 문발로 233 , B1층 1~25호(문발동, 은하관)"
   },
   {
     "id": "timeticket_rxzfg6mrr",
@@ -3601,7 +3601,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 고양시 일산서구 일현로 97-11 , 두산위브더제니스스퀘어 지하1층 105호"
+    "address": "경기도 고양시 일산서구 일현로 97-11 , 두산위브더제니스스퀘어 지하1층 105호"
   },
   {
     "id": "timeticket_3r8itlcmq",
@@ -3618,7 +3618,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 부천시 원미구 신흥로 150-1 , 위브더스테이트 8동 B101호"
+    "address": "경기도 부천시 원미구 신흥로 150-1 , 위브더스테이트 8동 B101호"
   },
   {
     "id": "timeticket_t1o9b04da",
@@ -3635,7 +3635,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 오산시 경기대로632번길 89"
+    "address": "경기도 오산시 경기대로632번길 89"
   },
   {
     "id": "timeticket_r3tpeof8e",
@@ -3652,7 +3652,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 양평군 용문면 은고갯길 112"
+    "address": "경기도 양평군 용문면 은고갯길 112"
   },
   {
     "id": "timeticket_wyq21nrse",
@@ -3703,7 +3703,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199"
+    "address": "경기도 용인시 처인구 포곡읍 에버랜드로 199"
   },
   {
     "id": "timeticket_ep27jiyfb",
@@ -3720,7 +3720,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 이천시 마장면 지산로 216 , 지산리조트렌탈샵그라운드"
+    "address": "경기도 이천시 마장면 지산로 216 , 지산리조트렌탈샵그라운드"
   },
   {
     "id": "timeticket_3ehbr8i1a",
@@ -3737,7 +3737,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 광주시 도척면 도척윗로 278 곤지암리조트"
+    "address": "경기도 광주시 도척면 도척윗로 278 곤지암리조트"
   },
   {
     "id": "timeticket_i2q3z56eo",
@@ -3771,7 +3771,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 김포시 대곶면 덕포진로103번길 90"
+    "address": "경기도 김포시 대곶면 덕포진로103번길 90"
   },
   {
     "id": "timeticket_7102v050x",
@@ -3805,7 +3805,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 광주시 도척면 독고개길302번길 29 , 곤지암렌탈샵 보스"
+    "address": "경기도 광주시 도척면 독고개길302번길 29 , 곤지암렌탈샵 보스"
   },
   {
     "id": "timeticket_jrc83hozj",
@@ -3822,7 +3822,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 광주시 도척면 도척윗로 226"
+    "address": "경기도 광주시 도척면 도척윗로 226"
   },
   {
     "id": "timeticket_wwgmfghlr",
@@ -3839,7 +3839,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 광주시 도척면 도척윗로 248 , 청춘스키"
+    "address": "경기도 광주시 도척면 도척윗로 248 , 청춘스키"
   },
   {
     "id": "timeticket_5d9nyieok",
@@ -3873,7 +3873,7 @@
     "runningTime": "",
     "ageLimit": "",
     "casting": "",
-    "address": "경기 가평군 가평읍 북한강변로 1024"
+    "address": "경기도 가평군 가평읍 북한강변로 1024"
   },
   {
     "id": "timeticket_diyx5lc9a",
@@ -3890,7 +3890,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 포천시 신북면 청신로947번길 35"
+    "address": "경기도 포천시 신북면 청신로947번길 35"
   },
   {
     "id": "timeticket_jno06dzy4",
@@ -3924,7 +3924,7 @@
     "runningTime": "",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 화성시 서신면 해안길 468-5 , 제부마리나 D16, D18"
+    "address": "경기도 화성시 서신면 해안길 468-5 , 제부마리나 D16, D18"
   },
   {
     "id": "timeticket_5tshn4fnx",
@@ -3941,7 +3941,7 @@
     "runningTime": "10분",
     "ageLimit": "전체이용가",
     "casting": "",
-    "address": "경기 수원시 팔달구 지동 256-1"
+    "address": "경기도 수원시 팔달구 지동 256-1"
   },
   {
     "id": "timeticket_ydtwhkv06",
@@ -3958,7 +3958,7 @@
     "runningTime": "",
     "ageLimit": "10세 이상",
     "casting": "",
-    "address": "경기 가평군 가평읍 북한강변로 1044-15 , 가평탑랜드"
+    "address": "경기도 가평군 가평읍 북한강변로 1044-15 , 가평탑랜드"
   },
   {
     "id": "timeticket_l1323xjtd",
@@ -3975,7 +3975,7 @@
     "runningTime": "",
     "ageLimit": "만 12세 이상",
     "casting": "",
-    "address": "경기 용인시 기흥구 고매로43번길 47"
+    "address": "경기도 용인시 기흥구 고매로43번길 47"
   },
   {
     "id": "timeticket_8jeo0p3sn",
@@ -3985,14 +3985,14 @@
     "venue": "도자기공방숲",
     "link": "https://timeticket.co.kr/product/6581",
     "region": "gyeonggi",
-    "genre": "activity",
+    "genre": "class",
     "price": "25,000원",
     "originalPrice": "25,000원",
     "discount": "31%",
     "runningTime": "",
     "ageLimit": "36개월 이상",
     "casting": "",
-    "address": "경기 동두천시 동두천로 7 , 1층"
+    "address": "경기도 동두천시 동두천로 7 , 1층"
   },
   {
     "id": "timeticket_ivdz48n0k",
@@ -4009,7 +4009,7 @@
     "runningTime": "90분",
     "ageLimit": "만 9세 이상",
     "casting": "",
-    "address": "경기 수원시 팔달구 인계로 123 , KBS 수원아트홀"
+    "address": "경기도 수원시 팔달구 인계로 123 , KBS 수원아트홀"
   },
   {
     "id": "timeticket_8bc7gc1vt",
@@ -4026,7 +4026,7 @@
     "runningTime": "90분",
     "ageLimit": "만 16세 이상",
     "casting": "",
-    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기도 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
     "id": "timeticket_3pnypp02i",
@@ -4043,7 +4043,7 @@
     "runningTime": "90분",
     "ageLimit": "중학생 이상 관람가",
     "casting": "",
-    "address": "경기 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 內 디아나아트홀"
+    "address": "경기도 용인시 처인구 남사읍 천덕산로111번길 16 , 디아나수풀 內 디아나아트홀"
   },
   {
     "id": "timeticket_q0awpiw1r",
@@ -4094,7 +4094,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
+    "address": "경기도 수원시 영통구 광교중앙로 124 , 갤러리아 광교 10층 매직앤조이"
   },
   {
     "id": "timeticket_4pj7v9t08",
@@ -4111,7 +4111,7 @@
     "runningTime": "50분",
     "ageLimit": "전체 관람가",
     "casting": "",
-    "address": "경기 수원시 팔달구 인계로 123 , KBS 수원아트홀"
+    "address": "경기도 수원시 팔달구 인계로 123 , KBS 수원아트홀"
   },
   {
     "id": "timeticket_syfw1lhk3",
@@ -4128,7 +4128,7 @@
     "runningTime": "50분",
     "ageLimit": "전체 관람가",
     "casting": "",
-    "address": "경기 부천시 원미구 길주로 1 , 한국만화박물관"
+    "address": "경기도 부천시 원미구 길주로 1 , 한국만화박물관"
   },
   {
     "id": "timeticket_a2g4npixg",
@@ -4145,7 +4145,7 @@
     "runningTime": "60분",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 성남시 분당구 성남대로 808 , 성남아트센터 큐브미술관 기획전시실 2층"
+    "address": "경기도 성남시 분당구 성남대로 808 , 성남아트센터 큐브미술관 기획전시실 2층"
   },
   {
     "id": "timeticket_ipuz300pn",
@@ -4162,7 +4162,7 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 부천시 오정구 신흥로511번길 180"
+    "address": "경기도 부천시 오정구 신흥로511번길 180"
   },
   {
     "id": "timeticket_e5dg00gew",
@@ -4179,6 +4179,6 @@
     "runningTime": "",
     "ageLimit": "전체관람가",
     "casting": "",
-    "address": "경기 부천시 오정구 신흥로511번길 180"
+    "address": "경기도 부천시 오정구 신흥로511번길 180"
   }
 ]

@@ -1,45 +1,5 @@
 [
   {
-    "id": "movie_20251231_만약에_우리",
-    "title": "만약에 우리",
-    "date": "2025-12-31",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%A7%8C%EC%95%BD%EC%97%90%20%EC%9A%B0%EB%A6%AC%20%EC%98%81%ED%99%94",
-    "runningTime": "115분",
-    "subGenre": "멜로",
-    "director": "김도영",
-    "cast": [
-      "구교환",
-      "문가영"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20251231_만약에_우리.webp"
-  },
-  {
-    "id": "movie_20251231_신의악단",
-    "title": "신의악단",
-    "date": "2025-12-31",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%8B%A0%EC%9D%98%EC%95%85%EB%8B%A8%20%EC%98%81%ED%99%94",
-    "runningTime": "110분",
-    "subGenre": "드라마",
-    "director": "김형협",
-    "cast": [
-      "박시후",
-      "정진운",
-      "태항호",
-      "장지건",
-      "한정완",
-      "고혜진",
-      "문경민",
-      "최선자"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20251231_신의악단.webp"
-  },
-  {
     "id": "movie_20251217_아바타:_불과_재",
     "title": "아바타: 불과 재",
     "date": "2025-12-17",
@@ -172,26 +132,6 @@
     "image": "/images/posters/movie_20251224_극장판_짱구는_못말려__초화려__작열하는_떡잎마을_댄서즈.webp"
   },
   {
-    "id": "movie_20260114_보이",
-    "title": "보이",
-    "date": "2026-01-14",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%B3%B4%EC%9D%B4%20%EC%98%81%ED%99%94",
-    "runningTime": "90분",
-    "subGenre": "범죄",
-    "director": "이상덕",
-    "cast": [
-      "조병규",
-      "유인수",
-      "지니",
-      "서인국",
-      "이상덕"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20260114_보이.webp"
-  },
-  {
     "id": "movie_20230104_더_퍼스트_슬램덩크",
     "title": "더 퍼스트 슬램덩크",
     "date": "2023-01-04",
@@ -207,27 +147,6 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movie_20230104_더_퍼스트_슬램덩크.webp"
-  },
-  {
-    "id": "movie_20260128_프라이메이트",
-    "title": "프라이메이트",
-    "date": "2026-01-28",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A9%94%EC%9D%B4%ED%8A%B8%20%EC%98%81%ED%99%94",
-    "runningTime": "89분",
-    "productionCountry": "미국",
-    "subGenre": "공포",
-    "director": "요하네스 로버츠",
-    "cast": [
-      "조니 세쿼야",
-      "지아 헌터",
-      "트로이 코처",
-      "빅토리아 와이언트",
-      "제시카 알렉산더"
-    ],
-    "venue": "청소년 관람불가",
-    "image": "/images/posters/movie_20260128_프라이메이트.webp"
   },
   {
     "id": "movie_20251211_뽀로로_극장판_스위트캐슬_대모험",
@@ -344,24 +263,6 @@
     "image": "/images/posters/movie_20260114_송_썽_블루.webp"
   },
   {
-    "id": "movie_20251231_화양연화_특별판",
-    "title": "화양연화 특별판",
-    "date": "2025-12-31",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%99%94%EC%96%91%EC%97%B0%ED%99%94%20%ED%8A%B9%EB%B3%84%ED%8C%90%20%EC%98%81%ED%99%94",
-    "runningTime": "108분",
-    "productionCountry": "홍콩",
-    "subGenre": "드라마",
-    "director": "왕가위",
-    "cast": [
-      "장만옥",
-      "양조위"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20251231_화양연화_특별판.webp"
-  },
-  {
     "id": "movie_20001028_하나_그리고_둘",
     "title": "하나 그리고 둘",
     "date": "2000-10-28",
@@ -384,23 +285,6 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movie_20001028_하나_그리고_둘.webp"
-  },
-  {
-    "id": "movie_20260129_판결",
-    "title": "판결",
-    "date": "2026-01-29",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%8C%90%EA%B2%B0%20%EC%98%81%ED%99%94",
-    "runningTime": "100분",
-    "subGenre": "드라마",
-    "director": "이창희",
-    "cast": [
-      "리오 드완토",
-      "레자 라하디안"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20260129_판결.webp"
   },
   {
     "id": "movie_20260107_피렌체",
@@ -482,30 +366,6 @@
     "image": "/images/posters/movie_20260114_리틀_아멜리.webp"
   },
   {
-    "id": "movie_20251119_국보",
-    "title": "국보",
-    "date": "2025-11-19",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B5%AD%EB%B3%B4%20%EC%98%81%ED%99%94",
-    "runningTime": "175분",
-    "productionCountry": "일본",
-    "subGenre": "드라마",
-    "director": "이상일",
-    "cast": [
-      "요시자와 료",
-      "요코하마 류세이",
-      "타카하타 미츠키",
-      "테라지마 시노부",
-      "모리 나나",
-      "쿠로카와 소야",
-      "와타나베 켄",
-      "오쿠데라 사토코"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20251119_국보.webp"
-  },
-  {
     "id": "movie_20251231_파더_마더_시스터_브라더",
     "title": "파더 마더 시스터 브라더",
     "date": "2025-12-31",
@@ -544,27 +404,6 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movie_20260107_강다니엘__홀드_유어_브레스.webp"
-  },
-  {
-    "id": "movie_20260107_굿_포츈",
-    "title": "굿 포츈",
-    "date": "2026-01-07",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B5%BF%20%ED%8F%AC%EC%B8%88%20%EC%98%81%ED%99%94",
-    "runningTime": "98분",
-    "productionCountry": "미국",
-    "subGenre": "코미디",
-    "director": "아지즈 안사리",
-    "cast": [
-      "키아누 리브스",
-      "아지즈 안사리",
-      "세스 로건",
-      "산드라 오",
-      "케케 파머"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movie_20260107_굿_포츈.webp"
   },
   {
     "id": "movie_20260128_얼음_여왕",

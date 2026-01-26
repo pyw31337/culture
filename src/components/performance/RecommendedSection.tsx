@@ -8,7 +8,7 @@ interface RecommendedSectionProps {
     onLocationClick: (loc: any) => void;
     onToggleLike: (e: React.MouseEvent, id: string) => void;
     likedIds: Set<string>;
-    onDetail: (id: string) => void;
+    onDetail: (perf: any) => void;
 }
 
 export default function RecommendedSection({ performances, onLocationClick, onToggleLike, likedIds, onDetail }: RecommendedSectionProps) {
@@ -85,7 +85,7 @@ export default function RecommendedSection({ performances, onLocationClick, onTo
                             isGradient={true}
                             onToggleLike={(e) => onToggleLike(e, perf.id)}
                             isLiked={likedIds.has(perf.id)}
-                            onDetail={() => onDetail(perf.id)}
+                            onDetail={() => onDetail(perf)}
                             enableActions={true}
                         />
                     </div>
