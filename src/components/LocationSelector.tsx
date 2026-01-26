@@ -15,6 +15,7 @@ interface LocationSelectorProps {
     districts: string[];
     availableVenues: string[];
     isMobile?: boolean;
+    dropUp?: boolean;
 }
 
 const CHOSEONG_LIST = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
@@ -28,7 +29,8 @@ export function LocationSelector({
     onVenueSelect,
     districts,
     availableVenues,
-    isMobile = false
+    isMobile = false,
+    dropUp = false
 }: LocationSelectorProps) {
 
     // UI Constants
