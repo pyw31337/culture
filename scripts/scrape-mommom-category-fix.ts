@@ -18,75 +18,43 @@ async function scrapeCategory() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
 
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+
     try {
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
         console.log('Page loaded.');
 
-        // Robust Load Logic: Scroll + Click "More"
+        // Simply try to get title
+        const title = await page.evaluate(() => {
+            return document.title;
+        });
+        console.log('Page Title:', title);
+
+        // Try simpler scroll logic without async/await inside if possible, or just standard async
         await page.evaluate(async () => {
-            const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
-
-            let lastHeight = 0;
-            let noChange = 0;
-
-            for (let i = 0; i < 50; i++) { // Try 50 loops
-                // 1. Scroll to bottom
-                window.scrollTo(0, document.body.scrollHeight);
-                await delay(1000); // Wait for load
-
-                // 2. Check for "More" button (common selectors)
-                const buttons = Array.from(document.querySelectorAll('button'));
-                const moreBtn = buttons.find(b => b.textContent?.includes('더보기') || b.textContent?.includes('More'));
-                if (moreBtn) {
-                    console.log('Clicking "More" button...');
-                    moreBtn.click();
-                    await delay(1000);
-                }
-
-                // 3. Check height change
-                const newHeight = document.body.scrollHeight;
-                if (newHeight === lastHeight) {
-                    noChange++;
-                } else {
-                    noChange = 0;
-                }
-                lastHeight = newHeight;
-
-                if (noChange > 5) break; // Stop if stuck
-                console.log(`Scroll Loop ${i + 1}: Height ${newHeight}`);
-            }
+            console.log('Starting scroll...');
+            // minimal wait
+            await new Promise(r => setTimeout(r, 1000));
+            window.scrollTo(0, 100);
+            console.log('Scrolled.');
         });
 
-        // Scrape Items
+        // If we get here, the basic evaluate works.
+        // Now try the scrape logic
         const listItems = await page.evaluate(() => {
-            const items: any[] = [];
-            document.querySelectorAll('a').forEach(a => {
-                // Heuristic: Link contains 'shop' or 'places' and has an image or title
+            const items = [];
+            const links = document.querySelectorAll('a');
+            for (const a of links) {
                 const href = a.href;
-                const text = a.innerText;
-                if ((href.includes('/shop/') || href.includes('/places/')) && text.length > 2) {
-                    const title = a.querySelector('h4')?.textContent ||
-                        a.querySelector('.title')?.textContent ||
-                        a.innerText.split('\n')[0];
-                    if (title) items.push({ title: title.trim(), link: href });
+                if (href.includes('/shop/') || href.includes('/places/')) {
+                    items.push({ link: href, text: a.innerText });
                 }
-            });
-            // Deduplicate
-            return items.filter((v, i, a) => a.findIndex(t => (t.link === v.link)) === i);
+            }
+            return items;
         });
 
-        console.log(`Final Item Count: ${listItems.length}`);
-
-        // Check for targets
-        const targets = ['상상체험', '서울랜드', '자이언트'];
-        targets.forEach(t => {
-            const matches = listItems.filter(i => i.title.includes(t));
-            console.log(`Searching for '${t}': Found ${matches.length} items.`);
-            if (matches.length > 0) console.log(matches[0]);
-        });
-
+        console.log(`Found ${listItems.length} items (simple scrape).`);
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(listItems, null, 2));
-        fs.writeFileSync('debug_final.html', await page.content());
 
     } catch (e) {
         console.error('Error:', e);

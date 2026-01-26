@@ -26,4 +26,5 @@ export type Performance = {
     productionCountry?: string;
     productionYear?: string;
     subGenre?: string;
+    backupPoster?: string; // Original remote URL for fallback
 };

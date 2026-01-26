@@ -34,6 +34,7 @@ export default function RecommendedSection({ recommendedItems, onDetail }: Recom
                             <div className="aspect-[3/4] relative rounded-xl overflow-hidden border border-white/10 shadow-lg group-hover/card:shadow-purple-500/20 transition-all duration-300 group-hover/card:scale-[1.02]">
                                 <ImageWithFallback
                                     src={item.image}
+                                    backupSrc={item.backupPoster}
                                     alt={item.title}
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover/card:scale-110"

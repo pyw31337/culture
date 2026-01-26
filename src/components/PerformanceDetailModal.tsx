@@ -99,6 +99,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 <div className="absolute inset-0">
                                     <ImageWithFallback
                                         src={getOptimizedUrl(performance.image, 800)}
+                                        backupSrc={performance.backupPoster}
                                         alt={performance.title}
                                         fill
                                         className="object-cover opacity-80"
@@ -109,6 +110,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     <div className="relative aspect-[3/4] w-48 md:w-64 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
                                         <ImageWithFallback
                                             src={getOptimizedUrl(performance.image, 600)}
+                                            backupSrc={performance.backupPoster}
                                             alt={performance.title}
                                             fill
                                             className="object-cover"

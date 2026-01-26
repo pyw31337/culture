@@ -726,10 +726,26 @@ async function scrapeOTT() {
     const imageLimit = pLimit(10);
     await Promise.all(finalItems.map(item => imageLimit(async () => {
         if (item.poster) {
+            // Store original as backup
+            item.backupPoster = item.poster;
+
             // Use stable filename: ott_Title
             const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
             const stableFilename = `ott_${safeTitle}`;
-            item.image = await processImage(item.poster, stableFilename);
+
+            // Try to download
+            const localPath = await processImage(item.poster, stableFilename);
+            if (localPath) {
+                item.image = localPath;
+            } else {
+                // If download fails, stick to remote as primary? Or let frontend handle it?
+                // Depending on Hybrid Strategy: Primary should be what we want to use.
+                // If download failed, localPath is empty.
+                // We set item.image to item.poster (Remote) so it works out of the box?
+                // OR we accept item.image = null, and use backupPoster?
+                // Let's set item.image = item.poster as primary fallback if local fails.
+                item.image = item.poster;
+            }
         }
     })));
 

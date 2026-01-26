@@ -229,6 +229,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 <div className="absolute inset-0 z-0">
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
+                                        backupSrc={perf.backupPoster}
                                         optimizationWidth={1000}
                                         alt={perf.title}
                                         fill
@@ -441,6 +442,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         <div className="relative h-full w-full">
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
+                                backupSrc={perf.backupPoster}
                                 optimizationWidth={1000}
                                 alt={perf.title}
                                 fill
