@@ -2043,6 +2043,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     <RecommendedSection
                         recommendedItems={recommendedItems}
                         onDetail={handleDetailOpen}
+                        onLocationClick={handleSelectResult}
+                        onToggleLike={toggleLike}
+                        likedIds={new Set(likedIds)}
                     />
                 </div>
             )}
