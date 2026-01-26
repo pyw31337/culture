@@ -113,11 +113,11 @@ async function scrapeList(context: any, platform: any, type: string) {
 
             const newItems = await page.evaluate((arg: { pName: string, tType: string }) => {
                 const { pName, tType } = arg;
-                const els = document.querySelectorAll('#main_pack .cm_content_area ul li.info_box, .cs_common_module li.info_box, .cm_content_area .card_item');
+                const els = document.querySelectorAll('li.info_box, .card_item, .list_image_info .item');
                 const list: any[] = [];
                 els.forEach(el => {
                     const titleEl = el.querySelector('strong.title a._text') || el.querySelector('a._text') || el.querySelector('.name');
-                    const img = el.querySelector('a.thumb img') || el.querySelector('.thumb img');
+                    const img = el.querySelector('a.thumb img') || el.querySelector('.thumb img') || el.querySelector('.thumb_area img');
 
                     if (titleEl) {
                         const title = titleEl.textContent?.trim() || '';
