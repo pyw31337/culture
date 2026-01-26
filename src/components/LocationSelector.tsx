@@ -16,6 +16,7 @@ interface LocationSelectorProps {
     availableVenues: string[];
     isMobile?: boolean;
     dropUp?: boolean;
+    inline?: boolean;
 }
 
 const CHOSEONG_LIST = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
@@ -30,7 +31,8 @@ export function LocationSelector({
     districts,
     availableVenues,
     isMobile = false,
-    dropUp = false
+    dropUp = false,
+    inline = false
 }: LocationSelectorProps) {
 
     // UI Constants
@@ -43,8 +45,9 @@ export function LocationSelector({
     const [activeChoseong, setActiveChoseong] = useState<string>('all');
     const venueDropdownRef = useRef<HTMLDivElement>(null);
 
-    // Close venue dropdown when clicking outside
+    // Close venue dropdown when clicking outside (only if NOT inline)
     useEffect(() => {
+        if (inline) return; // Don't auto-close inline as it's part of the flow
         function handleClickOutside(event: MouseEvent) {
             if (venueDropdownRef.current && !venueDropdownRef.current.contains(event.target as Node)) {
                 setIsVenueOpen(false);
@@ -54,7 +57,7 @@ export function LocationSelector({
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []);
+    }, [inline]);
 
     // Venue Filtering Logic
     const filteredVenues = useMemo(() => {
@@ -69,6 +72,8 @@ export function LocationSelector({
 
     const handleVenueClick = (venue: string) => {
         onVenueSelect(venue);
+        // For inline, we might not want to close it immediately, or maybe we do?
+        // Usually selection closes the dropdown.
         setIsVenueOpen(false);
     };
 
@@ -153,7 +158,7 @@ export function LocationSelector({
 
             {/* 3. Venue Selection (Custom Dropdown with Search/Filter) */}
             {(availableVenues.length > 0) && (
-                <div className="space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-400 delay-75 z-20"> {/* z-index for dropdown */}
+                <div className={clsx("space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-400 delay-75", !inline && "z-20")}> {/* z-index for dropdown */}
                     <label className="text-xs font-bold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
                         공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
                     </label>
@@ -179,7 +184,10 @@ export function LocationSelector({
 
                         {/* Dropdown Panel */}
                         {isVenueOpen && (
-                            <div className="absolute top-full left-0 w-full mt-2 bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                            <div className={clsx(
+                                "bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200",
+                                inline ? "mt-2 relative w-full" : (dropUp ? "absolute bottom-full mb-2 left-0 w-full" : "absolute top-full mt-2 left-0 w-full")
+                            )}>
 
                                 {/* Choseong Filter Header */}
                                 <div className="p-2 border-b border-white/5 light:border-gray-100 bg-gray-800/50 light:bg-gray-50">

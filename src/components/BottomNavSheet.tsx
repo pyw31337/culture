@@ -287,7 +287,7 @@ export default function BottomNavSheet({
                                 districts={districts}
                                 availableVenues={availableVenues}
                                 isMobile={true}
-                                dropUp={true}
+                                inline={true}
                             />
                         </div>
                     )}
