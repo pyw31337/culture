@@ -4,14 +4,14 @@ import PerformanceCard from './PerformanceCard';
 import { cleanTitle } from '@/lib/utils'; // Ensure cleanliness
 
 interface RecommendedSectionProps {
-    performances: any[];
+    recommendedItems: any[];
     onLocationClick: (loc: any) => void;
     onToggleLike: (e: React.MouseEvent, id: string) => void;
     likedIds: Set<string>;
     onDetail: (perf: any) => void;
 }
 
-export default function RecommendedSection({ performances, onLocationClick, onToggleLike, likedIds, onDetail }: RecommendedSectionProps) {
+export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail }: RecommendedSectionProps) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -20,11 +20,11 @@ export default function RecommendedSection({ performances, onLocationClick, onTo
 
     useEffect(() => {
         // Shuffle and pick 10 items across ALL genres
-        if (performances && performances.length > 0) {
-            const shuffled = [...performances].sort(() => 0.5 - Math.random());
+        if (recommendedItems && recommendedItems.length > 0) {
+            const shuffled = [...recommendedItems].sort(() => 0.5 - Math.random());
             setRandomRecs(shuffled.slice(0, 10));
         }
-    }, [performances]);
+    }, [recommendedItems]);
 
     // Drag to Scroll Handlers
     const onMouseDown = (e: React.MouseEvent) => {
