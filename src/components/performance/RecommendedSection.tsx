@@ -63,7 +63,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-14 overflow-visible pb-8 scrollbar-hide pl-4 md:pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
+                className="flex gap-4 sm:gap-14 overflow-x-auto pb-12 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
@@ -73,7 +73,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
-                        className="relative group flex-shrink-0 w-[190px] md:w-[250px] h-[215px] md:h-[301px] cursor-pointer"
+                        className="relative group flex-shrink-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] cursor-pointer"
                         onClick={() => window.open(perf.link, '_blank')}
                         title={cleanTitle(perf.title)}
                     >
@@ -90,7 +90,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         </div>
 
                         {/* 2. Poster Image (Right/Top - Overlapping - Wider Ratio) */}
-                        <div className="absolute right-0 bottom-0 w-[160px] md:w-[220px] h-[215px] md:h-[301px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
+                        <div className="absolute right-0 bottom-0 w-[180px] sm:w-[220px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
                             <div className="w-full h-full rounded-md overflow-hidden relative bg-gray-800">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
@@ -98,7 +98,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     alt={perf.title}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 160px, 220px"
+                                    sizes="(max-width: 768px) 180px, 220px"
                                 />
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
