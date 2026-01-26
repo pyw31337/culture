@@ -63,7 +63,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-14 overflow-visible pb-8 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
+                className="flex gap-14 overflow-visible pb-8 scrollbar-hide pl-4 md:pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
