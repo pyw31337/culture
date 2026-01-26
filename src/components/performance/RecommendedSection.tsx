@@ -19,10 +19,10 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
 
     useEffect(() => {
-        // Shuffle and pick 10 items across ALL genres
+        // Shuffle and pick 9 items (Netflix style max)
         if (recommendedItems && recommendedItems.length > 0) {
             const shuffled = [...recommendedItems].sort(() => 0.5 - Math.random());
-            setRandomRecs(shuffled.slice(0, 10));
+            setRandomRecs(shuffled.slice(0, 9));
         }
     }, [recommendedItems]);
 
@@ -63,7 +63,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
+                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
@@ -73,36 +73,35 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
-                        className="relative group flex-shrink-0 w-[200px] md:w-[260px] h-[280px] md:h-[360px] cursor-pointer"
+                        className="relative group flex-shrink-0 w-[180px] md:w-[240px] h-[215px] md:h-[301px] cursor-pointer"
                         onClick={() => window.open(perf.link, '_blank')}
                         title={cleanTitle(perf.title)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
-                        <div className="absolute -left-4 md:-left-8 bottom-0 z-0 h-full flex items-end">
+                        <div className="absolute -left-6 md:-left-8 bottom-0 z-0 h-full flex items-end">
                             <span
-                                className="text-[10rem] md:text-[13rem] font-black leading-none tracking-tighter text-transparent transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
+                                className="text-[10rem] md:text-[13rem] font-black italic leading-none tracking-tighter text-transparent transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
                                 style={{
-                                    WebkitTextStroke: '4px #6b7280', // Gray-500 stroke for visibility
-                                    // textShadow: '0 0 20px rgba(168,85,247,0.2)' // Optional subtle glow
+                                    WebkitTextStroke: '4px #6b7280', // Gray-500 stroke
                                 }}
                             >
                                 {idx + 1}
                             </span>
                         </div>
 
-                        {/* 2. Poster Image (Right/Top - Overlapping) */}
-                        <div className="absolute right-0 top-0 bottom-4 w-[160px] md:w-[200px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-bottom">
-                            <div className="w-full h-full rounded-lg overflow-hidden shadow-xl shadow-black/50 border border-white/10 relative bg-gray-800">
+                        {/* 2. Poster Image (Right/Top - Overlapping - 30:43 Ratio) */}
+                        <div className="absolute right-0 bottom-0 w-[150px] md:w-[210px] h-[215px] md:h-[301px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
+                            <div className="w-full h-full rounded-md overflow-hidden border border-white/10 relative bg-gray-800">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
                                     backupSrc={perf.backupPoster}
                                     alt={perf.title}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 160px, 200px"
+                                    sizes="(max-width: 768px) 150px, 210px"
                                 />
                                 {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                             </div>
                         </div>
                     </div>
