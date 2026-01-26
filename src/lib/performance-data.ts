@@ -113,7 +113,6 @@ export function getAllPerformances() {
         price: p.cost,   // Map 'cost' from JSON to 'price'
         date: p.time ? `${p.date} (${p.time})` : p.date, // Append time to date
         genre: inferSeoulGenre(p.title || '', p.place || '', p.codename || '')
-        genre: inferSeoulGenre(p.title || '', p.place || '', p.codename || '')
     }));
 
     const yes24 = safeArray<any>(yes24Data).map((p: any) => ({
