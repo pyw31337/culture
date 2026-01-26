@@ -1,69 +1,97 @@
-import React from 'react';
-import { Performance } from '@/types';
+import React, { useRef, useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
-import ImageWithFallback from '../ImageWithFallback';
-import { GENRES } from '@/lib/constants';
+import PerformanceCard from './PerformanceCard';
+import { cleanTitle } from '@/lib/utils'; // Ensure cleanliness
 
 interface RecommendedSectionProps {
-    recommendedItems: Performance[];
-    onDetail: (perf: Performance) => void;
+    performances: any[];
+    onLocationClick: (loc: any) => void;
+    onToggleLike: (e: React.MouseEvent, id: string) => void;
+    likedIds: Set<string>;
+    onDetail: (id: string) => void;
 }
 
-export default function RecommendedSection({ recommendedItems, onDetail }: RecommendedSectionProps) {
-    if (!recommendedItems || recommendedItems.length === 0) return null;
+export default function RecommendedSection({ performances, onLocationClick, onToggleLike, likedIds, onDetail }: RecommendedSectionProps) {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [randomRecs, setRandomRecs] = useState<any[]>([]);
+
+    useEffect(() => {
+        // Shuffle and pick 10 items across ALL genres
+        if (performances && performances.length > 0) {
+            const shuffled = [...performances].sort(() => 0.5 - Math.random());
+            setRandomRecs(shuffled.slice(0, 10));
+        }
+    }, [performances]);
+
+    // Drag to Scroll Handlers
+    const onMouseDown = (e: React.MouseEvent) => {
+        if (!scrollRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const onMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const onMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll-fast
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    if (randomRecs.length === 0) return null;
 
     return (
-        <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <div className="flex items-center gap-2 mb-4 px-1">
-                <Sparkles className="w-5 h-5 text-yellow-400 fill-yellow-400 animate-pulse-slow" />
-                <h3 className="text-xl font-bold text-white light:text-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-white to-yellow-200 light:from-purple-600 light:to-pink-600">
+        <section className="mb-12 relative animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="flex items-center gap-2 mb-6 px-4">
+                <Sparkles className="w-6 h-6 text-purple-500 animate-pulse" />
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
                     회원님을 위한 맞춤 추천
-                </h3>
+                </h2>
             </div>
 
-            <div className="relative group">
-                {/* Horizontal Scroll Container */}
-                <div className="flex overflow-x-auto gap-4 pb-4 px-1 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                    {recommendedItems.map((item, idx) => (
-                        <div
-                            key={`rec-${item.id}`}
-                            onClick={() => onDetail(item)}
-                            className="snap-start shrink-0 w-[160px] sm:w-[180px] flex flex-col gap-2 cursor-pointer group/card relative"
-                        >
-                            {/* Image Card */}
-                            <div className="aspect-[3/4] relative rounded-xl overflow-hidden border border-white/10 shadow-lg group-hover/card:shadow-purple-500/20 transition-all duration-300 group-hover/card:scale-[1.02]">
-                                <ImageWithFallback
-                                    src={item.image}
-                                    backupSrc={item.backupPoster}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover/card:scale-110"
-                                    sizes="180px"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-
-                                {/* Rank/Tag Badge */}
-                                <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-black/60 backdrop-blur-md rounded text-[10px] font-bold text-yellow-300 border border-yellow-500/30">
-                                    추천 #{idx + 1}
-                                </div>
-                            </div>
-
-                            {/* Text Info */}
-                            <div>
-                                <h4 className="text-white light:text-black font-bold text-sm truncate pr-2 group-hover/card:text-[#a78bfa] transition-colors">{item.title}</h4>
-                                <div className="flex items-center gap-2 text-xs text-gray-400 light:text-gray-600">
-                                    <span>{GENRES.find(g => g.id === item.genre)?.label || item.genre}</span>
-                                    <span className="w-0.5 h-0.5 rounded-full bg-gray-500" />
-                                    <span className="truncate max-w-[80px]">{item.date.split('~')[0].trim()}</span>
-                                </div>
-                            </div>
+            <div
+                ref={scrollRef}
+                className="flex gap-4 overflow-x-auto pb-8 scrollbar-hide px-4 select-none cursor-grab active:cursor-grabbing"
+                onMouseDown={onMouseDown}
+                onMouseLeave={onMouseLeave}
+                onMouseUp={onMouseUp}
+                onMouseMove={onMouseMove}
+                style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+            >
+                {randomRecs.map((perf, idx) => (
+                    <div key={perf.id} className="min-w-[160px] sm:min-w-[180px] md:min-w-[240px] h-auto relative flex-shrink-0">
+                        {/* Rank Badge */}
+                        <div className="absolute top-2 left-2 z-[60] px-2 py-0.5 bg-black/60 backdrop-blur-md rounded text-[10px] font-bold text-yellow-300 border border-yellow-500/30 shadow-lg pointer-events-none">
+                            추천 #{idx + 1}
                         </div>
-                    ))}
-                </div>
-
-                {/* Scroll Fade Hints */}
-                <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none sm:hidden light:from-white" />
+                        <PerformanceCard
+                            perf={perf}
+                            distLabel={null}
+                            venueInfo={null}
+                            onLocationClick={onLocationClick}
+                            variant="default"
+                            isGradient={true}
+                            onToggleLike={(e) => onToggleLike(e, perf.id)}
+                            isLiked={likedIds.has(perf.id)}
+                            onDetail={() => onDetail(perf.id)}
+                            enableActions={true}
+                        />
+                    </div>
+                ))}
             </div>
-        </div>
+            {/* Gradient Overlay Removed */}
+        </section>
     );
 }
