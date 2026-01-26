@@ -73,7 +73,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
-                        className="relative group flex-shrink-0 w-[180px] md:w-[240px] h-[215px] md:h-[301px] cursor-pointer"
+                        className="relative group flex-shrink-0 w-[190px] md:w-[250px] h-[215px] md:h-[301px] cursor-pointer"
                         onClick={() => window.open(perf.link, '_blank')}
                         title={cleanTitle(perf.title)}
                     >
@@ -82,23 +82,23 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             <span
                                 className="text-[10rem] md:text-[13rem] font-black italic leading-none tracking-tighter text-transparent transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
                                 style={{
-                                    WebkitTextStroke: '4px #6b7280', // Gray-500 stroke
+                                    WebkitTextStroke: '4px #cbd5e1', // Lighter Slate-300 for subtle stroke
                                 }}
                             >
                                 {idx + 1}
                             </span>
                         </div>
 
-                        {/* 2. Poster Image (Right/Top - Overlapping - 30:43 Ratio) */}
-                        <div className="absolute right-0 bottom-0 w-[150px] md:w-[210px] h-[215px] md:h-[301px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
-                            <div className="w-full h-full rounded-md overflow-hidden border border-white/10 relative bg-gray-800">
+                        {/* 2. Poster Image (Right/Top - Overlapping - Wider Ratio) */}
+                        <div className="absolute right-0 bottom-0 w-[160px] md:w-[220px] h-[215px] md:h-[301px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
+                            <div className="w-full h-full rounded-md overflow-hidden border dark:border-white/10 border-transparent relative bg-gray-800">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
                                     backupSrc={perf.backupPoster}
                                     alt={perf.title}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 150px, 210px"
+                                    sizes="(max-width: 768px) 160px, 220px"
                                 />
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
