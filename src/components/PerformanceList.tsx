@@ -1222,7 +1222,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
         } else if (e.key === 'Enter') {
             e.preventDefault();
-            if (isDropdownOpen && highlightedIndex >= 0 && searchResults[highlightedIndex]) {
+
+            // Check for Choseong (Initial Consonants)
+            const isChoseong = /^[ㄱ-ㅎ\s]+$/.test(searchText);
+
+            if (isChoseong) {
+                // If Choseong, skip map search (handleSearch). 
+                // Just blur to close keyboard, filtering is already live.
+                (e.target as HTMLInputElement).blur();
+                setIsDropdownOpen(false);
+            } else if (isDropdownOpen && highlightedIndex >= 0 && searchResults[highlightedIndex]) {
                 handleSelectResult(searchResults[highlightedIndex]);
             } else {
                 handleSearch();
@@ -2800,6 +2809,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             setSelectedVenue(v);
                             scrollToTop();
                         }}
+                        scrollToTop();
+                        }}
+                    onSearch={handleSearch}
                     />
                 </Portal>
 
