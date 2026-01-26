@@ -63,7 +63,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
+                className="flex gap-14 overflow-visible pb-8 scrollbar-hide px-4 sm:px-6 lg:px-8 select-none cursor-grab active:cursor-grabbing items-end pt-4"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
@@ -78,7 +78,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         title={cleanTitle(perf.title)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
-                        <div className="absolute -left-6 md:-left-8 bottom-0 z-0 h-full flex items-end">
+                        <div className="absolute -left-6 md:-left-[3.75rem] bottom-0 z-0 h-full flex items-end">
                             <span
                                 className="text-[10rem] md:text-[13rem] font-black italic leading-none tracking-tighter text-transparent transition-transform duration-300 group-hover:scale-105 origin-bottom-left"
                                 style={{
@@ -91,7 +91,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
                         {/* 2. Poster Image (Right/Top - Overlapping - Wider Ratio) */}
                         <div className="absolute right-0 bottom-0 w-[160px] md:w-[220px] h-[215px] md:h-[301px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
-                            <div className="w-full h-full rounded-md overflow-hidden border dark:border-white/10 border-transparent relative bg-gray-800">
+                            <div className="w-full h-full rounded-md overflow-hidden relative bg-gray-800">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
                                     backupSrc={perf.backupPoster}
