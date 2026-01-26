@@ -262,7 +262,7 @@ export default function BottomNavSheet({
 
                             {/* Search Bar - Hero Style */}
                             <div className="w-full relative group">
-                                <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-focus-within:shadow-purple-500/40 opacity-90 group-focus-within:opacity-100">
+                                <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-focus-within:shadow-[0_0_20px_rgba(167,139,250,0.6),0_0_40px_rgba(244,114,182,0.4)] opacity-90 group-focus-within:opacity-100 group-focus-within:scale-[1.01]">
                                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
                                         <Search className="ml-3 text-purple-400 w-5 h-5" />
                                         <input
