@@ -117,9 +117,26 @@ export function getAllPerformances() {
 
     const yes24 = safeArray<any>(yes24Data).map((p: any) => ({
         ...p,
-        // Yes24 data might need region mapping if it uses Korean regions
         region: REGION_MAP[p.region] || (p.region ? 'etc' : 'unknown')
     }));
+
+    const timeticket = safeArray<any>(timeticketData).map(p => ({ ...p, id: String(p.id) }));
+    const festivals = safeArray<any>(festivalsData).map(p => ({ ...p, id: String(p.id) }));
+    const volleyball = safeArray<any>(kovoData).map(p => ({ ...p, id: String(p.id) }));
+    const basketball = safeArray<any>(kblData).map(p => ({ ...p, id: String(p.id) }));
+    const baseball = safeArray<any>(kboData).map(p => ({ ...p, id: String(p.id) }));
+    const handball = safeArray<any>(handballData).map(p => ({ ...p, id: String(p.id) }));
+    const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
+    const movies = safeArray<any>(moviesData).map(p => ({ ...p, id: String(p.id), genre: 'movie' }));
+    const travels = safeArray<any>(travelData).map(p => ({ ...p, id: String(p.id) }));
+    const kids = safeArray<any>(kidsData).map(p => ({ ...p, id: String(p.id) }));
+    const classes = safeArray<any>(classData).map(p => ({ ...p, id: String(p.id) }));
+    const umclasses = safeArray<any>(umclassData).map(p => ({ ...p, id: String(p.id) }));
+    const mochaclasses = safeArray<any>(mochaclassData).map(p => ({ ...p, id: String(p.id) }));
+    const mommom = safeArray<any>(mommomData).map(p => ({ ...p, id: String(p.id) }));
+    const mommomFood = safeArray<any>(mommomFoodData).map(p => ({ ...p, id: String(p.id) }));
+    const mommomProduct = safeArray<any>(mommomProductData).map(p => ({ ...p, id: String(p.id) }));
+    const museum = safeArray<any>(museumData).map(p => ({ ...p, id: String(p.id) }));
 
     // 2. Aggregate
     const allPerformances = [
