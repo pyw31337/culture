@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { clsx } from 'clsx';
 import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
 import { TypingHero } from './TypingHero';
