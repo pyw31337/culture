@@ -2050,8 +2050,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
             {/* Sticky feature removed as per user request */}
 
-            {/* Recommendation Section (Visible in grid/list, only 'all' genre, no search) */}
-            {(viewMode === 'grid' || viewMode === 'list') && searchText === '' && selectedGenre === 'all' && (
+            {/* Recommendation Section (Visible in grid/list, only 'all' genre, no search text, no active location filter) */}
+            {(viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && (
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-6">
                     <RecommendedSection
                         recommendedItems={recommendedItems}
