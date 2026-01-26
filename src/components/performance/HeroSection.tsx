@@ -524,15 +524,19 @@ export default function HeroSection({
 
             {/* Hero Search Bar */}
             <div className="w-full lg:w-auto relative group z-[30]">
-                {/* Rotating Neon Border (The requested "Rotating Glow") */}
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#a855f7_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300" />
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#f472b6_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] blur-md transition-opacity duration-300" />
+                {/* 1. Deep Glow (Blurry Background) */}
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#a855f7_50%,#0000_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite] blur-xl transition-opacity duration-300" />
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#f472b6_50%,#0000_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite_reverse] blur-xl transition-opacity duration-300" />
+
+                {/* 2. Sharp Neon Line (The distinct border) */}
+                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#a855f7_50%,#0000_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] transition-opacity duration-300" />
+                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#f472b6_50%,#0000_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] transition-opacity duration-300" />
 
                 {/* Light Mode Static Glow */}
                 <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
 
                 {/* Main Container */}
-                <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)] transition-all duration-300 relative">
+                <div className="p-[2px] rounded-full bg-[#2d2d2d] group-focus-within:bg-transparent transition-colors duration-300 relative z-10">
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
                         {/* Radius Select for Hero */}
                         {activeLocation && (
