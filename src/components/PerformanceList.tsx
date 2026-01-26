@@ -2809,9 +2809,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             setSelectedVenue(v);
                             scrollToTop();
                         }}
-                        scrollToTop();
-                        }}
-                    onSearch={handleSearch}
+                        onSearch={handleSearch}
                     />
                 </Portal>
 
