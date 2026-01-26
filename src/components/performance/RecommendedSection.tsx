@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
-import PerformanceCard from './PerformanceCard';
+import ImageWithFallback from '../ImageWithFallback';
 import { cleanTitle } from '@/lib/utils'; // Ensure cleanliness
 
 interface RecommendedSectionProps {
@@ -93,11 +93,13 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         {/* 2. Poster Image (Right/Top - Overlapping) */}
                         <div className="absolute right-0 top-0 bottom-4 w-[160px] md:w-[200px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-bottom">
                             <div className="w-full h-full rounded-lg overflow-hidden shadow-xl shadow-black/50 border border-white/10 relative bg-gray-800">
-                                <img
-                                    src={perf.image}
+                                <ImageWithFallback
+                                    src={perf.image || perf.poster}
+                                    backupSrc={perf.backupPoster}
                                     alt={perf.title}
-                                    className="w-full h-full object-cover"
-                                    loading="lazy"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 160px, 200px"
                                 />
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
