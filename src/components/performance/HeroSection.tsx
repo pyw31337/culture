@@ -524,13 +524,13 @@ export default function HeroSection({
 
             {/* Hero Search Bar */}
             <div className="w-full lg:w-auto relative group z-[30]">
-                {/* 1. Deep Glow (Blurry Background) */}
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#a855f7_50%,#0000_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite] blur-xl transition-opacity duration-300" />
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#f472b6_50%,#0000_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite_reverse] blur-xl transition-opacity duration-300" />
+                {/* 1. Deep Glow (Blurry Background - Comet Tail) */}
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_50%,#a855f7_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite] blur-xl transition-opacity duration-300" />
+                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#0000_50%,#f472b6_100%)] opacity-0 group-focus-within:opacity-70 animate-[spin_3s_linear_infinite] blur-xl transition-opacity duration-300" />
 
-                {/* 2. Sharp Neon Line (The distinct border) */}
-                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#a855f7_50%,#0000_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] transition-opacity duration-300" />
-                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#f472b6_50%,#0000_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] transition-opacity duration-300" />
+                {/* 2. Sharp Neon Line (Distinct Comet Border) */}
+                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_50%,#a855f7_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] transition-opacity duration-300" />
+                <div className="absolute -inset-[1.5px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#0000_0%,#0000_50%,#f472b6_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] transition-opacity duration-300" />
 
                 {/* Light Mode Static Glow */}
                 <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
