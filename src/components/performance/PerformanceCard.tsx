@@ -61,6 +61,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     const dDay = perf.genre === 'movie' ? getDDay(perf.date) : null;
 
+    const handleMouseEnter = () => {
+        if (!cardRef.current) return;
+        cardRef.current.style.transition = 'none';
+    };
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
 
@@ -132,6 +137,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
     return (
         <div
             className="sm:perspective-1000 group h-full relative hover:z-[2000]"
+            onMouseEnter={handleMouseEnter}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >

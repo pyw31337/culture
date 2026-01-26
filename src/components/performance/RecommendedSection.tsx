@@ -74,7 +74,6 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                     <div
                         key={perf.id}
                         className="relative group flex-shrink-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] cursor-pointer"
-                        onClick={() => window.open(perf.link, '_blank')}
                         title={cleanTitle(perf.title)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
@@ -90,8 +89,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         </div>
 
                         {/* 2. Poster Image (Right/Top - Overlapping - Wider Ratio) */}
-                        <div className="absolute right-0 bottom-0 w-[180px] sm:w-[220px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl">
-                            <div className="w-full h-full rounded-md overflow-hidden relative bg-gray-800">
+                        <div className="absolute right-0 bottom-0 w-[180px] sm:w-[220px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl overflow-hidden rounded-md bg-gray-800">
+                            {/* Image */}
+                            <div className="w-full h-full relative">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
                                     backupSrc={perf.backupPoster}
@@ -101,7 +101,20 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     sizes="(max-width: 768px) 180px, 220px"
                                 />
                                 {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300" />
+                            </div>
+
+                            {/* View Details Button (Slide Up) */}
+                            <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-20">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        window.open(perf.link, '_blank');
+                                    }}
+                                    className="w-full bg-white text-black font-bold py-3 rounded-xl shadow-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 text-sm"
+                                >
+                                    자세히 보기
+                                </button>
                             </div>
                         </div>
                     </div>
