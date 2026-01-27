@@ -271,8 +271,16 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
                 await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+                // [FIX] Force close popups that might block content scraping
                 try {
-                    await page.waitForSelector('.infoList', { timeout: 10000 });
+                    await page.evaluate(() => {
+                        document.querySelectorAll('#popup-prdGuide, .popupLayer, .layerPopup').forEach(el => el.remove());
+                    });
+                } catch (e) { }
+
+                try {
+                    await page.waitForSelector('.infoList', { timeout: 5000 });
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
@@ -314,8 +322,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         const bodyText = document.body.innerText;
 
                         if (!runningTime) {
-                            // Match "공연시간" followed by newline/spaces and then likely "XXX분"
-                            const timeMatch = bodyText.match(/공연시간\s*\n*([0-9]+분)/);
+                            // Match "공연시간" OR "관람시간" followed by newline/spaces and then likely "XXX분"
+                            // "공연시간 \n 100분"
+                            const timeMatch = bodyText.match(/(?:공연시간|관람시간)\s*\n*([0-9,]+분)/);
                             if (timeMatch) runningTime = timeMatch[1];
                         }
 
