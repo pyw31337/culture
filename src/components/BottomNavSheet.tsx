@@ -151,7 +151,7 @@ export default function BottomNavSheet({
                 </div>
 
                 {/* Content Area */}
-                <div className="p-6 h-full overflow-hidden flex flex-col">
+                <div className="p-6 h-full overflow-hidden flex flex-col pb-32">
 
                     {/* VIEW MENU */}
                     {activeMenu === 'view' && (
