@@ -17,6 +17,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const [dragMoved, setDragMoved] = useState(false); // New: Track if actual movement occurred
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
 
     useEffect(() => {
@@ -27,28 +28,42 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
         }
     }, [recommendedItems]);
 
-    // Drag to Scroll Handlers
-    const onMouseDown = (e: React.MouseEvent) => {
+    // Drag to Scroll Handlers (Pointer Events for Touch + Mouse)
+    const onPointerDown = (e: React.PointerEvent) => {
         if (!scrollRef.current) return;
         setIsDragging(true);
+        setDragMoved(false);
         setStartX(e.pageX - scrollRef.current.offsetLeft);
         setScrollLeft(scrollRef.current.scrollLeft);
+        // Prevent default only for mouse to not block touch-scrolling (handled by touch-action)
+        if (e.pointerType === 'mouse') e.preventDefault();
     };
 
-    const onMouseLeave = () => {
+    const stopDragging = () => {
         setIsDragging(false);
     };
 
-    const onMouseUp = () => {
-        setIsDragging(false);
-    };
-
-    const onMouseMove = (e: React.MouseEvent) => {
+    const onPointerMove = (e: React.PointerEvent) => {
         if (!isDragging || !scrollRef.current) return;
-        e.preventDefault();
+
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll-fast
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startX) * 2;
+
+        // Threshold check (5px)
+        if (Math.abs(x - startX) > 5) {
+            setDragMoved(true);
+            scrollRef.current.scrollLeft = scrollLeft - walk;
+        }
+    };
+
+    const handleItemClick = (perf: any, e: React.MouseEvent) => {
+        // If we were dragging, don't trigger the click
+        if (dragMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+        onDetail(perf);
     };
 
     if (randomRecs.length === 0) return null;
@@ -59,18 +74,22 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
             <div
                 ref={scrollRef}
-                className="flex gap-4 sm:gap-14 overflow-x-auto pb-12 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
-                onMouseDown={onMouseDown}
-                onMouseLeave={onMouseLeave}
-                onMouseUp={onMouseUp}
-                onMouseMove={onMouseMove}
-                style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+                className="flex gap-4 sm:gap-14 overflow-x-auto pb-12 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-12 touch-action-pan-y"
+                onPointerDown={onPointerDown}
+                onPointerLeave={stopDragging}
+                onPointerUp={stopDragging}
+                onPointerMove={onPointerMove}
+                style={{
+                    scrollBehavior: isDragging ? 'auto' : 'smooth',
+                    touchAction: 'pan-y' // Allow vertical scroll, handle horizontal via JS/overflow
+                }}
             >
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
                         className="relative group flex-shrink-0 w-[240px] sm:w-[280px] h-[315px] sm:h-[370px] cursor-pointer"
                         title={cleanTitle(perf.title)}
+                        onClick={(e) => handleItemClick(perf, e)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
                         <div className="absolute -left-6 md:-left-[3.75rem] bottom-0 z-0 h-full flex items-end">
@@ -122,6 +141,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
+                                        if (dragMoved) return;
                                         window.open(perf.link, '_blank');
                                     }}
                                     className="w-full bg-white text-black font-bold py-3 rounded-xl shadow-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 text-sm"
@@ -133,6 +153,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                     </div>
                 ))}
             </div>
+
         </section>
     );
 }

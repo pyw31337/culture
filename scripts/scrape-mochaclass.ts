@@ -287,7 +287,8 @@ async function scrapeMochaClass() {
                         }
                     }
 
-                    const venue = district ? `모카클래스 (${district})` : '모카클래스';
+                    // Use address as venue key for better specificity
+                    const venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
 
                     // Stable ID hash
                     let id = existingMap.get(item.link)?.id;

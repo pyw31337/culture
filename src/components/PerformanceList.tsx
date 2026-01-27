@@ -1706,18 +1706,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     }, [filteredPerformances]);
 
     // Intersection Observer for Infinite Scroll
-    const observerTarget = useMemo(() => {
-        return (node: HTMLDivElement | null) => {
-            if (!node) return;
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    setVisibleCount(prev => prev + 24);
-                }
-            }, { threshold: 0.1, rootMargin: '2000px' });
-            observer.observe(node);
-            return () => observer.disconnect();
+    const observerRef = useRef<IntersectionObserver | null>(null);
+    const observerTargetRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (observerRef.current) observerRef.current.disconnect();
+
+        observerRef.current = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setVisibleCount(prev => prev + 24);
+            }
+        }, { threshold: 0.1, rootMargin: '1000px' }); // Reduced rootMargin slightly for stability
+
+        const currentTarget = observerTargetRef.current;
+        if (currentTarget) {
+            observerRef.current.observe(currentTarget);
         }
+
+        return () => {
+            if (observerRef.current) observerRef.current.disconnect();
+        };
     }, []);
+
+    // Stabilized observer assignment
+    const observerTarget = (node: HTMLDivElement | null) => {
+        observerTargetRef.current = node;
+        if (node && observerRef.current) {
+            observerRef.current.observe(node);
+        }
+    };
 
     // 🚀 Image Preloading Logic
     useEffect(() => {

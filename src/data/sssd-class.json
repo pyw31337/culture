@@ -3,7 +3,7 @@
     "id": "sssd-2",
     "title": "[홍대] 피스타치오 듬뿍 두바이쫀득쿠키 6개 만들기",
     "date": "상시",
-    "venue": "서울 마포구 와우산로11길 9-10 (상수동)",
+    "venue": "서울 마포구 와우산로11길 9-10 (상수동) 2층",
     "price": "43,900원",
     "originalPrice": "70,000원",
     "discount": "37%",
@@ -16,7 +16,9 @@
       "총 1시간 20분",
       "최대 수용 가능 인원 12명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 마포구 와우산로11길 9-10 (상수동) 2층",
+    "lastEnriched": "2026-01-27T02:56:36.245Z"
   },
   {
     "id": "sssd-1",
@@ -35,13 +37,15 @@
       "총 40분",
       "최대 수용 가능 인원 16명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 관악구 남부순환로220길 39 (봉천동, J.NEST) 3층 302",
+    "lastEnriched": "2026-01-27T02:56:36.654Z"
   },
   {
     "id": "sssd-3",
     "title": "[부평] 발로나 초콜릿 두바이쫀득쿠키 6p 만들기 원데이클래스",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "인천 부평구 장제로 196 (부평동) 2층 펫푸드스쿨",
     "price": "27,000원",
     "originalPrice": "50,000원",
     "discount": "46%",
@@ -50,13 +54,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "인천 부평구 장제로 196 (부평동) 2층 펫푸드스쿨",
+    "lastEnriched": "2026-01-27T02:56:36.254Z"
   },
   {
     "id": "sssd-0",
     "title": "[잠실] 쫀득쫀득~! 두바이 쫀득 쿠키 만들기!!",
     "date": "상시",
-    "venue": "서울 송파구 백제고분로45길 24-18 (송파동)",
+    "venue": "서울 송파구 백제고분로45길 24-18 (송파동) 202호 바라베이킹",
     "price": "39,900원",
     "originalPrice": "70,000원",
     "discount": "43%",
@@ -69,13 +75,15 @@
       "총 1시간 10분",
       "최대 수용 가능 인원 12명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 송파구 백제고분로45길 24-18 (송파동) 202호 바라베이킹",
+    "lastEnriched": "2026-01-27T02:56:48.870Z"
   },
   {
     "id": "sssd-5",
     "title": "[천호] 진한 피스타치오 풍미! 두바이 쫀득 쿠키 만들기 (일정 오픈!)",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 강동구 천호대로 1055 (천호동, 천호태영아파트) 베이크투데이",
     "price": "50,000원",
     "originalPrice": "52,000원",
     "discount": "",
@@ -84,13 +92,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강동구 천호대로 1055 (천호동, 천호태영아파트) 베이크투데이",
+    "lastEnriched": "2026-01-27T02:56:49.701Z"
   },
   {
     "id": "sssd-8",
     "title": "[강남] 특별한 레시피, 두바이 쫀득쿠키 만들기",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 강남구 봉은사로51길 13 (논현동) 1층 카페 데쎄르룸",
     "price": "60,000원",
     "originalPrice": "70,000원",
     "discount": "14%",
@@ -99,13 +109,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강남구 봉은사로51길 13 (논현동) 1층 카페 데쎄르룸",
+    "lastEnriched": "2026-01-27T02:56:48.400Z"
   },
   {
     "id": "sssd-7",
     "title": "[망원] 딸을 위해 만든 고급재료 듬뿍 두바이 쫀득쿠키 원데이클래스",
     "date": "상시",
-    "venue": "서울 마포구 동교로 53-1 (망원동)",
+    "venue": "서울 마포구 동교로 53-1 (망원동) 2층 201호 , 지아네요리공작소",
     "price": "50,000원",
     "originalPrice": "60,000원",
     "discount": "16%",
@@ -118,13 +130,15 @@
       "총 1시간",
       "최대 수용 가능 인원 4명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 마포구 동교로 53-1 (망원동) 2층 201호 , 지아네요리공작소",
+    "lastEnriched": "2026-01-27T02:57:07.257Z"
   },
   {
     "id": "sssd-4",
     "title": "[부천] 두바이쫀득쿠키 &두바이꼬마김밥 원데이클래스(두바이쫀득쿠키.두바이꼬마김밥)",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "경기 부천시 원미구 부천로3번길 48 (심곡동, 심곡동 피노키오 상가) 피노키오 상가 411호",
     "price": "29,000원",
     "originalPrice": "35,000원",
     "discount": "17%",
@@ -133,7 +147,9 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "경기 부천시 원미구 부천로3번길 48 (심곡동, 심곡동 피노키오 상가) 피노키오 상가 411호",
+    "lastEnriched": "2026-01-27T02:57:07.269Z"
   },
   {
     "id": "sssd-23",
@@ -154,7 +170,7 @@
     "id": "sssd-11",
     "title": "[중랑구] 피스타치오 100% 본따블르표 두바이 쫀득쿠키 7개 클래스",
     "date": "상시",
-    "venue": "본따블르",
+    "venue": "서울 중랑구 동일로140길 65 (중화동) 1층 본따블르",
     "price": "42,000원",
     "originalPrice": "100,000원",
     "discount": "58%",
@@ -167,13 +183,15 @@
       "총 1시간 30분",
       "최대 수용 가능 인원 24명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 중랑구 동일로140길 65 (중화동) 1층 본따블르",
+    "lastEnriched": "2026-01-27T02:57:51.640Z"
   },
   {
     "id": "sssd-18",
     "title": "[수원 신동카페거리] 생딸기 두바이 쫀득 쿠키 클래스",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "경기 수원시 영통구 권선로882번길 43-33 (신동) 101호 라뮤제 베이크하우스",
     "price": "50,000원",
     "originalPrice": "",
     "discount": "",
@@ -182,13 +200,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "경기 수원시 영통구 권선로882번길 43-33 (신동) 101호 라뮤제 베이크하우스",
+    "lastEnriched": "2026-01-27T02:57:56.272Z"
   },
   {
     "id": "sssd-12",
     "title": "[용산] 언커무드 나만의 무드를 담은 향수 만들기 (30ml)",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
     "price": "28,000원",
     "originalPrice": "",
     "discount": "",
@@ -197,7 +217,9 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 용산구 청파로45길 27 (청파동3가) 2층 끝 문 3층",
+    "lastEnriched": "2026-01-27T02:57:56.844Z"
   },
   {
     "id": "sssd-13",
@@ -218,7 +240,7 @@
     "id": "sssd-12",
     "title": "[용산] 저당 두바이 쫀득쿠키 만들기 원데이클래스",
     "date": "상시",
-    "venue": "에그쉘",
+    "venue": "서울 용산구 소월로40길 45 (이태원동) 1층 에그쉘",
     "price": "49,000원",
     "originalPrice": "55,000원",
     "discount": "10%",
@@ -231,13 +253,15 @@
       "총 1시간 30분",
       "최대 수용 가능 인원 16명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 용산구 소월로40길 45 (이태원동) 1층 에그쉘",
+    "lastEnriched": "2026-01-27T02:58:33.832Z"
   },
   {
     "id": "sssd-15",
     "title": "[성수] 도자기 물레 + 컬러 액션 페인팅 3작품 유니크한 도자기만들기 [노키즈]",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "103-39 Seongdeokjeong-gil, Seongdong-gu, Seoul, Republic of Korea 1st Floor Deep atelier",
     "price": "52,000원",
     "originalPrice": "56,000원",
     "discount": "7%",
@@ -246,13 +270,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "103-39 Seongdeokjeong-gil, Seongdong-gu, Seoul, Republic of Korea 1st Floor Deep atelier",
+    "lastEnriched": "2026-01-27T02:48:33.511Z"
   },
   {
     "id": "sssd-17",
     "title": "[동작] 친절한 쁨댄스와 함께하는 원데이 댄스클래스 / K-POP / 걸스힙합",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 동작구 사당로30길 131 (사당동) 수업 별 상이(개인 번호로 공지 드립니다)",
     "price": "33,900원",
     "originalPrice": "",
     "discount": "",
@@ -261,13 +287,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 동작구 사당로30길 131 (사당동) 수업 별 상이(개인 번호로 공지 드립니다)",
+    "lastEnriched": "2026-01-27T02:59:11.516Z"
   },
   {
     "id": "sssd-24",
     "title": "[강북] 대세탑승!! 100%피스타치오원물맛 그대로 두바이 쫀득쿠키 원데이클래스",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 강북구 삼양로81길 5 (수유동, 남성빌딩) 1층",
     "price": "48,000원",
     "originalPrice": "60,000원",
     "discount": "20%",
@@ -276,13 +304,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강북구 삼양로81길 5 (수유동, 남성빌딩) 1층",
+    "lastEnriched": "2026-01-27T02:59:01.024Z"
   },
   {
     "id": "sssd-25",
     "title": "[강남] (메이크업 클래스)청담동 메이크업아티스트에게 배우는 메이크업 노하우",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 강남구 영동대로129길 24-6 (삼성동) 플리페",
     "price": "99,000원",
     "originalPrice": "242,000원",
     "discount": "59%",
@@ -291,13 +321,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강남구 영동대로129길 24-6 (삼성동) 플리페",
+    "lastEnriched": "2026-01-27T02:59:00.935Z"
   },
   {
     "id": "sssd-18",
     "title": "[수원][스타필드] 다양한 베이킹을 나만의 특별한 디저트로! 손쉬운 셀프베이킹",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "경기 수원시 장안구 수성로 175 (정자동) 스타필드 수원 6층 클래스콕 베이킹룸",
     "price": "29,900원",
     "originalPrice": "40,000원",
     "discount": "25%",
@@ -306,13 +338,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "경기 수원시 장안구 수성로 175 (정자동) 스타필드 수원 6층 클래스콕 베이킹룸",
+    "lastEnriched": "2026-01-27T02:59:29.050Z"
   },
   {
     "id": "sssd-6",
     "title": "[청담] 친절한 혜온 쌤의 두 배 더 예뻐지는 1:1 데일리 메이크업 클래스",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 강남구 선릉로148길 15 (청담동) 301호 뮤티드메이크업",
     "price": "89,000원",
     "originalPrice": "160,000원",
     "discount": "44%",
@@ -321,13 +355,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강남구 선릉로148길 15 (청담동) 301호 뮤티드메이크업",
+    "lastEnriched": "2026-01-27T02:59:34.486Z"
   },
   {
     "id": "sssd-28",
     "title": "[잠실] 키티 두쫀쿠 6개 만들기 원데이 클래스",
     "date": "상시",
-    "venue": "감정선프로젝트 미술공방",
+    "venue": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
     "price": "59,900원",
     "originalPrice": "99,000원",
     "discount": "39%",
@@ -340,13 +376,15 @@
       "총 1시간",
       "최대 수용 가능 인원 40명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
+    "lastEnriched": "2026-01-27T02:59:29.056Z"
   },
   {
     "id": "sssd-16",
     "title": "[후기 1,000개돌파] 매일 아침 15분이 헛되지 않게 메이크업 배우기",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 서초구 강남대로 359 (서초동, 대우도씨에빛2) 19층 1905호",
     "price": "149,000원",
     "originalPrice": "210,000원",
     "discount": "29%",
@@ -355,13 +393,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 서초구 강남대로 359 (서초동, 대우도씨에빛2) 19층 1905호",
+    "lastEnriched": "2026-01-27T03:00:15.171Z"
   },
   {
     "id": "sssd-21",
     "title": "[강남/청담 원장] 썸을 부르는 1:1 메이크업클래스 퍼스널컬러 진단",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
     "price": "148,000원",
     "originalPrice": "250,000원",
     "discount": "40%",
@@ -370,13 +410,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 강남구 삼성로 642 (삼성동, 삼성빌딩) 203호 캐씨씨메이크업",
+    "lastEnriched": "2026-01-27T03:00:05.311Z"
   },
   {
     "id": "sssd-16",
     "title": "[경의선숲길] 볼거리도 풍성한 담금주공방 빛나는구술",
     "date": "상시",
-    "venue": "서울 마포구 백범로 34 (신수동)",
+    "venue": "서울 마포구 백범로 34 (신수동) 2층",
     "price": "25,000원",
     "originalPrice": "",
     "discount": "",
@@ -389,13 +431,15 @@
       "총 45분",
       "최대 수용 가능 인원 4명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 마포구 백범로 34 (신수동) 2층",
+    "lastEnriched": "2026-01-27T02:59:56.190Z"
   },
   {
     "id": "sssd-24",
     "title": "[잠실] 기념일 휘낭시에 베이킹, 맛있는 데이트코스 추천!",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
     "price": "26,000원",
     "originalPrice": "39,800원",
     "discount": "34%",
@@ -404,13 +448,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 송파구 백제고분로45길 8 (송파동) 지하1층 감정선프로젝트 미술공방",
+    "lastEnriched": "2026-01-27T03:00:30.775Z"
   },
   {
     "id": "sssd-25",
     "title": "[부평] 맛있는 두바이 쫀득 쿠키 만들기6개 (최상급 재료로 만드는)",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "인천 부평구 충선로 176-8 (부개동) 상가1동 102호 정성잇개 스튜디오",
     "price": "49,000원",
     "originalPrice": "70,000원",
     "discount": "30%",
@@ -419,13 +465,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "인천 부평구 충선로 176-8 (부개동) 상가1동 102호 정성잇개 스튜디오",
+    "lastEnriched": "2026-01-27T03:00:30.779Z"
   },
   {
     "id": "sssd-15",
     "title": "[서초] 너무맛있어요! 두바이 쫀득 찹쌀떡 두바이 모찌 원데이클래스(2인이상)",
     "date": "상시",
-    "venue": "라콤카페",
+    "venue": "서울 서초구 방배중앙로25길 19 (방배동) 1층 라콤카페",
     "price": "39,900원",
     "originalPrice": "59,900원",
     "discount": "33%",
@@ -438,13 +486,15 @@
       "총 1시간 30분",
       "최대 수용 가능 인원 23명"
     ],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 서초구 방배중앙로25길 19 (방배동) 1층 라콤카페",
+    "lastEnriched": "2026-01-27T03:00:30.971Z"
   },
   {
     "id": "sssd-19",
     "title": "[영등포] 7개국 최상급 원물재료 듬뿍! 두바이쫀득쿠키(무려 9피스+레시피제공)",
     "date": "상시",
-    "venue": "상세페이지 참조",
+    "venue": "서울 영등포구 선유서로21길 15 (양평동2가, 양평동벽산블루밍아파트) 206호, 문래오아시스 (2층 왼쪽 유리문 안쪽)",
     "price": "79,000원",
     "originalPrice": "156,000원",
     "discount": "49%",
@@ -453,13 +503,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 영등포구 선유서로21길 15 (양평동2가, 양평동벽산블루밍아파트) 206호, 문래오아시스 (2층 왼쪽 유리문 안쪽)",
+    "lastEnriched": "2026-01-27T03:00:40.789Z"
   },
   {
     "id": "sssd-28",
     "title": "[잠실] 발렌타인 후드 입은 곰 초콜릿 만들기 원데이클래스",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 송파구 백제고분로33길 31-15 (석촌동) 대성빌딩 2층",
     "price": "39,900원",
     "originalPrice": "75,000원",
     "discount": "46%",
@@ -468,13 +520,15 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 송파구 백제고분로33길 31-15 (석촌동) 대성빌딩 2층",
+    "lastEnriched": "2026-01-27T03:00:40.677Z"
   },
   {
     "id": "sssd-29",
     "title": "[성수] 컬러 힐링 마블 물레 도자기 원데이 클래스 *노키즈*",
     "date": "상시",
-    "venue": "정보 없음",
+    "venue": "서울 성동구 연무장길 76 (성수동2가, 성수 AK 밸리) 211호 컬러온스튜디오",
     "price": "56,000원",
     "originalPrice": "75,000원",
     "discount": "25%",
@@ -483,6 +537,8 @@
     "genre": "class",
     "source": "sssd",
     "tags": [],
-    "status": "OPEN"
+    "status": "OPEN",
+    "address": "서울 성동구 연무장길 76 (성수동2가, 성수 AK 밸리) 211호 컬러온스튜디오",
+    "lastEnriched": "2026-01-27T03:00:39.982Z"
   }
 ]
