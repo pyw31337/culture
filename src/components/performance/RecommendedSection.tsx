@@ -4,6 +4,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import { motion, useMotionValue } from 'framer-motion';
+import { useUserActivity } from '@/hooks/useUserActivity';
 
 interface RecommendedSectionProps {
     recommendedItems: any[];
@@ -21,13 +22,32 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     const [isDragging, setIsDragging] = useState(false);
     const x = useMotionValue(0);
 
-    useEffect(() => {
-        // Shuffle and pick 9 items (Netflix style max)
-        if (recommendedItems && recommendedItems.length > 0) {
-            const shuffled = [...recommendedItems].sort(() => 0.5 - Math.random());
-            setRandomRecs(shuffled.slice(0, 9));
+    const { activity } = useUserActivity();
+
+    // Deterministic Random Score Generator based on ID
+    // This allows the "Popular" list to be stable but look random initially,
+    // while ensuring specific IDs always get the same base score.
+    const getBaseScore = (id: string) => {
+        let hash = 0;
+        for (let i = 0; i < id.length; i++) {
+            hash = (hash << 5) - hash + id.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
         }
-    }, [recommendedItems]);
+        return Math.abs(hash) % 100; // Base score 0-99
+    };
+
+    useEffect(() => {
+        if (recommendedItems && recommendedItems.length > 0) {
+            // Rank = (User Clicks * 20) + Base Score
+            // This ensures user clicked items float to top, but otherwise there's a stable 'popular' order
+            const ranked = [...recommendedItems].sort((a, b) => {
+                const scoreA = (activity.itemClicks?.[a.id] || 0) * 20 + getBaseScore(a.id);
+                const scoreB = (activity.itemClicks?.[b.id] || 0) * 20 + getBaseScore(b.id);
+                return scoreB - scoreA;
+            });
+            setRandomRecs(ranked.slice(0, 9));
+        }
+    }, [recommendedItems, activity.itemClicks]);
 
     useEffect(() => {
         const updateConstraints = () => {
@@ -58,7 +78,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     return (
         <section className="mb-16 relative animate-in fade-in slide-in-from-bottom-4 duration-700">
             {/* Header Restored */}
-            <div className="flex items-center justify-between mb-8 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-0 px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-purple-400 fill-purple-400/20" />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">

@@ -4,6 +4,7 @@ import { safeStorage } from '@/lib/safeStorage';
 interface UserActivity {
     viewedGenres: Record<string, number>; // genre -> count
     viewedItems: string[]; // item IDs
+    itemClicks: Record<string, number>; // item ID -> click count
     lastActive: number; // timestamp
 }
 
@@ -13,6 +14,7 @@ export function useUserActivity() {
     const [activity, setActivity] = useState<UserActivity>({
         viewedGenres: {},
         viewedItems: [],
+        itemClicks: {},
         lastActive: Date.now()
     });
 
@@ -21,6 +23,7 @@ export function useUserActivity() {
         const stored = safeStorage.get<UserActivity>(STORAGE_KEY, {
             viewedGenres: {},
             viewedItems: [],
+            itemClicks: {},
             lastActive: Date.now()
         });
         if (stored) {
@@ -57,9 +60,15 @@ export function useUserActivity() {
         setActivity(prev => {
             // Keep only last 50 items to save space
             const newItems = [itemId, ...prev.viewedItems.filter(id => id !== itemId)].slice(0, 50);
+            const currentClicks = prev.itemClicks?.[itemId] || 0;
+
             return {
                 ...prev,
                 viewedItems: newItems,
+                itemClicks: {
+                    ...prev.itemClicks,
+                    [itemId]: currentClicks + 1
+                },
                 lastActive: Date.now()
             };
         });
