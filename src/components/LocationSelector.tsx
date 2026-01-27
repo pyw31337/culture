@@ -208,7 +208,7 @@ export function LocationSelector({
                                                 key={cho}
                                                 onClick={() => setActiveChoseong(cho)}
                                                 className={clsx(
-                                                    "w-6 h-6 flex items-center justify-center text-[10px] rounded hover:bg-purple-500/20 transition-colors",
+                                                    "w-12 h-12 flex items-center justify-center text-lg rounded hover:bg-purple-500/20 transition-colors", // Increased size
                                                     activeChoseong === cho
                                                         ? "bg-purple-600 text-white font-extrabold"
                                                         : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200"
@@ -221,7 +221,7 @@ export function LocationSelector({
                                 </div>
 
                                 {/* Venue List with Scrollbar */}
-                                <div className="max-h-[280px] overflow-y-auto custom-scrollbar p-1">
+                                <div className="max-h-[60vh] overflow-y-auto custom-scrollbar p-1">
                                     <button
                                         onClick={() => handleVenueClick('all')}
                                         className={clsx(
