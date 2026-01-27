@@ -1,7 +1,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { extract } from '@extractus/article-extractor'; // Or just fetch/regex if simple
+// import { extract } from '@extractus/article-extractor'; // Or just fetch/regex if simple
 
 // Simple fetch and regex approach since I can't easily install new packages without creating package.json churn.
 // I'll use fetch within node (available in newer node) or naive https. 

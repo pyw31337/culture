@@ -262,15 +262,33 @@ async function main() {
         if (originalKey !== newKey) venueKeyMap[originalKey] = newKey;
     }
 
+    // Helper: Levenshtein Distance
+    function levenshtein(a: string, b: string): number {
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1,
+                        matrix[i][j - 1] + 1,
+                        matrix[i - 1][j] + 1
+                    );
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
     // --- 7. Phase 2: Address-Based Merging ---
     console.log('Processing venues (Phase 2: Address Clustering)...');
 
     // Create an Address Normalizer for clustering
+    // Strict normalization: Only remove spaces. Keep numbers.
     const normalizeAddrForCluster = (addr: string) => {
-        return addr.replace(/\s+/g, '').replace(/[0-9\-]+$/g, ''); // Remove trailing numbers for broader match? No, detailed address defines unique venue.
-        // Actually, identical address means IDENTICAL.
-        // But spacing issues: "A B" vs "AB".
-        // remove whitespace.
         return addr.replace(/\s+/g, '');
     };
 
@@ -360,6 +378,7 @@ async function main() {
         const newPerfs: any[] = [];
         perfs.forEach((p: any) => {
             let vKey = p.venue;
+            if (!vKey || typeof vKey !== 'string') return;
             if (venuesToDelete.has(vKey)) return;
 
             if (venueKeyMap[vKey]) {

@@ -3,7 +3,7 @@ import path from 'path';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import iconv from 'iconv-lite';
-import { fetchPerformances, Performance } from '../src/lib/interpark';
+import { fetchPerformances, type Performance } from '../src/lib/interpark.js';
 
 // Define Venue Data Structure
 interface VenueData {
@@ -343,6 +343,9 @@ async function buildVenues() {
             for (const existingKey of knownVenues) {
                 if (existingKey.length < 2) continue; // Skip short keys
                 // Verify inclusion AND that the existing key has valid data
+                // EXCEPTION: Do not inherit for MochaClass / generic chains if they are distinct
+                if ((venueName.includes('모카클래스') && existingKey === '모카클래스')) continue;
+
                 if (venueName.includes(existingKey) && venues[existingKey].address && venues[existingKey].address !== '정보 없음') {
                     console.log(`   -> Inheriting data from parent venue: "${existingKey}" for "${venueName}"`);
                     venues[venueName].address = venues[existingKey].address;
@@ -381,6 +384,10 @@ async function buildVenues() {
             } else if ((perf as any).source === 'klook') {
                 address = perf.venue;
                 console.log(`   -> Using Klook Venue as Address: ${address}`);
+            } else if ((perf as any).source === 'mochaclass') {
+                address = perf.venue; // Mochaclass name often has enough info? No, mochaclass item has address.
+                // @ts-ignore
+                if (perf.address) address = perf.address;
             } else {
                 address = await getVenueAddress(perf.id);
             }

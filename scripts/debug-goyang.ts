@@ -23,3 +23,5 @@ if (REGION_PREFIX_REGEX.test(key) && key.length > 15) {
 } else {
     console.log("SKIPPED due to Regex or Length");
 }
+
+export { };

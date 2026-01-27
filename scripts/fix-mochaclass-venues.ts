@@ -62,7 +62,7 @@ async function scrapeDetails(page: any, url: string) {
         });
 
     } catch (e) {
-        console.error(`Error scraping ${url}:`, e.message);
+        console.error(`Error scraping detail ${url}:`, (e as any).message);
         return null;
     }
 }
@@ -111,7 +111,7 @@ async function geocode(page: any, query: string) {
             return bestMatch;
         });
     } catch (e) {
-        console.error(`Geocode error for ${query}:`, e.message);
+        console.error(`Geocode error for ${query}:`, (e as any).message);
         return null;
     }
 }
