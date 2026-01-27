@@ -5,6 +5,11 @@ import { ChevronDown, MapPin, Check, Search, X } from 'lucide-react'; // Added i
 import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul'; // Import Choseong utility
 
+import venuesData from '@/data/venues.json'; // Direct import for lookup
+
+// Type assertion for venues data since it's a JSON file
+const venues = venuesData as Record<string, any>;
+
 interface LocationSelectorProps {
     selectedRegion: string;
     onRegionSelect: (region: string) => void;
@@ -186,7 +191,8 @@ export function LocationSelector({
                         {isVenueOpen && (
                             <div className={clsx(
                                 "bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200",
-                                inline ? "mt-2 relative w-full" : (dropUp ? "absolute bottom-full mb-2 left-0 w-full" : "absolute top-full mt-2 left-0 w-full")
+                                // Fix overlap: Restricted height and bottom padding/margin logic
+                                inline ? "mt-2 relative w-full" : (dropUp ? "absolute bottom-[115%] mb-2 left-0 w-full max-h-[300px]" : "absolute top-full mt-2 left-0 w-full max-h-[300px]")
                             )}>
 
                                 {/* Choseong Filter Header */}
@@ -195,10 +201,10 @@ export function LocationSelector({
                                         <button
                                             onClick={() => setActiveChoseong('all')}
                                             className={clsx(
-                                                "px-2 py-1 text-[10px] rounded hover:bg-purple-500/20 transition-colors",
+                                                "w-8 h-8 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm", // Square 1:1, text size match
                                                 activeChoseong === 'all'
-                                                    ? "bg-purple-600 text-white font-extrabold"
-                                                    : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200"
+                                                    ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
+                                                    : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
                                             )}
                                         >
                                             전체
@@ -208,10 +214,10 @@ export function LocationSelector({
                                                 key={cho}
                                                 onClick={() => setActiveChoseong(cho)}
                                                 className={clsx(
-                                                    "w-12 h-12 flex items-center justify-center text-lg rounded hover:bg-purple-500/20 transition-colors", // Increased size
+                                                    "w-8 h-8 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm", // Square 1:1, text size match
                                                     activeChoseong === cho
-                                                        ? "bg-purple-600 text-white font-extrabold"
-                                                        : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200"
+                                                        ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
+                                                        : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
                                                 )}
                                             >
                                                 {cho}
@@ -221,7 +227,7 @@ export function LocationSelector({
                                 </div>
 
                                 {/* Venue List with Scrollbar */}
-                                <div className="max-h-[60vh] overflow-y-auto custom-scrollbar p-1">
+                                <div className="max-h-[200px] overflow-y-auto custom-scrollbar p-1"> {/* Reduced Max Height inside content to prevent overflow */}
                                     <button
                                         onClick={() => handleVenueClick('all')}
                                         className={clsx(
@@ -251,8 +257,19 @@ export function LocationSelector({
                                                         : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                                 )}
                                             >
-                                                <span>{v}</span>
-                                                {selectedVenue === v && <Check className="w-3.5 h-3.5" />}
+                                                {/* Left: Name */}
+                                                <span className="truncate mr-2">{v}</span>
+
+                                                {/* Right: Location & Check */}
+                                                <div className="flex items-center gap-2 shrink-0">
+                                                    {/* Location Tag */}
+                                                    {venues[v]?.district && (
+                                                        <span className="text-[10px] sm:text-xs text-gray-500 light:text-gray-400 border border-white/5 light:border-gray-200 px-1.5 py-0.5 rounded bg-black/20 light:bg-gray-50">
+                                                            {venues[v].district}
+                                                        </span>
+                                                    )}
+                                                    {selectedVenue === v && <Check className="w-3.5 h-3.5 text-purple-500" />}
+                                                </div>
                                             </button>
                                         ))
                                     )}
