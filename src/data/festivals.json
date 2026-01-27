@@ -1,38 +1,5 @@
 [
   {
-    "id": "535c28f4-598f-4b47-ba58-8d104dcfb813",
-    "title": "무안 겨울 숭어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/535c28f4-598f-4b47-ba58-8d104dcfb813_1.png",
-    "date": "2026.01.24~2026.01.25",
-    "venue": "전라남도 무안군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=535c28f4-598f-4b47-ba58-8d104dcfb813",
-    "genre": "festival",
-    "lastEnriched": "2026-01-22T00:16:01.567Z"
-  },
-  {
-    "id": "9088a057-90d7-4e39-a86d-1fc0d99ccf05",
-    "title": "단양 겨울놀이 축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9088a057-90d7-4e39-a86d-1fc0d99ccf05_16.jpg",
-    "date": "2026.01.23~2026.01.26",
-    "venue": "충청북도 단양군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9088a057-90d7-4e39-a86d-1fc0d99ccf05",
-    "genre": "festival",
-    "lastEnriched": "2026-01-22T00:12:34.886Z"
-  },
-  {
-    "id": "8148faba-f3c7-4043-aecc-a360156eecbd",
-    "title": "함안곶감축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/8148faba-f3c7-4043-aecc-a360156eecbd_39.jpg",
-    "date": "2026.01.23~2026.01.25",
-    "venue": "경상남도 함안군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=8148faba-f3c7-4043-aecc-a360156eecbd",
-    "genre": "festival",
-    "lastEnriched": "2026-01-22T00:12:34.886Z"
-  },
-  {
     "id": "ce544916-f27c-4839-9965-9617c27687cb",
     "title": "안성 동막골 빙어축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ce544916-f27c-4839-9965-9617c27687cb_279.jpg",
@@ -88,17 +55,6 @@
     "lastEnriched": "2026-01-22T00:12:34.886Z"
   },
   {
-    "id": "f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7",
-    "title": "홍천강 꽁꽁축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7_18.JPG",
-    "date": "2026.01.09~2026.01.25",
-    "venue": "강원특별자치도 홍천군",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7",
-    "genre": "festival",
-    "lastEnriched": "2026-01-22T00:12:34.886Z"
-  },
-  {
     "id": "fa0210d0-c2ce-4388-ae6e-bf81716018c9",
     "title": "포천백운계곡 동장군축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/fa0210d0-c2ce-4388-ae6e-bf81716018c9_83.jpg",
@@ -112,7 +68,7 @@
   {
     "id": "dc91678e-3dff-402a-986a-7fd5fbfb0743",
     "title": "온천천 빛 축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/dc91678e-3dff-402a-986a-7fd5fbfb0743_14.jpg",
+    "image": null,
     "date": "2025.12.19~2026.02.01",
     "venue": "부산 동래구",
     "region": "busan",
@@ -123,7 +79,7 @@
   {
     "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
     "title": "양평빙송어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
+    "image": null,
     "date": "2025.12.06~2026.03.02",
     "venue": "경기도 양평군",
     "region": "gyeonggi",
@@ -134,7 +90,7 @@
   {
     "id": "cd3921dc-baf4-4033-a3f3-acc739585872",
     "title": "광복로 겨울빛 트리축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd3921dc-baf4-4033-a3f3-acc739585872_10.JPG",
+    "image": null,
     "date": "2025.12.05~2026.02.22",
     "venue": "부산 중구",
     "region": "busan",
@@ -145,7 +101,7 @@
   {
     "id": "c34e66ec-0b3d-48be-96eb-c0ffbb6436ec",
     "title": "영동곶감축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/c34e66ec-0b3d-48be-96eb-c0ffbb6436ec_16.jpg",
+    "image": null,
     "date": "2026.01.30~2026.02.01",
     "venue": "충청북도 영동군",
     "region": "etc",
@@ -156,7 +112,7 @@
   {
     "id": "af789025-8035-4c59-8b84-5a9e0733d134",
     "title": "태백산 눈축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/af789025-8035-4c59-8b84-5a9e0733d134_12.jpg",
+    "image": null,
     "date": "2026.01.31~2026.02.08",
     "venue": "강원특별자치도 태백시",
     "region": "gangwon",
@@ -178,7 +134,7 @@
   {
     "id": "ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
     "title": "고령 대가야축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ecf68d54-808a-4ef0-8b64-122a4fc90f0f_26.jpg",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ecf68d54-808a-4ef0-8b64-122a4fc90f0f_74.jpg",
     "date": "2026.03.27~2026.03.29",
     "venue": "경상북도 고령군",
     "region": "etc",
@@ -240,6 +196,50 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=a212b550-67bf-422e-a110-7bb742e84672",
     "genre": "festival",
     "lastEnriched": "2026-01-22T00:16:01.572Z"
+  },
+  {
+    "id": "535c28f4-598f-4b47-ba58-8d104dcfb813",
+    "title": "무안 겨울 숭어축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/535c28f4-598f-4b47-ba58-8d104dcfb813_1.png",
+    "date": "2026.01.24~2026.01.25",
+    "venue": "전라남도 무안군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=535c28f4-598f-4b47-ba58-8d104dcfb813",
+    "genre": "festival",
+    "lastEnriched": "2026-01-22T00:16:01.567Z"
+  },
+  {
+    "id": "9088a057-90d7-4e39-a86d-1fc0d99ccf05",
+    "title": "단양 겨울놀이 축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9088a057-90d7-4e39-a86d-1fc0d99ccf05_16.jpg",
+    "date": "2026.01.23~2026.01.26",
+    "venue": "충청북도 단양군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9088a057-90d7-4e39-a86d-1fc0d99ccf05",
+    "genre": "festival",
+    "lastEnriched": "2026-01-22T00:12:34.886Z"
+  },
+  {
+    "id": "8148faba-f3c7-4043-aecc-a360156eecbd",
+    "title": "함안곶감축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/8148faba-f3c7-4043-aecc-a360156eecbd_39.jpg",
+    "date": "2026.01.23~2026.01.25",
+    "venue": "경상남도 함안군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=8148faba-f3c7-4043-aecc-a360156eecbd",
+    "genre": "festival",
+    "lastEnriched": "2026-01-22T00:12:34.886Z"
+  },
+  {
+    "id": "f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7",
+    "title": "홍천강 꽁꽁축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7_18.JPG",
+    "date": "2026.01.09~2026.01.25",
+    "venue": "강원특별자치도 홍천군",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f9d169f7-f976-42b3-a0f4-55a5e3bc0aa7",
+    "genre": "festival",
+    "lastEnriched": "2026-01-22T00:12:34.886Z"
   },
   {
     "id": "1e141ca8-3663-4289-b1de-f1f8a3be5f09",
