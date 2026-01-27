@@ -58,14 +58,14 @@ export default function InstallApp() {
                         <Download size={20} />
                     </div>
                     <div>
-                        <h4 className="text-sm font-bold text-white">앱 설치하기</h4>
+                        <h4 className="text-sm font-extrabold text-white">앱 설치하기</h4>
                         <p className="text-xs text-gray-400">더 빠르고 편하게 즐겨보세요!</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
                     <button
                         onClick={handleInstallClick}
-                        className="px-3 py-1.5 bg-[#a78bfa] hover:bg-[#9061f9] text-white text-xs font-bold rounded-lg transition-colors"
+                        className="px-3 py-1.5 bg-[#a78bfa] hover:bg-[#9061f9] text-white text-xs font-extrabold rounded-lg transition-colors"
                     >
                         설치
                     </button>

@@ -85,7 +85,7 @@ export default function EmptyState({
             </motion.div>
 
             {/* Text */}
-            <h3 className="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">
+            <h3 className="text-xl font-extrabold text-gray-700 dark:text-gray-300 mb-2">
                 {title}
             </h3>
             <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-sm">
@@ -97,7 +97,7 @@ export default function EmptyState({
                 <button
                     onClick={onReset}
                     className="mb-6 px-6 py-2.5 bg-gradient-to-r from-blue-500 to-indigo-600 
-                               text-white font-medium rounded-full shadow-lg
+                               text-white font-semibold rounded-full shadow-lg
                                hover:shadow-xl hover:scale-105 transition-all duration-200"
                 >
                     전체 보기

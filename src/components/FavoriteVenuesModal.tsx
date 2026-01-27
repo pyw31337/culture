@@ -46,9 +46,9 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                 {/* Header */}
                                 <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/20">
                                     <div>
-                                        <h2 className="text-xl font-bold text-white">찜한 공연장 목록</h2>
+                                        <h2 className="text-xl font-extrabold text-white">찜한 공연장 목록</h2>
                                         <p className="text-sm text-gray-400 mt-1">
-                                            총 <span className="text-emerald-400 font-bold">{favoriteVenues.length}</span>개의 공연장이 있습니다
+                                            총 <span className="text-emerald-400 font-extrabold">{favoriteVenues.length}</span>개의 공연장이 있습니다
                                         </p>
                                     </div>
                                     <button
@@ -78,7 +78,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                                         </div>
                                                         <button
                                                             onClick={() => onVenueClick(venueName)}
-                                                            className="text-gray-200 font-medium truncate text-left hover:underline decoration-emerald-400 decoration-2 underline-offset-4"
+                                                            className="text-gray-200 font-semibold truncate text-left hover:underline decoration-emerald-400 decoration-2 underline-offset-4"
                                                         >
                                                             {venueName}
                                                         </button>
@@ -98,7 +98,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                             <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4">
                                                 <MapPin size={24} className="text-gray-600" />
                                             </div>
-                                            <p className="text-gray-300 font-bold text-lg mb-1">찜한 공연장이 없습니다</p>
+                                            <p className="text-gray-300 font-extrabold text-lg mb-1">찜한 공연장이 없습니다</p>
                                             <p className="text-gray-500 text-sm">마음에 드는 공연장을 추가해보세요!</p>
                                         </div>
                                     )}
@@ -108,7 +108,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                 <div className="p-4 border-t border-white/10 bg-black/20 text-center">
                                     <button
                                         onClick={onClose}
-                                        className="w-full py-3 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition-colors"
+                                        className="w-full py-3 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold transition-colors"
                                     >
                                         닫기
                                     </button>

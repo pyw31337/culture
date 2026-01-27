@@ -71,7 +71,7 @@ export default function PerformanceGrid({
                         {/* Split List Header */}
                         {isNearbyHeader && (
                             <div className="w-full h-px relative bg-gradient-to-r from-transparent via-[#a78bfa]/50 to-transparent mb-8 flex items-center justify-center">
-                                <span className="bg-[#0f1115] px-4 text-[#a78bfa] text-sm font-bold tracking-widest uppercase">
+                                <span className="bg-[#0f1115] px-4 text-[#a78bfa] text-sm font-extrabold tracking-widest uppercase">
                                     Nearby Recommendations
                                 </span>
                             </div>

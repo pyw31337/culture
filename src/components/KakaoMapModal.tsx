@@ -144,7 +144,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                 borderRadius: '50%',
                                 color: 'white',
                                 textAlign: 'center', lineHeight: '50px',
-                                fontWeight: 'bold', fontSize: '14px',
+                                fontWeight: '800', fontSize: '14px',
                                 boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                                 border: '2px solid rgba(255,255,255,0.8)'
                             }]
@@ -203,7 +203,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     markers.push(marker);
 
                     const content = document.createElement('div');
-                    content.style.cssText = `background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 10px;`;
+                    content.style.cssText = `background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 10px;`;
                     content.innerText = perfs.length.toString();
 
                     const customOverlay = new window.kakao.maps.CustomOverlay({
@@ -220,11 +220,11 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
 
                     const closeBtn = document.createElement('button');
                     closeBtn.innerHTML = '×';
-                    closeBtn.className = 'absolute top-1 right-2 text-xl font-bold text-gray-500 hover:text-black';
+                    closeBtn.className = 'absolute top-1 right-2 text-xl font-extrabold text-gray-500 hover:text-black';
                     closeBtn.onclick = () => popupOverlay.setMap(null);
 
                     const title = document.createElement('h3');
-                    title.className = 'font-bold text-sm mb-2 pr-4';
+                    title.className = 'font-extrabold text-sm mb-2 pr-4';
                     title.innerText = venueName;
 
                     const list = document.createElement('div');
@@ -242,7 +242,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         const details = document.createElement('div');
                         details.className = 'flex-1 min-w-0';
                         const pTitle = document.createElement('p');
-                        pTitle.className = 'text-xs font-semibold line-clamp-2 leading-tight';
+                        pTitle.className = 'text-xs font-bold line-clamp-2 leading-tight';
                         pTitle.innerText = p.title;
                         const pDate = document.createElement('p');
                         pDate.className = 'text-[10px] text-gray-500 mt-0.5';
@@ -251,7 +251,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         const link = document.createElement('a');
                         link.href = p.link;
                         link.target = '_blank';
-                        link.className = 'inline-block mt-1 px-2 py-0.5 bg-blue-600 text-white text-[10px] rounded hover:bg-blue-700 font-bold';
+                        link.className = 'inline-block mt-1 px-2 py-0.5 bg-blue-600 text-white text-[10px] rounded hover:bg-blue-700 font-extrabold';
                         link.innerText = '예매하기';
 
                         details.appendChild(pTitle);
@@ -430,7 +430,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 }`}
                                         >
                                             <div className="flex justify-between items-start w-full">
-                                                <h4 className="font-bold text-sm truncate flex-1">{v.venueName}</h4>
+                                                <h4 className="font-extrabold text-sm truncate flex-1">{v.venueName}</h4>
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
@@ -445,7 +445,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                             </div>
                                             <p className={`text-xs truncate ${isFavorite ? 'text-emerald-100' : 'text-gray-600'}`}>{v.address || '주소 정보 없음'}</p>
                                             <div className="mt-1 flex items-center justify-between text-xs">
-                                                <span className={`font-bold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
+                                                <span className={`font-extrabold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
                                                 {/* Distance could be calculated if we have centerLocation */}
                                             </div>
                                             {onVenueLocationChange && v.lat && v.lng && (
@@ -454,7 +454,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                         e.stopPropagation();
                                                         onVenueLocationChange(v.venueName, v.lat, v.lng);
                                                     }}
-                                                    className={`w-full mt-2 py-1.5 px-3 text-xs rounded-lg font-medium transition-colors ${isFavorite
+                                                    className={`w-full mt-2 py-1.5 px-3 text-xs rounded-lg font-semibold transition-colors ${isFavorite
                                                         ? 'bg-white/20 hover:bg-white/30 text-white'
                                                         : 'bg-blue-600 hover:bg-blue-700 text-white'
                                                         }`}

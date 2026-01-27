@@ -21,7 +21,7 @@ export default function Error({
                 <AlertTriangle className="w-12 h-12 text-red-500" />
             </div>
 
-            <h2 className="text-2xl font-bold text-white light:text-gray-900 mb-2">
+            <h2 className="text-2xl font-extrabold text-white light:text-gray-900 mb-2">
                 문제가 발생했습니다
             </h2>
 
@@ -36,7 +36,7 @@ export default function Error({
                         // Attempt to recover by trying to re-render the segment
                         () => reset()
                     }
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition-colors"
+                    className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-extrabold rounded-xl hover:bg-gray-200 transition-colors"
                 >
                     <RefreshCcw size={18} />
                     다시 시도
@@ -44,7 +44,7 @@ export default function Error({
 
                 <a
                     href="/culture/"
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 text-white font-bold rounded-xl hover:bg-gray-700 transition-colors border border-white/10"
+                    className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 text-white font-extrabold rounded-xl hover:bg-gray-700 transition-colors border border-white/10"
                 >
                     <Home size={18} />
                     홈으로 이동

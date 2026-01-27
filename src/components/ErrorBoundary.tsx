@@ -36,7 +36,7 @@ export class ErrorBoundary extends Component<Props, State> {
                         <AlertTriangle className="w-8 h-8 text-red-500" />
                     </div>
 
-                    <h2 className="text-xl font-bold text-white light:text-gray-900 mb-2">
+                    <h2 className="text-xl font-extrabold text-white light:text-gray-900 mb-2">
                         문제가 발생했습니다
                     </h2>
 
@@ -50,7 +50,7 @@ export class ErrorBoundary extends Component<Props, State> {
                             this.setState({ hasError: false });
                             window.location.reload(); // Hard reload for safety, or we could just reset state
                         }}
-                        className="flex items-center gap-2 px-5 py-2.5 bg-gray-800 text-white rounded-lg font-bold hover:bg-gray-700 transition-colors border border-white/10"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-gray-800 text-white rounded-lg font-extrabold hover:bg-gray-700 transition-colors border border-white/10"
                     >
                         <RefreshCcw size={16} />
                         새로고침

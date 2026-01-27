@@ -137,7 +137,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                     {/* Distance Badge on Image */}
                     {distLabel && (
-                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md z-[60]">
+                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md z-[60]">
                             {distLabel}
                         </div>
                     )}
@@ -157,7 +157,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         rel="noopener noreferrer"
                                         onClick={(e) => e.stopPropagation()}
                                         className={clsx(
-                                            "h-6 flex items-center justify-center rounded-md text-[10px] font-bold uppercase hover:scale-105 transition-transform shadow-md text-white border border-white/10 px-1.5 w-auto",
+                                            "h-6 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase hover:scale-105 transition-transform shadow-md text-white border border-white/10 px-1.5 w-auto",
                                             platformInfo.color
                                         )}
                                         title={`${platformInfo.label}에서 검색`}
@@ -211,7 +211,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 initial={{ opacity: 0, scale: 0.8, y: 10 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-bold px-2 py-1 round-md whitespace-nowrap border border-white/20 z-[200] shadow-xl"
+                                className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-extrabold px-2 py-1 round-md whitespace-nowrap border border-white/20 z-[200] shadow-xl"
                             >
                                 복사됨!
                             </motion.div>
@@ -229,7 +229,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                     <div className="flex flex-col gap-1">
                         <div className="flex flex-wrap gap-2 mb-1 items-center">
                             <span className={clsx(
-                                "px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold border whitespace-nowrap",
+                                "px-2 py-0.5 rounded text-[10px] sm:text-xs font-extrabold border whitespace-nowrap",
                                 genreStyle.twBg ? `${genreStyle.twBg} text-white border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -238,7 +238,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             {/* Date - Condensed */}
                             <span className={clsx(
                                 "text-[10px] sm:text-xs flex items-center gap-1 ml-auto sm:ml-0",
-                                variant === 'yellow' ? "text-gray-400 light:text-black light:font-bold" : "text-gray-400 light:text-black"
+                                variant === 'yellow' ? "text-gray-400 light:text-black light:font-extrabold" : "text-gray-400 light:text-black"
                             )}>
                                 <Calendar className="w-3 h-3" />
                                 {perf.date ? perf.date.split('~')[0].trim() : '상시'}
@@ -247,8 +247,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className={clsx(
-                                "text-lg sm:text-xl font-bold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
-                                variant === 'yellow' ? "text-white light:text-black light:font-extrabold" : "text-white light:text-black"
+                                "text-lg sm:text-xl font-extrabold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
+                                variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
                                 {cleanTitle(perf.title) || '제목 없음'}
                             </h3>
@@ -259,8 +259,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             {perf.genre === 'ott' ? (
                                 perf.ageRating && (
                                     <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
-                                        <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                        <span className="text-gray-300 light:text-black font-medium">{perf.ageRating}</span>
+                                        <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                        <span className="text-gray-300 light:text-black font-semibold">{perf.ageRating}</span>
                                     </div>
                                 )
                             ) : perf.genre === 'movie' ? (
@@ -269,7 +269,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
-                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                            <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
                                             {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                         </>
                                     )}
@@ -277,7 +277,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             ) : perf.genre === 'travel' ? (
                                 <div className="text-gray-400 light:text-black text-xs flex flex-col gap-0.5 mb-2 truncate">
                                     {/* Agent */}
-                                    <div className="flex items-center gap-1 font-bold text-sky-400">
+                                    <div className="flex items-center gap-1 font-extrabold text-sky-400">
                                         <Plane className="w-3 h-3" />
                                         {perf.venue.split('|')[0]?.trim()}
                                     </div>
@@ -291,7 +291,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-bold")}>{perf.venue}</span>
+                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-extrabold")}>{perf.venue}</span>
                                 </button>
                             )}
                         </div>
@@ -425,7 +425,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     onClick={(e) => e.stopPropagation()}
-                                                                    className="hover:underline hover:text-black hover:font-bold transition-colors"
+                                                                    className="hover:underline hover:text-black hover:font-extrabold transition-colors"
                                                                     title={`${info?.label || p}에서 검색`}
                                                                 >
                                                                     {info ? info.label : p}
@@ -467,12 +467,12 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                         return (
                                             <div className="text-white light:text-black drop-shadow-md leading-none text-right">
                                                 {extracted.price === '무료' ? (
-                                                    <span className="text-lg font-extrabold">무료</span>
+                                                    <span className="text-lg font-black">무료</span>
                                                 ) : (
                                                     <>
                                                         {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                        <span className="text-lg font-extrabold">{extracted.price}</span>
-                                                        <span className="text-xs font-light ml-0.5">원</span>
+                                                        <span className="text-lg font-black">{extracted.price}</span>
+                                                        <span className="text-xs font-normal ml-0.5">원</span>
                                                     </>
                                                 )}
                                             </div>
@@ -494,7 +494,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     // Dark Mode: Subtle border/text
                                     "border-white/20 text-gray-400 hover:text-white hover:border-white/40 hover:bg-white/5",
                                     // Light Mode: Visible border/text -> Light Gray Background, No Border
-                                    "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-bold light:hover:bg-gray-200 light:hover:text-black"
+                                    "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-extrabold light:hover:bg-gray-200 light:hover:text-black"
                                 )}
                             >
                                 자세히 보기

@@ -131,19 +131,19 @@ export const TypingHero = ({
     if (phase === 'WAIT') cursorSegment = 'suffix';
 
     return (
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
             {t1}
             {cursorSegment === 'line1' && <Cursor />}
             <br />
             {tBold && (
-                <span className="font-extrabold text-white light:text-black">
+                <span className="font-black text-white light:text-black">
                     {tBold}
                 </span>
             )}
             {cursorSegment === 'bold' && <Cursor />}
             {t2Pre}
             {cursorSegment === 'line2Pre' && <Cursor />}
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+            <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
                 {tHl}
             </span>
             {cursorSegment === 'hl' && <Cursor />}

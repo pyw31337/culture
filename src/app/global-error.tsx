@@ -35,7 +35,7 @@ export default function GlobalError({
                     <div className="flex flex-col sm:flex-row gap-4">
                         <button
                             onClick={() => reset()}
-                            className="flex items-center justify-center gap-2 px-8 py-4 bg-red-600 text-white font-bold rounded-2xl hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20"
+                            className="flex items-center justify-center gap-2 px-8 py-4 bg-red-600 text-white font-extrabold rounded-2xl hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20"
                         >
                             <RefreshCcw size={20} />
                             앱 다시 시작
@@ -43,7 +43,7 @@ export default function GlobalError({
 
                         <a
                             href="/culture/"
-                            className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-white font-bold rounded-2xl hover:bg-gray-700 transition-colors border border-white/10"
+                            className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-white font-extrabold rounded-2xl hover:bg-gray-700 transition-colors border border-white/10"
                         >
                             <Home size={20} />
                             홈으로 강제 이동
@@ -51,7 +51,7 @@ export default function GlobalError({
                     </div>
 
                     <div className="mt-16 p-6 bg-gray-900 rounded-xl max-w-xl w-full text-left border border-white/10">
-                        <p className="text-sm text-gray-400 font-bold mb-2 tracking-wider uppercase">Error Details</p>
+                        <p className="text-sm text-gray-400 font-extrabold mb-2 tracking-wider uppercase">Error Details</p>
                         <code className="text-sm text-red-400 break-all font-mono block bg-black/50 p-4 rounded-lg">
                             {error.digest || error.message || 'Unknown Critical Error'}
                         </code>

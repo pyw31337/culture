@@ -1854,10 +1854,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 priority
                             />
                         </div>
-                        <h1 className="text-[1.5rem] md:text-3xl font-extrabold text-white light:text-black tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
+                        <h1 className="text-[1.5rem] md:text-3xl font-black text-white light:text-black tracking-tight flex items-center gap-2 group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
-                        <span className="text-xs md:text-sm text-gray-400 light:text-gray-600 font-bold hidden sm:inline-block tracking-widest border-l border-gray-600 light:border-gray-400 pl-3 ml-1">
+                        <span className="text-xs md:text-sm text-gray-400 light:text-gray-600 font-extrabold hidden sm:inline-block tracking-widest border-l border-gray-600 light:border-gray-400 pl-3 ml-1">
                             {(() => {
                                 switch (selectedGenre) {
                                     case 'festival': return '전국 축제 정보 검색';
@@ -1927,7 +1927,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             <Bell size={24} strokeWidth={isAlarmOpen ? 2.5 : 2} className={clsx(isAlarmOpen && "animate-pulse")} />
                             {/* Keyword count badge */}
                             {savedKeywords.length > 0 && (
-                                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
+                                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-extrabold rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/20">
                                     {savedKeywords.length > 99 ? '99+' : savedKeywords.length}
                                 </span>
                             )}
@@ -1943,7 +1943,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             )}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-bold text-white light:text-black flex items-center gap-2">
+                        <h3 className="text-lg font-extrabold text-white light:text-black flex items-center gap-2">
                             <Bell size={18} className="text-purple-400 light:text-purple-600" />
                             <span className="text-purple-100 light:text-gray-800">키워드 알림</span>
                         </h3>
@@ -1981,14 +1981,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         <button
                             type="submit"
                             disabled={!keywordInput.trim()}
-                            className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-purple-500 disabled:opacity-50 transition-all font-medium"
+                            className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-extrabold hover:bg-purple-500 disabled:opacity-50 transition-all font-semibold"
                         >
                             추가
                         </button>
                     </form>
 
                     <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">등록된 키워드</label>
+                        <label className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wider">등록된 키워드</label>
                         {savedKeywords.length === 0 ? (
                             <div className="text-center py-6 text-gray-500 bg-gray-800/30 rounded-xl border border-dashed border-white/5 text-xs">
                                 키워드를 등록해보세요.
@@ -1997,7 +1997,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto custom-scrollbar">
                                 {savedKeywords.map(k => (
                                     <div key={k} className="flex items-center gap-1.5 bg-gray-800 light:bg-white text-white light:text-black pl-3 pr-1.5 py-1.5 rounded-full border border-gray-700 light:border-gray-300 hover:border-purple-500/30 transition-all">
-                                        <span className="text-xs font-medium">{k}</span>
+                                        <span className="text-xs font-semibold">{k}</span>
                                         <button
                                             onClick={() => handleKeywordRemove(k)}
                                             className="p-0.5 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
@@ -2091,17 +2091,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             onClick={() => setIsFavoriteVenuesExpanded(!isFavoriteVenuesExpanded)}
                         >
                             <div className="flex items-center gap-3">
-                                <h3 className="text-xl font-bold text-emerald-500 flex items-center">
+                                <h3 className="text-xl font-extrabold text-emerald-500 flex items-center">
                                     <BuildingStadium className="w-6 h-6 text-emerald-500 mr-2" />
                                     찜한 공연장
-                                    <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({favoriteVenuePerformances.length})</span>
+                                    <span className="text-base sm:text-xl text-gray-400 font-medium ml-[12px]">({favoriteVenuePerformances.length})</span>
                                 </h3>
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setShowFavoriteListModal(true);
                                     }}
-                                    className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-black transition-colors"
+                                    className="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-black transition-colors"
                                 >
                                     목록보기
                                 </button>
@@ -2188,7 +2188,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             {(() => {
                                 const sharedItem = initialPerformances.find(p => p.id === sharedPerformanceId);
                                 if (!sharedItem) return (
-                                    <div className="text-white text-xl font-bold flex flex-col items-center">
+                                    <div className="text-white text-xl font-extrabold flex flex-col items-center">
                                         <span className="mb-2">⚠️</span>
                                         찾을 수 없는 공연입니다. (ID: {sharedPerformanceId})
                                     </div>
@@ -2226,7 +2226,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
                                             {/* Ribbon for Shared View */}
                                             <div className="absolute top-0 left-0 z-[60] w-32 h-32 pointer-events-none overflow-hidden rounded-tl-xl">
-                                                <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-extrabold py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
+                                                <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-base font-black py-2 w-48 text-center origin-top-left -rotate-45 translate-y-[96px] -translate-x-[42px] shadow-lg box-border border-b-2 border-white/20 tracking-wider">
                                                     추천 공연
                                                 </div>
                                             </div>
@@ -2237,12 +2237,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <div className="flex flex-col gap-4">
                                                 {/* Header */}
                                                 <div>
-                                                    <span className="text-[#a78bfa] font-bold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
+                                                    <span className="text-[#a78bfa] font-extrabold tracking-wider text-sm uppercase mb-2 block">Recommended Performance</span>
                                                     <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-2">
                                                         {sharedItem.title}
                                                     </h2>
                                                     <div className="flex flex-wrap gap-2">
-                                                        <span className="px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-gray-300 border border-gray-700">
+                                                        <span className="px-2 py-0.5 rounded text-xs font-extrabold bg-gray-800 text-gray-300 border border-gray-700">
                                                             {GENRES.find(g => g.id === sharedItem.genre)?.label || sharedItem.genre}
                                                         </span>
                                                         <span className="flex items-center gap-1 text-gray-400 text-xs px-2 py-0.5 rounded">
@@ -2257,7 +2257,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     <div className="flex items-start gap-3">
                                                         <MapPin className="w-5 h-5 text-gray-400 mt-1" />
                                                         <div>
-                                                            <div className="text-white font-medium text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
+                                                            <div className="text-white font-semibold text-lg cursor-pointer hover:text-[#a78bfa] hover:underline transition-colors"
                                                                 onClick={() => {
                                                                     // Open Map Modal over this popup
                                                                     // Ensure KakaoMapModal Z-Index is > 99999
@@ -2293,12 +2293,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     </div>
                                                     {(sharedItem.price || sharedItem.discount) && (
                                                         <div className="flex items-start gap-3">
-                                                            <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-bold">₩</span></div>
+                                                            <div className="w-5 flex justify-center mt-1"><span className="text-emerald-500 font-extrabold">₩</span></div>
                                                             <div>
 
                                                                 <div className="flex items-baseline gap-2">
-                                                                    {sharedItem.discount && <span className="text-red-400 font-bold text-xl">{sharedItem.discount}</span>}
-                                                                    {sharedItem.price && <span className="text-white font-bold text-xl">{sharedItem.price}</span>}
+                                                                    {sharedItem.discount && <span className="text-red-400 font-extrabold text-xl">{sharedItem.discount}</span>}
+                                                                    {sharedItem.price && <span className="text-white font-extrabold text-xl">{sharedItem.price}</span>}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2311,7 +2311,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                         href={sharedItem.link}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-bold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
+                                                        className="block w-full py-4 rounded-xl bg-[#a78bfa] hover:bg-[#8b5cf6] text-white font-extrabold text-center text-lg shadow-lg hover:shadow-none transition-all transform hover:-translate-y-1 relative overflow-hidden group/btn"
                                                     >
                                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shine_1s_ease-in-out_infinite]" />
                                                         예매하러 가기
@@ -2344,7 +2344,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             >
                                 {/* Modal Header */}
                                 <div className="p-4 border-b border-gray-800 flex justify-between items-center">
-                                    <h3 className="text-lg font-bold text-emerald-500 flex items-center gap-2">
+                                    <h3 className="text-lg font-extrabold text-emerald-500 flex items-center gap-2">
                                         <BuildingStadium className="w-5 h-5" />
                                         찜한 공연장 목록
                                     </h3>
@@ -2364,7 +2364,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         favoriteVenues.map((venueName) => (
                                             <div key={venueName} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg border border-gray-700/50 transition-colors">
                                                 <div className="flex flex-col">
-                                                    <span className="text-sm font-bold text-gray-200">{venueName}</span>
+                                                    <span className="text-sm font-extrabold text-gray-200">{venueName}</span>
                                                     {venues[venueName]?.address && (
                                                         <span className="text-xs text-gray-500 truncate max-w-[200px]">{venues[venueName].address}</span>
                                                     )}
@@ -2394,10 +2394,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-pink-500 cursor-pointer group"
                             onClick={() => setIsLikesExpanded(!isLikesExpanded)}
                         >
-                            <h3 className="text-xl font-bold text-pink-500 flex items-center">
+                            <h3 className="text-xl font-extrabold text-pink-500 flex items-center">
                                 <Heart className="w-6 h-6 fill-pink-500 text-pink-500 mr-2" />
                                 좋아요
-                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({likedPerformances.length})</span>
+                                <span className="text-base sm:text-xl text-gray-400 font-medium ml-[12px]">({likedPerformances.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
                                 {isLikesExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
@@ -2472,10 +2472,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             className="flex items-center justify-between mb-4 pl-2 border-l-4 border-yellow-500 cursor-pointer group"
                             onClick={() => setIsKeywordsExpanded(!isKeywordsExpanded)}
                         >
-                            <h3 className="text-xl font-bold text-yellow-500 flex items-center">
+                            <h3 className="text-xl font-extrabold text-yellow-500 flex items-center">
                                 <Star className="w-6 h-6 fill-yellow-500 text-yellow-500 mr-2" />
                                 키워드
-                                <span className="text-base sm:text-xl text-gray-400 font-normal ml-[12px]">({keywordMatches.length})</span>
+                                <span className="text-base sm:text-xl text-gray-400 font-medium ml-[12px]">({keywordMatches.length})</span>
                             </h3>
                             <button className="p-1 rounded-full text-gray-400 group-hover:text-white transition-colors">
                                 {isKeywordsExpanded ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
@@ -2524,21 +2524,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-8 gap-2">
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
-                            <h2 className="text-xl sm:text-2xl font-extrabold text-gray-200 light:text-black flex items-center gap-2">
+                            <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
                                 {viewMode === 'likes-perf' ? (
                                     <>
                                         <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
                                         <span>좋아요</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
                                     </>
                                 ) : viewMode === 'likes-venue' ? (
                                     <>
                                         <Star className="text-emerald-500 w-6 h-6 fill-emerald-500" />
                                         <span>찜한 공연장</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
                                         <button
                                             onClick={() => setIsFavoriteVenuesModalOpen(true)}
-                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-medium transition-colors flex items-center gap-1.5 border border-white/10 light:bg-white light:text-black light:border-gray-300 light:hover:bg-gray-100 shadow-sm"
+                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-semibold transition-colors flex items-center gap-1.5 border border-white/10 light:bg-white light:text-black light:border-gray-300 light:hover:bg-gray-100 shadow-sm"
                                         >
                                             <List size={14} className="light:text-black" />
                                             <span className="hidden sm:inline">찜한공연장 목록</span>
@@ -2569,7 +2569,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-input-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M20 11v-2a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h5" /><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
                                             검색 공연
                                         </span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
                                     </>
                                 ) : (
                                     <>
@@ -2580,12 +2580,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                 : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '공연'}`
                                             }
                                         </span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-normal ml-2">({displayPerformances.length})</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
                                     </>
                                 )}
                             </h2>
                             <div className="flex items-center gap-2 pb-[3px]">
-                                <p className="text-gray-400 text-xs sm:text-sm font-medium">
+                                <p className="text-gray-400 text-xs sm:text-sm font-semibold">
                                     {activeLocation
                                         ? `${radius}km 이내 공연을 거리순으로 보여줍니다.`
                                         : null}
@@ -2595,7 +2595,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         onClick={() => {
                                             setIsMapOpen(true);
                                         }}
-                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1 light:bg-gray-100 light:text-gray-900 light:border-gray-300 light:hover:bg-gray-200"
+                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-extrabold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1 light:bg-gray-100 light:text-gray-900 light:border-gray-300 light:hover:bg-gray-200"
                                     >
                                         <MapIcon className="w-3 h-3 text-[#a78bfa] light:text-purple-600" />
                                         <span className="hidden sm:inline text-gray-200 light:text-gray-900">지도보기</span>
@@ -2741,10 +2741,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <Bell className="w-6 h-6 fill-black" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white mb-1">새로운 공연 알림</h3>
+                                            <h3 className="text-xl font-extrabold text-white mb-1">새로운 공연 알림</h3>
                                             <p className="text-gray-400 text-sm">
                                                 설정하신 키워드({keywords.length}개)에 해당하는 <br />
-                                                <span className="text-yellow-400 font-bold">{newMatches.length}개</span>의 새로운 공연이 발견되었습니다!
+                                                <span className="text-yellow-400 font-extrabold">{newMatches.length}개</span>의 새로운 공연이 발견되었습니다!
                                             </p>
                                         </div>
                                     </div>
@@ -2764,10 +2764,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     />
                                                 </div>
                                                 <div className="flex-1 min-w-0 py-1">
-                                                    <div className="text-xs text-yellow-500 font-bold mb-1">
+                                                    <div className="text-xs text-yellow-500 font-extrabold mb-1">
                                                         {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                                     </div>
-                                                    <h4 className="text-white font-bold text-sm truncate leading-tight mb-1">{perf.title}</h4>
+                                                    <h4 className="text-white font-extrabold text-sm truncate leading-tight mb-1">{perf.title}</h4>
                                                     <p className="text-gray-500 text-xs truncate">{perf.venue} • {perf.date}</p>
                                                 </div>
                                             </div>
@@ -2783,7 +2783,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     <div className="p-4 border-t border-white/10 flex gap-3">
                                         <button
                                             onClick={handleCloseNotification}
-                                            className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl transition-all shadow-lg shadow-yellow-500/10"
+                                            className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-extrabold rounded-xl transition-all shadow-lg shadow-yellow-500/10"
                                         >
                                             확인했습니다
                                         </button>

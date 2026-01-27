@@ -128,12 +128,12 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     />
                     {/* Badge Count */}
                     {item.badgeCount !== undefined && item.badgeCount > 0 && (
-                        <span className="absolute -top-2 -right-2.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-lg shadow-pink-500/30 border border-white/20">
+                        <span className="absolute -top-2 -right-2.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-extrabold rounded-full flex items-center justify-center shadow-lg shadow-pink-500/30 border border-white/20">
                             {item.badgeCount > 99 ? '99+' : item.badgeCount}
                         </span>
                     )}
                 </div>
-                <span className="text-[10px] font-medium tracking-tight">
+                <span className="text-[10px] font-semibold tracking-tight">
                     {item.label}
                 </span>
             </button>

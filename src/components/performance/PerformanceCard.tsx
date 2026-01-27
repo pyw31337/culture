@@ -187,7 +187,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                     {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
                     {showRibbon && (
                         <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
-                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-[10px] font-bold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20">
+                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-[10px] font-extrabold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20">
                                 추천 공연
                             </div>
                         </div>
@@ -251,7 +251,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 {/* Badge */}
                                 <div
                                     className={clsx(
-                                        "absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                        "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
                                         variant === 'yellow'
                                             ? "bg-black/80 text-yellow-500 border-yellow-500/30"
                                             : variant === 'pink'
@@ -281,7 +281,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     }
                                                 }
                                             }}
-                                            className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
+                                            className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] relative group/share"
                                             aria-label="공유하기"
                                         >
                                             <Share2 className="w-5 h-5" />
@@ -291,7 +291,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         initial={{ opacity: 0, scale: 0.8, y: 10 }}
                                                         animate={{ opacity: 1, scale: 1, y: 0 }}
                                                         exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
                                                     >
                                                         <span className="text-emerald-400">✓</span> 복사됨!
                                                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
@@ -308,7 +308,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     onDetail();
                                                 }
                                             }}
-                                            className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
+                                            className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
                                             자세히 보기
                                             <Search className="w-4 h-4" />
@@ -335,7 +335,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         }
                                     }}
                                 >
-                                    <h3 className="font-bold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
+                                    <h3 className="font-extrabold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
                                         {cleanTitle(perf.title)}
                                     </h3>
                                 </button>
@@ -346,14 +346,14 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
                                         ) : (
                                             <>
-                                                <span className="text-cyan-600 font-bold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
+                                                <span className="text-cyan-600 font-extrabold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
                                                 {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
                                             </>
                                         )}
                                     </div>
                                 ) : perf.genre === 'travel' ? (
                                     <div className="text-gray-800 text-xs flex flex-col gap-0.5 mb-2 w-max cursor-default">
-                                        <div className="flex items-center gap-1 font-bold text-sky-700">
+                                        <div className="flex items-center gap-1 font-extrabold text-sky-700">
                                             <Plane className="w-3 h-3" />
                                             {perf.venue.split('|')[0]?.trim()}
                                         </div>
@@ -364,7 +364,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             e.stopPropagation();
                                             if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
                                         }}
-                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-bold cursor-pointer w-max"
+                                        className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-extrabold cursor-pointer w-max"
                                     >
                                         <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
                                         <span className="truncate">{perf.venue}</span>
@@ -386,12 +386,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         return (
                                                             <div className="text-black leading-none text-right">
                                                                 {extracted.price === '무료' ? (
-                                                                    <span className="text-lg font-extrabold">무료</span>
+                                                                    <span className="text-lg font-black">무료</span>
                                                                 ) : (
                                                                     <>
                                                                         {extracted.label && <span className="text-[10px] text-black/60 mr-1">{extracted.label}</span>}
-                                                                        <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
-                                                                        <span className="text-xs font-bold ml-0.5">원</span>
+                                                                        <span className="text-xl font-black tracking-tight">{extracted.price}</span>
+                                                                        <span className="text-xs font-extrabold ml-0.5">원</span>
                                                                     </>
                                                                 )}
                                                             </div>
@@ -403,15 +403,15 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     )}
                                 </div>
                                 <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
-                                    <span className="text-white text-xs font-bold bg-black px-2 py-1 rounded whitespace-nowrap">
+                                    <span className="text-white text-xs font-extrabold bg-black px-2 py-1 rounded whitespace-nowrap">
                                         {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                     </span>
                                     {dDay && (
-                                        <span className="text-white text-[10px] font-bold bg-transparent border border-white/30 px-2 rounded-full whitespace-nowrap flex items-center justify-center h-[20px]">
+                                        <span className="text-white text-[10px] font-extrabold bg-transparent border border-white/30 px-2 rounded-full whitespace-nowrap flex items-center justify-center h-[20px]">
                                             {dDay}
                                         </span>
                                     )}
-                                    <span className="text-[13px] font-bold opacity-70">{perf.date}</span>
+                                    <span className="text-[13px] font-extrabold opacity-70">{perf.date}</span>
                                     {perf.platforms && perf.platforms.length > 0 && (
                                         <div className="flex gap-1 ml-2">
                                             {perf.platforms.map((p: string) => {
@@ -425,7 +425,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             onClick={(e) => e.stopPropagation()}
-                                                            className={clsx("text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
+                                                            className={clsx("text-[10px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
                                                                 platformInfo.color
                                                             )}
                                                             title={`${platformInfo.label}에서 검색`}
@@ -435,7 +435,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     );
                                                 }
                                                 return (
-                                                    <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter bg-gray-600 text-white">
+                                                    <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tighter bg-gray-600 text-white">
                                                         {p.substring(0, 1).toUpperCase()}
                                                     </span>
                                                 );
@@ -481,7 +481,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                             {/* Hot Deal Badge (Top Left) */}
                             {perf.discount && (
                                 <div
-                                    className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm"
+                                    className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-extrabold shadow-lg flex items-center gap-1 backdrop-blur-sm"
                                     style={{ transform: 'translateZ(20px)' }}
                                 >
                                     <Flame className="w-3 h-3 fill-rose-500" />
@@ -508,7 +508,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                             <span className={clsx(
-                                                "px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-sm transition-all text-white",
+                                                "px-3 py-1 rounded-full text-xs font-extrabold backdrop-blur-md border shadow-sm transition-all text-white",
                                                 GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -516,7 +516,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                             {/* D-Day Badge (Movie Only) - Style Updated */}
                                             {dDay && (
-                                                <span className="px-2 rounded-full text-[10px] font-bold backdrop-blur-md border border-white/30 text-white bg-transparent flex items-center justify-center h-[24px]">
+                                                <span className="px-2 rounded-full text-[10px] font-extrabold backdrop-blur-md border border-white/30 text-white bg-transparent flex items-center justify-center h-[24px]">
                                                     {dDay}
                                                 </span>
                                             )}
@@ -539,7 +539,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                         e.stopPropagation();
                                                                         // e.nativeEvent.stopImmediatePropagation(); // Stronger stop
                                                                     }}
-                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase text-white shadow-sm hover:opacity-80 hover:scale-110 transition-all cursor-pointer pointer-events-auto relative",
+                                                                    className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-black uppercase text-white shadow-sm hover:opacity-80 hover:scale-110 transition-all cursor-pointer pointer-events-auto relative",
                                                                         platformInfo.color
                                                                     )}
                                                                     title={`${platformInfo.label} 보러가기`}
@@ -555,7 +555,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             )}
 
                                             {perf.date && (
-                                                <span className="text-xs text-gray-300 flex items-center gap-1 font-medium">
+                                                <span className="text-xs text-gray-300 flex items-center gap-1 font-semibold">
                                                     {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
                                                     {(() => {
                                                         let dateStr = perf.date;
@@ -592,11 +592,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                         {/* Venue/Grade Info - Hide for non-movie/ott when no detail info */}
                                         {(perf.genre === 'movie' || perf.genre === 'ott' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
-                                            <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-medium">
+                                            <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-semibold">
                                                 {perf.genre === 'ott' ? (
                                                     perf.ageRating && (
                                                         <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                                            <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                            <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
                                                             <span className="text-gray-300">{perf.ageRating}</span>
                                                         </div>
                                                     )
@@ -606,14 +606,14 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                             <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
                                                         ) : (
                                                             <>
-                                                                <span className="text-cyan-400 font-bold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                                                <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
                                                                 {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
                                                             </>
                                                         )}
                                                     </div>
                                                 ) : perf.genre === 'travel' ? (
                                                     <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
-                                                        <div className="flex items-center gap-1 font-bold text-sky-400">
+                                                        <div className="flex items-center gap-1 font-extrabold text-sky-400">
                                                             <Plane className="w-3.5 h-3.5" />
                                                             {perf.venue.split('|')[0]?.trim()}
                                                         </div>
@@ -751,12 +751,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                     return (
                                                                         <div className="text-white drop-shadow-md leading-none text-right">
                                                                             {extracted.price === '무료' ? (
-                                                                                <span className="text-lg font-extrabold">무료</span>
+                                                                                <span className="text-lg font-black">무료</span>
                                                                             ) : (
                                                                                 <>
                                                                                     {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                                                    <span className="text-xl font-extrabold tracking-tight">{extracted.price}</span>
-                                                                                    <span className="text-xs font-light ml-0.5">원</span>
+                                                                                    <span className="text-xl font-black tracking-tight">{extracted.price}</span>
+                                                                                    <span className="text-xs font-normal ml-0.5">원</span>
                                                                                 </>
                                                                             )}
                                                                         </div>
@@ -814,7 +814,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     }
                                                 }
                                             }}
-                                            className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-all font-bold shadow-lg h-[50px] relative group/share"
+                                            className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] relative group/share"
                                             aria-label="공유하기"
                                         >
                                             <Share2 className="w-5 h-5" />
@@ -824,7 +824,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         initial={{ opacity: 0, scale: 0.8, y: 10 }}
                                                         animate={{ opacity: 1, scale: 1, y: 0 }}
                                                         exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
+                                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
                                                     >
                                                         <span className="text-emerald-400">✓</span> 복사됨!
                                                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
@@ -837,7 +837,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 e.stopPropagation();
                                                 if (onDetail) onDetail();
                                             }}
-                                            className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] gap-2 text-sm"
+                                            className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
                                             자세히 보기
                                             <Search className="w-4 h-4" />

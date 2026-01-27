@@ -410,7 +410,7 @@ export default function HeroSection({
         )}>
             <div className="text-left flex-1 min-w-0 z-10">
                 {selectedGenre !== 'movie' && selectedGenre !== 'ott' && (
-                    <p className="text-[#a78bfa] font-bold mb-3 flex items-center gap-2 text-sm md:text-base">
+                    <p className="text-[#a78bfa] font-extrabold mb-3 flex items-center gap-2 text-sm md:text-base">
                         <button
                             onClick={handleCurrentLocationClick}
                             className="flex items-center gap-1 hover:text-white light:hover:text-purple-600 transition-colors group/label mr-2"
@@ -503,15 +503,15 @@ export default function HeroSection({
                 </div>
 
                 {/* Mobile: Dynamic (Simplified Layout) */}
-                <h2 className="text-4xl font-light text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
+                <h2 className="text-4xl font-normal text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
                     {currentTemplate.line1}<br />
                     {currentTemplate.boldPrefix && (
                         <>
-                            <span className="font-extrabold text-white light:text-black">{currentTemplate.boldPrefix}</span>
+                            <span className="font-black text-white light:text-black">{currentTemplate.boldPrefix}</span>
                         </>
                     )}
                     {currentTemplate.line2Pre}
-                    <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                    <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
                         {currentTemplate.highlight}
                     </span><br />
                     {currentTemplate.suffix}
@@ -544,7 +544,7 @@ export default function HeroSection({
                                 <select
                                     value={radius}
                                     onChange={(e) => setRadius(Number(e.target.value))}
-                                    className="bg-transparent text-[#a78bfa] text-sm font-bold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
+                                    className="bg-transparent text-[#a78bfa] text-sm font-extrabold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
                                 >
                                     {RADIUS_OPTIONS.map(r => (
                                         <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
@@ -568,7 +568,7 @@ export default function HeroSection({
                                 }
                             }}
                             onKeyDown={handleKeyDown}
-                            className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
+                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                             placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "문화 정보, 장소, 지역 검색..."}
                         />
 
@@ -587,7 +587,7 @@ export default function HeroSection({
                         )}
 
                         <button onClick={handleSearch} className="p-3.5 bg-gradient-to-r from-[#a78bfa] to-[#f472b6] rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all">
-                            <Search className="w-6 h-6 font-bold" />
+                            <Search className="w-6 h-6 font-extrabold" />
                         </button>
                     </div>
                 </div>
@@ -614,7 +614,7 @@ export default function HeroSection({
                                                 <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
                                                     {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
                                                 </div>
-                                                <div className="text-white text-base font-bold truncate">
+                                                <div className="text-white text-base font-extrabold truncate">
                                                     {result.name}
                                                 </div>
                                             </div>
@@ -636,7 +636,7 @@ export default function HeroSection({
                                 {/* Recent Keywords */}
                                 <div className="mb-6">
                                     <div className="flex items-center justify-between mb-3 px-1">
-                                        <h4 className="text-sm font-bold text-gray-400 flex items-center gap-2">
+                                        <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2">
                                             <Clock className="w-3.5 h-3.5" /> 최근 검색어
                                         </h4>
                                         {recentKeywords.length > 0 && (
@@ -682,7 +682,7 @@ export default function HeroSection({
 
                                 {/* Popular Keywords */}
                                 <div>
-                                    <h4 className="text-sm font-bold text-gray-400 flex items-center gap-2 mb-3 px-1">
+                                    <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2 mb-3 px-1">
                                         <TrendingUp className="w-3.5 h-3.5 text-red-400" /> 인기 검색어
                                     </h4>
                                     <div className="grid grid-cols-2 gap-2">
@@ -696,7 +696,7 @@ export default function HeroSection({
                                                 onClick={() => onKeywordSelect(keyword)}
                                                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors"
                                             >
-                                                <span className={`text-sm font-bold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
+                                                <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
                                                     {idx + 1}
                                                 </span>
                                                 <span className="text-sm text-gray-300 group-hover:text-white transition-colors">

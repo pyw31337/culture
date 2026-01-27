@@ -156,7 +156,7 @@ export default function BottomNavSheet({
                     {/* VIEW MENU */}
                     {activeMenu === 'view' && (
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold text-white light:text-black mb-4 px-1 flex items-center justify-between">
+                            <h3 className="text-xl font-extrabold text-white light:text-black mb-4 px-1 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <span className="text-purple-400 light:text-purple-600">#</span> 보기 방식
                                 </div>
@@ -171,7 +171,7 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <Moon size={14} />
-                                        <span className="text-xs font-bold">다크</span>
+                                        <span className="text-xs font-extrabold">다크</span>
                                     </button>
                                     <button
                                         onClick={toggleTheme}
@@ -181,7 +181,7 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <Sun size={14} />
-                                        <span className="text-xs font-bold">라이트</span>
+                                        <span className="text-xs font-extrabold">라이트</span>
                                     </button>
                                 </div>
                             </h3>
@@ -210,7 +210,7 @@ export default function BottomNavSheet({
                                                 <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white light:bg-purple-100 light:text-purple-600" : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")}>
                                                     <DisplayIcon size={20} className={clsx(isSelected && "w-5 h-5")} />
                                                 </div>
-                                                <div className="text-sm font-bold text-gray-200 light:text-black">{mode.label}</div>
+                                                <div className="text-sm font-extrabold text-gray-200 light:text-black">{mode.label}</div>
                                             </div>
                                         </button>
                                     );
@@ -222,7 +222,7 @@ export default function BottomNavSheet({
                     {/* CATEGORY MENU */}
                     {activeMenu === 'category' && (
                         <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-white light:text-black px-1 flex items-center gap-2">
+                            <h3 className="text-lg font-extrabold text-white light:text-black px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 카테고리
                             </h3>
                             <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
@@ -237,7 +237,7 @@ export default function BottomNavSheet({
                                     )}
                                 >
                                     <CloverIcon className="w-4 h-4" />
-                                    <span className="text-sm font-medium">전체</span>
+                                    <span className="text-sm font-semibold">전체</span>
                                 </button>
 
                                 {/* Hotdeal */}
@@ -251,7 +251,7 @@ export default function BottomNavSheet({
                                     )}
                                 >
                                     {getGenreIcon('hotdeal', 16)}
-                                    <span className="text-sm font-medium">핫딜</span>
+                                    <span className="text-sm font-semibold">핫딜</span>
                                 </button>
 
                                 {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
@@ -268,7 +268,7 @@ export default function BottomNavSheet({
                                             )}
                                         >
                                             {getGenreIcon(genre.id, 16)}
-                                            <span className="text-sm font-medium truncate">{genre.label}</span>
+                                            <span className="text-sm font-semibold truncate">{genre.label}</span>
                                         </button>
                                     );
                                 })}
@@ -279,7 +279,7 @@ export default function BottomNavSheet({
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
                         <div className="space-y-6">
-                            <h3 className="text-xl font-bold text-white light:text-black px-1 flex items-center gap-2">
+                            <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 위치 및 검색
                             </h3>
 
@@ -294,7 +294,7 @@ export default function BottomNavSheet({
                                             onChange={(e) => onSearchChange(e.target.value)}
                                             onKeyDown={handleKeyDown}
                                             placeholder="공연명, 출연진, 장소 검색..."
-                                            className="bg-transparent border-none text-white light:text-black text-lg font-bold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
+                                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                         />
                                     </div>
                                 </div>

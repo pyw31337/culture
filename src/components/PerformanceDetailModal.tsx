@@ -122,14 +122,14 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                     <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
                                                         <img src={performance.homeTeamLogo} alt={performance.homeTeam} className="w-full h-full object-contain" />
                                                     </div>
-                                                    <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
+                                                    <span className="text-white font-extrabold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
                                                 </div>
                                                 <div className="mt-8 text-white/90 font-black text-2xl italic bg-black/30 px-4 py-1 rounded-full backdrop-blur-[1px]">VS</div>
                                                 <div className="flex flex-col items-center gap-1">
                                                     <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
                                                         <img src={performance.awayTeamLogo} alt={performance.awayTeam} className="w-full h-full object-contain" />
                                                     </div>
-                                                    <span className="text-white font-bold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
+                                                    <span className="text-white font-extrabold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
                                                 </div>
                                             </div>
                                         )}
@@ -142,10 +142,10 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 {/* Header */}
                                 <div className="flex justify-between items-start mb-6">
                                     <div>
-                                        <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-bold mb-3 border border-white/5">
+                                        <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-extrabold mb-3 border border-white/5">
                                             {performance.genre.toUpperCase()}
                                         </span>
-                                        <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2 break-keep">
+                                        <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 break-keep">
                                             {performance.title}
                                         </h2>
 
@@ -165,7 +165,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <Calendar className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
                                         <div>
                                             <p className="text-xs text-gray-400 mb-0.5">일정</p>
-                                            <p className="text-sm text-gray-200 font-medium">{performance.date}</p>
+                                            <p className="text-sm text-gray-200 font-semibold">{performance.date}</p>
                                         </div>
                                     </div>
 
@@ -173,7 +173,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
                                         <div>
                                             <p className="text-xs text-gray-400 mb-0.5">장소</p>
-                                            <p className="text-sm text-gray-200 font-medium">{performance.venue}</p>
+                                            <p className="text-sm text-gray-200 font-semibold">{performance.venue}</p>
                                         </div>
                                     </div>
 
@@ -181,7 +181,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <Clock className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
                                         <div>
                                             <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                            <p className="text-sm text-gray-200 font-medium">{performance.price || '무료'}</p>
+                                            <p className="text-sm text-gray-200 font-semibold">{performance.price || '무료'}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Director */}
                                         {performance.director && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-bold mb-2">감독</h3>
+                                                <h3 className="text-gray-400 text-xs font-extrabold mb-2">감독</h3>
                                                 <div className="flex flex-wrap gap-2">
                                                     <a
                                                         href={`https://search.naver.com/search.naver?query=${encodeURIComponent(performance.director.replace('더보기', '').trim())}`}
@@ -209,7 +209,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Cast */}
                                         {performance.cast && performance.cast.length > 0 && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-bold mb-2">출연</h3>
+                                                <h3 className="text-gray-400 text-xs font-extrabold mb-2">출연</h3>
                                                 <div className="flex flex-wrap gap-2">
                                                     {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
                                                         const isObj = typeof actor === 'object';
@@ -242,7 +242,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
 
                                         {performance.platforms && performance.platforms.length > 0 && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-bold mb-2">제공</h3>
+                                                <h3 className="text-gray-400 text-xs font-extrabold mb-2">제공</h3>
                                                 <div className="flex flex-wrap gap-2">
                                                     {performance.platforms.map((p: string, idx: number) => {
                                                         // Direct mapping, assuming p is string as validated
@@ -279,7 +279,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Movie Info (Genre/Runtime/Rating) */}
                                         {performance.movieInfo && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-bold mb-2">정보</h3>
+                                                <h3 className="text-gray-400 text-xs font-extrabold mb-2">정보</h3>
                                                 <p className="text-sm text-gray-300 leading-relaxed">
                                                     {performance.movieInfo}
                                                 </p>
@@ -288,7 +288,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Description (MomMom) */}
                                         {performance.description && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-bold mb-2">상세 정보</h3>
+                                                <h3 className="text-gray-400 text-xs font-extrabold mb-2">상세 정보</h3>
                                                 <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-white/5 p-4 rounded-xl border border-white/5">
                                                     {performance.description}
                                                 </div>
@@ -301,21 +301,21 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 <div className="mt-auto grid grid-cols-2 gap-3">
                                     <button
                                         onClick={onShare}
-                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-semibold hover:bg-white/10 transition-colors border border-white/10"
                                     >
                                         <Share2 size={18} />
                                         공유하기
                                     </button>
                                     <button
                                         onClick={generateICS}
-                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+                                        className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-semibold hover:bg-white/10 transition-colors border border-white/10"
                                     >
                                         <Download size={18} />
                                         캘린더 저장
                                     </button>
                                     <button
                                         onClick={onBooking}
-                                        className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
+                                        className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-extrabold hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
                                     >
                                         <ExternalLink size={20} />
                                         예매처 바로가기

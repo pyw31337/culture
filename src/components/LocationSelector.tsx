@@ -36,8 +36,8 @@ export function LocationSelector({
 }: LocationSelectorProps) {
 
     // UI Constants
-    const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-medium transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
-    const activeClass = "bg-purple-600 text-white border-purple-500 shadow-md font-bold light:bg-purple-100 light:text-purple-700 light:border-purple-200";
+    const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
+    const activeClass = "bg-purple-600 text-white border-purple-500 shadow-md font-extrabold light:bg-purple-100 light:text-purple-700 light:border-purple-200";
     const inactiveClass = "bg-gray-800/50 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50";
 
     // Venue Selector State
@@ -83,7 +83,7 @@ export function LocationSelector({
             {/* 1. Region Selection (Grid) */}
             <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
-                    <label className="text-xs font-bold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1">
+                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1">
                         <MapPin className="w-3 h-3" /> 지역 (시/도)
                     </label>
                 </div>
@@ -121,7 +121,7 @@ export function LocationSelector({
             {/* 2. District Selection (Conditional) */}
             {(selectedRegion !== 'all' && districts.length > 0) && (
                 <div className="space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-300">
-                    <label className="text-xs font-bold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
+                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
                         상세 지역 (구/군)
                     </label>
                     <div className="bg-gray-900/30 light:bg-gray-50 p-3 sm:p-4 rounded-2xl border border-white/5 light:border-gray-200">
@@ -129,9 +129,9 @@ export function LocationSelector({
                             <button
                                 onClick={() => onDistrictSelect('all')}
                                 className={clsx(
-                                    "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-medium border transition-all",
+                                    "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-semibold border transition-all",
                                     selectedDistrict === 'all'
-                                        ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-bold"
+                                        ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold"
                                         : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                 )}
                             >
@@ -142,9 +142,9 @@ export function LocationSelector({
                                     key={d}
                                     onClick={() => onDistrictSelect(d)}
                                     className={clsx(
-                                        "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-medium border transition-all",
+                                        "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-semibold border transition-all",
                                         selectedDistrict === d
-                                            ? "bg-white text-black border-white font-bold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
+                                            ? "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
                                             : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                     )}
                                 >
@@ -159,7 +159,7 @@ export function LocationSelector({
             {/* 3. Venue Selection (Custom Dropdown with Search/Filter) */}
             {(availableVenues.length > 0) && (
                 <div className={clsx("space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-400 delay-75", !inline && "z-20")}> {/* z-index for dropdown */}
-                    <label className="text-xs font-bold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
+                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
                         공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
                     </label>
 
@@ -168,7 +168,7 @@ export function LocationSelector({
                         <button
                             onClick={() => setIsVenueOpen(!isVenueOpen)}
                             className={clsx(
-                                "w-full text-left bg-gray-900/80 light:bg-white border rounded-xl py-3.5 px-4 text-sm font-medium shadow-sm flex items-center justify-between transition-all",
+                                "w-full text-left bg-gray-900/80 light:bg-white border rounded-xl py-3.5 px-4 text-sm font-semibold shadow-sm flex items-center justify-between transition-all",
                                 isVenueOpen
                                     ? "border-purple-500 ring-1 ring-purple-500/30 text-white light:text-black"
                                     : "border-white/10 light:border-gray-300 text-white light:text-black hover:border-purple-500/30"
@@ -197,7 +197,7 @@ export function LocationSelector({
                                             className={clsx(
                                                 "px-2 py-1 text-[10px] rounded hover:bg-purple-500/20 transition-colors",
                                                 activeChoseong === 'all'
-                                                    ? "bg-purple-600 text-white font-bold"
+                                                    ? "bg-purple-600 text-white font-extrabold"
                                                     : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200"
                                             )}
                                         >
@@ -210,7 +210,7 @@ export function LocationSelector({
                                                 className={clsx(
                                                     "w-6 h-6 flex items-center justify-center text-[10px] rounded hover:bg-purple-500/20 transition-colors",
                                                     activeChoseong === cho
-                                                        ? "bg-purple-600 text-white font-bold"
+                                                        ? "bg-purple-600 text-white font-extrabold"
                                                         : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200"
                                                 )}
                                             >
@@ -227,7 +227,7 @@ export function LocationSelector({
                                         className={clsx(
                                             "w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors flex items-center justify-between group",
                                             selectedVenue === 'all'
-                                                ? "bg-purple-500/10 text-purple-400 font-bold"
+                                                ? "bg-purple-500/10 text-purple-400 font-extrabold"
                                                 : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                         )}
                                     >
@@ -247,7 +247,7 @@ export function LocationSelector({
                                                 className={clsx(
                                                     "w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors flex items-center justify-between group",
                                                     selectedVenue === v
-                                                        ? "bg-purple-500/10 text-purple-400 font-bold"
+                                                        ? "bg-purple-500/10 text-purple-400 font-extrabold"
                                                         : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                                 )}
                                             >
