@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
-import { cleanTitle } from '@/lib/utils'; // Ensure cleanliness
+import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { cleanTitle } from '@/lib/utils';
 
 interface RecommendedSectionProps {
     recommendedItems: any[];
@@ -54,16 +55,11 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
     return (
         <section className="mb-16 relative animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <div className="flex items-center gap-2 mb-4 px-4 sm:px-6 lg:px-8">
-                <Sparkles className="w-6 h-6 text-purple-500 animate-pulse" />
-                <h2 className="text-2xl font-bold text-white light:text-black">
-                    회원님을 위한 맞춤 추천
-                </h2>
-            </div>
+            {/* ... (header) */}
 
             <div
                 ref={scrollRef}
-                className="flex gap-4 sm:gap-14 overflow-x-auto md:overflow-visible pb-12 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
+                className="flex gap-4 sm:gap-14 overflow-x-auto pb-12 scrollbar-hide pl-[50px] pr-4 sm:pr-6 lg:pr-8 select-none cursor-grab active:cursor-grabbing items-end pt-12"
                 onMouseDown={onMouseDown}
                 onMouseLeave={onMouseLeave}
                 onMouseUp={onMouseUp}
@@ -73,7 +69,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 {randomRecs.map((perf, idx) => (
                     <div
                         key={perf.id}
-                        className="relative group flex-shrink-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] cursor-pointer"
+                        className="relative group flex-shrink-0 w-[240px] sm:w-[280px] h-[315px] sm:h-[370px] cursor-pointer"
                         title={cleanTitle(perf.title)}
                     >
                         {/* 1. Large Rank Number (Left/Behind) */}
@@ -89,7 +85,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         </div>
 
                         {/* 2. Poster Image (Right/Top - Overlapping - Wider Ratio) */}
-                        <div className="absolute right-0 bottom-0 w-[180px] sm:w-[220px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl overflow-hidden rounded-md bg-gray-800">
+                        <div className="absolute right-0 bottom-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl overflow-hidden rounded-md bg-gray-800">
                             {/* Image */}
                             <div className="w-full h-full relative">
                                 <ImageWithFallback
@@ -98,10 +94,27 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     alt={perf.title}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 180px, 220px"
+                                    sizes="(max-width: 768px) 220px, 260px"
                                 />
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300" />
+
+                                {/* Sports Team Logos Overlay */}
+                                {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none">
+                                        <img
+                                            src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
+                                            alt={perf.homeTeam}
+                                            className="w-[35%] max-w-[80px] aspect-square object-contain drop-shadow-lg"
+                                        />
+                                        <div className="text-white/90 font-black text-lg italic bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-[1px]">VS</div>
+                                        <img
+                                            src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
+                                            alt={perf.awayTeam}
+                                            className="w-[35%] max-w-[80px] aspect-square object-contain drop-shadow-lg"
+                                        />
+                                    </div>
+                                )}
                             </div>
 
                             {/* View Details Button (Slide Up) */}
