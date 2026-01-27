@@ -121,15 +121,17 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             </div>
 
                             {/* 2. Poster Image */}
-                            <div className="absolute right-0 bottom-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-4 origin-bottom shadow-black/50 drop-shadow-2xl overflow-hidden rounded-md bg-gray-800 pointer-events-none">
+                            <div className={`absolute right-0 bottom-0 w-[220px] sm:w-[260px] h-[315px] sm:h-[370px] z-10 transition-transform duration-300 ${!isDragging ? 'group-hover:scale-105 group-hover:-translate-y-4' : ''} origin-bottom shadow-black/50 drop-shadow-2xl overflow-hidden rounded-md bg-gray-800 ${isDragging ? 'pointer-events-none' : ''}`}>
                                 <div className="w-full h-full relative">
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
                                         alt={perf.title}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover select-none"
+                                        draggable={false}
                                         sizes="(max-width: 768px) 220px, 260px"
+                                        onDragStart={(e) => e.preventDefault()}
                                     />
                                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300" />
 
@@ -151,7 +153,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 </div>
 
                                 {/* View Details Button Overlay */}
-                                <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-20">
+                                <div className={`absolute inset-x-0 bottom-0 p-4 translate-y-full ${!isDragging ? 'group-hover:translate-y-0' : ''} transition-transform duration-300 ease-out z-20`}>
                                     <div className="w-full bg-white text-black font-extrabold py-3 rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm">
                                         자세히 보기
                                     </div>
