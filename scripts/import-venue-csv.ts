@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
+// @ts-ignore
 import { parse } from 'csv-parse/sync';
 
 const VENUES_FILE = path.resolve(process.cwd(), 'src/data/venues.json');
@@ -22,7 +23,7 @@ async function run() {
         columns: true,
         skip_empty_lines: true,
         relax_quotes: true,
-    });
+    }) as any[];
 
     const venues = JSON.parse(fs.readFileSync(VENUES_FILE, 'utf-8'));
     let updatedCount = 0;
