@@ -183,6 +183,29 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                 }
 
                 // 2. Venue Pins
+                // Optimization: Create ONE shared InfoWindow overlay to reuse
+                const sharedInfoContent = document.createElement('div');
+                sharedInfoContent.className = 'info-window bg-white text-black p-3 rounded-lg shadow-xl border border-gray-200 min-w-[250px] max-w-[300px] text-left relative hidden'; // Start hidden
+                sharedInfoContent.style.cssText = "bottom: 35px; position: relative; z-index: 100;";
+
+                // We'll update this content dynamically
+                const sharedPopupOverlay = new window.kakao.maps.CustomOverlay({
+                    position: new window.kakao.maps.LatLng(37.5, 127), // Dummy init
+                    content: sharedInfoContent,
+                    yAnchor: 1,
+                    zIndex: 10
+                });
+                sharedPopupOverlay.setMap(null); // Initially hidden
+
+                // We need to keep track of the currently open info window's target venue check
+                let currentOpenVenue: string | null = null;
+
+                const closeInfoWindow = () => {
+                    sharedPopupOverlay.setMap(null);
+                    currentOpenVenue = null;
+                    setSelectedVenue(null);
+                };
+
                 Object.entries(venueGroups).forEach(([venueName, perfs]) => {
                     const venueInfo = venues[venueName];
                     if (!venueInfo?.lat || !venueInfo?.lng) return;
@@ -213,24 +236,50 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     });
                     overlays.push({ marker, overlay: customOverlay });
 
-                    // InfoWindow Logic
-                    const infoContent = document.createElement('div');
-                    infoContent.className = 'info-window bg-white text-black p-3 rounded-lg shadow-xl border border-gray-200 min-w-[250px] max-w-[300px] text-left relative';
-                    infoContent.style.cssText = "bottom: 35px; position: relative; z-index: 100;";
+                    // Store overlay reference for external control (list click)
+                    overlaysRef.current[venueName] = {
+                        marker,
+                        // Simulate "setMap" interface for list control logic, but actually we just trigger the map-level popup
+                        setMap: (mapObj: any) => {
+                            if (mapObj) {
+                                // Open logic
+                                updateAndOpenInfoWindow(venueName, perfs, position);
+                            } else {
+                                // Close logic if it's the current one
+                                if (currentOpenVenue === venueName) closeInfoWindow();
+                            }
+                        }
+                    };
+
+                    content.onclick = () => {
+                        if (currentOpenVenue === venueName) {
+                            closeInfoWindow();
+                        } else {
+                            updateAndOpenInfoWindow(venueName, perfs, position);
+                        }
+                    };
+                });
+
+                // Function to update and open the shared InfoWindow
+                const updateAndOpenInfoWindow = (venueName: string, perfs: Performance[], position: any) => {
+                    // Clear previous
+                    sharedInfoContent.innerHTML = '';
+                    sharedInfoContent.classList.remove('hidden');
 
                     const closeBtn = document.createElement('button');
                     closeBtn.innerHTML = '×';
                     closeBtn.className = 'absolute top-1 right-2 text-xl font-extrabold text-gray-500 hover:text-black';
-                    closeBtn.onclick = () => popupOverlay.setMap(null);
+                    closeBtn.onclick = (e) => { e.stopPropagation(); closeInfoWindow(); };
 
                     const title = document.createElement('h3');
                     title.className = 'font-extrabold text-sm mb-2 pr-4';
                     title.innerText = venueName;
 
                     const list = document.createElement('div');
-                    list.className = 'space-y-2 max-h-[580px] overflow-y-auto scrollbar-hide';
+                    list.className = 'space-y-2 max-h-[250px] overflow-y-auto scrollbar-hide'; // Limit height for performance
 
-                    perfs.forEach(p => {
+                    // Render only first few items initially if many? For now just render all (usually small list)
+                    perfs.slice(0, 20).forEach(p => {
                         const item = document.createElement('div');
                         item.className = 'flex gap-2 items-start border-b border-gray-100 pb-2 last:border-0';
                         if (p.image) {
@@ -261,28 +310,15 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         list.appendChild(item);
                     });
 
-                    infoContent.appendChild(closeBtn);
-                    infoContent.appendChild(title);
-                    infoContent.appendChild(list);
+                    sharedInfoContent.appendChild(closeBtn);
+                    sharedInfoContent.appendChild(title);
+                    sharedInfoContent.appendChild(list);
 
-                    const popupOverlay = new window.kakao.maps.CustomOverlay({
-                        position: position,
-                        content: infoContent,
-                        yAnchor: 1,
-                        zIndex: 10
-                    });
-                    overlaysRef.current[venueName] = popupOverlay;
-
-                    content.onclick = () => {
-                        const isOpen = popupOverlay.getMap();
-                        Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
-                        if (isOpen) setSelectedVenue(null);
-                        else {
-                            popupOverlay.setMap(map);
-                            setSelectedVenue(venueName);
-                        }
-                    };
-                });
+                    sharedPopupOverlay.setPosition(position);
+                    sharedPopupOverlay.setMap(map);
+                    currentOpenVenue = venueName;
+                    setSelectedVenue(venueName);
+                };
 
                 if (clusterer) clusterer.addMarkers(markers);
                 else markers.forEach(m => m.setMap(map));
