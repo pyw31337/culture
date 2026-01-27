@@ -634,7 +634,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                         {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
                                         {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
-                                            <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
+                                            <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5 font-semibold", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
                                                 {/* OTT Specific: Original Title */}
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
@@ -756,7 +756,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                                                 <>
                                                                                     {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
                                                                                     <span className="text-xl font-black tracking-tight">{extracted.price}</span>
-                                                                                    <span className="text-xs font-normal ml-0.5">원</span>
+                                                                                    <span className="text-xs font-bold ml-0.5">원</span>
                                                                                 </>
                                                                             )}
                                                                         </div>
