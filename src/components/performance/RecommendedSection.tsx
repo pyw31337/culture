@@ -61,7 +61,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
             <div className="flex items-center justify-between mb-8 px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-purple-400 fill-purple-400/20" />
-                    <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
                         실시간 인기 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">TOP 9</span>
                     </h2>
                 </div>

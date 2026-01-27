@@ -131,7 +131,7 @@ export const TypingHero = ({
     if (phase === 'WAIT') cursorSegment = 'suffix';
 
     return (
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white light:text-black leading-[1.15] tracking-tighter hidden sm:block break-keep min-h-[2.3em]">
             {t1}
             {cursorSegment === 'line1' && <Cursor />}
             <br />
