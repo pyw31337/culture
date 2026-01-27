@@ -504,7 +504,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     {/* Gradient Background - moves with text */}
                                     <div className="absolute inset-0 -top-24 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
-                                    <div className="relative z-10 p-4 pb-8">
+                                    <div className="relative z-10 p-4 pb-4">
                                         {/* Tags/Badges */}
                                         <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                             <span className={clsx(
@@ -634,7 +634,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                         {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
                                         {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
-                                            <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5 pt-2", hasOtherDetails ? "border-t border-white/10" : "")}>
+                                            <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
                                                 {/* OTT Specific: Original Title */}
                                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                                     <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
