@@ -54,7 +54,25 @@ export const BLACKLIST_PATTERNS = [
     /해당없음/,
     /상세페이지 참조/,
     /상세주소는 클래스신청시 안내/,
-    /뵙겠습니다/
+    /뵙겠습니다/,
+    // Junk Data: Age Ratings mapped as Venues
+    /\d+세\s*.*관람가/,
+    /전체\s*관람가/,
+    /청소년\s*관람불가/,
+    /미성년자\s*관람불가/,
+    /12세/,
+    /15세/,
+    /19세/,
+    // Junk Data: Countries/Overseas mapped as Venues
+    /미국/,
+    /베트남/,
+    /싱가볼/,
+    /싱가포르/,
+    /일본/,
+    /중국/,
+    /유럽/,
+    /호주/,
+    /캐나다/
 ];
 
 // --- CORE LOGIC ---
