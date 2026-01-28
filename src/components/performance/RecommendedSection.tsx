@@ -110,17 +110,23 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
         });
     };
 
-    // Robust Click Handler
-    const handleItemClick = (perf: any, info: any) => {
-        // 1. Check if we just finished dragging (within 150ms)
-        const now = Date.now();
-        if (now - lastDragEndTime.current < 150) return;
+    // Simplified Click Detection
+    const pointerPos = useRef({ x: 0, y: 0 });
 
-        // 2. Check current dragging state
+    const handlePointerDown = (e: React.PointerEvent) => {
+        pointerPos.current = { x: e.clientX, y: e.clientY };
+    };
+
+    const handlePointerUp = (e: React.PointerEvent, perf: any) => {
+        // Threshold check
+        const diffX = Math.abs(e.clientX - pointerPos.current.x);
+        const diffY = Math.abs(e.clientY - pointerPos.current.y);
+
+        // If moved more than 10px, it was a drag or intentional swipe
+        if (diffX > 10 || diffY > 10) return;
+
+        // Ensure we aren't currently dragging
         if (isDragging) return;
-
-        // 3. Movement threshold check (Increased to 10px)
-        if (Math.abs(info.offset.x) > 10 || Math.abs(info.offset.y) > 10) return;
 
         onDetail(perf);
     };
@@ -161,7 +167,8 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
                 <div
                     ref={containerRef}
-                    className="overflow-hidden cursor-grab active:cursor-grabbing pb-12"
+                    className="overflow-hidden cursor-grab active:cursor-grabbing pb-12 transition-all select-none"
+                    style={{ touchAction: 'pan-y' }}
                 >
                     <motion.div
                         ref={contentRef}
@@ -174,47 +181,45 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             lastDragEndTime.current = Date.now();
                             setIsDragging(false);
                         }}
-                        className="flex gap-12 sm:gap-20 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
+                        className="flex gap-20 sm:gap-32 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
                     >
                         {randomRecs.map((perf, idx) => (
-                            <motion.div
+                            <div
                                 key={perf.id}
-                                className={clsx(
-                                    "relative flex-shrink-0 w-[200px] sm:w-[240px] h-[300px] sm:h-[360px] transition-all duration-300",
-                                    // Disable hover effects while dragging to prevent flicker
-                                    !isDragging && "hover:z-30 hover:scale-105"
-                                )}
-                                title={cleanTitle(perf.title)}
-                                onTap={(e, info) => handleItemClick(perf, info)}
+                                className="flex items-end gap-x-2 sm:gap-x-4 flex-shrink-0"
                             >
-                                {/* Rank Number */}
-                                <div className="absolute -left-12 sm:-left-20 bottom-0 z-0 h-full flex items-end pointer-events-none select-none">
+                                {/* Rank Number - Flexed Left */}
+                                <div className="flex-shrink-0 select-none pointer-events-none mb-[-1rem]">
                                     <span
-                                        className="text-[8rem] sm:text-[10rem] font-black italic leading-none tracking-tighter text-transparent"
-                                        style={{ WebkitTextStroke: '2px #64748b' }}
+                                        className="text-[10rem] sm:text-[14rem] font-black italic leading-none tracking-tighter text-transparent block"
+                                        style={{ WebkitTextStroke: '2px #64748b', opacity: 0.4 }}
                                     >
                                         {idx + 1}
                                     </span>
                                 </div>
 
-                                {/* Card Content */}
-                                <div className={clsx(
-                                    "relative w-full h-full rounded-lg overflow-hidden bg-gray-900 shadow-lg select-none",
-                                    // Shadow effect on hover (only if not dragging)
-                                    !isDragging && "shadow-purple-500/20"
-                                )}>
+                                {/* Poster Card */}
+                                <motion.div
+                                    className={clsx(
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-shadow",
+                                        !isDragging && "hover:shadow-purple-500/30"
+                                    )}
+                                    whileHover={!isDragging ? { scale: 1.05, zIndex: 30 } : {}}
+                                    onPointerDown={handlePointerDown}
+                                    onPointerUp={(e) => handlePointerUp(e as any, perf)}
+                                >
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
                                         alt={perf.title}
                                         fill
-                                        className="object-cover pointer-events-none" // Ensure image doesn't hijack drag
-                                        sizes="(max-width: 768px) 200px, 240px"
-                                        draggable={false} // Native drag disable
+                                        className="object-cover pointer-events-none"
+                                        sizes="(max-width: 768px) 200px, 260px"
+                                        draggable={false}
                                     />
 
                                     {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90" />
 
                                     {/* VS Badge for Sports */}
                                     {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
@@ -225,18 +230,16 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                         </div>
                                     )}
 
-                                    {/* Info Overlay (Visible on Hover Only) */}
-                                    {!isDragging && (
-                                        <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
-                                            <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
-                                            <p className="text-gray-300 text-sm mb-4">{perf.date}</p>
-                                            <div className="px-4 py-2 bg-white text-black font-extrabold text-sm rounded-full transform scale-90 hover:scale-100 transition-transform">
-                                                자세히 보기
-                                            </div>
+                                    {/* Info Overlay */}
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
+                                        <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
+                                        <p className="text-gray-300 text-sm mb-4">{perf.date}</p>
+                                        <div className="px-5 py-2.5 bg-white text-black font-extrabold text-xs rounded-full shadow-xl">
+                                            자세히 보기
                                         </div>
-                                    )}
-                                </div>
-                            </motion.div>
+                                    </div>
+                                </motion.div>
+                            </div>
                         ))}
                     </motion.div>
                 </div>
