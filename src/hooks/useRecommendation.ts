@@ -18,7 +18,8 @@ export function useRecommendation({ allPerformances, likedIds, recentSearches }:
             likedIds.length > 0 ||
             recentSearches.length > 0;
 
-        if (!hasActivity) return [];
+        // If no activity, return a default slice as fallback (e.g., first 40 items)
+        if (!hasActivity) return allPerformances.slice(0, 40);
 
         // Helper: Normalize string for comparison
         const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, '');
