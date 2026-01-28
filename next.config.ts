@@ -10,8 +10,8 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true, // Required for GitHub Pages static hosting
+  // output: 'export', // Disabled to support API Routes
+  // trailingSlash: true, // Disabled as it conflicts with dynamic routing often, or unnecessary for dynamic server
   basePath: isProd ? '/culture' : '',
   images: {
     unoptimized: true,

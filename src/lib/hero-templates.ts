@@ -6,12 +6,15 @@ export interface HeroTemplate {
     suffix: string;
     keywords: string[];
     boldPrefix?: string;
+    requiredGenres?: string[]; // Only show if these genres exist
+    excludeGenres?: string[];  // Do not show if these genres matches are primary
+    minMatchCount?: number;    // Minimum number of matching items required to use this template
 }
 
 export const HERO_TEMPLATES = {
     general: [
         { line1: "특별한 오늘,", line2Pre: "당신을 위한 ", highlight: "Spotlight", suffix: "는 어디일까요?", keywords: [] },
-        { line1: "반복되는 일상 속,", line2Pre: "당신을 위한 ", highlight: "새로운 영감", suffix: "은 어디일까요?", keywords: ["전시", "exhibition"] },
+        { line1: "반복되는 일상 속,", line2Pre: "당신을 위한 ", highlight: "새로운 영감", suffix: "은 어디일까요?", keywords: ["전시", "exhibition"], requiredGenres: ["exhibition"] },
         { line1: "감성이 메마른 날,", line2Pre: "당신을 위한 ", highlight: "설레는 경험", suffix: "은 어디일까요?", keywords: [] },
         { line1: "소중한 사람과 함께,", line2Pre: "당신을 위한 ", highlight: "잊지 못할 추억", suffix: "은 어디일까요?", keywords: ["가족", "연인", "친구"] },
         { line1: "혼자만의 시간이 필요할 때,", line2Pre: "당신을 위한 ", highlight: "특별한 순간", suffix: "은 어디일까요?", keywords: ["혼자", "1인"] },
@@ -281,7 +284,7 @@ export const HERO_TEMPLATES = {
             { line1: "일상 탈출, 준비되셨나요?", line2Pre: "가볍게 떠날 수 있는 ", highlight: "당일치기 여행", suffix: "을 추천해요.", keywords: ["여행", "travel"] },
             { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] },
             { line1: "캠핑 감성 충전,", line2Pre: "타닥타닥 타오르는 ", highlight: "불멍의 시간", suffix: "을 가져보세요.", keywords: ["여행", "캠핑", "글램핑"] },
-            { line1: "바다가 부른다!", line2Pre: "속이 뻥 뚫리는 시원한 ", highlight: "오션뷰 여행", suffix: " 지금 바로 출발!", keywords: ["여행", "바다"] }
+            { line1: "바다가 부른다!", line2Pre: "속이 뻥 뚫리는 시원한 ", highlight: "오션뷰 여행", suffix: " 지금 바로 출발!", keywords: ["여행", "바다"], requiredGenres: ["travel"], minMatchCount: 2 }
         ],
         festival: [
             { line1: "축제의 계절이 왔어요!", line2Pre: "전국 방방곡곡 ", highlight: "흥겨운 축제", suffix: "가 당신을 기다립니다.", keywords: ["축제", "festival"] },

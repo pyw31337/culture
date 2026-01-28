@@ -1,135 +1,183 @@
 
 import React from 'react';
+import { Filter } from 'lucide-react';
 import { clsx } from 'clsx';
-import { Home, Search, Star, MapPin, Map as MapIcon } from 'lucide-react';
-import { GENRES } from '../../lib/constants';
+import { GENRES, REGIONS } from '@/lib/constants';
+import { getGenreIcon } from '@/components/GenreIcons';
+
+// Reusable Dropdown Component
+interface FilterDropdownProps {
+    label: string;
+    value: string;
+    options: { id: string; label: string }[];
+    onChange: (val: string) => void;
+    icon?: React.ReactNode;
+    color?: string; // e.g. "purple", "emerald"
+    isOpen?: boolean;
+    onToggle?: () => void;
+}
+
+const FilterDropdown = ({ label, value, options, onChange, icon, color = "purple", isOpen, onToggle }: FilterDropdownProps) => {
+    return (
+        <div className="relative group">
+            <button
+                className={clsx(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all border",
+                    value !== 'all'
+                        ? `bg-${color}-500 text-white border-${color}-500 shadow-lg shadow-${color}-500/20`
+                        : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500 hover:text-gray-200 light:bg-white light:text-gray-600 light:border-gray-200 light:shadow-sm"
+                )}
+                onClick={onToggle} // Now controlled externally if needed, or we can make it internal state? 
+            // Actually for simplicity, standard dropdowns usually just use internal state or simple hover.
+            // But for mobile, click is better.
+            >
+                {icon}
+                <span>
+                    {value === 'all' ? label : options.find(o => o.id === value)?.label || label}
+                </span>
+            </button>
+            {/* Dropdown Menu - Simple Hover/Focus Implementation for Desktop, Click for Mobile if needed */}
+            <div className="absolute top-full left-0 mt-2 w-32 bg-gray-900 light:bg-white border border-gray-800 light:border-gray-200 rounded-xl shadow-xl overflow-hidden z-50 hidden group-hover:block transition-all">
+                <div className="max-h-[200px] overflow-y-auto custom-scrollbar p-1">
+                    <button
+                        onClick={() => onChange('all')}
+                        className={clsx(
+                            "w-full text-left px-3 py-2 text-xs rounded-lg transition-colors",
+                            value === 'all'
+                                ? `bg-${color}-500/10 text-${color}-500 font-bold`
+                                : "text-gray-400 light:text-gray-600 hover:bg-gray-800 light:hover:bg-gray-100"
+                        )}
+                    >
+                        전체
+                    </button>
+                    {options.map(opt => (
+                        <button
+                            key={opt.id}
+                            onClick={() => onChange(opt.id)}
+                            className={clsx(
+                                "w-full text-left px-3 py-2 text-xs rounded-lg transition-colors truncate",
+                                value === opt.id
+                                    ? `bg-${color}-500/10 text-${color}-500 font-bold`
+                                    : "text-gray-400 light:text-gray-600 hover:bg-gray-800 light:hover:bg-gray-100"
+                            )}
+                        >
+                            {opt.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
 
 interface FilterBarProps {
     isSticky: boolean;
-    searchText: string;
-    isDropdownOpen: boolean;
-    activeSearchSource: 'hero' | 'sticky' | null;
-    searchResults: any[];
-    highlightedIndex: number;
     selectedGenre: string;
-    searchLocation: { name: string } | null;
-    userAddress: string | null;
-
-    setSearchText: (val: string) => void;
-    handleSearchTextChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    handleKeyDown: (e: React.KeyboardEvent) => void;
-    setActiveSearchSource: (val: 'hero' | 'sticky') => void;
-    handleSelectResult: (candidate: any) => void;
-    setSelectedGenre: (val: string) => void;
-
-    // Reset Handlers
-    onReset: () => void;
-
-    // Map Toggle
-    setIsMapOpen: (val: boolean) => void;
+    onGenreChange: (genre: string) => void;
+    selectedRegion: string;
+    onRegionChange: (region: string) => void;
+    totalCount: number;
+    isLoading?: boolean;
 }
 
 export default function FilterBar({
     isSticky,
-    searchText,
-    isDropdownOpen,
-    activeSearchSource,
-    searchResults,
-    highlightedIndex,
     selectedGenre,
-    searchLocation,
-    userAddress,
-    setSearchText,
-    handleSearchTextChange,
-    handleKeyDown,
-    setActiveSearchSource,
-    handleSelectResult,
-    setSelectedGenre,
-    onReset,
-    setIsMapOpen
+    onGenreChange,
+    selectedRegion,
+    onRegionChange,
+    totalCount,
+    isLoading
 }: FilterBarProps) {
+
+    // Sort Genres for Dropdown (Same as PerformanceList logic?)
+    // Usually standard GENRES list.
+
     return (
         <div className={clsx(
-            "sticky top-[60px] md:top-[0px] z-[50] transition-all duration-300 transform",
-            isSticky ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-4 opacity-0 pointer-events-none h-0 overflow-hidden"
+            "flex items-center justify-between gap-4 transition-all duration-300",
+            isSticky ? "h-10" : "h-12"
         )}>
-            <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
-            <div className="bg-[#0f1115]/90 light:bg-white/95 backdrop-blur-xl border-b border-white/5 light:border-black/5 shadow-2xl">
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-3 flex items-center gap-3">
-                    {/* 1. Home / Refresh */}
-                    <button
-                        onClick={onReset}
-                        className="p-2.5 rounded-full bg-gray-800/50 hover:bg-gray-800 text-gray-400 hover:text-white transition-colors border border-white/5 light:bg-gray-100 light:text-gray-600 light:hover:bg-gray-200 light:border-gray-200"
-                    >
-                        <Home size={18} />
+            {/* Left: Filters */}
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pr-4">
+                {/* 1. Genre Filter */}
+                <div className="relative group shrink-0">
+                    <button className={clsx(
+                        "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all",
+                        selectedGenre !== 'all'
+                            ? "bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20"
+                            : "bg-gray-800/80 text-gray-300 border-white/10 hover:bg-gray-700 light:bg-white light:text-gray-700 light:border-gray-200 light:shadow-sm"
+                    )}>
+                        {getGenreIcon(selectedGenre, 14)}
+                        <span>{selectedGenre === 'all' ? '전체 장르' : GENRES.find(g => g.id === selectedGenre)?.label}</span>
                     </button>
-
-                    {/* 2. Search Input (Compact) */}
-                    <div className="flex-1 max-w-lg relative group">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Search className="w-4 h-4 text-gray-500 group-focus-within:text-[#a78bfa] transition-colors" />
+                    {/* Dropdown */}
+                    <div className="absolute top-full left-0 mt-2 w-40 bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden z-50 hidden group-hover:block">
+                        <div className="p-1 max-h-[300px] overflow-y-auto custom-scrollbar">
+                            <button onClick={() => onGenreChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">전체 보기</button>
+                            {GENRES.map(g => (
+                                <button
+                                    key={g.id}
+                                    onClick={() => onGenreChange(g.id)}
+                                    className={clsx(
+                                        "w-full flex items-center gap-2 px-3 py-2 text-xs rounded-lg transition-colors",
+                                        selectedGenre === g.id
+                                            ? "bg-purple-500/20 text-purple-400 font-bold"
+                                            : "text-gray-300 hover:bg-white/5 light:text-gray-700 light:hover:bg-gray-100"
+                                    )}
+                                >
+                                    {getGenreIcon(g.id, 14)}
+                                    {g.label}
+                                </button>
+                            ))}
                         </div>
-                        <input
-                            type="text"
-                            className="block w-full pl-10 pr-3 py-2.5 bg-gray-900/50 light:bg-gray-100 border border-white/10 light:border-gray-200 rounded-full leading-5 text-gray-300 light:text-gray-900 placeholder-gray-600 focus:outline-none focus:bg-gray-900 focus:border-[#a78bfa]/50 transition-all text-sm font-semibold"
-                            placeholder={searchLocation?.name || userAddress ? `${searchLocation?.name || userAddress} 주변 검색...` : "공연, 배우, 장소 검색..."}
-                            value={searchText}
-                            onChange={handleSearchTextChange}
-                            onKeyDown={handleKeyDown}
-                            onFocus={() => setActiveSearchSource('sticky')}
-                        />
-                        {/* Sticky Dropdown Positioned Here */}
-                        {isDropdownOpen && activeSearchSource === 'sticky' && searchResults.length > 0 && (
-                            <div className="absolute top-full left-0 right-0 mt-3 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[9999] overflow-hidden max-h-[60vh] overflow-y-auto">
-                                {searchResults.map((result, idx) => {
-                                    const addressParts = result.address ? result.address.split(' ') : [];
-                                    const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
-                                    return (
-                                        <div
-                                            key={`search-sticky-${idx}`}
-                                            onClick={() => handleSelectResult(result)}
-                                            className={`px-4 py-3 cursor-pointer flex items-center justify-between gap-3 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'}`}
-                                        >
-                                            <div className="flex items-center gap-3 min-w-0">
-                                                <div className="bg-black/50 p-2 rounded-full shrink-0 border border-white/10">
-                                                    {result.type === 'video' ? <Star className="w-3.5 h-3.5 text-yellow-500" /> : <MapPin className="w-3.5 h-3.5 text-[#a78bfa]" />}
-                                                </div>
-                                                <div className="text-white text-sm font-extrabold truncate">{result.name}</div>
-                                            </div>
-                                            <div className="text-gray-500 text-xs whitespace-nowrap shrink-0">{shortAddress}</div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
                     </div>
-
-                    {/* 3. Category Scroll (Compact) */}
-                    <div className="flex-1 overflow-x-auto scrollbar-hide flex gap-2 mask-linear-fade">
-                        {GENRES.map(genre => (
-                            <button
-                                key={genre.id}
-                                onClick={() => setSelectedGenre(genre.id)}
-                                className={clsx(
-                                    "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-extrabold transition-all border",
-                                    selectedGenre === genre.id
-                                        ? "bg-[#a78bfa] text-white border-[#a78bfa]"
-                                        : "bg-gray-800/50 text-gray-400 border-white/10 hover:bg-gray-800 light:bg-gray-50 light:text-gray-600 light:border-gray-200"
-                                )}
-                            >
-                                {genre.label}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* 4. Map/List Toggle */}
-                    <button
-                        onClick={() => setIsMapOpen(true)}
-                        className="p-2.5 rounded-full bg-[#a78bfa]/20 hover:bg-[#a78bfa] text-[#a78bfa] hover:text-white transition-all border border-[#a78bfa]/30 shrink-0"
-                    >
-                        <MapIcon size={18} />
-                    </button>
                 </div>
+
+                {/* 2. Region Filter */}
+                <div className="relative group shrink-0">
+                    <button className={clsx(
+                        "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all",
+                        selectedRegion !== 'all'
+                            ? "bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-500/20"
+                            : "bg-gray-800/80 text-gray-300 border-white/10 hover:bg-gray-700 light:bg-white light:text-gray-700 light:border-gray-200 light:shadow-sm"
+                    )}>
+                        <Filter size={12} />
+                        <span>{selectedRegion === 'all' ? '전체 지역' : REGIONS.find(r => r.id === selectedRegion)?.label}</span>
+                    </button>
+                    {/* Dropdown */}
+                    <div className="absolute top-full left-0 mt-2 w-32 bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden z-50 hidden group-hover:block">
+                        <div className="p-1">
+                            <button onClick={() => onRegionChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">전체 지역</button>
+                            {REGIONS.map(r => (
+                                <button
+                                    key={r.id}
+                                    onClick={() => onRegionChange(r.id)}
+                                    className={clsx(
+                                        "w-full text-left px-3 py-2 text-xs rounded-lg transition-colors",
+                                        selectedRegion === r.id
+                                            ? "bg-emerald-500/20 text-emerald-400 font-bold"
+                                            : "text-gray-300 hover:bg-white/5 light:text-gray-700 light:hover:bg-gray-100"
+                                    )}
+                                >
+                                    {r.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Right: Count */}
+            <div className="shrink-0 text-xs font-bold text-gray-500 light:text-gray-400 flex items-center gap-2">
+                {isLoading ? (
+                    <span className="animate-pulse">Loading...</span>
+                ) : (
+                    <>
+                        <span>총 <span className="text-white light:text-black">{totalCount}</span>개</span>
+                    </>
+                )}
             </div>
         </div>
     );

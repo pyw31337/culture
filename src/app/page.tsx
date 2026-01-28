@@ -8,7 +8,13 @@ async function getPerformances() {
 }
 
 export default async function Home() {
-    const performances = await getPerformances();
+    const allPerformances = await getPerformances();
+    // Optimization: Only pass the first 24 items to the client for initial render
+    // The rest will be fetched via Infinite Scroll API
+    // We sort by Date Ascending (Upcoming) by default for consistency with API default
+    const performaceFilter = await import('@/lib/performance-filter');
+    const sorted = performaceFilter.sortPerformances(allPerformances, 'all');
+    const performances = sorted.slice(0, 24);
 
     const now = new Date();
     const formatter = new Intl.DateTimeFormat('ko-KR', {
