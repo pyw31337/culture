@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "generate-data": "npx tsx scripts/generate-performance-json.ts",
+    "build": "npm run generate-data && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "scrape:movies": "npx tsx scripts/scrape-movies.ts",

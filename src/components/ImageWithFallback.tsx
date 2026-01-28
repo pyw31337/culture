@@ -56,7 +56,7 @@ export default function ImageWithFallback({
         }
     };
 
-    const isUnoptimized = errorStage >= 1 || src.startsWith('/'); // Local or Backup usually unoptimized
+    const isUnoptimized = errorStage >= 1 || !!(src && src.startsWith('/')); // Local or Backup usually unoptimized
 
     return (
         <>

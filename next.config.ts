@@ -1,3 +1,4 @@
+
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -10,8 +11,8 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig: NextConfig = {
-  // output: 'export', // Disabled to support API Routes
-  // trailingSlash: true, // Disabled as it conflicts with dynamic routing often, or unnecessary for dynamic server
+  output: 'export',
+  trailingSlash: true, // Required for GitHub Pages static hosting
   basePath: isProd ? '/culture' : '',
   images: {
     unoptimized: true,

@@ -40,6 +40,7 @@ import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import ErrorBoundary from './ErrorBoundary';
 import { HERO_TEMPLATES, HeroTemplate } from '@/lib/hero-templates';
 import FilterBar from './performance/FilterBar';
+import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
 
 interface Venue {
     name: string;
@@ -52,35 +53,27 @@ interface Venue {
 const venues = venueData as Record<string, Venue>;
 
 interface PerformanceListProps {
-    initialPerformances: Performance[]; // Now acts as "First Page"
+    initialPerformances: Performance[]; // First 24 items
     lastUpdated: string;
     initialGenre?: string;
     isCategoryPage?: boolean;
     categoryLabel?: string;
 }
 
-// Minimal Hero Templates import (Assume existing logic is preserved but simplified or re-imported)
-// To save space and complexity, we might need to extract Hero Selection logic too, but for now we keep it
-// to ensure "Hero Text" still updates dynamically.
-
 export default function PerformanceList({ initialPerformances, lastUpdated, initialGenre = 'all', isCategoryPage = false, categoryLabel }: PerformanceListProps) {
 
     // --- State ---
 
-    // Data & Pagination
-    const [performances, setPerformances] = useState<Performance[]>(initialPerformances);
-    const [page, setPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
-    const [isLoading, setIsLoading] = useState(false);
-    const [totalCount, setTotalCount] = useState(initialPerformances.length); // Approximate, will update on API call
+    // Data (Hybrid: Initial -> Fetched Full)
+    const [allPerformances, setAllPerformances] = useState<Performance[]>(initialPerformances);
+    const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(24);
 
     // Filters
-    // Initialize Genre from props, then local state
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
-
     const [searchText, setSearchText] = useState('');
     const [searchLocation, setSearchLocation] = useState<{ lat: number, lng: number, name: string } | null>(null);
     const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
@@ -88,12 +81,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [radius, setRadius] = useState<number>(10);
 
     // View & Layout
-    const [viewMode, setViewMode] = useState<string>('grid'); // 'list' | 'grid' | 'calendar' | 'map'
+    const [viewMode, setViewMode] = useState<string>('grid');
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
     const [isMapOpen, setIsMapOpen] = useState(false);
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
 
-    // User Preferences (Persisted)
+    // User Preferences
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [savedKeywords, setSavedKeywords] = useState<string[]>([]);
@@ -103,101 +96,98 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
-    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
-    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
-    const [showLikes, setShowLikes] = useState(true);
-    const [isLikesExpanded, setIsLikesExpanded] = useState(true);
-    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
     const [isHeroVisible, setIsHeroVisible] = useState(true);
 
-    // Deep Linking & Modals
-    const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
-    const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null);
-    const searchParams = useSearchParams();
+    // Deep Linking
     const router = useRouter();
 
 
-    // --- API Data Fetching ---
-
-    const fetchPerformances = useCallback(async (reset: boolean = false) => {
-        if (isLoading) return;
-        setIsLoading(true);
-
-        const nextPage = reset ? 1 : page + 1;
-        const limit = 24;
-
-        try {
-            const params = new URLSearchParams();
-            params.set('page', nextPage.toString());
-            params.set('limit', limit.toString());
-            params.set('genre', selectedGenre);
-            params.set('region', selectedRegion);
-            params.set('district', selectedDistrict);
-            params.set('venue', selectedVenue);
-            if (searchText) params.set('search', searchText);
-
-            // Location Filter
-            const activeLoc = searchLocation || userLocation;
-            if (activeLoc && selectedVenue === 'all') { // If specific venue selected, it overrides radius
-                params.set('lat', activeLoc.lat.toString());
-                params.set('lng', activeLoc.lng.toString());
-                params.set('radius', radius.toString());
-            }
-
-            const res = await fetch(`/api/performances?${params.toString()}`);
-            const data = await res.json();
-
-            if (data.data) {
-                if (reset) {
-                    setPerformances(data.data);
-                    // If we reset, we might want to update Hero Text based on NEW data context?
-                    // Currently Hero Text uses 'initialPerformances' which is now just the first page or the filtered set?
-                    // We need to keep a reference to "some" data for hero text to work.
-                } else {
-                    setPerformances(prev => [...prev, ...data.data]);
-                }
-
-                setHasMore(data.meta.hasMore);
-                setPage(nextPage);
-                setTotalCount(data.meta.total); // Backend should return total count of FILTERED items
-            }
-        } catch (error) {
-            console.error("Failed to fetch performances", error);
-        } finally {
-            setIsLoading(false);
-        }
-    }, [page, isLoading, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius]);
-
-    // Initial Load & Filter Change Effect
-    // Reset and fetch when filters change
+    // --- 1. Async Data Fetch (Static JSON) ---
     useEffect(() => {
-        // Debounce fetch on filter change to avoid rapid firing
+        const loadAllData = async () => {
+            try {
+                // Static Fetch (GitHub Pages compatible)
+                const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                const res = await fetch(`${basePath}/data/performances.json`);
+                if (!res.ok) throw new Error('Failed to load data');
+                const data: Performance[] = await res.json();
+
+                // Merge/Replace initial
+                setAllPerformances(data);
+                setIsDataFullyLoaded(true);
+            } catch (e) {
+                console.error("Background data load failed", e);
+            }
+        };
+
+        // Delay slightly to prioritize rendering
         const timer = setTimeout(() => {
-            fetchPerformances(true);
-        }, 300);
+            loadAllData();
+        }, 500);
         return () => clearTimeout(timer);
-    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius]);
+    }, []);
+
+
+    // --- 2. Filtering & Sorting (Client Side) ---
+    const filteredPerformances = useMemo(() => {
+        if (!isDataFullyLoaded) {
+            // While loading, just filter the initial 24 items provided (fallback)
+            // or show loading? Better to show what we have.
+            return initialPerformances;
+        }
+
+        // Use shared logic
+        const filtered = filterPerformances(allPerformances, {
+            genre: selectedGenre,
+            region: selectedRegion,
+            district: selectedDistrict,
+            venue: selectedVenue,
+            search: searchText,
+            lat: searchLocation?.lat || userLocation?.lat,
+            lng: searchLocation?.lng || userLocation?.lng,
+            radius: radius
+        });
+
+        // Sort
+        return sortPerformances(filtered, selectedGenre);
+
+    }, [allPerformances, isDataFullyLoaded, initialPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius]);
+
+
+    // --- 3. Pagination (Virtual "Infinite Scroll") ---
+    const displayPerformances = useMemo(() => {
+        return filteredPerformances.slice(0, visibleCount);
+    }, [filteredPerformances, visibleCount]);
+
+    const hasMore = visibleCount < filteredPerformances.length;
+
+    // Reset pagination on filter change
+    useEffect(() => {
+        setVisibleCount(24);
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText]);
+
 
     // Infinite Scroll Observer
     const observerTarget = useRef<HTMLDivElement>(null);
+    const loadMore = useCallback(() => {
+        setVisibleCount(prev => prev + 24);
+    }, []);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             entries => {
-                if (entries[0].isIntersecting && hasMore && !isLoading) {
-                    fetchPerformances(false);
+                if (entries[0].isIntersecting && hasMore) {
+                    loadMore();
                 }
             },
-            { threshold: 0.1, rootMargin: '500px' } // Load when 500px from bottom (approx 2/3 scroll)
+            { threshold: 0.1, rootMargin: '500px' }
         );
 
-        if (observerTarget.current) {
-            observer.observe(observerTarget.current);
-        }
-
+        if (observerTarget.current) observer.observe(observerTarget.current);
         return () => {
             if (observerTarget.current) observer.unobserve(observerTarget.current);
         };
-    }, [hasMore, isLoading, fetchPerformances]);
+    }, [hasMore, loadMore]);
 
 
     // --- Local Storage Loading ---
@@ -205,10 +195,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setSavedKeywords(safeStorage.get<string[]>('culture_keywords', []));
         setLikedIds(safeStorage.get<string[]>('culture_likes', []));
         setFavoriteVenues(safeStorage.get<string[]>('culture_favorite_venues', []));
-        setIsLikesExpanded(safeStorage.get<boolean>('culture_likes_expanded', true));
-        setIsFavoriteVenuesExpanded(safeStorage.get<boolean>('culture_venues_expanded', true));
-        setShowFavoriteVenues(safeStorage.get<boolean>('culture_show_favorite_venues', true));
-        setShowLikes(safeStorage.get<boolean>('culture_show_likes', true));
 
         const storedViewMode = safeStorage.get<string>('culture_view_mode', 'grid');
         setViewMode(storedViewMode);
@@ -217,7 +203,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setIsStorageLoaded(true);
     }, []);
 
-    // Persist Effects
     useEffect(() => { if (isStorageLoaded) safeStorage.set('culture_likes', likedIds); }, [likedIds, isStorageLoaded]);
     useEffect(() => { if (isStorageLoaded) safeStorage.set('culture_favorite_venues', favoriteVenues); }, [favoriteVenues, isStorageLoaded]);
     useEffect(() => { if (isStorageLoaded) safeStorage.set('culture_keywords', savedKeywords); }, [savedKeywords, isStorageLoaded]);
@@ -236,12 +221,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     };
 
     const handleDetailOpen = (perf: Performance) => {
-        // setSelectedPerformance(perf); 
-        // Logic change: Open Link directly for now as per previous behavior override? 
-        // No, user code had handleDetailOpen opening window.open OR modal.
-        // Let's stick to Modal if possible, or new tab.
-        // Reverting to: Open new tab if link exists, or show modal?
-        // Original code: window.open(perf.link, '_blank');
         window.open(perf.link, '_blank');
     };
 
@@ -252,24 +231,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         return true;
     };
 
-    // --- Hero Text Logic (Simplified/Stubbed for now) ---
-    // We pass `initialPerformances` (first 20) to HeroSection. 
-    // Ideally HeroSection needs the full context to say "There are X jazz concerts today". 
-    // For now, we accept it might be limited to the first batch or we can fetch stats separately later.
+    // Stub Hero Text
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
-    // (Omitted large logic for template selection re-implementation - using static for safety/speed)
-    // You can restore strict logic if needed.
-
-    // --- Render ---
-
-    // Derived Lists for "Likes" and "Favorites" view modes
-    // These need to filter *FROM THE API* or from *ALL LOADED*? 
-    // Actually, for "Likes" view, we usually want to show ALL liked items, regardless of current filter.
-    // So "Likes" view might need its own specific API call "getPerformancesByIds".
-    // For now, we filter from `performances` which is incomplete. 
-    // FIX: If ViewMode is 'likes', we should fetch Liked items from API.
-    // Let's stick to basic Grid/List first. The "Likes" view might show empty if items are not loaded.
-    // Optimization: Add `ids` filter to API for this case?
 
     return (
         <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
@@ -278,7 +241,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             <ErrorBoundary fallback={<div>Header Error</div>}>
                 <HeroSection
                     heroText={heroText}
-                    onCycle={() => { }} // Stub
+                    onCycle={() => { }}
                     isHeroVisible={isHeroVisible}
                     viewMode={viewMode}
                     selectedGenre={selectedGenre}
@@ -291,7 +254,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     lastUpdated={lastUpdated}
                     searchLocation={searchLocation}
                     searchText={searchText}
-                    searchResults={[]} // Search logic moved to API, typeahead suggestions usually separate
+                    searchResults={[]}
                     isDropdownOpen={isDropdownOpen}
                     activeSearchSource={activeSearchSource}
                     highlightedIndex={-1}
@@ -307,7 +270,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     setSearchText={setSearchText}
                     setActiveSearchSource={setActiveSearchSource}
                     setIsDropdownOpen={setIsDropdownOpen}
-                    handleSearch={() => fetchPerformances(true)}
+                    handleSearch={() => { }} // No auto fetch, happens via Effect
                     handleSelectResult={(res) => {
                         setSearchLocation(res);
                         setSearchText('');
@@ -316,11 +279,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     handleKeyDown={() => { }}
                     handleCurrentLocationClick={() => { }}
 
-                    availableVenues={[]} // Dynamic?
-                    districts={[]} // Dynamic?
+                    availableVenues={[]}
+                    districts={[]}
 
                     recentKeywords={savedKeywords}
-                    onKeywordSelect={(k) => { setSearchText(k); fetchPerformances(true); }}
+                    onKeywordSelect={(k) => { setSearchText(k); }}
                     onRemoveRecent={() => { }}
                     onClearRecent={() => { }}
                 />
@@ -330,20 +293,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             <div className="sticky top-0 z-40 bg-gray-900/95 light:bg-white/95 backdrop-blur-md border-b border-white/5 light:border-black/5">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-2">
                     <FilterBar
-                        isSticky={true} // Always compact here
+                        isSticky={true}
                         selectedGenre={selectedGenre}
                         onGenreChange={setSelectedGenre}
                         selectedRegion={selectedRegion}
                         onRegionChange={setSelectedRegion}
-                        totalCount={totalCount}
-                        isLoading={isLoading}
+                        totalCount={filteredPerformances.length}
+                        isLoading={!isDataFullyLoaded}
                     />
                 </div>
             </div>
 
             {/* 3. Main Content (Grid/List) */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
-                {performances.length === 0 && !isLoading ? (
+                {filteredPerformances.length === 0 && isDataFullyLoaded ? (
                     <EmptyState
                         viewMode={viewMode}
                         selectedGenre={selectedGenre}
@@ -355,7 +318,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     />
                 ) : (
                     <PerformanceGrid
-                        items={performances}
+                        items={displayPerformances} // Sliced
                         hasMore={hasMore}
                         observerRef={observerTarget}
                         layoutMode={layoutMode}
@@ -373,9 +336,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     />
                 )}
 
-                {isLoading && (
+                {!isDataFullyLoaded && (
                     <div className="flex justify-center py-8">
                         <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+                        <span className="ml-2 text-sm text-gray-500">전체 데이터 불러오는 중...</span>
                     </div>
                 )}
             </main>
@@ -383,7 +347,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* 4. Modals */}
             {isMapOpen && (
                 <KakaoMapModal
-                    performances={performances} // Pass current filtered list
+                    performances={filteredPerformances} // Pass full filtered list to Map
                     centerLocation={searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                     favoriteVenues={favoriteVenues}
                     onToggleFavorite={toggleFavoriteVenue}
@@ -410,9 +374,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 keywords={savedKeywords}
                 onKeywordAdd={(k) => setSavedKeywords(prev => [...prev, k])}
                 onKeywordRemove={(k) => setSavedKeywords(prev => prev.filter(w => w !== k))}
-                districts={[]} // Dynamic logic available inside LocationSelector usually, or we can pass empty if not needed
+                districts={[]}
                 availableVenues={Object.keys(venues)}
-                onSearch={() => fetchPerformances(true)}
+                onSearch={() => { }}
             />
 
             <BottomNav
