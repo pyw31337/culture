@@ -161,7 +161,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // --- Derived Filter Lists (Restored) ---
     const districts = useMemo(() => {
         if (!selectedRegion || selectedRegion === 'all') return [];
-        const regionVenues = Object.values(venues).filter(v => v.address.includes(selectedRegion));
+        const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label || '';
+        const regionVenues = Object.values(venues).filter(v => v.address.includes(regionLabel));
         const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
         return Array.from(uniqueDistricts).sort();
     }, [selectedRegion]);
@@ -169,7 +170,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const availableVenues = useMemo(() => {
         let relevantVenues = Object.keys(venues);
         if (selectedRegion && selectedRegion !== 'all') {
-            relevantVenues = relevantVenues.filter(v => venues[v].address.includes(selectedRegion));
+            const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label || '';
+            relevantVenues = relevantVenues.filter(v => venues[v].address.includes(regionLabel));
         }
         if (selectedDistrict && selectedDistrict !== 'all') {
             relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
@@ -387,8 +389,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Bottom Nav Handlers
     const handleMenuClick = (menu: BottomMenuType) => setActiveBottomMenu(menu);
-    const handleLikePerfClick = () => setViewMode('likes-perf');
-    const handleLikeVenueClick = () => setViewMode('likes-venue');
+    const handleLikePerfClick = () => setViewMode(prev => prev === 'likes-perf' ? 'grid' : 'likes-perf');
+    const handleLikeVenueClick = () => setViewMode(prev => prev === 'likes-venue' ? 'grid' : 'likes-venue');
     const handleViewModeChange = (mode: string) => setViewMode(mode);
     const handleGenreSelect = (g: string) => setSelectedGenre(g);
     const handleRegionSelect = (r: string) => setSelectedRegion(r);
@@ -783,12 +785,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 activeMenu={activeBottomMenu}
                 currentViewMode={viewMode}
                 onMenuClick={setActiveBottomMenu}
-                onLikePerfClick={() => setViewMode('likes-perf')}
-                onLikeVenueClick={() => setViewMode('likes-venue')}
+                onLikePerfClick={handleLikePerfClick}
+                onLikeVenueClick={handleLikeVenueClick}
                 likeCount={likedIds.length}
                 venueCount={favoriteVenues.length}
                 selectedGenre={selectedGenre}
             />
+
+            {viewMode === 'calendar' && (
+                <CalendarModal
+                    performances={filteredPerformances}
+                    onClose={() => setViewMode('grid')}
+                />
+            )}
 
         </div>
     );
