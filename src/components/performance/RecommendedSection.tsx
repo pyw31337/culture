@@ -21,6 +21,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
     const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
+    const lastDragEndTime = useRef<number>(0);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
@@ -111,9 +112,16 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
 
     // Robust Click Handler
     const handleItemClick = (perf: any, info: any) => {
-        // If movement threshold exceeded (dragged), don't trigger click
-        // 5px threshold is standard for "click" vs "drag"
-        if (Math.abs(info.offset.x) > 5 || Math.abs(info.offset.y) > 5) return;
+        // 1. Check if we just finished dragging (within 150ms)
+        const now = Date.now();
+        if (now - lastDragEndTime.current < 150) return;
+
+        // 2. Check current dragging state
+        if (isDragging) return;
+
+        // 3. Movement threshold check (Increased to 10px)
+        if (Math.abs(info.offset.x) > 10 || Math.abs(info.offset.y) > 10) return;
+
         onDetail(perf);
     };
 
@@ -163,8 +171,8 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         style={{ x }}
                         onDragStart={() => setIsDragging(true)}
                         onDragEnd={() => {
-                            // Small delay to prevent accidental clicks immediately after drag release
-                            setTimeout(() => setIsDragging(false), 50);
+                            lastDragEndTime.current = Date.now();
+                            setIsDragging(false);
                         }}
                         className="flex gap-12 sm:gap-20 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
                     >
