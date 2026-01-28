@@ -1,10 +1,32 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react'; // Added hooks
 import { clsx } from 'clsx';
-import { ChevronDown, MapPin, Check, Search, X, GripHorizontal } from 'lucide-react'; // Added icons
+import { ChevronDown, MapPin, Check, Search, X, GripHorizontal, ChevronUp } from 'lucide-react'; // Added icons
 import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul';
 import { motion } from 'framer-motion';
+
+// --- Stadium Icon Component ---
+const StadiumIcon = ({ className }: { className?: string }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={clsx("icon icon-tabler icons-tabler-outline icon-tabler-building-stadium", className)}
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 12a8 2 0 1 0 16 0a8 2 0 1 0 -16 0" />
+        <path d="M4 12v7c0 .94 2.51 1.785 6 2v-3h4v3c3.435 -.225 6 -1.07 6 -2v-7" />
+        <path d="M15 6h4v-3h-4v7" />
+        <path d="M7 6h4v-3h-4v7" />
+    </svg>
+);
 
 import venuesData from '@/data/venues.json'; // Direct import for lookup
 
@@ -120,97 +142,148 @@ export function LocationSelector({
         });
     }, [availableVenues, activeChoseong]);
 
+    // Accordion State
+    const [isRegionExpanded, setIsRegionExpanded] = useState(true);
+
+    const handleRegionSelectInternal = (region: string) => {
+        onRegionSelect(region);
+        setIsRegionExpanded(false); // Auto-collapse on any region selection as requested
+    };
+
+    const handleDistrictSelectInternal = (district: string) => {
+        onDistrictSelect(district);
+        setIsRegionExpanded(false); // Auto-collapse on district selection
+    };
+
     const handleVenueClick = (venue: string) => {
         onVenueSelect(venue);
-        // For inline, we might not want to close it immediately, or maybe we do?
-        // Usually selection closes the dropdown.
         setIsVenueOpen(false);
     };
+
+    const selectedRegionLabel = useMemo(() => {
+        if (selectedRegion === 'all') return '전국';
+        return REGIONS.find(r => r.id === selectedRegion)?.label || '';
+    }, [selectedRegion]);
 
     return (
         <div className="flex flex-col gap-5 w-full">
 
-            {/* 1. Region Selection (Grid) */}
+            {/* 1. Region & District Area (Accordion) */}
             <div className="space-y-2.5">
-                <div className="flex items-center justify-between">
-                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1">
-                        <MapPin className="w-3 h-3" /> 지역 (시/도)
+                {/* Accordion Header / Summary View */}
+                <div
+                    className="flex items-center justify-between cursor-pointer group hover:bg-white/5 p-1 rounded-lg transition-colors"
+                    onClick={() => setIsRegionExpanded(!isRegionExpanded)}
+                >
+                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1 cursor-pointer">
+                        <MapPin className="w-3 h-3 text-purple-400" /> 지역 설정
                     </label>
+                    <div className="flex items-center gap-2">
+                        {!isRegionExpanded && (
+                            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-extrabold text-purple-400 animate-in fade-in zoom-in-95 duration-300">
+                                <span>{selectedRegionLabel}</span>
+                                {selectedDistrict !== 'all' && (
+                                    <>
+                                        <span className="opacity-40 text-[9px]">•</span>
+                                        <span>{selectedDistrict}</span>
+                                    </>
+                                )}
+                            </div>
+                        )}
+                        {isRegionExpanded ? (
+                            <ChevronUp className="w-4 h-4 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                        ) : (
+                            <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                        )}
+                    </div>
                 </div>
 
-                {/* Horizontal Drag Area */}
-                <HorizontalScroll>
-                    {/* 'All' Button */}
-                    <button
-                        onClick={() => {
-                            onRegionSelect('all');
-                        }}
-                        className={clsx(
-                            baseButtonClass,
-                            selectedRegion === 'all' ? activeClass : inactiveClass
-                        )}
+                {/* Collapsible Content */}
+                {isRegionExpanded && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="space-y-4 overflow-hidden"
                     >
-                        전국
-                    </button>
-
-                    {REGIONS.filter(r => r.id !== 'all').map(r => (
-                        <button
-                            key={r.id}
-                            onClick={() => onRegionSelect(r.id)}
-                            className={clsx(
-                                baseButtonClass,
-                                selectedRegion === r.id ? activeClass : inactiveClass
-                            )}
-                        >
-                            {r.label}
-                        </button>
-                    ))}
-                </HorizontalScroll>
-            </div>
-
-            {/* 2. District Selection (Conditional) */}
-            {(selectedRegion !== 'all' && districts.length > 0) && (
-                <div className="space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-300">
-                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
-                        상세 지역 (구/군)
-                    </label>
-                    <div className="bg-gray-900/30 light:bg-gray-50 p-2 sm:p-3 rounded-2xl border border-white/5 light:border-gray-200">
+                        {/* Region Buttons */}
                         <HorizontalScroll>
                             <button
-                                onClick={() => onDistrictSelect('all')}
+                                onClick={() => handleRegionSelectInternal('all')}
                                 className={clsx(
-                                    "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
-                                    selectedDistrict === 'all'
-                                        ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold"
-                                        : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                    baseButtonClass,
+                                    selectedRegion === 'all' ? activeClass : inactiveClass
                                 )}
                             >
-                                전체
+                                전국
                             </button>
-                            {districts.map(d => (
+
+                            {REGIONS.filter(r => r.id !== 'all').map(r => (
                                 <button
-                                    key={d}
-                                    onClick={() => onDistrictSelect(d)}
+                                    key={r.id}
+                                    onClick={() => handleRegionSelectInternal(r.id)}
                                     className={clsx(
-                                        "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
-                                        selectedDistrict === d
-                                            ? "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
-                                            : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                        baseButtonClass,
+                                        selectedRegion === r.id ? activeClass : inactiveClass
                                     )}
                                 >
-                                    {d}
+                                    {r.label}
                                 </button>
                             ))}
                         </HorizontalScroll>
-                    </div>
-                </div>
-            )}
 
-            {/* 3. Venue Selection (Custom Dropdown with Search/Filter) */}
+                        {/* District Selection (Inside styled box with pointer) */}
+                        {(selectedRegion !== 'all' && districts.length > 0) && (
+                            <div className="relative pt-2 animate-in fade-in slide-in-from-top-2 duration-300">
+                                {/* Pointer Arrow */}
+                                <div className="absolute top-0 left-6 w-3 h-3 bg-gray-900 light:bg-gray-50 border-l border-t border-white/10 light:border-gray-200 rotate-45 -translate-y-1/2 z-10" />
+
+                                <div className="bg-gray-900/50 light:bg-gray-50 p-3 rounded-2xl border border-white/10 light:border-gray-200 shadow-inner">
+                                    <div className="flex items-center justify-between mb-2 px-1">
+                                        <label className="text-[10px] font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-widest">
+                                            상세 지역 (구/군)
+                                        </label>
+                                        <span className="text-[10px] text-purple-400 font-bold">{selectedRegionLabel} {districts.length}</span>
+                                    </div>
+                                    <HorizontalScroll>
+                                        <button
+                                            onClick={() => handleDistrictSelectInternal('all')}
+                                            className={clsx(
+                                                "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
+                                                selectedDistrict === 'all'
+                                                    ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold"
+                                                    : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                            )}
+                                        >
+                                            전체
+                                        </button>
+                                        {districts.map(d => (
+                                            <button
+                                                key={d}
+                                                onClick={() => handleDistrictSelectInternal(d)}
+                                                className={clsx(
+                                                    "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
+                                                    selectedDistrict === d
+                                                        ? "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
+                                                        : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                                )}
+                                            >
+                                                {d}
+                                            </button>
+                                        ))}
+                                    </HorizontalScroll>
+                                </div>
+                            </div>
+                        )}
+                    </motion.div>
+                )}
+            </div>
+
+            {/* 2. Venue Selection (Custom Dropdown with Search/Filter) */}
             {(availableVenues.length > 0) && (
                 <div className={clsx("space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-400 delay-75", !inline && "z-20")}> {/* z-index for dropdown */}
-                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
-                        공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
+                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1">
+                        <StadiumIcon className="w-3.5 h-3.5 text-purple-400" /> 공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
                     </label>
 
                     <div className="relative" ref={venueDropdownRef}>

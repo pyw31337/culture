@@ -387,7 +387,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     };
 
     // Bottom Nav Handlers
-    const handleMenuClick = (menu: BottomMenuType) => setActiveBottomMenu(menu);
+    const handleMenuClick = (menu: BottomMenuType) => {
+        setActiveBottomMenu(prev => prev === menu ? null : menu);
+    };
     const handleLikePerfClick = () => setViewMode(prev => prev === 'likes-perf' ? 'grid' : 'likes-perf');
     const handleLikeVenueClick = () => setViewMode(prev => prev === 'likes-venue' ? 'grid' : 'likes-venue');
     const handleViewModeChange = (mode: string) => setViewMode(mode);
@@ -783,7 +785,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             <BottomNav
                 activeMenu={activeBottomMenu}
                 currentViewMode={viewMode}
-                onMenuClick={setActiveBottomMenu}
+                onMenuClick={handleMenuClick}
                 onLikePerfClick={handleLikePerfClick}
                 onLikeVenueClick={handleLikeVenueClick}
                 likeCount={likedIds.length}

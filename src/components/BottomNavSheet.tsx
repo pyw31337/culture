@@ -278,7 +278,7 @@ export default function BottomNavSheet({
 
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
-                        <div className="space-y-6">
+                        <div className="space-y-4">
                             <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center gap-2">
                                 <span className="text-purple-400">#</span> 위치 및 검색
                             </h3>
