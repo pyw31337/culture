@@ -80,15 +80,15 @@ export default function ImageWithFallback({
                 onError={handleError}
                 onLoad={() => setIsLoaded(true)}
                 unoptimized={isUnoptimized}
-                width={optimizationWidth}
-                height={Math.floor(optimizationWidth * 1.4)}
+                width={!props.fill ? (props.width || optimizationWidth) : undefined}
+                height={!props.fill ? (props.height || Math.floor(optimizationWidth * 1.4)) : undefined}
                 className={clsx(
                     props.className,
                     "transition-opacity duration-500",
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 quality={75}
-                style={{ zIndex: 1 }}
+                style={{ zIndex: 1, ...props.style }}
             />
         </>
     );

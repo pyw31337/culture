@@ -1,9 +1,10 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react'; // Added hooks
 import { clsx } from 'clsx';
-import { ChevronDown, MapPin, Check, Search, X } from 'lucide-react'; // Added icons
+import { ChevronDown, MapPin, Check, Search, X, GripHorizontal } from 'lucide-react'; // Added icons
 import { REGIONS } from '@/lib/constants';
-import { getChoseong } from '@/lib/hangul'; // Import Choseong utility
+import { getChoseong } from '@/lib/hangul';
+import { motion } from 'framer-motion';
 
 import venuesData from '@/data/venues.json'; // Direct import for lookup
 
@@ -39,6 +40,43 @@ export function LocationSelector({
     dropUp = false,
     inline = false
 }: LocationSelectorProps) {
+
+    // --- Horizontal Scroll Sub-component ---
+    const HorizontalScroll = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+        const containerRef = useRef<HTMLDivElement>(null);
+        const contentRef = useRef<HTMLDivElement>(null);
+        const [constraints, setConstraints] = useState({ left: 0, right: 0 });
+
+        const updateConstraints = () => {
+            if (containerRef.current && contentRef.current) {
+                const containerWidth = containerRef.current.offsetWidth;
+                const contentWidth = contentRef.current.scrollWidth;
+                setConstraints({ left: Math.min(0, containerWidth - contentWidth - 16), right: 0 });
+            }
+        };
+
+        useEffect(() => {
+            updateConstraints();
+            window.addEventListener('resize', updateConstraints);
+            return () => window.removeEventListener('resize', updateConstraints);
+        }, [children]);
+
+        return (
+            <div ref={containerRef} className={clsx("overflow-hidden cursor-grab active:cursor-grabbing relative", className)}>
+                <motion.div
+                    ref={contentRef}
+                    drag="x"
+                    dragConstraints={constraints}
+                    dragElastic={0.4}
+                    className="flex gap-2 min-w-max pb-2 pt-0.5"
+                >
+                    {children}
+                </motion.div>
+                {/* Visual indicator for overflow */}
+                <div className="absolute right-0 top-0 bottom-2 w-12 bg-gradient-to-l from-gray-900/40 light:from-white/40 to-transparent pointer-events-none" />
+            </div>
+        );
+    };
 
     // UI Constants
     const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
@@ -93,8 +131,8 @@ export function LocationSelector({
                     </label>
                 </div>
 
-                {/* Modified container: Reduced gap to fit items better */}
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                {/* Horizontal Drag Area */}
+                <HorizontalScroll>
                     {/* 'All' Button */}
                     <button
                         onClick={() => {
@@ -120,7 +158,7 @@ export function LocationSelector({
                             {r.label}
                         </button>
                     ))}
-                </div>
+                </HorizontalScroll>
             </div>
 
             {/* 2. District Selection (Conditional) */}
@@ -129,12 +167,12 @@ export function LocationSelector({
                     <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider">
                         상세 지역 (구/군)
                     </label>
-                    <div className="bg-gray-900/30 light:bg-gray-50 p-3 sm:p-4 rounded-2xl border border-white/5 light:border-gray-200">
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                    <div className="bg-gray-900/30 light:bg-gray-50 p-2 sm:p-3 rounded-2xl border border-white/5 light:border-gray-200">
+                        <HorizontalScroll>
                             <button
                                 onClick={() => onDistrictSelect('all')}
                                 className={clsx(
-                                    "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-semibold border transition-all",
+                                    "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
                                     selectedDistrict === 'all'
                                         ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold"
                                         : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
@@ -147,7 +185,7 @@ export function LocationSelector({
                                     key={d}
                                     onClick={() => onDistrictSelect(d)}
                                     className={clsx(
-                                        "px-3 py-1.5 sm:py-2 rounded-lg text-xs font-semibold border transition-all",
+                                        "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
                                         selectedDistrict === d
                                             ? "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
                                             : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
@@ -156,7 +194,7 @@ export function LocationSelector({
                                     {d}
                                 </button>
                             ))}
-                        </div>
+                        </HorizontalScroll>
                     </div>
                 </div>
             )}
@@ -192,16 +230,16 @@ export function LocationSelector({
                             <div className={clsx(
                                 "bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200",
                                 // Fix overlap: Restricted height and bottom padding/margin logic
-                                inline ? "mt-2 relative w-full" : (dropUp ? "absolute bottom-[115%] mb-2 left-0 w-full max-h-[300px]" : "absolute top-full mt-2 left-0 w-full max-h-[300px]")
+                                inline ? "mt-2 relative w-full" : (dropUp ? "absolute bottom-[115%] mb-2 left-0 w-full max-h-[400px]" : "absolute top-full mt-2 left-0 w-full max-h-[400px]")
                             )}>
 
                                 {/* Choseong Filter Header */}
                                 <div className="p-2 border-b border-white/5 light:border-gray-100 bg-gray-800/50 light:bg-gray-50">
-                                    <div className="flex flex-wrap gap-1 justify-center">
+                                    <HorizontalScroll>
                                         <button
                                             onClick={() => setActiveChoseong('all')}
                                             className={clsx(
-                                                "w-8 h-8 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm", // Square 1:1, text size match
+                                                "w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm",
                                                 activeChoseong === 'all'
                                                     ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
                                                     : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
@@ -214,7 +252,7 @@ export function LocationSelector({
                                                 key={cho}
                                                 onClick={() => setActiveChoseong(cho)}
                                                 className={clsx(
-                                                    "w-8 h-8 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm", // Square 1:1, text size match
+                                                    "w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm",
                                                     activeChoseong === cho
                                                         ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
                                                         : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
@@ -223,11 +261,11 @@ export function LocationSelector({
                                                 {cho}
                                             </button>
                                         ))}
-                                    </div>
+                                    </HorizontalScroll>
                                 </div>
 
                                 {/* Venue List with Scrollbar */}
-                                <div className="max-h-[200px] overflow-y-auto custom-scrollbar p-1"> {/* Reduced Max Height inside content to prevent overflow */}
+                                <div className="max-h-[300px] overflow-y-auto custom-scrollbar p-1"> {/* Increased from 200px */}
                                     <button
                                         onClick={() => handleVenueClick('all')}
                                         className={clsx(
@@ -251,7 +289,7 @@ export function LocationSelector({
                                                 key={v}
                                                 onClick={() => handleVenueClick(v)}
                                                 className={clsx(
-                                                    "w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors flex items-center justify-between group",
+                                                    "w-full text-left px-3 py-3 text-sm rounded-lg transition-colors flex items-center justify-between group border-b border-white/5 light:border-gray-50 last:border-0",
                                                     selectedVenue === v
                                                         ? "bg-purple-500/10 text-purple-400 font-extrabold"
                                                         : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
@@ -262,10 +300,10 @@ export function LocationSelector({
 
                                                 {/* Right: Location & Check */}
                                                 <div className="flex items-center gap-2 shrink-0">
-                                                    {/* Location Tag */}
-                                                    {venues[v]?.district && (
-                                                        <span className="text-[10px] sm:text-xs text-gray-500 light:text-gray-400 border border-white/5 light:border-gray-200 px-1.5 py-0.5 rounded bg-black/20 light:bg-gray-50">
-                                                            {venues[v].district}
+                                                    {/* Location Tag (Full Region + District) */}
+                                                    {(venues[v]?.mapped_region_id || venues[v]?.district) && (
+                                                        <span className="text-[10px] sm:text-xs text-gray-400 light:text-gray-500 border border-white/5 light:border-gray-200 px-2 py-0.5 rounded bg-black/40 light:bg-gray-100 italic">
+                                                            {[REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
                                                         </span>
                                                     )}
                                                     {selectedVenue === v && <Check className="w-3.5 h-3.5 text-purple-500" />}
