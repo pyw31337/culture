@@ -47,6 +47,7 @@ interface Venue {
     district?: string;
     lat?: number;
     lng?: number;
+    mapped_region_id?: string;
 }
 
 const venues = venueData as Record<string, Venue>;
@@ -161,8 +162,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // --- Derived Filter Lists (Restored) ---
     const districts = useMemo(() => {
         if (!selectedRegion || selectedRegion === 'all') return [];
-        const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label || '';
-        const regionVenues = Object.values(venues).filter(v => v.address.includes(regionLabel));
+        const regionVenues = Object.values(venues).filter(v => v.mapped_region_id === selectedRegion);
         const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
         return Array.from(uniqueDistricts).sort();
     }, [selectedRegion]);
@@ -170,8 +170,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const availableVenues = useMemo(() => {
         let relevantVenues = Object.keys(venues);
         if (selectedRegion && selectedRegion !== 'all') {
-            const regionLabel = REGIONS.find(r => r.id === selectedRegion)?.label || '';
-            relevantVenues = relevantVenues.filter(v => venues[v].address.includes(regionLabel));
+            relevantVenues = relevantVenues.filter(v => venues[v].mapped_region_id === selectedRegion);
         }
         if (selectedDistrict && selectedDistrict !== 'all') {
             relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
