@@ -186,7 +186,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         {randomRecs.map((perf, idx) => (
                             <div
                                 key={perf.id}
-                                className="flex items-end gap-x-2 sm:gap-x-4 flex-shrink-0"
+                                className="flex items-end gap-x-4 sm:gap-x-8 flex-shrink-0"
                             >
                                 {/* Rank Number - Flexed Left */}
                                 <div className="flex-shrink-0 select-none pointer-events-none mb-[-1rem]">
