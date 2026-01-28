@@ -158,6 +158,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius]);
 
+    // --- Derived Filter Lists (Restored) ---
+    const districts = useMemo(() => {
+        if (!selectedRegion || selectedRegion === 'all') return [];
+        const regionVenues = Object.values(venues).filter(v => v.address.includes(selectedRegion));
+        const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
+        return Array.from(uniqueDistricts).sort();
+    }, [selectedRegion]);
+
+    const availableVenues = useMemo(() => {
+        let relevantVenues = Object.keys(venues);
+        if (selectedRegion && selectedRegion !== 'all') {
+            relevantVenues = relevantVenues.filter(v => venues[v].address.includes(selectedRegion));
+        }
+        if (selectedDistrict && selectedDistrict !== 'all') {
+            relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
+        }
+        return relevantVenues.sort();
+    }, [selectedRegion, selectedDistrict]);
+
 
     // --- 3. Pagination (Virtual "Infinite Scroll") ---
     const [visibleCount, setVisibleCount] = useState(24);
@@ -593,8 +612,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     }}
                     handleKeyDown={() => { }}
                     handleCurrentLocationClick={() => { }}
-                    availableVenues={[]}
-                    districts={[]}
+                    availableVenues={availableVenues}
+                    districts={districts}
                     recentKeywords={savedKeywords}
                     onKeywordSelect={(k) => { setSearchText(k); }}
                     onRemoveRecent={() => { }}
@@ -755,8 +774,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 keywords={savedKeywords}
                 onKeywordAdd={(k) => setSavedKeywords(prev => [...prev, k])}
                 onKeywordRemove={(k) => setSavedKeywords(prev => prev.filter(w => w !== k))}
-                districts={[]}
-                availableVenues={Object.keys(venues)}
+                districts={districts}
+                availableVenues={availableVenues}
                 onSearch={() => { }}
             />
 
