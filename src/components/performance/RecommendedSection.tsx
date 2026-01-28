@@ -120,7 +120,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     if (randomRecs.length === 0) return null;
 
     return (
-        <section className="mb-16 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
+        <section className="mb-8 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
             <div className="flex items-center justify-between mb-4 px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-purple-400 fill-purple-400/20" />
@@ -159,14 +159,14 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                         ref={contentRef}
                         drag="x"
                         dragConstraints={constraints}
-                        dragElastic={0.1} // Reduced elasticity for tighter feel
+                        dragElastic={0.6} // Restored elastic feel
                         style={{ x }}
                         onDragStart={() => setIsDragging(true)}
                         onDragEnd={() => {
                             // Small delay to prevent accidental clicks immediately after drag release
                             setTimeout(() => setIsDragging(false), 50);
                         }}
-                        className="flex gap-4 sm:gap-6 pl-[4%] pr-[4%] pt-4 items-end min-w-max"
+                        className="flex gap-12 sm:gap-20 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
                     >
                         {randomRecs.map((perf, idx) => (
                             <motion.div
@@ -180,7 +180,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 onTap={(e, info) => handleItemClick(perf, info)}
                             >
                                 {/* Rank Number */}
-                                <div className="absolute -left-4 sm:-left-10 bottom-0 z-0 h-full flex items-end pointer-events-none select-none">
+                                <div className="absolute -left-12 sm:-left-20 bottom-0 z-0 h-full flex items-end pointer-events-none select-none">
                                     <span
                                         className="text-[8rem] sm:text-[10rem] font-black italic leading-none tracking-tighter text-transparent"
                                         style={{ WebkitTextStroke: '2px #64748b' }}
