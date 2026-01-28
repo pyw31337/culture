@@ -32,6 +32,20 @@ export function filterPerformances(performances: Performance[], options: FilterO
     let filtered = performances;
     const { genre, region, district, venue, search, lat, lng, radius } = options;
 
+    // 0. Base Filter: Strict Address Integrity
+    // Exclude any physical event that doesn't have a record in venues.json or has an empty address.
+    // Digital content (OTT/Movie) is exempt from physical address requirement.
+    filtered = filtered.filter(p => {
+        if (p.genre === 'ott' || p.genre === 'movie') return true;
+
+        const venueInfo = venues[p.venue];
+        if (!venueInfo || !venueInfo.address || venueInfo.address.trim() === '') {
+            return false;
+        }
+        return true;
+    });
+
+
     // 1. Search Filter (Highest Priority)
     if (search && search.trim()) {
         const searchText = search.trim();

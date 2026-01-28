@@ -31,16 +31,50 @@ const regionInverseMapping: Record<string, string> = Object.fromEntries(
     Object.entries(regionMapping).map(([k, v]) => [v, k])
 );
 
+const performancesPath = path.resolve(process.cwd(), 'public/data/performances.json');
+const performances = JSON.parse(fs.readFileSync(performancesPath, 'utf8'));
+
 console.log('Auditing Venue addresses...');
 
 let fixCount = 0;
 let unknownCount = 0;
+let newVenueCount = 0;
+
+// 1. Collect all unique venues from performances
+const performanceVenues = new Set<string>();
+performances.forEach((p: any) => {
+    if (p.venue) performanceVenues.add(p.venue);
+});
+
+// 2. Add missing venues to venues.json if the venue name looks like an address
+performanceVenues.forEach(vName => {
+    if (!venues[vName]) {
+        // Heuristic: If name starts with common region markers, it's likely an address
+        const looksLikeAddress = /^(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)/.test(vName);
+
+        if (looksLikeAddress) {
+            venues[vName] = {
+                name: vName,
+                address: vName,
+                district: '',
+                mapped_region_id: ''
+            };
+            newVenueCount++;
+        }
+    }
+});
 
 for (const key in venues) {
     const venue = venues[key];
     const address = venue.address || '';
 
-    // 1. Identify primary region from address
+    // skip if no address
+    if (!address) {
+        unknownCount++;
+        continue;
+    }
+
+    // Identify primary region from address
     let foundRegion = '';
     for (const reg in hierarchy) {
         if (address.startsWith(reg) || address.includes(reg + ' ')) {
@@ -56,7 +90,6 @@ for (const key in venues) {
             for (const reg in hierarchy) {
                 if (hierarchy[reg].includes(curDistrict)) {
                     foundRegion = reg;
-                    // console.log(`Fixed unknown region for ${venue.name} using district ${curDistrict} -> ${reg}`);
                     fixCount++;
                     break;
                 }
@@ -65,21 +98,16 @@ for (const key in venues) {
     }
 
     if (foundRegion) {
-        // 2. Validate/Fix District
         const possibleDistricts = hierarchy[foundRegion];
         const curDistrict = venue.district;
 
-        // Specific fix for Michuhol-gu: If it's Michuhol-gu, foundRegion MUST be Incheon
         if (curDistrict === '미추홀구' && foundRegion !== '인천') {
-            console.log(`Mismatch: ${venue.name} has Michuhol-gu but region is ${foundRegion}. Fixing to 인천.`);
             foundRegion = '인천';
-            venue.address = address.replace(/경기|서울|인천/, '인천'); // Rough fix
+            venue.address = address.replace(/경기|서울|인천/, '인천');
             fixCount++;
         }
 
-        // Check if district is in the allowed list for this region
         if (curDistrict && !possibleDistricts.includes(curDistrict)) {
-            // Try to find correct region for this district
             let correctRegion = '';
             for (const reg in hierarchy) {
                 if (hierarchy[reg].includes(curDistrict)) {
@@ -89,16 +117,13 @@ for (const key in venues) {
             }
 
             if (correctRegion && correctRegion !== foundRegion) {
-                // console.log(`Inconsistent: ${venue.name} District ${curDistrict} belongs to ${correctRegion} but address says ${foundRegion}. Updating region id.`);
                 foundRegion = correctRegion;
                 fixCount++;
             }
         }
 
-        // Update venue properties
         venue.mapped_region_id = regionMapping[foundRegion];
 
-        // If address starts with region but district is missing, try to extract it
         if (!venue.district) {
             for (const dist of possibleDistricts) {
                 if (address.includes(dist)) {
@@ -109,11 +134,10 @@ for (const key in venues) {
         }
     } else {
         unknownCount++;
-        // console.warn(`Could not determine region for: ${venue.name} (${address})`);
     }
 }
 
-console.log(`Audit complete. Fixed: ${fixCount}, Unknown: ${unknownCount}`);
+console.log(`Audit complete. Added: ${newVenueCount}, Fixed: ${fixCount}, Unknown: ${unknownCount}`);
 
 fs.writeFileSync(venuesPath, JSON.stringify(venues, null, 2));
 console.log('Saved updated venues.json');
