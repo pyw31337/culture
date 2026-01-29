@@ -560,74 +560,80 @@ export default function HeroSection({
                         : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
                 )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
-                        {/* Mode Toggle Switch */}
-                        <div className="flex bg-gray-900/50 light:bg-gray-100 p-1 rounded-full border border-gray-700/50 light:border-gray-200 mr-2 shrink-0">
+
+                        {/* Input Field (Moved to Left) */}
+                        <div className="flex-1 relative">
+                            <input
+                                type="text"
+                                value={searchText}
+                                onFocus={() => setActiveSearchSource('hero')}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    setSearchText(val);
+                                    // Reset location filters when user starts typing search
+                                    if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
+                                        setSelectedRegion('all');
+                                        setSelectedDistrict('all');
+                                        setSelectedVenue('all');
+                                    }
+                                }}
+                                onKeyDown={handleKeyDown}
+                                className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
+                                placeholder={searchMode === 'location'
+                                    ? "지역, 지하철역, 장소 검색 (예: 강남역)"
+                                    : "문화 정보, 장소, 공연명 검색..."
+                                }
+                            />
+                            {/* Reset Button (Next to Input) */}
+                            {searchText && (
+                                <button
+                                    onClick={() => {
+                                        setSearchText('');
+                                        setIsDropdownOpen(false);
+                                        setSearchLocation(null);
+                                    }}
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-white light:hover:text-black transition-colors"
+                                >
+                                    <X className="w-4 h-4" />
+                                </button>
+                            )}
+                        </div>
+
+                        {/* Divider */}
+                        <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
+
+                        {/* Mode Toggle Switch (Moved to Right of Input) */}
+                        <div className="flex px-1 shrink-0">
+                            {/* Single Toggle Button that flips mode */}
                             <button
-                                onClick={() => onSearchModeChange('location')}
+                                onClick={() => onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
                                 className={clsx(
-                                    "px-3 py-1.5 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap",
+                                    "px-4 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
                                     searchMode === 'location'
-                                        ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
-                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-black"
+                                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
+                                        : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
                                 )}
+                                style={{ height: '80%' }} // Hint at 80% size relative to search button area roughly
                             >
-                                <MapPin size={12} fill={searchMode === 'location' ? "currentColor" : "none"} />
-                                위치 검색
-                            </button>
-                            <button
-                                onClick={() => onSearchModeChange('keyword')}
-                                className={clsx(
-                                    "px-3 py-1.5 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap",
-                                    searchMode === 'keyword'
-                                        ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-black"
+                                {searchMode === 'location' ? (
+                                    <>
+                                        <MapPin size={14} className="fill-current" />
+                                        <span>위치 검색</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Search size={14} />
+                                        <span>키워드 검색</span>
+                                    </>
                                 )}
-                            >
-                                <Search size={12} />
-                                키워드 검색
                             </button>
                         </div>
 
-                        <input
-                            type="text"
-                            value={searchText}
-                            onFocus={() => setActiveSearchSource('hero')}
-                            onChange={(e) => {
-                                const val = e.target.value;
-                                setSearchText(val);
-                                // Reset location filters when user starts typing search
-                                if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
-                                    setSelectedRegion('all');
-                                    setSelectedDistrict('all');
-                                    setSelectedVenue('all');
-                                }
-                            }}
-                            onKeyDown={handleKeyDown}
-                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-3 py-3 w-full lg:w-[320px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
-                            placeholder={searchMode === 'location'
-                                ? "지역, 지하철역, 장소 검색 (예: 강남역)"
-                                : "문화 정보, 장소, 공연명 검색..."
-                            }
-                        />
-
-                        {/* Reset Button */}
-                        {searchText && (
-                            <button
-                                onClick={() => {
-                                    setSearchText('');
-                                    setIsDropdownOpen(false);
-                                    setSearchLocation(null);
-                                }}
-                                className="p-2 text-gray-500 hover:text-white"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-                        )}
-
+                        {/* Search Button (Far Right) */}
                         <button
                             onClick={handleSearch}
                             className={clsx(
-                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none",
+                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1",
                                 searchMode === 'location'
                                     ? "bg-gradient-to-r from-emerald-500 to-teal-500 shadow-emerald-500/30"
                                     : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6]"

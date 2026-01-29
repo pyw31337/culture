@@ -17,9 +17,10 @@ interface PerformanceListItemProps {
     variant?: 'default' | 'yellow' | 'pink' | 'emerald';
     onShare?: () => Promise<boolean>;
     onDetail?: () => void;
+    searchMode?: 'keyword' | 'location';
 }
 
-export default function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail }: PerformanceListItemProps) {
+export default function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword' }: PerformanceListItemProps) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -247,7 +248,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className={clsx(
-                                "text-lg sm:text-xl font-extrabold leading-tight mb-1 group-hover/link:text-[#a78bfa] transition-colors line-clamp-5",
+                                "text-lg sm:text-xl font-extrabold leading-tight mb-1 transition-colors line-clamp-5",
+                                searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",
                                 variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
                                 {cleanTitle(perf.title) || '제목 없음'}

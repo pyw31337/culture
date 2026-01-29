@@ -21,9 +21,10 @@ interface PerformanceCardProps {
     isGradient?: boolean;
     onShare?: () => Promise<boolean>;
     onDetail?: () => void;
+    searchMode?: 'keyword' | 'location';
 }
 
-export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail }: PerformanceCardProps) {
+export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword' }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
@@ -147,7 +148,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                 className={
                     clsx(
                         "relative transition-transform ease-out sm:transform-style-3d shadow-xl light:shadow-none group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-none h-full rounded-[15px] will-change-transform",
-                        variant === 'default' ? "gold-shimmer-wrapper aspect-[3/4]" : "",
+                        variant === 'default'
+                            ? (searchMode === 'location'
+                                ? "gold-shimmer-wrapper aspect-[3/4] border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
+                                : "gold-shimmer-wrapper aspect-[3/4]")
+                            : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
                             : variant === 'pink'
@@ -171,14 +176,16 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                 {/* Shimmer Border (Default Only) */}
                 {variant === 'default' && (
-                    <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? '#a78bfa' : 'gold' } as React.CSSProperties} />
+                    <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
                 )}
 
                 {/* Main Card Content */}
                 <div className={clsx(
                     "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
                     isGradient
-                        ? "bg-gradient-to-br from-[#2e1065] to-[#0f172a]"
+                        ? (searchMode === 'location'
+                            ? "bg-gradient-to-br from-[#064e3b] to-[#0f172a]" // Emerald to Dark
+                            : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
                         : "bg-gray-900"
                 )}
                     style={{ transform: 'translateZ(0)' }} // Force stacking context for Safari overflow fix
@@ -187,7 +194,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                     {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
                     {showRibbon && (
                         <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
-                            <div className="absolute top-0 left-0 bg-[#a78bfa] text-white text-[10px] font-extrabold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20">
+                            <div className={clsx(
+                                "absolute top-0 left-0 text-white text-[10px] font-extrabold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20",
+                                searchMode === 'location' ? "bg-emerald-500" : "bg-[#a78bfa]"
+                            )}>
                                 추천 공연
                             </div>
                         </div>
@@ -215,13 +225,23 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                     {/* Neon Stroke Effect (Border Gradient) */}
                     {variant !== 'yellow' && variant !== 'pink' && (
-                        <div className="absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc] bg-[length:200%_auto] pointer-events-none" />
+                        <div className={clsx(
+                            "absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-[length:200%_auto] pointer-events-none",
+                            searchMode === 'location'
+                                ? "bg-linear-to-tr from-[#34d399] via-[#059669] to-[#34d399]"
+                                : "bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc]"
+                        )} />
                     )}
 
                     {/* Glare Effect 2 */}
                     <div
                         ref={glareRef}
-                        className="hidden sm:block absolute inset-0 w-[200%] h-[200%] bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300"
+                        className={clsx(
+                            "hidden sm:block absolute inset-0 w-[200%] h-[200%] opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300",
+                            searchMode === 'location'
+                                ? "bg-linear-to-tr from-transparent via-white/10 via-emerald-400/20 via-teal-400/20 via-white/10 to-transparent"
+                                : "bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent"
+                        )}
                         style={{ left: '-25%', top: '-25%' }}
                     />
 
@@ -517,7 +537,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                             <span className={clsx(
                                                 "px-3 py-1 rounded-full text-xs font-extrabold backdrop-blur-md border shadow-sm transition-all text-white",
-                                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]'
+                                                GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                             )}>
                                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                             </span>
@@ -632,8 +652,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         if (onLocationClick) {
                                                             onLocationClick({ lat: venueInfo?.lat || 0, lng: venueInfo?.lng || 0, name: perf.venue || 'Online' });
                                                         }
-                                                    }} className="flex items-center gap-1 hover:text-[#a78bfa] hover:underline truncate relative z-[100] cursor-pointer max-w-full">
-                                                        <MapPin className="w-3.5 h-3.5 text-[#a78bfa] flex-shrink-0" />
+                                                    }} className={clsx("flex items-center gap-1 hover:underline truncate relative z-[100] cursor-pointer max-w-full", searchMode === 'location' ? "hover:text-emerald-400" : "hover:text-[#a78bfa]")}>
+                                                        <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
                                                         <span className="truncate">{perf.venue || 'Online'}</span>
                                                     </button>
                                                 )}

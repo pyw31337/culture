@@ -23,6 +23,7 @@ interface PerformanceGridProps {
     // For Logic
     selectedGenre: string;
     viewMode: string;
+    searchMode?: 'keyword' | 'location';
 }
 
 export default function PerformanceGrid({
@@ -40,7 +41,8 @@ export default function PerformanceGrid({
     hasMore,
     observerRef,
     selectedGenre,
-    viewMode
+    viewMode,
+    searchMode = 'keyword'
 }: PerformanceGridProps) {
 
     return (
@@ -95,6 +97,7 @@ export default function PerformanceGrid({
                                 enableActions={true}
                                 onShare={() => copyItemShareUrl(perf.id)}
                                 onDetail={() => handleDetailOpen(perf)}
+                                searchMode={searchMode}
                             />
                         ) : (
                             <PerformanceListItem
@@ -109,6 +112,7 @@ export default function PerformanceGrid({
                                 onToggleLike={(e) => onToggleLike(perf.id, e)}
                                 onShare={() => copyItemShareUrl(perf.id)}
                                 onDetail={() => handleDetailOpen(perf)}
+                                searchMode={searchMode}
                             />
                         )}
                     </div>

@@ -297,42 +297,53 @@ export default function BottomNavSheet({
                                 )}>
                                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
 
-                                        {/* Toggle Switch */}
-                                        <div className="flex bg-gray-900 light:bg-gray-100 p-1 rounded-full border border-gray-700 light:border-gray-200 mr-2 shrink-0">
-                                            <button
-                                                onClick={() => onSearchModeChange('location')}
-                                                className={clsx(
-                                                    "px-3 py-1.5 rounded-full text-[10px] font-bold transition-all flex items-center gap-1 whitespace-nowrap",
-                                                    searchMode === 'location'
-                                                        ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
-                                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500"
-                                                )}
-                                            >
-                                                <MapPin size={10} fill={searchMode === 'location' ? "currentColor" : "none"} />
-                                                위치
-                                            </button>
-                                            <button
-                                                onClick={() => onSearchModeChange('keyword')}
-                                                className={clsx(
-                                                    "px-3 py-1.5 rounded-full text-[10px] font-bold transition-all flex items-center gap-1 whitespace-nowrap",
-                                                    searchMode === 'keyword'
-                                                        ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500"
-                                                )}
-                                            >
-                                                <Search size={10} />
-                                                키워드
-                                            </button>
+                                        {/* Input moved to Left */}
+                                        <div className="flex-1 relative">
+                                            <input
+                                                type="text"
+                                                value={searchText}
+                                                onChange={(e) => onSearchChange(e.target.value)}
+                                                onKeyDown={handleKeyDown}
+                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소 검색..."}
+                                                className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
+                                            />
+                                            {searchText && (
+                                                <button
+                                                    onClick={() => onSearchChange('')}
+                                                    className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-500 hover:text-white light:hover:text-black"
+                                                >
+                                                    <X className="w-4 h-4" />
+                                                </button>
+                                            )}
                                         </div>
 
-                                        <input
-                                            type="text"
-                                            value={searchText}
-                                            onChange={(e) => onSearchChange(e.target.value)}
-                                            onKeyDown={handleKeyDown}
-                                            placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소 검색..."}
-                                            className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-2 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
-                                        />
+                                        {/* Divider */}
+                                        <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
+
+                                        {/* Toggle Switch moved to Right */}
+                                        <div className="flex px-1 shrink-0">
+                                            <button
+                                                onClick={() => onSearchModeChange && onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
+                                                className={clsx(
+                                                    "px-3 py-2 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
+                                                    searchMode === 'location'
+                                                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
+                                                        : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
+                                                )}
+                                            >
+                                                {searchMode === 'location' ? (
+                                                    <>
+                                                        <MapPin size={12} className="fill-current" />
+                                                        <span>위치 검색</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <Search size={12} />
+                                                        <span>키워드</span>
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
