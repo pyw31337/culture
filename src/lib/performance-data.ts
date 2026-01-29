@@ -27,7 +27,7 @@ import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
 import venueData from '@/data/venues.json';
 
-const venues = venueData as Record<string, { address: string }>;
+const venues = venueData as Record<string, { address: string; lat?: number; lng?: number }>;
 
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
