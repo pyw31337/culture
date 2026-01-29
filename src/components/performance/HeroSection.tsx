@@ -518,6 +518,7 @@ export default function HeroSection({
                                 onVenueSelect={setSelectedVenue}
                                 districts={districts}
                                 availableVenues={availableVenues}
+                                searchMode={searchMode}
                             />
                         </div>
                     </div>
@@ -528,6 +529,7 @@ export default function HeroSection({
                         template={currentTemplate}
                         onCycle={onCycle}
                         paused={!isHeroVisible || !['list', 'grid', 'likes-perf', 'likes-venue'].includes(viewMode)}
+                        searchMode={searchMode}
                     />
                 </div>
 

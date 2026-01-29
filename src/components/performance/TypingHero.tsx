@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { HeroTemplate } from '../../lib/hero-templates';
+import { clsx } from 'clsx';
 
 const Cursor = () => (
     <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
@@ -9,11 +9,13 @@ const Cursor = () => (
 export const TypingHero = ({
     template,
     onCycle,
-    paused
+    paused,
+    searchMode = 'keyword'
 }: {
     template: HeroTemplate,
     onCycle: () => void,
-    paused: boolean
+    paused: boolean,
+    searchMode?: 'keyword' | 'location'
 }) => {
     const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
     // Phases: TYPE (writing), WAIT (holding text), DELETE (erasing), CYCLING (waiting for new prop)
@@ -143,7 +145,12 @@ export const TypingHero = ({
             {cursorSegment === 'bold' && <Cursor />}
             {t2Pre}
             {cursorSegment === 'line2Pre' && <Cursor />}
-            <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+            <span className={clsx(
+                "font-black text-transparent bg-clip-text animate-shine bg-[length:200%_auto] tracking-normal py-1",
+                searchMode === 'location'
+                    ? "bg-gradient-to-r from-emerald-300 via-teal-400 to-green-300"
+                    : "bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa]"
+            )}>
                 {tHl}
             </span>
             {cursorSegment === 'hl' && <Cursor />}

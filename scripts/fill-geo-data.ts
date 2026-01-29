@@ -50,7 +50,7 @@ async function run() {
     // Identify targets
     const targets = Object.entries(venues).filter(([key, v]: [string, any]) => {
         return !v.lat || !v.lng || v.lat === 'null' || isNaN(parseFloat(v.lat));
-    });
+    }) as [string, any][];
 
     console.log(`Found ${targets.length} venues missing geodata.`);
 

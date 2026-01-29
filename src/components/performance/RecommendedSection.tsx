@@ -13,9 +13,10 @@ interface RecommendedSectionProps {
     onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
     onDetail: (perf: any) => void;
+    searchMode?: 'keyword' | 'location';
 }
 
-export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail }: RecommendedSectionProps) {
+export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword' }: RecommendedSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
@@ -137,9 +138,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
         <section className="mb-8 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
             <div className="flex items-center justify-between mb-4 px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-purple-400 fill-purple-400/20" />
+                    <Sparkles className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        실시간 인기 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">TOP 9</span>
+                        실시간 인기 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-emerald-400 to-teal-500" : "from-purple-400 to-pink-500")}>TOP 9</span>
                     </h2>
                 </div>
             </div>

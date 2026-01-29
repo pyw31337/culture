@@ -45,6 +45,7 @@ interface LocationSelectorProps {
     isMobile?: boolean;
     dropUp?: boolean;
     inline?: boolean;
+    searchMode?: 'keyword' | 'location';
 }
 
 const CHOSEONG_LIST = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
@@ -62,13 +63,26 @@ export function LocationSelector({
     availableVenues,
     isMobile = false,
     dropUp = false,
-    inline = false
+    inline = false,
+    searchMode = 'keyword'
 }: LocationSelectorProps) {
 
     // UI Constants
     const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
-    const activeClass = "bg-purple-600 text-white border-purple-500 shadow-md font-extrabold light:bg-purple-100 light:text-purple-700 light:border-purple-200";
+
+    // Dynamic Colors based on Search Mode
+    const isLoc = searchMode === 'location';
+
+    const activeClass = isLoc
+        ? "bg-emerald-600 text-white border-emerald-500 shadow-md font-extrabold light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
+        : "bg-purple-600 text-white border-purple-500 shadow-md font-extrabold light:bg-purple-100 light:text-purple-700 light:border-purple-200";
+
     const inactiveClass = "bg-gray-800/50 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50";
+
+    const accentTextClass = isLoc ? "text-emerald-400" : "text-purple-400";
+    const accentBorderClass = isLoc ? "border-emerald-500" : "border-purple-500";
+    const accentBgClass = isLoc ? "bg-emerald-600" : "bg-purple-600";
+    const accentLightTextClass = isLoc ? "light:text-emerald-600" : "light:text-purple-600";
 
     // Venue Selector State
     const [isVenueOpen, setIsVenueOpen] = useState(false);
@@ -136,7 +150,7 @@ export function LocationSelector({
                     {/* Fixed width container for icon to align text perfectly */}
                     <div className="flex items-center gap-2">
                         <div className="w-5 flex justify-center">
-                            <MapPin className="w-4 h-4 text-purple-400" strokeWidth={2.5} />
+                            <MapPin className={clsx("w-4 h-4", accentTextClass)} strokeWidth={2.5} />
                         </div>
                         <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider cursor-pointer">
                             지역 설정
@@ -145,7 +159,12 @@ export function LocationSelector({
 
                     <div className="flex items-center gap-2">
                         {!isRegionExpanded && (
-                            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-extrabold text-purple-400 animate-in fade-in zoom-in-95 duration-300">
+                            <div className={clsx(
+                                "flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-[11px] font-extrabold animate-in fade-in zoom-in-95 duration-300",
+                                isLoc
+                                    ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
+                                    : "bg-purple-500/10 border-purple-500/20 text-purple-400"
+                            )}>
                                 <span>{selectedRegionLabel}</span>
                                 {selectedDistrict !== 'all' && (
                                     <>
@@ -156,9 +175,9 @@ export function LocationSelector({
                             </div>
                         )}
                         {isRegionExpanded ? (
-                            <ChevronUp className="w-4 h-4 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                            <ChevronUp className={clsx("w-4 h-4 text-gray-500 transition-colors", isLoc ? "group-hover:text-emerald-400" : "group-hover:text-purple-400")} />
                         ) : (
-                            <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-purple-400 transition-colors" />
+                            <ChevronDown className={clsx("w-4 h-4 text-gray-500 transition-colors", isLoc ? "group-hover:text-emerald-400" : "group-hover:text-purple-400")} />
                         )}
                     </div>
                 </div>
@@ -179,7 +198,7 @@ export function LocationSelector({
                                     className={clsx(
                                         baseButtonClass,
                                         selectedRegion === 'all'
-                                            ? "bg-purple-600 text-white border-purple-500 shadow-md font-extrabold"
+                                            ? activeClass
                                             : inactiveClass
                                     )}
                                 >
@@ -194,7 +213,7 @@ export function LocationSelector({
                                             "relative rounded-t-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center whitespace-nowrap",
                                             // Tab logic: If active, white background (light) / gray-900 (dark), connect to bottom
                                             selectedRegion === r.id
-                                                ? "bg-gray-900/50 light:bg-gray-50 text-purple-400 light:text-purple-600 border-white/10 light:border-gray-200 border-b-0 -mb-px z-30 font-extrabold shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
+                                                ? clsx(accentTextClass, accentLightTextClass, "bg-gray-900/50 light:bg-gray-50 border-white/10 light:border-gray-200 border-b-0 -mb-px z-30 font-extrabold shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]")
                                                 : "rounded-b-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1" // Add margin bottom for inactive to separate from line
                                         )}
                                     >
@@ -217,7 +236,7 @@ export function LocationSelector({
                                         <label className="text-[10px] font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-widest">
                                             상세 지역 (구/군)
                                         </label>
-                                        <span className="text-[10px] text-purple-400 font-bold">{selectedRegionLabel} {districts.length}</span>
+                                        <span className={clsx("text-[10px] font-bold", accentTextClass)}>{selectedRegionLabel} {districts.length}</span>
                                     </div>
                                     <HorizontalScroll>
                                         <button
@@ -225,7 +244,9 @@ export function LocationSelector({
                                             className={clsx(
                                                 "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
                                                 selectedDistrict === 'all'
-                                                    ? "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold"
+                                                    ? (isLoc
+                                                        ? "bg-emerald-500/20 text-emerald-300 light:text-emerald-700 light:bg-emerald-100 border-emerald-500/50 light:border-emerald-200 font-extrabold"
+                                                        : "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold")
                                                     : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                             )}
                                         >
@@ -238,7 +259,9 @@ export function LocationSelector({
                                                 className={clsx(
                                                     "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
                                                     selectedDistrict === d
-                                                        ? "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm"
+                                                        ? (isLoc
+                                                            ? "bg-white text-black border-white font-extrabold light:bg-emerald-600 light:text-white light:border-emerald-600 shadow-sm"
+                                                            : "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm")
                                                         : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                                 )}
                                             >
@@ -259,11 +282,10 @@ export function LocationSelector({
                     {/* Header with Alignment */}
                     <div className="flex items-center gap-2 pl-1 mb-2">
                         <div className="w-5 flex justify-center">
-                            <StadiumIcon className="w-3.5 h-3.5 text-purple-400" /> {/* Stroke logic inside component? No, component hardcodes strokeWidth=2. Need to pass prop or assume user meant visual weight match map pin. I'll modify StadiumIcon definition or just rely on 'MapPin stroke=2.5' I set earlier. Wait, user said "increase left icon thickness... to MATCH venue". So MapPin 2.5, Stadium matches? Stadium default is 2. Let's make Stadium 2 or 2.5? "Increase region icon... to match venue". So Venue is ALREADY thick? No, user said "Make region icon THICKER to match venue". Wait. "Increase region icon thickness... to match venue icon". AND "Align them". */}
-                            {/* Actually, let's just make both consistent. MapPin stroke=2.5. StadiumIcon definition below needs update? No, it's defined at top of file. I should update StadiumIcon definition to allow stroke width prop or default to 2.5. */}
+                            <StadiumIcon className={clsx("w-3.5 h-3.5", accentTextClass)} />
                         </div>
                         <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider">
-                            공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
+                            공연장 선택 <span className={clsx("ml-1", accentTextClass)}>({availableVenues.length})</span>
                         </label>
                     </div>
 
@@ -274,8 +296,8 @@ export function LocationSelector({
                             className={clsx(
                                 "w-full text-left bg-gray-900/80 light:bg-white border rounded-xl py-3.5 px-4 text-sm font-semibold shadow-sm flex items-center justify-between transition-all",
                                 isVenueOpen
-                                    ? "border-purple-500 ring-1 ring-purple-500/30 text-white light:text-black"
-                                    : "border-white/10 light:border-gray-300 text-white light:text-black hover:border-purple-500/30"
+                                    ? clsx("ring-1 text-white light:text-black", accentBorderClass, isLoc ? "ring-emerald-500/30" : "ring-purple-500/30")
+                                    : clsx("border-white/10 light:border-gray-300 text-white light:text-black", isLoc ? "hover:border-emerald-500/30" : "hover:border-purple-500/30")
                             )}
                         >
                             <span className="truncate">
@@ -302,7 +324,7 @@ export function LocationSelector({
                                             className={clsx(
                                                 "w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm",
                                                 activeChoseong === 'all'
-                                                    ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
+                                                    ? clsx(accentBgClass, "text-white font-extrabold", isLoc ? "shadow-emerald-500/30" : "shadow-purple-500/30")
                                                     : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
                                             )}
                                         >
@@ -315,7 +337,7 @@ export function LocationSelector({
                                                 className={clsx(
                                                     "w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg text-xs sm:text-sm transition-all shadow-sm",
                                                     activeChoseong === cho
-                                                        ? "bg-purple-600 text-white font-extrabold shadow-purple-500/30"
+                                                        ? clsx(accentBgClass, "text-white font-extrabold", isLoc ? "shadow-emerald-500/30" : "shadow-purple-500/30")
                                                         : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
                                                 )}
                                             >
@@ -332,7 +354,7 @@ export function LocationSelector({
                                         className={clsx(
                                             "w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors flex items-center justify-between group",
                                             selectedVenue === 'all'
-                                                ? "bg-purple-500/10 text-purple-400 font-extrabold"
+                                                ? (isLoc ? "bg-emerald-500/10 text-emerald-400 font-extrabold" : "bg-purple-500/10 text-purple-400 font-extrabold")
                                                 : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                         )}
                                     >
@@ -352,7 +374,7 @@ export function LocationSelector({
                                                 className={clsx(
                                                     "w-full text-left px-3 py-3 text-sm rounded-lg transition-colors flex items-center justify-between group border-b border-white/5 light:border-gray-50 last:border-0",
                                                     selectedVenue === v
-                                                        ? "bg-purple-500/10 text-purple-400 font-extrabold"
+                                                        ? (isLoc ? "bg-emerald-500/10 text-emerald-400 font-extrabold" : "bg-purple-500/10 text-purple-400 font-extrabold")
                                                         : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                                 )}
                                             >
@@ -367,7 +389,7 @@ export function LocationSelector({
                                                             {[REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
                                                         </span>
                                                     )}
-                                                    {selectedVenue === v && <Check className="w-3.5 h-3.5 text-purple-500" />}
+                                                    {selectedVenue === v && <Check className={clsx("w-3.5 h-3.5", isLoc ? "text-emerald-500" : "text-purple-500")} />}
                                                 </div>
                                             </button>
                                         ))

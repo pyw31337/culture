@@ -162,7 +162,7 @@ export default function BottomNavSheet({
                         <div className="space-y-6">
                             <h3 className="text-xl font-extrabold text-white light:text-black mb-4 px-1 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-purple-400 light:text-purple-600">#</span> 보기 방식
+                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 보기 방식
                                 </div>
 
                                 {/* Theme Toggle */}
@@ -206,12 +206,18 @@ export default function BottomNavSheet({
                                             className={clsx(
                                                 "p-4 rounded-2xl border text-left transition-all duration-300 group hover:scale-[1.02]",
                                                 isSelected
-                                                    ? "bg-white/10 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)] light:bg-purple-50 light:border-purple-600 light:shadow-none"
+                                                    ? (searchMode === 'location'
+                                                        ? "bg-white/10 border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)] light:bg-emerald-50 light:border-emerald-600 light:shadow-none"
+                                                        : "bg-white/10 border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)] light:bg-purple-50 light:border-purple-600 light:shadow-none")
                                                     : "bg-gray-900/50 light:bg-white border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50"
                                             )}
                                         >
                                             <div className="flex items-center gap-3">
-                                                <div className={clsx("p-2 rounded-lg", isSelected ? "bg-gray-800 text-white light:bg-purple-100 light:text-purple-600" : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")}>
+                                                <div className={clsx("p-2 rounded-lg",
+                                                    isSelected
+                                                        ? (searchMode === 'location' ? "bg-gray-800 text-white light:bg-emerald-100 light:text-emerald-600" : "bg-gray-800 text-white light:bg-purple-100 light:text-purple-600")
+                                                        : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")
+                                                }>
                                                     <DisplayIcon size={20} className={clsx(isSelected && "w-5 h-5")} />
                                                 </div>
                                                 <div className="text-sm font-extrabold text-gray-200 light:text-black">{mode.label}</div>
@@ -227,7 +233,7 @@ export default function BottomNavSheet({
                     {activeMenu === 'category' && (
                         <div className="space-y-4">
                             <h3 className="text-lg font-extrabold text-white light:text-black px-1 flex items-center gap-2">
-                                <span className="text-purple-400">#</span> 카테고리
+                                <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 카테고리
                             </h3>
                             <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
                                 {/* All */}
@@ -236,7 +242,9 @@ export default function BottomNavSheet({
                                     className={clsx(
                                         "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                         selectedGenre === 'all'
-                                            ? "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none"
+                                            ? (searchMode === 'location'
+                                                ? "bg-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-900/50 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-600 light:shadow-none"
+                                                : "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none")
                                             : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
@@ -267,7 +275,9 @@ export default function BottomNavSheet({
                                             className={clsx(
                                                 "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                                 isSelected
-                                                    ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg light:bg-white light:text-purple-700 light:border-purple-600 light:ring-purple-600`
+                                                    ? (searchMode === 'location'
+                                                        ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-emerald-500/20 shadow-lg light:bg-white light:text-emerald-700 light:border-emerald-600 light:ring-emerald-600`
+                                                        : `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg light:bg-white light:text-purple-700 light:border-purple-600 light:ring-purple-600`)
                                                     : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                             )}
                                         >
@@ -284,7 +294,7 @@ export default function BottomNavSheet({
                     {activeMenu === 'location' && (
                         <div className="space-y-4">
                             <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center gap-2">
-                                <span className="text-purple-400">#</span> 위치 및 검색
+                                <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 위치 및 검색
                             </h3>
 
                             {/* Search Bar - Unified Style */}
@@ -360,12 +370,10 @@ export default function BottomNavSheet({
                                 availableVenues={availableVenues}
                                 isMobile={true}
                                 inline={true}
+                                searchMode={searchMode}
                             />
                         </div>
                     )}
-
-
-
                 </div>
             </div>
         </>
