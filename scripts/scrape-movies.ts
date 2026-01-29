@@ -384,54 +384,54 @@ async function scrapeMovies() {
     await browser.close();
 
     // Atomic Save
-    if (finalMovies.length > 0)    // 3. Merge and Save (Strict Retention Logic)
+    if (finalMovies.length > 0) { // 3. Merge and Save (Strict Retention Logic)
         console.log('Merging data with strict retention policy...');
-    const now = new Date().toISOString();
-    const movieMap = new Map<string, any>();
+        const now = new Date().toISOString();
+        const movieMap = new Map<string, any>();
 
-    // Load ALL existing data first
-    if (fs.existsSync(OUTPUT_FILE)) {
-        const oldData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-        oldData.forEach((m: any) => movieMap.set(m.title, m));
+        // Load ALL existing data first
+        if (fs.existsSync(OUTPUT_FILE)) {
+            const oldData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            oldData.forEach((m: any) => movieMap.set(m.title, m));
+        }
+
+        // Update with NEW data
+        for (const newMovie of finalMovies) {
+            // If it existed, we merge carefully
+            const existing = movieMap.get(newMovie.title);
+
+            const merged = {
+                ...existing, // Keep old fields (like manual overrides/descriptions if we had them)
+                ...newMovie, // Overwrite with new data (rank, date, etc.)
+                lastCollected: now // MARK AS FRESH
+            };
+
+            movieMap.set(newMovie.title, merged);
+        }
+
+        // Convert back to array
+        // We do NOT filter out old items here. Pruning happens in prune-data.ts.
+        // However, we might want to sort by rank for the UI, but allow undefined ranks for old items?
+        // Start with items that have a current rank
+        const allMovies = Array.from(movieMap.values());
+
+        // Sort: Ranked items first, then by lastCollected descending
+        allMovies.sort((a, b) => {
+            if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
+            if (a.rank) return -1;
+            if (b.rank) return 1;
+            return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
+        });
+
+        // Atomic Write
+        const tempFile = `${OUTPUT_FILE}.tmp`;
+        fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
+        fs.renameSync(tempFile, OUTPUT_FILE);
+
+        console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+    } else {
+        console.warn('Scraper found 0 movies. Aborting save.');
     }
-
-    // Update with NEW data
-    for (const newMovie of finalMovies) {
-        // If it existed, we merge carefully
-        const existing = movieMap.get(newMovie.title);
-
-        const merged = {
-            ...existing, // Keep old fields (like manual overrides/descriptions if we had them)
-            ...newMovie, // Overwrite with new data (rank, date, etc.)
-            lastCollected: now // MARK AS FRESH
-        };
-
-        movieMap.set(newMovie.title, merged);
-    }
-
-    // Convert back to array
-    // We do NOT filter out old items here. Pruning happens in prune-data.ts.
-    // However, we might want to sort by rank for the UI, but allow undefined ranks for old items?
-    // Start with items that have a current rank
-    const allMovies = Array.from(movieMap.values());
-
-    // Sort: Ranked items first, then by lastCollected descending
-    allMovies.sort((a, b) => {
-        if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
-        if (a.rank) return -1;
-        if (b.rank) return 1;
-        return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
-    });
-
-    // Atomic Write
-    const tempFile = `${OUTPUT_FILE}.tmp`;
-    fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
-    fs.renameSync(tempFile, OUTPUT_FILE);
-
-    console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
-} else {
-    console.warn('Scraper found 0 movies. Aborting save.');
-}
 }
 
 scrapeMovies();
