@@ -107,8 +107,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [keywordInput, setKeywordInput] = useState('');
 
     // Deep Linking
+    // Deep Linking
     const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null);
+
+    // Search Mode & Logic
+    const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
+
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -142,22 +147,87 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // --- 2. Filtering & Sorting (Client Side) ---
     const filteredPerformances = useMemo(() => {
         // While loading, use what we have (initial or partial)
-        // Use shared logic
         const filtered = filterPerformances(allPerformances, {
             genre: selectedGenre,
             region: selectedRegion,
             district: selectedDistrict,
             venue: selectedVenue,
-            search: searchText,
+            search: searchMode === 'keyword' ? searchText : '', // Only use text search for keyword mode
             lat: searchLocation?.lat || userLocation?.lat,
             lng: searchLocation?.lng || userLocation?.lng,
             radius: radius
         });
 
-        // Sort
+        // Search Mode: Location -> Sort by Distance
+        if (searchMode === 'location' && (searchLocation || userLocation)) {
+            const center = searchLocation || userLocation;
+            if (center && center.lat && center.lng) {
+                const withDist = filtered.map(p => {
+                    const v = venues[p.venue];
+                    const dist = (v?.lat && v?.lng)
+                        ? getDistanceFromLatLonInKm(center.lat, center.lng, v.lat, v.lng)
+                        : 99999;
+                    return { ...p, _dist: dist };
+                });
+                return withDist.sort((a, b) => a._dist - b._dist);
+            }
+        }
+
+        // Default Sort
         return sortPerformances(filtered, selectedGenre);
 
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius, searchMode]);
+
+    // --- Search Results (Dynamic based on Mode) ---
+    const searchResults = useMemo(() => {
+        if (!searchText.trim()) return [];
+
+        if (searchMode === 'location') {
+            // Location Mode: Search Venues/Regions
+            // 1. Venues
+            const matchedVenues = Object.entries(venues)
+                .filter(([name, v]) =>
+                    name.includes(searchText) ||
+                    (v.address && v.address.includes(searchText)) ||
+                    (v.district && v.district.includes(searchText))
+                )
+                .map(([name, v]) => ({
+                    type: 'location',
+                    name: name,
+                    address: v.address,
+                    lat: v.lat,
+                    lng: v.lng,
+                    venueId: name
+                }));
+            return matchedVenues.slice(0, 50); // Limit results
+        } else {
+            // Keyword Mode (Existing Logic)
+            // Filter distinct items matching text
+            const lowerText = searchText.toLowerCase();
+            const isChoseong = /^[ㄱ-ㅎ\s]+$/.test(searchText);
+
+            // De-duplicate by title
+            const uniqueTitles = new Set();
+            return allPerformances
+                .filter(p => {
+                    if (uniqueTitles.has(p.title)) return false;
+                    const match = isChoseong
+                        ? isChoseongMatch(p.title, searchText)
+                        : (p.title.toLowerCase().includes(lowerText) ||
+                            p.venue.includes(searchText) ||
+                            (p.cast && Array.isArray(p.cast) && p.cast.some((c: any) => typeof c === 'string' ? c.includes(searchText) : c.name.includes(searchText))));
+                    if (match) uniqueTitles.add(p.title);
+                    return match;
+                })
+                .slice(0, 10)
+                .map(p => ({
+                    type: p.genre === 'movie' || p.genre === 'ott' ? 'video' : 'stage',
+                    name: p.title,
+                    address: p.venue, // Subtext
+                    ...p
+                }));
+        }
+    }, [searchText, searchMode, allPerformances]);
 
     // --- Derived Filter Lists (Restored) ---
     const districts = useMemo(() => {
@@ -407,8 +477,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
             {/* 🌌 Backgrounds */}
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-            <div className="fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#7c3aed] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow"></div>
-            <div className="fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#db2777] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000"></div>
+            <div className={clsx(
+                "fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow transition-colors duration-700",
+                searchMode === 'location' ? "bg-emerald-500" : "bg-[#7c3aed]"
+            )}></div>
+            <div className={clsx(
+                "fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000 transition-colors duration-700",
+                searchMode === 'location' ? "bg-teal-400" : "bg-[#db2777]"
+            )}></div>
 
             {/* 1. Header (Restored) */}
             <header className="relative z-40 bg-transparent backdrop-blur-none border-b border-transparent light:border-transparent">
@@ -591,7 +667,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     lastUpdated={lastUpdated}
                     searchLocation={searchLocation}
                     searchText={searchText}
-                    searchResults={[]}
+                    searchResults={searchResults}
                     isDropdownOpen={isDropdownOpen}
                     activeSearchSource={activeSearchSource}
                     highlightedIndex={-1}
@@ -607,35 +683,67 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     setSearchText={setSearchText}
                     setActiveSearchSource={setActiveSearchSource}
                     setIsDropdownOpen={setIsDropdownOpen}
-                    handleSearch={() => { }}
-                    handleSelectResult={(res) => {
-                        setSearchLocation(res);
-                        setSearchText('');
-                        setIsDropdownOpen(false);
+                    handleSearch={handleSearch}
+                    handleSelectResult={(result: any) => {
+                        if (searchMode === 'location') {
+                            if (result.lat && result.lng) {
+                                setSearchLocation({
+                                    lat: result.lat,
+                                    lng: result.lng,
+                                    name: result.name
+                                });
+                                setIsDropdownOpen(false);
+                                setSearchText(result.name);
+                            }
+                        } else {
+                            setSearchText(result.name);
+                            setIsDropdownOpen(false);
+                            // handleSearch(); // Optional: Trigger search immediately
+                        }
                     }}
-                    handleKeyDown={() => { }}
-                    handleCurrentLocationClick={() => { }}
+                    handleKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            setIsDropdownOpen(false);
+                            if (searchMode === 'location' && searchResults.length > 0) {
+                                const top: any = searchResults[0];
+                                if (top.lat && top.lng) {
+                                    setSearchLocation({ lat: top.lat, lng: top.lng, name: top.name });
+                                    setSearchText(top.name);
+                                }
+                            }
+                        }
+                    }}
+                    handleCurrentLocationClick={() => {
+                        // Reset logic
+                        setUserLocation(null);
+                        setSearchLocation(null);
+                    }}
                     availableVenues={availableVenues}
                     districts={districts}
                     recentKeywords={savedKeywords}
-                    onKeywordSelect={(k) => { setSearchText(k); }}
-                    onRemoveRecent={() => { }}
-                    onClearRecent={() => { }}
+                    onKeywordSelect={(k) => { setSearchText(k); handleSearch(); }}
+                    onRemoveRecent={handleKeywordRemove}
+                    onClearRecent={() => setSavedKeywords([])}
+
+                    searchMode={searchMode}
+                    onSearchModeChange={setSearchMode}
                 />
             </ErrorBoundary>
 
             {/* Recommendation Section (Restored) */}
-            {(viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && (
-                <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-6">
-                    <RecommendedSection
-                        recommendedItems={recommendedItems}
-                        onDetail={handleDetailOpen}
-                        onLocationClick={(loc) => { setSearchLocation(loc); setViewMode('map'); }}
-                        onToggleLike={toggleLike}
-                        likedIds={new Set(likedIds)}
-                    />
-                </div>
-            )}
+            {
+                (viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && (
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-6">
+                        <RecommendedSection
+                            recommendedItems={recommendedItems}
+                            onDetail={handleDetailOpen}
+                            onLocationClick={(loc) => { setSearchLocation(loc); setViewMode('map'); }}
+                            onToggleLike={toggleLike}
+                            likedIds={new Set(likedIds)}
+                        />
+                    </div>
+                )
+            }
 
             {/* 3. Main Content (Grid/List) */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
@@ -695,7 +803,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             </h2>
                             {activeLocation && (
                                 <div className="flex items-center gap-2 pb-[3px]">
-                                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">{radius}km 이내</p>
+                                    <div className="relative flex items-center bg-gray-800 light:bg-white/50 border border-white/10 light:border-gray-300 rounded-md pl-2 pr-1 py-0.5 group hover:border-[#a78bfa] transition-colors">
+                                        <select
+                                            value={radius}
+                                            onChange={(e) => setRadius(Number(e.target.value))}
+                                            className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-5 cursor-pointer"
+                                        >
+                                            {RADIUS_OPTIONS.map(r => (
+                                                <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
+                                                    {r.label}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <ChevronDown className="absolute right-1 w-3 h-3 text-gray-500 pointer-events-none group-hover:text-[#a78bfa] transition-colors" />
+                                    </div>
                                     <button
                                         onClick={() => setIsMapOpen(true)}
                                         className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-extrabold bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/10 ml-1 light:bg-gray-100 light:text-gray-900 light:border-gray-300 light:hover:bg-gray-200"
@@ -748,16 +869,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             </main>
 
             {/* 4. Modals */}
-            {isMapOpen && (
-                <KakaoMapModal
-                    performances={filteredPerformances}
-                    centerLocation={searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
-                    favoriteVenues={favoriteVenues}
-                    onToggleFavorite={toggleFavoriteVenue}
-                    onClose={() => setIsMapOpen(false)}
-                    onVenueLocationChange={(name, lat, lng) => setSearchLocation({ name, lat, lng })}
-                />
-            )}
+            {
+                isMapOpen && (
+                    <KakaoMapModal
+                        performances={filteredPerformances}
+                        centerLocation={searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
+                        favoriteVenues={favoriteVenues}
+                        onToggleFavorite={toggleFavoriteVenue}
+                        onClose={() => setIsMapOpen(false)}
+                        onVenueLocationChange={(name, lat, lng) => setSearchLocation({ name, lat, lng })}
+                    />
+                )
+            }
 
             <BottomNavSheet
                 activeMenu={activeBottomMenu}
@@ -780,6 +903,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 districts={districts}
                 availableVenues={availableVenues}
                 onSearch={() => { }}
+                searchMode={searchMode}
+                onSearchModeChange={setSearchMode}
             />
 
             <BottomNav
@@ -793,13 +918,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 selectedGenre={selectedGenre}
             />
 
-            {viewMode === 'calendar' && (
-                <CalendarModal
-                    performances={filteredPerformances}
-                    onClose={() => setViewMode('grid')}
-                />
-            )}
+            {
+                viewMode === 'calendar' && (
+                    <CalendarModal
+                        performances={filteredPerformances}
+                        onClose={() => setViewMode('grid')}
+                    />
+                )
+            }
 
-        </div>
+        </div >
     );
 }

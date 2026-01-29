@@ -78,6 +78,7 @@ interface MomMomItem {
     platform: string;
     description?: string;
     closedDay?: string;
+    lastCollected?: string;
 }
 
 // Custom delay function
@@ -419,59 +420,57 @@ async function scrapeMomMomFood() {
 
         // Final Save with Strict Retention
         const now = new Date().toISOString();
-        let finalData: MomMomItem[] = [];
+        let currentFileContent: MomMomItem[] = [];
 
         if (fs.existsSync(OUTPUT_FILE)) {
-            finalData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-        }
-
-        const dataMap = new Map<string, MomMomItem>();
-        finalData.forEach(item => dataMap.set(item.link, item));
-
-        // Note: 'existingData' in this script was used for filtering processed items.
-        // We need to ensure we mark 'lastCollected' for ALL items we encountered in the list, 
-        // regardless of whether we scraped deep details or not.
-
-        // 'listItems' contains everything found on the list page.
-        // We should update 'lastCollected' for all of them.
-        for (const item of listItems) {
-            const existing = dataMap.get(item.link);
-
-            // If we scraped deep details for this item, use that. 
-            // Otherwise use existing or basic item.
-            // (Note: This script has complex periodical saving, so we must be careful)
-            // Ideally, the periodical save should have updated the map? 
-
-            // Actually, we should just load the 'periodical' saves if any?
-            // The logic above saved to file periodically.
-            // Let's rely on the periodical saves but do a final pass to ensure lastCollected is set for everything found on list.
-        }
-
-        // Wait, the periodic save appends to array 'existingData' and writes file.
-        // This is messy. Let's simplify:
-        // 1. We just finished scraping. 'existingData' variable holds the in-memory STATE of the file (including periodic updates).
-        // 2. We iterate 'listItems' (all found from list page).
-        // 3. For each found item, we update 'lastCollected' in 'existingData'.
-
-        for (const listItem of listItems) {
-            const index = existingData.findIndex(e => e.link === listItem.link);
-            if (index !== -1) {
-                existingData[index].lastCollected = now;
-            } else {
-                // New item that presumably failed processing or was skipped?
-                // If skipped (description exists), it's in existingData.
-                // If it's new but failed detail scraping? We add it as basic.
-                existingData.push({
-                    title: listItem.title,
-                    link: listItem.link,
-                    image: listItem.image,
-                    lastCollected: now
-                });
+            try {
+                currentFileContent = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+            } catch (err) {
+                console.error('Error reading output file for merge:', err);
             }
         }
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(existingData, null, 2));
-        console.log(`Saved ${existingData.length} items (merged). Scanned: ${listItems.length}.`);
+        // Map for fast lookup of EXISTING FULL DATA
+        const dataMap = new Map<string, MomMomItem>();
+        currentFileContent.forEach(item => dataMap.set(item.link, item));
+
+        const mergedData: MomMomItem[] = [];
+
+        // Iterate over ALL items found on the list page (listItems)
+        // If we have full details on file (dataMap), use them and update lastCollected.
+        // If not, create a basic entry.
+        for (const listItem of listItems) {
+            let record = dataMap.get(listItem.link);
+
+            if (record) {
+                // Existing item: Update timestamp, preserve all other details
+                record.lastCollected = now;
+            } else {
+                // New item (failed scrape or just discovered): Create basic record
+                record = {
+                    id: `mommom_food_${listItem.title.replace(/\s/g, '').slice(0, 10)}_${Date.now().toString().slice(-4)}`,
+                    title: listItem.title,
+                    image: listItem.image,
+                    link: listItem.link,
+                    date: '연중무휴',
+                    genre: 'food',
+                    region: 'etc',
+                    venue: listItem.title,
+                    address: '',
+                    latitude: 0,
+                    longitude: 0,
+                    originalPrice: '',
+                    price: '',
+                    rate: 0,
+                    platform: 'mommom',
+                    lastCollected: now
+                };
+            }
+            mergedData.push(record);
+        }
+
+        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(mergedData, null, 2));
+        console.log(`Saved ${mergedData.length} items (merged). Scanned: ${listItems.length}.`);
 
     } catch (e) {
         console.error(e);
@@ -479,4 +478,6 @@ async function scrapeMomMomFood() {
         await browser.close();
     }
 
-    scrapeMomMomFood();
+}
+
+scrapeMomMomFood();

@@ -53,6 +53,10 @@ interface HeroSectionProps {
     onKeywordSelect: (keyword: string) => void;
     onRemoveRecent: (keyword: string) => void;
     onClearRecent: () => void;
+
+    // Search Mode
+    searchMode: 'keyword' | 'location';
+    onSearchModeChange: (mode: 'keyword' | 'location') => void;
 }
 
 export default function HeroSection({
@@ -94,7 +98,9 @@ export default function HeroSection({
     recentKeywords,
     onKeywordSelect,
     onRemoveRecent,
-    onClearRecent
+    onClearRecent,
+    searchMode,
+    onSearchModeChange
 }: HeroSectionProps) {
     const heroRef = useRef<HTMLDivElement>(null);
 
@@ -525,33 +531,62 @@ export default function HeroSection({
             {/* Hero Search Bar */}
             <div className="w-full lg:w-auto relative group z-[30]">
                 {/* Rotating Neon Border (The requested "Rotating Glow") */}
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#a855f7_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300" />
-                <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#f472b6_50%,#transparent_100%)] opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] blur-md transition-opacity duration-300" />
+                <div className={clsx(
+                    "absolute -inset-[3px] rounded-full opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300",
+                    searchMode === 'location'
+                        ? "bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#10b981_50%,#transparent_100%)]"
+                        : "bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#a855f7_50%,#transparent_100%)]"
+                )} />
+                <div className={clsx(
+                    "absolute -inset-[3px] rounded-full opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] blur-md transition-opacity duration-300",
+                    searchMode === 'location'
+                        ? "bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#14b8a6_50%,#transparent_100%)]"
+                        : "bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#f472b6_50%,#transparent_100%)]"
+                )} />
 
                 {/* Light Mode Static Glow */}
-                <div className="hidden light:block absolute -inset-4 bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20 blur-2xl rounded-full opacity-70 pointer-events-none" />
+                <div className={clsx(
+                    "hidden light:block absolute -inset-4 blur-2xl rounded-full opacity-70 pointer-events-none transition-colors duration-500",
+                    searchMode === 'location'
+                        ? "bg-gradient-to-r from-emerald-400/20 via-teal-400/15 to-green-400/20"
+                        : "bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20"
+                )} />
 
                 {/* Main Container */}
-                <div className="p-[3px] rounded-full bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] opacity-100 light:shadow-[0_4px_30px_rgba(168,85,247,0.25)] transition-all duration-300 relative">
+                <div className={clsx(
+                    "p-[3px] rounded-full transition-all duration-300 relative",
+                    searchMode === 'location'
+                        ? "bg-linear-to-r from-emerald-500 via-teal-500 to-green-500 light:shadow-[0_4px_30px_rgba(16,185,129,0.25)]"
+                        : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
+                )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
-                        {/* Radius Select for Hero */}
-                        {activeLocation && (
-                            <div className="border-r border-gray-700 light:border-gray-300 pr-0 mr-2 ml-3 relative flex items-center">
-                                <div className="pointer-events-none absolute right-2 flex flex-col items-center justify-center opacity-70">
-                                    <ChevronUp className="w-2 h-2 text-gray-400" />
-                                    <ChevronDown className="w-2 h-2 text-gray-400" />
-                                </div>
-                                <select
-                                    value={radius}
-                                    onChange={(e) => setRadius(Number(e.target.value))}
-                                    className="bg-transparent text-[#a78bfa] text-sm font-extrabold focus:outline-none cursor-pointer appearance-none pl-1 pr-6 py-2"
-                                >
-                                    {RADIUS_OPTIONS.map(r => (
-                                        <option key={r.value} value={r.value} className="bg-gray-900 text-white">{r.label}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        )}
+                        {/* Mode Toggle Switch */}
+                        <div className="flex bg-gray-900/50 light:bg-gray-100 p-1 rounded-full border border-gray-700/50 light:border-gray-200 mr-2 shrink-0">
+                            <button
+                                onClick={() => onSearchModeChange('location')}
+                                className={clsx(
+                                    "px-3 py-1.5 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap",
+                                    searchMode === 'location'
+                                        ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
+                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-black"
+                                )}
+                            >
+                                <MapPin size={12} fill={searchMode === 'location' ? "currentColor" : "none"} />
+                                위치 검색
+                            </button>
+                            <button
+                                onClick={() => onSearchModeChange('keyword')}
+                                className={clsx(
+                                    "px-3 py-1.5 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap",
+                                    searchMode === 'keyword'
+                                        ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
+                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-black"
+                                )}
+                            >
+                                <Search size={12} />
+                                키워드 검색
+                            </button>
+                        </div>
 
                         <input
                             type="text"
@@ -568,8 +603,11 @@ export default function HeroSection({
                                 }
                             }}
                             onKeyDown={handleKeyDown}
-                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-4 py-3 w-full lg:w-[350px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
-                            placeholder={activeLocation ? `"${activeLocation.name}" 주변 검색...` : "문화 정보, 장소, 지역 검색..."}
+                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-3 py-3 w-full lg:w-[320px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
+                            placeholder={searchMode === 'location'
+                                ? "지역, 지하철역, 장소 검색 (예: 강남역)"
+                                : "문화 정보, 장소, 공연명 검색..."
+                            }
                         />
 
                         {/* Reset Button */}
@@ -586,8 +624,19 @@ export default function HeroSection({
                             </button>
                         )}
 
-                        <button onClick={handleSearch} className="p-3.5 bg-gradient-to-r from-[#a78bfa] to-[#f472b6] rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all">
-                            <Search className="w-6 h-6 font-extrabold" />
+                        <button
+                            onClick={handleSearch}
+                            className={clsx(
+                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none",
+                                searchMode === 'location'
+                                    ? "bg-gradient-to-r from-emerald-500 to-teal-500 shadow-emerald-500/30"
+                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6]"
+                            )}
+                        >
+                            {searchMode === 'location'
+                                ? <MapPin className="w-6 h-6 font-extrabold" />
+                                : <Search className="w-6 h-6 font-extrabold" />
+                            }
                         </button>
                     </div>
                 </div>

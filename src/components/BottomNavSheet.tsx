@@ -28,6 +28,8 @@ interface BottomNavSheetProps {
     selectedVenue: string;
     onVenueSelect: (venue: string) => void;
     onSearch: () => void;
+    searchMode?: 'keyword' | 'location';
+    onSearchModeChange?: (mode: 'keyword' | 'location') => void;
 }
 
 import { getGenreIcon } from '@/components/GenreIcons';
@@ -53,7 +55,9 @@ export default function BottomNavSheet({
     availableVenues,
     selectedVenue,
     onVenueSelect,
-    onSearch
+    onSearch,
+    searchMode = 'keyword',
+    onSearchModeChange = () => { }
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -283,18 +287,51 @@ export default function BottomNavSheet({
                                 <span className="text-purple-400">#</span> 위치 및 검색
                             </h3>
 
-                            {/* Search Bar - Hero Style */}
-                            <div className="w-full relative group">
-                                <div className="p-[3px] rounded-full bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-lg shadow-purple-500/20 transition-all duration-300 group-focus-within:shadow-[0_0_20px_rgba(167,139,250,0.6),0_0_40px_rgba(244,114,182,0.4)] opacity-90 group-focus-within:opacity-100 group-focus-within:scale-[1.01]">
+                            {/* Search Bar - Unified Style */}
+                            <div className="w-full relative group z-10">
+                                <div className={clsx(
+                                    "p-[3px] rounded-full transition-all duration-300 shadow-lg opacity-90 group-focus-within:opacity-100 group-focus-within:scale-[1.01]",
+                                    searchMode === 'location'
+                                        ? "bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 shadow-emerald-500/20"
+                                        : "bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-purple-500/20"
+                                )}>
                                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
-                                        <Search className="ml-3 text-purple-400 w-5 h-5" />
+
+                                        {/* Toggle Switch */}
+                                        <div className="flex bg-gray-900 light:bg-gray-100 p-1 rounded-full border border-gray-700 light:border-gray-200 mr-2 shrink-0">
+                                            <button
+                                                onClick={() => onSearchModeChange('location')}
+                                                className={clsx(
+                                                    "px-3 py-1.5 rounded-full text-[10px] font-bold transition-all flex items-center gap-1 whitespace-nowrap",
+                                                    searchMode === 'location'
+                                                        ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
+                                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500"
+                                                )}
+                                            >
+                                                <MapPin size={10} fill={searchMode === 'location' ? "currentColor" : "none"} />
+                                                위치
+                                            </button>
+                                            <button
+                                                onClick={() => onSearchModeChange('keyword')}
+                                                className={clsx(
+                                                    "px-3 py-1.5 rounded-full text-[10px] font-bold transition-all flex items-center gap-1 whitespace-nowrap",
+                                                    searchMode === 'keyword'
+                                                        ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
+                                                        : "text-gray-400 hover:text-gray-200 light:text-gray-500"
+                                                )}
+                                            >
+                                                <Search size={10} />
+                                                키워드
+                                            </button>
+                                        </div>
+
                                         <input
                                             type="text"
                                             value={searchText}
                                             onChange={(e) => onSearchChange(e.target.value)}
                                             onKeyDown={handleKeyDown}
-                                            placeholder="공연명, 출연진, 장소 검색..."
-                                            className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
+                                            placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소 검색..."}
+                                            className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-2 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                         />
                                     </div>
                                 </div>
