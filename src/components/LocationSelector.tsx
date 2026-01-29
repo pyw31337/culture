@@ -7,7 +7,7 @@ import { getChoseong } from '@/lib/hangul';
 import { motion } from 'framer-motion';
 
 // --- Stadium Icon Component ---
-const StadiumIcon = ({ className }: { className?: string }) => (
+const StadiumIcon = ({ className, strokeWidth = 2.5 }: { className?: string, strokeWidth?: number }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -15,7 +15,7 @@ const StadiumIcon = ({ className }: { className?: string }) => (
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
         className={clsx("icon icon-tabler icons-tabler-outline icon-tabler-building-stadium", className)}
@@ -105,7 +105,7 @@ export function LocationSelector({
 
     const handleRegionSelectInternal = (region: string) => {
         onRegionSelect(region);
-        setIsRegionExpanded(false); // Auto-collapse on any region selection as requested
+        // setIsRegionExpanded(false); // Removed auto-collapse: User wants it to stay open for District selection
     };
 
     const handleDistrictSelectInternal = (district: string) => {
@@ -133,9 +133,16 @@ export function LocationSelector({
                     className="flex items-center justify-between cursor-pointer group hover:bg-white/5 p-1 rounded-lg transition-colors"
                     onClick={() => setIsRegionExpanded(!isRegionExpanded)}
                 >
-                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1 cursor-pointer">
-                        <MapPin className="w-3 h-3 text-purple-400" /> 지역 설정
-                    </label>
+                    {/* Fixed width container for icon to align text perfectly */}
+                    <div className="flex items-center gap-2">
+                        <div className="w-5 flex justify-center">
+                            <MapPin className="w-4 h-4 text-purple-400" strokeWidth={2.5} />
+                        </div>
+                        <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider cursor-pointer">
+                            지역 설정
+                        </label>
+                    </div>
+
                     <div className="flex items-center gap-2">
                         {!isRegionExpanded && (
                             <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-extrabold text-purple-400 animate-in fade-in zoom-in-95 duration-300">
@@ -162,41 +169,50 @@ export function LocationSelector({
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="space-y-4 overflow-hidden"
+                        className="space-y-0 overflow-visible" // Changed space-y-4 to 0 for tight tab connection
                     >
                         {/* Region Buttons */}
-                        <HorizontalScroll>
-                            <button
-                                onClick={() => handleRegionSelectInternal('all')}
-                                className={clsx(
-                                    baseButtonClass,
-                                    selectedRegion === 'all' ? activeClass : inactiveClass
-                                )}
-                            >
-                                전국
-                            </button>
-
-                            {REGIONS.filter(r => r.id !== 'all').map(r => (
+                        <div className="relative z-20 pb-0"> {/* z-index to sit on top of district box */}
+                            <HorizontalScroll className="px-1 pb-0">
                                 <button
-                                    key={r.id}
-                                    onClick={() => handleRegionSelectInternal(r.id)}
+                                    onClick={() => handleRegionSelectInternal('all')}
                                     className={clsx(
                                         baseButtonClass,
-                                        selectedRegion === r.id ? activeClass : inactiveClass
+                                        selectedRegion === 'all'
+                                            ? "bg-purple-600 text-white border-purple-500 shadow-md font-extrabold"
+                                            : inactiveClass
                                     )}
                                 >
-                                    {r.label}
+                                    전국
                                 </button>
-                            ))}
-                        </HorizontalScroll>
 
-                        {/* District Selection (Inside styled box with pointer) */}
+                                {REGIONS.filter(r => r.id !== 'all').map(r => (
+                                    <button
+                                        key={r.id}
+                                        onClick={() => handleRegionSelectInternal(r.id)}
+                                        className={clsx(
+                                            "relative rounded-t-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center whitespace-nowrap",
+                                            // Tab logic: If active, white background (light) / gray-900 (dark), connect to bottom
+                                            selectedRegion === r.id
+                                                ? "bg-gray-900/50 light:bg-gray-50 text-purple-400 light:text-purple-600 border-white/10 light:border-gray-200 border-b-0 -mb-px z-30 font-extrabold shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
+                                                : "rounded-b-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1" // Add margin bottom for inactive to separate from line
+                                        )}
+                                    >
+                                        {r.label}
+                                        {/* Visual connector for tab style (optional, but css border-b-0 handles most) */}
+                                        {selectedRegion === r.id && (
+                                            <div className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-gray-900/50 light:bg-gray-50 z-40" />
+                                        )}
+                                    </button>
+                                ))}
+                            </HorizontalScroll>
+                        </div>
+
+                        {/* District Selection (Box) */}
                         {(selectedRegion !== 'all' && districts.length > 0) && (
-                            <div className="relative pt-2 animate-in fade-in slide-in-from-top-2 duration-300">
-                                {/* Pointer Arrow */}
-                                <div className="absolute top-0 left-6 w-3 h-3 bg-gray-900 light:bg-gray-50 border-l border-t border-white/10 light:border-gray-200 rotate-45 -translate-y-1/2 z-10" />
-
-                                <div className="bg-gray-900/50 light:bg-gray-50 p-3 rounded-2xl border border-white/10 light:border-gray-200 shadow-inner">
+                            <div className="relative pt-0 animate-in fade-in slide-in-from-top-1 duration-200 z-10 -mt-px">
+                                {/* The Box */}
+                                <div className="bg-gray-900/50 light:bg-gray-50 p-3 pt-5 rounded-b-2xl rounded-tr-2xl rounded-tl-2xl border border-white/10 light:border-gray-200 shadow-inner">
                                     <div className="flex items-center justify-between mb-2 px-1">
                                         <label className="text-[10px] font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-widest">
                                             상세 지역 (구/군)
@@ -240,9 +256,16 @@ export function LocationSelector({
             {/* 2. Venue Selection (Custom Dropdown with Search/Filter) */}
             {(availableVenues.length > 0) && (
                 <div className={clsx("space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-400 delay-75", !inline && "z-20")}> {/* z-index for dropdown */}
-                    <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 ml-1 block uppercase tracking-wider flex items-center gap-1">
-                        <StadiumIcon className="w-3.5 h-3.5 text-purple-400" /> 공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
-                    </label>
+                    {/* Header with Alignment */}
+                    <div className="flex items-center gap-2 pl-1 mb-2">
+                        <div className="w-5 flex justify-center">
+                            <StadiumIcon className="w-3.5 h-3.5 text-purple-400" /> {/* Stroke logic inside component? No, component hardcodes strokeWidth=2. Need to pass prop or assume user meant visual weight match map pin. I'll modify StadiumIcon definition or just rely on 'MapPin stroke=2.5' I set earlier. Wait, user said "increase left icon thickness... to MATCH venue". So MapPin 2.5, Stadium matches? Stadium default is 2. Let's make Stadium 2 or 2.5? "Increase region icon... to match venue". So Venue is ALREADY thick? No, user said "Make region icon THICKER to match venue". Wait. "Increase region icon thickness... to match venue icon". AND "Align them". */}
+                            {/* Actually, let's just make both consistent. MapPin stroke=2.5. StadiumIcon definition below needs update? No, it's defined at top of file. I should update StadiumIcon definition to allow stroke width prop or default to 2.5. */}
+                        </div>
+                        <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider">
+                            공연장 선택 <span className="text-purple-400 ml-1">({availableVenues.length})</span>
+                        </label>
+                    </div>
 
                     <div className="relative" ref={venueDropdownRef}>
                         {/* Trigger Button */}
