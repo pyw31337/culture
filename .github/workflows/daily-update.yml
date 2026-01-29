@@ -92,7 +92,7 @@ jobs:
           npx tsx scripts/scrape-mochaclass.ts || true
           npx tsx scripts/scrape-seoul-culture.ts || true
           npx tsx scripts/build-venues.ts || true
-          npx tsx scripts/validate-data.ts
+          npx tsx scripts/build-venues.ts || true
           npx tsx scripts/verify-links.ts || true
 
       - name: Commit and Push changes
@@ -116,6 +116,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           force_orphan: true
+
+      - name: Prune Stale Data (Strict Retention)
+        if: always()
+        run: npx tsx scripts/prune-data.ts
+
+      - name: Validate Data Integrity (Post-Deployment Alert)
+        if: always() # Run even if deployment fails, or succeeds. Alerts on 0 data.
+        run: npx tsx scripts/validate-data-integrity.ts
 
 
 

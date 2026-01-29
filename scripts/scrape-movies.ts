@@ -145,7 +145,7 @@ async function scrapeMovies() {
 
     // ANTI-BLOCKING: Disable Automation Controls
     const browser = await chromium.launch({
-        headless: true,
+        headless: process.env.HEADLESS !== 'false',
         args: [
             '--disable-blink-features=AutomationControlled',
             '--no-sandbox',
@@ -179,6 +179,11 @@ async function scrapeMovies() {
         console.log(`Navigating to KOBIS: ${KOBIS_URL}`);
         await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
         await kobisPage.waitForSelector('.rst_sch', { timeout: 30000 });
+        try {
+            await kobisPage.waitForSelector('#tbody_0 > tr', { timeout: 10000 });
+        } catch (e) {
+            console.warn('Timeout waiting for rows, trying to proceed anyway (might be empty or slow).');
+        }
 
         // Load More (Click twice to get 30+ items)
         const loadMoreBtn = await kobisPage.$('#btn_0');
@@ -211,6 +216,18 @@ async function scrapeMovies() {
             });
             return list;
         });
+
+        if (movies.length === 0) {
+            console.error('KOBIS returned 0 items. Creating error marker.');
+            fs.writeFileSync(path.join(DATA_DIR, 'movies.error'), 'KOBIS returned 0 items. Check selector: #tbody_0 > tr');
+            await browser.close();
+            return;
+        } else {
+            // Cleanup error file if exists
+            const errFile = path.join(DATA_DIR, 'movies.error');
+            if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
+        }
+
         console.log(`Found ${movies.length} movies from KOBIS.`);
 
     } catch (e) {
@@ -367,14 +384,54 @@ async function scrapeMovies() {
     await browser.close();
 
     // Atomic Save
-    if (finalMovies.length > 0) {
-        const tempFile = `${OUTPUT_FILE}.temp`;
-        fs.writeFileSync(tempFile, JSON.stringify(finalMovies, null, 2));
-        fs.renameSync(tempFile, OUTPUT_FILE);
-        console.log(`Saved ${finalMovies.length} movies to movies.json`);
-    } else {
-        console.warn('Scraper found 0 movies. Aborting save.');
+    if (finalMovies.length > 0)    // 3. Merge and Save (Strict Retention Logic)
+        console.log('Merging data with strict retention policy...');
+    const now = new Date().toISOString();
+    const movieMap = new Map<string, any>();
+
+    // Load ALL existing data first
+    if (fs.existsSync(OUTPUT_FILE)) {
+        const oldData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+        oldData.forEach((m: any) => movieMap.set(m.title, m));
     }
+
+    // Update with NEW data
+    for (const newMovie of finalMovies) {
+        // If it existed, we merge carefully
+        const existing = movieMap.get(newMovie.title);
+
+        const merged = {
+            ...existing, // Keep old fields (like manual overrides/descriptions if we had them)
+            ...newMovie, // Overwrite with new data (rank, date, etc.)
+            lastCollected: now // MARK AS FRESH
+        };
+
+        movieMap.set(newMovie.title, merged);
+    }
+
+    // Convert back to array
+    // We do NOT filter out old items here. Pruning happens in prune-data.ts.
+    // However, we might want to sort by rank for the UI, but allow undefined ranks for old items?
+    // Start with items that have a current rank
+    const allMovies = Array.from(movieMap.values());
+
+    // Sort: Ranked items first, then by lastCollected descending
+    allMovies.sort((a, b) => {
+        if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
+        if (a.rank) return -1;
+        if (b.rank) return 1;
+        return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
+    });
+
+    // Atomic Write
+    const tempFile = `${OUTPUT_FILE}.tmp`;
+    fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
+    fs.renameSync(tempFile, OUTPUT_FILE);
+
+    console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+} else {
+    console.warn('Scraper found 0 movies. Aborting save.');
+}
 }
 
 scrapeMovies();

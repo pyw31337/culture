@@ -88,7 +88,7 @@ async function scrapeMomMomFood() {
 
     // Launch browser
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: process.env.HEADLESS !== 'false',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -102,48 +102,35 @@ async function scrapeMomMomFood() {
 
         // Scroll to load all items
         console.log('Scrolling to load items...');
-        await page.evaluate(async (targetCount) => {
-            await new Promise<void>((resolve) => {
-                let totalHeight = 0;
-                let noChangeCount = 0;
-                const distance = 800; // Scroll slightly more per tick
-                let lastScrollHeight = 0;
-                let itemsCount = 0;
+        // Scroll to load all items
+        console.log('Scrolling to load items...');
+        let previousHeight = 0;
+        let noChangeAttempts = 0;
+        const MAX_NO_CHANGE = 15; // Stop after 15 attempts (30s) without height change
 
-                const timer = setInterval(() => {
-                    const scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
+        while (noChangeAttempts < MAX_NO_CHANGE) {
+            const currentHeight = await page.evaluate(() => document.body.scrollHeight);
 
-                    // Check items count
-                    itemsCount = document.querySelectorAll('a[href*="/travel/places/"]').length;
+            if (currentHeight > previousHeight) {
+                previousHeight = currentHeight;
+                noChangeAttempts = 0;
+            } else {
+                noChangeAttempts++;
+            }
 
-                    if (itemsCount >= targetCount) {
-                        // Found enough items
-                        clearInterval(timer);
-                        resolve();
-                        return;
-                    }
+            // Scroll to bottom
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
-                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                        if (document.body.scrollHeight > lastScrollHeight) {
-                            noChangeCount = 0;
-                            lastScrollHeight = document.body.scrollHeight;
-                        } else {
-                            noChangeCount++;
-                        }
-                    } else {
-                        noChangeCount = 0;
-                    }
+            // Wait for load
+            await delay(2000);
 
-                    // Stop if no change for very long time (network error or true end)
-                    if (noChangeCount > 200) { // Slower wait
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 200); // 200ms per scroll - gentle
-            });
-        }, TARGET_COUNT);
+            // Check count
+            const count = await page.evaluate(() => document.querySelectorAll('a[href*="/travel/places/"]').length);
+            process.stdout.write(`\rLoaded ${count} items...`);
+
+            if (count >= TARGET_COUNT) break;
+        }
+        console.log('\nFinished scrolling.');
 
         // Extract Links
         const listItems = await page.evaluate(() => {
@@ -178,6 +165,16 @@ async function scrapeMomMomFood() {
             });
             return results;
         });
+
+        if (listItems.length === 0) {
+            console.error('Mom-Mom Food scraper found 0 items. Creating error marker.');
+            fs.writeFileSync(path.join(process.cwd(), 'src/data/mommom-food.error'), 'Mom-Mom Food scraper found 0 items. Check login or selector.');
+            await browser.close();
+            return;
+        } else {
+            const errFile = path.join(process.cwd(), 'src/data/mommom-food.error');
+            if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
+        }
 
         console.log(`Found ${listItems.length} items.`);
 
@@ -420,15 +417,66 @@ async function scrapeMomMomFood() {
         }
         bar.stop();
 
-        // Final Save
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
-        console.log(`Saved ${finalItems.length} items to ${OUTPUT_FILE}`);
+        // Final Save with Strict Retention
+        const now = new Date().toISOString();
+        let finalData: MomMomItem[] = [];
+
+        if (fs.existsSync(OUTPUT_FILE)) {
+            finalData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+        }
+
+        const dataMap = new Map<string, MomMomItem>();
+        finalData.forEach(item => dataMap.set(item.link, item));
+
+        // Note: 'existingData' in this script was used for filtering processed items.
+        // We need to ensure we mark 'lastCollected' for ALL items we encountered in the list, 
+        // regardless of whether we scraped deep details or not.
+
+        // 'listItems' contains everything found on the list page.
+        // We should update 'lastCollected' for all of them.
+        for (const item of listItems) {
+            const existing = dataMap.get(item.link);
+
+            // If we scraped deep details for this item, use that. 
+            // Otherwise use existing or basic item.
+            // (Note: This script has complex periodical saving, so we must be careful)
+            // Ideally, the periodical save should have updated the map? 
+
+            // Actually, we should just load the 'periodical' saves if any?
+            // The logic above saved to file periodically.
+            // Let's rely on the periodical saves but do a final pass to ensure lastCollected is set for everything found on list.
+        }
+
+        // Wait, the periodic save appends to array 'existingData' and writes file.
+        // This is messy. Let's simplify:
+        // 1. We just finished scraping. 'existingData' variable holds the in-memory STATE of the file (including periodic updates).
+        // 2. We iterate 'listItems' (all found from list page).
+        // 3. For each found item, we update 'lastCollected' in 'existingData'.
+
+        for (const listItem of listItems) {
+            const index = existingData.findIndex(e => e.link === listItem.link);
+            if (index !== -1) {
+                existingData[index].lastCollected = now;
+            } else {
+                // New item that presumably failed processing or was skipped?
+                // If skipped (description exists), it's in existingData.
+                // If it's new but failed detail scraping? We add it as basic.
+                existingData.push({
+                    title: listItem.title,
+                    link: listItem.link,
+                    image: listItem.image,
+                    lastCollected: now
+                });
+            }
+        }
+
+        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(existingData, null, 2));
+        console.log(`Saved ${existingData.length} items (merged). Scanned: ${listItems.length}.`);
 
     } catch (e) {
         console.error(e);
     } finally {
         await browser.close();
     }
-}
 
-scrapeMomMomFood();
+    scrapeMomMomFood();

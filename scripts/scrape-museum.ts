@@ -24,7 +24,7 @@ interface MuseumItem {
 async function scrapeMuseum() {
     console.log('Starting Museum/Experience Scraper...');
     const browser = await puppeteer.launch({
-        headless: true, // Use headless for speed, maybe switch if detected
+        headless: process.env.HEADLESS !== 'false',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -35,33 +35,33 @@ async function scrapeMuseum() {
 
         // 1. Infinite Scroll to load all items
         console.log('Scrolling to load all items (~800)...');
-        await page.evaluate(async () => {
-            await new Promise<void>((resolve) => {
-                let totalHeight = 0;
-                let noChangeCount = 0;
-                const distance = 400;
+        // 1. Robust Infinite Scroll
+        console.log('Scrolling to load all items...');
+        let previousHeight = 0;
+        let noChangeAttempts = 0;
+        const MAX_NO_CHANGE = 10; // Stop after 10 attempts (~20 sec) of no new content
 
-                const timer = setInterval(() => {
-                    const scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
+        while (noChangeAttempts < MAX_NO_CHANGE) {
+            const currentHeight = await page.evaluate(() => document.body.scrollHeight);
 
-                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                        if (document.body.scrollHeight > scrollHeight) {
-                            noChangeCount = 0;
-                        } else {
-                            noChangeCount++;
-                        }
-                    }
+            if (currentHeight > previousHeight) {
+                previousHeight = currentHeight;
+                noChangeAttempts = 0;
+            } else {
+                noChangeAttempts++;
+            }
 
-                    // Stop if no change for multiple iterations or exceedingly large height (safety)
-                    if (noChangeCount > 30 || totalHeight > 500000) {
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 100);
-            });
-        });
+            // Scroll to bottom
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+            // Wait for load (variable delay)
+            await new Promise(r => setTimeout(r, 2000));
+
+            // Log progress
+            const count = await page.evaluate(() => document.querySelectorAll('div.contents > a').length);
+            process.stdout.write(`\rLoaded ${count} items...`);
+        }
+        console.log('\nFinished scrolling.');
 
         await new Promise(r => setTimeout(r, 3000)); // Final wait
 
@@ -114,6 +114,16 @@ async function scrapeMuseum() {
             });
             return results;
         });
+
+        if (listItems.length === 0) {
+            console.error('Museum scraper found 0 items. Creating error marker.');
+            fs.writeFileSync(path.join(process.cwd(), 'src/data/museum.error'), 'Museum scraper found 0 items. Check selector: div.contents > a');
+            await browser.close();
+            return;
+        } else {
+            const errFile = path.join(process.cwd(), 'src/data/museum.error');
+            if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
+        }
 
         console.log(`Found ${listItems.length} items. Starting detail scraping...`);
 
@@ -186,26 +196,33 @@ async function scrapeMuseum() {
 
         console.log('\nScraping complete.');
 
-        // 4. Persistence
+        // 4. Persistence (Strict Retention)
+        const now = new Date().toISOString();
         let existingData: MuseumItem[] = [];
+
+        // Load ALL existing data
         if (fs.existsSync(DATA_PATH)) {
-            try {
-                const raw = fs.readFileSync(DATA_PATH, 'utf-8');
-                existingData = JSON.parse(raw);
-            } catch (e) {
-                console.warn('Failed to parse existing museum data, overwriting.');
-            }
+            existingData = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
         }
 
-        // Merge: Update existing items, append new ones. Identify by ID.
-        const mergedMap = new Map<string, MuseumItem>();
-        existingData.forEach(item => mergedMap.set(item.id, item));
-        finalItems.forEach(item => mergedMap.set(item.id, item)); // Overwrite with new data
+        const dataMap = new Map<string, MuseumItem>();
+        existingData.forEach(item => dataMap.set(item.id, item));
 
-        const mergedList = Array.from(mergedMap.values());
+        // Update with collected items
+        for (const item of finalItems) {
+            const existing = dataMap.get(item.id);
+            const merged = {
+                ...existing,
+                ...item,
+                lastCollected: now
+            };
+            dataMap.set(item.id, merged);
+        }
 
-        fs.writeFileSync(DATA_PATH, JSON.stringify(mergedList, null, 2));
-        console.log(`Saved ${mergedList.length} items to ${DATA_PATH}`);
+        const allItems = Array.from(dataMap.values());
+
+        fs.writeFileSync(DATA_PATH, JSON.stringify(allItems, null, 2));
+        console.log(`Saved ${allItems.length} items (merged). Updated: ${finalItems.length}.`);
 
     } catch (error) {
         console.error('Fatal Error:', error);

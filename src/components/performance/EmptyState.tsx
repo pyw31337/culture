@@ -1,7 +1,9 @@
 import React from 'react';
-import { Heart, Star, Search, Filter, Calendar, Zap, Music, Ticket, Palmtree } from 'lucide-react';
+import { Heart, Star, Search, Filter, Calendar, Zap } from 'lucide-react';
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
+import { GENRES } from '@/lib/constants';
+import { getGenreIcon } from '@/components/GenreIcons';
 
 interface EmptyStateProps {
     viewMode: string;
@@ -35,12 +37,14 @@ export default function EmptyState({
         }
     };
 
-    const RecommendationChip = ({ icon: Icon, label, onClick }: { icon: any, label: string, onClick: () => void }) => (
+    const RecommendationChip = ({ icon, label, onClick }: { icon: React.ReactNode, label: string, onClick: () => void }) => (
         <button
             onClick={onClick}
             className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gray-800/50 light:bg-gray-100 hover:bg-gray-700 light:hover:bg-gray-200 border border-gray-700 light:border-gray-300 transition-all transform hover:scale-105"
         >
-            <Icon size={14} className="text-purple-400 light:text-purple-600" />
+            <span className="text-purple-400 light:text-purple-600 flex items-center justify-center">
+                {icon}
+            </span>
             <span className="text-sm font-extrabold text-gray-300 light:text-gray-700">{label}</span>
         </button>
     );
@@ -137,10 +141,18 @@ export default function EmptyState({
                             이런 카테고리는 어때요?
                         </span>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <RecommendationChip icon={Palmtree} label="전국축제" onClick={() => handleRedirect('festival')} />
-                            <RecommendationChip icon={Ticket} label="뮤지컬" onClick={() => handleRedirect('musical')} />
-                            <RecommendationChip icon={Music} label="콘서트" onClick={() => handleRedirect('concert')} />
-                            <RecommendationChip icon={Star} label="팝업스토어" onClick={() => handleRedirect('exhibition')} />
+                            {['festival', 'musical', 'concert', 'exhibition'].map(id => {
+                                const genre = GENRES.find(g => g.id === id);
+                                if (!genre) return null;
+                                return (
+                                    <RecommendationChip
+                                        key={id}
+                                        icon={getGenreIcon(id, 14)}
+                                        label={genre.label}
+                                        onClick={() => handleRedirect(id)}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </>
