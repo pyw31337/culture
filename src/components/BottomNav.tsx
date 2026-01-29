@@ -17,6 +17,7 @@ interface BottomNavProps {
     likeCount?: number;
     venueCount?: number;
     selectedGenre?: string;
+    searchMode?: 'keyword' | 'location';
 }
 
 
@@ -44,7 +45,7 @@ export const ListDetailsIcon = ({ className, size = 24 }: { className?: string; 
     </svg>
 );
 
-export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0, selectedGenre = 'all' }: BottomNavProps) {
+export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0, selectedGenre = 'all', searchMode = 'keyword' }: BottomNavProps) {
     // Determine Category Label
     const categoryLabel = (selectedGenre && selectedGenre !== 'all')
         ? (GENRES.find(g => g.id === selectedGenre)?.label || '카테고리')
@@ -115,14 +116,18 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onClick={item.action}
                 className={clsx(
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
-                    isActive ? "text-[#a78bfa] light:text-purple-600" : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
+                    isActive
+                        ? (searchMode === 'location' ? "text-emerald-400 light:text-emerald-600" : "text-[#a78bfa] light:text-purple-600")
+                        : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
                 )}
             >
                 <div className="relative">
                     <Icon
                         className={clsx(
                             "w-5 h-5 transition-all duration-300",
-                            isActive && "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"
+                            isActive && (searchMode === 'location'
+                                ? "drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]"
+                                : "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]")
                         )}
                         strokeWidth={isActive ? 2.5 : 2}
                     />
@@ -157,12 +162,16 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                             onClick={() => onMenuClick('location')}
                             className={clsx(
                                 "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
-                                "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
+                                searchMode === 'location'
+                                    ? "bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500"
+                                    : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
                                 "hover:scale-105",
                                 "active:scale-95",
                                 "active:scale-95",
                                 "bg-white light:bg-white", // Floating button bg
-                                activeMenu === 'location' && "shadow-[0_0_40px_rgba(167,139,250,0.8)]"
+                                activeMenu === 'location' && (searchMode === 'location'
+                                    ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
+                                    : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
                             )}
                         >
                             <MapPin
@@ -171,20 +180,32 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                             />
                         </button>
                     </div>
-                    {/* Ripple effect when active */}
                     {activeMenu === 'location' && (
-                        <div className="absolute inset-0 rounded-full animate-ping bg-purple-400/30 pointer-events-none" />
+                        <div className={clsx(
+                            "absolute inset-0 rounded-full animate-ping pointer-events-none",
+                            searchMode === 'location' ? "bg-emerald-400/30" : "bg-purple-400/30"
+                        )} />
                     )}
                 </div>
 
                 {/* Bottom bar with curved notch */}
-                <div className="relative bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 backdrop-blur-xl border-t border-purple-500/20 light:border-black/5 rounded-t-3xl overflow-hidden shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
+                <div className={clsx(
+                    "relative backdrop-blur-xl rounded-t-3xl overflow-hidden transition-colors duration-500",
+                    searchMode === 'location'
+                        ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+                        : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+                )}>
                     {/* SVG Notch Mask */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
                         <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
                             <path
                                 d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
-                                className="drop-shadow-lg fill-[#1a0b2e] light:fill-gray-50 transition-colors duration-300"
+                                className={clsx(
+                                    "drop-shadow-lg transition-colors duration-500",
+                                    searchMode === 'location'
+                                        ? "fill-[#0a1f1a] light:fill-gray-50"
+                                        : "fill-[#1a0b2e] light:fill-gray-50"
+                                )}
                             />
                         </svg>
                     </div>

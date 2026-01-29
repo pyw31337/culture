@@ -925,6 +925,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 likeCount={likedIds.length}
                 venueCount={favoriteVenues.length}
                 selectedGenre={selectedGenre}
+                searchMode={searchMode}
             />
 
             {

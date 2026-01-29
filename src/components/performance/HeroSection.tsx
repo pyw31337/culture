@@ -416,13 +416,26 @@ export default function HeroSection({
         )}>
             <div className="text-left flex-1 min-w-0 z-10">
                 {selectedGenre !== 'movie' && selectedGenre !== 'ott' && (
-                    <p className="text-[#a78bfa] font-extrabold mb-3 flex items-center gap-2 text-sm md:text-base">
+                    <p className={clsx(
+                        "font-extrabold mb-3 flex items-center gap-2 text-sm md:text-base transition-colors duration-500",
+                        searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]"
+                    )}>
                         <button
                             onClick={handleCurrentLocationClick}
-                            className="flex items-center gap-1 hover:text-white light:hover:text-purple-600 transition-colors group/label mr-2"
+                            className={clsx(
+                                "flex items-center gap-1 transition-colors group/label mr-2",
+                                searchMode === 'location'
+                                    ? "hover:text-white light:hover:text-emerald-600"
+                                    : "hover:text-white light:hover:text-purple-600"
+                            )}
                             title="내 위치 찾기"
                         >
-                            <MapPin className="w-4 h-4 text-[#a78bfa] light:text-purple-600 group-hover/label:scale-110 transition-transform" />
+                            <MapPin className={clsx(
+                                "w-4 h-4 group-hover/label:scale-110 transition-transform",
+                                searchMode === 'location'
+                                    ? "text-emerald-400 light:text-emerald-600"
+                                    : "text-[#a78bfa] light:text-purple-600"
+                            )} />
                             <span>
                                 {(selectedRegion !== 'all' || selectedVenue !== 'all')
                                     ? '설정위치 :'
@@ -432,7 +445,12 @@ export default function HeroSection({
                         </button>
                         <span
                             onClick={() => setIsHeroFilterExpanded(prev => !prev)}
-                            className="text-white light:text-black border-b border-[#a78bfa] cursor-pointer hover:border-white transition-colors"
+                            className={clsx(
+                                "text-white light:text-black cursor-pointer hover:border-white transition-colors",
+                                searchMode === 'location'
+                                    ? "border-b border-emerald-400"
+                                    : "border-b border-[#a78bfa]"
+                            )}
                         >
                             {(selectedRegion === 'all' && selectedVenue === 'all')
                                 ? (searchLocation?.name
@@ -475,7 +493,12 @@ export default function HeroSection({
 
                 {/* Inline Filter Panel (Toggle) */}
                 {isHeroFilterExpanded && (
-                    <div ref={filterRef} className="mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border border-purple-500/20 light:border-black/5 shadow-2xl rounded-2xl z-[60]">
+                    <div ref={filterRef} className={clsx(
+                        "mt-2 mb-4 animate-in fade-in slide-in-from-top-2 duration-300 origin-top relative w-full backdrop-blur-3xl shadow-2xl rounded-2xl z-[60] transition-colors duration-500",
+                        searchMode === 'location'
+                            ? "bg-[#0a1f1a]/95 light:bg-white/95 border border-emerald-500/20 light:border-black/5"
+                            : "bg-[#1a0b2e]/95 light:bg-white/95 border border-purple-500/20 light:border-black/5"
+                    )}>
                         <div className="flex flex-col gap-4 p-6">
                             <LocationSelector
                                 selectedRegion={selectedRegion}
@@ -517,7 +540,12 @@ export default function HeroSection({
                         </>
                     )}
                     {currentTemplate.line2Pre}
-                    <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa] animate-shine bg-[length:200%_auto] tracking-normal py-1">
+                    <span className={clsx(
+                        "font-black text-transparent bg-clip-text animate-shine bg-[length:200%_auto] tracking-normal py-1",
+                        searchMode === 'location'
+                            ? "bg-gradient-to-r from-emerald-300 via-teal-400 to-green-300"
+                            : "bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa]"
+                    )}>
                         {currentTemplate.highlight}
                     </span><br />
                     {currentTemplate.suffix}
@@ -556,7 +584,7 @@ export default function HeroSection({
                 <div className={clsx(
                     "p-[3px] rounded-full transition-all duration-300 relative",
                     searchMode === 'location'
-                        ? "bg-linear-to-r from-emerald-500 via-teal-500 to-green-500 light:shadow-[0_4px_30px_rgba(16,185,129,0.25)]"
+                        ? "bg-linear-to-r from-emerald-400 via-teal-600 to-green-400 light:shadow-[0_4px_30px_rgba(16,185,129,0.35)]"
                         : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
                 )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">

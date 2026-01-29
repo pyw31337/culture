@@ -107,7 +107,7 @@ async function scrapeMomMomFood() {
         console.log('Scrolling to load items...');
         let previousHeight = 0;
         let noChangeAttempts = 0;
-        const MAX_NO_CHANGE = 15; // Stop after 15 attempts (30s) without height change
+        const MAX_NO_CHANGE = 30; // Stop after 30 attempts without height change
 
         while (noChangeAttempts < MAX_NO_CHANGE) {
             const currentHeight = await page.evaluate(() => document.body.scrollHeight);
@@ -123,7 +123,7 @@ async function scrapeMomMomFood() {
             await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
             // Wait for load
-            await delay(2000);
+            await delay(1500);
 
             // Check count
             const count = await page.evaluate(() => document.querySelectorAll('a[href*="/travel/places/"]').length);
