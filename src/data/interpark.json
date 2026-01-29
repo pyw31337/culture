@@ -179,7 +179,7 @@
     "title": "〈슬립노모어 서울〉 (Sleep No More Seoul)",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25008376_p.gif",
     "date": "2025.07.24 ~ 2026.02.28",
-    "venue": "매키탄 호텔 (The McKithan Hotel)",
+    "venue": "매키탄 호텔",
     "link": "https://tickets.interpark.com/goods/25008376",
     "region": "서울",
     "genre": "musical",
@@ -1782,7 +1782,7 @@
     "title": "페인터즈 - 서대문 전용관",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25005146_p.gif",
     "date": "2025.04.10 ~ 2026.03.31",
-    "venue": "서대문 전용관(NH아트홀)",
+    "venue": "서대문 전용관",
     "link": "https://tickets.interpark.com/goods/25005146",
     "region": "서울",
     "genre": "musical",
@@ -12245,7 +12245,7 @@
     "title": "＂오늘도 괜찮아＂ 토크 콘서트",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26000132_p.gif",
     "date": "2026.03.28 ~ 2026.03.28",
-    "venue": "돔(DOME)676",
+    "venue": "돔676",
     "link": "https://tickets.interpark.com/goods/26000132",
     "region": "경기",
     "genre": "concert",
@@ -12573,7 +12573,7 @@
     "title": "2026 FIRST MUSIC STATION - 고양",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017769_p.gif",
     "date": "2026.01.31 ~ 2026.02.01",
-    "venue": "일산 킨텍스(KINTEX)",
+    "venue": "일산 킨텍스",
     "link": "https://tickets.interpark.com/goods/25017769",
     "region": "경기",
     "genre": "concert",
@@ -21522,16 +21522,6 @@
     "genre": "musical"
   },
   {
-    "id": "25018451",
-    "title": "뮤지컬 〈말리〉 ＆ 〈은밀하게 위대하게:THE LAST〉 패키지 티켓",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018451_p.gif",
-    "date": "2025.12.29 ~ 2026.02.13",
-    "venue": "해당공연 공연장－서울",
-    "link": "https://tickets.interpark.com/goods/25018451",
-    "region": "서울",
-    "genre": "musical"
-  },
-  {
     "id": "26001001",
     "title": "뮤지컬 〈빌리 엘리어트〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001001_p.gif",
@@ -21962,26 +21952,6 @@
     "genre": "classic"
   },
   {
-    "id": "26000573",
-    "title": "2026 존 엘리엇 가디너 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000573_p.gif",
-    "date": "2026.01.15 ~ 2026.03.02",
-    "venue": "해당공연 공연장－서울",
-    "link": "https://tickets.interpark.com/goods/26000573",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
-    "id": "26001214",
-    "title": "2026 MAC 모닝 콘서트 ＃1~3 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001214_p.gif",
-    "date": "2026.01.28 ~ 2026.03.24",
-    "venue": "해당공연 공연장－서울",
-    "link": "https://tickets.interpark.com/goods/26001214",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
     "id": "26001367",
     "title": "3월, 월간연주자 피아니스트 이주용",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001367_p.gif",
@@ -22202,16 +22172,6 @@
     "genre": "classic"
   },
   {
-    "id": "25014096",
-    "title": "아벨 콰르텟 베토벤 현악사중주 전곡연주 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25014096_p.gif",
-    "date": "2025.09.26 ~ 2026.02.04",
-    "venue": "해당공연 공연장－서울",
-    "link": "https://tickets.interpark.com/goods/25014096",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
     "id": "26001468",
     "title": "어텀 실내악 페스티벌 for Humanity",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001468_p.gif",
@@ -22418,16 +22378,6 @@
     "date": "2026.03.07 ~ 2026.03.07",
     "venue": "예술의전당 리사이틀홀",
     "link": "https://tickets.interpark.com/goods/26001304",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
-    "id": "25017708",
-    "title": "KBS교향악단 2026시즌 L 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017708_p.gif",
-    "date": "2026.01.16 ~ 2026.09.10",
-    "venue": "해당공연 공연장－서울",
-    "link": "https://tickets.interpark.com/goods/25017708",
     "region": "서울",
     "genre": "classic"
   },
@@ -22752,16 +22702,6 @@
     "genre": "classic"
   },
   {
-    "id": "26000792",
-    "title": "2026 성남아트센터 클래식 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000792_p.gif",
-    "date": "2026.03.28 ~ 2026.10.03",
-    "venue": "해당공연 공연장 - 성남",
-    "link": "https://tickets.interpark.com/goods/26000792",
-    "region": "경기",
-    "genre": "classic"
-  },
-  {
     "id": "26001316",
     "title": "2026 신춘음악회 〈가곡과 아리아의 밤〉 - 평택",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001316_p.gif",
@@ -22779,16 +22719,6 @@
     "venue": "인천문화예술회관 소공연장",
     "link": "https://tickets.interpark.com/goods/26000933",
     "region": "인천",
-    "genre": "classic"
-  },
-  {
-    "id": "26000510",
-    "title": "2026년 〈토요키즈클래식〉 (상반기) 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000510_p.gif",
-    "date": "2026.02.28 ~ 2026.06.27",
-    "venue": "해당공연 공연장 - 용인",
-    "link": "https://tickets.interpark.com/goods/26000510",
-    "region": "경기",
     "genre": "classic"
   },
   {
@@ -23266,7 +23196,7 @@
     "title": "국립심포니콘서트오케스트라 〈멘델스존, 교향곡 3번 ＇스코틀랜드＇〉 - 세종",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26000895_p.gif",
     "date": "2026.02.12 ~ 2026.02.12",
-    "venue": "세종문화예술회관 대공연장(세종시)",
+    "venue": "세종문화예술회관",
     "link": "https://tickets.interpark.com/goods/26000895",
     "region": "충남",
     "genre": "classic"
@@ -24566,7 +24496,7 @@
     "title": "2002 한일 월드컵 20주년 기념 특별전",
     "image": "https://ticketimage.interpark.com/Play/image/large/22/22006119_p.gif",
     "date": "2022.06.01 ~ 2026.12.31",
-    "venue": "풋볼 팬타지움 (2002 FIFA 월드컵 기념관)",
+    "venue": "풋볼 팬타지움",
     "link": "https://tickets.interpark.com/goods/22006119",
     "region": "서울",
     "genre": "exhibition"
@@ -24706,7 +24636,7 @@
     "title": "나 혼자만 레벨업 展",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017792_p.gif",
     "date": "2025.12.13 ~ 2026.03.01",
-    "venue": "덕스(DUEX) 홍대 1관",
+    "venue": "덕스 홍대 1관",
     "link": "https://tickets.interpark.com/goods/25017792",
     "region": "서울",
     "genre": "exhibition"
@@ -24756,7 +24686,7 @@
     "title": "바스키아: 과거와 미래를 잇는 상징적 기호들",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25013674_p.gif",
     "date": "2025.09.23 ~ 2026.01.31",
-    "venue": "동대문디자인플라자(DDP) 전시 1관",
+    "venue": "동대문디자인플라자 전시 1관",
     "link": "https://tickets.interpark.com/goods/25013674",
     "region": "서울",
     "genre": "exhibition"
@@ -24806,7 +24736,7 @@
     "title": "브릭 아트 뮤지엄",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018354_p.gif",
     "date": "2025.12.24 ~ 2026.12.31",
-    "venue": "덕스(DUEX) 홍대 2관",
+    "venue": "덕스 홍대 2관",
     "link": "https://tickets.interpark.com/goods/25018354",
     "region": "서울",
     "genre": "exhibition"
@@ -25526,7 +25456,7 @@
     "title": "［익선］ 리얼샷 사격양궁장",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001472_p.gif",
     "date": "2023.07.12 ~ 2026.12.31",
-    "venue": "주식회사 리얼샷 익선점",
+    "venue": "리얼샷 익선점",
     "link": "https://tickets.interpark.com/goods/Y3001472",
     "region": "서울",
     "genre": "leisure"
@@ -25932,16 +25862,6 @@
     "genre": "etc"
   },
   {
-    "id": "25001751",
-    "title": "［ 한국항공대학교 항공우주박물관 ］ 종합 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25001751_p.gif",
-    "date": "2025.02.15 ~ 2026.03.31",
-    "venue": "해당공연 공연장－경기",
-    "link": "https://tickets.interpark.com/goods/25001751",
-    "region": "경기",
-    "genre": "exhibition"
-  },
-  {
     "id": "Y4001912",
     "title": "［경기 과천］ 매직플로우 원더파크",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001912_p.gif",
@@ -26176,7 +26096,7 @@
     "title": "파라다이스시티 - 키자니아 GO 2시간 돌봄 패키지",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001422_p.gif",
     "date": "2026.02.03 ~ 2026.03.02",
-    "venue": "파라다이스시티 플라자 3층(키자니아 GO)",
+    "venue": "파라다이스시티 플라자 3층",
     "link": "https://tickets.interpark.com/goods/26001422",
     "region": "인천",
     "genre": "exhibition"
@@ -26446,7 +26366,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 실외타석이용권 10회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001329_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001329",
     "region": "경기",
     "genre": "leisure"
@@ -26456,7 +26376,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 실외타석이용권 1회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001328_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001328",
     "region": "경기",
     "genre": "leisure"
@@ -26466,7 +26386,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 실외타석이용권 20회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001330_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001330",
     "region": "경기",
     "genre": "leisure"
@@ -26476,7 +26396,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 실외타석이용권 30회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001327_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001327",
     "region": "경기",
     "genre": "leisure"
@@ -26486,7 +26406,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 파3골프장 10회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001333_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001333",
     "region": "경기",
     "genre": "leisure"
@@ -26496,7 +26416,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 파3골프장 1회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001332_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001332",
     "region": "경기",
     "genre": "leisure"
@@ -26506,7 +26426,7 @@
     "title": "［경기/용인］ 조일프라자골프클럽 : 파3골프장 30회권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y4/Y4001331_p.gif",
     "date": "2024.09.23 ~ 2027.09.19",
-    "venue": "(주)송운개발",
+    "venue": "송운개발",
     "link": "https://tickets.interpark.com/goods/Y4001331",
     "region": "경기",
     "genre": "leisure"
@@ -27136,7 +27056,7 @@
     "title": "［용인］ 에버랜드 Q-PASS: 판다 세컨하우스",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000124_p.gif",
     "date": "2026.01.06 ~ 2026.01.31",
-    "venue": "(주)에버랜드",
+    "venue": "에버랜드",
     "link": "https://tickets.interpark.com/goods/Y6000124",
     "region": "경기",
     "genre": "leisure"
@@ -27146,7 +27066,7 @@
     "title": "［용인］ 에버랜드 Q-PASS: 판다월드",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000123_p.gif",
     "date": "2026.01.06 ~ 2026.01.31",
-    "venue": "(주)에버랜드",
+    "venue": "에버랜드",
     "link": "https://tickets.interpark.com/goods/Y6000123",
     "region": "경기",
     "genre": "leisure"
@@ -27476,7 +27396,7 @@
     "title": "［파주］서원인레인지(서원밸리CC 골프연습장) 일일이용권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5001533_p.gif",
     "date": "2025.10.02 ~ 2026.09.07",
-    "venue": "서원인레인지 (서원밸리CC 골프연습장)",
+    "venue": "서원인레인지",
     "link": "https://tickets.interpark.com/goods/Y5001533",
     "region": "경기",
     "genre": "leisure"
@@ -28196,7 +28116,7 @@
     "title": "［강원 속초］ 더다이브(The Dive) 스쿠버 다이빙",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001847_p.gif",
     "date": "2023.05.25 ~ 2026.12.31",
-    "venue": "더다이브(The Dive)",
+    "venue": "더다이브",
     "link": "https://tickets.interpark.com/goods/Y3001847",
     "region": "강원",
     "genre": "leisure"
@@ -28726,7 +28646,7 @@
     "title": "［충남］ 소노벨 천안 스노우어드벤처 이용권 (~02/22)",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000203_p.gif",
     "date": "2026.01.07 ~ 2026.02.21",
-    "venue": "(주)소노호텔앤리조트 천안",
+    "venue": "소노호텔앤리조트 천안",
     "link": "https://tickets.interpark.com/goods/Y6000203",
     "region": "충남",
     "genre": "leisure"
@@ -29016,7 +28936,7 @@
     "title": "스노우미술관5 - 대구",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017922_p.gif",
     "date": "2026.01.02 ~ 2026.02.22",
-    "venue": "대백프라자갤러리 (프라자점 12F)",
+    "venue": "대백프라자갤러리",
     "link": "https://tickets.interpark.com/goods/25017922",
     "region": "대구",
     "genre": "exhibition"
@@ -29986,7 +29906,7 @@
     "title": "［영천］ 야외추리게임 별의기억 시간이탈자",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3002182_p.gif",
     "date": "2023.12.14 ~ 2026.12.31",
-    "venue": "주식회사 어디든가게",
+    "venue": "어디든가게",
     "link": "https://tickets.interpark.com/goods/Y3002182",
     "region": "경북",
     "genre": "leisure"
@@ -30336,7 +30256,7 @@
     "title": "［부산］ TV애니메이션 체인소 맨 展",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26000133_p.gif",
     "date": "2026.01.21 ~ 2026.05.31",
-    "venue": "덕스(DUEX) 부산",
+    "venue": "덕스 부산",
     "link": "https://tickets.interpark.com/goods/26000133",
     "region": "부산",
     "genre": "exhibition"
@@ -33886,7 +33806,7 @@
     "title": "［제주］ 카페패스 3일 프리미엄",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5000086_p.gif",
     "date": "2025.01.22 ~ 2026.01.31",
-    "venue": "(주) 캐플릭스",
+    "venue": "캐플릭스",
     "link": "https://tickets.interpark.com/goods/Y5000086",
     "region": "제주",
     "genre": "leisure"

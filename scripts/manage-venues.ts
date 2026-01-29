@@ -96,8 +96,19 @@ export function normalizeVenueName(name: string): string {
         normalized = '창경궁';
     }
 
-    // 4. Clean up "뵙겠습니다" suffixes if not caught by blacklist
+    // 4. Clean up "뵙겠습니다" suffixes
     normalized = normalized.replace(/에서\s*뵙겠습니다\.?$/, '').replace(/뵙겠습니다\.?$/, '').trim();
+
+    // 5. Remove English names in parentheses or mixed English
+    // Example: "예술의전당 (Seoul Arts Center)" -> "예술의전당"
+    normalized = normalized.replace(/\s*\(.*[a-zA-Z]+.*\)/g, '').trim();
+    // Also remove purely English parts if mixed? Just parens for now as per user request "English names removed"
+
+    // 6. Remove corporate suffixes like (주), (유), 주식회사
+    normalized = normalized.replace(/\(주\)/g, '').replace(/\(유\)/g, '').replace(/주식회사/g, '').trim();
+
+    // 7. Remove address-like prefixes/suffixes if accidental (User mentioned "refined data" implies clean names)
+    // For now, let's stick to the user's explicit request about English and (Ju).
 
     return normalized;
 }
