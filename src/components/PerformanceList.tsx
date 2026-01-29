@@ -802,40 +802,38 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 )}
                             </h2>
                             {activeLocation && (
-                                { activeLocation && (
-                                    <div className="flex items-center gap-2 pb-[3px] ml-auto">
-                                        <div className="flex items-center bg-gray-800 light:bg-white border border-white/10 light:border-gray-200 rounded-full pl-3 pr-1 py-1 group hover:border-[#a78bfa] transition-all shadow-sm">
-                                            {/* Radius Select */}
-                                            <div className="relative flex items-center mr-2">
-                                                <span className="text-xs text-gray-400 mr-2 font-bold">반경</span>
-                                                <select
-                                                    value={radius}
-                                                    onChange={(e) => setRadius(Number(e.target.value))}
-                                                    className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-4 cursor-pointer"
-                                                >
-                                                    {RADIUS_OPTIONS.map(r => (
-                                                        <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
-                                                            {r.label}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <ChevronDown className="absolute right-0 w-3 h-3 text-gray-500 pointer-events-none" />
-                                            </div>
-
-                                            {/* Divider */}
-                                            <div className="w-[1px] h-4 bg-gray-600 light:bg-gray-300 mx-2"></div>
-
-                                            {/* Map View Button - Expanded Size */}
-                                            <button
-                                                onClick={() => setIsMapOpen(true)}
-                                                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extra-bold text-gray-300 light:text-gray-700 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5 transition-colors"
+                                <div className="flex items-center gap-2 pb-[3px] ml-auto">
+                                    <div className="flex items-center bg-gray-800 light:bg-white border border-white/10 light:border-gray-200 rounded-full pl-3 pr-1 py-1 group hover:border-[#a78bfa] transition-all shadow-sm">
+                                        {/* Radius Select */}
+                                        <div className="relative flex items-center mr-2">
+                                            <span className="text-xs text-gray-400 mr-2 font-bold">반경</span>
+                                            <select
+                                                value={radius}
+                                                onChange={(e) => setRadius(Number(e.target.value))}
+                                                className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-4 cursor-pointer"
                                             >
-                                                <MapIcon className="w-4 h-4 text-[#a78bfa] light:text-purple-600" />
-                                                <span className="font-extrabold text-sm">지도보기</span>
-                                            </button>
+                                                {RADIUS_OPTIONS.map(r => (
+                                                    <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
+                                                        {r.label}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown className="absolute right-0 w-3 h-3 text-gray-500 pointer-events-none" />
                                         </div>
+
+                                        {/* Divider */}
+                                        <div className="w-[1px] h-4 bg-gray-600 light:bg-gray-300 mx-2"></div>
+
+                                        {/* Map View Button - Expanded Size */}
+                                        <button
+                                            onClick={() => setIsMapOpen(true)}
+                                            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extra-bold text-gray-300 light:text-gray-700 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5 transition-colors"
+                                        >
+                                            <MapIcon className="w-4 h-4 text-[#a78bfa] light:text-purple-600" />
+                                            <span className="font-extrabold text-sm">지도보기</span>
+                                        </button>
                                     </div>
-                                )}
+                                </div>
                             )}
                         </div>
                     </div>
