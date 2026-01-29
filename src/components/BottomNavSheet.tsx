@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
-import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, LayoutList, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun } from 'lucide-react';
+import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, LayoutList, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun, MapPin } from 'lucide-react';
 import { BottomMenuType, ListDetailsIcon } from './BottomNav';
 import { CloverIcon } from './GenreIcons';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
