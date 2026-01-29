@@ -61,7 +61,7 @@ interface PerformanceListProps {
 }
 
 export default function PerformanceList({ initialPerformances, lastUpdated, initialGenre = 'all', isCategoryPage = false, categoryLabel }: PerformanceListProps) {
-
+    const [focusVenue, setFocusVenue] = useState<{ lat: number, lng: number, name: string } | null>(null);
     // --- State ---
 
     // Data (Hybrid: Initial -> Fetched Full)
@@ -802,37 +802,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 )}
                             </h2>
                             {activeLocation && (
-                                <div className="flex items-center gap-2 pb-[3px] ml-auto">
-                                    <div className="flex items-center bg-gray-800 light:bg-white border border-white/10 light:border-gray-200 rounded-full pl-3 pr-1 py-1 group hover:border-[#a78bfa] transition-all shadow-sm">
-                                        {/* Radius Select */}
-                                        <div className="relative flex items-center mr-2">
-                                            <select
-                                                value={radius}
-                                                onChange={(e) => setRadius(Number(e.target.value))}
-                                                className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-4 cursor-pointer"
+                                { activeLocation && (
+                                    <div className="flex items-center gap-2 pb-[3px] ml-auto">
+                                        <div className="flex items-center bg-gray-800 light:bg-white border border-white/10 light:border-gray-200 rounded-full pl-3 pr-1 py-1 group hover:border-[#a78bfa] transition-all shadow-sm">
+                                            {/* Radius Select */}
+                                            <div className="relative flex items-center mr-2">
+                                                <span className="text-xs text-gray-400 mr-2 font-bold">반경</span>
+                                                <select
+                                                    value={radius}
+                                                    onChange={(e) => setRadius(Number(e.target.value))}
+                                                    className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-4 cursor-pointer"
+                                                >
+                                                    {RADIUS_OPTIONS.map(r => (
+                                                        <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
+                                                            {r.label}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown className="absolute right-0 w-3 h-3 text-gray-500 pointer-events-none" />
+                                            </div>
+
+                                            {/* Divider */}
+                                            <div className="w-[1px] h-4 bg-gray-600 light:bg-gray-300 mx-2"></div>
+
+                                            {/* Map View Button - Expanded Size */}
+                                            <button
+                                                onClick={() => setIsMapOpen(true)}
+                                                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extra-bold text-gray-300 light:text-gray-700 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5 transition-colors"
                                             >
-                                                {RADIUS_OPTIONS.map(r => (
-                                                    <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
-                                                        {r.label}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                            <ChevronDown className="absolute right-0 w-3 h-3 text-gray-500 pointer-events-none" />
+                                                <MapIcon className="w-4 h-4 text-[#a78bfa] light:text-purple-600" />
+                                                <span className="font-extrabold text-sm">지도보기</span>
+                                            </button>
                                         </div>
-
-                                        {/* Divider */}
-                                        <div className="w-[1px] h-3 bg-gray-600 light:bg-gray-300 mx-1"></div>
-
-                                        {/* Map View Button */}
-                                        <button
-                                            onClick={() => setIsMapOpen(true)}
-                                            className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-extrabold text-gray-300 light:text-gray-700 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5 transition-colors"
-                                        >
-                                            <MapIcon className="w-3.5 h-3.5 text-[#a78bfa] light:text-purple-600" />
-                                            <span>지도보기</span>
-                                        </button>
                                     </div>
-                                </div>
+                                )}
                             )}
                         </div>
                     </div>
@@ -861,6 +864,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         onToggleLike={toggleLike}
                         handleDetailOpen={handleDetailOpen}
                         setSearchLocation={setSearchLocation}
+                        onVenuePreview={(loc) => {
+                            setFocusVenue(loc); // Just set preview focus
+                            setIsMapOpen(true); // Open map
+                            // Do NOT set searchLocation/searchMode here
+                        }}
                         setIsMapOpen={setIsMapOpen}
                         copyItemShareUrl={copyItemShareUrl}
                         selectedGenre={selectedGenre}
@@ -882,11 +890,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 isMapOpen && (
                     <KakaoMapModal
                         performances={filteredPerformances}
-                        centerLocation={searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
+                        centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}
-                        onClose={() => setIsMapOpen(false)}
-                        onVenueLocationChange={(name, lat, lng) => setSearchLocation({ name, lat, lng })}
+                        onClose={() => {
+                            setIsMapOpen(false);
+                            setFocusVenue(null); // Clear focus on close
+                        }}
+                        onVenueLocationChange={(name, lat, lng) => {
+                            // This is the "Set As Location" action from Map
+                            setSearchLocation({ name, lat, lng });
+                            setSearchMode('location'); // Force location mode
+                            setFocusVenue(null); // Clear preview focus as we now have real filter
+                        }}
                     />
                 )
             }

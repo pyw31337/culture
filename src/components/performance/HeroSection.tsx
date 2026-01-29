@@ -559,7 +559,10 @@ export default function HeroSection({
             </div>
 
             {/* Hero Search Bar */}
-            <div className="w-full lg:w-auto relative group z-[30]">
+            <div className={clsx(
+                "w-full lg:w-auto relative group",
+                (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
+            )}>
                 {/* Rotating Neon Border (The requested "Rotating Glow") */}
                 <div className={clsx(
                     "absolute -inset-[3px] rounded-full opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300",

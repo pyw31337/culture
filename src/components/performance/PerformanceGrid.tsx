@@ -15,6 +15,7 @@ interface PerformanceGridProps {
     onToggleLike: (id: string, e: any) => void;
     handleDetailOpen: (perf: any) => void;
     setSearchLocation: (loc: any) => void;
+    onVenuePreview?: (loc: any) => void; // Optional to separate preview from search
     setIsMapOpen: (val: boolean) => void;
     copyItemShareUrl: (id: string) => Promise<boolean>;
     // Infinite Scroll
@@ -36,6 +37,7 @@ export default function PerformanceGrid({
     onToggleLike,
     handleDetailOpen,
     setSearchLocation,
+    onVenuePreview,
     setIsMapOpen,
     copyItemShareUrl,
     hasMore,

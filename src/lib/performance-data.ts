@@ -175,7 +175,7 @@ export function getAllPerformances() {
 
     const filtered = allPerformances.filter(p => {
         // Always show specific genres (Bypass Date & Region)
-        if (p.genre === 'movie' || p.genre === 'ott' || p.genre === 'museum' || p.genre === 'leisure' || p.genre === 'hotdeal') return true;
+        if (p.genre === 'movie' || p.genre === 'ott') return true;
 
         // Date Check (Enforced for everything else)
         if (!isPerformanceActive(p.date, now)) return false;
@@ -202,17 +202,16 @@ export function getAllPerformances() {
         if (p.venue === '예매하기') return false;
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
 
-        // Address-based Filtering (Service Area Check) -> Disable for nationwide
-        /*
-        if (venues[p.venue]) {
-            const addr = venues[p.venue].address;
-            if (addr && addr !== '정보 없음') {
-                const isServiceArea = addr.startsWith('서울') || addr.startsWith('경기') || addr.startsWith('인천');
-                // Allow if in validRegions (broad support) or service area
-                if (!isServiceArea && !validRegions.includes(p.region)) return false;
+        // Address/Location Validation (Strict Policy)
+        // Only allow 'movie' and 'ott' to bypass location check.
+        // Everything else MUST have a valid geolocation to be displayed.
+        if (p.genre !== 'movie' && p.genre !== 'ott') {
+            const v = venues[p.venue];
+            // If venue data is missing, or address is invalid, or lat/lng is missing/invalid
+            if (!v || !v.address || v.address === '정보 없음' || !v.lat || !v.lng) {
+                return false;
             }
         }
-        */
 
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
