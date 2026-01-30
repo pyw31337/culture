@@ -18,8 +18,66 @@ async function generate() {
     console.log('Generating static performance data...');
     try {
         const performances = await getAllPerformances();
+
+        // Filter out expired performances
+        // Use a safe buffer (e.g., allow items ending yesterday to show until today's build runs, but 1 month ago is definitely out)
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const activePerformances = performances.filter(p => {
+            if (!p.date) return false; // No date = active? No, safety first.
+
+            // Allow "Open Run" or "TBA" if necessary, but for now stricter is better.
+            // If date string contains "~", parse end date.
+            // If single date, parse that.
+
+            try {
+                let endDate: Date | null = null;
+                const d = p.date.replace(/\./g, '-'); // Normalize dots to dashes for better parsing
+
+                if (d.includes('~')) {
+                    const parts = d.split('~');
+                    let endStr = parts[1].trim();
+                    // Clean up junk like "]" or " ("
+                    endStr = endStr.split('[')[0].split('(')[0].trim();
+
+                    // Handle "2026-01-04" or "26-01-04"
+                    if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
+                        endStr = '20' + endStr;
+                    }
+
+                    endDate = new Date(endStr);
+                } else {
+                    let endStr = d.trim();
+                    endStr = endStr.split('[')[0].split('(')[0].trim();
+                    if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
+                        endStr = '20' + endStr;
+                    }
+                    endDate = new Date(endStr);
+                }
+
+                if (!endDate || isNaN(endDate.getTime())) {
+                    // Invalid date format?? 
+                    // If it's a long run open run, keep it?
+                    // Safe default: If we can't parse it, keep it but log warning? 
+                    // User wants validation. Let's start with strict logging.
+                    // console.warn(`Unparseable date: ${p.date} (${p.title})`);
+                    return true;
+                }
+
+                // Set end date to end of day
+                endDate.setHours(23, 59, 59, 999);
+                return endDate >= today;
+
+            } catch (e) {
+                return true;
+            }
+        });
+
+        console.log(`Filtered ${performances.length - activePerformances.length} expired items.`);
+
         // Sort by default (Date Ascending) to match previous API behavior
-        const sorted = sortPerformances(performances, 'all');
+        const sorted = sortPerformances(activePerformances, 'all');
 
         const outputPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
 
