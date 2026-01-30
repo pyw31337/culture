@@ -563,19 +563,7 @@ export default function HeroSection({
                 "w-full lg:w-auto relative group",
                 (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
             )}>
-                {/* Rotating Neon Border (The requested "Rotating Glow") */}
-                <div className={clsx(
-                    "absolute -inset-[3px] rounded-full opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite] blur-md transition-opacity duration-300",
-                    searchMode === 'location'
-                        ? "bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#10b981_50%,#transparent_100%)]"
-                        : "bg-[conic-gradient(from_90deg_at_50%_50%,#transparent_0%,#a855f7_50%,#transparent_100%)]"
-                )} />
-                <div className={clsx(
-                    "absolute -inset-[3px] rounded-full opacity-0 group-focus-within:opacity-100 animate-[spin_3s_linear_infinite_reverse] blur-md transition-opacity duration-300",
-                    searchMode === 'location'
-                        ? "bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#14b8a6_50%,#transparent_100%)]"
-                        : "bg-[conic-gradient(from_270deg_at_50%_50%,#transparent_0%,#f472b6_50%,#transparent_100%)]"
-                )} />
+
 
                 {/* Light Mode Static Glow */}
                 <div className={clsx(
