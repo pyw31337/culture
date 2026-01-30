@@ -86,7 +86,38 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [savedScrollPosition, setSavedScrollPosition] = useState(0); // Added for scroll restoration
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
     const [isMapOpen, setIsMapOpen] = useState(false);
+    // Kakao State moved down
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
+
+    // User Preferences (Persisted)
+    const [likedIds, setLikedIds] = useState<string[]>([]);
+    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
+    const [savedKeywords, setSavedKeywords] = useState<string[]>([]);
+    const [isStorageLoaded, setIsStorageLoaded] = useState(false);
+
+    // UI Toggles
+    const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
+    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
+    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
+    const [showLikes, setShowLikes] = useState(true);
+    const [isLikesExpanded, setIsLikesExpanded] = useState(true);
+    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
+    const [isFavoriteVenuesModalOpen, setIsFavoriteVenuesModalOpen] = useState(false); // Added
+    const [isHeroVisible, setIsHeroVisible] = useState(true);
+    const [isAlarmOpen, setIsAlarmOpen] = useState(false);
+    const [keywordInput, setKeywordInput] = useState('');
+
+    // Deep Linking
+    // Deep Linking
+    const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
+    const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null);
+
+    // Search Mode & Logic
+    const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
+
+    // Location Search Results (Kakao)
     const [kakaoSearchResults, setKakaoSearchResults] = useState<any[]>([]);
 
     useEffect(() => {
@@ -116,34 +147,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             setKakaoSearchResults([]);
         }
     }, [searchText, searchMode]);
-
-    // User Preferences (Persisted)
-    const [likedIds, setLikedIds] = useState<string[]>([]);
-    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
-    const [savedKeywords, setSavedKeywords] = useState<string[]>([]);
-    const [isStorageLoaded, setIsStorageLoaded] = useState(false);
-
-    // UI Toggles
-    const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
-    const [showFavoriteVenues, setShowFavoriteVenues] = useState(true);
-    const [isFavoriteVenuesExpanded, setIsFavoriteVenuesExpanded] = useState(true);
-    const [showLikes, setShowLikes] = useState(true);
-    const [isLikesExpanded, setIsLikesExpanded] = useState(true);
-    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
-    const [isFavoriteVenuesModalOpen, setIsFavoriteVenuesModalOpen] = useState(false); // Added
-    const [isHeroVisible, setIsHeroVisible] = useState(true);
-    const [isAlarmOpen, setIsAlarmOpen] = useState(false);
-    const [keywordInput, setKeywordInput] = useState('');
-
-    // Deep Linking
-    // Deep Linking
-    const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
-    const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null);
-
-    // Search Mode & Logic
-    const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
 
     const searchParams = useSearchParams();
     const router = useRouter();
