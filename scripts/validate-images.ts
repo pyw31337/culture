@@ -59,7 +59,7 @@ async function validateImages() {
                     console.log(`[${response.status}] ${item.title}: ${imageUrl}`);
                     brokenImages.push(item);
                 }
-            } catch (error) {
+            } catch (error: any) {
                 console.log(`[ERROR] ${item.title}: ${imageUrl} - ${error.message}`);
                 brokenImages.push(item);
             }
