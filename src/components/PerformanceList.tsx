@@ -43,10 +43,11 @@ import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
 
 interface Venue {
     name: string;
+    refined_name?: string;
     address: string;
     district?: string;
-    lat?: number;
-    lng?: number;
+    lat?: number | null;
+    lng?: number | null;
     mapped_region_id?: string;
 }
 
