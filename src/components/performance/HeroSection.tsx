@@ -57,6 +57,7 @@ interface HeroSectionProps {
     // Search Mode
     searchMode: 'keyword' | 'location';
     onSearchModeChange: (mode: 'keyword' | 'location') => void;
+    onSearchChange: (text: string) => void;
 }
 
 export default function HeroSection({

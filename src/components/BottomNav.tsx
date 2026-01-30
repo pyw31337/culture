@@ -199,27 +199,14 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     )}
                 </div>
 
-                {/* Bottom bar with curved notch */}
+                {/* Bottom bar - Clean Glassy Look */}
                 <div className={clsx(
                     "relative backdrop-blur-xl rounded-t-3xl overflow-hidden transition-colors duration-500",
                     searchMode === 'location'
-                        ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
-                        : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+                        ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:bg-white/60 light:bg-none border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.05)]"
+                        : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:bg-white/60 light:bg-none border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.05)]"
                 )}>
-                    {/* SVG Notch Mask */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
-                        <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
-                            <path
-                                d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
-                                className={clsx(
-                                    "drop-shadow-lg transition-colors duration-500",
-                                    searchMode === 'location'
-                                        ? "fill-[#0a1f1a] light:fill-gray-50"
-                                        : "fill-[#1a0b2e] light:fill-gray-50"
-                                )}
-                            />
-                        </svg>
-                    </div>
+                    {/* SVG Notch Mask REMOVED */}
 
                     {/* Navigation Items Container */}
                     <div className="h-16 flex items-center">
