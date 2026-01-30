@@ -427,7 +427,7 @@ export default function BottomNavSheet({
                                     referenceLocation={activeLocation}
                                 />
                             </div>
-                    )}
+
                         </div>
         </div >
             </>
