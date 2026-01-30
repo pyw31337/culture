@@ -506,6 +506,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (main) main.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const handleSearchChange = (text: string) => {
+        setSearchText(text);
+        if (text.trim().length > 0) {
+            // Reset filters to 'all' for global search
+            setSelectedGenre('all');
+            setSelectedRegion('all');
+            setSelectedDistrict('all');
+            setSelectedVenue('all');
+        }
+    };
+
     // Bottom Nav Handlers
     const handleMenuClick = (menu: BottomMenuType) => {
         setActiveBottomMenu(prev => prev === menu ? null : menu);
