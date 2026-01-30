@@ -27,4 +27,5 @@ export type Performance = {
     productionYear?: string;
     subGenre?: string;
     backupPoster?: string; // Original remote URL for fallback
+    posterUrl?: string; // Manual override for missing images
 };
