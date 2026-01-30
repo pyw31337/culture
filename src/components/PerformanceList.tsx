@@ -142,20 +142,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (searchMode === 'location' && searchText.trim().length > 1) {
             // Debounce
             const timer = setTimeout(() => {
-                if (window.kakao && window.kakao.maps && window.kakao.maps.services) {
-                    const ps = new window.kakao.maps.services.Places();
-                    ps.keywordSearch(searchText, (data: any, status: any) => {
-                        if (status === window.kakao.maps.services.Status.OK) {
-                            setKakaoSearchResults(data.map((place: any) => ({
-                                type: 'location',
-                                name: place.place_name,
-                                address: place.road_address_name || place.address_name,
-                                lat: parseFloat(place.y),
-                                lng: parseFloat(place.x),
-                                venueId: place.id,
-                                category: place.category_group_name
-                            })));
-                            setIsDropdownOpen(true); // Open dropdown on result
+                if (window.kakao && window.kakao.maps) {
+                    // Must call kakao.maps.load() because SDK uses autoload=false
+                    window.kakao.maps.load(() => {
+                        if (window.kakao.maps.services) {
+                            const ps = new window.kakao.maps.services.Places();
+                            ps.keywordSearch(searchText, (data: any, status: any) => {
+                                if (status === window.kakao.maps.services.Status.OK) {
+                                    setKakaoSearchResults(data.map((place: any) => ({
+                                        type: 'location',
+                                        name: place.place_name,
+                                        address: place.road_address_name || place.address_name,
+                                        lat: parseFloat(place.y),
+                                        lng: parseFloat(place.x),
+                                        venueId: place.id,
+                                        category: place.category_group_name
+                                    })));
+                                    setIsDropdownOpen(true); // Open dropdown on result
+                                }
+                            });
                         }
                     });
                 }
