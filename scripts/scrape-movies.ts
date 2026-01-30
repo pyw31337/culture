@@ -1,8 +1,10 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor';
+// import { processImage } from './utils/image-processor';
 import pLimit from 'p-limit'; // Add pLimit for parallelism control if needed, though KOBIS is small.
+import axios from 'axios';
+import sharp from 'sharp';
 
 // KOBIS Daily Box Office
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
@@ -137,6 +139,88 @@ const extractMetadata = () => {
 };
 
 // --- Scraper Class ---
+
+// --- Helper: Process Image (Inlined) ---
+async function processImage(url: string, filenameBase: string): Promise<string> {
+    const EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
+    const MAX_RETRIES = 3;
+
+    // 1. Sanitize Filename
+    // Replace all non-alphanumeric (except Korean) with underscore
+    const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+    const subDir = 'movies';
+    const relativePath = `/images/posters/${subDir}/${safeFilename}.webp`;
+    const absolutePath = path.join(process.cwd(), 'public', relativePath);
+    const dir = path.dirname(absolutePath);
+
+    if (fs.existsSync(absolutePath)) return relativePath; // Cache hit
+
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    for (let i = 0; i < MAX_RETRIES; i++) {
+        try {
+            const response = await axios({
+                url,
+                responseType: 'arraybuffer',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Referer': 'https://search.naver.com/',
+                    'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+                },
+                timeout: 5000
+            });
+
+            await sharp(response.data)
+                .resize(300, 430, { fit: 'cover' }) // Standardize size
+                .webp({ quality: 80 })
+                .toFile(absolutePath);
+
+            // console.log(`[Image] Saved: ${relativePath}`);
+            return relativePath;
+        } catch (e) {
+            if (i === MAX_RETRIES - 1) {
+                // console.error(`[Image] Failed to download ${url}:`, e);
+            }
+            await new Promise(r => setTimeout(r, 1000));
+        }
+    }
+    return ''; // Fail silently (fallback to null/empty)
+}
+
+// --- Cleanup Logic ---
+function cleanupOldMovieImages(validMovies: any[]) {
+    const posterDir = path.join(process.cwd(), 'public', 'images', 'posters', 'movies');
+    if (!fs.existsSync(posterDir)) return;
+
+    console.log(`Cleaning up orphan movie images... (Valid items: ${validMovies.length})`);
+
+    // Generate valid filenames set
+    const validFilenames = new Set<string>();
+    validMovies.forEach(m => {
+        if (m.image && m.image.startsWith('/images/posters/movies/')) {
+            validFilenames.add(path.basename(m.image));
+        }
+    });
+
+    const files = fs.readdirSync(posterDir);
+    let deletedCount = 0;
+
+    files.forEach(file => {
+        if (!file.endsWith('.webp')) return;
+        if (!validFilenames.has(file)) {
+            try {
+                fs.unlinkSync(path.join(posterDir, file));
+                // console.log(`Deleted orphan image: ${file}`);
+                deletedCount++;
+            } catch (e) {
+                console.error(`Failed to delete ${file}:`, e);
+            }
+        }
+    });
+    console.log(`Cleanup complete. Deleted ${deletedCount} orphan images.`);
+}
+
+
 async function scrapeMovies() {
     console.log('Starting KOBIS -> Naver Movie Scraper (Stealth Playwright)...');
 
@@ -335,6 +419,12 @@ async function scrapeMovies() {
                         const newDetail = await page.evaluate(extractMetadata);
                         if (newDetail.director) item.director = newDetail.director;
                         if (newDetail.cast) item.cast = newDetail.cast;
+
+                        // Try for poster again if missing
+                        if (!item.poster) {
+                            const newDetail2 = await page.evaluate(extractMetadata);
+                            if (newDetail2.poster) item.poster = newDetail2.poster;
+                        }
                     }
                 } catch (e) { }
             }
@@ -429,6 +519,10 @@ async function scrapeMovies() {
         fs.renameSync(tempFile, OUTPUT_FILE);
 
         console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+
+        // Perform Cleanup
+        cleanupOldMovieImages(allMovies);
+
     } else {
         console.warn('Scraper found 0 movies. Aborting save.');
     }
