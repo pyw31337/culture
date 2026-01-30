@@ -8,7 +8,8 @@
     "source": "naver",
     "platforms": [
       "coupang",
-      "tving"
+      "tving",
+      "netflix"
     ],
     "subGenre": "드라마",
     "ageRating": "15세 이상 관람가",
@@ -98,7 +99,10 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "netflix",
+      "tving",
+      "wavve"
     ],
     "ageRating": "15세 이상 관람가",
     "cast": [
@@ -126,7 +130,9 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "netflix",
+      "wavve"
     ],
     "runningTime": "124분",
     "productionCountry": "일본",
@@ -159,7 +165,10 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "netflix",
+      "tving",
+      "wavve"
     ],
     "ageRating": "15세 이상 관람가",
     "cast": [
@@ -182,7 +191,9 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "netflix",
+      "wavve"
     ],
     "runningTime": "103분",
     "subGenre": "미스터리",
@@ -240,7 +251,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "wavve"
     ],
     "runningTime": "100분",
     "productionCountry": "일본",
@@ -332,7 +344,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "wavve"
     ],
     "runningTime": "162분",
     "productionCountry": "미국",
@@ -452,7 +465,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "coupang"
+      "coupang",
+      "wavve"
     ],
     "runningTime": "116분",
     "subGenre": "코미디, 드라마",
@@ -825,7 +839,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "netflix"
+      "netflix",
+      "disney"
     ],
     "runningTime": "132분",
     "productionCountry": "미국",
@@ -858,7 +873,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "netflix"
+      "netflix",
+      "disney"
     ],
     "runningTime": "143분",
     "productionCountry": "미국",
@@ -924,7 +940,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "netflix"
+      "netflix",
+      "disney"
     ],
     "runningTime": "113분",
     "productionCountry": "미국",
@@ -1160,7 +1177,8 @@
     "type": "신작",
     "source": "naver",
     "platforms": [
-      "disney"
+      "disney",
+      "coupang"
     ],
     "runningTime": "114분",
     "subGenre": "코미디, 드라마",
@@ -1459,7 +1477,9 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "tving"
+      "tving",
+      "netflix",
+      "wavve"
     ],
     "subGenre": "드라마",
     "ageRating": "15세 이상 관람가",
@@ -1709,7 +1729,8 @@
     "type": "추천",
     "source": "naver",
     "platforms": [
-      "wavve"
+      "wavve",
+      "netflix"
     ],
     "subGenre": "드라마",
     "ageRating": "15세 이상 관람가",
@@ -1729,5 +1750,175 @@
     "genre": "ott",
     "date": "2026-01-21",
     "image": null
+  },
+  {
+    "title": "주토피아 2",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=36435246&qvt=0&query=%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84%202",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251126_216%2F17641208921706FCfp_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "platforms": [
+      "coupang"
+    ],
+    "runningTime": "108분",
+    "productionCountry": "미국",
+    "subGenre": "애니메이션",
+    "releaseDate": "2025-11-26",
+    "director": "자레드 부시",
+    "cast": [
+      "일간스포츠",
+      "뉴시스",
+      "›",
+      "browse",
+      "namu.wiki",
+      "이벳 메리노",
+      "개요",
+      "포스터"
+    ],
+    "ageRating": "전체 관람가",
+    "id": "ott_20260130_주토피아2",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2025-11-26",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251126_216%2F17641208921706FCfp_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "image": "/images/posters/ott/ott_주토피아2.webp"
+  },
+  {
+    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=28829334&qvt=0&query=%EC%98%A4%EB%8A%98%20%EB%B0%A4%20%EC%84%B8%EA%B3%84%EC%97%90%EC%84%9C%20%EC%9D%B4%20%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%20%ED%95%B4%EB%8F%84",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20221104_258%2F1667527490266scSO3_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "platforms": [
+      "coupang",
+      "wavve"
+    ],
+    "runningTime": "121분",
+    "productionCountry": "일본",
+    "subGenre": "멜로",
+    "releaseDate": "2022-11-30",
+    "director": "미키 타카히로",
+    "cast": [
+      "www.kobis.or.kr",
+      "›",
+      "kobis",
+      "스포츠경향",
+      "KBS 연예",
+      "...",
+      "요즘 인기",
+      "눈마음"
+    ],
+    "ageRating": "12세 이상 관람가",
+    "id": "ott_20260130_오늘밤세계에서이사랑이사라진다해도",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2022-11-30",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20221104_258%2F1667527490266scSO3_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "image": "/images/posters/ott/ott_오늘밤세계에서이사랑이사라진다해도.webp"
+  },
+  {
+    "title": "널 기다리며",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1927185&qvt=0&query=%EB%84%90%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20160307_193%2F1457316803459eHDRf_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "platforms": [
+      "coupang",
+      "netflix"
+    ],
+    "runningTime": "108분",
+    "subGenre": "스릴러",
+    "releaseDate": "2016-03-10",
+    "director": "모홍진",
+    "cast": [
+      "맥스무비",
+      "›",
+      "Movie",
+      "www.kmdb.or.kr",
+      "db",
+      "한국강사신문",
+      "백현지",
+      "가가무비"
+    ],
+    "ageRating": "청소년 관람불가",
+    "productionCountry": "대한민국",
+    "id": "ott_20260130_널기다리며",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2016-03-10",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20160307_193%2F1457316803459eHDRf_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "image": "/images/posters/ott/ott_널기다리며.webp"
+  },
+  {
+    "title": "냉장고를 부탁해 since 2014",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=35470956&qvt=0&query=%EB%83%89%EC%9E%A5%EA%B3%A0%EB%A5%BC%20%EB%B6%80%ED%83%81%ED%95%B4%20%EC%8B%A0%EC%8A%A4%202014",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241212_83%2F1733990821050etzH0_JPEG%2Ff719fcb20dae3924ad6c713438fdd23b.jpg",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "platforms": [
+      "coupang",
+      "netflix",
+      "tving",
+      "wavve"
+    ],
+    "ageRating": "15세 이상 관람가",
+    "cast": [
+      "네이버TV",
+      "tv.naver.com",
+      "›",
+      "namu.wiki",
+      "JTBC",
+      "TVING",
+      "www.tving.com",
+      "contents"
+    ],
+    "id": "ott_20260130_냉장고를부탁해since2014",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2026-01-30",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241212_83%2F1733990821050etzH0_JPEG%2Ff719fcb20dae3924ad6c713438fdd23b.jpg",
+    "image": "/images/posters/ott/ott_냉장고를부탁해since2014.webp"
+  },
+  {
+    "title": "침범",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=35168554&qvt=0&query=%EC%98%81%ED%99%94%20%EC%B9%A8%EB%B2%94",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250312_294%2F1741759236040iv5Fx_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "platforms": [
+      "coupang",
+      "wavve"
+    ],
+    "runningTime": "112분",
+    "subGenre": "미스터리",
+    "releaseDate": "2025-03-12",
+    "director": "김여정",
+    "cast": [
+      "namu.wiki",
+      "›",
+      "침범(영화)",
+      "스릴러",
+      "개요",
+      "포스터",
+      "예고편",
+      "시놉시스"
+    ],
+    "ageRating": "15세 이상 관람가",
+    "id": "ott_20260130_침범",
+    "venue": "OTT",
+    "region": "ott",
+    "genre": "ott",
+    "date": "2025-03-12",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250312_294%2F1741759236040iv5Fx_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "image": "/images/posters/ott/ott_침범.webp"
   }
 ]
