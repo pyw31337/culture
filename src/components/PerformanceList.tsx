@@ -122,6 +122,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Search Mode & Logic
     const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
 
+    // Load search mode from local storage on mount
+    useEffect(() => {
+        const savedMode = localStorage.getItem('cultureflow_search_mode');
+        if (savedMode === 'keyword' || savedMode === 'location') {
+            setSearchMode(savedMode);
+        }
+    }, []);
+
+    // Save search mode to local storage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('cultureflow_search_mode', searchMode);
+    }, [searchMode]);
+
     // Location Search Results (Kakao)
     const [kakaoSearchResults, setKakaoSearchResults] = useState<any[]>([]);
 

@@ -365,71 +365,72 @@ export default function BottomNavSheet({
                                         </div>
                                     </div>
                                 </div>
-
-
-                                {/* Search Results List (Inserted) */}
-                                {searchResults.length > 0 && searchText.trim().length > 0 && (
-                                    <div className="w-full flex flex-col gap-1 max-h-[200px] overflow-y-auto custom-scrollbar my-2 p-1">
-                                        {searchResults.map((result, idx) => (
-                                            <button
-                                                key={`${result.id || result.venueId}-${idx}`}
-                                                onClick={() => {
-                                                    onResultSelect(result);
-                                                    onClose(); // Close sheet on selection
-                                                }}
-                                                className={clsx(
-                                                    "w-full text-left px-3 py-2.5 rounded-xl transition-colors flex items-start gap-3 group shrink-0",
-                                                    "hover:bg-white/5 light:hover:bg-gray-50",
-                                                    searchMode === 'location' ? "hover:bg-emerald-500/10 light:hover:bg-emerald-50" : "hover:bg-purple-500/10 light:hover:bg-purple-50"
-                                                )}
-                                            >
-                                                <div className={clsx(
-                                                    "p-2 rounded-lg mt-0.5 shrink-0",
-                                                    searchMode === 'location'
-                                                        ? "bg-emerald-500/20 text-emerald-400 light:bg-emerald-100 light:text-emerald-600"
-                                                        : "bg-purple-500/20 text-purple-400 light:bg-purple-100 light:text-purple-600"
-                                                )}>
-                                                    {searchMode === 'location' ? <MapPin size={16} /> : <Search size={16} />}
-                                                </div>
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="text-sm font-bold text-gray-200 light:text-gray-900 truncate">
-                                                            {result.name}
-                                                        </span>
-                                                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 light:bg-gray-200 text-gray-400 light:text-gray-600 whitespace-nowrap">
-                                                            {result.category || result.type}
-                                                        </span>
-                                                    </div>
-                                                    {result.address && (
-                                                        <div className="text-xs text-gray-500 light:text-gray-500 truncate mt-0.5">
-                                                            {result.address}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-
-                                {/* Location Filter Unified */}
-                                <LocationSelector
-                                    selectedRegion={selectedRegion}
-                                    onRegionSelect={onRegionSelect}
-                                    selectedDistrict={selectedDistrict}
-                                    onDistrictSelect={onDistrictSelect}
-                                    selectedVenue={selectedVenue}
-                                    onVenueSelect={onVenueSelect}
-                                    districts={districts}
-                                    availableVenues={availableVenues}
-                                    isMobile={true}
-                                    inline={true}
-                                    searchMode={searchMode}
-                                    referenceLocation={activeLocation}
-                                />
                             </div>
 
+
+                            {/* Search Results List (Inserted) */}
+                            {searchResults.length > 0 && searchText.trim().length > 0 && (
+                                <div className="w-full flex flex-col gap-1 max-h-[200px] overflow-y-auto custom-scrollbar my-2 p-1">
+                                    {searchResults.map((result, idx) => (
+                                        <button
+                                            key={`${result.id || result.venueId}-${idx}`}
+                                            onClick={() => {
+                                                onResultSelect(result);
+                                                onClose(); // Close sheet on selection
+                                            }}
+                                            className={clsx(
+                                                "w-full text-left px-3 py-2.5 rounded-xl transition-colors flex items-start gap-3 group shrink-0",
+                                                "hover:bg-white/5 light:hover:bg-gray-50",
+                                                searchMode === 'location' ? "hover:bg-emerald-500/10 light:hover:bg-emerald-50" : "hover:bg-purple-500/10 light:hover:bg-purple-50"
+                                            )}
+                                        >
+                                            <div className={clsx(
+                                                "p-2 rounded-lg mt-0.5 shrink-0",
+                                                searchMode === 'location'
+                                                    ? "bg-emerald-500/20 text-emerald-400 light:bg-emerald-100 light:text-emerald-600"
+                                                    : "bg-purple-500/20 text-purple-400 light:bg-purple-100 light:text-purple-600"
+                                            )}>
+                                                {searchMode === 'location' ? <MapPin size={16} /> : <Search size={16} />}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-sm font-bold text-gray-200 light:text-gray-900 truncate">
+                                                        {result.name}
+                                                    </span>
+                                                    <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 light:bg-gray-200 text-gray-400 light:text-gray-600 whitespace-nowrap">
+                                                        {result.category || result.type}
+                                                    </span>
+                                                </div>
+                                                {result.address && (
+                                                    <div className="text-xs text-gray-500 light:text-gray-500 truncate mt-0.5">
+                                                        {result.address}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Location Filter Unified */}
+                            <LocationSelector
+                                selectedRegion={selectedRegion}
+                                onRegionSelect={onRegionSelect}
+                                selectedDistrict={selectedDistrict}
+                                onDistrictSelect={onDistrictSelect}
+                                selectedVenue={selectedVenue}
+                                onVenueSelect={onVenueSelect}
+                                districts={districts}
+                                availableVenues={availableVenues}
+                                isMobile={true}
+                                inline={true}
+                                searchMode={searchMode}
+                                referenceLocation={activeLocation}
+                            />
                         </div>
-        </div >
-            </>
-            );
+                    )}
+                </div>
+            </div>
+        </>
+    );
 }
