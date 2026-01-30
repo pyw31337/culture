@@ -1050,7 +1050,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 onSearchModeChange={setSearchMode}
                 activeLocation={searchLocation || userLocation}
                 searchResults={searchResults}
-                isDropdownOpen={isDropdownOpen} // Reuse open state logic if needed, or manage internal? Sheet is always open when typing?
+
                 // Actually, for bottom sheet, we just show list if text exists.
                 onResultSelect={(result) => {
                     if (searchMode === 'location') {
