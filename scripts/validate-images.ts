@@ -17,8 +17,8 @@ const items = performances as Performance[];
 async function validateImages() {
     console.log(`Starting validation of ${items.length} items...`);
 
-    const brokenImages = [];
-    const missingImages = [];
+    const brokenImages: Performance[] = [];
+    const missingImages: Performance[] = [];
 
     // Concurrency limit
     const batchSize = 20;
