@@ -83,6 +83,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // View & Layout
     const [viewMode, setViewMode] = useState<string>('grid'); // 'list' | 'grid' | 'calendar' | 'map'
+    const [savedScrollPosition, setSavedScrollPosition] = useState(0); // Added for scroll restoration
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
     const [isMapOpen, setIsMapOpen] = useState(false);
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
