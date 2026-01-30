@@ -253,6 +253,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
     }, [searchText, searchMode, allPerformances]);
 
+    // Reset highlight when results change
+    useEffect(() => {
+        setHighlightedIndex(-1);
+    }, [searchResults]);
+
     // --- Derived Filter Lists (Restored) ---
     const districts = useMemo(() => {
         if (!selectedRegion || selectedRegion === 'all') return [];
@@ -725,7 +730,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     searchText={searchText}
                     searchResults={searchResults}
                     isDropdownOpen={isDropdownOpen}
-                    activeSearchSource={activeSearchSource}
                     activeSearchSource={activeSearchSource}
                     highlightedIndex={highlightedIndex}
 
