@@ -211,7 +211,13 @@ export default function BottomNavSheet({
                                     return (
                                         <button
                                             key={mode.id}
-                                            onClick={() => { onViewModeChange(mode.id); onClose(); }}
+                                            onClick={() => {
+                                                onViewModeChange(mode.id);
+                                                if (mode.id === 'map' && onSearchModeChange) {
+                                                    onSearchModeChange('location');
+                                                }
+                                                onClose();
+                                            }}
                                             className={clsx(
                                                 "p-4 rounded-2xl border text-left transition-all duration-300 group hover:scale-[1.02]",
                                                 isSelected
