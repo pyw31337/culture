@@ -267,12 +267,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     }, [searchText, searchMode, allPerformances, kakaoSearchResults]);
 
-    // Auto-open dropdown when results exist (Keyword Mode)
+    // Auto-open dropdown when results exist (Both Modes)
     useEffect(() => {
-        if (searchMode === 'keyword' && searchText.trim().length > 0 && searchResults.length > 0) {
+        if (searchText.trim().length > 0 && searchResults.length > 0) {
             setIsDropdownOpen(true);
         }
-    }, [searchResults, searchMode, searchText]);
+    }, [searchResults, searchText]);
 
     // Reset highlight when results change
     useEffect(() => {

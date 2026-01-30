@@ -230,7 +230,9 @@ export default function BottomNavSheet({
                                             <div className="flex items-center gap-3">
                                                 <div className={clsx("p-2 rounded-lg",
                                                     isSelected
-                                                        ? "bg-transparent text-white light:bg-purple-100 light:text-purple-600"
+                                                        ? (searchMode === 'location'
+                                                            ? "bg-transparent text-white light:bg-emerald-100 light:text-emerald-600"
+                                                            : "bg-transparent text-white light:bg-purple-100 light:text-purple-600")
                                                         : "text-gray-400 light:text-black p-0 bg-transparent light:bg-transparent")
                                                 }>
                                                     <DisplayIcon size={20} className={clsx(isSelected && "w-5 h-5")} />
