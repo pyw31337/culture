@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-// import { processImage } from './utils/image-processor';
+import { processImage } from './utils/image-processor';
 import pLimit from 'p-limit'; // Add pLimit for parallelism control if needed, though KOBIS is small.
 import axios from 'axios';
 import sharp from 'sharp';
@@ -140,52 +140,7 @@ const extractMetadata = () => {
 
 // --- Scraper Class ---
 
-// --- Helper: Process Image (Inlined) ---
-async function processImage(url: string, filenameBase: string): Promise<string> {
-    const EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
-    const MAX_RETRIES = 3;
-
-    // 1. Sanitize Filename
-    // Replace all non-alphanumeric (except Korean) with underscore
-    const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
-    const subDir = 'movies';
-    const relativePath = `/images/posters/${subDir}/${safeFilename}.webp`;
-    const absolutePath = path.join(process.cwd(), 'public', relativePath);
-    const dir = path.dirname(absolutePath);
-
-    if (fs.existsSync(absolutePath)) return relativePath; // Cache hit
-
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-
-    for (let i = 0; i < MAX_RETRIES; i++) {
-        try {
-            const response = await axios({
-                url,
-                responseType: 'arraybuffer',
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://search.naver.com/',
-                    'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
-                },
-                timeout: 5000
-            });
-
-            await sharp(response.data)
-                .resize(300, 430, { fit: 'cover' }) // Standardize size
-                .webp({ quality: 80 })
-                .toFile(absolutePath);
-
-            // console.log(`[Image] Saved: ${relativePath}`);
-            return relativePath;
-        } catch (e) {
-            if (i === MAX_RETRIES - 1) {
-                // console.error(`[Image] Failed to download ${url}:`, e);
-            }
-            await new Promise(r => setTimeout(r, 1000));
-        }
-    }
-    return ''; // Fail silently (fallback to null/empty)
-}
+// --- Helper: Process Image (Removed - using shared utility) ---
 
 // --- Cleanup Logic ---
 function cleanupOldMovieImages(validMovies: any[]) {
@@ -448,7 +403,7 @@ async function scrapeMovies() {
                 // Use stable filename: movie_Title
                 const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
                 const stableFilename = `movie_${safeTitle}`;
-                const localPath = await processImage(item.poster, stableFilename);
+                const localPath = await processImage(item.poster, stableFilename, 'posters/movies');
                 if (localPath) item.image = localPath;
             } else {
                 item.image = '';

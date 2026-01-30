@@ -734,7 +734,7 @@ async function scrapeOTT() {
             const stableFilename = `ott_${safeTitle}`;
 
             // Try to download
-            const localPath = await processImage(item.poster, stableFilename);
+            const localPath = await processImage(item.poster, stableFilename, 'posters/ott');
             if (localPath) {
                 item.image = localPath;
             } else {
