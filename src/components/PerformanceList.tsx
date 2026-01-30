@@ -269,10 +269,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Auto-open dropdown when results exist (Both Modes)
     useEffect(() => {
-        if (searchText.trim().length > 0 && searchResults.length > 0) {
-            setIsDropdownOpen(true);
+        // Keyword mode: check searchResults
+        // Location mode: check kakaoSearchResults directly (since searchResults depends on it via useMemo with async delay)
+        if (searchText.trim().length > 0) {
+            if (searchMode === 'keyword' && searchResults.length > 0) {
+                setIsDropdownOpen(true);
+            }
+            if (searchMode === 'location' && kakaoSearchResults.length > 0) {
+                setIsDropdownOpen(true);
+            }
         }
-    }, [searchResults, searchText]);
+    }, [searchResults, searchText, searchMode, kakaoSearchResults]);
 
     // Reset highlight when results change
     useEffect(() => {
