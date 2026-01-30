@@ -185,23 +185,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (!searchText.trim()) return [];
 
         if (searchMode === 'location') {
-            // Location Mode: Search Venues/Regions
-            // 1. Venues
-            const matchedVenues = Object.entries(venues)
-                .filter(([name, v]) =>
-                    name.includes(searchText) ||
-                    (v.address && v.address.includes(searchText)) ||
-                    (v.district && v.district.includes(searchText))
-                )
-                .map(([name, v]) => ({
-                    type: 'location',
-                    name: name,
-                    address: v.address,
-                    lat: v.lat,
-                    lng: v.lng,
-                    venueId: name
-                }));
-            return matchedVenues.slice(0, 50); // Limit results
+            // Location Mode: Return Kakao Results
+            return kakaoSearchResults;
         } else {
             // Keyword Mode (Existing Logic)
             // Filter distinct items matching text
@@ -737,13 +722,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     }}
                     handleKeyDown={(e) => {
                         if (e.key === 'Enter') {
-                            setIsDropdownOpen(false);
-                            if (searchMode === 'location' && searchResults.length > 0) {
-                                const top: any = searchResults[0];
-                                if (top.lat && top.lng) {
-                                    setSearchLocation({ lat: top.lat, lng: top.lng, name: top.name });
-                                    setSearchText(top.name);
-                                }
+                            // If dropdown is has results, keep it open or select top?
+                            // User request: "Enter shows results below search bar"
+                            // So we just ensure it is OPEN.
+                            if (searchResults.length > 0) {
+                                setIsDropdownOpen(true);
+                            } else {
+                                handleSearch(); // Fallback to scroll/filter if no dropdown results (e.g. pure text filter)
                             }
                         }
                     }}
