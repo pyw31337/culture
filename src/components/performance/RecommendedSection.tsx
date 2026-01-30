@@ -182,7 +182,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             lastDragEndTime.current = Date.now();
                             setIsDragging(false);
                         }}
-                        className="flex gap-10 sm:gap-16 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
+                        className="flex gap-7 sm:gap-11 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
                     >
                         {randomRecs.map((perf, idx) => (
                             <div
