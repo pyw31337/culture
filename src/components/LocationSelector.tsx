@@ -28,7 +28,7 @@ const StadiumIcon = ({ className, strokeWidth = 2.5 }: { className?: string, str
     </svg>
 );
 
-import venuesData from '@/data/venues.json'; // Direct import for lookup
+import venuesData from '@/data/venue-dictionary.json'; // Direct import for lookup
 
 // Type assertion for venues data since it's a JSON file
 const venues = venuesData as Record<string, any>;
@@ -379,7 +379,9 @@ export function LocationSelector({
                                                 )}
                                             >
                                                 {/* Left: Name */}
-                                                <span className="truncate mr-2">{v}</span>
+                                                <span className="truncate mr-2">
+                                                    {venues[v]?.refined_name || venues[v]?.name || v}
+                                                </span>
 
                                                 {/* Right: Location & Check */}
                                                 <div className="flex items-center gap-2 shrink-0">

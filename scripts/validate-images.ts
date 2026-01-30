@@ -1,69 +1,82 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import performances from '../public/data/performances.json';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const PROJECT_ROOT = path.resolve(__dirname, '..');
-
-const DATA_DIR = path.join(PROJECT_ROOT, 'src/data');
-const PUBLIC_DIR = path.join(PROJECT_ROOT, 'public');
-
-const filesToCheck = ['handball.json', 'kbl.json'];
-
-interface GameData {
+// Define the type for performance items
+interface Performance {
     id: string;
-    homeTeamLogo: string;
-    awayTeamLogo: string;
-    [key: string]: any; // Allow other properties
+    title: string;
+    posterUrl: string;
+    // Add other properties if needed
 }
 
-function checkImages() {
-    let hasErrors = false;
+// Cast the imported JSON to the correct type
+const items = performances as Performance[];
 
-    for (const file of filesToCheck) {
-        const filePath = path.join(DATA_DIR, file);
-        if (!fs.existsSync(filePath)) {
-            console.error(`File not found: ${filePath}`);
-            continue;
+async function validateImages() {
+    console.log(`Starting validation of ${items.length} items...`);
+
+    const brokenImages = [];
+    const missingImages = [];
+
+    // Concurrency limit
+    const batchSize = 20;
+
+    for (let i = 0; i < items.length; i += batchSize) {
+        const batch = items.slice(i, i + batchSize);
+
+        await Promise.all(batch.map(async (item) => {
+            // @ts-ignore
+            const imageUrl = item.image || item.posterUrl; // Fallback just in case
+
+            if (!imageUrl) {
+                missingImages.push(item);
+                return;
+            }
+
+            // Skip if it's a relative path (local image) - assume valid for now or check file existence
+            if (imageUrl.startsWith('/')) {
+                const localPath = path.join(process.cwd(), 'public', imageUrl);
+                if (!fs.existsSync(localPath)) {
+                    console.log(`[LOCAL MISSING] ${item.title}: ${imageUrl}`);
+                    brokenImages.push(item);
+                }
+                return;
+            }
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+
+                const response = await fetch(imageUrl, {
+                    method: 'HEAD',
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    console.log(`[${response.status}] ${item.title}: ${imageUrl}`);
+                    brokenImages.push(item);
+                }
+            } catch (error) {
+                console.log(`[ERROR] ${item.title}: ${imageUrl} - ${error.message}`);
+                brokenImages.push(item);
+            }
+        }));
+
+        if (i % 100 === 0) {
+            console.log(`Processed ${i}/${items.length}...`);
         }
-
-        console.log(`Checking ${file}...`);
-        const data: GameData[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-
-        data.forEach((item, index) => {
-            const logos = [item.homeTeamLogo, item.awayTeamLogo];
-
-            logos.forEach(logo => {
-                if (!logo) return;
-
-                // Skip external URLs
-                if (logo.startsWith('http')) {
-                    console.log(`[SKIP] External URL: ${logo}`);
-                    return;
-                }
-
-                // Remove /culture prefix if present to map to filesystem
-                const relativePath = logo.startsWith('/culture') ? logo.replace('/culture', '') : logo;
-                const fullPath = path.join(PUBLIC_DIR, relativePath);
-
-                if (!fs.existsSync(fullPath)) {
-                    console.error(`[MISSING] File: ${file}, Item Index: ${index}, ID: ${item.id}`);
-                    console.error(`  - Image URL: ${logo}`);
-                    console.error(`  - Expected Path: ${fullPath}`);
-                    hasErrors = true;
-                }
-            });
-        });
     }
 
-    if (hasErrors) {
-        console.error('\nValidation FAILED: Missing images found.');
-        process.exit(1);
-    } else {
-        console.log('\nValidation PASSED: All images exist.');
-    }
+    console.log('--- Report ---');
+    console.log(`Total Items: ${items.length}`);
+    console.log(`Missing Poster URL: ${missingImages.length}`);
+    console.log(`Broken/404 Posters: ${brokenImages.length}`);
+
+    fs.writeFileSync('broken-images-report.json', JSON.stringify(brokenImages, null, 2));
+    console.log('Report saved to broken-images-report.json');
 }
 
-checkImages();
+validateImages();
