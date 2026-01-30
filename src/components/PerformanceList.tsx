@@ -929,6 +929,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 onSearch={() => { }}
                 searchMode={searchMode}
                 onSearchModeChange={setSearchMode}
+                activeLocation={searchLocation || userLocation}
             />
 
             <BottomNav

@@ -30,6 +30,7 @@ interface BottomNavSheetProps {
     onSearch: () => void;
     searchMode?: 'keyword' | 'location';
     onSearchModeChange?: (mode: 'keyword' | 'location') => void;
+    activeLocation?: { lat: number, lng: number } | null;
 }
 
 import { getGenreIcon } from '@/components/GenreIcons';
@@ -57,7 +58,8 @@ export default function BottomNavSheet({
     onVenueSelect,
     onSearch,
     searchMode = 'keyword',
-    onSearchModeChange = () => { }
+    onSearchModeChange = () => { },
+    activeLocation
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -371,6 +373,7 @@ export default function BottomNavSheet({
                                 isMobile={true}
                                 inline={true}
                                 searchMode={searchMode}
+                                referenceLocation={activeLocation}
                             />
                         </div>
                     )}

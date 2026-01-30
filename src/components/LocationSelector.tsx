@@ -6,6 +6,8 @@ import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul';
 import { motion } from 'framer-motion';
 
+import { getDistanceFromLatLonInKm } from '@/lib/utils';
+
 // --- Stadium Icon Component ---
 const StadiumIcon = ({ className, strokeWidth = 2.5 }: { className?: string, strokeWidth?: number }) => (
     <svg
@@ -46,9 +48,13 @@ interface LocationSelectorProps {
     dropUp?: boolean;
     inline?: boolean;
     searchMode?: 'keyword' | 'location';
+    referenceLocation?: { lat: number, lng: number } | null;
 }
 
-const CHOSEONG_LIST = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+const CHOSEONG_LIST = [
+    'ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+];
 
 import { HorizontalScroll } from '@/components/ui/HorizontalScroll';
 
@@ -64,7 +70,8 @@ export function LocationSelector({
     isMobile = false,
     dropUp = false,
     inline = false,
-    searchMode = 'keyword'
+    searchMode = 'keyword',
+    referenceLocation
 }: LocationSelectorProps) {
 
     // UI Constants
@@ -105,14 +112,50 @@ export function LocationSelector({
 
     // Venue Filtering Logic
     const filteredVenues = useMemo(() => {
-        if (activeChoseong === 'all') return availableVenues;
-        return availableVenues.filter(v => {
-            const cho = getChoseong(v);
-            // Check if the FIRST char's choseong matches, OR if the venue starts with the choseong char directly (rare)
-            // User likely wants to filter by first letter.
+        let sorted = [...availableVenues];
+
+        // 1. Sort Logic
+        if (searchMode === 'location' && referenceLocation) {
+            // Sort by Distance
+            sorted.sort((a, b) => {
+                const va = venues[a];
+                const vb = venues[b];
+                const da = (va?.lat && va?.lng) ? getDistanceFromLatLonInKm(referenceLocation.lat, referenceLocation.lng, va.lat, va.lng) : 99999;
+                const db = (vb?.lat && vb?.lng) ? getDistanceFromLatLonInKm(referenceLocation.lat, referenceLocation.lng, vb.lat, vb.lng) : 99999;
+                return da - db;
+            });
+        } else {
+            // Sort by English (A-Z) then Korean (ㄱ-ㅎ)
+            sorted.sort((a, b) => {
+                const nameA = venues[a]?.refined_name || venues[a]?.name || a;
+                const nameB = venues[b]?.refined_name || venues[b]?.name || b;
+
+                const isEnglishA = /^[A-Za-z]/.test(nameA);
+                const isEnglishB = /^[A-Za-z]/.test(nameB);
+
+                if (isEnglishA && !isEnglishB) return -1;
+                if (!isEnglishA && isEnglishB) return 1;
+
+                return nameA.localeCompare(nameB);
+            });
+        }
+
+        // 2. Filter by Choseong
+        if (activeChoseong === 'all') return sorted;
+
+        return sorted.filter(v => {
+            const name = venues[v]?.refined_name || venues[v]?.name || v;
+
+            // Handle English filter
+            if (/[A-Z]/.test(activeChoseong)) {
+                return name.toUpperCase().startsWith(activeChoseong);
+            }
+
+            // Handle Korean Choseong
+            const cho = getChoseong(name);
             return cho.startsWith(activeChoseong);
         });
-    }, [availableVenues, activeChoseong]);
+    }, [availableVenues, activeChoseong, searchMode, referenceLocation]);
 
     // Accordion State
     const [isRegionExpanded, setIsRegionExpanded] = useState(true);
