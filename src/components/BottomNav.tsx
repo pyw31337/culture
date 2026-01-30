@@ -157,7 +157,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     <button
                         onClick={() => onMenuClick('location')}
                         className={clsx(
-                            "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
+                            "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
                             searchMode === 'location'
                                 ? "bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500"
                                 : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
