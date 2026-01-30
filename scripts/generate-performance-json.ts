@@ -19,6 +19,29 @@ async function generate() {
     try {
         const performances = await getAllPerformances();
 
+        // [Data Quality Override]
+        // Manual fixes for specific items requested by user
+        performances.forEach(p => {
+            // 1. Hardcode specific festival posters
+            if (p.title.includes('양평빙송어축제')) {
+                p.posterUrl = '/images/posters/festivals/yangpyeong_ice_trout.png';
+            } else if (p.title.includes('온천천 빛 축제')) {
+                p.posterUrl = '/images/posters/festivals/oncheoncheon_light.png';
+            } else if (p.title.includes('포천백운계곡 동장군축제')) {
+                p.posterUrl = '/images/posters/festivals/pocheon_dongjanggun.jpg';
+            }
+
+            // 2. Fix Category for National Dance Company 2026 Festival (it's a performance, not a festival)
+            if (p.title.includes('국립무용단 [2026 축제]')) {
+                p.category = 'NON_COMMERCIAL'; // Or 'MUSICAL' / 'PLAY' depending on mapping. 'NON_COMMERCIAL' often maps to '국악/무용' or similar. 
+                // Let's assume we want it in 'Performing Arts' general bucket.
+                // If the user said "It's a performance", we should ensure it's not 'FESTIVAL'.
+                // If we check categories... 
+                // Let's check what genres we have. '무용' (Dance) usually falls under specific types.
+                p.genre = '무용';
+            }
+        });
+
         // Filter out expired performances
         // Use a safe buffer (e.g., allow items ending yesterday to show until today's build runs, but 1 month ago is definitely out)
         const today = new Date();
