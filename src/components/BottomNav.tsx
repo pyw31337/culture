@@ -123,16 +123,16 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 className={clsx(
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
                     isActive
-                        : (item.id === 'likes-perf'
-        ? "text-pink-500 light:text-pink-600"
-        : (item.id === 'likes-venue'
-            ? "text-emerald-500 light:text-emerald-600"
-            : (searchMode === 'location'
-                ? "bg-emerald-600 text-white light:bg-transparent light:text-emerald-600 rounded-2xl mx-2 shadow-lg shadow-emerald-900/20"
-                : "bg-purple-600 text-white light:bg-transparent light:text-purple-600 rounded-2xl mx-2 shadow-lg shadow-purple-900/20")))
+                        ? (item.id === 'likes-perf'
+                            ? "text-pink-500 light:text-pink-600"
+                            : (item.id === 'likes-venue'
+                                ? "text-emerald-500 light:text-emerald-600"
+                                : (searchMode === 'location'
+                                    ? "text-emerald-400 light:text-emerald-600"
+                                    : "text-purple-400 light:text-purple-600")))
                         : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
                 )
-}
+                }
             >
                 <div className="relative">
                     <Icon
@@ -163,81 +163,81 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     };
 
 
-return (
-    <nav className="fixed bottom-0 left-0 right-0 z-[5000] pb-safe">
-        {/* Main bar container with notch */}
-        <div className="relative max-w-7xl mx-auto px-2">
+    return (
+        <nav className="fixed bottom-0 left-0 right-0 z-[5000] pb-safe">
+            {/* Main bar container with notch */}
+            <div className="relative max-w-7xl mx-auto px-2">
 
-            {/* Center floating button with rotating gradient border */}
-            <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
-                {/* Outer gradient border wrapper - rotating conic gradient */}
-                <button
-                    onClick={() => onMenuClick('location')}
-                    className={clsx(
-                        "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
-                        searchMode === 'location'
-                            ? "bg-gradient-to-br from-[#55df99] to-[#0090f5]"
-                            : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
-                        "hover:scale-105",
-                        "active:scale-95",
-                        "bg-white light:bg-white", // Floating button bg
-                        activeMenu === 'location' && (searchMode === 'location'
-                            ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
-                            : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
-                    )}
-                >
-                    <MapPin
-                        className="w-7 h-7 text-white drop-shadow-lg"
-                        strokeWidth={2.5}
-                    />
-                </button>
-                {activeMenu === 'location' && (
-                    <div className={clsx(
-                        "absolute inset-0 rounded-full animate-ping pointer-events-none",
-                        searchMode === 'location' ? "bg-emerald-400/30" : "bg-purple-400/30"
-                    )} />
-                )}
-            </div>
-
-            {/* Bottom bar with curved notch */}
-            <div className={clsx(
-                "relative backdrop-blur-xl rounded-t-3xl overflow-hidden transition-colors duration-500",
-                searchMode === 'location'
-                    ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
-                    : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
-            )}>
-                {/* SVG Notch Mask */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
-                    <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
-                        <path
-                            d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
-                            className={clsx(
-                                "drop-shadow-lg transition-colors duration-500",
-                                searchMode === 'location'
-                                    ? "fill-[#0a1f1a] light:fill-gray-50"
-                                    : "fill-[#1a0b2e] light:fill-gray-50"
-                            )}
+                {/* Center floating button with rotating gradient border */}
+                <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
+                    {/* Outer gradient border wrapper - rotating conic gradient */}
+                    <button
+                        onClick={() => onMenuClick('location')}
+                        className={clsx(
+                            "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
+                            searchMode === 'location'
+                                ? "bg-gradient-to-br from-[#55df99] to-[#0090f5]"
+                                : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
+                            "hover:scale-105",
+                            "active:scale-95",
+                            "bg-white light:bg-white", // Floating button bg
+                            activeMenu === 'location' && (searchMode === 'location'
+                                ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
+                                : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
+                        )}
+                    >
+                        <MapPin
+                            className="w-7 h-7 text-white drop-shadow-lg"
+                            strokeWidth={2.5}
                         />
-                    </svg>
+                    </button>
+                    {activeMenu === 'location' && (
+                        <div className={clsx(
+                            "absolute inset-0 rounded-full animate-ping pointer-events-none",
+                            searchMode === 'location' ? "bg-emerald-400/30" : "bg-purple-400/30"
+                        )} />
+                    )}
                 </div>
 
-                {/* Navigation Items Container */}
-                <div className="h-16 flex items-center">
-                    {/* Left Side */}
-                    <div className="flex-1 flex items-center justify-evenly h-full">
-                        {leftItems.map(renderNavItem)}
+                {/* Bottom bar with curved notch */}
+                <div className={clsx(
+                    "relative backdrop-blur-xl rounded-t-3xl overflow-hidden transition-colors duration-500",
+                    searchMode === 'location'
+                        ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+                        : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:from-white light:via-gray-50 light:to-white/95 border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+                )}>
+                    {/* SVG Notch Mask */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-24 h-8">
+                        <svg viewBox="0 0 96 32" fill="none" className="w-full h-full">
+                            <path
+                                d="M0 0 C16 0 24 28 48 28 C72 28 80 0 96 0 L96 32 L0 32 Z"
+                                className={clsx(
+                                    "drop-shadow-lg transition-colors duration-500",
+                                    searchMode === 'location'
+                                        ? "fill-[#0a1f1a] light:fill-gray-50"
+                                        : "fill-[#1a0b2e] light:fill-gray-50"
+                                )}
+                            />
+                        </svg>
                     </div>
 
-                    {/* Center Spacer for the floating button */}
-                    <div className="w-20" />
+                    {/* Navigation Items Container */}
+                    <div className="h-16 flex items-center">
+                        {/* Left Side */}
+                        <div className="flex-1 flex items-center justify-evenly h-full">
+                            {leftItems.map(renderNavItem)}
+                        </div>
 
-                    {/* Right Side */}
-                    <div className="flex-1 flex items-center justify-evenly h-full">
-                        {rightItems.map(renderNavItem)}
+                        {/* Center Spacer for the floating button */}
+                        <div className="w-20" />
+
+                        {/* Right Side */}
+                        <div className="flex-1 flex items-center justify-evenly h-full">
+                            {rightItems.map(renderNavItem)}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
-);
+        </nav>
+    );
 }
