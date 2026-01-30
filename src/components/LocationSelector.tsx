@@ -274,13 +274,7 @@ export function LocationSelector({
                         {(selectedRegion !== 'all' && districts.length > 0) && (
                             <div className="relative pt-0 animate-in fade-in slide-in-from-top-1 duration-200 z-10 -mt-px">
                                 {/* The Box */}
-                                <div className="bg-gray-900/50 light:bg-gray-50 p-3 pt-5 rounded-b-2xl rounded-tr-2xl rounded-tl-2xl border border-white/10 light:border-gray-200 shadow-inner">
-                                    <div className="flex items-center justify-between mb-2 px-1">
-                                        <label className="text-[10px] font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-widest">
-                                            상세 지역 (구/군)
-                                        </label>
-                                        <span className={clsx("text-[10px] font-bold", accentTextClass)}>{selectedRegionLabel} {districts.length}</span>
-                                    </div>
+                                <div className="bg-gray-900/50 light:bg-gray-50 p-3 pt-2 rounded-b-2xl rounded-tr-2xl rounded-tl-2xl border border-white/10 light:border-gray-200 shadow-inner">
                                     <HorizontalScroll>
                                         <button
                                             onClick={() => handleDistrictSelectInternal('all')}
