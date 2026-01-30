@@ -123,7 +123,9 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 className={clsx(
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
                     isActive
-                        ? (searchMode === 'location' ? "text-emerald-400 light:text-emerald-600" : "text-[#a78bfa] light:text-purple-600")
+                        ? (item.id === 'likes-perf'
+                            ? "text-pink-500 light:text-pink-600" // Always Pink for Likes
+                            : (searchMode === 'location' ? "text-emerald-400 light:text-emerald-600" : "text-[#a78bfa] light:text-purple-600"))
                         : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
                 )}
             >
@@ -131,9 +133,12 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     <Icon
                         className={clsx(
                             "w-5 h-5 transition-all duration-300",
-                            isActive && (searchMode === 'location'
-                                ? "drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]"
-                                : "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]")
+                            "w-5 h-5 transition-all duration-300",
+                            isActive && (item.id === 'likes-perf'
+                                ? "drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]" // Pink Glow
+                                : (searchMode === 'location'
+                                    ? "drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]"
+                                    : "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"))
                         )}
                         strokeWidth={isActive ? 2.5 : 2}
                     />
