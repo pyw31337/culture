@@ -182,18 +182,18 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                             lastDragEndTime.current = Date.now();
                             setIsDragging(false);
                         }}
-                        className="flex gap-20 sm:gap-32 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
+                        className="flex gap-10 sm:gap-16 pl-[8%] pr-[8%] pt-4 items-end min-w-max"
                     >
                         {randomRecs.map((perf, idx) => (
                             <div
                                 key={perf.id}
-                                className="flex items-end gap-x-4 sm:gap-x-8 flex-shrink-0"
+                                className="flex items-end gap-x-0 flex-shrink-0"
                             >
                                 {/* Rank Number - Flexed Left */}
                                 <div className="flex-shrink-0 select-none pointer-events-none mb-[-1rem]">
                                     <span
                                         className="text-[10rem] sm:text-[14rem] font-black italic leading-none tracking-tighter text-transparent block"
-                                        style={{ WebkitTextStroke: '2px #64748b', opacity: 0.4 }}
+                                        style={{ WebkitTextStroke: '2px #64748b', opacity: 0.4, mixBlendMode: 'color-burn' }}
                                     >
                                         {idx + 1}
                                     </span>
@@ -202,7 +202,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 {/* Poster Card */}
                                 <motion.div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-shadow",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-shadow -ml-6",
                                         !isDragging && "hover:shadow-purple-500/30"
                                     )}
                                     whileHover={!isDragging ? { scale: 1.05, zIndex: 30 } : {}}

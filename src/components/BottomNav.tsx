@@ -154,32 +154,26 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 {/* Center floating button with rotating gradient border */}
                 <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
                     {/* Outer gradient border wrapper - rotating conic gradient */}
-                    <div className={clsx(
-                        "relative w-[68px] h-[68px] rounded-full p-[1px] overflow-hidden",
-                        "animate-rotate-gradient"
-                    )}>
-                        <button
-                            onClick={() => onMenuClick('location')}
-                            className={clsx(
-                                "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
-                                searchMode === 'location'
-                                    ? "bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500"
-                                    : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
-                                "hover:scale-105",
-                                "active:scale-95",
-                                "active:scale-95",
-                                "bg-white light:bg-white", // Floating button bg
-                                activeMenu === 'location' && (searchMode === 'location'
-                                    ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
-                                    : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
-                            )}
-                        >
-                            <MapPin
-                                className="w-7 h-7 text-white drop-shadow-lg"
-                                strokeWidth={2.5}
-                            />
-                        </button>
-                    </div>
+                    <button
+                        onClick={() => onMenuClick('location')}
+                        className={clsx(
+                            "w-full h-full rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
+                            searchMode === 'location'
+                                ? "bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500"
+                                : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
+                            "hover:scale-105",
+                            "active:scale-95",
+                            "bg-white light:bg-white", // Floating button bg
+                            activeMenu === 'location' && (searchMode === 'location'
+                                ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
+                                : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
+                        )}
+                    >
+                        <MapPin
+                            className="w-7 h-7 text-white drop-shadow-lg"
+                            strokeWidth={2.5}
+                        />
+                    </button>
                     {activeMenu === 'location' && (
                         <div className={clsx(
                             "absolute inset-0 rounded-full animate-ping pointer-events-none",

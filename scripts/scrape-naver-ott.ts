@@ -4,11 +4,15 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import cliProgress from 'cli-progress';
-import { processImage } from './utils/image-processor';
+
+// import { processImage } from './utils/image-processor'; // Removed
+import axios from 'axios';
+import sharp from 'sharp';
 
 // --- CONFIG ---
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver.json');
 const RAW_OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver-raw.json');
+const POSTER_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'ott');
 
 // Platforms & Types
 const PLATFORMS = [
@@ -22,6 +26,76 @@ const TYPES = ['추천', '신작'];
 
 // --- HELPERS ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+
+async function processImage(url: string, filenameBase: string): Promise<string> {
+    if (!url || url.startsWith('data:')) return '';
+
+    const MAX_RETRIES = 2;
+    // Sanitize
+    const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+    const relativePath = `/images/posters/ott/${safeFilename}.webp`;
+    const absolutePath = path.join(process.cwd(), 'public', relativePath);
+    const dir = path.dirname(absolutePath);
+
+    if (fs.existsSync(absolutePath)) return relativePath; // Cache hit
+
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    for (let i = 0; i < MAX_RETRIES; i++) {
+        try {
+            const response = await axios({
+                url,
+                responseType: 'arraybuffer',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+                },
+                timeout: 5000
+            });
+
+            await sharp(response.data)
+                .resize(300, 430, { fit: 'cover' })
+                .webp({ quality: 80 })
+                .toFile(absolutePath);
+
+            return relativePath;
+        } catch (e) {
+            if (i === MAX_RETRIES - 1) {
+                // console.error(`[Image] Failed to download ${url}:`, e.message);
+            }
+            await new Promise(r => setTimeout(r, 1000));
+        }
+    }
+    return '';
+}
+
+function cleanupOldOTTImages(validItems: any[]) {
+    if (!fs.existsSync(POSTER_DIR)) return;
+
+    console.log(`Cleaning up orphan OTT images... (Valid items: ${validItems.length})`);
+    const validFilenames = new Set<string>();
+    validItems.forEach(m => {
+        if (m.poster && m.poster.startsWith('/images/posters/ott/')) {
+            validFilenames.add(path.basename(m.poster));
+        }
+    });
+
+    const files = fs.readdirSync(POSTER_DIR);
+    let deletedCount = 0;
+
+    files.forEach(file => {
+        if (!file.endsWith('.webp')) return;
+        if (!validFilenames.has(file)) {
+            try {
+                fs.unlinkSync(path.join(POSTER_DIR, file));
+                deletedCount++;
+            } catch (e) {
+                console.error(`Failed to delete ${file}:`, e);
+            }
+        }
+    });
+    console.log(`Cleanup complete. Deleted ${deletedCount} orphan images.`);
+}
 
 async function scrapeList(context: any, platform: any, type: string) {
     const page = await context.newPage();
@@ -73,7 +147,7 @@ async function scrapeList(context: any, platform: any, type: string) {
             }, { pName: platform.name, tType: type });
 
             items.push(...newItems);
-            console.log(`   ${platform.name} (${type}) Page ${pageNum}: Found ${newItems.length} items.`);
+            // console.log(`   ${platform.name} (${type}) Page ${pageNum}: Found ${newItems.length} items.`);
 
             const nextBtn = await page.$('a.pg_next.on');
             if (nextBtn) {
@@ -271,8 +345,16 @@ async function scrapeList(context: any, platform: any, type: string) {
                 } catch (err) { }
             }
 
-            // --- 4. NamuWiki Poster Fallback ---
-            const isInvalidPoster = !item.poster || item.poster.length < 50 || item.poster.startsWith('data:');
+            // --- 4. IMAGE PROCESSING & NamuWiki Fallback ---
+            // Try downloading original poster first
+            let localPoster = '';
+            if (item.poster && !item.poster.startsWith('data:')) {
+                localPoster = await processImage(item.poster, item.title);
+                if (localPoster) item.poster = localPoster;
+            }
+
+            // If failed or invalid, try NamuWiki
+            const isInvalidPoster = !localPoster; // If processImage returned '', we still need a poster
             const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
 
             if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !item.posterSource) {
@@ -280,7 +362,6 @@ async function scrapeList(context: any, platform: any, type: string) {
                     await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
                     await sleep(2000);
 
-                    // Check for Search Result Page
                     const searchResultLink = await page.$('.search-item a, .search-result-list a');
                     if (searchResultLink) {
                         const txt = await searchResultLink.innerText();
@@ -290,20 +371,16 @@ async function scrapeList(context: any, platform: any, type: string) {
                         }
                     }
 
-                    // Scroll and Wait for Image
                     await page.evaluate(() => window.scrollTo(0, 800));
                     await page.waitForTimeout(1000);
 
                     const namuPoster = await page.evaluate(() => {
-                        // 1. Try Table/Infobox
                         const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
                         let candidate = imgs.find(img => {
                             const el = img as HTMLImageElement;
-                            // Width > 150 (relaxed)
                             return el.width > 150 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
                         });
 
-                        // 2. Global fallback
                         if (!candidate) {
                             const allImgs = Array.from(document.querySelectorAll('img'));
                             candidate = allImgs.find(img => {
@@ -311,15 +388,16 @@ async function scrapeList(context: any, platform: any, type: string) {
                                 return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
                             });
                         }
-
                         return candidate ? (candidate as HTMLImageElement).src : null;
                     });
 
                     if (namuPoster) {
-                        // Use smart image processor to download/convert if needed
-                        item.poster = await processImage(namuPoster, item.title);
-                        item.posterSource = 'namuwiki';
-                        console.log(`[NamuWiki] Found poster for ${item.title}: ${item.poster}`);
+                        const newLocal = await processImage(namuPoster, item.title);
+                        if (newLocal) {
+                            item.poster = newLocal;
+                            item.posterSource = 'namuwiki';
+                            console.log(`[NamuWiki] Found & Saved poster for ${item.title}`);
+                        }
                     }
                 } catch (namuErr) {
                     // Fail silently
@@ -341,4 +419,8 @@ async function scrapeList(context: any, platform: any, type: string) {
 
     console.log(`Phase 2 Done. Saving ${enrichedItems.length} items to ${OUTPUT_FILE}...`);
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
+
+    // Cleanup Orphans
+    cleanupOldOTTImages(enrichedItems);
+
 })();

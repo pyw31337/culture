@@ -741,6 +741,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             onLocationClick={(loc) => { setSearchLocation(loc); setViewMode('map'); }}
                             onToggleLike={toggleLike}
                             likedIds={new Set(likedIds)}
+                            searchMode={searchMode}
                         />
                     </div>
                 )
