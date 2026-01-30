@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
-import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { useUserActivity } from '@/hooks/useUserActivity';
