@@ -4,10 +4,12 @@
  * Parallelized List Scraping AND Detail Scraping.
  */
 
+
+
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-// ... imports
-import { chromium, type Page } from 'playwright';
+import { Browser, Page } from 'puppeteer';
+import { chromium } from 'playwright'; // Keep chromium if needed, or remove if unused. It seems unused for scraping logic which uses puppeteer.
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
