@@ -140,7 +140,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 <div className="flex items-center gap-2">
                     <Sparkles className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        실시간 인기 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-emerald-400 to-teal-500" : "from-purple-400 to-pink-500")}>TOP 9</span>
+                        실시간 인기 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-green-300 via-emerald-500 to-teal-700" : "from-purple-400 to-pink-500")}>TOP 9</span>
                     </h2>
                 </div>
             </div>

@@ -545,7 +545,7 @@ export default function HeroSection({
                     <span className={clsx(
                         "font-black text-transparent bg-clip-text animate-shine bg-[length:200%_auto] tracking-normal py-1",
                         searchMode === 'location'
-                            ? "bg-gradient-to-r from-emerald-300 via-teal-400 to-green-300"
+                            ? "bg-gradient-to-r from-green-300 via-emerald-500 to-teal-700"
                             : "bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa]"
                     )}>
                         {currentTemplate.highlight}
@@ -589,7 +589,7 @@ export default function HeroSection({
                 <div className={clsx(
                     "p-[3px] rounded-full transition-all duration-300 relative",
                     searchMode === 'location'
-                        ? "bg-linear-to-r from-emerald-400 via-teal-600 to-green-400 light:shadow-[0_4px_30px_rgba(16,185,129,0.35)]"
+                        ? "bg-linear-to-r from-green-300 via-emerald-500 to-teal-700 light:shadow-[0_4px_30px_rgba(16,185,129,0.35)]"
                         : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
                 )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
@@ -668,7 +668,7 @@ export default function HeroSection({
                             className={clsx(
                                 "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1",
                                 searchMode === 'location'
-                                    ? "bg-gradient-to-r from-emerald-500 to-teal-500 shadow-emerald-500/30"
+                                    ? "bg-gradient-to-r from-green-300 to-teal-700 shadow-emerald-500/30"
                                     : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6]"
                             )}
                         >
