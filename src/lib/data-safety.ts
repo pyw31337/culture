@@ -66,7 +66,6 @@ export function safePerformance(data: any): Performance | null {
         awayTeam: typeof data.awayTeam === 'string' ? data.awayTeam : undefined,
         homeTeamLogo: typeof data.homeTeamLogo === 'string' ? data.homeTeamLogo : undefined,
         awayTeamLogo: typeof data.awayTeamLogo === 'string' ? data.awayTeamLogo : undefined,
-        awayTeamLogo: typeof data.awayTeamLogo === 'string' ? data.awayTeamLogo : undefined,
         posterUrl: typeof data.posterUrl === 'string' ? data.posterUrl : undefined,
         category: typeof data.category === 'string' ? data.category : undefined,
     };
