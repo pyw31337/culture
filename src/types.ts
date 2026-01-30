@@ -28,4 +28,5 @@ export type Performance = {
     subGenre?: string;
     backupPoster?: string; // Original remote URL for fallback
     posterUrl?: string; // Manual override for missing images
+    category?: string; // High-level category override
 };
