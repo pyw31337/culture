@@ -48,6 +48,9 @@ async function generate() {
         today.setHours(0, 0, 0, 0);
 
         const activePerformances = performances.filter(p => {
+            // 0. Exempt Persistent Content (Movies, OTT) from Date Check
+            if (p.genre === 'movie' || p.genre === 'ott') return true;
+
             if (!p.date) return false; // No date = active? No, safety first.
 
             // Allow "Open Run" or "TBA" if necessary, but for now stricter is better.
