@@ -117,10 +117,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     // Keyboard Navigation
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
-    // Reset highlight when results change
-    useEffect(() => {
-        setHighlightedIndex(-1);
-    }, [searchResults]);
+    // Effect for resetting highlight moved down
 
     // Search Mode & Logic
     const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
