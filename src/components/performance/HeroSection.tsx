@@ -545,7 +545,7 @@ export default function HeroSection({
                     <span className={clsx(
                         "font-black text-transparent bg-clip-text animate-shine bg-[length:200%_auto] tracking-normal py-1",
                         searchMode === 'location'
-                            ? "bg-gradient-to-r from-green-300 via-emerald-500 to-teal-700"
+                            ? "bg-gradient-to-r from-[#55df99] to-[#0090f5]"
                             : "bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa]"
                     )}>
                         {currentTemplate.highlight}
@@ -569,7 +569,7 @@ export default function HeroSection({
                 <div className={clsx(
                     "hidden light:block absolute -inset-4 blur-2xl rounded-full opacity-70 pointer-events-none transition-colors duration-500",
                     searchMode === 'location'
-                        ? "bg-gradient-to-r from-emerald-400/20 via-teal-400/15 to-green-400/20"
+                        ? "bg-gradient-to-r from-[#55df99]/30 to-[#0090f5]/30"
                         : "bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20"
                 )} />
 
@@ -577,7 +577,7 @@ export default function HeroSection({
                 <div className={clsx(
                     "p-[3px] rounded-full transition-all duration-300 relative",
                     searchMode === 'location'
-                        ? "bg-linear-to-r from-green-300 via-emerald-500 to-teal-700 light:shadow-[0_4px_30px_rgba(16,185,129,0.35)]"
+                        ? "bg-linear-to-r from-[#55df99] to-[#0090f5] light:shadow-[0_4px_30px_rgba(85,223,153,0.35)]"
                         : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
                 )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">

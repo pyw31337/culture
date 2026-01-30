@@ -307,7 +307,7 @@ export default function BottomNavSheet({
                                 <div className={clsx(
                                     "p-[3px] rounded-full transition-all duration-300 shadow-lg opacity-90 group-focus-within:opacity-100 group-focus-within:scale-[1.01]",
                                     searchMode === 'location'
-                                        ? "bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 shadow-emerald-500/20"
+                                        ? "bg-gradient-to-r from-[#55df99] to-[#0090f5] shadow-emerald-500/20"
                                         : "bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-purple-500/20"
                                 )}>
                                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">

@@ -159,7 +159,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                         className={clsx(
                             "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
                             searchMode === 'location'
-                                ? "bg-gradient-to-br from-green-300 via-emerald-500 to-teal-700"
+                                ? "bg-gradient-to-br from-[#55df99] to-[#0090f5]"
                                 : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
                             "hover:scale-105",
                             "active:scale-95",
