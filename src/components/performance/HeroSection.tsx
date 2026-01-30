@@ -717,7 +717,7 @@ export default function HeroSection({
                                         <div
                                             key={`search-hero-${idx}`}
                                             onClick={() => handleSelectResult(result)}
-                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/10 dark:bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
                                                 }`}
                                         >
                                             <div className="flex items-center gap-3 min-w-0">

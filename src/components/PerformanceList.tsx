@@ -114,6 +114,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [selectedPerformance, setSelectedPerformance] = useState<Performance | null>(null);
     const [sharedPerformanceId, setSharedPerformanceId] = useState<string | null>(null);
 
+    // Keyboard Navigation
+    const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+
+    // Reset highlight when results change
+    useEffect(() => {
+        setHighlightedIndex(-1);
+    }, [searchResults]);
+
     // Search Mode & Logic
     const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
 
@@ -721,7 +729,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     searchResults={searchResults}
                     isDropdownOpen={isDropdownOpen}
                     activeSearchSource={activeSearchSource}
-                    highlightedIndex={-1}
+                    activeSearchSource={activeSearchSource}
+                    highlightedIndex={highlightedIndex}
 
                     setIsHeroFilterExpanded={setIsHeroFilterExpanded}
                     isHeroFilterExpanded={isHeroFilterExpanded}
@@ -753,14 +762,58 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         }
                     }}
                     handleKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            // If dropdown is has results, keep it open or select top?
-                            // User request: "Enter shows results below search bar"
-                            // So we just ensure it is OPEN.
-                            if (searchResults.length > 0) {
-                                setIsDropdownOpen(true);
+                        if (!isDropdownOpen || searchResults.length === 0) {
+                            if (e.key === 'Enter') {
+                                // Default enter behavior (just close or search)
+                                handleSearch();
+                                setIsDropdownOpen(false); // Ensure close
+                            }
+                            return;
+                        }
+
+                        if (e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            setHighlightedIndex(prev => (prev + 1) % searchResults.length);
+                        } else if (e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            setHighlightedIndex(prev => (prev - 1 + searchResults.length) % searchResults.length);
+                        } else if (e.key === 'Enter') {
+                            e.preventDefault();
+                            if (highlightedIndex >= 0 && searchResults[highlightedIndex]) {
+                                // Select the highlighted item
+                                const selected = searchResults[highlightedIndex];
+                                if (searchMode === 'location') {
+                                    if (selected.lat && selected.lng) {
+                                        setSearchLocation({
+                                            lat: selected.lat,
+                                            lng: selected.lng,
+                                            name: selected.name
+                                        });
+                                        setSearchText(selected.name);
+                                    }
+                                } else {
+                                    setSearchText(selected.name);
+                                    handleSearch(); // Trigger search for keyword
+                                }
+                                setIsDropdownOpen(false);
                             } else {
-                                handleSearch(); // Fallback to scroll/filter if no dropdown results (e.g. pure text filter)
+                                // No highlight, but entered -> Select top result or just search?
+                                // User feedback implicit: "Enter to select highlighted".
+                                // If no highlight, maybe select top result (idx 0) if user just typed and pressed enter?
+                                // Original logic was: select top. Let's keep that as fallback if index is -1.
+                                if (searchResults.length > 0) {
+                                    const top = searchResults[0];
+                                    if (searchMode === 'location') {
+                                        if (top.lat && top.lng) {
+                                            setSearchLocation({ lat: top.lat, lng: top.lng, name: top.name });
+                                            setSearchText(top.name);
+                                        }
+                                    } else {
+                                        setSearchText(top.name);
+                                        handleSearch();
+                                    }
+                                    setIsDropdownOpen(false);
+                                }
                             }
                         }
                     }}
