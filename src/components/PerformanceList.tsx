@@ -734,7 +734,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* Recommendation Section (Restored) */}
             {
                 (viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && (
-                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-6">
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14">
                         <RecommendedSection
                             recommendedItems={recommendedItems}
                             onDetail={handleDetailOpen}
