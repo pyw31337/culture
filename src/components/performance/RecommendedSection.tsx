@@ -192,8 +192,8 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 {/* Rank Number - Flexed Left */}
                                 <div className="flex-shrink-0 select-none pointer-events-none mb-[-1rem]">
                                     <span
-                                        className="text-[10rem] sm:text-[14rem] font-black italic leading-none tracking-tighter text-transparent block"
-                                        style={{ WebkitTextStroke: '2px #64748b', opacity: 0.4, mixBlendMode: 'color-burn' }}
+                                        className="text-[10rem] sm:text-[14rem] font-black italic leading-none tracking-tighter text-transparent block mix-blend-[plus-lighter] light:mix-blend-darken"
+                                        style={{ WebkitTextStroke: '2px #64748b', opacity: 0.4 }}
                                     >
                                         {idx + 1}
                                     </span>
