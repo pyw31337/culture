@@ -462,8 +462,40 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const handleMenuClick = (menu: BottomMenuType) => {
         setActiveBottomMenu(prev => prev === menu ? null : menu);
     };
-    const handleLikePerfClick = () => setViewMode(prev => prev === 'likes-perf' ? 'grid' : 'likes-perf');
-    const handleLikeVenueClick = () => setViewMode(prev => prev === 'likes-venue' ? 'grid' : 'likes-venue');
+    const handleLikePerfClick = () => {
+        if (viewMode === 'likes-perf') {
+            setViewMode('grid'); // Toggle off -> Go back to default/grid
+            // Restore scroll
+            setTimeout(() => {
+                window.scrollTo({ top: savedScrollPosition, behavior: 'auto' });
+            }, 10);
+        } else {
+            // Save current scroll
+            setSavedScrollPosition(window.scrollY);
+            setViewMode('likes-perf');
+            // Scroll to top
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }, 10);
+        }
+    };
+    const handleLikeVenueClick = () => {
+        if (viewMode === 'likes-venue') {
+            setViewMode('grid'); // Toggle off
+            // Restore scroll
+            setTimeout(() => {
+                window.scrollTo({ top: savedScrollPosition, behavior: 'auto' });
+            }, 10);
+        } else {
+            // Save current scroll
+            setSavedScrollPosition(window.scrollY);
+            setViewMode('likes-venue');
+            // Scroll to top
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }, 10);
+        }
+    };
     const handleViewModeChange = (mode: string) => setViewMode(mode);
     const handleGenreSelect = (g: string) => setSelectedGenre(g);
     const handleRegionSelect = (r: string) => setSelectedRegion(r);
