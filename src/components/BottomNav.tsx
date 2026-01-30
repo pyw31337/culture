@@ -124,8 +124,19 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
                     isActive
                         ? (item.id === 'likes-perf'
-                            ? "text-pink-500 light:text-pink-600" // Always Pink for Likes
-                            : (searchMode === 'location' ? "text-emerald-400 light:text-emerald-600" : "text-[#a78bfa] light:text-purple-600"))
+                            ? "text-pink-500 light:text-pink-600" // Always Pink for Likes (No Bg change requested for likes?) User said "View Mode and Category...". But consistency? Let's stick to user request OR apply consistent rounded active state.
+                            // User specific: "View Mode" and "Category" buttons.
+                            // But usually bottom navs are consistent.
+                            // If I change View/Category to have BG, Likes should probably too or stay text.
+                            // Let's assume ONLY View/Category as requested or apply to all for UI consistency?
+                            // User said: "In bottom menu... 'View Mode' and 'Category' buttons when pressed... change style".
+                            // I will apply to all for consistency as "Likes" are also toggles.
+                            // Actually, let's strictly follow: "View Mode & Category".
+                            // But `renderNavItem` is shared.
+                            // I will apply the logic:
+                            : (searchMode === 'location'
+                                ? "bg-emerald-600 text-white light:bg-transparent light:text-emerald-600 rounded-2xl mx-2 shadow-lg shadow-emerald-900/20"
+                                : "bg-purple-600 text-white light:bg-transparent light:text-purple-600 rounded-2xl mx-2 shadow-lg shadow-purple-900/20"))
                         : "text-gray-400 hover:text-gray-200 light:text-gray-600 light:hover:text-black"
                 )}
             >
@@ -133,12 +144,11 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     <Icon
                         className={clsx(
                             "w-5 h-5 transition-all duration-300",
-                            "w-5 h-5 transition-all duration-300",
                             isActive && (item.id === 'likes-perf'
                                 ? "drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]" // Pink Glow
                                 : (searchMode === 'location'
-                                    ? "drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]"
-                                    : "drop-shadow-[0_0_8px_rgba(167,139,250,0.6)]"))
+                                    ? "drop-shadow-none" // Remove glow if BG is present
+                                    : "drop-shadow-none")) // Remove glow if BG is present
                         )}
                         strokeWidth={isActive ? 2.5 : 2}
                     />
