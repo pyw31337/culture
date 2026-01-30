@@ -6,9 +6,120 @@
 
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import { Browser, Page } from 'puppeteer';
-import * as fs from 'fs';
-import * as path from 'path';
+// ... imports
+import { chromium, type Page } from 'playwright';
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import sharp from 'sharp';
+
+// --- Image Processor Utility (Inlined) ---
+const DOWNLOAD_DOMAINS = ['namu.wiki', 'i.namu.wiki', 'pstatic.net', 'naver.com', 'kakaocdn.net', 'daumcdn.net', 'justwatch.com', 'images.justwatch.com', 'kfescdn.visitkorea.or.kr', 'tong.visitkorea.or.kr', 'cdn.visitkorea.or.kr'];
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+
+// Ensure directory exists
+const ensureDir = (dir: string) => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+};
+
+/**
+ * Downloads and processes an image if it matches specific domains.
+ * Converts to WebP.
+ * 
+ * @param url The original image URL
+ * @param filenameBase The desired filename (without extension)
+ * @param subDir Optional subdirectory inside public/images/ (e.g. 'posters/festivals')
+ * @returns The final URL to use (local path if downloaded, original URL otherwise)
+ */
+async function processImage(url: string, filenameBase: string, subDir: string = 'posters'): Promise<string> {
+    if (!url) return '';
+    if (url.startsWith('data:')) return url; // Skip data URIs
+
+    // Construct target directory
+    const targetDir = path.join(PUBLIC_DIR, 'images', subDir);
+    ensureDir(targetDir);
+
+    try {
+        if (url.includes('search.pstatic.net')) {
+            // Clean Naver Image URL
+            // Keep only 'src', remove 'type', 'quality'
+            try {
+                const u = new URL(url);
+                const src = u.searchParams.get('src');
+                if (src) {
+                    url = decodeURIComponent(src); // Use the direct source URL
+                }
+            } catch (e) { }
+        }
+
+        const urlObj = new URL(url);
+        const shouldDownload = DOWNLOAD_DOMAINS.some(d => urlObj.hostname.includes(d));
+
+        if (!shouldDownload) {
+            return url;
+        }
+
+        // Sanitize filename
+        const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+        const relativePath = `/images/${subDir}/${safeFilename}.webp`;
+        const absolutePath = path.join(targetDir, `${safeFilename}.webp`);
+
+        // Check if already exists (optimistic skipping)
+        if (fs.existsSync(absolutePath)) {
+            // Optional: Check file size or age to re-download? For now, skip if exists.
+            // console.log(`[Image] cache hit: ${relativePath}`);
+            return relativePath;
+        }
+
+        console.log(`[Image] Downloading: ${url} -> ${relativePath}`);
+
+        let referer = 'https://www.naver.com/';
+        if (url.includes('namu.wiki') || url.includes('namu.mirror')) referer = 'https://namu.wiki/';
+        if (url.includes('daum') || url.includes('kakao')) referer = 'https://daum.net/';
+        if (url.includes('visitkorea')) referer = 'https://korean.visitkorea.or.kr/';
+
+        const response = await axios({
+            url,
+            method: 'GET',
+            responseType: 'arraybuffer',
+            headers: {
+                'Referer': referer,
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            },
+            timeout: 10000
+        });
+
+        await sharp(response.data)
+            .resize({ width: 600, withoutEnlargement: true }) // Reasonable max width for posters
+            .webp({ quality: 80 })
+            .toFile(absolutePath);
+
+        return relativePath;
+
+    } catch (error: any) {
+        // Handle specific HTTP errors
+        const statusCode = error?.response?.status;
+        if (statusCode === 404) {
+            console.warn(`[Image] 404 Not Found: ${url} - using empty fallback`);
+            return ''; // Return empty to use frontend placeholder
+        }
+        console.error(`[Image] Failed to process ${url}:`, error instanceof Error ? error.message : String(error));
+        // Return empty string instead of broken URL for better UX
+        return '';
+    }
+}
+// -------------------------------------
+
+// ... existing code
+
+// Remove unused Browser import if it was there (it was removed in previous step but linter complained)
+
+// ... existing code
+
+// Fix the end of file call
+// function call removed from here
 
 puppeteer.use(StealthPlugin());
 
@@ -96,34 +207,104 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
 }
 
 async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalItem | null> {
-    // If we already have all data from list, just return it.
-    if (item.date && item.venue) {
-        return {
-            id: item.id,
-            title: item.title,
-            image: item.thumbnailImage,
-            date: item.date,
-            venue: item.venue,
-            region: parseRegion(item.venue),
-            link: `${DETAIL_BASE_URL}?fstvlCntntsId=${item.id}`,
-            genre: 'festival',
-            lastEnriched: new Date().toISOString()
-        };
-    }
-
-    // Fallback to scraping detail if info missing (Unlikely with new layout)
+    // Navigate to detail page to get high-quality poster/cover
     let url = `${DETAIL_BASE_URL}?fstvlCntntsId=${item.id}`;
 
     try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-        // ... (Existing extraction logic could go here if needed, but simplified for now)
-        return null;
+
+        // Extract Image with Priority
+        // 1. Poster Image (User specified selector)
+        // 2. Background Cover Image
+        // 3. Fallback to List Thumbnail
+        const detailImage = await page.evaluate(() => {
+            // 1. Try Poster Selector
+            // Selector: #mainTab > div > div > section.poster_detail > div > div.poster_detail_wrap > div > div.detail_img_box > a > img
+            const posterImg = document.querySelector('#mainTab .detail_img_box img');
+            if (posterImg) {
+                return (posterImg as HTMLImageElement).src;
+            }
+
+            // 2. Try Background Cover Selector
+            // Selector: #mainTab > div > section > div > div
+            // Need to extract 'url("...")' from style
+            const bgEl = document.querySelector('#mainTab > div > section > div > div');
+            if (bgEl) {
+                const style = window.getComputedStyle(bgEl);
+                const bgImage = style.backgroundImage; // e.g., 'url("https://...")'
+                if (bgImage && bgImage !== 'none') {
+                    // Extract URL from 'url("...")' or 'url(...)'
+                    const match = bgImage.match(/url\(["']?(.*?)["']?\)/);
+                    if (match && match[1]) {
+                        return match[1];
+                    }
+                }
+            }
+
+            return null;
+        });
+
+        // Regex Fallback if DOM extraction failed
+        let finalImage = detailImage;
+        if (!finalImage) {
+            const html = await page.content();
+            // Look for common content image patterns if specific selectors failed
+            // Example: https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/...
+            const urlMatch = html.match(/https:\/\/kfescdn\.visitkorea\.or\.kr\/kfes\/upload\/contents\/db\/[^"'\s)]+/);
+            if (urlMatch) {
+                finalImage = urlMatch[0];
+            }
+        }
+
+        // Use thumbnail if detail scrape failed
+        let imageUrl = finalImage || item.thumbnailImage;
+
+        // LOCALIZATION: Download Image
+        if (imageUrl) {
+            // Use ID as filename to ensure uniqueness and easy cleanup
+            const localPath = await processImage(imageUrl, item.id, 'posters/festivals');
+            if (localPath) {
+                imageUrl = localPath;
+            }
+        }
+
+        return {
+            id: item.id,
+            title: item.title,
+            image: imageUrl,
+            date: item.date || '',
+            venue: item.venue || '',
+            region: parseRegion(item.venue || ''),
+            link: url,
+            genre: 'festival',
+            lastEnriched: new Date().toISOString()
+        };
     } catch (error) {
-        return null;
+        console.error(`Detail scrape error for ${item.id}:`, error);
+
+        // Fallback to list data if detailed scrape fails
+        // Still try to download the thumbnail
+        let imageUrl = item.thumbnailImage;
+        if (imageUrl) {
+            const localPath = await processImage(imageUrl, item.id, 'posters/festivals');
+            if (localPath) imageUrl = localPath;
+        }
+
+        return {
+            id: item.id,
+            title: item.title,
+            image: imageUrl,
+            date: item.date || '',
+            venue: item.venue || '',
+            region: parseRegion(item.venue || ''),
+            link: url,
+            genre: 'festival',
+            lastEnriched: new Date().toISOString()
+        };
     }
 }
 
-async function main() {
+async function scrapeFestivals() {
     console.log('Starting VisitKorea Festival Scraper (Sequential List / Parallel Details)...');
     console.log(`Target Concurrency: ${CONCURRENCY}`);
 
@@ -233,7 +414,32 @@ async function main() {
             } catch (e) { return false; }
         };
 
+        const isItemExpired = (dateStr: string): boolean => {
+            if (!dateStr) return false; // validation needed?
+            try {
+                // Format: "2024.01.01" or "2024.01.01 ~ 2024.01.31"
+                const parts = dateStr.split('~');
+                const endDateStr = parts[parts.length - 1].trim(); // Get the last part (end date)
+                // Convert YYYY.MM.DD to YYYY-MM-DD
+                const cleanDate = endDateStr.replace(/\./g, '-');
+                // Set time to end of day to be inclusive
+                const endDate = new Date(cleanDate);
+                endDate.setHours(23, 59, 59, 999);
+
+                const now = new Date();
+                return endDate < now;
+            } catch (e) {
+                return false; // conservative: keep if parsing fails
+            }
+        };
+
         for (const item of Array.from(uniqueListItems.values())) {
+            // OPTIMIZATION: Discard expired items immediately
+            if (isItemExpired(item.date || '')) {
+                // console.log(`Skipping Expired: ${item.title} (${item.date})`);
+                continue;
+            }
+
             const existing = existingMap.get(item.id);
             if (existing && isRecentlyEnriched(existing)) {
                 // Force update image from list (high-res)
@@ -317,10 +523,16 @@ async function main() {
 
         // Final Atomic Save (Circuit Breaker)
         if (results.length > 0) {
+            // Final Save
             console.log(`Final Save: ${results.length} items to ${OUTPUT_FILE}`);
             const tempFile = `${OUTPUT_FILE}.temp`;
             fs.writeFileSync(tempFile, JSON.stringify(results, null, 2));
             fs.renameSync(tempFile, OUTPUT_FILE);
+
+            // Cleanup Logic
+            cleanupExpiredImages(results.map(i => i.id));
+
+            console.log(`Scraping Complete. Exit code: 0`);
         } else {
             // Safety measure: Do NOT overwrite if results are empty, unless the list was genuinely empty (handled earlier)
             console.warn('Scraper finished with 0 items. Aborting save to protect existing data.');
@@ -328,4 +540,34 @@ async function main() {
     }
 }
 
-main().catch(console.error);
+function cleanupExpiredImages(validIds: string[]) {
+    const posterDir = path.join(process.cwd(), 'public', 'images', 'posters', 'festivals');
+    if (!fs.existsSync(posterDir)) return;
+
+    console.log(`Cleaning up expired festival images... (Valid IDs count: ${validIds.length})`);
+
+    // Generate valid filenames based on the same logic as processImage
+    const validFilenames = new Set(validIds.map(id => {
+        return id.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100) + '.webp';
+    }));
+
+    const files = fs.readdirSync(posterDir);
+    let deletedCount = 0;
+
+    files.forEach(file => {
+        if (!file.endsWith('.webp')) return;
+
+        if (!validFilenames.has(file)) {
+            try {
+                fs.unlinkSync(path.join(posterDir, file));
+                console.log(`Deleted expired image: ${file}`);
+                deletedCount++;
+            } catch (e) {
+                console.error(`Failed to delete ${file}:`, e);
+            }
+        }
+    });
+    console.log(`Cleanup complete. Deleted ${deletedCount} expired images.`);
+}
+
+scrapeFestivals().catch(console.error);

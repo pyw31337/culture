@@ -65,21 +65,15 @@ export default function PerformanceGrid({
                     : null;
                 const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
-                const isNearbyHeader = (selectedVenue !== 'all' && perf.venue !== selectedVenue && (index === 0 || items[index - 1].venue === selectedVenue));
+                // Nearby Check
+                // If selectedVenue is active, and this perf's venue DOES NOT match, it's a recommendation.
+                const isNearby = selectedVenue !== 'all' && perf.venue !== selectedVenue;
 
                 return (
                     <div
                         key={`${perf.id}-${perf.region}`}
-                        className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full", isNearbyHeader ? "col-span-full pt-8" : "")}
+                        className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
                     >
-                        {/* Split List Header */}
-                        {isNearbyHeader && (
-                            <div className="w-full h-px relative bg-gradient-to-r from-transparent via-[#a78bfa]/50 to-transparent mb-8 flex items-center justify-center">
-                                <span className="bg-[#0f1115] px-4 text-[#a78bfa] text-sm font-extrabold tracking-widest uppercase">
-                                    Nearby Recommendations
-                                </span>
-                            </div>
-                        )}
                         {layoutMode === 'grid' ? (
                             <PerformanceCard
                                 perf={perf}
@@ -91,11 +85,10 @@ export default function PerformanceGrid({
                                 }}
                                 isLiked={likedIds.includes(perf.id)}
                                 onToggleLike={(e) => onToggleLike(perf.id, e)}
-                                // Logic Update: 
-                                // - Ribbon: pass false
-                                // - Gradient: KEEP for general recommended lists? (Logic copied from PerformanceList)
-                                showRibbon={false}
-                                isGradient={selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue'}
+                                // Show ribbon for Nearby items
+                                showRibbon={isNearby}
+                                ribbonText="Nearby"
+                                isGradient={isNearby || (selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue')}
                                 enableActions={true}
                                 onShare={() => copyItemShareUrl(perf.id)}
                                 onDetail={() => handleDetailOpen(perf)}

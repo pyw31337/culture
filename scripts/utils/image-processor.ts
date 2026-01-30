@@ -4,14 +4,15 @@ import path from 'path';
 import axios from 'axios';
 import sharp from 'sharp';
 
-const DOWNLOAD_DOMAINS = ['namu.wiki', 'i.namu.wiki', 'pstatic.net', 'naver.com', 'kakaocdn.net', 'daumcdn.net', 'justwatch.com', 'images.justwatch.com'];
+const DOWNLOAD_DOMAINS = ['namu.wiki', 'i.namu.wiki', 'pstatic.net', 'naver.com', 'kakaocdn.net', 'daumcdn.net', 'justwatch.com', 'images.justwatch.com', 'kfescdn.visitkorea.or.kr', 'tong.visitkorea.or.kr', 'cdn.visitkorea.or.kr'];
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
-const POSTERS_DIR = path.join(PUBLIC_DIR, 'images', 'posters');
 
 // Ensure directory exists
-if (!fs.existsSync(POSTERS_DIR)) {
-    fs.mkdirSync(POSTERS_DIR, { recursive: true });
-}
+const ensureDir = (dir: string) => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+};
 
 /**
  * Downloads and processes an image if it matches specific domains.
@@ -19,11 +20,16 @@ if (!fs.existsSync(POSTERS_DIR)) {
  * 
  * @param url The original image URL
  * @param filenameBase The desired filename (without extension)
+ * @param subDir Optional subdirectory inside public/images/posters/ (e.g. 'festivals')
  * @returns The final URL to use (local path if downloaded, original URL otherwise)
  */
-export async function processImage(url: string, filenameBase: string): Promise<string> {
+export async function processImage(url: string, filenameBase: string, subDir: string = 'posters'): Promise<string> {
     if (!url) return '';
     if (url.startsWith('data:')) return url; // Skip data URIs
+
+    // Construct target directory
+    const targetDir = path.join(PUBLIC_DIR, 'images', subDir);
+    ensureDir(targetDir);
 
     try {
         if (url.includes('search.pstatic.net')) {
@@ -47,8 +53,8 @@ export async function processImage(url: string, filenameBase: string): Promise<s
 
         // Sanitize filename
         const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
-        const relativePath = `/images/posters/${safeFilename}.webp`;
-        const absolutePath = path.join(POSTERS_DIR, `${safeFilename}.webp`);
+        const relativePath = `/images/${subDir}/${safeFilename}.webp`;
+        const absolutePath = path.join(targetDir, `${safeFilename}.webp`);
 
         // Check if already exists (optimistic skipping)
         if (fs.existsSync(absolutePath)) {
