@@ -147,7 +147,7 @@ export default function BottomNavSheet({
             {/* Sheet */}
             <div
                 className={clsx(
-                    "fixed bottom-0 left-0 right-0 z-[4990] bg-black/95 light:bg-white/95 backdrop-blur-xl border-t-2 rounded-t-3xl transition-transform duration-300 ease-out max-h-[90vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-0 animate-purple-shimmer",
+                    "fixed bottom-0 left-0 right-0 z-[4990] bg-black/95 light:bg-white/95 backdrop-blur-xl border-t-2 rounded-t-3xl transition-transform duration-300 ease-out max-h-[90vh] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.7)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.1)] pb-0 animate-in slide-in-from-bottom duration-300",
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50",
                     searchMode === 'location'
                         ? "border-emerald-500/60 light:border-emerald-600/30"
