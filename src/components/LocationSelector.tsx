@@ -235,7 +235,7 @@ export function LocationSelector({
                     >
                         {/* Region Buttons */}
                         <div className="relative z-20 pb-0"> {/* z-index to sit on top of district box */}
-                            <HorizontalScroll className="px-1 pb-0">
+                            <HorizontalScroll className="px-1 pb-0 relative z-30">
                                 <button
                                     onClick={() => handleRegionSelectInternal('all')}
                                     className={clsx(
@@ -254,23 +254,19 @@ export function LocationSelector({
                                         onClick={() => handleRegionSelectInternal(r.id)}
                                         className={clsx(
                                             "relative rounded-t-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center whitespace-nowrap",
-                                            // Tab logic: If active, connect to bottom with negative margin and z-index
+                                            // Tab logic: Filled color for active, clearly contrasting text
                                             selectedRegion === r.id
                                                 ? clsx(
-                                                    accentTextClass, accentLightTextClass,
-                                                    "bg-gray-900/50 light:bg-gray-50 border-b-0 -mb-px z-30 font-extrabold shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]",
+                                                    "text-white z-30 font-extrabold shadow-lg -mb-2 pb-4", // -mb-2 and large pb to overlap
                                                     isLoc
-                                                        ? "border-emerald-500/60 light:border-emerald-600/30 border-t border-l border-r" // Green mode active border
-                                                        : "border-purple-400/60 light:border-purple-600/30 border-t border-l border-r"   // Purple mode active border
+                                                        ? "bg-emerald-600 border-emerald-500 ring-2 ring-emerald-500/20"
+                                                        : "bg-purple-600 border-purple-500 ring-2 ring-purple-500/20"
                                                 )
-                                                : "rounded-b-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1" // Add margin bottom for inactive to separate from line
+                                                : "rounded-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1"
                                         )}
                                     >
                                         {r.label}
-                                        {/* Visual connector for tab style (hiding the bottom border line of the container if any, though negative margin handles overlap) */}
-                                        {selectedRegion === r.id && (
-                                            <div className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-gray-900/50 light:bg-gray-50 z-40" />
-                                        )}
+                                        {/* Visual connector removed as we use filled button overlap */}
                                     </button>
                                 ))}
                             </HorizontalScroll>
@@ -279,14 +275,14 @@ export function LocationSelector({
                         {/* District Selection (Box) */}
                         {(selectedRegion !== 'all' && districts.length > 0) && (
                             <div className="relative pt-0 animate-in fade-in slide-in-from-top-1 duration-200 z-10 -mt-px">
-                                {/* The Box */}
+                                {/* The Box - Tighten margin top (-mt-3 to sit behind buttons) */}
                                 <div className={clsx(
-                                    "bg-gray-900/50 light:bg-gray-50 p-3 pt-2 rounded-b-2xl rounded-tr-2xl rounded-tl-2xl border shadow-inner",
+                                    "bg-gray-900/50 light:bg-gray-50 p-3 pt-4 rounded-2xl border shadow-inner flex items-center justify-center min-h-[60px]", // Added flex center and min-height
                                     isLoc
                                         ? "border-emerald-500/60 light:border-emerald-600/30"
                                         : "border-purple-400/60 light:border-purple-600/30"
                                 )}>
-                                    <HorizontalScroll>
+                                    <HorizontalScroll className="items-center h-full"> {/* Center items in scroll */}
                                         <button
                                             onClick={() => handleDistrictSelectInternal('all')}
                                             className={clsx(
