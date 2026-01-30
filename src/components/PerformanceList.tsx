@@ -763,6 +763,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     setSearchLocation={setSearchLocation}
                     setRadius={setRadius}
                     setSearchText={setSearchText}
+                    onSearchChange={handleSearchChange}
                     setActiveSearchSource={setActiveSearchSource}
                     setIsDropdownOpen={setIsDropdownOpen}
                     handleSearch={handleSearch}
@@ -1046,7 +1047,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 selectedVenue={selectedVenue}
                 onVenueSelect={setSelectedVenue}
                 searchText={searchText}
-                onSearchChange={setSearchText}
+                onSearchChange={handleSearchChange}
                 keywords={savedKeywords}
                 onKeywordAdd={(k) => setSavedKeywords(prev => [...prev, k])}
                 onKeywordRemove={(k) => setSavedKeywords(prev => prev.filter(w => w !== k))}
