@@ -524,17 +524,17 @@ export default function HeroSection({
 
                         {/* Search Dropdown - Main Hero */}
                         {isDropdownOpen && searchResults.length > 0 && (
-                            <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-xl rounded-2xl border border-white/10 light:border-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.5)] overflow-hidden z-[100] max-h-[320px] overflow-y-auto custom-scrollbar">
+                            <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a0b2e] light:bg-white backdrop-blur-xl rounded-2xl border border-white/10 light:border-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.5)] overflow-hidden z-[100] max-h-[320px] overflow-y-auto custom-scrollbar">
                                 <div className="p-2">
-                                    <div className="px-3 py-2 text-xs font-bold text-gray-500 light:text-gray-400 uppercase tracking-wider flex justify-between items-center">
+                                    <div className="px-3 py-2 text-xs font-bold text-gray-400 light:text-gray-500 uppercase tracking-wider flex justify-between items-center">
                                         <span>검색 결과</span>
-                                        <button onClick={() => setIsDropdownOpen(false)} className="bg-transparent hover:bg-white/5 p-1 rounded-full"><X size={14} /></button>
+                                        <button onClick={() => setIsDropdownOpen(false)} className="bg-transparent hover:bg-white/5 p-1 rounded-full text-white light:text-black"><X size={14} /></button>
                                     </div>
                                     {searchResults.map((result, idx) => (
                                         <button
                                             key={idx}
                                             onClick={() => handleSelectResult(result)}
-                                            className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 light:hover:bg-gray-50 transition-colors flex items-start gap-3 group"
+                                            className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 light:hover:bg-gray-50 transition-colors flex items-start gap-3 group"
                                         >
                                             <div className="mt-0.5 p-2 rounded-lg bg-gray-800 light:bg-gray-100 text-gray-400 group-hover:text-white light:group-hover:text-black group-hover:bg-purple-500 transition-colors">
                                                 {result.type === 'location' ? <MapPin size={16} /> : <Search size={16} />}
