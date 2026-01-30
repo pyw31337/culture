@@ -29,40 +29,55 @@ async function run() {
     let updatedCount = 0;
 
     for (const record of records) {
-        // CSV Headers: Name, Key, Region, District, Address, Latitude, Longitude
+        // CSV Headers: Name, Key, Region, District, Address, Latitude, Longitude, region_id
+        // The user wants 'Name' from CSV to be the authority.
         const key = record.Key || record.Name;
-
         if (!key) continue;
 
+        // If venue doesn't exist, create it or log? User said "apply my CSV".
+        // Let's assume we initialize it if missing.
         if (!venues[key]) {
-            // New venue? For now, let's only update existing unless it's clearly a new valid one.
-            // But if the key is in the report, it likely exists or existed.
-            // If the user *renamed* it in the Name column but Key is preserved... 
-            // The report generates Key column usually comparable to the JSON key.
-            console.log(`[Warning] JSON missing key from CSV: ${key}. Skipping creation to avoid junk.`);
+            venues[key] = {
+                name: record.Name || key,
+                address: record.Address || '정보 없음',
+                district: record.District || '',
+                lat: parseFloat(record.Latitude) || 0,
+                lng: parseFloat(record.Longitude) || 0,
+                mapped_region_id: record.mapped_region_id || record.Region || 'etc'
+            };
+            updatedCount++;
             continue;
         }
 
         const v = venues[key];
         let modified = false;
 
-        // Update Fields
-        if (record.Address && record.Address !== '정보 없음' && record.Address !== v.address) {
+        // Name Enforcement
+        if (record.Name && record.Name !== v.name) {
+            v.name = record.Name;
+            modified = true;
+        }
+
+        // Address
+        if (record.Address && record.Address !== v.address) {
             v.address = record.Address;
             modified = true;
         }
 
+        // District
         if (record.District && record.District !== v.district) {
             v.district = record.District;
             modified = true;
         }
 
-        if (record.Region && record.Region !== v.region) {
-            // Map common regions if CSV has friendly names
-            v.region = record.Region;
+        // Region ID (mapped_region_id is the system field)
+        const regionId = record.mapped_region_id || record.Region;
+        if (regionId && regionId !== v.mapped_region_id) {
+            v.mapped_region_id = regionId;
             modified = true;
         }
 
+        // Coords
         const lat = parseFloat(record.Latitude);
         const lng = parseFloat(record.Longitude);
 
@@ -77,7 +92,6 @@ async function run() {
 
         if (modified) {
             updatedCount++;
-            // console.log(`Updated ${key}`);
         }
     }
 
