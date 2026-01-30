@@ -82,7 +82,10 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
             id: 'likes-perf',
             label: '좋아요',
             icon: Heart,
-            action: onLikePerfClick,
+            action: () => {
+                onMenuClick(null);
+                onLikePerfClick();
+            },
             isActive: currentViewMode === 'likes-perf',
             badgeCount: likeCount
         },
@@ -90,7 +93,10 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
             id: 'likes-venue',
             label: '공연장',
             icon: Star,
-            action: onLikeVenueClick,
+            action: () => {
+                onMenuClick(null);
+                onLikeVenueClick();
+            },
             isActive: currentViewMode === 'likes-venue',
             badgeCount: venueCount
         },
