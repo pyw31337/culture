@@ -234,7 +234,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     {/* Info Overlay */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
-                                        <p className="text-gray-300 text-sm mb-4">{perf.date}</p>
+                                        <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </p>
                                         <div className="px-5 py-2.5 bg-white text-black font-extrabold text-xs rounded-full shadow-xl">
                                             자세히 보기
                                         </div>
