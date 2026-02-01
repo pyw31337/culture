@@ -137,9 +137,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Location Search Results (Kakao)
     const [kakaoSearchResults, setKakaoSearchResults] = useState<any[]>([]);
+    const searchTextRef = useRef(searchText); // Track current searchText to detect stale responses
 
     useEffect(() => {
+        searchTextRef.current = searchText; // Always keep ref in sync
+
         if (searchMode === 'location' && searchText.trim().length > 1) {
+            const currentSearchText = searchText.trim(); // Capture at request time
             // Debounce
             const timer = setTimeout(() => {
                 if (window.kakao && window.kakao.maps) {
@@ -147,7 +151,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     window.kakao.maps.load(() => {
                         if (window.kakao.maps.services) {
                             const ps = new window.kakao.maps.services.Places();
-                            ps.keywordSearch(searchText, (data: any, status: any) => {
+                            ps.keywordSearch(currentSearchText, (data: any, status: any) => {
+                                // Check if this response is still relevant (not stale)
+                                if (searchTextRef.current.trim() !== currentSearchText) {
+                                    // Search text changed since request was made, ignore this response
+                                    console.log(`[Kakao] Ignoring stale response for "${currentSearchText}", current is "${searchTextRef.current}"`);
+                                    return;
+                                }
+
                                 if (status === window.kakao.maps.services.Status.OK) {
                                     setKakaoSearchResults(data.map((place: any) => ({
                                         type: 'location',
