@@ -277,6 +277,10 @@ async function scrapeOTT() {
             newItem.platforms.forEach((p: string) => {
                 if (!existing.platforms.includes(p)) existing.platforms.push(p);
             });
+            // Update Poster if available (Critical for image downloading)
+            if (newItem.poster) existing.poster = newItem.poster;
+            if (newItem.link) existing.link = newItem.link; // Update link too to prevent stale links
+
             // Update existing map
             skippedCount++;
         } else {
