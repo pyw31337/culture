@@ -398,8 +398,8 @@ export default function BottomNavSheet({
                                                 className={clsx(
                                                     "p-3 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1",
                                                     searchMode === 'location'
-                                                        ? "bg-gradient-to-r from-[#55df99] to-[#0090f5] shadow-emerald-500/20"
-                                                        : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] shadow-purple-500/20"
+                                                        ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
+                                                        : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
                                                 )}
                                             >
                                                 {searchMode === 'location' ? <MapPin size={20} className="fill-current" /> : <Search size={20} />}
