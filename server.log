@@ -1,5 +1,6 @@
  INFO  Accepting connections at http://localhost:3000
- HTTP  2/2/2026 12:09:14 PM ::1 GET /culture
+ HTTP  2/2/2026 12
+09:14 PM ::1 GET /culture
  HTTP  2/2/2026 12:09:14 PM ::1 Returned 404 in 153 ms
  HTTP  2/2/2026 12:09:14 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
  HTTP  2/2/2026 12:09:14 PM ::1 Returned 404 in 4 ms
@@ -831,3 +832,1883 @@
  HTTP  2/2/2026 12:21:00 PM ::1 Returned 404 in 3 ms
  HTTP  2/2/2026 12:21:03 PM ::1 GET /culture/favicon.png
  HTTP  2/2/2026 12:21:03 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 304 in 57 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 35 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 35 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 67 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 55 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 49 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 53 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:46:02 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:46:02 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:46:03 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:46:03 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:28 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:46:28 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 25 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 22 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:46:33 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:33 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:34 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:46:34 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:46:34 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:46:34 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 36 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 59 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:46:39 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 63 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 63 ms
+ HTTP  2/2/2026 12:46:39 PM ::1 Returned 404 in 60 ms
+ HTTP  2/2/2026 12:46:40 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:46:40 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:46:41 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:46:41 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:55 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:46:55 PM ::1 Returned 404 in 36 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:46:59 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:46:59 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:47:00 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:00 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 54 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 53 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 24 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:47:05 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:47:05 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:06 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:06 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:10 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:10 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:47:15 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:15 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 65 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 41 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:47:23 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:47:23 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 12:47:24 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:24 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:47:31 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:31 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:47:36 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:47:36 PM ::1 Returned 304 in 14 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 76 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 75 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 70 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:47:45 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 12:47:45 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:47:46 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:47:46 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 12:47:47 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:47 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /map/
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 75 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 76 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 75 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 57 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 23 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 23 ms
+ HTTP  2/2/2026 12:47:54 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:47:54 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:47:55 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:47:55 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:48:01 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:48:01 PM ::1 Returned 404 in 40 ms
+ HTTP  2/2/2026 12:48:07 PM ::1 GET /culture/
+ HTTP  2/2/2026 12:48:07 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 27 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:48:08 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:48:08 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:48:10 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:48:10 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 304 in 57 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 33 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 35 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 27 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:48:18 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 12:48:18 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 12:48:19 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:48:19 PM ::1 Returned 404 in 63 ms
+ HTTP  2/2/2026 12:48:21 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:48:21 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 58 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 79 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 69 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 23 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 20 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 14 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 22 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 27 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 304 in 41 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 22 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 200 in 92 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 12:48:27 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 12:48:27 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 304 in 11 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 12:48:28 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:48:28 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:48:35 PM ::1 GET /culture/_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 12:48:35 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 12:48:44 PM ::1 GET /
+ HTTP  2/2/2026 12:48:44 PM ::1 Returned 304 in 92 ms
+ HTTP  2/2/2026 12:48:44 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:48:44 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:48:44 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:44 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:48:44 PM ::1 Returned 404 in 104 ms
+ HTTP  2/2/2026 12:48:44 PM ::1 Returned 404 in 103 ms
+ HTTP  2/2/2026 12:48:44 PM ::1 Returned 404 in 94 ms
+ HTTP  2/2/2026 12:48:44 PM ::1 Returned 404 in 80 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 33 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 55 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 32 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:48:45 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:48:45 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 12:48:47 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:48:47 PM ::1 Returned 404 in 68 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 304 in 2 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 12:48:57 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:48:57 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:49:57 PM ::1 GET /
+ HTTP  2/2/2026 12:49:57 PM ::1 Returned 304 in 284 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 136 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 79 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 90 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 97 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 98 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 56 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 63 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 12:49:58 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:49:58 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:49:59 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:49:59 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 12 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 11 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 20 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 19 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 32 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 19 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 45 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 304 in 44 ms
+ HTTP  2/2/2026 12:50:06 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:50:06 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 22 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 304 in 24 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 12:50:07 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 12:50:07 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:50:08 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:50:08 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 12:50:21 PM ::1 GET /culture/_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 12:50:21 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:50:30 PM ::1 GET /
+ HTTP  2/2/2026 12:50:30 PM ::1 Returned 304 in 90 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 133 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 153 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 130 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 126 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 113 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:50:31 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:50:31 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 12:50:32 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:50:32 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 51 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 20 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 13 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:50:43 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 27 ms
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 30 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:50:43 PM ::1 Returned 304 in 34 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 13 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 14 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 17 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 404 in 38 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /images/ticket_icon.png
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 200 in 36 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 304 in 64 ms
+ HTTP  2/2/2026 12:50:44 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:50:44 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 12:50:45 PM ::1 GET /data/performances.json
+ HTTP  2/2/2026 12:50:45 PM ::1 GET /data/movies.json
+ HTTP  2/2/2026 12:50:45 PM ::1 GET /data/ott.json
+ HTTP  2/2/2026 12:50:45 PM ::1 Returned 200 in 33 ms
+ HTTP  2/2/2026 12:50:45 PM ::1 Returned 200 in 38 ms
+ HTTP  2/2/2026 12:50:45 PM ::1 Returned 200 in 84 ms
+ HTTP  2/2/2026 12:51:01 PM ::1 GET /culture/_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 12:51:01 PM ::1 Returned 404 in 245 ms
+ HTTP  2/2/2026 12:51:19 PM ::1 GET /
+ HTTP  2/2/2026 12:51:19 PM ::1 Returned 304 in 81 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 76 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 91 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 133 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 140 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 138 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 88 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 44 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:51:20 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:51:20 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 12:51:22 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:51:22 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 69 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 26 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 33 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 22 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /images/ticket_icon.png
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 12:51:42 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 12:51:42 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:51:43 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 12:51:43 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 12:51:43 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 12:51:43 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 12:51:43 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 12:51:43 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:51:43 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:51:43 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:52:13 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:52:13 PM ::1 Returned 404 in 302 ms
+ HTTP  2/2/2026 12:53:20 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:53:20 PM ::1 Returned 404 in 216 ms
+ HTTP  2/2/2026 12:53:50 PM ::1 GET /
+ HTTP  2/2/2026 12:53:50 PM ::1 Returned 304 in 91 ms
+ HTTP  2/2/2026 12:53:50 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:53:50 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:53:50 PM ::1 Returned 404 in 138 ms
+ HTTP  2/2/2026 12:53:50 PM ::1 Returned 404 in 155 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 254 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 240 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 243 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 241 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 56 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 54 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 66 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 72 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 68 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 48 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 12:53:51 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:53:51 PM ::1 Returned 404 in 74 ms
+ HTTP  2/2/2026 12:53:58 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:53:58 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 46 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 17 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 10 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 64 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 43 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 19 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 23 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 23 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 26 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 304 in 25 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 32 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 60 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:54:22 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 12:54:22 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 12:54:23 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 12:54:23 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 12:54:23 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 12:54:23 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:54:23 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 12:54:23 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:54:56 PM ::1 GET /culture/_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 12:54:56 PM ::1 Returned 404 in 100 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 78 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 89 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 91 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 91 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 86 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:55:29 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 117 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 104 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 113 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 101 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 59 ms
+ HTTP  2/2/2026 12:55:29 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:55:30 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:55:30 PM ::1 Returned 404 in 169 ms
+ HTTP  2/2/2026 12:55:55 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:55:55 PM ::1 Returned 404 in 99 ms
+ HTTP  2/2/2026 12:56:14 PM ::1 GET /
+ HTTP  2/2/2026 12:56:14 PM ::1 Returned 304 in 139 ms
+ HTTP  2/2/2026 12:56:14 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:56:14 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:56:14 PM ::1 Returned 404 in 569 ms
+ HTTP  2/2/2026 12:56:14 PM ::1 Returned 404 in 449 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 131 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 89 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 87 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 121 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 120 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 120 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 117 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 24 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 25 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 12:56:15 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:56:15 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 12:56:19 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:56:19 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 32 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 13 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 10 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/polyfills-42372ed130431b0a.js
+ HTTP  2/2/2026 12:56:47 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 12:56:47 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 12:56:48 PM ::1 GET /images/ticket_icon.png
+ HTTP  2/2/2026 12:56:48 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 12:56:48 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 12:56:48 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 12:56:48 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 12:56:48 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 12:56:48 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 12:56:48 PM ::1 Returned 404 in 28 ms
+ HTTP  2/2/2026 12:56:48 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 12:56:48 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 12:56:57 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:56:57 PM ::1 Returned 404 in 48 ms
+ HTTP  2/2/2026 12:58:19 PM ::1 GET /_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 12:58:19 PM ::1 Returned 304 in 182 ms
+ HTTP  2/2/2026 12:58:23 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:58:23 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 304 in 450 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 40 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 230 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 114 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 118 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 120 ms
+ HTTP  2/2/2026 12:58:48 PM ::1 Returned 404 in 91 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 51 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 65 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 53 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 62 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 32 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 35 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 12:58:49 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 12:58:49 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 12:58:52 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 12:58:52 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 12:59:27 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 12:59:27 PM ::1 Returned 304 in 105 ms
+ HTTP  2/2/2026 1:01:04 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:01:04 PM ::1 Returned 304 in 351 ms
+ HTTP  2/2/2026 1:09:16 PM ::1 GET /
+ HTTP  2/2/2026 1:09:16 PM ::1 Returned 304 in 268 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 163 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 160 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 200 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 205 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 206 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 215 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 24 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 38 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 28 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 22 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:09:17 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 1:09:17 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 1:09:18 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:09:18 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:09:24 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:09:24 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 1:10:41 PM ::1 GET /
+ HTTP  2/2/2026 1:10:41 PM ::1 Returned 304 in 141 ms
+ HTTP  2/2/2026 1:10:41 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:10:41 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:10:41 PM ::1 Returned 404 in 92 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:10:41 PM ::1 Returned 404 in 90 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 66 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 69 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 65 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 66 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:10:42 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:10:42 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:10:46 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:10:46 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:11:06 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:06 PM ::1 Returned 404 in 79 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 80 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 82 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:11:11 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:11:11 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 1:11:12 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:11:12 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:11:13 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:13 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 304 in 15 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 74 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 58 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 56 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 44 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 57 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 58 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 146 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 147 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 146 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 147 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 165 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 102 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:11:16 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:11:16 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:11:17 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:17 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 1:11:40 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:40 PM ::1 Returned 404 in 663 ms
+ HTTP  2/2/2026 1:11:45 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:45 PM ::1 Returned 404 in 67 ms
+ HTTP  2/2/2026 1:11:51 PM ::1 GET /
+ HTTP  2/2/2026 1:11:51 PM ::1 Returned 304 in 30 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 107 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:11:52 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 1:11:52 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:11:56 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:11:56 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 65 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 69 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 54 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 70 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 80 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 97 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:12:02 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 120 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 112 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 88 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 88 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 23 ms
+ HTTP  2/2/2026 1:12:02 PM ::1 Returned 404 in 22 ms
+ HTTP  2/2/2026 1:12:03 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:12:03 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 1:12:04 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:04 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 42 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 37 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 37 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:12:08 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 56 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 1:12:08 PM ::1 Returned 404 in 49 ms
+ HTTP  2/2/2026 1:12:09 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:12:09 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:12:10 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:10 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:12:14 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:14 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:12:19 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:19 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:12:24 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:24 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 133 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 135 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:12:30 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 57 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 25 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:12:30 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:12:31 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:12:31 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:12:33 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:12:33 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 1:13:11 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:11 PM ::1 Returned 404 in 118 ms
+ HTTP  2/2/2026 1:13:18 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:18 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:13:30 PM ::1 GET /map/
+ HTTP  2/2/2026 1:13:30 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:13:31 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 220 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 208 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 201 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 75 ms
+ HTTP  2/2/2026 1:13:31 PM ::1 Returned 404 in 121 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:13:32 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 414 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 378 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 188 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 64 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 54 ms
+ HTTP  2/2/2026 1:13:32 PM ::1 Returned 404 in 61 ms
+ HTTP  2/2/2026 1:13:33 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:13:33 PM ::1 Returned 404 in 48 ms
+ HTTP  2/2/2026 1:13:37 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:37 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/map
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 316 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 23 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:13:41 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 48 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 47 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 57 ms
+ HTTP  2/2/2026 1:13:41 PM ::1 Returned 404 in 46 ms
+ HTTP  2/2/2026 1:13:42 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:13:42 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:13:44 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:44 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:13:50 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:50 PM ::1 Returned 404 in 36 ms
+ HTTP  2/2/2026 1:13:55 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:13:55 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:13:56 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:13:56 PM ::1 Returned 404 in 14 ms
+ HTTP  2/2/2026 1:14:01 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:14:01 PM ::1 Returned 304 in 40 ms
+ HTTP  2/2/2026 1:14:02 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:14:02 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 30 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 16 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 1 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 6 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 25 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:14:08 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:14:08 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:14:09 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:14:09 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:14:10 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 1:14:10 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 1:14:10 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 1:14:10 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:14:10 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:14:10 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:14:10 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 1:14:10 PM ::1 Returned 304 in 8 ms
+ HTTP  2/2/2026 1:14:10 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 1:14:10 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:14:39 PM ::1 GET /culture/_next/static/chunks/124.5b26f94fa3ee43a0.js
+ HTTP  2/2/2026 1:14:39 PM ::1 Returned 404 in 423 ms
+ HTTP  2/2/2026 1:14:58 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:14:58 PM ::1 Returned 404 in 498 ms
+ HTTP  2/2/2026 1:14:58 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 1:14:58 PM ::1 Returned 404 in 27 ms
+ HTTP  2/2/2026 1:14:59 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 1:14:59 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 1:14:59 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:14:59 PM ::1 Returned 404 in 24 ms
+ HTTP  2/2/2026 1:16:22 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:16:22 PM ::1 GET /culture/data/performances.json
+ HTTP  2/2/2026 1:16:22 PM ::1 GET /culture/data/movies.json
+ HTTP  2/2/2026 1:16:22 PM ::1 GET /culture/data/ott.json
+ HTTP  2/2/2026 1:16:22 PM ::1 Returned 404 in 357 ms
+ HTTP  2/2/2026 1:16:22 PM ::1 Returned 404 in 201 ms
+ HTTP  2/2/2026 1:16:22 PM ::1 Returned 404 in 156 ms
+ HTTP  2/2/2026 1:16:22 PM ::1 Returned 404 in 150 ms
+ HTTP  2/2/2026 1:17:02 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:17:02 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:17:02 PM ::1 Returned 304 in 97 ms
+ HTTP  2/2/2026 1:17:02 PM ::1 Returned 304 in 28 ms
+ HTTP  2/2/2026 1:17:02 PM ::1 GET /images/ticket_icon.png
+ HTTP  2/2/2026 1:17:02 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 1:17:02 PM ::1 Returned 304 in 29 ms
+ HTTP  2/2/2026 1:17:02 PM ::1 Returned 304 in 30 ms
+ HTTP  2/2/2026 1:17:03 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 1:17:03 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:17:22 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:17:22 PM ::1 Returned 404 in 229 ms
+ HTTP  2/2/2026 1:17:22 PM ::1 GET /data/performances.json
+ HTTP  2/2/2026 1:17:22 PM ::1 GET /data/movies.json
+ HTTP  2/2/2026 1:17:22 PM ::1 Returned 304 in 9 ms
+ HTTP  2/2/2026 1:17:22 PM ::1 GET /data/ott.json
+ HTTP  2/2/2026 1:17:22 PM ::1 Returned 304 in 12 ms
+ HTTP  2/2/2026 1:17:22 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:18:15 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:18:15 PM ::1 Returned 404 in 212 ms
+ HTTP  2/2/2026 1:18:16 PM ::1 GET /data/performances.json
+ HTTP  2/2/2026 1:18:16 PM ::1 Returned 304 in 44 ms
+ HTTP  2/2/2026 1:18:16 PM ::1 GET /data/movies.json
+ HTTP  2/2/2026 1:18:16 PM ::1 GET /data/ott.json
+ HTTP  2/2/2026 1:18:16 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:18:16 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:19:13 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:19:13 PM ::1 Returned 404 in 221 ms
+ HTTP  2/2/2026 1:19:14 PM ::1 GET /data/performances.json
+ HTTP  2/2/2026 1:19:14 PM ::1 GET /data/movies.json
+ HTTP  2/2/2026 1:19:14 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:19:14 PM ::1 GET /data/ott.json
+ HTTP  2/2/2026 1:19:14 PM ::1 Returned 304 in 5 ms
+ HTTP  2/2/2026 1:19:14 PM ::1 Returned 304 in 2 ms
+ HTTP  2/2/2026 1:21:24 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:21:24 PM ::1 Returned 304 in 76 ms
+ HTTP  2/2/2026 1:21:45 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:21:45 PM ::1 Returned 304 in 18 ms
+ HTTP  2/2/2026 1:21:45 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:21:45 PM ::1 Returned 304 in 7 ms
+ HTTP  2/2/2026 1:21:45 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:21:45 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 1:21:45 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:21:45 PM ::1 Returned 304 in 2 ms
+ HTTP  2/2/2026 1:22:21 PM ::1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:22:21 PM ::1 Returned 404 in 158 ms
+ HTTP  2/2/2026 1:22:21 PM ::1 GET /data/performances.json
+ HTTP  2/2/2026 1:22:21 PM ::1 Returned 304 in 14 ms
+ HTTP  2/2/2026 1:22:21 PM ::1 GET /data/movies.json
+ HTTP  2/2/2026 1:22:21 PM ::1 GET /data/ott.json
+ HTTP  2/2/2026 1:22:21 PM ::1 Returned 304 in 4 ms
+ HTTP  2/2/2026 1:22:21 PM ::1 Returned 304 in 3 ms
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 304 in 199 ms
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:26:50 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 404 in 83 ms
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 404 in 92 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 404 in 84 ms
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 404 in 90 ms
+ HTTP  2/2/2026 1:26:50 PM ::1 Returned 404 in 86 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 174 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 172 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 166 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 164 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 131 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 160 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:26:51 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:26:51 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:26:53 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:26:53 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 304 in 190 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 304 in 22 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /manifest.json
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 304 in 2 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /favicon.png
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 304 in 11 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 304 in 17 ms
+ HTTP  2/2/2026 1:27:43 PM ::1 GET /culture/icon.png
+ HTTP  2/2/2026 1:27:43 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 304 in 157 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 117 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 107 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 82 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 79 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 77 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 23 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:30:25 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:30:25 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:30:26 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:30:26 PM ::1 Returned 404 in 0 ms
+ HTTP  2/2/2026 1:30:26 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:30:26 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 304 in 67 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 39 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 43 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 48 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 40 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 36 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:30:44 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:30:44 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:30:46 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:30:46 PM ::1 Returned 404 in 26 ms
+ HTTP  2/2/2026 1:30:50 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:30:50 PM ::1 Returned 404 in 55 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 27 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:30:54 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:30:54 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:30:56 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:30:56 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:31:01 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:31:01 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:31:20 PM ::1 GET /
+ HTTP  2/2/2026 1:31:20 PM ::1 Returned 304 in 90 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 19 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 21 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 11 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:31:21 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:31:21 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:31:22 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:31:22 PM ::1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:31:27 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:31:27 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:31:32 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:31:32 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 167 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 53 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 56 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 52 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 13 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 16 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 55 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:32:18 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:32:18 PM ::1 Returned 404 in 24 ms
+ HTTP  2/2/2026 1:32:19 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:32:19 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:32:19 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:19 PM ::1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:32:23 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:23 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:32:34 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:34 PM ::1 Returned 404 in 34 ms
+ HTTP  2/2/2026 1:32:39 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:39 PM ::1 Returned 404 in 30 ms
+ HTTP  2/2/2026 1:32:44 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:44 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:32:51 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:32:51 PM ::1 Returned 404 in 33 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 200 in 86 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 17 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 19 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 25 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 26 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 23 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 27 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 45 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 39 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 51 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 51 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 36 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 38 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 36 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 18 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 9 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:33:33 PM 127.0.0.1 Returned 404 in 32 ms
+ HTTP  2/2/2026 1:33:34 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:33:34 PM 127.0.0.1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:33:36 PM 127.0.0.1 GET /culture/_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:33:36 PM 127.0.0.1 Returned 404 in 46 ms
+ HTTP  2/2/2026 1:33:40 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:33:40 PM 127.0.0.1 Returned 404 in 38 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 146 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 49 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 20 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 110 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 111 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 111 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 112 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 8 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:33:47 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 6 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 10 ms
+ HTTP  2/2/2026 1:33:47 PM ::1 Returned 404 in 12 ms
+ HTTP  2/2/2026 1:33:48 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:33:48 PM ::1 Returned 404 in 59 ms
+ HTTP  2/2/2026 1:33:51 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:33:51 PM ::1 Returned 404 in 18 ms
+ HTTP  2/2/2026 1:33:56 PM ::1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:33:56 PM ::1 Returned 304 in 84 ms
+ HTTP  2/2/2026 1:34:07 PM ::1 GET /culture/
+ HTTP  2/2/2026 1:34:07 PM ::1 Returned 404 in 306 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 358 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 333 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 153 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 55 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 50 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 38 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 134 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 135 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 134 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 133 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 140 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 120 ms
+ HTTP  2/2/2026 1:34:08 PM ::1 GET /culture/manifest.json
+ HTTP  2/2/2026 1:34:08 PM ::1 Returned 404 in 29 ms
+ HTTP  2/2/2026 1:34:10 PM ::1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:34:10 PM ::1 Returned 404 in 31 ms
+ HTTP  2/2/2026 1:34:20 PM ::1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:34:20 PM ::1 Returned 404 in 15 ms
+ HTTP  2/2/2026 1:34:20 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:34:20 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:26 PM 127.0.0.1 GET /culture/_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:34:26 PM 127.0.0.1 Returned 404 in 38 ms
+ HTTP  2/2/2026 1:34:26 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:34:26 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 16 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 10 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 36 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 34 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /favicon.png
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /manifest.json
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 7 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 7 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 7 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/webpack-223626e23d6617c8.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/main-app-7dda00b53c886147.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 8 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/media/93f479601ee12b01-s.p.woff2
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/css/dbab3859e94f4a36.css
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/css/e7d60130e68b0db0.css
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/icon.png
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/4bd1b696-01b4a2ffa8bac205.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/794-4d270ba25faf55cf.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 5 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/layout-870af5d92e916fb8.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/global-error-d037190ee9a5ddd4.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/624-6f88d9f96dc14566.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/error-b73a178482d23cbe.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/app/page-45a2a5d403cd3147.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 7 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/chunks/376-43b8f472d4479548.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/_next/static/chunks/178-71f5c98f3f9b2b0d.js
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 4 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 3 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/favicon.png
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 2 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /culture/images/ticket_icon.png
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 404 in 7 ms
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 GET /favicon.png
+ HTTP  2/2/2026 1:34:33 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 GET /manifest.json
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 Returned 304 in 9 ms
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 GET /culture/icon.png
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 Returned 404 in 1 ms
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 GET /culture/data/performances.json
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 GET /culture/data/movies.json
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 GET /culture/data/ott.json
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 Returned 404 in 5 ms
+ HTTP  2/2/2026 1:34:34 PM 127.0.0.1 Returned 404 in 5 ms

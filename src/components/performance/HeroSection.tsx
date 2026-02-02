@@ -723,7 +723,13 @@ export default function HeroSection({
                                         >
                                             <div className="flex items-center gap-3 min-w-0">
                                                 <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
-                                                    {result.type === 'video' ? <Star className="w-4 h-4 text-yellow-500" /> : <MapPin className="w-4 h-4 text-[#a78bfa]" />}
+                                                    {result.type === 'location' ? (
+                                                        <MapPin className="w-4 h-4 text-emerald-400" />
+                                                    ) : result.type === 'video' ? (
+                                                        <Star className="w-4 h-4 text-yellow-500" />
+                                                    ) : (
+                                                        <Search className="w-4 h-4 text-[#a78bfa]" />
+                                                    )}
                                                 </div>
                                                 <div className="text-white text-base font-extrabold truncate">
                                                     {result.name}
