@@ -402,7 +402,7 @@ export default function BottomNavSheet({
                                                         : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
                                                 )}
                                             >
-                                                {searchMode === 'location' ? <MapPin size={20} className="fill-current" /> : <Search size={20} />}
+                                                {searchMode === 'location' ? <MapPin size={20} /> : <Search size={20} />}
                                             </button>
                                         </div>
                                     </div>
