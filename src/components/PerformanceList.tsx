@@ -971,7 +971,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     </>
                                 ) : searchText ? (
                                     <>
-                                        <Search className="w-5 h-5 text-purple-500" />
+                                        <Search className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-500" : "text-purple-500")} />
                                         <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
                                         <span className="text-base sm:text-xl shrink-0">키워드 검색 공연 ({filteredPerformances.length})</span>
                                     </>

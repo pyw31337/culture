@@ -110,6 +110,8 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // 3. Region Filter
     if (region && region !== 'all') {
         filtered = filtered.filter(p => {
+            if (p.genre === 'movie' || p.genre === 'ott') return true;
+
             const venueInfo = venues[p.venue];
 
             // 0. Use Strict Mapped Region ID if available
@@ -148,6 +150,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
         if (centerVenue && centerVenue.lat && centerVenue.lng) {
             // Include: 1. Exact Venue Match OR 2. Within 10km (Standard logic)
             filtered = filtered.filter(p => {
+                if (p.genre === 'movie' || p.genre === 'ott') return true;
                 if (p.venue === venue) return true;
                 const pVenue = venues[p.venue];
                 if (!pVenue?.lat || !pVenue?.lng) return false;
@@ -163,6 +166,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // Note: If 'venue' selected, it overrides this with its own radius logic above.
     if ((!venue || venue === 'all') && lat && lng && radius) {
         filtered = filtered.filter(p => {
+            if (p.genre === 'movie' || p.genre === 'ott') return true;
             const pVenue = venues[p.venue];
             if (!pVenue?.lat || !pVenue?.lng) return false;
             const dist = getDistanceFromLatLonInKm(lat, lng, pVenue.lat, pVenue.lng);
