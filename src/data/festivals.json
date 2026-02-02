@@ -1,14 +1,14 @@
 [
   {
-    "id": "c34e66ec-0b3d-48be-96eb-c0ffbb6436ec",
-    "title": "영동곶감축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/c34e66ec-0b3d-48be-96eb-c0ffbb6436ec_16.jpg",
-    "date": "2026.01.30~2026.02.01",
-    "venue": "충청북도 영동군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c34e66ec-0b3d-48be-96eb-c0ffbb6436ec",
+    "id": "af789025-8035-4c59-8b84-5a9e0733d134",
+    "title": "태백산 눈축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/af789025-8035-4c59-8b84-5a9e0733d134_12.jpg",
+    "date": "2026.01.31~2026.02.08",
+    "venue": "강원특별자치도 태백시",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=af789025-8035-4c59-8b84-5a9e0733d134",
     "genre": "festival",
-    "lastEnriched": "2026-01-29T14:43:07.343Z"
+    "lastEnriched": "2026-01-29T14:43:08.248Z"
   },
   {
     "id": "ce544916-f27c-4839-9965-9617c27687cb",
@@ -33,28 +33,6 @@
     "lastEnriched": "2026-01-29T14:43:06.301Z"
   },
   {
-    "id": "02a1c2ab-bce7-404a-9c8f-4eb4ac69acb3",
-    "title": "얼음나라화천 산천어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/02a1c2ab-bce7-404a-9c8f-4eb4ac69acb3_67.png",
-    "date": "2026.01.10~2026.02.01",
-    "venue": "강원특별자치도 화천군",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=02a1c2ab-bce7-404a-9c8f-4eb4ac69acb3",
-    "genre": "festival",
-    "lastEnriched": "2026-01-29T14:43:06.078Z"
-  },
-  {
-    "id": "bec7a8b5-db92-4da8-be98-38036f5b6991",
-    "title": "영양꽁꽁겨울축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/bec7a8b5-db92-4da8-be98-38036f5b6991_49.jpg",
-    "date": "2026.01.09~2026.02.01",
-    "venue": "경상북도 영양군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=bec7a8b5-db92-4da8-be98-38036f5b6991",
-    "genre": "festival",
-    "lastEnriched": "2026-01-29T14:43:06.280Z"
-  },
-  {
     "id": "e79ad504-4e44-46d4-950c-cff9292665c1",
     "title": "평창송어축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/e79ad504-4e44-46d4-950c-cff9292665c1_45.jpg",
@@ -77,17 +55,6 @@
     "lastEnriched": "2026-01-29T14:43:07.331Z"
   },
   {
-    "id": "dc91678e-3dff-402a-986a-7fd5fbfb0743",
-    "title": "온천천 빛 축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/dc91678e-3dff-402a-986a-7fd5fbfb0743_14.jpg",
-    "date": "2025.12.19~2026.02.01",
-    "venue": "부산 동래구",
-    "region": "busan",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=dc91678e-3dff-402a-986a-7fd5fbfb0743",
-    "genre": "festival",
-    "lastEnriched": "2026-01-29T14:43:07.391Z"
-  },
-  {
     "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
     "title": "양평빙송어축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
@@ -108,17 +75,6 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd3921dc-baf4-4033-a3f3-acc739585872",
     "genre": "festival",
     "lastEnriched": "2026-01-29T14:43:08.020Z"
-  },
-  {
-    "id": "af789025-8035-4c59-8b84-5a9e0733d134",
-    "title": "태백산 눈축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/af789025-8035-4c59-8b84-5a9e0733d134_12.jpg",
-    "date": "2026.01.31~2026.02.08",
-    "venue": "강원특별자치도 태백시",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=af789025-8035-4c59-8b84-5a9e0733d134",
-    "genre": "festival",
-    "lastEnriched": "2026-01-29T14:43:08.248Z"
   },
   {
     "id": "cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
@@ -220,25 +176,58 @@
     "lastEnriched": "2026-01-29T14:43:09.740Z"
   },
   {
-    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "title": "산청한방약초축제",
-    "image": "/images/posters/festivals/83e1c0ed_fc26_49df_9364_6bc7729d14b6.webp",
-    "date": "",
-    "venue": "경상남도 산청군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "genre": "festival",
-    "lastEnriched": "2026-01-30T01:59:13.771Z"
-  },
-  {
     "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "title": "영암왕인문화축제",
-    "image": "/images/posters/festivals/89d1d005_fcc5_49e3_9191_6d92cc9e7125.webp",
+    "image": null,
     "date": "",
     "venue": "전라남도 영암군",
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-01-30T01:59:13.910Z"
+    "lastEnriched": "2026-02-02T14:47:51.083Z"
+  },
+  {
+    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "title": "산청한방약초축제",
+    "image": null,
+    "date": "",
+    "venue": "경상남도 산청군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "genre": "festival",
+    "lastEnriched": "2026-02-02T14:47:51.374Z"
+  },
+  {
+    "id": "c0f75de3-9cc2-4e84-8c7b-e77900e6ab13",
+    "title": "정월대보름 달맞이축제",
+    "image": null,
+    "date": "2026.03.03~2026.03.03",
+    "venue": "강원특별자치도 춘천시",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c0f75de3-9cc2-4e84-8c7b-e77900e6ab13",
+    "genre": "festival",
+    "lastEnriched": "2026-02-02T14:47:52.780Z"
+  },
+  {
+    "id": "7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
+    "title": "광주 추억의 충장축제",
+    "image": null,
+    "date": "2026.10.07~2026.10.11",
+    "venue": "광주 동구",
+    "region": "gwangju",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
+    "genre": "festival",
+    "lastEnriched": "2026-02-02T14:47:53.136Z"
+  },
+  {
+    "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
+    "title": "양양 낙산해변 달빛 모닥불축제",
+    "image": null,
+    "date": "2026.02.28~2026.03.01",
+    "venue": "강원특별자치도 양양군",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=555e6f9e-7133-47e2-a3c4-23939e965c47",
+    "genre": "festival",
+    "lastEnriched": "2026-02-02T14:47:53.743Z"
   }
 ]
