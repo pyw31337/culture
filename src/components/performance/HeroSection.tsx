@@ -636,8 +636,8 @@ export default function HeroSection({
                                 onKeyDown={handleKeyDown}
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                                 placeholder={searchMode === 'location'
-                                    ? "지역, 지하철역, 장소 검색 (예: 강남역)"
-                                    : "문화 정보, 장소, 공연명 검색..."
+                                    ? "장소 검색"
+                                    : "공연명 검색"
                                 }
                             />
                             {/* Reset Button (Next to Input) */}
@@ -674,12 +674,14 @@ export default function HeroSection({
                                 {searchMode === 'location' ? (
                                     <>
                                         <Search size={14} />
-                                        <span>키워드 검색</span>
+                                        <span className="hidden lg:inline">키워드 검색</span>
+                                        <span className="hidden sm:inline lg:hidden">키워드</span>
                                     </>
                                 ) : (
                                     <>
                                         <MapPin size={14} className="fill-current" />
-                                        <span>위치 검색 모드</span>
+                                        <span className="hidden lg:inline">위치 검색</span>
+                                        <span className="hidden sm:inline lg:hidden">위치</span>
                                     </>
                                 )}
                             </button>
@@ -691,8 +693,8 @@ export default function HeroSection({
                             className={clsx(
                                 "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
                                 searchMode === 'location'
-                                    ? "bg-gradient-to-r from-green-300 to-teal-700 shadow-emerald-500/30"
-                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6]"
+                                    ? "bg-[#1a1a1a] border-2 border-emerald-500/60 shadow-[0_4px_20px_rgba(16,185,129,0.4)] text-emerald-400 hover:bg-[#1a1a1a]/80"
+                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
                             )}
                         >
                             {searchMode === 'location'
