@@ -190,15 +190,37 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     useEffect(() => {
         const loadAllData = async () => {
             try {
-                // Static Fetch (GitHub Pages compatible)
+                // Static Fetch (GitHub Pages compatible); Load multiple sources
                 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-                const res = await fetch(`${basePath}/data/performances.json`);
-                if (!res.ok) throw new Error('Failed to load data');
-                const data: Performance[] = await res.json();
 
-                // Merge/Replace initial
-                setAllPerformances(data);
-                setIsDataFullyLoaded(true);
+                const results = await Promise.allSettled([
+                    fetch(`${basePath}/data/performances.json`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/movies.json`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/ott.json`).then(r => r.ok ? r.json() : [])
+                ]);
+
+                const mergedData: Performance[] = [];
+
+                // Process results
+                results.forEach((res, index) => {
+                    if (res.status === 'fulfilled') {
+                        if (Array.isArray(res.value)) {
+                            mergedData.push(...res.value);
+                        }
+                    } else {
+                        console.error(`Failed to load data source index ${index}`, res.reason);
+                    }
+                });
+
+                if (mergedData.length > 0) {
+                    // Merge/Replace initial
+                    setAllPerformances(mergedData);
+                    setIsDataFullyLoaded(true);
+                } else {
+                    // Fallback to initial if all failed (unlikely if local)
+                    setIsDataFullyLoaded(true);
+                }
+
             } catch (e) {
                 console.error("Background data load failed", e);
             }

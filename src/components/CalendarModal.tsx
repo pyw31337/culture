@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths } from 'date-fns';
 import { ko } from 'date-fns/locale';
@@ -25,30 +25,63 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     const handlePrevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
     const handleNextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
 
-    // Helper to check if a performance is active on a given day
-    const getPerformancesForDay = (day: Date) => {
-        return performances.filter(perf => {
-            const dateStr = perf.date.trim();
-            const dayStr = format(day, 'yyyy-MM-dd');
+    // O(N) Pre-calculation: Group performances by date (yyyy-MM-dd)
+    // This runs only when 'performances' changes, not on every render/month switch.
+    const performancesByDate = useMemo(() => {
+        const map = new Map<string, Performance[]>();
 
-            // Case 1: Range "2024.12.10 ~ 2025.01.10"
+        performances.forEach(perf => {
+            const dateStr = perf.date.trim();
+            // Normalized Date Logic
+            // If range: "2024.12.10 ~ 2025.01.10"
             if (dateStr.includes('~')) {
                 const [startRaw, endRaw] = dateStr.split('~').map(s => s.trim());
                 if (startRaw && endRaw) {
-                    const standardStart = startRaw.replace(/\./g, '-');
-                    const standardEnd = endRaw.replace(/\./g, '-');
-                    return dayStr >= standardStart && dayStr <= standardEnd;
+                    const start = new Date(startRaw.replace(/\./g, '-'));
+                    const end = new Date(endRaw.replace(/\./g, '-'));
+
+                    // Simple sanity check for invalid dates
+                    if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+                        // Limit huge ranges (optional safety, e.g. loops 365 days)
+                        // For now, assume data is reasonable.
+                        // Use simplified iteration to avoid 'eachDayOfInterval' overhead if needed,
+                        // but eachDayOfInterval is cleaner.
+                        try {
+                            const interval = eachDayOfInterval({ start, end });
+                            interval.forEach(day => {
+                                const dayStr = format(day, 'yyyy-MM-dd');
+                                if (!map.has(dayStr)) map.set(dayStr, []);
+                                map.get(dayStr)!.push(perf);
+                            });
+                        } catch (e) {
+                            // Ignore invalid intervals
+                        }
+                    }
+                }
+            } else {
+                // Single Date: "2024.12.10(Tue) 19:30" -> "2024-12-10"
+                const normalizedDate = dateStr.replace(/\./g, '-').substring(0, 10);
+                if (normalizedDate.length === 10) { // Simple validation YYYY-MM-DD
+                    if (!map.has(normalizedDate)) map.set(normalizedDate, []);
+                    map.get(normalizedDate)!.push(perf);
                 }
             }
-
-            // Case 2: Single Date "2024.12.10(Tue) 19:30" or "2024-12-10"
-            const normalizedDate = dateStr.replace(/\./g, '-').substring(0, 10);
-            return normalizedDate === dayStr;
         });
+
+        return map;
+    }, [performances]);
+
+    // O(1) Lookup
+    const getPerformancesForDay = (day: Date) => {
+        const dayStr = format(day, 'yyyy-MM-dd');
+        return performancesByDate.get(dayStr) || [];
     };
 
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedPopupGenre, setSelectedPopupGenre] = useState('all');
+
+    // Infinite Scroll State
+    const [visibleCount, setVisibleCount] = useState(20);
 
     // Filter events for the selected popup date
     const selectedDateEvents = selectedDate ? getPerformancesForDay(selectedDate) : [];
@@ -58,7 +91,20 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
         ? selectedDateEvents
         : selectedDateEvents.filter(p => p.genre === selectedPopupGenre);
 
-    // Drag to scroll logic
+    // Slice for Infinite Scroll
+    const displayedEvents = filteredDateEvents.slice(0, visibleCount);
+
+    // Reset visible count when date or genre changes
+    if (selectedDate && visibleCount > 20 && displayedEvents.length < visibleCount && filteredDateEvents.length <= 20) {
+        // Just fail-safe reset if needed, but useEffect is better.
+    }
+
+    // Using simple effect to reset
+    useState(() => {
+        // logic moved to effect below
+    });
+
+    // Drag to scroll logic (Genre Tabs)
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -83,8 +129,34 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
         if (!isDragging || !scrollRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll-fast
+        const walk = (x - startX) * 2;
         scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    // Reset pagination when content changes
+    const prevDateRef = useRef<string | null>(null);
+    const prevGenreRef = useRef<string>('all');
+
+    if (selectedDate) {
+        const dStr = selectedDate.toISOString();
+        if (prevDateRef.current !== dStr || prevGenreRef.current !== selectedPopupGenre) {
+            setVisibleCount(20);
+            prevDateRef.current = dStr;
+            prevGenreRef.current = selectedPopupGenre;
+        }
+    }
+
+    // Scroll Handler for List
+    const listRef = useRef<HTMLDivElement>(null);
+    const onListScroll = () => {
+        if (listRef.current) {
+            const { scrollTop, scrollHeight, clientHeight } = listRef.current;
+            if (scrollTop + clientHeight >= scrollHeight - 50) { // 50px threshold
+                if (visibleCount < filteredDateEvents.length) {
+                    setVisibleCount(prev => prev + 20);
+                }
+            }
+        }
     };
 
     return (
@@ -125,7 +197,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                     key={day.toISOString()}
                                     onClick={() => {
                                         setSelectedDate(day);
-                                        setSelectedPopupGenre('all'); // Reset filter when opening
+                                        setSelectedPopupGenre('all');
                                     }}
                                     className={clsx(
                                         "min-h-[80px] sm:min-h-[120px] bg-gray-900 p-2 flex flex-col gap-1 transition-colors hover:bg-gray-800/80 cursor-pointer relative",
@@ -155,7 +227,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                 key={perf.id}
                                                 className={clsx(
                                                     "text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition",
-                                                    GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-700'
+                                                    (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-700'
                                                 )}
                                                 title={perf.title}
                                             >
@@ -229,39 +301,51 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             </div>
                         </div>
 
-                        <div className="p-4 overflow-y-auto space-y-3 custom-scrollbar">
-                            {filteredDateEvents.length === 0 ? (
+                        <div
+                            ref={listRef}
+                            onScroll={onListScroll}
+                            className="p-4 overflow-y-auto space-y-3 custom-scrollbar"
+                        >
+                            {displayedEvents.length === 0 ? (
                                 <p className="text-center text-gray-500 py-8">
                                     {selectedPopupGenre === 'all' ? '일정이 없습니다.' : '해당 장르의 일정이 없습니다.'}
                                 </p>
                             ) : (
-                                filteredDateEvents.map(perf => (
-                                    <a
-                                        key={perf.id}
-                                        href={perf.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
-                                    >
-                                        {perf.image && (
-                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
-                                        )}
-                                        <div className="min-w-0 flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className={clsx(
-                                                    "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
-                                                    GENRE_STYLES[perf.genre]?.twBg || 'bg-gray-600'
-                                                )}>
-                                                    {GENRES.find(g => g.id === perf.genre)?.label}
-                                                </span>
-                                                <span className="text-[10px] text-gray-500">{perf.venue}</span>
+                                <>
+                                    {displayedEvents.map(perf => (
+                                        <a
+                                            key={`${perf.id}-${perf.venue}`} // Use composite key if duplicates exist
+                                            href={perf.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
+                                        >
+                                            {perf.image && (
+                                                <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
+                                            )}
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <span className={clsx(
+                                                        "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
+                                                        (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600'
+                                                    )}>
+                                                        {GENRES.find(g => g.id === perf.genre)?.label}
+                                                    </span>
+                                                    <span className="text-[10px] text-gray-500">{perf.venue}</span>
+                                                </div>
+                                                <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-blue-400 transition-colors">
+                                                    {perf.title}
+                                                </h4>
                                             </div>
-                                            <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-blue-400 transition-colors">
-                                                {perf.title}
-                                            </h4>
+                                        </a>
+                                    ))}
+                                    {/* Loading Indicator for Infinite Scroll */}
+                                    {displayedEvents.length < filteredDateEvents.length && (
+                                        <div className="py-2 text-center text-xs text-gray-500">
+                                            Loading more...
                                         </div>
-                                    </a>
-                                ))
+                                    )}
+                                </>
                             )}
                         </div>
                     </div>

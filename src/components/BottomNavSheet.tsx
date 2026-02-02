@@ -275,7 +275,9 @@ export default function BottomNavSheet({
                                     className={clsx(
                                         "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                         selectedGenre === 'hotdeal'
-                                            ? "bg-gradient-to-r from-orange-500 to-red-500 text-white border-transparent shadow-lg shadow-orange-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none light:bg-none"
+                                            ? (searchMode === 'location'
+                                                ? "bg-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-900/50 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-600 light:shadow-none"
+                                                : "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none")
                                             : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                     )}
                                 >
@@ -293,8 +295,8 @@ export default function BottomNavSheet({
                                                 "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
                                                 isSelected
                                                     ? (searchMode === 'location'
-                                                        ? `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-emerald-500/20 shadow-lg light:bg-white light:text-emerald-700 light:border-emerald-600 light:ring-emerald-600`
-                                                        : `${GENRE_STYLES[genre.id]?.twBg.replace('bg-', 'bg-') || 'bg-gray-600'} text-white border-transparent ring-2 ring-white/20 shadow-lg light:bg-white light:text-purple-700 light:border-purple-600 light:ring-purple-600`)
+                                                        ? "bg-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-900/50 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-600 light:shadow-none"
+                                                        : "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none")
                                                     : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
                                             )}
                                         >
@@ -306,6 +308,7 @@ export default function BottomNavSheet({
                             </div>
                         </div>
                     )}
+
 
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
@@ -368,6 +371,24 @@ export default function BottomNavSheet({
                                                     <X className="w-4 h-4" />
                                                 </button>
                                             )}
+                                        </div>
+
+                                        {/* Search Button (Added) */}
+                                        <div className="flex px-1 shrink-0">
+                                            <button
+                                                onClick={() => {
+                                                    onSearch();
+                                                    onClose();
+                                                }}
+                                                className={clsx(
+                                                    "p-3 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1",
+                                                    searchMode === 'location'
+                                                        ? "bg-gradient-to-r from-[#55df99] to-[#0090f5] shadow-emerald-500/20"
+                                                        : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] shadow-purple-500/20"
+                                                )}
+                                            >
+                                                {searchMode === 'location' ? <MapPin size={20} className="fill-current" /> : <Search size={20} />}
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -435,8 +456,9 @@ export default function BottomNavSheet({
                             />
                         </div>
                     )}
+
                 </div>
-            </div>
+            </div >
         </>
     );
 }
