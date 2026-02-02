@@ -693,7 +693,7 @@ export default function HeroSection({
                             className={clsx(
                                 "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
                                 searchMode === 'location'
-                                    ? "bg-[#1a1a1a] border-2 border-emerald-500/60 shadow-[0_4px_20px_rgba(16,185,129,0.4)] text-emerald-400 hover:bg-[#1a1a1a]/80"
+                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
                                     : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
                             )}
                         >
