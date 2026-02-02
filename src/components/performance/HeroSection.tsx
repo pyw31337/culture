@@ -679,7 +679,7 @@ export default function HeroSection({
                                 ) : (
                                     <>
                                         <MapPin size={14} className="fill-current" />
-                                        <span>위치 검색</span>
+                                        <span>위치 검색 모드</span>
                                     </>
                                 )}
                             </button>
@@ -689,15 +689,21 @@ export default function HeroSection({
                         <button
                             onClick={handleSearch}
                             className={clsx(
-                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1",
+                                "pl-4 pr-6 py-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center gap-2",
                                 searchMode === 'location'
                                     ? "bg-gradient-to-r from-green-300 to-teal-700 shadow-emerald-500/30"
                                     : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6]"
                             )}
                         >
                             {searchMode === 'location'
-                                ? <MapPin className="w-6 h-6 font-extrabold" />
-                                : <Search className="w-6 h-6 font-extrabold" />
+                                ? <>
+                                    <MapPin className="w-5 h-5 font-extrabold" />
+                                    <span className="font-bold whitespace-nowrap hidden sm:inline">위치 검색</span>
+                                </>
+                                : <>
+                                    <Search className="w-5 h-5 font-extrabold" />
+                                    <span className="font-bold whitespace-nowrap hidden sm:inline">키워드 검색</span>
+                                </>
                             }
                         </button>
                     </div>

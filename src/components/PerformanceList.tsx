@@ -989,11 +989,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 <div className="flex items-center gap-2 ml-auto">
                                     <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
                                         {/* Radius Select */}
-                                        <div className="relative flex items-center">
+                                        <div className="relative flex items-center pl-1">
                                             <select
                                                 value={radius}
                                                 onChange={(e) => setRadius(Number(e.target.value))}
-                                                className="bg-transparent text-xs sm:text-sm font-bold text-emerald-400 light:text-emerald-600 focus:outline-none appearance-none pr-4 cursor-pointer"
+                                                className="bg-transparent text-xs sm:text-sm font-bold text-emerald-500 light:text-emerald-700 focus:outline-none appearance-none pr-6 cursor-pointer py-1.5"
                                             >
                                                 {RADIUS_OPTIONS.map(r => (
                                                     <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
@@ -1001,17 +1001,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     </option>
                                                 ))}
                                             </select>
-                                            <ChevronDown className="absolute right-0 w-3 h-3 text-emerald-500 pointer-events-none" />
+                                            <ChevronDown className="absolute right-0 w-3.5 h-3.5 text-emerald-500 pointer-events-none mr-1" />
                                         </div>
-                                        <span className="text-xs text-emerald-500 font-bold mr-1">반경</span>
 
                                         {/* Divider */}
-                                        <div className="w-[1px] h-4 bg-emerald-500/30 mx-2"></div>
+                                        <div className="w-[1px] h-4 bg-emerald-500/30 mx-3"></div>
 
                                         {/* Map View Button */}
                                         <button
                                             onClick={() => setIsMapOpen(true)}
-                                            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-extrabold text-emerald-400 light:text-emerald-600 hover:text-emerald-300 light:hover:text-emerald-700 hover:bg-emerald-500/10 transition-colors"
+                                            className="flex items-center gap-1.5 pr-2 py-1.5 rounded-full text-xs font-extrabold text-emerald-600 light:text-emerald-700 hover:text-emerald-500 light:hover:text-emerald-900 transition-colors"
                                         >
                                             <MapIcon className="w-4 h-4" />
                                             <span>지도보기</span>
