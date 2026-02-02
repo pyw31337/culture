@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { X, Star } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
@@ -34,7 +35,17 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
     const overlaysRef = useRef<Record<string, any>>({});
 
-    // Drag to scroll logic
+    // Optimization States
+    const [visibleVenues, setVisibleVenues] = useState<any[]>([]);
+    const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
+    const [isMapReady, setIsMapReady] = useState(false);
+
+    // Group performances by venue - Pre-calculation
+    const allVenueGroups = useRef<Record<string, any>>({});
+    // Sorted list of all venues for initial calculation
+    const allVenuesList = useRef<any[]>([]);
+
+    // Drag to scroll logic (Horizontal List)
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -47,38 +58,55 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
         setScrollLeft(scrollRef.current.scrollLeft);
     };
 
-    const onMouseLeave = () => {
-        setIsDragging(false);
-    };
-
-    const onMouseUp = () => {
-        setIsDragging(false);
-    };
-
+    const onMouseLeave = () => setIsDragging(false);
+    const onMouseUp = () => setIsDragging(false);
     const onMouseMove = (e: React.MouseEvent) => {
         if (!isDragging || !scrollRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll-fast
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startX) * 2;
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
-    // Auto-select and scroll to venue in list if provided via centerLocation
+    // Initialize Data
     useEffect(() => {
-        if (centerLocation?.name) {
-            setSelectedVenue(centerLocation.name);
-            // Wait for render cycle then scroll
-            setTimeout(() => {
-                if (!scrollRef.current) return;
-                const targetEl = scrollRef.current.querySelector<HTMLElement>(`[data-venue-name="${CSS.escape(centerLocation.name)}"]`);
-                if (targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                }
-            }, 300); // 300ms delay to ensure list is rendered and modal transition is mostly done
-        }
-    }, [centerLocation]);
+        const groups = performances.reduce((acc, perf) => {
+            if (!acc[perf.venue]) {
+                acc[perf.venue] = {
+                    ...venues[perf.venue],
+                    venueName: perf.venue,
+                    performances: [],
+                    lat: venues[perf.venue]?.lat || 0,
+                    lng: venues[perf.venue]?.lng || 0
+                };
+            }
+            acc[perf.venue].performances.push(perf);
+            return acc;
+        }, {} as Record<string, any>);
 
+        allVenueGroups.current = groups;
+        const list = Object.values(groups).filter(v => v.lat && v.lng); // Filter invalid venues
+
+        // Sort by distance if center exists
+        if (centerLocation) {
+            list.sort((a, b) => {
+                if (a.venueName === centerLocation.name) return -1;
+                if (b.venueName === centerLocation.name) return 1;
+                const distA = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, a.lat, a.lng);
+                const distB = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, b.lat, b.lng);
+                return distA - distB;
+            });
+        }
+        allVenuesList.current = list;
+
+        // Initial visible set (take top 20 or all if small)
+        // If centerLocation exists, we probably want to see that.
+        // We will update visibleVenues correctly once map loads and boundaries are known.
+        // For now, init with sorted list.
+        setVisibleVenues(list.slice(0, 20));
+    }, [performances, centerLocation]);
+
+    // Map Initialization
     useEffect(() => {
         const initializeMap = () => {
             if (!window.kakao || !window.kakao.maps) return;
@@ -91,313 +119,145 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
                         : defaultCenter,
-                    level: centerLocation ? 3 : 8
+                    level: centerLocation ? 4 : 8 // Start with slightly closer level for visibility
                 };
 
-                // Clear container before initializing (React Strict Mode safety)
                 mapRef.current.innerHTML = '';
-
                 const map = new window.kakao.maps.Map(mapRef.current, options);
                 setMapInstance(map);
 
-                // If no centerLocation provided, try to get user's current position
-                if (!centerLocation && navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                            const lat = position.coords.latitude;
-                            const lng = position.coords.longitude;
-                            const loc = new window.kakao.maps.LatLng(lat, lng);
-                            map.setCenter(loc);
-                            map.setLevel(5);
-
-                            const content = document.createElement('div');
-                            content.className = 'custom-overlay-me';
-                            content.innerHTML = `
-                                <div style="background-color:#3b82f6;width:24px;height:24px;border-radius:50%;border:3px solid white;box-shadow:0 0 10px rgba(59,130,246,0.5);display:flex;align-items:center;justify-content:center;">
-                                    <div style="width:8px;height:8px;background:white;border-radius:50%;"></div>
-                                </div>
-                            `;
-                            new window.kakao.maps.CustomOverlay({
-                                map: map,
-                                position: loc,
-                                content: content,
-                                yAnchor: 0.5,
-                                zIndex: 3
-                            });
-                        },
-                        (err) => { /* console.log("Geolocation failed:", err) */ }
-                    );
-                }
-
-                // Initialize Clusterer Safely
+                // --- Markers & Clusterer ---
                 let clusterer: any = null;
-                try {
-                    if (window.kakao.maps.MarkerClusterer) {
+                if (window.kakao.maps.MarkerClusterer) {
+                    try {
                         clusterer = new window.kakao.maps.MarkerClusterer({
                             map: map,
                             averageCenter: true,
                             minLevel: 6,
-                            disableClickZoom: false,
+                            disableClickZoom: false, // We will handle click
                             styles: [{
                                 width: '50px', height: '50px',
-                                background: 'rgba(37, 99, 235, 0.9)',
+                                background: 'rgba(59, 130, 246, 0.9)',
                                 borderRadius: '50%',
                                 color: 'white',
                                 textAlign: 'center', lineHeight: '50px',
-                                fontWeight: '800', fontSize: '14px',
+                                fontWeight: 'bold',
                                 boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                                 border: '2px solid rgba(255,255,255,0.8)'
                             }]
                         });
-                    }
-                } catch (e) {
-                    console.warn('Failed to initialize MarkerClusterer:', e);
+                    } catch (e) { console.warn("Clusterer error", e); }
                 }
-
-                overlaysRef.current = {};
-                const venueGroups = performances.reduce((acc, perf) => {
-                    if (!acc[perf.venue]) acc[perf.venue] = [];
-                    acc[perf.venue].push(perf);
-                    return acc;
-                }, {} as Record<string, Performance[]>);
 
                 const markers: any[] = [];
                 const overlays: any[] = [];
-                const bounds = new window.kakao.maps.LatLngBounds();
 
-                // 1. Search Pin (If active)
-                if (centerLocation) {
-                    bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
-                    const searchPos = new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng);
-                    const searchContent = document.createElement('div');
-                    searchContent.className = 'custom-overlay-search'; // Ensure this class exists or use inline styles heavily
-                    searchContent.innerHTML = `<div style="background-color:#ef4444;width:32px;height:32px;border-radius:50%;border:3px solid white;box-shadow:0 4px 6px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:white;animation:bounce 0.5s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:white;padding:2px 6px;border-radius:4px;font-size:10px;white-space:nowrap;">${centerLocation.name}</div>`;
-
-                    new window.kakao.maps.CustomOverlay({
-                        position: searchPos,
-                        content: searchContent,
-                        map: map,
-                        yAnchor: 0.5,
-                        zIndex: 20
-                    });
-                }
-
-                // 2. Venue Pins
-                // Optimization: Create ONE shared InfoWindow overlay to reuse
-                const sharedInfoContent = document.createElement('div');
-                sharedInfoContent.className = 'info-window bg-white text-black p-3 rounded-lg shadow-xl border border-gray-200 min-w-[250px] max-w-[300px] text-left relative hidden'; // Start hidden
-                sharedInfoContent.style.cssText = "bottom: 35px; position: relative; z-index: 100;";
-
-                // We'll update this content dynamically
-                const sharedPopupOverlay = new window.kakao.maps.CustomOverlay({
-                    position: new window.kakao.maps.LatLng(37.5, 127), // Dummy init
-                    content: sharedInfoContent,
-                    yAnchor: 1,
-                    zIndex: 10
-                });
-                sharedPopupOverlay.setMap(null); // Initially hidden
-
-                // We need to keep track of the currently open info window's target venue check
-                let currentOpenVenue: string | null = null;
-
-                const closeInfoWindow = () => {
-                    sharedPopupOverlay.setMap(null);
-                    currentOpenVenue = null;
-                    setSelectedVenue(null);
-                };
-
-                Object.entries(venueGroups).forEach(([venueName, perfs]) => {
-                    const venueInfo = venues[venueName];
-                    if (!venueInfo?.lat || !venueInfo?.lng) return;
-
-                    const position = new window.kakao.maps.LatLng(venueInfo.lat, venueInfo.lng);
-                    bounds.extend(position);
-                    const primaryGenre = perfs[0].genre;
+                allVenuesList.current.forEach(venue => {
+                    const position = new window.kakao.maps.LatLng(venue.lat, venue.lng);
+                    const perfs = venue.performances;
+                    const primaryGenre = perfs[0]?.genre;
                     const color = GENRE_STYLES[primaryGenre]?.hex || '#9ca3af';
 
-                    const marker = new window.kakao.maps.Marker({
-                        position: position,
-                        image: new window.kakao.maps.MarkerImage(
-                            'data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3C/svg%3E',
-                            new window.kakao.maps.Size(1, 1)
-                        )
-                    });
-                    (marker as any).venueName = venueName;
-                    markers.push(marker);
-
+                    // Marker (Invisible/Small) or Custom Content
+                    // We use CustomOverlay for the badges as main indicators
                     const content = document.createElement('div');
-                    content.style.cssText = `background-color: ${color}; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 10px;`;
+                    content.style.cssText = `background-color: ${color}; width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10;`;
                     content.innerText = perfs.length.toString();
+
+                    content.onclick = () => {
+                        setSelectedVenue(venue.venueName);
+                        // Center map on click? Optional. 
+                        // map.panTo(position); 
+                    };
 
                     const customOverlay = new window.kakao.maps.CustomOverlay({
                         position: position,
                         content: content,
                         yAnchor: 1
                     });
-                    overlays.push({ marker, overlay: customOverlay });
 
-                    // Store overlay reference for external control (list click)
-                    overlaysRef.current[venueName] = {
-                        marker,
-                        // Simulate "setMap" interface for list control logic, but actually we just trigger the map-level popup
-                        setMap: (mapObj: any) => {
-                            if (mapObj) {
-                                // Open logic
-                                updateAndOpenInfoWindow(venueName, perfs, position);
-                            } else {
-                                // Close logic if it's the current one
-                                if (currentOpenVenue === venueName) closeInfoWindow();
-                            }
-                        }
-                    };
+                    // Also create a marker for Clusterer if needed, or just use overlay.
+                    // Clusterer usually needs Markers.
+                    const marker = new window.kakao.maps.Marker({ position });
+                    marker.setMap(null); // Hide default marker
+                    // Hack: Clusterer works with Markers. We might want to just show Overlays and skip Clusterer if we want custom UI?
+                    // Or sync them. 
+                    // For performance with thousands of points, Clusterer is better.
+                    // Let's stick to Overlays for now as they carry count info which is critical.
+                    // If performance is issue, we can revisit. User said "optimize speed", so...
+                    // But Overlay view is "venue" based. There aren't THAT many venues (usually < 100 visible).
+                    // So rendering 100 overlays is fine.
 
-                    content.onclick = () => {
-                        if (currentOpenVenue === venueName) {
-                            closeInfoWindow();
-                        } else {
-                            updateAndOpenInfoWindow(venueName, perfs, position);
-                        }
-                    };
+                    customOverlay.setMap(map);
+                    overlays.push(customOverlay);
                 });
 
-                // Function to update and open the shared InfoWindow
-                const updateAndOpenInfoWindow = (venueName: string, perfs: Performance[], position: any) => {
-                    // Clear previous
-                    sharedInfoContent.innerHTML = '';
-                    sharedInfoContent.classList.remove('hidden');
-
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '×';
-                    closeBtn.className = 'absolute top-1 right-2 text-xl font-extrabold text-gray-500 hover:text-black';
-                    closeBtn.onclick = (e) => { e.stopPropagation(); closeInfoWindow(); };
-
-                    const title = document.createElement('h3');
-                    title.className = 'font-extrabold text-sm mb-2 pr-4';
-                    title.innerText = venueName;
-
-                    const list = document.createElement('div');
-                    list.className = 'space-y-2 max-h-[250px] overflow-y-auto scrollbar-hide'; // Limit height for performance
-
-                    // Render only first few items initially if many? For now just render all (usually small list)
-                    perfs.slice(0, 20).forEach(p => {
-                        const item = document.createElement('div');
-                        item.className = 'flex gap-2 items-start border-b border-gray-100 pb-2 last:border-0';
-                        if (p.image) {
-                            const img = document.createElement('img');
-                            img.src = getOptimizedUrl(p.image, 80);
-                            img.className = 'w-10 h-14 object-cover rounded bg-gray-100 shrink-0';
-                            item.appendChild(img);
-                        }
-                        const details = document.createElement('div');
-                        details.className = 'flex-1 min-w-0';
-                        const pTitle = document.createElement('p');
-                        pTitle.className = 'text-xs font-bold line-clamp-2 leading-tight';
-                        pTitle.innerText = p.title;
-                        const pDate = document.createElement('p');
-                        pDate.className = 'text-[10px] text-gray-500 mt-0.5';
-                        pDate.innerText = p.date;
-
-                        const link = document.createElement('a');
-                        link.href = p.link;
-                        link.target = '_blank';
-                        link.className = 'inline-block mt-1 px-2 py-0.5 bg-blue-600 text-white text-[10px] rounded hover:bg-blue-700 font-extrabold';
-                        link.innerText = '예매하기';
-
-                        details.appendChild(pTitle);
-                        details.appendChild(pDate);
-                        details.appendChild(link);
-                        item.appendChild(details);
-                        list.appendChild(item);
+                // User Location Marker
+                if (!centerLocation && navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(pos => {
+                        const loc = new window.kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                        const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
+                        new window.kakao.maps.CustomOverlay({ map, position: loc, content });
                     });
+                }
 
-                    sharedInfoContent.appendChild(closeBtn);
-                    sharedInfoContent.appendChild(title);
-                    sharedInfoContent.appendChild(list);
-
-                    sharedPopupOverlay.setPosition(position);
-                    sharedPopupOverlay.setMap(map);
-                    currentOpenVenue = venueName;
-                    setSelectedVenue(venueName);
+                // --- Event Listeners ---
+                const handleMapChange = () => {
+                    setShowSearchHereBtn(true);
                 };
 
-                if (clusterer) clusterer.addMarkers(markers);
-                else markers.forEach(m => m.setMap(map));
+                window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
+                window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
 
-                const syncOverlays = () => {
-                    overlays.forEach(({ marker, overlay }) => {
-                        if (marker.getMap()) overlay.setMap(map);
-                        else overlay.setMap(null);
-                    });
-                };
-                window.kakao.maps.event.addListener(map, 'idle', syncOverlays);
-                setTimeout(syncOverlays, 100);
+                setIsMapReady(true);
+
+                // Initial Bounds Check to set Visible Venues correctly
+                // Wait for map to settle
+                setTimeout(() => {
+                    handleSearchHereInternal(map);
+                }, 500);
             });
         };
 
-        // Wait for global SDK
         const checkInterval = setInterval(() => {
             if (window.kakao && window.kakao.maps) {
                 clearInterval(checkInterval);
                 initializeMap();
             }
         }, 100);
-
         return () => clearInterval(checkInterval);
-    }, [performances, centerLocation]);
+    }, []);
 
-    // Group performances for the list view and SORT
-    const uniqueVenues = Object.values(performances.reduce((acc, perf) => {
-        if (!acc[perf.venue]) {
-            acc[perf.venue] = {
-                ...venues[perf.venue],
-                venueName: perf.venue,
-                performances: []
-            };
-        }
-        acc[perf.venue].performances.push(perf);
-        return acc;
-    }, {} as Record<string, any>)).sort((a, b) => {
-        // 1. Priority: Exact name match with searched location
-        if (centerLocation) {
-            if (a.venueName === centerLocation.name) return -1;
-            if (b.venueName === centerLocation.name) return 1;
-
-            // 2. Priority: Distance from center
-            if (a.lat && a.lng && b.lat && b.lng) {
-                const distA = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, a.lat, a.lng);
-                const distB = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, b.lat, b.lng);
-                return distA - distB;
-            }
-        }
-        return 0;
-    });
-
-    const moveToVenue = (venueName: string) => {
-        const venue = venues[venueName];
-        if (venue?.lat && venue?.lng) {
-            // We need to access the map instance. 
-            // Since map is inside useEffect, we might need a stored ref or re-create logic.
-            // Simpler: Just rely on the fact that we can't easily access the map instance from outside the effect without state.
-            // OR: Store map instance in ref.
-        }
+    const handleSearchHereInternal = (map: any) => {
+        if (!map) return;
+        const bounds = map.getBounds();
+        const visible = allVenuesList.current.filter(v => {
+            const latlng = new window.kakao.maps.LatLng(v.lat, v.lng);
+            return bounds.contain(latlng);
+        });
+        setVisibleVenues(visible);
+        setShowSearchHereBtn(false);
     };
 
-    // We need map instance to control it from the list.
-    // const [mapInstance, setMapInstance] = useState<any>(null); // Already defined at top
+    const handleSearchHere = () => handleSearchHereInternal(mapInstance);
 
+    // Handling Selected Venue Performance List (Infinite Scroll Logic)
+    const [perfVisibleCount, setPerfVisibleCount] = useState(10);
+    const selectedVenueData = selectedVenue ? allVenueGroups.current[selectedVenue] : null;
 
-    // Update useEffect to set mapInstance
-    // We need to rewrite the useEffect slightly to expose map.
-    // Actually, let's just do it inside the component body, but we need to modify the file content heavily to add state.
-    // Let's defer component logic change to a second tool call to avoid complex multi-chunk issues if possible, 
-    // BUT we are in multi_replace_file_content so we can do it.
+    // Reset visible count when venue changes
+    useEffect(() => {
+        if (selectedVenue) setPerfVisibleCount(10);
+    }, [selectedVenue]);
 
-    // Wait, I can't easily inject `userState` inside the component function body without replacing the whole function start, which I did in chunk 2. 
-    // I entered `export default function ...` in chunk 2. I should have added `const [mapInstance, setMapInstance] = useState<any>(null);` there.
-    // I will skip adding state for now and focus on rendering the Bottom List first, then fix the interaction in next step if needed or try to fit it now.
-
-    // Let's restart the mental model for chunk 2:
-    // replacing `export default function ... {` with `export default function ... { const [mapInstance, setMapInstance] = useState<any>(null);`
+    const handlePerfScroll = (e: React.UIEvent<HTMLDivElement>) => {
+        const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+        if (scrollTop + clientHeight >= scrollHeight - 20) {
+            if (selectedVenueData && perfVisibleCount < selectedVenueData.performances.length) {
+                setPerfVisibleCount(prev => prev + 10);
+            }
+        }
+    };
 
     return (
         <Portal>
@@ -411,99 +271,129 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         <X className="w-6 h-6" />
                     </button>
 
-                    <div ref={mapRef} className="w-full h-full bg-gray-800" />
-
-                    {/* Bottom List for Multiple Venues */}
-                    {uniqueVenues.length > 0 && (
-                        <div className="absolute bottom-4 left-0 right-0 z-[90] px-4 pointer-events-none">
-                            <div
-                                ref={scrollRef}
-                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                                onMouseDown={onMouseDown}
-                                onMouseLeave={onMouseLeave}
-                                onMouseUp={onMouseUp}
-                                onMouseMove={onMouseMove}
+                    {/* Search Here Button */}
+                    {showSearchHereBtn && isMapReady && (
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[100]">
+                            <button
+                                onClick={handleSearchHere}
+                                className="px-4 py-2 bg-blue-600 text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm animate-fade-in-up"
                             >
-                                {uniqueVenues.map((v: any) => {
-                                    const isFavorite = favoriteVenues.includes(v.venueName);
-                                    const isSelected = selectedVenue === v.venueName;
-                                    return (
-                                        <button
-                                            type="button"
-                                            key={v.venueName}
-                                            data-venue-name={v.venueName}
-                                            style={{ pointerEvents: 'auto' }}
-                                            onClick={(e) => {
-                                                if (mapInstance && v.lat && v.lng) {
-                                                    if (isSelected) {
-                                                        // Close
-                                                        const overlay = overlaysRef.current[v.venueName];
-                                                        if (overlay) overlay.setMap(null);
-                                                        setSelectedVenue(null);
-                                                    } else {
-                                                        // Open
-                                                        const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                        mapInstance.setLevel(3);
-                                                        mapInstance.setCenter(moveLatLon); // Force center
-
-                                                        Object.values(overlaysRef.current).forEach((o: any) => o.setMap(null));
-                                                        const overlay = overlaysRef.current[v.venueName];
-                                                        if (overlay) overlay.setMap(mapInstance);
-                                                        setSelectedVenue(v.venueName);
-                                                    }
-                                                } else {
-                                                    console.warn('Map click failed: missing instance or coords', { mapInstance: !!mapInstance, lat: v.lat, lng: v.lng });
-                                                }
-                                            }}
-                                            className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300
-                                                ${isSelected
-                                                    ? 'ring-4 ring-blue-500 scale-[1.02] z-10'
-                                                    : 'border hover:scale-[1.01]'
-                                                }
-                                                ${isFavorite
-                                                    ? 'bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600'
-                                                    : 'bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white'
-                                                }`}
-                                        >
-                                            <div className="flex justify-between items-start w-full">
-                                                <h4 className="font-extrabold text-sm truncate flex-1">{v.venueName}</h4>
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        onToggleFavorite(v.venueName);
-                                                    }}
-                                                    className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
-                                                >
-                                                    <Star
-                                                        className={`w-4 h-4 ${isFavorite ? 'text-white fill-white' : 'text-gray-400'}`}
-                                                    />
-                                                </button>
-                                            </div>
-                                            <p className={`text-xs truncate ${isFavorite ? 'text-emerald-100' : 'text-gray-600'}`}>{v.address || '주소 정보 없음'}</p>
-                                            <div className="mt-1 flex items-center justify-between text-xs">
-                                                <span className={`font-extrabold ${isFavorite ? 'text-yellow-400' : 'text-blue-600'}`}>{v.performances.length}개 공연</span>
-                                                {/* Distance could be calculated if we have centerLocation */}
-                                            </div>
-                                            {onVenueLocationChange && v.lat && v.lng && (
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        onVenueLocationChange(v.venueName, v.lat, v.lng);
-                                                    }}
-                                                    className={`w-full mt-2 py-1.5 px-3 text-xs rounded-lg font-semibold transition-colors ${isFavorite
-                                                        ? 'bg-white/20 hover:bg-white/30 text-white'
-                                                        : 'bg-blue-600 hover:bg-blue-700 text-white'
-                                                        }`}
-                                                >
-                                                    이 공연장 주변보기
-                                                </button>
-                                            )}
-                                        </button>
-                                    );
-                                })}
-                            </div>
+                                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                                현 위치에서 검색
+                            </button>
                         </div>
                     )}
+
+                    <div ref={mapRef} className="w-full h-full bg-gray-800" />
+
+                    {/* Bottom Sheet Area */}
+                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-8 pb-4 px-4">
+
+                        {/* CASE 1: Selected Venue Detail (Vertical List) */}
+                        {selectedVenue && selectedVenueData ? (
+                            <div className="bg-gray-900 rounded-xl border border-gray-800 shadow-2xl max-h-[50vh] flex flex-col animate-slide-up">
+                                <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-gray-800/50 rounded-t-xl shrink-0">
+                                    <div>
+                                        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                                            {selectedVenue}
+                                            <span className="text-xs px-2 py-0.5 rounded-full bg-blue-900/50 text-blue-300 border border-blue-800">
+                                                {selectedVenueData.performances.length}건
+                                            </span>
+                                        </h3>
+                                        <p className="text-xs text-gray-400 mt-0.5">{selectedVenueData.address}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => setSelectedVenue(null)}
+                                        className="text-sm text-gray-400 hover:text-white underline decoration-gray-600 hover:decoration-white underline-offset-4"
+                                    >
+                                        지도 목록보기
+                                    </button>
+                                </div>
+                                <div
+                                    className="overflow-y-auto p-4 space-y-3 custom-scrollbar"
+                                    onScroll={handlePerfScroll}
+                                >
+                                    {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
+                                        <a
+                                            key={p.id}
+                                            href={p.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex gap-3 bg-gray-800/50 p-2 rounded-lg hover:bg-gray-800 transition border border-gray-800 hover:border-gray-700"
+                                        >
+                                            {p.image && <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-12 h-16 object-cover rounded bg-gray-900 shrink-0" />}
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <span className={clsx(
+                                                        "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
+                                                        (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
+                                                    )}>
+                                                        {GENRES.find(g => g.id === p.genre)?.label}
+                                                    </span>
+                                                    <span className="text-[10px] text-gray-500">{p.date}</span>
+                                                </div>
+                                                <h4 className="text-sm font-bold text-white line-clamp-2 leading-tight">{p.title}</h4>
+                                            </div>
+                                        </a>
+                                    ))}
+                                    {perfVisibleCount < selectedVenueData.performances.length && (
+                                        <div className="text-center py-2">
+                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0s' }}></span>
+                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0.1s' }}></span>
+                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ) : (
+                            /* CASE 2: Visible Venues List (Horizontal Scroll) */
+                            visibleVenues.length > 0 && (
+                                <div
+                                    ref={scrollRef}
+                                    className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                    onMouseDown={onMouseDown}
+                                    onMouseLeave={onMouseLeave}
+                                    onMouseUp={onMouseUp}
+                                    onMouseMove={onMouseMove}
+                                >
+                                    {visibleVenues.map((v: any) => {
+                                        const isFavorite = favoriteVenues.includes(v.venueName);
+                                        return (
+                                            <button
+                                                type="button"
+                                                key={v.venueName}
+                                                onClick={() => {
+                                                    setSelectedVenue(v.venueName);
+                                                    if (mapInstance && v.lat && v.lng) {
+                                                        const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                        mapInstance.panTo(moveLatLon);
+                                                    }
+                                                }}
+                                                className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border hover:scale-[1.01] bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white`}
+                                            >
+                                                <div className="flex justify-between items-start w-full">
+                                                    <h4 className="font-extrabold text-sm truncate flex-1">{v.venueName}</h4>
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            onToggleFavorite(v.venueName);
+                                                        }}
+                                                        className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
+                                                    >
+                                                        <Star className={`w-4 h-4 ${isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400'}`} />
+                                                    </button>
+                                                </div>
+                                                <p className="text-xs text-gray-600 truncate">{v.address || '주소 정보 없음'}</p>
+                                                <div className="mt-1 flex items-center justify-between text-xs">
+                                                    <span className="font-extrabold text-blue-600">{v.performances.length}개 공연</span>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            )
+                        )}
+                    </div>
                 </div>
             </div>
         </Portal>
