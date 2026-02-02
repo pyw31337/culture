@@ -673,13 +673,13 @@ export default function HeroSection({
                             >
                                 {searchMode === 'location' ? (
                                     <>
-                                        <MapPin size={14} className="fill-current" />
-                                        <span>위치 검색</span>
+                                        <Search size={14} />
+                                        <span>키워드 검색</span>
                                     </>
                                 ) : (
                                     <>
-                                        <Search size={14} />
-                                        <span>키워드 검색</span>
+                                        <MapPin size={14} className="fill-current" />
+                                        <span>위치 검색</span>
                                     </>
                                 )}
                             </button>

@@ -510,7 +510,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         className="absolute top-2 left-2 z-40 bg-emerald-600/90 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-xs font-extrabold shadow-lg flex items-center gap-1 backdrop-blur-sm"
                                         style={{ transform: 'translateZ(20px)' }}
                                     >
-                                        <MapPin className="w-3 h-3 fill-emerald-100" />
+                                        <MapPin className="w-3 h-3 text-white" />
                                         {distLabel}
                                     </div>
                                 ) : perf.discount && (

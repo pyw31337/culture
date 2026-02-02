@@ -310,8 +310,34 @@ export default function BottomNavSheet({
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
                         <div className="space-y-4">
-                            <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center gap-2">
-                                <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 위치 및 검색
+                            <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center justify-between gap-2 mb-2">
+                                <div className="flex items-center gap-2">
+                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 위치 및 검색
+                                </div>
+
+                                {/* Search Mode Toggle (New Location) */}
+                                <div className="flex bg-gray-800 light:bg-gray-200 p-1 rounded-full border border-white/10 light:border-black/5">
+                                    <button
+                                        onClick={() => onSearchModeChange && onSearchModeChange('location')}
+                                        className={clsx(
+                                            "p-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 px-3",
+                                            searchMode === 'location' ? "bg-emerald-600 text-white shadow-md light:bg-white light:text-emerald-600" : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-gray-700"
+                                        )}
+                                    >
+                                        <MapPin size={14} className={clsx(searchMode === 'location' ? "text-white light:text-emerald-600" : "")} />
+                                        <span className="text-xs font-extrabold">위치검색</span>
+                                    </button>
+                                    <button
+                                        onClick={() => onSearchModeChange && onSearchModeChange('keyword')}
+                                        className={clsx(
+                                            "p-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 px-3",
+                                            searchMode === 'keyword' ? "bg-purple-600 text-white shadow-md light:bg-white light:text-purple-600" : "text-gray-400 hover:text-gray-200 light:text-gray-500 light:hover:text-gray-700"
+                                        )}
+                                    >
+                                        <Search size={14} className={clsx(searchMode === 'keyword' ? "text-white light:text-purple-600" : "")} />
+                                        <span className="text-xs font-extrabold">키워드</span>
+                                    </button>
+                                </div>
                             </h3>
 
                             {/* Search Bar - Unified Style */}
@@ -324,14 +350,14 @@ export default function BottomNavSheet({
                                 )}>
                                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
 
-                                        {/* Input moved to Left */}
+                                        {/* Input Only */}
                                         <div className="flex-1 relative">
                                             <input
                                                 type="text"
                                                 value={searchText}
                                                 onChange={(e) => onSearchChange(e.target.value)}
                                                 onKeyDown={handleKeyDown}
-                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소 검색..."}
+                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소, 출연진 검색..."}
                                                 className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                             />
                                             {searchText && (
@@ -342,34 +368,6 @@ export default function BottomNavSheet({
                                                     <X className="w-4 h-4" />
                                                 </button>
                                             )}
-                                        </div>
-
-                                        {/* Divider */}
-                                        <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
-
-                                        {/* Toggle Switch moved to Right */}
-                                        <div className="flex px-1 shrink-0">
-                                            <button
-                                                onClick={() => onSearchModeChange && onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
-                                                className={clsx(
-                                                    "px-3 py-2 rounded-full text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
-                                                    searchMode === 'location'
-                                                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
-                                                        : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
-                                                )}
-                                            >
-                                                {searchMode === 'location' ? (
-                                                    <>
-                                                        <MapPin size={12} className="fill-current" />
-                                                        <span>위치 검색</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <Search size={12} />
-                                                        <span>키워드</span>
-                                                    </>
-                                                )}
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
