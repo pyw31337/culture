@@ -60,6 +60,19 @@ body {
   display: none;
 }
 
+/* Kakao Map Accessibility Fix */
+.screen_out {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -259,11 +272,13 @@ body {
       opacity: 0;
       transform: translate3d(0, 20px, 0);
     }
+
     100% {
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
   }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.5s ease-out forwards;
   }
@@ -273,10 +288,12 @@ body {
     0% {
       transform: translateY(100%);
     }
+
     100% {
       transform: translateY(0);
     }
   }
+
   .animate-slide-up {
     animation: slide-up 0.3s ease-out forwards;
   }
