@@ -10,6 +10,7 @@ import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 
 import Portal from './ui/Portal';
+import BottomNavSheet from './BottomNavSheet';
 
 interface Venue {
     name: string;
@@ -250,6 +251,30 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
         if (selectedVenue) setPerfVisibleCount(10);
     }, [selectedVenue]);
 
+    // Use BottomNavSheet for Venue Detail
+    // When selectedVenue is active, we treat it as 'venue-detail' menu active
+    // We need to pass dummy props for the required ones that aren't used here.
+    const noop = () => { };
+    const dummyProps = {
+        viewMode: 'map',
+        onViewModeChange: noop,
+        selectedGenre: 'all',
+        onGenreSelect: noop,
+        searchText: '',
+        onSearchChange: noop,
+        selectedRegion: 'all',
+        onRegionSelect: noop,
+        selectedDistrict: 'all',
+        onDistrictSelect: noop,
+        keywords: [],
+        onKeywordAdd: noop,
+        onKeywordRemove: noop,
+        districts: [],
+        availableVenues: [],
+        onSearch: noop,
+        onVenueSelect: noop,
+    };
+
     const handlePerfScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
         if (scrollTop + clientHeight >= scrollHeight - 20) {
@@ -289,110 +314,63 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     {/* Bottom Sheet Area */}
                     <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-8 pb-4 px-4">
 
-                        {/* CASE 1: Selected Venue Detail (Vertical List) */}
-                        {selectedVenue && selectedVenueData ? (
-                            <div className="bg-gray-900 rounded-xl border border-gray-800 shadow-2xl max-h-[50vh] flex flex-col animate-slide-up">
-                                <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-gray-800/50 rounded-t-xl shrink-0">
-                                    <div>
-                                        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                                            {selectedVenue}
-                                            <span className="text-xs px-2 py-0.5 rounded-full bg-blue-900/50 text-blue-300 border border-blue-800">
-                                                {selectedVenueData.performances.length}건
-                                            </span>
-                                        </h3>
-                                        <p className="text-xs text-gray-400 mt-0.5">{selectedVenueData.address}</p>
-                                    </div>
-                                    <button
-                                        onClick={() => setSelectedVenue(null)}
-                                        className="text-sm text-gray-400 hover:text-white underline decoration-gray-600 hover:decoration-white underline-offset-4"
-                                    >
-                                        지도 목록보기
-                                    </button>
-                                </div>
-                                <div
-                                    className="overflow-y-auto p-4 space-y-3 custom-scrollbar"
-                                    onScroll={handlePerfScroll}
-                                >
-                                    {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
-                                        <a
-                                            key={p.id}
-                                            href={p.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex gap-3 bg-gray-800/50 p-2 rounded-lg hover:bg-gray-800 transition border border-gray-800 hover:border-gray-700"
+                        {/* CASE 1: Selected Venue Detail (BottomNavSheet Integration) */}
+                        <BottomNavSheet
+                            activeMenu={selectedVenue ? 'venue-detail' : null}
+                            onClose={() => setSelectedVenue(null)}
+                            {...dummyProps}
+                            venuePerformances={selectedVenueData?.performances || []}
+                            selectedVenue={selectedVenue || ''}
+                            hasBackdrop={false}
+                        />
+
+                        {/* CASE 2: Visible Venues List (Horizontal Scroll) - Only when no venue selected */}
+                        {!selectedVenue && visibleVenues.length > 0 && (
+                            <div
+                                ref={scrollRef}
+                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                onMouseDown={onMouseDown}
+                                onMouseLeave={onMouseLeave}
+                                onMouseUp={onMouseUp}
+                                onMouseMove={onMouseMove}
+                            >
+                                {visibleVenues.map((v: any) => {
+                                    const isFavorite = favoriteVenues.includes(v.venueName);
+                                    return (
+                                        <button
+                                            type="button"
+                                            key={v.venueName}
+                                            onClick={() => {
+                                                setSelectedVenue(v.venueName);
+                                                if (mapInstance && v.lat && v.lng) {
+                                                    const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                    mapInstance.panTo(moveLatLon);
+                                                }
+                                            }}
+                                            className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border hover:scale-[1.01] bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white`}
                                         >
-                                            {p.image && <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-12 h-16 object-cover rounded bg-gray-900 shrink-0" />}
-                                            <div className="flex-1 min-w-0">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <span className={clsx(
-                                                        "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
-                                                        (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
-                                                    )}>
-                                                        {GENRES.find(g => g.id === p.genre)?.label}
-                                                    </span>
-                                                    <span className="text-[10px] text-gray-500">{p.date}</span>
-                                                </div>
-                                                <h4 className="text-sm font-bold text-white line-clamp-2 leading-tight">{p.title}</h4>
+                                            <div className="flex justify-between items-start w-full">
+                                                <h4 className="font-extrabold text-sm truncate flex-1">{v.venueName}</h4>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onToggleFavorite(v.venueName);
+                                                    }}
+                                                    className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
+                                                >
+                                                    <Star className={`w-4 h-4 ${isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400'}`} />
+                                                </button>
                                             </div>
-                                        </a>
-                                    ))}
-                                    {perfVisibleCount < selectedVenueData.performances.length && (
-                                        <div className="text-center py-2">
-                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0s' }}></span>
-                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0.1s' }}></span>
-                                            <span className="inline-block w-1.5 h-1.5 bg-gray-600 rounded-full mx-0.5 animate-bounce" style={{ animationDelay: '0.2s' }}></span>
-                                        </div>
-                                    )}
-                                </div>
+                                            <p className="text-xs text-gray-600 truncate">{v.address || '주소 정보 없음'}</p>
+                                            <div className="mt-1 flex items-center justify-between text-xs">
+                                                <span className="font-extrabold text-blue-600">{v.performances.length}개 공연</span>
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
-                        ) : (
-                            /* CASE 2: Visible Venues List (Horizontal Scroll) */
-                            visibleVenues.length > 0 && (
-                                <div
-                                    ref={scrollRef}
-                                    className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                                    onMouseDown={onMouseDown}
-                                    onMouseLeave={onMouseLeave}
-                                    onMouseUp={onMouseUp}
-                                    onMouseMove={onMouseMove}
-                                >
-                                    {visibleVenues.map((v: any) => {
-                                        const isFavorite = favoriteVenues.includes(v.venueName);
-                                        return (
-                                            <button
-                                                type="button"
-                                                key={v.venueName}
-                                                onClick={() => {
-                                                    setSelectedVenue(v.venueName);
-                                                    if (mapInstance && v.lat && v.lng) {
-                                                        const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                        mapInstance.panTo(moveLatLon);
-                                                    }
-                                                }}
-                                                className={`snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border hover:scale-[1.01] bg-white/90 backdrop-blur border-white/20 text-black hover:bg-white`}
-                                            >
-                                                <div className="flex justify-between items-start w-full">
-                                                    <h4 className="font-extrabold text-sm truncate flex-1">{v.venueName}</h4>
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            onToggleFavorite(v.venueName);
-                                                        }}
-                                                        className={`ml-2 p-1 rounded-full transition-colors ${isFavorite ? 'hover:bg-white/20' : 'hover:bg-gray-100'}`}
-                                                    >
-                                                        <Star className={`w-4 h-4 ${isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400'}`} />
-                                                    </button>
-                                                </div>
-                                                <p className="text-xs text-gray-600 truncate">{v.address || '주소 정보 없음'}</p>
-                                                <div className="mt-1 flex items-center justify-between text-xs">
-                                                    <span className="font-extrabold text-blue-600">{v.performances.length}개 공연</span>
-                                                </div>
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            )
-                        )}
+                        )
+                        }
                     </div>
                 </div>
             </div>

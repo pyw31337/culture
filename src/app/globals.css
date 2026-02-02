@@ -61,16 +61,11 @@ body {
 }
 
 /* Kakao Map Accessibility Fix */
+/* Kakao Map Accessibility Fix - Force Hide */
+.root_daum_roughmap .screen_out,
+.fol_map .screen_out,
 .screen_out {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  display: none !important;
 }
 
 .scrollbar-hide {

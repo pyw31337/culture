@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon, CloverIcon } from '@/components/GenreIcons';
 
-export type BottomMenuType = 'view' | 'category' | 'location' | null;
+export type BottomMenuType = 'view' | 'category' | 'location' | 'venue-detail' | null;
 
 interface BottomNavProps {
     activeMenu: BottomMenuType;

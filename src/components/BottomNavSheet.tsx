@@ -5,6 +5,8 @@ import { BottomMenuType, ListDetailsIcon } from './BottomNav';
 import { CloverIcon } from './GenreIcons';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 import { safeStorage } from '@/lib/safeStorage';
+import { Performance } from '@/types';
+import { getOptimizedUrl } from '@/lib/utils';
 
 interface BottomNavSheetProps {
     activeMenu: BottomMenuType;
@@ -33,6 +35,9 @@ interface BottomNavSheetProps {
     activeLocation?: { lat: number, lng: number } | null;
     searchResults?: any[];
     onResultSelect?: (result: any) => void;
+    // New Props for Venue Detail Integration
+    venuePerformances?: Performance[];
+    hasBackdrop?: boolean;
 }
 
 import { getGenreIcon } from '@/components/GenreIcons';
@@ -63,7 +68,9 @@ export default function BottomNavSheet({
     onSearchModeChange = () => { },
     activeLocation,
     searchResults = [],
-    onResultSelect = () => { }
+    onResultSelect = () => { },
+    venuePerformances = [],
+    hasBackdrop = true
 }: BottomNavSheetProps) {
     const [isVisible, setIsVisible] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -140,12 +147,17 @@ export default function BottomNavSheet({
     return (
         <>
             {/* Backdrop */}
-            <div
-                className={clsx(
-                    "fixed inset-0 bg-black/60 backdrop-blur-sm z-[4980] transition-opacity duration-300",
-                    activeMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                )}
-                onClick={onClose}
+            {hasBackdrop && (
+                <div
+                    className={clsx(
+                        "fixed inset-0 bg-black/60 backdrop-blur-sm z-[4980] transition-opacity duration-300",
+                        activeMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    )}
+                    onClick={onClose}
+                />
+            )}
+
+            onClick={onClose}
             />
 
             {/* Sheet */}
@@ -155,7 +167,8 @@ export default function BottomNavSheet({
                     activeMenu ? "translate-y-0 opacity-100" : "translate-y-full opacity-50",
                     searchMode === 'location'
                         ? "border-emerald-500/60 light:border-emerald-600/30"
-                        : "border-purple-400/60 light:border-purple-600/30"
+                        : "border-purple-400/60 light:border-purple-600/30",
+                    !hasBackdrop && "pointer-events-auto" // Ensure it's clickable if no backdrop
                 )}
             >
                 {/* Handle Bar */}
@@ -455,10 +468,71 @@ export default function BottomNavSheet({
                                 referenceLocation={activeLocation}
                             />
                         </div>
+                        />
+                        </div>
                     )}
 
-                </div>
-            </div >
+                {/* VENUE DETAIL MENU (New) */}
+                {activeMenu === 'venue-detail' && (
+                    <div className="flex flex-col h-full overflow-hidden">
+                        <div className="flex justify-between items-center mb-4 shrink-0">
+                            <div>
+                                <h3 className="text-xl font-bold text-white light:text-black flex items-center gap-2">
+                                    <MapPin className="text-emerald-500 w-5 h-5" />
+                                    {selectedVenue}
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-900/50 text-emerald-300 border border-emerald-800">
+                                        {venuePerformances.length}건
+                                    </span>
+                                </h3>
+                                {/* Address removed or can be passed if needed, defaulting to keeping it simple for now */}
+                            </div>
+                        </div>
+
+                        <div className="overflow-y-auto space-y-3 custom-scrollbar flex-1 pb-safe">
+                            {venuePerformances.length === 0 ? (
+                                <div className="text-center py-8 text-gray-500">
+                                    공연 정보가 없습니다.
+                                </div>
+                            ) : (
+                                venuePerformances.map((p) => (
+                                    <a
+                                        key={p.id}
+                                        href={p.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex gap-3 bg-gray-800/50 light:bg-gray-100 p-2 rounded-lg hover:bg-gray-800 light:hover:bg-gray-200 transition border border-gray-800 light:border-gray-200 hover:border-emerald-500/30"
+                                    >
+                                        <div className="relative w-12 h-16 shrink-0 rounded bg-gray-900 overflow-hidden">
+                                            {p.image ? (
+                                                <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">
+                                                    <Star size={12} />
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="flex-1 min-w-0 flex flex-col justify-center">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className={clsx(
+                                                    "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
+                                                    (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
+                                                )}>
+                                                    {GENRES.find(g => g.id === p.genre)?.label}
+                                                </span>
+                                                <span className="text-[10px] text-gray-500">{p.date}</span>
+                                            </div>
+                                            <h4 className="text-sm font-bold text-gray-100 light:text-black line-clamp-2 leading-tight">
+                                                {p.title}
+                                            </h4>
+                                        </div>
+                                    </a>
+                                ))
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div >
         </>
     );
 }
