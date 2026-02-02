@@ -936,9 +936,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     </>
                                 ) : activeLocation ? (
                                     <>
-                                        <MapPin className="text-green-500 w-5 h-5" />
+                                        <MapPin className="text-emerald-500 w-5 h-5" />
                                         <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : '내 위치'}</span>
-                                        <span className="text-base sm:text-xl shrink-0">{searchLocation ? '공연장 주변' : '주변'} ({filteredPerformances.length})</span>
+                                        <span className="text-base sm:text-xl shrink-0">주변 ({filteredPerformances.length})</span>
                                         <button
                                             onClick={() => { setSearchLocation(null); setSearchText(''); }}
                                             className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 group/reload"
@@ -949,9 +949,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     </>
                                 ) : searchText ? (
                                     <>
-                                        <Search className="w-5 h-5" />
-                                        <span>검색 공연</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredPerformances.length})</span>
+                                        <Search className="w-5 h-5 text-purple-500" />
+                                        <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
+                                        <span className="text-base sm:text-xl shrink-0">키워드 검색 공연 ({filteredPerformances.length})</span>
                                     </>
                                 ) : (
                                     <>
@@ -964,15 +964,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 )}
                             </h2>
                             {activeLocation && (
-                                <div className="flex items-center gap-2 pb-[3px] ml-auto">
-                                    <div className="flex items-center bg-gray-800 light:bg-white border border-white/10 light:border-gray-200 rounded-full pl-3 pr-1 py-1 group hover:border-[#a78bfa] transition-all shadow-sm">
+                                <div className="flex items-center gap-2 ml-auto">
+                                    <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
                                         {/* Radius Select */}
-                                        <div className="relative flex items-center mr-2">
-                                            <span className="text-xs text-gray-400 mr-2 font-bold">반경</span>
+                                        <div className="relative flex items-center">
                                             <select
                                                 value={radius}
                                                 onChange={(e) => setRadius(Number(e.target.value))}
-                                                className="bg-transparent text-xs sm:text-sm font-bold text-gray-300 light:text-gray-700 focus:outline-none appearance-none pr-4 cursor-pointer"
+                                                className="bg-transparent text-xs sm:text-sm font-bold text-emerald-400 light:text-emerald-600 focus:outline-none appearance-none pr-4 cursor-pointer"
                                             >
                                                 {RADIUS_OPTIONS.map(r => (
                                                     <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
@@ -980,19 +979,20 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                     </option>
                                                 ))}
                                             </select>
-                                            <ChevronDown className="absolute right-0 w-3 h-3 text-gray-500 pointer-events-none" />
+                                            <ChevronDown className="absolute right-0 w-3 h-3 text-emerald-500 pointer-events-none" />
                                         </div>
+                                        <span className="text-xs text-emerald-500 font-bold mr-1">반경</span>
 
                                         {/* Divider */}
-                                        <div className="w-[1px] h-4 bg-gray-600 light:bg-gray-300 mx-2"></div>
+                                        <div className="w-[1px] h-4 bg-emerald-500/30 mx-2"></div>
 
-                                        {/* Map View Button - Expanded Size */}
+                                        {/* Map View Button */}
                                         <button
                                             onClick={() => setIsMapOpen(true)}
-                                            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extra-bold text-gray-300 light:text-gray-700 hover:text-white light:hover:text-black hover:bg-white/10 light:hover:bg-black/5 transition-colors"
+                                            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-extrabold text-emerald-400 light:text-emerald-600 hover:text-emerald-300 light:hover:text-emerald-700 hover:bg-emerald-500/10 transition-colors"
                                         >
-                                            <MapIcon className="w-4 h-4 text-[#a78bfa] light:text-purple-600" />
-                                            <span className="font-extrabold text-sm">지도보기</span>
+                                            <MapIcon className="w-4 h-4" />
+                                            <span>지도보기</span>
                                         </button>
                                     </div>
                                 </div>
