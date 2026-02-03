@@ -1,16 +1,16 @@
 [
   {
-    "id": "kbl_20260202_55_60",
-    "title": "서울 SK vs 부산 KCC",
+    "id": "kbl_20260204_66_60",
+    "title": "고양 소노 vs 부산 KCC",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-02 19:00",
-    "venue": "잠실학생",
+    "date": "2026-02-04 19:00",
+    "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
+    "region": "gyeonggi",
     "genre": "basketball",
-    "homeTeam": "서울 SK",
+    "homeTeam": "고양 소노",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
@@ -56,6 +56,20 @@
     "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
+    "id": "kbl_20260202_55_60",
+    "title": "서울 SK vs 부산 KCC",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-02 19:00",
+    "venue": "잠실학생",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "seoul",
+    "genre": "basketball",
+    "homeTeam": "서울 SK",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
+  },
+  {
     "id": "kbl_20260203_31_28",
     "title": "현대모비스 vs DB",
     "image": "/culture/images/kbl_poster.png",
@@ -96,20 +110,6 @@
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
-  },
-  {
-    "id": "kbl_20260204_66_60",
-    "title": "고양 소노 vs 부산 KCC",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-04 19:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260205_28_29",
