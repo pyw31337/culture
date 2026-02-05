@@ -1,17 +1,17 @@
 [
   {
-    "id": "kbl_20260204_66_60",
-    "title": "고양 소노 vs 부산 KCC",
+    "id": "kbl_20260206_55_10",
+    "title": "서울 SK vs 울산 현대모비스",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-04 19:00",
-    "venue": "고양소노아레나",
+    "date": "2026-02-06 19:00",
+    "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
+    "region": "seoul",
     "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
+    "homeTeam": "서울 SK",
+    "awayTeam": "울산 현대모비스",
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260201_10_70",
@@ -112,6 +112,20 @@
     "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
+    "id": "kbl_20260204_66_60",
+    "title": "고양 소노 vs 부산 KCC",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-04 19:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "gyeonggi",
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
+  },
+  {
     "id": "kbl_20260205_28_29",
     "title": "DB vs 상무",
     "image": "/culture/images/kbl_poster.png",
@@ -152,20 +166,6 @@
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
-  },
-  {
-    "id": "kbl_20260206_55_10",
-    "title": "서울 SK vs 울산 현대모비스",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-06 19:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260207_70_60",

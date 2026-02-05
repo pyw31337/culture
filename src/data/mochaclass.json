@@ -18270,24 +18270,6 @@
     "lastEnriched": "2026-02-03T16:58:07.033Z"
   },
   {
-    "id": "mochaclass_xywv35koy",
-    "title": "하루 만에 체스 마스터하기!",
-    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FQFOGN08ZYY033DUN_6645fae955c6795e47704f95_400x400?alt=media",
-    "date": "OPEN RUN",
-    "venue": "모카클래스",
-    "link": "https://mochaclass.com/class/664608a178a3005e27c7ea9b",
-    "region": "seoul",
-    "genre": "class",
-    "price": "30,000원",
-    "originalPrice": "25%40,000원",
-    "discount": "",
-    "runningTime": "예약페이지 참조",
-    "ageLimit": "전체",
-    "casting": "",
-    "address": "서울",
-    "lastEnriched": "2026-02-03T16:58:09.388Z"
-  },
-  {
     "id": "mochaclass_1884050597",
     "title": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
     "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_400x400?alt=media",
@@ -21454,5 +21436,23 @@
     "casting": "",
     "address": "서울",
     "lastEnriched": "2026-02-03T16:59:26.426Z"
+  },
+  {
+    "id": "mochaclass_958330696",
+    "title": "스트레스 풀리는 터프팅 공예 원데이 클래스",
+    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FrvC0MDXlgrMMbdia_5f5097bb65c28a0d18e73545_400x400?alt=media",
+    "date": "OPEN RUN",
+    "venue": "모카클래스",
+    "link": "https://mochaclass.com/class/6822e315da36af53fff49f99",
+    "region": "seoul",
+    "genre": "class",
+    "price": "120,000원",
+    "originalPrice": "120,000원",
+    "discount": "",
+    "runningTime": "예약페이지 참조",
+    "ageLimit": "전체",
+    "casting": "",
+    "address": "서울",
+    "lastEnriched": "2026-02-05T16:44:44.673Z"
   }
 ]
