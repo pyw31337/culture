@@ -1,16 +1,5 @@
 [
   {
-    "id": "af789025-8035-4c59-8b84-5a9e0733d134",
-    "title": "태백산 눈축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/af789025-8035-4c59-8b84-5a9e0733d134_12.jpg",
-    "date": "2026.01.31~2026.02.08",
-    "venue": "강원특별자치도 태백시",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=af789025-8035-4c59-8b84-5a9e0733d134",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:24.535Z"
-  },
-  {
     "id": "ce544916-f27c-4839-9965-9617c27687cb",
     "title": "안성 동막골 빙어축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ce544916-f27c-4839-9965-9617c27687cb_279.jpg",
@@ -90,7 +79,7 @@
   {
     "id": "98d02557-f042-4423-aabb-112b599b7eec",
     "title": "울진대게와 붉은대게 축제",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/98d02557-f042-4423-aabb-112b599b7eec_8.jpg",
     "date": "2026.02.27~2026.03.02",
     "venue": "경상북도 울진군",
     "region": "etc",
@@ -101,7 +90,7 @@
   {
     "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
     "title": "양양 낙산해변 달빛 모닥불축제",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/555e6f9e-7133-47e2-a3c4-23939e965c47_4.png",
     "date": "2026.02.28~2026.03.01",
     "venue": "강원특별자치도 양양군",
     "region": "gangwon",
@@ -286,15 +275,15 @@
     "lastEnriched": "2026-02-05T16:19:29.433Z"
   },
   {
-    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "title": "산청한방약초축제",
-    "image": null,
-    "date": "",
-    "venue": "경상남도 산청군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "id": "af789025-8035-4c59-8b84-5a9e0733d134",
+    "title": "태백산 눈축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/af789025-8035-4c59-8b84-5a9e0733d134_12.jpg",
+    "date": "2026.01.31~2026.02.08",
+    "venue": "강원특별자치도 태백시",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=af789025-8035-4c59-8b84-5a9e0733d134",
     "genre": "festival",
-    "lastEnriched": "2026-02-07T14:33:00.848Z"
+    "lastEnriched": "2026-02-05T16:19:24.535Z"
   },
   {
     "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
@@ -305,6 +294,17 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-02-07T14:33:00.849Z"
+    "lastEnriched": "2026-02-08T16:02:06.694Z"
+  },
+  {
+    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "title": "산청한방약초축제",
+    "image": null,
+    "date": "",
+    "venue": "경상남도 산청군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "genre": "festival",
+    "lastEnriched": "2026-02-08T16:02:06.697Z"
   }
 ]
