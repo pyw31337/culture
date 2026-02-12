@@ -1,23 +1,5 @@
 [
   {
-    "id": "mochaclass_958330696",
-    "title": "스트레스 풀리는 터프팅 공예 원데이 클래스",
-    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FrvC0MDXlgrMMbdia_5f5097bb65c28a0d18e73545_400x400?alt=media",
-    "date": "OPEN RUN",
-    "venue": "모카클래스",
-    "link": "https://mochaclass.com/class/6822e315da36af53fff49f99",
-    "region": "seoul",
-    "genre": "class",
-    "price": "120,000원",
-    "originalPrice": "120,000원",
-    "discount": "",
-    "runningTime": "예약페이지 참조",
-    "ageLimit": "전체",
-    "casting": "",
-    "address": "서울",
-    "lastEnriched": "2026-02-05T16:44:44.673Z"
-  },
-  {
     "id": "mochaclass_yodtkps6e",
     "title": "[샾로맨티시스트]타로카드 원데이 기초부터 실전까지(서울일정)",
     "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/images%2F%EB%8B%A4%ED%95%B4%EB%B0%94%20500400.png?alt=media&token=288e6c87-35fb-4c3e-82db-0465c234ec3a",
@@ -21454,5 +21436,23 @@
     "casting": "",
     "address": "서울",
     "lastEnriched": "2026-02-11T15:36:56.588Z"
+  },
+  {
+    "id": "mochaclass_958330696",
+    "title": "스트레스 풀리는 터프팅 공예 원데이 클래스",
+    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FrvC0MDXlgrMMbdia_5f5097bb65c28a0d18e73545_400x400?alt=media",
+    "date": "OPEN RUN",
+    "venue": "모카클래스",
+    "link": "https://mochaclass.com/class/6822e315da36af53fff49f99",
+    "region": "seoul",
+    "genre": "class",
+    "price": "120,000원",
+    "originalPrice": "120,000원",
+    "discount": "",
+    "runningTime": "예약페이지 참조",
+    "ageLimit": "전체",
+    "casting": "",
+    "address": "서울",
+    "lastEnriched": "2026-02-05T16:44:44.673Z"
   }
 ]
