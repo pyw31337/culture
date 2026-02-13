@@ -1,74 +1,8 @@
 [
   {
-    "id": "cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
-    "title": "대관령눈꽃축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8_28.JPG",
-    "date": "2026.02.13~2026.02.22",
-    "venue": "강원특별자치도 평창군",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:25.976Z"
-  },
-  {
-    "id": "ce544916-f27c-4839-9965-9617c27687cb",
-    "title": "안성 동막골 빙어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ce544916-f27c-4839-9965-9617c27687cb_289.jpg",
-    "date": "2026.01.17~2026.02.17",
-    "venue": "경기도 안성시",
-    "region": "gyeonggi",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ce544916-f27c-4839-9965-9617c27687cb",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:24.252Z"
-  },
-  {
-    "id": "86e5f381-79ef-4581-8676-a1e5b1610f35",
-    "title": "홍성남당항 새조개축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/86e5f381-79ef-4581-8676-a1e5b1610f35_52.JPG",
-    "date": "2026.01.17~2026.04.30",
-    "venue": "충청남도 홍성군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86e5f381-79ef-4581-8676-a1e5b1610f35",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:22.998Z"
-  },
-  {
-    "id": "fa0210d0-c2ce-4388-ae6e-bf81716018c9",
-    "title": "포천백운계곡 동장군축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/fa0210d0-c2ce-4388-ae6e-bf81716018c9_83.jpg",
-    "date": "2025.12.20~2026.02.22",
-    "venue": "경기도 포천시",
-    "region": "gyeonggi",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fa0210d0-c2ce-4388-ae6e-bf81716018c9",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:22.822Z"
-  },
-  {
-    "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
-    "title": "양평빙송어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
-    "date": "2025.12.06~2026.03.02",
-    "venue": "경기도 양평군",
-    "region": "gyeonggi",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:24.924Z"
-  },
-  {
-    "id": "cd3921dc-baf4-4033-a3f3-acc739585872",
-    "title": "광복로 겨울빛 트리축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd3921dc-baf4-4033-a3f3-acc739585872_10.JPG",
-    "date": "2025.12.05~2026.02.22",
-    "venue": "부산 중구",
-    "region": "busan",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd3921dc-baf4-4033-a3f3-acc739585872",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:25.152Z"
-  },
-  {
     "id": "3c8b7d73-aac8-4052-b566-a6cb99e55beb",
     "title": "강진청자축제",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3c8b7d73-aac8-4052-b566-a6cb99e55beb_97.jpg",
     "date": "2026.02.21~2026.03.02",
     "venue": "전라남도 강진군",
     "region": "etc",
@@ -77,20 +11,9 @@
     "lastEnriched": "2026-02-10T15:10:06.777Z"
   },
   {
-    "id": "98d02557-f042-4423-aabb-112b599b7eec",
-    "title": "울진대게와 붉은대게 축제",
-    "image": null,
-    "date": "2026.02.27~2026.03.02",
-    "venue": "경상북도 울진군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=98d02557-f042-4423-aabb-112b599b7eec",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:26.559Z"
-  },
-  {
     "id": "d6353dad-ed78-4636-8e0d-f363aa371735",
     "title": "1919 서대문, 그날의 함성",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/d6353dad-ed78-4636-8e0d-f363aa371735_34.jpg",
     "date": "2026.02.28~2026.03.01",
     "venue": "서울 서대문구",
     "region": "seoul",
@@ -101,24 +24,13 @@
   {
     "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
     "title": "양양 낙산해변 달빛 모닥불축제",
-    "image": null,
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/555e6f9e-7133-47e2-a3c4-23939e965c47_4.png",
     "date": "2026.02.28~2026.03.01",
     "venue": "강원특별자치도 양양군",
     "region": "gangwon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=555e6f9e-7133-47e2-a3c4-23939e965c47",
     "genre": "festival",
     "lastEnriched": "2026-02-09T17:10:46.352Z"
-  },
-  {
-    "id": "c0f75de3-9cc2-4e84-8c7b-e77900e6ab13",
-    "title": "정월대보름 달맞이축제",
-    "image": null,
-    "date": "2026.03.03~2026.03.03",
-    "venue": "강원특별자치도 춘천시",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c0f75de3-9cc2-4e84-8c7b-e77900e6ab13",
-    "genre": "festival",
-    "lastEnriched": "2026-02-09T17:10:43.580Z"
   },
   {
     "id": "6a467ed2-f522-4635-9102-ff491755ff9c",
@@ -143,28 +55,6 @@
     "lastEnriched": "2026-02-10T15:10:06.315Z"
   },
   {
-    "id": "ee1a067a-6d05-4066-8b4a-1fb8003409d9",
-    "title": "진안고원 운장산 고로쇠축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee1a067a-6d05-4066-8b4a-1fb8003409d9_17.JPG",
-    "date": "2026.03.14~2026.03.15",
-    "venue": "전북특별자치도 진안군",
-    "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee1a067a-6d05-4066-8b4a-1fb8003409d9",
-    "genre": "festival",
-    "lastEnriched": "2026-02-06T17:15:04.744Z"
-  },
-  {
-    "id": "ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
-    "title": "고령 대가야축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ecf68d54-808a-4ef0-8b64-122a4fc90f0f_74.jpg",
-    "date": "2026.03.27~2026.03.29",
-    "venue": "경상북도 고령군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:26.785Z"
-  },
-  {
     "id": "f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
     "title": "여수 영취산 진달래축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f6c40fcf-7dd2-4701-a2f6-657bb88f155c_4.jpg",
@@ -176,81 +66,15 @@
     "lastEnriched": "2026-02-11T15:05:46.389Z"
   },
   {
-    "id": "e6b3596c-3769-41a2-9090-84a7585db5e0",
-    "title": "진도신비의바닷길축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/e6b3596c-3769-41a2-9090-84a7585db5e0_23.jpg",
-    "date": "2026.04.17~2026.04.20",
-    "venue": "전라남도 진도군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=e6b3596c-3769-41a2-9090-84a7585db5e0",
+    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
+    "title": "춘향제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/31a0fb6b-c075-402b-9cf7-a79e16451aab_18.JPG",
+    "date": "2026.04.30~2026.05.06",
+    "venue": "전북특별자치도 남원시",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
     "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:27.263Z"
-  },
-  {
-    "id": "ba03d3b0-906c-487e-8d6b-cbccaab916ec",
-    "title": "단종문화제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ba03d3b0-906c-487e-8d6b-cbccaab916ec_41.jpg",
-    "date": "2026.04.24~2026.04.26",
-    "venue": "강원특별자치도 영월군",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ba03d3b0-906c-487e-8d6b-cbccaab916ec",
-    "genre": "festival",
-    "lastEnriched": "2026-02-06T17:15:04.549Z"
-  },
-  {
-    "id": "9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
-    "title": "이천도자기축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9cd48059-8bb6-4ea6-9a5b-126a9c1f671b_8.jpg",
-    "date": "2026.04.24~2026.05.05",
-    "venue": "경기도 이천시",
-    "region": "gyeonggi",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
-    "genre": "festival",
-    "lastEnriched": "2026-02-06T17:15:03.081Z"
-  },
-  {
-    "id": "c1152db9-0f84-498c-9e85-e97775ade5b0",
-    "title": "아산 성웅 이순신축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/c1152db9-0f84-498c-9e85-e97775ade5b0_49.JPG",
-    "date": "2026.04.28~2026.05.03",
-    "venue": "충청남도 아산시",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c1152db9-0f84-498c-9e85-e97775ade5b0",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:27.652Z"
-  },
-  {
-    "id": "5720706a-565b-4fe9-a988-592e664e8ef2",
-    "title": "어린이·가족 예술축제 <톡톡>",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/5720706a-565b-4fe9-a988-592e664e8ef2_25.jpg",
-    "date": "2026.05.02~2026.05.03",
-    "venue": "서울 양천구",
-    "region": "seoul",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=5720706a-565b-4fe9-a988-592e664e8ef2",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:27.657Z"
-  },
-  {
-    "id": "09b23de6-e3cc-4ea0-b102-91fe01a17e4a",
-    "title": "영주 한국선비문화축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/09b23de6-e3cc-4ea0-b102-91fe01a17e4a_9.jpg",
-    "date": "2026.05.02~2026.05.05",
-    "venue": "경상북도 영주시",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=09b23de6-e3cc-4ea0-b102-91fe01a17e4a",
-    "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:28.530Z"
-  },
-  {
-    "id": "11c0c030-bbf8-4544-95a3-3c21862626bc",
-    "title": "연등회",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/11c0c030-bbf8-4544-95a3-3c21862626bc_41.jpg",
-    "date": "2026.05.16~2026.05.17",
-    "venue": "서울 종로구",
-    "region": "seoul",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=11c0c030-bbf8-4544-95a3-3c21862626bc",
-    "genre": "festival",
-    "lastEnriched": "2026-02-06T17:15:03.081Z"
+    "lastEnriched": "2026-02-12T15:01:50.112Z"
   },
   {
     "id": "86c83f48-8750-4de0-81e5-a8a257507bcd",
@@ -297,26 +121,213 @@
     "lastEnriched": "2026-02-10T15:10:06.465Z"
   },
   {
-    "id": "53d646d1-9565-4c14-8888-81359ac8867a",
-    "title": "고창모양성제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/53d646d1-9565-4c14-8888-81359ac8867a_61.jpg",
-    "date": "2026.10.15~2026.10.19",
-    "venue": "전북특별자치도 고창군",
-    "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=53d646d1-9565-4c14-8888-81359ac8867a",
+    "id": "ce544916-f27c-4839-9965-9617c27687cb",
+    "title": "안성 동막골 빙어축제",
+    "image": null,
+    "date": "2026.01.17~2026.02.15",
+    "venue": "경기도 안성시",
+    "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ce544916-f27c-4839-9965-9617c27687cb",
     "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:29.212Z"
+    "lastEnriched": "2026-02-13T19:14:15.823Z"
+  },
+  {
+    "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
+    "title": "양평빙송어축제",
+    "image": null,
+    "date": "2025.12.06~2026.03.02",
+    "venue": "경기도 양평군",
+    "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:16.118Z"
+  },
+  {
+    "id": "cd3921dc-baf4-4033-a3f3-acc739585872",
+    "title": "광복로 겨울빛 트리축제",
+    "image": null,
+    "date": "2025.12.05~2026.02.22",
+    "venue": "부산 중구",
+    "region": "busan",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd3921dc-baf4-4033-a3f3-acc739585872",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:17.041Z"
+  },
+  {
+    "id": "cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
+    "title": "대관령눈꽃축제",
+    "image": null,
+    "date": "2026.02.13~2026.02.22",
+    "venue": "강원특별자치도 평창군",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:17.212Z"
+  },
+  {
+    "id": "86e5f381-79ef-4581-8676-a1e5b1610f35",
+    "title": "홍성남당항 새조개축제",
+    "image": null,
+    "date": "2026.01.17~2026.04.30",
+    "venue": "충청남도 홍성군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86e5f381-79ef-4581-8676-a1e5b1610f35",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:17.250Z"
+  },
+  {
+    "id": "fa0210d0-c2ce-4388-ae6e-bf81716018c9",
+    "title": "포천백운계곡 동장군축제",
+    "image": null,
+    "date": "2025.12.20~2026.02.22",
+    "venue": "경기도 포천시",
+    "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fa0210d0-c2ce-4388-ae6e-bf81716018c9",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:17.938Z"
+  },
+  {
+    "id": "98d02557-f042-4423-aabb-112b599b7eec",
+    "title": "울진대게와 붉은대게 축제",
+    "image": null,
+    "date": "2026.02.27~2026.03.02",
+    "venue": "경상북도 울진군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=98d02557-f042-4423-aabb-112b599b7eec",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:18.634Z"
+  },
+  {
+    "id": "490432fc-f28f-4967-aaf4-6ee74857158f",
+    "title": "제천빨간오뎅축제",
+    "image": null,
+    "date": "2026.02.28~2026.03.02",
+    "venue": "충청북도 제천시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=490432fc-f28f-4967-aaf4-6ee74857158f",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:18.864Z"
+  },
+  {
+    "id": "ee1a067a-6d05-4066-8b4a-1fb8003409d9",
+    "title": "진안고원 운장산 고로쇠축제",
+    "image": null,
+    "date": "2026.03.14~2026.03.15",
+    "venue": "전북특별자치도 진안군",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ee1a067a-6d05-4066-8b4a-1fb8003409d9",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:18.931Z"
+  },
+  {
+    "id": "d80cfb61-617b-4647-8196-98995001f079",
+    "title": "서천 동백꽃 주꾸미 축제",
+    "image": null,
+    "date": "2026.03.21~2026.04.05",
+    "venue": "충청남도 서천군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d80cfb61-617b-4647-8196-98995001f079",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:19.230Z"
+  },
+  {
+    "id": "ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
+    "title": "고령 대가야축제",
+    "image": null,
+    "date": "2026.03.27~2026.03.29",
+    "venue": "경상북도 고령군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:20.081Z"
+  },
+  {
+    "id": "ba03d3b0-906c-487e-8d6b-cbccaab916ec",
+    "title": "단종문화제",
+    "image": null,
+    "date": "2026.04.24~2026.04.26",
+    "venue": "강원특별자치도 영월군",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ba03d3b0-906c-487e-8d6b-cbccaab916ec",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:20.282Z"
+  },
+  {
+    "id": "9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
+    "title": "이천도자기축제",
+    "image": null,
+    "date": "2026.04.24~2026.05.05",
+    "venue": "경기도 이천시",
+    "region": "gyeonggi",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:20.494Z"
+  },
+  {
+    "id": "e6b3596c-3769-41a2-9090-84a7585db5e0",
+    "title": "진도신비의바닷길축제",
+    "image": null,
+    "date": "2026.04.17~2026.04.20",
+    "venue": "전라남도 진도군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=e6b3596c-3769-41a2-9090-84a7585db5e0",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:20.952Z"
+  },
+  {
+    "id": "c1152db9-0f84-498c-9e85-e97775ade5b0",
+    "title": "아산 성웅 이순신축제",
+    "image": null,
+    "date": "2026.04.28~2026.05.03",
+    "venue": "충청남도 아산시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c1152db9-0f84-498c-9e85-e97775ade5b0",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:21.444Z"
+  },
+  {
+    "id": "11c0c030-bbf8-4544-95a3-3c21862626bc",
+    "title": "연등회",
+    "image": null,
+    "date": "2026.05.16~2026.05.17",
+    "venue": "서울 종로구",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=11c0c030-bbf8-4544-95a3-3c21862626bc",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:22.208Z"
+  },
+  {
+    "id": "09b23de6-e3cc-4ea0-b102-91fe01a17e4a",
+    "title": "영주 한국선비문화축제",
+    "image": null,
+    "date": "2026.05.02~2026.05.05",
+    "venue": "경상북도 영주시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=09b23de6-e3cc-4ea0-b102-91fe01a17e4a",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:22.321Z"
+  },
+  {
+    "id": "5720706a-565b-4fe9-a988-592e664e8ef2",
+    "title": "어린이·가족 예술축제 <톡톡>",
+    "image": null,
+    "date": "2026.05.02~2026.05.03",
+    "venue": "서울 양천구",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=5720706a-565b-4fe9-a988-592e664e8ef2",
+    "genre": "festival",
+    "lastEnriched": "2026-02-13T19:14:22.333Z"
   },
   {
     "id": "a212b550-67bf-422e-a110-7bb742e84672",
     "title": "사천에어쇼",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/a212b550-67bf-422e-a110-7bb742e84672_8.png",
+    "image": null,
     "date": "2026.10.22~2026.10.25",
     "venue": "경상남도 사천시",
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=a212b550-67bf-422e-a110-7bb742e84672",
     "genre": "festival",
-    "lastEnriched": "2026-02-05T16:19:29.433Z"
+    "lastEnriched": "2026-02-13T19:14:22.968Z"
   },
   {
     "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
@@ -327,7 +338,7 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-02-12T15:01:47.996Z"
+    "lastEnriched": "2026-02-13T19:14:23.429Z"
   },
   {
     "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
@@ -338,17 +349,17 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "genre": "festival",
-    "lastEnriched": "2026-02-12T15:01:48.024Z"
+    "lastEnriched": "2026-02-13T19:14:23.753Z"
   },
   {
-    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
-    "title": "춘향제",
+    "id": "53d646d1-9565-4c14-8888-81359ac8867a",
+    "title": "고창모양성제",
     "image": null,
-    "date": "2026.04.30~2026.05.06",
-    "venue": "전북특별자치도 남원시",
+    "date": "2026.10.15~2026.10.19",
+    "venue": "전북특별자치도 고창군",
     "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=53d646d1-9565-4c14-8888-81359ac8867a",
     "genre": "festival",
-    "lastEnriched": "2026-02-12T15:01:50.112Z"
+    "lastEnriched": "2026-02-13T19:14:24.360Z"
   }
 ]
