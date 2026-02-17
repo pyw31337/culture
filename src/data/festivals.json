@@ -55,17 +55,6 @@
     "lastEnriched": "2026-02-13T19:14:17.041Z"
   },
   {
-    "id": "3c8b7d73-aac8-4052-b566-a6cb99e55beb",
-    "title": "강진청자축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3c8b7d73-aac8-4052-b566-a6cb99e55beb_97.jpg",
-    "date": "2026.02.21~2026.03.02",
-    "venue": "전라남도 강진군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=3c8b7d73-aac8-4052-b566-a6cb99e55beb",
-    "genre": "festival",
-    "lastEnriched": "2026-02-10T15:10:06.777Z"
-  },
-  {
     "id": "98d02557-f042-4423-aabb-112b599b7eec",
     "title": "울진대게와 붉은대게 축제",
     "image": null,
@@ -77,15 +66,15 @@
     "lastEnriched": "2026-02-13T19:14:18.634Z"
   },
   {
-    "id": "d6353dad-ed78-4636-8e0d-f363aa371735",
-    "title": "1919 서대문, 그날의 함성",
+    "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
+    "title": "양양 낙산해변 달빛 모닥불축제",
     "image": null,
     "date": "2026.02.28~2026.03.01",
-    "venue": "서울 서대문구",
-    "region": "seoul",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d6353dad-ed78-4636-8e0d-f363aa371735",
+    "venue": "강원특별자치도 양양군",
+    "region": "gangwon",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=555e6f9e-7133-47e2-a3c4-23939e965c47",
     "genre": "festival",
-    "lastEnriched": "2026-02-10T15:10:06.795Z"
+    "lastEnriched": "2026-02-16T18:44:21.516Z"
   },
   {
     "id": "490432fc-f28f-4967-aaf4-6ee74857158f",
@@ -110,20 +99,9 @@
     "lastEnriched": "2026-02-11T15:05:47.245Z"
   },
   {
-    "id": "019edf5d-ed47-47ff-82a3-627852996c9a",
-    "title": "제주들불축제",
-    "image": null,
-    "date": "2026.03.09~2026.03.14",
-    "venue": "제주특별자치도 제주시",
-    "region": "jeju",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=019edf5d-ed47-47ff-82a3-627852996c9a",
-    "genre": "festival",
-    "lastEnriched": "2026-02-10T15:10:06.315Z"
-  },
-  {
     "id": "ee1a067a-6d05-4066-8b4a-1fb8003409d9",
     "title": "진안고원 운장산 고로쇠축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee1a067a-6d05-4066-8b4a-1fb8003409d9_17.JPG",
+    "image": null,
     "date": "2026.03.14~2026.03.15",
     "venue": "전북특별자치도 진안군",
     "region": "jeonbuk",
@@ -134,7 +112,7 @@
   {
     "id": "d80cfb61-617b-4647-8196-98995001f079",
     "title": "서천 동백꽃 주꾸미 축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/d80cfb61-617b-4647-8196-98995001f079_7.jpg",
+    "image": null,
     "date": "2026.03.21~2026.04.05",
     "venue": "충청남도 서천군",
     "region": "etc",
@@ -275,15 +253,15 @@
     "lastEnriched": "2026-02-11T15:05:46.900Z"
   },
   {
-    "id": "9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
-    "title": "세종한글축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1_170.jpg",
-    "date": "2026.10.09~2026.10.11",
-    "venue": "세종특별자치시 세종시",
-    "region": "sejong",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
+    "id": "7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
+    "title": "광주 추억의 충장축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/7d2cf1b1-9e46-470d-bfa9-4e2b8272802b_33.jpg",
+    "date": "2026.10.07~2026.10.11",
+    "venue": "광주 동구",
+    "region": "gwangju",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
     "genre": "festival",
-    "lastEnriched": "2026-02-10T15:10:06.465Z"
+    "lastEnriched": "2026-02-16T18:44:21.257Z"
   },
   {
     "id": "53d646d1-9565-4c14-8888-81359ac8867a",
@@ -308,17 +286,6 @@
     "lastEnriched": "2026-02-13T19:14:22.968Z"
   },
   {
-    "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
-    "title": "영암왕인문화축제",
-    "image": null,
-    "date": "",
-    "venue": "전라남도 영암군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
-    "genre": "festival",
-    "lastEnriched": "2026-02-16T18:44:19.335Z"
-  },
-  {
     "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "title": "산청한방약초축제",
     "image": null,
@@ -327,28 +294,61 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "genre": "festival",
-    "lastEnriched": "2026-02-16T18:44:19.520Z"
+    "lastEnriched": "2026-02-17T19:05:26.340Z"
   },
   {
-    "id": "7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
-    "title": "광주 추억의 충장축제",
+    "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
+    "title": "영암왕인문화축제",
     "image": null,
-    "date": "2026.10.07~2026.10.11",
-    "venue": "광주 동구",
-    "region": "gwangju",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
+    "date": "",
+    "venue": "전라남도 영암군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-02-16T18:44:21.257Z"
+    "lastEnriched": "2026-02-17T19:05:28.101Z"
   },
   {
-    "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
-    "title": "양양 낙산해변 달빛 모닥불축제",
+    "id": "d6353dad-ed78-4636-8e0d-f363aa371735",
+    "title": "1919 서대문, 그날의 함성",
     "image": null,
     "date": "2026.02.28~2026.03.01",
-    "venue": "강원특별자치도 양양군",
-    "region": "gangwon",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=555e6f9e-7133-47e2-a3c4-23939e965c47",
+    "venue": "서울 서대문구",
+    "region": "seoul",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d6353dad-ed78-4636-8e0d-f363aa371735",
     "genre": "festival",
-    "lastEnriched": "2026-02-16T18:44:21.516Z"
+    "lastEnriched": "2026-02-17T19:05:29.273Z"
+  },
+  {
+    "id": "019edf5d-ed47-47ff-82a3-627852996c9a",
+    "title": "제주들불축제",
+    "image": null,
+    "date": "2026.03.09~2026.03.14",
+    "venue": "제주특별자치도 제주시",
+    "region": "jeju",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=019edf5d-ed47-47ff-82a3-627852996c9a",
+    "genre": "festival",
+    "lastEnriched": "2026-02-17T19:05:29.662Z"
+  },
+  {
+    "id": "3c8b7d73-aac8-4052-b566-a6cb99e55beb",
+    "title": "강진청자축제",
+    "image": null,
+    "date": "2026.02.21~2026.03.02",
+    "venue": "전라남도 강진군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=3c8b7d73-aac8-4052-b566-a6cb99e55beb",
+    "genre": "festival",
+    "lastEnriched": "2026-02-17T19:05:29.904Z"
+  },
+  {
+    "id": "9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
+    "title": "세종한글축제",
+    "image": null,
+    "date": "2026.10.09~2026.10.11",
+    "venue": "세종특별자치시 세종시",
+    "region": "sejong",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
+    "genre": "festival",
+    "lastEnriched": "2026-02-17T19:05:32.363Z"
   }
 ]

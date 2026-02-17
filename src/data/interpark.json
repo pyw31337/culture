@@ -6304,20 +6304,6 @@
     "lastEnriched": "2026-01-20T04:22:58.428Z"
   },
   {
-    "id": "P0004577",
-    "title": "피아니스트 이정화 리사이틀",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004577_p.gif",
-    "date": "2026.02.16 ~ 2026.02.16",
-    "venue": "세종문화회관",
-    "link": "https://tickets.interpark.com/goods/P0004577",
-    "region": "서울",
-    "genre": "concert",
-    "runningTime": "90분(인터미션 15분 포함)",
-    "ageRating": "만 8세이상",
-    "price": "20,000원",
-    "lastEnriched": "2026-01-20T04:23:03.223Z"
-  },
-  {
     "id": "25018177",
     "title": "피터 야블론스키 ＆ 김정원 피아노 듀오 리사이틀",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25018177_p.gif",
@@ -8925,20 +8911,6 @@
     "ageRating": "초등학생이상 관람가",
     "price": "10,000원",
     "lastEnriched": "2026-01-20T04:28:12.543Z"
-  },
-  {
-    "id": "25018627",
-    "title": "연극 라면 (수원)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018627_p.gif",
-    "date": "2026.01.09 ~ 2026.02.16",
-    "venue": "KBS수원아트홀",
-    "link": "https://tickets.interpark.com/goods/25018627",
-    "region": "경기",
-    "genre": "play",
-    "runningTime": "60분",
-    "ageRating": "만 9세이상",
-    "price": "40,000원",
-    "lastEnriched": "2026-01-20T04:28:10.946Z"
   },
   {
     "id": "25017556",
@@ -11933,22 +11905,6 @@
     "lastEnriched": "2026-01-20T04:32:40.936Z"
   },
   {
-    "id": "25017624",
-    "title": "2026 라이브 가족뮤지컬 〈벌거벗은 임금님〉 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017624_p.gif",
-    "date": "2026.02.14 ~ 2026.02.16",
-    "venue": "대백프라자 10층 프라임홀",
-    "link": "https://tickets.interpark.com/goods/25017624",
-    "region": "대구",
-    "genre": "musical",
-    "runningTime": "60분",
-    "ageRating": "24개월이상 관람가능",
-    "price": "13,000원",
-    "originalPrice": "30,000원",
-    "discount": "57%",
-    "lastEnriched": "2026-01-20T04:32:53.976Z"
-  },
-  {
     "id": "26000301",
     "title": "2026 라이브 가족뮤지컬 〈알라딘〉 - 대구",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26000301_p.gif",
@@ -12218,20 +12174,6 @@
     "price": "30,000원",
     "originalPrice": "50,000원",
     "discount": "40%",
-    "lastEnriched": "2026-01-20T04:33:24.029Z"
-  },
-  {
-    "id": "26000058",
-    "title": "이은결 〈META〉 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000058_p.gif",
-    "date": "2026.02.13 ~ 2026.02.16",
-    "venue": "수성아트피아",
-    "link": "https://tickets.interpark.com/goods/26000058",
-    "region": "대구",
-    "genre": "musical",
-    "runningTime": "100분",
-    "ageRating": "6세이상",
-    "price": "88,000원",
     "lastEnriched": "2026-01-20T04:33:24.029Z"
   },
   {
@@ -23583,16 +23525,6 @@
     "genre": "etc"
   },
   {
-    "id": "25018461",
-    "title": "김영임 소리 효 콘서트",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018461_p.gif",
-    "date": "2026.02.17 ~ 2026.02.17",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25018461",
-    "region": "서울",
-    "genre": "etc"
-  },
-  {
     "id": "26001699",
     "title": "김지영의 ONE DAY Ⅱ",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001699_p.gif",
@@ -25259,16 +25191,6 @@
     "date": "2024.03.27 ~ 2026.03.30",
     "venue": "이랜드크루즈",
     "link": "https://tickets.interpark.com/goods/Y4000442",
-    "region": "서울",
-    "genre": "leisure"
-  },
-  {
-    "id": "Y6000174",
-    "title": "［여의도］ 프랑제리 달빛/불꽃 디너 크루즈 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000174_p.gif",
-    "date": "2026.01.21 ~ 2026.02.16",
-    "venue": "이크루즈",
-    "link": "https://tickets.interpark.com/goods/Y6000174",
     "region": "서울",
     "genre": "leisure"
   },
@@ -30729,16 +30651,6 @@
     "date": "2026.01.19 ~ 2026.03.31",
     "venue": "송도 해상케이블카",
     "link": "https://tickets.interpark.com/goods/Y6000168",
-    "region": "부산",
-    "genre": "leisure"
-  },
-  {
-    "id": "Y6000299",
-    "title": "［부산］ 송도해상케이블카+부산타워PKG",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000299_p.gif",
-    "date": "2026.02.13 ~ 2026.05.31",
-    "venue": "송도 해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y6000299",
     "region": "부산",
     "genre": "leisure"
   },
