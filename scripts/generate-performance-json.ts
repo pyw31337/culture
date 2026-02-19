@@ -47,15 +47,24 @@ async function generate() {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
+        let movieCount = 0;
+        let ottCount = 0;
+        let dateCount = 0;
+
         const activePerformances = performances.filter(p => {
-            // 0. Exempt Persistent Content (Movies, OTT) from Date Check
-            if (p.genre === 'movie' || p.genre === 'ott') return true;
+            // 0. EXCLUDE Movies and OTT from this specific JSON 
+            // because they are loaded separately in the frontend (movies.json, ott.json)
+            // to avoid duplicates.
+            if (p.genre === 'movie') {
+                movieCount++;
+                return false;
+            }
+            if (p.genre === 'ott') {
+                ottCount++;
+                return false;
+            }
 
             if (!p.date) return false; // No date = active? No, safety first.
-
-            // Allow "Open Run" or "TBA" if necessary, but for now stricter is better.
-            // If date string contains "~", parse end date.
-            // If single date, parse that.
 
             try {
                 let endDate: Date | null = null;
@@ -83,24 +92,26 @@ async function generate() {
                 }
 
                 if (!endDate || isNaN(endDate.getTime())) {
-                    // Invalid date format?? 
-                    // If it's a long run open run, keep it?
-                    // Safe default: If we can't parse it, keep it but log warning? 
-                    // User wants validation. Let's start with strict logging.
-                    // console.warn(`Unparseable date: ${p.date} (${p.title})`);
                     return true;
                 }
 
                 // Set end date to end of day
                 endDate.setHours(23, 59, 59, 999);
-                return endDate >= today;
+                const isActive = endDate >= today;
+                if (!isActive) dateCount++;
+                return isActive;
 
             } catch (e) {
                 return true;
             }
         });
 
-        console.log(`Filtered ${performances.length - activePerformances.length} expired items.`);
+        console.log(`[Filtering Stats]`);
+        console.log(`- Movies Filtered: ${movieCount}`);
+        console.log(`- OTT Filtered: ${ottCount}`);
+        console.log(`- Expired/Date Filtered: ${dateCount}`);
+
+        console.log(`Filtered ${performances.length - activePerformances.length} items (Expired or Duplicate Type).`);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformances(activePerformances, 'all');

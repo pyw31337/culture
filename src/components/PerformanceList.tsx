@@ -192,11 +192,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             try {
                 // Static Fetch (GitHub Pages compatible); Load multiple sources
                 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                const ts = new Date().getTime(); // Cache busting
 
                 const results = await Promise.allSettled([
-                    fetch(`${basePath}/data/performances.json`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/movies.json`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/ott.json`).then(r => r.ok ? r.json() : [])
+                    fetch(`${basePath}/data/performances.json?v=${ts}`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/movies.json?v=${ts}`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/ott.json?v=${ts}`).then(r => r.ok ? r.json() : [])
                 ]);
 
                 const mergedData: Performance[] = [];
@@ -205,6 +206,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 results.forEach((res, index) => {
                     if (res.status === 'fulfilled') {
                         if (Array.isArray(res.value)) {
+                            // Filter out potential duplicates if logic fails (Server-side should handle this, but safety net)
+                            // Actually, let's just push for now as we fixed the generation.
                             mergedData.push(...res.value);
                         }
                     } else {
