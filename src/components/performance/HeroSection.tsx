@@ -655,11 +655,27 @@ export default function HeroSection({
                             )}
                         </div>
 
+                        {/* Search Button (Far Right) */}
+                        <button
+                            onClick={handleSearch}
+                            className={clsx(
+                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
+                                searchMode === 'location'
+                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
+                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
+                            )}
+                        >
+                            {searchMode === 'location'
+                                ? <MapPin className="w-5 h-5 font-extrabold" />
+                                : <Search className="w-5 h-5 font-extrabold" />
+                            }
+                        </button>
+
                         {/* Divider */}
                         <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
 
                         {/* Mode Toggle Switch (Moved to Right of Input) */}
-                        <div className="flex px-1 shrink-0">
+                        <div className="flex px-1 shrink-0 ml-1">
                             {/* Single Toggle Button that flips mode */}
                             <button
                                 onClick={() => onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
@@ -686,22 +702,6 @@ export default function HeroSection({
                                 )}
                             </button>
                         </div>
-
-                        {/* Search Button (Far Right) */}
-                        <button
-                            onClick={handleSearch}
-                            className={clsx(
-                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
-                                searchMode === 'location'
-                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
-                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
-                            )}
-                        >
-                            {searchMode === 'location'
-                                ? <MapPin className="w-5 h-5 font-extrabold" />
-                                : <Search className="w-5 h-5 font-extrabold" />
-                            }
-                        </button>
                     </div>
                 </div>
 

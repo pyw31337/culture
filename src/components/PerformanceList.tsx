@@ -940,9 +940,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* 3. Main Content (Grid/List) */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
                 {/* Results Info Header */}
-                <div className="flex flex-col sm:flex-row justify-between items-end mb-6 mt-8 gap-2">
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2">
                     <div className="w-full sm:w-auto">
-                        <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
                                 {viewMode === 'likes-perf' ? (
                                     <>
