@@ -588,248 +588,246 @@ export default function HeroSection({
                     {currentTemplate.suffix}
                 </h2>
 
-                <div className="text-xs text-gray-500 font-mono mt-2 tracking-tighter">
-                    {lastUpdated} 기준
+            </div>
+        </div>
+
+            {/* Hero Search Bar */ }
+    <div className={clsx(
+        "w-full lg:w-auto relative group",
+        (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
+    )}>
+
+
+        {/* Light Mode Static Glow */}
+        <div className={clsx(
+            "hidden light:block absolute -inset-4 blur-2xl rounded-full opacity-70 pointer-events-none transition-colors duration-500",
+            searchMode === 'location'
+                ? "bg-gradient-to-r from-[#55df99]/30 to-[#0090f5]/30"
+                : "bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20"
+        )} />
+
+        {/* Main Container */}
+        <div className={clsx(
+            "p-[3px] rounded-full transition-all duration-300 relative",
+            searchMode === 'location'
+                ? "bg-linear-to-r from-[#55df99] to-[#0090f5] light:shadow-[0_4px_30px_rgba(85,223,153,0.35)]"
+                : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
+        )}>
+            <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
+
+                {/* Input Field (Moved to Left) */}
+                <div className="flex-1 relative">
+                    <input
+                        type="text"
+                        value={searchText}
+                        onFocus={() => setActiveSearchSource('hero')}
+                        onChange={(e) => {
+                            const val = e.target.value;
+                            setSearchText(val);
+                            // Reset location filters when user starts typing search
+                            if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
+                                setSelectedRegion('all');
+                                setSelectedDistrict('all');
+                                setSelectedVenue('all');
+                            }
+                        }}
+                        onKeyDown={handleKeyDown}
+                        className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
+                        placeholder={searchMode === 'location'
+                            ? "장소 검색"
+                            : "컨텐츠 검색"
+                        }
+                    />
+                    {/* Reset Button (Next to Input) */}
+                    {searchText && (
+                        <button
+                            onClick={() => {
+                                setSearchText('');
+                                setIsDropdownOpen(false);
+                                setSearchLocation(null);
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-white light:hover:text-black transition-colors"
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    )}
+                </div>
+
+                {/* Search Button (Far Right) */}
+                <button
+                    onClick={handleSearch}
+                    className={clsx(
+                        "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
+                        searchMode === 'location'
+                            ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
+                            : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
+                    )}
+                >
+                    {searchMode === 'location'
+                        ? <MapPin className="w-5 h-5 font-extrabold" />
+                        : <Search className="w-5 h-5 font-extrabold" />
+                    }
+                </button>
+
+                {/* Divider */}
+                <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
+
+                {/* Mode Toggle Switch (Moved to Right of Input) */}
+                <div className="flex px-1 shrink-0 ml-1">
+                    {/* Single Toggle Button that flips mode */}
+                    <button
+                        onClick={() => onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
+                        className={clsx(
+                            "px-4 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
+                            searchMode === 'location'
+                                ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
+                                : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
+                        )}
+                        style={{ height: '80%' }} // Hint at 80% size relative to search button area roughly
+                    >
+                        {searchMode === 'location' ? (
+                            <>
+                                <Search size={14} />
+                                <span className="hidden lg:inline">키워드 검색</span>
+                                <span className="hidden sm:inline lg:hidden">키워드</span>
+                            </>
+                        ) : (
+                            <>
+                                <MapPin size={14} className="fill-current" />
+                                <span className="hidden lg:inline">위치 검색</span>
+                                <span className="hidden sm:inline lg:hidden">위치</span>
+                            </>
+                        )}
+                    </button>
                 </div>
             </div>
+        </div>
 
-            {/* Hero Search Bar */}
-            <div className={clsx(
-                "w-full lg:w-auto relative group",
-                (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
-            )}>
+        {/* Search Results Dropdown (Attached to Hero Input) */}
+        {isDropdownOpen && activeSearchSource === 'hero' && (
+            <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
 
+                {/* Case 1: Search Text Exists -> Show Results */}
+                {searchText ? (
+                    searchResults.length > 0 ? (
+                        searchResults.map((result, idx) => {
+                            const addressParts = result.address ? result.address.split(' ') : [];
+                            const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
 
-                {/* Light Mode Static Glow */}
-                <div className={clsx(
-                    "hidden light:block absolute -inset-4 blur-2xl rounded-full opacity-70 pointer-events-none transition-colors duration-500",
-                    searchMode === 'location'
-                        ? "bg-gradient-to-r from-[#55df99]/30 to-[#0090f5]/30"
-                        : "bg-gradient-to-r from-purple-400/20 via-pink-400/15 to-purple-400/20"
-                )} />
-
-                {/* Main Container */}
-                <div className={clsx(
-                    "p-[3px] rounded-full transition-all duration-300 relative",
-                    searchMode === 'location'
-                        ? "bg-linear-to-r from-[#55df99] to-[#0090f5] light:shadow-[0_4px_30px_rgba(85,223,153,0.35)]"
-                        : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
-                )}>
-                    <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
-
-                        {/* Input Field (Moved to Left) */}
-                        <div className="flex-1 relative">
-                            <input
-                                type="text"
-                                value={searchText}
-                                onFocus={() => setActiveSearchSource('hero')}
-                                onChange={(e) => {
-                                    const val = e.target.value;
-                                    setSearchText(val);
-                                    // Reset location filters when user starts typing search
-                                    if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
-                                        setSelectedRegion('all');
-                                        setSelectedDistrict('all');
-                                        setSelectedVenue('all');
-                                    }
-                                }}
-                                onKeyDown={handleKeyDown}
-                                className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
-                                placeholder={searchMode === 'location'
-                                    ? "장소 검색"
-                                    : "컨텐츠 검색"
-                                }
-                            />
-                            {/* Reset Button (Next to Input) */}
-                            {searchText && (
-                                <button
-                                    onClick={() => {
-                                        setSearchText('');
-                                        setIsDropdownOpen(false);
-                                        setSearchLocation(null);
-                                    }}
-                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-white light:hover:text-black transition-colors"
+                            return (
+                                <div
+                                    key={`search-hero-${idx}`}
+                                    onClick={() => handleSelectResult(result)}
+                                    className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/10 dark:bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                        }`}
                                 >
-                                    <X className="w-4 h-4" />
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Search Button (Far Right) */}
-                        <button
-                            onClick={handleSearch}
-                            className={clsx(
-                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
-                                searchMode === 'location'
-                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
-                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
-                            )}
-                        >
-                            {searchMode === 'location'
-                                ? <MapPin className="w-5 h-5 font-extrabold" />
-                                : <Search className="w-5 h-5 font-extrabold" />
-                            }
-                        </button>
-
-                        {/* Divider */}
-                        <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
-
-                        {/* Mode Toggle Switch (Moved to Right of Input) */}
-                        <div className="flex px-1 shrink-0 ml-1">
-                            {/* Single Toggle Button that flips mode */}
-                            <button
-                                onClick={() => onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
-                                className={clsx(
-                                    "px-4 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
-                                    searchMode === 'location'
-                                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
-                                        : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
-                                )}
-                                style={{ height: '80%' }} // Hint at 80% size relative to search button area roughly
-                            >
-                                {searchMode === 'location' ? (
-                                    <>
-                                        <Search size={14} />
-                                        <span className="hidden lg:inline">키워드 검색</span>
-                                        <span className="hidden sm:inline lg:hidden">키워드</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <MapPin size={14} className="fill-current" />
-                                        <span className="hidden lg:inline">위치 검색</span>
-                                        <span className="hidden sm:inline lg:hidden">위치</span>
-                                    </>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Search Results Dropdown (Attached to Hero Input) */}
-                {isDropdownOpen && activeSearchSource === 'hero' && (
-                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
-
-                        {/* Case 1: Search Text Exists -> Show Results */}
-                        {searchText ? (
-                            searchResults.length > 0 ? (
-                                searchResults.map((result, idx) => {
-                                    const addressParts = result.address ? result.address.split(' ') : [];
-                                    const shortAddress = addressParts.length >= 2 ? `${addressParts[0]} ${addressParts[1]}` : result.address;
-
-                                    return (
-                                        <div
-                                            key={`search-hero-${idx}`}
-                                            onClick={() => handleSelectResult(result)}
-                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/10 dark:bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
-                                                }`}
-                                        >
-                                            <div className="flex items-center gap-3 min-w-0">
-                                                <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
-                                                    {result.type === 'location' ? (
-                                                        <MapPin className="w-4 h-4 text-emerald-400" />
-                                                    ) : result.type === 'video' ? (
-                                                        <Star className="w-4 h-4 text-yellow-500" />
-                                                    ) : (
-                                                        <Search className="w-4 h-4 text-[#a78bfa]" />
-                                                    )}
-                                                </div>
-                                                <div className="text-white text-base font-extrabold truncate">
-                                                    {result.name}
-                                                </div>
-                                            </div>
-
-                                            <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
-                                                {shortAddress}
-                                            </div>
+                                    <div className="flex items-center gap-3 min-w-0">
+                                        <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
+                                            {result.type === 'location' ? (
+                                                <MapPin className="w-4 h-4 text-emerald-400" />
+                                            ) : result.type === 'video' ? (
+                                                <Star className="w-4 h-4 text-yellow-500" />
+                                            ) : (
+                                                <Search className="w-4 h-4 text-[#a78bfa]" />
+                                            )}
                                         </div>
-                                    );
-                                })
-                            ) : (
-                                <div className="p-8 text-center text-gray-400">
-                                    검색 결과가 없습니다.
+                                        <div className="text-white text-base font-extrabold truncate">
+                                            {result.name}
+                                        </div>
+                                    </div>
+
+                                    <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
+                                        {shortAddress}
+                                    </div>
                                 </div>
-                            )
-                        ) : (
-                            /* Case 2: No Search Text -> Show Recent/Popular Keywords */
-                            <div className="p-4 bg-[#1a0b2e]/95 backdrop-blur-3xl">
-                                {/* Recent Keywords */}
-                                <div className="mb-6">
-                                    <div className="flex items-center justify-between mb-3 px-1">
-                                        <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2">
-                                            <Clock className="w-3.5 h-3.5" /> 최근 검색어
-                                        </h4>
-                                        {recentKeywords.length > 0 && (
+                            );
+                        })
+                    ) : (
+                        <div className="p-8 text-center text-gray-400">
+                            검색 결과가 없습니다.
+                        </div>
+                    )
+                ) : (
+                    /* Case 2: No Search Text -> Show Recent/Popular Keywords */
+                    <div className="p-4 bg-[#1a0b2e]/95 backdrop-blur-3xl">
+                        {/* Recent Keywords */}
+                        <div className="mb-6">
+                            <div className="flex items-center justify-between mb-3 px-1">
+                                <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2">
+                                    <Clock className="w-3.5 h-3.5" /> 최근 검색어
+                                </h4>
+                                {recentKeywords.length > 0 && (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            onClearRecent();
+                                        }}
+                                        className="text-xs text-gray-500 hover:text-red-400 transition-colors"
+                                    >
+                                        전체 삭제
+                                    </button>
+                                )}
+                            </div>
+
+                            {recentKeywords.length === 0 ? (
+                                <div className="text-center py-4 text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
+                                    최근 검색 내역이 없습니다.
+                                </div>
+                            ) : (
+                                <div className="flex flex-wrap gap-2">
+                                    {recentKeywords.map((keyword, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full cursor-pointer transition-all"
+                                            onClick={() => onKeywordSelect(keyword)}
+                                        >
+                                            <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{keyword}</span>
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    onClearRecent();
+                                                    onRemoveRecent(keyword);
                                                 }}
-                                                className="text-xs text-gray-500 hover:text-red-400 transition-colors"
+                                                className="text-gray-500 hover:text-red-400 p-0.5 rounded-full hover:bg-white/10 transition-colors"
                                             >
-                                                전체 삭제
+                                                <X className="w-3 h-3" />
                                             </button>
-                                        )}
-                                    </div>
-
-                                    {recentKeywords.length === 0 ? (
-                                        <div className="text-center py-4 text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
-                                            최근 검색 내역이 없습니다.
                                         </div>
-                                    ) : (
-                                        <div className="flex flex-wrap gap-2">
-                                            {recentKeywords.map((keyword, idx) => (
-                                                <div
-                                                    key={idx}
-                                                    className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full cursor-pointer transition-all"
-                                                    onClick={() => onKeywordSelect(keyword)}
-                                                >
-                                                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{keyword}</span>
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            onRemoveRecent(keyword);
-                                                        }}
-                                                        className="text-gray-500 hover:text-red-400 p-0.5 rounded-full hover:bg-white/10 transition-colors"
-                                                    >
-                                                        <X className="w-3 h-3" />
-                                                    </button>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
+                                    ))}
                                 </div>
+                            )}
+                        </div>
 
-                                {/* Popular Keywords */}
-                                <div>
-                                    <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2 mb-3 px-1">
-                                        <TrendingUp className="w-3.5 h-3.5 text-red-400" /> 인기 검색어
-                                    </h4>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {[
-                                            '뮤지컬', '콘서트', '서울', '전시회',
-                                            '아이브', '임영웅', '싸이', '모네',
-                                            '예술의전당', '세종문화회관'
-                                        ].map((keyword, idx) => (
-                                            <div
-                                                key={idx}
-                                                onClick={() => onKeywordSelect(keyword)}
-                                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors"
-                                            >
-                                                <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
-                                                    {idx + 1}
-                                                </span>
-                                                <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
-                                                    {keyword}
-                                                </span>
-                                            </div>
-                                        ))}
+                        {/* Popular Keywords */}
+                        <div>
+                            <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2 mb-3 px-1">
+                                <TrendingUp className="w-3.5 h-3.5 text-red-400" /> 인기 검색어
+                            </h4>
+                            <div className="grid grid-cols-2 gap-2">
+                                {[
+                                    '뮤지컬', '콘서트', '서울', '전시회',
+                                    '아이브', '임영웅', '싸이', '모네',
+                                    '예술의전당', '세종문화회관'
+                                ].map((keyword, idx) => (
+                                    <div
+                                        key={idx}
+                                        onClick={() => onKeywordSelect(keyword)}
+                                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors"
+                                    >
+                                        <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
+                                            {idx + 1}
+                                        </span>
+                                        <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                                            {keyword}
+                                        </span>
                                     </div>
-                                </div>
+                                ))}
                             </div>
-                        )}
+                        </div>
                     </div>
                 )}
             </div>
-        </div>
+        )}
+    </div>
+        </div >
     );
 }
