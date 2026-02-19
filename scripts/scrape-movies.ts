@@ -478,6 +478,14 @@ async function scrapeMovies() {
         // Perform Cleanup
         cleanupOldMovieImages(allMovies);
 
+        // Copy to public/data for frontend access
+        const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');
+        const publicDir = path.dirname(publicFile);
+        if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+
+        fs.copyFileSync(OUTPUT_FILE, publicFile);
+        console.log(`Copied to ${publicFile}`);
+
     } else {
         console.warn('Scraper found 0 movies. Aborting save.');
     }

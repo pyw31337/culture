@@ -270,15 +270,16 @@ async function scrapeOTT() {
         const existing = existingMap.get(newItem.title);
         // Skip enrichment if:
         // 1. Item exists
-        // 2. Item has critical data (ageRating, director, cast, or it's 'All' rating which is often static)
-        // 3. (Optional) Check timestamp if we added one (not yet, but good for future)
-        if (existing && existing.ageRating && existing.cast) {
+        // 2. Item has critical data AND POSTER
+        if (existing && existing.ageRating && existing.cast && existing.poster) {
             // Merge platforms just in case
             newItem.platforms.forEach((p: string) => {
                 if (!existing.platforms.includes(p)) existing.platforms.push(p);
             });
             // Update Poster if available (Critical for image downloading)
-            if (newItem.poster) existing.poster = newItem.poster;
+            // If new item has poster but existing doesn't, we wouldn't be here (condition above).
+            // But if existing has poster, we can still update if new one is different?
+            // Actually, if existing has poster, we are good.
             if (newItem.link) existing.link = newItem.link; // Update link too to prevent stale links
 
             // Update existing map
@@ -503,6 +504,24 @@ async function scrapeOTT() {
                 }
 
                 if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
+
+                // Poster Extraction (Added to fix missing images)
+                const img = document.querySelector('.detail_info a.thumb img') ||
+                    document.querySelector('.cm_content_area .thumb img') ||
+                    document.querySelector('.api_subject_bx .thumb img') ||
+                    document.querySelector('.detail_info .thumb img');
+
+                if (img) {
+                    let src = img.getAttribute('src');
+                    if (src && src.includes('search.pstatic.net') && src.includes('src=')) {
+                        try {
+                            const urlObj = new URL(src, 'https://search.naver.com');
+                            const realSrc = urlObj.searchParams.get('src');
+                            if (realSrc) src = decodeURIComponent(realSrc);
+                        } catch (e) { }
+                    }
+                    if (src) res.poster = src;
+                }
 
                 return res;
             };
@@ -759,6 +778,14 @@ async function scrapeOTT() {
         fs.writeFileSync(tempFile, JSON.stringify(finalItems, null, 2));
         fs.renameSync(tempFile, OUTPUT_FILE);
         console.log(`Done. Saved ${finalItems.length} items to ${OUTPUT_FILE}`);
+
+        // Copy to public/data for frontend access
+        const publicFile = path.resolve(process.cwd(), 'public/data/ott.json');
+        const publicDir = path.dirname(publicFile);
+        if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+
+        fs.copyFileSync(OUTPUT_FILE, publicFile);
+        console.log(`Copied to ${publicFile}`);
     } else {
         console.warn('Scraper found 0 items. Aborting save.');
     }
