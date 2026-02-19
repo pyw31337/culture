@@ -310,6 +310,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Auto-open dropdown when results exist (Both Modes)
     useEffect(() => {
+        // Prevent auto-open if the text exactly matches the selected location (user just selected it)
+        if (searchMode === 'location' && searchLocation && searchText === searchLocation.name) {
+            return;
+        }
+
         // Keyword mode: check searchResults
         // Location mode: check kakaoSearchResults directly (since searchResults depends on it via useMemo with async delay)
         if (searchText.trim().length > 0) {
@@ -320,7 +325,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 setIsDropdownOpen(true);
             }
         }
-    }, [searchResults, searchText, searchMode, kakaoSearchResults]);
+    }, [searchResults, searchText, searchMode, kakaoSearchResults, searchLocation]);
 
     // Reset highlight when results change
     useEffect(() => {
@@ -827,6 +832,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     setIsDropdownOpen={setIsDropdownOpen}
                     handleSearch={handleSearch}
                     handleSelectResult={(result: any) => {
+                        // Always reset category to 'all' on new selection
+                        setSelectedGenre('all');
+
                         if (searchMode === 'location') {
                             if (result.lat && result.lng) {
                                 setSearchLocation({

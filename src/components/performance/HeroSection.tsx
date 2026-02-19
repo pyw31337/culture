@@ -637,7 +637,7 @@ export default function HeroSection({
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                                 placeholder={searchMode === 'location'
                                     ? "장소 검색"
-                                    : "공연명 검색"
+                                    : "컨텐츠 검색"
                                 }
                             />
                             {/* Reset Button (Next to Input) */}
