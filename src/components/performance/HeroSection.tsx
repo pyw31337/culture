@@ -602,8 +602,23 @@ export default function HeroSection({
                         : "bg-linear-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] light:shadow-[0_4px_30px_rgba(168,85,247,0.25)]"
                 )}>
                     <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative mix-blend-hard-light light:mix-blend-normal">
+                        {/* Search Button (Now on Left) */}
+                        <button
+                            onClick={handleSearch}
+                            className={clsx(
+                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none flex items-center justify-center shrink-0",
+                                searchMode === 'location'
+                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
+                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
+                            )}
+                        >
+                            {searchMode === 'location'
+                                ? <MapPin className="w-5 h-5 font-extrabold" />
+                                : <Search className="w-5 h-5 font-extrabold" />
+                            }
+                        </button>
 
-                        {/* Input Field (Moved to Left) */}
+                        {/* Input Field (Middle) */}
                         <div className="flex-1 relative">
                             <input
                                 type="text"
@@ -622,7 +637,7 @@ export default function HeroSection({
                                 onKeyDown={handleKeyDown}
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[380px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                                 placeholder={searchMode === 'location'
-                                    ? "장소 검색"
+                                    ? "위치 검색"
                                     : "컨텐츠 검색"
                                 }
                             />
@@ -641,37 +656,20 @@ export default function HeroSection({
                             )}
                         </div>
 
-                        {/* Search Button (Far Right) */}
-                        <button
-                            onClick={handleSearch}
-                            className={clsx(
-                                "p-3.5 rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all outline-none ml-1 flex items-center justify-center",
-                                searchMode === 'location'
-                                    ? "bg-gradient-to-br from-[#55df99] to-[#0090f5] shadow-emerald-500/30 text-white"
-                                    : "bg-gradient-to-r from-[#a78bfa] to-[#f472b6] text-white"
-                            )}
-                        >
-                            {searchMode === 'location'
-                                ? <MapPin className="w-5 h-5 font-extrabold" />
-                                : <Search className="w-5 h-5 font-extrabold" />
-                            }
-                        </button>
-
                         {/* Divider */}
                         <div className="w-[1px] h-6 bg-white/10 light:bg-black/10 mx-1"></div>
 
-                        {/* Mode Toggle Switch (Moved to Right of Input) */}
-                        <div className="flex px-1 shrink-0 ml-1">
+                        {/* Mode Toggle Switch (Far Right) */}
+                        <div className="flex px-1 shrink-0">
                             {/* Single Toggle Button that flips mode */}
                             <button
                                 onClick={() => onSearchModeChange(searchMode === 'keyword' ? 'location' : 'keyword')}
                                 className={clsx(
                                     "px-4 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap border border-transparent hover:scale-105 active:scale-95",
                                     searchMode === 'location'
-                                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
-                                        : "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
+                                        ? "bg-purple-500/20 text-purple-400 border-purple-500/30 hover:bg-purple-500/30 light:bg-purple-100 light:text-purple-700 light:border-purple-200"
+                                        : "bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30 light:bg-emerald-100 light:text-emerald-700 light:border-emerald-200"
                                 )}
-                                style={{ height: '80%' }} // Hint at 80% size relative to search button area roughly
                             >
                                 {searchMode === 'location' ? (
                                     <>
