@@ -104,6 +104,23 @@ export default function HeroSection({
     onSearchModeChange
 }: HeroSectionProps) {
     const heroRef = useRef<HTMLDivElement>(null);
+    const searchContainerRef = useRef<HTMLDivElement>(null);
+
+    // Handle click outside to close search dropdown
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+                if (isDropdownOpen && activeSearchSource === 'hero') {
+                    setIsDropdownOpen(false);
+                }
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isDropdownOpen, activeSearchSource, setIsDropdownOpen]);
 
     // Logic for determining the current template to display
     const currentTemplate = (() => {
@@ -580,10 +597,12 @@ export default function HeroSection({
             </div>
 
             {/* Hero Search Bar */}
-            <div className={clsx(
-                "w-full lg:w-auto relative group",
-                (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
-            )}>
+            <div
+                ref={searchContainerRef}
+                className={clsx(
+                    "w-full lg:w-auto relative group",
+                    (isDropdownOpen && activeSearchSource === 'hero') ? "z-[101]" : "z-[30]"
+                )}>
 
 
                 {/* Light Mode Static Glow */}
