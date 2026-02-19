@@ -23,9 +23,25 @@ interface PerformanceCardProps {
     onShare?: () => Promise<boolean>;
     onDetail?: () => void;
     searchMode?: 'keyword' | 'location';
+    searchText?: string;
 }
 
-export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 공연', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword' }: PerformanceCardProps) {
+// Helper for Highlighting
+const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) => {
+    if (!keyword || !text) return <>{text}</>;
+    // Escape special regex chars if needed, but for simple keywords:
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    const parts = text.split(regex);
+    return (
+        <>
+            {parts.map((part, i) =>
+                regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
+            )}
+        </>
+    );
+};
+
+export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 공연', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
@@ -362,7 +378,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         }}
                                     >
                                         <h3 className="font-extrabold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
-                                            {cleanTitle(perf.title)}
+                                            <HighlightText text={cleanTitle(perf.title)} keyword={searchText} />
                                         </h3>
                                     </button>
 
@@ -393,7 +409,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-extrabold cursor-pointer w-max"
                                         >
                                             <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
-                                            <span className="truncate">{perf.venue}</span>
+                                            <span className="truncate"><HighlightText text={perf.venue} keyword={searchText} /></span>
                                         </button>
                                     )}
                                     {/* Price Section (Unified Style) */}
@@ -618,7 +634,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             {/* Title (Link Removed per request) */}
                                             <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
                                                 <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
-                                                    {cleanTitle(perf.title) || '제목 없음'}
+                                                    <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                                                 </h3>
                                             </div>
 
@@ -660,7 +676,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                             }
                                                         }} className={clsx("flex items-center gap-1 hover:underline truncate relative z-[100] cursor-pointer max-w-full", searchMode === 'location' ? "hover:text-emerald-400" : "hover:text-[#a78bfa]")}>
                                                             <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
-                                                            <span className="truncate">{perf.venue || 'Online'}</span>
+                                                            <span className="truncate"><HighlightText text={perf.venue || 'Online'} keyword={searchText} /></span>
                                                         </button>
                                                     )}
                                                 </div>

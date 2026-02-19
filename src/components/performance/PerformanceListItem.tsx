@@ -18,9 +18,24 @@ interface PerformanceListItemProps {
     onShare?: () => Promise<boolean>;
     onDetail?: () => void;
     searchMode?: 'keyword' | 'location';
+    searchText?: string;
 }
 
-export default function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword' }: PerformanceListItemProps) {
+// Helper for Highlighting
+const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) => {
+    if (!keyword || !text) return <>{text}</>;
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    const parts = text.split(regex);
+    return (
+        <>
+            {parts.map((part, i) =>
+                regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
+            )}
+        </>
+    );
+};
+
+export default function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
     const genreStyle = GENRE_STYLES[perf.genre] || {};
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -252,7 +267,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",
                                 variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
-                                {cleanTitle(perf.title) || '제목 없음'}
+                                <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                             </h3>
                         </a>
 
@@ -293,7 +308,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-extrabold")}>{perf.venue}</span>
+                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-extrabold")}><HighlightText text={perf.venue} keyword={searchText} /></span>
                                 </button>
                             )}
                         </div>

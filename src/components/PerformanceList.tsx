@@ -142,6 +142,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     useEffect(() => {
         searchTextRef.current = searchText; // Always keep ref in sync
 
+        // [FIX] Prevent searching if text matches selected location exactly (User selected it)
+        if (searchMode === 'location' && searchLocation && searchText === searchLocation.name) {
+            return;
+        }
+
         if (searchMode === 'location' && searchText.trim().length > 1) {
             const currentSearchText = searchText.trim(); // Capture at request time
             // Debounce
@@ -180,7 +185,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         } else if (searchMode === 'location' && searchText.trim().length === 0) {
             setKakaoSearchResults([]);
         }
-    }, [searchText, searchMode]);
+    }, [searchText, searchMode, searchLocation]);
 
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -891,19 +896,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 // User feedback implicit: "Enter to select highlighted".
                                 // If no highlight, maybe select top result (idx 0) if user just typed and pressed enter?
                                 // Original logic was: select top. Let's keep that as fallback if index is -1.
-                                if (searchResults.length > 0) {
-                                    const top = searchResults[0];
-                                    if (searchMode === 'location') {
-                                        if (top.lat && top.lng) {
-                                            setSearchLocation({ lat: top.lat, lng: top.lng, name: top.name });
-                                            setSearchText(top.name);
-                                        }
-                                    } else {
-                                        setSearchText(top.name);
-                                        handleSearch();
-                                    }
-                                    setIsDropdownOpen(false);
-                                }
+                                // No highlight, but entered -> Just search with current text
+                                // User feedback: "Enter to select highlighted".
+                                // If no highlight, do NOT select top result. Just search.
+                                handleSearch();
+                                setIsDropdownOpen(false);
                             }
                         }
                     }}
@@ -1066,6 +1063,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         selectedGenre={selectedGenre}
                         viewMode={viewMode}
                         searchMode={searchMode}
+                        searchText={searchText}
                     />
                 )}
 
