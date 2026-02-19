@@ -978,9 +978,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     </>
                                 ) : searchText ? (
                                     <>
-                                        <Search className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-500" : "text-purple-500")} />
+                                        {searchMode === 'location' ? (
+                                            <MapPin className="text-emerald-500 w-5 h-5" />
+                                        ) : (
+                                            <Search className="text-purple-500 w-5 h-5" />
+                                        )}
                                         <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
-                                        <span className="text-base sm:text-xl shrink-0">키워드 검색 공연 ({filteredPerformances.length})</span>
+                                        <span className="text-base sm:text-xl shrink-0">
+                                            {searchMode === 'location' ? '위치 검색 공연' : '키워드 검색 공연'} ({filteredPerformances.length})
+                                        </span>
                                     </>
                                 ) : (
                                     <>
