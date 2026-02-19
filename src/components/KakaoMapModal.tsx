@@ -425,161 +425,95 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     {/* Bottom Sheet Area (Venue List) */}
                     <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-8 pb-4 px-4">
 
-                        {/* Bottom Sheet Area */}
-                        <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-8 pb-4 px-4">
 
-                            {/* CASE 1: Selected Venue Popup (Overlay) */}
-                            {selectedVenue && selectedVenueData && popupPosition && (
-                                <div
-                                    className="absolute pointer-events-auto z-[200] flex flex-col items-center"
-                                    style={{
-                                        left: popupPosition.x,
-                                        top: popupPosition.y,
-                                        transform: 'translate(-50%, -100%) translateY(-20px)', // Pivot bottom center + gap above marker
-                                        filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.3))'
-                                    }}
-                                >
-                                    <div className="bg-gray-900 rounded-xl border border-gray-700 w-[280px] overflow-hidden flex flex-col">
-                                        {/* Header */}
-                                        <div className="bg-gray-800 p-3 flex justify-between items-start">
-                                            <div>
-                                                <h3 className="text-white font-bold text-base leading-tight">{selectedVenue}</h3>
-                                                <p className="text-xs text-gray-400 mt-0.5">{selectedVenueData.address}</p>
-                                            </div>
-                                            <button onClick={() => setSelectedVenue(null)} className="text-gray-400 hover:text-white">
-                                                <X size={16} />
-                                            </button>
-                                        </div>
 
-                                        {/* List */}
-                                        <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-gray-900 p-2 space-y-2"
-                                            onScroll={handlePerfScroll}
+                        {/* CASE 2: Visible Venues List (Horizontal Scroll) - ALWAYS VISIBLE */}
+                        {visibleVenues.length > 0 && (
+                            <div
+                                ref={scrollRef}
+                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                onMouseDown={onMouseDown}
+                                onMouseLeave={onMouseLeave}
+                                onMouseUp={onMouseUp}
+                                onMouseMove={onMouseMove}
+                            >
+                                {visibleVenues.map((v: any) => {
+                                    const isFavorite = favoriteVenues.includes(v.venueName);
+                                    const isSelected = selectedVenue === v.venueName;
+
+                                    // Calculate Distance
+                                    let distanceLabel = '';
+                                    if (centerLocation) {
+                                        const dist = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, v.lat, v.lng);
+                                        distanceLabel = `${dist.toFixed(1)}km`;
+                                    }
+
+                                    return (
+                                        <button
+                                            type="button"
+                                            key={v.venueName}
+                                            onClick={() => {
+                                                const newSelected = v.venueName === selectedVenue ? null : v.venueName;
+                                                setSelectedVenue(newSelected); // Toggle
+                                                if (newSelected && mapInstance && v.lat && v.lng) {
+                                                    const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
+                                                    mapInstance.panTo(moveLatLon);
+                                                    mapInstance.setLevel(2); // Focus zoom level
+                                                }
+                                            }}
+                                            className={clsx(
+                                                "snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border",
+                                                isSelected
+                                                    ? "bg-emerald-50/95 border-emerald-500 ring-2 ring-emerald-500/50 scale-[1.02]"
+                                                    : "bg-white/90 backdrop-blur border-white/20 hover:bg-white hover:scale-[1.01]"
+                                            )}
                                         >
-                                            {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
-                                                <a
-                                                    key={p.id}
-                                                    href={p.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex gap-2 bg-gray-800/50 p-2 rounded hover:bg-gray-800 transition border border-gray-800 hover:border-gray-600 group"
-                                                >
-                                                    {p.image ? (
-                                                        <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-950 shrink-0" />
-                                                    ) : (
-                                                        <div className="w-10 h-14 bg-gray-800 rounded flex items-center justify-center shrink-0">
-                                                            <Star size={10} className="text-gray-600" />
-                                                        </div>
+                                            <div className="flex justify-between items-start w-full">
+                                                <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-emerald-900" : "text-black")}>
+                                                    {v.venueName}
+                                                </h4>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onToggleFavorite(v.venueName);
+                                                    }}
+                                                    className={clsx(
+                                                        "ml-2 p-1 rounded-full transition-colors",
+                                                        isFavorite
+                                                            ? "hover:bg-yellow-100"
+                                                            : (isSelected ? "hover:bg-emerald-200" : "hover:bg-gray-100")
                                                     )}
-                                                    <div className="flex-1 min-w-0">
-                                                        <div className="flex items-center gap-1.5 mb-0.5">
-                                                            <span className={clsx(
-                                                                "px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none",
-                                                                (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
-                                                            )}>
-                                                                {GENRES.find(g => g.id === p.genre)?.label}
-                                                            </span>
-                                                            <span className="text-[9px] text-gray-500">{p.date}</span>
-                                                        </div>
-                                                        <h4 className="text-[12px] font-bold text-gray-200 group-hover:text-emerald-400 line-clamp-2 leading-tight">
-                                                            {p.title}
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    {/* Arrow Tail */}
-                                    <div className="w-4 h-4 bg-gray-900 border-r border-b border-gray-700 transform rotate-45 -mt-2 z-0 relative"></div>
-                                </div>
-                            )}
+                                                >
+                                                    <Star className={clsx("w-4 h-4", isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400')} />
+                                                </button>
+                                            </div>
 
-                            {/* CASE 2: Visible Venues List (Horizontal Scroll) - ALWAYS VISIBLE */}
-                            {visibleVenues.length > 0 && (
-                                <div
-                                    ref={scrollRef}
-                                    className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                                    onMouseDown={onMouseDown}
-                                    onMouseLeave={onMouseLeave}
-                                    onMouseUp={onMouseUp}
-                                    onMouseMove={onMouseMove}
-                                >
-                                    {visibleVenues.map((v: any) => {
-                                        const isFavorite = favoriteVenues.includes(v.venueName);
-                                        const isSelected = selectedVenue === v.venueName;
-
-                                        // Calculate Distance
-                                        let distanceLabel = '';
-                                        if (centerLocation) {
-                                            const dist = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, v.lat, v.lng);
-                                            distanceLabel = `${dist.toFixed(1)}km`;
-                                        }
-
-                                        return (
-                                            <button
-                                                type="button"
-                                                key={v.venueName}
-                                                onClick={() => {
-                                                    const newSelected = v.venueName === selectedVenue ? null : v.venueName;
-                                                    setSelectedVenue(newSelected); // Toggle
-                                                    if (newSelected && mapInstance && v.lat && v.lng) {
-                                                        const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                        mapInstance.panTo(moveLatLon);
-                                                        mapInstance.setLevel(2); // Focus zoom level
-                                                    }
-                                                }}
-                                                className={clsx(
-                                                    "snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border",
+                                            {/* Distance Badge */}
+                                            {distanceLabel && (
+                                                <div className={clsx(
+                                                    "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] w-fit font-bold mb-1",
                                                     isSelected
-                                                        ? "bg-emerald-50/95 border-emerald-500 ring-2 ring-emerald-500/50 scale-[1.02]"
-                                                        : "bg-white/90 backdrop-blur border-white/20 hover:bg-white hover:scale-[1.01]"
-                                                )}
-                                            >
-                                                <div className="flex justify-between items-start w-full">
-                                                    <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-emerald-900" : "text-black")}>
-                                                        {v.venueName}
-                                                    </h4>
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            onToggleFavorite(v.venueName);
-                                                        }}
-                                                        className={clsx(
-                                                            "ml-2 p-1 rounded-full transition-colors",
-                                                            isFavorite
-                                                                ? "hover:bg-yellow-100"
-                                                                : (isSelected ? "hover:bg-emerald-200" : "hover:bg-gray-100")
-                                                        )}
-                                                    >
-                                                        <Star className={clsx("w-4 h-4", isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400')} />
-                                                    </button>
+                                                        ? "bg-emerald-200 text-emerald-800"
+                                                        : "bg-gray-100 text-gray-500"
+                                                )}>
+                                                    <MapPin size={10} className="fill-current" />
+                                                    {distanceLabel}
                                                 </div>
+                                            )}
 
-                                                {/* Distance Badge */}
-                                                {distanceLabel && (
-                                                    <div className={clsx(
-                                                        "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] w-fit font-bold mb-1",
-                                                        isSelected
-                                                            ? "bg-emerald-200 text-emerald-800"
-                                                            : "bg-gray-100 text-gray-500"
-                                                    )}>
-                                                        <MapPin size={10} className="fill-current" />
-                                                        {distanceLabel}
-                                                    </div>
-                                                )}
-
-                                                <div className="mt-auto flex items-center justify-between text-xs">
-                                                    <span className={clsx("font-extrabold", isSelected ? "text-emerald-600" : "text-blue-600")}>
-                                                        {v.performances.length}개 공연
-                                                    </span>
-                                                </div>
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            )}
-                        </div>
+                                            <div className="mt-auto flex items-center justify-between text-xs">
+                                                <span className={clsx("font-extrabold", isSelected ? "text-emerald-600" : "text-blue-600")}>
+                                                    {v.performances.length}개 공연
+                                                </span>
+                                            </div>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
                 </div>
+            </div>
         </Portal>
     );
 }
