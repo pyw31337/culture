@@ -643,7 +643,11 @@ export default function HeroSection({
                             <input
                                 type="text"
                                 value={searchText}
-                                onFocus={() => setActiveSearchSource('hero')}
+                                onFocus={() => {
+                                    setActiveSearchSource('hero');
+                                    setIsDropdownOpen(true);
+                                }}
+                                onClick={() => setIsDropdownOpen(true)}
                                 onChange={(e) => {
                                     const val = e.target.value;
                                     setSearchText(val);
@@ -653,6 +657,7 @@ export default function HeroSection({
                                         setSelectedDistrict('all');
                                         setSelectedVenue('all');
                                     }
+                                    if (!isDropdownOpen) setIsDropdownOpen(true);
                                 }}
                                 onKeyDown={handleKeyDown}
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[480px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
@@ -680,10 +685,10 @@ export default function HeroSection({
 
                 {/* Search Results Dropdown (Attached to Hero Input) */}
                 {isDropdownOpen && activeSearchSource === 'hero' && (
-                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto">
+                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
 
                         {/* Case 1: Search Text Exists -> Show Results */}
-                        {searchText ? (
+                        {searchText.trim() ? (
                             searchResults.length > 0 ? (
                                 searchResults.map((result, idx) => {
                                     const addressParts = result.address ? result.address.split(' ') : [];

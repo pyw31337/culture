@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { clsx } from 'clsx';
 import { X, Search, Grid3X3, List, CalendarDays, Map, LayoutGrid, LayoutList, Mic2, Music, Ticket, Frame, Baby, Star, Moon, Sun, MapPin } from 'lucide-react';
 import { BottomMenuType, ListDetailsIcon } from './BottomNav';
@@ -76,6 +76,24 @@ export default function BottomNavSheet({
     const [keywordInput, setKeywordInput] = useState('');
     // Default to true (Light) as that is now the CSS default
     const [isLight, setIsLight] = useState(true);
+    const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+    const searchContainerRef = useRef<HTMLDivElement>(null);
+
+    // Handle click outside to close search results in the sheet
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+                setIsSearchDropdownOpen(false);
+            }
+        }
+
+        if (isSearchDropdownOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isSearchDropdownOpen]);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -350,21 +368,29 @@ export default function BottomNavSheet({
                                         ? "bg-gradient-to-r from-[#55df99] to-[#0090f5] shadow-emerald-500/20"
                                         : "bg-gradient-to-r from-[#a78bfa] via-purple-500 to-[#f472b6] shadow-purple-500/20"
                                 )}>
-                                    <div className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
+                                    <div ref={searchContainerRef} className="bg-[#0a0a0a] light:bg-white rounded-full flex items-center p-1 relative">
 
                                         {/* Input Only */}
                                         <div className="flex-1 relative">
                                             <input
                                                 type="text"
                                                 value={searchText}
-                                                onChange={(e) => onSearchChange(e.target.value)}
+                                                onFocus={() => setIsSearchDropdownOpen(true)}
+                                                onClick={() => setIsSearchDropdownOpen(true)}
+                                                onChange={(e) => {
+                                                    onSearchChange(e.target.value);
+                                                    if (!isSearchDropdownOpen) setIsSearchDropdownOpen(true);
+                                                }}
                                                 onKeyDown={handleKeyDown}
                                                 placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소, 출연진 검색..."}
                                                 className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                             />
                                             {searchText && (
                                                 <button
-                                                    onClick={() => onSearchChange('')}
+                                                    onClick={() => {
+                                                        onSearchChange('');
+                                                        setIsSearchDropdownOpen(false);
+                                                    }}
                                                     className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-500 hover:text-white light:hover:text-black"
                                                 >
                                                     <X className="w-4 h-4" />
@@ -395,46 +421,56 @@ export default function BottomNavSheet({
 
 
                             {/* Search Results List (Inserted) */}
-                            {searchResults.length > 0 && searchText.trim().length > 0 && (
-                                <div className="w-full flex flex-col gap-1 max-h-[200px] overflow-y-auto custom-scrollbar my-2 p-1">
-                                    {searchResults.map((result, idx) => (
-                                        <button
-                                            key={`${result.id || result.venueId}-${idx}`}
-                                            onClick={() => {
-                                                onResultSelect(result);
-                                                onClose(); // Close sheet on selection
-                                            }}
-                                            className={clsx(
-                                                "w-full text-left px-3 py-2.5 rounded-xl transition-colors flex items-start gap-3 group shrink-0",
-                                                "hover:bg-white/5 light:hover:bg-gray-50",
-                                                searchMode === 'location' ? "hover:bg-emerald-500/10 light:hover:bg-emerald-50" : "hover:bg-purple-500/10 light:hover:bg-purple-50"
-                                            )}
-                                        >
-                                            <div className={clsx(
-                                                "p-2 rounded-lg mt-0.5 shrink-0",
-                                                searchMode === 'location'
-                                                    ? "bg-emerald-500/20 text-emerald-400 light:bg-emerald-100 light:text-emerald-600"
-                                                    : "bg-purple-500/20 text-purple-400 light:bg-purple-100 light:text-purple-600"
-                                            )}>
-                                                {searchMode === 'location' ? <MapPin size={16} /> : <Search size={16} />}
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                                <div className="flex items-center gap-2">
-                                                    <span className="text-sm font-bold text-gray-200 light:text-gray-900 truncate">
-                                                        {result.name}
-                                                    </span>
-                                                    <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 light:bg-gray-200 text-gray-400 light:text-gray-600 whitespace-nowrap">
-                                                        {result.category || result.type}
-                                                    </span>
-                                                </div>
-                                                {result.address && (
-                                                    <div className="text-xs text-gray-500 light:text-gray-500 truncate mt-0.5">
-                                                        {result.address}
-                                                    </div>
+                            {isSearchDropdownOpen && (
+                                <div className="w-full flex flex-col gap-1 max-h-[300px] overflow-y-auto custom-scrollbar my-2 p-1 bg-black/40 light:bg-gray-50 border border-white/10 light:border-black/5 rounded-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+                                    {searchResults.length > 0 && searchText.trim().length > 0 ? (
+                                        searchResults.map((result, idx) => (
+                                            <button
+                                                key={`${result.id || result.venueId}-${idx}`}
+                                                onClick={() => {
+                                                    onResultSelect(result);
+                                                    setIsSearchDropdownOpen(false);
+                                                    onClose(); // Close sheet on selection
+                                                }}
+                                                className={clsx(
+                                                    "w-full text-left px-3 py-2.5 rounded-xl transition-colors flex items-start gap-3 group shrink-0",
+                                                    "hover:bg-white/5 light:hover:bg-gray-100",
+                                                    searchMode === 'location' ? "hover:bg-emerald-500/10 light:hover:bg-emerald-50" : "hover:bg-purple-500/10 light:hover:bg-purple-50"
                                                 )}
-                                            </div>
-                                        </button>
-                                    ))}
+                                            >
+                                                <div className={clsx(
+                                                    "p-2 rounded-lg mt-0.5 shrink-0",
+                                                    searchMode === 'location'
+                                                        ? "bg-emerald-500/20 text-emerald-400 light:bg-emerald-100 light:text-emerald-600"
+                                                        : "bg-purple-500/20 text-purple-400 light:bg-purple-100 light:text-purple-600"
+                                                )}>
+                                                    {searchMode === 'location' ? <MapPin size={16} /> : <Search size={16} />}
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-sm font-bold text-gray-200 light:text-gray-900 truncate">
+                                                            {result.name}
+                                                        </span>
+                                                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 light:bg-gray-200 text-gray-400 light:text-gray-600 whitespace-nowrap">
+                                                            {result.category || result.type}
+                                                        </span>
+                                                    </div>
+                                                    {result.address && (
+                                                        <div className="text-xs text-gray-500 light:text-gray-500 truncate mt-0.5">
+                                                            {result.address}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </button>
+                                        ))
+                                    ) : (
+                                        <div className="py-8 text-center text-gray-500 text-sm">
+                                            {searchText.trim().length === 0
+                                                ? (searchMode === 'location' ? "찾으시는 장소를 입력해주세요" : "검색어를 입력해주세요")
+                                                : "검색 결과가 없습니다"
+                                            }
+                                        </div>
+                                    )}
                                 </div>
                             )}
 
