@@ -314,13 +314,7 @@ export const HERO_TEMPLATES = {
             { line1: "내 손안의 극장,", line2Pre: "언제 어디서나 즐기는 ", highlight: "무제한 콘텐츠", suffix: "의 바다.", keywords: ["OTT", "콘텐츠"] },
             { line1: "독점 공개작 오픈!", line2Pre: "오직 여기서만 볼 수 있는 ", highlight: "오리지널 시리즈", suffix: "를 만나보세요.", keywords: ["OTT", "오리지널"] }
         ],
-        hotdeal: [
-            { line1: "놓치면 후회할 껄요?", line2Pre: "지금 이 순간만 가능한 ", highlight: "역대급 할인", suffix: " 찬스!", keywords: ["핫딜", "hotdeal"] },
-            { line1: "지갑은 지키고 재미는 챙기고,", line2Pre: "가성비 끝판왕 ", highlight: "반값 티켓", suffix: "이 쏟아집니다.", keywords: ["핫딜", "할인"] },
-            { line1: "마감 임박! 서두르세요,", line2Pre: "고민하는 순간 품절되는 ", highlight: "초특가 타임", suffix: ".", keywords: ["핫딜", "마감"] },
-            { line1: "문화생활도 알뜰하게,", line2Pre: "똑똑한 당신을 위한 ", highlight: "최저가 혜택", suffix: " 모음.", keywords: ["핫딜", "최저가"] },
-            { line1: "오늘만 이 가격!", line2Pre: "눈을 의심하게 만드는 ", highlight: "파격적인 혜택", suffix: "을 잡으세요.", keywords: ["핫딜", "이벤트"] }
-        ],
+
         leisure: [
             { line1: "주말엔 역시 야외로!", line2Pre: "꽉 막힌 도심을 벗어나 ", highlight: "자유를 만끽", suffix: "하세요.", keywords: ["레저", "leisure"] },
             { line1: "물 위를 가르는 짜릿함,", line2Pre: "무더위를 잊게 해줄 ", highlight: "수상 레저", suffix: "의 세계로.", keywords: ["레저", "수상"] },

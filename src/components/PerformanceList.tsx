@@ -682,7 +682,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'exhibition': return '전시 · 행사 정보';
                                     case 'activity': return '액티비티 체험';
                                     case 'leisure': return '레저 · 테마파크';
-                                    case 'hotdeal': return '🔥 오늘의 핫딜 특가';
                                     default: return '전국 통합 문화 검색';
                                 }
                             })()}

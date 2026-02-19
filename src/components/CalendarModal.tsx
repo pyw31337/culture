@@ -280,7 +280,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             onMouseMove={onMouseMove}
                         >
                             <div className="flex gap-2 w-max pointer-events-none">
-                                {GENRES.filter(g => g.id !== 'hotdeal').map(g => (
+                                {GENRES.map(g => (
                                     <button
                                         key={g.id}
                                         onClick={(e) => {

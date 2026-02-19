@@ -18,10 +18,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const filtered = allStable.filter(p => {
         if (!genreFilter) return true;
 
-        // Match PerformanceList logic for Hotdeal
-        if (genreFilter === 'hotdeal') {
-            return p.genre === 'hotdeal' || (p.discount && p.discount !== '' && p.discount !== '0');
-        }
+
 
         if (Array.isArray(genreFilter)) {
             return genreFilter.includes(p.genre);

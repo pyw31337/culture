@@ -142,18 +142,7 @@ export default function HeroSection({
 
         // Category-specific emotional messages with boldPrefix
         const genreMessages: Record<string, any[]> = {
-            hotdeal: [
-                { line1: "지금 아니면", boldPrefix: "핫딜", line2Pre: "을 놓칠 수 있어요! ", highlight: "특가", suffix: "를 확인해보세요." },
-                { line1: "가성비 갑!", boldPrefix: "핫딜", line2Pre: " 컨텐츠들이 ", highlight: "기다리고", suffix: " 있어요." },
-                { line1: "이 가격에?", boldPrefix: "핫딜", line2Pre: " 놓치면 ", highlight: "후회", suffix: "해요." },
-                { line1: "오늘만!", boldPrefix: "핫딜", line2Pre: " 가격에 만나는 ", highlight: "컨텐츠", suffix: "들이에요." },
-                { line1: "알뜰하게", boldPrefix: "핫딜", line2Pre: "로 즐기는 ", highlight: "문화생활", suffix: "!" },
-                { line1: "지갑은 가볍게,", boldPrefix: "핫딜", line2Pre: " 감동은 ", highlight: "크게", suffix: "!" },
-                { line1: "현명한 선택,", boldPrefix: "핫딜", line2Pre: " 컨텐츠 ", highlight: "모음", suffix: "이에요." },
-                { line1: "득템 찬스!", boldPrefix: "핫딜", line2Pre: " ", highlight: "컨텐츠", suffix: "를 잡아보세요." },
-                { line1: "싸고 좋은", boldPrefix: "핫딜", line2Pre: " ", highlight: "발견", suffix: "!" },
-                { line1: "할인의 기회,", boldPrefix: "핫딜", line2Pre: " ", highlight: "지금", suffix: " 바로 확인하세요." }
-            ],
+
             movie: [
                 { line1: "퇴근하고", boldPrefix: "영화", line2Pre: " 한편에 ", highlight: "맥주 한잔", suffix: "만한게 없죠?" },
                 { line1: "오늘 밤,", boldPrefix: "영화", line2Pre: "관에서 만나는 ", highlight: "감동", suffix: "은 어떠세요?" },
@@ -412,7 +401,7 @@ export default function HeroSection({
 
     return (
         <div className={clsx(
-            "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-end gap-8",
+            "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-center gap-8",
             (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
             <div className="text-left flex-1 min-w-0 z-10">

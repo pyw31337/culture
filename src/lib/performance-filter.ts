@@ -68,9 +68,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 2. Genre Filter
     if (genre && genre !== 'all') {
-        if (genre === 'hotdeal') {
-            filtered = filtered.filter(p => p.discount && p.discount !== '' && p.discount !== '0');
-        } else if (genre === 'ott') {
+        if (genre === 'ott') {
             filtered = filtered.filter(p => p.genre === 'ott' || (p.platforms && p.platforms.length > 0));
         } else {
             filtered = filtered.filter(p => p.genre === genre);

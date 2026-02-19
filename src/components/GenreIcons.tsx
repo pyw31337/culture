@@ -211,7 +211,7 @@ export const OttIcon = ({ size = 16 }: { size?: number }) => (
 export const getGenreIcon = (id: string, size = 16) => {
     switch (id) {
         case 'all': return <CloverIcon size={size} />;
-        case 'hotdeal': return <FlameIcon size={size} />;
+
         case 'movie': return <MovieIcon size={size} />;
         case 'musical': return <MusicalIcon size={size} />;
         case 'theater': return <DramaIcon size={size} />;

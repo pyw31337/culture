@@ -284,23 +284,7 @@ export default function BottomNavSheet({
                                     <span className="text-sm font-semibold">전체</span>
                                 </button>
 
-                                {/* Hotdeal */}
-                                <button
-                                    onClick={() => { onGenreSelect('hotdeal'); onClose(); }}
-                                    className={clsx(
-                                        "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
-                                        selectedGenre === 'hotdeal'
-                                            ? (searchMode === 'location'
-                                                ? "bg-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-900/50 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-600 light:shadow-none"
-                                                : "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none")
-                                            : "bg-gray-800/50 light:bg-white text-gray-400 light:text-black border-white/5 light:border-black/5 hover:bg-gray-800 light:hover:bg-gray-50 hover:border-white/10"
-                                    )}
-                                >
-                                    {getGenreIcon('hotdeal', 16)}
-                                    <span className="text-sm font-semibold">핫딜</span>
-                                </button>
-
-                                {GENRES.filter(g => g.id !== 'hotdeal' && g.id !== 'all').map(genre => {
+                                {GENRES.filter(g => g.id !== 'all').map(genre => {
                                     const isSelected = selectedGenre === genre.id;
                                     return (
                                         <button

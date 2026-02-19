@@ -529,15 +529,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         <MapPin className="w-3 h-3 text-white" />
                                         {distLabel}
                                     </div>
-                                ) : perf.discount && (
-                                    <div
-                                        className="absolute top-2 left-2 z-40 bg-black/80 text-rose-500 border border-rose-500/30 px-2 py-1 rounded-full text-xs font-extrabold shadow-lg flex items-center gap-1 backdrop-blur-sm"
-                                        style={{ transform: 'translateZ(20px)' }}
-                                    >
-                                        <Flame className="w-3 h-3 fill-rose-500" />
-                                        핫딜
-                                    </div>
-                                )}
+                                ) : null}
 
 
                                 <div

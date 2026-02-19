@@ -1,5 +1,5 @@
 export const GENRE_GROUPS = [
-    { id: 'all', label: '전체', genres: ['all', 'hotdeal'] },
+    { id: 'all', label: '전체', genres: ['all'] },
     { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic', 'korean_music'] },
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'activity', label: '액티비티', genres: ['festival', 'activity', 'leisure', 'travel', 'kids', 'class'] },
@@ -9,7 +9,7 @@ export const GENRE_GROUPS = [
 
 export const GENRES = [
     { id: 'all', label: '전체' },
-    { id: 'hotdeal', label: '🔥 핫딜' },
+
     { id: 'movie', label: '영화' },
     { id: 'ott', label: 'OTT' },
     { id: 'musical', label: '뮤지컬' },
@@ -55,7 +55,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'handball': { hex: '#d97706', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
     'museum': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' }, // Emerald for Museum
     'food': { hex: '#65a30d', twText: 'text-lime-600', twBg: 'bg-lime-600', twBorder: 'border-lime-500', twActivebg: 'bg-lime-500' }, // Lime for Food
-    'hotdeal': { hex: '#e11d48', twText: 'text-rose-600', twBg: 'bg-rose-600', twBorder: 'border-rose-500', twActivebg: 'bg-rose-500' },
+
     'all': { hex: '#4b5563', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };
 
@@ -96,7 +96,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
-    'hotdeal', 'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'korean_music', 'exhibition',
+    'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'korean_music', 'exhibition',
     'activity', 'class', 'travel', 'festival', 'leisure', 'kids', 'museum', 'food',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
