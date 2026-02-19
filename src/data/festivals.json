@@ -101,13 +101,24 @@
   {
     "id": "490432fc-f28f-4967-aaf4-6ee74857158f",
     "title": "제천빨간오뎅축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/490432fc-f28f-4967-aaf4-6ee74857158f_61.jpg",
+    "image": null,
     "date": "2026.02.28~2026.03.02",
     "venue": "충청북도 제천시",
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=490432fc-f28f-4967-aaf4-6ee74857158f",
     "genre": "festival",
     "lastEnriched": "2026-02-13T19:14:18.864Z"
+  },
+  {
+    "id": "6a467ed2-f522-4635-9102-ff491755ff9c",
+    "title": "완주삼례딸기대축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/6a467ed2-f522-4635-9102-ff491755ff9c_8.jpg",
+    "date": "2026.03.06~2026.03.08",
+    "venue": "전북특별자치도 완주군",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=6a467ed2-f522-4635-9102-ff491755ff9c",
+    "genre": "festival",
+    "lastEnriched": "2026-02-18T19:17:10.513Z"
   },
   {
     "id": "019edf5d-ed47-47ff-82a3-627852996c9a",
@@ -154,6 +165,17 @@
     "lastEnriched": "2026-02-13T19:14:20.081Z"
   },
   {
+    "id": "f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
+    "title": "여수 영취산 진달래축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f6c40fcf-7dd2-4701-a2f6-657bb88f155c_4.jpg",
+    "date": "2026.03.28~2026.03.29",
+    "venue": "전라남도 여수시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
+    "genre": "festival",
+    "lastEnriched": "2026-02-18T19:17:09.477Z"
+  },
+  {
     "id": "e6b3596c-3769-41a2-9090-84a7585db5e0",
     "title": "진도신비의바닷길축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/e6b3596c-3769-41a2-9090-84a7585db5e0_23.jpg",
@@ -198,17 +220,6 @@
     "lastEnriched": "2026-02-13T19:14:21.444Z"
   },
   {
-    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
-    "title": "춘향제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/31a0fb6b-c075-402b-9cf7-a79e16451aab_18.JPG",
-    "date": "2026.04.30~2026.05.06",
-    "venue": "전북특별자치도 남원시",
-    "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
-    "genre": "festival",
-    "lastEnriched": "2026-02-12T15:01:50.112Z"
-  },
-  {
     "id": "5720706a-565b-4fe9-a988-592e664e8ef2",
     "title": "어린이·가족 예술축제 <톡톡>",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/5720706a-565b-4fe9-a988-592e664e8ef2_25.jpg",
@@ -240,6 +251,28 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=11c0c030-bbf8-4544-95a3-3c21862626bc",
     "genre": "festival",
     "lastEnriched": "2026-02-13T19:14:22.208Z"
+  },
+  {
+    "id": "86c83f48-8750-4de0-81e5-a8a257507bcd",
+    "title": "영주 소백산 철쭉제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/86c83f48-8750-4de0-81e5-a8a257507bcd_27.jpg",
+    "date": "2026.05.23~2026.05.24",
+    "venue": "경상북도 영주시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86c83f48-8750-4de0-81e5-a8a257507bcd",
+    "genre": "festival",
+    "lastEnriched": "2026-02-18T19:17:09.467Z"
+  },
+  {
+    "id": "52c26e05-2f86-4332-8181-ca3f68edb064",
+    "title": "김제지평선축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/52c26e05-2f86-4332-8181-ca3f68edb064_35.jpg",
+    "date": "2026.10.01~2026.10.05",
+    "venue": "전북특별자치도 김제시",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=52c26e05-2f86-4332-8181-ca3f68edb064",
+    "genre": "festival",
+    "lastEnriched": "2026-02-18T19:17:10.161Z"
   },
   {
     "id": "7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
@@ -286,17 +319,6 @@
     "lastEnriched": "2026-02-13T19:14:22.968Z"
   },
   {
-    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "title": "산청한방약초축제",
-    "image": null,
-    "date": "",
-    "venue": "경상남도 산청군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:06.683Z"
-  },
-  {
     "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "title": "영암왕인문화축제",
     "image": null,
@@ -305,50 +327,39 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:08.054Z"
+    "lastEnriched": "2026-02-19T15:03:34.790Z"
   },
   {
-    "id": "86c83f48-8750-4de0-81e5-a8a257507bcd",
-    "title": "영주 소백산 철쭉제",
+    "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
+    "title": "산청한방약초축제",
     "image": null,
-    "date": "2026.05.23~2026.05.24",
-    "venue": "경상북도 영주시",
+    "date": "",
+    "venue": "경상남도 산청군",
     "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86c83f48-8750-4de0-81e5-a8a257507bcd",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:09.467Z"
+    "lastEnriched": "2026-02-19T15:03:34.994Z"
   },
   {
-    "id": "f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
-    "title": "여수 영취산 진달래축제",
+    "id": "87dfeda1-084e-41a9-b76e-09f2d502443a",
+    "title": "논산딸기축제",
     "image": null,
-    "date": "2026.03.28~2026.03.29",
-    "venue": "전라남도 여수시",
+    "date": "2026.03.26~2026.03.29",
+    "venue": "충청남도 논산시",
     "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=87dfeda1-084e-41a9-b76e-09f2d502443a",
     "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:09.477Z"
+    "lastEnriched": "2026-02-19T15:03:36.686Z"
   },
   {
-    "id": "52c26e05-2f86-4332-8181-ca3f68edb064",
-    "title": "김제지평선축제",
+    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
+    "title": "춘향제",
     "image": null,
-    "date": "2026.10.01~2026.10.05",
-    "venue": "전북특별자치도 김제시",
+    "date": "2026.04.30~2026.05.06",
+    "venue": "전북특별자치도 남원시",
     "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=52c26e05-2f86-4332-8181-ca3f68edb064",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
     "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:10.161Z"
-  },
-  {
-    "id": "6a467ed2-f522-4635-9102-ff491755ff9c",
-    "title": "완주삼례딸기대축제",
-    "image": null,
-    "date": "2026.03.06~2026.03.08",
-    "venue": "전북특별자치도 완주군",
-    "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=6a467ed2-f522-4635-9102-ff491755ff9c",
-    "genre": "festival",
-    "lastEnriched": "2026-02-18T19:17:10.513Z"
+    "lastEnriched": "2026-02-19T15:03:36.706Z"
   }
 ]
