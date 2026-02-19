@@ -25,6 +25,7 @@ interface PerformanceGridProps {
     selectedGenre: string;
     viewMode: string;
     searchMode?: 'keyword' | 'location';
+    searchText?: string;
 }
 
 export default function PerformanceGrid({
@@ -44,7 +45,8 @@ export default function PerformanceGrid({
     observerRef,
     selectedGenre,
     viewMode,
-    searchMode = 'keyword'
+    searchMode = 'keyword',
+    searchText
 }: PerformanceGridProps) {
 
     return (
@@ -93,6 +95,7 @@ export default function PerformanceGrid({
                                 onShare={() => copyItemShareUrl(perf.id)}
                                 onDetail={() => handleDetailOpen(perf)}
                                 searchMode={searchMode}
+                                searchText={searchText}
                             />
                         ) : (
                             <PerformanceListItem
@@ -108,6 +111,7 @@ export default function PerformanceGrid({
                                 onShare={() => copyItemShareUrl(perf.id)}
                                 onDetail={() => handleDetailOpen(perf)}
                                 searchMode={searchMode}
+                                searchText={searchText}
                             />
                         )}
                     </div>
