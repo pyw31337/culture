@@ -26,11 +26,17 @@ export interface FilterOptions {
     lat?: number;
     lng?: number;
     radius?: number; // In km
+    searchMode?: 'keyword' | 'location';
 }
 
 export function filterPerformances(performances: Performance[], options: FilterOptions): Performance[] {
     let filtered = performances;
-    const { genre, region, district, venue, search, lat, lng, radius } = options;
+    const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
+
+    // A. Search Mode: Location -> Strictly exclude digital content (Movie/OTT)
+    if (searchMode === 'location') {
+        filtered = filtered.filter(p => p.genre !== 'movie' && p.genre !== 'ott');
+    }
 
     // 0. Base Filter: Strict Address Integrity
     // Exclude any physical event that doesn't have a record in venues.json or has an empty address.

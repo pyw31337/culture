@@ -253,7 +253,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             search: searchMode === 'keyword' ? searchText : '', // Only use text search for keyword mode
             lat: searchLocation?.lat || userLocation?.lat,
             lng: searchLocation?.lng || userLocation?.lng,
-            radius: radius
+            radius: radius,
+            searchMode: searchMode
         });
 
         // Search Mode: Location -> Sort by Distance
