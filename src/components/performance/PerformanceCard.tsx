@@ -41,7 +41,7 @@ const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) =>
     );
 };
 
-export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 공연', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
+export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 

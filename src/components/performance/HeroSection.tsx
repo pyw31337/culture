@@ -142,16 +142,16 @@ export default function HeroSection({
 
         // Dynamic title messages for likes-venue
         const likesVenueMessages: any[] = [
-            { line1: "찜한 공연장에서", line2Pre: "오늘 어떤 ", highlight: "공연", suffix: "이 열리고 있을까요?" },
+            { line1: "찜한 공연장에서", line2Pre: "오늘 어떤 ", highlight: "컨텐츠", suffix: "가 열리고 있을까요?" },
             { line1: "자주 찾는", line2Pre: "공연장의 ", highlight: "일정", suffix: "을 확인해보세요." },
             { line1: "좋아하는 공연장,", line2Pre: "그곳의 ", highlight: "무대", suffix: "가 기다리고 있어요." },
             { line1: "마음에 든 공연장의", line2Pre: "오늘의 ", highlight: "라인업", suffix: "은 뭘까요?" },
-            { line1: "찜한 공연장에서", line2Pre: "새로운 ", highlight: "공연", suffix: "을 발견해보세요." },
+            { line1: "찜한 공연장에서", line2Pre: "새로운 ", highlight: "컨텐츠", suffix: "를 발견해보세요." },
             { line1: "익숙한 그 공연장,", line2Pre: "특별한 ", highlight: "오늘", suffix: "이 될 수도 있어요." },
             { line1: "당신이 사랑하는", line2Pre: "공연장의 ", highlight: "소식", suffix: "을 전해드릴게요." },
             { line1: "공연장 Pick,", line2Pre: "거기서 뭐 ", highlight: "하고 있나", suffix: " 볼까요?" },
             { line1: "찜한 공연장 어때요?", line2Pre: "오늘의 ", highlight: "무대", suffix: "를 확인해보세요." },
-            { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "공연", suffix: "이 기다리고 있을지도요." }
+            { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "컨텐츠", suffix: "가 기다리고 있을지도요." }
         ];
 
         const perfMsg = likesPerfMessages[minuteSeed % likesPerfMessages.length];
@@ -212,7 +212,7 @@ export default function HeroSection({
                 { line1: "선율이 마음을", boldPrefix: "클래식", line2Pre: " 연주로 ", highlight: "적셔요", suffix: "." },
                 { line1: "오케스트라의", boldPrefix: "클래식", line2Pre: " ", highlight: "하모니", suffix: "를 느껴보세요." },
                 { line1: "고요 속에서", boldPrefix: "클래식", line2Pre: " ", highlight: "선율", suffix: "이 피어나요." },
-                { line1: "우아한 밤,", boldPrefix: "클래식", line2Pre: " 공연과 ", highlight: "함께", suffix: "해요." },
+                { line1: "우아한 밤,", boldPrefix: "클래식", line2Pre: " 컨텐츠와 ", highlight: "함께", suffix: "해요." },
                 { line1: "거장의 음악을", boldPrefix: "클래식", line2Pre: " 무대에서 ", highlight: "직접", suffix: " 만나보세요." },
                 { line1: "마음이 정화되는", boldPrefix: "클래식", line2Pre: " ", highlight: "선율", suffix: "이에요." },
                 { line1: "오늘은 조금", boldPrefix: "클래식", line2Pre: " ", highlight: "우아하게", suffix: " 어때요?" },
@@ -341,16 +341,16 @@ export default function HeroSection({
                 { line1: "다 같이 외쳐요,", boldPrefix: "축구", line2Pre: " ", highlight: "대한민국", suffix: "!" }
             ],
             kids: [
-                { line1: "아이와 함께하는", boldPrefix: "키즈", line2Pre: " 공연은 ", highlight: "특별", suffix: "해요." },
-                { line1: "아이 눈이 반짝!", boldPrefix: "키즈", line2Pre: " ", highlight: "공연", suffix: "을 찾아봐요." },
-                { line1: "온 가족이 즐기는", boldPrefix: "키즈", line2Pre: " ", highlight: "가족 공연", suffix: "!" },
-                { line1: "아이에게 선물하는", boldPrefix: "키즈", line2Pre: " 공연 ", highlight: "추억", suffix: "!" },
-                { line1: "캐릭터 만나는", boldPrefix: "키즈", line2Pre: " ", highlight: "공연", suffix: " 어때요?" },
+                { line1: "아이와 함께하는", boldPrefix: "키즈", line2Pre: " 컨텐츠는 ", highlight: "특별", suffix: "해요." },
+                { line1: "아이 눈이 반짝!", boldPrefix: "키즈", line2Pre: " ", highlight: "컨텐츠", suffix: "를 찾아봐요." },
+                { line1: "온 가족이 즐기는", boldPrefix: "키즈", line2Pre: " ", highlight: "가족 컨텐츠", suffix: "!" },
+                { line1: "아이에게 선물하는", boldPrefix: "키즈", line2Pre: " 컨텐츠 ", highlight: "추억", suffix: "!" },
+                { line1: "캐릭터 만나는", boldPrefix: "키즈", line2Pre: " ", highlight: "컨텐츠", suffix: " 어때요?" },
                 { line1: "신나게 뛰어노는", boldPrefix: "키즈", line2Pre: " ", highlight: "체험", suffix: "!" },
                 { line1: "교육적이면서 재미있는", boldPrefix: "키즈", line2Pre: " ", highlight: "콘텐츠", suffix: "!" },
-                { line1: "아이의 웃음소리가", boldPrefix: "키즈", line2Pre: " ", highlight: "공연", suffix: "에서 가득해요." },
+                { line1: "아이의 웃음소리가", boldPrefix: "키즈", line2Pre: " ", highlight: "컨텐츠", suffix: "에서 가득해요." },
                 { line1: "주말엔 아이와 함께", boldPrefix: "키즈", line2Pre: " ", highlight: "나들이", suffix: "!" },
-                { line1: "상상력 자극하는", boldPrefix: "키즈", line2Pre: " ", highlight: "공연", suffix: "!" }
+                { line1: "상상력 자극하는", boldPrefix: "키즈", line2Pre: " ", highlight: "컨텐츠", suffix: "!" }
             ]
         };
 
@@ -366,7 +366,7 @@ export default function HeroSection({
             return { ...genreMsg, keywords: [] } as HeroTemplate;
         } else if (searchText) {
             return {
-                line1: "찾으시는 공연,",
+                line1: "찾으시는 컨텐츠,",
                 line2Pre: "입력하신 ",
                 highlight: `"${searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim()}"`,
                 suffix: " 키워드로 정리해드릴게요.",

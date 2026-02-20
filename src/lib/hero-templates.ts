@@ -49,7 +49,7 @@ export const HERO_TEMPLATES = {
     ],
     weather: {
         rain: [
-            { line1: "비 예보가 있는 오늘,", line2Pre: "감성 가득한 ", highlight: "촉촉한 전시/공연", suffix: " 어떠신가요?", keywords: ["비", "장마", "실내", "전시"] },
+            { line1: "비 예보가 있는 오늘,", line2Pre: "감성 가득한 ", highlight: "촉촉한 전시/컨텐츠", suffix: " 어떠신가요?", keywords: ["비", "장마", "실내", "전시"] },
             { line1: "우산 챙기셨나요?", line2Pre: "비 오는 날 더 운치 있는 ", highlight: "실내 데이트", suffix: "를 즐겨보세요.", keywords: ["비", "실내", "데이트"] },
             { line1: "흐린 날씨엔 역시,", line2Pre: "기분 전환을 위한 ", highlight: "신나는 공연", suffix: "이 최고죠.", keywords: ["기분전환", "신나는"] },
             { line1: "빗소리와 함께,", line2Pre: "더 깊어지는 ", highlight: "감성 충전", suffix: "의 시간을 가져보세요.", keywords: ["감성", "비"] },
@@ -60,13 +60,13 @@ export const HERO_TEMPLATES = {
         snow: [
             { line1: "하얀 눈이 내리는 날,", line2Pre: "포근한 ", highlight: "공연장", suffix: "에서 몸을 녹이세요.", keywords: ["눈", "겨울", "따뜻한"] },
             { line1: "온 세상이 하얀 오늘,", line2Pre: "따뜻한 ", highlight: "감동", suffix: "을 만나보세요.", keywords: ["눈", "감동"] },
-            { line1: "손발 시린 겨울,", line2Pre: "마음만은 훈훈하게 ", highlight: "로맨틱한 공연", suffix: " 어떠세요?", keywords: ["겨울", "로맨틱"] },
+            { line1: "손발 시린 겨울,", line2Pre: "마음만은 훈훈하게 ", highlight: "로맨틱한 컨텐츠", suffix: " 어떠세요?", keywords: ["겨울", "로맨틱"] },
             { line1: "눈 오는 날의 낭만,", line2Pre: "영화 주인공처럼 ", highlight: "아름다운 추억", suffix: "을 남겨보세요.", keywords: ["눈", "낭만"] },
             { line1: "첫눈 같은 설렘,", line2Pre: "당신을 기다리는 ", highlight: "순백의 무대", suffix: "가 있습니다.", keywords: ["눈", "설렘"] },
-            { line1: "눈길 조심하세요!", line2Pre: "하지만 이 공연은 ", highlight: "놓치면 후회", suffix: "할지도 몰라요.", keywords: ["눈", "추천"] }
+            { line1: "눈길 조심하세요!", line2Pre: "하지만 이 컨텐츠는 ", highlight: "놓치면 후회", suffix: "할지도 몰라요.", keywords: ["눈", "추천"] }
         ],
         clear: [
-            { line1: "날씨 좋은 오늘,", line2Pre: "산책하듯 ", highlight: "즐기기 좋은 공연", suffix: "들을 모았어요.", keywords: ["야외", "산책"] },
+            { line1: "날씨 좋은 오늘,", line2Pre: "산책하듯 ", highlight: "즐기기 좋은 컨텐츠", suffix: "들을 모았어요.", keywords: ["야외", "산책"] },
             { line1: "화창한 하늘 아래,", line2Pre: "설레는 마음으로 ", highlight: "공연장 나들이", suffix: " 어때요?", keywords: ["나들이"] },
             { line1: "오늘 같은 날씨엔,", line2Pre: "야외 활동 대신 시원한 ", highlight: "공연장 데이트!", suffix: "", keywords: ["데이트", "시원한"] },
             { line1: "햇살 가득한 날,", line2Pre: "어디론가 떠나고 싶다면 ", highlight: "문화 바캉스", suffix: "를 즐겨보세요.", keywords: ["바캉스", "여행"] },
@@ -79,7 +79,7 @@ export const HERO_TEMPLATES = {
         friday: [
             { line1: "설레는 금요일,", line2Pre: "한 주 동안 고생한 당신을 위한 ", highlight: "힐링 타임", suffix: "이 필요해요.", keywords: ["금요일", "불금", "힐링"] },
             { line1: "주말의 시작 금요일,", line2Pre: "사랑하는 사람과 함께할 ", highlight: "로맨틱한 데이트", suffix: " 계획하셨나요?", keywords: ["주말", "데이트"] },
-            { line1: "불금엔 공연이지!", line2Pre: "화끈하게 스트레스 날려버릴 ", highlight: "열정적인 무대", suffix: "를 즐겨보세요.", keywords: ["불금", "열정"] },
+            { line1: "불금엔 컨텐츠지!", line2Pre: "화끈하게 스트레스 날려버릴 ", highlight: "열정적인 무대", suffix: "를 즐겨보세요.", keywords: ["불금", "열정"] },
             { line1: "여유로운 주말을 앞두고,", line2Pre: "미리 준비하는 ", highlight: "취향 저격 문화생활", suffix: " 리스트.", keywords: ["주말"] },
             { line1: "칼퇴 준비 되셨나요?", line2Pre: "지금 바로 출발하면 ", highlight: "완벽한 불금", suffix: "을 보낼 수 있어요.", keywords: ["칼퇴", "불금"] }
         ],
@@ -96,12 +96,12 @@ export const HERO_TEMPLATES = {
             { line1: "봄바람 휘날리며,", line2Pre: "꽃향기보다 설레는 ", highlight: "봄 맞이 공연", suffix: "으로 나들이 가요.", keywords: ["봄", "꽃"] },
             { line1: "따뜻한 봄날,", line2Pre: "겨우내 얼었던 감성을 녹여줄 ", highlight: "말랑말랑한 전시", suffix: "를 추천해요.", keywords: ["봄", "전시"] },
             { line1: "벚꽃은 졌지만,", line2Pre: "우리들의 봄은 ", highlight: "이제 시작", suffix: "입니다.", keywords: ["봄", "시작"] },
-            { line1: "나랑 봄 보러 가지 않을래?", line2Pre: "노래 가사처럼 ", highlight: "설렘 가득한", suffix: " 공연 어때요?", keywords: ["봄", "설렘"] },
+            { line1: "나랑 봄 보러 가지 않을래?", line2Pre: "노래 가사처럼 ", highlight: "설렘 가득한", suffix: " 컨텐츠 어때요?", keywords: ["봄", "설렘"] },
             { line1: "싱그러운 봄기운,", line2Pre: "새로운 시작을 응원하는 ", highlight: "희망찬 무대", suffix: "를 만나보세요.", keywords: ["봄", "희망"] }
         ],
         summer: [ // 6, 7, 8
             { line1: "무더운 여름,", line2Pre: "더위를 시원하게 날려버릴 ", highlight: "짜릿한 페스티벌", suffix: "이 시작됩니다.", keywords: ["여름", "페스티벌", "시원한"] },
-            { line1: "해가 길어진 여름밤,", line2Pre: "잠들기 아쉬운 당신을 위한 ", highlight: "심야 괴담? 아니, 심야 공연!", suffix: "", keywords: ["여름", "심야"] },
+            { line1: "해가 길어진 여름밤,", line2Pre: "잠들기 아쉬운 당신을 위한 ", highlight: "심야 괴담? 아니, 심야 컨텐츠!", suffix: "", keywords: ["여름", "심야"] },
             { line1: "여름 휴가 계획 하셨나요?", line2Pre: "멀리 못 간다면 ", highlight: "도심 속 피서", suffix: "를 즐겨보세요.", keywords: ["여름", "휴가"] },
             { line1: "아이스 아메리카노처럼,", line2Pre: "머리끝까지 시원해지는 ", highlight: "쿨한 무대", suffix: "가 기다립니다.", keywords: ["여름", "시원한"] },
             { line1: "뜨거운 태양 아래,", line2Pre: "더 뜨겁게 타오르는 ", highlight: "열정의 현장", suffix: "으로 초대합니다.", keywords: ["여름", "열정"] }
@@ -125,20 +125,20 @@ export const HERO_TEMPLATES = {
     holiday: {
         newYear: [ // 1.1
             { line1: "새로운 시작 1월,", line2Pre: "올해는 더 행복한 일만 가득하길 ", highlight: "문화생활", suffix: "로 응원합니다.", keywords: ["새해", "신년", "시작"] },
-            { line1: "Happy New Year!", line2Pre: "작심삼일이 되지 않도록 ", highlight: "첫 공연 나들이", suffix: " 계획해볼까요?", keywords: ["새해", "첫"] },
+            { line1: "Happy New Year!", line2Pre: "작심삼일이 되지 않도록 ", highlight: "첫 컨텐츠 나들이", suffix: " 계획해볼까요?", keywords: ["새해", "첫"] },
             { line1: "복 많이 받으세요!", line2Pre: "당신의 일 년을 빛내줄 ", highlight: "행운 같은 공연", suffix: "을 추천해요.", keywords: ["새해", "행운"] },
             { line1: "해돋이는 보셨나요?", line2Pre: "떠오르는 태양처럼 ", highlight: "벅찬 감동", suffix: "을 느껴보세요.", keywords: ["새해", "감동"] },
             { line1: "올해의 버킷리스트,", line2Pre: "미뤄왔던 문화생활, ", highlight: "오늘부터 1일", suffix: " 실천해보세요.", keywords: ["버킷리스트", "시작"] }
         ],
         seollal: [ // Lunar New Year
-            { line1: "새해 복 많이 받으세요!", line2Pre: "가족들과 함께 나누는 ", highlight: "풍성한 덕담", suffix: " 같은 공연.", keywords: ["설날", "가족", "전통"] },
+            { line1: "새해 복 많이 받으세요!", line2Pre: "가족들과 함께 나누는 ", highlight: "풍성한 덕담", suffix: " 같은 컨텐츠.", keywords: ["설날", "가족", "전통"] },
             { line1: "즐거운 설 연휴,", line2Pre: "오랜만에 만난 친척들과 ", highlight: "특별한 추억", suffix: "을 만들어보세요.", keywords: ["설날", "가족"] },
             { line1: "명절엔 역시,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "흥겨운 무대", suffix: "가 제격이죠.", keywords: ["설날", "흥겨운"] },
             { line1: "연휴 순삭 방지!", line2Pre: "맛있는 음식 먹고 ", highlight: "소화시킬 겸", suffix: " 공연장 나들이 어때요?", keywords: ["연휴", "나들이"] },
             { line1: "까치 까치 설날은,", line2Pre: "어제고요, 우리 우리 설날은 ", highlight: "문화 즐기는 날", suffix: "이래요.", keywords: ["설날", "동요"] }
         ],
         valentine: [ // 2.14
-            { line1: "달콤한 발렌타인,", line2Pre: "사랑하는 연인에게 초콜릿보다 달달한 ", highlight: "공연 데이트", suffix: "를 선물하세요.", keywords: ["발렌타인", "사랑", "커플"] },
+            { line1: "달콤한 발렌타인,", line2Pre: "사랑하는 연인에게 초콜릿보다 달달한 ", highlight: "컨텐츠 데이트", suffix: "를 선물하세요.", keywords: ["발렌타인", "사랑", "커플"] },
             { line1: "두근두근 설레는 오늘,", line2Pre: "썸타는 그 사람과 ", highlight: "로맨틱한 시간", suffix: "을 보내고 싶다면?", keywords: ["로맨틱", "썸", "데이트"] },
             { line1: "사랑 고백 D-Day,", line2Pre: "성공 확률 100% ", highlight: "분위기 깡패", suffix: " 공연장 추천.", keywords: ["고백", "사랑"] },
             { line1: "솔로라도 괜찮아!", line2Pre: "나 자신을 사랑하는 ", highlight: "셀프 선물", suffix: "같은 하루를 보내세요.", keywords: ["솔로", "선물"] },
@@ -152,7 +152,7 @@ export const HERO_TEMPLATES = {
             { line1: "봄의 시작과 함께,", line2Pre: "자유와 평화의 가치를 담은 ", highlight: "예술 작품", suffix: "을 감상해보세요.", keywords: ["평화", "예술"] }
         ],
         children: [ // 5.5
-            { line1: "오늘은 어린이날!", line2Pre: "우리 아이들의 세상, 꿈과 희망이 가득한 ", highlight: "키즈 공연", suffix: " 총출동!", keywords: ["어린이", "가족", "키즈"] },
+            { line1: "오늘은 어린이날!", line2Pre: "우리 아이들의 세상, 꿈과 희망이 가득한 ", highlight: "키즈 컨텐츠", suffix: " 총출동!", keywords: ["어린이", "가족", "키즈"] },
             { line1: "엄마 아빠 사랑해요,", line2Pre: "온 가족이 함께 웃을 수 있는 ", highlight: "패밀리 쇼", suffix: "를 만나보세요.", keywords: ["가족", "사랑"] },
             { line1: "너의 꿈을 응원해,", line2Pre: "아이들의 상상력을 자극하는 ", highlight: "창의력 대장", suffix: " 전시회.", keywords: ["어린이", "꿈"] },
             { line1: "선물 샀니?", line2Pre: "장난감보다 더 오래 기억될 ", highlight: "소중한 추억", suffix: "을 선물해주세요.", keywords: ["어린이날", "선물"] },
@@ -162,12 +162,12 @@ export const HERO_TEMPLATES = {
             { line1: "더도 말고 덜도 말고 한가위만 같아라,", line2Pre: "보름달처럼 꽉 찬 ", highlight: "감동의 무대", suffix: "가 기다립니다.", keywords: ["추석", "한가위", "가족"] },
             { line1: "풍성한 추석 연휴,", line2Pre: "가족 모두가 만족할 ", highlight: "대작 뮤지컬", suffix: " 어떠신가요?", keywords: ["추석", "뮤지컬", "가족"] },
             { line1: "고향 가는 길,", line2Pre: "지루한 귀성길을 달래줄 ", highlight: "재미있는 읽을거리", suffix: "를 챙겨가세요.", keywords: ["귀성길", "추석"] },
-            { line1: "송편 빚고 공연 보고,", line2Pre: "전통과 현대가 어우러진 ", highlight: "퓨전 국악", suffix: " 공연은 어때요?", keywords: ["추석", "국악"] },
+            { line1: "송편 빚고 컨텐츠 보고,", line2Pre: "전통과 현대가 어우러진 ", highlight: "퓨전 국악", suffix: " 컨텐츠는 어때요?", keywords: ["추석", "국악"] },
             { line1: "달님에게 소원을,", line2Pre: "당신의 바램이 이루어지는 ", highlight: "마법 같은 순간", suffix: "을 기원합니다.", keywords: ["소원", "보름달"] }
         ],
         halloween: [ // 10.31
             { line1: "Trick or Treat!", line2Pre: "할로윈의 밤, 등골이 오싹해지는 ", highlight: "이색 호러", suffix: " 체험을 즐겨보세요.", keywords: ["할로윈", "호러", "공포"] },
-            { line1: "유령이 나올 것 같은 밤,", line2Pre: "평범한 일상을 깨울 ", highlight: "짜릿한 파티", suffix: " 같은 공연!", keywords: ["파티", "할로윈"] },
+            { line1: "유령이 나올 것 같은 밤,", line2Pre: "평범한 일상을 깨울 ", highlight: "짜릿한 파티", suffix: " 같은 컨텐츠!", keywords: ["파티", "할로윈"] },
             { line1: "분장 준비 완료?", line2Pre: "누구보다 돋보이는 코스튬 입고 ", highlight: "할로윈 축제", suffix: " 현장으로!", keywords: ["할로윈", "코스튬"] },
             { line1: "오싹하지만 재밌어,", line2Pre: "아이들도 즐길 수 있는 ", highlight: "귀여운 유령", suffix: "들을 만나러 오세요.", keywords: ["할로윈", "가족"] },
             { line1: "오늘 밤 주인공은,", line2Pre: "마녀도 드라큘라도 아닌 ", highlight: "바로 당신", suffix: "입니다.", keywords: ["할로윈", "주인공"] }
@@ -183,7 +183,7 @@ export const HERO_TEMPLATES = {
             { line1: "Good Bye 2025,", line2Pre: "한 해의 마지막 페이지를 ", highlight: "아름다운 선율", suffix: "로 장식해보세요.", keywords: ["연말", "콘서트", "음악회"] },
             { line1: "수고했어 올해도,", line2Pre: "나를 위한 연말 정산, ", highlight: "최고의 공연", suffix: "으로 보상받으세요.", keywords: ["연말", "보상"] },
             { line1: "카운트다운 준비!", line2Pre: "새해를 맞이하는 ", highlight: "벅찬 순간", suffix: "을 함께하고 싶어요.", keywords: ["카운트다운", "새해"] },
-            { line1: "연말 모임 장소 고민?", line2Pre: "식상한 술자리 대신 ", highlight: "품격 있는 공연", suffix: " 회식 어때요?", keywords: ["연말", "모임"] },
+            { line1: "연말 모임 장소 고민?", line2Pre: "식상한 술자리 대신 ", highlight: "품격 있는 컨텐츠", suffix: " 회식 어때요?", keywords: ["연말", "모임"] },
             { line1: "아듀 2025,", line2Pre: "지나간 아쉬움은 털어버리고 ", highlight: "새로운 희망", suffix: "을 노래하세요.", keywords: ["송년회", "희망"] }
         ]
     },
@@ -290,11 +290,11 @@ export const HERO_TEMPLATES = {
             { line1: "축제의 계절이 왔어요!", line2Pre: "전국 방방곡곡 ", highlight: "흥겨운 축제", suffix: "가 당신을 기다립니다.", keywords: ["축제", "festival"] },
             { line1: "밤하늘을 수놓는 불꽃,", line2Pre: "황홀한 야경과 함께하는 ", highlight: "로맨틱 축제", suffix: "를 즐겨보세요.", keywords: ["축제", "불꽃"] },
             { line1: "맛있는 건 0칼로리?", line2Pre: "지역 특산물이 가득한 ", highlight: "미식 여행", suffix: " 떠나볼까요?", keywords: ["축제", "먹거리"] },
-            { line1: "거리마다 활기 가득,", line2Pre: "퍼레이드와 공연이 어우러진 ", highlight: "거리 축제", suffix: "의 현장으로.", keywords: ["축제", "퍼레이드"] },
+            { line1: "거리마다 활기 가득,", line2Pre: "퍼레이드와 컨텐츠가 어우러진 ", highlight: "거리 축제", suffix: "의 현장으로.", keywords: ["축제", "퍼레이드"] },
             { line1: "꽃구경 갈 사람?", line2Pre: "인생샷 백만 장 남길 수 있는 ", highlight: "꽃 축제", suffix: " 놓치지 마세요.", keywords: ["축제", "꽃"] }
         ],
         kids: [
-            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 공연", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
+            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 컨텐츠", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
             { line1: "엄마 아빠 어디 가?", line2Pre: "아이들이 더 좋아하는 ", highlight: "신나는 체험", suffix: " 떠나볼까요?", keywords: ["아동", "kids"] },
             { line1: "동화 속 세상으로!", line2Pre: "아이들의 상상력을 키워줄 ", highlight: "마법 같은 공연", suffix: "을 선물하세요.", keywords: ["아동", "동화"] },
             { line1: "교육과 재미를 동시에,", line2Pre: "놀면서 배우는 ", highlight: "유익한 전시", suffix: "를 만나보세요.", keywords: ["아동", "체험"] },

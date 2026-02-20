@@ -382,7 +382,7 @@ export default function BottomNavSheet({
                                                     if (!isSearchDropdownOpen) setIsSearchDropdownOpen(true);
                                                 }}
                                                 onKeyDown={handleKeyDown}
-                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "공연명, 장소, 출연진 검색..."}
+                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "컨텐츠명, 장소, 출연진 검색..."}
                                                 className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                             />
                                             {searchText && (
@@ -467,7 +467,15 @@ export default function BottomNavSheet({
                                         <div className="py-8 text-center text-gray-500 text-sm">
                                             {searchText.trim().length === 0
                                                 ? (searchMode === 'location' ? "찾으시는 장소를 입력해주세요" : "검색어를 입력해주세요")
-                                                : "검색 결과가 없습니다"
+                                                : (
+                                                    <div className="flex flex-col items-center justify-center py-10 text-gray-400 light:text-gray-500">
+                                                        <Search size={32} className="mb-2 opacity-50" />
+                                                        <p className="text-sm font-semibold">
+                                                            검색 결과가 없습니다.<br />
+                                                            다른 검색어를 입력해보세요.
+                                                        </p>
+                                                    </div>
+                                                )
                                             }
                                         </div>
                                     )}

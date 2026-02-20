@@ -695,10 +695,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'hockey': return '아시아리그 아이스하키';
                                     case 'museum': return '박물관/체험관';
                                     case 'handball': return '핸드볼 H리그 일정';
-                                    case 'musical': return '뮤지컬 공연 정보';
-                                    case 'concert': return '콘서트 공연 정보';
-                                    case 'play': return '연극 공연 정보';
-                                    case 'classic': return '클래식 · 무용 공연';
+                                    case 'musical': return '뮤지컬 컨텐츠 정보';
+                                    case 'concert': return '콘서트 컨텐츠 정보';
+                                    case 'play': return '연극 컨텐츠 정보';
+                                    case 'classic': return '클래식 · 무용 컨텐츠';
                                     case 'exhibition': return '전시 · 행사 정보';
                                     case 'activity': return '액티비티 체험';
                                     case 'leisure': return '레저 · 테마파크';
@@ -1021,14 +1021,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         )}
                                         <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
                                         <span className="text-base sm:text-xl shrink-0">
-                                            {searchMode === 'location' ? '위치 검색 공연' : '키워드 검색 공연'} ({filteredPerformances.length})
+                                            {searchMode === 'location' ? '위치 검색 컨텐츠' : '키워드 검색 컨텐츠'} ({filteredPerformances.length})
                                         </span>
                                     </>
                                 ) : (
                                     <>
                                         <span className="flex items-center gap-2">
                                             {getGenreIcon(selectedGenre, 28)}
-                                            {selectedGenre === 'all' ? '추천 공연' : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '공연'}`}
+                                            {selectedGenre === 'all' ? '추천 컨텐츠' : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'}`}
                                         </span>
                                         <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredPerformances.length})</span>
                                     </>

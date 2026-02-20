@@ -67,9 +67,9 @@ export default function EmptyState({
                         <Heart className="w-12 h-12 text-pink-500/60 fill-pink-500/10" />
                         <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-pink-500 animate-pulse" />
                     </motion.div>
-                    <h3 className="text-2xl font-extrabold text-pink-500 mb-2">좋아요한 공연이 없어요</h3>
-                    <p className="text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed">
-                        마음에 드는 공연이나 전시를 발견하면 하트를 눌러보세요.<br />
+                    <h3 className="text-2xl font-extrabold text-pink-500 mb-2">좋아요한 컨텐츠가 없어요</h3>
+                    <p className="text-gray-400 light:text-gray-600 mb-6 font-semibold">
+                        마음에 드는 컨텐츠나 전시를 발견하면 하트를 눌러보세요.<br />
                         나만의 문화 리스트가 만들어집니다! 💝
                     </p>
                     <a href="/culture/" className="px-8 py-3 rounded-xl bg-pink-500 text-white font-extrabold hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-500/30">
@@ -92,11 +92,10 @@ export default function EmptyState({
                         주변 맛집이나 티켓 오픈 소식을 더 빠르게 확인할 수 있습니다. 🏟️
                     </p>
                     <button
-                        onClick={() => setIsMapOpen(true)}
-                        className="px-8 py-3 rounded-xl bg-emerald-500 text-white font-extrabold hover:bg-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/30 flex items-center gap-2 mx-auto"
+                        onClick={() => { setSelectedRegion('all'); setSelectedDistrict('all'); setSearchText(''); }}
+                        className="bg-purple-600/20 text-purple-400 light:bg-purple-600 light:text-white px-6 py-3 rounded-xl hover:bg-purple-500/30 font-extrabold transition-all border border-purple-500/30"
                     >
-                        <Search size={18} />
-                        지도에서 찾기
+                        컨텐츠 둘러보기
                     </button>
                 </>
             ) : (

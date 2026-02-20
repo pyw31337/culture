@@ -500,10 +500,10 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                     {distanceLabel}
                                                 </div>
                                             )}
-
+                                            <span className="text-gray-300 light:text-gray-600 truncate">{v.groupName}</span>
                                             <div className="mt-auto flex items-center justify-between text-xs">
-                                                <span className={clsx("font-extrabold", isSelected ? "text-emerald-600" : "text-blue-600")}>
-                                                    {v.performances.length}개 공연
+                                                <span className="text-emerald-400 light:text-emerald-600 font-bold shrink-0">
+                                                    {v.performances.length}개 컨텐츠
                                                 </span>
                                             </div>
                                         </button>
