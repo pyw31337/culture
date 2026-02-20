@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/cli-progress": "^3.11.6",
     "@types/csv-parse": "^1.1.12",
     "@types/csv-stringify": "^1.4.3",

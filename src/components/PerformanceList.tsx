@@ -23,6 +23,7 @@ import { isChoseongMatch } from '@/lib/hangul';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { useRecommendation } from '@/hooks/useRecommendation';
 import RecommendedSection from './performance/RecommendedSection';
+import KeywordSection from './performance/KeywordSection';
 
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
@@ -492,6 +493,24 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         recentSearches: savedKeywords
     });
 
+    // --- Keyword Content Logic ---
+    const keywordItems = useMemo(() => {
+        if (!savedKeywords || savedKeywords.length === 0 || allPerformances.length === 0) return [];
+
+        const matches = allPerformances.filter(p =>
+            savedKeywords.some(k =>
+                (p.title || '').includes(k) ||
+                (p.genre || '').includes(k) ||
+                (p.venue || '').includes(k) ||
+                (venues[p.venue || '']?.district?.includes(k))
+            )
+        );
+
+        // Remove duplicates and limit to 15 to keep it horizontal
+        const unique = Array.from(new Map(matches.map(m => [m.id, m])).values());
+        return unique.slice(0, 15);
+    }, [savedKeywords, allPerformances]);
+
 
     // --- Local Storage Loading ---
     useEffect(() => {
@@ -920,6 +939,22 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     onSearchModeChange={setSearchMode}
                 />
             </ErrorBoundary>
+
+            {/* Keyword Content Section */}
+            {
+                (viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && keywordItems.length > 0 && (
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14">
+                        <KeywordSection
+                            keywordItems={keywordItems}
+                            onDetail={handleDetailOpen}
+                            onLocationClick={(loc) => { setSearchLocation(loc); setViewMode('map'); }}
+                            onToggleLike={toggleLike}
+                            likedIds={new Set(likedIds)}
+                            searchMode={searchMode}
+                        />
+                    </div>
+                )
+            }
 
             {/* Recommendation Section (Restored) */}
             {
