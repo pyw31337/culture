@@ -32,6 +32,8 @@ export const HorizontalScroll = ({ children, className }: HorizontalScrollProps)
         };
     }, [children]);
 
+    const isDragging = useRef(false);
+
     return (
         <div ref={containerRef} className={clsx("overflow-hidden cursor-grab active:cursor-grabbing relative", className)}>
             <motion.div
@@ -39,6 +41,16 @@ export const HorizontalScroll = ({ children, className }: HorizontalScrollProps)
                 drag="x"
                 dragConstraints={constraints}
                 dragElastic={0.4}
+                onDragStart={() => { isDragging.current = true; }}
+                onDragEnd={() => {
+                    // Use a small timeout so the following click event can be captured and blocked
+                    setTimeout(() => { isDragging.current = false; }, 50);
+                }}
+                onClickCapture={(e) => {
+                    if (isDragging.current) {
+                        e.stopPropagation();
+                    }
+                }}
                 // Use whileDrag to handle pointer events more cleanly if needed
                 className="flex gap-2 min-w-max pb-2 pt-0.5"
             >
