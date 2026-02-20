@@ -33,8 +33,8 @@ export function filterPerformances(performances: Performance[], options: FilterO
     let filtered = performances;
     const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
 
-    // A. Search Mode: Location -> Strictly exclude digital content (Movie/OTT)
-    if (searchMode === 'location') {
+    // A. Search Mode: Location -> Strictly exclude digital content (Movie/OTT) unless explicitly selected
+    if (searchMode === 'location' && genre !== 'movie' && genre !== 'ott') {
         filtered = filtered.filter(p => p.genre !== 'movie' && p.genre !== 'ott');
     }
 

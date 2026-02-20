@@ -33,11 +33,11 @@ async function scrapeHandball() {
     await page.setViewport({ width: 1280, height: 1024 });
 
     console.log(`Navigating to ${TARGET_URL}...`);
-    await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
     // Wait for table to ensure load
     try {
-        await page.waitForSelector('.record_table.pc_only table tbody tr', { timeout: 10000 });
+        await page.waitForSelector('.record_table.pc_only table tbody tr', { timeout: 30000 });
     } catch (e) {
         console.log('Table not found or timed out');
     }
@@ -67,27 +67,29 @@ async function scrapeHandball() {
                 currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
                 dateStr = currentDate;
                 timeStr = cells[1]?.innerText.trim() || '00:00';
-                contentCell = cells[2] as HTMLElement;
-                venueStr = cells[4]?.innerText.trim() || '';
-                // Note: Index 4 based on diagnostic (Date, Time, Content, Broadcaster, Venue, ...)
+                contentCell = cells[3] as HTMLElement;
+                venueStr = cells[5]?.innerText.trim() || '';
+                // Note: Index 5 based on diagnostic (Date, Time, Division, Content, Broadcaster, Venue, ...)
                 // Diagnostic showed: 
                 // 0: Date
                 // 1: Time
-                // 2: Content
-                // 3: Broadcaster
-                // 4: Venue
+                // 2: Division
+                // 3: Content
+                // 4: Broadcaster
+                // 5: Venue
             } else {
                 // Continuation Row (No date cell)
                 if (!currentDate) return; // Should not happen if data is sorted
                 dateStr = currentDate;
                 timeStr = cells[0]?.innerText.trim() || '00:00';
-                contentCell = cells[1] as HTMLElement;
-                venueStr = cells[3]?.innerText.trim() || '';
+                contentCell = cells[2] as HTMLElement;
+                venueStr = cells[4]?.innerText.trim() || '';
                 // Diagnostic showed:
                 // 0: Time
-                // 1: Content
-                // 2: Broadcaster
-                // 3: Venue
+                // 1: Division
+                // 2: Content
+                // 3: Broadcaster
+                // 4: Venue
             }
 
             // Extract Teams and Logos from Content Cell
@@ -159,12 +161,13 @@ async function scrapeHandball() {
 
 function classifyRegion(venue: string): string {
     if (!venue) return 'etc';
-    if (venue.includes('서울') || venue.includes('SK핸드볼')) return 'seoul';
+    if (venue.includes('서울') || venue.includes('SK핸드볼') || venue.includes('핸드볼경기장')) return 'seoul';
     if (venue.includes('인천') || venue.includes('남동')) return 'incheon';
     if (venue.includes('광명') || venue.includes('수원')) return 'gyeonggi';
-    if (venue.includes('부산') || venue.includes('기장')) return 'busan';
+    if (venue.includes('부산') || venue.includes('기장체육관') || venue.match(/\b기장\b/)) return 'busan';
     if (venue.includes('대구')) return 'daegu';
     if (venue.includes('광주')) return 'gwangju';
+    if (venue.includes('청주') || venue.includes('충북')) return 'etc'; // Example for others
     return 'etc';
 }
 
