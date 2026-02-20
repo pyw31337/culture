@@ -686,11 +686,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'ott': return '오늘 뭐 볼까? OTT 콘텐츠';
                                     case 'movie': return '최신 영화 개봉 정보';
                                     case 'travel': return '국내 여행 상품 검색';
-                                    case 'class': return '취미 클래스 검색';
-                                    case 'kids': return '아이와 함께하는 체험';
-                                    case 'baseball': return 'KBO 프로야구 일정';
-                                    case 'basketball': return 'KBL 프로농구 일정';
-                                    case 'volleyball': return 'V-리그 프로배구 일정';
+                                    case 'leisure': return '레저 · 테마파크';
+                                    case 'volleyball': return 'K-V 리그 (배구)';
+                                    case 'basketball': return 'KBL 농구 일정';
                                     case 'soccer': return 'K-리그 축구 일정';
                                     case 'hockey': return '아시아리그 아이스하키';
                                     case 'museum': return '박물관/체험관';

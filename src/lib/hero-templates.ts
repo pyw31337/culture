@@ -293,13 +293,6 @@ export const HERO_TEMPLATES = {
             { line1: "거리마다 활기 가득,", line2Pre: "퍼레이드와 컨텐츠가 어우러진 ", highlight: "거리 축제", suffix: "의 현장으로.", keywords: ["축제", "퍼레이드"] },
             { line1: "꽃구경 갈 사람?", line2Pre: "인생샷 백만 장 남길 수 있는 ", highlight: "꽃 축제", suffix: " 놓치지 마세요.", keywords: ["축제", "꽃"] }
         ],
-        kids: [
-            { line1: "우리 아이 웃음꽃 활짝,", line2Pre: "온 가족이 함께 즐기는 ", highlight: "키즈 컨텐츠", suffix: " 여기 다 있어요.", keywords: ["아동", "kids", "가족"] },
-            { line1: "엄마 아빠 어디 가?", line2Pre: "아이들이 더 좋아하는 ", highlight: "신나는 체험", suffix: " 떠나볼까요?", keywords: ["아동", "kids"] },
-            { line1: "동화 속 세상으로!", line2Pre: "아이들의 상상력을 키워줄 ", highlight: "마법 같은 공연", suffix: "을 선물하세요.", keywords: ["아동", "동화"] },
-            { line1: "교육과 재미를 동시에,", line2Pre: "놀면서 배우는 ", highlight: "유익한 전시", suffix: "를 만나보세요.", keywords: ["아동", "체험"] },
-            { line1: "캐릭터 친구들 안녕?", line2Pre: "TV 속 친구들을 직접 만나는 ", highlight: "팬미팅 시간", suffix: "!", keywords: ["아동", "캐릭터"] }
-        ],
         movie: [
             { line1: "영화 같은 하루,", line2Pre: "고소한 팝콘 냄새와 함께 ", highlight: "스크린 여행", suffix: " 떠나볼까요?", keywords: ["영화", "movie"] },
             { line1: "천만 관객의 선택,", line2Pre: "지금 가장 핫한 ", highlight: "블록버스터", suffix: "를 확인하세요.", keywords: ["영화", "movie"] },

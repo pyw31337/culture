@@ -129,7 +129,6 @@ export function getAllPerformances() {
     const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
     const movies = safeArray<any>(moviesData).map(p => ({ ...p, id: String(p.id), genre: 'movie' }));
     const travels = safeArray<any>(travelData).map(p => ({ ...p, id: String(p.id) }));
-    const kids = safeArray<any>(kidsData).map(p => ({ ...p, id: String(p.id) }));
     const classes = safeArray<any>(classData).map(p => ({ ...p, id: String(p.id) }));
     const umclasses = safeArray<any>(umclassData).map(p => ({ ...p, id: String(p.id) }));
     const mochaclasses = safeArray<any>(mochaclassData).map(p => ({ ...p, id: String(p.id) }));
@@ -152,7 +151,6 @@ export function getAllPerformances() {
         ...ott.map(p => ({ ...p, venue: 'OTT' })),
         ...movies,
         ...travels,
-        ...kids,
         ...classes,
         ...umclasses,
         ...mochaclasses,
@@ -165,7 +163,29 @@ export function getAllPerformances() {
     ].map(p => ({
         ...p,
         id: String(p.id)
-    }));
+    })).map(p => {
+        // [Data Quality Override]
+        // Reclassify kids content into more specific existing categories based on keywords.
+        // It's possible that a source explicitly targets 'kids' genre, so we remap it safely here.
+        if (p.genre === 'kids') {
+            const t = (p.title + ' ' + (p.venue || '')).toLowerCase();
+            if (t.includes('뮤지컬') || t.includes('티니핑') || t.includes('핑크퐁') || t.includes('오페라') || t.includes('싱어롱')) {
+                return { ...p, genre: 'musical' };
+            }
+            if (t.includes('연극') || t.includes('아동극') || t.includes('인형극')) {
+                return { ...p, genre: 'play' };
+            }
+            if (t.includes('클래식') || t.includes('음악회') || t.includes('발레') || t.includes('오케스트라')) {
+                return { ...p, genre: 'classic' };
+            }
+            if (t.includes('도슨트') || t.includes('박물관') || t.includes('역사') || t.includes('서대문형무소') || t.includes('경복궁') || t.includes('법안발의') || t.includes('미술관') || t.includes('기념관') || t.includes('에듀') || t.includes('투어')) {
+                return { ...p, genre: 'museum' };
+            }
+            // Fallback for kids content goes to activity
+            return { ...p, genre: 'activity' };
+        }
+        return p;
+    });
 
     // 3. Filter
     const now = new Date();

@@ -2,7 +2,7 @@ export const GENRE_GROUPS = [
     { id: 'all', label: '전체', genres: ['all'] },
     { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic', 'korean_music'] },
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
-    { id: 'activity', label: '액티비티', genres: ['festival', 'activity', 'leisure', 'travel', 'kids', 'class'] },
+    { id: 'activity', label: '액티비티', genres: ['festival', 'activity', 'leisure', 'travel', 'class'] },
     { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
     { id: 'life', label: '라이프', genres: ['movie', 'ott', 'food'] },
 ];
@@ -23,7 +23,6 @@ export const GENRES = [
     { id: 'travel', label: '여행' },
     { id: 'festival', label: '축제' },
     { id: 'leisure', label: '레저' },
-    { id: 'kids', label: '키즈' },
     { id: 'museum', label: '박물관/체험관' },
     { id: 'food', label: '식당/카페' },
     { id: 'volleyball', label: '배구' },
@@ -47,7 +46,6 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'travel': { hex: '#0ea5e9', twText: 'text-sky-600', twBg: 'bg-sky-600', twBorder: 'border-sky-500', twActivebg: 'bg-sky-500' }, // Sky Blue for Travel
     'festival': { hex: '#f97316', twText: 'text-orange-500', twBg: 'bg-orange-500', twBorder: 'border-orange-400', twActivebg: 'bg-orange-400' },
     'leisure': { hex: '#ea580c', twText: 'text-orange-700', twBg: 'bg-orange-700', twBorder: 'border-orange-500', twActivebg: 'bg-orange-600' },
-    'kids': { hex: '#84cc16', twText: 'text-lime-700', twBg: 'bg-lime-700', twBorder: 'border-lime-500', twActivebg: 'bg-lime-600' },
     'volleyball': { hex: '#059669', twText: 'text-emerald-700', twBg: 'bg-emerald-700', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-600' },
     'basketball': { hex: '#c2410c', twText: 'text-orange-800', twBg: 'bg-orange-800', twBorder: 'border-orange-600', twActivebg: 'bg-orange-700' },
     'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-700', twActivebg: 'bg-blue-800' },
@@ -97,7 +95,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
     'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic', 'korean_music', 'exhibition',
-    'activity', 'class', 'travel', 'festival', 'leisure', 'kids', 'museum', 'food',
+    'activity', 'class', 'travel', 'festival', 'leisure', 'museum', 'food',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
 

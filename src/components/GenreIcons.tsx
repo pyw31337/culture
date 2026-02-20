@@ -102,16 +102,6 @@ export const PlaneTiltIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Kids: HorseToy
-export const HorseToyIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3.5 17.5c5.667 4.667 11.333 4.667 17 0" />
-        <path d="M19 18.5l-2 -8.5l1 -2l2 1l1.5 -1.5l-2.5 -4.5c-5.052 .218 -5.99 3.133 -7 6h-6a3 3 0 0 0 -3 3" />
-        <path d="M5 18.5l2 -9.5" />
-        <path d="M8 20l2 -5h4l2 5" />
-    </svg>
-);
-
 // Class icon (kept for backwards compatibility)
 export const ClassIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -222,7 +212,6 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'activity': return <TicketIcon size={size} />;
         case 'class': return <ClassIcon size={size} />;
         case 'travel': return <PlaneTiltIcon size={size} />;
-        case 'kids': return <HorseToyIcon size={size} />;
         case 'festival': return <FestivalIcon size={size} />;
         case 'leisure': return <KayakIcon size={size} />;
         case 'volleyball': return <VolleyballIcon size={size} />;
