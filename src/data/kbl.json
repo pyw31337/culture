@@ -1,31 +1,31 @@
 [
   {
-    "id": "kbl_20260220_36_18",
-    "title": "LG vs KT",
+    "id": "kbl_20260221_26_24",
+    "title": "삼성 vs KCC",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-20 13:00",
+    "date": "2026-02-21 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "삼성",
+    "awayTeam": "KCC",
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
+  },
+  {
+    "id": "kbl_20260221_36_19",
+    "title": "LG vs SK",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-21 15:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "LG",
-    "awayTeam": "KT",
+    "awayTeam": "SK",
     "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
-  },
-  {
-    "id": "kbl_20260220_31_57",
-    "title": "현대모비스 vs 정관장",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-20 15:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "현대모비스",
-    "awayTeam": "정관장",
-    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260201_10_70",
@@ -602,32 +602,32 @@
     "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
-    "id": "kbl_20260221_26_24",
-    "title": "삼성 vs KCC",
+    "id": "kbl_20260220_36_18",
+    "title": "LG vs KT",
     "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-21 13:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "삼성",
-    "awayTeam": "KCC",
-    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20260221_36_19",
-    "title": "LG vs SK",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-21 15:00",
+    "date": "2026-02-20 13:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "LG",
-    "awayTeam": "SK",
+    "awayTeam": "KT",
     "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
+  },
+  {
+    "id": "kbl_20260220_31_57",
+    "title": "현대모비스 vs 정관장",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-20 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260226_68_31",

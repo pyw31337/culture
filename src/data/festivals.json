@@ -1,5 +1,16 @@
 [
   {
+    "id": "3c8b7d73-aac8-4052-b566-a6cb99e55beb",
+    "title": "강진청자축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3c8b7d73-aac8-4052-b566-a6cb99e55beb_97.jpg",
+    "date": "2026.02.21~2026.03.02",
+    "venue": "전라남도 강진군",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=3c8b7d73-aac8-4052-b566-a6cb99e55beb",
+    "genre": "festival",
+    "lastEnriched": "2026-02-17T19:05:29.904Z"
+  },
+  {
     "id": "cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8",
     "title": "대관령눈꽃축제",
     "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd23ea6b-7745-4ae5-aa52-dcb6b09b02e8_28.JPG",
@@ -35,7 +46,7 @@
   {
     "id": "ee90ecd1-8a54-4858-ac6d-b95e7f8d113a",
     "title": "양평빙송어축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ee90ecd1-8a54-4858-ac6d-b95e7f8d113a_20.jpg",
+    "image": null,
     "date": "2025.12.06~2026.03.02",
     "venue": "경기도 양평군",
     "region": "gyeonggi",
@@ -46,7 +57,7 @@
   {
     "id": "cd3921dc-baf4-4033-a3f3-acc739585872",
     "title": "광복로 겨울빛 트리축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/cd3921dc-baf4-4033-a3f3-acc739585872_10.JPG",
+    "image": null,
     "date": "2025.12.05~2026.02.22",
     "venue": "부산 중구",
     "region": "busan",
@@ -55,20 +66,9 @@
     "lastEnriched": "2026-02-13T19:14:17.041Z"
   },
   {
-    "id": "3c8b7d73-aac8-4052-b566-a6cb99e55beb",
-    "title": "강진청자축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/3c8b7d73-aac8-4052-b566-a6cb99e55beb_97.jpg",
-    "date": "2026.02.21~2026.03.02",
-    "venue": "전라남도 강진군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=3c8b7d73-aac8-4052-b566-a6cb99e55beb",
-    "genre": "festival",
-    "lastEnriched": "2026-02-17T19:05:29.904Z"
-  },
-  {
     "id": "98d02557-f042-4423-aabb-112b599b7eec",
     "title": "울진대게와 붉은대게 축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/98d02557-f042-4423-aabb-112b599b7eec_8.jpg",
+    "image": null,
     "date": "2026.02.27~2026.03.02",
     "venue": "경상북도 울진군",
     "region": "etc",
@@ -79,7 +79,7 @@
   {
     "id": "d6353dad-ed78-4636-8e0d-f363aa371735",
     "title": "1919 서대문, 그날의 함성",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/d6353dad-ed78-4636-8e0d-f363aa371735_34.jpg",
+    "image": null,
     "date": "2026.02.28~2026.03.01",
     "venue": "서울 서대문구",
     "region": "seoul",
@@ -90,7 +90,7 @@
   {
     "id": "555e6f9e-7133-47e2-a3c4-23939e965c47",
     "title": "양양 낙산해변 달빛 모닥불축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/555e6f9e-7133-47e2-a3c4-23939e965c47_4.png",
+    "image": null,
     "date": "2026.02.28~2026.03.01",
     "venue": "강원특별자치도 양양군",
     "region": "gangwon",
@@ -112,7 +112,7 @@
   {
     "id": "6a467ed2-f522-4635-9102-ff491755ff9c",
     "title": "완주삼례딸기대축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/6a467ed2-f522-4635-9102-ff491755ff9c_8.jpg",
+    "image": null,
     "date": "2026.03.06~2026.03.08",
     "venue": "전북특별자치도 완주군",
     "region": "jeonbuk",
@@ -152,6 +152,17 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d80cfb61-617b-4647-8196-98995001f079",
     "genre": "festival",
     "lastEnriched": "2026-02-13T19:14:19.230Z"
+  },
+  {
+    "id": "87dfeda1-084e-41a9-b76e-09f2d502443a",
+    "title": "논산딸기축제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/87dfeda1-084e-41a9-b76e-09f2d502443a_32.JPG",
+    "date": "2026.03.26~2026.03.29",
+    "venue": "충청남도 논산시",
+    "region": "etc",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=87dfeda1-084e-41a9-b76e-09f2d502443a",
+    "genre": "festival",
+    "lastEnriched": "2026-02-19T15:03:36.686Z"
   },
   {
     "id": "ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
@@ -218,6 +229,17 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c1152db9-0f84-498c-9e85-e97775ade5b0",
     "genre": "festival",
     "lastEnriched": "2026-02-13T19:14:21.444Z"
+  },
+  {
+    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
+    "title": "춘향제",
+    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/31a0fb6b-c075-402b-9cf7-a79e16451aab_18.JPG",
+    "date": "2026.04.30~2026.05.06",
+    "venue": "전북특별자치도 남원시",
+    "region": "jeonbuk",
+    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
+    "genre": "festival",
+    "lastEnriched": "2026-02-19T15:03:36.706Z"
   },
   {
     "id": "5720706a-565b-4fe9-a988-592e664e8ef2",
@@ -327,7 +349,7 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-02-19T15:03:34.790Z"
+    "lastEnriched": "2026-02-20T18:41:51.676Z"
   },
   {
     "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
@@ -338,28 +360,6 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "genre": "festival",
-    "lastEnriched": "2026-02-19T15:03:34.994Z"
-  },
-  {
-    "id": "87dfeda1-084e-41a9-b76e-09f2d502443a",
-    "title": "논산딸기축제",
-    "image": null,
-    "date": "2026.03.26~2026.03.29",
-    "venue": "충청남도 논산시",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=87dfeda1-084e-41a9-b76e-09f2d502443a",
-    "genre": "festival",
-    "lastEnriched": "2026-02-19T15:03:36.686Z"
-  },
-  {
-    "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
-    "title": "춘향제",
-    "image": null,
-    "date": "2026.04.30~2026.05.06",
-    "venue": "전북특별자치도 남원시",
-    "region": "jeonbuk",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
-    "genre": "festival",
-    "lastEnriched": "2026-02-19T15:03:36.706Z"
+    "lastEnriched": "2026-02-20T18:41:51.676Z"
   }
 ]
