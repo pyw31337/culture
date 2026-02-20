@@ -282,7 +282,22 @@ async function buildVenues() {
         }
     }
 
-    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems, ...umclassItems, ...mochaclassItems, ...sssdItems];
+    // Read Mommom Data
+    let mommomItems: any[] = [];
+    for (const file of ['mommom.json', 'mommom-food.json', 'mommom-product.json']) {
+        const filePath = path.join(process.cwd(), 'src/data', file);
+        if (fs.existsSync(filePath)) {
+            try {
+                const items = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                mommomItems = [...mommomItems, ...items];
+                console.log(`Loaded ${items.length} items from ${file}.`);
+            } catch (e) {
+                console.error(`Failed to load ${file}`, e);
+            }
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems, ...umclassItems, ...mochaclassItems, ...sssdItems, ...mommomItems];
 
     console.log(`Total items: ${all.length}`);
 
@@ -368,11 +383,25 @@ async function buildVenues() {
         let lat = venues[venueName]?.lat;
         let lng = venues[venueName]?.lng;
 
+        // 3.0 Always extract native coordinates if this is a mommom item
+        if ((perf as any).platform === 'mommom' || (perf as any).source === 'mommom') {
+            if ((perf as any).latitude && (perf as any).longitude) {
+                lat = (perf as any).latitude;
+                lng = (perf as any).longitude;
+            }
+        }
+
         // 3a. Fetch Address if missing
         if (!address || address === '정보 없음') {
-            // Check if the performance object itself has an address (TimeTicket)
-            // @ts-ignore
-            if (perf.address) {
+            // Check explicitly for source/platform instead of just checking the address field
+            if ((perf as any).platform === 'mommom' || (perf as any).source === 'mommom') {
+                if (perf.address) address = perf.address;
+                if ((perf as any).latitude && (perf as any).longitude) {
+                    lat = (perf as any).latitude;
+                    lng = (perf as any).longitude;
+                    console.log(`   -> Using Mommom Coords: ${lat}, ${lng}`);
+                }
+            } else if ((perf as any).address) {
                 // @ts-ignore
                 address = perf.address;
                 console.log(`   -> Using Provided Address: ${address}`);
