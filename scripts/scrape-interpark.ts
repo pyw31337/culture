@@ -223,9 +223,11 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const ex = existingEnriched.get(c.id)!;
 
             // Criteria for skipping:
-            // 1. Has important details (runningTime OR price) 
-            // 2. OR was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
-            if ((ex.runningTime || ex.price || ex.ageRating) || isRecentlyEnriched(ex)) {
+            // 1. Has important details (MUST have price to be considered fully enriched, unless it was recently checked)
+            // 2. Was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
+            const hasCompleteData = ex.price && (ex.runningTime || ex.ageRating);
+
+            if (hasCompleteData || isRecentlyEnriched(ex)) {
                 alreadyDone.push({ ...c, ...ex });
             } else {
                 todo.push(c);
@@ -274,8 +276,8 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 // [FIX] Force close popups that might block content scraping
                 try {
-                    await page.evaluate(() => {
-                        document.querySelectorAll('#popup-prdGuide, .popupLayer, .layerPopup').forEach(el => el.remove());
+                    await page.evaluate(function () {
+                        document.querySelectorAll('#popup-prdGuide, .popupLayer, .layerPopup').forEach(function (el) { el.remove(); });
                     });
                 } catch (e) { }
 
@@ -284,10 +286,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
-                const basicInfo = await page.evaluate(() => {
-                    // Helper to get text safely
-                    const getText = (selector: string, parent: Element | Document = document) =>
-                        parent.querySelector(selector)?.textContent?.trim() || '';
+                const basicInfo = await page.evaluate(function () {
+                    function getText(selector: string, parent: Element | Document = document) {
+                        return parent.querySelector(selector)?.textContent?.trim() || '';
+                    }
 
                     // 1. Info Items (Runtime, Age)
                     let runningTime = '';
@@ -395,7 +397,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                         if (bestItem) {
                             // Helper to extract clean text
-                            const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
+                            function getVal(cls: string) {
+                                return bestItem?.querySelector(cls)?.textContent?.trim() || '';
+                            }
 
                             // Structure 1: .sale, .original, .rate
                             const sale = getVal('.sale');
@@ -440,11 +444,11 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         await priceBtn.click();
                         await page.waitForSelector('.popPriceTable', { visible: true, timeout: 3000 });
 
-                        const popupData = await page.evaluate(() => {
+                        const popupData = await page.evaluate(function () {
                             const rows = Array.from(document.querySelectorAll('.popPriceTable tbody tr'));
                             let prices: number[] = [];
 
-                            rows.forEach(tr => {
+                            rows.forEach(function (tr) {
                                 const tds = tr.querySelectorAll('td');
                                 const valStr = tds[tds.length - 1]?.textContent?.trim() || '';
                                 const val = parseInt(valStr.replace(/[^0-9]/g, ''), 10);
