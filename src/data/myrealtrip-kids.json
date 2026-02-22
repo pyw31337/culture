@@ -132,18 +132,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3880369",
-    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
-    "date": "-오전 10시30분  -오후 13시30분",
-    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
-    "price": "34,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3880369",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3828720",
     "title": "[키즈][경주] 프리미엄 어린이 역사 체험 학습: 국립경주박물관",
     "date": "10시 / 13시 30분",
@@ -151,6 +139,18 @@
     "price": "55,000원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/14/PuTZ/4D2rn0o0du.jpg",
     "link": "https://experiences.myrealtrip.com/products/3828720",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3880369",
+    "title": "[키즈][서대문] 서대문 형무소 키즈 도슨트 투어",
+    "date": "-오전 10시30분  -오후 13시30분",
+    "venue": "서울 서대문구 통일로 251 서대문형무소역사관 \n(검표 후 연락 주세요)",
+    "price": "34,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/25/qdis/6s2HTPVDwH.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3880369",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -252,18 +252,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3828441",
-    "title": "[키즈][서울/종로] 세종 충무공이야기, 역사의 절정속으로!",
-    "date": "매주 토/일 10시, 13시",
-    "venue": "서울 종로구 세종대로 175 광화문 광장 세종대왕 동상",
-    "price": "40,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/mi0q/BvsmoPvjZs.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3828441",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3896370",
     "title": "[키즈][겨울방학 얼리버드]예비초 그리스가 로마에게 로마가 그리스에게 - 국립중앙박물관",
     "date": "오전 11시 / 오후 14시 30분",
@@ -283,6 +271,18 @@
     "price": "27,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/QNy0/yfBpVZjLlb.jpg",
     "link": "https://experiences.myrealtrip.com/products/3886100",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3828441",
+    "title": "[키즈][서울/종로] 세종 충무공이야기, 역사의 절정속으로!",
+    "date": "매주 토/일 10시, 13시",
+    "venue": "서울 종로구 세종대로 175 광화문 광장 세종대왕 동상",
+    "price": "40,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/05/mi0q/BvsmoPvjZs.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3828441",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -360,18 +360,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3828863",
-    "title": "[키즈] [서울/용산] 한반도를 뒤흔든 전쟁의 역사 \"전쟁기념관\"",
-    "date": "오전 10시/ 오후 13시 (10분 전 출석체크)",
-    "venue": "용산 전쟁기념관 1층 로비",
-    "price": "40,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/18/b855/kHEvgazVlP.png",
-    "link": "https://experiences.myrealtrip.com/products/3828863",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3851387",
     "title": "[키즈] 세계사시리즈 2탄! 국립세계문자박물관에서 역사탐험 떠나요",
     "date": "옵션(시간)을 선택할 때, 신청가능한 날짜가 표기되어있습니다! 신청하시기 전에 꼭 확인 해주세요😉",
@@ -408,13 +396,13 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4165719",
-    "title": "[키즈][서울/종로] 초등 근현대사! 한국사 특강 끝났다면 대한민국역사박물관으로 모여라!",
-    "date": "오전 10시 30분 / 오후 14시",
-    "venue": "대한민국역사박물관(서울 종로구 세종대로 198)",
-    "price": "34,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/01/10/kfIg/mwGdRq45WS.jpg",
-    "link": "https://experiences.myrealtrip.com/products/4165719",
+    "id": "mrt-3828863",
+    "title": "[키즈] [서울/용산] 한반도를 뒤흔든 전쟁의 역사 \"전쟁기념관\"",
+    "date": "오전 10시/ 오후 13시 (10분 전 출석체크)",
+    "venue": "용산 전쟁기념관 1층 로비",
+    "price": "40,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/18/b855/kHEvgazVlP.png",
+    "link": "https://experiences.myrealtrip.com/products/3828863",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -451,6 +439,18 @@
     "price": "34,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/eP6l/jSdATe63Xm.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885195",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4165719",
+    "title": "[키즈][서울/종로] 초등 근현대사! 한국사 특강 끝났다면 대한민국역사박물관으로 모여라!",
+    "date": "오전 10시 30분 / 오후 14시",
+    "venue": "대한민국역사박물관(서울 종로구 세종대로 198)",
+    "price": "34,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/01/10/kfIg/mwGdRq45WS.jpg",
+    "link": "https://experiences.myrealtrip.com/products/4165719",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -648,18 +648,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4678472",
-    "title": "[키즈] [국립대구박물관] 옷으로 읽는 우리 역사 이야기",
-    "date": "오전 10시, 오후 1시",
-    "venue": "국립대구박물관",
-    "price": "45,000원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/07/01/qoJz/YU22P7B2Is.jpeg",
-    "link": "https://experiences.myrealtrip.com/products/4678472",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3828453",
     "title": "[키즈][서울/종로] 아름다운 우리의 미술사, 서울공예박물관",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -703,6 +691,18 @@
     "price": "40,000원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/04/21/1X9t/MDKPv3vrCn.png",
     "link": "https://experiences.myrealtrip.com/products/4469787",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4678472",
+    "title": "[키즈] [국립대구박물관] 옷으로 읽는 우리 역사 이야기",
+    "date": "오전 10시, 오후 1시",
+    "venue": "국립대구박물관",
+    "price": "45,000원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/07/01/qoJz/YU22P7B2Is.jpeg",
+    "link": "https://experiences.myrealtrip.com/products/4678472",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1476,18 +1476,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885289",
-    "title": "[라라클래스] 저학년 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "국립중앙박물관 기념품점 앞",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/E54c/AW0E4GOCc8.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885289",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-4745771",
     "title": "[국회탐험대] 10-13세 추천! 민주주의의 비밀을 밝혀라! 국회를 탐험해요 - 국회박물관",
     "date": "오전 09시 50분",
@@ -1500,6 +1488,18 @@
     "status": "OPEN"
   },
   {
+    "id": "mrt-3885289",
+    "title": "[라라클래스] 저학년 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "국립중앙박물관 기념품점 앞",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/E54c/AW0E4GOCc8.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885289",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
     "id": "mrt-3885310",
     "title": "[라라클래스 영어도슨트]그리스로마 신화와 별자리를 한번에 알아보는 시간 in 국립중앙박물관",
     "date": "예약 확정 후 수업 일정을 조율합니다.",
@@ -1507,6 +1507,18 @@
     "price": "87,000원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/lWpl/4rK8c2BHI1.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885310",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885314",
+    "title": "[라라클래스] 서대문형무소역사관 인권과 평화로 배우는 근현대사-초등 고학년 역사탐험대",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "서대문형무소역사관 정문 앞",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/GZnt/KTODAfypvd.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885314",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1531,18 +1543,6 @@
     "price": "59,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/17/v6vk/leKEsqzRk3.jpg",
     "link": "https://experiences.myrealtrip.com/products/5539579",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
-    "id": "mrt-3885314",
-    "title": "[라라클래스] 서대문형무소역사관 인권과 평화로 배우는 근현대사-초등 고학년 역사탐험대",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "서대문형무소역사관 정문 앞",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/GZnt/KTODAfypvd.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885314",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1608,6 +1608,18 @@
     "status": "OPEN"
   },
   {
+    "id": "mrt-5539586",
+    "title": "[국립중앙박물관] 이순신 탐험대, 미취학 전용 - 거북선을 타고 바다로 모험을 떠나요",
+    "date": "10시 20분, 12시 50분, 15시 20분",
+    "venue": "국립중앙박물관",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/17/KB71/10zY4t8UD8.jpg",
+    "link": "https://experiences.myrealtrip.com/products/5539586",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
     "id": "mrt-5518082",
     "title": "[가족과 함께] 이슬람 미술 '찬란한 빛의 여정' 국립중앙박물관 도슨트 투어",
     "date": "도슨트 시작 10분 전 만남",
@@ -1632,18 +1644,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-5539586",
-    "title": "[국립중앙박물관] 이순신 탐험대, 미취학 전용 - 거북선을 타고 바다로 모험을 떠나요",
-    "date": "10시 20분, 12시 50분, 15시 20분",
-    "venue": "국립중앙박물관",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/12/17/KB71/10zY4t8UD8.jpg",
-    "link": "https://experiences.myrealtrip.com/products/5539586",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3924480",
     "title": "[라라클래스] 국립중앙박물관 삼국시대 미취학 \"Premium\" 역사탐험대 Season3",
     "date": "상품 상세페이지 참고해 주세요",
@@ -1656,18 +1656,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-4439409",
-    "title": "[라라클래스] 허준박물관 의학탐험대 미취학 전용! 밥이 왜 보약이 되는지 알아보러가요!",
-    "date": "오전 10시 50분, 오후 13시 50분",
-    "venue": "허준 박물관",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/04/11/WLYS/Sk0F7jS9f8.png",
-    "link": "https://experiences.myrealtrip.com/products/4439409",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885278",
     "title": "[라라클래스] 초등 고학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
     "date": "상품 상세페이지를 참고해 주세요",
@@ -1675,6 +1663,18 @@
     "price": "59,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/LHF5/U3VXkmYbZK.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885278",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-4439409",
+    "title": "[라라클래스] 허준박물관 의학탐험대 미취학 전용! 밥이 왜 보약이 되는지 알아보러가요!",
+    "date": "오전 10시 50분, 오후 13시 50분",
+    "venue": "허준 박물관",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2025/04/11/WLYS/Sk0F7jS9f8.png",
+    "link": "https://experiences.myrealtrip.com/products/4439409",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
@@ -1716,18 +1716,6 @@
     "status": "OPEN"
   },
   {
-    "id": "mrt-3885295",
-    "title": "[라라클래스] 미취학 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
-    "date": "상품 상세 페이지를 참고해주세요.",
-    "venue": "국립중앙박물관 앞",
-    "price": "59,900원~",
-    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/p0zf/2XfjeqGtxK.jpg",
-    "link": "https://experiences.myrealtrip.com/products/3885295",
-    "genre": "kids",
-    "source": "myrealtrip",
-    "status": "OPEN"
-  },
-  {
     "id": "mrt-3885315",
     "title": "[라라클래스] 서대문형무소역사관 유관순부터 민주화 운동가까지-초등 저학년 역사탐험대",
     "date": "상품 상세 페이지를 참고해주세요.",
@@ -1735,6 +1723,18 @@
     "price": "59,900원~",
     "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/7v4d/CJSfcJUOm4.jpg",
     "link": "https://experiences.myrealtrip.com/products/3885315",
+    "genre": "kids",
+    "source": "myrealtrip",
+    "status": "OPEN"
+  },
+  {
+    "id": "mrt-3885295",
+    "title": "[라라클래스] 미취학 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+    "date": "상품 상세 페이지를 참고해주세요.",
+    "venue": "국립중앙박물관 앞",
+    "price": "59,900원~",
+    "image": "https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2024/11/27/p0zf/2XfjeqGtxK.jpg",
+    "link": "https://experiences.myrealtrip.com/products/3885295",
     "genre": "kids",
     "source": "myrealtrip",
     "status": "OPEN"
