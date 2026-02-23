@@ -15,7 +15,7 @@ export const GENRES = [
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
-    { id: 'classic_tradition', label: '클래식/전통' },
+    { id: 'classic_tradition', label: '클래식' },
     { id: 'exhibition', label: '전시/행사' },
     { id: 'activity', label: '액티비티' },
     { id: 'class', label: '클래스' },
