@@ -1,5 +1,15 @@
 [
   {
+    "id": "yes24_56187",
+    "title": "매미(MEMI) 단독공연 [MEMI : The Ring]",
+    "image": "//tkfile.yes24.com/upload2/PerfBlog/202511/20251120/20251120-56187.jpg",
+    "date": "2025.12.21~2025.12.21",
+    "venue": "빅베어복싱클럽",
+    "link": "http://ticket.yes24.com/Perf/56187",
+    "region": "unknown",
+    "genre": "concert"
+  },
+  {
     "id": "yes24_55968",
     "title": "2025 송민준 단독 콘서트 〈챕터4〉",
     "image": "//tkfile.yes24.com/upload2/PerfBlog/202511/20251106/20251106-55968.jpg",
@@ -56,16 +66,6 @@
     "date": "2026.01.17~2026.01.18",
     "venue": "벡스코 오디토리움",
     "link": "http://ticket.yes24.com/Perf/55752",
-    "region": "unknown",
-    "genre": "concert"
-  },
-  {
-    "id": "yes24_55751",
-    "title": "2025-2026 이창섭 단독 콘서트 〈EndAnd〉 - 대구",
-    "image": "//tkfile.yes24.com/upload2/PerfBlog/202510/20251023/20251023-55751.jpg",
-    "date": "2026.01.03~2026.01.04",
-    "venue": "대구 엑스코 5층 컨벤션홀",
-    "link": "http://ticket.yes24.com/Perf/55751",
     "region": "unknown",
     "genre": "concert"
   }
