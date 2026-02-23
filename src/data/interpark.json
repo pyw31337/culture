@@ -13506,7 +13506,7 @@
     "genre": "musical",
     "runningTime": "150분(인터미션 20분 포함)",
     "ageRating": "14세 이상 관람가",
-    "price": "",
+    "price": "이벤트",
     "originalPrice": "",
     "discount": "",
     "lastEnriched": "2026-02-20T08:43:48.930Z"
@@ -13538,7 +13538,7 @@
     "genre": "musical",
     "runningTime": "150분(인터미션 20분 포함)",
     "ageRating": "8세이상 관람가능",
-    "price": "",
+    "price": "이벤트",
     "originalPrice": "",
     "discount": "",
     "lastEnriched": "2026-02-20T08:43:48.938Z"
@@ -13554,7 +13554,7 @@
     "genre": "musical",
     "runningTime": "65분",
     "ageRating": "24개월이상 관람가능",
-    "price": "",
+    "price": "무료/이벤트",
     "originalPrice": "",
     "discount": "",
     "lastEnriched": "2026-02-20T08:43:49.060Z"
@@ -13898,7 +13898,8 @@
     "venue": "마포아트센터 아트홀 맥",
     "link": "https://tickets.interpark.com/goods/26002093",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "25016292",
@@ -13908,7 +13909,8 @@
     "venue": "국립극장 해오름극장",
     "link": "https://tickets.interpark.com/goods/25016292",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료"
   },
   {
     "id": "25016372",
@@ -13918,7 +13920,8 @@
     "venue": "국립극장 해오름극장",
     "link": "https://tickets.interpark.com/goods/25016372",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료"
   },
   {
     "id": "25016373",
@@ -13928,7 +13931,8 @@
     "venue": "국립극장 해오름극장",
     "link": "https://tickets.interpark.com/goods/25016373",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료"
   },
   {
     "id": "25016422",
@@ -13938,7 +13942,8 @@
     "venue": "국립극장 달오름극장",
     "link": "https://tickets.interpark.com/goods/25016422",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "25016418",
@@ -13948,7 +13953,8 @@
     "venue": "국립극장 달오름극장",
     "link": "https://tickets.interpark.com/goods/25016418",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "25016374",
@@ -14145,7 +14151,8 @@
     "venue": "관악아트홀",
     "link": "https://tickets.interpark.com/goods/25018196",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001931",
@@ -14232,7 +14239,8 @@
     "venue": "강북문화예술회관 강북소나무홀",
     "link": "https://tickets.interpark.com/goods/26002435",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000620",
@@ -14429,7 +14437,8 @@
     "venue": "서울아트센터 도암홀",
     "link": "https://tickets.interpark.com/goods/26001784",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001785",
@@ -14439,7 +14448,8 @@
     "venue": "김희수아트센터 SPACE1",
     "link": "https://tickets.interpark.com/goods/26001785",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "P0004476",
@@ -14515,7 +14525,8 @@
     "venue": "문화공간 아이원",
     "link": "https://tickets.interpark.com/goods/26001683",
     "region": "서울",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000807",
@@ -14602,7 +14613,8 @@
     "venue": "더서울라이티움(갤러리아포레)",
     "link": "https://tickets.interpark.com/goods/25018658",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25017654",
@@ -14612,7 +14624,8 @@
     "venue": "디뮤지엄",
     "link": "https://tickets.interpark.com/goods/25017654",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25008105",
@@ -14622,7 +14635,8 @@
     "venue": "대원뮤지엄 팝콘D스퀘어",
     "link": "https://tickets.interpark.com/goods/25008105",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "이벤트"
   },
   {
     "id": "26001970",
@@ -14682,7 +14696,8 @@
     "venue": "디뮤지엄",
     "link": "https://tickets.interpark.com/goods/25008638",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25017717",
@@ -14780,7 +14795,8 @@
     "venue": "아라아트센터",
     "link": "https://tickets.interpark.com/goods/26000291",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "24016400",
@@ -14823,7 +14839,8 @@
     "venue": "DDP 뮤지엄 전시 2관",
     "link": "https://tickets.interpark.com/goods/25015776",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000006",
@@ -14833,7 +14850,8 @@
     "venue": "DDP 뮤지엄 전시 2관",
     "link": "https://tickets.interpark.com/goods/26000006",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25018027",
@@ -14843,7 +14861,8 @@
     "venue": "아트조선스페이스",
     "link": "https://tickets.interpark.com/goods/25018027",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25014079",
@@ -14853,7 +14872,8 @@
     "venue": "DDP 뮤지엄 전시 2관",
     "link": "https://tickets.interpark.com/goods/25014079",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000339",
@@ -14876,7 +14896,8 @@
     "venue": "그라운드시소 이스트",
     "link": "https://tickets.interpark.com/goods/25016395",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001047",
@@ -14899,7 +14920,8 @@
     "venue": "MUSEUM 209",
     "link": "https://tickets.interpark.com/goods/25015728",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001243",
@@ -14996,7 +15018,8 @@
     "venue": "롯데뮤지엄",
     "link": "https://tickets.interpark.com/goods/25016046",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25017291",
@@ -15265,7 +15288,8 @@
     "venue": "한국민화학교",
     "link": "https://tickets.interpark.com/goods/25017849",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25017747",
@@ -15308,7 +15332,8 @@
     "venue": "세종문화회관 미술관",
     "link": "https://tickets.interpark.com/goods/25015420",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000791",
@@ -15542,7 +15567,8 @@
     "venue": "한국민화학교",
     "link": "https://tickets.interpark.com/goods/25017836",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "18009027",
@@ -15629,7 +15655,8 @@
     "venue": "서울 COEX C홀",
     "link": "https://tickets.interpark.com/goods/26000018",
     "region": "서울",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000334",
@@ -16265,7 +16292,8 @@
     "venue": "케이탑건 홍대점",
     "link": "https://tickets.interpark.com/goods/Y5000740",
     "region": "서울",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "22002652",
@@ -16275,7 +16303,8 @@
     "venue": "월드컵공원 노을캠핑장",
     "link": "https://tickets.interpark.com/goods/22002652",
     "region": "서울",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "22002654",
@@ -16285,7 +16314,8 @@
     "venue": "월드컵공원",
     "link": "https://tickets.interpark.com/goods/22002654",
     "region": "서울",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001536",
@@ -16415,7 +16445,8 @@
     "venue": "천왕산가족캠핑장",
     "link": "https://tickets.interpark.com/goods/21012652",
     "region": "서울",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000196",
@@ -16523,7 +16554,8 @@
     "venue": "경기국악원 국악당",
     "link": "https://tickets.interpark.com/goods/26002648",
     "region": "경기",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26002646",
@@ -16533,7 +16565,8 @@
     "venue": "경기국악원 국악당",
     "link": "https://tickets.interpark.com/goods/26002646",
     "region": "경기",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26002454",
@@ -16554,7 +16587,8 @@
     "venue": "반석아트홀",
     "link": "https://tickets.interpark.com/goods/25017540",
     "region": "경기",
-    "genre": "etc"
+    "genre": "etc",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001131",
@@ -16873,7 +16907,8 @@
     "venue": "송도컨벤시아",
     "link": "https://tickets.interpark.com/goods/26000004",
     "region": "인천",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001777",
@@ -16894,7 +16929,8 @@
     "venue": "용인어린이상상의숲 예술놀이터",
     "link": "https://tickets.interpark.com/goods/25017810",
     "region": "경기",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "22009178",
@@ -16970,7 +17006,8 @@
     "venue": "한국만화박물관 1층 만화영화상영관",
     "link": "https://tickets.interpark.com/goods/26000350",
     "region": "경기",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26002409",
@@ -17046,7 +17083,8 @@
     "venue": "고양 아람누리 제4전시실",
     "link": "https://tickets.interpark.com/goods/25015234",
     "region": "경기",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26001422",
@@ -17111,7 +17149,8 @@
     "venue": "안성맞춤아트홀 주민편의동 1층 전시실",
     "link": "https://tickets.interpark.com/goods/26000171",
     "region": "경기",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000764",
@@ -18749,7 +18788,8 @@
     "venue": "고대산 오토캠핑장",
     "link": "https://tickets.interpark.com/goods/26002643",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "22005895",
@@ -18955,7 +18995,8 @@
     "venue": "안성맞춤 남사당공연장",
     "link": "https://tickets.interpark.com/goods/25004354",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001622",
@@ -18965,7 +19006,8 @@
     "venue": "안성팜랜드",
     "link": "https://tickets.interpark.com/goods/Y5001622",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000237",
@@ -18988,7 +19030,8 @@
     "venue": "연천 세계캠핑체험존",
     "link": "https://tickets.interpark.com/goods/22001336",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "22016459",
@@ -19009,7 +19052,8 @@
     "venue": "옐레드 하남미사점",
     "link": "https://tickets.interpark.com/goods/Y5001882",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001310",
@@ -19043,7 +19087,8 @@
     "venue": "잭슨나인스 일산",
     "link": "https://tickets.interpark.com/goods/Y6000234",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001381",
@@ -19164,7 +19209,8 @@
     "venue": "포천자연마을 서울캠핑장",
     "link": "https://tickets.interpark.com/goods/25005896",
     "region": "경기",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001834",
@@ -19364,7 +19410,8 @@
     "venue": "현대백화점 충청점 7층 문화홀",
     "link": "https://tickets.interpark.com/goods/26002598",
     "region": "충북",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001685",
@@ -19474,7 +19521,8 @@
     "venue": "제천 하늘뜨레 서울캠핑장",
     "link": "https://tickets.interpark.com/goods/25005895",
     "region": "충북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001841",
@@ -20022,7 +20070,8 @@
     "venue": "알프스마을 눈썰매장",
     "link": "https://tickets.interpark.com/goods/Y5001736",
     "region": "충남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000097",
@@ -20071,7 +20120,8 @@
     "venue": "(주)소노호텔앤리조트 천안",
     "link": "https://tickets.interpark.com/goods/Y6000203",
     "region": "충남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000118",
@@ -20129,7 +20179,8 @@
     "venue": "충남 피나클랜드",
     "link": "https://tickets.interpark.com/goods/Y6000031",
     "region": "충남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000249",
@@ -20178,7 +20229,8 @@
     "venue": "서천 금빛노을 서울캠핑장",
     "link": "https://tickets.interpark.com/goods/25005893",
     "region": "충남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000160",
@@ -20256,7 +20308,8 @@
     "venue": "더 플랫폼 넘버원",
     "link": "https://tickets.interpark.com/goods/26001259",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000562",
@@ -20379,7 +20432,8 @@
     "venue": "정글미디어파크",
     "link": "https://tickets.interpark.com/goods/Y4000559",
     "region": "경북",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001634",
@@ -20389,7 +20443,8 @@
     "venue": "경주 키덜트뮤지엄",
     "link": "https://tickets.interpark.com/goods/Y3001634",
     "region": "경북",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001863",
@@ -20412,7 +20467,8 @@
     "venue": "대구미술관",
     "link": "https://tickets.interpark.com/goods/25011549",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25016933",
@@ -20422,7 +20478,8 @@
     "venue": "뮤씨엄 대구점",
     "link": "https://tickets.interpark.com/goods/25016933",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "26000742",
@@ -20443,7 +20500,8 @@
     "venue": "더 플랫폼 넘버원",
     "link": "https://tickets.interpark.com/goods/26001128",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25017922",
@@ -20453,7 +20511,8 @@
     "venue": "대백프라자갤러리 (프라자점 12F)",
     "link": "https://tickets.interpark.com/goods/25017922",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25018415",
@@ -20463,7 +20522,8 @@
     "venue": "뮤씨엄 대구점",
     "link": "https://tickets.interpark.com/goods/25018415",
     "region": "대구",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001881",
@@ -20728,7 +20788,8 @@
     "venue": "동궁원",
     "link": "https://tickets.interpark.com/goods/Y4001628",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002069",
@@ -20738,7 +20799,8 @@
     "venue": "경주루지월드",
     "link": "https://tickets.interpark.com/goods/Y3002069",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000634",
@@ -20748,7 +20810,8 @@
     "venue": "경주루지월드",
     "link": "https://tickets.interpark.com/goods/Y4000634",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000433",
@@ -20771,7 +20834,8 @@
     "venue": "국민힐링파크",
     "link": "https://tickets.interpark.com/goods/Y5001854",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000130",
@@ -20794,7 +20858,8 @@
     "venue": "동궁원",
     "link": "https://tickets.interpark.com/goods/Y4000722",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001622",
@@ -20815,7 +20880,8 @@
     "venue": "경주엑스포대공원",
     "link": "https://tickets.interpark.com/goods/Y3001604",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002105",
@@ -20825,7 +20891,8 @@
     "venue": "정글미디어파크",
     "link": "https://tickets.interpark.com/goods/Y3002105",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001316",
@@ -21009,7 +21076,8 @@
     "venue": "원더스페이스 보문점",
     "link": "https://tickets.interpark.com/goods/Y4000954",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002150",
@@ -21533,7 +21601,8 @@
     "venue": "대구 이월드",
     "link": "https://tickets.interpark.com/goods/Y6000246",
     "region": "대구",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료"
   },
   {
     "id": "Y5001552",
@@ -21710,7 +21779,8 @@
     "venue": "대구 스틸 301 플레이파크",
     "link": "https://tickets.interpark.com/goods/Y5001534",
     "region": "대구",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001401",
@@ -21746,7 +21816,8 @@
     "venue": "상주 감꽃마을 서울캠핑장",
     "link": "https://tickets.interpark.com/goods/25005853",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "20010339",
@@ -21767,7 +21838,8 @@
     "venue": "영천시 별빛테마마을 (펜션시설)",
     "link": "https://tickets.interpark.com/goods/21011412",
     "region": "경북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "18005923",
@@ -21998,7 +22070,8 @@
     "venue": "요트홀릭X뮤지엄원",
     "link": "https://tickets.interpark.com/goods/Y5000906",
     "region": "부산",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001821",
@@ -22008,7 +22081,8 @@
     "venue": "자수정동굴",
     "link": "https://tickets.interpark.com/goods/Y3001821",
     "region": "울산",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25013256",
@@ -22079,7 +22153,8 @@
     "venue": "현대백화점 울산점 13층 팝업행사장",
     "link": "https://tickets.interpark.com/goods/26000311",
     "region": "울산",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001820",
@@ -22115,7 +22190,8 @@
     "venue": "하동 케이블카",
     "link": "https://tickets.interpark.com/goods/Y6000053",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000890",
@@ -22457,7 +22533,8 @@
     "venue": "부산요트투어 요트하이",
     "link": "https://tickets.interpark.com/goods/Y4000496",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000827",
@@ -22467,7 +22544,8 @@
     "venue": "［부산］ 해운대 요트G 퍼블릭투어",
     "link": "https://tickets.interpark.com/goods/Y3000827",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001417",
@@ -22503,7 +22581,8 @@
     "venue": "부산요트 카카오",
     "link": "https://tickets.interpark.com/goods/Y3000756",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001584",
@@ -22591,7 +22670,8 @@
     "venue": "해운대 브레이크아웃",
     "link": "https://tickets.interpark.com/goods/Y3001842",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001133",
@@ -22601,7 +22681,8 @@
     "venue": "레이저태그스포츠",
     "link": "https://tickets.interpark.com/goods/Y4001133",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000812",
@@ -22633,7 +22714,8 @@
     "venue": "남포동 쿵스 게임랜드",
     "link": "https://tickets.interpark.com/goods/Y3001301",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001307",
@@ -22895,7 +22977,8 @@
     "venue": "SMB 웰니스",
     "link": "https://tickets.interpark.com/goods/Y4000630",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001264",
@@ -22931,7 +23014,8 @@
     "venue": "MCT슈팅클럽",
     "link": "https://tickets.interpark.com/goods/Y5000157",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000956",
@@ -22941,7 +23025,8 @@
     "venue": "부산시티투어버스",
     "link": "https://tickets.interpark.com/goods/Y3000956",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000893",
@@ -22951,7 +23036,8 @@
     "venue": "부산시티투어버스",
     "link": "https://tickets.interpark.com/goods/Y5000893",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001394",
@@ -22961,7 +23047,8 @@
     "venue": "부산시티투어버스",
     "link": "https://tickets.interpark.com/goods/Y5001394",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001396",
@@ -22971,7 +23058,8 @@
     "venue": "송도해상케이블카",
     "link": "https://tickets.interpark.com/goods/Y5001396",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001344",
@@ -22981,7 +23069,8 @@
     "venue": "송도해상케이블카",
     "link": "https://tickets.interpark.com/goods/Y3001344",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001395",
@@ -22991,7 +23080,8 @@
     "venue": "요트홀릭",
     "link": "https://tickets.interpark.com/goods/Y5001395",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001849",
@@ -23001,7 +23091,8 @@
     "venue": "양산 에덴밸리",
     "link": "https://tickets.interpark.com/goods/Y5001849",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001851",
@@ -23011,7 +23102,8 @@
     "venue": "양산 에덴밸리",
     "link": "https://tickets.interpark.com/goods/Y5001851",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001843",
@@ -23021,7 +23113,8 @@
     "venue": "양산 에덴밸리",
     "link": "https://tickets.interpark.com/goods/Y5001843",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000820",
@@ -23159,7 +23252,8 @@
     "venue": "스카이라인루지 통영",
     "link": "https://tickets.interpark.com/goods/Y3001355",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001124",
@@ -23219,7 +23313,8 @@
     "venue": "김해가야테마파크",
     "link": "https://tickets.interpark.com/goods/Y6000112",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000115",
@@ -23229,7 +23324,8 @@
     "venue": "김해가야테마파크",
     "link": "https://tickets.interpark.com/goods/Y6000115",
     "region": "경남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001026",
@@ -23239,7 +23335,8 @@
     "venue": "더브릭 키즈카페 W스퀘어점",
     "link": "https://tickets.interpark.com/goods/Y4001026",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000081",
@@ -23325,7 +23422,8 @@
     "venue": "요트홀릭",
     "link": "https://tickets.interpark.com/goods/21006866",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "19018070",
@@ -23348,7 +23446,8 @@
     "venue": "부산항 힐링 야영장",
     "link": "https://tickets.interpark.com/goods/21004842",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000056",
@@ -23358,7 +23457,8 @@
     "venue": "송도해상케이블카",
     "link": "https://tickets.interpark.com/goods/Y5000056",
     "region": "부산",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001384",
@@ -23460,7 +23560,8 @@
     "venue": "전북투어패스",
     "link": "https://tickets.interpark.com/goods/Y3002117",
     "region": "전북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002118",
@@ -23481,7 +23582,8 @@
     "venue": "전북투어패스",
     "link": "https://tickets.interpark.com/goods/Y3001995",
     "region": "전북",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001699",
@@ -23653,7 +23755,8 @@
     "venue": "GS칼텍스 예울마루 7층 전시실",
     "link": "https://tickets.interpark.com/goods/26002553",
     "region": "전남",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000177",
@@ -23698,7 +23801,8 @@
     "venue": "섬진강 별빛 스카이 (더챌린지)",
     "link": "https://tickets.interpark.com/goods/Y5000040",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001426",
@@ -23734,7 +23838,8 @@
     "venue": "히어로플레이파크 광주점",
     "link": "https://tickets.interpark.com/goods/Y5001581",
     "region": "광주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000931",
@@ -23757,7 +23862,8 @@
     "venue": "대나무 숯가마 찜질방",
     "link": "https://tickets.interpark.com/goods/Y3002092",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000351",
@@ -23778,7 +23884,8 @@
     "venue": "여수엑스포 스페이스 키즈파크",
     "link": "https://tickets.interpark.com/goods/Y5000724",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000730",
@@ -23799,7 +23906,8 @@
     "venue": "이사부크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000083",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001388",
@@ -23809,7 +23917,8 @@
     "venue": "［광주］곡성 기차마을 패러글라이딩",
     "link": "https://tickets.interpark.com/goods/Y3001388",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001671",
@@ -23830,7 +23939,8 @@
     "venue": "［완도］ 청해포구 촬영장",
     "link": "https://tickets.interpark.com/goods/Y3001459",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000049",
@@ -23840,7 +23950,8 @@
     "venue": "금호화순스파리조트 아쿠아나",
     "link": "https://tickets.interpark.com/goods/Y6000049",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002107",
@@ -23850,7 +23961,8 @@
     "venue": "담양리조트",
     "link": "https://tickets.interpark.com/goods/Y3002107",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001837",
@@ -23873,7 +23985,8 @@
     "venue": "라풀 어드벤처 워터파크",
     "link": "https://tickets.interpark.com/goods/Y5001663",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001616",
@@ -23896,7 +24009,8 @@
     "venue": "썬웨이 워터파크",
     "link": "https://tickets.interpark.com/goods/Y6000158",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000869",
@@ -23919,7 +24033,8 @@
     "venue": "아쿠아플라넷 여수",
     "link": "https://tickets.interpark.com/goods/Y6000212",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000150",
@@ -23942,7 +24057,8 @@
     "venue": "미남크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000238",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000240",
@@ -23965,7 +24081,8 @@
     "venue": "미남크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000269",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000239",
@@ -23975,7 +24092,8 @@
     "venue": "미남크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000239",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000107",
@@ -23985,7 +24103,8 @@
     "venue": "이사부크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000107",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000106",
@@ -23995,7 +24114,8 @@
     "venue": "이사부크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000106",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "25005894",
@@ -24005,7 +24125,8 @@
     "venue": "함평 나비마을 서울캠핑장",
     "link": "https://tickets.interpark.com/goods/25005894",
     "region": "전남",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "25018526",
@@ -24028,7 +24149,8 @@
     "venue": "스카이워터쇼",
     "link": "https://tickets.interpark.com/goods/Y5000516",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001418",
@@ -24038,7 +24160,8 @@
     "venue": "제주 아트서커스",
     "link": "https://tickets.interpark.com/goods/Y5001418",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000379",
@@ -24061,7 +24184,8 @@
     "venue": "제주 그리스신화박물관＆트릭아이 미술관",
     "link": "https://tickets.interpark.com/goods/Y3001998",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000778",
@@ -24071,7 +24195,8 @@
     "venue": "노형수퍼마켙",
     "link": "https://tickets.interpark.com/goods/Y3000778",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000298",
@@ -24081,7 +24206,8 @@
     "venue": "노형수퍼마켙",
     "link": "https://tickets.interpark.com/goods/Y5000298",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000158",
@@ -24102,7 +24228,8 @@
     "venue": "더 케이쇼",
     "link": "https://tickets.interpark.com/goods/Y5000131",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001226",
@@ -24227,7 +24354,8 @@
     "venue": "헬로키티아일랜드",
     "link": "https://tickets.interpark.com/goods/Y4001002",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000226",
@@ -24303,7 +24431,8 @@
     "venue": "유동룡미술관(이타미준뮤지엄)",
     "link": "https://tickets.interpark.com/goods/25005363",
     "region": "제주",
-    "genre": "exhibition"
+    "genre": "exhibition",
+    "price": "무료/이벤트"
   },
   {
     "id": "25010759",
@@ -24363,7 +24492,8 @@
     "venue": "서귀포유람선",
     "link": "https://tickets.interpark.com/goods/Y5000513",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000746",
@@ -24412,7 +24542,8 @@
     "venue": "무지개요트",
     "link": "https://tickets.interpark.com/goods/Y5001400",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002003",
@@ -24422,7 +24553,8 @@
     "venue": "마라도 정기여객선",
     "link": "https://tickets.interpark.com/goods/Y3002003",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001706",
@@ -24432,7 +24564,8 @@
     "venue": "파더스가든",
     "link": "https://tickets.interpark.com/goods/Y3001706",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001955",
@@ -24481,7 +24614,8 @@
     "venue": "그림카페",
     "link": "https://tickets.interpark.com/goods/Y5001867",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000924",
@@ -24491,7 +24625,8 @@
     "venue": "제주금당목장 ATV",
     "link": "https://tickets.interpark.com/goods/Y5000924",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002093",
@@ -24501,7 +24636,8 @@
     "venue": "김녕왕발통",
     "link": "https://tickets.interpark.com/goods/Y3002093",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000051",
@@ -24678,7 +24814,8 @@
     "venue": "더마파크 카트",
     "link": "https://tickets.interpark.com/goods/Y5000017",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001223",
@@ -24688,7 +24825,8 @@
     "venue": "더마파크",
     "link": "https://tickets.interpark.com/goods/Y3001223",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000054",
@@ -24787,7 +24925,8 @@
     "venue": "드르쿰다 in 성산",
     "link": "https://tickets.interpark.com/goods/Y3002049",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000565",
@@ -24797,7 +24936,8 @@
     "venue": "목장카페 드르쿰다",
     "link": "https://tickets.interpark.com/goods/Y4000565",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000094",
@@ -24807,7 +24947,8 @@
     "venue": "아라고나이트 온천＆수영장",
     "link": "https://tickets.interpark.com/goods/Y3000094",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000880",
@@ -24856,7 +24997,8 @@
     "venue": "레이저레나엑스 제주점",
     "link": "https://tickets.interpark.com/goods/Y5000503",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001765",
@@ -24866,7 +25008,8 @@
     "venue": "레일바이크",
     "link": "https://tickets.interpark.com/goods/Y5001765",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000988",
@@ -24876,7 +25019,8 @@
     "venue": "머맨스쿠버",
     "link": "https://tickets.interpark.com/goods/Y4000988",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000590",
@@ -24899,7 +25043,8 @@
     "venue": "목장카페 드르쿰다",
     "link": "https://tickets.interpark.com/goods/Y3002002",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001210",
@@ -24935,7 +25080,8 @@
     "venue": "제주민속촌",
     "link": "https://tickets.interpark.com/goods/Y3001579",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000096",
@@ -24945,7 +25091,8 @@
     "venue": "박물관은살아있다",
     "link": "https://tickets.interpark.com/goods/Y6000096",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002020",
@@ -24955,7 +25102,8 @@
     "venue": "불빛정원",
     "link": "https://tickets.interpark.com/goods/Y3002020",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001586",
@@ -24978,7 +25126,8 @@
     "venue": "사려니 ATV＆승마",
     "link": "https://tickets.interpark.com/goods/Y4001640",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001292",
@@ -25001,7 +25150,8 @@
     "venue": "산방산유람선",
     "link": "https://tickets.interpark.com/goods/Y3002125",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000674",
@@ -25011,7 +25161,8 @@
     "venue": "산방산유람선",
     "link": "https://tickets.interpark.com/goods/Y5000674",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001508",
@@ -25021,7 +25172,8 @@
     "venue": "산방산탄산온천",
     "link": "https://tickets.interpark.com/goods/Y4001508",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000278",
@@ -25057,7 +25209,8 @@
     "venue": "새별 ATV",
     "link": "https://tickets.interpark.com/goods/Y5000925",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002128",
@@ -25067,7 +25220,8 @@
     "venue": "서귀포다이브센터",
     "link": "https://tickets.interpark.com/goods/Y3002128",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000675",
@@ -25077,7 +25231,8 @@
     "venue": "서귀포유람선",
     "link": "https://tickets.interpark.com/goods/Y5000675",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000048",
@@ -25087,7 +25242,8 @@
     "venue": "서귀포잠수함",
     "link": "https://tickets.interpark.com/goods/Y5000048",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000165",
@@ -25240,7 +25396,8 @@
     "venue": "소랑 ATV＆승마",
     "link": "https://tickets.interpark.com/goods/Y4001627",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000540",
@@ -25250,7 +25407,8 @@
     "venue": "소인국테마파크",
     "link": "https://tickets.interpark.com/goods/Y5000540",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002197",
@@ -25260,7 +25418,8 @@
     "venue": "송악카트",
     "link": "https://tickets.interpark.com/goods/Y3002197",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002014",
@@ -25270,7 +25429,8 @@
     "venue": "쇠소깍산물관광농원",
     "link": "https://tickets.interpark.com/goods/Y3002014",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000989",
@@ -25280,7 +25440,8 @@
     "venue": "스누피가든",
     "link": "https://tickets.interpark.com/goods/Y5000989",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000099",
@@ -25290,7 +25451,8 @@
     "venue": "스카이온파이브다이닝",
     "link": "https://tickets.interpark.com/goods/Y6000099",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001109",
@@ -25300,7 +25462,8 @@
     "venue": "스카이워터쇼",
     "link": "https://tickets.interpark.com/goods/Y5001109",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000162",
@@ -25310,7 +25473,8 @@
     "venue": "스카이워터쇼",
     "link": "https://tickets.interpark.com/goods/Y5000162",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000308",
@@ -25320,7 +25484,8 @@
     "venue": "스파엔아로마테라피",
     "link": "https://tickets.interpark.com/goods/Y5000308",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002019",
@@ -25356,7 +25521,8 @@
     "venue": "아르떼키즈파크",
     "link": "https://tickets.interpark.com/goods/Y4000486",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002245",
@@ -25379,7 +25545,8 @@
     "venue": "알프스 제주",
     "link": "https://tickets.interpark.com/goods/Y5001242",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002022",
@@ -25402,7 +25569,8 @@
     "venue": "액트몬",
     "link": "https://tickets.interpark.com/goods/Y5001831",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001446",
@@ -25451,7 +25619,8 @@
     "venue": "제주 오레브스파",
     "link": "https://tickets.interpark.com/goods/Y6000232",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002199",
@@ -25474,7 +25643,8 @@
     "venue": "오름ATV",
     "link": "https://tickets.interpark.com/goods/Y3001904",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000810",
@@ -25484,7 +25654,8 @@
     "venue": "오설록 티뮤지엄",
     "link": "https://tickets.interpark.com/goods/Y5000810",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001191",
@@ -25507,7 +25678,8 @@
     "venue": "우도잠수함",
     "link": "https://tickets.interpark.com/goods/Y5001419",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000319",
@@ -25517,7 +25689,8 @@
     "venue": "우도정원",
     "link": "https://tickets.interpark.com/goods/Y5000319",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001308",
@@ -25575,7 +25748,8 @@
     "venue": "유리바닥보트",
     "link": "https://tickets.interpark.com/goods/Y3001805",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000173",
@@ -25585,7 +25759,8 @@
     "venue": "일출랜드",
     "link": "https://tickets.interpark.com/goods/Y5000173",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001770",
@@ -25608,7 +25783,8 @@
     "venue": "제주 점보빌리지",
     "link": "https://tickets.interpark.com/goods/Y4000371",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001085",
@@ -25618,7 +25794,8 @@
     "venue": "점보빌리지",
     "link": "https://tickets.interpark.com/goods/Y5001085",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001088",
@@ -25678,7 +25855,8 @@
     "venue": "더마파크",
     "link": "https://tickets.interpark.com/goods/Y5001807",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001810",
@@ -25714,7 +25892,8 @@
     "venue": "제주 레일바이크",
     "link": "https://tickets.interpark.com/goods/Y5000235",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001879",
@@ -25737,7 +25916,8 @@
     "venue": "액티브파크 카트",
     "link": "https://tickets.interpark.com/goods/Y5000175",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001592",
@@ -25747,7 +25927,8 @@
     "venue": "액티브파크 클립앤클라임",
     "link": "https://tickets.interpark.com/goods/Y4001592",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000172",
@@ -25822,7 +26003,8 @@
     "venue": "제주바다체험장",
     "link": "https://tickets.interpark.com/goods/Y5001216",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001637",
@@ -25832,7 +26014,8 @@
     "venue": "제주바다하늘 패러글라이딩",
     "link": "https://tickets.interpark.com/goods/Y3001637",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001285",
@@ -25842,7 +26025,8 @@
     "venue": "제주시티투어",
     "link": "https://tickets.interpark.com/goods/Y5001285",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000065",
@@ -25913,7 +26097,8 @@
     "venue": "중문승마공원",
     "link": "https://tickets.interpark.com/goods/Y3002186",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002096",
@@ -25975,7 +26160,8 @@
     "venue": "타크라다이브",
     "link": "https://tickets.interpark.com/goods/Y3000501",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3002083",
@@ -25998,7 +26184,8 @@
     "venue": "제주 테디베어하우스 테지움",
     "link": "https://tickets.interpark.com/goods/Y3000527",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000914",
@@ -26008,7 +26195,8 @@
     "venue": "제주 테디베어하우스 테지움",
     "link": "https://tickets.interpark.com/goods/Y5000914",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4000828",
@@ -26031,7 +26219,8 @@
     "venue": "팰롱팰롱 빛나는",
     "link": "https://tickets.interpark.com/goods/Y3001581",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001791",
@@ -26091,7 +26280,8 @@
     "venue": "한담컬쳐",
     "link": "https://tickets.interpark.com/goods/Y5000799",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y4001511",
@@ -26140,7 +26330,8 @@
     "venue": "허브동산",
     "link": "https://tickets.interpark.com/goods/Y5001645",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001644",
@@ -26189,7 +26380,8 @@
     "venue": "훈데르트바서파크",
     "link": "https://tickets.interpark.com/goods/Y5000318",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000230",
@@ -26199,7 +26391,8 @@
     "venue": "제주 휴애리",
     "link": "https://tickets.interpark.com/goods/Y3000230",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001584",
@@ -26222,7 +26415,8 @@
     "venue": "OK 레저 ATV",
     "link": "https://tickets.interpark.com/goods/Y5000741",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3000269",
@@ -26232,7 +26426,8 @@
     "venue": "아리랑혼 태권마샬아트공연",
     "link": "https://tickets.interpark.com/goods/Y3000269",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y3001953",
@@ -26255,7 +26450,8 @@
     "venue": "제주 레포츠랜드",
     "link": "https://tickets.interpark.com/goods/Y3000365",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5001518",
@@ -26365,7 +26561,8 @@
     "venue": "제주 소인국 테마파크",
     "link": "https://tickets.interpark.com/goods/19005801",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y6000147",
@@ -26425,7 +26622,8 @@
     "venue": "카멜리아힐",
     "link": "https://tickets.interpark.com/goods/Y6000043",
     "region": "제주",
-    "genre": "leisure"
+    "genre": "leisure",
+    "price": "무료/이벤트"
   },
   {
     "id": "Y5000677",

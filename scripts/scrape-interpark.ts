@@ -287,10 +287,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 // 1. Basic Info & Base Price
                 const basicInfo = await page.evaluate(function () {
-                    const getText = (selector: string, parent: Element | Document = document) => {
-                        return parent.querySelector(selector)?.textContent?.trim() || '';
-                    };
-
                     // 1. Info Items (Runtime, Age)
                     let runningTime = '';
                     let ageRating = '';
@@ -312,7 +308,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         const items = Array.from(document.querySelectorAll('li.infoItem, dl > div, dl > .item'));
                         items.forEach(item => {
                             const label = item.querySelector('.infoLabel, dt')?.textContent?.trim() || '';
-                            const text = getText('.infoDesc .infoText, dd', item);
+                            const text = item.querySelector('.infoDesc .infoText, dd')?.textContent?.trim() || '';
 
                             if (!runningTime && (label.includes('공연시간') || label.includes('관람시간'))) runningTime = text;
                             if (!ageRating && (label.includes('관람연령') || label.includes('이용등급'))) ageRating = text;
@@ -401,13 +397,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         if (!bestItem && validPriceItems.length > 0) bestItem = validPriceItems[0];
 
                         if (bestItem) {
-                            // Helper to extract clean text
-                            const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
-
                             // Structure 1: .sale, .original, .rate
-                            const sale = getVal('.sale');
-                            const priceVal = getVal('.price'); // Can be original price in discount context
-                            const rate = getVal('.rate');
+                            const sale = bestItem.querySelector('.sale')?.textContent?.trim() || '';
+                            const priceVal = bestItem.querySelector('.price')?.textContent?.trim() || ''; // Can be original price in discount context
+                            const rate = bestItem.querySelector('.rate')?.textContent?.trim() || '';
 
                             if (sale && priceVal && rate) {
                                 // Discount Case
@@ -429,7 +422,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // Strategy B: Old Structure text parsing
                     if (!price) {
-                        const dlPriceText = getText('.infoItem.infoPrice .infoDesc');
+                        const dlPriceText = document.querySelector('.infoItem.infoPrice .infoDesc')?.textContent?.trim() || '';
                         if (dlPriceText && !dlPriceText.includes('전체가격보기')) {
                             const match = dlPriceText.match(/([0-9,]+원)/);
                             if (match) price = match[1];
@@ -450,6 +443,42 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             if (!txt.includes('전체가격보기') && txt.match(/[0-9,]{3,}원/)) {
                                 price = txt.match(/([0-9,]{3,}원)/)![1];
                                 break;
+                            }
+
+                        }
+
+                        // Fallback for "Free" or "Event" tickets with no price text
+                        if (!price) {
+                            const text = (document.title + ' ' + (document.body ? document.body.innerText : '')).toLowerCase();
+                            let isEvent = false;
+                            let isFree = false;
+
+                            const eventKeywords = ['로터리', '이벤트', '응모', '초청', '초대', '당첨'];
+                            const freeKeywords = ['무료', '0원', '정오의 음악회'];
+
+                            for (const kw of eventKeywords) {
+                                if (text.includes(kw)) {
+                                    isEvent = true;
+                                    break;
+                                }
+                            }
+
+                            for (const kw of freeKeywords) {
+                                if (text.includes(kw)) {
+                                    isFree = true;
+                                    break;
+                                }
+                            }
+
+                            if (isEvent && isFree) {
+                                price = '무료/이벤트';
+                            } else if (isEvent) {
+                                price = '이벤트';
+                            } else if (isFree) {
+                                price = '무료';
+                            } else {
+                                // Default to 무료/이벤트 if it completely lacks price strings on page
+                                price = '무료/이벤트';
                             }
                         }
                     }
