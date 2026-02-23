@@ -648,7 +648,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         // Obsolete, merged into likes-perf
     };
     const handleViewModeChange = (mode: string) => setViewMode(mode);
-    const handleGenreSelect = (g: string) => setSelectedGenre(g);
+    const handleGenreSelect = (g: string) => {
+        setSelectedGenre(g);
+        if (viewMode === 'likes-perf') setViewMode('grid');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    };
     const handleRegionSelect = (r: string) => setSelectedRegion(r);
     const handleDistrictSelect = (d: string) => setSelectedDistrict(d);
 
