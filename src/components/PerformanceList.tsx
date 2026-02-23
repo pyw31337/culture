@@ -1145,7 +1145,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                             >
                                                                 <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-800 light:bg-gray-200 relative">
                                                                     <img
-                                                                        src={perf.image || perf.poster || perf.posterUrl}
+                                                                        src={perf.image || perf.posterUrl || ''}
                                                                         alt={perf.title}
                                                                         className="w-full h-full object-cover group-hover/venue:scale-105 transition-transform duration-300"
                                                                         loading="lazy"
