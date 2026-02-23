@@ -976,7 +976,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* 3. Main Content (Grid/List) */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
                 {/* Results Info Header */}
-                <div className="flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2">
+                <div className={`flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2${viewMode === 'likes-perf' ? ' hidden' : ''}`}>
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
@@ -1141,17 +1141,23 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                             <div
                                                                 key={perf.id}
                                                                 onClick={() => handleDetailOpen(perf)}
-                                                                className="cursor-pointer group"
+                                                                className="cursor-pointer group/venue"
                                                             >
                                                                 <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-800 light:bg-gray-200 relative">
                                                                     <img
-                                                                        src={perf.posterUrl || perf.image}
+                                                                        src={perf.image || perf.poster || perf.posterUrl}
                                                                         alt={perf.title}
-                                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                                        className="w-full h-full object-cover group-hover/venue:scale-105 transition-transform duration-300"
                                                                         loading="lazy"
                                                                     />
+                                                                    {/* Hover Overlay */}
+                                                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                                                                        <h4 className="text-white font-bold text-xs sm:text-sm mb-2 line-clamp-2">{perf.title}</h4>
+                                                                        <div className="px-3 py-1.5 bg-white text-black font-extrabold text-[10px] sm:text-xs rounded-full shadow-xl">
+                                                                            자세히 보기
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <p className="text-xs text-gray-300 light:text-gray-700 mt-1 truncate font-medium">{perf.title}</p>
                                                             </div>
                                                         ))}
                                                     </div>
