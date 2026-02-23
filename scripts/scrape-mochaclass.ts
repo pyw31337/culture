@@ -255,12 +255,46 @@ async function scrapeMochaClass() {
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
 
                     const detailData = await p.evaluate(() => {
-                        const addressEl = document.querySelector('#topleft > div:nth-child(10) > div > p.MuiTypography-root');
+                        const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div'));
+                        let rawAddress = '';
+
+                        for (let i = 0; i < allNodes.length; i++) {
+                            if (allNodes[i].textContent?.trim() === '위치') {
+                                const container = allNodes[i].closest('div')?.parentElement;
+                                if (container) {
+                                    const text = container.textContent || '';
+                                    const match = text.match(/위치(.*?)찾아오는\s*길/);
+                                    if (match && match[1]) {
+                                        rawAddress = match[1].trim();
+                                        break;
+                                    } else {
+                                        const match2 = text.match(/위치(대한민국.*?(구|동|시|군|로|길)\b.*?)/);
+                                        if (match2) {
+                                            rawAddress = match2[1].trim();
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if (!rawAddress) {
+                            for (const node of allNodes) {
+                                const text = node.textContent?.trim() || '';
+                                if ((text.includes('대한민국') || text.includes('서울') || text.includes('경기') || text.includes('로 ') || text.includes('길 ')) && text.length > 10 && text.length < 100 && !text.includes('모카클래스')) {
+                                    if (text.match(/([가-힣]+(도|시|구|군|동|로|길)\s*)+/)) {
+                                        rawAddress = text;
+                                        if (text.includes('대한민국')) break;
+                                    }
+                                }
+                            }
+                        }
+
                         const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
                         const priceEl = document.querySelector('#topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7');
 
                         return {
-                            rawAddress: addressEl ? addressEl.textContent?.trim() || '' : '',
+                            rawAddress: rawAddress,
                             time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
                             detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : ''
                         };
@@ -272,7 +306,9 @@ async function scrapeMochaClass() {
                         if (match) detailPrice = match[0];
                     }
 
-                    const address = detailData.rawAddress || '서울';
+                    let address = detailData.rawAddress || '서울';
+                    address = address.replace(/^대한민국\s*/, '').trim(); // Remove redundant '대한민국'
+
                     let district = '';
                     const districtMatch = address.match(/(\w+[구])/);
                     if (districtMatch) {
@@ -287,7 +323,7 @@ async function scrapeMochaClass() {
                         }
                     }
 
-                    // Use address as venue key for better specificity
+                    // Use accurate address as venue, fallback to Mochaclass (District)
                     const venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
 
                     // Stable ID hash
