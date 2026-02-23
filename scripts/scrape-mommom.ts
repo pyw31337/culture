@@ -580,7 +580,7 @@ async function scrapeMomMom() {
                         date: r.closedDay || '연중무휴', // Map closed day to date!
                         genre: determineGenre(r.title),
                         region: r.region,
-                        venue: r.address || r.title, // Venue name often matches title for museums
+                        venue: r.title, // Venue name IS the title for MomMom places
                         address: r.address,
                         latitude: r.latitude,
                         longitude: r.longitude,
