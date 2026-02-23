@@ -223,13 +223,6 @@ export const HERO_TEMPLATES = {
             { line1: "던지고 막고 뛰고!", line2Pre: "한시도 눈을 뗄 수 없는 ", highlight: "박진감", suffix: " 넘치는 경기.", keywords: ["핸드볼", "스포츠"] },
             { line1: "비인기? 아니 꿀재미!", line2Pre: "한 번 보면 빠져드는 ", highlight: "핸드볼의 매력", suffix: "을 발견하세요.", keywords: ["핸드볼", "매력"] }
         ],
-        hockey: [
-            { line1: "빙판 위의 격투기,", line2Pre: "가장 빠르고 거친 스포츠, ", highlight: "아이스하키", suffix: "의 세계로!", keywords: ["하키", "hockey", "아이스하키"] },
-            { line1: "퍽! 소리 나는 쾌감,", line2Pre: "시속 160km로 질주하는 ", highlight: "퍽의 움직임", suffix: "을 쫓아보세요.", keywords: ["하키", "퍽"] },
-            { line1: "쿨한 링크장 데이트,", line2Pre: "무더위를 날려버릴 ", highlight: "시원한 경기", suffix: " 관람 어때요?", keywords: ["하키", "피서"] },
-            { line1: "바디체크의 짜릿함,", line2Pre: "남자들의 뜨거운 승부, ", highlight: "빙판 위의 전쟁", suffix: "이 시작됩니다.", keywords: ["하키", "승부"] },
-            { line1: "동계 스포츠의 꽃,", line2Pre: "순백의 링크 위 펼쳐지는 ", highlight: "화려한 플레이", suffix: "를 감상하세요.", keywords: ["하키", "동계"] }
-        ],
         musical: [
             { line1: "오늘은 내가 주인공,", line2Pre: "화려한 조명 아래 펼쳐지는 ", highlight: "뮤지컬 한 편", suffix: " 어때요?", keywords: ["뮤지컬", "musical"] },
             { line1: "눈과 귀가 즐거운 시간,", line2Pre: "당신의 감성을 채워줄 ", highlight: "명작 뮤지컬", suffix: "을 만나보세요.", keywords: ["뮤지컬", "musical"] },

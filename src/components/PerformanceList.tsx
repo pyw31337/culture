@@ -694,7 +694,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     case 'volleyball': return 'K-V 리그 (배구)';
                                     case 'basketball': return 'KBL 농구 일정';
                                     case 'soccer': return 'K-리그 축구 일정';
-                                    case 'hockey': return '아시아리그 아이스하키';
                                     case 'museum': return '박물관/체험관';
                                     case 'handball': return '핸드볼 H리그 일정';
                                     case 'musical': return '뮤지컬 컨텐츠 정보';

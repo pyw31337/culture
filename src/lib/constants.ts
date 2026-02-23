@@ -3,7 +3,7 @@ export const GENRE_GROUPS = [
     { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic_tradition'] },
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'experience', label: '체험/액티비티', genres: ['activity', 'class'] },
-    { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball', 'hockey'] },
+    { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
     { id: 'media', label: '미디어', genres: ['movie', 'ott'] },
 ];
 
@@ -25,7 +25,7 @@ export const GENRES = [
     { id: 'baseball', label: '야구' },
     { id: 'soccer', label: '축구' },
     { id: 'handball', label: '핸드볼' },
-    { id: 'hockey', label: '아이스하키' },
+
 ];
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
@@ -44,7 +44,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-700', twActivebg: 'bg-blue-800' },
     'soccer': { hex: '#dc2626', twText: 'text-red-700', twBg: 'bg-red-700', twBorder: 'border-red-500', twActivebg: 'bg-red-600' },
     'handball': { hex: '#d97706', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
-    'hockey': { hex: '#0284c7', twText: 'text-sky-600', twBg: 'bg-sky-600', twBorder: 'border-sky-500', twActivebg: 'bg-sky-500' },
+
 
     'all': { hex: '#4b5563', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };
@@ -82,13 +82,13 @@ export const RADIUS_OPTIONS = [
 ];
 
 // Sports genres for composite /sports URL
-export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'hockey'];
+export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
     'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic_tradition', 'exhibition',
     'activity', 'class', 'museum',
-    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'hockey'
+    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
 
 export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: string }> = {
