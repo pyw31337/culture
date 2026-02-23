@@ -555,13 +555,13 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // --- Auto-purge expired/stale liked IDs ---
     useEffect(() => {
-        if (!isStorageLoaded || allPerformances.length === 0) return;
+        if (!isStorageLoaded || !isDataFullyLoaded || allPerformances.length === 0) return;
         const validIds = new Set(allPerformances.map(p => p.id));
         const validLikes = likedIds.filter(id => validIds.has(id));
         if (validLikes.length !== likedIds.length) {
             setLikedIds(validLikes);
         }
-    }, [allPerformances, isStorageLoaded]);
+    }, [allPerformances, isStorageLoaded, isDataFullyLoaded]);
 
 
     // --- Handlers ---
