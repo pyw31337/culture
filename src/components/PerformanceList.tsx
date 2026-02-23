@@ -1105,7 +1105,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         )}
 
                         {/* 좋아요한 공연장 Section */}
-                        <div className="mb-10 mt-8 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
+                        <div className="mb-10 mt-8">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
                                     <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
