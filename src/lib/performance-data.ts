@@ -159,7 +159,7 @@ export function getAllPerformances() {
         id: String(p.id)
     })).map(p => {
         // [Data Quality Override]
-        if (p.genre === 'classic' || p.genre === 'class') {
+        if (p.genre === 'classic') {
             return { ...p, genre: 'classic_tradition' };
         }
         if (p.genre === 'theater') {
