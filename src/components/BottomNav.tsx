@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star } from 'lucide-react';
+import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star, Search } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon, CloverIcon } from '@/components/GenreIcons';
@@ -186,10 +186,17 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                                 : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
                         )}
                     >
-                        <MapPin
-                            className="w-7 h-7 text-white drop-shadow-lg"
-                            strokeWidth={2.5}
-                        />
+                        {searchMode === 'location' ? (
+                            <MapPin
+                                className="w-7 h-7 text-white drop-shadow-lg"
+                                strokeWidth={2.5}
+                            />
+                        ) : (
+                            <Search
+                                className="w-7 h-7 text-white drop-shadow-lg"
+                                strokeWidth={2.5}
+                            />
+                        )}
                     </button>
                     {activeMenu === 'location' && (
                         <div className={clsx(
