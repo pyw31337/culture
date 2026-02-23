@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star, Search } from 'lucide-react';
+import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star, Search, Map as MapIcon, CalendarDays } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon, CloverIcon } from '@/components/GenreIcons';
@@ -13,7 +13,8 @@ interface BottomNavProps {
     currentViewMode: string;
     onMenuClick: (menu: BottomMenuType) => void;
     onLikePerfClick: () => void;
-    onLikeVenueClick: () => void;
+    onMapClick: () => void;
+    onCalendarClick: () => void;
     likeCount?: number;
     venueCount?: number;
     selectedGenre?: string;
@@ -45,7 +46,7 @@ export const ListDetailsIcon = ({ className, size = 24 }: { className?: string; 
     </svg>
 );
 
-export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onLikeVenueClick, likeCount = 0, venueCount = 0, selectedGenre = 'all', searchMode = 'keyword' }: BottomNavProps) {
+export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onMapClick, onCalendarClick, likeCount = 0, venueCount = 0, selectedGenre = 'all', searchMode = 'keyword' }: BottomNavProps) {
     // Determine Category Label
     const categoryLabel = (selectedGenre && selectedGenre !== 'all')
         ? (GENRES.find(g => g.id === selectedGenre)?.label || '카테고리')
@@ -63,22 +64,6 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     // Left side items
     const leftItems = [
         {
-            id: 'view',
-            label: currentViewMode === 'list' ? '리스트보기' : '썸네일보기',
-            icon: (props: any) => currentViewMode === 'list'
-                ? <ListDetailsIcon {...props} />
-                : <LayoutGrid {...props} />, // Show Grid icon when in Grid mode (implied context: button switches modes OR shows current state? Validating user request: "When Thumbnail/List selected... use respective icon") 
-            // Wait, standard nav pattern: Button function is "Change View". Often shows CURRENT state or NEXT state. 
-            // User request: "Bottom menu... if thumbnail/list selected... use respective icon".
-            // So if View is 'grid', show LayoutGrid (Thumbnail). If 'list', show List details.
-            action: () => onMenuClick('view')
-        },
-        { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick('category') },
-    ];
-
-    // Right side items with badge counts
-    const rightItems = [
-        {
             id: 'likes-perf',
             label: '좋아요',
             icon: Heart,
@@ -87,18 +72,31 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onLikePerfClick();
             },
             isActive: currentViewMode === 'likes-perf',
-            badgeCount: likeCount
+            badgeCount: likeCount + venueCount
         },
+        { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick('category') },
+    ];
+
+    // Right side items with badge counts
+    const rightItems = [
         {
-            id: 'likes-venue',
-            label: '공연장',
-            icon: Star,
+            id: 'map',
+            label: '지도보기',
+            icon: MapIcon,
             action: () => {
                 onMenuClick(null);
-                onLikeVenueClick();
+                onMapClick();
             },
-            isActive: currentViewMode === 'likes-venue',
-            badgeCount: venueCount
+        },
+        {
+            id: 'calendar',
+            label: '달력보기',
+            icon: CalendarDays,
+            action: () => {
+                onMenuClick(null);
+                onCalendarClick();
+            },
+            isActive: currentViewMode === 'calendar'
         },
     ];
 

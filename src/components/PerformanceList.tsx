@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Performance } from '@/types';
-import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight, Tag, Home, Loader2 } from 'lucide-react';
+import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight, Tag, Home, Loader2, Moon, Sun, Trash2 } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 import BuildingStadium from './BuildingStadium';
 import { clsx } from 'clsx';
@@ -28,7 +28,6 @@ import KeywordSection from './performance/KeywordSection';
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
-const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 
 import { useSearchParams, useRouter } from 'next/navigation';
 import HeroSection from './performance/HeroSection';
@@ -97,6 +96,25 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [isStorageLoaded, setIsStorageLoaded] = useState(false);
 
     // UI Toggles
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+    useEffect(() => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setTheme(isDark ? 'dark' : 'light');
+    }, []);
+
+    const toggleTheme = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark) {
+            document.documentElement.classList.remove('dark');
+            safeStorage.set('theme', 'light');
+            setTheme('light');
+        } else {
+            document.documentElement.classList.add('dark');
+            safeStorage.set('theme', 'dark');
+            setTheme('dark');
+        }
+    };
     const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
@@ -105,7 +123,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [showLikes, setShowLikes] = useState(true);
     const [isLikesExpanded, setIsLikesExpanded] = useState(true);
     const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
-    const [isFavoriteVenuesModalOpen, setIsFavoriteVenuesModalOpen] = useState(false); // Added
     const [isHeroVisible, setIsHeroVisible] = useState(true);
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
@@ -617,21 +634,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
     };
     const handleLikeVenueClick = () => {
-        if (viewMode === 'likes-venue') {
-            setViewMode('grid'); // Toggle off
-            // Restore scroll
-            setTimeout(() => {
-                window.scrollTo({ top: savedScrollPosition, behavior: 'auto' });
-            }, 10);
-        } else {
-            // Save current scroll
-            setSavedScrollPosition(window.scrollY);
-            setViewMode('likes-venue');
-            // Scroll to top
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'auto' });
-            }, 10);
-        }
+        // Obsolete, merged into likes-perf
     };
     const handleViewModeChange = (mode: string) => setViewMode(mode);
     const handleGenreSelect = (g: string) => setSelectedGenre(g);
@@ -708,24 +711,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
                     <div className="flex items-center gap-1 ml-4">
                         <button
-                            onClick={() => setIsMapOpen(!isMapOpen)}
+                            onClick={toggleTheme}
                             className={clsx(
                                 "p-2 rounded-full transition-all duration-300 relative",
-                                isMapOpen ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
+                                "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
                             )}
-                            aria-label="지도 보기"
+                            aria-label="테마 변경"
                         >
-                            <MapIcon size={24} strokeWidth={isMapOpen ? 2.5 : 2} />
-                        </button>
-                        <button
-                            onClick={() => setViewMode(viewMode === 'calendar' ? 'grid' : 'calendar')}
-                            className={clsx(
-                                "p-2 rounded-full transition-all duration-300 relative",
-                                viewMode === 'calendar' ? "bg-purple-500/20 text-purple-300 light:bg-purple-600 light:text-white" : "text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black hover:bg-white/5 light:hover:bg-black/5"
-                            )}
-                            aria-label="달력 보기"
-                        >
-                            <CalendarDays size={24} strokeWidth={viewMode === 'calendar' ? 2.5 : 2} />
+                            {theme === 'dark' ? <Sun size={24} strokeWidth={2} /> : <Moon size={24} strokeWidth={2} />}
                         </button>
                         <button
                             onClick={(e) => {
@@ -980,22 +973,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 {viewMode === 'likes-perf' ? (
                                     <>
                                         <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
-                                        <span>좋아요</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
-                                    </>
-                                ) : viewMode === 'likes-venue' ? (
-                                    <>
-                                        <Star className="text-emerald-500 w-6 h-6 fill-emerald-500" />
-                                        <span>찜한 공연장</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({displayPerformances.length})</span>
-                                        <button
-                                            onClick={() => setIsFavoriteVenuesModalOpen(true)}
-                                            className="ml-3 px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs sm:text-sm text-gray-300 font-semibold transition-colors flex items-center gap-1.5 border border-white/10 light:bg-white light:text-black light:border-gray-300 light:hover:bg-gray-100 shadow-sm"
-                                        >
-                                            <List size={14} className="light:text-black" />
-                                            <span className="hidden sm:inline">찜한공연장 목록</span>
-                                            <span className="sm:hidden">목록</span>
-                                        </button>
+                                        <span>좋아요 컨텐츠</span>
+                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({likedIds.length + favoriteVenues.length})</span>
                                     </>
                                 ) : activeLocation ? (
                                     <>
@@ -1080,30 +1059,85 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         setIsMapOpen={setIsMapOpen}
                     />
                 ) : (
-                    <PerformanceGrid
-                        items={displayPerformances}
-                        hasMore={hasMore}
-                        observerRef={observerTarget}
-                        layoutMode={layoutMode}
-                        selectedVenue={selectedVenue}
-                        activeLocation={searchLocation || userLocation}
-                        venues={venues}
-                        likedIds={likedIds}
-                        onToggleLike={toggleLike}
-                        handleDetailOpen={handleDetailOpen}
-                        setSearchLocation={setSearchLocation}
-                        onVenuePreview={(loc) => {
-                            setFocusVenue(loc); // Just set preview focus
-                            setIsMapOpen(true); // Open map
-                            // Do NOT set searchLocation/searchMode here
-                        }}
-                        setIsMapOpen={setIsMapOpen}
-                        copyItemShareUrl={copyItemShareUrl}
-                        selectedGenre={selectedGenre}
-                        viewMode={viewMode}
-                        searchMode={searchMode}
-                        searchText={searchText}
-                    />
+                    <>
+                        {/* 🌟 Merged Likes View: Venues Section */}
+                        {viewMode === 'likes-perf' && (
+                            <div className="mb-10 mt-4 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
+                                        <Star className="text-emerald-500 w-5 h-5 fill-emerald-500" />
+                                        찜한 공연장 <span className="text-emerald-400 light:text-emerald-600">({favoriteVenues.length})</span>
+                                    </h3>
+                                </div>
+                                {favoriteVenues.length > 0 ? (
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                        {favoriteVenues.map((venueName) => (
+                                            <div
+                                                key={venueName}
+                                                className="flex items-center justify-between p-3 bg-gray-800/50 light:bg-white rounded-xl group hover:bg-gray-800 light:hover:bg-gray-50 transition-colors border border-white/5 light:border-gray-200 hover:border-emerald-500/30"
+                                            >
+                                                <div className="flex items-center gap-3 overflow-hidden flex-1">
+                                                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 shrink-0">
+                                                        <MapPin size={16} />
+                                                    </div>
+                                                    <button
+                                                        onClick={() => {
+                                                            setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                                                            setIsMapOpen(true);
+                                                        }}
+                                                        className="text-gray-200 light:text-gray-800 font-semibold truncate text-left hover:underline decoration-emerald-500 decoration-2 underline-offset-4 text-sm"
+                                                    >
+                                                        {venueName}
+                                                    </button>
+                                                </div>
+                                                <button
+                                                    onClick={() => setFavoriteVenues(prev => prev.filter(v => v !== venueName))}
+                                                    className="p-1.5 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all shrink-0 ml-2"
+                                                    title="목록에서 삭제"
+                                                >
+                                                    <Trash2 size={16} />
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="text-center py-6 text-gray-500 text-sm">
+                                        찜한 공연장이 없습니다. 마음에 드는 단골 공연장을 찜해보세요!
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        {viewMode === 'likes-perf' && (
+                            <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2 mb-4">
+                                <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
+                                찜한 공연 <span className="text-pink-400 light:text-pink-600">({likedIds.length})</span>
+                            </h3>
+                        )}
+                        <PerformanceGrid
+                            items={viewMode === 'likes-perf' ? allPerformances.filter(p => likedIds.includes(p.id)) : displayPerformances}
+                            hasMore={viewMode === 'likes-perf' ? false : hasMore}
+                            observerRef={observerTarget}
+                            layoutMode={layoutMode}
+                            selectedVenue={selectedVenue}
+                            activeLocation={searchLocation || userLocation}
+                            venues={venues}
+                            likedIds={likedIds}
+                            onToggleLike={toggleLike}
+                            handleDetailOpen={handleDetailOpen}
+                            setSearchLocation={setSearchLocation}
+                            onVenuePreview={(loc) => {
+                                setFocusVenue(loc); // Just set preview focus
+                                setIsMapOpen(true); // Open map
+                                // Do NOT set searchLocation/searchMode here
+                            }}
+                            setIsMapOpen={setIsMapOpen}
+                            copyItemShareUrl={copyItemShareUrl}
+                            selectedGenre={selectedGenre}
+                            viewMode={viewMode}
+                            searchMode={searchMode}
+                            searchText={searchText}
+                        />
+                    </>
                 )}
 
                 {!isDataFullyLoaded && (
@@ -1186,7 +1220,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 currentViewMode={viewMode}
                 onMenuClick={handleMenuClick}
                 onLikePerfClick={handleLikePerfClick}
-                onLikeVenueClick={handleLikeVenueClick}
+                onMapClick={() => {
+                    setIsMapOpen(true);
+                    setFocusVenue(null);
+                }}
+                onCalendarClick={() => setViewMode(viewMode === 'calendar' ? 'grid' : 'calendar')}
                 likeCount={likedIds.length}
                 venueCount={favoriteVenues.length}
                 selectedGenre={selectedGenre}
