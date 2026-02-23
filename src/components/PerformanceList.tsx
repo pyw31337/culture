@@ -553,6 +553,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     useEffect(() => { if (isStorageLoaded) safeStorage.set('culture_keywords', savedKeywords); }, [savedKeywords, isStorageLoaded]);
     useEffect(() => { if (isStorageLoaded) safeStorage.set('culture_view_mode', viewMode); }, [viewMode, isStorageLoaded]);
 
+    // --- Auto-purge expired/stale liked IDs ---
+    useEffect(() => {
+        if (!isStorageLoaded || allPerformances.length === 0) return;
+        const validIds = new Set(allPerformances.map(p => p.id));
+        const validLikes = likedIds.filter(id => validIds.has(id));
+        if (validLikes.length !== likedIds.length) {
+            setLikedIds(validLikes);
+        }
+    }, [allPerformances, isStorageLoaded]);
+
 
     // --- Handlers ---
     const toggleLike = (id: string, e?: React.MouseEvent) => {
@@ -972,9 +982,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
                                 {viewMode === 'likes-perf' ? (
                                     <>
-                                        <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
-                                        <span>좋아요 컨텐츠</span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({likedIds.length + favoriteVenues.length})</span>
                                     </>
                                 ) : activeLocation ? (
                                     <>
@@ -1048,7 +1055,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     </div>
                 </div>
 
-                {filteredPerformances.length === 0 && isDataFullyLoaded ? (
+                {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                     <EmptyState
                         viewMode={viewMode}
                         selectedGenre={selectedGenre}
@@ -1058,79 +1065,134 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         setUserLocation={setUserLocation}
                         setIsMapOpen={setIsMapOpen}
                     />
-                ) : (
+                ) : viewMode === 'likes-perf' ? (
                     <>
-                        {/* 좋아요한 컨텐츠 Header */}
-                        {viewMode === 'likes-perf' && (
-                            <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2 mb-4">
-                                <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
-                                좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600">({likedIds.length})</span>
-                            </h3>
-                        )}
-                        <PerformanceGrid
-                            items={viewMode === 'likes-perf' ? allPerformances.filter(p => likedIds.includes(p.id)) : displayPerformances}
-                            hasMore={viewMode === 'likes-perf' ? false : hasMore}
-                            observerRef={observerTarget}
-                            layoutMode={layoutMode}
-                            selectedVenue={selectedVenue}
-                            activeLocation={searchLocation || userLocation}
-                            venues={venues}
-                            likedIds={likedIds}
-                            onToggleLike={toggleLike}
-                            handleDetailOpen={handleDetailOpen}
-                            setSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => {
-                                setFocusVenue(loc); // Just set preview focus
-                                setIsMapOpen(true); // Open map
-                                // Do NOT set searchLocation/searchMode here
-                            }}
-                            setIsMapOpen={setIsMapOpen}
-                            copyItemShareUrl={copyItemShareUrl}
-                            selectedGenre={selectedGenre}
-                            viewMode={viewMode}
-                            searchMode={searchMode}
-                            searchText={searchText}
-                        />
-                    </>
-                )}
-
-                {/* 좋아요한 공연장 Section (below performances) */}
-                {viewMode === 'likes-perf' && (
-                    <div className="mb-10 mt-6 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
-                        <div className="flex items-center justify-between mb-2">
-                            <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
-                                <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
-                                좋아요한 공연장 <span className="text-pink-400 light:text-pink-600">({favoriteVenues.length})</span>
-                            </h3>
-                            <button
-                                onClick={() => setShowFavoriteListModal(true)}
-                                className="px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 hover:text-pink-300 transition-all text-sm font-semibold border border-pink-500/20"
-                            >
-                                공연장 편집
-                            </button>
-                        </div>
-                        {favoriteVenues.length > 0 ? (
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                {favoriteVenues.map((venueName) => (
-                                    <button
-                                        key={venueName}
-                                        onClick={() => {
-                                            setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
-                                            setIsMapOpen(true);
-                                        }}
-                                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-300 light:text-pink-600 hover:bg-pink-500/20 transition-colors text-sm font-medium border border-pink-500/20"
-                                    >
-                                        <MapPin size={12} />
-                                        {venueName}
-                                    </button>
-                                ))}
-                            </div>
+                        {/* 좋아요한 컨텐츠 Section */}
+                        <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2 mb-4">
+                            <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
+                            좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
+                        </h3>
+                        {allPerformances.filter(p => likedIds.includes(p.id)).length > 0 ? (
+                            <PerformanceGrid
+                                items={allPerformances.filter(p => likedIds.includes(p.id))}
+                                hasMore={false}
+                                observerRef={observerTarget}
+                                layoutMode={layoutMode}
+                                selectedVenue={selectedVenue}
+                                activeLocation={searchLocation || userLocation}
+                                venues={venues}
+                                likedIds={likedIds}
+                                onToggleLike={toggleLike}
+                                handleDetailOpen={handleDetailOpen}
+                                setSearchLocation={setSearchLocation}
+                                onVenuePreview={(loc) => {
+                                    setFocusVenue(loc);
+                                    setIsMapOpen(true);
+                                }}
+                                setIsMapOpen={setIsMapOpen}
+                                copyItemShareUrl={copyItemShareUrl}
+                                selectedGenre={selectedGenre}
+                                viewMode={viewMode}
+                                searchMode={searchMode}
+                                searchText={searchText}
+                            />
                         ) : (
-                            <div className="text-center py-4 text-gray-500 text-sm">
-                                좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
+                            <div className="text-center py-12 text-gray-500">
+                                <Heart className="w-12 h-12 mx-auto mb-4 text-gray-600" />
+                                <p className="text-lg font-semibold">좋아요한 컨텐츠가 없습니다</p>
+                                <p className="text-sm mt-1">마음에 드는 공연/전시를 좋아요 해보세요!</p>
                             </div>
                         )}
-                    </div>
+
+                        {/* 좋아요한 공연장 Section */}
+                        <div className="mb-10 mt-8 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
+                                    <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
+                                    좋아요한 공연장 <span className="text-pink-400 light:text-pink-600">({favoriteVenues.length})</span>
+                                </h3>
+                                <button
+                                    onClick={() => setShowFavoriteListModal(true)}
+                                    className="px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 hover:text-pink-300 transition-all text-sm font-semibold border border-pink-500/20"
+                                >
+                                    공연장 편집
+                                </button>
+                            </div>
+                            {favoriteVenues.length > 0 ? (
+                                <div className="space-y-6">
+                                    {favoriteVenues.map((venueName) => {
+                                        const venuePerfs = allPerformances.filter(p => p.venue === venueName);
+                                        return (
+                                            <div key={venueName}>
+                                                <button
+                                                    onClick={() => {
+                                                        setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                                                        setIsMapOpen(true);
+                                                    }}
+                                                    className="flex items-center gap-2 mb-2 text-pink-300 light:text-pink-600 hover:text-pink-200 transition-colors"
+                                                >
+                                                    <MapPin size={14} />
+                                                    <span className="font-semibold text-sm">{venueName}</span>
+                                                    <span className="text-xs text-gray-500">({venuePerfs.length}건)</span>
+                                                </button>
+                                                {venuePerfs.length > 0 ? (
+                                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                                                        {venuePerfs.slice(0, 5).map(perf => (
+                                                            <div
+                                                                key={perf.id}
+                                                                onClick={() => handleDetailOpen(perf)}
+                                                                className="cursor-pointer group"
+                                                            >
+                                                                <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-800 light:bg-gray-200 relative">
+                                                                    <img
+                                                                        src={perf.posterUrl || perf.image}
+                                                                        alt={perf.title}
+                                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                                        loading="lazy"
+                                                                    />
+                                                                </div>
+                                                                <p className="text-xs text-gray-300 light:text-gray-700 mt-1 truncate font-medium">{perf.title}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <p className="text-sm text-gray-500 ml-6">현재 진행중인 공연이 없습니다</p>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div className="text-center py-4 text-gray-500 text-sm">
+                                    좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
+                                </div>
+                            )}
+                        </div>
+                    </>
+                ) : (
+                    <PerformanceGrid
+                        items={displayPerformances}
+                        hasMore={hasMore}
+                        observerRef={observerTarget}
+                        layoutMode={layoutMode}
+                        selectedVenue={selectedVenue}
+                        activeLocation={searchLocation || userLocation}
+                        venues={venues}
+                        likedIds={likedIds}
+                        onToggleLike={toggleLike}
+                        handleDetailOpen={handleDetailOpen}
+                        setSearchLocation={setSearchLocation}
+                        onVenuePreview={(loc) => {
+                            setFocusVenue(loc);
+                            setIsMapOpen(true);
+                        }}
+                        setIsMapOpen={setIsMapOpen}
+                        copyItemShareUrl={copyItemShareUrl}
+                        selectedGenre={selectedGenre}
+                        viewMode={viewMode}
+                        searchMode={searchMode}
+                        searchText={searchText}
+                    />
                 )}
 
                 {!isDataFullyLoaded && (
