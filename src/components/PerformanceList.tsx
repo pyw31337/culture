@@ -28,6 +28,7 @@ import KeywordSection from './performance/KeywordSection';
 const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
+const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 
 import { useSearchParams, useRouter } from 'next/navigation';
 import HeroSection from './performance/HeroSection';
@@ -1060,57 +1061,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     />
                 ) : (
                     <>
-                        {/* 🌟 Merged Likes View: Venues Section */}
-                        {viewMode === 'likes-perf' && (
-                            <div className="mb-10 mt-4 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
-                                <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
-                                        <Star className="text-emerald-500 w-5 h-5 fill-emerald-500" />
-                                        찜한 공연장 <span className="text-emerald-400 light:text-emerald-600">({favoriteVenues.length})</span>
-                                    </h3>
-                                </div>
-                                {favoriteVenues.length > 0 ? (
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                        {favoriteVenues.map((venueName) => (
-                                            <div
-                                                key={venueName}
-                                                className="flex items-center justify-between p-3 bg-gray-800/50 light:bg-white rounded-xl group hover:bg-gray-800 light:hover:bg-gray-50 transition-colors border border-white/5 light:border-gray-200 hover:border-emerald-500/30"
-                                            >
-                                                <div className="flex items-center gap-3 overflow-hidden flex-1">
-                                                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 shrink-0">
-                                                        <MapPin size={16} />
-                                                    </div>
-                                                    <button
-                                                        onClick={() => {
-                                                            setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
-                                                            setIsMapOpen(true);
-                                                        }}
-                                                        className="text-gray-200 light:text-gray-800 font-semibold truncate text-left hover:underline decoration-emerald-500 decoration-2 underline-offset-4 text-sm"
-                                                    >
-                                                        {venueName}
-                                                    </button>
-                                                </div>
-                                                <button
-                                                    onClick={() => setFavoriteVenues(prev => prev.filter(v => v !== venueName))}
-                                                    className="p-1.5 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all shrink-0 ml-2"
-                                                    title="목록에서 삭제"
-                                                >
-                                                    <Trash2 size={16} />
-                                                </button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className="text-center py-6 text-gray-500 text-sm">
-                                        찜한 공연장이 없습니다. 마음에 드는 단골 공연장을 찜해보세요!
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                        {/* 좋아요한 컨텐츠 Header */}
                         {viewMode === 'likes-perf' && (
                             <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2 mb-4">
                                 <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
-                                찜한 공연 <span className="text-pink-400 light:text-pink-600">({likedIds.length})</span>
+                                좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600">({likedIds.length})</span>
                             </h3>
                         )}
                         <PerformanceGrid
@@ -1138,6 +1093,45 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             searchText={searchText}
                         />
                     </>
+                )}
+
+                {/* 좋아요한 공연장 Section (below performances) */}
+                {viewMode === 'likes-perf' && (
+                    <div className="mb-10 mt-6 bg-white/5 light:bg-gray-50 rounded-2xl p-4 sm:p-6 border border-white/10 light:border-gray-200">
+                        <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
+                                <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
+                                좋아요한 공연장 <span className="text-pink-400 light:text-pink-600">({favoriteVenues.length})</span>
+                            </h3>
+                            <button
+                                onClick={() => setShowFavoriteListModal(true)}
+                                className="px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 hover:text-pink-300 transition-all text-sm font-semibold border border-pink-500/20"
+                            >
+                                공연장 편집
+                            </button>
+                        </div>
+                        {favoriteVenues.length > 0 ? (
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                {favoriteVenues.map((venueName) => (
+                                    <button
+                                        key={venueName}
+                                        onClick={() => {
+                                            setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                                            setIsMapOpen(true);
+                                        }}
+                                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-300 light:text-pink-600 hover:bg-pink-500/20 transition-colors text-sm font-medium border border-pink-500/20"
+                                    >
+                                        <MapPin size={12} />
+                                        {venueName}
+                                    </button>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="text-center py-4 text-gray-500 text-sm">
+                                좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
+                            </div>
+                        )}
+                    </div>
                 )}
 
                 {!isDataFullyLoaded && (
@@ -1169,6 +1163,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     />
                 )
             }
+
+            {/* Favorite Venues Edit Modal */}
+            {showFavoriteListModal && (
+                <FavoriteVenuesModal
+                    isOpen={showFavoriteListModal}
+                    onClose={() => setShowFavoriteListModal(false)}
+                    favoriteVenues={favoriteVenues}
+                    onRemove={handleRemoveFavoriteVenue}
+                    onVenueClick={(venueName) => {
+                        setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                        setShowFavoriteListModal(false);
+                        setIsMapOpen(true);
+                    }}
+                />
+            )}
 
             <BottomNavSheet
                 activeMenu={activeBottomMenu}

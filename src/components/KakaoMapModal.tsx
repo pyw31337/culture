@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Star, MapPin } from 'lucide-react';
+import { X, Heart, MapPin } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -395,7 +395,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                     <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-950 shrink-0" />
                                                 ) : (
                                                     <div className="w-10 h-14 bg-gray-800 rounded flex items-center justify-center shrink-0">
-                                                        <Star size={10} className="text-gray-600" />
+                                                        <Heart size={10} className="text-gray-600" />
                                                     </div>
                                                 )}
                                                 <div className="flex-1 min-w-0">
@@ -480,11 +480,11 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                     className={clsx(
                                                         "ml-2 p-1 rounded-full transition-colors",
                                                         isFavorite
-                                                            ? "hover:bg-yellow-100"
+                                                            ? "hover:bg-pink-100"
                                                             : (isSelected ? "hover:bg-emerald-200" : "hover:bg-gray-100")
                                                     )}
                                                 >
-                                                    <Star className={clsx("w-4 h-4", isFavorite ? 'text-yellow-500 fill-yellow-500' : 'text-gray-400')} />
+                                                    <Heart className={clsx("w-4 h-4", isFavorite ? 'text-pink-500 fill-pink-500' : 'text-gray-400')} />
                                                 </button>
                                             </div>
 
