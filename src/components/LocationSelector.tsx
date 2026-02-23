@@ -112,7 +112,20 @@ export function LocationSelector({
 
     // Venue Filtering Logic
     const filteredVenues = useMemo(() => {
-        let sorted = [...availableVenues];
+        let baseVenues = [...availableVenues];
+
+        // Deduplicate by display name
+        const seenNames = new Set<string>();
+        const uniqueVenues = [];
+        for (const v of baseVenues) {
+            const name = venues[v]?.refined_name || venues[v]?.name || v;
+            if (!seenNames.has(name)) {
+                seenNames.add(name);
+                uniqueVenues.push(v);
+            }
+        }
+
+        let sorted = uniqueVenues;
 
         // 1. Sort Logic
         if (searchMode === 'location' && referenceLocation) {
