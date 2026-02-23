@@ -223,9 +223,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const ex = existingEnriched.get(c.id)!;
 
             // Criteria for skipping:
-            // 1. Has important details (MUST have price to be considered fully enriched, unless it was recently checked)
+            // 1. Has important details (MUST have a REAL price to be considered fully enriched)
             // 2. Was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
-            const hasCompleteData = ex.price && (ex.runningTime || ex.ageRating);
+            const hasBadPrice = !ex.price || ex.price === '무료/이벤트' || ex.price === '이벤트' || ex.price === '가격정보없음';
+            const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating);
 
             if (hasCompleteData || isRecentlyEnriched(ex)) {
                 alreadyDone.push({ ...c, ...ex });
@@ -385,10 +386,14 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // 2. If Detail Text Failed, try structured elements (.sale, .price)
                     if (!price && priceItems.length > 0) {
-                        // Filter out items that are just the "View All Prices (전체가격보기)" buttons
+                        // Filter out items that are ONLY the "View All Prices" button with no actual price elements
                         const validPriceItems = priceItems.filter(i => {
                             const text = i.textContent || '';
-                            return !text.includes('전체가격보기') && (i.querySelector('.price') || i.querySelector('.sale') || text.includes('원'));
+                            const hasPriceEl = i.querySelector('.price') || i.querySelector('.sale');
+                            // Keep if it has structured price elements, even if it also contains '전체가격보기'
+                            if (hasPriceEl) return true;
+                            // Otherwise, exclude '전체가격보기'-only items and require '원' in text
+                            return !text.includes('전체가격보기') && text.includes('원');
                         });
 
                         let bestItem = validPriceItems.find(i => i.querySelector('.sale') && i.querySelector('.price'));
@@ -444,16 +449,53 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                                 price = txt.match(/([0-9,]{3,}원)/)![1];
                                 break;
                             }
-
                         }
 
-                        // Fallback for "Free" or "Event" tickets with no price text
+                        // Also try: price area that has '전체가격보기' button but also shows a price number
                         if (!price) {
+                            const priceAreaItems = Array.from(document.querySelectorAll('.infoItem, .infoDesc'));
+                            for (let el of priceAreaItems) {
+                                const txt = el.textContent || '';
+                                // Match items that have both '전체가격보기' AND a price number - extract the price
+                                if (txt.includes('전체가격보기') && txt.match(/[0-9,]{3,}원/)) {
+                                    const priceMatch = txt.match(/([0-9,]{3,}원)/);
+                                    if (priceMatch) {
+                                        price = priceMatch[1];
+                                        // Look for discount info too
+                                        const discountMatch = txt.match(/(\d+)%/);
+                                        const origMatch = txt.match(/([0-9,]{3,}원)\s*\n*\s*([0-9,]{3,}원)/);
+                                        if (discountMatch) discount = discountMatch[1] + '%';
+                                        if (origMatch) {
+                                            const p1 = parseInt(origMatch[1].replace(/[^0-9]/g, ''));
+                                            const p2 = parseInt(origMatch[2].replace(/[^0-9]/g, ''));
+                                            if (p1 > p2) {
+                                                originalPrice = origMatch[1];
+                                                price = origMatch[2];
+                                            } else if (p2 > p1) {
+                                                originalPrice = origMatch[2];
+                                                price = origMatch[1];
+                                            }
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Fallback for "Free" or "Event" tickets with no price text
+                    // Only apply if no price-like numbers exist in the entire price info area
+                    if (!price) {
+                        // Double-check: scan the entire info area for ANY price number first
+                        const anyPriceInInfo = Array.from(document.querySelectorAll('.infoList, .infoItem, .infoPriceList, .prdPriceDetail'))
+                            .some(el => (el.textContent || '').match(/[0-9,]{3,}원/));
+
+                        if (!anyPriceInInfo) {
                             const text = (document.title + ' ' + (document.body ? document.body.innerText : '')).toLowerCase();
                             let isEvent = false;
                             let isFree = false;
 
-                            const eventKeywords = ['로터리', '이벤트', '응모', '초청', '초대', '당첨'];
+                            const eventKeywords = ['로터리', '응모', '초청', '초대', '당첨'];
                             const freeKeywords = ['무료', '0원', '정오의 음악회'];
 
                             for (const kw of eventKeywords) {
@@ -477,8 +519,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             } else if (isFree) {
                                 price = '무료';
                             } else {
-                                // Default to 무료/이벤트 if it completely lacks price strings on page
-                                price = '무료/이벤트';
+                                price = '가격정보없음';
                             }
                         }
                     }
@@ -493,7 +534,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 try {
                     // Update selector to support button or a tag
                     const priceBtn = await page.$('[data-popup="info-price"]');
-                    if (priceBtn && (!price || !originalPrice)) {
+                    if (priceBtn && (!price || price === '무료/이벤트' || price === '이벤트' || price === '가격정보없음' || !originalPrice)) {
                         await priceBtn.click();
                         await page.waitForSelector('.popPriceTable', { visible: true, timeout: 3000 });
 
