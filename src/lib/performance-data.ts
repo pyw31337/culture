@@ -159,9 +159,12 @@ export function getAllPerformances() {
         id: String(p.id)
     })).map(p => {
         // [Data Quality Override]
-        // Reclassify content to fit the consolidated categories.
-        // 'popup' and 'travel' are completely dropped. 
-        // 'kids', 'festival', 'leisure' are merged into 'activity'.
+        if (p.genre === 'classic' || p.genre === 'class') {
+            return { ...p, genre: 'classic_tradition' };
+        }
+        if (p.genre === 'theater') {
+            return { ...p, genre: 'play' };
+        }
         if (p.genre === 'popup' || p.genre === 'travel') {
             // Will be filtered out later if we don't return it, or we can mark it
         }
