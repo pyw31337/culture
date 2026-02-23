@@ -289,18 +289,65 @@ async function scrapeUmClass() {
                         const originPrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
                         const salePrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
                         const useTime = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
-                        const rawAddress = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(15) > div:nth-child(2) > span');
-                        return { rawAddress, duration, people, totalCount, discount, originPrice, salePrice, useTime };
+
+                        // Heuristic address finding for UmClass
+                        const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div'));
+                        let address = '';
+
+                        for (let i = 0; i < headings.length; i++) {
+                            if (headings[i].textContent?.trim() === '클래스 장소') {
+                                const container = headings[i].closest('div')?.parentElement;
+                                if (container) {
+                                    const text = container.textContent || '';
+                                    if (text.includes('복사')) {
+                                        const parts = text.split('복사');
+                                        if (parts[0]) {
+                                            address = parts[0].replace('클래스 장소', '').trim();
+                                        }
+                                    } else {
+                                        address = text.replace('클래스 장소', '').trim();
+                                    }
+                                }
+                                break;
+                            }
+                            if (headings[i].textContent?.trim() === '장소') {
+                                const nextSibling = headings[i].nextElementSibling;
+                                if (nextSibling) {
+                                    address = nextSibling.textContent?.trim() || '';
+                                }
+                                break;
+                            }
+                        }
+
+                        if (!address) {
+                            for (const el of headings) {
+                                const text = el.textContent?.trim() || '';
+                                if ((text.includes('대한민국') || text.includes('동구') || text.includes('중구') || text.includes('서구') || text.includes('남구') || text.includes('북구') || text.includes('시 ') || text.includes('도 ') || text.includes('로 ') || text.includes('길 ')) && text.length > 10 && text.length < 100 && !text.includes('솜씨당')) {
+                                    if (text.match(/([가-힣]+(도|시|구|군|동|로|길)\s*)+/)) {
+                                        address = text;
+                                        if (text.includes('대한민국')) break;
+                                    }
+                                }
+                            }
+                        }
+
+                        // Strip trailing UI garbage
+                        address = address.replace(/지도보기주소복사/g, '').replace(/주소복사/g, '').replace(/지도보기/g, '').trim();
+
+                        return { rawAddress: address, duration, people, totalCount, discount, originPrice, salePrice, useTime };
                     });
 
                     let venue = '솜씨당 클래스';
                     let address = detailData.rawAddress || '서울';
+                    address = address.replace(/^대한민국\s*/, '').trim();
 
-                    if (detailData.rawAddress) {
-                        const tokens = detailData.rawAddress.split(/\s+/);
+                    if (address.length > 5) {
+                        const tokens = address.split(/\s+/);
                         if (tokens.length > 1) {
-                            venue = tokens[tokens.length - 1];
+                            venue = tokens[tokens.length - 1]; // Assume last word might be the venue name, or just use the whole address
                         }
+                        // To be safe, let's just use the full accurate address as the venue
+                        venue = address;
                     }
 
                     // Preserve ID if existing, else regenerate (Note: Regenerating per run is bad practice, but following legacy for now. Ideally should hash URL)
