@@ -297,7 +297,23 @@ async function buildVenues() {
         }
     }
 
-    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems, ...umclassItems, ...mochaclassItems, ...sssdItems, ...mommomItems];
+    // Read Museum Data
+    let museumItems: any[] = [];
+    const MUSEUM_FILE = path.join(process.cwd(), 'src/data/museum.json');
+    if (fs.existsSync(MUSEUM_FILE)) {
+        try {
+            museumItems = JSON.parse(fs.readFileSync(MUSEUM_FILE, 'utf-8'));
+            // Missing venues in museum are usually the museum themselves
+            museumItems.forEach(m => {
+                if (!m.venue) m.venue = m.title;
+            });
+            console.log(`Loaded ${museumItems.length} Museum items.`);
+        } catch (e) {
+            console.error('Failed to load Museum data', e);
+        }
+    }
+
+    const all = [...interparkItems, ...timeticketItems, ...myrealtripItems, ...klookItems, ...umclassItems, ...mochaclassItems, ...sssdItems, ...mommomItems, ...museumItems];
 
     console.log(`Total items: ${all.length}`);
 
