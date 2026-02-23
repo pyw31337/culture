@@ -284,7 +284,7 @@ async function buildVenues() {
 
     // Read Mommom Data
     let mommomItems: any[] = [];
-    for (const file of ['mommom.json', 'mommom-food.json', 'mommom-product.json']) {
+    for (const file of ['mommom.json', 'mommom-products.json']) {
         const filePath = path.join(process.cwd(), 'src/data', file);
         if (fs.existsSync(filePath)) {
             try {

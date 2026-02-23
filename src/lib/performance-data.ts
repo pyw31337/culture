@@ -5,7 +5,6 @@ import interparkData from '@/data/interpark.json';
 import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
 import kboData from '@/data/kbo.json';
-import travelData from '@/data/travel.json';
 import festivalsData from '@/data/festivals.json';
 import yes24Data from '@/data/yes24.json';
 import timeticketData from '@/data/timeticket.json';
@@ -127,7 +126,6 @@ export function getAllPerformances() {
     const handball = safeArray<any>(handballData).map(p => ({ ...p, id: String(p.id) }));
     const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
     const movies = safeArray<any>(moviesData).map(p => ({ ...p, id: String(p.id), genre: 'movie' }));
-    const travels = safeArray<any>(travelData).map(p => ({ ...p, id: String(p.id) }));
     const classes = safeArray<any>(classData).map(p => ({ ...p, id: String(p.id) }));
     const umclasses = safeArray<any>(umclassData).map(p => ({ ...p, id: String(p.id) }));
     const mochaclasses = safeArray<any>(mochaclassData).map(p => ({ ...p, id: String(p.id) }));
@@ -148,7 +146,6 @@ export function getAllPerformances() {
         // ...soccerData,
         ...ott.map(p => ({ ...p, venue: 'OTT' })),
         ...movies,
-        ...travels,
         ...classes,
         ...umclasses,
         ...mochaclasses,
@@ -162,24 +159,32 @@ export function getAllPerformances() {
         id: String(p.id)
     })).map(p => {
         // [Data Quality Override]
-        // Reclassify kids content into more specific existing categories based on keywords.
-        // It's possible that a source explicitly targets 'kids' genre, so we remap it safely here.
-        if (p.genre === 'kids') {
+        // Reclassify content to fit the consolidated categories.
+        // 'popup' and 'travel' are completely dropped. 
+        // 'kids', 'festival', 'leisure' are merged into 'activity'.
+        if (p.genre === 'popup' || p.genre === 'travel') {
+            // Will be filtered out later if we don't return it, or we can mark it
+        }
+
+        if (p.genre === 'kids' || p.genre === 'festival' || p.genre === 'leisure') {
             const t = (p.title + ' ' + (p.venue || '')).toLowerCase();
-            if (t.includes('뮤지컬') || t.includes('티니핑') || t.includes('핑크퐁') || t.includes('오페라') || t.includes('싱어롱')) {
-                return { ...p, genre: 'musical' };
+            // Optional refined mappings for kids
+            if (p.genre === 'kids') {
+                if (t.includes('뮤지컬') || t.includes('티니핑') || t.includes('핑크퐁') || t.includes('오페라') || t.includes('싱어롱')) {
+                    return { ...p, genre: 'musical' };
+                }
+                if (t.includes('연극') || t.includes('아동극') || t.includes('인형극')) {
+                    return { ...p, genre: 'play' };
+                }
+                if (t.includes('클래식') || t.includes('음악회') || t.includes('발레') || t.includes('오케스트라')) {
+                    return { ...p, genre: 'classic_tradition' };
+                }
+                if (t.includes('도슨트') || t.includes('박물관') || t.includes('역사') || t.includes('서대문형무소') || t.includes('경복궁') || t.includes('미술관') || t.includes('기념관') || t.includes('에듀') || t.includes('투어')) {
+                    return { ...p, genre: 'museum' };
+                }
             }
-            if (t.includes('연극') || t.includes('아동극') || t.includes('인형극')) {
-                return { ...p, genre: 'play' };
-            }
-            if (t.includes('클래식') || t.includes('음악회') || t.includes('발레') || t.includes('오케스트라')) {
-                return { ...p, genre: 'classic_tradition' };
-            }
-            if (t.includes('도슨트') || t.includes('박물관') || t.includes('역사') || t.includes('서대문형무소') || t.includes('경복궁') || t.includes('법안발의') || t.includes('미술관') || t.includes('기념관') || t.includes('에듀') || t.includes('투어')) {
-                return { ...p, genre: 'museum' };
-            }
-            // Fallback for kids content goes to kids
-            return { ...p, genre: 'kids' };
+            // By default, merge them into 'activity'
+            return { ...p, genre: 'activity' };
         }
         return p;
     });
@@ -191,6 +196,9 @@ export function getAllPerformances() {
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
+        // Filter out deprecated genres eagerly
+        if (p.genre === 'popup' || p.genre === 'travel') return false;
+
         // Always show specific genres (Bypass Date & Region)
         if (p.genre === 'movie' || p.genre === 'ott') return true;
 

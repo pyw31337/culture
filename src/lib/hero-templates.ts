@@ -279,20 +279,8 @@ export const HERO_TEMPLATES = {
             { line1: "요리부터 드로잉까지,", line2Pre: "배움의 즐거움이 가득한 ", highlight: "취미 부자", suffix: "의 길로 초대합니다.", keywords: ["클래스", "배움"] },
             { line1: "베이킹의 달인 도전!", line2Pre: "달콤한 디저트 냄새 가득한 ", highlight: "쿠킹 클래스", suffix: "에서 힐링하세요.", keywords: ["클래스", "베이킹"] }
         ],
-        travel: [
-            { line1: "곧 연휴인데 어디 가지?", line2Pre: "지금 떠나기 딱 좋은 ", highlight: "여행지 정보", suffix: "를 모아봤어요.", keywords: ["여행", "travel", "투어"] },
-            { line1: "일상 탈출, 준비되셨나요?", line2Pre: "가볍게 떠날 수 있는 ", highlight: "당일치기 여행", suffix: "을 추천해요.", keywords: ["여행", "travel"] },
-            { line1: "이번 주말엔 여기!", line2Pre: "고민 없이 떠나는 ", highlight: "힐링 여행", suffix: " 어떠신가요?", keywords: ["여행", "travel"] },
-            { line1: "캠핑 감성 충전,", line2Pre: "타닥타닥 타오르는 ", highlight: "불멍의 시간", suffix: "을 가져보세요.", keywords: ["여행", "캠핑", "글램핑"] },
-            { line1: "바다가 부른다!", line2Pre: "속이 뻥 뚫리는 시원한 ", highlight: "오션뷰 여행", suffix: " 지금 바로 출발!", keywords: ["여행", "바다"], requiredGenres: ["travel"], minMatchCount: 2 }
-        ],
-        festival: [
-            { line1: "축제의 계절이 왔어요!", line2Pre: "전국 방방곡곡 ", highlight: "흥겨운 축제", suffix: "가 당신을 기다립니다.", keywords: ["축제", "festival"] },
-            { line1: "밤하늘을 수놓는 불꽃,", line2Pre: "황홀한 야경과 함께하는 ", highlight: "로맨틱 축제", suffix: "를 즐겨보세요.", keywords: ["축제", "불꽃"] },
-            { line1: "맛있는 건 0칼로리?", line2Pre: "지역 특산물이 가득한 ", highlight: "미식 여행", suffix: " 떠나볼까요?", keywords: ["축제", "먹거리"] },
-            { line1: "거리마다 활기 가득,", line2Pre: "퍼레이드와 컨텐츠가 어우러진 ", highlight: "거리 축제", suffix: "의 현장으로.", keywords: ["축제", "퍼레이드"] },
-            { line1: "꽃구경 갈 사람?", line2Pre: "인생샷 백만 장 남길 수 있는 ", highlight: "꽃 축제", suffix: " 놓치지 마세요.", keywords: ["축제", "꽃"] }
-        ],
+
+
         movie: [
             { line1: "영화 같은 하루,", line2Pre: "고소한 팝콘 냄새와 함께 ", highlight: "스크린 여행", suffix: " 떠나볼까요?", keywords: ["영화", "movie"] },
             { line1: "천만 관객의 선택,", line2Pre: "지금 가장 핫한 ", highlight: "블록버스터", suffix: "를 확인하세요.", keywords: ["영화", "movie"] },
@@ -308,13 +296,7 @@ export const HERO_TEMPLATES = {
             { line1: "독점 공개작 오픈!", line2Pre: "오직 여기서만 볼 수 있는 ", highlight: "오리지널 시리즈", suffix: "를 만나보세요.", keywords: ["OTT", "오리지널"] }
         ],
 
-        leisure: [
-            { line1: "주말엔 역시 야외로!", line2Pre: "꽉 막힌 도심을 벗어나 ", highlight: "자유를 만끽", suffix: "하세요.", keywords: ["레저", "leisure"] },
-            { line1: "물 위를 가르는 짜릿함,", line2Pre: "무더위를 잊게 해줄 ", highlight: "수상 레저", suffix: "의 세계로.", keywords: ["레저", "수상"] },
-            { line1: "하얀 설원을 질주하라,", line2Pre: "짜릿한 속도감이 느껴지는 ", highlight: "겨울 레저", suffix: " 시즌!", keywords: ["레저", "스키"] },
-            { line1: "힐링 낚시 캠프,", line2Pre: "잔잔한 물결을 바라보며 ", highlight: "세월을 낚는", suffix: " 여유를 즐기세요.", keywords: ["레저", "낚시"] },
-            { line1: "도심 속 힐링 스팟,", line2Pre: "가볍게 즐길 수 있는 ", highlight: "실내 레저", suffix: "도 다양해요.", keywords: ["레저", "실내"] }
-        ]
+
     },
     location: [
         { line1: "오늘 {location}에서,", line2Pre: "특별한 ", highlight: "{genre} 한 편", suffix: " 어때요?", keywords: ["{location}"] },

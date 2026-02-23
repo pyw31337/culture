@@ -7,7 +7,6 @@ const DATA_DIR = path.join(process.cwd(), 'src/data');
 const RULES: Record<string, number> = {
     // 'movies.json': 3,       // Removed: User wants movies to accumulate
     'museum.json': 14,         // Museum: 14 days (Slow turnover)
-    'mommom-food.json': 14,    // Food: 14 days
 };
 
 // Generic Interface for items with lastCollected

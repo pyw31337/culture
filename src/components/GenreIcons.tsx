@@ -95,12 +95,7 @@ export const TicketIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Travel: PlaneTilt
-export const PlaneTiltIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5" />
-    </svg>
-);
+
 
 // Class icon (kept for backwards compatibility)
 export const ClassIcon = ({ size = 16 }: { size?: number }) => (
@@ -110,13 +105,7 @@ export const ClassIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-export const FestivalIcon = ({ size = 16 }: { size?: number }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 5h2" /><path d="M5 4v2" /><path d="M11.5 4l-.5 2" /><path d="M18 5h2" /><path d="M19 4v2" />
-        <path d="M15 9l-1 1" /><path d="M18 13l2 -.5" /><path d="M18 19h2" /><path d="M19 18v2" />
-        <path d="M14 16.518l-6.518 -6.518l-4.39 9.58a1 1 0 0 0 1.329 1.329l9.579 -4.39z" />
-    </svg>
-);
+
 
 export const VolleyballIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -152,19 +141,15 @@ export const FootballIcon = ({ size = 16 }: { size?: number }) => (
     </svg>
 );
 
-// Leisure: Kayak
-export const KayakIcon = ({ size = 16 }: { size?: number }) => (
+
+
+export const HockeyIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6.414 6.414a2 2 0 0 0 0 -2.828l-1.414 -1.414l-2.828 2.828l1.414 1.414a2 2 0 0 0 2.828 0" />
-        <path d="M17.586 17.586a2 2 0 0 0 0 2.828l1.414 1.414l2.828 -2.828l-1.414 -1.414a2 2 0 0 0 -2.828 0" />
-        <path d="M6.5 6.5l11 11" />
-        <path d="M22 2.5c-9.983 2.601 -17.627 7.952 -20 19.5c9.983 -2.601 17.627 -7.952 20 -19.5" />
-        <path d="M6.5 12.5l5 5" />
-        <path d="M12.5 6.5l5 5" />
+        <path d="M5.5 19l4.5 -12" /><path d="M12 7l-2 5.5l5.5 -2.5" /><path d="M18.5 19l-4.5 -12" />
+        <path d="M4 19h16" /><path d="M5 21a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2" />
+        <circle cx="12" cy="7" r="1.5" />
     </svg>
 );
-
-// Hockey Icon removed
 // Museum: Building
 export const MuseumIcon = ({ size = 16 }: { size?: number }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-landmark-icon lucide-landmark">
@@ -201,16 +186,13 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'exhibition': return <FanIcon size={size} />;
         case 'activity': return <TicketIcon size={size} />;
         case 'class': return <ClassIcon size={size} />;
-        case 'travel': return <PlaneTiltIcon size={size} />;
-        case 'festival': return <FestivalIcon size={size} />;
-        case 'leisure': return <KayakIcon size={size} />;
         case 'volleyball': return <VolleyballIcon size={size} />;
         case 'basketball': return <BasketballIcon size={size} />;
         case 'baseball': return <BaseballIcon size={size} />;
         case 'football': return <FootballIcon size={size} />;
         case 'soccer': return <FootballIcon size={size} />;
         case 'handball': return <HandballIcon size={size} />;
-        case 'hockey': return <MuseumIcon size={size} />; // Hockey was removed from constants, but just in case of stale usage mapping, we might want to be careful. Ideally remove this case.
+        case 'hockey': return <HockeyIcon size={size} />;
         case 'museum': return <MuseumIcon size={size} />;
 
         case 'ott': return <OttIcon size={size} />;
