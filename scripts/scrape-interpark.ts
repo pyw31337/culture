@@ -287,9 +287,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 // 1. Basic Info & Base Price
                 const basicInfo = await page.evaluate(function () {
-                    function getText(selector: string, parent: Element | Document = document) {
+                    const getText = (selector: string, parent: Element | Document = document) => {
                         return parent.querySelector(selector)?.textContent?.trim() || '';
-                    }
+                    };
 
                     // 1. Info Items (Runtime, Age)
                     let runningTime = '';
@@ -389,17 +389,20 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // 2. If Detail Text Failed, try structured elements (.sale, .price)
                     if (!price && priceItems.length > 0) {
-                        // Find item with most detail (sale + original + rate)
-                        let bestItem = priceItems.find(i => i.querySelector('.sale') && i.querySelector('.price'));
-                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.sale'));
-                        if (!bestItem) bestItem = priceItems.find(i => i.querySelector('.price')); // Fallback (sometimes .price is the final price if no discount)
-                        if (!bestItem) bestItem = priceItems[0];
+                        // Filter out items that are just the "View All Prices (전체가격보기)" buttons
+                        const validPriceItems = priceItems.filter(i => {
+                            const text = i.textContent || '';
+                            return !text.includes('전체가격보기') && (i.querySelector('.price') || i.querySelector('.sale') || text.includes('원'));
+                        });
+
+                        let bestItem = validPriceItems.find(i => i.querySelector('.sale') && i.querySelector('.price'));
+                        if (!bestItem) bestItem = validPriceItems.find(i => i.querySelector('.sale'));
+                        if (!bestItem) bestItem = validPriceItems.find(i => i.querySelector('.price')); // Fallback (sometimes .price is the final price if no discount)
+                        if (!bestItem && validPriceItems.length > 0) bestItem = validPriceItems[0];
 
                         if (bestItem) {
                             // Helper to extract clean text
-                            function getVal(cls: string) {
-                                return bestItem?.querySelector(cls)?.textContent?.trim() || '';
-                            }
+                            const getVal = (cls: string) => bestItem?.querySelector(cls)?.textContent?.trim() || '';
 
                             // Structure 1: .sale, .original, .rate
                             const sale = getVal('.sale');
@@ -415,18 +418,39 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                                 price = sale;
                             } else if (priceVal) {
                                 price = priceVal;
+                            } else {
+                                // Fallback: try capturing any number with '원' from text content if structure fails
+                                const text = bestItem.textContent || '';
+                                const match = text.match(/([0-9,]+원)/);
+                                if (match) price = match[1];
                             }
                         }
                     }
 
                     // Strategy B: Old Structure text parsing
                     if (!price) {
-                        const priceText = getText('.infoItem.infoPrice .infoDesc');
-                        if (priceText) {
-                            // Check for "50,000원 -> 45,000원" pattern if text based
-                            const match = priceText.match(/([0-9,]+원)/);
+                        const dlPriceText = getText('.infoItem.infoPrice .infoDesc');
+                        if (dlPriceText && !dlPriceText.includes('전체가격보기')) {
+                            const match = dlPriceText.match(/([0-9,]+원)/);
                             if (match) price = match[1];
-                            else price = priceText;
+                            else price = dlPriceText;
+                        }
+                    }
+
+                    // Strict validation: if price doesn't have a number, clear it
+                    if (price && !/[0-9]/.test(price)) {
+                        price = '';
+                    }
+
+                    // Final ultimate global fallback: scan for any price-like format in info list
+                    if (!price) {
+                        const genericItems = Array.from(document.querySelectorAll('.infoItem, .infoPriceItem'));
+                        for (let el of genericItems) {
+                            const txt = el.textContent || '';
+                            if (!txt.includes('전체가격보기') && txt.match(/[0-9,]{3,}원/)) {
+                                price = txt.match(/([0-9,]{3,}원)/)![1];
+                                break;
+                            }
                         }
                     }
 
