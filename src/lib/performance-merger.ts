@@ -23,7 +23,7 @@ export function processAndMergePerformances(items: any[]): any[] {
         let key = `${groupPrefix}${normalizedTitle}`;
 
         // Exception for Travel & Sports: Include Date in key to allow same title with different dates
-        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'hockey'].includes(p.genre)) {
+        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(p.genre)) {
             key += `_${p.date}`;
         }
 

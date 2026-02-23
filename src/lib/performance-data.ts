@@ -76,10 +76,10 @@ export function getAllPerformances() {
     const REGION_MAP: Record<string, string> = {
         '서울': 'seoul', '경기': 'gyeonggi', '인천': 'incheon',
         '부산': 'busan', '대구': 'daegu', '광주': 'gwangju',
-        '대전': 'etc', '울산': 'etc', '세종': 'etc',
-        '강원': 'etc', '충북': 'etc', '충남': 'etc',
-        '전북': 'etc', '전남': 'etc', '경북': 'etc',
-        '경남': 'etc', '제주': 'etc'
+        '대전': 'daejeon', '울산': 'ulsan', '세종': 'sejong',
+        '강원': 'gangwon', '충북': 'chungbuk', '충남': 'chungnam',
+        '전북': 'jeonbuk', '전남': 'jeonnam', '경북': 'gyeongbuk',
+        '경남': 'gyeongnam', '제주': 'jeju'
     };
 
     const interpark = safeArray<any>(interparkData).map((p: any) => ({
@@ -100,7 +100,7 @@ export function getAllPerformances() {
         if (text.includes('연극')) return 'play';
         if (text.includes('무용') || text.includes('발레')) return 'classic';
 
-        return 'etc';
+        return 'activity';
     }
 
     const seoulCulture = safeArray<any>(seoulData).map((p: any) => ({
@@ -146,6 +146,7 @@ export function getAllPerformances() {
         // ...soccerData,
         ...ott.map(p => ({ ...p, venue: 'OTT' })),
         ...movies,
+        ...safeArray<any>(kidsData).map(p => ({ ...p, id: String(p.id) })),
         ...classes,
         ...umclasses,
         ...mochaclasses,
@@ -166,7 +167,10 @@ export function getAllPerformances() {
             return { ...p, genre: 'play' };
         }
         if (p.genre === 'popup' || p.genre === 'travel') {
-            // Will be filtered out later if we don't return it, or we can mark it
+            return { ...p }; // Keep but will be filtered out in step 3
+        }
+        if (p.genre === 'korean_music') {
+            return { ...p, genre: 'classic_tradition' };
         }
 
         if (p.genre === 'kids' || p.genre === 'festival' || p.genre === 'leisure') {
@@ -208,11 +212,7 @@ export function getAllPerformances() {
         // Date Check (Enforced for everything else)
         if (!isPerformanceActive(p.date, now)) return false;
 
-        // Region Check Exemptions (Nationwide content that expires)
-        // Region Check Exemptions (Now practically everything is nationwide)
-        // if (p.genre === 'festival' || p.genre === 'travel' || p.genre === 'kids' || p.genre === 'class') return true;
 
-        if (!isPerformanceActive(p.date, now)) return false;
 
         // Sports: Strict Region Filter -> Relaxed to Nationwide? 
         // User said: "movie/OTT excluded, expand others to nationwide". 

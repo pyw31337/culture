@@ -192,7 +192,6 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'football': return <FootballIcon size={size} />;
         case 'soccer': return <FootballIcon size={size} />;
         case 'handball': return <HandballIcon size={size} />;
-        case 'hockey': return <HockeyIcon size={size} />;
         case 'museum': return <MuseumIcon size={size} />;
 
         case 'ott': return <OttIcon size={size} />;

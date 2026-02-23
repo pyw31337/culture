@@ -504,7 +504,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
                                 {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                                {['volleyball', 'basketball', 'baseball', 'handball', 'hockey', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
                                         <img
                                             src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
