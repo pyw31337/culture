@@ -20,7 +20,6 @@ import umclassData from '../src/data/umclass.json';
 import seoulData from '../src/data/seoul-culture.json';
 import mochaclassData from '../src/data/mochaclass.json';
 import mommomData from '../src/data/mommom.json';
-import mommomFoodData from '../src/data/mommom-food.json';
 import mommomProductData from '../src/data/mommom-products.json';
 import museumData from '../src/data/museum.json';
 
@@ -74,7 +73,6 @@ const allPerformances = [
     ...safeArray(mochaclassData),
     ...seoulCulture,
     ...safeArray(mommomData),
-    ...safeArray(mommomFoodData),
     ...safeArray(mommomProductData),
     ...safeArray(museumData)
 ].map((p: any) => ({

@@ -20,7 +20,6 @@ const SOURCES = [
     { name: 'MochaClass', file: 'mochaclass.json', type: 'class' },
     { name: 'MyRealTrip Kids', file: 'myrealtrip-kids.json', type: 'kids' },
     { name: 'Mommom', file: 'mommom.json', type: 'kids' },
-    { name: 'Mommom Food', file: 'mommom-food.json', type: 'kids' },
     { name: 'Mommom Product', file: 'mommom-products.json', type: 'kids' },
     { name: 'Museum', file: 'museum.json', type: 'museum' },
 ];

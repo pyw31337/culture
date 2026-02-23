@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
     "build": "npm run generate-data && next build --webpack",
     "start": "next start",

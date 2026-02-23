@@ -30,8 +30,6 @@ function classifyGenre(title: string): string {
         t.includes('동물원') || t.includes('식물원') || t.includes('테마파크')) return 'museum';
     if (t.includes('클래스') || t.includes('체험') || t.includes('만들기') ||
         t.includes('공방') || t.includes('쿠킹') || t.includes('베이킹')) return 'class';
-    if (t.includes('식당') || t.includes('레스토랑') || t.includes('카페') ||
-        t.includes('맛집') || t.includes('뷔페')) return 'food';
     return 'activity';
 }
 

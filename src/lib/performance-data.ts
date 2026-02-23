@@ -21,7 +21,6 @@ import seoulData from '@/data/seoul-culture.json';
 
 import mochaclassData from '@/data/mochaclass.json';
 import mommomData from '@/data/mommom.json';
-import mommomFoodData from '@/data/mommom-food.json';
 import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
@@ -133,7 +132,6 @@ export function getAllPerformances() {
     const umclasses = safeArray<any>(umclassData).map(p => ({ ...p, id: String(p.id) }));
     const mochaclasses = safeArray<any>(mochaclassData).map(p => ({ ...p, id: String(p.id) }));
     const mommom = safeArray<any>(mommomData).map(p => ({ ...p, id: String(p.id) }));
-    const mommomFood = safeArray<any>(mommomFoodData).map(p => ({ ...p, id: String(p.id) }));
     const mommomProduct = safeArray<any>(mommomProductData).map(p => ({ ...p, id: String(p.id) }));
     const museum = safeArray<any>(museumData).map(p => ({ ...p, id: String(p.id) }));
 
@@ -156,7 +154,6 @@ export function getAllPerformances() {
         ...mochaclasses,
         ...seoulCulture,
         ...mommom,
-        ...mommomFood,
         ...mommomProduct,
         ...museum,
         // ...musical,
@@ -176,13 +173,13 @@ export function getAllPerformances() {
                 return { ...p, genre: 'play' };
             }
             if (t.includes('클래식') || t.includes('음악회') || t.includes('발레') || t.includes('오케스트라')) {
-                return { ...p, genre: 'classic' };
+                return { ...p, genre: 'classic_tradition' };
             }
             if (t.includes('도슨트') || t.includes('박물관') || t.includes('역사') || t.includes('서대문형무소') || t.includes('경복궁') || t.includes('법안발의') || t.includes('미술관') || t.includes('기념관') || t.includes('에듀') || t.includes('투어')) {
                 return { ...p, genre: 'museum' };
             }
-            // Fallback for kids content goes to activity
-            return { ...p, genre: 'activity' };
+            // Fallback for kids content goes to kids
+            return { ...p, genre: 'kids' };
         }
         return p;
     });

@@ -5,7 +5,6 @@ import path from 'path';
 const CRITICAL_TARGETS = [
     // { file: 'movies.json', name: 'Movies' }, // Temporarily disabled to unblock build
     { file: 'museum.json', name: 'Museum' },
-    { file: 'mommom-food.json', name: 'Mommom Food' },
     // Add others if needed: { file: 'ott.json', name: 'OTT' }
 ];
 

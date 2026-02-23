@@ -6,7 +6,6 @@ const target = process.argv[2];
 const SCRAPER_MAP: Record<string, string> = {
     'movie': 'scripts/scrape-movies.ts',
     'museum': 'scripts/scrape-museum.ts',
-    'mommom-food': 'scripts/scrape-mommom-food.ts',
 };
 
 if (!target || !SCRAPER_MAP[target]) {
