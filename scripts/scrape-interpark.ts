@@ -281,7 +281,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const goodsIdMatch = item.link.match(/\/goods\/([A-Za-z0-9]+)/);
                 const goodsId = goodsIdMatch ? goodsIdMatch[1] : null;
                 if (!goodsId) {
-                    req.continue();
                     return;
                 }
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
