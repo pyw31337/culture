@@ -11,6 +11,13 @@ import cliProgress from 'cli-progress';
 
 puppeteer.use(StealthPlugin());
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 interface Performance {
     id: string;
     title: string;
@@ -177,13 +184,14 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
                 }
 
                 if (title && id) {
+                    const stableId = `perf_${slugify(title)}`;
                     performances.push({
-                        id,
+                        id: stableId,
                         title,
                         image,
                         date,
                         venue,
-                        link: `https://tickets.interpark.com/goods/${id}`, // Use new URL format for consistency
+                        link: `https://tickets.interpark.com/goods/${id}`, // Keep numeric ID in link for detail scraping
                         region: regionName,
                         genre
                     });
@@ -269,8 +277,13 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
 
-                // Determine 
-                const goodsId = item.id;
+                // Extract original GoodsCode from link
+                const goodsIdMatch = item.link.match(/\/goods\/([A-Za-z0-9]+)/);
+                const goodsId = goodsIdMatch ? goodsIdMatch[1] : null;
+                if (!goodsId) {
+                    req.continue();
+                    return;
+                }
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
                 await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });

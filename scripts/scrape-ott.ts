@@ -22,6 +22,13 @@ const TYPES = ['추천', '신작'];
 // --- HELPERS ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 const MANUAL_GRADES: Record<string, string> = {
     '은애하는 도적님아': '15세 이상 관람가',
     '은애하는 도적님아 - 시즌 1': '15세 이상 관람가',
@@ -724,18 +731,24 @@ async function scrapeOTT() {
     const finalItems = Array.from(existingMap.values());
 
     // Generate IDs and Image Paths
-    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    const usedIds = new Set<string>();
     finalItems.forEach(item => {
-        // Create ID: ott_YYYYMMDD_Title(sanitized)
-        const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-        // Only generate ID if missing (Should be stable if we want persistence, but current logic uses daily IDs?
-        // Wait, current logic was `ott_${today}_${safeTitle}`.
-        // If we upsert, we should probably Keep the ID if it exists?
-        // But if we re-scrape, maybe we want new IDs?
-        // Actually, preventing ID churn is better.
-        if (!item.id) {
-            item.id = `ott_${today}_${safeTitle}`;
+        // Create ID: ott_Title(sanitized)
+        if (!item.id || item.id.startsWith('ott_20')) { // Reset old date-based IDs or generate if missing
+            const safeTitle = slugify(item.title);
+            let newId = `ott_${safeTitle}`;
+
+            // Handle duplicates
+            let counter = 2;
+            let finalId = newId;
+            while (usedIds.has(finalId)) {
+                finalId = `${newId}_${counter}`;
+                counter++;
+            }
+            item.id = finalId;
         }
+        usedIds.add(item.id);
+
         item.venue = 'OTT';
         item.region = 'ott';
         if (!item.genre) item.genre = 'ott';

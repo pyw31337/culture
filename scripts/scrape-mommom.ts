@@ -20,6 +20,13 @@ function cleanAddress(addr: string): string {
     return addr.replace('주소', '').trim();
 }
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 function determineGenre(title: string): string {
     const t = title;
     // User requested "Museum/Experience" category specifically. 
@@ -569,8 +576,7 @@ async function scrapeMomMom() {
             results.forEach(r => {
                 if (r) {
                     // ID generation
-                    const safeTitle = r.title.replace(/\s/g, '').slice(0, 15);
-                    const id = `mommom_${safeTitle}`;
+                    const id = `mommom_${slugify(r.title)}`;
 
                     finalItems.push({
                         id,

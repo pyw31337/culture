@@ -15,6 +15,13 @@ const CATEGORIES = [
     { name: '전체', midx: 'all' }
 ];
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 async function setupKoreanLocale(page: any) {
     await page.setExtraHTTPHeaders({
         'Accept-Language': 'ko-KR,ko;q=0.9',
@@ -350,7 +357,7 @@ async function scrape() {
                 }
 
                 results.push({
-                    id: `sssd-${i}`,
+                    id: `class_${slugify(item.title)}`,
                     title: item.title,
                     date: '상시',
                     venue: detailInfo.location,

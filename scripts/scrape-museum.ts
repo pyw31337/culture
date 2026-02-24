@@ -10,6 +10,13 @@ const TARGET_URL = 'https://mom-mom.net/search?q=%EB%B0%95%EB%AC%BC%EA%B4%80/%EC
 const DATA_PATH = path.join(process.cwd(), 'src/data/museum.json');
 const CONCURRENCY_LIMIT = 5;
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 interface MuseumItem {
     id: string;
     title: string;
@@ -177,7 +184,7 @@ async function scrapeMuseum() {
                     await detailPage.close();
                 }
 
-                const id = `museum_${item.title.replace(/\s+/g, '')}`;
+                const id = `museum_${slugify(item.title)}`;
 
                 finalItems.push({
                     id,

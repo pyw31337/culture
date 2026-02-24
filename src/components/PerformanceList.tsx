@@ -577,11 +577,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         // 1. Exact ID match
         let perf = allPerformances.find(p => p.id === targetId);
 
-        // 2. Fallback: old movie URLs with date prefix (movie_20260218_title → movie_title)
-        if (!perf && targetId.startsWith('movie_')) {
-            const withoutDate = targetId.replace(/^movie_\d{8}_/, 'movie_');
+        // 2. Fallback: old URLs with date prefix (movie_20260218_title → movie_title)
+        if (!perf && targetId.match(/^(movie|ott|perf|fest|travel|kids|class|mommom|museum)_/)) {
+            const prefix = targetId.split('_')[0] + '_';
+            const withoutDate = targetId.replace(/^[a-z]+_\d{8}_/, prefix);
             // Normalize: strip special chars to match current ID format
-            const normalized = 'movie_' + withoutDate.replace(/^movie_/, '').replace(/[^a-zA-Z0-9가-힣]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+            const normalized = prefix + withoutDate.replace(/^[a-z]+_/, '').replace(/[^a-zA-Z0-9가-힣]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
             perf = allPerformances.find(p => p.id === normalized);
         }
 

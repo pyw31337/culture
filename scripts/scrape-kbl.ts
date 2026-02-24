@@ -2,6 +2,13 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 const KBL_URL = 'https://www.kbl.or.kr/match/schedule';
 const KBL_POSTER = '/culture/images/kbl_poster.png';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
@@ -109,7 +116,8 @@ async function scrapeKbl() {
         if (!dateStr.startsWith('2026')) continue;
 
         const title = `${match.tnameH} vs ${match.tnameA}`;
-        const id = `kbl_${match.gameDate}_${match.tcodeH}_${match.tcodeA}`;
+        const safeMatchup = slugify(title);
+        const id = `kbl_${match.gameDate}_${safeMatchup}`;
 
         if (seenIds.has(id)) continue;
         seenIds.add(id);

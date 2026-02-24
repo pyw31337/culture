@@ -1,6 +1,6 @@
 [
   {
-    "id": "kbo_20260328_KTvsLG",
+    "id": "kbo_20260328_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-28 14:00",
@@ -14,7 +14,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260328_KIAvsSSG",
+    "id": "kbo_20260328_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-28 14:00",
@@ -28,7 +28,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260328_롯데vs삼성",
+    "id": "kbo_20260328_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-28 14:00",
@@ -42,7 +42,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260328_두산vsNC",
+    "id": "kbo_20260328_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-28 14:00",
@@ -56,7 +56,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260328_키움vs한화",
+    "id": "kbo_20260328_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-28 14:00",
@@ -70,7 +70,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260329_KTvsLG",
+    "id": "kbo_20260329_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-29 14:00",
@@ -84,7 +84,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260329_KIAvsSSG",
+    "id": "kbo_20260329_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-29 14:00",
@@ -98,7 +98,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260329_롯데vs삼성",
+    "id": "kbo_20260329_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-29 14:00",
@@ -112,7 +112,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260329_두산vsNC",
+    "id": "kbo_20260329_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-29 14:00",
@@ -126,7 +126,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260329_키움vs한화",
+    "id": "kbo_20260329_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-29 14:00",
@@ -140,7 +140,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260331_KIAvsLG",
+    "id": "kbo_20260331_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-31 18:30",
@@ -154,7 +154,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260331_키움vsSSG",
+    "id": "kbo_20260331_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-31 18:30",
@@ -168,7 +168,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260331_두산vs삼성",
+    "id": "kbo_20260331_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-31 18:30",
@@ -182,7 +182,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260331_롯데vsNC",
+    "id": "kbo_20260331_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-31 18:30",
@@ -196,7 +196,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260331_KTvs한화",
+    "id": "kbo_20260331_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-31 18:30",
@@ -210,7 +210,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260401_KIAvsLG",
+    "id": "kbo_20260401_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-01 18:30",
@@ -224,7 +224,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260401_키움vsSSG",
+    "id": "kbo_20260401_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-01 18:30",
@@ -238,7 +238,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260401_두산vs삼성",
+    "id": "kbo_20260401_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-01 18:30",
@@ -252,7 +252,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260401_롯데vsNC",
+    "id": "kbo_20260401_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-01 18:30",
@@ -266,7 +266,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260401_KTvs한화",
+    "id": "kbo_20260401_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-01 18:30",
@@ -280,7 +280,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260402_KIAvsLG",
+    "id": "kbo_20260402_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-02 18:30",
@@ -294,7 +294,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260402_키움vsSSG",
+    "id": "kbo_20260402_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-02 18:30",
@@ -308,7 +308,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260402_두산vs삼성",
+    "id": "kbo_20260402_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-02 18:30",
@@ -322,7 +322,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260402_롯데vsNC",
+    "id": "kbo_20260402_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-02 18:30",
@@ -336,7 +336,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260402_KTvs한화",
+    "id": "kbo_20260402_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-02 18:30",
@@ -350,7 +350,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260403_한화vs두산",
+    "id": "kbo_20260403_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-03 18:30",
@@ -364,7 +364,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260403_SSGvs롯데",
+    "id": "kbo_20260403_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-03 18:30",
@@ -378,7 +378,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260403_삼성vsKT",
+    "id": "kbo_20260403_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-03 18:30",
@@ -392,7 +392,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260403_NCvsKIA",
+    "id": "kbo_20260403_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-03 18:30",
@@ -406,7 +406,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260403_LGvs키움",
+    "id": "kbo_20260403_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-03 18:30",
@@ -420,7 +420,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260404_한화vs두산",
+    "id": "kbo_20260404_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-04 17:00",
@@ -434,7 +434,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260404_SSGvs롯데",
+    "id": "kbo_20260404_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-04 17:00",
@@ -448,7 +448,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260404_삼성vsKT",
+    "id": "kbo_20260404_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-04 17:00",
@@ -462,7 +462,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260404_NCvsKIA",
+    "id": "kbo_20260404_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-04 17:00",
@@ -476,7 +476,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260404_LGvs키움",
+    "id": "kbo_20260404_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-04 17:00",
@@ -490,7 +490,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260405_한화vs두산",
+    "id": "kbo_20260405_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-05 14:00",
@@ -504,7 +504,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260405_SSGvs롯데",
+    "id": "kbo_20260405_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-05 14:00",
@@ -518,7 +518,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260405_삼성vsKT",
+    "id": "kbo_20260405_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-05 14:00",
@@ -532,7 +532,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260405_NCvsKIA",
+    "id": "kbo_20260405_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-05 14:00",
@@ -546,7 +546,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260405_LGvs키움",
+    "id": "kbo_20260405_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-05 14:00",
@@ -560,7 +560,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260407_키움vs두산",
+    "id": "kbo_20260407_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-07 18:30",
@@ -574,7 +574,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260407_한화vsSSG",
+    "id": "kbo_20260407_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-07 18:30",
@@ -588,7 +588,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260407_KTvs롯데",
+    "id": "kbo_20260407_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-07 18:30",
@@ -602,7 +602,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260407_LGvsNC",
+    "id": "kbo_20260407_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-07 18:30",
@@ -616,7 +616,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260407_삼성vsKIA",
+    "id": "kbo_20260407_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-07 18:30",
@@ -630,7 +630,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260408_키움vs두산",
+    "id": "kbo_20260408_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-08 18:30",
@@ -644,7 +644,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260408_한화vsSSG",
+    "id": "kbo_20260408_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-08 18:30",
@@ -658,7 +658,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260408_KTvs롯데",
+    "id": "kbo_20260408_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-08 18:30",
@@ -672,7 +672,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260408_LGvsNC",
+    "id": "kbo_20260408_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-08 18:30",
@@ -686,7 +686,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260408_삼성vsKIA",
+    "id": "kbo_20260408_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-08 18:30",
@@ -700,7 +700,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260409_키움vs두산",
+    "id": "kbo_20260409_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-09 18:30",
@@ -714,7 +714,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260409_한화vsSSG",
+    "id": "kbo_20260409_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-09 18:30",
@@ -728,7 +728,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260409_KTvs롯데",
+    "id": "kbo_20260409_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-09 18:30",
@@ -742,7 +742,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260409_LGvsNC",
+    "id": "kbo_20260409_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-09 18:30",
@@ -756,7 +756,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260409_삼성vsKIA",
+    "id": "kbo_20260409_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-09 18:30",
@@ -770,7 +770,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260410_SSGvsLG",
+    "id": "kbo_20260410_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-10 18:30",
@@ -784,7 +784,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260410_NCvs삼성",
+    "id": "kbo_20260410_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-10 18:30",
@@ -798,7 +798,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260410_두산vsKT",
+    "id": "kbo_20260410_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-10 18:30",
@@ -812,7 +812,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260410_롯데vs키움",
+    "id": "kbo_20260410_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-10 18:30",
@@ -826,7 +826,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260410_KIAvs한화",
+    "id": "kbo_20260410_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-10 18:30",
@@ -840,7 +840,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260411_SSGvsLG",
+    "id": "kbo_20260411_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-11 17:00",
@@ -854,7 +854,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260411_NCvs삼성",
+    "id": "kbo_20260411_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-11 17:00",
@@ -868,7 +868,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260411_두산vsKT",
+    "id": "kbo_20260411_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-11 17:00",
@@ -882,7 +882,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260411_롯데vs키움",
+    "id": "kbo_20260411_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-11 17:00",
@@ -896,7 +896,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260411_KIAvs한화",
+    "id": "kbo_20260411_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-11 17:00",
@@ -910,7 +910,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260412_SSGvsLG",
+    "id": "kbo_20260412_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-12 14:00",
@@ -924,7 +924,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260412_NCvs삼성",
+    "id": "kbo_20260412_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-12 14:00",
@@ -938,7 +938,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260412_두산vsKT",
+    "id": "kbo_20260412_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-12 14:00",
@@ -952,7 +952,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260412_롯데vs키움",
+    "id": "kbo_20260412_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-12 14:00",
@@ -966,7 +966,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260412_KIAvs한화",
+    "id": "kbo_20260412_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-12 14:00",
@@ -980,7 +980,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260414_롯데vsLG",
+    "id": "kbo_20260414_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-14 18:30",
@@ -994,7 +994,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260414_두산vsSSG",
+    "id": "kbo_20260414_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-14 18:30",
@@ -1008,7 +1008,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260414_KTvsNC",
+    "id": "kbo_20260414_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-14 18:30",
@@ -1022,7 +1022,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260414_키움vsKIA",
+    "id": "kbo_20260414_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-14 18:30",
@@ -1036,7 +1036,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260414_삼성vs한화",
+    "id": "kbo_20260414_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-14 18:30",
@@ -1050,7 +1050,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260415_롯데vsLG",
+    "id": "kbo_20260415_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-15 18:30",
@@ -1064,7 +1064,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260415_두산vsSSG",
+    "id": "kbo_20260415_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-15 18:30",
@@ -1078,7 +1078,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260415_KTvsNC",
+    "id": "kbo_20260415_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-15 18:30",
@@ -1092,7 +1092,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260415_키움vsKIA",
+    "id": "kbo_20260415_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-15 18:30",
@@ -1106,7 +1106,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260415_삼성vs한화",
+    "id": "kbo_20260415_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-15 18:30",
@@ -1120,7 +1120,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260416_롯데vsLG",
+    "id": "kbo_20260416_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-16 18:30",
@@ -1134,7 +1134,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260416_두산vsSSG",
+    "id": "kbo_20260416_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-16 18:30",
@@ -1148,7 +1148,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260416_KTvsNC",
+    "id": "kbo_20260416_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-16 18:30",
@@ -1162,7 +1162,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260416_키움vsKIA",
+    "id": "kbo_20260416_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-16 18:30",
@@ -1176,7 +1176,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260416_삼성vs한화",
+    "id": "kbo_20260416_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-16 18:30",
@@ -1190,7 +1190,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260417_KIAvs두산",
+    "id": "kbo_20260417_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-17 18:30",
@@ -1204,7 +1204,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260417_한화vs롯데",
+    "id": "kbo_20260417_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-17 18:30",
@@ -1218,7 +1218,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260417_LGvs삼성",
+    "id": "kbo_20260417_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-17 18:30",
@@ -1232,7 +1232,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260417_SSGvsNC",
+    "id": "kbo_20260417_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-17 18:30",
@@ -1246,7 +1246,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260417_키움vsKT",
+    "id": "kbo_20260417_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-17 18:30",
@@ -1260,7 +1260,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260418_KIAvs두산",
+    "id": "kbo_20260418_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-18 17:00",
@@ -1274,7 +1274,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260418_한화vs롯데",
+    "id": "kbo_20260418_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-18 17:00",
@@ -1288,7 +1288,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260418_LGvs삼성",
+    "id": "kbo_20260418_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-18 17:00",
@@ -1302,7 +1302,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260418_SSGvsNC",
+    "id": "kbo_20260418_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-18 17:00",
@@ -1316,7 +1316,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260418_키움vsKT",
+    "id": "kbo_20260418_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-18 17:00",
@@ -1330,7 +1330,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260419_KIAvs두산",
+    "id": "kbo_20260419_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-19 14:00",
@@ -1344,7 +1344,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260419_한화vs롯데",
+    "id": "kbo_20260419_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-19 14:00",
@@ -1358,7 +1358,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260419_LGvs삼성",
+    "id": "kbo_20260419_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-19 14:00",
@@ -1372,7 +1372,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260419_SSGvsNC",
+    "id": "kbo_20260419_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-19 14:00",
@@ -1386,7 +1386,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260419_키움vsKT",
+    "id": "kbo_20260419_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-19 14:00",
@@ -1400,7 +1400,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260421_한화vsLG",
+    "id": "kbo_20260421_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-21 18:30",
@@ -1414,7 +1414,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260421_두산vs롯데",
+    "id": "kbo_20260421_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-21 18:30",
@@ -1428,7 +1428,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260421_SSGvs삼성",
+    "id": "kbo_20260421_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-21 18:30",
@@ -1442,7 +1442,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260421_KIAvsKT",
+    "id": "kbo_20260421_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-21 18:30",
@@ -1456,7 +1456,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260421_NCvs키움",
+    "id": "kbo_20260421_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-21 18:30",
@@ -1470,7 +1470,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260422_한화vsLG",
+    "id": "kbo_20260422_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-22 18:30",
@@ -1484,7 +1484,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260422_두산vs롯데",
+    "id": "kbo_20260422_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-22 18:30",
@@ -1498,7 +1498,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260422_SSGvs삼성",
+    "id": "kbo_20260422_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-22 18:30",
@@ -1512,7 +1512,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260422_KIAvsKT",
+    "id": "kbo_20260422_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-22 18:30",
@@ -1526,7 +1526,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260422_NCvs키움",
+    "id": "kbo_20260422_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-22 18:30",
@@ -1540,7 +1540,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260423_한화vsLG",
+    "id": "kbo_20260423_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-23 18:30",
@@ -1554,7 +1554,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260423_두산vs롯데",
+    "id": "kbo_20260423_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-23 18:30",
@@ -1568,7 +1568,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260423_SSGvs삼성",
+    "id": "kbo_20260423_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-23 18:30",
@@ -1582,7 +1582,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260423_KIAvsKT",
+    "id": "kbo_20260423_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-23 18:30",
@@ -1596,7 +1596,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260423_NCvs키움",
+    "id": "kbo_20260423_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-23 18:30",
@@ -1610,7 +1610,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260424_LGvs두산",
+    "id": "kbo_20260424_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-24 18:30",
@@ -1624,7 +1624,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260424_KTvsSSG",
+    "id": "kbo_20260424_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-24 18:30",
@@ -1638,7 +1638,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260424_롯데vsKIA",
+    "id": "kbo_20260424_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-24 18:30",
@@ -1652,7 +1652,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260424_삼성vs키움",
+    "id": "kbo_20260424_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-24 18:30",
@@ -1666,7 +1666,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260424_NCvs한화",
+    "id": "kbo_20260424_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-24 18:30",
@@ -1680,7 +1680,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260425_LGvs두산",
+    "id": "kbo_20260425_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-25 17:00",
@@ -1694,7 +1694,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260425_KTvsSSG",
+    "id": "kbo_20260425_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-25 17:00",
@@ -1708,7 +1708,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260425_롯데vsKIA",
+    "id": "kbo_20260425_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-25 17:00",
@@ -1722,7 +1722,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260425_삼성vs키움",
+    "id": "kbo_20260425_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-25 17:00",
@@ -1736,7 +1736,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260425_NCvs한화",
+    "id": "kbo_20260425_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-25 17:00",
@@ -1750,7 +1750,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260426_LGvs두산",
+    "id": "kbo_20260426_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-26 14:00",
@@ -1764,7 +1764,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260426_KTvsSSG",
+    "id": "kbo_20260426_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-26 14:00",
@@ -1778,7 +1778,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260426_롯데vsKIA",
+    "id": "kbo_20260426_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-26 14:00",
@@ -1792,7 +1792,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260426_삼성vs키움",
+    "id": "kbo_20260426_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-26 14:00",
@@ -1806,7 +1806,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260426_NCvs한화",
+    "id": "kbo_20260426_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-26 14:00",
@@ -1820,7 +1820,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260428_삼성vs두산",
+    "id": "kbo_20260428_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-28 18:30",
@@ -1834,7 +1834,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260428_키움vs롯데",
+    "id": "kbo_20260428_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-28 18:30",
@@ -1848,7 +1848,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260428_KIAvsNC",
+    "id": "kbo_20260428_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-28 18:30",
@@ -1862,7 +1862,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260428_LGvsKT",
+    "id": "kbo_20260428_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-28 18:30",
@@ -1876,7 +1876,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260428_SSGvs한화",
+    "id": "kbo_20260428_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-28 18:30",
@@ -1890,7 +1890,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260429_삼성vs두산",
+    "id": "kbo_20260429_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-29 18:30",
@@ -1904,7 +1904,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260429_키움vs롯데",
+    "id": "kbo_20260429_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-29 18:30",
@@ -1918,7 +1918,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260429_KIAvsNC",
+    "id": "kbo_20260429_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-29 18:30",
@@ -1932,7 +1932,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260429_LGvsKT",
+    "id": "kbo_20260429_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-29 18:30",
@@ -1946,7 +1946,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260429_SSGvs한화",
+    "id": "kbo_20260429_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-29 18:30",
@@ -1960,7 +1960,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260430_삼성vs두산",
+    "id": "kbo_20260430_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-30 18:30",
@@ -1974,7 +1974,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260430_키움vs롯데",
+    "id": "kbo_20260430_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-30 18:30",
@@ -1988,7 +1988,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260430_KIAvsNC",
+    "id": "kbo_20260430_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-30 18:30",
@@ -2002,7 +2002,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260430_LGvsKT",
+    "id": "kbo_20260430_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-30 18:30",
@@ -2016,7 +2016,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260430_SSGvs한화",
+    "id": "kbo_20260430_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-04-30 18:30",
@@ -2030,7 +2030,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260501_NCvsLG",
+    "id": "kbo_20260501_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-01 18:30",
@@ -2044,7 +2044,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260501_롯데vsSSG",
+    "id": "kbo_20260501_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-01 18:30",
@@ -2058,7 +2058,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260501_한화vs삼성",
+    "id": "kbo_20260501_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-01 18:30",
@@ -2072,7 +2072,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260501_KTvsKIA",
+    "id": "kbo_20260501_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-01 18:30",
@@ -2086,7 +2086,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260501_두산vs키움",
+    "id": "kbo_20260501_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-01 18:30",
@@ -2100,7 +2100,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260502_NCvsLG",
+    "id": "kbo_20260502_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-02 17:00",
@@ -2114,7 +2114,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260502_롯데vsSSG",
+    "id": "kbo_20260502_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-02 17:00",
@@ -2128,7 +2128,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260502_한화vs삼성",
+    "id": "kbo_20260502_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-02 17:00",
@@ -2142,7 +2142,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260502_KTvsKIA",
+    "id": "kbo_20260502_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-02 17:00",
@@ -2156,7 +2156,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260502_두산vs키움",
+    "id": "kbo_20260502_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-02 17:00",
@@ -2170,7 +2170,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260503_NCvsLG",
+    "id": "kbo_20260503_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-03 14:00",
@@ -2184,7 +2184,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260503_롯데vsSSG",
+    "id": "kbo_20260503_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-03 14:00",
@@ -2198,7 +2198,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260503_한화vs삼성",
+    "id": "kbo_20260503_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-03 14:00",
@@ -2212,7 +2212,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260503_KTvsKIA",
+    "id": "kbo_20260503_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-03 14:00",
@@ -2226,7 +2226,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260503_두산vs키움",
+    "id": "kbo_20260503_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-03 14:00",
@@ -2240,7 +2240,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260505_두산vsLG",
+    "id": "kbo_20260505_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-05 14:00",
@@ -2254,7 +2254,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260505_NCvsSSG",
+    "id": "kbo_20260505_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-05 14:00",
@@ -2268,7 +2268,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260505_키움vs삼성",
+    "id": "kbo_20260505_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-05 14:00",
@@ -2282,7 +2282,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260505_롯데vsKT",
+    "id": "kbo_20260505_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-05 14:00",
@@ -2296,7 +2296,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260505_한화vsKIA",
+    "id": "kbo_20260505_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-05 14:00",
@@ -2310,7 +2310,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260506_두산vsLG",
+    "id": "kbo_20260506_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-06 18:30",
@@ -2324,7 +2324,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260506_NCvsSSG",
+    "id": "kbo_20260506_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-06 18:30",
@@ -2338,7 +2338,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260506_키움vs삼성",
+    "id": "kbo_20260506_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-06 18:30",
@@ -2352,7 +2352,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260506_롯데vsKT",
+    "id": "kbo_20260506_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-06 18:30",
@@ -2366,7 +2366,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260506_한화vsKIA",
+    "id": "kbo_20260506_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-06 18:30",
@@ -2380,7 +2380,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260507_두산vsLG",
+    "id": "kbo_20260507_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-07 18:30",
@@ -2394,7 +2394,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260507_NCvsSSG",
+    "id": "kbo_20260507_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-07 18:30",
@@ -2408,7 +2408,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260507_키움vs삼성",
+    "id": "kbo_20260507_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-07 18:30",
@@ -2422,7 +2422,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260507_롯데vsKT",
+    "id": "kbo_20260507_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-07 18:30",
@@ -2436,7 +2436,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260507_한화vsKIA",
+    "id": "kbo_20260507_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-07 18:30",
@@ -2450,7 +2450,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260508_SSGvs두산",
+    "id": "kbo_20260508_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-08 18:30",
@@ -2464,7 +2464,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260508_KIAvs롯데",
+    "id": "kbo_20260508_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-08 18:30",
@@ -2478,7 +2478,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260508_삼성vsNC",
+    "id": "kbo_20260508_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-08 18:30",
@@ -2492,7 +2492,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260508_KTvs키움",
+    "id": "kbo_20260508_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-08 18:30",
@@ -2506,7 +2506,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260508_LGvs한화",
+    "id": "kbo_20260508_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-08 18:30",
@@ -2520,7 +2520,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260509_SSGvs두산",
+    "id": "kbo_20260509_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-09 17:00",
@@ -2534,7 +2534,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260509_KIAvs롯데",
+    "id": "kbo_20260509_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-09 17:00",
@@ -2548,7 +2548,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260509_삼성vsNC",
+    "id": "kbo_20260509_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-09 17:00",
@@ -2562,7 +2562,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260509_KTvs키움",
+    "id": "kbo_20260509_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-09 17:00",
@@ -2576,7 +2576,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260509_LGvs한화",
+    "id": "kbo_20260509_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-09 17:00",
@@ -2590,7 +2590,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260510_SSGvs두산",
+    "id": "kbo_20260510_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-10 14:00",
@@ -2604,7 +2604,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260510_KIAvs롯데",
+    "id": "kbo_20260510_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-10 14:00",
@@ -2618,7 +2618,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260510_삼성vsNC",
+    "id": "kbo_20260510_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-10 14:00",
@@ -2632,7 +2632,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260510_KTvs키움",
+    "id": "kbo_20260510_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-10 14:00",
@@ -2646,7 +2646,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260510_LGvs한화",
+    "id": "kbo_20260510_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-10 14:00",
@@ -2660,7 +2660,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260512_삼성vsLG",
+    "id": "kbo_20260512_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-12 18:30",
@@ -2674,7 +2674,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260512_NCvs롯데",
+    "id": "kbo_20260512_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-12 18:30",
@@ -2688,7 +2688,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260512_SSGvsKT",
+    "id": "kbo_20260512_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-12 18:30",
@@ -2702,7 +2702,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260512_두산vsKIA",
+    "id": "kbo_20260512_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-12 18:30",
@@ -2716,7 +2716,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260512_한화vs키움",
+    "id": "kbo_20260512_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-12 18:30",
@@ -2730,7 +2730,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260513_삼성vsLG",
+    "id": "kbo_20260513_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-13 18:30",
@@ -2744,7 +2744,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260513_NCvs롯데",
+    "id": "kbo_20260513_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-13 18:30",
@@ -2758,7 +2758,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260513_SSGvsKT",
+    "id": "kbo_20260513_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-13 18:30",
@@ -2772,7 +2772,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260513_두산vsKIA",
+    "id": "kbo_20260513_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-13 18:30",
@@ -2786,7 +2786,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260513_한화vs키움",
+    "id": "kbo_20260513_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-13 18:30",
@@ -2800,7 +2800,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260514_삼성vsLG",
+    "id": "kbo_20260514_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-14 18:30",
@@ -2814,7 +2814,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260514_NCvs롯데",
+    "id": "kbo_20260514_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-14 18:30",
@@ -2828,7 +2828,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260514_SSGvsKT",
+    "id": "kbo_20260514_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-14 18:30",
@@ -2842,7 +2842,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260514_두산vsKIA",
+    "id": "kbo_20260514_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-14 18:30",
@@ -2856,7 +2856,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260514_한화vs키움",
+    "id": "kbo_20260514_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-14 18:30",
@@ -2870,7 +2870,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260515_롯데vs두산",
+    "id": "kbo_20260515_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-15 18:30",
@@ -2884,7 +2884,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260515_LGvsSSG",
+    "id": "kbo_20260515_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-15 18:30",
@@ -2898,7 +2898,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260515_KIAvs삼성",
+    "id": "kbo_20260515_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-15 18:30",
@@ -2912,7 +2912,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260515_키움vsNC",
+    "id": "kbo_20260515_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-15 18:30",
@@ -2926,7 +2926,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260515_한화vsKT",
+    "id": "kbo_20260515_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-15 18:30",
@@ -2940,7 +2940,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260516_롯데vs두산",
+    "id": "kbo_20260516_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-16 17:00",
@@ -2954,7 +2954,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260516_LGvsSSG",
+    "id": "kbo_20260516_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-16 17:00",
@@ -2968,7 +2968,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260516_KIAvs삼성",
+    "id": "kbo_20260516_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-16 17:00",
@@ -2982,7 +2982,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260516_키움vsNC",
+    "id": "kbo_20260516_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-16 17:00",
@@ -2996,7 +2996,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260516_한화vsKT",
+    "id": "kbo_20260516_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-16 17:00",
@@ -3010,7 +3010,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260517_롯데vs두산",
+    "id": "kbo_20260517_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-17 14:00",
@@ -3024,7 +3024,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260517_LGvsSSG",
+    "id": "kbo_20260517_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-17 14:00",
@@ -3038,7 +3038,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260517_KIAvs삼성",
+    "id": "kbo_20260517_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-17 14:00",
@@ -3052,7 +3052,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260517_키움vsNC",
+    "id": "kbo_20260517_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-17 14:00",
@@ -3066,7 +3066,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260517_한화vsKT",
+    "id": "kbo_20260517_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-17 14:00",
@@ -3080,7 +3080,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260519_NCvs두산",
+    "id": "kbo_20260519_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-19 18:30",
@@ -3094,7 +3094,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260519_KTvs삼성",
+    "id": "kbo_20260519_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-19 18:30",
@@ -3108,7 +3108,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260519_LGvsKIA",
+    "id": "kbo_20260519_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-19 18:30",
@@ -3122,7 +3122,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260519_SSGvs키움",
+    "id": "kbo_20260519_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-19 18:30",
@@ -3136,7 +3136,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260519_롯데vs한화",
+    "id": "kbo_20260519_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-19 18:30",
@@ -3150,7 +3150,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260520_NCvs두산",
+    "id": "kbo_20260520_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-20 18:30",
@@ -3164,7 +3164,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260520_KTvs삼성",
+    "id": "kbo_20260520_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-20 18:30",
@@ -3178,7 +3178,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260520_LGvsKIA",
+    "id": "kbo_20260520_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-20 18:30",
@@ -3192,7 +3192,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260520_SSGvs키움",
+    "id": "kbo_20260520_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-20 18:30",
@@ -3206,7 +3206,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260520_롯데vs한화",
+    "id": "kbo_20260520_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-20 18:30",
@@ -3220,7 +3220,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260521_NCvs두산",
+    "id": "kbo_20260521_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-21 18:30",
@@ -3234,7 +3234,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260521_KTvs삼성",
+    "id": "kbo_20260521_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-21 18:30",
@@ -3248,7 +3248,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260521_LGvsKIA",
+    "id": "kbo_20260521_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-21 18:30",
@@ -3262,7 +3262,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260521_SSGvs키움",
+    "id": "kbo_20260521_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-21 18:30",
@@ -3276,7 +3276,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260521_롯데vs한화",
+    "id": "kbo_20260521_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-21 18:30",
@@ -3290,7 +3290,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260522_키움vsLG",
+    "id": "kbo_20260522_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-22 18:30",
@@ -3304,7 +3304,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260522_삼성vs롯데",
+    "id": "kbo_20260522_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-22 18:30",
@@ -3318,7 +3318,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260522_NCvsKT",
+    "id": "kbo_20260522_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-22 18:30",
@@ -3332,7 +3332,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260522_SSGvsKIA",
+    "id": "kbo_20260522_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-22 18:30",
@@ -3346,7 +3346,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260522_두산vs한화",
+    "id": "kbo_20260522_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-22 18:30",
@@ -3360,7 +3360,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260523_키움vsLG",
+    "id": "kbo_20260523_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-23 17:00",
@@ -3374,7 +3374,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260523_삼성vs롯데",
+    "id": "kbo_20260523_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-23 17:00",
@@ -3388,7 +3388,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260523_NCvsKT",
+    "id": "kbo_20260523_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-23 17:00",
@@ -3402,7 +3402,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260523_SSGvsKIA",
+    "id": "kbo_20260523_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-23 17:00",
@@ -3416,7 +3416,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260523_두산vs한화",
+    "id": "kbo_20260523_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-23 17:00",
@@ -3430,7 +3430,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260524_키움vsLG",
+    "id": "kbo_20260524_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-24 14:00",
@@ -3444,7 +3444,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260524_삼성vs롯데",
+    "id": "kbo_20260524_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-24 14:00",
@@ -3458,7 +3458,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260524_NCvsKT",
+    "id": "kbo_20260524_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-24 14:00",
@@ -3472,7 +3472,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260524_SSGvsKIA",
+    "id": "kbo_20260524_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-24 14:00",
@@ -3486,7 +3486,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260524_두산vs한화",
+    "id": "kbo_20260524_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-24 14:00",
@@ -3500,7 +3500,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260526_KTvs두산",
+    "id": "kbo_20260526_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-26 18:30",
@@ -3514,7 +3514,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260526_삼성vsSSG",
+    "id": "kbo_20260526_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-26 18:30",
@@ -3528,7 +3528,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260526_LGvs롯데",
+    "id": "kbo_20260526_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-26 18:30",
@@ -3542,7 +3542,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260526_한화vsNC",
+    "id": "kbo_20260526_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-26 18:30",
@@ -3556,7 +3556,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260526_KIAvs키움",
+    "id": "kbo_20260526_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-26 18:30",
@@ -3570,7 +3570,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260527_KTvs두산",
+    "id": "kbo_20260527_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-27 18:30",
@@ -3584,7 +3584,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260527_삼성vsSSG",
+    "id": "kbo_20260527_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-27 18:30",
@@ -3598,7 +3598,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260527_LGvs롯데",
+    "id": "kbo_20260527_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-27 18:30",
@@ -3612,7 +3612,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260527_한화vsNC",
+    "id": "kbo_20260527_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-27 18:30",
@@ -3626,7 +3626,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260527_KIAvs키움",
+    "id": "kbo_20260527_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-27 18:30",
@@ -3640,7 +3640,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260528_KTvs두산",
+    "id": "kbo_20260528_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-28 18:30",
@@ -3654,7 +3654,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260528_삼성vsSSG",
+    "id": "kbo_20260528_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-28 18:30",
@@ -3668,7 +3668,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260528_LGvs롯데",
+    "id": "kbo_20260528_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-28 18:30",
@@ -3682,7 +3682,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260528_한화vsNC",
+    "id": "kbo_20260528_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-28 18:30",
@@ -3696,7 +3696,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260528_KIAvs키움",
+    "id": "kbo_20260528_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-28 18:30",
@@ -3710,7 +3710,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260529_KIAvsLG",
+    "id": "kbo_20260529_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-29 18:30",
@@ -3724,7 +3724,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260529_두산vs삼성",
+    "id": "kbo_20260529_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-29 18:30",
@@ -3738,7 +3738,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260529_롯데vsNC",
+    "id": "kbo_20260529_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-29 18:30",
@@ -3752,7 +3752,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260529_KTvs키움",
+    "id": "kbo_20260529_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-29 18:30",
@@ -3766,7 +3766,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260529_SSGvs한화",
+    "id": "kbo_20260529_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-29 18:30",
@@ -3780,7 +3780,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260530_KIAvsLG",
+    "id": "kbo_20260530_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-30 17:00",
@@ -3794,7 +3794,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260530_두산vs삼성",
+    "id": "kbo_20260530_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-30 17:00",
@@ -3808,7 +3808,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260530_롯데vsNC",
+    "id": "kbo_20260530_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-30 17:00",
@@ -3822,7 +3822,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260530_KTvs키움",
+    "id": "kbo_20260530_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-30 17:00",
@@ -3836,7 +3836,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260530_SSGvs한화",
+    "id": "kbo_20260530_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-30 17:00",
@@ -3850,7 +3850,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260531_KIAvsLG",
+    "id": "kbo_20260531_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-31 14:00",
@@ -3864,7 +3864,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260531_두산vs삼성",
+    "id": "kbo_20260531_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-31 14:00",
@@ -3878,7 +3878,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260531_롯데vsNC",
+    "id": "kbo_20260531_롯데_vs_NC",
     "title": "롯데 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-31 14:00",
@@ -3892,7 +3892,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260531_KTvs키움",
+    "id": "kbo_20260531_KT_vs_키움",
     "title": "KT vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-31 14:00",
@@ -3906,7 +3906,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260531_SSGvs한화",
+    "id": "kbo_20260531_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-05-31 14:00",
@@ -3920,7 +3920,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260602_한화vs두산",
+    "id": "kbo_20260602_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-02 18:30",
@@ -3934,7 +3934,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260602_키움vsSSG",
+    "id": "kbo_20260602_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-02 18:30",
@@ -3948,7 +3948,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260602_NCvs삼성",
+    "id": "kbo_20260602_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-02 18:30",
@@ -3962,7 +3962,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260602_LGvsKT",
+    "id": "kbo_20260602_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-02 18:30",
@@ -3976,7 +3976,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260602_롯데vsKIA",
+    "id": "kbo_20260602_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-02 18:30",
@@ -3990,7 +3990,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260603_한화vs두산",
+    "id": "kbo_20260603_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-03 17:00",
@@ -4004,7 +4004,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260603_키움vsSSG",
+    "id": "kbo_20260603_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-03 17:00",
@@ -4018,7 +4018,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260603_NCvs삼성",
+    "id": "kbo_20260603_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-03 17:00",
@@ -4032,7 +4032,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260603_LGvsKT",
+    "id": "kbo_20260603_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-03 17:00",
@@ -4046,7 +4046,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260603_롯데vsKIA",
+    "id": "kbo_20260603_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-03 17:00",
@@ -4060,7 +4060,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260604_한화vs두산",
+    "id": "kbo_20260604_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-04 18:30",
@@ -4074,7 +4074,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260604_키움vsSSG",
+    "id": "kbo_20260604_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-04 18:30",
@@ -4088,7 +4088,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260604_NCvs삼성",
+    "id": "kbo_20260604_NC_vs_삼성",
     "title": "NC vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-04 18:30",
@@ -4102,7 +4102,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260604_LGvsKT",
+    "id": "kbo_20260604_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-04 18:30",
@@ -4116,7 +4116,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260604_롯데vsKIA",
+    "id": "kbo_20260604_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-04 18:30",
@@ -4130,7 +4130,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260605_키움vs두산",
+    "id": "kbo_20260605_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-05 18:30",
@@ -4144,7 +4144,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260605_KTvsSSG",
+    "id": "kbo_20260605_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-05 18:30",
@@ -4158,7 +4158,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260605_한화vs롯데",
+    "id": "kbo_20260605_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-05 18:30",
@@ -4172,7 +4172,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260605_LGvsNC",
+    "id": "kbo_20260605_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-05 18:30",
@@ -4186,7 +4186,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260605_삼성vsKIA",
+    "id": "kbo_20260605_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-05 18:30",
@@ -4200,7 +4200,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260606_키움vs두산",
+    "id": "kbo_20260606_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-06 17:00",
@@ -4214,7 +4214,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260606_KTvsSSG",
+    "id": "kbo_20260606_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-06 17:00",
@@ -4228,7 +4228,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260606_한화vs롯데",
+    "id": "kbo_20260606_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-06 17:00",
@@ -4242,7 +4242,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260606_LGvsNC",
+    "id": "kbo_20260606_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-06 17:00",
@@ -4256,7 +4256,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260606_삼성vsKIA",
+    "id": "kbo_20260606_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-06 17:00",
@@ -4270,7 +4270,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260607_키움vs두산",
+    "id": "kbo_20260607_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-07 17:00",
@@ -4284,7 +4284,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260607_KTvsSSG",
+    "id": "kbo_20260607_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-07 17:00",
@@ -4298,7 +4298,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260607_한화vs롯데",
+    "id": "kbo_20260607_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-07 17:00",
@@ -4312,7 +4312,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260607_LGvsNC",
+    "id": "kbo_20260607_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-07 17:00",
@@ -4326,7 +4326,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260607_삼성vsKIA",
+    "id": "kbo_20260607_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-07 17:00",
@@ -4340,7 +4340,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260609_SSGvsLG",
+    "id": "kbo_20260609_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-09 18:30",
@@ -4354,7 +4354,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260609_두산vs롯데",
+    "id": "kbo_20260609_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-09 18:30",
@@ -4368,7 +4368,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260609_삼성vsKT",
+    "id": "kbo_20260609_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-09 18:30",
@@ -4382,7 +4382,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260609_NCvs키움",
+    "id": "kbo_20260609_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-09 18:30",
@@ -4396,7 +4396,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260609_KIAvs한화",
+    "id": "kbo_20260609_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-09 18:30",
@@ -4410,7 +4410,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260610_SSGvsLG",
+    "id": "kbo_20260610_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-10 18:30",
@@ -4424,7 +4424,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260610_두산vs롯데",
+    "id": "kbo_20260610_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-10 18:30",
@@ -4438,7 +4438,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260610_삼성vsKT",
+    "id": "kbo_20260610_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-10 18:30",
@@ -4452,7 +4452,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260610_NCvs키움",
+    "id": "kbo_20260610_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-10 18:30",
@@ -4466,7 +4466,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260610_KIAvs한화",
+    "id": "kbo_20260610_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-10 18:30",
@@ -4480,7 +4480,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260611_SSGvsLG",
+    "id": "kbo_20260611_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-11 18:30",
@@ -4494,7 +4494,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260611_두산vs롯데",
+    "id": "kbo_20260611_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-11 18:30",
@@ -4508,7 +4508,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260611_삼성vsKT",
+    "id": "kbo_20260611_삼성_vs_KT",
     "title": "삼성 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-11 18:30",
@@ -4522,7 +4522,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260611_NCvs키움",
+    "id": "kbo_20260611_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-11 18:30",
@@ -4536,7 +4536,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260611_KIAvs한화",
+    "id": "kbo_20260611_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-11 18:30",
@@ -4550,7 +4550,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260612_롯데vsLG",
+    "id": "kbo_20260612_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-12 18:30",
@@ -4564,7 +4564,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260612_SSGvs삼성",
+    "id": "kbo_20260612_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-12 18:30",
@@ -4578,7 +4578,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260612_NCvsKT",
+    "id": "kbo_20260612_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-12 18:30",
@@ -4592,7 +4592,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260612_두산vsKIA",
+    "id": "kbo_20260612_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-12 18:30",
@@ -4606,7 +4606,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260612_한화vs키움",
+    "id": "kbo_20260612_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-12 18:30",
@@ -4620,7 +4620,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260613_롯데vsLG",
+    "id": "kbo_20260613_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-13 17:00",
@@ -4634,7 +4634,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260613_SSGvs삼성",
+    "id": "kbo_20260613_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-13 17:00",
@@ -4648,7 +4648,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260613_NCvsKT",
+    "id": "kbo_20260613_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-13 17:00",
@@ -4662,7 +4662,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260613_두산vsKIA",
+    "id": "kbo_20260613_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-13 17:00",
@@ -4676,7 +4676,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260613_한화vs키움",
+    "id": "kbo_20260613_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-13 17:00",
@@ -4690,7 +4690,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260614_한화vs키움",
+    "id": "kbo_20260614_한화_vs_키움",
     "title": "한화 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-14 14:00",
@@ -4704,7 +4704,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260614_롯데vsLG",
+    "id": "kbo_20260614_롯데_vs_LG",
     "title": "롯데 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-14 17:00",
@@ -4718,7 +4718,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260614_SSGvs삼성",
+    "id": "kbo_20260614_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-14 17:00",
@@ -4732,7 +4732,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260614_NCvsKT",
+    "id": "kbo_20260614_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-14 17:00",
@@ -4746,7 +4746,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260614_두산vsKIA",
+    "id": "kbo_20260614_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-14 17:00",
@@ -4760,7 +4760,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260616_KTvs두산",
+    "id": "kbo_20260616_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-16 18:30",
@@ -4774,7 +4774,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260616_롯데vsSSG",
+    "id": "kbo_20260616_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-16 18:30",
@@ -4788,7 +4788,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260616_키움vs삼성",
+    "id": "kbo_20260616_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-16 18:30",
@@ -4802,7 +4802,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260616_한화vsNC",
+    "id": "kbo_20260616_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-16 18:30",
@@ -4816,7 +4816,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260616_LGvsKIA",
+    "id": "kbo_20260616_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-16 18:30",
@@ -4830,7 +4830,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260617_KTvs두산",
+    "id": "kbo_20260617_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-17 18:30",
@@ -4844,7 +4844,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260617_롯데vsSSG",
+    "id": "kbo_20260617_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-17 18:30",
@@ -4858,7 +4858,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260617_키움vs삼성",
+    "id": "kbo_20260617_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-17 18:30",
@@ -4872,7 +4872,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260617_한화vsNC",
+    "id": "kbo_20260617_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-17 18:30",
@@ -4886,7 +4886,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260617_LGvsKIA",
+    "id": "kbo_20260617_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-17 18:30",
@@ -4900,7 +4900,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260618_KTvs두산",
+    "id": "kbo_20260618_KT_vs_두산",
     "title": "KT vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-18 18:30",
@@ -4914,7 +4914,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260618_롯데vsSSG",
+    "id": "kbo_20260618_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-18 18:30",
@@ -4928,7 +4928,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260618_키움vs삼성",
+    "id": "kbo_20260618_키움_vs_삼성",
     "title": "키움 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-18 18:30",
@@ -4942,7 +4942,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260618_한화vsNC",
+    "id": "kbo_20260618_한화_vs_NC",
     "title": "한화 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-18 18:30",
@@ -4956,7 +4956,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260618_LGvsKIA",
+    "id": "kbo_20260618_LG_vs_KIA",
     "title": "LG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-18 18:30",
@@ -4970,7 +4970,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260619_두산vsLG",
+    "id": "kbo_20260619_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-19 18:30",
@@ -4984,7 +4984,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260619_SSGvsNC",
+    "id": "kbo_20260619_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-19 18:30",
@@ -4998,7 +4998,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260619_KIAvsKT",
+    "id": "kbo_20260619_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-19 18:30",
@@ -5012,7 +5012,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260619_롯데vs키움",
+    "id": "kbo_20260619_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-19 18:30",
@@ -5026,7 +5026,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260619_삼성vs한화",
+    "id": "kbo_20260619_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-19 18:30",
@@ -5040,7 +5040,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260620_두산vsLG",
+    "id": "kbo_20260620_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-20 17:00",
@@ -5054,7 +5054,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260620_SSGvsNC",
+    "id": "kbo_20260620_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-20 17:00",
@@ -5068,7 +5068,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260620_KIAvsKT",
+    "id": "kbo_20260620_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-20 17:00",
@@ -5082,7 +5082,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260620_롯데vs키움",
+    "id": "kbo_20260620_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-20 17:00",
@@ -5096,7 +5096,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260620_삼성vs한화",
+    "id": "kbo_20260620_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-20 17:00",
@@ -5110,7 +5110,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260621_롯데vs키움",
+    "id": "kbo_20260621_롯데_vs_키움",
     "title": "롯데 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-21 14:00",
@@ -5124,7 +5124,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260621_두산vsLG",
+    "id": "kbo_20260621_두산_vs_LG",
     "title": "두산 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-21 17:00",
@@ -5138,7 +5138,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260621_SSGvsNC",
+    "id": "kbo_20260621_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-21 17:00",
@@ -5152,7 +5152,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260621_KIAvsKT",
+    "id": "kbo_20260621_KIA_vs_KT",
     "title": "KIA vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-21 17:00",
@@ -5166,7 +5166,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260621_삼성vs한화",
+    "id": "kbo_20260621_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-21 17:00",
@@ -5180,7 +5180,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260623_삼성vsLG",
+    "id": "kbo_20260623_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-23 18:30",
@@ -5194,7 +5194,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260623_NCvs롯데",
+    "id": "kbo_20260623_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-23 18:30",
@@ -5208,7 +5208,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260623_SSGvsKT",
+    "id": "kbo_20260623_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-23 18:30",
@@ -5222,7 +5222,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260623_KIAvs키움",
+    "id": "kbo_20260623_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-23 18:30",
@@ -5236,7 +5236,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260623_두산vs한화",
+    "id": "kbo_20260623_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-23 18:30",
@@ -5250,7 +5250,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260624_삼성vsLG",
+    "id": "kbo_20260624_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-24 18:30",
@@ -5264,7 +5264,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260624_NCvs롯데",
+    "id": "kbo_20260624_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-24 18:30",
@@ -5278,7 +5278,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260624_SSGvsKT",
+    "id": "kbo_20260624_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-24 18:30",
@@ -5292,7 +5292,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260624_KIAvs키움",
+    "id": "kbo_20260624_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-24 18:30",
@@ -5306,7 +5306,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260624_두산vs한화",
+    "id": "kbo_20260624_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-24 18:30",
@@ -5320,7 +5320,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260625_삼성vsLG",
+    "id": "kbo_20260625_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-25 18:30",
@@ -5334,7 +5334,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260625_NCvs롯데",
+    "id": "kbo_20260625_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-25 18:30",
@@ -5348,7 +5348,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260625_SSGvsKT",
+    "id": "kbo_20260625_SSG_vs_KT",
     "title": "SSG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-25 18:30",
@@ -5362,7 +5362,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260625_KIAvs키움",
+    "id": "kbo_20260625_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-25 18:30",
@@ -5376,7 +5376,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260625_두산vs한화",
+    "id": "kbo_20260625_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-25 18:30",
@@ -5390,7 +5390,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260626_KIAvs두산",
+    "id": "kbo_20260626_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-26 18:30",
@@ -5404,7 +5404,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260626_한화vsSSG",
+    "id": "kbo_20260626_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-26 18:30",
@@ -5418,7 +5418,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260626_LGvs롯데",
+    "id": "kbo_20260626_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-26 18:30",
@@ -5432,7 +5432,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260626_KTvs삼성",
+    "id": "kbo_20260626_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-26 18:30",
@@ -5446,7 +5446,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260626_키움vsNC",
+    "id": "kbo_20260626_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-26 18:30",
@@ -5460,7 +5460,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260627_KIAvs두산",
+    "id": "kbo_20260627_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-27 17:00",
@@ -5474,7 +5474,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260627_한화vsSSG",
+    "id": "kbo_20260627_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-27 17:00",
@@ -5488,7 +5488,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260627_LGvs롯데",
+    "id": "kbo_20260627_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-27 17:00",
@@ -5502,7 +5502,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260627_KTvs삼성",
+    "id": "kbo_20260627_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-27 17:00",
@@ -5516,7 +5516,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260627_키움vsNC",
+    "id": "kbo_20260627_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-27 17:00",
@@ -5530,7 +5530,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260628_KIAvs두산",
+    "id": "kbo_20260628_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-28 17:00",
@@ -5544,7 +5544,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260628_한화vsSSG",
+    "id": "kbo_20260628_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-28 17:00",
@@ -5558,7 +5558,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260628_LGvs롯데",
+    "id": "kbo_20260628_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-28 17:00",
@@ -5572,7 +5572,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260628_KTvs삼성",
+    "id": "kbo_20260628_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-28 17:00",
@@ -5586,7 +5586,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260628_키움vsNC",
+    "id": "kbo_20260628_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-28 17:00",
@@ -5600,7 +5600,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260630_롯데vs두산",
+    "id": "kbo_20260630_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-30 18:30",
@@ -5614,7 +5614,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260630_삼성vsNC",
+    "id": "kbo_20260630_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-30 18:30",
@@ -5628,7 +5628,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260630_SSGvsKIA",
+    "id": "kbo_20260630_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-30 18:30",
@@ -5642,7 +5642,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260630_LGvs키움",
+    "id": "kbo_20260630_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-30 18:30",
@@ -5656,7 +5656,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260630_KTvs한화",
+    "id": "kbo_20260630_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-06-30 18:30",
@@ -5670,7 +5670,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260701_롯데vs두산",
+    "id": "kbo_20260701_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-01 18:30",
@@ -5684,7 +5684,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260701_삼성vsNC",
+    "id": "kbo_20260701_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-01 18:30",
@@ -5698,7 +5698,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260701_SSGvsKIA",
+    "id": "kbo_20260701_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-01 18:30",
@@ -5712,7 +5712,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260701_LGvs키움",
+    "id": "kbo_20260701_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-01 18:30",
@@ -5726,7 +5726,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260701_KTvs한화",
+    "id": "kbo_20260701_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-01 18:30",
@@ -5740,7 +5740,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260702_롯데vs두산",
+    "id": "kbo_20260702_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-02 18:30",
@@ -5754,7 +5754,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260702_삼성vsNC",
+    "id": "kbo_20260702_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-02 18:30",
@@ -5768,7 +5768,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260702_SSGvsKIA",
+    "id": "kbo_20260702_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-02 18:30",
@@ -5782,7 +5782,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260702_LGvs키움",
+    "id": "kbo_20260702_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-02 18:30",
@@ -5796,7 +5796,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260702_KTvs한화",
+    "id": "kbo_20260702_KT_vs_한화",
     "title": "KT vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-02 18:30",
@@ -5810,7 +5810,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260703_한화vsLG",
+    "id": "kbo_20260703_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-03 18:30",
@@ -5824,7 +5824,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260703_삼성vsSSG",
+    "id": "kbo_20260703_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-03 18:30",
@@ -5838,7 +5838,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260703_롯데vsKT",
+    "id": "kbo_20260703_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-03 18:30",
@@ -5852,7 +5852,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260703_NCvsKIA",
+    "id": "kbo_20260703_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-03 18:30",
@@ -5866,7 +5866,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260703_두산vs키움",
+    "id": "kbo_20260703_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-03 18:30",
@@ -5880,7 +5880,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260704_한화vsLG",
+    "id": "kbo_20260704_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-04 18:00",
@@ -5894,7 +5894,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260704_삼성vsSSG",
+    "id": "kbo_20260704_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-04 18:00",
@@ -5908,7 +5908,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260704_롯데vsKT",
+    "id": "kbo_20260704_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-04 18:00",
@@ -5922,7 +5922,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260704_NCvsKIA",
+    "id": "kbo_20260704_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-04 18:00",
@@ -5936,7 +5936,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260704_두산vs키움",
+    "id": "kbo_20260704_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-04 18:00",
@@ -5950,7 +5950,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260705_두산vs키움",
+    "id": "kbo_20260705_두산_vs_키움",
     "title": "두산 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-05 14:00",
@@ -5964,7 +5964,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260705_한화vsLG",
+    "id": "kbo_20260705_한화_vs_LG",
     "title": "한화 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-05 18:00",
@@ -5978,7 +5978,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260705_삼성vsSSG",
+    "id": "kbo_20260705_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-05 18:00",
@@ -5992,7 +5992,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260705_롯데vsKT",
+    "id": "kbo_20260705_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-05 18:00",
@@ -6006,7 +6006,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260705_NCvsKIA",
+    "id": "kbo_20260705_NC_vs_KIA",
     "title": "NC vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-05 18:00",
@@ -6020,7 +6020,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260707_SSGvs두산",
+    "id": "kbo_20260707_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-07 18:30",
@@ -6034,7 +6034,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260707_KIAvs롯데",
+    "id": "kbo_20260707_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-07 18:30",
@@ -6048,7 +6048,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260707_LGvs삼성",
+    "id": "kbo_20260707_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-07 18:30",
@@ -6062,7 +6062,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260707_키움vsKT",
+    "id": "kbo_20260707_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-07 18:30",
@@ -6076,7 +6076,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260707_NCvs한화",
+    "id": "kbo_20260707_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-07 18:30",
@@ -6090,7 +6090,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260708_SSGvs두산",
+    "id": "kbo_20260708_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-08 18:30",
@@ -6104,7 +6104,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260708_KIAvs롯데",
+    "id": "kbo_20260708_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-08 18:30",
@@ -6118,7 +6118,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260708_LGvs삼성",
+    "id": "kbo_20260708_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-08 18:30",
@@ -6132,7 +6132,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260708_키움vsKT",
+    "id": "kbo_20260708_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-08 18:30",
@@ -6146,7 +6146,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260708_NCvs한화",
+    "id": "kbo_20260708_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-08 18:30",
@@ -6160,7 +6160,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260709_SSGvs두산",
+    "id": "kbo_20260709_SSG_vs_두산",
     "title": "SSG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-09 18:30",
@@ -6174,7 +6174,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260709_KIAvs롯데",
+    "id": "kbo_20260709_KIA_vs_롯데",
     "title": "KIA vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-09 18:30",
@@ -6188,7 +6188,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260709_LGvs삼성",
+    "id": "kbo_20260709_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-09 18:30",
@@ -6202,7 +6202,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260709_키움vsKT",
+    "id": "kbo_20260709_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-09 18:30",
@@ -6216,7 +6216,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260709_NCvs한화",
+    "id": "kbo_20260709_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-09 18:30",
@@ -6230,7 +6230,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260716_KTvsLG",
+    "id": "kbo_20260716_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-16 18:30",
@@ -6244,7 +6244,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260716_KIAvsSSG",
+    "id": "kbo_20260716_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-16 18:30",
@@ -6258,7 +6258,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260716_롯데vs삼성",
+    "id": "kbo_20260716_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-16 18:30",
@@ -6272,7 +6272,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260716_두산vsNC",
+    "id": "kbo_20260716_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-16 18:30",
@@ -6286,7 +6286,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260716_키움vs한화",
+    "id": "kbo_20260716_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-16 18:30",
@@ -6300,7 +6300,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260717_KTvsLG",
+    "id": "kbo_20260717_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-17 18:30",
@@ -6314,7 +6314,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260717_KIAvsSSG",
+    "id": "kbo_20260717_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-17 18:30",
@@ -6328,7 +6328,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260717_롯데vs삼성",
+    "id": "kbo_20260717_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-17 18:30",
@@ -6342,7 +6342,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260717_두산vsNC",
+    "id": "kbo_20260717_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-17 18:30",
@@ -6356,7 +6356,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260717_키움vs한화",
+    "id": "kbo_20260717_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-17 18:30",
@@ -6370,7 +6370,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260718_KTvsLG",
+    "id": "kbo_20260718_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-18 18:00",
@@ -6384,7 +6384,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260718_KIAvsSSG",
+    "id": "kbo_20260718_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-18 18:00",
@@ -6398,7 +6398,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260718_롯데vs삼성",
+    "id": "kbo_20260718_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-18 18:00",
@@ -6412,7 +6412,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260718_두산vsNC",
+    "id": "kbo_20260718_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-18 18:00",
@@ -6426,7 +6426,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260718_키움vs한화",
+    "id": "kbo_20260718_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-18 18:00",
@@ -6440,7 +6440,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260719_KTvsLG",
+    "id": "kbo_20260719_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-19 18:00",
@@ -6454,7 +6454,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260719_KIAvsSSG",
+    "id": "kbo_20260719_KIA_vs_SSG",
     "title": "KIA vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-19 18:00",
@@ -6468,7 +6468,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260719_롯데vs삼성",
+    "id": "kbo_20260719_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-19 18:00",
@@ -6482,7 +6482,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260719_두산vsNC",
+    "id": "kbo_20260719_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-19 18:00",
@@ -6496,7 +6496,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260719_키움vs한화",
+    "id": "kbo_20260719_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-19 18:00",
@@ -6510,7 +6510,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260721_NCvsLG",
+    "id": "kbo_20260721_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-21 18:30",
@@ -6524,7 +6524,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260721_SSGvs롯데",
+    "id": "kbo_20260721_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-21 18:30",
@@ -6538,7 +6538,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260721_두산vsKT",
+    "id": "kbo_20260721_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-21 18:30",
@@ -6552,7 +6552,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260721_한화vsKIA",
+    "id": "kbo_20260721_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-21 18:30",
@@ -6566,7 +6566,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260721_삼성vs키움",
+    "id": "kbo_20260721_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-21 18:30",
@@ -6580,7 +6580,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260722_NCvsLG",
+    "id": "kbo_20260722_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-22 18:30",
@@ -6594,7 +6594,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260722_SSGvs롯데",
+    "id": "kbo_20260722_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-22 18:30",
@@ -6608,7 +6608,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260722_두산vsKT",
+    "id": "kbo_20260722_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-22 18:30",
@@ -6622,7 +6622,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260722_한화vsKIA",
+    "id": "kbo_20260722_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-22 18:30",
@@ -6636,7 +6636,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260722_삼성vs키움",
+    "id": "kbo_20260722_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-22 18:30",
@@ -6650,7 +6650,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260723_NCvsLG",
+    "id": "kbo_20260723_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-23 18:30",
@@ -6664,7 +6664,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260723_SSGvs롯데",
+    "id": "kbo_20260723_SSG_vs_롯데",
     "title": "SSG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-23 18:30",
@@ -6678,7 +6678,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260723_두산vsKT",
+    "id": "kbo_20260723_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-23 18:30",
@@ -6692,7 +6692,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260723_한화vsKIA",
+    "id": "kbo_20260723_한화_vs_KIA",
     "title": "한화 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-23 18:30",
@@ -6706,7 +6706,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260723_삼성vs키움",
+    "id": "kbo_20260723_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-23 18:30",
@@ -6720,7 +6720,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260724_삼성vs두산",
+    "id": "kbo_20260724_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-24 18:30",
@@ -6734,7 +6734,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260724_NCvsSSG",
+    "id": "kbo_20260724_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-24 18:30",
@@ -6748,7 +6748,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260724_KTvs롯데",
+    "id": "kbo_20260724_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-24 18:30",
@@ -6762,7 +6762,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260724_키움vsKIA",
+    "id": "kbo_20260724_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-24 18:30",
@@ -6776,7 +6776,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260724_LGvs한화",
+    "id": "kbo_20260724_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-24 18:30",
@@ -6790,7 +6790,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260725_삼성vs두산",
+    "id": "kbo_20260725_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-25 18:00",
@@ -6804,7 +6804,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260725_NCvsSSG",
+    "id": "kbo_20260725_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-25 18:00",
@@ -6818,7 +6818,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260725_KTvs롯데",
+    "id": "kbo_20260725_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-25 18:00",
@@ -6832,7 +6832,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260725_키움vsKIA",
+    "id": "kbo_20260725_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-25 18:00",
@@ -6846,7 +6846,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260725_LGvs한화",
+    "id": "kbo_20260725_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-25 18:00",
@@ -6860,7 +6860,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260726_삼성vs두산",
+    "id": "kbo_20260726_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-26 18:00",
@@ -6874,7 +6874,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260726_NCvsSSG",
+    "id": "kbo_20260726_NC_vs_SSG",
     "title": "NC vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-26 18:00",
@@ -6888,7 +6888,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260726_KTvs롯데",
+    "id": "kbo_20260726_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-26 18:00",
@@ -6902,7 +6902,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260726_키움vsKIA",
+    "id": "kbo_20260726_키움_vs_KIA",
     "title": "키움 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-26 18:00",
@@ -6916,7 +6916,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260726_LGvs한화",
+    "id": "kbo_20260726_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-26 18:00",
@@ -6930,7 +6930,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260728_키움vsLG",
+    "id": "kbo_20260728_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-28 18:30",
@@ -6944,7 +6944,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260728_두산vsSSG",
+    "id": "kbo_20260728_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-28 18:30",
@@ -6958,7 +6958,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260728_KIAvs삼성",
+    "id": "kbo_20260728_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-28 18:30",
@@ -6972,7 +6972,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260728_KTvsNC",
+    "id": "kbo_20260728_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-28 18:30",
@@ -6986,7 +6986,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260728_롯데vs한화",
+    "id": "kbo_20260728_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-28 18:30",
@@ -7000,7 +7000,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260729_키움vsLG",
+    "id": "kbo_20260729_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-29 18:30",
@@ -7014,7 +7014,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260729_두산vsSSG",
+    "id": "kbo_20260729_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-29 18:30",
@@ -7028,7 +7028,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260729_KIAvs삼성",
+    "id": "kbo_20260729_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-29 18:30",
@@ -7042,7 +7042,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260729_KTvsNC",
+    "id": "kbo_20260729_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-29 18:30",
@@ -7056,7 +7056,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260729_롯데vs한화",
+    "id": "kbo_20260729_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-29 18:30",
@@ -7070,7 +7070,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260730_키움vsLG",
+    "id": "kbo_20260730_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-30 18:30",
@@ -7084,7 +7084,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260730_두산vsSSG",
+    "id": "kbo_20260730_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-30 18:30",
@@ -7098,7 +7098,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260730_KIAvs삼성",
+    "id": "kbo_20260730_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-30 18:30",
@@ -7112,7 +7112,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260730_KTvsNC",
+    "id": "kbo_20260730_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-30 18:30",
@@ -7126,7 +7126,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260730_롯데vs한화",
+    "id": "kbo_20260730_롯데_vs_한화",
     "title": "롯데 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-30 18:30",
@@ -7140,7 +7140,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260731_LGvs두산",
+    "id": "kbo_20260731_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-31 18:30",
@@ -7154,7 +7154,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260731_삼성vs롯데",
+    "id": "kbo_20260731_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-31 18:30",
@@ -7168,7 +7168,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260731_KIAvsNC",
+    "id": "kbo_20260731_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-31 18:30",
@@ -7182,7 +7182,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260731_한화vsKT",
+    "id": "kbo_20260731_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-31 18:30",
@@ -7196,7 +7196,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260731_SSGvs키움",
+    "id": "kbo_20260731_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-07-31 18:30",
@@ -7210,7 +7210,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260801_LGvs두산",
+    "id": "kbo_20260801_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-01 18:00",
@@ -7224,7 +7224,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260801_삼성vs롯데",
+    "id": "kbo_20260801_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-01 18:00",
@@ -7238,7 +7238,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260801_KIAvsNC",
+    "id": "kbo_20260801_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-01 18:00",
@@ -7252,7 +7252,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260801_한화vsKT",
+    "id": "kbo_20260801_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-01 18:00",
@@ -7266,7 +7266,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260801_SSGvs키움",
+    "id": "kbo_20260801_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-01 18:00",
@@ -7280,7 +7280,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260802_SSGvs키움",
+    "id": "kbo_20260802_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-02 14:00",
@@ -7294,7 +7294,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260802_LGvs두산",
+    "id": "kbo_20260802_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-02 18:00",
@@ -7308,7 +7308,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260802_삼성vs롯데",
+    "id": "kbo_20260802_삼성_vs_롯데",
     "title": "삼성 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-02 18:00",
@@ -7322,7 +7322,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260802_KIAvsNC",
+    "id": "kbo_20260802_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-02 18:00",
@@ -7336,7 +7336,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260802_한화vsKT",
+    "id": "kbo_20260802_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-02 18:00",
@@ -7350,7 +7350,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260804_NCvs두산",
+    "id": "kbo_20260804_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-04 18:30",
@@ -7364,7 +7364,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260804_LGvsSSG",
+    "id": "kbo_20260804_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-04 18:30",
@@ -7378,7 +7378,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260804_키움vs롯데",
+    "id": "kbo_20260804_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-04 18:30",
@@ -7392,7 +7392,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260804_한화vs삼성",
+    "id": "kbo_20260804_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-04 18:30",
@@ -7406,7 +7406,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260804_KTvsKIA",
+    "id": "kbo_20260804_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-04 18:30",
@@ -7420,7 +7420,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260805_NCvs두산",
+    "id": "kbo_20260805_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-05 18:30",
@@ -7434,7 +7434,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260805_LGvsSSG",
+    "id": "kbo_20260805_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-05 18:30",
@@ -7448,7 +7448,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260805_키움vs롯데",
+    "id": "kbo_20260805_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-05 18:30",
@@ -7462,7 +7462,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260805_한화vs삼성",
+    "id": "kbo_20260805_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-05 18:30",
@@ -7476,7 +7476,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260805_KTvsKIA",
+    "id": "kbo_20260805_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-05 18:30",
@@ -7490,7 +7490,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260806_NCvs두산",
+    "id": "kbo_20260806_NC_vs_두산",
     "title": "NC vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-06 18:30",
@@ -7504,7 +7504,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260806_LGvsSSG",
+    "id": "kbo_20260806_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-06 18:30",
@@ -7518,7 +7518,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260806_키움vs롯데",
+    "id": "kbo_20260806_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-06 18:30",
@@ -7532,7 +7532,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260806_한화vs삼성",
+    "id": "kbo_20260806_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-06 18:30",
@@ -7546,7 +7546,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260806_KTvsKIA",
+    "id": "kbo_20260806_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-06 18:30",
@@ -7560,7 +7560,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260807_KIAvsLG",
+    "id": "kbo_20260807_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-07 18:30",
@@ -7574,7 +7574,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260807_두산vs삼성",
+    "id": "kbo_20260807_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-07 18:30",
@@ -7588,7 +7588,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260807_SSGvsNC",
+    "id": "kbo_20260807_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-07 18:30",
@@ -7602,7 +7602,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260807_롯데vsKT",
+    "id": "kbo_20260807_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-07 18:30",
@@ -7616,7 +7616,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260807_키움vs한화",
+    "id": "kbo_20260807_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-07 18:30",
@@ -7630,7 +7630,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260808_KIAvsLG",
+    "id": "kbo_20260808_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-08 18:00",
@@ -7644,7 +7644,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260808_두산vs삼성",
+    "id": "kbo_20260808_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-08 18:00",
@@ -7658,7 +7658,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260808_SSGvsNC",
+    "id": "kbo_20260808_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-08 18:00",
@@ -7672,7 +7672,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260808_롯데vsKT",
+    "id": "kbo_20260808_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-08 18:00",
@@ -7686,7 +7686,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260808_키움vs한화",
+    "id": "kbo_20260808_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-08 18:00",
@@ -7700,7 +7700,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260809_KIAvsLG",
+    "id": "kbo_20260809_KIA_vs_LG",
     "title": "KIA vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-09 18:00",
@@ -7714,7 +7714,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260809_두산vs삼성",
+    "id": "kbo_20260809_두산_vs_삼성",
     "title": "두산 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-09 18:00",
@@ -7728,7 +7728,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260809_SSGvsNC",
+    "id": "kbo_20260809_SSG_vs_NC",
     "title": "SSG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-09 18:00",
@@ -7742,7 +7742,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260809_롯데vsKT",
+    "id": "kbo_20260809_롯데_vs_KT",
     "title": "롯데 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-09 18:00",
@@ -7756,7 +7756,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260809_키움vs한화",
+    "id": "kbo_20260809_키움_vs_한화",
     "title": "키움 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-09 18:00",
@@ -7770,7 +7770,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260811_한화vs두산",
+    "id": "kbo_20260811_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-11 18:30",
@@ -7784,7 +7784,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260811_롯데vsSSG",
+    "id": "kbo_20260811_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-11 18:30",
@@ -7798,7 +7798,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260811_KTvsNC",
+    "id": "kbo_20260811_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-11 18:30",
@@ -7812,7 +7812,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260811_삼성vsKIA",
+    "id": "kbo_20260811_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-11 18:30",
@@ -7826,7 +7826,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260811_LGvs키움",
+    "id": "kbo_20260811_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-11 18:30",
@@ -7840,7 +7840,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260812_한화vs두산",
+    "id": "kbo_20260812_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-12 18:30",
@@ -7854,7 +7854,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260812_롯데vsSSG",
+    "id": "kbo_20260812_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-12 18:30",
@@ -7868,7 +7868,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260812_KTvsNC",
+    "id": "kbo_20260812_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-12 18:30",
@@ -7882,7 +7882,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260812_삼성vsKIA",
+    "id": "kbo_20260812_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-12 18:30",
@@ -7896,7 +7896,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260812_LGvs키움",
+    "id": "kbo_20260812_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-12 18:30",
@@ -7910,7 +7910,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260813_한화vs두산",
+    "id": "kbo_20260813_한화_vs_두산",
     "title": "한화 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-13 18:30",
@@ -7924,7 +7924,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260813_롯데vsSSG",
+    "id": "kbo_20260813_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-13 18:30",
@@ -7938,7 +7938,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260813_KTvsNC",
+    "id": "kbo_20260813_KT_vs_NC",
     "title": "KT vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-13 18:30",
@@ -7952,7 +7952,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260813_삼성vsKIA",
+    "id": "kbo_20260813_삼성_vs_KIA",
     "title": "삼성 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-13 18:30",
@@ -7966,7 +7966,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260813_LGvs키움",
+    "id": "kbo_20260813_LG_vs_키움",
     "title": "LG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-13 18:30",
@@ -7980,7 +7980,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260814_SSGvsLG",
+    "id": "kbo_20260814_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-14 18:30",
@@ -7994,7 +7994,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260814_NCvs롯데",
+    "id": "kbo_20260814_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-14 18:30",
@@ -8008,7 +8008,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260814_한화vs삼성",
+    "id": "kbo_20260814_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-14 18:30",
@@ -8022,7 +8022,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260814_키움vsKT",
+    "id": "kbo_20260814_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-14 18:30",
@@ -8036,7 +8036,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260814_두산vsKIA",
+    "id": "kbo_20260814_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-14 18:30",
@@ -8050,7 +8050,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260815_SSGvsLG",
+    "id": "kbo_20260815_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-15 18:00",
@@ -8064,7 +8064,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260815_NCvs롯데",
+    "id": "kbo_20260815_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-15 18:00",
@@ -8078,7 +8078,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260815_한화vs삼성",
+    "id": "kbo_20260815_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-15 18:00",
@@ -8092,7 +8092,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260815_키움vsKT",
+    "id": "kbo_20260815_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-15 18:00",
@@ -8106,7 +8106,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260815_두산vsKIA",
+    "id": "kbo_20260815_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-15 18:00",
@@ -8120,7 +8120,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260816_SSGvsLG",
+    "id": "kbo_20260816_SSG_vs_LG",
     "title": "SSG vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-16 18:00",
@@ -8134,7 +8134,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260816_NCvs롯데",
+    "id": "kbo_20260816_NC_vs_롯데",
     "title": "NC vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-16 18:00",
@@ -8148,7 +8148,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260816_한화vs삼성",
+    "id": "kbo_20260816_한화_vs_삼성",
     "title": "한화 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-16 18:00",
@@ -8162,7 +8162,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260816_키움vsKT",
+    "id": "kbo_20260816_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-16 18:00",
@@ -8176,7 +8176,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260816_두산vsKIA",
+    "id": "kbo_20260816_두산_vs_KIA",
     "title": "두산 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-16 18:00",
@@ -8190,7 +8190,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260818_KTvsLG",
+    "id": "kbo_20260818_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-18 18:30",
@@ -8204,7 +8204,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260818_키움vs롯데",
+    "id": "kbo_20260818_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-18 18:30",
@@ -8218,7 +8218,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260818_SSGvs삼성",
+    "id": "kbo_20260818_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-18 18:30",
@@ -8232,7 +8232,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260818_두산vsNC",
+    "id": "kbo_20260818_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-18 18:30",
@@ -8246,7 +8246,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260818_KIAvs한화",
+    "id": "kbo_20260818_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-18 18:30",
@@ -8260,7 +8260,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260819_KTvsLG",
+    "id": "kbo_20260819_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-19 18:30",
@@ -8274,7 +8274,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260819_키움vs롯데",
+    "id": "kbo_20260819_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-19 18:30",
@@ -8288,7 +8288,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260819_SSGvs삼성",
+    "id": "kbo_20260819_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-19 18:30",
@@ -8302,7 +8302,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260819_두산vsNC",
+    "id": "kbo_20260819_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-19 18:30",
@@ -8316,7 +8316,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260819_KIAvs한화",
+    "id": "kbo_20260819_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-19 18:30",
@@ -8330,7 +8330,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260820_KTvsLG",
+    "id": "kbo_20260820_KT_vs_LG",
     "title": "KT vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-20 18:30",
@@ -8344,7 +8344,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260820_키움vs롯데",
+    "id": "kbo_20260820_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-20 18:30",
@@ -8358,7 +8358,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260820_SSGvs삼성",
+    "id": "kbo_20260820_SSG_vs_삼성",
     "title": "SSG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-20 18:30",
@@ -8372,7 +8372,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260820_두산vsNC",
+    "id": "kbo_20260820_두산_vs_NC",
     "title": "두산 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-20 18:30",
@@ -8386,7 +8386,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260820_KIAvs한화",
+    "id": "kbo_20260820_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-20 18:30",
@@ -8400,7 +8400,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260821_롯데vs두산",
+    "id": "kbo_20260821_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-21 18:30",
@@ -8414,7 +8414,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260821_KTvsSSG",
+    "id": "kbo_20260821_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-21 18:30",
@@ -8428,7 +8428,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260821_삼성vsNC",
+    "id": "kbo_20260821_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-21 18:30",
@@ -8442,7 +8442,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260821_KIAvs키움",
+    "id": "kbo_20260821_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-21 18:30",
@@ -8456,7 +8456,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260821_LGvs한화",
+    "id": "kbo_20260821_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-21 18:30",
@@ -8470,7 +8470,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260822_롯데vs두산",
+    "id": "kbo_20260822_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-22 18:00",
@@ -8484,7 +8484,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260822_KTvsSSG",
+    "id": "kbo_20260822_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-22 18:00",
@@ -8498,7 +8498,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260822_삼성vsNC",
+    "id": "kbo_20260822_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-22 18:00",
@@ -8512,7 +8512,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260822_KIAvs키움",
+    "id": "kbo_20260822_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-22 18:00",
@@ -8526,7 +8526,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260822_LGvs한화",
+    "id": "kbo_20260822_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-22 18:00",
@@ -8540,7 +8540,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260823_KIAvs키움",
+    "id": "kbo_20260823_KIA_vs_키움",
     "title": "KIA vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-23 14:00",
@@ -8554,7 +8554,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260823_롯데vs두산",
+    "id": "kbo_20260823_롯데_vs_두산",
     "title": "롯데 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-23 18:00",
@@ -8568,7 +8568,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260823_KTvsSSG",
+    "id": "kbo_20260823_KT_vs_SSG",
     "title": "KT vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-23 18:00",
@@ -8582,7 +8582,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260823_삼성vsNC",
+    "id": "kbo_20260823_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-23 18:00",
@@ -8596,7 +8596,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260823_LGvs한화",
+    "id": "kbo_20260823_LG_vs_한화",
     "title": "LG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-23 18:00",
@@ -8610,7 +8610,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260825_NCvsLG",
+    "id": "kbo_20260825_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-25 18:30",
@@ -8624,7 +8624,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260825_한화vsSSG",
+    "id": "kbo_20260825_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-25 18:30",
@@ -8638,7 +8638,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260825_두산vsKT",
+    "id": "kbo_20260825_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-25 18:30",
@@ -8652,7 +8652,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260825_롯데vsKIA",
+    "id": "kbo_20260825_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-25 18:30",
@@ -8666,7 +8666,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260825_삼성vs키움",
+    "id": "kbo_20260825_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-25 18:30",
@@ -8680,7 +8680,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260826_NCvsLG",
+    "id": "kbo_20260826_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-26 18:30",
@@ -8694,7 +8694,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260826_한화vsSSG",
+    "id": "kbo_20260826_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-26 18:30",
@@ -8708,7 +8708,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260826_두산vsKT",
+    "id": "kbo_20260826_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-26 18:30",
@@ -8722,7 +8722,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260826_롯데vsKIA",
+    "id": "kbo_20260826_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-26 18:30",
@@ -8736,7 +8736,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260826_삼성vs키움",
+    "id": "kbo_20260826_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-26 18:30",
@@ -8750,7 +8750,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260827_NCvsLG",
+    "id": "kbo_20260827_NC_vs_LG",
     "title": "NC vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-27 18:30",
@@ -8764,7 +8764,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260827_한화vsSSG",
+    "id": "kbo_20260827_한화_vs_SSG",
     "title": "한화 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-27 18:30",
@@ -8778,7 +8778,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260827_두산vsKT",
+    "id": "kbo_20260827_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-27 18:30",
@@ -8792,7 +8792,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260827_롯데vsKIA",
+    "id": "kbo_20260827_롯데_vs_KIA",
     "title": "롯데 vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-27 18:30",
@@ -8806,7 +8806,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260827_삼성vs키움",
+    "id": "kbo_20260827_삼성_vs_키움",
     "title": "삼성 vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-27 18:30",
@@ -8820,7 +8820,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260828_키움vs두산",
+    "id": "kbo_20260828_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-28 18:30",
@@ -8834,7 +8834,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260828_LGvs롯데",
+    "id": "kbo_20260828_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-28 18:30",
@@ -8848,7 +8848,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260828_KTvs삼성",
+    "id": "kbo_20260828_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-28 18:30",
@@ -8862,7 +8862,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260828_SSGvsKIA",
+    "id": "kbo_20260828_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-28 18:30",
@@ -8876,7 +8876,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260828_NCvs한화",
+    "id": "kbo_20260828_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-28 18:30",
@@ -8890,7 +8890,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260829_키움vs두산",
+    "id": "kbo_20260829_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-29 18:00",
@@ -8904,7 +8904,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260829_LGvs롯데",
+    "id": "kbo_20260829_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-29 18:00",
@@ -8918,7 +8918,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260829_KTvs삼성",
+    "id": "kbo_20260829_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-29 18:00",
@@ -8932,7 +8932,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260829_SSGvsKIA",
+    "id": "kbo_20260829_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-29 18:00",
@@ -8946,7 +8946,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260829_NCvs한화",
+    "id": "kbo_20260829_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-29 18:00",
@@ -8960,7 +8960,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260830_키움vs두산",
+    "id": "kbo_20260830_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-30 18:00",
@@ -8974,7 +8974,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260830_LGvs롯데",
+    "id": "kbo_20260830_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-30 18:00",
@@ -8988,7 +8988,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260830_KTvs삼성",
+    "id": "kbo_20260830_KT_vs_삼성",
     "title": "KT vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-30 18:00",
@@ -9002,7 +9002,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260830_SSGvsKIA",
+    "id": "kbo_20260830_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-30 18:00",
@@ -9016,7 +9016,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260830_NCvs한화",
+    "id": "kbo_20260830_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-08-30 18:00",
@@ -9030,7 +9030,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260901_LGvs두산",
+    "id": "kbo_20260901_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-01 18:30",
@@ -9044,7 +9044,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260901_롯데vs삼성",
+    "id": "kbo_20260901_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-01 18:30",
@@ -9058,7 +9058,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260901_KIAvsNC",
+    "id": "kbo_20260901_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-01 18:30",
@@ -9072,7 +9072,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260901_한화vsKT",
+    "id": "kbo_20260901_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-01 18:30",
@@ -9086,7 +9086,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260901_SSGvs키움",
+    "id": "kbo_20260901_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-01 18:30",
@@ -9100,7 +9100,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260902_LGvs두산",
+    "id": "kbo_20260902_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-02 18:30",
@@ -9114,7 +9114,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260902_롯데vs삼성",
+    "id": "kbo_20260902_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-02 18:30",
@@ -9128,7 +9128,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260902_KIAvsNC",
+    "id": "kbo_20260902_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-02 18:30",
@@ -9142,7 +9142,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260902_한화vsKT",
+    "id": "kbo_20260902_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-02 18:30",
@@ -9156,7 +9156,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260902_SSGvs키움",
+    "id": "kbo_20260902_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-02 18:30",
@@ -9170,7 +9170,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260903_LGvs두산",
+    "id": "kbo_20260903_LG_vs_두산",
     "title": "LG vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-03 18:30",
@@ -9184,7 +9184,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260903_롯데vs삼성",
+    "id": "kbo_20260903_롯데_vs_삼성",
     "title": "롯데 vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-03 18:30",
@@ -9198,7 +9198,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260903_KIAvsNC",
+    "id": "kbo_20260903_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-03 18:30",
@@ -9212,7 +9212,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260903_한화vsKT",
+    "id": "kbo_20260903_한화_vs_KT",
     "title": "한화 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-03 18:30",
@@ -9226,7 +9226,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260903_SSGvs키움",
+    "id": "kbo_20260903_SSG_vs_키움",
     "title": "SSG vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-03 18:30",
@@ -9240,7 +9240,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260904_삼성vsLG",
+    "id": "kbo_20260904_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-04 18:30",
@@ -9254,7 +9254,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260904_두산vsSSG",
+    "id": "kbo_20260904_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-04 18:30",
@@ -9268,7 +9268,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260904_한화vs롯데",
+    "id": "kbo_20260904_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-04 18:30",
@@ -9282,7 +9282,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260904_KTvsKIA",
+    "id": "kbo_20260904_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-04 18:30",
@@ -9296,7 +9296,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260904_NCvs키움",
+    "id": "kbo_20260904_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-04 18:30",
@@ -9310,7 +9310,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260905_삼성vsLG",
+    "id": "kbo_20260905_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-05 17:00",
@@ -9324,7 +9324,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260905_두산vsSSG",
+    "id": "kbo_20260905_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-05 17:00",
@@ -9338,7 +9338,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260905_한화vs롯데",
+    "id": "kbo_20260905_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-05 17:00",
@@ -9352,7 +9352,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260905_KTvsKIA",
+    "id": "kbo_20260905_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-05 17:00",
@@ -9366,7 +9366,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260905_NCvs키움",
+    "id": "kbo_20260905_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-05 17:00",
@@ -9380,7 +9380,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260906_삼성vsLG",
+    "id": "kbo_20260906_삼성_vs_LG",
     "title": "삼성 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-06 14:00",
@@ -9394,7 +9394,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260906_두산vsSSG",
+    "id": "kbo_20260906_두산_vs_SSG",
     "title": "두산 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-06 14:00",
@@ -9408,7 +9408,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260906_한화vs롯데",
+    "id": "kbo_20260906_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-06 14:00",
@@ -9422,7 +9422,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260906_KTvsKIA",
+    "id": "kbo_20260906_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-06 14:00",
@@ -9436,7 +9436,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260906_NCvs키움",
+    "id": "kbo_20260906_NC_vs_키움",
     "title": "NC vs 키움",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-09-06 14:00",
@@ -9450,7 +9450,7 @@
     "awayTeamLogo": "/culture/images/logos/kbo/kiwoom.svg"
   },
   {
-    "id": "kbo_20260312_LGvsNC",
+    "id": "kbo_20260312_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-12 13:00",
@@ -9464,7 +9464,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260312_키움vs두산",
+    "id": "kbo_20260312_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-12 13:00",
@@ -9478,7 +9478,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260312_KTvs롯데",
+    "id": "kbo_20260312_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-12 13:00",
@@ -9492,7 +9492,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260312_SSGvsKIA",
+    "id": "kbo_20260312_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-12 13:00",
@@ -9506,7 +9506,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260312_삼성vs한화",
+    "id": "kbo_20260312_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-12 13:00",
@@ -9520,7 +9520,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260313_LGvsNC",
+    "id": "kbo_20260313_LG_vs_NC",
     "title": "LG vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-13 13:00",
@@ -9534,7 +9534,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260313_키움vs두산",
+    "id": "kbo_20260313_키움_vs_두산",
     "title": "키움 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-13 13:00",
@@ -9548,7 +9548,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260313_KTvs롯데",
+    "id": "kbo_20260313_KT_vs_롯데",
     "title": "KT vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-13 13:00",
@@ -9562,7 +9562,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260313_SSGvsKIA",
+    "id": "kbo_20260313_SSG_vs_KIA",
     "title": "SSG vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-13 13:00",
@@ -9576,7 +9576,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260313_삼성vs한화",
+    "id": "kbo_20260313_삼성_vs_한화",
     "title": "삼성 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-13 13:00",
@@ -9590,7 +9590,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260314_삼성vs두산",
+    "id": "kbo_20260314_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-14 13:00",
@@ -9604,7 +9604,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260314_키움vsNC",
+    "id": "kbo_20260314_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-14 13:00",
@@ -9618,7 +9618,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260314_LGvs롯데",
+    "id": "kbo_20260314_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-14 13:00",
@@ -9632,7 +9632,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260314_KTvsKIA",
+    "id": "kbo_20260314_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-14 13:00",
@@ -9646,7 +9646,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260314_SSGvs한화",
+    "id": "kbo_20260314_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-14 13:00",
@@ -9660,7 +9660,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260315_삼성vs두산",
+    "id": "kbo_20260315_삼성_vs_두산",
     "title": "삼성 vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-15 13:00",
@@ -9674,7 +9674,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260315_키움vsNC",
+    "id": "kbo_20260315_키움_vs_NC",
     "title": "키움 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-15 13:00",
@@ -9688,7 +9688,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260315_LGvs롯데",
+    "id": "kbo_20260315_LG_vs_롯데",
     "title": "LG vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-15 13:00",
@@ -9702,7 +9702,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260315_KTvsKIA",
+    "id": "kbo_20260315_KT_vs_KIA",
     "title": "KT vs KIA",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-15 13:00",
@@ -9716,7 +9716,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg"
   },
   {
-    "id": "kbo_20260315_SSGvs한화",
+    "id": "kbo_20260315_SSG_vs_한화",
     "title": "SSG vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-15 13:00",
@@ -9730,7 +9730,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260316_삼성vsSSG",
+    "id": "kbo_20260316_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-16 13:00",
@@ -9744,7 +9744,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260316_키움vs롯데",
+    "id": "kbo_20260316_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-16 13:00",
@@ -9758,7 +9758,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260316_KIAvsNC",
+    "id": "kbo_20260316_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-16 13:00",
@@ -9772,7 +9772,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260316_LGvsKT",
+    "id": "kbo_20260316_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-16 13:00",
@@ -9786,7 +9786,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260316_두산vs한화",
+    "id": "kbo_20260316_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-16 13:00",
@@ -9800,7 +9800,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260317_삼성vsSSG",
+    "id": "kbo_20260317_삼성_vs_SSG",
     "title": "삼성 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-17 13:00",
@@ -9814,7 +9814,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260317_키움vs롯데",
+    "id": "kbo_20260317_키움_vs_롯데",
     "title": "키움 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-17 13:00",
@@ -9828,7 +9828,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260317_KIAvsNC",
+    "id": "kbo_20260317_KIA_vs_NC",
     "title": "KIA vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-17 13:00",
@@ -9842,7 +9842,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260317_LGvsKT",
+    "id": "kbo_20260317_LG_vs_KT",
     "title": "LG vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-17 13:00",
@@ -9856,7 +9856,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260317_두산vs한화",
+    "id": "kbo_20260317_두산_vs_한화",
     "title": "두산 vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-17 13:00",
@@ -9870,7 +9870,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260319_LGvsSSG",
+    "id": "kbo_20260319_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-19 13:00",
@@ -9884,7 +9884,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260319_두산vs롯데",
+    "id": "kbo_20260319_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-19 13:00",
@@ -9898,7 +9898,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260319_삼성vsNC",
+    "id": "kbo_20260319_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-19 13:00",
@@ -9912,7 +9912,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260319_키움vsKT",
+    "id": "kbo_20260319_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-19 13:00",
@@ -9926,7 +9926,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260319_KIAvs한화",
+    "id": "kbo_20260319_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-19 13:00",
@@ -9940,7 +9940,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260320_LGvsSSG",
+    "id": "kbo_20260320_LG_vs_SSG",
     "title": "LG vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-20 13:00",
@@ -9954,7 +9954,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260320_두산vs롯데",
+    "id": "kbo_20260320_두산_vs_롯데",
     "title": "두산 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-20 13:00",
@@ -9968,7 +9968,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260320_삼성vsNC",
+    "id": "kbo_20260320_삼성_vs_NC",
     "title": "삼성 vs NC",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-20 13:00",
@@ -9982,7 +9982,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg"
   },
   {
-    "id": "kbo_20260320_키움vsKT",
+    "id": "kbo_20260320_키움_vs_KT",
     "title": "키움 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-20 13:00",
@@ -9996,7 +9996,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260320_KIAvs한화",
+    "id": "kbo_20260320_KIA_vs_한화",
     "title": "KIA vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-20 13:00",
@@ -10010,7 +10010,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260321_KIAvs두산",
+    "id": "kbo_20260321_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-21 13:00",
@@ -10024,7 +10024,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260321_키움vsSSG",
+    "id": "kbo_20260321_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-21 13:00",
@@ -10038,7 +10038,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260321_한화vs롯데",
+    "id": "kbo_20260321_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-21 13:00",
@@ -10052,7 +10052,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260321_LGvs삼성",
+    "id": "kbo_20260321_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-21 13:00",
@@ -10066,7 +10066,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260321_NCvsKT",
+    "id": "kbo_20260321_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-21 13:00",
@@ -10080,7 +10080,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260322_KIAvs두산",
+    "id": "kbo_20260322_KIA_vs_두산",
     "title": "KIA vs 두산",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-22 13:00",
@@ -10094,7 +10094,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg"
   },
   {
-    "id": "kbo_20260322_키움vsSSG",
+    "id": "kbo_20260322_키움_vs_SSG",
     "title": "키움 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-22 13:00",
@@ -10108,7 +10108,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260322_한화vs롯데",
+    "id": "kbo_20260322_한화_vs_롯데",
     "title": "한화 vs 롯데",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-22 13:00",
@@ -10122,7 +10122,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg"
   },
   {
-    "id": "kbo_20260322_LGvs삼성",
+    "id": "kbo_20260322_LG_vs_삼성",
     "title": "LG vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-22 13:00",
@@ -10136,7 +10136,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260322_NCvsKT",
+    "id": "kbo_20260322_NC_vs_KT",
     "title": "NC vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-22 13:00",
@@ -10150,7 +10150,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260323_키움vsLG",
+    "id": "kbo_20260323_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-23 13:00",
@@ -10164,7 +10164,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260323_롯데vsSSG",
+    "id": "kbo_20260323_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-23 13:00",
@@ -10178,7 +10178,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260323_KIAvs삼성",
+    "id": "kbo_20260323_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-23 13:00",
@@ -10192,7 +10192,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260323_두산vsKT",
+    "id": "kbo_20260323_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-23 13:00",
@@ -10206,7 +10206,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260323_NCvs한화",
+    "id": "kbo_20260323_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-23 13:00",
@@ -10220,7 +10220,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
   },
   {
-    "id": "kbo_20260324_키움vsLG",
+    "id": "kbo_20260324_키움_vs_LG",
     "title": "키움 vs LG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-24 13:00",
@@ -10234,7 +10234,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg"
   },
   {
-    "id": "kbo_20260324_롯데vsSSG",
+    "id": "kbo_20260324_롯데_vs_SSG",
     "title": "롯데 vs SSG",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-24 13:00",
@@ -10248,7 +10248,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
   },
   {
-    "id": "kbo_20260324_KIAvs삼성",
+    "id": "kbo_20260324_KIA_vs_삼성",
     "title": "KIA vs 삼성",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-24 13:00",
@@ -10262,7 +10262,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg"
   },
   {
-    "id": "kbo_20260324_두산vsKT",
+    "id": "kbo_20260324_두산_vs_KT",
     "title": "두산 vs KT",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-24 13:00",
@@ -10276,7 +10276,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg"
   },
   {
-    "id": "kbo_20260324_NCvs한화",
+    "id": "kbo_20260324_NC_vs_한화",
     "title": "NC vs 한화",
     "image": "/culture/images/kbo-thumbnail.png",
     "date": "2026-03-24 13:00",

@@ -18,6 +18,13 @@ export interface Performance {
     genre: string;
 }
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 const SEARCH_URL = 'https://ticket.yes24.com/Search/단독';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/yes24.json');
 
@@ -176,9 +183,7 @@ async function scrapeYes24() {
         if (!region) region = 'unknown';
 
         seenTitles.add(item.title);
-
-        const idMatch = item.link.match(/\/Perf\/(\d+)/);
-        const id = idMatch ? `yes24_${idMatch[1]}` : `yes24_${Math.random().toString(36).substr(2, 9)}`;
+        const id = `perf_${slugify(item.title)}`;
 
         uniqueItems.push({
             id,

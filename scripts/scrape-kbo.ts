@@ -5,6 +5,13 @@ import path from 'path';
 
 puppeteer.use(StealthPlugin());
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 interface Performance {
     id: string;
     title: string;
@@ -362,9 +369,9 @@ async function scrapeKBO() {
                 const isoDate = `${item.year}-${datePart.replace('.', '-')}`; // "2026-03-09"
 
                 // Construct ID
-                // kbo_20260309_LG_KT
-                const cleanTitle = item.title.replace(/\s/g, '');
-                const id = `kbo_${isoDate.replace(/-/g, '')}_${cleanTitle}`;
+                // kbo_20260309_LG_vs_KT
+                const safeMatchup = slugify(item.title);
+                const id = `kbo_${isoDate.replace(/-/g, '')}_${safeMatchup}`;
 
                 if (seenIds.has(id)) continue;
                 seenIds.add(id);

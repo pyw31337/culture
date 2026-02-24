@@ -1,30 +1,33 @@
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
 
 export function processAndMergePerformances(items: any[]): any[] {
     const uniqueMap = new Map<string, any>();
-    const VIDEO_GENRES = ['movie', 'ott'];
-    const LIVE_GENRES = ['musical', 'play', 'classic', 'opera', 'concert', 'exhibition', 'festival', 'museum', 'dance', 'korean_music'];
+    const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
 
     items.forEach(p => {
-        // 1. Generate Key
-        // Normalize title: remove spaces, special chars, lowercase to match duplicates
-        const normalizedTitle = p.title.replace(/[\s\(\)\[\]\-\_\!\~\.\,]/g, '').toLowerCase();
+        // 1. Generate Merge Key
+        const safeTitle = slugify(p.title);
+        let category = p.genre;
 
-        // Determine Merge Group to prevent cross-type merging (e.g. Musical "Wicked" vs Movie "Wicked")
-        let groupPrefix = 'misc_';
-        if (VIDEO_GENRES.includes(p.genre)) {
-            groupPrefix = 'video_';
-        } else if (LIVE_GENRES.includes(p.genre)) {
-            groupPrefix = 'live_';
-        } else {
-            // Keep others separate by genre (e.g. sports, travel, class, etc.)
-            groupPrefix = p.genre + '_';
+        // Grouping for Merge: 
+        // We want to merge the same title if they are in similar categories
+        // e.g. 'musical' vs 'performance' (historical)
+        let mergeCategory = category;
+        if (['musical', 'play', 'classic', 'classic_tradition', 'opera', 'concert', 'exhibition', 'dance'].includes(category)) {
+            mergeCategory = 'live';
         }
 
-        let key = `${groupPrefix}${normalizedTitle}`;
+        let key = `${mergeCategory}_${safeTitle}`;
 
-        // Exception for Travel & Sports: Include Date in key to allow same title with different dates
-        if (p.genre === 'travel' || ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(p.genre)) {
-            key += `_${p.date}`;
+        // Exception for Sports: Include Date in key to allow same teams playing on different days
+        if (SPORTS_GENRES.includes(p.genre)) {
+            const dateOnly = p.date?.split(' ')[0].replace(/-/g, '') || '00000000';
+            key = `${p.genre}_${dateOnly}_${safeTitle}`;
         }
 
         if (uniqueMap.has(key)) {
@@ -36,17 +39,32 @@ export function processAndMergePerformances(items: any[]): any[] {
         }
     });
 
-    // 2. Stable ID Generation
-    return Array.from(uniqueMap.entries()).map(([key, p]) => {
-        // Simple hash function for ID
-        let hash = 0;
-        const str = key + (p.date?.split('~')[0] || '');
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash;
+    // 2. Final ID Generation
+    return Array.from(uniqueMap.values()).map(p => {
+        const safeTitle = slugify(p.title);
+        let category = p.genre;
+
+        // Map internal genres to public shared link prefixes
+        const prefixMap: Record<string, string> = {
+            'musical': 'perf',
+            'play': 'perf',
+            'classic_tradition': 'perf',
+            'exhibition': 'perf',
+            'concert': 'perf',
+            'activity': 'perf',
+            'leisure': 'perf',
+            'movie': 'movie',
+            'ott': 'ott',
+            'festival': 'fest'
+        };
+
+        const prefix = prefixMap[category] || category;
+        let stableId = `${prefix}_${safeTitle}`;
+
+        if (SPORTS_GENRES.includes(category)) {
+            const dateOnly = p.date?.split(' ')[0].replace(/-/g, '') || '00000000';
+            stableId = `${category}_${dateOnly}_${safeTitle}`;
         }
-        const stableId = `perf_${Math.abs(hash).toString(16)}`;
 
         return {
             ...p,

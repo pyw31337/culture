@@ -64,6 +64,13 @@ function saveData(data: UmClassItem[]) {
     console.log(`\nSaved ${data.length} items to ${OUTPUT_PATH}`);
 }
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 async function scrapeUmClass() {
     console.log(`Starting UmClass Scraper...`);
 
@@ -350,21 +357,8 @@ async function scrapeUmClass() {
                         venue = address;
                     }
 
-                    // Preserve ID if existing, else regenerate (Note: Regenerating per run is bad practice, but following legacy for now. Ideally should hash URL)
-                    // Better: Hash the link to make ID stable
-                    // const crypto = require('crypto'); // Need to import
-                    // Simple hash for now or keep random if simpler to avoid import errors right now.
-                    // Let's use simple hash of link
-                    let id = existingMap.get(item.link)?.id;
-                    if (!id) {
-                        // Simple string hash
-                        let hash = 0;
-                        for (let i = 0; i < item.link.length; i++) {
-                            hash = ((hash << 5) - hash) + item.link.charCodeAt(i);
-                            hash |= 0;
-                        }
-                        id = `umclass_${Math.abs(hash)}`;
-                    }
+                    // Stable ID
+                    const id = `class_${slugify(item.title)}`;
 
                     return {
                         id,

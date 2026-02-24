@@ -11,6 +11,13 @@ const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBox
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 // --- Helper: Sleep ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
@@ -315,8 +322,7 @@ async function scrapeMovies() {
         // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
         // Reuse existing ID if available to avoid breaking already-shared links
         const existingForId = existingMap.get(m.title);
-        const safeTitle = m.title.replace(/[^a-zA-Z0-9가-힣]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
-        const id = existingForId?.id || `movie_${safeTitle}`;
+        const id = existingForId?.id || `movie_${slugify(m.title)}`;
 
         const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
 

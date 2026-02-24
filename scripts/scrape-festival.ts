@@ -142,6 +142,13 @@ const REGION_MAP: Record<string, string> = {
     '경남': 'gyeongnam', '제주': 'jeju',
 };
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 interface FestivalItem {
@@ -198,7 +205,9 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 const locEl = el.querySelector('.loc');
                 const venue = locEl?.textContent?.trim() || '';
 
-                items.push({ id, title, thumbnailImage, date, venue, link: href });
+                const festId = `fest_${slugify(title)}`;
+
+                items.push({ id: festId, title, thumbnailImage, date, venue, link: href });
             });
             return items;
         });

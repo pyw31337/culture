@@ -63,6 +63,13 @@ class ProgressBar {
 
 }
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 function saveData(data: Performance[]) {
     if (data.length === 0) {
         console.log("No items to save.");
@@ -510,7 +517,7 @@ async function scrapeTimeTicket() {
             }
 
             allItems.push({
-                id: `timeticket_${Math.random().toString(36).substr(2, 9)}`,
+                id: `perf_${slugify(item.title)}`,
                 title: item.title,
                 image: finalImage,
                 date: detailData.date,

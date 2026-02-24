@@ -5,6 +5,13 @@ import path from 'path';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 // Types
 interface ScrapedEvent {
     id: string;
@@ -97,7 +104,7 @@ async function scrapeList(browser: any) {
         lastFirstLink = listItems[0].link;
 
         for (const item of listItems) {
-            const id = crypto.createHash('md5').update(item.link).digest('hex');
+            const id = `perf_${slugify(item.title)}`;
             const genre = await mapCategory(item.title);
             collectedEvents.push({
                 id,

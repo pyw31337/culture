@@ -1,124 +1,57 @@
-
 import puppeteer from 'puppeteer';
 
-async function testMochaScrape() {
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+(async () => {
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
+    await page.goto('https://mochaclass.com/class/63148cfbf5301a7e91d9bb9f', { waitUntil: 'networkidle2' });
 
-    // Set viewport
-    await page.setViewport({ width: 1280, height: 800 });
+    const result = await page.evaluate(() => {
+        // Find the element containing exactly "위치"
+        const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span'));
+        let address = '';
 
-    const targetUrl = 'https://mochaclass.com/Search?page=1&is_online_class=false&where=list&course=%EC%9B%90%EB%8D%B0%EC%9D%B4&sort=%EA%B1%B0%EB%A6%AC%EC%88%9C&location=%EC%84%9C%EC%9A%B8';
-    console.log(`Navigating to ${targetUrl}...`);
-
-    try {
-        await page.goto(targetUrl, { waitUntil: 'networkidle2', timeout: 30000 });
-
-        // Wait for list to load - the user selector starts with #root > div > div.css-1ndybjf...
-        // Let's try to find a container that holds the list items.
-        // Based on user selector: #root > div > div.css-1ndybjf > div.jss1.jss2 > div > div > div.css-10fjw1o > div > div.MuiGrid-root.css-2xazwd
-        // It seems MuiGrid-root css-2xazwd might be the container, and `a` tags are items.
-
-        await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
-
-        // Get list items
-        const items = await page.evaluate(() => {
-            // Generalize the selector to find the grid container
-            // We search for the grid container that has multiple anchor tags as children
-            const grids = document.querySelectorAll('.MuiGrid-root.css-2xazwd');
-            // Assuming the main list is one of these. 
-            // User selector: ... > div.MuiGrid-root.css-2xazwd > a:nth-child(3)
-
-            let targetGrid: Element | null = null;
-            // Simple heuristic: find the grid with the most 'a' children
-            grids.forEach((g: any) => {
-                if (!targetGrid || g.querySelectorAll('a').length > targetGrid.querySelectorAll('a').length) {
-                    targetGrid = g;
+        for (let i = 0; i < headings.length; i++) {
+            if (headings[i].textContent?.trim() === '위치') {
+                // The address is usually the next sibling or somewhere nearby
+                // Let's check the next few elements in the DOM tree, or just the parent's text
+                let current: Element | null = headings[i];
+                // Go up one or two levels
+                const container = headings[i].closest('div')?.parentElement;
+                if (container) {
+                    const text = container.textContent || '';
+                    // text will be like "위치대한민국 울산광역시 동구 전하2동 691-6 1F 해도방 도예카페찾아오는 길울산..."
+                    // We can extract everything between "위치" and "찾아오는 길"
+                    const match = text.match(/위치(.*?)찾아오는 길/);
+                    if (match && match[1]) {
+                        address = match[1].trim();
+                        break;
+                    } else {
+                        // If no "찾아오는 길", just take everything after "위치" up to the next heading?
+                        const match2 = text.match(/위치(대한민국.*?(구|동|시|군|로|길)\b.*?)/);
+                        if (match2) {
+                            address = match2[1].trim();
+                            break;
+                        }
+                    }
                 }
-            });
-
-            if (!targetGrid) return [];
-
-            const anchors = (targetGrid as Element).querySelectorAll('a');
-            const results: any[] = [];
-
-            anchors.forEach((anchor: any, index: number) => {
-                if (index >= 3) return; // Limit to 3 items for testing
-
-                const link = anchor.href;
-
-                // Title
-                // User selector: ... > div > div.css-76zbcf > p
-                const titleElem = anchor.querySelector('div > div.css-76zbcf > p');
-                const title = titleElem ? titleElem.textContent?.trim() : 'No Title';
-
-                // Image
-                // User selector: ... > div > div.css-11udqdf > img
-                const imgElem = anchor.querySelector('div > div.css-11udqdf > img');
-                const image = imgElem ? imgElem.getAttribute('src') : '';
-
-                // Price
-                // User selector: ... > div > div.css-76zbcf > div.css-1k8tf8v > div > p
-                const priceElem = anchor.querySelector('div > div.css-76zbcf > div.css-1k8tf8v > div > p');
-                const price = priceElem ? priceElem.textContent?.trim() : '';
-
-                results.push({
-                    title,
-                    link,
-                    image,
-                    price
-                });
-            });
-
-            return results;
-        });
-
-        console.log(`Found ${items.length} items. Processing details...`);
-
-        // Visit each detail page
-        for (const item of items) {
-            console.log(`Scraping detail for: ${item.title}`);
-            const detailPage = await browser.newPage();
-            await detailPage.setViewport({ width: 1280, height: 800 });
-
-            try {
-                await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
-                // Detail selector provided: #topleft > div:nth-child(10) > div > p
-
-                // Wait briefly
-                await new Promise(r => setTimeout(r, 1000));
-
-                const rawAddress = await detailPage.evaluate(() => {
-                    const el = document.querySelector('#topleft > div:nth-child(10) > div > p');
-                    return el ? el.textContent?.trim() : null;
-                });
-
-                item.rawAddress = rawAddress;
-                console.log(`  - Address: ${rawAddress}`);
-
-            } catch (e) {
-                console.error(`  - Failed to load detail page: ${e}`);
-            } finally {
-                await detailPage.close();
             }
-
-            // Random delay
-            await new Promise(r => setTimeout(r, 1000));
         }
 
-        console.log("---------------------------------------------------");
-        console.log("SAMPLE DATA:");
-        console.log(JSON.stringify(items, null, 2));
-        console.log("---------------------------------------------------");
+        // Alternative method: just find the string starting with 대한민국
+        if (!address) {
+            const allElements = Array.from(document.querySelectorAll('p, span'));
+            for (const el of allElements) {
+                const text = el.textContent?.trim() || '';
+                if (text.startsWith('대한민국') && text.length > 10) {
+                    address = text;
+                    break;
+                }
+            }
+        }
 
-    } catch (error) {
-        console.error("Error during scraping:", error);
-    } finally {
-        await browser.close();
-    }
-}
+        return { address };
+    });
 
-testMochaScrape();
+    console.log(JSON.stringify(result, null, 2));
+    await browser.close();
+})();

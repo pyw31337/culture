@@ -2,6 +2,13 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 export interface Performance {
     id: string;
     title: string;
@@ -180,20 +187,25 @@ async function scrapeKovo() {
             console.log(`DOM Scraping complete. Found ${scrapedItems.length} items.`);
             await browser.close();
 
-            const performances: Performance[] = scrapedItems.map((item: any) => ({
-                id: `kovo_${item.date.replace(/-/g, '')}_${item.homeTeam}_${item.awayTeam}`.replace(/\s+/g, ''),
-                title: `[배구] ${item.homeTeam} vs ${item.awayTeam}`,
-                image: item.image || VOLLEYBALL_POSTER,
-                date: item.fullDate,
-                venue: item.venue,
-                link: KOVO_SCHEDULE_URL,
-                region: classifyRegion(item.venue),
-                genre: 'volleyball',
-                homeTeam: item.homeTeam,
-                awayTeam: item.awayTeam,
-                homeTeamLogo: item.homeLogo,
-                awayTeamLogo: item.awayLogo
-            }));
+            const performances: Performance[] = scrapedItems.map((item: any) => {
+                const title = `[배구] ${item.homeTeam} vs ${item.awayTeam}`;
+                const safeMatchup = slugify(`${item.homeTeam} vs ${item.awayTeam}`);
+                const id = `kovo_${item.date.replace(/-/g, '')}_${safeMatchup}`;
+
+                return {
+                    id,
+                    title,
+                    image: item.image || VOLLEYBALL_POSTER,
+                    date: item.fullDate,
+                    venue: item.venue,
+                    link: KOVO_SCHEDULE_URL,
+                    region: classifyRegion(item.venue),
+                    genre: 'volleyball',
+                    homeTeam: item.homeTeam,
+                    awayTeam: item.awayTeam,
+                    homeTeamLogo: item.homeLogo,
+                    awayTeamLogo: item.awayLogo
+                }));
 
             if (performances.length > 0) {
                 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));

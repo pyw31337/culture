@@ -47,6 +47,13 @@ async function scrapeHandball() {
         const results: any[] = [];
         let currentDate = '';
 
+        function slugify(text: string): string {
+            return text
+                .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+                .replace(/_+/g, '_')
+                .replace(/^_|_$/g, '');
+        }
+
         rows.forEach(tr => {
             const cells = Array.from(tr.children) as HTMLElement[];
             if (cells.length === 0) return;
@@ -127,9 +134,11 @@ async function scrapeHandball() {
             }
 
             if (homeTeam && awayTeam) {
+                const title = `${homeTeam} vs ${awayTeam}`;
+                const safeMatchup = slugify(title);
                 results.push({
-                    id: `handball_${dateStr.replace(/-/g, '')}_${homeTeam}_${awayTeam}`,
-                    title: `${homeTeam} vs ${awayTeam}`,
+                    id: `handball_${dateStr.replace(/-/g, '')}_${safeMatchup}`,
+                    title,
                     date: `${dateStr} ${timeStr}`,
                     venue: venueStr,
                     link: 'https://www.koreahandball.com/game/schedule_list.php',

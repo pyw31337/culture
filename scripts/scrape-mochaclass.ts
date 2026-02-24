@@ -63,6 +63,13 @@ function saveData(data: MochaClassItem[]) {
     console.log(`\nSaved ${data.length} items to ${OUTPUT_PATH}`);
 }
 
+function slugify(text: string): string {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 async function scrapeMochaClass() {
     console.log(`Starting MochaClass Scraper...`);
 
@@ -326,16 +333,8 @@ async function scrapeMochaClass() {
                     // Use accurate address as venue, fallback to Mochaclass (District)
                     const venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
 
-                    // Stable ID hash
-                    let id = existingMap.get(item.link)?.id;
-                    if (!id) {
-                        let hash = 0;
-                        for (let i = 0; i < item.link.length; i++) {
-                            hash = ((hash << 5) - hash) + item.link.charCodeAt(i);
-                            hash |= 0;
-                        }
-                        id = `mochaclass_${Math.abs(hash)}`;
-                    }
+                    // Stable ID
+                    const id = `class_${slugify(item.title)}`;
 
                     return {
                         id,
