@@ -204,8 +204,8 @@ async function scrapeKovo() {
                     homeTeam: item.homeTeam,
                     awayTeam: item.awayTeam,
                     homeTeamLogo: item.homeLogo,
-                    awayTeamLogo: item.awayLogo
-                }));
+                };
+            });
 
             if (performances.length > 0) {
                 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
