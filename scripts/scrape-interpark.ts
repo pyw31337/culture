@@ -199,9 +199,9 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
 }
 
 async function scrapeDetails(browser: any, items: Performance[], existingEnriched: Map<string, Performance>) {
-    // Only target relevant genres
-    const candidates = items.filter(i => ['musical', 'play', 'concert', 'classic'].includes(i.genre));
-    const others = items.filter(i => !['musical', 'play', 'concert', 'classic'].includes(i.genre));
+    const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure'];
+    const candidates = items.filter(i => targetGenres.includes(i.genre));
+    const others = items.filter(i => !targetGenres.includes(i.genre));
 
     // Split candidates into 'already done' vs 'todo'
     const alreadyDone: Performance[] = [];
@@ -228,7 +228,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const hasBadPrice = !ex.price || ex.price === '무료/이벤트' || ex.price === '이벤트' || ex.price === '가격정보없음';
             const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating);
 
-            if (hasCompleteData || isRecentlyEnriched(ex)) {
+            if (hasCompleteData || (isRecentlyEnriched(ex) && !hasBadPrice)) {
                 alreadyDone.push({ ...c, ...ex });
             } else {
                 todo.push(c);
