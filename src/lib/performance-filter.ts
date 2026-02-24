@@ -102,10 +102,12 @@ export function filterPerformances(performances: Performance[], options: FilterO
         if (isMajorCountry) return true;
 
         // [Fallback] Hide other foreign series if "Season" in title or Genre/SubGenre is "Drama"
+        // CRITICAL: Movie category should be more lenient with single-film dramas (often missing country info)
+        const isMovie = p.genre === 'movie';
         const titleHasSeason = p.title.includes('시즌') || p.title.toLowerCase().includes('season');
         const isDrama = p.subGenre === '드라마';
 
-        if (titleHasSeason || isDrama) {
+        if (titleHasSeason || (isDrama && !isMovie)) {
             return false; // Hide
         }
         return true;

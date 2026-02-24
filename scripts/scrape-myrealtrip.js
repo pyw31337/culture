@@ -10,6 +10,13 @@ const OUTPUT_FILE = path.join(__dirname, '../src/data/myrealtrip-kids.json');
 // User's selectors look like Desktop structure.
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
+function slugify(text) {
+    return text
+        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+}
+
 async function scrape() {
     console.log('launching browser...');
     const browser = await puppeteer.launch({
@@ -114,7 +121,7 @@ async function scrape() {
 
                 if (data.title) {
                     results.push({
-                        id: `mrt-${url.split('/products/')[1].split('?')[0]}`,
+                        id: `kids_${slugify(data.title)}`,
                         title: data.title,
                         date: data.date.replace(/[\n\r]+/g, ' '), // Clean newlines
                         venue: data.venue,

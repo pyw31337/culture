@@ -35,7 +35,7 @@ const extractMetadata = () => {
     const patterns = {
         age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*이상|\d{1,2}세이상|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
         runtime: /(\d{1,3}분)/,
-        country: /(한국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
+        country: /(한국|대한민국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
         genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
     };
 
@@ -249,7 +249,7 @@ async function scrapeMovies() {
             const rows = document.querySelectorAll('#tbody_0 > tr');
             const list: any[] = [];
             rows.forEach((row, idx) => {
-                if (idx >= 30) return; // Limit to 30
+                if (idx >= 30) return; // Limit to Top 30 as requested
                 const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
                 if (titleLink) {
                     const title = titleLink.textContent?.trim() || '';
@@ -398,6 +398,12 @@ async function scrapeMovies() {
 
             // Final Data Mapping
             if (item.releaseDate) item.date = item.releaseDate; // Prefer precise release date
+
+            // CRITICAL: If country is missing but it's a Top Rank movie, default to '한국'
+            // if it looks like a Korean title. This prevents aggressive drama filtering.
+            if (!item.productionCountry && item.title.match(/[가-힣]/)) {
+                if (item.rank && item.rank <= 5) item.productionCountry = '한국';
+            }
 
             // Map ageRating to venue (standard convention in this project)
             if (item.ageRating) {
