@@ -1256,7 +1256,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 viewMode={viewMode}
                 onViewModeChange={setViewMode}
                 selectedGenre={selectedGenre}
-                onGenreSelect={setSelectedGenre}
+                onGenreSelect={handleGenreSelect}
                 selectedRegion={selectedRegion}
                 onRegionSelect={setSelectedRegion}
                 selectedDistrict={selectedDistrict}
