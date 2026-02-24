@@ -287,8 +287,8 @@ async function scrapeMovies() {
     for (const m of movies) {
         const existing = existingMap.get(m.title);
         if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
-            // If we have comprehensive data, reuse it but update volatile fields like Rank (if we stored rank, but we don't usually)
-            // We just need to ensure the ID/Title/Date match.
+            // Reuse existing data but update volatile fields
+            existing.rank = m.rank ? parseInt(m.rank) : existing.rank;
             finalMovies.push(existing);
             // Maybe update date if KOBIS has a new release date? Usually assume existing is better/enriched.
         } else {
@@ -321,6 +321,7 @@ async function scrapeMovies() {
             date: date, // Will update with precise date if found
             region: '전국', // Default
             genre: 'movie',
+            rank: m.rank ? parseInt(m.rank) : undefined,
             link: searchUrl // Add Link
         };
 
