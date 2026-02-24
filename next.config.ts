@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true, // Required for GitHub Pages static hosting
   basePath: isProd ? '/culture' : '',
+  outputFileTracingRoot: process.cwd(),
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -58,9 +59,8 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: isProd ? '/culture' : '',
   },
-  experimental: {
-    turbopack: {},
-  },
+  // @ts-ignore - Silence Turbopack warning when custom webpack is used
+  turbopack: {},
 };
 
 export default withPWA(nextConfig);
