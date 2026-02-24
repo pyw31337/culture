@@ -573,11 +573,35 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (!hash.startsWith('#p=')) return;
 
         const targetId = decodeURIComponent(hash.slice(3));
-        const perf = allPerformances.find(p => p.id === targetId);
+
+        // 1. Exact ID match
+        let perf = allPerformances.find(p => p.id === targetId);
+
+        // 2. Fallback: old movie URLs with date prefix (movie_20260218_title → movie_title)
+        if (!perf && targetId.startsWith('movie_')) {
+            const withoutDate = targetId.replace(/^movie_\d{8}_/, 'movie_');
+            // Normalize: strip special chars to match current ID format
+            const normalized = 'movie_' + withoutDate.replace(/^movie_/, '').replace(/[^a-zA-Z0-9가-힣]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+            perf = allPerformances.find(p => p.id === normalized);
+        }
+
+        // 3. Fallback: title-based fuzzy search from any ID format
+        if (!perf) {
+            // Extract readable title from ID: strip prefix and underscores
+            const titleFromId = targetId
+                .replace(/^(movie|perf|kopis|ott)_(\d{8}_)?/, '')
+                .replace(/_/g, ' ')
+                .trim();
+            if (titleFromId.length > 2) {
+                perf = allPerformances.find(p =>
+                    p.title.replace(/\s+/g, '') === titleFromId.replace(/\s+/g, '')
+                );
+            }
+        }
+
         if (perf) {
             deepLinkHandled.current = true;
             setSharedPerf(perf);
-            // Clean up hash
             window.history.replaceState(null, '', window.location.pathname + window.location.search);
         }
     }, [allPerformances, isDataFullyLoaded]);
