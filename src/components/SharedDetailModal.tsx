@@ -2,7 +2,8 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles } from 'lucide-react';
+import { OTT_PLATFORMS } from '@/lib/constants';
+import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, MonitorPlay } from 'lucide-react';
 import Portal from './ui/Portal';
 import { useEffect, useRef, useState } from 'react';
 import { getOptimizedUrl } from '@/lib/utils';
@@ -40,9 +41,9 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
     const hasDiscount = p.discount && p.originalPrice;
     const hasCast = p.cast && p.cast.length > 0;
     const castNames = hasCast ? p.cast!.map(c => typeof c === 'string' ? c : c.name) : [];
-    const rawImg = p.image || p.backupPoster || p.posterUrl || '';
+    const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
-    const fallbackImg = p.backupPoster || p.posterUrl || '';
+    const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
 
     const handleShare = async () => {
         const url = `${window.location.origin}${window.location.pathname}#p=${p.id}`;
@@ -237,9 +238,16 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                     <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight drop-shadow-lg line-clamp-2">
                                         {p.title}
                                     </h2>
-                                    {p.originalTitle && (
-                                        <p className="text-sm text-white/60 mt-1 font-medium">{p.originalTitle}</p>
-                                    )}
+                                    <div className="flex flex-wrap gap-2 mt-2">
+                                        {p.ageRating && (
+                                            <span className="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md text-[10px] font-bold text-white/80 border border-white/20">
+                                                {p.ageRating}
+                                            </span>
+                                        )}
+                                        {p.originalTitle && (
+                                            <p className="text-sm text-white/60 font-medium">{p.originalTitle}</p>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -283,12 +291,40 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                     </div>
                                 )}
 
+                                {/* Platform Section (For OTT/Movies) */}
+                                {(p.platforms && p.platforms.length > 0) && (
+                                    <div className="mb-5 flex flex-wrap gap-2 items-center">
+                                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mr-1">Available on</span>
+                                        {p.platforms.map(pid => {
+                                            const plat = OTT_PLATFORMS[pid.toLowerCase()];
+                                            if (!plat) return null;
+                                            return (
+                                                <a
+                                                    key={pid}
+                                                    href={plat.url.replace('{title}', encodeURIComponent(p.title))}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl ${plat.color} text-white text-[11px] font-extrabold shadow-sm hover:scale-105 transition-transform`}
+                                                >
+                                                    {plat.label}
+                                                </a>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+
                                 {/* Info Grid */}
                                 <div className="space-y-3 mb-5">
                                     {p.venue && (
                                         <div className="flex items-start gap-3">
-                                            <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{p.venue}</span>
+                                            {p.genre === 'ott' ? (
+                                                <MonitorPlay className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
+                                            ) : (
+                                                <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
+                                            )}
+                                            <span className="text-sm text-gray-300">
+                                                {p.genre === 'ott' && p.venue === 'OTT' ? '온라인 스트리밍' : p.venue}
+                                            </span>
                                         </div>
                                     )}
                                     {p.date && (
@@ -325,7 +361,19 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                             <div className="flex items-start gap-2">
                                                 <Users className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                                                 <span className="text-xs text-gray-400 font-bold shrink-0 mt-0.5">출연</span>
-                                                <span className="text-sm text-gray-300 leading-relaxed">{castNames.join(', ')}</span>
+                                                <div className="flex flex-wrap gap-x-2 gap-y-1">
+                                                    {castNames.map((name, idx) => (
+                                                        <a
+                                                            key={idx}
+                                                            href={`https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-sm text-gray-300 hover:text-white hover:underline transition-colors"
+                                                        >
+                                                            {name}{idx < castNames.length - 1 ? ',' : ''}
+                                                        </a>
+                                                    ))}
+                                                </div>
                                             </div>
                                         )}
                                     </div>
