@@ -29,6 +29,7 @@ const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
+const SharedDetailModal = dynamic(() => import('./SharedDetailModal'), { ssr: false });
 
 import { useSearchParams, useRouter } from 'next/navigation';
 import HeroSection from './performance/HeroSection';
@@ -564,6 +565,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     }, [allPerformances, isStorageLoaded, isDataFullyLoaded]);
 
     // Deep Link: handle #p=<id> hash URLs (from shared links)
+    const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
     const deepLinkHandled = useRef(false);
     useEffect(() => {
         if (deepLinkHandled.current || !isDataFullyLoaded || allPerformances.length === 0) return;
@@ -574,10 +576,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         const perf = allPerformances.find(p => p.id === targetId);
         if (perf) {
             deepLinkHandled.current = true;
-            // Open the detail link
-            if (perf.link) {
-                window.open(perf.link, '_blank');
-            }
+            setSharedPerf(perf);
             // Clean up hash
             window.history.replaceState(null, '', window.location.pathname + window.location.search);
         }
@@ -1339,6 +1338,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     />
                 )
             }
+
+
+            {/* Shared Deep Link Modal */}
+            {sharedPerf && (
+                <SharedDetailModal
+                    performance={sharedPerf}
+                    onClose={() => setSharedPerf(null)}
+                />
+            )}
 
         </div >
     );
