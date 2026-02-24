@@ -90,10 +90,13 @@ export function filterPerformances(performances: Performance[], options: FilterO
         if (p.genre !== 'ott' && p.genre !== 'movie') return true;
 
         const country = p.productionCountry ? p.productionCountry.replace(/\s+/g, '') : '';
-        // [Denylist] Explicitly hide works from China, Thailand, India, Brazil
-        const denylist = ['중국', 'China', '태국', 'Thailand', '인도', 'India', '브라질', 'Brazil'];
-        const isDeniedCountry = denylist.some(c => country.includes(c));
-        if (isDeniedCountry) return false;
+        // [Denylist] Explicitly hide works from China, Thailand, India, Brazil for OTT
+        // User requested: Movies should NOT be filtered by country.
+        if (p.genre === 'ott') {
+            const denylist = ['중국', 'China', '태국', 'Thailand', '인도', 'India', '브라질', 'Brazil'];
+            const isDeniedCountry = denylist.some(c => country.includes(c));
+            if (isDeniedCountry) return false;
+        }
 
         // [Allowlist] Allow if country is KR/JP/US
         const allowlist = ['한국', '대한민국', '일본', '미국', 'UnitedStates'];
