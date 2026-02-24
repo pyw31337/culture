@@ -107,6 +107,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.productionCountry && loser.productionCountry) merged.productionCountry = loser.productionCountry;
     if (!merged.productionYear && loser.productionYear) merged.productionYear = loser.productionYear;
     if (!merged.subGenre && loser.subGenre) merged.subGenre = loser.subGenre;
+    if (!merged.rank && loser.rank) merged.rank = loser.rank;
 
     // Poster/Image
     // If winner has no valid image, try loser's

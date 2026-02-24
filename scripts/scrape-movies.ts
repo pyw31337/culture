@@ -459,24 +459,20 @@ async function scrapeMovies() {
         }
 
         // Update with NEW data
+        // STRICT POLICY: Only keep movies that are in finalMovies (current Top 30)
+        // This removes movies that are no longer in the KOBIS ranking.
+        const synchronizedMovies: any[] = [];
         for (const newMovie of finalMovies) {
-            // If it existed, we merge carefully
             const existing = movieMap.get(newMovie.title);
-
             const merged = {
-                ...existing, // Keep old fields (like manual overrides/descriptions if we had them)
-                ...newMovie, // Overwrite with new data (rank, date, etc.)
-                lastCollected: now // MARK AS FRESH
+                ...existing,
+                ...newMovie,
+                lastCollected: now
             };
-
-            movieMap.set(newMovie.title, merged);
+            synchronizedMovies.push(merged);
         }
 
-        // Convert back to array
-        // We do NOT filter out old items here. Pruning happens in prune-data.ts.
-        // However, we might want to sort by rank for the UI, but allow undefined ranks for old items?
-        // Start with items that have a current rank
-        const allMovies = Array.from(movieMap.values());
+        const allMovies = synchronizedMovies;
 
         // Sort: Ranked items first, then by lastCollected descending
         allMovies.sort((a, b) => {

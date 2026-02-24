@@ -446,7 +446,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     </div>
                                     <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
                                         <span className="text-white text-xs font-extrabold bg-black px-2 py-1 rounded whitespace-nowrap">
-                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            {perf.genre === 'movie' && perf.rank ? `(영화 #${perf.rank}위)` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </span>
                                         {dDay && (
                                             <span className="text-white text-[10px] font-extrabold bg-transparent border border-white/30 px-2 rounded-full whitespace-nowrap flex items-center justify-center h-[20px]">
@@ -553,7 +553,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     "px-3 py-1 rounded-full text-xs font-extrabold backdrop-blur-md border shadow-sm transition-all text-white",
                                                     GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                                 )}>
-                                                    {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                                    {perf.genre === 'movie' && perf.rank ? `(영화 #${perf.rank}위)` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                                 </span>
 
                                                 {/* D-Day Badge (Movie Only) - Style Updated */}

@@ -30,4 +30,5 @@ export type Performance = {
     posterUrl?: string; // Manual override for missing images
     category?: string; // High-level category override
     poster?: string; // Original remote URL for OTT/Movies
+    rank?: number;
 };

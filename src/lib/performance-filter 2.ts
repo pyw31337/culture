@@ -26,31 +26,11 @@ export interface FilterOptions {
     lat?: number;
     lng?: number;
     radius?: number; // In km
-    searchMode?: 'keyword' | 'location';
 }
 
 export function filterPerformances(performances: Performance[], options: FilterOptions): Performance[] {
     let filtered = performances;
-    const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
-
-    // A. Search Mode: Location -> Strictly exclude digital content (Movie/OTT) unless explicitly selected
-    if (searchMode === 'location' && genre !== 'movie' && genre !== 'ott') {
-        filtered = filtered.filter(p => p.genre !== 'movie' && p.genre !== 'ott');
-    }
-
-    // 0. Base Filter: Strict Address Integrity
-    // Exclude any physical event that doesn't have a record in venues.json or has an empty address.
-    // Digital content (OTT/Movie) is exempt from physical address requirement.
-    filtered = filtered.filter(p => {
-        if (p.genre === 'ott' || p.genre === 'movie') return true;
-
-        const venueInfo = venues[p.venue];
-        if (!venueInfo || !venueInfo.address || venueInfo.address.trim() === '') {
-            return false;
-        }
-        return true;
-    });
-
+    const { genre, region, district, venue, search, lat, lng, radius } = options;
 
     // 1. Search Filter (Highest Priority)
     if (search && search.trim()) {
@@ -74,7 +54,9 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 2. Genre Filter
     if (genre && genre !== 'all') {
-        if (genre === 'ott') {
+        if (genre === 'hotdeal') {
+            filtered = filtered.filter(p => p.discount && p.discount !== '' && p.discount !== '0');
+        } else if (genre === 'ott') {
             filtered = filtered.filter(p => p.genre === 'ott' || (p.platforms && p.platforms.length > 0));
         } else {
             filtered = filtered.filter(p => p.genre === genre);
@@ -102,12 +84,10 @@ export function filterPerformances(performances: Performance[], options: FilterO
         if (isMajorCountry) return true;
 
         // [Fallback] Hide other foreign series if "Season" in title or Genre/SubGenre is "Drama"
-        // CRITICAL: Movie category should be more lenient with single-film dramas (often missing country info)
-        const isMovie = p.genre === 'movie';
         const titleHasSeason = p.title.includes('시즌') || p.title.toLowerCase().includes('season');
         const isDrama = p.subGenre === '드라마';
 
-        if (titleHasSeason || (isDrama && !isMovie)) {
+        if (titleHasSeason || isDrama) {
             return false; // Hide
         }
         return true;
@@ -116,8 +96,6 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // 3. Region Filter
     if (region && region !== 'all') {
         filtered = filtered.filter(p => {
-            if (p.genre === 'movie' || p.genre === 'ott') return true;
-
             const venueInfo = venues[p.venue];
 
             // 0. Use Strict Mapped Region ID if available
@@ -156,7 +134,6 @@ export function filterPerformances(performances: Performance[], options: FilterO
         if (centerVenue && centerVenue.lat && centerVenue.lng) {
             // Include: 1. Exact Venue Match OR 2. Within 10km (Standard logic)
             filtered = filtered.filter(p => {
-                if (p.genre === 'movie' || p.genre === 'ott') return true;
                 if (p.venue === venue) return true;
                 const pVenue = venues[p.venue];
                 if (!pVenue?.lat || !pVenue?.lng) return false;
@@ -172,7 +149,6 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // Note: If 'venue' selected, it overrides this with its own radius logic above.
     if ((!venue || venue === 'all') && lat && lng && radius) {
         filtered = filtered.filter(p => {
-            if (p.genre === 'movie' || p.genre === 'ott') return true;
             const pVenue = venues[p.venue];
             if (!pVenue?.lat || !pVenue?.lng) return false;
             const dist = getDistanceFromLatLonInKm(lat, lng, pVenue.lat, pVenue.lng);
@@ -188,7 +164,7 @@ export function sortPerformances(performances: Performance[], genre: string, key
     let sorted = [...performances];
 
     // Sports: Strict Date ASC Sort (Nearest First)
-    const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
+    const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer', 'hockey'];
     if (genre && sportsGenres.includes(genre)) {
         return sorted.sort((a, b) => {
             const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
@@ -197,14 +173,9 @@ export function sortPerformances(performances: Performance[], genre: string, key
         });
     }
 
-    // Movie/OTT: Rank First, then Strict Date DESC Sort (Newest First)
+    // Movie/OTT: Strict Date DESC Sort (Newest First)
     if (genre === 'movie' || genre === 'ott') {
         return sorted.sort((a, b) => {
-            // Prioritize rank if available
-            if (a.rank !== undefined && b.rank !== undefined) return a.rank - b.rank;
-            if (a.rank !== undefined) return -1;
-            if (b.rank !== undefined) return 1;
-
             const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
             const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
             return dateB.localeCompare(dateA);

@@ -125,7 +125,9 @@ export function getAllPerformances() {
     const baseball = safeArray<any>(kboData).map(p => ({ ...p, id: String(p.id) }));
     const handball = safeArray<any>(handballData).map(p => ({ ...p, id: String(p.id) }));
     const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
-    const movies = safeArray<any>(moviesData).map(p => ({ ...p, id: String(p.id), genre: 'movie' }));
+    const movies = safeArray<any>(moviesData)
+        .map(p => ({ ...p, id: String(p.id), genre: 'movie' }))
+        .sort((a, b) => (a.rank || 99) - (b.rank || 99));
     const classes = safeArray<any>(classData).map(p => ({ ...p, id: String(p.id) }));
     const umclasses = safeArray<any>(umclassData).map(p => ({ ...p, id: String(p.id) }));
     const mochaclasses = safeArray<any>(mochaclassData).map(p => ({ ...p, id: String(p.id) }));
