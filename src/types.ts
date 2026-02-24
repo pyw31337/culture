@@ -29,4 +29,5 @@ export type Performance = {
     backupPoster?: string; // Original remote URL for fallback
     posterUrl?: string; // Manual override for missing images
     category?: string; // High-level category override
+    poster?: string; // Original remote URL for OTT/Movies
 };
