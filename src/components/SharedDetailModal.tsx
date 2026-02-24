@@ -4,7 +4,8 @@ import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2 } from 'lucide-react';
 import Portal from './ui/Portal';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { getOptimizedUrl } from '@/lib/utils';
 
 interface SharedDetailModalProps {
     performance: Performance;
@@ -32,7 +33,9 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
     const hasDiscount = p.discount && p.originalPrice;
     const hasCast = p.cast && p.cast.length > 0;
     const castNames = hasCast ? p.cast!.map(c => typeof c === 'string' ? c : c.name) : [];
-    const imgSrc = p.image || p.backupPoster || p.posterUrl || '';
+    const rawImg = p.image || p.backupPoster || p.posterUrl || '';
+    const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
+    const fallbackImg = p.backupPoster || p.posterUrl || '';
 
     const handleShare = async () => {
         const url = `${window.location.origin}${window.location.pathname}#p=${p.id}`;
@@ -60,6 +63,13 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                 alt={p.title}
                                 className="w-full h-full object-cover"
                                 referrerPolicy="no-referrer"
+                                onError={() => {
+                                    if (fallbackImg && imgSrc !== fallbackImg && imgSrc !== getOptimizedUrl(fallbackImg)) {
+                                        setImgSrc(getOptimizedUrl(fallbackImg));
+                                    } else {
+                                        setImgSrc('');
+                                    }
+                                }}
                             />
                             {/* Gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
