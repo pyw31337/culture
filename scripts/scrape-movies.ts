@@ -311,7 +311,12 @@ async function scrapeMovies() {
         // Base Item
         let date = m.dateRaw || '';
         if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
-        const id = `movie_${date.replace(/[\.\s]/g, '')}_${m.title.replace(/[\s\(\)]/g, '_')}`;
+
+        // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
+        // Reuse existing ID if available to avoid breaking already-shared links
+        const existingForId = existingMap.get(m.title);
+        const safeTitle = m.title.replace(/[^a-zA-Z0-9가-힣]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+        const id = existingForId?.id || `movie_${safeTitle}`;
 
         const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
 

@@ -563,6 +563,26 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         }
     }, [allPerformances, isStorageLoaded, isDataFullyLoaded]);
 
+    // Deep Link: handle #p=<id> hash URLs (from shared links)
+    const deepLinkHandled = useRef(false);
+    useEffect(() => {
+        if (deepLinkHandled.current || !isDataFullyLoaded || allPerformances.length === 0) return;
+        const hash = window.location.hash;
+        if (!hash.startsWith('#p=')) return;
+
+        const targetId = decodeURIComponent(hash.slice(3));
+        const perf = allPerformances.find(p => p.id === targetId);
+        if (perf) {
+            deepLinkHandled.current = true;
+            // Open the detail link
+            if (perf.link) {
+                window.open(perf.link, '_blank');
+            }
+            // Clean up hash
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+    }, [allPerformances, isDataFullyLoaded]);
+
 
     // --- Handlers ---
     const toggleLike = (id: string, e?: React.MouseEvent) => {
