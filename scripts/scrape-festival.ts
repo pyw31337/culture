@@ -9,7 +9,6 @@
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { Browser, Page } from 'puppeteer';
-import { chromium } from 'playwright'; // Keep chromium if needed, or remove if unused. It seems unused for scraping logic which uses puppeteer.
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
@@ -581,4 +580,9 @@ function cleanupExpiredImages(validIds: string[]) {
     console.log(`Cleanup complete. Deleted ${deletedCount} expired images.`);
 }
 
-scrapeFestivals().catch(console.error);
+scrapeFestivals().then(() => {
+    process.exit(0);
+}).catch(err => {
+    console.error(err);
+    process.exit(1);
+});

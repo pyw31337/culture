@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor';
+import { processImage } from './utils/image-processor.js';
 import pLimit from 'p-limit'; // Add pLimit for parallelism control if needed, though KOBIS is small.
 import axios from 'axios';
 import sharp from 'sharp';
@@ -199,310 +199,317 @@ async function scrapeMovies() {
         ]
     });
 
-    // 0. Load Existing Data for Incremental Check
-    const existingMap = new Map<string, any>();
-    if (fs.existsSync(OUTPUT_FILE)) {
-        try {
-            const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-            loaded.forEach((m: any) => existingMap.set(m.title, m));
-            console.log(`Loaded ${loaded.length} existing movies.`);
-        } catch (e) {
-            console.error('Failed to load existing movies:', e);
-        }
-    }
-
-    // 1. Scrape KOBIS List
-    const kobisContext = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-    });
-    const kobisPage = await kobisContext.newPage();
-    // Stealth
-    await kobisPage.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-
-    let movies: any[] = [];
-
     try {
-        console.log(`Navigating to KOBIS: ${KOBIS_URL}`);
-        await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
-        await kobisPage.waitForSelector('.rst_sch', { timeout: 30000 });
-        try {
-            await kobisPage.waitForSelector('#tbody_0 > tr', { timeout: 10000 });
-        } catch (e) {
-            console.warn('Timeout waiting for rows, trying to proceed anyway (might be empty or slow).');
-        }
 
-        // Load More (Click twice to get 30+ items)
-        const loadMoreBtn = await kobisPage.$('#btn_0');
-        if (loadMoreBtn) {
+        // 0. Load Existing Data for Incremental Check
+        const existingMap = new Map<string, any>();
+        if (fs.existsSync(OUTPUT_FILE)) {
             try {
-                await loadMoreBtn.click();
-                await sleep(1500);
-                const loadMoreBtn2 = await kobisPage.$('#btn_0');
-                if (loadMoreBtn2) {
-                    await loadMoreBtn2.click();
-                    await sleep(1500);
-                }
-            } catch (e) { }
+                const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+                loaded.forEach((m: any) => existingMap.set(m.title, m));
+                console.log(`Loaded ${loaded.length} existing movies.`);
+            } catch (e) {
+                console.error('Failed to load existing movies:', e);
+            }
         }
 
-        movies = await kobisPage.evaluate(() => {
-            const rows = document.querySelectorAll('#tbody_0 > tr');
-            const list: any[] = [];
-            rows.forEach((row, idx) => {
-                if (idx >= 30) return; // Limit to Top 30 as requested
-                const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
-                if (titleLink) {
-                    const title = titleLink.textContent?.trim() || '';
-                    const dateRaw = row.querySelector('td:nth-child(3)')?.textContent?.trim();
-                    const rank = row.querySelector('td:nth-child(1)')?.textContent?.trim();
-                    if (title) {
-                        list.push({ title, dateRaw, rank });
-                    }
-                }
-            });
-            return list;
+        // 1. Scrape KOBIS List
+        const kobisContext = await browser.newContext({
+            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
         });
+        const kobisPage = await kobisContext.newPage();
+        // Stealth
+        await kobisPage.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 
-        if (movies.length === 0) {
-            console.error('KOBIS returned 0 items. Creating error marker.');
-            fs.writeFileSync(path.join(DATA_DIR, 'movies.error'), 'KOBIS returned 0 items. Check selector: #tbody_0 > tr');
-            await browser.close();
-            return;
-        } else {
-            // Cleanup error file if exists
-            const errFile = path.join(DATA_DIR, 'movies.error');
-            if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
-        }
-
-        console.log(`Found ${movies.length} movies from KOBIS.`);
-
-    } catch (e) {
-        console.error('KOBIS Scraping Error:', e);
-        await browser.close();
-        return;
-    } finally {
-        await kobisPage.close();
-    }
-
-    // 2. Enrich with Naver (Sequential with context reuse)
-    // Filter out movies that already have good data
-    const moviesToEnrich: any[] = [];
-
-    // Create Final List Order based on KOBIS rank, but populate with Existing data if available
-    const finalMovies: any[] = [];
-
-    for (const m of movies) {
-        const existing = existingMap.get(m.title);
-        if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
-            // Reuse existing data but update volatile fields
-            existing.rank = m.rank ? parseInt(m.rank) : existing.rank;
-            finalMovies.push(existing);
-            // Maybe update date if KOBIS has a new release date? Usually assume existing is better/enriched.
-        } else {
-            // Needs enrichment
-            moviesToEnrich.push(m);
-        }
-    }
-
-    console.log(`Skipped ${finalMovies.length} movies (Already have data). Enriching ${moviesToEnrich.length}...`);
-
-    const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-    });
-
-    for (const m of moviesToEnrich) {
-        console.log(`Processing: ${m.title}`);
-        const page = await context.newPage();
-        await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-
-        // Base Item
-        let date = m.dateRaw || '';
-        if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
-
-        // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
-        // Reuse existing ID if available to avoid breaking already-shared links
-        const existingForId = existingMap.get(m.title);
-        const id = existingForId?.id || `movie_${slugify(m.title)}`;
-
-        const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
-
-        const item: any = {
-            id,
-            title: m.title,
-            date: date, // Will update with precise date if found
-            region: '전국', // Default
-            genre: 'movie',
-            rank: m.rank ? parseInt(m.rank) : undefined,
-            link: searchUrl // Add Link
-        };
+        let movies: any[] = [];
 
         try {
-            await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
-            await sleep(500 + Math.random() * 500); // Throttling
+            console.log(`Navigating to KOBIS: ${KOBIS_URL}`);
+            await kobisPage.goto(KOBIS_URL, { waitUntil: 'domcontentloaded' });
+            await kobisPage.waitForSelector('.rst_sch', { timeout: 30000 });
+            try {
+                await kobisPage.waitForSelector('#tbody_0 > tr', { timeout: 10000 });
+            } catch (e) {
+                console.warn('Timeout waiting for rows, trying to proceed anyway (might be empty or slow).');
+            }
 
-            // Initial Extraction
-            let detail = await page.evaluate(extractMetadata);
-            Object.assign(item, detail);
-
-            // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
-            if (!item.ageRating || !item.releaseDate) {
+            // Load More (Click twice to get 30+ items)
+            const loadMoreBtn = await kobisPage.$('#btn_0');
+            if (loadMoreBtn) {
                 try {
-                    const clicked = await page.evaluate(() => {
-                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
-                        const t = tabs.find(el => {
-                            const txt = el.textContent?.trim();
-                            return txt === '기본정보' || txt === '정보';
-                        });
-                        if (t) { (t as HTMLElement).click(); return true; }
-                        return false;
-                    });
-                    if (clicked) {
-                        await page.waitForTimeout(1000);
-                        const newDetail = await page.evaluate(extractMetadata);
-                        if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
-                        if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
-                        if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
-                        if (newDetail.director) item.director = newDetail.director;
-                        if (newDetail.cast) item.cast = newDetail.cast;
-                        if (newDetail.poster && !item.poster) item.poster = newDetail.poster;
+                    await loadMoreBtn.click();
+                    await sleep(1500);
+                    const loadMoreBtn2 = await kobisPage.$('#btn_0');
+                    if (loadMoreBtn2) {
+                        await loadMoreBtn2.click();
+                        await sleep(1500);
                     }
                 } catch (e) { }
             }
-
-            // Tab Click Fallback (Cast) - for Cast/Director
-            if (!item.cast || item.cast.length === 0) {
-                try {
-                    const clicked = await page.evaluate(() => {
-                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
-                        const t = tabs.find(el => {
-                            const txt = el.textContent?.trim() || '';
-                            return txt.includes('출연') || txt.includes('등장인물');
-                        });
-                        if (t) { (t as HTMLElement).click(); return true; }
-                        return false;
-                    });
-                    if (clicked) {
-                        await page.waitForTimeout(1000);
-                        const newDetail = await page.evaluate(extractMetadata);
-                        if (newDetail.director) item.director = newDetail.director;
-                        if (newDetail.cast) item.cast = newDetail.cast;
-
-                        // Try for poster again if missing
-                        if (!item.poster) {
-                            const newDetail2 = await page.evaluate(extractMetadata);
-                            if (newDetail2.poster) item.poster = newDetail2.poster;
+            movies = await kobisPage.evaluate(() => {
+                const rows = document.querySelectorAll('#tbody_0 > tr');
+                const list: any[] = [];
+                rows.forEach((row, idx) => {
+                    if (idx >= 30) return; // Limit to Top 30 as requested
+                    const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
+                    if (titleLink) {
+                        const title = titleLink.textContent?.trim() || '';
+                        const dateRaw = row.querySelector('td:nth-child(3)')?.textContent?.trim();
+                        const rank = row.querySelector('td:nth-child(1)')?.textContent?.trim();
+                        if (title) {
+                            list.push({ title, dateRaw, rank });
                         }
                     }
-                } catch (e) { }
-            }
+                });
+                return list;
+            });
 
-            // Final Data Mapping
-            if (item.releaseDate) item.date = item.releaseDate; // Prefer precise release date
-
-            // CRITICAL: If country is missing but it's a Top Rank movie, default to '한국'
-            // if it looks like a Korean title. This prevents aggressive drama filtering.
-            if (!item.productionCountry && item.title.match(/[가-힣]/)) {
-                if (item.rank && item.rank <= 5) item.productionCountry = '한국';
-            }
-
-            // Map ageRating to venue (standard convention in this project)
-            if (item.ageRating) {
-                if (item.ageRating.includes('전체')) item.venue = '전체 관람가';
-                else if (item.ageRating.includes('12')) item.venue = '12세 관람가';
-                else if (item.ageRating.includes('15')) item.venue = '15세 관람가';
-                else if (item.ageRating.includes('청소년')) item.venue = '청소년 관람불가';
-                else item.venue = item.ageRating;
+            if (movies.length === 0) {
+                console.error('KOBIS returned 0 items. Creating error marker.');
+                fs.writeFileSync(path.join(DATA_DIR, 'movies.error'), 'KOBIS returned 0 items. Check selector: #tbody_0 > tr');
+                return;
             } else {
-                item.venue = '등급 미정';
+                // Cleanup error file if exists
+                const errFile = path.join(DATA_DIR, 'movies.error');
+                if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
             }
 
-            // Image Processing
-            if (item.poster) {
-                // Use stable filename: movie_Title
-                const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-                const stableFilename = `movie_${safeTitle}`;
-                const localPath = await processImage(item.poster, stableFilename, 'posters/movies');
-                if (localPath) item.image = localPath;
-            } else {
-                item.image = '';
-            }
-
-            // Cleanup internal fields
-            delete item.poster;
-            delete item.releaseDate;
-            delete item.originalTitle; // Optional: keep if needed, but OTT scraper deletes it often
-            delete item.ageRating;     // Mapped to venue
-
-            finalMovies.push(item);
-            await sleep(300);
+            console.log(`Found ${movies.length} movies from KOBIS.`);
 
         } catch (e) {
-            console.error(`Error processing ${m.title}:`, e);
-            finalMovies.push(item); // Push basic info even if failed
+            console.error('KOBIS Scraping Error:', e);
+            return;
         } finally {
-            await page.close();
-        }
-    }
-
-    await browser.close();
-
-    // Atomic Save
-    if (finalMovies.length > 0) { // 3. Merge and Save (Strict Retention Logic)
-        console.log('Merging data with strict retention policy...');
-        const now = new Date().toISOString();
-        const movieMap = new Map<string, any>();
-
-        // Load ALL existing data first
-        if (fs.existsSync(OUTPUT_FILE)) {
-            const oldData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-            oldData.forEach((m: any) => movieMap.set(m.title, m));
+            await kobisPage.close();
         }
 
-        // Update with NEW data
-        // STRICT POLICY: Only keep movies that are in finalMovies (current Top 30)
-        // This removes movies that are no longer in the KOBIS ranking.
-        const synchronizedMovies: any[] = [];
-        for (const newMovie of finalMovies) {
-            const existing = movieMap.get(newMovie.title);
-            const merged = {
-                ...existing,
-                ...newMovie,
-                lastCollected: now
-            };
-            synchronizedMovies.push(merged);
+        // 2. Enrich with Naver (Sequential with context reuse)
+        // Filter out movies that already have good data
+        const moviesToEnrich: any[] = [];
+
+        // Create Final List Order based on KOBIS rank, but populate with Existing data if available
+        const finalMovies: any[] = [];
+
+        for (const m of movies) {
+            const existing = existingMap.get(m.title);
+            if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
+                // Reuse existing data but update volatile fields
+                existing.rank = m.rank ? parseInt(m.rank) : existing.rank;
+                finalMovies.push(existing);
+                // Maybe update date if KOBIS has a new release date? Usually assume existing is better/enriched.
+            } else {
+                // Needs enrichment
+                moviesToEnrich.push(m);
+            }
         }
 
-        const allMovies = synchronizedMovies;
+        console.log(`Skipped ${finalMovies.length} movies (Already have data). Enriching ${moviesToEnrich.length}...`);
 
-        // Sort: Ranked items first, then by lastCollected descending
-        allMovies.sort((a, b) => {
-            if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
-            if (a.rank) return -1;
-            if (b.rank) return 1;
-            return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
+        const context = await browser.newContext({
+            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
         });
 
-        // Atomic Write
-        const tempFile = `${OUTPUT_FILE}.tmp`;
-        fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
-        fs.renameSync(tempFile, OUTPUT_FILE);
+        for (const m of moviesToEnrich) {
+            console.log(`Processing: ${m.title}`);
+            const page = await context.newPage();
+            await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 
-        console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+            // Base Item
+            let date = m.dateRaw || '';
+            if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
 
-        // Perform Cleanup
-        cleanupOldMovieImages(allMovies);
+            // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
+            // Reuse existing ID if available to avoid breaking already-shared links
+            const existingForId = existingMap.get(m.title);
+            const id = existingForId?.id || `movie_${slugify(m.title)}`;
 
-        // Copy to public/data for frontend access
-        const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');
-        const publicDir = path.dirname(publicFile);
-        if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
 
-        fs.copyFileSync(OUTPUT_FILE, publicFile);
-        console.log(`Copied to ${publicFile}`);
+            const item: any = {
+                id,
+                title: m.title,
+                date: date, // Will update with precise date if found
+                region: '전국', // Default
+                genre: 'movie',
+                rank: m.rank ? parseInt(m.rank) : undefined,
+                link: searchUrl // Add Link
+            };
 
-    } else {
-        console.warn('Scraper found 0 movies. Aborting save.');
+            try {
+                await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
+                await sleep(500 + Math.random() * 500); // Throttling
+
+                // Initial Extraction
+                let detail = await page.evaluate(extractMetadata);
+                Object.assign(item, detail);
+
+                // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
+                if (!item.ageRating || !item.releaseDate) {
+                    try {
+                        const clicked = await page.evaluate(() => {
+                            const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
+                            const t = tabs.find(el => {
+                                const txt = el.textContent?.trim();
+                                return txt === '기본정보' || txt === '정보';
+                            });
+                            if (t) { (t as HTMLElement).click(); return true; }
+                            return false;
+                        });
+                        if (clicked) {
+                            await page.waitForTimeout(1000);
+                            const newDetail = await page.evaluate(extractMetadata);
+                            if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
+                            if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
+                            if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
+                            if (newDetail.director) item.director = newDetail.director;
+                            if (newDetail.cast) item.cast = newDetail.cast;
+                            if (newDetail.poster && !item.poster) item.poster = newDetail.poster;
+                        }
+                    } catch (e) { }
+                }
+
+                // Tab Click Fallback (Cast) - for Cast/Director
+                if (!item.cast || item.cast.length === 0) {
+                    try {
+                        const clicked = await page.evaluate(() => {
+                            const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
+                            const t = tabs.find(el => {
+                                const txt = el.textContent?.trim() || '';
+                                return txt.includes('출연') || txt.includes('등장인물');
+                            });
+                            if (t) { (t as HTMLElement).click(); return true; }
+                            return false;
+                        });
+                        if (clicked) {
+                            await page.waitForTimeout(1000);
+                            const newDetail = await page.evaluate(extractMetadata);
+                            if (newDetail.director) item.director = newDetail.director;
+                            if (newDetail.cast) item.cast = newDetail.cast;
+
+                            // Try for poster again if missing
+                            if (!item.poster) {
+                                const newDetail2 = await page.evaluate(extractMetadata);
+                                if (newDetail2.poster) item.poster = newDetail2.poster;
+                            }
+                        }
+                    } catch (e) { }
+                }
+
+                // Final Data Mapping
+                if (item.releaseDate) item.date = item.releaseDate; // Prefer precise release date
+
+                // CRITICAL: If country is missing but it's a Top Rank movie, default to '한국'
+                // if it looks like a Korean title. This prevents aggressive drama filtering.
+                if (!item.productionCountry && item.title.match(/[가-힣]/)) {
+                    if (item.rank && item.rank <= 5) item.productionCountry = '한국';
+                }
+
+                // Map ageRating to venue (standard convention in this project)
+                if (item.ageRating) {
+                    if (item.ageRating.includes('전체')) item.venue = '전체 관람가';
+                    else if (item.ageRating.includes('12')) item.venue = '12세 관람가';
+                    else if (item.ageRating.includes('15')) item.venue = '15세 관람가';
+                    else if (item.ageRating.includes('청소년')) item.venue = '청소년 관람불가';
+                    else item.venue = item.ageRating;
+                } else {
+                    item.venue = '등급 미정';
+                }
+
+                // Image Processing
+                if (item.poster) {
+                    // Use stable filename: movie_Title
+                    const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
+                    const stableFilename = `movie_${safeTitle}`;
+                    const localPath = await processImage(item.poster, stableFilename, 'posters/movies');
+                    if (localPath) item.image = localPath;
+                } else {
+                    item.image = '';
+                }
+
+                // Cleanup internal fields
+                delete item.poster;
+                delete item.releaseDate;
+                delete item.originalTitle; // Optional: keep if needed, but OTT scraper deletes it often
+                delete item.ageRating;     // Mapped to venue
+
+                finalMovies.push(item);
+                await sleep(300);
+
+            } catch (e) {
+                console.error(`Error processing ${m.title}:`, e);
+                finalMovies.push(item); // Push basic info even if failed
+            } finally {
+                await page.close();
+            }
+        }
+
+        await browser.close();
+
+        // Atomic Save
+        if (finalMovies.length > 0) { // 3. Merge and Save (Strict Retention Logic)
+            console.log('Merging data with strict retention policy...');
+            const now = new Date().toISOString();
+            const movieMap = new Map<string, any>();
+
+            // Load ALL existing data first
+            if (fs.existsSync(OUTPUT_FILE)) {
+                const oldData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+                oldData.forEach((m: any) => movieMap.set(m.title, m));
+            }
+
+            // Update with NEW data
+            // STRICT POLICY: Only keep movies that are in finalMovies (current Top 30)
+            // This removes movies that are no longer in the KOBIS ranking.
+            const synchronizedMovies: any[] = [];
+            for (const newMovie of finalMovies) {
+                const existing = movieMap.get(newMovie.title);
+                const merged = {
+                    ...existing,
+                    ...newMovie,
+                    lastCollected: now
+                };
+                synchronizedMovies.push(merged);
+            }
+
+            const allMovies = synchronizedMovies;
+
+            // Sort: Ranked items first, then by lastCollected descending
+            allMovies.sort((a, b) => {
+                if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
+                if (a.rank) return -1;
+                if (b.rank) return 1;
+                return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
+            });
+
+            // Atomic Write
+            const tempFile = `${OUTPUT_FILE}.tmp`;
+            fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
+            fs.renameSync(tempFile, OUTPUT_FILE);
+
+            console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+
+            // Perform Cleanup
+            cleanupOldMovieImages(allMovies);
+
+            // Copy to public/data for frontend access
+            const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');
+            const publicDir = path.dirname(publicFile);
+            if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+
+            fs.copyFileSync(OUTPUT_FILE, publicFile);
+            console.log(`Copied to ${publicFile}`);
+
+        } else {
+            console.warn('Scraper found 0 movies. Aborting save.');
+        }
+    } finally {
+        await browser.close();
     }
 }
 
-scrapeMovies();
+scrapeMovies().then(() => {
+    process.exit(0);
+}).catch(err => {
+    console.error(err);
+    process.exit(1);
+});

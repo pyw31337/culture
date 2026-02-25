@@ -169,298 +169,326 @@ async function scrapeList(context: any, platform: any, type: string) {
 (async () => {
     console.log('Starting Naver OTT Scraper...');
     const browser = await chromium.launch({ headless: true });
+    let finalRaw: any[] = [];
 
-    // --- Scrape List (Phase 1) ---
-    const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
-    const limit = pLimit(1); // Reduced from 2 to 1 for Phase 1 list scraping
-    const tasks = [];
+    try {
+        // --- Scrape List (Phase 1) ---
+        const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
+        const limit = pLimit(1); // Reduced from 2 to 1 for Phase 1 list scraping
+        const tasks = [];
 
-    const phase1Bar = new cliProgress.SingleBar({
-        format: 'Phase 1 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {platform} - {type}',
-        hideCursor: true
-    }, cliProgress.Presets.shades_classic);
-    phase1Bar.start(PLATFORMS.length * TYPES.length, 0, { platform: 'Ready', type: '' });
+        const phase1Bar = new cliProgress.SingleBar({
+            format: 'Phase 1 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {platform} - {type}',
+            hideCursor: true
+        }, cliProgress.Presets.shades_classic);
+        phase1Bar.start(PLATFORMS.length * TYPES.length, 0, { platform: 'Ready', type: '' });
 
-    for (const p of PLATFORMS) {
-        for (const t of TYPES) {
-            tasks.push(limit(async () => {
-                phase1Bar.update({ platform: p.name, type: t });
-                const res = await scrapeList(context, p, t);
-                phase1Bar.increment();
-                return res;
-            }));
-        }
-    }
-
-    const results = await Promise.all(tasks);
-    phase1Bar.stop();
-    const flatResults = results.flat();
-
-    const dedupedCtx: Record<string, any> = {};
-    for (const it of flatResults) {
-        const id = `ott_naver_${it.title.replace(/\s+/g, '')}`;
-        if (!dedupedCtx[id]) {
-            dedupedCtx[id] = { ...it, id, platforms: [it.platform] };
-        } else {
-            if (!dedupedCtx[id].platforms.includes(it.platform)) {
-                dedupedCtx[id].platforms.push(it.platform);
+        for (const p of PLATFORMS) {
+            for (const t of TYPES) {
+                tasks.push(limit(async () => {
+                    phase1Bar.update({ platform: p.name, type: t });
+                    const res = await scrapeList(context, p, t);
+                    phase1Bar.increment();
+                    return res;
+                }));
             }
         }
+
+        const results = await Promise.all(tasks);
+        phase1Bar.stop();
+        const flatResults = results.flat();
+
+        const dedupedCtx: Record<string, any> = {};
+        for (const it of flatResults) {
+            const id = `ott_naver_${it.title.replace(/\s+/g, '')}`;
+            if (!dedupedCtx[id]) {
+                dedupedCtx[id] = { ...it, id, platforms: [it.platform] };
+            } else {
+                if (!dedupedCtx[id].platforms.includes(it.platform)) {
+                    dedupedCtx[id].platforms.push(it.platform);
+                }
+            }
+        }
+
+        finalRaw = Object.values(dedupedCtx);
+        console.log(`Raw Collection Complete. Total Unique: ${finalRaw.length}`);
+        fs.writeFileSync(RAW_OUTPUT_FILE, JSON.stringify(finalRaw, null, 2));
+
+    } finally {
+        await browser.close();
     }
 
-    const finalRaw = Object.values(dedupedCtx);
-    console.log(`Raw Collection Complete. Total Unique: ${finalRaw.length}`);
-    fs.writeFileSync(RAW_OUTPUT_FILE, JSON.stringify(finalRaw, null, 2));
-
-    await browser.close();
     console.log('Phase 1 Done. Starting Phase 2 (Enrichment)...');
 
     // --- Enrichment (Phase 2) ---
     const enrichedItems: any[] = [];
     const browser2 = await chromium.launch({ headless: true });
-    // Use slightly taller viewport for NamuWiki scrolling
-    const context2 = await browser2.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        viewport: { width: 1280, height: 1080 }
-    });
 
-    const limitEnrich = pLimit(2); // Reduced from 5 to 2 for Phase 2 enrichment
-    const progressBar = new cliProgress.SingleBar({
-        format: 'Phase 2 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {status}',
-        hideCursor: true
-    }, cliProgress.Presets.shades_classic);
-    progressBar.start(finalRaw.length, 0, { status: 'Starting...' });
+    try {
+        // Use slightly taller viewport for NamuWiki scrolling
+        const context2 = await browser2.newContext({
+            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            viewport: { width: 1280, height: 1080 }
+        });
 
-    const enrichTasks = finalRaw.map(item => limitEnrich(async () => {
-        const page = await context2.newPage();
-        page.setDefaultTimeout(15000);
-        page.setDefaultNavigationTimeout(15000);
-        try {
-            progressBar.update({ status: item.title.substring(0, 20) });
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
-            // Increased delay to reduce CPU spikes
-            await sleep(1500 + Math.random() * 2000);
+        const limitEnrich = pLimit(2); // Reduced from 5 to 2 for Phase 2 enrichment
+        const progressBar = new cliProgress.SingleBar({
+            format: 'Phase 2 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {status}',
+            hideCursor: true
+        }, cliProgress.Presets.shades_classic);
+        progressBar.start(finalRaw.length, 0, { status: 'Starting...' });
 
-            const detail = await page.evaluate(async () => {
-                const res: any = {};
+        const enrichTasks = finalRaw.map(item => limitEnrich(async () => {
+            const page = await context2.newPage();
+            page.setDefaultTimeout(15000);
+            page.setDefaultNavigationTimeout(15000);
+            try {
+                progressBar.update({ status: item.title.substring(0, 20) });
+                await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                // Increased delay to reduce CPU spikes
+                await sleep(1500 + Math.random() * 2000);
 
-                // 1. Basic Info Parsing using Iteration (Robust)
-                const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
-                let realGenre = '';
+                const detail = await page.evaluate(async () => {
+                    const res: any = {};
 
-                infoGroups.forEach(group => {
-                    const dt = group.querySelector('dt');
-                    const dd = group.querySelector('dd');
-                    if (!dt || !dd) return;
+                    // 1. Basic Info Parsing using Iteration (Robust)
+                    const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
+                    let realGenre = '';
 
-                    const label = dt.textContent?.trim() || '';
-                    const value = dd.textContent?.trim() || '';
+                    infoGroups.forEach(group => {
+                        const dt = group.querySelector('dt');
+                        const dd = group.querySelector('dd');
+                        if (!dt || !dd) return;
 
-                    if (label.includes('개요') || label.includes('장르')) {
-                        if (value.includes('·')) {
-                            const parts = value.split('·').map(s => s.trim());
-                            parts.forEach(p => {
-                                if (p.endsWith('분')) res.runningTime = p;
-                                else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c)) || p.length < 5) res.productionCountry = p;
-                                else realGenre = p;
-                            });
-                        } else {
-                            if (!value.match(/(\d+분)/) && !value.match(/(한국|미국|일본|중국|영국|독일|프랑스)/)) {
-                                realGenre = value;
+                        const label = dt.textContent?.trim() || '';
+                        const value = dd.textContent?.trim() || '';
+
+                        if (label.includes('개요') || label.includes('장르')) {
+                            if (value.includes('·')) {
+                                const parts = value.split('·').map(s => s.trim());
+                                parts.forEach(p => {
+                                    if (p.endsWith('분')) res.runningTime = p;
+                                    else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c)) || p.length < 5) res.productionCountry = p;
+                                    else realGenre = p;
+                                });
+                            } else {
+                                if (!value.match(/(\d+분)/) && !value.match(/(한국|미국|일본|중국|영국|독일|프랑스)/)) {
+                                    realGenre = value;
+                                }
+                            }
+                        }
+                        if (label === '등급') res.ageRating = value;
+                        if (label === '국가') res.productionCountry = value;
+                        if (label === '러닝타임') res.runningTime = value;
+                    });
+
+                    if (!res.date) {
+                        const groups = Array.from(document.querySelectorAll('.info_group'));
+                        for (const g of groups) {
+                            const dt = g.querySelector('dt');
+                            const dd = g.querySelector('dd');
+                            if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영') || dt.textContent?.includes('공개') || dt.textContent?.includes('오픈') || dt.textContent?.includes('출시') || dt.textContent?.includes('제작'))) {
+                                const text = dd.textContent?.trim() || '';
+                                const match = text.match(/20\d{2}[년\.\-\s]+[0-1]?\d[월\.\-\s]+[0-3]?\d[일\.\-\s]*/);
+                                if (match) {
+                                    let dateStr = match[0].replace(/[년월일\s]/g, '.').replace(/\.+/g, '.').replace(/\.$/, '');
+                                    const parts = dateStr.split('.');
+                                    if (parts.length === 3) {
+                                        const y = parts[0];
+                                        const m = parts[1].padStart(2, '0');
+                                        const d = parts[2].padStart(2, '0');
+                                        res.date = `${y}.${m}.${d}`;
+                                    } else {
+                                        res.date = dateStr;
+                                    }
+                                } else {
+                                    const matchYM = text.match(/20\d{2}[년\.\-\s]+[0-1]?\d[월\.\-\s]*/);
+                                    if (matchYM) {
+                                        let temp = matchYM[0].replace(/[년월\s]/g, '.').replace(/\.+/g, '.').replace(/\.$/, '');
+                                        const parts = temp.split('.');
+                                        res.date = `${parts[0]}.${parts[1].padStart(2, '0')}.01`;
+                                    } else {
+                                        res.date = text.replace(/\(.*\)/, '').replace(/[가-힣\s]/g, '').replace(/\.$/, '').trim();
+                                    }
+                                }
+                                break;
                             }
                         }
                     }
-                    if (label === '등급') res.ageRating = value;
-                    if (label === '국가') res.productionCountry = value;
-                    if (label === '러닝타임') res.runningTime = value;
+
+                    if (!res.ageRating) {
+                        const groups = Array.from(document.querySelectorAll('.info_group'));
+                        for (const g of groups) {
+                            const dt = g.querySelector('dt');
+                            const dd = g.querySelector('dd');
+                            if (dt && dd && (dt.textContent?.includes('등급') || dt.textContent?.includes('연령'))) {
+                                res.ageRating = dd.textContent?.trim();
+                                break;
+                            }
+                        }
+                    }
+
+                    if (!realGenre) {
+                        const subGenre = document.querySelector('.sub_title span.txt');
+                        if (subGenre) realGenre = subGenre.textContent?.trim() || '';
+                    }
+
+                    res.genre = 'ott';
+                    res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
+
+                    // 2. Cast Parsing (Scoped)
+                    const cast: string[] = [];
+                    // Primary container for cast in Naver SDS
+                    const castContainer = document.querySelector('.cm_content_area._cast_area, ._actor_wrap, .sec_scroll_cast_member');
+                    if (castContainer) {
+                        const members = castContainer.querySelectorAll('.card_item, .item');
+                        members.forEach(m => {
+                            const nameEl = m.querySelector('.name') || m.querySelector('a._text');
+                            const roleEl = m.querySelector('.sub_text');
+                            let name = nameEl?.textContent?.trim() || '';
+                            let role = roleEl?.textContent?.trim() || '';
+
+                            if (name.includes(' 역')) {
+                                if (role) name = role;
+                                else name = name.split(' 역')[0];
+                            }
+
+                            // Stricter name validation
+                            if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
+                                const isDirector = role.includes('감독') || role.includes('연출');
+                                if (isDirector) res.director = name;
+                                else cast.push(name);
+                            }
+                        });
+                    }
+                    if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
+
+                    return res;
                 });
 
-                if (!res.date) {
-                    const groups = Array.from(document.querySelectorAll('.info_group'));
-                    for (const g of groups) {
-                        const dt = g.querySelector('dt');
-                        const dd = g.querySelector('dd');
-                        if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영') || dt.textContent?.includes('공개'))) {
-                            res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '').replace(/[가-힣\s]/g, (match) => match === ' ' ? ' ' : '').trim();
-                            // If it's just "2026 02 14", convert to "2026.02.14"
-                            if (res.date.match(/^\d{4}\s\d{2}\s\d{2}$/)) {
-                                res.date = res.date.replace(/\s/g, '.');
+                if (detail) Object.assign(item, detail);
+
+                // --- 3. Interactive Cast Fallback ---
+                if ((!item.cast || item.cast.length === 0) && item.link.includes('search.naver.com')) {
+                    try {
+                        const foundTab = await page.evaluate(() => {
+                            const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
+                            const t = tabs.find(el => el.textContent?.includes('출연진') || el.textContent?.includes('등장인물'));
+                            if (t) { (t as HTMLElement).click(); return true; }
+                            return false;
+                        });
+
+                        if (foundTab) {
+                            await page.waitForTimeout(1500);
+                            const newCastData = await page.evaluate(() => {
+                                const newCast: string[] = [];
+                                let director = '';
+                                // Strictly scope to the active content wrap
+                                const container = document.querySelector('.cm_content_wrap .list_image_info._content, .cm_content_wrap .list_info');
+                                if (container) {
+                                    const members = container.querySelectorAll('li, .item');
+                                    members.forEach(m => {
+                                        const nameEl = m.querySelector('strong.name, .name') || m.querySelector('a._text');
+                                        const roleEl = m.querySelector('span.sub_text, .sub_text');
+                                        let name = nameEl?.textContent?.trim() || '';
+                                        let role = roleEl?.textContent?.trim() || '';
+
+                                        if (name.includes(' 역')) name = name.split(' 역')[0];
+
+                                        // Strict name check
+                                        if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
+                                            if (role.includes('감독') || role.includes('연출')) director = name;
+                                            else newCast.push(name);
+                                        }
+                                    });
+                                }
+                                return { cast: Array.from(new Set(newCast)).slice(0, 8), director };
+                            });
+                            if (newCastData.cast.length > 0) item.cast = newCastData.cast;
+                            if (newCastData.director && !item.director) item.director = newCastData.director;
+                        }
+                    } catch (err) { }
+                }
+
+                // --- 4. IMAGE PROCESSING & NamuWiki Fallback ---
+                // Try downloading original poster first
+                let localPoster = '';
+                if (item.poster && !item.poster.startsWith('data:')) {
+                    localPoster = await processImage(item.poster, item.title);
+                    if (localPoster) item.poster = localPoster;
+                }
+
+                // If failed or invalid, try NamuWiki
+                const isInvalidPoster = !localPoster; // If processImage returned '', we still need a poster
+                const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
+
+                if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !item.posterSource) {
+                    try {
+                        await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                        await sleep(2000);
+
+                        const searchResultLink = await page.$('.search-item a, .search-result-list a');
+                        if (searchResultLink) {
+                            const txt = await searchResultLink.innerText();
+                            if (!txt.includes('User:') && !txt.includes('Talk:') && !txt.includes('사용자:') && !txt.includes('토론:')) {
+                                await searchResultLink.click();
+                                await page.waitForTimeout(2000);
                             }
-                            break;
-                        }
-                    }
-                }
-
-                if (!res.ageRating) {
-                    const groups = Array.from(document.querySelectorAll('.info_group'));
-                    for (const g of groups) {
-                        const dt = g.querySelector('dt');
-                        const dd = g.querySelector('dd');
-                        if (dt && dd && (dt.textContent?.includes('등급') || dt.textContent?.includes('연령'))) {
-                            res.ageRating = dd.textContent?.trim();
-                            break;
-                        }
-                    }
-                }
-
-                if (!realGenre) {
-                    const subGenre = document.querySelector('.sub_title span.txt');
-                    if (subGenre) realGenre = subGenre.textContent?.trim() || '';
-                }
-
-                res.genre = 'ott';
-                res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
-
-                // 2. Cast Parsing (Scoped)
-                const cast: string[] = [];
-                // Primary container for cast in Naver SDS
-                const castContainer = document.querySelector('.cm_content_area._cast_area, ._actor_wrap, .sec_scroll_cast_member');
-                if (castContainer) {
-                    const members = castContainer.querySelectorAll('.card_item, .item');
-                    members.forEach(m => {
-                        const nameEl = m.querySelector('.name') || m.querySelector('a._text');
-                        const roleEl = m.querySelector('.sub_text');
-                        let name = nameEl?.textContent?.trim() || '';
-                        let role = roleEl?.textContent?.trim() || '';
-
-                        if (name.includes(' 역')) {
-                            if (role) name = role;
-                            else name = name.split(' 역')[0];
                         }
 
-                        // Stricter name validation
-                        if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
-                            const isDirector = role.includes('감독') || role.includes('연출');
-                            if (isDirector) res.director = name;
-                            else cast.push(name);
-                        }
-                    });
-                }
-                if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
+                        await page.evaluate(() => window.scrollTo(0, 800));
+                        await page.waitForTimeout(1000);
 
-                return res;
-            });
+                        const namuPoster = await page.evaluate(() => {
+                            const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
+                            let candidate = imgs.find(img => {
+                                const el = img as HTMLImageElement;
+                                return el.width > 150 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
+                            });
 
-            if (detail) Object.assign(item, detail);
-
-            // --- 3. Interactive Cast Fallback ---
-            if ((!item.cast || item.cast.length === 0) && item.link.includes('search.naver.com')) {
-                try {
-                    const foundTab = await page.evaluate(() => {
-                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
-                        const t = tabs.find(el => el.textContent?.includes('출연진') || el.textContent?.includes('등장인물'));
-                        if (t) { (t as HTMLElement).click(); return true; }
-                        return false;
-                    });
-
-                    if (foundTab) {
-                        await page.waitForTimeout(1500);
-                        const newCastData = await page.evaluate(() => {
-                            const newCast: string[] = [];
-                            let director = '';
-                            // Strictly scope to the active content wrap
-                            const container = document.querySelector('.cm_content_wrap .list_image_info._content, .cm_content_wrap .list_info');
-                            if (container) {
-                                const members = container.querySelectorAll('li, .item');
-                                members.forEach(m => {
-                                    const nameEl = m.querySelector('strong.name, .name') || m.querySelector('a._text');
-                                    const roleEl = m.querySelector('span.sub_text, .sub_text');
-                                    let name = nameEl?.textContent?.trim() || '';
-                                    let role = roleEl?.textContent?.trim() || '';
-
-                                    if (name.includes(' 역')) name = name.split(' 역')[0];
-
-                                    // Strict name check
-                                    if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
-                                        if (role.includes('감독') || role.includes('연출')) director = name;
-                                        else newCast.push(name);
-                                    }
+                            if (!candidate) {
+                                const allImgs = Array.from(document.querySelectorAll('img'));
+                                candidate = allImgs.find(img => {
+                                    const el = img as HTMLImageElement;
+                                    return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
                                 });
                             }
-                            return { cast: Array.from(new Set(newCast)).slice(0, 8), director };
-                        });
-                        if (newCastData.cast.length > 0) item.cast = newCastData.cast;
-                        if (newCastData.director && !item.director) item.director = newCastData.director;
-                    }
-                } catch (err) { }
-            }
-
-            // --- 4. IMAGE PROCESSING & NamuWiki Fallback ---
-            // Try downloading original poster first
-            let localPoster = '';
-            if (item.poster && !item.poster.startsWith('data:')) {
-                localPoster = await processImage(item.poster, item.title);
-                if (localPoster) item.poster = localPoster;
-            }
-
-            // If failed or invalid, try NamuWiki
-            const isInvalidPoster = !localPoster; // If processImage returned '', we still need a poster
-            const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
-
-            if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !item.posterSource) {
-                try {
-                    await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
-                    await sleep(2000);
-
-                    const searchResultLink = await page.$('.search-item a, .search-result-list a');
-                    if (searchResultLink) {
-                        const txt = await searchResultLink.innerText();
-                        if (!txt.includes('User:') && !txt.includes('Talk:') && !txt.includes('사용자:') && !txt.includes('토론:')) {
-                            await searchResultLink.click();
-                            await page.waitForTimeout(2000);
-                        }
-                    }
-
-                    await page.evaluate(() => window.scrollTo(0, 800));
-                    await page.waitForTimeout(1000);
-
-                    const namuPoster = await page.evaluate(() => {
-                        const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
-                        let candidate = imgs.find(img => {
-                            const el = img as HTMLImageElement;
-                            return el.width > 150 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
+                            return candidate ? (candidate as HTMLImageElement).src : null;
                         });
 
-                        if (!candidate) {
-                            const allImgs = Array.from(document.querySelectorAll('img'));
-                            candidate = allImgs.find(img => {
-                                const el = img as HTMLImageElement;
-                                return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
-                            });
+                        if (namuPoster) {
+                            const newLocal = await processImage(namuPoster, item.title);
+                            if (newLocal) {
+                                item.poster = newLocal;
+                                item.posterSource = 'namuwiki';
+                            }
                         }
-                        return candidate ? (candidate as HTMLImageElement).src : null;
-                    });
-
-                    if (namuPoster) {
-                        const newLocal = await processImage(namuPoster, item.title);
-                        if (newLocal) {
-                            item.poster = newLocal;
-                            item.posterSource = 'namuwiki';
-                        }
+                    } catch (namuErr) {
+                        // Fail silently
                     }
-                } catch (namuErr) {
-                    // Fail silently
                 }
+
+            } catch (e) {
+                // console.error(`Error enriching ${item.title}:`, e);
+            } finally {
+                await page.close();
+                progressBar.increment();
             }
+            enrichedItems.push(item);
+        }));
 
-        } catch (e) {
-            // console.error(`Error enriching ${item.title}:`, e);
-        } finally {
-            await page.close();
-            progressBar.increment();
-        }
-        enrichedItems.push(item);
-    }));
+        await Promise.all(enrichTasks);
+        progressBar.stop();
+        console.log(`Phase 2 Done. Saving ${enrichedItems.length} items...`);
+        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
+        fs.writeFileSync(PUBLIC_OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
 
-    await Promise.all(enrichTasks);
-    progressBar.stop();
-    await browser2.close();
-
-    console.log(`Phase 2 Done. Saving ${enrichedItems.length} items...`);
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
-    fs.writeFileSync(PUBLIC_OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
-
-    // Cleanup Orphans
-    cleanupOldOTTImages(enrichedItems);
-
-})();
+    } finally {
+        await browser2.close();
+    }
+})().then(() => {
+    process.exit(0);
+}).catch(err => {
+    console.error(err);
+    process.exit(1);
+});

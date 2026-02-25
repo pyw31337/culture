@@ -29,143 +29,146 @@ async function scrapeHandball() {
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
     });
 
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 1024 });
-
-    console.log(`Navigating to ${TARGET_URL}...`);
-    await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
-
-    // Wait for table to ensure load
     try {
-        await page.waitForSelector('.record_table.pc_only table tbody tr', { timeout: 30000 });
-    } catch (e) {
-        console.log('Table not found or timed out');
-    }
+        const page = await browser.newPage();
+        await page.setViewport({ width: 1280, height: 1024 });
 
-    const performances: Performance[] = await page.evaluate(() => {
-        const rows = Array.from(document.querySelectorAll('.record_table.pc_only table tbody tr'));
-        const results: any[] = [];
-        let currentDate = '';
+        console.log(`Navigating to ${TARGET_URL}...`);
+        await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        function slugify(text: string): string {
-            return text
-                .replace(/[^a-zA-Z0-9가-힣]/g, '_')
-                .replace(/_+/g, '_')
-                .replace(/^_|_$/g, '');
+        // Wait for table to ensure load
+        try {
+            await page.waitForSelector('.record_table.pc_only table tbody tr', { timeout: 30000 });
+        } catch (e) {
+            console.log('Table not found or timed out');
         }
 
-        rows.forEach(tr => {
-            const cells = Array.from(tr.children) as HTMLElement[];
-            if (cells.length === 0) return;
+        const performances: Performance[] = await page.evaluate(() => {
+            const rows = Array.from(document.querySelectorAll('.record_table.pc_only table tbody tr'));
+            const results: any[] = [];
+            let currentDate = '';
 
-            let dateStr = '';
-            let timeStr = '';
-            let venueStr = '';
-            let teamsStr = '';
-
-            // Check if this row initiates a new date (first cell has date pattern)
-            const firstCellText = cells[0].innerText.trim();
-            const dateMatch = firstCellText.match(/(\d{4})\.(\d{2})\.(\d{2})/);
-
-            let contentCell: HTMLElement | null = null;
-
-            if (dateMatch) {
-                // New Date Row
-                currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
-                dateStr = currentDate;
-                timeStr = cells[1]?.innerText.trim() || '00:00';
-                contentCell = cells[3] as HTMLElement;
-                venueStr = cells[5]?.innerText.trim() || '';
-                // Note: Index 5 based on diagnostic (Date, Time, Division, Content, Broadcaster, Venue, ...)
-                // Diagnostic showed: 
-                // 0: Date
-                // 1: Time
-                // 2: Division
-                // 3: Content
-                // 4: Broadcaster
-                // 5: Venue
-            } else {
-                // Continuation Row (No date cell)
-                if (!currentDate) return; // Should not happen if data is sorted
-                dateStr = currentDate;
-                timeStr = cells[0]?.innerText.trim() || '00:00';
-                contentCell = cells[2] as HTMLElement;
-                venueStr = cells[4]?.innerText.trim() || '';
-                // Diagnostic showed:
-                // 0: Time
-                // 1: Division
-                // 2: Content
-                // 3: Broadcaster
-                // 4: Venue
-            }
-
-            // Extract Teams and Logos from Content Cell
-            const HANDBALL_LOGOS = {
-                "두산": "/culture/images/logos/handball/doosan_official.png",
-                "SK호크스": "/culture/images/logos/handball/sk_hawks_official.png",
-                "하남시청": "/culture/images/logos/handball/hanam_official.png",
-                "상무 피닉스": "/culture/images/logos/handball/sangmu_official.png",
-                "충남도청": "/culture/images/logos/handball/chungnam_official.png",
-                "인천도시공사": "/culture/images/logos/handball/incheon_official.png",
-                "SK슈가글라이더즈": "/culture/images/logos/handball/sk_sugar_official.png",
-                "광주도시공사": "/culture/images/logos/handball/gwangju_official.png",
-                "서울시청": "/culture/images/logos/handball/seoul_official.png",
-                "인천광역시청": "/culture/images/logos/handball/incheon_city_official.png",
-                "부산시설공단": "/culture/images/logos/handball/busan_official.png",
-                "경남개발공사": "/culture/images/logos/handball/gyeongnam_official.png",
-                "삼척시청": "/culture/images/logos/handball/samcheok_official.png",
-                "대구광역시청": "/culture/images/logos/handball/daegu_official.png"
+            const slugify = (text: string): string => {
+                return text
+                    .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+                    .replace(/_+/g, '_')
+                    .replace(/^_|_$/g, '');
             };
 
-            let homeTeam = '';
-            let awayTeam = '';
-            let homeTeamLogo = '';
-            let awayTeamLogo = '';
+            rows.forEach(tr => {
+                const cells = Array.from(tr.children) as HTMLElement[];
+                if (cells.length === 0) return;
 
-            if (contentCell) {
-                const homeEl = contentCell.querySelector('.team.home .name');
-                const awayEl = contentCell.querySelector('.team.away .name');
+                let dateStr = '';
+                let timeStr = '';
+                let venueStr = '';
+                let teamsStr = '';
 
-                if (homeEl) homeTeam = (homeEl as HTMLElement).innerText.trim();
-                if (awayEl) awayTeam = (awayEl as HTMLElement).innerText.trim();
+                // Check if this row initiates a new date (first cell has date pattern)
+                const firstCellText = cells[0].innerText.trim();
+                const dateMatch = firstCellText.match(/(\d{4})\.(\d{2})\.(\d{2})/);
 
-                homeTeamLogo = (HANDBALL_LOGOS as any)[homeTeam] || '';
-                awayTeamLogo = (HANDBALL_LOGOS as any)[awayTeam] || '';
-            }
+                let contentCell: HTMLElement | null = null;
 
-            if (homeTeam && awayTeam) {
-                const title = `${homeTeam} vs ${awayTeam}`;
-                const safeMatchup = slugify(title);
-                results.push({
-                    id: `handball_${dateStr.replace(/-/g, '')}_${safeMatchup}`,
-                    title,
-                    date: `${dateStr} ${timeStr}`,
-                    venue: venueStr,
-                    link: 'https://www.koreahandball.com/game/schedule_list.php',
-                    genre: 'handball',
-                    homeTeam,
-                    awayTeam,
-                    homeTeamLogo,
-                    awayTeamLogo
-                });
-            }
+                if (dateMatch) {
+                    // New Date Row
+                    currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+                    dateStr = currentDate;
+                    timeStr = cells[1]?.innerText.trim() || '00:00';
+                    contentCell = cells[3] as HTMLElement;
+                    venueStr = cells[5]?.innerText.trim() || '';
+                    // Note: Index 5 based on diagnostic (Date, Time, Division, Content, Broadcaster, Venue, ...)
+                    // Diagnostic showed: 
+                    // 0: Date
+                    // 1: Time
+                    // 2: Division
+                    // 3: Content
+                    // 4: Broadcaster
+                    // 5: Venue
+                } else {
+                    // Continuation Row (No date cell)
+                    if (!currentDate) return; // Should not happen if data is sorted
+                    dateStr = currentDate;
+                    timeStr = cells[0]?.innerText.trim() || '00:00';
+                    contentCell = cells[2] as HTMLElement;
+                    venueStr = cells[4]?.innerText.trim() || '';
+                    // Diagnostic showed:
+                    // 0: Time
+                    // 1: Division
+                    // 2: Content
+                    // 3: Broadcaster
+                    // 4: Venue
+                }
+
+                // Extract Teams and Logos from Content Cell
+                const HANDBALL_LOGOS = {
+                    "두산": "/culture/images/logos/handball/doosan_official.png",
+                    "SK호크스": "/culture/images/logos/handball/sk_hawks_official.png",
+                    "하남시청": "/culture/images/logos/handball/hanam_official.png",
+                    "상무 피닉스": "/culture/images/logos/handball/sangmu_official.png",
+                    "충남도청": "/culture/images/logos/handball/chungnam_official.png",
+                    "인천도시공사": "/culture/images/logos/handball/incheon_official.png",
+                    "SK슈가글라이더즈": "/culture/images/logos/handball/sk_sugar_official.png",
+                    "광주도시공사": "/culture/images/logos/handball/gwangju_official.png",
+                    "서울시청": "/culture/images/logos/handball/seoul_official.png",
+                    "인천광역시청": "/culture/images/logos/handball/incheon_city_official.png",
+                    "부산시설공단": "/culture/images/logos/handball/busan_official.png",
+                    "경남개발공사": "/culture/images/logos/handball/gyeongnam_official.png",
+                    "삼척시청": "/culture/images/logos/handball/samcheok_official.png",
+                    "대구광역시청": "/culture/images/logos/handball/daegu_official.png"
+                };
+
+                let homeTeam = '';
+                let awayTeam = '';
+                let homeTeamLogo = '';
+                let awayTeamLogo = '';
+
+                if (contentCell) {
+                    const homeEl = contentCell.querySelector('.team.home .name');
+                    const awayEl = contentCell.querySelector('.team.away .name');
+
+                    if (homeEl) homeTeam = (homeEl as HTMLElement).innerText.trim();
+                    if (awayEl) awayTeam = (awayEl as HTMLElement).innerText.trim();
+
+                    homeTeamLogo = (HANDBALL_LOGOS as any)[homeTeam] || '';
+                    awayTeamLogo = (HANDBALL_LOGOS as any)[awayTeam] || '';
+                }
+
+                if (homeTeam && awayTeam) {
+                    const title = `${homeTeam} vs ${awayTeam}`;
+                    const safeMatchup = slugify(title);
+                    results.push({
+                        id: `handball_${dateStr.replace(/-/g, '')}_${safeMatchup}`,
+                        title,
+                        date: `${dateStr} ${timeStr}`,
+                        venue: venueStr,
+                        link: 'https://www.koreahandball.com/game/schedule_list.php',
+                        genre: 'handball',
+                        homeTeam,
+                        awayTeam,
+                        homeTeamLogo,
+                        awayTeamLogo
+                    });
+                }
+            });
+
+            return results;
         });
 
-        return results;
-    });
+        // Post-process to add region and image
+        const finalData = performances.map(p => ({
+            ...p,
+            image: HANDBALL_POSTER,
+            region: classifyRegion(p.venue)
+        }));
 
-    // Post-process to add region and image
-    const finalData = performances.map(p => ({
-        ...p,
-        image: HANDBALL_POSTER,
-        region: classifyRegion(p.venue)
-    }));
+        console.log(`Total matches collected: ${finalData.length}`);
+        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalData, null, 2));
+        console.log(`Saved to ${OUTPUT_PATH}`);
 
-    console.log(`Total matches collected: ${finalData.length}`);
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalData, null, 2));
-    console.log(`Saved to ${OUTPUT_PATH}`);
-
-    await browser.close();
+    } finally {
+        await browser.close();
+    }
 }
 
 function classifyRegion(venue: string): string {
@@ -180,4 +183,9 @@ function classifyRegion(venue: string): string {
     return 'etc';
 }
 
-scrapeHandball().catch(console.error);
+scrapeHandball().then(() => {
+    process.exit(0);
+}).catch(err => {
+    console.error(err);
+    process.exit(1);
+});

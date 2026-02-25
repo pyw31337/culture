@@ -625,8 +625,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     return finalItems;
 }
 
-(async () => {
+const runScraper = async () => {
     console.log('Starting Interpark Scraper (TS) with Resume...');
+
+    const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
 
     // 0. Load existing data
     const existingMap = new Map<string, Performance>();
@@ -659,7 +661,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     // 2. Enrich Details
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
     });
 
     try {
@@ -672,4 +674,11 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     } finally {
         await browser.close();
     }
-})();
+};
+
+runScraper().then(() => {
+    process.exit(0);
+}).catch(err => {
+    console.error(err);
+    process.exit(1);
+});

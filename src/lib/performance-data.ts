@@ -14,6 +14,7 @@ import classData from '@/data/sssd-class.json';
 import ottData from '@/data/ott.json';
 
 import handballData from '@/data/handball.json';
+import kleagueData from '@/data/kleague.json';
 // import hockeyData from '@/data/hockey.json'; 
 import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
@@ -124,6 +125,7 @@ export function getAllPerformances() {
     const basketball = safeArray<any>(kblData).map(p => ({ ...p, id: String(p.id) }));
     const baseball = safeArray<any>(kboData).map(p => ({ ...p, id: String(p.id) }));
     const handball = safeArray<any>(handballData).map(p => ({ ...p, id: String(p.id) }));
+    const soccer = safeArray<any>(kleagueData).map(p => ({ ...p, id: String(p.id) }));
     const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
     const movies = safeArray<any>(moviesData)
         .map(p => ({ ...p, id: String(p.id), genre: 'movie' }))
@@ -145,7 +147,7 @@ export function getAllPerformances() {
         ...basketball,
         ...baseball,
         ...handball,
-        // ...soccerData,
+        ...soccer,
         ...ott.map(p => ({ ...p, venue: 'OTT' })),
         ...movies,
         ...safeArray<any>(kidsData).map(p => ({ ...p, id: String(p.id) })),
