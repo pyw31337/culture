@@ -114,7 +114,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          external_repository: pyw31337/culture
           publish_dir: ./out
           force_orphan: true
 
