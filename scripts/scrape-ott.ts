@@ -4,10 +4,15 @@ import fs from 'fs';
 import path from 'path';
 import pLimit from 'p-limit';
 import cliProgress from 'cli-progress';
-import { processImage } from './utils/image-processor';
+
+// import { processImage } from './utils/image-processor'; // Removed
+import axios from 'axios';
+import sharp from 'sharp';
 
 // --- CONFIG ---
-const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
+const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver.json');
+const RAW_OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver-raw.json');
+const POSTER_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'ott');
 
 // Platforms & Types
 const PLATFORMS = [
@@ -22,86 +27,78 @@ const TYPES = ['추천', '신작'];
 // --- HELPERS ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
-function slugify(text: string): string {
-    return text
-        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
-        .replace(/_+/g, '_')
-        .replace(/^_|_$/g, '');
-}
+async function processImage(url: string, filenameBase: string): Promise<string> {
+    if (!url || url.startsWith('data:')) return '';
 
-const MANUAL_GRADES: Record<string, string> = {
-    '은애하는 도적님아': '15세 이상 관람가',
-    '은애하는 도적님아 - 시즌 1': '15세 이상 관람가',
-    '언더커버 미쓰홍': '15세 이상 관람가',
-    '언더커버 미쓰홍 - 시즌 1': '15세 이상 관람가',
-    '화려한 날들': '15세 이상 관람가',
-    '화려한 날들 - 시즌 1': '15세 이상 관람가',
-    '사죄의 왕': '15세 이상 관람가'
-};
+    const MAX_RETRIES = 2;
+    // Sanitize
+    const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+    const relativePath = `/images/posters/ott/${safeFilename}.webp`;
+    const absolutePath = path.join(process.cwd(), 'public', relativePath);
+    const dir = path.dirname(absolutePath);
 
-function normalizeAgeRating(rating: string): string | null {
-    if (!rating) return null;
-    const r = rating.trim();
-    if (['ALL', 'All', 'all', '전체', 'G', '전체관람가'].some(k => r.includes(k))) return '전체 관람가';
-    if (r.includes('12') && (r.includes('세') || r.includes('+') || r.includes('연령'))) return '12세 이상 관람가';
-    if (r.includes('15') && (r.includes('세') || r.includes('+') || r.includes('연령'))) return '15세 이상 관람가';
-    if (r.includes('18') || r.includes('19') || r.includes('청불') || r.includes('청소년')) return '청소년 관람불가';
-    const validSet = ['전체 관람가', '12세 이상 관람가', '15세 이상 관람가', '청소년 관람불가'];
-    if (validSet.includes(r)) return r;
-    if (/^\d+세 이상 관람가$/.test(r)) return r;
-    return null;
-}
+    if (fs.existsSync(absolutePath)) return relativePath; // Cache hit
 
-function cleanOTTItem(item: any) {
-    if (item.title && MANUAL_GRADES[item.title]) {
-        item.ageRating = MANUAL_GRADES[item.title];
-    } else {
-        const validGrade = normalizeAgeRating(item.ageRating);
-        if (validGrade) item.ageRating = validGrade;
-        else delete item.ageRating;
-    }
-    if (item.originalTitle) {
-        let ot = item.originalTitle.trim();
-        if (/^\d{1,3}분$/.test(ot)) delete item.originalTitle;
-        else if (/^\d{4}$/.test(ot)) delete item.originalTitle;
-        else if (ot.length > 20 && (/[\d\.\+\-\(\)]+/.test(ot) && (ot.includes('연령') || ot.includes('분')))) {
-            delete item.originalTitle;
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    for (let i = 0; i < MAX_RETRIES; i++) {
+        try {
+            const response = await axios({
+                url,
+                responseType: 'arraybuffer',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+                },
+                timeout: 5000
+            });
+
+            await sharp(response.data)
+                .resize(300, 430, { fit: 'cover' })
+                .webp({ quality: 80 })
+                .toFile(absolutePath);
+
+            return relativePath;
+        } catch (e) {
+            if (i === MAX_RETRIES - 1) {
+                // console.error(`[Image] Failed to download ${url}:`, e.message);
+            }
+            await new Promise(r => setTimeout(r, 1000));
         }
-        else if (ot === item.title) delete item.originalTitle;
     }
-    if (item.subGenre === 'OTT') delete item.subGenre;
+    return '';
+}
 
-    // Strict Cast Validation (Final Guard)
-    if (item.cast && Array.isArray(item.cast)) {
-        item.cast = item.cast.filter((name: string) => {
-            if (!name) return false;
+function cleanupOldOTTImages(validItems: any[]) {
+    if (!fs.existsSync(POSTER_DIR)) return;
 
-            const isKorean = /[가-힣]/.test(name);
-            if (isKorean && name.length > 6) return false;
-            if (!isKorean && name.length > 15) return false;
+    console.log(`Cleaning up orphan OTT images... (Valid items: ${validItems.length})`);
+    const validFilenames = new Set<string>();
+    validItems.forEach(m => {
+        if (m.poster && m.poster.startsWith('/images/posters/ott/')) {
+            validFilenames.add(path.basename(m.poster));
+        }
+    });
 
-            const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체'];
-            if (garbage.some(g => name.includes(g))) return false;
+    const files = fs.readdirSync(POSTER_DIR);
+    let deletedCount = 0;
 
-            if (/[0-9?!%*]/.test(name)) return false;
-            if (name === item.title) return false;
-            if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return false;
-
-            return true;
-        });
-        if (item.cast.length === 0) delete item.cast;
-    }
+    files.forEach(file => {
+        if (!file.endsWith('.webp')) return;
+        if (!validFilenames.has(file)) {
+            try {
+                fs.unlinkSync(path.join(POSTER_DIR, file));
+                deletedCount++;
+            } catch (e) {
+                console.error(`Failed to delete ${file}:`, e);
+            }
+        }
+    });
+    console.log(`Cleanup complete. Deleted ${deletedCount} orphan images.`);
 }
 
 async function scrapeList(context: any, platform: any, type: string) {
     const page = await context.newPage();
-    // Stealth: Remove webdriver pattern
-    await page.addInitScript(() => {
-        Object.defineProperty(navigator, 'webdriver', {
-            get: () => undefined,
-        });
-    });
-
     const query = `${platform.keyword} ${type}`;
     const url = `https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkdJ&qvt=0&query=${encodeURIComponent(query)}`;
 
@@ -111,25 +108,23 @@ async function scrapeList(context: any, platform: any, type: string) {
     try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
+        // Pagination Limit
         const MAX_PAGES = 15;
         let pageNum = 1;
 
         while (pageNum <= MAX_PAGES) {
-            // Throttling List Pages
-            await sleep(Math.random() * 1000 + 500);
-
             const newItems = await page.evaluate((arg: { pName: string, tType: string }) => {
                 const { pName, tType } = arg;
-                const els = document.querySelectorAll('li.info_box, .card_item, .list_image_info .item');
+                const els = document.querySelectorAll('#main_pack .cm_content_area ul li.info_box, .cs_common_module li.info_box');
                 const list: any[] = [];
                 els.forEach(el => {
-                    const titleEl = el.querySelector('strong.title a._text') || el.querySelector('a._text') || el.querySelector('.name');
-                    const img = el.querySelector('a.thumb img') || el.querySelector('.thumb img') || el.querySelector('.thumb_area img');
+                    const titleEl = el.querySelector('strong.title a._text') || el.querySelector('a._text');
+                    const img = el.querySelector('a.thumb img');
 
                     if (titleEl) {
                         const title = titleEl.textContent?.trim() || '';
                         let link = titleEl.getAttribute('href') || '';
-                        if (link && link.startsWith('?')) link = `https://search.naver.com/search.naver${link}`;
+                        if (link.startsWith('?')) link = `https://search.naver.com/search.naver${link}`;
 
                         let poster = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
                         if (poster.includes('type=')) {
@@ -152,11 +147,12 @@ async function scrapeList(context: any, platform: any, type: string) {
             }, { pName: platform.name, tType: type });
 
             items.push(...newItems);
+            // console.log(`   ${platform.name} (${type}) Page ${pageNum}: Found ${newItems.length} items.`);
 
             const nextBtn = await page.$('a.pg_next.on');
             if (nextBtn) {
                 await nextBtn.click();
-                await page.waitForTimeout(1000 + Math.random() * 500);
+                await page.waitForTimeout(1500 + Math.random() * 1000);
                 pageNum++;
             } else {
                 break;
@@ -170,640 +166,262 @@ async function scrapeList(context: any, platform: any, type: string) {
     return items;
 }
 
-// JustWatch Search Fallback
-async function searchJustWatch(context: any, title: string) {
-    const page = await context.newPage();
-    await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-    try {
-        const sUrl = `https://www.justwatch.com/kr/검색?q=${encodeURIComponent(title)}`;
-        await page.goto(sUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+// --- MAIN ---
+(async () => {
+    console.log('Starting Naver OTT Scraper...');
+    const browser = await chromium.launch({ headless: true });
 
-        // Click first result
-        const first = await page.$('.title-list-row__row__header');
-        if (first) {
-            await first.click();
-            await page.waitForTimeout(1500);
-        } else {
-            await page.close();
-            return null;
-        }
+    // --- Scrape List (Phase 1) ---
+    const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
+    const limit = pLimit(1); // Reduced from 2 to 1 for Phase 1 list scraping
+    const tasks = [];
 
-        const data = await page.evaluate(() => {
-            const res: any = {};
-            // Grade
-            const ageEl = document.querySelector('.detail-infos__value .sc-16o0t-1');
-            if (ageEl && ageEl.textContent?.includes('세')) res.ageRating = ageEl.textContent.trim();
-
-            // Cast
-            const castEls = document.querySelectorAll('.title-credits__actor-name');
-            const cast: string[] = [];
-            castEls.forEach(c => cast.push(c.textContent?.trim() || ''));
-            if (cast.length > 0) res.cast = cast.slice(0, 8);
-
-            // Director
-            const dirEl = document.querySelector('.title-credits__director-name');
-            if (dirEl) res.director = dirEl.textContent?.trim();
-
-            return res;
-        });
-        return data;
-
-    } catch (e) {
-        return null;
-    } finally {
-        await page.close();
-    }
-}
-
-async function scrapeOTT() {
-    // ANTI-BLOCKING: Disable Automation Controls
-    const browser = await chromium.launch({
-        headless: true,
-        args: [
-            '--disable-blink-features=AutomationControlled',
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ]
-    });
-    // Keep generic context
-    const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-    });
-
-    console.log('Starting Naver-First OTT Scraper (Stealth & Incremental)...');
-
-    // Load Existing Data
-    let existingData: any[] = [];
-    const existingMap = new Map<string, any>();
-    if (fs.existsSync(OUTPUT_FILE)) {
-        try {
-            existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-            existingData.forEach(item => existingMap.set(item.title, item));
-            console.log(`Loaded ${existingData.length} existing items.`);
-        } catch (e) {
-            console.error('Failed to load existing data:', e);
-        }
-    }
-
-    let allItems: any[] = [];
-
-    // Phase 1: Scrape Lists
     for (const p of PLATFORMS) {
         for (const t of TYPES) {
-            // Intelligent Throttling
-            await sleep(2000 + Math.random() * 2000);
-            const items = await scrapeList(context, p, t);
-            allItems.push(...items);
+            tasks.push(limit(() => scrapeList(context, p, t)));
         }
     }
 
-    // Dedup
-    const uniqueItems = new Map();
-    allItems.forEach(i => {
-        if (!uniqueItems.has(i.title)) {
-            i.platforms = [i.platform];
-            uniqueItems.set(i.title, i);
+    const results = await Promise.all(tasks);
+    const flatResults = results.flat();
+
+    const dedupedCtx: Record<string, any> = {};
+    for (const it of flatResults) {
+        const id = `ott_naver_${it.title.replace(/\s+/g, '')}`;
+        if (!dedupedCtx[id]) {
+            dedupedCtx[id] = { ...it, id, platforms: [it.platform] };
         } else {
-            const existing = uniqueItems.get(i.title);
-            if (!existing.platforms.includes(i.platform)) existing.platforms.push(i.platform);
+            if (!dedupedCtx[id].platforms.includes(it.platform)) {
+                dedupedCtx[id].platforms.push(it.platform);
+            }
         }
+    }
+
+    const finalRaw = Object.values(dedupedCtx);
+    console.log(`Raw Collection Complete. Total Unique: ${finalRaw.length}`);
+    fs.writeFileSync(RAW_OUTPUT_FILE, JSON.stringify(finalRaw, null, 2));
+
+    await browser.close();
+    console.log('Phase 1 Done. Starting Phase 2 (Enrichment)...');
+
+    // --- Enrichment (Phase 2) ---
+    const enrichedItems: any[] = [];
+    const browser2 = await chromium.launch({ headless: true });
+    // Use slightly taller viewport for NamuWiki scrolling
+    const context2 = await browser2.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        viewport: { width: 1280, height: 1080 }
     });
 
-    // INCREMENTAL LOGIC: Filter items to process
-    let itemsToProcess: any[] = [];
-    let skippedCount = 0;
-
-    for (const newItem of Array.from(uniqueItems.values())) {
-        const existing = existingMap.get(newItem.title);
-        // Skip enrichment if:
-        // 1. Item exists
-        // 2. Item has critical data AND POSTER
-        if (existing && existing.ageRating && existing.cast && existing.poster) {
-            // Merge platforms just in case
-            newItem.platforms.forEach((p: string) => {
-                if (!existing.platforms.includes(p)) existing.platforms.push(p);
-            });
-            // Update Poster if available (Critical for image downloading)
-            // If new item has poster but existing doesn't, we wouldn't be here (condition above).
-            // But if existing has poster, we can still update if new one is different?
-            // Actually, if existing has poster, we are good.
-            if (newItem.link) existing.link = newItem.link; // Update link too to prevent stale links
-
-            // Update existing map
-            skippedCount++;
-        } else {
-            itemsToProcess.push(newItem);
-        }
-    }
-
-    console.log(`Phase 1 Complete. Found ${uniqueItems.size} items. Skipped ${skippedCount} (Good Data). Enriching ${itemsToProcess.length} new/incomplete items.`);
-
-    const limit = pLimit(5);
+    const limitEnrich = pLimit(2); // Reduced from 5 to 2 for Phase 2 enrichment
     const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    progressBar.start(itemsToProcess.length, 0);
+    progressBar.start(finalRaw.length, 0);
 
-    // Phase 2: Enrichment (Naver Detail > Tab Click Fallback > JustWatch/Namu)
-    await Promise.all(itemsToProcess.map(item => limit(async () => {
-        const page = await context.newPage();
-        // Stealth Injection
-        await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-
+    const enrichTasks = finalRaw.map(item => limitEnrich(async () => {
+        const page = await context2.newPage();
         try {
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
-            await sleep(1000 + Math.random() * 1000); // Throttling
+            // Increased delay to reduce CPU spikes
+            await sleep(1500 + Math.random() * 2000);
 
-            // --- Enforce Strict Metadata Extraction Logic ---
-            const extractMetadata = () => {
+            const detail = await page.evaluate(async () => {
                 const res: any = {};
-                // Unified Metadata Extraction (Header + Basic Info + Pattern Matching)
-                const metadataSources = [
-                    ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), // Headers (original)
-                    ...Array.from(document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt')), // Headers (new: for dramas/variety)
-                    ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd, .intro_box .intro_desc')) // Details
-                ];
 
-                const patterns = {
-                    age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*이상|\d{1,2}세이상|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
-                    runtime: /(\d{1,3}분)/,
-                    country: /(한국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
-                    genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
-                };
-
+                // 1. Basic Info Parsing using Iteration (Robust)
+                const infoGroups = document.querySelectorAll('.info_group, .detail_info dl, .cm_content_area .info_group');
                 let realGenre = '';
 
-                metadataSources.forEach(el => {
-                    const text = el.textContent?.trim() || '';
-                    if (!text) return;
+                infoGroups.forEach(group => {
+                    const dt = group.querySelector('dt');
+                    const dd = group.querySelector('dd');
+                    if (!dt || !dd) return;
 
-                    // 1. Explicit Parsing (DT/DD structure if parent exists)
-                    const dt = el.previousElementSibling?.tagName === 'DT' ? el.previousElementSibling : null;
-                    const label = dt?.textContent?.trim() || '';
+                    const label = dt.textContent?.trim() || '';
+                    const value = dd.textContent?.trim() || '';
 
-                    if (label === '등급') res.ageRating = text;
-                    if (label === '국가') res.productionCountry = text;
-                    if (label === '러닝타임') res.runningTime = text;
-                    if (label === '장르' || label === '개요') realGenre = text;
-                    if (label === '원제') res.originalTitle = text;
-
-                    // 2. Pattern Matching (Fallback & Header)
-                    if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)![0];
-                    if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
-                    if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
-                    if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
-                        if (patterns.genre.test(text)) res.subGenre = text;
-                    }
-
-                    // Use Link Text for Genre (common in Naver headers)
-                    const link = el.querySelector('a');
-                    if (link && !res.subGenre && patterns.genre.test(link.textContent || '')) {
-                        res.subGenre = link.textContent?.trim();
-                    }
-                });
-
-                // Refine Genre from Basic Info if Pattern failed
-                if (realGenre && !res.subGenre) {
-                    if (realGenre.includes('·')) {
-                        realGenre.split('·').forEach(p => {
-                            p = p.trim();
-                            if (patterns.genre.test(p)) res.subGenre = p;
-                        });
-                    } else {
-                        const match = realGenre.match(patterns.genre);
-                        if (match) {
-                            res.subGenre = match[0];
+                    if (label.includes('개요') || label.includes('장르')) {
+                        if (value.includes('·')) {
+                            const parts = value.split('·').map(s => s.trim());
+                            parts.forEach(p => {
+                                if (p.endsWith('분')) res.runningTime = p;
+                                else if (['한국', '미국', '일본', '중국', '영국', '독일', '프랑스'].some(c => p.includes(c)) || p.length < 5) res.productionCountry = p;
+                                else realGenre = p;
+                            });
                         } else {
-                            res.subGenre = realGenre;
+                            if (!value.match(/(\d+분)/) && !value.match(/(한국|미국|일본|중국|영국|독일|프랑스)/)) {
+                                realGenre = value;
+                            }
                         }
                     }
-                }
-
-                // Final Cleanups for Age Rating
-                if (res.ageRating && !res.ageRating.includes('관람가') && !res.ageRating.includes('불가') && !res.ageRating.includes('시청가')) {
-                    if (res.ageRating === '전체') res.ageRating = '전체 관람가';
-                    else if (res.ageRating.includes('세')) res.ageRating += ' 관람가';
-                }
-
-                // Extract Release Date (오픈/개봉)
-                const infoGroups = document.querySelectorAll('.info_group');
-                infoGroups.forEach(g => {
-                    const dt = g.querySelector('dt');
-                    const dd = g.querySelector('dd');
-                    if (dt && dd) {
-                        const label = dt.textContent?.trim() || '';
-                        if (label === '오픈' || label === '개봉') {
-                            const raw = dd.textContent?.trim() || '';
-                            const match = raw.match(/(\d{4})\.(\d{2})\.(\d{2})/);
-                            if (match) res.releaseDate = `${match[1]}-${match[2]}-${match[3]}`;
-                        }
-                    }
+                    if (label === '등급') res.ageRating = value;
+                    if (label === '국가') res.productionCountry = value;
+                    if (label === '러닝타임') res.runningTime = value;
                 });
 
-                // Extract Cast (Robust) - Scope to "출연진" container only
+                if (!res.date) {
+                    const groups = Array.from(document.querySelectorAll('.info_group'));
+                    for (const g of groups) {
+                        const dt = g.querySelector('dt');
+                        const dd = g.querySelector('dd');
+                        if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영'))) {
+                            res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '');
+                            break;
+                        }
+                    }
+                }
+
+                if (!realGenre) {
+                    const subGenre = document.querySelector('.sub_title span.txt');
+                    if (subGenre) realGenre = subGenre.textContent?.trim() || '';
+                }
+
+                res.genre = 'ott';
+                res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
+
+                // 2. Cast Parsing
+                const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item');
                 const cast: string[] = [];
+                members.forEach(m => {
+                    let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                    const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
 
-                // Strategy 1: Find the "출연진" (Cast) container and extract only items with role labels
-                const allContentAreas = Array.from(document.querySelectorAll('.cm_content_area, .api_subject_bx'));
-                const castContainer = allContentAreas.find(area => {
-                    const title = area.querySelector('h2, h3, .cm_title')?.textContent?.trim();
-                    return title && (title.includes('출연진') || title.includes('출연') || title.includes('제작진'));
-                });
-
-                if (castContainer) {
-                    // Look for items inside the cast container
-                    castContainer.querySelectorAll('.card_item, .area_card, li, a.inner, .item').forEach(el => {
-                        const fullText = el.textContent?.trim() || '';
-
-                        // Only process if it has a role label (출연, 감독, 연출)
-                        if (fullText.includes('출연') || fullText.includes('감독') || fullText.includes('연출')) {
-                            // Try to extract name
-                            const nameEl = el.querySelector('.name, strong span, strong, a._text');
-                            let name = nameEl?.textContent?.trim() || '';
-
-                            // Fallback: get first link or text before role label
-                            if (!name) {
-                                const link = el.querySelector('a:not(.area_link_box)');
-                                name = link?.textContent?.trim() || '';
-                            }
-
-                            // Clean name
-                            if (name.includes(' 역')) name = name.split(' 역')[0];
-                            if (name.includes('출연')) name = '';  // Skip if name contains role word
-                            if (name.includes('감독')) name = '';
-
-                            // STRICT NAME VALIDATION
-                            // 1. Length Check
-                            if (name.length > 15) name = '';
-
-                            // 2. Keyword Check (Titles often contain these)
-                            if (name.includes('시즌')) name = '';
-                            if (/[0-9?!]/.test(name)) name = ''; // No numbers or punctuation in names mostly
-
-                            if (name && !name.includes('더보기')) {
-                                const isDirector = fullText.includes('감독') || fullText.includes('연출');
-                                if (isDirector && !res.director) res.director = name;
-                                else if (!isDirector) cast.push(name);
-                            }
-                        }
-                    });
-                }
-
-                // Strategy 2: Movie "a.inner" structure (for 출연/제작진 tab only, as fallback)
-                if (cast.length === 0) {
-                    const castContainers = document.querySelectorAll('.cm_content_area._cast_area, .cm_content_area[data-tab="cast"], .sec_scroll_cast_member');
-                    castContainers.forEach(container => {
-                        // Double check we are not in a recommendation section
-                        if (container.querySelector('h2')?.textContent?.includes('추천') || container.querySelector('h2')?.textContent?.includes('비슷한')) return;
-
-                        container.querySelectorAll('a.inner').forEach(a => {
-                            const name = a.querySelector('strong span')?.textContent?.trim() ||
-                                a.querySelector('strong')?.textContent?.trim() ||
-                                a.querySelector('.name')?.textContent?.trim();
-                            const role = a.querySelector('.sub_text span')?.textContent?.trim() ||
-                                a.querySelector('.sub_text')?.textContent?.trim() || '';
-
-                            // STRICT FILTERING
-                            if (!name) return;
-
-                            // 1. Length Check (Korean names usually 2-4 chars, Foreign < 15)
-                            if (name.length > 15) return; // Too long -> likely a title
-
-                            // 2. Garbage Check
-                            if (/[0-9?!%*]/.test(name)) return; // Contains numbers or garbage
-                            if (name.includes('시즌')) return; // "Season" in name -> Title
-                            if (name.includes('더보기')) return;
-                            if (name === '출연') return;
-
-                            // 3. Known Bad Strings (Titles leaking in)
-                            if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return; // Heuristic based on user report
-
-                            if (role.includes('감독') || role.includes('연출')) res.director = name;
-                            else cast.push(name);
-                        });
-                    });
-                }
-
-                // Strategy 4: SDS Modern UI (e.g. Idol Eyes) - Fallback for new layouts
-                if (cast.length === 0) {
-                    // Look for text content in links (actors are usually clickable)
-                    const sdsItems = document.querySelectorAll('.sds-comps-text-content, .sds-comps-text');
-                    sdsItems.forEach(el => {
-                        const txt = el.textContent?.trim() || '';
-                        const parentA = el.closest('a');
-
-                        if (txt && parentA) {
-                            const name = txt;
-
-                            // STRICT VALIDATION for Heuristic Extraction
-                            const isKorean = /[가-힣]/.test(name);
-                            // Korean names are short (2-4). Allow 6 for odd cases.
-                            if (isKorean && name.length > 6) return;
-                            if (!isKorean && name.length > 15) return;
-
-                            const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
-                            if (garbage.some(g => name.includes(g))) return;
-
-                            if (/[0-9?!%*]/.test(name)) return;
-                            if (name === '출연' || name === '등장인물') return;
-
-                            if (!cast.includes(name)) cast.push(name);
-                        }
-                    });
-                }
-
-                if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
-
-                // Poster Extraction (Added to fix missing images)
-                const img = document.querySelector('.detail_info a.thumb img') ||
-                    document.querySelector('.cm_content_area .thumb img') ||
-                    document.querySelector('.api_subject_bx .thumb img') ||
-                    document.querySelector('.detail_info .thumb img');
-
-                if (img) {
-                    let src = img.getAttribute('src');
-                    if (src && src.includes('search.pstatic.net') && src.includes('src=')) {
-                        try {
-                            const urlObj = new URL(src, 'https://search.naver.com');
-                            const realSrc = urlObj.searchParams.get('src');
-                            if (realSrc) src = decodeURIComponent(realSrc);
-                        } catch (e) { }
+                    if (name.includes(' 역')) {
+                        if (role) name = role;
+                        else name = name.split(' 역')[0];
                     }
-                    if (src) res.poster = src;
-                }
+
+                    if (name && !name.includes('배역') && !name.includes('출연') && name.length < 20) {
+                        if (role.includes('감독') || role.includes('연출')) res.director = name;
+                        else cast.push(name);
+                    }
+                });
+                if (cast.length > 0) res.cast = cast.slice(0, 5);
 
                 return res;
-            };
+            });
 
-            // 1. Initial Extraction
-            let detail = await page.evaluate(extractMetadata);
             if (detail) Object.assign(item, detail);
 
-            // 1.5. Header-specific Age Rating Extraction (for dramas/variety shows)
-            if (!item.ageRating) {
-                const headerAge = await page.evaluate(() => {
-                    const headerEls = document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt');
-                    const agePattern = /(전체|ALL|\d{1,2}세\s*이상|\d{1,2}세이상|청소년\s*관람불가|청불)/i;
-                    for (const el of headerEls) {
-                        const text = el.textContent?.trim() || '';
-                        if (agePattern.test(text)) return text;
-                    }
-                    return null;
-                });
-                if (headerAge) item.ageRating = headerAge;
-            }
-
-            // 2. Fallback: If Age Rating is missing, try clicking '기본정보' or '정보' tab
-            // This is the validation loop the user requested
-            if (!item.ageRating) {
-                try {
-                    const clicked = await page.evaluate(() => {
-                        const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
-                        // Prioritize "Cast" tabs over "Basic Info"
-                        let t = tabs.find(el => {
-                            const txt = el.textContent?.trim() || '';
-                            return txt.length < 10 && (txt === '출연/제작' || txt === '등장인물' || txt === '출연');
-                        });
-
-                        if (!t) {
-                            t = tabs.find(el => {
-                                const txt = el.textContent?.trim() || '';
-                                return txt.length < 10 && (txt === '기본정보' || txt === '정보');
-                            });
-                        }
-
-                        if (t) { (t as HTMLElement).click(); return true; }
-                        return false;
-                    });
-
-                    if (clicked) {
-                        await page.waitForTimeout(1500); // Wait for Tab Content
-                        // Re-run the EXACT SAME extraction logic to capture everything revealed by the tab
-                        const newDetail = await page.evaluate(extractMetadata);
-                        // Merge new details, preferring new values if they exist
-                        if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
-                        if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
-                        if (newDetail.productionCountry) item.productionCountry = newDetail.productionCountry;
-                        if (newDetail.subGenre) item.subGenre = newDetail.subGenre;
-                        if (newDetail.originalTitle) item.originalTitle = newDetail.originalTitle;
-                        // ADD: Also merge releaseDate, director, and cast
-                        if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
-                        if (newDetail.director) item.director = newDetail.director;
-                        if (newDetail.cast && newDetail.cast.length > 0) item.cast = newDetail.cast;
-                    }
-                } catch (e) { }
-            }
-
-            // 3. Last Resort: Regex scan on Body Text (if still missing)
-            if (!item.ageRating) {
-                const bodyAge = await page.evaluate(() => {
-                    const patterns = {
-                        age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/
-                    };
-                    const match = document.body.innerText.match(patterns.age);
-                    return match ? match[0] : null;
-                });
-                if (bodyAge) {
-                    item.ageRating = bodyAge;
-                    // Cleanup
-                    if (item.ageRating === '전체') item.ageRating = '전체 관람가';
-                    else if (item.ageRating.includes('세') && !item.ageRating.includes('관람가')) item.ageRating += ' 관람가';
-                }
-            }
-
-            // B. INTERACTIVE CAST FALLBACK (Generic)
-            if (!item.cast || item.cast.length === 0) {
+            // --- 3. Interactive Cast Fallback ---
+            if ((!item.cast || item.cast.length === 0) && item.link.includes('search.naver.com')) {
                 try {
                     const foundTab = await page.evaluate(() => {
                         const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
-                        // Includes '등장인물', '출연', '제작', '참가', '출연진'
-                        // Fix: Ensure tab text is short (< 10 chars) to avoid clicking news links
-                        const t = tabs.find(el => {
-                            const txt = el.textContent?.trim() || '';
-                            // Stricter check: must be short and contain keywords
-                            return txt.length < 15 && (txt === '출연/제작' || txt === '등장인물' || txt === '출연' || txt === '제작진');
-                        });
+                        const t = tabs.find(el => el.textContent?.includes('출연진') || el.textContent?.includes('등장인물'));
                         if (t) { (t as HTMLElement).click(); return true; }
                         return false;
                     });
+
                     if (foundTab) {
-                        await page.waitForTimeout(1500);
+                        await page.waitForTimeout(1000);
                         const newCastData = await page.evaluate(() => {
                             const newCast: string[] = [];
-
-                            // 1. Drama/Variety: .list_image_info structure (e.g., 러브 미, 나는 SOLO)
-                            const dramaItems = document.querySelectorAll('.list_image_info._content .item, .list_image_info .item');
-                            dramaItems.forEach(item => {
-                                const titleBox = item.querySelector('.title_box');
-                                if (titleBox) {
-                                    const links = Array.from(titleBox.querySelectorAll('a._text'));
-                                    let name = '';
-                                    // Second a._text is usually the actor name
-                                    if (links.length >= 2) {
-                                        name = links[1].textContent?.trim() || '';
-                                    } else if (links.length === 1) {
-                                        name = links[0].textContent?.trim() || '';
-                                    }
-
-                                    if (name) {
-                                        if (name.includes(' 역')) name = name.split(' 역')[0];
-
-                                        // STRICT VALIDATION
-                                        const isKorean = /[가-힣]/.test(name);
-                                        if (isKorean && name.length > 6) return;
-                                        if (!isKorean && name.length > 15) return;
-
-                                        const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
-                                        if (garbage.some(g => name.includes(g))) return;
-
-                                        if (/[0-9?!%*]/.test(name)) return;
-                                        if (name.includes('통역') || name.includes('도적') || name.includes('리플리')) return;
-
-                                        newCast.push(name);
-                                    }
+                            let director = '';
+                            const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
+                            members.forEach(m => {
+                                let name = '';
+                                let roleOrSub = '';
+                                const nameEl = m.querySelector('strong.name, .name');
+                                const subEl = m.querySelector('span.sub_text, .sub_text');
+                                if (nameEl) {
+                                    let nameTxt = nameEl.textContent?.trim() || '';
+                                    let subTxt = subEl?.textContent?.trim() || '';
+                                    if (nameTxt.includes(' 역')) name = subTxt;
+                                    else name = nameTxt;
+                                    roleOrSub = subTxt;
+                                } else {
+                                    if (m.classList.contains('_text')) name = m.textContent?.trim() || '';
+                                    else name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
+                                }
+                                if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
+                                    if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
+                                    else newCast.push(name);
                                 }
                             });
-
-                            // Strategy 4: SDS Modern UI (Interactive)
-                            if (newCast.length === 0) {
-                                const sdsItems = document.querySelectorAll('.sds-comps-text-content, .sds-comps-text');
-                                sdsItems.forEach(el => {
-                                    const txt = el.textContent?.trim() || '';
-                                    const parentA = el.closest('a');
-
-                                    if (txt && parentA) {
-                                        const name = txt;
-                                        const isKorean = /[가-힣]/.test(name);
-                                        if (isKorean && name.length > 6) return;
-                                        if (!isKorean && name.length > 15) return;
-
-                                        const garbage = ['위키', '저장', '바로가기', '뉴스', '관련', '순', '검색', '사이트', '웹', '더보기', '시즌', '톡', '전체', '동영상', '이미지', '카페', '블로그'];
-                                        if (garbage.some(g => name.includes(g))) return;
-
-                                        if (/[0-9?!%*]/.test(name)) return;
-                                        if (name === '출연' || name === '등장인물') return;
-
-                                        if (!newCast.includes(name)) newCast.push(name);
-                                    }
-                                });
-                            }
-
-                            // 2. Movie: existing selectors
-                            if (newCast.length === 0) {
-                                const members = document.querySelectorAll('.cast_box .name, .detail_info .name, ._actor_wrap .card_item, .area_card .name, .area_card .title');
-                                members.forEach(m => {
-                                    let name = m.textContent?.trim() || '';
-                                    if (m.querySelector('.name')) name = m.querySelector('.name')?.textContent?.trim() || '';
-                                    if (name.includes(' 역')) name = name.split(' 역')[0];
-                                    if (name && name.length < 20 && !name.includes('출연') && !name.includes('더보기')) newCast.push(name);
-                                });
-                            }
-
-                            return newCast;
+                            return { cast: Array.from(new Set(newCast)).slice(0, 5), director };
                         });
-                        if (newCastData.length > 0) item.cast = [...new Set(newCastData)].slice(0, 8);
+                        if (newCastData.cast.length > 0) item.cast = newCastData.cast;
+                        if (newCastData.director && !item.director) item.director = newCastData.director;
                     }
-                } catch (e) { }
+                } catch (err) { }
             }
 
-            cleanOTTItem(item);
+            // --- 4. IMAGE PROCESSING & NamuWiki Fallback ---
+            // Try downloading original poster first
+            let localPoster = '';
+            if (item.poster && !item.poster.startsWith('data:')) {
+                localPoster = await processImage(item.poster, item.title);
+                if (localPoster) item.poster = localPoster;
+            }
 
-            // Fallback to JustWatch if critical info missing
-            if (!item.ageRating && !item.cast) {
-                const jwData = await searchJustWatch(context, item.title);
-                if (jwData) Object.assign(item, jwData);
+            // If failed or invalid, try NamuWiki
+            const isInvalidPoster = !localPoster; // If processImage returned '', we still need a poster
+            const forcedFallbackTitles = ['프랑켄슈타인: 더 뮤지컬 라이브', '좀비딸'];
+
+            if ((isInvalidPoster || forcedFallbackTitles.some(t => item.title.includes(t))) && !item.posterSource) {
+                try {
+                    await page.goto(`https://namu.wiki/Go?q=${encodeURIComponent(item.title)}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    await sleep(2000);
+
+                    const searchResultLink = await page.$('.search-item a, .search-result-list a');
+                    if (searchResultLink) {
+                        const txt = await searchResultLink.innerText();
+                        if (!txt.includes('User:') && !txt.includes('Talk:') && !txt.includes('사용자:') && !txt.includes('토론:')) {
+                            await searchResultLink.click();
+                            await page.waitForTimeout(2000);
+                        }
+                    }
+
+                    await page.evaluate(() => window.scrollTo(0, 800));
+                    await page.waitForTimeout(1000);
+
+                    const namuPoster = await page.evaluate(() => {
+                        const imgs = Array.from(document.querySelectorAll('table img, .wiki-table img, div[class*="wiki-table"] img, .wiki-heading-content img'));
+                        let candidate = imgs.find(img => {
+                            const el = img as HTMLImageElement;
+                            return el.width > 150 && el.src.includes('namu.wiki') && !el.src.includes('icon') && !el.src.includes('logo');
+                        });
+
+                        if (!candidate) {
+                            const allImgs = Array.from(document.querySelectorAll('img'));
+                            candidate = allImgs.find(img => {
+                                const el = img as HTMLImageElement;
+                                return el.width > 200 && el.height > 250 && el.src.includes('namu.wiki');
+                            });
+                        }
+                        return candidate ? (candidate as HTMLImageElement).src : null;
+                    });
+
+                    if (namuPoster) {
+                        const newLocal = await processImage(namuPoster, item.title);
+                        if (newLocal) {
+                            item.poster = newLocal;
+                            item.posterSource = 'namuwiki';
+                            console.log(`[NamuWiki] Found & Saved poster for ${item.title}`);
+                        }
+                    }
+                } catch (namuErr) {
+                    // Fail silently
+                }
             }
 
         } catch (e) {
-            console.error(`Error enriching ${item.title}:`, e);
+            // console.error(`Error enriching ${item.title}:`, e);
         } finally {
             await page.close();
             progressBar.increment();
         }
-    })));
+        enrichedItems.push(item);
+    }));
 
+    await Promise.all(enrichTasks);
     progressBar.stop();
+    await browser2.close();
 
-    // Re-merge itemsToProcess into existingMap (to handle updates)
-    itemsToProcess.forEach(item => {
-        existingMap.set(item.title, item);
-    });
+    console.log(`Phase 2 Done. Saving ${enrichedItems.length} items to ${OUTPUT_FILE}...`);
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
 
-    // Generate Final List from Map
-    const finalItems = Array.from(existingMap.values());
+    // Cleanup Orphans
+    cleanupOldOTTImages(enrichedItems);
 
-    // Generate IDs and Image Paths
-    const usedIds = new Set<string>();
-    finalItems.forEach(item => {
-        // Create ID: ott_Title(sanitized)
-        if (!item.id || item.id.startsWith('ott_20')) { // Reset old date-based IDs or generate if missing
-            const safeTitle = slugify(item.title);
-            let newId = `ott_${safeTitle}`;
-
-            // Handle duplicates
-            let counter = 2;
-            let finalId = newId;
-            while (usedIds.has(finalId)) {
-                finalId = `${newId}_${counter}`;
-                counter++;
-            }
-            item.id = finalId;
-        }
-        usedIds.add(item.id);
-
-        item.venue = 'OTT';
-        item.region = 'ott';
-        if (!item.genre) item.genre = 'ott';
-        // Use extracted release date if available, otherwise use today's date
-        if (!item.date && item.releaseDate) item.date = item.releaseDate;
-        else if (!item.date) item.date = new Date().toISOString().slice(0, 10);
-    });
-
-    // Phase 3: Images
-    console.log('Phase 3: Downloading Images...');
-    const imageLimit = pLimit(10);
-    await Promise.all(finalItems.map(item => imageLimit(async () => {
-        if (item.poster) {
-            // Store original as backup
-            item.backupPoster = item.poster;
-
-            // Use stable filename: ott_Title
-            const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-            const stableFilename = `ott_${safeTitle}`;
-
-            // Try to download
-            const localPath = await processImage(item.poster, stableFilename, 'posters/ott');
-            if (localPath) {
-                item.image = localPath;
-            } else {
-                // If download fails, stick to remote as primary? Or let frontend handle it?
-                // Depending on Hybrid Strategy: Primary should be what we want to use.
-                // If download failed, localPath is empty.
-                // We set item.image to item.poster (Remote) so it works out of the box?
-                // OR we accept item.image = null, and use backupPoster?
-                // Let's set item.image = item.poster as primary fallback if local fails.
-                item.image = item.poster;
-            }
-        }
-    })));
-
-    // ATOMIC SAVE (Safety)
-    if (finalItems.length > 0) {
-        const tempFile = `${OUTPUT_FILE}.temp`;
-        fs.writeFileSync(tempFile, JSON.stringify(finalItems, null, 2));
-        fs.renameSync(tempFile, OUTPUT_FILE);
-        console.log(`Done. Saved ${finalItems.length} items to ${OUTPUT_FILE}`);
-
-        // Copy to public/data for frontend access
-        const publicFile = path.resolve(process.cwd(), 'public/data/ott.json');
-        const publicDir = path.dirname(publicFile);
-        if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
-
-        fs.copyFileSync(OUTPUT_FILE, publicFile);
-        console.log(`Copied to ${publicFile}`);
-    } else {
-        console.warn('Scraper found 0 items. Aborting save.');
-    }
-
-    await browser.close();
-}
-
-scrapeOTT();
+})();

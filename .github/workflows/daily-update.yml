@@ -73,6 +73,7 @@ jobs:
         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        timeout-minutes: 240 # Total max for all scrapers
         run: |
           npx tsx scripts/scrape-interpark.ts || true
           npx tsx scripts/scrape-kovo.ts || true
@@ -84,13 +85,12 @@ jobs:
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-movies.ts || true
 
-          npx tsx scripts/scrape-ott.ts || true
+          npx tsx scripts/scrape-naver-ott.ts || true
           node scripts/scrape-myrealtrip.js || true
           npx tsx scripts/scrape-umclass.ts || true
           npx tsx scripts/scrape-sssd.ts || true
           npx tsx scripts/scrape-mochaclass.ts || true
           npx tsx scripts/scrape-seoul-culture.ts || true
-          npx tsx scripts/build-venues.ts || true
           npx tsx scripts/build-venues.ts || true
           npx tsx scripts/verify-links.ts || true
 
