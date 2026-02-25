@@ -11,6 +11,7 @@ import sharp from 'sharp';
 
 // --- CONFIG ---
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
+const PUBLIC_OUTPUT_FILE = path.resolve(process.cwd(), 'public/data/ott.json');
 const RAW_OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver-raw.json');
 const POSTER_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'ott');
 
@@ -424,8 +425,9 @@ async function scrapeList(context: any, platform: any, type: string) {
     progressBar.stop();
     await browser2.close();
 
-    console.log(`Phase 2 Done. Saving ${enrichedItems.length} items to ${OUTPUT_FILE}...`);
+    console.log(`Phase 2 Done. Saving ${enrichedItems.length} items...`);
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
+    fs.writeFileSync(PUBLIC_OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
 
     // Cleanup Orphans
     cleanupOldOTTImages(enrichedItems);
