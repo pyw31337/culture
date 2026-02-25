@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/tsconfig.tsbuildinfo
+next-env.d.ts
 
 # production
 /build
@@ -23,12 +25,25 @@
 # misc
 .DS_Store
 *.pem
+Untitled-*.psd
+*.zip
+*.log
+*.txt
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# screenshots & debug images
+debug-*.png
+debug-*.html
+error_row_*.png
+naver_debug*.png
+*.webp
+
+# data/cache
+venue_cache.json
+venue_report.*
+venue_audit.csv
+venue_export.csv
+venue_validation_log.txt
+missing_venues.txt
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -38,4 +53,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
