@@ -23,13 +23,13 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                 onSelectDay(day);
             }}
             className={clsx(
-                "min-h-[80px] sm:min-h-[120px] bg-gray-900 p-2 flex flex-col gap-1 transition-colors hover:bg-gray-800/80 cursor-pointer relative",
-                !isCurrentMonth && "opacity-30 bg-gray-900/50"
+                "min-h-[80px] sm:min-h-[120px] bg-white dark:bg-gray-900 p-2 flex flex-col gap-1 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/80 cursor-pointer relative",
+                !isCurrentMonth && "opacity-40 bg-gray-50 dark:bg-gray-900/50"
             )}
         >
             <span className={clsx(
                 "text-sm font-extrabold w-7 h-7 flex items-center justify-center rounded-full mb-1",
-                isToday ? "bg-blue-600 text-white" : "text-gray-400"
+                isToday ? "bg-blue-600 text-white" : "text-gray-900 dark:text-gray-400"
             )}>
                 {format(day, 'd')}
             </span>
@@ -37,7 +37,7 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
             {/* Mobile View: Circle Badge Count */}
             <div className="flex-1 flex items-center justify-center sm:hidden w-full h-full absolute inset-0 pt-6">
                 {hasEvents && (
-                    <div className="w-8 h-8 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center text-xs font-extrabold text-white mt-2 shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 flex items-center justify-center text-xs font-extrabold text-gray-900 dark:text-white mt-2 shadow-sm">
                         {dayEvents.length}
                     </div>
                 )}
@@ -49,8 +49,8 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                     <div
                         key={`${perf.id}-${i}`}
                         className={clsx(
-                            "text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition",
-                            (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-700'
+                            "text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition relative z-10",
+                            (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700'
                         )}
                         title={perf.title}
                     >
@@ -58,7 +58,7 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                     </div>
                 ))}
                 {dayEvents.length > 2 && (
-                    <div className="text-[10px] text-gray-400 text-left pl-1 cursor-pointer">
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400 text-left pl-1 cursor-default relative z-10">
                         +{dayEvents.length - 2} more
                     </div>
                 )}

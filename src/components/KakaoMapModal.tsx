@@ -331,11 +331,11 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
     return (
         <Portal>
             <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
+                <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col">
                     {/* Close Button */}
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 z-[100] p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition"
+                        className="absolute top-4 right-4 z-[100] p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
                     >
                         <X className="w-6 h-6" />
                     </button>
@@ -353,7 +353,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         </div>
                     )}
 
-                    <div ref={mapRef} className="w-full h-full bg-gray-800" />
+                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
                     {/* Popup Layer (Relative to Map) */}
                     <div className="absolute inset-0 pointer-events-none z-[110]">
@@ -367,20 +367,20 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                     filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))'
                                 }}
                             >
-                                <div className="bg-gray-900 rounded-xl border border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
+                                <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
                                     {/* Header */}
-                                    <div className="bg-gray-800 p-3 flex justify-between items-start">
+                                    <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
-                                            <h3 className="text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
-                                            <p className="text-[10px] text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
+                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
+                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
                                         </div>
-                                        <button onClick={() => setSelectedVenue(null)} className="text-gray-400 hover:text-white ml-2 shrink-0">
+                                        <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
                                             <X size={16} />
                                         </button>
                                     </div>
 
                                     {/* List */}
-                                    <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-gray-900 p-2 space-y-2"
+                                    <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
                                         onScroll={handlePerfScroll}
                                     >
                                         {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
@@ -389,13 +389,13 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 href={p.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex gap-2 bg-gray-800/50 p-2 rounded hover:bg-gray-800 transition border border-gray-800 hover:border-gray-600 group"
+                                                className="flex gap-2 bg-gray-50 dark:bg-gray-800/50 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 group"
                                             >
                                                 {p.image ? (
-                                                    <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-950 shrink-0" />
+                                                    <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0" />
                                                 ) : (
-                                                    <div className="w-10 h-14 bg-gray-800 rounded flex items-center justify-center shrink-0">
-                                                        <Heart size={10} className="text-gray-600" />
+                                                    <div className="w-10 h-14 bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center shrink-0">
+                                                        <Heart size={10} className="text-gray-400 dark:text-gray-600" />
                                                     </div>
                                                 )}
                                                 <div className="flex-1 min-w-0">
@@ -408,7 +408,7 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                         </span>
                                                         <span className="text-[9px] text-gray-500">{p.date}</span>
                                                     </div>
-                                                    <h4 className="text-[12px] font-bold text-gray-200 group-hover:text-emerald-400 line-clamp-2 leading-tight">
+                                                    <h4 className="text-[12px] font-bold text-gray-900 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 line-clamp-2 leading-tight">
                                                         {p.title}
                                                     </h4>
                                                 </div>
@@ -417,13 +417,13 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                     </div>
                                 </div>
                                 {/* Arrow Tail */}
-                                <div className="w-4 h-4 bg-gray-900 border-r border-b border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
+                                <div className="w-4 h-4 bg-white dark:bg-gray-900 border-r border-b border-gray-200 dark:border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
                             </div>
                         )}
                     </div>
 
                     {/* Bottom Sheet Area (Venue List) */}
-                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-8 pb-4 px-4">
+                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/90 dark:from-gray-900 via-white/80 dark:via-gray-900/90 to-transparent pt-12 pb-4 px-4">
 
 
 
@@ -464,12 +464,12 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                             className={clsx(
                                                 "snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border",
                                                 isSelected
-                                                    ? "bg-emerald-50/95 border-emerald-500 ring-2 ring-emerald-500/50 scale-[1.02]"
-                                                    : "bg-white/90 backdrop-blur border-white/20 hover:bg-white hover:scale-[1.01]"
+                                                    ? "bg-emerald-50 dark:bg-emerald-900/50 border-emerald-500 ring-2 ring-emerald-500/50 scale-[1.02]"
+                                                    : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
                                             )}
                                         >
                                             <div className="flex justify-between items-start w-full">
-                                                <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-emerald-900" : "text-black")}>
+                                                <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-emerald-900 dark:text-emerald-300" : "text-gray-900 dark:text-white")}>
                                                     {v.venueName}
                                                 </h4>
                                                 <button
@@ -480,8 +480,8 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                     className={clsx(
                                                         "ml-2 p-1 rounded-full transition-colors",
                                                         isFavorite
-                                                            ? "hover:bg-pink-100"
-                                                            : (isSelected ? "hover:bg-emerald-200" : "hover:bg-gray-100")
+                                                            ? "hover:bg-pink-100 dark:hover:bg-pink-900/50"
+                                                            : (isSelected ? "hover:bg-emerald-200 dark:hover:bg-emerald-800" : "hover:bg-gray-100 dark:hover:bg-gray-700")
                                                     )}
                                                 >
                                                     <Heart className={clsx("w-4 h-4", isFavorite ? 'text-pink-500 fill-pink-500' : 'text-gray-400')} />
@@ -493,16 +493,16 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                                 <div className={clsx(
                                                     "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] w-fit font-bold mb-1",
                                                     isSelected
-                                                        ? "bg-emerald-200 text-emerald-800"
-                                                        : "bg-gray-100 text-gray-500"
+                                                        ? "bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200"
+                                                        : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
                                                 )}>
                                                     <MapPin size={10} className="fill-current" />
                                                     {distanceLabel}
                                                 </div>
                                             )}
-                                            <span className="text-gray-300 light:text-gray-600 truncate">{v.groupName}</span>
+                                            <span className="text-gray-500 dark:text-gray-400 text-[10px] truncate">{v.groupName}</span>
                                             <div className="mt-auto flex items-center justify-between text-xs">
-                                                <span className="text-emerald-400 light:text-emerald-600 font-bold shrink-0">
+                                                <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">
                                                     {v.performances.length}개 컨텐츠
                                                 </span>
                                             </div>

@@ -147,15 +147,15 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     return (
         <Portal>
             <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-                <div className="bg-gray-900 w-full max-w-[1700px] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-800">
+                <div className="bg-white dark:bg-gray-900 w-full max-w-[1700px] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-800">
                     {/* Header */}
-                    <div className="flex items-center justify-between p-6 border-b border-gray-800">
-                        <h2 className="text-2xl font-extrabold text-white flex items-center gap-4">
+                    <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
+                        <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-4">
                             <button onClick={() => {
                                 if (calendarView === 'monthly') handlePrevMonth();
                                 else if (calendarView === 'weekly') setCurrentMonth(subWeeks(currentMonth, 1));
                                 else setCurrentMonth(subDays(currentMonth, 1));
-                            }} className="p-2 hover:bg-gray-800 rounded-full transition"><ChevronLeft /></button>
+                            }} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"><ChevronLeft /></button>
                             {calendarView === 'daily'
                                 ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
                                 : calendarView === 'weekly'
@@ -165,7 +165,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                 if (calendarView === 'monthly') handleNextMonth();
                                 else if (calendarView === 'weekly') setCurrentMonth(addWeeks(currentMonth, 1));
                                 else setCurrentMonth(addDays(currentMonth, 1));
-                            }} className="p-2 hover:bg-gray-800 rounded-full transition"><ChevronRight /></button>
+                            }} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"><ChevronRight /></button>
                         </h2>
                         <div className="flex items-center gap-2">
                             {(['daily', 'weekly', 'monthly'] as CalendarView[]).map(v => (
@@ -176,13 +176,13 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         'px-3 py-1.5 rounded-lg text-xs font-bold transition-colors',
                                         calendarView === v
                                             ? 'bg-blue-600 text-white'
-                                            : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'
+                                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
                                     )}
                                 >
                                     {v === 'daily' ? '일간' : v === 'weekly' ? '주간' : '월간'}
                                 </button>
                             ))}
-                            <button onClick={onClose} className="p-2 hover:bg-gray-800 rounded-full text-gray-400 hover:text-white transition ml-2">
+                            <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition ml-2">
                                 <X className="w-6 h-6" />
                             </button>
                         </div>
@@ -198,10 +198,10 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                 );
                                 return dayEvents.map((perf, i) => (
                                     <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                        className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
+                                        className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
                                     >
                                         {perf.image && (
-                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-14 h-[72px] object-cover rounded bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
+                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-14 h-[72px] object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
                                         )}
                                         <div className="min-w-0 flex-1">
                                             <div className="flex items-center gap-2 mb-1">
@@ -210,7 +210,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                 </span>
                                                 <span className="text-[10px] text-gray-500">{perf.venue}</span>
                                             </div>
-                                            <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                            <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
                                         </div>
                                     </a>
                                 ));
@@ -221,25 +221,25 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     {/* Weekly View */}
                     {calendarView === 'weekly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-800 bg-gray-900/50">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
                                 {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map((day, idx) => (
-                                    <div key={day.toISOString()} className={clsx("py-3 text-center text-xs font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-400")}>
+                                    <div key={day.toISOString()} className={clsx("py-3 text-center text-xs font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
                                         {format(day, 'eee d일', { locale: ko })}
                                     </div>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-7 flex-grow overflow-y-auto bg-gray-800 gap-[1px]">
+                            <div className="grid grid-cols-7 flex-grow overflow-y-auto bg-gray-200 dark:bg-gray-800 gap-[1px]">
                                 {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map(day => {
                                     const dayEvents = getPerformancesForDay(day);
                                     const isToday = isSameDay(day, new Date());
                                     return (
-                                        <div key={day.toISOString()} className="bg-gray-900 p-2 flex flex-col gap-1 overflow-y-auto">
-                                            <span className={clsx("text-xs font-extrabold mb-1", isToday ? "text-blue-400" : "text-gray-500")}>
+                                        <div key={day.toISOString()} className="bg-white dark:bg-gray-900 p-2 flex flex-col gap-1 overflow-y-auto">
+                                            <span className={clsx("text-xs font-extrabold mb-1", isToday ? "text-blue-600 dark:text-blue-400" : "text-gray-500")}>
                                                 {dayEvents.length}건
                                             </span>
                                             {dayEvents.slice(0, 10).map((perf, i) => (
                                                 <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                                    className={clsx("text-[10px] px-2 py-1 rounded truncate text-white block hover:opacity-80 transition", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-700')}
+                                                    className={clsx("text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700')}
                                                     title={perf.title}
                                                 >{perf.title}</a>
                                             ))}
@@ -254,15 +254,15 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     {/* Monthly View */}
                     {calendarView === 'monthly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-800 bg-gray-900/50">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
                                 {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
-                                    <div key={day} className={clsx("py-3 text-center text-sm font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-400")}>
+                                    <div key={day} className={clsx("py-3 text-center text-sm font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
                                         {day}
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="grid grid-cols-7 flex-grow overflow-y-auto auto-rows-fr bg-gray-800 gap-[1px]">
+                            <div className="grid grid-cols-7 flex-grow overflow-y-auto auto-rows-fr bg-gray-200 dark:bg-gray-800 gap-[1px]">
                                 {dayList.map((day) => {
                                     const dayEvents = getPerformancesForDay(day);
                                     return (
@@ -288,14 +288,14 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
             {selectedDate && (
                 <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
                     <div
-                        className="bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-700 overflow-hidden"
+                        className="bg-white dark:bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-700 overflow-hidden"
                         onClick={e => e.stopPropagation()}
                     >
-                        <div className="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800">
-                            <h3 className="text-lg font-extrabold text-white">
+                        <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
+                            <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
                                 {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
                             </h3>
-                            <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-700 rounded-full text-gray-400 hover:text-white">
+                            <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
                                 <X className="w-5 h-5" />
                             </button>
                         </div>
@@ -303,7 +303,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         {/* Genre Tabs - Draggable */}
                         <div
                             ref={scrollRef}
-                            className={`w-full px-4 py-3 bg-black/50 border-b border-gray-700 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                            className={`w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-700 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
                             onMouseDown={onMouseDown}
                             onMouseLeave={onMouseLeave}
                             onMouseUp={onMouseUp}
@@ -321,8 +321,8 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         className={clsx(
                                             "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border select-none",
                                             selectedPopupGenre === g.id
-                                                ? "bg-white text-black border-white"
-                                                : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500 hover:text-gray-200"
+                                                ? "bg-gray-900 dark:bg-white text-white dark:text-black border-gray-900 dark:border-white"
+                                                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:text-gray-900 dark:hover:text-gray-200"
                                         )}
                                     >
                                         {g.label}
@@ -348,10 +348,10 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                             href={perf.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex gap-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-750 border border-gray-700 transition group"
+                                            className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
                                         >
                                             {perf.image && (
-                                                <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
+                                                <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
                                             )}
                                             <div className="min-w-0 flex-1">
                                                 <div className="flex items-center gap-2 mb-1">
@@ -363,7 +363,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                     </span>
                                                     <span className="text-[10px] text-gray-500">{perf.venue}</span>
                                                 </div>
-                                                <h4 className="text-sm font-bold text-white leading-tight line-clamp-2 group-hover:text-blue-400 transition-colors">
+                                                <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
                                                     {perf.title}
                                                 </h4>
                                             </div>
