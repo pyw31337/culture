@@ -23,7 +23,7 @@ const PLATFORMS = [
     { name: 'tving', keyword: '티빙' },
     { name: 'wavve', keyword: '웨이브' }
 ];
-const TYPES = ['추천', '신작'];
+const TYPES = ['추천', '신작', '많이 찾는', '주간 순위', '오리지널'];
 
 // --- HELPERS ---
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
@@ -103,8 +103,6 @@ async function scrapeList(context: any, platform: any, type: string) {
     const query = `${platform.keyword} ${type}`;
     const url = `https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkdJ&qvt=0&query=${encodeURIComponent(query)}`;
 
-    console.log(`[Scrape] Starting ${platform.name} - ${type}...`);
-
     let items: any[] = [];
     try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -177,13 +175,25 @@ async function scrapeList(context: any, platform: any, type: string) {
     const limit = pLimit(1); // Reduced from 2 to 1 for Phase 1 list scraping
     const tasks = [];
 
+    const phase1Bar = new cliProgress.SingleBar({
+        format: 'Phase 1 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {platform} - {type}',
+        hideCursor: true
+    }, cliProgress.Presets.shades_classic);
+    phase1Bar.start(PLATFORMS.length * TYPES.length, 0, { platform: 'Ready', type: '' });
+
     for (const p of PLATFORMS) {
         for (const t of TYPES) {
-            tasks.push(limit(() => scrapeList(context, p, t)));
+            tasks.push(limit(async () => {
+                phase1Bar.update({ platform: p.name, type: t });
+                const res = await scrapeList(context, p, t);
+                phase1Bar.increment();
+                return res;
+            }));
         }
     }
 
     const results = await Promise.all(tasks);
+    phase1Bar.stop();
     const flatResults = results.flat();
 
     const dedupedCtx: Record<string, any> = {};
@@ -215,13 +225,19 @@ async function scrapeList(context: any, platform: any, type: string) {
     });
 
     const limitEnrich = pLimit(2); // Reduced from 5 to 2 for Phase 2 enrichment
-    const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    progressBar.start(finalRaw.length, 0);
+    const progressBar = new cliProgress.SingleBar({
+        format: 'Phase 2 | {bar} | {percentage}% | ETA: {eta}s | {value}/{total} | {status}',
+        hideCursor: true
+    }, cliProgress.Presets.shades_classic);
+    progressBar.start(finalRaw.length, 0, { status: 'Starting...' });
 
     const enrichTasks = finalRaw.map(item => limitEnrich(async () => {
         const page = await context2.newPage();
+        page.setDefaultTimeout(15000);
+        page.setDefaultNavigationTimeout(15000);
         try {
-            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
+            progressBar.update({ status: item.title.substring(0, 20) });
+            await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
             // Increased delay to reduce CPU spikes
             await sleep(1500 + Math.random() * 2000);
 
@@ -264,8 +280,24 @@ async function scrapeList(context: any, platform: any, type: string) {
                     for (const g of groups) {
                         const dt = g.querySelector('dt');
                         const dd = g.querySelector('dd');
-                        if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영'))) {
-                            res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '');
+                        if (dt && dd && (dt.textContent?.includes('개봉') || dt.textContent?.includes('방영') || dt.textContent?.includes('공개'))) {
+                            res.date = dd.textContent?.trim().replace(/\(.*\)/, '').replace(/\.$/, '').replace(/[가-힣\s]/g, (match) => match === ' ' ? ' ' : '').trim();
+                            // If it's just "2026 02 14", convert to "2026.02.14"
+                            if (res.date.match(/^\d{4}\s\d{2}\s\d{2}$/)) {
+                                res.date = res.date.replace(/\s/g, '.');
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                if (!res.ageRating) {
+                    const groups = Array.from(document.querySelectorAll('.info_group'));
+                    for (const g of groups) {
+                        const dt = g.querySelector('dt');
+                        const dd = g.querySelector('dd');
+                        if (dt && dd && (dt.textContent?.includes('등급') || dt.textContent?.includes('연령'))) {
+                            res.ageRating = dd.textContent?.trim();
                             break;
                         }
                     }
@@ -404,7 +436,6 @@ async function scrapeList(context: any, platform: any, type: string) {
                         if (newLocal) {
                             item.poster = newLocal;
                             item.posterSource = 'namuwiki';
-                            console.log(`[NamuWiki] Found & Saved poster for ${item.title}`);
                         }
                     }
                 } catch (namuErr) {

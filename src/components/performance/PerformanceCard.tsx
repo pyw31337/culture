@@ -5,7 +5,7 @@ import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { extractFirstPrice, cleanTitle } from '@/lib/utils';
+import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
 interface PerformanceCardProps {
@@ -453,7 +453,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 {dDay}
                                             </span>
                                         )}
-                                        <span className="text-[13px] font-extrabold opacity-70">{perf.date}</span>
+                                        <span className="text-[13px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
                                         {perf.platforms && perf.platforms.length > 0 && (
                                             <div className="flex gap-1 ml-2">
                                                 {perf.platforms.map((p: string) => {
@@ -600,21 +600,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     <span className="text-xs text-gray-300 flex items-center gap-1 font-semibold">
                                                         {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
                                                         {(() => {
-                                                            let dateStr = perf.date;
-                                                            // Clean up date string:
-                                                            // 1. Remove tags like [얼리버드], [유효기간:~xxxx.xx.xx], etc.
-                                                            dateStr = dateStr.replace(/\[(?:얼리버드|유효기간[:\s～~]*[^\\]]*|[^\]]*)\]/g, '');
-                                                            // 2. Remove orphan brackets
-                                                            dateStr = dateStr.replace(/[\[\]]/g, '');
-                                                            // 3. Normalize dashes to dots, remove trailing dots
-                                                            dateStr = dateStr.replace(/-/g, '.').replace(/\.+$/, '').trim();
-                                                            // 4. If date is like "~2026.03.02 ~2026.03.02", take just one
-                                                            const parts = dateStr.split('~').map((s: string) => s.trim()).filter(Boolean);
-                                                            if (parts.length === 2 && parts[0] === parts[1]) {
-                                                                return parts[0];
-                                                            } else if (parts.length >= 1 && dateStr.startsWith('~')) {
-                                                                // Format: "~2026.03.02" - just return the clean end date
-                                                                return `~${parts[parts.length - 1]}`;
+                                                            let dateStr = formatUnifiedDate(perf.date);
+                                                            // Keep the ~ logic for ranged dates just in case, but formatUnifiedDate mostly handles this now
+                                                            if (dateStr.startsWith('~')) {
+                                                                return dateStr;
                                                             }
                                                             return dateStr;
                                                         })()}

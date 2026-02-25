@@ -1,3 +1,5 @@
+import { format, isValid, parse } from 'date-fns';
+import { ko } from 'date-fns/locale';
 
 export const getOptimizedUrl = (url: string, width: number = 400) => {
     if (!url) return '';
@@ -112,4 +114,51 @@ export function getLowResUrl(url: string): string | null {
     // blur=5: Apply blur on server side
     // q=20: Low quality
     return `https://wsrv.nl/?url=${encodedUrl}&w=20&blur=5&q=20&output=webp`;
+}
+
+// Unified Date Formatter: YYYY.MM.DD (E) HH:mm
+export function formatUnifiedDate(dateStr: string): string {
+    if (!dateStr) return '';
+    try {
+        let cleanStr = dateStr;
+        // 1. Remove tags like [얼리버드], [유효기간:~xxxx.xx.xx]
+        cleanStr = cleanStr.replace(/\[(?:얼리버드|유효기간[:\s～~]*[^\\]]*|[^\]]*)\]/g, '');
+        // 2. Remove orphan brackets
+        cleanStr = cleanStr.replace(/[\[\]]/g, '');
+        // 3. Normalize dashes to dots
+        cleanStr = cleanStr.replace(/-/g, '.').replace(/\.+$/, '').trim();
+        // 4. Handle ranges like "~2026.03.02" or multiple dates
+        const parts = cleanStr.split('~').map(s => s.trim()).filter(Boolean);
+        if (parts.length >= 1) {
+            cleanStr = parts[parts.length - 1]; // take the last date mostly
+        }
+
+        // Replace back dots with dashes to parse safely with native Date or date-fns if standard
+        let parseStr = cleanStr.replace(/\./g, '-');
+        // Handle "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DD HH:mm"
+        let parsedDate = new Date(parseStr);
+
+        if (!isValid(parsedDate)) {
+            // Try strict parsing
+            parsedDate = parse(parseStr, 'yyyy-MM-dd HH:mm:ss', new Date());
+            if (!isValid(parsedDate)) {
+                parsedDate = parse(parseStr, 'yyyy-MM-dd HH:mm', new Date());
+            }
+        }
+
+        if (isValid(parsedDate)) {
+            // Check if original string had time
+            if (parseStr.includes(':')) {
+                return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
+            } else {
+                // For now, prompt asks for system-wide format '2026.03.12 (목) 13:00'
+                // However, if there's no time, we might just default to 00:00 or skip time. 
+                // Let's assume if they want it globally, if time is 00:00 we omit it, unless specified.
+                // The prompt: Date format should be united as `2026.03.12 (목) 13:00`.
+                return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
+            }
+        }
+    } catch { }
+
+    return dateStr;
 }

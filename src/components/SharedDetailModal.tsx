@@ -2,11 +2,11 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { OTT_PLATFORMS } from '@/lib/constants';
+import { OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, MonitorPlay } from 'lucide-react';
 import Portal from './ui/Portal';
 import { useEffect, useRef, useState } from 'react';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
 
 interface SharedDetailModalProps {
     performance: Performance;
@@ -18,6 +18,9 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
     const [phase, setPhase] = useState<'spin' | 'reveal'>('spin');
+
+    const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
+    const hasTeams = p.homeTeam && p.awayTeam;
 
     // Animation phases: spin (0.8s) → reveal
     useEffect(() => {
@@ -58,11 +61,23 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
             {/* Inline keyframes for the animations */}
             <style>{`
                 @keyframes sdm-spin-in {
-                    0% { transform: perspective(1200px) rotateY(0deg) scale(0.3); opacity: 0; }
-                    30% { transform: perspective(1200px) rotateY(540deg) scale(0.6); opacity: 0.7; }
-                    70% { transform: perspective(1200px) rotateY(900deg) scale(0.9); opacity: 1; }
-                    85% { transform: perspective(1200px) rotateY(1050deg) scale(1.02); }
-                    100% { transform: perspective(1200px) rotateY(1080deg) scale(1); }
+                    0% { transform: perspective(1200px) translateZ(-1000px) rotateY(0deg) scale(0.1); opacity: 0; }
+                    60% { transform: perspective(1200px) translateZ(150px) rotateY(720deg) scale(1.15); opacity: 1; }
+                    80% { transform: perspective(1200px) translateZ(0px) rotateY(1080deg) scale(0.95); opacity: 1; }
+                    100% { transform: perspective(1200px) translateZ(0px) rotateY(1080deg) scale(1); opacity: 1; }
+                }
+                @keyframes sdm-camera-shake {
+                    0%, 79% { transform: translate(0,0) rotate(0deg); }
+                    80% { transform: translate(-10px, 10px) rotate(-2deg); }
+                    84% { transform: translate(10px, -10px) rotate(2deg); }
+                    88% { transform: translate(-10px, -10px) rotate(-1deg); }
+                    92% { transform: translate(10px, 10px) rotate(1deg); }
+                    100% { transform: translate(0,0) rotate(0deg); }
+                }
+                @keyframes sdm-flash-bang {
+                    0%, 79% { opacity: 0; box-shadow: none; background: transparent; }
+                    80% { opacity: 1; box-shadow: 0 0 150px 100px white; background: white; }
+                    100% { opacity: 0; box-shadow: none; background: transparent; }
                 }
                 @keyframes sdm-glow-rotate {
                     0% { transform: translate(-50%, -50%) rotate(0deg); }
@@ -89,8 +104,11 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                     0% { opacity: 0; transform: translateY(20px); }
                     100% { opacity: 1; transform: translateY(0); }
                 }
+                .sdm-modal-shake {
+                    animation: sdm-camera-shake 0.8s ease-out forwards;
+                }
                 .sdm-card-spin {
-                    animation: sdm-spin-in 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+                    animation: sdm-spin-in 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
                     backface-visibility: hidden;
                 }
                 .sdm-card-reveal {
@@ -104,13 +122,20 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
 
             <div
                 ref={overlayRef}
-                className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+                className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 ${phase === 'spin' ? 'sdm-modal-shake' : ''}`}
                 onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
                 style={{
                     background: 'radial-gradient(circle at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.92) 100%)',
                     backdropFilter: 'blur(12px)',
                 }}
             >
+                {/* Flash Bang Effect */}
+                {phase === 'spin' && (
+                    <div
+                        className="fixed inset-0 pointer-events-none z-[9998]"
+                        style={{ animation: 'sdm-flash-bang 0.8s ease-out forwards' }}
+                    />
+                )}
                 {/* Rotating Glow Aura — behind the card */}
                 <div
                     className="absolute pointer-events-none"
@@ -249,6 +274,23 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                         )}
                                     </div>
                                 </div>
+
+                                {/* Sports VS Overlay */}
+                                {isSports && hasTeams && (
+                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-6 items-center z-20 pointer-events-none drop-shadow-2xl">
+                                        <img
+                                            src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
+                                            alt={p.homeTeam}
+                                            className="w-[30%] max-w-[120px] aspect-square object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+                                        />
+                                        <div className="text-white text-3xl font-black italic bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/30 shadow-2xl">VS</div>
+                                        <img
+                                            src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
+                                            alt={p.awayTeam}
+                                            className="w-[30%] max-w-[120px] aspect-square object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+                                        />
+                                    </div>
+                                )}
                             </div>
                         )}
 
@@ -330,7 +372,7 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                     {p.date && (
                                         <div className="flex items-start gap-3">
                                             <Calendar className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{p.date}</span>
+                                            <span className="text-sm text-gray-300">{formatUnifiedDate(p.date)}</span>
                                         </div>
                                     )}
                                     {p.runningTime && (
