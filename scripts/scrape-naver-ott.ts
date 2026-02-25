@@ -10,7 +10,7 @@ import axios from 'axios';
 import sharp from 'sharp';
 
 // --- CONFIG ---
-const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver.json');
+const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott.json');
 const RAW_OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/ott-naver-raw.json');
 const POSTER_DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'ott');
 
@@ -278,24 +278,32 @@ async function scrapeList(context: any, platform: any, type: string) {
                 res.genre = 'ott';
                 res.description = [realGenre, res.productionCountry, res.runningTime].filter(Boolean).join(' | ');
 
-                // 2. Cast Parsing
-                const members = document.querySelectorAll('.sec_scroll_cast_member .card_item, ._actor_wrap .card_item, .cm_content_area._cast_area .card_item');
+                // 2. Cast Parsing (Scoped)
                 const cast: string[] = [];
-                members.forEach(m => {
-                    let name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
-                    const role = m.querySelector('.sub_text')?.textContent?.trim() || '';
+                // Primary container for cast in Naver SDS
+                const castContainer = document.querySelector('.cm_content_area._cast_area, ._actor_wrap, .sec_scroll_cast_member');
+                if (castContainer) {
+                    const members = castContainer.querySelectorAll('.card_item, .item');
+                    members.forEach(m => {
+                        const nameEl = m.querySelector('.name') || m.querySelector('a._text');
+                        const roleEl = m.querySelector('.sub_text');
+                        let name = nameEl?.textContent?.trim() || '';
+                        let role = roleEl?.textContent?.trim() || '';
 
-                    if (name.includes(' 역')) {
-                        if (role) name = role;
-                        else name = name.split(' 역')[0];
-                    }
+                        if (name.includes(' 역')) {
+                            if (role) name = role;
+                            else name = name.split(' 역')[0];
+                        }
 
-                    if (name && !name.includes('배역') && !name.includes('출연') && name.length < 20) {
-                        if (role.includes('감독') || role.includes('연출')) res.director = name;
-                        else cast.push(name);
-                    }
-                });
-                if (cast.length > 0) res.cast = cast.slice(0, 5);
+                        // Stricter name validation
+                        if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
+                            const isDirector = role.includes('감독') || role.includes('연출');
+                            if (isDirector) res.director = name;
+                            else cast.push(name);
+                        }
+                    });
+                }
+                if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
 
                 return res;
             });
@@ -313,32 +321,30 @@ async function scrapeList(context: any, platform: any, type: string) {
                     });
 
                     if (foundTab) {
-                        await page.waitForTimeout(1000);
+                        await page.waitForTimeout(1500);
                         const newCastData = await page.evaluate(() => {
                             const newCast: string[] = [];
                             let director = '';
-                            const members = document.querySelectorAll('.card_item, .area_link_box li, .sec_scroll_cast_member .card_item, .item, .cm_content_wrap li, .list_info .item');
-                            members.forEach(m => {
-                                let name = '';
-                                let roleOrSub = '';
-                                const nameEl = m.querySelector('strong.name, .name');
-                                const subEl = m.querySelector('span.sub_text, .sub_text');
-                                if (nameEl) {
-                                    let nameTxt = nameEl.textContent?.trim() || '';
-                                    let subTxt = subEl?.textContent?.trim() || '';
-                                    if (nameTxt.includes(' 역')) name = subTxt;
-                                    else name = nameTxt;
-                                    roleOrSub = subTxt;
-                                } else {
-                                    if (m.classList.contains('_text')) name = m.textContent?.trim() || '';
-                                    else name = m.querySelector('.name')?.textContent?.trim() || m.querySelector('a._text')?.textContent?.trim() || '';
-                                }
-                                if (name && name.length < 20 && !name.includes('배역') && !name.includes('출연') && !name.includes('전체삭제')) {
-                                    if (roleOrSub.includes('감독') || roleOrSub.includes('연출')) director = name;
-                                    else newCast.push(name);
-                                }
-                            });
-                            return { cast: Array.from(new Set(newCast)).slice(0, 5), director };
+                            // Strictly scope to the active content wrap
+                            const container = document.querySelector('.cm_content_wrap .list_image_info._content, .cm_content_wrap .list_info');
+                            if (container) {
+                                const members = container.querySelectorAll('li, .item');
+                                members.forEach(m => {
+                                    const nameEl = m.querySelector('strong.name, .name') || m.querySelector('a._text');
+                                    const roleEl = m.querySelector('span.sub_text, .sub_text');
+                                    let name = nameEl?.textContent?.trim() || '';
+                                    let role = roleEl?.textContent?.trim() || '';
+
+                                    if (name.includes(' 역')) name = name.split(' 역')[0];
+
+                                    // Strict name check
+                                    if (name && name.length < 15 && !name.includes('배역') && !name.includes('출연') && !name.includes('더보기')) {
+                                        if (role.includes('감독') || role.includes('연출')) director = name;
+                                        else newCast.push(name);
+                                    }
+                                });
+                            }
+                            return { cast: Array.from(new Set(newCast)).slice(0, 8), director };
                         });
                         if (newCastData.cast.length > 0) item.cast = newCastData.cast;
                         if (newCastData.director && !item.director) item.director = newCastData.director;

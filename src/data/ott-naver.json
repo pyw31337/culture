@@ -1,27 +1,5 @@
 [
   {
-    "title": "아너 : 그녀들의 법정",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37585393&qvt=0&query=%EC%95%84%EB%84%88%20%EA%B7%B8%EB%85%80%EB%93%A4%EC%9D%98%20%EB%B2%95%EC%A0%95",
-    "poster": "/images/posters/ott/아너___그녀들의_법정.webp",
-    "platform": "coupang",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_아너:그녀들의법정",
-    "platforms": [
-      "coupang"
-    ],
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "이나영",
-      "정은채",
-      "이청아",
-      "연우진",
-      "서현우"
-    ],
-    "posterSource": "namuwiki"
-  },
-  {
     "title": "오은영 리포트 - 결혼 지옥",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=26141194&qvt=0&query=%EC%98%A4%EC%9D%80%EC%98%81%20%EB%A6%AC%ED%8F%AC%ED%8A%B8%20%EA%B2%B0%ED%98%BC%20%EC%A7%80%EC%98%A5",
     "poster": "/images/posters/ott/오은영_리포트___결혼_지옥.webp",
@@ -40,8 +18,31 @@
       "소유진",
       "문세윤",
       "박지민"
+    ]
+  },
+  {
+    "title": "아너 : 그녀들의 법정",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37585393&qvt=0&query=%EC%95%84%EB%84%88%20%EA%B7%B8%EB%85%80%EB%93%A4%EC%9D%98%20%EB%B2%95%EC%A0%95",
+    "poster": "/images/posters/ott/아너___그녀들의_법정.webp",
+    "platform": "coupang",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_아너:그녀들의법정",
+    "platforms": [
+      "coupang"
     ],
-    "posterSource": "namuwiki"
+    "genre": "ott",
+    "description": "드라마",
+    "cast": [
+      "윤라영",
+      "강신재",
+      "황현진",
+      "백태주",
+      "박제열",
+      "구선규",
+      "한민서",
+      "성태임"
+    ]
   },
   {
     "title": "천하제빵 : 베이크 유어 드림",
@@ -62,9 +63,9 @@
       "노희영",
       "이석원",
       "김나래",
-      "미미"
-    ],
-    "posterSource": "namuwiki"
+      "미미",
+      "나폴리 맛피아"
+    ]
   },
   {
     "title": "야구여왕",
@@ -84,9 +85,11 @@
       "추신수",
       "윤석민",
       "이대형",
-      "김동영"
-    ],
-    "posterSource": "namuwiki"
+      "김동영",
+      "김주현",
+      "박재홍",
+      "이광용"
+    ]
   },
   {
     "title": "주토피아 2",
@@ -107,10 +110,12 @@
       "제이슨 베이트먼",
       "키 호이 콴",
       "전해리",
-      "정재헌"
+      "정재헌",
+      "전태열",
+      "변정현",
+      "엄상현"
     ],
-    "director": "바이론 하워드",
-    "posterSource": "namuwiki"
+    "director": "바이론 하워드"
   },
   {
     "title": "사흘",
@@ -132,10 +137,12 @@
       "이민기",
       "이레",
       "박민정",
-      "박재준"
+      "박재준",
+      "원미원",
+      "태인호",
+      "김기천"
     ],
-    "director": "현문섭",
-    "posterSource": "namuwiki"
+    "director": "현문섭"
   },
   {
     "title": "놀면 뭐하니?",
@@ -154,8 +161,7 @@
       "유재석",
       "하하",
       "주우재"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "극장판 체인소 맨: 레제편",
@@ -172,14 +178,9 @@
     "genre": "ott",
     "description": "영화",
     "cast": [
-      "후지모토 타츠키",
-      "극장판 귀멸의 칼날: 무한성편",
-      "너의 이름은.",
-      "극장판 귀멸의 칼날: 무한열차편",
-      "스즈메의 문단속"
+      "후지모토 타츠키"
     ],
-    "director": "요시하라 타츠야",
-    "posterSource": "namuwiki"
+    "director": "요시하라 타츠야"
   },
   {
     "title": "하우스메이드",
@@ -198,12 +199,9 @@
     "cast": [
       "시드니 스위니",
       "아만다 사이프리드",
-      "브랜든 스클레너",
-      "시스터",
-      "다크 플레이스"
+      "브랜든 스클레너"
     ],
-    "director": "폴 페이그",
-    "posterSource": "namuwiki"
+    "director": "폴 페이그"
   },
   {
     "title": "시스터",
@@ -224,7 +222,10 @@
       "이수혁",
       "차주영",
       "정지우",
-      "김설아"
+      "김설아",
+      "진성문",
+      "채민주",
+      "배준오"
     ],
     "director": "진성문"
   },
@@ -247,10 +248,12 @@
       "전종서",
       "김신록",
       "정영주",
-      "이재균"
+      "이재균",
+      "유아",
+      "김성철",
+      "이환"
     ],
-    "director": "이환",
-    "posterSource": "namuwiki"
+    "director": "이환"
   },
   {
     "title": "하트맨",
@@ -271,10 +274,10 @@
       "문채원",
       "김서헌",
       "박지환",
-      "피오"
+      "피오",
+      "이수아"
     ],
-    "director": "최원섭",
-    "posterSource": "namuwiki"
+    "director": "최원섭"
   },
   {
     "title": "8번 출구",
@@ -297,8 +300,7 @@
       "히라세 켄타로",
       "카와무라 겐키"
     ],
-    "director": "카와무라 겐키",
-    "posterSource": "namuwiki"
+    "director": "카와무라 겐키"
   },
   {
     "title": "퍼스트 라이드",
@@ -321,31 +323,7 @@
       "강영석",
       "한선화"
     ],
-    "director": "남대중",
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "언더커버 미쓰홍",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36656094&qvt=0&query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D",
-    "poster": "/images/posters/ott/언더커버_미쓰홍.webp",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_언더커버미쓰홍",
-    "platforms": [
-      "netflix",
-      "tving"
-    ],
-    "genre": "ott",
-    "description": "드라마",
-    "cast": [
-      "박신혜",
-      "고경표",
-      "하윤경",
-      "조한결",
-      "최지수"
-    ],
-    "posterSource": "namuwiki"
+    "director": "남대중"
   },
   {
     "title": "프레데터: 죽음의 땅",
@@ -363,14 +341,34 @@
     "genre": "ott",
     "description": "영화",
     "cast": [
-      "엘르 패닝",
-      "디미트리우스 슈스터-콜로아마탕기",
-      "프레이",
-      "에이리언: 로물루스",
-      "더 프레데터"
+      "엘르 패닝"
     ],
-    "director": "댄 트라첸버그",
-    "posterSource": "namuwiki"
+    "director": "댄 트라첸버그"
+  },
+  {
+    "title": "언더커버 미쓰홍",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36656094&qvt=0&query=%EC%96%B8%EB%8D%94%EC%BB%A4%EB%B2%84%20%EB%AF%B8%EC%93%B0%ED%99%8D",
+    "poster": "/images/posters/ott/언더커버_미쓰홍.webp",
+    "platform": "netflix",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_언더커버미쓰홍",
+    "platforms": [
+      "netflix",
+      "tving"
+    ],
+    "genre": "ott",
+    "description": "드라마",
+    "cast": [
+      "홍금보",
+      "신정우",
+      "고복희",
+      "알벗 오",
+      "강노라",
+      "김미숙",
+      "방진목",
+      "이용기"
+    ]
   },
   {
     "title": "현역가왕3",
@@ -390,8 +388,7 @@
     "cast": [
       "신동엽",
       "린"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "은애하는 도적님아",
@@ -408,13 +405,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "남지현",
-      "문상민",
-      "홍민기",
-      "한소은",
-      "최원영"
-    ],
-    "posterSource": "namuwiki"
+      "홍은조",
+      "이 열",
+      "임재이",
+      "신해림",
+      "임사형",
+      "이 규",
+      "대비",
+      "홍민직"
+    ]
   },
   {
     "title": "레이디 두아",
@@ -432,8 +431,7 @@
     "cast": [
       "신혜선",
       "이준혁"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "약한영웅 Class 2",
@@ -449,13 +447,32 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "박지훈",
-      "려운",
-      "최민영",
-      "이준영",
-      "유수빈"
+      "연시은",
+      "박후민",
+      "서준태",
+      "금성제",
+      "최효만",
+      "나백진",
+      "고현탁"
+    ]
+  },
+  {
+    "title": "틈만 나면,",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=33809574&qvt=0&query=%ED%8B%88%EB%A7%8C%20%EB%82%98%EB%A9%B4",
+    "poster": "/images/posters/ott/틈만_나면_.webp",
+    "platform": "netflix",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_틈만나면,",
+    "platforms": [
+      "netflix"
     ],
-    "posterSource": "namuwiki"
+    "genre": "ott",
+    "description": "예능",
+    "cast": [
+      "유재석",
+      "유연석"
+    ]
   },
   {
     "title": "솔로지옥 시즌5",
@@ -479,25 +496,6 @@
     ]
   },
   {
-    "title": "틈만 나면,",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=33809574&qvt=0&query=%ED%8B%88%EB%A7%8C%20%EB%82%98%EB%A9%B4",
-    "poster": "/images/posters/ott/틈만_나면_.webp",
-    "platform": "netflix",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_틈만나면,",
-    "platforms": [
-      "netflix"
-    ],
-    "genre": "ott",
-    "description": "예능",
-    "cast": [
-      "유재석",
-      "유연석"
-    ],
-    "posterSource": "namuwiki"
-  },
-  {
     "title": "오늘부터 인간입니다만",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=36278788&qvt=0&query=%EC%98%A4%EB%8A%98%EB%B6%80%ED%84%B0%20%EC%9D%B8%EA%B0%84%EC%9E%85%EB%8B%88%EB%8B%A4%EB%A7%8C",
     "poster": "/images/posters/ott/오늘부터_인간입니다만.webp",
@@ -511,53 +509,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "김혜윤",
-      "로몬",
-      "이시우",
-      "장동주",
-      "김태우"
-    ],
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "쿵푸 팬더 2",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1807060&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%942",
-    "poster": "/images/posters/ott/쿵푸_팬더_2.webp",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_쿵푸팬더2",
-    "platforms": [
-      "netflix"
-    ],
-    "date": "2011.05.26",
-    "genre": "ott",
-    "description": "영화",
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "쿵푸팬더3",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1830931&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%943",
-    "poster": "/images/posters/ott/쿵푸팬더3.webp",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_쿵푸팬더3",
-    "platforms": [
-      "netflix"
-    ],
-    "date": "2016.01.28",
-    "genre": "ott",
-    "description": "영화",
-    "cast": [
-      "잭 블랙",
-      "안젤리나 졸리",
-      "더스틴 호프만",
-      "성룡",
-      "세스 로건"
-    ],
-    "director": "알레산드로 칼로니",
-    "posterSource": "namuwiki"
+      "은호",
+      "강시열",
+      "금호",
+      "현우석",
+      "장도철",
+      "이윤",
+      "박용길",
+      "현상철"
+    ]
   },
   {
     "title": "쿵푸 팬더",
@@ -578,10 +538,53 @@
       "더스틴 호프만",
       "성룡",
       "루시 리우",
-      "안젤리나 졸리"
+      "안젤리나 졸리",
+      "이안 맥쉐인",
+      "데이빗 크로스",
+      "세스 로건"
     ],
-    "director": "존 스티븐슨",
-    "posterSource": "namuwiki"
+    "director": "존 스티븐슨"
+  },
+  {
+    "title": "쿵푸팬더3",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1830931&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%943",
+    "poster": "/images/posters/ott/쿵푸팬더3.webp",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_쿵푸팬더3",
+    "platforms": [
+      "netflix"
+    ],
+    "date": "2016.01.28",
+    "genre": "ott",
+    "description": "영화",
+    "cast": [
+      "잭 블랙",
+      "안젤리나 졸리",
+      "더스틴 호프만",
+      "성룡",
+      "세스 로건",
+      "루시 리우",
+      "데이빗 크로스",
+      "J.K. 시몬스"
+    ],
+    "director": "알레산드로 칼로니"
+  },
+  {
+    "title": "쿵푸 팬더 2",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1807060&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%942",
+    "poster": "/images/posters/ott/쿵푸_팬더_2.webp",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_쿵푸팬더2",
+    "platforms": [
+      "netflix"
+    ],
+    "date": "2011.05.26",
+    "genre": "ott",
+    "description": "영화"
   },
   {
     "title": "순수 박물관",
@@ -595,7 +598,33 @@
       "netflix"
     ],
     "genre": "ott",
-    "description": "해외"
+    "description": "전시 > 서울 전시"
+  },
+  {
+    "title": "변호인",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1835068&qvt=0&query=%EC%98%81%ED%99%94%20%EB%B3%80%ED%98%B8%EC%9D%B8",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20131203_145%2F1386034788519v2Vwy_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_변호인",
+    "platforms": [
+      "netflix"
+    ],
+    "date": "2013.12.18",
+    "genre": "ott",
+    "description": "영화",
+    "cast": [
+      "송강호",
+      "김영애",
+      "오달수",
+      "곽도원",
+      "임시완",
+      "송영창",
+      "정원중",
+      "조민기"
+    ],
+    "director": "양우석"
   },
   {
     "title": "사랑하기 때문에",
@@ -610,16 +639,7 @@
     ],
     "date": "2017.01.04",
     "genre": "ott",
-    "description": "영화",
-    "cast": [
-      "차태현",
-      "김유정",
-      "서현진",
-      "임주환",
-      "김윤혜"
-    ],
-    "director": "주지홍",
-    "posterSource": "namuwiki"
+    "description": "영화"
   },
   {
     "title": "스윙키즈",
@@ -640,30 +660,12 @@
       "자레드 그라임스",
       "박혜수",
       "오정세",
-      "김민호"
+      "김민호",
+      "로스 케틀",
+      "Aj 시몬스",
+      "송재룡"
     ],
-    "director": "강형철",
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "백만 팔로워는 추리 중",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40572873&qvt=0&query=%EB%B0%B1%EB%A7%8C%20%ED%8C%94%EB%A1%9C%EC%9B%8C%EB%8A%94%20%EC%B6%94%EB%A6%AC%20%EC%A4%91",
-    "poster": "/images/posters/ott/백만_팔로워는_추리_중.webp",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_백만팔로워는추리중",
-    "platforms": [
-      "netflix"
-    ],
-    "genre": "ott",
-    "description": "대만스릴러8부작",
-    "cast": [
-      "정이건",
-      "러우쥔숴",
-      "리페이위"
-    ],
-    "posterSource": "namuwiki"
+    "director": "강형철"
   },
   {
     "title": "운명전쟁49",
@@ -684,8 +686,7 @@
       "박하선",
       "신동",
       "강지영"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "찬란한 너의 계절에",
@@ -702,13 +703,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "이성경",
-      "채종협",
-      "이미숙",
-      "강석우",
-      "한지현"
-    ],
-    "posterSource": "namuwiki"
+      "송하란",
+      "선우찬",
+      "김나나",
+      "박만재",
+      "송하영",
+      "송하담",
+      "연태석",
+      "차유겸"
+    ]
   },
   {
     "title": "블러디 플라워",
@@ -727,8 +730,7 @@
       "려운",
       "성동일",
       "금새록"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "메이드 인 코리아",
@@ -748,9 +750,11 @@
       "정우성",
       "우도환",
       "조여정",
-      "서은수"
-    ],
-    "posterSource": "namuwiki"
+      "서은수",
+      "원지안",
+      "정성일",
+      "강길우"
+    ]
   },
   {
     "title": "낭만닥터 김사부 3",
@@ -766,13 +770,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "한석규",
-      "안효섭",
-      "이성경",
-      "김민재",
-      "진경"
-    ],
-    "posterSource": "namuwiki"
+      "김사부",
+      "서우진",
+      "차은재",
+      "박은탁",
+      "오명심",
+      "장기태",
+      "남도일",
+      "박민국"
+    ]
   },
   {
     "title": "무빙",
@@ -792,33 +798,11 @@
       "한효주",
       "조인성",
       "차태현",
-      "류승범"
-    ],
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "좀비딸",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=34395627&qvt=0&query=%EC%98%81%ED%99%94%20%EC%A2%80%EB%B9%84%EB%94%B8",
-    "poster": "/images/posters/ott/좀비딸.webp",
-    "platform": "disney",
-    "type": "추천",
-    "source": "naver",
-    "id": "ott_naver_좀비딸",
-    "platforms": [
-      "disney"
-    ],
-    "date": "2025.07.30",
-    "genre": "ott",
-    "description": "영화",
-    "cast": [
-      "조정석",
-      "이정은",
-      "조여정",
-      "윤경호",
-      "최유리"
-    ],
-    "director": "필감성",
-    "posterSource": "namuwiki"
+      "류승범",
+      "김성균",
+      "김희원",
+      "문성근"
+    ]
   },
   {
     "title": "반도",
@@ -839,9 +823,38 @@
       "이정현",
       "이레",
       "권해효",
-      "김민재"
+      "김민재",
+      "구교환",
+      "김도윤",
+      "이예원"
     ],
-    "director": "연상호",
+    "director": "연상호"
+  },
+  {
+    "title": "좀비딸",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=34395627&qvt=0&query=%EC%98%81%ED%99%94%20%EC%A2%80%EB%B9%84%EB%94%B8",
+    "poster": "/images/posters/ott/좀비딸.webp",
+    "platform": "disney",
+    "type": "추천",
+    "source": "naver",
+    "id": "ott_naver_좀비딸",
+    "platforms": [
+      "disney"
+    ],
+    "date": "2025.07.30",
+    "genre": "ott",
+    "description": "영화",
+    "cast": [
+      "조정석",
+      "이정은",
+      "조여정",
+      "윤경호",
+      "최유리",
+      "금동",
+      "전수지",
+      "김병춘"
+    ],
+    "director": "필감성",
     "posterSource": "namuwiki"
   },
   {
@@ -863,10 +876,12 @@
       "문채원",
       "서영희",
       "원현준",
-      "솔라"
+      "솔라",
+      "차선우",
+      "수민",
+      "서지수"
     ],
-    "director": "홍원기",
-    "posterSource": "namuwiki"
+    "director": "홍원기"
   },
   {
     "title": "하얀 차를 탄 여자",
@@ -887,10 +902,11 @@
       "이정은",
       "김정민",
       "장진희",
-      "강정우"
+      "강정우",
+      "이휘종",
+      "서자연"
     ],
-    "director": "고혜진",
-    "posterSource": "namuwiki"
+    "director": "고혜진"
   },
   {
     "title": "보스",
@@ -911,7 +927,10 @@
       "정경호",
       "박지환",
       "이규형",
-      "오달수"
+      "오달수",
+      "황우슬혜",
+      "정유진",
+      "고창석"
     ],
     "director": "라희찬"
   },
@@ -933,7 +952,9 @@
       "안소니 라모스",
       "제러미 포프",
       "애쉬튼 커쳐",
-      "벨라 하디드"
+      "벨라 하디드",
+      "레베카 홀",
+      "이사벨라 로셀리니"
     ]
   },
   {
@@ -951,13 +972,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "함은정",
-      "오현경",
-      "윤선우",
-      "박건일",
-      "김민설"
-    ],
-    "posterSource": "namuwiki"
+      "오장미",
+      "채화영",
+      "강백호",
+      "마서린",
+      "강준호",
+      "진홍주",
+      "정숙희",
+      "오복길"
+    ]
   },
   {
     "title": "1등들",
@@ -978,9 +1001,10 @@
       "붐",
       "백지영",
       "허성태",
-      "김용준"
-    ],
-    "posterSource": "namuwiki"
+      "김용준",
+      "박지현",
+      "김채원"
+    ]
   },
   {
     "title": "마니또 클럽",
@@ -1002,8 +1026,7 @@
       "이수지",
       "덱스",
       "제니"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "우주를 줄게",
@@ -1019,13 +1042,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "배인혁",
-      "노정의",
-      "박서함",
-      "하준",
-      "박유호"
-    ],
-    "posterSource": "namuwiki"
+      "선태형",
+      "우현진",
+      "박윤성",
+      "선우진",
+      "선우주",
+      "김의준",
+      "우현주",
+      "박애자"
+    ]
   },
   {
     "title": "망내인: 얼굴 없는 살인자들",
@@ -1046,10 +1071,12 @@
       "강서하",
       "성희현",
       "라경덕",
-      "이다슬"
+      "이다슬",
+      "박율리",
+      "임율리",
+      "천명재"
     ],
-    "director": "신재호",
-    "posterSource": "namuwiki"
+    "director": "신재호"
   },
   {
     "title": "동경",
@@ -1070,7 +1097,10 @@
       "이해선",
       "송동은",
       "김인철",
-      "송재혁"
+      "송재혁",
+      "박하랑",
+      "윤웅대",
+      "강대헌"
     ],
     "director": "김정선"
   },
@@ -1110,8 +1140,7 @@
       "최현욱",
       "강남",
       "코드 쿤스트"
-    ],
-    "posterSource": "namuwiki"
+    ]
   },
   {
     "title": "미혼남녀의 효율적 만남",
@@ -1131,32 +1160,11 @@
       "박성훈",
       "이기택",
       "정혜성",
-      "주연우"
-    ],
-    "posterSource": "namuwiki"
-  },
-  {
-    "title": "데스 리버",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=40605608&qvt=0&query=%EB%8D%B0%EC%8A%A4%20%EB%A6%AC%EB%B2%84",
-    "poster": "/images/posters/ott/데스_리버.webp",
-    "platform": "tving",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_데스리버",
-    "platforms": [
-      "tving"
-    ],
-    "genre": "ott",
-    "description": "영화",
-    "cast": [
-      "조셉 밀슨",
-      "사라 알렉산드라 마크",
-      "루이즈 제임스",
-      "엘라 스타벅",
-      "좀비2 : 인도"
-    ],
-    "director": "하워드 J. 포드",
-    "posterSource": "namuwiki"
+      "김소혜",
+      "신재하",
+      "이미도",
+      "윤박"
+    ]
   },
   {
     "title": "세이렌",
@@ -1176,9 +1184,32 @@
       "위하준",
       "김정현",
       "이엘리야",
-      "한준우"
+      "한준우",
+      "공성하",
+      "김금순",
+      "홍기준"
+    ]
+  },
+  {
+    "title": "데스 리버",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=40605608&qvt=0&query=%EB%8D%B0%EC%8A%A4%20%EB%A6%AC%EB%B2%84",
+    "poster": "/images/posters/ott/데스_리버.webp",
+    "platform": "tving",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_데스리버",
+    "platforms": [
+      "tving"
     ],
-    "posterSource": "namuwiki"
+    "genre": "ott",
+    "description": "영화",
+    "cast": [
+      "조셉 밀슨",
+      "사라 알렉산드라 마크",
+      "루이즈 제임스",
+      "엘라 스타벅"
+    ],
+    "director": "하워드 J. 포드"
   },
   {
     "title": "붉은 진주",
@@ -1194,13 +1225,15 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "박진희",
-      "남상지",
-      "최재성",
-      "김희정",
-      "김경보"
-    ],
-    "posterSource": "namuwiki"
+      "김단희",
+      "백진주",
+      "박태호",
+      "오정란",
+      "박민준",
+      "박현준",
+      "최유나",
+      "김명희"
+    ]
   },
   {
     "title": "마리와 별난 아빠들",
@@ -1216,12 +1249,14 @@
     "genre": "ott",
     "description": "드라마",
     "cast": [
-      "하승리",
-      "현우",
-      "박은혜",
-      "류진",
-      "황동주"
-    ],
-    "posterSource": "namuwiki"
+      "강마리",
+      "이강세",
+      "주시라",
+      "이풍주",
+      "강민보",
+      "진기식",
+      "윤순애",
+      "이옥순"
+    ]
   }
 ]

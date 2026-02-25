@@ -284,13 +284,13 @@
     ]
   },
   {
-    "title": "쿵푸 팬더 2",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1807060&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%942",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111223_279%2F1324636684744MS3nW_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "title": "쿵푸 팬더",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1796101&qvt=0&query=%EC%BF%B5%ED%91%B8%20%ED%8C%AC%EB%8D%94%201",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111222_227%2F13245572855713o8Lx_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_naver_쿵푸팬더2",
+    "id": "ott_naver_쿵푸팬더",
     "platforms": [
       "netflix"
     ]
@@ -308,13 +308,13 @@
     ]
   },
   {
-    "title": "쿵푸 팬더",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1796101&qvt=0&query=%EC%BF%B5%ED%91%B8%20%ED%8C%AC%EB%8D%94%201",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111222_227%2F13245572855713o8Lx_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "title": "쿵푸 팬더 2",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1807060&qvt=0&query=%EC%BF%B5%ED%91%B8%ED%8C%AC%EB%8D%942",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20111223_279%2F1324636684744MS3nW_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
-    "id": "ott_naver_쿵푸팬더",
+    "id": "ott_naver_쿵푸팬더2",
     "platforms": [
       "netflix"
     ]
@@ -327,6 +327,18 @@
     "type": "신작",
     "source": "naver",
     "id": "ott_naver_순수박물관",
+    "platforms": [
+      "netflix"
+    ]
+  },
+  {
+    "title": "변호인",
+    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1835068&qvt=0&query=%EC%98%81%ED%99%94%20%EB%B3%80%ED%98%B8%EC%9D%B8",
+    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20131203_145%2F1386034788519v2Vwy_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "platform": "netflix",
+    "type": "신작",
+    "source": "naver",
+    "id": "ott_naver_변호인",
     "platforms": [
       "netflix"
     ]
@@ -351,18 +363,6 @@
     "type": "신작",
     "source": "naver",
     "id": "ott_naver_스윙키즈",
-    "platforms": [
-      "netflix"
-    ]
-  },
-  {
-    "title": "백만 팔로워는 추리 중",
-    "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40572873&qvt=0&query=%EB%B0%B1%EB%A7%8C%20%ED%8C%94%EB%A1%9C%EC%9B%8C%EB%8A%94%20%EC%B6%94%EB%A6%AC%20%EC%A4%91",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260211_157%2F1770767993296Tp2wq_JPEG%2F356_40572873_image_1770767993287.jpg",
-    "platform": "netflix",
-    "type": "신작",
-    "source": "naver",
-    "id": "ott_naver_백만팔로워는추리중",
     "platforms": [
       "netflix"
     ]
