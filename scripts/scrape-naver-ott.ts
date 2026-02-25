@@ -173,7 +173,7 @@ async function scrapeList(context: any, platform: any, type: string) {
 
     // --- Scrape List (Phase 1) ---
     const context = await browser.newContext({ userAgent: 'Mozilla/5.0 (Mac)' });
-    const limit = pLimit(2);
+    const limit = pLimit(1); // Reduced from 2 to 1 for Phase 1 list scraping
     const tasks = [];
 
     for (const p of PLATFORMS) {
@@ -213,7 +213,7 @@ async function scrapeList(context: any, platform: any, type: string) {
         viewport: { width: 1280, height: 1080 }
     });
 
-    const limitEnrich = pLimit(5);
+    const limitEnrich = pLimit(2); // Reduced from 5 to 2 for Phase 2 enrichment
     const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     progressBar.start(finalRaw.length, 0);
 
@@ -221,7 +221,8 @@ async function scrapeList(context: any, platform: any, type: string) {
         const page = await context2.newPage();
         try {
             await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 20000 });
-            await sleep(500 + Math.random() * 1000);
+            // Increased delay to reduce CPU spikes
+            await sleep(1500 + Math.random() * 2000);
 
             const detail = await page.evaluate(async () => {
                 const res: any = {};
