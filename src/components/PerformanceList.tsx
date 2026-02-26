@@ -238,7 +238,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 results.forEach((res, index) => {
                     if (res.status === 'fulfilled') {
                         if (Array.isArray(res.value)) {
-                            if (index === 3) {
+                            if (index === 2) {
                                 setCinemas(res.value);
                             } else {
                                 mergedData.push(...res.value);
@@ -1282,7 +1282,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {
                 isMapOpen && (
                     <KakaoMapModal
-                        performances={selectedGenre === 'movie' ? [] : filteredPerformances}
+                        performances={selectedGenre === 'movie' ? allPerformances : filteredPerformances}
                         cinemas={selectedGenre === 'movie' ? cinemas : []}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}

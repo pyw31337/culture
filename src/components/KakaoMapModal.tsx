@@ -11,9 +11,6 @@ import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 
 import Portal from './ui/Portal';
 
-// import BottomNavSheet from './BottomNavSheet'; // Reverted usage for detail view
-
-
 interface Cinema {
     name: string;
     address: string;
@@ -44,7 +41,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
-    const overlaysRef = useRef<Record<string, any>>({});
 
     // Optimization States
     const [visibleVenues, setVisibleVenues] = useState<any[]>([]);
@@ -53,7 +49,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
 
     // Group performances by venue - Pre-calculation
     const allVenueGroups = useRef<Record<string, any>>({});
-    // Sorted list of all venues for initial calculation
     const allVenuesList = useRef<any[]>([]);
 
     // Drag to scroll logic (Horizontal List)
@@ -125,16 +120,26 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
             });
         }
         allVenuesList.current = list;
-
-        // Initial visible set (take top 20 or all if small)
-        // If centerLocation exists, we probably want to see that.
-        // We will update visibleVenues correctly once map loads and boundaries are known.
-        // For now, init with sorted list.
         setVisibleVenues(list.slice(0, 20));
-    }, [performances, centerLocation]);
+    }, [performances, cinemas, centerLocation]);
 
-    // Map Initialization
+    const handleSearchHereInternal = useCallback((map: any) => {
+        if (!map) return;
+        const bounds = map.getBounds();
+        const visible = allVenuesList.current.filter(v => {
+            const latlng = new window.kakao.maps.LatLng(v.lat, v.lng);
+            return bounds.contain(latlng);
+        });
+        setVisibleVenues(visible);
+        setShowSearchHereBtn(false);
+    }, []);
+
+    const handleSearchHere = () => handleSearchHereInternal(mapInstance);
+
+    // 1. Initialize Map Instance
     useEffect(() => {
+        let checkInterval: any;
+
         const initializeMap = () => {
             if (!window.kakao || !window.kakao.maps) return;
 
@@ -146,106 +151,25 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
                         : defaultCenter,
-                    level: centerLocation ? 2 : 6 // Zoom in: 4->2, 8->6
+                    level: centerLocation ? 2 : 6
                 };
 
-                mapRef.current.innerHTML = '';
+                mapRef.current!.innerHTML = '';
                 const map = new window.kakao.maps.Map(mapRef.current, options);
+
+                // Attach custom properties for state tracking
+                (map as any)._customOverlays = [];
+                (map as any)._clusterer = null;
+
                 setMapInstance(map);
 
-                // --- Markers & Clusterer ---
-                let clusterer: any = null;
-                if (window.kakao.maps.MarkerClusterer) {
-                    try {
-                        clusterer = new window.kakao.maps.MarkerClusterer({
-                            map: map,
-                            averageCenter: true,
-                            minLevel: 7,
-                            disableClickZoom: false,
-                            styles: [{
-                                width: '50px', height: '50px',
-                                background: 'rgba(79, 70, 229, 0.9)',
-                                borderRadius: '50%',
-                                color: 'white',
-                                textAlign: 'center', lineHeight: '50px',
-                                fontWeight: 'bold',
-                                boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-                                border: '2px solid rgba(255,255,255,0.8)'
-                            }]
-                        });
-                    } catch (e) { console.warn("Clusterer error", e); }
-                }
-
-                const markers: any[] = [];
-                const overlays: any[] = [];
-
-                allVenuesList.current.forEach(venue => {
-                    const position = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-                    const perfs = venue.performances;
-                    const primaryGenre = perfs[0]?.genre;
-                    const isCinema = venue.type === 'cinema';
-                    const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
-
-                    // 1. Create Overlay for UI
-                    const content = document.createElement('div');
-                    content.style.cssText = `background-color: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10; transition: transform 0.2s;`;
-
-                    if (isCinema) {
-                        content.innerText = perfs.length > 0 ? perfs.length.toString() : '📽️';
-                    } else {
-                        content.innerText = perfs.length.toString();
-                    }
-
-                    content.onclick = () => {
-                        setSelectedVenue(venue.venueName);
-                    };
-
-                    const customOverlay = new window.kakao.maps.CustomOverlay({
-                        position: position,
-                        content: content,
-                        yAnchor: 0.5
-                    });
-
-                    // Initially show if level is deep enough
-                    if (map.getLevel() <= 6) {
-                        customOverlay.setMap(map);
-                    }
-
-                    // 2. Create Marker for Clusterer (Invisible to avoid redundancy with CustomOverlay)
-                    const marker = new window.kakao.maps.Marker({
-                        position,
-                        image: new window.kakao.maps.MarkerImage(
-                            'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-                            new window.kakao.maps.Size(1, 1)
-                        ),
-                        opacity: 0
-                    });
-
-                    overlays.push({ overlay: customOverlay, isCinema });
-                    markers.push(marker);
-                });
-
-                if (clusterer) {
-                    clusterer.addMarkers(markers);
-                }
-
-                // --- Event Listeners with high-perf management ---
-                const manageVisibility = () => {
-                    const currentLevel = map.getLevel();
-                    const showOverlays = currentLevel <= 6;
-
-                    overlays.forEach(item => {
-                        if (showOverlays) {
-                            item.overlay.setMap(map);
-                        } else {
-                            item.overlay.setMap(null);
-                        }
-                    });
+                // --- Global Event Listeners ---
+                const handleMapChange = () => {
                     setShowSearchHereBtn(true);
                 };
 
-                window.kakao.maps.event.addListener(map, 'dragend', () => setShowSearchHereBtn(true));
-                window.kakao.maps.event.addListener(map, 'zoom_changed', manageVisibility);
+                window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
+                window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
 
                 // User Location Marker
                 if (!centerLocation && navigator.geolocation) {
@@ -256,14 +180,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     });
                 }
 
-                // --- Event Listeners removed from here as they handle stale states incorrectly ---
-                const handleMapChange = () => {
-                    setShowSearchHereBtn(true);
-                };
-
-                window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
-                window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
-
                 setIsMapReady(true);
 
                 // Initial Bounds Check
@@ -273,27 +189,120 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
             });
         };
 
-        const checkInterval = setInterval(() => {
+        checkInterval = setInterval(() => {
             if (window.kakao && window.kakao.maps) {
                 clearInterval(checkInterval);
                 initializeMap();
             }
         }, 100);
         return () => clearInterval(checkInterval);
-    }, []);
+    }, [centerLocation, handleSearchHereInternal]);
 
-    const handleSearchHereInternal = (map: any) => {
-        if (!map) return;
-        const bounds = map.getBounds();
-        const visible = allVenuesList.current.filter(v => {
-            const latlng = new window.kakao.maps.LatLng(v.lat, v.lng);
-            return bounds.contain(latlng);
+    // 2. Re-render Markers when Data changes
+    useEffect(() => {
+        if (!mapInstance || !isMapReady) return;
+
+        const map = mapInstance;
+
+        // --- Cleanup Existing ---
+        if (map._clusterer) {
+            map._clusterer.clear();
+        }
+        if (map._customOverlays) {
+            map._customOverlays.forEach((ov: any) => ov.setMap(null));
+        }
+
+        // --- New Markers & Clusterer ---
+        let clusterer = map._clusterer;
+        if (!clusterer && window.kakao.maps.MarkerClusterer) {
+            try {
+                clusterer = new window.kakao.maps.MarkerClusterer({
+                    map: map,
+                    averageCenter: true,
+                    minLevel: 7,
+                    disableClickZoom: false,
+                    styles: [{
+                        width: '50px', height: '50px',
+                        background: 'rgba(79, 70, 229, 0.9)',
+                        borderRadius: '50%',
+                        color: 'white',
+                        textAlign: 'center', lineHeight: '50px',
+                        fontWeight: 'bold',
+                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+                        border: '2px solid rgba(255,255,255,0.8)'
+                    }]
+                });
+                map._clusterer = clusterer;
+            } catch (e) {
+                console.warn("Clusterer error", e);
+            }
+        }
+
+        const markers: any[] = [];
+        const newOverlays: any[] = [];
+
+        allVenuesList.current.forEach(venue => {
+            if (!venue.lat || !venue.lng) return;
+
+            const position = new window.kakao.maps.LatLng(venue.lat, venue.lng);
+            const perfs = venue.performances;
+            const primaryGenre = perfs[0]?.genre;
+            const isCinema = venue.type === 'cinema';
+            const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
+
+            const content = document.createElement('div');
+            content.style.cssText = `background-color: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10; transition: transform 0.2s;`;
+
+            if (isCinema) {
+                content.innerText = perfs.length > 0 ? perfs.length.toString() : '📽️';
+            } else {
+                content.innerText = perfs.length.toString();
+            }
+
+            content.onclick = () => {
+                setSelectedVenue(venue.venueName);
+            };
+
+            const customOverlay = new window.kakao.maps.CustomOverlay({
+                position: position,
+                content: content,
+                yAnchor: 0.5
+            });
+
+            if (map.getLevel() <= 6) {
+                customOverlay.setMap(map);
+            }
+
+            const marker = new window.kakao.maps.Marker({
+                position,
+                image: new window.kakao.maps.MarkerImage(
+                    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+                    new window.kakao.maps.Size(1, 1)
+                ),
+                opacity: 0
+            });
+
+            newOverlays.push(customOverlay);
+            markers.push(marker);
         });
-        setVisibleVenues(visible);
-        setShowSearchHereBtn(false);
-    };
 
-    const handleSearchHere = () => handleSearchHereInternal(mapInstance);
+        if (clusterer) {
+            clusterer.addMarkers(markers);
+        }
+        map._customOverlays = newOverlays;
+
+        const manageVisibility = () => {
+            const currentLevel = map.getLevel();
+            const showOverlays = currentLevel <= 6;
+            newOverlays.forEach(ov => ov.setMap(showOverlays ? map : null));
+        };
+
+        window.kakao.maps.event.addListener(map, 'zoom_changed', manageVisibility);
+
+        return () => {
+            window.kakao.maps.event.removeListener(map, 'zoom_changed', manageVisibility);
+        };
+    }, [mapInstance, isMapReady, performances, cinemas]); // Re-run when data changes
 
     // Popup Position Logic
     const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);
@@ -304,13 +313,13 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
             return;
         }
 
-        const venueData = allVenueGroups.current[selectedVenue];
-        if (!venueData) {
+        const venueValue = allVenueGroups.current[selectedVenue];
+        if (!venueValue || !venueValue.lat || !venueValue.lng) {
             setPopupPosition(null);
             return;
         }
 
-        const pos = new window.kakao.maps.LatLng(venueData.lat, venueData.lng);
+        const pos = new window.kakao.maps.LatLng(venueValue.lat, venueValue.lng);
         const projection = mapInstance.getProjection();
         const point = projection.containerPointFromCoords(pos);
 
@@ -327,7 +336,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
         window.kakao.maps.event.addListener(mapInstance, 'zoom_changed', syncPopup);
         window.kakao.maps.event.addListener(mapInstance, 'bounds_changed', syncPopup);
 
-        // Initial sync
         syncPopup();
 
         return () => {
@@ -337,39 +345,12 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
         };
     }, [mapInstance, updatePopupPosition]);
 
-
-    // Handling Selected Venue Performance List (Infinite Scroll Logic)
     const [perfVisibleCount, setPerfVisibleCount] = useState(10);
     const selectedVenueData = selectedVenue ? allVenueGroups.current[selectedVenue] : null;
 
-    // Reset visible count when venue changes
     useEffect(() => {
         if (selectedVenue) setPerfVisibleCount(10);
     }, [selectedVenue]);
-
-    // Use BottomNavSheet for Venue Detail
-    // When selectedVenue is active, we treat it as 'venue-detail' menu active
-    // We need to pass dummy props for the required ones that aren't used here.
-    const noop = () => { };
-    const dummyProps = {
-        viewMode: 'map',
-        onViewModeChange: noop,
-        selectedGenre: 'all',
-        onGenreSelect: noop,
-        searchText: '',
-        onSearchChange: noop,
-        selectedRegion: 'all',
-        onRegionSelect: noop,
-        selectedDistrict: 'all',
-        onDistrictSelect: noop,
-        keywords: [],
-        onKeywordAdd: noop,
-        onKeywordRemove: noop,
-        districts: [],
-        availableVenues: [],
-        onSearch: noop,
-        onVenueSelect: noop,
-    };
 
     const handlePerfScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
@@ -384,7 +365,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
         <Portal>
             <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
                 <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col">
-                    {/* Close Button */}
                     <button
                         onClick={onClose}
                         className="absolute top-4 right-4 z-[100] p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
@@ -392,7 +372,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                         <X className="w-6 h-6" />
                     </button>
 
-                    {/* Search Here Button */}
                     {showSearchHereBtn && isMapReady && (
                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[100]">
                             <button
@@ -407,7 +386,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
 
                     <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
-                    {/* Popup Layer (Relative to Map) */}
                     <div className="absolute inset-0 pointer-events-none z-[110]">
                         {selectedVenue && selectedVenueData && popupPosition && (
                             <div
@@ -415,12 +393,11 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                 style={{
                                     left: popupPosition.x,
                                     top: popupPosition.y,
-                                    transform: 'translate(-50%, -100%) translateY(-25px)', // Adjusted for centered anchor (0.5 yAnchor)
+                                    transform: 'translate(-50%, -100%) translateY(-25px)',
                                     filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))'
                                 }}
                             >
                                 <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
-                                    {/* Header */}
                                     <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
                                             <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
@@ -431,7 +408,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                         </button>
                                     </div>
 
-                                    {/* Cinema Special Row */}
                                     {selectedVenueData.type === 'cinema' && (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
                                             <a
@@ -449,7 +425,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                         </div>
                                     )}
 
-                                    {/* List */}
                                     <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
                                         onScroll={handlePerfScroll}
                                     >
@@ -486,18 +461,12 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                         ))}
                                     </div>
                                 </div>
-                                {/* Arrow Tail */}
                                 <div className="w-4 h-4 bg-white dark:bg-gray-900 border-r border-b border-gray-200 dark:border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
                             </div>
                         )}
                     </div>
 
-                    {/* Bottom Sheet Area (Venue List) */}
                     <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/90 dark:from-gray-900 via-white/80 dark:via-gray-900/90 to-transparent pt-12 pb-4 px-4">
-
-
-
-                        {/* CASE 2: Visible Venues List (Horizontal Scroll) - ALWAYS VISIBLE */}
                         {visibleVenues.length > 0 && (
                             <div
                                 ref={scrollRef}
@@ -511,7 +480,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                     const isFavorite = favoriteVenues.includes(v.venueName);
                                     const isSelected = selectedVenue === v.venueName;
 
-                                    // Calculate Distance
                                     let distanceLabel = '';
                                     if (centerLocation) {
                                         const dist = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, v.lat, v.lng);
@@ -524,11 +492,11 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                             key={v.venueName}
                                             onClick={() => {
                                                 const newSelected = v.venueName === selectedVenue ? null : v.venueName;
-                                                setSelectedVenue(newSelected); // Toggle
+                                                setSelectedVenue(newSelected);
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
                                                     const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
                                                     mapInstance.panTo(moveLatLon);
-                                                    mapInstance.setLevel(2); // Focus zoom level
+                                                    mapInstance.setLevel(2);
                                                 }
                                             }}
                                             className={clsx(
@@ -558,7 +526,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                                 </button>
                                             </div>
 
-                                            {/* Distance Badge */}
                                             {distanceLabel && (
                                                 <div className={clsx(
                                                     "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] w-fit font-bold mb-1",
@@ -569,7 +536,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                                     {distanceLabel}
                                                 </div>
                                             )}
-                                            <span className="text-gray-500 dark:text-gray-400 text-[10px] truncate">{v.groupName}</span>
+                                            <span className="text-gray-500 dark:text-gray-400 text-[10px] truncate">{v.address}</span>
                                             <div className="mt-auto flex items-center justify-between text-xs">
                                                 <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">
                                                     {v.performances.length}개 컨텐츠
