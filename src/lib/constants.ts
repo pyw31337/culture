@@ -1,5 +1,6 @@
 export const GENRE_GROUPS = [
     { id: 'all', label: '전체', genres: ['all'] },
+    { id: 'movie', label: '영화', genres: ['movie'] },
     { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic_tradition'] },
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'experience', label: '체험/액티비티', genres: ['activity', 'class'] },

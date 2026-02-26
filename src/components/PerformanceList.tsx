@@ -1282,7 +1282,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {
                 isMapOpen && (
                     <KakaoMapModal
-                        performances={selectedGenre === 'movie' ? allPerformances : filteredPerformances}
+                        performances={selectedGenre === 'movie' ? [] : filteredPerformances}
                         cinemas={selectedGenre === 'movie' ? cinemas : []}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}
