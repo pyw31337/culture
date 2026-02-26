@@ -33,13 +33,21 @@ async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Ci
 
             const data = await res.json();
             if (data.documents) {
-                const mapped = data.documents.map((doc: any) => ({
-                    name: doc.place_name,
-                    address: doc.road_address_name || doc.address_name,
-                    lat: parseFloat(doc.y),
-                    lng: parseFloat(doc.x),
-                    brand
-                }));
+                const mapped = data.documents
+                    .filter((doc: any) => {
+                        // Exclude non-cinema facilities
+                        const invalidKeywords = ['주차장', '화장실', '매표소', '매점', '본사', '고객센터', '오피스', '사무실', '물류', '엘리베이터', '타워'];
+                        if (invalidKeywords.some(kw => doc.place_name.includes(kw))) return false;
+                        if (doc.category_name && (doc.category_name.includes('주차장') || doc.category_name.includes('화장실'))) return false;
+                        return true;
+                    })
+                    .map((doc: any) => ({
+                        name: doc.place_name,
+                        address: doc.road_address_name || doc.address_name,
+                        lat: parseFloat(doc.y),
+                        lng: parseFloat(doc.x),
+                        brand
+                    }));
                 allResults.push(...mapped);
             }
 
@@ -93,12 +101,32 @@ async function main() {
     }
 
     const cinemaList = Object.values(allCinemas);
-    console.log(`Total unique cinemas collected: ${cinemaList.length}`);
+    console.log(`Total cinemas collected before coordinate dedup: ${cinemaList.length}`);
+
+    // Deduplicate by Coordinates (Same physical building/address)
+    const uniqueByCoords = new Map<string, Cinema>();
+    for (const c of cinemaList) {
+        // Use 4 decimal places (~11m resolution) for the strict same location
+        const key = `${c.lat.toFixed(4)}_${c.lng.toFixed(4)}`;
+
+        if (uniqueByCoords.has(key)) {
+            const existing = uniqueByCoords.get(key)!;
+            // Prefer the shorter name to drop suffixes like 'CGV 대학로 개방화장실' or 'CGV 대학로점'
+            if (c.name.length < existing.name.length) {
+                uniqueByCoords.set(key, c);
+            }
+        } else {
+            uniqueByCoords.set(key, c);
+        }
+    }
+
+    const finalCinemaList = Array.from(uniqueByCoords.values());
+    console.log(`Total unique root cinemas after deduplication: ${finalCinemaList.length}`);
 
     // Sort by name
-    cinemaList.sort((a, b) => a.name.localeCompare(b.name));
+    finalCinemaList.sort((a, b) => a.name.localeCompare(b.name));
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(cinemaList, null, 2), 'utf8');
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalCinemaList, null, 2), 'utf8');
     console.log(`Saved cinema data to ${OUTPUT_PATH}`);
 }
 
