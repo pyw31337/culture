@@ -6,7 +6,7 @@ import path from 'path';
 puppeteer.use(StealthPlugin());
 
 async function run() {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     await page.setViewport({ width: 1280, height: 800 });
@@ -36,10 +36,13 @@ async function run() {
 
             // Let's use page.goto to that image and get buffer, bypassing cloudflare
             const viewSource = await page.goto(imgSrc);
-            const buffer = await viewSource.buffer();
-
-            fs.writeFileSync(path.join(process.cwd(), 'public', 'images', 'logos', 'kleague', '용인.webp'), buffer);
-            console.log('✅ Downloaded 용인.webp successfully!');
+            if (viewSource) {
+                const buffer = await viewSource.buffer();
+                fs.writeFileSync(path.join(process.cwd(), 'public', 'images', 'logos', 'kleague', '용인.webp'), buffer);
+                console.log('✅ Downloaded 용인.webp successfully!');
+            } else {
+                console.log('❌ Could not load image source.');
+            }
         } else {
             console.log('❌ Could not find logo URL on the page.');
         }

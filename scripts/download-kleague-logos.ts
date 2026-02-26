@@ -103,7 +103,7 @@ async function fetchWikiEmblem(teamKey: string, wikiTitle: string) {
         return `/culture/images/logos/kleague/${teamKey}${ext}`;
 
     } catch (error) {
-        console.error(`❌ Error fetching logo for ${teamKey} (${wikiTitle}):`, error.message);
+        console.error(`❌ Error fetching logo for ${teamKey} (${wikiTitle}):`, (error as Error).message);
         return null;
     }
 }

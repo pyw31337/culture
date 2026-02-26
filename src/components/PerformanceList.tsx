@@ -73,6 +73,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // Filters
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
+
+    useEffect(() => {
+        setSelectedGenre(initialGenre);
+    }, [initialGenre]);
+
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
@@ -95,6 +100,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [likedIds, setLikedIds] = useState<string[]>([]);
     const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
     const [savedKeywords, setSavedKeywords] = useState<string[]>([]);
+    const [cinemas, setCinemas] = useState<any[]>([]);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false);
 
     // UI Toggles
@@ -222,7 +228,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 const results = await Promise.allSettled([
                     fetch(`${basePath}/data/performances.json?v=${ts}`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/movies.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/ott.json?v=${ts}`).then(r => r.ok ? r.json() : [])
+                    fetch(`${basePath}/data/ott.json?v=${ts}`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/cinemas.json?v=${ts}`).then(r => r.ok ? r.json() : [])
                 ]);
 
                 const mergedData: Performance[] = [];
@@ -231,9 +238,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 results.forEach((res, index) => {
                     if (res.status === 'fulfilled') {
                         if (Array.isArray(res.value)) {
-                            // Filter out potential duplicates if logic fails (Server-side should handle this, but safety net)
-                            // Actually, let's just push for now as we fixed the generation.
-                            mergedData.push(...res.value);
+                            if (index === 3) {
+                                setCinemas(res.value);
+                            } else {
+                                mergedData.push(...res.value);
+                            }
                         }
                     } else {
                         console.error(`Failed to load data source index ${index}`, res.reason);
@@ -660,6 +669,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setSearchText(text);
         if (text.trim().length > 0) {
             // Reset filters to 'all' for global search
+            if (selectedGenre !== 'all') {
+                const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                router.push(`${basePath}/`);
+            }
             setSelectedGenre('all');
             setSelectedRegion('all');
             setSelectedDistrict('all');
@@ -695,7 +708,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const handleGenreSelect = (g: string) => {
         setSelectedGenre(g);
         if (viewMode === 'likes-perf') setViewMode('grid');
-        window.scrollTo({ top: 0, behavior: 'auto' });
+
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        if (g === 'all') {
+            router.push(`${basePath}/`);
+        } else {
+            let slug = g;
+            if (g === 'play') slug = 'theater';
+            router.push(`${basePath}/${slug}`);
+        }
     };
     const handleRegionSelect = (r: string) => setSelectedRegion(r);
     const handleDistrictSelect = (d: string) => setSelectedDistrict(d);
@@ -906,6 +927,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     handleSearch={handleSearch}
                     handleSelectResult={(result: any) => {
                         // Always reset category to 'all' on new selection
+                        if (selectedGenre !== 'all') {
+                            const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                            router.push(`${basePath}/`);
+                        }
                         setSelectedGenre('all');
 
                         if (searchMode === 'location') {
@@ -1262,6 +1287,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 isMapOpen && (
                     <KakaoMapModal
                         performances={selectedGenre === 'ott' || selectedGenre === 'movie' ? allPerformances : filteredPerformances}
+                        cinemas={selectedGenre === 'movie' ? cinemas : []}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}
