@@ -1133,6 +1133,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         setSearchText={setSearchText}
                         setUserLocation={setUserLocation}
                         setIsMapOpen={setIsMapOpen}
+                        searchMode={searchMode}
+                        setSearchMode={setSearchMode}
+                        searchText={searchText}
                     />
                 ) : viewMode === 'likes-perf' ? (
                     <>
