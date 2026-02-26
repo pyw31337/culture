@@ -51,7 +51,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             const diffTime = Math.abs(end.getTime() - start.getTime());
                             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-                            if (perf.genre === 'ott' || perf.genre === 'movie') {
+                            if (perf.genre === 'movie') {
                                 // For OTT or Movies, only map to their start/release date.
                                 maxEnd = start;
                             } else if (diffDays > MAX_DAYS) {

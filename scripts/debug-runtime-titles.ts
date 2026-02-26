@@ -14,7 +14,7 @@ import timeticketData from '../src/data/timeticket.json';
 import moviesData from '../src/data/movies.json';
 import kidsData from '../src/data/myrealtrip-kids.json';
 import classData from '../src/data/sssd-class.json';
-import ottData from '../src/data/ott.json';
+
 import handballData from '../src/data/handball.json';
 import umclassData from '../src/data/umclass.json';
 import seoulData from '../src/data/seoul-culture.json';
@@ -64,7 +64,7 @@ const allPerformances = [
     ...safeArray(kblData),
     ...safeArray(kboData),
     ...safeArray(handballData),
-    ...safeArray(ottData).map((p: any) => ({ ...p, venue: 'OTT' })),
+
     ...safeArray(moviesData),
     ...safeArray(travelData),
     ...safeArray(kidsData),

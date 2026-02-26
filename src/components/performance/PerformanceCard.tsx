@@ -146,7 +146,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         perf.productionYear ||
         perf.subGenre ||
         perf.runningTime ||
-        (perf.ageRating && !['movie', 'ott'].includes(perf.genre)) ||
+        (perf.ageRating && !['movie'].includes(perf.genre)) ||
         perf.director ||
         ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
         (perf.platforms && perf.platforms.length > 0)
@@ -344,7 +344,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    if ((perf.genre === 'movie' || perf.genre === 'ott') && perf.link) {
+                                                    if ((perf.genre === 'movie') && perf.link) {
                                                         window.open(perf.link, '_blank', 'noopener,noreferrer');
                                                     } else if (onDetail) {
                                                         onDetail();
@@ -370,7 +370,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         className="block group/link relative z-[100] text-left w-full"
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            if ((perf.genre === 'movie' || perf.genre === 'ott') && perf.link) {
+                                            if ((perf.genre === 'movie') && perf.link) {
                                                 window.open(perf.link, '_blank', 'noopener,noreferrer');
                                             } else if (onDetail) {
                                                 onDetail();
@@ -382,7 +382,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </h3>
                                     </button>
 
-                                    {perf.genre === 'movie' || perf.genre === 'ott' ? (
+                                    {perf.genre === 'movie' ? (
                                         <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
                                             {perf.gradeIcon ? (
                                                 <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
@@ -535,7 +535,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
                                                 {perf.date && (
                                                     <span className="text-xs text-gray-300 flex items-center gap-1 font-semibold">
-                                                        {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
+                                                        {perf.genre !== 'movie' && <Calendar className="w-3.5 h-3.5" />}
                                                         {(() => {
                                                             let dateStr = formatUnifiedDate(perf.date);
                                                             // Keep the ~ logic for ranged dates just in case, but formatUnifiedDate mostly handles this now
@@ -631,7 +631,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     )}
 
                                                     {/* Age Rating (For non-Movie/OTT which show it in header) */}
-                                                    {perf.ageRating && !['movie', 'ott'].includes(perf.genre) && (
+                                                    {perf.ageRating && !['movie'].includes(perf.genre) && (
                                                         <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
                                                             <div>
                                                                 <span className="text-gray-500 mr-1">관람연령:</span>
@@ -723,33 +723,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Provider (Text) - Moved to bottom */}
-                                                    {perf.platforms && perf.platforms.length > 0 && (
-                                                        <div className="flex items-start gap-1 mt-1">
-                                                            <span className="text-gray-500 min-w-[24px]">제공</span>
-                                                            <span className="text-gray-300 line-clamp-1 flex gap-1">
-                                                                {perf.platforms.map((p: string, i: number) => {
-                                                                    const info = OTT_PLATFORMS[p];
-                                                                    if (info) {
-                                                                        const url = info.url.replace('{title}', encodeURIComponent(perf.title));
-                                                                        return (
-                                                                            <a
-                                                                                key={p}
-                                                                                href={url}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                                className="hover:text-white hover:underline decoration-white/30"
-                                                                            >
-                                                                                {info.label}{i < perf.platforms.length - 1 ? ', ' : ''}
-                                                                            </a>
-                                                                        );
-                                                                    }
-                                                                    return <span key={p}>{p}{i < perf.platforms.length - 1 ? ', ' : ''}</span>;
-                                                                })}
-                                                            </span>
-                                                        </div>
-                                                    )}
+
                                                 </div>
                                             )}
 

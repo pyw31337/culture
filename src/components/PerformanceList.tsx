@@ -10,7 +10,7 @@ import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import venueData from '@/data/venue-dictionary.json';
-import { GENRES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { GENRES, REGIONS, NATIONWIDE_REGIONS, RADIUS_OPTIONS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils';
 import { safeStorage } from '@/lib/safeStorage';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -229,7 +229,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 const results = await Promise.allSettled([
                     fetch(`${basePath}/data/performances.json?v=${ts}`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/movies.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/ott.json?v=${ts}`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/cinemas.json?v=${ts}`).then(r => r.ok ? r.json() : [])
                 ]);
 
@@ -335,7 +334,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 })
                 .slice(0, 10)
                 .map(p => ({
-                    type: p.genre === 'movie' || p.genre === 'ott' ? 'video' : 'stage',
+                    type: p.genre === 'movie' ? 'video' : 'stage',
                     name: p.title,
                     address: p.venue, // Subtext
                     ...p
@@ -765,7 +764,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             {(() => {
                                 switch (selectedGenre) {
                                     case 'festival': return '전국 축제 정보 검색';
-                                    case 'ott': return '오늘 뭐 볼까? OTT 콘텐츠';
                                     case 'movie': return '최신 영화 개봉 정보';
                                     case 'travel': return '국내 여행 상품 검색';
                                     case 'leisure': return '레저 · 테마파크';
@@ -1284,7 +1282,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {
                 isMapOpen && (
                     <KakaoMapModal
-                        performances={selectedGenre === 'ott' || selectedGenre === 'movie' ? allPerformances : filteredPerformances}
+                        performances={selectedGenre === 'movie' ? allPerformances : filteredPerformances}
                         cinemas={selectedGenre === 'movie' ? cinemas : []}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}

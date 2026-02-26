@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, MonitorPlay } from 'lucide-react';
 import Portal from './ui/Portal';
 import { useEffect, useRef, useState } from 'react';
@@ -333,40 +333,14 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                     </div>
                                 )}
 
-                                {/* Platform Section (For OTT/Movies) */}
-                                {(p.platforms && p.platforms.length > 0) && (
-                                    <div className="mb-5 flex flex-wrap gap-2 items-center">
-                                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mr-1">Available on</span>
-                                        {p.platforms.map(pid => {
-                                            const plat = OTT_PLATFORMS[pid.toLowerCase()];
-                                            if (!plat) return null;
-                                            return (
-                                                <a
-                                                    key={pid}
-                                                    href={plat.url.replace('{title}', encodeURIComponent(p.title))}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl ${plat.color} text-white text-[11px] font-extrabold shadow-sm hover:scale-105 transition-transform`}
-                                                >
-                                                    {plat.label}
-                                                </a>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+
 
                                 {/* Info Grid */}
                                 <div className="space-y-3 mb-5">
                                     {p.venue && (
                                         <div className="flex items-start gap-3">
-                                            {p.genre === 'ott' ? (
-                                                <MonitorPlay className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            ) : (
-                                                <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            )}
-                                            <span className="text-sm text-gray-300">
-                                                {p.genre === 'ott' && p.venue === 'OTT' ? '온라인 스트리밍' : p.venue}
-                                            </span>
+                                            <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
+                                            <span className="text-sm text-gray-300">{p.venue}</span>
                                         </div>
                                     )}
                                     {p.date && (

@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
@@ -158,32 +158,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         </div>
                     )}
 
-                    {/* OTT Platforms on Image (List View) */}
-                    {perf.platforms && perf.platforms.length > 0 && (
-                        <div className="absolute bottom-1 right-1 flex gap-1 z-[60]">
-                            {perf.platforms.map((p: string) => {
-                                const platformInfo = OTT_PLATFORMS[p];
-                                if (!platformInfo) return null;
-                                const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                return (
-                                    <a
-                                        key={p}
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className={clsx(
-                                            "h-6 flex items-center justify-center rounded-md text-[10px] font-extrabold uppercase hover:scale-105 transition-transform shadow-md text-white border border-white/10 px-1.5 w-auto",
-                                            platformInfo.color
-                                        )}
-                                        title={`${platformInfo.label}에서 검색`}
-                                    >
-                                        {platformInfo.label}
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    )}
+
 
                     {/* Like Button (on Image) */}
                     <button
@@ -273,21 +248,15 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
 
-                            {perf.genre === 'ott' ? (
-                                perf.ageRating && (
-                                    <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
-                                        <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                        <span className="text-gray-300 light:text-black font-semibold">{perf.ageRating}</span>
-                                    </div>
-                                )
-                            ) : perf.genre === 'movie' ? (
+
+                            {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
                                             <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                            {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
+                                            {perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim()) || perf.venue}
                                         </>
                                     )}
                                 </div>
@@ -314,15 +283,15 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         </div>
 
                         {/* Movie & OTT Metadata (Cast, Director, Info) */}
-                        {/* Movie & OTT Metadata (Cast, Director, Info) */}
-                        {(perf.genre === 'movie' || perf.genre === 'ott') && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                        {/* Movie Metadata (Cast, Director, Info) */}
+                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
                             <div className="mt-2 text-xs text-gray-400 light:text-gray-900 space-y-0.5 border-t border-white/10 light:border-black/10 pt-2">
                                 {/* OTT Specific: Original Title */}
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
                                 )}
                                 {/* Detailed Metadata (Synced with Card) */}
-                                {(perf.subGenre || perf.director || perf.cast || (perf.platforms && perf.platforms.length > 0)) && (
+                                {(perf.subGenre || perf.director || perf.cast) && (
                                     <div className="mt-2 space-y-1 text-xs text-gray-400">
 
                                         {/* Country / Year / SubGenre */}
@@ -416,43 +385,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 </div>
                                             </div>
                                         )}
-                                        {perf.ageRating && perf.genre !== 'ott' && (
-                                            <div className="flex flex-col gap-0.5 text-xs text-gray-400">
-                                                <div>
-                                                    <span className="text-gray-500 light:text-gray-600 mr-1">관람연령:</span>
-                                                    <span className="light:text-black">{perf.ageRating}</span>
-                                                </div>
-                                            </div>
-                                        )}
 
-
-                                        {/* Provider (Text) - Moved to bottom */}
-                                        {perf.platforms && perf.platforms.length > 0 && (
-                                            <div className="flex items-start gap-1">
-                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">제공</span>
-                                                <span className="text-gray-400 light:text-gray-900 line-clamp-1">
-                                                    {perf.platforms.map((p: string, idx: number) => {
-                                                        const info = OTT_PLATFORMS[p];
-                                                        const url = info ? info.url.replace('{title}', encodeURIComponent(perf.title)) : '#';
-                                                        return (
-                                                            <span key={p}>
-                                                                {idx > 0 && ', '}
-                                                                <a
-                                                                    href={url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    onClick={(e) => e.stopPropagation()}
-                                                                    className="hover:underline hover:text-black hover:font-extrabold transition-colors"
-                                                                    title={`${info?.label || p}에서 검색`}
-                                                                >
-                                                                    {info ? info.label : p}
-                                                                </a>
-                                                            </span>
-                                                        );
-                                                    })}
-                                                </span>
-                                            </div>
-                                        )}
                                     </div>
                                 )}
 
@@ -460,11 +393,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 {perf.cast && perf.cast.length > 0 && (
                                     <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
                                 )}
-                                {/* Provider (OTT) */}
-                                {/* Provider (OTT) - Removed duplicate icon block */}
-                                {perf.platforms && perf.platforms.length > 0 && (
-                                    <div className="hidden"></div>
-                                )}
+
 
                                 {/* Info */}
                             </div>

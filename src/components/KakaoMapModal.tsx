@@ -191,11 +191,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     content.style.cssText = `background-color: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10; transition: transform 0.2s;`;
 
                     if (isCinema) {
-                        content.innerHTML = `
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="18" height="18" x="3" y="3" rx="2"/><path d="m15 3-3 3-3-3"/><path d="m15 21-3-3-3 3"/><path d="m3 15 3-3-3-3"/><path d="m21 15-3-3 3-3"/>
-                            </svg>
-                        `;
+                        content.innerText = perfs.length > 0 ? perfs.length.toString() : '📽️';
                     } else {
                         content.innerText = perfs.length.toString();
                     }
@@ -207,7 +203,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     const customOverlay = new window.kakao.maps.CustomOverlay({
                         position: position,
                         content: content,
-                        yAnchor: 1
+                        yAnchor: 0.5
                     });
 
                     // Initially show if level is deep enough
@@ -219,9 +215,10 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     const marker = new window.kakao.maps.Marker({
                         position,
                         image: new window.kakao.maps.MarkerImage(
-                            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
+                            'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
                             new window.kakao.maps.Size(1, 1)
-                        )
+                        ),
+                        opacity: 0
                     });
 
                     overlays.push({ overlay: customOverlay, isCinema });
@@ -418,7 +415,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                 style={{
                                     left: popupPosition.x,
                                     top: popupPosition.y,
-                                    transform: 'translate(-50%, -100%) translateY(-20px)', // Pivot bottom center + gap above marker
+                                    transform: 'translate(-50%, -100%) translateY(-25px)', // Adjusted for centered anchor (0.5 yAnchor)
                                     filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))'
                                 }}
                             >
