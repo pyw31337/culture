@@ -1,0 +1,8 @@
+- [ ] Back up Brain files to Git
+    - [ ] Create `.agents/history` directory
+    - [ ] Copy `task.md`, `implementation_plan.md`, `walkthrough.md` to `.agents/history`
+- [ ] Create "Resume Work Manual"
+    - [ ] Write `RESUME_GUIDE.md` with step-by-step instructions
+- [ ] Deploy backup and manual to Git
+    - [ ] Stage and commit files
+    - [ ] Push to remote

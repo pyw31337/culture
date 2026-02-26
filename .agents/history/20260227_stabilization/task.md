@@ -1,0 +1,11 @@
+- [x] Analyze server crash cause
+    - [x] Review `recover-missing-coordinates.ts` for memory issues or infinite loops
+    - [x] Check terminal logs for error messages
+    - [x] Verify script performance with large datasets
+- [x] Resume work from last session
+    - [x] Verify `venues.json` integrity
+    - [x] Check if SEO JSON-LD is correctly applied to all pages
+    - [x] Finalize any pending data restoration tasks
+- [x] Implement robust error handling for heavy scripts
+    - [x] Add periodic saving to `recover-missing-coordinates.ts`
+    - [x] Optimize p-limit for stability
