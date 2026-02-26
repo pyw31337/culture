@@ -9,6 +9,7 @@ export const GENRE_GROUPS = [
 
 export const GENRES = [
     { id: 'all', label: '전체' },
+    { id: 'movie', label: '영화' },
 
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
