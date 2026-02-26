@@ -250,7 +250,10 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                             </span>
                                             {dayEvents.slice(0, 30).map((perf, i) => (
                                                 <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                                    className={clsx("text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700')}
+                                                    className={clsx(
+                                                        "text-[10px] sm:text-xs px-2 py-1 rounded truncate block hover:bg-gray-100 dark:hover:bg-gray-800 transition shrink-0 font-bold",
+                                                        (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
+                                                    )}
                                                     title={perf.title}
                                                 >{perf.title}</a>
                                             ))}

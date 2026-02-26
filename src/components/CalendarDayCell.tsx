@@ -49,8 +49,8 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                     <div
                         key={`${perf.id}-${i}`}
                         className={clsx(
-                            "text-[10px] sm:text-xs px-2 py-[2px] rounded truncate text-white block hover:opacity-80 transition relative z-10",
-                            (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700'
+                            "text-[10px] sm:text-xs px-2 py-[2px] rounded truncate block hover:bg-gray-100 dark:hover:bg-gray-800 transition relative z-10 font-bold",
+                            (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
                         )}
                         title={perf.title}
                     >
