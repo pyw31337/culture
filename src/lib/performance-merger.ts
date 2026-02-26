@@ -54,7 +54,6 @@ export function processAndMergePerformances(items: any[]): any[] {
             'activity': 'perf',
             'leisure': 'perf',
             'movie': 'movie',
-            'ott': 'ott',
             'festival': 'fest'
         };
 
@@ -85,7 +84,7 @@ function mergeItems(a: any, b: any): any {
     // Base on winner, but absorb valuable fields from loser if missing in winner
     const merged = { ...winner };
 
-    // Price & Discount (Important: Movie might have price, OTT might not)
+    // Price & Discount (Important: Movie might have price)
     if (!merged.price && loser.price) {
         merged.price = loser.price;
         // If we duplicate price, we should probably check originalPrice too
@@ -93,7 +92,7 @@ function mergeItems(a: any, b: any): any {
         if (!merged.discount) merged.discount = loser.discount;
     }
 
-    // Platforms (OTT Providers)
+    // Platforms
     if ((!merged.platforms || merged.platforms.length === 0) && (loser.platforms && loser.platforms.length > 0)) {
         merged.platforms = loser.platforms;
     }
@@ -119,10 +118,8 @@ function mergeItems(a: any, b: any): any {
     }
 
     // Venue
-    // If winner has generic venue 'OTT' or 'Online' but loser has specific venue, keep specific?
-    // Case: Movie (OTT) vs Movie (Cinema). 
-    // If scores favor OTT (rich metadata), venue becomes 'OTT'. 
-    // But if we have Cinema price, maybe we want Cinema venue?
+    // Case: Movie (Cinema) vs Movie (Other). 
+    // If scores favor the winner, keep it., maybe we want Cinema venue?
     // But 'venue' is often used for grouping. 
     // Let's stick to Winner's venue unless it's empty.
     if (!merged.venue && loser.venue) merged.venue = loser.venue;
@@ -139,9 +136,6 @@ function getRichnessScore(item: any): number {
     if (item.runningTime) score += 1;
     if (item.ageRating) score += 1;
     if (item.originalTitle) score += 1;
-
-    // OTT Platform info is valuable
-    if (item.platforms && item.platforms.length > 0) score += 2;
 
     // Price is good, but shouldn't override metadata (unless metadata is equal)
     if (item.price) score += 1;

@@ -11,7 +11,7 @@ import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
-import ottData from '@/data/ott.json';
+
 
 import handballData from '@/data/handball.json';
 import kleagueData from '@/data/kleague.json';
@@ -126,7 +126,7 @@ export function getAllPerformances() {
     const baseball = safeArray<any>(kboData).map(p => ({ ...p, id: String(p.id) }));
     const handball = safeArray<any>(handballData).map(p => ({ ...p, id: String(p.id) }));
     const soccer = safeArray<any>(kleagueData).map(p => ({ ...p, id: String(p.id) }));
-    const ott = safeArray<any>(ottData).map(p => ({ ...p, id: String(p.id) }));
+
     const movies = safeArray<any>(moviesData)
         .map(p => ({ ...p, id: String(p.id), genre: 'movie' }))
         .sort((a, b) => (a.rank || 99) - (b.rank || 99));
@@ -136,6 +136,7 @@ export function getAllPerformances() {
     const mommom = safeArray<any>(mommomData).map(p => ({ ...p, id: String(p.id) }));
     const mommomProduct = safeArray<any>(mommomProductData).map(p => ({ ...p, id: String(p.id) }));
     const museum = safeArray<any>(museumData).map(p => ({ ...p, id: String(p.id) }));
+
 
     // 2. Aggregate
     const allPerformances = [
@@ -148,8 +149,8 @@ export function getAllPerformances() {
         ...baseball,
         ...handball,
         ...soccer,
-        ...ott.map(p => ({ ...p, venue: 'OTT' })),
-        ...movies,
+
+        ...movies.map(p => ({ ...p, genre: 'movie', venue: 'Movie' })),
         ...safeArray<any>(kidsData).map(p => ({ ...p, id: String(p.id) })),
         ...classes,
         ...umclasses,
@@ -211,7 +212,7 @@ export function getAllPerformances() {
         if (p.genre === 'popup' || p.genre === 'travel') return false;
 
         // Always show specific genres (Bypass Date & Region)
-        if (p.genre === 'movie' || p.genre === 'ott') return true;
+        if (p.genre === 'movie') return true;
 
         // Date Check (Enforced for everything else)
         if (!isPerformanceActive(p.date, now)) return false;
@@ -219,8 +220,9 @@ export function getAllPerformances() {
 
 
         // Sports: Strict Region Filter -> Relaxed to Nationwide? 
-        // User said: "movie/OTT excluded, expand others to nationwide". 
-        // Sports were strictly filtered. Let's allow them too if that's the intent, or keep them for now?
+        // User said: "movie excluded, expand others to nationwide". 
+        // This is necessary because they don't have lat/lng? (User said so)
+        // Correct approach: if p.genre === 'movie' return true;m for now?
         // "나머지 서울/경기/인천 지역 한정을 전국단위로 범위를 확장했기 때문에, 지역 필터를 사용해서 비노출 시키는 컨텐츠는 없도록 해줘."
         // This implies NO content should be hidden by region filter.
 
@@ -235,9 +237,9 @@ export function getAllPerformances() {
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
 
         // Address/Location Validation (Strict Policy)
-        // Only allow 'movie' and 'ott' to bypass location check.
+        // Only allow 'movie' to bypass location check.
         // Everything else MUST have a valid geolocation to be displayed.
-        if (p.genre !== 'movie' && p.genre !== 'ott') {
+        if (p.genre !== 'movie') {
             const v = venues[p.venue];
             // If venue data is missing, or address is invalid, or lat/lng is missing/invalid
             if (!v || !v.address || v.address === '정보 없음' || !v.lat || !v.lng) {

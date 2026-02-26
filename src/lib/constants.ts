@@ -4,14 +4,11 @@ export const GENRE_GROUPS = [
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'experience', label: '체험/액티비티', genres: ['activity', 'class'] },
     { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
-    { id: 'media', label: '미디어', genres: ['movie', 'ott'] },
 ];
 
 export const GENRES = [
     { id: 'all', label: '전체' },
 
-    { id: 'movie', label: '영화' },
-    { id: 'ott', label: 'OTT' },
     { id: 'musical', label: '뮤지컬' },
     { id: 'concert', label: '콘서트' },
     { id: 'play', label: '연극' },
@@ -30,7 +27,7 @@ export const GENRES = [
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
     'movie': { hex: '#06b6d4', twText: 'text-cyan-600', twBg: 'bg-cyan-600', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-500' },
-    'ott': { hex: '#8b5cf6', twText: 'text-violet-600', twBg: 'bg-violet-600', twBorder: 'border-violet-500', twActivebg: 'bg-violet-500' },
+
     'musical': { hex: '#be185d', twText: 'text-pink-700', twBg: 'bg-pink-700', twBorder: 'border-pink-500', twActivebg: 'bg-pink-600' },
     'concert': { hex: '#2563eb', twText: 'text-blue-700', twBg: 'bg-blue-700', twBorder: 'border-blue-500', twActivebg: 'bg-blue-600' },
     'play': { hex: '#16a34a', twText: 'text-green-700', twBg: 'bg-green-700', twBorder: 'border-green-500', twActivebg: 'bg-green-600' },
@@ -86,25 +83,12 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 
 // Valid genre slugs for URL routing
 export const VALID_GENRE_SLUGS = [
-    'movie', 'ott', 'musical', 'theater', 'play', 'concert', 'classic_tradition', 'exhibition',
+    'movie', 'musical', 'theater', 'play', 'concert', 'classic_tradition', 'exhibition',
     'activity', 'class', 'museum',
     'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
 ];
 
-export const OTT_PLATFORMS: Record<string, { label: string, color: string, url: string }> = {
-    'netflix': { label: 'Netflix', color: 'bg-red-600', url: 'https://www.netflix.com/search?q={title}' },
-    'tving': { label: 'TVing', color: 'bg-red-500', url: 'https://www.tving.com/search?keyword={title}' },
-    'watcha': { label: 'Watcha', color: 'bg-pink-600', url: 'https://pedia.watcha.com/ko-KR/search?query={title}' },
-    'disney': { label: 'Disney+', color: 'bg-blue-600', url: 'https://www.disneyplus.com/ko-kr/browse/search?q={title}' },
-    'wavve': { label: 'Wavve', color: 'bg-blue-500', url: 'https://www.wavve.com/search?searchWord={title}' },
-    'coupang': { label: 'Coupang Play', color: 'bg-blue-800', url: 'https://www.coupangplay.com/query?src=page_search&keyword={title}' },
-    'apple': { label: 'Apple TV+', color: 'bg-gray-800', url: 'https://tv.apple.com/kr/search?term={title}' },
-    'uplus': { label: 'U+모바일tv', color: 'bg-pink-500', url: 'https://www.lguplus.com/search?query={title}' },
-    'laftel': { label: 'Laftel', color: 'bg-purple-600', url: 'https://laftel.net/search?keyword={title}' },
-    'amazon': { label: 'Amazon Prime', color: 'bg-blue-400', url: 'https://www.primevideo.com/search/ref=atv_nb_sr?phrase={title}' },
-    'google': { label: 'Google Play', color: 'bg-red-500', url: 'https://play.google.com/store/search?q={title}&c=movies' },
-    'naver': { label: 'Naver Series', color: 'bg-green-500', url: 'https://serieson.naver.com/v2/search?query={title}' },
-};
+
 
 // Futures League Team Logos (emblemF versions for minor league / development teams)
 // Futures League Team Logos (Using high-quality local SVGs where available)

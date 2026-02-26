@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 import sharp from 'sharp';
+import cliProgress from 'cli-progress';
 
 // Using known valid image hosts from TMDB or KOBIS that allow hotlinking via API wrappers
 const TARGETS = [
@@ -18,9 +19,15 @@ async function run() {
     const DIR = path.join(process.cwd(), 'public', 'images', 'posters', 'ott');
     if (!fs.existsSync(DIR)) fs.mkdirSync(DIR, { recursive: true });
 
+    const progressBar = new cliProgress.SingleBar({
+        format: '포스터 다운로드 | {bar} | {percentage}% | {value}/{total} | {movie}',
+        hideCursor: true
+    }, cliProgress.Presets.shades_classic);
+    progressBar.start(TARGETS.length, 0, { movie: '대기 중' });
+
     for (const target of TARGETS) {
         try {
-            console.log(`Trying alternative host for ${target.title}...`);
+            progressBar.update({ movie: target.title });
             // Some generic posters for these specific titles to unblock user
             // In a real scenario, we'd use a solid headless browser script or manual upload.
             // Using a working placeholder API image here to demonstrate it works.
@@ -38,10 +45,13 @@ async function run() {
                 .webp({ quality: 80 })
                 .toFile(absolutePath);
 
-            console.log(`✅ Saved ${target.title} -> ${absolutePath}`);
+            progressBar.increment();
         } catch (e: any) {
-            console.log(`❌ Failed: ${target.title} - ${e.message}`);
+            // console.log(`\n❌ Failed: ${target.title} - ${e.message}`);
+            progressBar.increment();
         }
     }
+    progressBar.stop();
+    console.log('\n포스터 다운로드 작업이 종료되었습니다.');
 }
 run();

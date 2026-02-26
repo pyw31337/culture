@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GENRES, GENRE_STYLES, OTT_PLATFORMS, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 
@@ -454,36 +454,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             </span>
                                         )}
                                         <span className="text-[13px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
-                                        {perf.platforms && perf.platforms.length > 0 && (
-                                            <div className="flex gap-1 ml-2">
-                                                {perf.platforms.map((p: string) => {
-                                                    const platformInfo = OTT_PLATFORMS[p];
-                                                    if (platformInfo) {
-                                                        const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                        return (
-                                                            <a
-                                                                key={p}
-                                                                href={url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                onClick={(e) => e.stopPropagation()}
-                                                                className={clsx("text-[10px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tighter text-white hover:opacity-80 transition-opacity",
-                                                                    platformInfo.color
-                                                                )}
-                                                                title={`${platformInfo.label}에서 검색`}
-                                                            >
-                                                                {platformInfo.label.substring(0, 1).toUpperCase()}
-                                                            </a>
-                                                        );
-                                                    }
-                                                    return (
-                                                        <span key={p} className="text-[10px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-tighter bg-gray-600 text-white">
-                                                            {p.substring(0, 1).toUpperCase()}
-                                                        </span>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             </>
@@ -563,39 +533,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     </span>
                                                 )}
 
-                                                {/* [OTT] [N] Date Format Logic */}
-                                                {perf.genre === 'ott' && perf.platforms && perf.platforms.length > 0 && (
-                                                    <div className="flex gap-1 items-center relative z-[200]" style={{ transform: 'translateZ(100px)' }}>
-                                                        {perf.platforms.map((p: string) => {
-                                                            const platformInfo = OTT_PLATFORMS[p];
-                                                            if (platformInfo) {
-                                                                // Use platform specific search URL
-                                                                const url = platformInfo.url.replace('{title}', encodeURIComponent(perf.title));
-                                                                return (
-                                                                    <a
-                                                                        key={p}
-                                                                        href={url}
-                                                                        target="_blank"
-                                                                        rel="noopener noreferrer"
-                                                                        onClick={(e) => {
-                                                                            e.stopPropagation();
-                                                                            // e.nativeEvent.stopImmediatePropagation(); // Stronger stop
-                                                                        }}
-                                                                        className={clsx("w-5 h-5 flex items-center justify-center rounded-md text-[10px] font-black uppercase text-white shadow-sm hover:opacity-80 hover:scale-110 transition-all cursor-pointer pointer-events-auto relative",
-                                                                            platformInfo.color
-                                                                        )}
-                                                                        title={`${platformInfo.label} 보러가기`}
-                                                                        style={{ zIndex: 201 }} // Explicit inline Z-index to force top
-                                                                    >
-                                                                        {platformInfo.label.substring(0, 1).toUpperCase()}
-                                                                    </a>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                    </div>
-                                                )}
-
                                                 {perf.date && (
                                                     <span className="text-xs text-gray-300 flex items-center gap-1 font-semibold">
                                                         {perf.genre !== 'ott' && <Calendar className="w-3.5 h-3.5" />}
@@ -622,16 +559,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             {/* Platforms Text */}
 
                                             {/* Venue/Grade Info - Hide for non-movie/ott when no detail info */}
-                                            {(perf.genre === 'movie' || perf.genre === 'ott' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
+                                            {(perf.genre === 'movie' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
                                                 <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-semibold">
-                                                    {perf.genre === 'ott' ? (
-                                                        perf.ageRating && (
-                                                            <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                                                <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                <span className="text-gray-300">{perf.ageRating}</span>
-                                                            </div>
-                                                        )
-                                                    ) : perf.genre === 'movie' ? (
+                                                    {perf.genre === 'movie' ? (
                                                         <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
                                                             {perf.gradeIcon ? (
                                                                 <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
@@ -666,11 +596,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
                                             {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
                                                 <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5 font-semibold", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
-                                                    {/* OTT Specific: Original Title */}
-                                                    {perf.originalTitle && perf.originalTitle !== perf.title && (
-                                                        <div className="text-gray-500 italic mb-0.5 line-clamp-1">{perf.originalTitle}</div>
-                                                    )}
-
                                                     {/* Country / Year / SubGenre */}
                                                     {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                                         <div className="flex flex-col gap-0.5 text-gray-500 text-xs">

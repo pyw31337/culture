@@ -12,7 +12,6 @@ export type Performance = {
     originalPrice?: string;
     price?: string;
     gradeIcon?: string;
-    platforms?: string[];
     cast?: (string | { name: string; url?: string })[];
     director?: string;
     movieInfo?: string;

@@ -422,7 +422,7 @@ export default function HeroSection({
             (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
             <div className="text-left flex-1 min-w-0 z-10">
-                {selectedGenre !== 'movie' && selectedGenre !== 'ott' && (
+                {selectedGenre !== 'movie' && (
                     <p className={clsx(
                         "font-extrabold mb-3 flex items-center gap-2 text-sm md:text-base transition-colors duration-500",
                         searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]"
@@ -444,9 +444,9 @@ export default function HeroSection({
                                     : "text-[#a78bfa] light:text-purple-600"
                             )} />
                             <span>
-                                {(selectedRegion !== 'all' || selectedVenue !== 'all')
-                                    ? '설정위치 :'
-                                    : (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
+                                {(selectedRegion === 'all' && selectedVenue === 'all')
+                                    ? (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
+                                    : '설정위치 :'
                                 }
                             </span>
                         </button>

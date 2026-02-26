@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, MapPin, RotateCw, Film } from 'lucide-react';
+import { X, Heart, RotateCw, Film } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -215,8 +215,14 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                         customOverlay.setMap(map);
                     }
 
-                    // 2. Create Marker for Clusterer
-                    const marker = new window.kakao.maps.Marker({ position });
+                    // 2. Create Marker for Clusterer (Invisible to avoid redundancy with CustomOverlay)
+                    const marker = new window.kakao.maps.Marker({
+                        position,
+                        image: new window.kakao.maps.MarkerImage(
+                            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
+                            new window.kakao.maps.Size(1, 1)
+                        )
+                    });
 
                     overlays.push({ overlay: customOverlay, isCinema });
                     markers.push(marker);
@@ -563,7 +569,6 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                                                         ? "bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200"
                                                         : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
                                                 )}>
-                                                    <MapPin size={10} className="fill-current" />
                                                     {distanceLabel}
                                                 </div>
                                             )}

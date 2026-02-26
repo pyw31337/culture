@@ -277,16 +277,9 @@ export const HERO_TEMPLATES = {
         movie: [
             { line1: "영화 같은 하루,", line2Pre: "고소한 팝콘 냄새와 함께 ", highlight: "스크린 여행", suffix: " 떠나볼까요?", keywords: ["영화", "movie"] },
             { line1: "천만 관객의 선택,", line2Pre: "지금 가장 핫한 ", highlight: "블록버스터", suffix: "를 확인하세요.", keywords: ["영화", "movie"] },
-            { line1: "감동의 대서사시,", line2Pre: "손수건 필수! 눈물 콧물 쏙 뺄 ", highlight: "인생 영화", suffix: " 한 편.", keywords: ["영화", "감동"] },
+            { line1: "감동의 대서사시,", line2Pre: "손수건 필수! 눈물 콧물 쏙 뺄 ", highlight: "인기 영화", suffix: " 한 편.", keywords: ["영화", "감동"] },
             { line1: "심장이 쫄깃한 스릴러,", line2Pre: "반전에 반전을 거듭하는 ", highlight: "미친 스토리", suffix: "에 빠져보세요.", keywords: ["영화", "스릴러"] },
             { line1: "달달한 로맨스,", line2Pre: "연애 세포 깨워줄 ", highlight: "사랑스러운 영화", suffix: " 추천해드려요.", keywords: ["영화", "로맨스"] }
-        ],
-        ott: [
-            { line1: "이불 밖은 위험해,", line2Pre: "집에서 편안하게 즐기는 ", highlight: "방구석 1열", suffix: " 영화관.", keywords: ["OTT", "넷플릭스"] },
-            { line1: "주말 순삭 주의보!", line2Pre: "한 번 시작하면 멈출 수 없는 ", highlight: "마성의 시리즈", suffix: " 정주행.", keywords: ["OTT", "드라마"] },
-            { line1: "뭘 볼까 고민될 땐?", line2Pre: "당신의 취향을 저격할 ", highlight: "추천작 리스트", suffix: "를 확인하세요.", keywords: ["OTT", "추천"] },
-            { line1: "내 손안의 극장,", line2Pre: "언제 어디서나 즐기는 ", highlight: "무제한 콘텐츠", suffix: "의 바다.", keywords: ["OTT", "콘텐츠"] },
-            { line1: "독점 공개작 오픈!", line2Pre: "오직 여기서만 볼 수 있는 ", highlight: "오리지널 시리즈", suffix: "를 만나보세요.", keywords: ["OTT", "오리지널"] }
         ],
 
 

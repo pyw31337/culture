@@ -2,9 +2,10 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { processImage } from './utils/image-processor.js';
-import pLimit from 'p-limit'; // Add pLimit for parallelism control if needed, though KOBIS is small.
+import pLimit from 'p-limit';
 import axios from 'axios';
 import sharp from 'sharp';
+import cliProgress from 'cli-progress';
 
 // KOBIS Daily Box Office
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
@@ -246,11 +247,17 @@ async function scrapeMovies() {
                     }
                 } catch (e) { }
             }
+            const progressBar = new cliProgress.SingleBar({
+                format: 'KOBIS 수집 | {bar} | {percentage}% | {value}/{total} | {movie}',
+                hideCursor: true
+            }, cliProgress.Presets.shades_classic);
+            progressBar.start(30, 0, { movie: '대기 중' });
+
             movies = await kobisPage.evaluate(() => {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
                 const list: any[] = [];
                 rows.forEach((row, idx) => {
-                    if (idx >= 30) return; // Limit to Top 30 as requested
+                    if (idx >= 30) return;
                     const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
                     if (titleLink) {
                         const title = titleLink.textContent?.trim() || '';
@@ -263,6 +270,9 @@ async function scrapeMovies() {
                 });
                 return list;
             });
+
+            progressBar.update(movies.length, { movie: '완료' });
+            progressBar.stop();
 
             if (movies.length === 0) {
                 console.error('KOBIS returned 0 items. Creating error marker.');
@@ -309,8 +319,14 @@ async function scrapeMovies() {
             userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
         });
 
+        const enrichBar = new cliProgress.SingleBar({
+            format: '네이버 정보 보강 | {bar} | {percentage}% | 남은 시간: {eta}s | {value}/{total} | {movie}',
+            hideCursor: true
+        }, cliProgress.Presets.shades_classic);
+        enrichBar.start(moviesToEnrich.length, 0, { movie: '시작' });
+
         for (const m of moviesToEnrich) {
-            console.log(`Processing: ${m.title}`);
+            enrichBar.update({ movie: m.title.substring(0, 15) });
             const page = await context.newPage();
             await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 
@@ -440,8 +456,10 @@ async function scrapeMovies() {
                 finalMovies.push(item); // Push basic info even if failed
             } finally {
                 await page.close();
+                enrichBar.increment();
             }
         }
+        enrichBar.stop();
 
         await browser.close();
 

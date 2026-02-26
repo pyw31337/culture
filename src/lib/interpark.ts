@@ -19,7 +19,7 @@ export interface Performance {
   price?: string;
   gradeIcon?: string;
 
-  // OTT/Movie metadata
+  // Movie metadata
   ageRating?: string;
   subGenre?: string;
   runningTime?: string;

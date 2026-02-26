@@ -4,7 +4,6 @@ import { X, Calendar, MapPin, Share2, ExternalLink, Download, Clock } from 'luci
 import { Performance } from '@/types';
 import ImageWithFallback from './ImageWithFallback';
 import { getOptimizedUrl } from '@/lib/utils';
-import { OTT_PLATFORMS } from '@/lib/constants';
 import Image from 'next/image';
 import Portal from './ui/Portal';
 
@@ -27,21 +26,21 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
         // Parsing logic for date (Simplified for demo)
         // Ideally should parse 'YYYY.MM.DD' to Date object
         const dateStr = performance.date.split('~')[0].trim().replace(/\./g, '');
-        const startDate = `${dateStr}T090000`; // Default start time
-        const endDate = `${dateStr}T110000`; // Default end time
+        const startDate = `${dateStr} T090000`; // Default start time
+        const endDate = `${dateStr} T110000`; // Default end time
 
         const icsContent = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
             'PRODID:-//CultureFlow//KR',
             'BEGIN:VEVENT',
-            `UID:${performance.id}@cultureflow`,
-            `DTSTAMP:${now}`,
-            `DTSTART:${startDate}`,
-            `DTEND:${endDate}`,
-            `SUMMARY:${performance.title}`,
-            `DESCRIPTION:${performance.genre} | ${performance.price || ''} | ${performance.link}`,
-            `LOCATION:${performance.venue}`,
+            `UID:${performance.id} @cultureflow`,
+            `DTSTAMP:${now} `,
+            `DTSTART:${startDate} `,
+            `DTEND:${endDate} `,
+            `SUMMARY:${performance.title} `,
+            `DESCRIPTION:${performance.genre} | ${performance.price || ''} | ${performance.link} `,
+            `LOCATION:${performance.venue} `,
             'END:VEVENT',
             'END:VCALENDAR'
         ].join('\r\n');
@@ -187,7 +186,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 </div>
 
                                 {/* Detailed Metadata Section: Director, Cast, Provider, Info */}
-                                {(performance.director || (performance.cast && performance.cast.length > 0) || (performance.platforms && performance.platforms.length > 0) || performance.movieInfo) && (
+                                {(performance.director || (performance.cast && performance.cast.length > 0) || performance.movieInfo) && (
                                     <div className="mb-6 space-y-4">
                                         {/* Director */}
                                         {performance.director && (
@@ -201,100 +200,67 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                         className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
                                                     >
                                                         {performance.director.replace('더보기', '').trim()}
-                                                    </a>
-                                                </div>
-                                            </div>
+                                                    </a >
+                                                </div >
+                                            </div >
                                         )}
 
                                         {/* Cast */}
-                                        {performance.cast && performance.cast.length > 0 && (
-                                            <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">출연</h3>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
-                                                        const isObj = typeof actor === 'object';
-                                                        const rawName = isObj ? actor.name : actor as string;
+                                        {
+                                            performance.cast && performance.cast.length > 0 && (
+                                                <div>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">출연</h3>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
+                                                            const isObj = typeof actor === 'object';
+                                                            const rawName = isObj ? actor.name : actor as string;
 
-                                                        // Always use Naver Search Link
-                                                        const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(rawName.replace('더보기', '').trim())}`;
+                                                            // Always use Naver Search Link
+                                                            const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(rawName.replace('더보기', '').trim())}`;
 
-                                                        const cleanName = rawName.replace('더보기', '').trim();
+                                                            const cleanName = rawName.replace('더보기', '').trim();
 
-                                                        if (!cleanName) return null;
-                                                        return (
-                                                            <a
-                                                                key={idx}
-                                                                href={url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
-                                                            >
-                                                                {cleanName}
-                                                            </a>
-                                                        );
-                                                    })}
+                                                            if (!cleanName) return null;
+                                                            return (
+                                                                <a
+                                                                    key={idx}
+                                                                    href={url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
+                                                                >
+                                                                    {cleanName}
+                                                                </a>
+                                                            );
+                                                        })}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )}
-
-                                        {/* Provider (OTT only) */}
-                                        {/* Debug Log (Hidden in UI) */}
-
-                                        {performance.platforms && performance.platforms.length > 0 && (
-                                            <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">제공</h3>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {performance.platforms.map((p: string, idx: number) => {
-                                                        // Direct mapping, assuming p is string as validated
-                                                        let key = typeof p === 'string' ? p.toLowerCase() : String(p);
-
-                                                        const platform = OTT_PLATFORMS[key];
-
-                                                        if (!platform) {
-                                                            console.warn(`[PerformanceDetailModal] Unknown platform key: ${key}`);
-                                                            return null;
-                                                        }
-
-                                                        const label = platform.label;
-                                                        const color = platform.color;
-                                                        const url = platform.url.replace('{title}', encodeURIComponent(performance.title));
-
-                                                        return (
-                                                            <a
-                                                                key={`${key}-${idx}`}
-                                                                href={url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className={`px-3 py-1.5 rounded-lg ${color} hover:brightness-110 transition-all text-sm text-white flex items-center gap-1.5 shadow-lg`}
-                                                            >
-                                                                {label}
-                                                                <ExternalLink size={12} className="opacity-70" />
-                                                            </a>
-                                                        );
-                                                    })}
-                                                </div>
-                                            </div>
-                                        )}
+                                            )
+                                        }
 
                                         {/* Movie Info (Genre/Runtime/Rating) */}
-                                        {performance.movieInfo && (
-                                            <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">정보</h3>
-                                                <p className="text-sm text-gray-300 leading-relaxed">
-                                                    {performance.movieInfo}
-                                                </p>
-                                            </div>
-                                        )}
-                                        {/* Description (MomMom) */}
-                                        {performance.description && (
-                                            <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">상세 정보</h3>
-                                                <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-white/5 p-4 rounded-xl border border-white/5">
-                                                    {performance.description}
+                                        {
+                                            performance.movieInfo && (
+                                                <div>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">정보</h3>
+                                                    <p className="text-sm text-gray-300 leading-relaxed">
+                                                        {performance.movieInfo}
+                                                    </p>
                                                 </div>
-                                            </div>
-                                        )}
-                                    </div>
+                                            )
+                                        }
+                                        {/* Description (MomMom) */}
+                                        {
+                                            performance.description && (
+                                                <div>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">상세 정보</h3>
+                                                    <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-white/5 p-4 rounded-xl border border-white/5">
+                                                        {performance.description}
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                    </div >
                                 )}
 
                                 {/* Actions */}
@@ -326,12 +292,12 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 <div className="mt-6 text-center text-[10px] text-gray-500">
                                     데이터 출처: {performance.link.includes('interpark') ? '인터파크' : '서울문화포털'} 외
                                 </div>
-                            </div>
-                        </motion.div>
+                            </div >
+                        </motion.div >
                     </>
                 )}
-            </AnimatePresence>
-        </Portal>
+            </AnimatePresence >
+        </Portal >
     );
 
 }

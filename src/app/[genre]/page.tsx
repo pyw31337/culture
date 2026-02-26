@@ -24,11 +24,6 @@ async function getPerformances(genreFilter: string | string[] | null) {
             return genreFilter.includes(p.genre);
         }
 
-        // Expanded filter for OTT: Include merged movie items that have platform info
-        if (genreFilter === 'ott') {
-            return p.genre === 'ott' || (p.platforms && p.platforms.length > 0);
-        }
-
         return p.genre === genreFilter;
     });
 

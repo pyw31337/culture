@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
+import cliProgress from 'cli-progress';
 
 function slugify(text: string): string {
     return text
@@ -60,6 +61,13 @@ async function scrapeKovo() {
                     autoScroll(page),
                     new Promise(r => setTimeout(r, 15000))
                 ]);
+
+                console.log(`기존 데이터를 분석하고 있습니다...`);
+
+                const progressBar = new cliProgress.SingleBar({
+                    format: '배구 일정 수집 | {bar} | {percentage}% | {value}/{total} | {status}',
+                    hideCursor: true
+                }, cliProgress.Presets.shades_classic);
 
                 const scrapedItems = await page.evaluate(() => {
                     const KOVO_LOGOS: Record<string, string> = {
@@ -143,12 +151,14 @@ async function scrapeKovo() {
                     return results;
                 });
 
-                console.log(`DOM Scraping complete. Found ${scrapedItems.length} items.`);
+                progressBar.start(scrapedItems.length, 0, { status: '변환 중' });
 
                 const performances: Performance[] = scrapedItems.map((item: any) => {
                     const title = `[배구] ${item.homeTeam} vs ${item.awayTeam}`;
                     const safeMatchup = slugify(`${item.homeTeam} vs ${item.awayTeam}`);
                     const id = `kovo_${item.date.replace(/-/g, '')}_${safeMatchup}`;
+
+                    progressBar.increment({ status: `${item.homeTeam} vs ${item.awayTeam}` });
 
                     return {
                         id,
@@ -164,6 +174,7 @@ async function scrapeKovo() {
                         homeTeamLogo: item.homeLogo,
                     };
                 });
+                progressBar.stop();
 
                 if (performances.length > 0) {
                     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
