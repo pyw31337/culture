@@ -45,7 +45,7 @@ import { HERO_TEMPLATES, HeroTemplate } from '@/lib/hero-templates';
 import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
 
 interface Venue {
-    name: string;
+    name?: string;
     refined_name?: string;
     address?: string;
     district?: string;

@@ -1,5 +1,6 @@
 
-import mommomData from '../src/data/mommom.json';
+import mommomDataRaw from '../src/data/mommom.json';
+const mommomData = mommomDataRaw as any[];
 import venueData from '../src/data/venues.json';
 
 const venues = venueData as Record<string, { address: string }>;

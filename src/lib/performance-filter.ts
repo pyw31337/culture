@@ -7,7 +7,7 @@ import { getDistanceFromLatLonInKm } from './utils';
 
 // Define Venue Interface since we import JSON directly
 interface Venue {
-    name: string;
+    name?: string;
     address: string;
     district?: string;
     lat?: number;
