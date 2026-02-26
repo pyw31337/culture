@@ -232,7 +232,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     {/* Weekly View */}
                     {calendarView === 'weekly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950">
                                 {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map((day, idx) => (
                                     <div key={day.toISOString()} className={clsx("py-3 text-center text-xs font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
                                         {format(day, 'eee d일', { locale: ko })}
@@ -268,7 +268,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     {/* Monthly View */}
                     {calendarView === 'monthly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950">
                                 {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
                                     <div key={day} className={clsx("py-3 text-center text-sm font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
                                         {day}
@@ -302,10 +302,10 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
             {selectedDate && (
                 <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
                     <div
-                        className="bg-white dark:bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-700 overflow-hidden"
+                        className="bg-white dark:bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-800 overflow-hidden"
                         onClick={e => e.stopPropagation()}
                     >
-                        <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
+                        <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
                             <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
                                 {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
                             </h3>
@@ -317,7 +317,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         {/* Genre Tabs - Draggable */}
                         <div
                             ref={scrollRef}
-                            className={`w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-700 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                            className={`w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
                             onMouseDown={onMouseDown}
                             onMouseLeave={onMouseLeave}
                             onMouseUp={onMouseUp}

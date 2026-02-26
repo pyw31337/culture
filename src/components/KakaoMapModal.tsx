@@ -19,14 +19,14 @@ interface Cinema {
     brand: string;
 }
 interface Venue {
-    name: string;
+    name?: string;
     address: string;
     lat?: number;
     lng?: number;
     district?: string;
     refined_name?: string;
 }
-const venues = venueData as Record<string, Venue>;
+const venues = venueData as unknown as Record<string, Venue>;
 
 export interface KakaoMapModalProps {
     performances: Performance[];
@@ -469,7 +469,7 @@ export default function KakaoMapModal({
                         </div>
                     )}
 
-                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800 dark:filter dark:grayscale dark:invert-[0.9] dark:hue-rotate-180" />
 
                     <div className="absolute inset-0 pointer-events-none z-[110]">
                         {selectedVenue && selectedVenueData && popupPosition && (
