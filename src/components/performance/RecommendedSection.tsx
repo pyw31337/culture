@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
@@ -14,9 +14,10 @@ interface RecommendedSectionProps {
     likedIds: Set<string>;
     onDetail: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
+    onShare?: (id: string, e?: React.MouseEvent) => void;
 }
 
-export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword' }: RecommendedSectionProps) {
+export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: RecommendedSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
@@ -231,7 +232,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                         </div>
                                     )}
 
-                                    {/* Info Overlay */}
+                                    {/* Info Overlay (Detail View) */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
@@ -239,6 +240,28 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                         </p>
                                         <div className="px-5 py-2.5 bg-white text-black font-extrabold text-xs rounded-full shadow-xl">
                                             자세히 보기
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom Action Bar (Permanent) */}
+                                    <div className="absolute inset-x-0 bottom-0 z-20 p-3 h-14 flex items-center justify-between pointer-events-none">
+                                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-0" />
+
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onShare?.(perf.id, e);
+                                            }}
+                                            className="relative z-10 p-2 rounded-lg bg-black/40 hover:bg-white/20 text-white/90 border border-white/10 backdrop-blur-md pointer-events-auto transition-all"
+                                            title="공유하기"
+                                        >
+                                            <Share2 size={16} />
+                                        </button>
+
+                                        <div className="relative z-10 text-right">
+                                            <span className="text-white font-black text-xs sm:text-sm drop-shadow-md line-clamp-1 max-w-[120px]">
+                                                {cleanTitle(perf.title)}
+                                            </span>
                                         </div>
                                     </div>
                                 </motion.div>
