@@ -76,22 +76,28 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
 
     // Initialize Data
     useEffect(() => {
-        const groups = performances.reduce((acc, perf) => {
-            if (!acc[perf.venue]) {
-                acc[perf.venue] = {
-                    ...venues[perf.venue],
-                    venueName: perf.venue,
-                    performances: [],
-                    lat: venues[perf.venue]?.lat || 0,
-                    lng: venues[perf.venue]?.lng || 0,
-                    type: 'performance'
-                };
-            }
-            acc[perf.venue].performances.push(perf);
-            return acc;
-        }, {} as Record<string, any>);
+        const isCinemaMode = cinemas && cinemas.length > 0;
 
-        // Add Cinemas as separate groups if provided
+        const groups: Record<string, any> = {};
+
+        // If NOT in cinema mode, group performances into markers
+        if (!isCinemaMode) {
+            performances.forEach((perf) => {
+                if (!groups[perf.venue]) {
+                    groups[perf.venue] = {
+                        ...venues[perf.venue],
+                        venueName: perf.venue,
+                        performances: [],
+                        lat: venues[perf.venue]?.lat || 0,
+                        lng: venues[perf.venue]?.lng || 0,
+                        type: 'performance'
+                    };
+                }
+                groups[perf.venue].performances.push(perf);
+            });
+        }
+
+        // Add Cinemas as separate groups if provided (Cinema mode)
         cinemas.forEach(cinema => {
             if (!groups[cinema.name]) {
                 groups[cinema.name] = {
@@ -101,7 +107,10 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
                     lng: cinema.lng,
                     brand: cinema.brand,
                     type: 'cinema',
-                    performances: performances.filter(p => p.genre === 'movie').slice(0, 5) // Show top movies in cinema popup
+                    // Find movies for THIS cinema or just show general movies if venue matching is not possible
+                    // For now, since we show cinemas from cinemas.json, we don't have direct link to performances in that json.
+                    // So we show the movies passed in props (which are already filtered to 'movie' genre by parent)
+                    performances: performances.slice(0, 10)
                 };
             }
         });
