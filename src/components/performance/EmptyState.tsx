@@ -106,14 +106,14 @@ export default function EmptyState({
                 </>
             ) : (
                 <>
-    // General Empty State (Search/Filter)
+        // General Empty State (Search/Filter)
                     <motion.div
                         variants={floatVariant}
                         animate="animate"
                         className="mb-8 opacity-80"
                     >
                         {searchText ? (
-                            searchMode === 'location' ? <MapPin className="w-20 h-20 text-emerald-500" strokeWidth={1} /> : <Search className="w-20 h-20 text-purple-500" strokeWidth={1} />
+                            <Search className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
                         ) : selectedGenre === 'baseball' || selectedGenre === 'soccer' ? (
                             <Calendar className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
                         ) : (
@@ -123,11 +123,7 @@ export default function EmptyState({
 
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (
-                            <>
-                                <strong className={searchMode === 'location' ? "text-emerald-500" : "text-purple-500"}>
-                                    {searchMode === 'location' ? '위치' : '키워드'}
-                                </strong> 검색 결과가 없습니다 😢
-                            </>
+                            '검색 결과가 없습니다 😢'
                         ) : (selectedGenre === 'baseball' || selectedGenre === 'soccer') ? (
                             '예정된 경기 일정이 없습니다 🏖️'
                         ) : (
@@ -136,23 +132,11 @@ export default function EmptyState({
                     </h3>
                     <p className="text-gray-400 light:text-gray-500 mb-8 text-sm">
                         {searchText
-                            ? `'${searchText}'에 대한 ${searchMode === 'location' ? '장소' : '공연 명칭/출연진 등'} 검색 결과가 없습니다.`
+                            ? `'${searchText}'에 대한 검색 결과가 없습니다.`
                             : '필터 조건을 변경하거나 다른 검색어로 시도해보세요.'}
                     </p>
 
                     <div className="flex gap-3 mb-12">
-                        {searchText && (
-                            <button onClick={() => {
-                                // Switch mode but keep the search text
-                                if (setSearchMode) setSearchMode(searchMode === 'location' ? 'keyword' : 'location');
-                            }} className={`px-6 py-2.5 rounded-full font-extrabold text-white transition-all flex items-center gap-2 shadow-lg hover:-translate-y-0.5 ${searchMode === 'location'
-                                ? 'bg-purple-600 hover:bg-purple-500 shadow-purple-500/20'
-                                : 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-500/20'
-                                }`}>
-                                {searchMode === 'location' ? <Search size={16} /> : <MapPin size={16} />}
-                                {searchMode === 'location' ? '키워드 검색 전환' : '위치 검색 전환'}
-                            </button>
-                        )}
                         <button onClick={() => {
                             setSelectedRegion('all');
                             setSelectedDistrict('all');
@@ -162,27 +146,6 @@ export default function EmptyState({
                             <Zap size={16} />
                             필터 초기화
                         </button>
-                    </div>
-
-                    {/* Smart Recommendations */}
-                    <div className="flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-                        <span className="text-xs font-extrabold text-gray-500 uppercase tracking-widest bg-gray-900/50 light:bg-gray-100 px-3 py-1 rounded-full">
-                            이런 카테고리는 어때요?
-                        </span>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {['festival', 'musical', 'concert', 'exhibition'].map(id => {
-                                const genre = GENRES.find(g => g.id === id);
-                                if (!genre) return null;
-                                return (
-                                    <RecommendationChip
-                                        key={id}
-                                        icon={getGenreIcon(id, 14)}
-                                        label={genre.label}
-                                        onClick={() => handleRedirect(id)}
-                                    />
-                                );
-                            })}
-                        </div>
                     </div>
                 </>
             )}

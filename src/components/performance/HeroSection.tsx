@@ -723,8 +723,21 @@ export default function HeroSection({
                                     );
                                 })
                             ) : (
-                                <div className="p-8 text-center text-gray-400">
-                                    검색 결과가 없습니다.
+                                <div className="p-8 text-center flex flex-col items-center gap-3">
+                                    <div className="text-gray-400 text-sm">
+                                        <strong className={searchMode === 'location' ? "text-emerald-500" : "text-purple-500"}>
+                                            {searchMode === 'location' ? '위치' : '키워드'}
+                                        </strong> 검색 결과가 없습니다 😢
+                                    </div>
+                                    <button onClick={() => {
+                                        onSearchModeChange(searchMode === 'location' ? 'keyword' : 'location');
+                                    }} className={`px-4 py-2 rounded-full text-sm font-extrabold text-white transition-all flex items-center gap-2 shadow-lg hover:-translate-y-0.5 ${searchMode === 'location'
+                                        ? 'bg-purple-600 hover:bg-purple-500 shadow-purple-500/20'
+                                        : 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-500/20'
+                                        }`}>
+                                        {searchMode === 'location' ? <Search size={14} /> : <MapPin size={14} />}
+                                        {searchMode === 'location' ? '키워드 검색 전환' : '위치 검색 전환'}
+                                    </button>
                                 </div>
                             )
                         ) : (

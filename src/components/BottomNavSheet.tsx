@@ -468,12 +468,21 @@ export default function BottomNavSheet({
                                             {searchText.trim().length === 0
                                                 ? (searchMode === 'location' ? "찾으시는 장소를 입력해주세요" : "검색어를 입력해주세요")
                                                 : (
-                                                    <div className="flex flex-col items-center justify-center py-10 text-gray-400 light:text-gray-500">
-                                                        <Search size={32} className="mb-2 opacity-50" />
-                                                        <p className="text-sm font-semibold">
-                                                            검색 결과가 없습니다.<br />
-                                                            다른 검색어를 입력해보세요.
-                                                        </p>
+                                                    <div className="flex flex-col items-center justify-center py-10 text-gray-400 light:text-gray-500 gap-3">
+                                                        <div className="text-sm font-semibold">
+                                                            <strong className={searchMode === 'location' ? "text-emerald-500" : "text-purple-500"}>
+                                                                {searchMode === 'location' ? '위치' : '키워드'}
+                                                            </strong> 검색 결과가 없습니다 😢
+                                                        </div>
+                                                        <button onClick={() => {
+                                                            if (onSearchModeChange) onSearchModeChange(searchMode === 'location' ? 'keyword' : 'location');
+                                                        }} className={`mt-1 px-4 py-2 rounded-full text-xs font-extrabold text-white transition-all flex items-center gap-2 shadow-lg hover:-translate-y-0.5 ${searchMode === 'location'
+                                                            ? 'bg-purple-600 hover:bg-purple-500 shadow-purple-500/20'
+                                                            : 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-500/20'
+                                                            }`}>
+                                                            {searchMode === 'location' ? <Search size={14} /> : <MapPin size={14} />}
+                                                            {searchMode === 'location' ? '키워드 검색 전환' : '위치 검색 전환'}
+                                                        </button>
                                                     </div>
                                                 )
                                             }
