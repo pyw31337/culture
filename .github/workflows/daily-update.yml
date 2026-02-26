@@ -81,15 +81,21 @@ jobs:
           npx tsx scripts/scrape-handball.ts || true
           npx tsx scripts/scrape-festival.ts || true
           npx tsx scripts/scrape-kbo.ts || true
+          npx tsx scripts/scrape-kleague.ts || true
           npx tsx scripts/scrape-yes24.ts || true
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-movies.ts || true
-
+          npx tsx scripts/scrape-cinemas.ts || true
           npx tsx scripts/scrape-naver-ott.ts || true
           node scripts/scrape-myrealtrip.js || true
           npx tsx scripts/scrape-umclass.ts || true
           npx tsx scripts/scrape-sssd.ts || true
           npx tsx scripts/scrape-mochaclass.ts || true
+          npx tsx scripts/scrape-museum.ts || true
+          npx tsx scripts/scrape-mommom.ts || true
+          npx tsx scripts/scrape-mommom-activities.ts || true
+          npx tsx scripts/scrape-mommom-exhibitions.ts || true
+          npx tsx scripts/scrape-mommom-products.ts || true
           npx tsx scripts/scrape-seoul-culture.ts || true
           npx tsx scripts/build-venues.ts || true
           npx tsx scripts/verify-links.ts || true
