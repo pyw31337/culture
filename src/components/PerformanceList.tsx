@@ -192,7 +192,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 }
 
                                 if (status === window.kakao.maps.services.Status.OK) {
-                                    setKakaoSearchResults(data.map((place: any) => ({
+                                    // 문화 공간 탐색과 무관한 카테고리 노이즈 필터링 (단, 사용자가 정확한 상호명을 검색한 경우는 허용)
+                                    const filteredData = data.filter((place: any) => {
+                                        const cat = place.category_name || '';
+                                        const isIrrelevant = /서비스,산업|의료,건강|부동산|교육,학원|기업/.test(cat);
+                                        const isExactMatch = place.place_name.toLowerCase().includes(currentSearchText.toLowerCase());
+                                        return !isIrrelevant || isExactMatch;
+                                    });
+
+                                    setKakaoSearchResults(filteredData.map((place: any) => ({
                                         type: 'location',
                                         name: place.place_name,
                                         address: place.road_address_name || place.address_name,
@@ -202,6 +210,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                         category: place.category_group_name
                                     })));
                                     setIsDropdownOpen(true); // Open dropdown on result
+                                } else {
+                                    // 검색 결과가 없거나(ZERO_RESULT) 에러 발생 시 빈 배열로 세팅하여 '결과 없음' UI 노출
+                                    setKakaoSearchResults([]);
+                                    setIsDropdownOpen(true);
                                 }
                             });
                         }
