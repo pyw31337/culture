@@ -24,6 +24,7 @@ interface Venue {
     lat?: number;
     lng?: number;
     district?: string;
+    refined_name?: string;
 }
 const venues = venueData as Record<string, Venue>;
 
@@ -104,17 +105,19 @@ export default function KakaoMapModal({
                 // If specific genre (not 'all'), only include if matches
                 if (!isAllMode && perf.genre !== selectedGenre) return;
 
-                if (!groups[perf.venue]) {
-                    groups[perf.venue] = {
+                const displayVenueName = venues[perf.venue]?.refined_name || venues[perf.venue]?.name || perf.venue;
+
+                if (!groups[displayVenueName]) {
+                    groups[displayVenueName] = {
                         ...venues[perf.venue],
-                        venueName: perf.venue,
+                        venueName: displayVenueName,
                         performances: [],
                         lat: venues[perf.venue]?.lat || 0,
                         lng: venues[perf.venue]?.lng || 0,
                         type: 'performance'
                     };
                 }
-                groups[perf.venue].performances.push(perf);
+                groups[displayVenueName].performances.push(perf);
             });
         }
 
@@ -293,8 +296,12 @@ export default function KakaoMapModal({
                 setSelectedVenue(venue.venueName);
                 if (map) {
                     const moveLatLon = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-                    map.panTo(moveLatLon);
-                    if (map.getLevel() > 4) map.setLevel(4);
+                    if (map.getLevel() > 4) {
+                        map.setLevel(4);
+                        setTimeout(() => map.panTo(moveLatLon), 10);
+                    } else {
+                        map.panTo(moveLatLon);
+                    }
                 }
                 setTimeout(() => {
                     const scrollContainer = document.getElementById('venue-scroll-container');
@@ -551,8 +558,12 @@ export default function KakaoMapModal({
                                                 setSelectedVenue(newSelected);
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
                                                     const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                    mapInstance.panTo(moveLatLon);
-                                                    if (mapInstance.getLevel() > 4) mapInstance.setLevel(4);
+                                                    if (mapInstance.getLevel() > 4) {
+                                                        mapInstance.setLevel(4);
+                                                        setTimeout(() => mapInstance.panTo(moveLatLon), 10);
+                                                    } else {
+                                                        mapInstance.panTo(moveLatLon);
+                                                    }
                                                 }
                                             }}
                                             className={clsx(
