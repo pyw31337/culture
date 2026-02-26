@@ -126,6 +126,23 @@ async function generate() {
 
         fs.writeFileSync(outputPath, JSON.stringify(sorted));
         console.log(`Successfully generated ${sorted.length} items to ${outputPath}`);
+
+        // [New: Sync critical data files to public/data]
+        const dataDir = path.join(process.cwd(), 'src', 'data');
+        const filesToSync = ['cinemas.json', 'movies.json', 'ott.json', 'venues.json'];
+
+        filesToSync.forEach(filename => {
+            const srcPath = path.join(dataDir, filename);
+            const destPath = path.join(dir, filename);
+
+            if (fs.existsSync(srcPath)) {
+                fs.copyFileSync(srcPath, destPath);
+                console.log(`Synced ${filename} to ${destPath}`);
+            } else {
+                console.warn(`Warning: ${filename} not found in src/data, skipping sync.`);
+            }
+        });
+
     } catch (error) {
         console.error('Error generating performance data:', error);
         process.exit(1);
