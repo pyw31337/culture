@@ -149,31 +149,42 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
             <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
                 <div className="bg-white dark:bg-gray-900 w-full max-w-[1700px] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-800">
                     {/* Header */}
-                    <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-                        <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-4">
+                    <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden">
+                        <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">
                             <button onClick={() => {
                                 if (calendarView === 'monthly') handlePrevMonth();
                                 else if (calendarView === 'weekly') setCurrentMonth(subWeeks(currentMonth, 1));
                                 else setCurrentMonth(subDays(currentMonth, 1));
-                            }} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"><ChevronLeft /></button>
-                            {calendarView === 'daily'
-                                ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
-                                : calendarView === 'weekly'
-                                    ? `${format(startOfWeek(currentMonth), 'M/d')} ~ ${format(endOfWeek(currentMonth), 'M/d')}`
-                                    : format(currentMonth, 'yyyy년 M월', { locale: ko })}
+                            }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" /></button>
+
+                            <span className="hidden sm:inline">
+                                {calendarView === 'daily'
+                                    ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
+                                    : calendarView === 'weekly'
+                                        ? `${format(startOfWeek(currentMonth), 'M/d')} ~ ${format(endOfWeek(currentMonth), 'M/d')}`
+                                        : format(currentMonth, 'yyyy년 M월', { locale: ko })}
+                            </span>
+                            <span className="sm:hidden text-base truncate">
+                                {calendarView === 'daily'
+                                    ? format(currentMonth, 'yy.MM.dd', { locale: ko })
+                                    : calendarView === 'weekly'
+                                        ? `${format(startOfWeek(currentMonth), 'M/d')}~${format(endOfWeek(currentMonth), 'M/d')}`
+                                        : format(currentMonth, 'yy.MM', { locale: ko })}
+                            </span>
+
                             <button onClick={() => {
                                 if (calendarView === 'monthly') handleNextMonth();
                                 else if (calendarView === 'weekly') setCurrentMonth(addWeeks(currentMonth, 1));
                                 else setCurrentMonth(addDays(currentMonth, 1));
-                            }} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"><ChevronRight /></button>
+                            }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" /></button>
                         </h2>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                             {(['daily', 'weekly', 'monthly'] as CalendarView[]).map(v => (
                                 <button
                                     key={v}
                                     onClick={() => setCalendarView(v)}
                                     className={clsx(
-                                        'px-3 py-1.5 rounded-lg text-xs font-bold transition-colors',
+                                        'px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-bold transition-colors',
                                         calendarView === v
                                             ? 'bg-blue-600 text-white'
                                             : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -182,8 +193,8 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                     {v === 'daily' ? '일간' : v === 'weekly' ? '주간' : '월간'}
                                 </button>
                             ))}
-                            <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition ml-2">
-                                <X className="w-6 h-6" />
+                            <button onClick={onClose} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition ml-0 sm:ml-2 shrink-0">
+                                <X className="w-5 h-5 sm:w-6 sm:h-6" />
                             </button>
                         </div>
                     </div>
@@ -237,13 +248,13 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                             <span className={clsx("text-xs font-extrabold mb-1", isToday ? "text-blue-600 dark:text-blue-400" : "text-gray-500")}>
                                                 {dayEvents.length}건
                                             </span>
-                                            {dayEvents.slice(0, 10).map((perf, i) => (
+                                            {dayEvents.slice(0, 30).map((perf, i) => (
                                                 <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                                    className={clsx("text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700')}
+                                                    className={clsx("text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700')}
                                                     title={perf.title}
                                                 >{perf.title}</a>
                                             ))}
-                                            {dayEvents.length > 10 && <span className="text-[10px] text-gray-500 pl-1">+{dayEvents.length - 10}</span>}
+                                            {dayEvents.length > 30 && <span className="text-[10px] text-gray-500 pl-1 font-bold shrink-0">+{dayEvents.length - 30}</span>}
                                         </div>
                                     );
                                 })}

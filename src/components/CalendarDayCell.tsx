@@ -43,13 +43,13 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                 )}
             </div>
 
-            {/* PC View: List (Max 2) */}
-            <div className="hidden sm:flex flex-col gap-1 overflow-hidden">
-                {dayEvents.slice(0, 2).map((perf, i) => (
+            {/* PC View: List (Max 5) */}
+            <div className="hidden sm:flex flex-col gap-[2px] overflow-hidden">
+                {dayEvents.slice(0, 5).map((perf, i) => (
                     <div
                         key={`${perf.id}-${i}`}
                         className={clsx(
-                            "text-[10px] sm:text-xs px-2 py-1 rounded truncate text-white block hover:opacity-80 transition relative z-10",
+                            "text-[10px] sm:text-xs px-2 py-[2px] rounded truncate text-white block hover:opacity-80 transition relative z-10",
                             (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400 dark:bg-gray-700'
                         )}
                         title={perf.title}
@@ -57,9 +57,9 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                         {perf.title}
                     </div>
                 ))}
-                {dayEvents.length > 2 && (
-                    <div className="text-[10px] text-gray-500 dark:text-gray-400 text-left pl-1 cursor-default relative z-10">
-                        +{dayEvents.length - 2} more
+                {dayEvents.length > 5 && (
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400 text-left pl-1 cursor-default relative z-10 font-bold">
+                        +{dayEvents.length - 5}
                     </div>
                 )}
             </div>
