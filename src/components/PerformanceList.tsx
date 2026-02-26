@@ -25,7 +25,8 @@ import { useRecommendation } from '@/hooks/useRecommendation';
 import RecommendedSection from './performance/RecommendedSection';
 import KeywordSection from './performance/KeywordSection';
 
-const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
+import type { KakaoMapModalProps } from './KakaoMapModal';
+const KakaoMapModal = dynamic<KakaoMapModalProps>(() => import('./KakaoMapModal'), { ssr: false });
 const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const PerformanceDetailModal = dynamic(() => import('./PerformanceDetailModal'), { ssr: false });
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });

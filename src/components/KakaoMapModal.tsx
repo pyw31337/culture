@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, MapPin } from 'lucide-react';
+import { X, Heart, MapPin, RotateCw, Film } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -14,6 +14,13 @@ import Portal from './ui/Portal';
 // import BottomNavSheet from './BottomNavSheet'; // Reverted usage for detail view
 
 
+interface Cinema {
+    name: string;
+    address: string;
+    lat: number;
+    lng: number;
+    brand: string;
+}
 interface Venue {
     name: string;
     address: string;
@@ -23,16 +30,17 @@ interface Venue {
 }
 const venues = venueData as Record<string, Venue>;
 
-interface KakaoMapModalProps {
+export interface KakaoMapModalProps {
     performances: Performance[];
     onClose: () => void;
     centerLocation?: { lat: number; lng: number; name: string } | null;
     favoriteVenues: string[];
     onToggleFavorite: (venueName: string) => void;
     onVenueLocationChange?: (venueName: string, lat: number, lng: number) => void;
+    cinemas?: Cinema[];
 }
 
-export default function KakaoMapModal({ performances, onClose, centerLocation, favoriteVenues, onToggleFavorite, onVenueLocationChange }: KakaoMapModalProps) {
+export default function KakaoMapModal({ performances, cinemas = [], onClose, centerLocation, favoriteVenues, onToggleFavorite, onVenueLocationChange }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
@@ -80,12 +88,28 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     venueName: perf.venue,
                     performances: [],
                     lat: venues[perf.venue]?.lat || 0,
-                    lng: venues[perf.venue]?.lng || 0
+                    lng: venues[perf.venue]?.lng || 0,
+                    type: 'performance'
                 };
             }
             acc[perf.venue].performances.push(perf);
             return acc;
         }, {} as Record<string, any>);
+
+        // Add Cinemas as separate groups if provided
+        cinemas.forEach(cinema => {
+            if (!groups[cinema.name]) {
+                groups[cinema.name] = {
+                    venueName: cinema.name,
+                    address: cinema.address,
+                    lat: cinema.lat,
+                    lng: cinema.lng,
+                    brand: cinema.brand,
+                    type: 'cinema',
+                    performances: performances.filter(p => p.genre === 'movie').slice(0, 5) // Show top movies in cinema popup
+                };
+            }
+        });
 
         allVenueGroups.current = groups;
         const list = Object.values(groups).filter(v => v.lat && v.lng); // Filter invalid venues
@@ -136,11 +160,11 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         clusterer = new window.kakao.maps.MarkerClusterer({
                             map: map,
                             averageCenter: true,
-                            minLevel: 6,
-                            disableClickZoom: false, // We will handle click
+                            minLevel: 7,
+                            disableClickZoom: false,
                             styles: [{
                                 width: '50px', height: '50px',
-                                background: 'rgba(59, 130, 246, 0.9)',
+                                background: 'rgba(79, 70, 229, 0.9)',
                                 borderRadius: '50%',
                                 color: 'white',
                                 textAlign: 'center', lineHeight: '50px',
@@ -159,18 +183,25 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                     const position = new window.kakao.maps.LatLng(venue.lat, venue.lng);
                     const perfs = venue.performances;
                     const primaryGenre = perfs[0]?.genre;
-                    const color = GENRE_STYLES[primaryGenre]?.hex || '#9ca3af';
+                    const isCinema = venue.type === 'cinema';
+                    const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
 
-                    // Marker (Invisible/Small) or Custom Content
-                    // We use CustomOverlay for the badges as main indicators
+                    // 1. Create Overlay for UI
                     const content = document.createElement('div');
-                    content.style.cssText = `background-color: ${color}; width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10;`;
-                    content.innerText = perfs.length.toString();
+                    content.style.cssText = `background-color: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10; transition: transform 0.2s;`;
+
+                    if (isCinema) {
+                        content.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2"/><path d="m15 3-3 3-3-3"/><path d="m15 21-3-3-3 3"/><path d="m3 15 3-3-3-3"/><path d="m21 15-3-3 3-3"/>
+                            </svg>
+                        `;
+                    } else {
+                        content.innerText = perfs.length.toString();
+                    }
 
                     content.onclick = () => {
                         setSelectedVenue(venue.venueName);
-                        // Center map on click? Optional. 
-                        // map.panTo(position); 
                     };
 
                     const customOverlay = new window.kakao.maps.CustomOverlay({
@@ -179,21 +210,39 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                         yAnchor: 1
                     });
 
-                    // Also create a marker for Clusterer if needed, or just use overlay.
-                    // Clusterer usually needs Markers.
-                    const marker = new window.kakao.maps.Marker({ position });
-                    marker.setMap(null); // Hide default marker
-                    // Hack: Clusterer works with Markers. We might want to just show Overlays and skip Clusterer if we want custom UI?
-                    // Or sync them. 
-                    // For performance with thousands of points, Clusterer is better.
-                    // Let's stick to Overlays for now as they carry count info which is critical.
-                    // If performance is issue, we can revisit. User said "optimize speed", so...
-                    // But Overlay view is "venue" based. There aren't THAT many venues (usually < 100 visible).
-                    // So rendering 100 overlays is fine.
+                    // Initially show if level is deep enough
+                    if (map.getLevel() <= 6) {
+                        customOverlay.setMap(map);
+                    }
 
-                    customOverlay.setMap(map);
-                    overlays.push(customOverlay);
+                    // 2. Create Marker for Clusterer
+                    const marker = new window.kakao.maps.Marker({ position });
+
+                    overlays.push({ overlay: customOverlay, isCinema });
+                    markers.push(marker);
                 });
+
+                if (clusterer) {
+                    clusterer.addMarkers(markers);
+                }
+
+                // --- Event Listeners with high-perf management ---
+                const manageVisibility = () => {
+                    const currentLevel = map.getLevel();
+                    const showOverlays = currentLevel <= 6;
+
+                    overlays.forEach(item => {
+                        if (showOverlays) {
+                            item.overlay.setMap(map);
+                        } else {
+                            item.overlay.setMap(null);
+                        }
+                    });
+                    setShowSearchHereBtn(true);
+                };
+
+                window.kakao.maps.event.addListener(map, 'dragend', () => setShowSearchHereBtn(true));
+                window.kakao.maps.event.addListener(map, 'zoom_changed', manageVisibility);
 
                 // User Location Marker
                 if (!centerLocation && navigator.geolocation) {
@@ -378,6 +427,24 @@ export default function KakaoMapModal({ performances, onClose, centerLocation, f
                                             <X size={16} />
                                         </button>
                                     </div>
+
+                                    {/* Cinema Special Row */}
+                                    {selectedVenueData.type === 'cinema' && (
+                                        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
+                                            <a
+                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue + ' 상영시간표')}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
+                                            >
+                                                <RotateCw size={12} />
+                                                실시간 상영시간표 확인하기
+                                            </a>
+                                            <p className="text-[9px] text-indigo-600 dark:text-indigo-400 mt-1.5 font-bold text-center">
+                                                ★ 현재 박스오피스 상영 예정작
+                                            </p>
+                                        </div>
+                                    )}
 
                                     {/* List */}
                                     <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
