@@ -123,7 +123,7 @@
   {
     "id": "fest_고령_대가야축제",
     "title": "고령 대가야축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/ecf68d54-808a-4ef0-8b64-122a4fc90f0f_74.jpg",
+    "image": null,
     "date": "2026.03.27~2026.03.29",
     "venue": "경상북도 고령군",
     "region": "etc",
@@ -134,7 +134,7 @@
   {
     "id": "fest_여수_영취산_진달래축제",
     "title": "여수 영취산 진달래축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f6c40fcf-7dd2-4701-a2f6-657bb88f155c_4.jpg",
+    "image": null,
     "date": "2026.03.28~2026.03.29",
     "venue": "전라남도 여수시",
     "region": "etc",
@@ -295,28 +295,6 @@
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=a212b550-67bf-422e-a110-7bb742e84672",
     "genre": "festival",
     "lastEnriched": "2026-02-21T18:37:23.669Z"
-  },
-  {
-    "id": "fest_산청한방약초축제",
-    "title": "산청한방약초축제",
-    "image": null,
-    "date": "",
-    "venue": "경상남도 산청군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
-    "genre": "festival",
-    "lastEnriched": "2026-02-23T14:50:10.540Z"
-  },
-  {
-    "id": "fest_영암왕인문화축제",
-    "title": "영암왕인문화축제",
-    "image": null,
-    "date": "",
-    "venue": "전라남도 영암군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
-    "genre": "festival",
-    "lastEnriched": "2026-02-23T14:50:10.543Z"
   },
   {
     "id": "fest_진해군항제",
