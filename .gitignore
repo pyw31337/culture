@@ -37,6 +37,7 @@ error_row_*.png
 naver_debug*.png
 *.webp
 !public/images/posters/**/*.webp
+!public/images/logos/**/*.webp
 
 # data/cache
 venue_cache.json
