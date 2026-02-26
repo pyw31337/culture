@@ -61,6 +61,7 @@ export default function KakaoMapModal({
     // Group performances by venue - Pre-calculation
     const allVenueGroups = useRef<Record<string, any>>({});
     const allVenuesList = useRef<any[]>([]);
+    const lastBoundedLocationRef = useRef<string | null>(null);
 
     // Drag to scroll logic (Horizontal List)
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -355,6 +356,26 @@ export default function KakaoMapModal({
         }
         map._customOverlays = newOverlays;
 
+        // --- Auto-adjust bounds to ensure at least 1 closest venue is visible ---
+        if (centerLocation && allVenuesList.current.length > 0) {
+            const locKey = `${centerLocation.lat},${centerLocation.lng}`;
+            if (lastBoundedLocationRef.current !== locKey) {
+                lastBoundedLocationRef.current = locKey;
+                const closest = allVenuesList.current[0]; // Already sorted by distance in Data Init useEffect
+                if (closest && closest.lat && closest.lng) {
+                    const bounds = new window.kakao.maps.LatLngBounds();
+                    bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
+                    bounds.extend(new window.kakao.maps.LatLng(closest.lat, closest.lng));
+
+                    // Use setTimeout to allow the map to render before bounding
+                    setTimeout(() => {
+                        // Apply padding to ensure markers aren't perfectly on the visual edge
+                        map.setBounds(bounds, 150, 50, 50, 50);
+                    }, 100);
+                }
+            }
+        }
+
         const manageVisibility = () => {
             const currentLevel = map.getLevel();
             const showOverlays = currentLevel <= 6;
@@ -366,7 +387,7 @@ export default function KakaoMapModal({
         return () => {
             window.kakao.maps.event.removeListener(map, 'zoom_changed', manageVisibility);
         };
-    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre]); // Re-run when data changes
+    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]); // Re-run when data changes
 
     // Popup Position Logic
     const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);

@@ -975,9 +975,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             setHighlightedIndex(prev => (prev - 1 + searchResults.length) % searchResults.length);
                         } else if (e.key === 'Enter') {
                             e.preventDefault();
-                            if (highlightedIndex >= 0 && searchResults[highlightedIndex]) {
-                                // Select the highlighted item
-                                const selected = searchResults[highlightedIndex];
+                            const targetIndex = highlightedIndex >= 0 ? highlightedIndex : 0;
+                            if (searchResults.length > targetIndex) {
+                                // Select the chosen or first item
+                                const selected = searchResults[targetIndex];
                                 if (searchMode === 'location') {
                                     if (selected.lat && selected.lng) {
                                         setSearchLocation({
@@ -986,6 +987,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             name: selected.name
                                         });
                                         setSearchText(selected.name);
+                                        setIsDropdownOpen(false);
                                     }
                                 } else {
                                     setSearchText(selected.name);
@@ -1118,17 +1120,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                             <ChevronDown className="absolute right-0 w-3.5 h-3.5 text-emerald-500 pointer-events-none mr-1" />
                                         </div>
 
-                                        {/* Divider */}
-                                        <div className="w-[1px] h-4 bg-emerald-500/30 mx-3"></div>
-
-                                        {/* Map View Button */}
-                                        <button
-                                            onClick={() => setIsMapOpen(true)}
-                                            className="flex items-center gap-1.5 pr-2 py-1.5 rounded-full text-xs font-extrabold text-emerald-600 light:text-emerald-700 hover:text-emerald-500 light:hover:text-emerald-900 transition-colors"
-                                        >
-                                            <MapIcon className="w-4 h-4" />
-                                            <span>지도보기</span>
-                                        </button>
+                                        {/* Divider (Removed Map Button and Divider) */}
                                     </div>
                                 </div>
                             )}
