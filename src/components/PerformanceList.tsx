@@ -47,7 +47,7 @@ import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
 interface Venue {
     name: string;
     refined_name?: string;
-    address: string;
+    address?: string;
     district?: string;
     lat?: number | null;
     lng?: number | null;
@@ -671,8 +671,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         if (text.trim().length > 0) {
             // Reset filters to 'all' for global search
             if (selectedGenre !== 'all') {
-                const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-                router.push(`${basePath}/`);
+                router.push('/');
             }
             setSelectedGenre('all');
             setSelectedRegion('all');
@@ -710,13 +709,12 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         setSelectedGenre(g);
         if (viewMode === 'likes-perf') setViewMode('grid');
 
-        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
         if (g === 'all') {
-            router.push(`${basePath}/`);
+            router.push('/');
         } else {
             let slug = g;
             if (g === 'play') slug = 'theater';
-            router.push(`${basePath}/${slug}`);
+            router.push(`/${slug}`);
         }
     };
     const handleRegionSelect = (r: string) => setSelectedRegion(r);
@@ -929,8 +927,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     handleSelectResult={(result: any) => {
                         // Always reset category to 'all' on new selection
                         if (selectedGenre !== 'all') {
-                            const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-                            router.push(`${basePath}/`);
+                            router.push('/');
                         }
                         setSelectedGenre('all');
 
