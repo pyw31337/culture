@@ -5,6 +5,7 @@ import Script from 'next/script';
 import ProgressBarProvider from "@/components/ProgressBarProvider";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import InstallApp from "@/components/InstallApp";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -99,6 +100,7 @@ export default function RootLayout({
           <ErrorBoundary>
             {children}
             <InstallApp />
+            <ScrollToTop />
           </ErrorBoundary>
         </ProgressBarProvider>
         <Script

@@ -3,10 +3,11 @@
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, MonitorPlay } from 'lucide-react';
+import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles } from 'lucide-react';
 import Portal from './ui/Portal';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SharedDetailModalProps {
     performance: Performance;
@@ -14,19 +15,11 @@ interface SharedDetailModalProps {
 }
 
 export default function SharedDetailModal({ performance: p, onClose }: SharedDetailModalProps) {
-    const overlayRef = useRef<HTMLDivElement>(null);
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
-    const [phase, setPhase] = useState<'spin' | 'reveal'>('spin');
 
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
     const hasTeams = p.homeTeam && p.awayTeam;
-
-    // Animation phases: spin (0.8s) → reveal
-    useEffect(() => {
-        const t = setTimeout(() => setPhase('reveal'), 800);
-        return () => clearTimeout(t);
-    }, []);
 
     // Close on Escape
     useEffect(() => {
@@ -56,335 +49,234 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
 
     const hex = genreStyle.hex;
 
+    // Animation Variants
+    const backdropVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 }
+    };
+
+    const cardVariants = {
+        hidden: {
+            scale: 0.8,
+            opacity: 0,
+            y: 40,
+            rotateX: 10
+        },
+        visible: {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            transition: {
+                type: 'spring' as const,
+                stiffness: 260,
+                damping: 20,
+                delayChildren: 0.2,
+                staggerChildren: 0.05
+            }
+        },
+        exit: {
+            scale: 0.9,
+            opacity: 0,
+            y: 20,
+            transition: { duration: 0.2 }
+        }
+    } as const;
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 15 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
         <Portal>
-            {/* Inline keyframes for the animations */}
-            <style>{`
-                @keyframes sdm-spin-in {
-                    0% { transform: perspective(1200px) translateZ(-1000px) rotateY(0deg) scale(0.1); opacity: 0; }
-                    60% { transform: perspective(1200px) translateZ(150px) rotateY(720deg) scale(1.15); opacity: 1; }
-                    80% { transform: perspective(1200px) translateZ(0px) rotateY(1080deg) scale(0.95); opacity: 1; }
-                    100% { transform: perspective(1200px) translateZ(0px) rotateY(1080deg) scale(1); opacity: 1; }
-                }
-                @keyframes sdm-camera-shake {
-                    0%, 79% { transform: translate(0,0) rotate(0deg); }
-                    80% { transform: translate(-10px, 10px) rotate(-2deg); }
-                    84% { transform: translate(10px, -10px) rotate(2deg); }
-                    88% { transform: translate(-10px, -10px) rotate(-1deg); }
-                    92% { transform: translate(10px, 10px) rotate(1deg); }
-                    100% { transform: translate(0,0) rotate(0deg); }
-                }
-                @keyframes sdm-flash-bang {
-                    0%, 79% { opacity: 0; box-shadow: none; background: transparent; }
-                    80% { opacity: 1; box-shadow: 0 0 150px 100px white; background: white; }
-                    100% { opacity: 0; box-shadow: none; background: transparent; }
-                }
-                @keyframes sdm-glow-rotate {
-                    0% { transform: translate(-50%, -50%) rotate(0deg); }
-                    100% { transform: translate(-50%, -50%) rotate(360deg); }
-                }
-                @keyframes sdm-shimmer {
-                    0% { transform: translateX(-100%) rotate(25deg); }
-                    100% { transform: translateX(200%) rotate(25deg); }
-                }
-                @keyframes sdm-sparkle {
-                    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-                    50% { opacity: 1; transform: scale(1) rotate(180deg); }
-                }
-                @keyframes sdm-float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-6px); }
-                }
-                @keyframes sdm-pulse-ring {
-                    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
-                    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.2; }
-                    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
-                }
-                @keyframes sdm-content-up {
-                    0% { opacity: 0; transform: translateY(20px); }
-                    100% { opacity: 1; transform: translateY(0); }
-                }
-                .sdm-modal-shake {
-                    animation: sdm-camera-shake 0.8s ease-out forwards;
-                }
-                .sdm-card-spin {
-                    animation: sdm-spin-in 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-                    backface-visibility: hidden;
-                }
-                .sdm-card-reveal {
-                    animation: sdm-float 3s ease-in-out infinite;
-                    transform: perspective(1200px) rotateY(0deg) scale(1);
-                }
-                .sdm-content-reveal {
-                    animation: sdm-content-up 0.5s ease-out 0.1s both;
-                }
-            `}</style>
-
-            <div
-                ref={overlayRef}
-                className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 ${phase === 'spin' ? 'sdm-modal-shake' : ''}`}
-                onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
-                style={{
-                    background: 'radial-gradient(circle at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.92) 100%)',
-                    backdropFilter: 'blur(12px)',
-                }}
-            >
-                {/* Flash Bang Effect */}
-                {phase === 'spin' && (
-                    <div
-                        className="fixed inset-0 pointer-events-none z-[9998]"
-                        style={{ animation: 'sdm-flash-bang 0.8s ease-out forwards' }}
-                    />
-                )}
-                {/* Rotating Glow Aura — behind the card */}
-                <div
-                    className="absolute pointer-events-none"
+            <AnimatePresence>
+                <motion.div
+                    key="backdrop"
+                    variants={backdropVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
                     style={{
-                        top: '50%', left: '50%',
-                        width: '600px', height: '600px',
-                        animation: 'sdm-glow-rotate 6s linear infinite',
-                        background: `conic-gradient(from 0deg, ${hex}00, ${hex}50, ${hex}00, ${hex}30, ${hex}00, ${hex}60, ${hex}00)`,
-                        borderRadius: '50%',
-                        filter: 'blur(80px)',
-                        opacity: phase === 'reveal' ? 0.5 : 0.3,
-                        transition: 'opacity 0.5s',
+                        background: 'radial-gradient(circle at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%)',
+                        backdropFilter: 'blur(16px)',
                     }}
-                />
-
-                {/* Pulsing Ring */}
-                <div
-                    className="absolute pointer-events-none"
-                    style={{
-                        top: '50%', left: '50%',
-                        width: '520px', height: '520px',
-                        animation: 'sdm-pulse-ring 3s ease-in-out infinite',
-                        border: `2px solid ${hex}30`,
-                        borderRadius: '50%',
-                        opacity: phase === 'reveal' ? 1 : 0,
-                        transition: 'opacity 0.5s 0.3s',
-                    }}
-                />
-
-                {/* Sparkle particles */}
-                {phase === 'reveal' && Array.from({ length: 8 }).map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute pointer-events-none text-white/60"
-                        style={{
-                            top: `${20 + Math.random() * 60}%`,
-                            left: `${15 + Math.random() * 70}%`,
-                            animation: `sdm-sparkle ${1.5 + Math.random() * 2}s ease-in-out ${Math.random() * 2}s infinite`,
-                            fontSize: `${8 + Math.random() * 12}px`,
-                        }}
-                    >
-                        ✦
-                    </div>
-                ))}
-
-                {/* Card Container */}
-                <div
-                    className={phase === 'spin' ? 'sdm-card-spin' : 'sdm-card-reveal'}
-                    style={{ perspective: '1200px', transformStyle: 'preserve-3d', width: '100%', maxWidth: '28rem' }}
+                    onClick={onClose}
                 >
-                    <div
-                        className="relative w-full bg-gray-900 rounded-3xl shadow-2xl overflow-hidden"
-                        style={{
-                            maxHeight: '90vh',
-                            border: `1px solid ${hex}30`,
-                            boxShadow: `0 0 40px ${hex}20, 0 0 80px ${hex}10, 0 20px 60px rgba(0,0,0,0.5)`,
-                        }}
+                    {/* Floating Glow BGs */}
+                    <div className="absolute pointer-events-none w-full h-full overflow-hidden">
+                        <motion.div
+                            animate={{
+                                scale: [1, 1.2, 1],
+                                opacity: [0.3, 0.5, 0.3],
+                            }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-1/4 -left-1/4 w-[80vw] h-[80vw] rounded-full blur-[120px]"
+                            style={{ background: `${hex}20` }}
+                        />
+                        <motion.div
+                            animate={{
+                                scale: [1.2, 1, 1.2],
+                                opacity: [0.2, 0.4, 0.2],
+                            }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute bottom-1/4 -right-1/4 w-[70vw] h-[70vw] rounded-full blur-[100px]"
+                            style={{ background: `${hex}15` }}
+                        />
+                    </div>
+
+                    {/* Card Container */}
+                    <motion.div
+                        key="card"
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="relative w-full max-w-md bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/10"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ perspective: '1000px' }}
                     >
-                        {/* Shimmer sweep overlay */}
-                        {phase === 'reveal' && (
-                            <div
-                                className="absolute inset-0 z-50 pointer-events-none overflow-hidden rounded-3xl"
-                                style={{ opacity: 0.4 }}
-                            >
-                                <div
-                                    style={{
-                                        position: 'absolute', top: '-50%', left: '-50%',
-                                        width: '50%', height: '200%',
-                                        background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)',
-                                        animation: 'sdm-shimmer 3s ease-in-out 0.5s infinite',
-                                    }}
-                                />
-                            </div>
-                        )}
-
-                        {/* "추천" Badge */}
-                        {phase === 'reveal' && (
-                            <div className="sdm-content-reveal absolute top-4 right-14 z-30 flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg shadow-amber-500/30">
-                                <Sparkles className="w-3 h-3 text-white" />
-                                <span className="text-[10px] font-extrabold text-white tracking-wider">추천</span>
-                            </div>
-                        )}
-
-                        {/* Hero Image */}
-                        {imgSrc && (
-                            <div className="relative h-56 sm:h-72 overflow-hidden">
-                                <img
-                                    src={imgSrc}
-                                    alt={p.title}
-                                    className="w-full h-full object-cover"
-                                    referrerPolicy="no-referrer"
-                                    onError={() => {
-                                        if (fallbackImg && imgSrc !== fallbackImg && imgSrc !== getOptimizedUrl(fallbackImg)) {
-                                            setImgSrc(getOptimizedUrl(fallbackImg));
-                                        } else {
-                                            setImgSrc('');
-                                        }
-                                    }}
-                                />
-                                {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
-
-                                {/* Genre badge */}
-                                <div className="absolute top-4 left-4 flex gap-2 z-20">
-                                    <span className={`px-3 py-1 rounded-full text-xs font-extrabold text-white ${genreStyle.twBg} shadow-lg`}>
-                                        {genreLabel}
-                                    </span>
-                                    {p.subGenre && p.subGenre !== genreLabel && (
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold text-white/90 bg-white/20 backdrop-blur-sm">
-                                            {p.subGenre}
-                                        </span>
-                                    )}
-                                </div>
-
-                                {/* Close button */}
-                                <button
-                                    onClick={onClose}
-                                    className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white transition-colors"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
-
-                                {/* Title overlay */}
-                                <div className="absolute bottom-4 left-5 right-5 z-10">
-                                    <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight drop-shadow-lg line-clamp-2">
-                                        {p.title}
-                                    </h2>
-                                    <div className="flex flex-wrap gap-2 mt-2">
-                                        {p.ageRating && (
-                                            <span className="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md text-[10px] font-bold text-white/80 border border-white/20">
-                                                {p.ageRating}
-                                            </span>
-                                        )}
-                                        {p.originalTitle && (
-                                            <p className="text-sm text-white/60 font-medium">{p.originalTitle}</p>
-                                        )}
-                                    </div>
-                                </div>
-
-                                {/* Sports VS Overlay */}
-                                {isSports && hasTeams && (
-                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-6 items-center z-20 pointer-events-none drop-shadow-2xl">
-                                        <img
-                                            src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
-                                            alt={p.homeTeam}
-                                            className="w-[30%] max-w-[120px] aspect-square object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
-                                        />
-                                        <div className="text-white text-3xl font-black italic bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/30 shadow-2xl">VS</div>
-                                        <img
-                                            src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
-                                            alt={p.awayTeam}
-                                            className="w-[30%] max-w-[120px] aspect-square object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        {/* Content — staggered reveal */}
-                        <div
-                            className={phase === 'reveal' ? 'sdm-content-reveal' : 'opacity-0'}
-                            style={{ transition: 'opacity 0.3s' }}
+                        {/* Close button - Absolute */}
+                        <button
+                            onClick={onClose}
+                            className="absolute top-4 right-4 z-[60] p-2.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white/80 hover:text-white transition-all active:scale-95 border border-white/10"
                         >
-                            <div className="p-5 overflow-y-auto" style={{ maxHeight: imgSrc ? 'calc(90vh - 18rem)' : '80vh' }}>
-                                {/* No image - show title here */}
-                                {!imgSrc && (
-                                    <div className="mb-4">
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <span className={`px-3 py-1 rounded-full text-xs font-extrabold text-white ${genreStyle.twBg}`}>
-                                                {genreLabel}
-                                            </span>
-                                            <button onClick={onClose} className="ml-auto p-1.5 rounded-full hover:bg-gray-800 text-gray-400 hover:text-white transition">
-                                                <X className="w-5 h-5" />
-                                            </button>
-                                        </div>
-                                        <h2 className="text-2xl font-black text-white">{p.title}</h2>
-                                    </div>
-                                )}
+                            <X className="w-5 h-5" />
+                        </button>
 
-                                {/* Price Section */}
-                                {p.price && (
-                                    <div className="mb-5 p-4 rounded-2xl bg-gradient-to-r from-gray-800/80 to-gray-800/40 border border-gray-700/50">
-                                        <div className="flex items-end gap-3">
-                                            <Ticket className="w-5 h-5 text-gray-400 shrink-0 mb-0.5" />
-                                            <div>
-                                                {hasDiscount && (
-                                                    <div className="flex items-center gap-2 mb-1">
-                                                        <span className="text-sm text-gray-500 line-through">{p.originalPrice}</span>
-                                                        <span className="px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-xs font-extrabold">{p.discount}</span>
-                                                    </div>
-                                                )}
-                                                <span className="text-xl font-black text-white">{p.price}</span>
+                        <div className="overflow-y-auto overflow-x-hidden max-h-[85vh] scrollbar-hide">
+                            {/* Hero Image Section */}
+                            {imgSrc && (
+                                <div className="relative h-64 sm:h-80 w-full">
+                                    <motion.img
+                                        initial={{ scale: 1.1 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                        src={imgSrc}
+                                        alt={p.title}
+                                        className="w-full h-full object-cover"
+                                        referrerPolicy="no-referrer"
+                                        onError={() => {
+                                            if (fallbackImg && imgSrc !== fallbackImg && imgSrc !== getOptimizedUrl(fallbackImg)) {
+                                                setImgSrc(getOptimizedUrl(fallbackImg));
+                                            } else {
+                                                setImgSrc('');
+                                            }
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
+
+                                    {/* Genre badge */}
+                                    <div className="absolute top-5 left-5 flex gap-2 z-20">
+                                        <span className={`px-4 py-1.5 rounded-full text-[11px] font-black text-white ${genreStyle.twBg} shadow-lg tracking-wider uppercase`}>
+                                            {genreLabel}
+                                        </span>
+                                    </div>
+
+                                    {/* Recommended Badge */}
+                                    <div className="absolute top-5 right-16 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 shadow-xl border border-white/20">
+                                        <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
+                                        <span className="text-[10px] font-black text-white tracking-widest">BEST</span>
+                                    </div>
+
+                                    {/* Sports VS Overlay */}
+                                    {isSports && hasTeams && (
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none px-8">
+                                            <div className="flex justify-between items-center w-full gap-4">
+                                                <motion.img
+                                                    initial={{ x: -20, opacity: 0 }}
+                                                    animate={{ x: 0, opacity: 1 }}
+                                                    transition={{ delay: 0.4 }}
+                                                    src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
+                                                    alt={p.homeTeam}
+                                                    className="w-1/3 aspect-square object-contain drop-shadow-[0_8px_24px_rgba(255,255,255,0.4)]"
+                                                />
+                                                <div className="text-white text-2xl font-black italic bg-black/60 px-4 py-1 rounded-full backdrop-blur-xl border border-white/20 shadow-2xl skew-x-[-10deg]">VS</div>
+                                                <motion.img
+                                                    initial={{ x: 20, opacity: 0 }}
+                                                    animate={{ x: 0, opacity: 1 }}
+                                                    transition={{ delay: 0.4 }}
+                                                    src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
+                                                    alt={p.awayTeam}
+                                                    className="w-1/3 aspect-square object-contain drop-shadow-[0_8px_24px_rgba(255,255,255,0.4)]"
+                                                />
                                             </div>
                                         </div>
-                                    </div>
-                                )}
-
-
-
-                                {/* Info Grid */}
-                                <div className="space-y-3 mb-5">
-                                    {p.venue && (
-                                        <div className="flex items-start gap-3">
-                                            <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{p.venue}</span>
-                                        </div>
-                                    )}
-                                    {p.date && (
-                                        <div className="flex items-start gap-3">
-                                            <Calendar className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{formatUnifiedDate(p.date)}</span>
-                                        </div>
-                                    )}
-                                    {p.runningTime && (
-                                        <div className="flex items-start gap-3">
-                                            <Clock className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{p.runningTime}</span>
-                                        </div>
-                                    )}
-                                    {p.productionCountry && (
-                                        <div className="flex items-start gap-3">
-                                            <Tag className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" />
-                                            <span className="text-sm text-gray-300">{p.productionCountry}</span>
-                                        </div>
                                     )}
                                 </div>
+                            )}
+
+                            {/* Main Content */}
+                            <div className="p-7 pt-5 space-y-6">
+                                <motion.div variants={itemVariants}>
+                                    <h2 className="text-2xl sm:text-3xl font-black text-white leading-[1.2] tracking-tight mb-2">
+                                        {p.title}
+                                    </h2>
+                                    {p.originalTitle && (
+                                        <p className="text-sm text-gray-500 font-medium italic">{p.originalTitle}</p>
+                                    )}
+                                </motion.div>
+
+                                {/* Price / Ticket */}
+                                {p.price && (
+                                    <motion.div variants={itemVariants} className="p-5 rounded-3xl bg-white/[0.03] border border-white/5 shadow-inner">
+                                        <div className="flex items-center gap-4">
+                                            <div className={`p-3 rounded-2xl ${genreStyle.twBg} bg-opacity-20`}>
+                                                <Ticket className={`w-6 h-6 ${genreStyle.twText}`} />
+                                            </div>
+                                            <div>
+                                                {hasDiscount && (
+                                                    <div className="flex items-center gap-2 mb-0.5">
+                                                        <span className="text-xs text-gray-500 line-through decoration-gray-600 font-medium">{p.originalPrice}</span>
+                                                        <span className="px-1.5 py-0.5 rounded bg-red-500/10 text-red-500 text-[10px] font-black">{p.discount}</span>
+                                                    </div>
+                                                )}
+                                                <span className="text-2xl font-black text-white tracking-tight">{p.price}</span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
+
+                                {/* Info Grid */}
+                                <motion.div variants={itemVariants} className="grid grid-cols-1 gap-4">
+                                    {[
+                                        { icon: MapPin, text: p.venue, color: 'text-emerald-400' },
+                                        { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-400' },
+                                        { icon: Clock, text: p.runningTime, color: 'text-amber-400' },
+                                        { icon: Tag, text: p.productionCountry, color: 'text-purple-400' }
+                                    ].filter(item => item.text).map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-3.5">
+                                            <div className="bg-white/5 p-2 rounded-xl border border-white/5">
+                                                <item.icon className={`w-4 h-4 ${item.color}`} />
+                                            </div>
+                                            <span className="text-sm text-gray-300 font-medium opacity-90">{item.text}</span>
+                                        </div>
+                                    ))}
+                                </motion.div>
 
                                 {/* Cast & Director */}
                                 {(p.director || hasCast) && (
-                                    <div className="mb-5 p-4 rounded-2xl bg-gray-800/50 border border-gray-700/30">
+                                    <motion.div variants={itemVariants} className="p-5 rounded-3xl bg-gray-800/20 border border-white/5 space-y-3">
                                         {p.director && (
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <Star className="w-4 h-4 text-yellow-500" />
-                                                <span className="text-xs text-gray-400 font-bold">감독</span>
-                                                <span className="text-sm text-white font-semibold">{p.director}</span>
+                                            <div className="flex items-center gap-3">
+                                                <Star className="w-4 h-4 text-amber-500 shrink-0" />
+                                                <span className="text-xs text-gray-400 font-black tracking-widest shrink-0 uppercase">Director</span>
+                                                <span className="text-sm text-white font-bold">{p.director}</span>
                                             </div>
                                         )}
                                         {hasCast && (
-                                            <div className="flex items-start gap-2">
-                                                <Users className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                                                <span className="text-xs text-gray-400 font-bold shrink-0 mt-0.5">출연</span>
-                                                <div className="flex flex-wrap gap-x-2 gap-y-1">
+                                            <div className="flex items-start gap-3">
+                                                <Users className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                                                <span className="text-xs text-gray-400 font-black tracking-widest shrink-0 mt-0.5 uppercase">Cast</span>
+                                                <div className="flex flex-wrap gap-x-2 gap-y-1.5 pt-px">
                                                     {castNames.map((name, idx) => (
                                                         <a
                                                             key={idx}
                                                             href={`https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-sm text-gray-300 hover:text-white hover:underline transition-colors"
+                                                            className="text-sm text-gray-300 hover:text-white underline underline-offset-4 decoration-white/20 transition-all font-medium"
                                                         >
                                                             {name}{idx < castNames.length - 1 ? ',' : ''}
                                                         </a>
@@ -392,50 +284,45 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                                 </div>
                                             </div>
                                         )}
-                                    </div>
+                                    </motion.div>
                                 )}
 
                                 {/* Description */}
                                 {p.description && (
-                                    <p className="text-sm text-gray-400 leading-relaxed mb-5 line-clamp-4">{p.description}</p>
+                                    <motion.p variants={itemVariants} className="text-sm text-gray-400 leading-relaxed line-clamp-4 font-medium italic opacity-80">
+                                        "{p.description}"
+                                    </motion.p>
                                 )}
 
-                                {/* Action Buttons */}
-                                <div className="flex gap-3 pt-2">
-                                    <a
+                                {/* Sticky-like Action Footer inside Modal */}
+                                <motion.div variants={itemVariants} className="flex gap-3 pt-4">
+                                    <motion.a
+                                        whileHover={{ scale: 1.02, filter: 'brightness(1.1)' }}
+                                        whileTap={{ scale: 0.98 }}
                                         href={p.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-white font-extrabold text-sm ${genreStyle.twBg} hover:opacity-90 transition-all shadow-lg relative overflow-hidden`}
-                                        style={{ boxShadow: `0 4px 24px ${hex}50` }}
+                                        className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 rounded-2xl text-white font-black text-sm ${genreStyle.twBg} shadow-[0_8px_20px_-4px_rgba(0,0,0,0.4)] relative overflow-hidden`}
+                                        style={{ boxShadow: `0 12px 30px -10px ${hex}60` }}
                                     >
-                                        {/* Button shimmer */}
-                                        <div className="absolute inset-0 overflow-hidden">
-                                            <div
-                                                style={{
-                                                    position: 'absolute', top: '-50%', left: '-50%',
-                                                    width: '40%', height: '200%',
-                                                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
-                                                    animation: 'sdm-shimmer 2.5s ease-in-out 1.5s infinite',
-                                                }}
-                                            />
-                                        </div>
-                                        <ExternalLink className="w-4 h-4 relative z-10" />
-                                        <span className="relative z-10">자세히 보기</span>
-                                    </a>
-                                    <button
+                                        <ExternalLink className="w-4 h-4" />
+                                        <span>예매 및 상세보기</span>
+                                    </motion.a>
+                                    <motion.button
+                                        whileHover={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
+                                        whileTap={{ scale: 0.95 }}
                                         onClick={handleShare}
-                                        className="px-4 py-3.5 rounded-2xl bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors border border-gray-700"
+                                        className="px-5 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all border border-white/10"
                                         title="링크 복사"
                                     >
-                                        <Share2 className="w-4 h-4" />
-                                    </button>
-                                </div>
+                                        <Share2 className="w-5 h-5" />
+                                    </motion.button>
+                                </motion.div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </motion.div>
+                </motion.div>
+            </AnimatePresence>
         </Portal>
     );
 }

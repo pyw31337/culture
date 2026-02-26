@@ -275,10 +275,11 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
         };
 
-        // Delay slightly to prioritize rendering
+        // Delay slightly to prioritize rendering, but if it's a deep link, we might want it faster
+        const isDeepLink = typeof window !== 'undefined' && window.location.hash.startsWith('#p=');
         const timer = setTimeout(() => {
             loadAllData();
-        }, 500);
+        }, isDeepLink ? 0 : 500);
         return () => clearTimeout(timer);
     }, []);
 
@@ -589,7 +590,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
     const deepLinkHandled = useRef(false);
     useEffect(() => {
-        if (deepLinkHandled.current || !isDataFullyLoaded || allPerformances.length === 0) return;
+        if (deepLinkHandled.current || allPerformances.length === 0) return;
         const hash = window.location.hash;
         if (!hash.startsWith('#p=')) return;
 
@@ -644,7 +645,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     };
 
     const copyItemShareUrl = async (id: string) => {
-        const url = `${window.location.origin}${window.location.pathname}#p=${id}`;
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const url = `${window.location.origin}${basePath}/p/${id}/`;
         await navigator.clipboard.writeText(url);
         alert('링크가 복사되었습니다.');
         return true;

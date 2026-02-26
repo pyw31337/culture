@@ -20,6 +20,7 @@ async function checkMissing() {
         const vInfo = venues[d.venue];
         if (!vInfo) return true;
         if (!vInfo.lat || !vInfo.lng) return true;
+        if (!vInfo.address || vInfo.address === '정보 없음' || vInfo.address.includes('서울특별시 송파구')) return true; // 송파구 is often a partial address fallback
         return false;
     });
 
@@ -35,16 +36,25 @@ async function checkMissing() {
     const missingVenues = new Set(missingCoords.map((d: any) => d.venue).filter(Boolean));
     console.log(`\nUnique venues missing coordinates: ${missingVenues.size}`);
 
-    // Output top 30 missing venues
     const venueCounts = missingCoords.reduce((acc: any, d: any) => {
         const v = d.venue || 'No Venue Listed';
         acc[v] = (acc[v] || 0) + 1;
         return acc;
     }, {});
 
-    const sortedVenues = Object.entries(venueCounts).sort((a: any, b: any) => b[1] - a[1]).slice(0, 30);
-    console.log('\nTop missing venues:');
-    sortedVenues.forEach(([v, c]) => console.log(`- ${v}: ${c} items`));
+    const sortedVenues = Object.entries(venueCounts).sort((a: any, b: any) => b[1] - a[1]);
+
+    const reportData = sortedVenues.map(([venue, count]) => ({
+        venue,
+        count
+    }));
+
+    fs.writeFileSync(path.resolve(process.cwd(), 'missing_venues_report.json'), JSON.stringify(reportData, null, 2));
+
+    console.log(`Total non-media items: ${nonMedia.length}`);
+    console.log(`Items missing coordinates: ${missingCoords.length}`);
+    console.log(`Unique venues missing coordinates: ${missingVenues.size}`);
+    console.log(`Report written to missing_venues_report.json`);
 }
 
 checkMissing();

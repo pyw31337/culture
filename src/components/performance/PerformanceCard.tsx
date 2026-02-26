@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useEffect } from 'react'; // Verified: Naver Link Enforced
+import React, { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react'; // Verified: Naver Link Enforced
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
@@ -27,7 +27,7 @@ interface PerformanceCardProps {
 }
 
 // Helper for Highlighting
-const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) => {
+const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string }) => {
     if (!keyword || !text) return <>{text}</>;
     // Escape special regex chars if needed, but for simple keywords:
     const regex = new RegExp(`(${keyword})`, 'gi');
@@ -39,35 +39,30 @@ const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) =>
             )}
         </>
     );
-};
+});
 
-export default function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
+HighlightText.displayName = 'HighlightText';
+
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false); // For Mobile Touch
 
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
-    // D-Day Calculation Helper
-    const getDDay = (dateStr: string) => {
-        if (!dateStr) return null;
+    const dDay = useMemo(() => {
+        if (perf.genre !== 'movie' || !perf.date) return null;
         try {
-            // Standardize YYYY-MM-DD or YYYY.MM.DD
-            const cleanDate = dateStr.replace(/\./g, '-').split('~')[0].trim();
+            const cleanDate = perf.date.replace(/\./g, '-').split('~')[0].trim();
             const target = new Date(cleanDate);
             const now = new Date();
-
-            // Reset hours to compare dates only
             target.setHours(0, 0, 0, 0);
             now.setHours(0, 0, 0, 0);
-
             const diffTime = target.getTime() - now.getTime();
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
             if (diffDays === 0) return 'D-Day';
             if (diffDays > 0) return `D-${diffDays}`;
             if (diffDays < 0) {
-                // If more than 100 days have passed (D+100), hide the badge
                 if (diffDays < -100) return null;
                 return `D+${Math.abs(diffDays)}`;
             }
@@ -75,19 +70,16 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         } catch (e) {
             return null;
         }
-    };
+    }, [perf.date, perf.genre]);
 
-    const dDay = perf.genre === 'movie' ? getDDay(perf.date) : null;
-
-    const handleMouseEnter = () => {
+    const handleMouseEnter = useCallback(() => {
         if (!cardRef.current) return;
         cardRef.current.style.transition = 'none';
-    };
+    }, []);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
 
-        // Disable transition during movement for instant response
         cardRef.current.style.transition = 'none';
 
         const rect = cardRef.current.getBoundingClientRect();
@@ -103,17 +95,15 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
         glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
-    };
+    }, []);
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         if (!cardRef.current || !glareRef.current) return;
 
-        // Enable transition for smooth reset
         cardRef.current.style.transition = 'transform 0.3s ease-out';
-
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
-    };
+    }, []);
 
     const handleCardClick = (e: React.MouseEvent) => {
         if (onDetail) {
@@ -125,7 +115,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         }
     }
 
-    // Global listener to close actions on outside click (Mobile)
     useEffect(() => {
         if (!showActions) return;
         const handleGlobalClick = (e: any) => {
@@ -139,8 +128,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
-    // Calculate if there are details other than price/discount to manage borders
-    const hasOtherDetails = !!(
+    const hasOtherDetails = useMemo(() => !!(
         (perf.originalTitle && perf.originalTitle !== perf.title) ||
         perf.productionCountry ||
         perf.productionYear ||
@@ -150,7 +138,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         perf.director ||
         ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
         (perf.platforms && perf.platforms.length > 0)
-    );
+    ), [perf.originalTitle, perf.title, perf.productionCountry, perf.productionYear, perf.subGenre, perf.runningTime, perf.ageRating, perf.genre, perf.director, perf.castWithLinks, perf.cast, perf.platforms]);
 
     return (
         <div
@@ -159,7 +147,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            {/* New Gold Shimmer Wrapper Structure */}
             <div
                 ref={cardRef}
                 className={
@@ -180,8 +167,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                     )
                 }
                 style={{ transformStyle: 'preserve-3d' }}
+                onClick={handleCardClick}
             >
-                {/* Glare Effect */}
                 <div
                     ref={glareRef}
                     className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200 rounded-xl"
@@ -191,12 +178,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                     }}
                 />
 
-                {/* Shimmer Border (Default Only) */}
                 {variant === 'default' && (
                     <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
                 )}
 
-                {/* Main Card Content */}
                 <div className={clsx(
                     "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
                     isGradient
@@ -205,10 +190,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                             : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
                         : "bg-gray-900"
                 )}
-                    style={{ transform: 'translateZ(0)' }} // Force stacking context for Safari overflow fix
+                    style={{ transform: 'translateZ(0)' }}
                 >
 
-                    {/* 🎗️ Recommended Ribbon (Only if showRibbon is true) */}
                     {
                         showRibbon && (
                             <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
@@ -222,8 +206,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         )
                     }
 
-
-                    {/* Like Button (Heart) */}
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
@@ -242,7 +224,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         />
                     </button>
 
-                    {/* Neon Stroke Effect (Border Gradient) */}
                     {
                         variant !== 'yellow' && variant !== 'pink' && (
                             <div className={clsx(
@@ -254,7 +235,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         )
                     }
 
-                    {/* Glare Effect 2 */}
                     <div
                         ref={glareRef}
                         className={clsx(
@@ -266,15 +246,9 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                         style={{ left: '-25%', top: '-25%' }}
                     />
 
-                    {/* ========================================================= */}
-                    {/*             VARIANT LOGIC: Interest vs Default            */}
-                    {/* ========================================================= */}
-
                     {
                         isInterestVariant ? (
-                            /* --- VARIANT: INTEREST (Yellow/Pink/Emerald) --- */
                             <>
-                                {/* Image Section (Top, Aspect 3/4) */}
                                 <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                     <div className="absolute inset-0 z-0">
                                         <ImageWithFallback
@@ -290,7 +264,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
                                     </div>
-                                    {/* Badge */}
                                     <div
                                         className={clsx(
                                             "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
@@ -306,7 +279,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
                                     </div>
 
-                                    {/* Action Buttons (Slide Up inside Image) */}
                                     {enableActions && (
                                         <div className={clsx(
                                             "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between transition-transform duration-300 ease-out",
@@ -359,13 +331,11 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     )}
                                 </div>
 
-                                {/* Content Section (Bottom, Yellow/Pink/Emerald) */}
                                 <div className={clsx(
                                     "relative flex-1 sm:transform-style-3d overflow-hidden p-4 flex flex-col min-h-0",
                                     variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500"
                                 )} style={{ transform: 'translateZ(10px)' }}>
 
-                                    {/* Text Content Area */}
                                     <button
                                         className="block group/link relative z-[100] text-left w-full"
                                         onClick={(e) => {
@@ -412,7 +382,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                             <span className="truncate"><HighlightText text={perf.venue} keyword={searchText} /></span>
                                         </button>
                                     )}
-                                    {/* Price Section (Unified Style) */}
                                     <div className="mt-auto mb-2 w-full">
                                         {(perf.price || perf.discount) && (
                                             <div className="flex justify-between items-end w-full border-t border-black/10 pt-2">
@@ -458,7 +427,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 </div>
                             </>
                         ) : (
-                            /* --- VARIANT: DEFAULT (Spotlight/Standard) --- */
                             <div className="relative h-full w-full">
                                 <ImageWithFallback
                                     src={perf.image || perf.poster}
@@ -473,7 +441,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
 
-                                {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
                                 {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
                                         <img
@@ -490,7 +457,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     </div>
                                 )}
 
-                                {/* Distance Badge or Hot Deal Badge (Top Left) */}
                                 {distLabel ? (
                                     <div
                                         className="absolute top-2 left-2 z-40 bg-emerald-600/90 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-xs font-extrabold shadow-lg flex items-center gap-1 backdrop-blur-sm"
@@ -511,13 +477,10 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                     )}
                                     style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
                                 >
-                                    {/* Text Content */}
                                     <div className="relative z-20 w-full">
-                                        {/* Gradient Background - moves with text */}
                                         <div className="absolute inset-0 -top-24 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
 
                                         <div className="relative z-10 p-4 pb-4">
-                                            {/* Tags/Badges */}
                                             <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                                 <span className={clsx(
                                                     "px-3 py-1 rounded-full text-xs font-extrabold backdrop-blur-md border shadow-sm transition-all text-white",
@@ -526,7 +489,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                     {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                                 </span>
 
-                                                {/* D-Day Badge (Movie Only) - Style Updated */}
                                                 {dDay && (
                                                     <span className="px-2 rounded-full text-[10px] font-extrabold backdrop-blur-md border border-white/30 text-white bg-transparent flex items-center justify-center h-[24px]">
                                                         {dDay}
@@ -538,7 +500,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         {perf.genre !== 'movie' && <Calendar className="w-3.5 h-3.5" />}
                                                         {(() => {
                                                             let dateStr = formatUnifiedDate(perf.date);
-                                                            // Keep the ~ logic for ranged dates just in case, but formatUnifiedDate mostly handles this now
                                                             if (dateStr.startsWith('~')) {
                                                                 return dateStr;
                                                             }
@@ -548,17 +509,12 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 )}
                                             </div>
 
-                                            {/* Title */}
-                                            {/* Title (Link Removed per request) */}
                                             <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
                                                 <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
                                                     <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                                                 </h3>
                                             </div>
 
-                                            {/* Platforms Text */}
-
-                                            {/* Venue/Grade Info - Hide for non-movie/ott when no detail info */}
                                             {(perf.genre === 'movie' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
                                                 <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-semibold">
                                                     {perf.genre === 'movie' ? (
@@ -593,10 +549,8 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                 </div>
                                             )}
 
-                                            {/* Movie/Performance Info (Director/Cast/Runtime/Price/Age) */}
                                             {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
                                                 <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5 font-semibold", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
-                                                    {/* Country / Year / SubGenre */}
                                                     {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                                         <div className="flex flex-col gap-0.5 text-gray-500 text-xs">
                                                             {perf.subGenre && (
@@ -620,7 +574,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Runtime */}
                                                     {perf.runningTime && (
                                                         <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
                                                             <div>
@@ -630,7 +583,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Age Rating (For non-Movie/OTT which show it in header) */}
                                                     {perf.ageRating && !['movie'].includes(perf.genre) && (
                                                         <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
                                                             <div>
@@ -640,7 +592,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Director */}
                                                     {(perf.director) && (
                                                         <div className="flex items-start gap-1">
                                                             <span className="text-gray-500 min-w-[24px]">감독</span>
@@ -663,7 +614,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Cast */}
                                                     {((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) && (
                                                         <div className="flex items-start gap-1">
                                                             <span className="text-gray-500 min-w-[24px]">출연</span>
@@ -692,7 +642,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                                         </div>
                                                     )}
 
-                                                    {/* Price & Discount (Unified Style) */}
                                                     {(perf.price || perf.discount) && (
                                                         <div className={clsx("flex justify-between items-end mt-2 w-full pt-2", (hasOtherDetails || perf.genre === 'travel') ? "border-t border-white/10" : "")}>
                                                             <div className="flex flex-col justify-end leading-none">
@@ -730,7 +679,6 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
                                         </div>
                                     </div>
 
-                                    {/* Actions Area (Height approx 82px) */}
                                     {enableActions && (
                                         <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between">
                                             <button
@@ -783,3 +731,7 @@ export default function PerformanceCard({ perf, distLabel, venueInfo, onLocation
         </div >
     );
 }
+
+PerformanceCard.displayName = 'PerformanceCard';
+
+export default memo(PerformanceCard);

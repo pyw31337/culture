@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -22,7 +22,7 @@ interface PerformanceListItemProps {
 }
 
 // Helper for Highlighting
-const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) => {
+const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string }) => {
     if (!keyword || !text) return <>{text}</>;
     const regex = new RegExp(`(${keyword})`, 'gi');
     const parts = text.split(regex);
@@ -33,62 +33,84 @@ const HighlightText = ({ text, keyword }: { text: string, keyword?: string }) =>
             )}
         </>
     );
-};
+});
 
-export default function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
-    const genreStyle = GENRE_STYLES[perf.genre] || {};
+HighlightText.displayName = 'HighlightText';
+
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
+    const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
-    // Tilt handlers (same as PerformanceCard)
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Tilt handlers
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
         const rect = cardRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -5; // Less tilt for horizontal card
+        const rotateX = ((y - centerY) / centerY) * -5;
         const rotateY = ((x - centerX) / centerX) * 5;
         cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
         glareRef.current.style.transform = `translateX(${(x - centerX) / 3}px) translateY(${(y - centerY) / 3}px)`;
         glareRef.current.style.opacity = '1';
-    };
+    }, []);
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         if (!cardRef.current || !glareRef.current) return;
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
-    };
+    }, []);
 
-    const handleTouchStart = () => {
+    const handleTouchStart = useCallback(() => {
         if (!cardRef.current) return;
         cardRef.current.style.transform = `perspective(1000px) rotateX(3deg) scale3d(0.99, 0.99, 0.99)`;
-    };
+    }, []);
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = useCallback(() => {
         if (!cardRef.current) return;
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
-    };
+    }, []);
 
-    // Variant styles for outer card border/shadow
-    const outerVariantStyle = variant === 'emerald'
+    // Variant styles
+    const outerVariantStyle = useMemo(() => variant === 'emerald'
         ? "border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
         : variant === 'pink'
             ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
             : variant === 'yellow'
                 ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl light:shadow-none light:hover:shadow-none bg-gray-900 light:bg-white";
+                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl light:shadow-none light:hover:shadow-none bg-gray-900 light:bg-white", [variant]);
 
-    // Content background for colored variants
-    const contentBgStyle = variant === 'emerald'
+    const contentBgStyle = useMemo(() => variant === 'emerald'
         ? "bg-emerald-950/40"
         : variant === 'pink'
             ? "bg-pink-950/40"
             : variant === 'yellow'
                 ? "bg-yellow-950 light:bg-yellow-100"
-                : ""; // Default: transparent (no bg class)
+                : "", [variant]);
+
+    const handleShareClick = useCallback(async (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (onShare) {
+            const usedClipboard = await onShare();
+            if (usedClipboard) {
+                setIsCopied(true);
+                setTimeout(() => setIsCopied(false), 2000);
+            }
+        }
+    }, [onShare]);
+
+    const handleLocationClick = useCallback((e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
+    }, [venueInfo, onLocationClick, perf.venue]);
+
+    const handleDetailClick = useCallback((e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (onDetail) onDetail();
+    }, [onDetail]);
 
     return (
         <div
@@ -97,19 +119,19 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            onClick={onDetail}
         >
             <div
                 ref={cardRef}
                 className={clsx(
-                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border backface-hidden",
+                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border backface-hidden h-full",
                     outerVariantStyle
                 )}
                 style={{
                     transformStyle: 'preserve-3d',
-                    WebkitMaskImage: '-webkit-radial-gradient(white, black)', // Force proper clipping on Safari/Chrome
+                    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
                 }}
             >
-                {/* Glare Effect */}
                 <div
                     ref={glareRef}
                     className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200"
@@ -119,8 +141,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                     }}
                 />
 
-                {/* Image (Left) */}
-                <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0">
+                <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0 h-full">
                     <ImageWithFallback
                         src={perf.image || perf.poster}
                         backupSrc={perf.backupPoster}
@@ -134,7 +155,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
-                    {/* Sports Team Logos Overlay (List View) */}
                     {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-20 pointer-events-none">
                             <img
@@ -151,16 +171,12 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         </div>
                     )}
 
-                    {/* Distance Badge on Image */}
                     {distLabel && (
                         <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md z-[60]">
                             {distLabel}
                         </div>
                     )}
 
-
-
-                    {/* Like Button (on Image) */}
                     <button
                         onClick={onToggleLike}
                         className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
@@ -174,18 +190,8 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             )}
                         />
                     </button>
-                    {/* Share Button (Bottom Left on Image) */}
                     <button
-                        onClick={async (e) => {
-                            e.stopPropagation();
-                            if (onShare) {
-                                const usedClipboard = await onShare();
-                                if (usedClipboard) {
-                                    setIsCopied(true);
-                                    setTimeout(() => setIsCopied(false), 2000);
-                                }
-                            }
-                        }}
+                        onClick={handleShareClick}
                         className="absolute bottom-1 left-1 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors z-[60] flex items-center justify-center group/share"
                     >
                         {isCopied ? (
@@ -195,7 +201,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         )}
                     </button>
 
-                    {/* Copied Toast for List Item */}
                     <AnimatePresence>
                         {isCopied && (
                             <motion.div
@@ -210,13 +215,10 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                     </AnimatePresence>
                 </div>
 
-                {/* Content (Right) - Apply variant background here */}
                 <div className={clsx(
                     "flex-1 p-3 sm:p-5 flex flex-col justify-between relative min-w-0",
                     contentBgStyle
                 )}>
-
-                    {/* Header: Badges & Title */}
                     <div className="flex flex-col gap-1">
                         <div className="flex flex-wrap gap-2 mb-1 items-center">
                             <span className={clsx(
@@ -226,7 +228,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                             </span>
 
-                            {/* Date - Condensed */}
                             <span className={clsx(
                                 "text-[10px] sm:text-xs flex items-center gap-1 ml-auto sm:ml-0",
                                 variant === 'yellow' ? "text-gray-400 light:text-black light:font-extrabold" : "text-gray-400 light:text-black"
@@ -238,7 +239,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
 
                         <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className={clsx(
-                                "text-lg sm:text-xl font-extrabold leading-tight mb-1 transition-colors line-clamp-5",
+                                "text-lg sm:text-xl font-extrabold leading-tight mb-1 transition-colors line-clamp-2",
                                 searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",
                                 variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
@@ -247,8 +248,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                         </a>
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
-
-
                             {perf.genre === 'movie' ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
@@ -262,7 +261,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 </div>
                             ) : perf.genre === 'travel' ? (
                                 <div className="text-gray-400 light:text-black text-xs flex flex-col gap-0.5 mb-2 truncate">
-                                    {/* Agent */}
                                     <div className="flex items-center gap-1 font-extrabold text-sky-400">
                                         <Plane className="w-3 h-3" />
                                         {perf.venue.split('|')[0]?.trim()}
@@ -270,10 +268,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                 </div>
                             ) : (
                                 <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                    }}
+                                    onClick={handleLocationClick}
                                     className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
@@ -282,20 +277,13 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             )}
                         </div>
 
-                        {/* Movie & OTT Metadata (Cast, Director, Info) */}
-                        {/* Movie Metadata (Cast, Director, Info) */}
                         {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
                             <div className="mt-2 text-xs text-gray-400 light:text-gray-900 space-y-0.5 border-t border-white/10 light:border-black/10 pt-2">
-                                {/* OTT Specific: Original Title */}
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
                                 )}
-                                {/* Detailed Metadata (Synced with Card) */}
                                 {(perf.subGenre || perf.director || perf.cast) && (
                                     <div className="mt-2 space-y-1 text-xs text-gray-400">
-
-                                        {/* Country / Year / SubGenre */}
-                                        {/* Country / Year / SubGenre */}
                                         {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 {perf.subGenre && (
@@ -319,7 +307,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             </div>
                                         )}
 
-                                        {/* Director */}
                                         {perf.director && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">감독</span>
@@ -342,7 +329,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                             </div>
                                         )}
 
-                                        {/* Cast */}
                                         {((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) && (
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">출연</span>
@@ -350,9 +336,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                     {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
                                                         const isObj = typeof c === 'object' && c !== null;
                                                         const name = isObj ? c.name : c;
-                                                        // Always force Naver search
                                                         const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name.replace('더보기', '').trim())}`;
-
                                                         return (
                                                             <span key={i}>
                                                                 <a
@@ -374,7 +358,6 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                     </div>
                                 )}
 
-                                {/* Interpark Scraped Details: Time / Age / Info */}
                                 {(perf.runningTime || perf.ageRating || perf.price) && (
                                     <div className="text-gray-400 light:text-gray-900 mt-1.5 space-y-1">
                                         {perf.runningTime && (
@@ -385,21 +368,11 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                                                 </div>
                                             </div>
                                         )}
-
                                     </div>
                                 )}
-
-
-                                {perf.cast && perf.cast.length > 0 && (
-                                    <div className="flex gap-2 items-start hidden"> {/* Duplicate Hidden */} </div>
-                                )}
-
-
-                                {/* Info */}
                             </div>
                         )}
 
-                        {/* Price & Discount info for List View */}
                         {(perf.price || perf.discount) && (
                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
                                 <div className="flex flex-col justify-end">
@@ -428,24 +401,18 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
                             </div>
                         )}
 
-                        {/* Action Buttons */}
                         <div className="mt-auto pt-3 flex items-center gap-2">
-                            <a
-                                href={perf.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
+                            <button
+                                onClick={handleDetailClick}
                                 className={clsx(
-                                    "w-full py-2.5 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border",
-                                    // Dark Mode: Subtle border/text
+                                    "w-full py-2.5 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border text-left",
                                     "border-white/20 text-gray-400 hover:text-white hover:border-white/40 hover:bg-white/5",
-                                    // Light Mode: Visible border/text -> Light Gray Background, No Border
                                     "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-extrabold light:hover:bg-gray-200 light:hover:text-black"
                                 )}
                             >
                                 자세히 보기
                                 <ChevronDown className="-rotate-90 w-3 h-3" />
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -453,3 +420,7 @@ export default function PerformanceListItem({ perf, distLabel, venueInfo, onLoca
         </div>
     );
 }
+
+PerformanceListItem.displayName = 'PerformanceListItem';
+
+export default memo(PerformanceListItem);
