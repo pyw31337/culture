@@ -204,8 +204,19 @@ export default function KakaoMapModal({
                 window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
                 window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
 
-                // User Location Marker
-                if (!centerLocation && navigator.geolocation) {
+                // Center / User Location Marker
+                if (centerLocation) {
+                    const loc = new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng);
+                    const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
+                        <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400">
+                            ${centerLocation.name || '검색 위치'}
+                        </div>
+                        <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
+                            <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
+                        </div>
+                    </div>`;
+                    new window.kakao.maps.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+                } else if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(pos => {
                         const loc = new window.kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                         const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
