@@ -1284,6 +1284,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     <KakaoMapModal
                         performances={filteredPerformances}
                         cinemas={selectedGenre === 'movie' ? cinemas : []}
+                        selectedGenre={selectedGenre}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}

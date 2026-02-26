@@ -35,9 +35,19 @@ export interface KakaoMapModalProps {
     onToggleFavorite: (venueName: string) => void;
     onVenueLocationChange?: (venueName: string, lat: number, lng: number) => void;
     cinemas?: Cinema[];
+    selectedGenre?: string;
 }
 
-export default function KakaoMapModal({ performances, cinemas = [], onClose, centerLocation, favoriteVenues, onToggleFavorite, onVenueLocationChange }: KakaoMapModalProps) {
+export default function KakaoMapModal({
+    performances,
+    cinemas = [],
+    onClose,
+    centerLocation,
+    favoriteVenues,
+    onToggleFavorite,
+    onVenueLocationChange,
+    selectedGenre = 'all'
+}: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
@@ -76,13 +86,18 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
 
     // Initialize Data
     useEffect(() => {
-        const isCinemaMode = cinemas && cinemas.length > 0;
+        const isMovieMode = selectedGenre === 'movie';
+        const isAllMode = selectedGenre === 'all' || !selectedGenre;
 
         const groups: Record<string, any> = {};
 
-        // If NOT in cinema mode, group performances into markers
-        if (!isCinemaMode) {
+        // 1. Process Performances (Non-movie venues, or All)
+        // Skip this section entirely if we are STRICTLY in movie mode
+        if (!isMovieMode || isAllMode) {
             performances.forEach((perf) => {
+                // If specific genre (not 'all'), only include if matches
+                if (!isAllMode && perf.genre !== selectedGenre) return;
+
                 if (!groups[perf.venue]) {
                     groups[perf.venue] = {
                         ...venues[perf.venue],
@@ -97,26 +112,26 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
             });
         }
 
-        // Add Cinemas as separate groups if provided (Cinema mode)
-        cinemas.forEach(cinema => {
-            if (!groups[cinema.name]) {
-                groups[cinema.name] = {
-                    venueName: cinema.name,
-                    address: cinema.address,
-                    lat: cinema.lat,
-                    lng: cinema.lng,
-                    brand: cinema.brand,
-                    type: 'cinema',
-                    // Find movies for THIS cinema or just show general movies if venue matching is not possible
-                    // For now, since we show cinemas from cinemas.json, we don't have direct link to performances in that json.
-                    // So we show the movies passed in props (which are already filtered to 'movie' genre by parent)
-                    performances: performances.slice(0, 10)
-                };
-            }
-        });
+        // 2. Process Cinemas (Movie venues, or All)
+        if (isMovieMode || isAllMode) {
+            cinemas.forEach(cinema => {
+                if (!groups[cinema.name]) {
+                    groups[cinema.name] = {
+                        venueName: cinema.name,
+                        address: cinema.address,
+                        lat: cinema.lat,
+                        lng: cinema.lng,
+                        brand: cinema.brand,
+                        type: 'cinema',
+                        // Parent component already filters performances to relevant ones
+                        performances: performances.slice(0, 10)
+                    };
+                }
+            });
+        }
 
         allVenueGroups.current = groups;
-        const list = Object.values(groups).filter(v => v.lat && v.lng); // Filter invalid venues
+        const list = Object.values(groups).filter(v => v.lat && v.lng);
 
         // Sort by distance if center exists
         if (centerLocation) {
@@ -130,7 +145,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
         }
         allVenuesList.current = list;
         setVisibleVenues(list.slice(0, 20));
-    }, [performances, cinemas, centerLocation]);
+    }, [performances, cinemas, centerLocation, selectedGenre]);
 
     const handleSearchHereInternal = useCallback((map: any) => {
         if (!map) return;
@@ -311,7 +326,7 @@ export default function KakaoMapModal({ performances, cinemas = [], onClose, cen
         return () => {
             window.kakao.maps.event.removeListener(map, 'zoom_changed', manageVisibility);
         };
-    }, [mapInstance, isMapReady, performances, cinemas]); // Re-run when data changes
+    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre]); // Re-run when data changes
 
     // Popup Position Logic
     const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);
