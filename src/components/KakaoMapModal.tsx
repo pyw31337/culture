@@ -285,6 +285,22 @@ export default function KakaoMapModal({
 
             content.onclick = () => {
                 setSelectedVenue(venue.venueName);
+                if (map) {
+                    const moveLatLon = new window.kakao.maps.LatLng(venue.lat, venue.lng);
+                    map.panTo(moveLatLon);
+                    if (map.getLevel() > 4) map.setLevel(4);
+                }
+                setTimeout(() => {
+                    const scrollContainer = document.getElementById('venue-scroll-container');
+                    if (scrollContainer) {
+                        const idx = allVenuesList.current.findIndex(v => v.venueName === venue.venueName);
+                        if (idx !== -1 && scrollContainer.children[idx]) {
+                            const card = scrollContainer.children[idx] as HTMLElement;
+                            const scrollLeft = card.offsetLeft - (scrollContainer.clientWidth / 2) + (card.clientWidth / 2);
+                            scrollContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                        }
+                    }
+                }, 100);
             };
 
             const customOverlay = new window.kakao.maps.CustomOverlay({
@@ -443,9 +459,6 @@ export default function KakaoMapModal({
                                                 <RotateCw size={12} />
                                                 실시간 상영시간표 확인하기
                                             </a>
-                                            <p className="text-[9px] text-indigo-600 dark:text-indigo-400 mt-1.5 font-bold text-center">
-                                                ★ 현재 박스오피스 상영 예정작
-                                            </p>
                                         </div>
                                     )}
 
@@ -493,8 +506,10 @@ export default function KakaoMapModal({
                     <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/90 dark:from-gray-900 via-white/80 dark:via-gray-900/90 to-transparent pt-12 pb-4 px-4">
                         {visibleVenues.length > 0 && (
                             <div
+                                id="venue-scroll-container"
                                 ref={scrollRef}
-                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
+                                style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain' }}
                                 onMouseDown={onMouseDown}
                                 onMouseLeave={onMouseLeave}
                                 onMouseUp={onMouseUp}
@@ -510,6 +525,13 @@ export default function KakaoMapModal({
                                         distanceLabel = `${dist.toFixed(1)}km`;
                                     }
 
+                                    const primaryGenre = v.performances[0]?.genre || selectedGenre || 'all';
+                                    const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
+
+                                    // Make sure cinema falls back to dark indigo just like markers
+                                    const isCinemaObj = v.type === 'cinema';
+                                    const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
+
                                     return (
                                         <button
                                             type="button"
@@ -520,18 +542,18 @@ export default function KakaoMapModal({
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
                                                     const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
                                                     mapInstance.panTo(moveLatLon);
-                                                    mapInstance.setLevel(2);
+                                                    if (mapInstance.getLevel() > 4) mapInstance.setLevel(4);
                                                 }
                                             }}
                                             className={clsx(
-                                                "snap-center shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 border",
+                                                "shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300",
                                                 isSelected
-                                                    ? "bg-emerald-50 dark:bg-emerald-900/50 border-emerald-500 ring-2 ring-emerald-500/50 scale-[1.02]"
-                                                    : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
+                                                    ? `${bgClass} text-white scale-[1.03] shadow-2xl`
+                                                    : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
                                             )}
                                         >
                                             <div className="flex justify-between items-start w-full">
-                                                <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-emerald-900 dark:text-emerald-300" : "text-gray-900 dark:text-white")}>
+                                                <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-white" : "text-gray-900 dark:text-white")}>
                                                     {v.venueName}
                                                 </h4>
                                                 <button
@@ -542,11 +564,11 @@ export default function KakaoMapModal({
                                                     className={clsx(
                                                         "ml-2 p-1 rounded-full transition-colors",
                                                         isFavorite
-                                                            ? "hover:bg-pink-100 dark:hover:bg-pink-900/50"
-                                                            : (isSelected ? "hover:bg-emerald-200 dark:hover:bg-emerald-800" : "hover:bg-gray-100 dark:hover:bg-gray-700")
+                                                            ? (isSelected ? "bg-white/20 hover:bg-white/30" : "hover:bg-pink-100 dark:hover:bg-pink-900/50")
+                                                            : (isSelected ? "hover:bg-white/20 hover:text-white" : "hover:bg-gray-100 dark:hover:bg-gray-700")
                                                     )}
                                                 >
-                                                    <Heart className={clsx("w-4 h-4", isFavorite ? 'text-pink-500 fill-pink-500' : 'text-gray-400')} />
+                                                    <Heart className={clsx("w-4 h-4", isFavorite ? (isSelected ? 'text-white fill-white' : 'text-pink-500 fill-pink-500') : (isSelected ? 'text-white/60' : 'text-gray-400'))} />
                                                 </button>
                                             </div>
 
@@ -554,15 +576,15 @@ export default function KakaoMapModal({
                                                 <div className={clsx(
                                                     "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] w-fit font-bold mb-1",
                                                     isSelected
-                                                        ? "bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200"
+                                                        ? "bg-white/20 text-white"
                                                         : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
                                                 )}>
                                                     {distanceLabel}
                                                 </div>
                                             )}
-                                            <span className="text-gray-500 dark:text-gray-400 text-[10px] truncate">{v.address}</span>
+                                            <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{v.address}</span>
                                             <div className="mt-auto flex items-center justify-between text-xs">
-                                                <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">
+                                                <span className={clsx("font-bold shrink-0", isSelected ? "text-white" : "text-emerald-600 dark:text-emerald-400")}>
                                                     {v.performances.length}개 컨텐츠
                                                 </span>
                                             </div>
