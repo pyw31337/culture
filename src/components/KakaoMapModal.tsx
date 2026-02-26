@@ -451,7 +451,7 @@ export default function KakaoMapModal({
                                     {selectedVenueData.type === 'cinema' && (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
                                             <a
-                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue + ' 상영시간표')}`}
+                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
