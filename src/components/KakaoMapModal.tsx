@@ -66,12 +66,15 @@ export default function KakaoMapModal({
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const isDragClicked = useRef(false);
 
     const onMouseDown = (e: React.MouseEvent) => {
-        if (!scrollRef.current) return;
         setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        isDragClicked.current = false;
+        if (scrollRef.current) {
+            setStartX(e.pageX - scrollRef.current.offsetLeft);
+            setScrollLeft(scrollRef.current.scrollLeft);
+        }
     };
 
     const onMouseLeave = () => setIsDragging(false);
@@ -81,6 +84,9 @@ export default function KakaoMapModal({
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 2;
+        if (Math.abs(walk) > 10) {
+            isDragClicked.current = true;
+        }
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
@@ -536,7 +542,11 @@ export default function KakaoMapModal({
                                         <button
                                             type="button"
                                             key={v.venueName}
-                                            onClick={() => {
+                                            onClick={(e) => {
+                                                if (isDragClicked.current) {
+                                                    e.preventDefault();
+                                                    return;
+                                                }
                                                 const newSelected = v.venueName === selectedVenue ? null : v.venueName;
                                                 setSelectedVenue(newSelected);
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
