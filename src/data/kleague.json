@@ -960,6 +960,21 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
+    "id": "kleague_2026.03.28_1_포항_vs_강원",
+    "title": "포항 vs 강원",
+    "image": "/culture/images/posters/kleague_2026_default.webp",
+    "date": "2026-03-28 15:00",
+    "venue": "포항 스틸야드",
+    "link": "https://www.kleague.com/schedule.do",
+    "region": "daegu",
+    "genre": "soccer",
+    "league": "K League 1",
+    "homeTeam": "포항",
+    "awayTeam": "강원",
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
+  },
+  {
     "id": "kleague_2026.03.28_2_성남_vs_김포",
     "title": "성남 vs 김포",
     "image": "/culture/images/posters/kleague_2026_default.webp",

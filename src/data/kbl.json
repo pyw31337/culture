@@ -1,33 +1,5 @@
 [
   {
-    "id": "kbl_20260226_한국가스공사_vs_현대모비스",
-    "title": "한국가스공사 vs 현대모비스",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-26 13:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "한국가스공사",
-    "awayTeam": "현대모비스",
-    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
-  },
-  {
-    "id": "kbl_20260226_LG_vs_소노",
-    "title": "LG vs 소노",
-    "image": "/culture/images/kbl_poster.png",
-    "date": "2026-02-26 15:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "LG",
-    "awayTeam": "소노",
-    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
-  },
-  {
     "id": "kbl_20260201_울산_현대모비스_vs_안양_정관장",
     "title": "울산 현대모비스 vs 안양 정관장",
     "image": "/culture/images/kbl_poster.png",
@@ -656,6 +628,34 @@
     "awayTeam": "SK",
     "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
     "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
+  },
+  {
+    "id": "kbl_20260226_한국가스공사_vs_현대모비스",
+    "title": "한국가스공사 vs 현대모비스",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-26 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "한국가스공사",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
+  },
+  {
+    "id": "kbl_20260226_LG_vs_소노",
+    "title": "LG vs 소노",
+    "image": "/culture/images/kbl_poster.png",
+    "date": "2026-02-26 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "소노",
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260227_DB_vs_SK",
