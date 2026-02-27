@@ -157,7 +157,7 @@ async function scrapeTimeTicket() {
                     continue;
                 }
 
-                const listItems: any[] = await page.evaluate(`((currentRegion, currentCatId, currentDefaultGenre) => {
+                const listItems: any[] = (await page.evaluate(`((currentRegion, currentCatId, currentDefaultGenre) => {
                     const results = [];
                     // Use a more robust selector based on href pattern
                     const items = document.querySelectorAll('a[href*="/product/"]');
@@ -223,7 +223,7 @@ async function scrapeTimeTicket() {
                         }
                     });
                     return results;
-                })("${region}", ${cat.id}, "${cat.defaultGenre}")`);
+                })("${region}", ${cat.id}, "${cat.defaultGenre}")`)) as any;
 
 
                 // If we get here, either no state or hash mismatch. proceed with full collection.
