@@ -43,7 +43,7 @@ async function scrapeHandball() {
             console.log('Table not found or timed out');
         }
 
-        const performances: Performance[] = await page.evaluate(`(() => {
+        const performances: Performance[] = (await page.evaluate(`(() => {
             const rows = Array.from(document.querySelectorAll('.record_table.pc_only table tbody tr'));
             const results = [];
             let currentDate = '';
@@ -139,7 +139,7 @@ async function scrapeHandball() {
             });
 
             return results;
-        })()`);
+        })()`)) as any;
 
         // Post-process to add region and image
         const finalData = performances.map(p => ({

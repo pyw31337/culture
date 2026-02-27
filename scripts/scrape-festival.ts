@@ -174,7 +174,7 @@ function parseRegion(address: string): string {
 async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> {
     try {
         // Updated Selectors for New Layout
-        return await page.evaluate(`(() => {
+        return (await page.evaluate(`(() => {
             const slugify = (text) => {
                 return text
                     .replace(/[^a-zA-Z0-9가-힣]/g, '_')
@@ -215,7 +215,7 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 items.push({ id: festId, title, thumbnailImage, date, venue, link: href });
             });
             return items;
-        })()`);
+        })()`)) as any;
     } catch (e) {
         console.error(`Page ${pageNum} scrape error:`, e);
         return [];
