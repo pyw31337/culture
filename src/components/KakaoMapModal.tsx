@@ -460,7 +460,7 @@ export default function KakaoMapModal({
     return (
         <Portal>
             <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="relative w-full h-full max-w-[1700px] sm:max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-black sm:rounded-2xl overflow-hidden shadow-2xl border-0 sm:border border-gray-200 dark:border-gray-800 flex flex-col">
+                <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
                     {/* Controls */}
                     <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
                         <button

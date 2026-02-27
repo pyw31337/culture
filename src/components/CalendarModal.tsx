@@ -199,9 +199,9 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         </div>
                     </div>
 
-                    {/* Daily View */}
+                    {/* Daily View (Tighter Spacing) */}
                     {calendarView === 'daily' && (
-                        <div className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-black">
+                        <div className="flex-grow overflow-y-auto p-2 sm:p-4 space-y-1.5 bg-white dark:bg-black">
                             {(() => {
                                 const dayEvents = getPerformancesForDay(currentMonth);
                                 if (dayEvents.length === 0) return (
@@ -229,9 +229,9 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         </div>
                     )}
 
-                    {/* Weekly View (Vertical Row Layout) */}
+                    {/* Weekly View (Vertical Row Layout - Redensified) */}
                     {calendarView === 'weekly' && (
-                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-black">
+                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-black/90">
                             {eachDayOfInterval({
                                 start: startOfWeek(currentMonth, { weekStartsOn: 0 }),
                                 end: endOfWeek(currentMonth, { weekStartsOn: 0 })
@@ -240,32 +240,32 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                 const isToday = isSameDay(day, new Date());
 
                                 return (
-                                    <div key={day.toISOString()} className="flex border-b border-gray-200 dark:border-gray-800 min-h-[120px] sm:min-h-[140px] last:border-b-0">
-                                        {/* Day Info Sidebar */}
+                                    <div key={day.toISOString()} className="flex border-b border-gray-200 dark:border-gray-800 min-h-[80px] sm:min-h-[100px] last:border-b-0">
+                                        {/* Day Info Sidebar (More compact) */}
                                         <div className={clsx(
-                                            "w-20 sm:w-28 flex flex-col items-center justify-center border-r border-gray-200 dark:border-gray-800 shrink-0 select-none",
+                                            "w-16 sm:w-24 flex flex-col items-center justify-center border-r border-gray-200 dark:border-gray-800 shrink-0 select-none",
                                             isToday ? "bg-blue-50/50 dark:bg-blue-900/20" : "bg-gray-50/50 dark:bg-gray-900/30"
                                         )}>
                                             <span className={clsx(
-                                                "text-sm sm:text-base font-black truncate w-full text-center px-1",
-                                                idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-700 dark:text-gray-300"
+                                                "text-[10px] sm:text-xs font-black truncate w-full text-center px-1 uppercase",
+                                                idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400"
                                             )}>
                                                 {format(day, 'eee', { locale: ko })}
                                             </span>
-                                            <span className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mt-1">
+                                            <span className="text-lg sm:text-2xl font-black text-gray-900 dark:text-white leading-none mt-0.5">
                                                 {format(day, 'd')}
                                             </span>
                                             <span className={clsx(
-                                                "text-[10px] sm:text-xs font-bold mt-2 px-2 py-0.5 rounded-full",
-                                                dayEvents.length > 0 ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300" : "text-gray-400"
+                                                "text-[9px] sm:text-[10px] font-bold mt-1 px-1.5 py-0.5 rounded-full border",
+                                                dayEvents.length > 0 ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 border-blue-200 dark:border-blue-800" : "text-gray-400 border-transparent"
                                             )}>
                                                 {dayEvents.length}건
                                             </span>
                                         </div>
 
-                                        {/* Performance List Viewport */}
-                                        <div className="flex-grow p-2 sm:p-4 overflow-x-auto bg-white dark:bg-black/40">
-                                            <div className="flex flex-col gap-1.5 min-w-max sm:min-w-0">
+                                        {/* Performance List Viewport (Tighter Gap) */}
+                                        <div className="flex-grow p-1.5 sm:p-3 overflow-x-auto bg-white dark:bg-black/20">
+                                            <div className="flex flex-col gap-0.5 min-w-max sm:min-w-0">
                                                 {dayEvents.length > 0 ? (
                                                     dayEvents.slice(0, 50).map((perf, i) => (
                                                         <a
@@ -274,25 +274,25 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             className={clsx(
-                                                                "group flex items-center gap-2 text-xs sm:text-sm px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition font-bold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none",
+                                                                "group flex items-center gap-1.5 text-[11px] sm:text-sm px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition font-bold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none",
                                                                 (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
                                                             )}
                                                             title={perf.title}
                                                         >
-                                                            <span className={clsx("w-1.5 h-1.5 rounded-full shrink-0 group-hover:scale-125 transition", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                                                            <span className={clsx("w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
                                                             <span className="truncate">{perf.title}</span>
                                                             {perf.venue && (
-                                                                <span className="text-[10px] sm:text-xs text-gray-400 font-medium ml-auto hidden sm:block shrink-0">{perf.venue}</span>
+                                                                <span className="text-[9px] sm:text-[11px] text-gray-400 font-medium ml-auto hidden sm:block shrink-0">{perf.venue}</span>
                                                             )}
                                                         </a>
                                                     ))
                                                 ) : (
-                                                    <div className="h-full flex items-center justify-center text-gray-400 text-xs sm:text-sm font-medium italic opacity-60 py-4">
+                                                    <div className="h-full flex items-center justify-center text-gray-400 text-[10px] sm:text-xs font-medium italic opacity-60 py-2">
                                                         일정이 없습니다
                                                     </div>
                                                 )}
                                                 {dayEvents.length > 50 && (
-                                                    <div className="text-xs text-gray-500 font-bold pl-3 py-1">
+                                                    <div className="text-[10px] text-gray-500 font-bold pl-2 py-0.5">
                                                         외 {dayEvents.length - 50}건 더보기
                                                     </div>
                                                 )}
@@ -304,12 +304,12 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         </div>
                     )}
 
-                    {/* Monthly View */}
+                    {/* Monthly View (Reduced font size and padding) */}
                     {calendarView === 'monthly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950 shrink-0">
                                 {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
-                                    <div key={day} className={clsx("py-3 text-center text-sm font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
+                                    <div key={day} className={clsx("py-2 text-center text-[10px] sm:text-xs font-black", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400")}>
                                         {day}
                                     </div>
                                 ))}
@@ -337,11 +337,11 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                 </div>
             </div>
 
-            {/* Day Detail Modal */}
+            {/* Day Detail Modal (Always Full-screen) */}
             {selectedDate && (
-                <div className="fixed inset-0 z-[10000] flex items-center justify-center sm:p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
+                <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
                     <div
-                        className="bg-white dark:bg-gray-950 w-full max-w-md h-full sm:h-auto sm:max-h-[80vh] sm:rounded-2xl shadow-2xl flex flex-col border-0 sm:border border-gray-200 dark:border-gray-800 overflow-hidden"
+                        className="bg-white dark:bg-gray-950 w-full h-full shadow-2xl flex flex-col border-0 overflow-hidden"
                         onClick={e => e.stopPropagation()}
                     >
                         <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-900">
