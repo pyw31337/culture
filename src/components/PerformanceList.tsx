@@ -997,8 +997,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             setHighlightedIndex(prev => (prev - 1 + searchResults.length) % searchResults.length);
                         } else if (e.key === 'Enter') {
                             e.preventDefault();
-                            const targetIndex = highlightedIndex >= 0 ? highlightedIndex : 0;
-                            if (searchResults.length > targetIndex) {
+                            // Fix: Only auto-select top result in location mode. Keyword mode searches the whole string!
+                            const targetIndex = highlightedIndex >= 0 ? highlightedIndex : (searchMode === 'location' ? 0 : -1);
+                            
+                            if (targetIndex >= 0 && searchResults.length > targetIndex) {
                                 // Select the chosen or first item
                                 const selected = searchResults[targetIndex];
                                 if (searchMode === 'location') {
@@ -1017,10 +1019,6 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 }
                                 setIsDropdownOpen(false);
                             } else {
-                                // No highlight, but entered -> Select top result or just search?
-                                // User feedback implicit: "Enter to select highlighted".
-                                // If no highlight, maybe select top result (idx 0) if user just typed and pressed enter?
-                                // Original logic was: select top. Let's keep that as fallback if index is -1.
                                 // No highlight, but entered -> Just search with current text
                                 // User feedback: "Enter to select highlighted".
                                 // If no highlight, do NOT select top result. Just search.
