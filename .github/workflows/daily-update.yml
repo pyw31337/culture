@@ -37,11 +37,11 @@ jobs:
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm ci
-          npx playwright install chromium --with-deps
 
-      - name: Install System Dependencies (Puppeteer)
+      - name: Install Playwright and System Dependencies
         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
         run: |
+          npx playwright install chromium --with-deps
           sudo apt-get update
           sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
 
