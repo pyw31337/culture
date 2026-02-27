@@ -106,6 +106,18 @@ export default function HeroSection({
     const heroRef = useRef<HTMLDivElement>(null);
     const searchContainerRef = useRef<HTMLDivElement>(null);
 
+    // Handle scroll to sync animation
+    const [isAtTop, setIsAtTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            setIsAtTop(currentScrollPos < 50); // Threshold for being "at top"
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     // Handle click outside to close search dropdown
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -571,6 +583,7 @@ export default function HeroSection({
                         onCycle={onCycle}
                         paused={!isHeroVisible || !['list', 'grid', 'likes-perf', 'likes-venue'].includes(viewMode)}
                         searchMode={searchMode}
+                        isAtTop={isAtTop}
                     />
                 </div>
 

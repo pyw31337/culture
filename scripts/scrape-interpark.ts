@@ -33,6 +33,7 @@ interface Performance {
     price?: string;
     originalPrice?: string;
     discount?: string;
+    address?: string;
     lastEnriched?: string; // ISO Date string
 }
 
@@ -495,51 +496,51 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         }
                     }
 
-                    // Fallback for "Free" or "Event" tickets with no price text
-                    // Only apply if no price-like numbers exist in the entire price info area
-                    if (!price) {
-                        // Double-check: scan the entire info area for ANY price number first
-                        const anyPriceInInfo = Array.from(document.querySelectorAll('.infoList, .infoItem, .infoPriceList, .prdPriceDetail'))
-                            .some(el => (el.textContent || '').match(/[0-9,]{3,}원/));
-
-                        if (!anyPriceInInfo) {
-                            const text = (document.title + ' ' + (document.body ? document.body.innerText : '')).toLowerCase();
-                            let isEvent = false;
-                            let isFree = false;
-
-                            const eventKeywords = ['로터리', '응모', '초청', '초대', '당첨'];
-                            const freeKeywords = ['무료', '0원', '정오의 음악회'];
-
-                            for (const kw of eventKeywords) {
-                                if (text.includes(kw)) {
-                                    isEvent = true;
-                                    break;
-                                }
-                            }
-
-                            for (const kw of freeKeywords) {
-                                if (text.includes(kw)) {
-                                    isFree = true;
-                                    break;
-                                }
-                            }
-
-                            if (isEvent && isFree) {
-                                price = '무료/이벤트';
-                            } else if (isEvent) {
-                                price = '이벤트';
-                            } else if (isFree) {
-                                price = '무료';
-                            } else {
-                                price = '가격정보없음';
-                            }
-                        }
+                    // Ultimate Price Fallback: Search for ANY number + '원' in the entire body if still missing
+                    if (!price || price === '가격정보없음') {
+                        const allText = document.body.innerText;
+                        // RegEx to look for "전석" or "정상가" or "판매가" etc near a price
+                        const pricePattern = /(?:전석|정상가|판매가|일반)\s*(?:[:\s]|[^0-9])*([0-9,]{3,}원)/;
+                        const match = allText.match(pricePattern);
+                        if (match) price = match[1];
                     }
 
-                    return { runningTime, ageRating, price, originalPrice, discount };
+                    // --- 4. Address Extraction (New) ---
+                    let address = '';
+                    try {
+                        // Look for address in any info item first
+                        const addressItem = Array.from(document.querySelectorAll('.infoItem, .infoDesc')).find(el => el.textContent?.includes('주소'));
+                        if (addressItem) {
+                            address = addressItem.textContent?.replace(/주소\s*[:\s]*/, '').trim() || '';
+                        }
+                    } catch (e) {}
+
+                    return { runningTime, ageRating, price, originalPrice, discount, address };
                 });
 
-                let { runningTime, ageRating, price, originalPrice, discount } = basicInfo;
+                let { runningTime, ageRating, price, originalPrice, discount, address } = basicInfo;
+
+                // 3. Click "Venue Info" Layer if address is missing
+                if (!address) {
+                    try {
+                        // Interpark detail pages often have a link next to the venue name labeled "(자세히)" or similar
+                        // Selector for the "Venue Info" toggle/button
+                        const venueDetailBtn = await page.$('.infoItem.infoPlace .infoText a, .infoItem.infoPlace a[data-popup="info-place"]');
+                        if (venueDetailBtn) {
+                            await venueDetailBtn.click();
+                            await page.waitForSelector('.layerPopup, .popupLayer, .popVenueInfo', { visible: true, timeout: 3000 });
+                            
+                            address = await page.evaluate(() => {
+                                const popup = document.querySelector('.layerPopup, .popupLayer, .popVenueInfo') as HTMLElement;
+                                if (!popup) return '';
+                                const text = popup.innerText || '';
+                                // Look for "주소 :" pattern
+                                const match = text.match(/주소\s*:\s*(.*)/);
+                                return match ? match[1].split('\n')[0].trim() : '';
+                            });
+                        }
+                    } catch (e) {}
+                }
 
                 // 3. Click Price Popup for Detailed Breakdown if basic info is insufficient
                 // Only try if we don't have a discount but suspect there is one, or just to get the base General price.
@@ -594,6 +595,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     price,
                     originalPrice,
                     discount,
+                    address,
                     lastEnriched: new Date().toISOString()
                 };
 

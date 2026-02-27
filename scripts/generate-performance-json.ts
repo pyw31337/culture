@@ -31,16 +31,36 @@ async function generate() {
                 p.posterUrl = '/images/posters/festivals/pocheon_dongjanggun.jpg';
             }
 
-            // 2. Fix Category for National Dance Company 2026 Festival (it's a performance, not a festival)
+            // 2. Fix Category for National Dance Company 2026 Festival
             if (p.title.includes('국립무용단 [2026 축제]')) {
-                p.category = 'NON_COMMERCIAL'; // Or 'MUSICAL' / 'PLAY' depending on mapping. 'NON_COMMERCIAL' often maps to '국악/무용' or similar. 
-                // Let's assume we want it in 'Performing Arts' general bucket.
-                // If the user said "It's a performance", we should ensure it's not 'FESTIVAL'.
-                // If we check categories... 
-                // Let's check what genres we have. '무용' (Dance) usually falls under specific types.
                 p.genre = '무용';
             }
         });
+
+        // Overseas Filtering Logic (User Request)
+        const KR_LAT_MIN = 33.0;
+        const KR_LAT_MAX = 43.0;
+        const KR_LNG_MIN = 124.0;
+        const KR_LNG_MAX = 132.0;
+
+        const isOverseas = (p: any) => {
+            // 1. Specific title exclusion
+            if (p.title.includes('일본 스페이스 일일캠프') || p.title.includes('JAXA츠크바우주센터')) return true;
+
+            // 2. Address keywords
+            const overseasKeywords = ['일본', '미국', '중국', '유럽', 'France', 'USA', 'Japan', 'China', '츠쿠바역'];
+            if (overseasKeywords.some(kw => p.address?.includes(kw) || p.venue?.includes(kw))) return true;
+
+            // 3. Coordinate check (if available)
+            // Note: coordinates come from venues.json usually via p.venue mapping
+            // In generate-performance-json, we have 'performances' array.
+            // Let's check coordinates if they exist on the performance object (some sources have them)
+            if (p.lat && p.lng) {
+                if (p.lat < KR_LAT_MIN || p.lat > KR_LAT_MAX || p.lng < KR_LNG_MIN || p.lng > KR_LNG_MAX) return true;
+            }
+
+            return false;
+        };
 
         // Filter out expired performances
         // Use a safe buffer (e.g., allow items ending yesterday to show until today's build runs, but 1 month ago is definitely out)
@@ -63,6 +83,9 @@ async function generate() {
                 ottCount++;
                 return false;
             }
+
+            // Exclude Overseas Content
+            if (isOverseas(p)) return false;
 
             if (!p.date) return false; // No date = active? No, safety first.
 

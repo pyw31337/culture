@@ -10,12 +10,14 @@ export const TypingHero = ({
     template,
     onCycle,
     paused,
-    searchMode = 'keyword'
+    searchMode = 'keyword',
+    isAtTop = true
 }: {
     template: HeroTemplate,
     onCycle: () => void,
     paused: boolean,
-    searchMode?: 'keyword' | 'location'
+    searchMode?: 'keyword' | 'location',
+    isAtTop?: boolean
 }) => {
     const [displayedTemplate, setDisplayedTemplate] = useState<HeroTemplate>(template);
     // Phases: TYPE (writing), WAIT (holding text), DELETE (erasing), CYCLING (waiting for new prop)
@@ -67,13 +69,16 @@ export const TypingHero = ({
             // Key Fix: If paused, stay in WAIT phase (hold the completed sentence).
             if (paused) return;
 
+            // User Request: If not at top, stay in WAIT (don't delete)
+            if (!isAtTop) return;
+
             // Wait 5 seconds before deleting
             timeout = setTimeout(() => {
                 setPhase('DELETE');
             }, 5000);
         } else if (phase === 'DELETE') {
-            // If paused during delete, freeze state.
-            if (paused) return;
+            // If paused during delete OR not at top, freeze state.
+            if (paused || !isAtTop) return;
 
             // Delete backwards
             timeout = setTimeout(() => {
@@ -88,8 +93,7 @@ export const TypingHero = ({
                 });
             }, 50);
         } else if (phase === 'TYPE') {
-            // Key Fix: Ignore 'paused' prop during TYPE phase to ensure sentence finishes.
-            // Type forwards
+            // Type forwards (Always finish typing even if scrolled, for better UX)
             timeout = setTimeout(() => {
                 setProgress(prev => {
                     const next = prev + 1;
@@ -103,7 +107,7 @@ export const TypingHero = ({
         }
 
         return () => clearTimeout(timeout);
-    }, [phase, progress, totalLen, onCycle, paused]);
+    }, [phase, progress, totalLen, onCycle, paused, isAtTop]);
 
     // Helper to slice text based on global progress
     const getSub = (text: string, offset: number) => {
