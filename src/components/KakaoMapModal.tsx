@@ -37,6 +37,8 @@ export interface KakaoMapModalProps {
     onVenueLocationChange?: (venueName: string, lat: number, lng: number) => void;
     cinemas?: Cinema[];
     selectedGenre?: string;
+    searchMode?: 'keyword' | 'location';
+    searchText?: string;
 }
 
 export default function KakaoMapModal({
@@ -47,7 +49,9 @@ export default function KakaoMapModal({
     favoriteVenues,
     onToggleFavorite,
     onVenueLocationChange,
-    selectedGenre = 'all'
+    selectedGenre = 'all',
+    searchMode = 'keyword',
+    searchText = ''
 }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
@@ -185,7 +189,7 @@ export default function KakaoMapModal({
                     center: centerLocation
                         ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
                         : defaultCenter,
-                    level: centerLocation ? 2 : 6
+                    level: centerLocation ? 2 : 5 // Default to Level 5 (approx 250m) for initial Seoul Station view
                 };
 
                 mapRef.current!.innerHTML = '';
@@ -375,7 +379,18 @@ export default function KakaoMapModal({
                 }
             }
         } else if (!centerLocation && allVenuesList.current.length > 0) {
-            const sigKey = `all_${allVenuesList.current.length}_${selectedGenre}`;
+            // Only auto-bound if we are in an active search state (Keyword with text OR Location mode)
+            const isActiveSearch = (searchMode === 'keyword' && searchText.trim().length > 0) || (searchMode === 'location');
+
+            if (!isActiveSearch) {
+                // If not active search, still mark signature to avoid repeated checks, 
+                // but don't perform the setBounds.
+                const idleSig = `idle_${allVenuesList.current.length}_${selectedGenre}`;
+                lastBoundedLocationRef.current = idleSig;
+                return;
+            }
+
+            const sigKey = `all_${allVenuesList.current.length}_${selectedGenre}_${searchText}`;
             if (lastBoundedLocationRef.current !== sigKey) {
                 lastBoundedLocationRef.current = sigKey;
                 
@@ -396,13 +411,18 @@ export default function KakaoMapModal({
                         if (allVenuesList.current.length === 1) {
                             map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
                             map.setLevel(4);
+                            // Auto open popup for this single venue
+                            setSelectedVenue(allVenuesList.current[0].venueName);
                         } else {
                             map.setBounds(bounds, 100, 50, 150, 50);
                             
-                            // Restrict zoom out to Level 7 (approx 1km scale) to prevent zooming out to the whole country.
+                            // Restrict zoom out between Level 5 (250m) and Level 7 (1km)
                             setTimeout(() => {
-                                if (map.getLevel() > 7) {
+                                const currentLevel = map.getLevel();
+                                if (currentLevel > 7) {
                                     map.setLevel(7);
+                                } else if (currentLevel < 5) {
+                                    map.setLevel(5);
                                 }
                             }, 50);
                         }

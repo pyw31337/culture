@@ -1312,6 +1312,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         performances={filteredPerformances}
                         cinemas={selectedGenre === 'movie' ? cinemas : []}
                         selectedGenre={selectedGenre}
+                        searchMode={searchMode}
+                        searchText={searchText}
                         centerLocation={focusVenue || searchLocation || (selectedVenue !== 'all' && venues[selectedVenue] ? { lat: venues[selectedVenue].lat!, lng: venues[selectedVenue].lng!, name: selectedVenue } : null)}
                         favoriteVenues={favoriteVenues}
                         onToggleFavorite={toggleFavoriteVenue}
