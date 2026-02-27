@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
+import { getGenreIcon } from '../GenreIcons';
 
 interface PerformanceCardProps {
     perf: any;
@@ -347,7 +348,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             }
                                         }}
                                     >
-                                        <h3 className="font-extrabold text-lg text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
+                                        <h3 className="font-extrabold text-lg text-black light:text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
                                             <HighlightText text={cleanTitle(perf.title)} keyword={searchText} />
                                         </h3>
                                     </button>
@@ -443,16 +444,23 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                        {/* Background Decorative Icon */}
+                                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] text-white pointer-events-none z-[-1]">
+                                            {React.isValidElement(getGenreIcon(perf.genre, 180)) ?
+                                                React.cloneElement(getGenreIcon(perf.genre, 180) as React.ReactElement<React.SVGProps<SVGSVGElement>>, { strokeWidth: 1 }) :
+                                                null}
+                                        </div>
+
                                         <img
                                             src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
                                             alt={perf.homeTeam}
-                                            className="w-[35%] max-w-[96px] aspect-square object-contain"
+                                            className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                                         />
-                                        <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-[1px]">VS</div>
+                                        <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-[1px] shadow-lg border border-white/10">VS</div>
                                         <img
                                             src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
                                             alt={perf.awayTeam}
-                                            className="w-[35%] max-w-[96px] aspect-square object-contain"
+                                            className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                                         />
                                     </div>
                                 )}
@@ -510,7 +518,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             </div>
 
                                             <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
-                                                <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
+                                                <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white light:text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
                                                     <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                                                 </h3>
                                             </div>

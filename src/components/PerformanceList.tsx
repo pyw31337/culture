@@ -349,16 +349,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             return allPerformances
                 .filter(p => {
                     if (uniqueTitles.has(p.title)) return false;
-                    
+
                     const titleNoSpace = p.title.toLowerCase().replace(/\s+/g, '');
                     const venueNoSpace = p.venue.toLowerCase().replace(/\s+/g, '');
-                    
+
                     const match = isChoseong
                         ? isChoseongMatch(p.title, searchText)
                         : (titleNoSpace.includes(lowerText) ||
                             venueNoSpace.includes(lowerText) ||
                             (p.cast && Array.isArray(p.cast) && p.cast.some((c: any) => typeof c === 'string' ? c.replace(/\s+/g, '').includes(lowerText) : c.name.replace(/\s+/g, '').includes(lowerText))));
-                    
+
                     if (match) uniqueTitles.add(p.title);
                     return match;
                 })
@@ -761,10 +761,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // --- Render ---
     return (
-        <div className="min-h-screen bg-white light:bg-white text-white light:text-black">
+        <div className="min-h-screen bg-transparent text-white light:text-black">
             {/* 🌈 High-End Rainbow Background Flow */}
             <RainbowBackground />
-            
+
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 
             {/* 1. Header (Restored) */}
@@ -994,7 +994,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             e.preventDefault();
                             // Fix: Only auto-select top result in location mode. Keyword mode searches the whole string!
                             const targetIndex = highlightedIndex >= 0 ? highlightedIndex : (searchMode === 'location' ? 0 : -1);
-                            
+
                             if (targetIndex >= 0 && searchResults.length > targetIndex) {
                                 // Select the chosen or first item
                                 const selected = searchResults[targetIndex];
@@ -1074,7 +1074,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* 3. Main Content (Grid/List) */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
                 {/* Results Info Header */}
-                <div className={`flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2${viewMode === 'likes-perf' ? ' hidden' : ''}`}>
+                <div className={`flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2`}>
                     <div className="w-full sm:w-auto">
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                             <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
@@ -1110,7 +1110,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     <>
                                         <span className="flex items-center gap-2">
                                             {getGenreIcon(selectedGenre, 28)}
-                                            {selectedGenre === 'all' ? '추천 컨텐츠' : `추천 ${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'}`}
+                                            {selectedGenre === 'all' ? '전체 컨텐츠 목록' : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`}
                                         </span>
                                         <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredPerformances.length})</span>
                                     </>
@@ -1159,9 +1159,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 ) : viewMode === 'likes-perf' ? (
                     <>
                         {/* 좋아요한 컨텐츠 Section */}
-                        <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2 mb-4">
-                            <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
-                            좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
+                        <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6">
+                            <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
+                            좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
                         </h3>
                         {allPerformances.filter(p => likedIds.includes(p.id)).length > 0 ? (
                             <PerformanceGrid
@@ -1198,9 +1198,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                         {/* 좋아요한 공연장 Section */}
                         <div className="mb-10 mt-8">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-lg sm:text-xl font-extrabold text-white light:text-black flex items-center gap-2">
-                                    <Heart className="text-pink-500 w-5 h-5 fill-pink-500" />
-                                    좋아요한 공연장 <span className="text-pink-400 light:text-pink-600">({favoriteVenues.length})</span>
+                                <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3">
+                                    <MapPin className="text-pink-400 w-6 h-6" />
+                                    좋아요한 공연장 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
                                 </h3>
                                 <button
                                     onClick={() => setShowFavoriteListModal(true)}

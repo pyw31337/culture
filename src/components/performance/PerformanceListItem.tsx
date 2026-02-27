@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
+import { getGenreIcon } from '../GenreIcons';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -157,16 +158,23 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                     {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-20 pointer-events-none">
+                            {/* Background Decorative Icon */}
+                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]">
+                                {React.isValidElement(getGenreIcon(perf.genre, 90)) ?
+                                    React.cloneElement(getGenreIcon(perf.genre, 90) as React.ReactElement<React.SVGProps<SVGSVGElement>>, { strokeWidth: 1.5 }) :
+                                    null}
+                            </div>
+
                             <img
                                 src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
                                 alt={perf.homeTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain"
+                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
-                            <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded backdrop-blur-[2px]">VS</div>
+                            <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded backdrop-blur-[2px] border border-white/10">VS</div>
                             <img
                                 src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
                                 alt={perf.awayTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain"
+                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
                         </div>
                     )}

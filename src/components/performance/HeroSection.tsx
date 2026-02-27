@@ -724,12 +724,12 @@ export default function HeroSection({
                                                         <Search className="w-4 h-4 text-[#a78bfa]" />
                                                     )}
                                                 </div>
-                                                <div className="text-white text-base font-extrabold truncate">
+                                                <div className="text-white light:text-black text-base font-extrabold truncate">
                                                     {result.name}
                                                 </div>
                                             </div>
 
-                                            <div className="text-gray-400 text-sm whitespace-nowrap shrink-0">
+                                            <div className="text-gray-400 light:text-gray-600 text-sm whitespace-nowrap shrink-0">
                                                 {shortAddress}
                                             </div>
                                         </div>
@@ -737,7 +737,7 @@ export default function HeroSection({
                                 })
                             ) : (
                                 <div className="p-8 text-center flex flex-col items-center gap-3">
-                                    <div className="text-gray-400 text-sm">
+                                    <div className="text-gray-400 light:text-gray-600 text-sm">
                                         <strong className={searchMode === 'location' ? "text-emerald-500" : "text-purple-500"}>
                                             {searchMode === 'location' ? '위치' : '키워드'}
                                         </strong> 검색 결과가 없습니다 😢
@@ -759,7 +759,7 @@ export default function HeroSection({
                                 {/* Recent Keywords */}
                                 <div className="mb-6">
                                     <div className="flex items-center justify-between mb-3 px-1">
-                                        <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2">
+                                        <h4 className="text-sm font-extrabold text-gray-400 light:text-gray-600 flex items-center gap-2">
                                             <Clock className="w-3.5 h-3.5" /> 최근 검색어
                                         </h4>
                                         {recentKeywords.length > 0 && (
@@ -776,7 +776,7 @@ export default function HeroSection({
                                     </div>
 
                                     {recentKeywords.length === 0 ? (
-                                        <div className="text-center py-4 text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
+                                        <div className="text-center py-4 text-gray-600 light:text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
                                             최근 검색 내역이 없습니다.
                                         </div>
                                     ) : (
@@ -787,7 +787,7 @@ export default function HeroSection({
                                                     className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full cursor-pointer transition-all"
                                                     onClick={() => onKeywordSelect(keyword)}
                                                 >
-                                                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{keyword}</span>
+                                                    <span className="text-sm text-gray-300 light:text-gray-600 group-hover:text-white light:group-hover:text-black transition-colors">{keyword}</span>
                                                     <button
                                                         onClick={(e) => {
                                                             e.stopPropagation();
@@ -805,7 +805,7 @@ export default function HeroSection({
 
                                 {/* Popular Keywords */}
                                 <div>
-                                    <h4 className="text-sm font-extrabold text-gray-400 flex items-center gap-2 mb-3 px-1">
+                                    <h4 className="text-sm font-extrabold text-gray-400 light:text-gray-600 flex items-center gap-2 mb-3 px-1">
                                         <TrendingUp className="w-3.5 h-3.5 text-red-400" /> 인기 검색어
                                     </h4>
                                     <div className="grid grid-cols-2 gap-2">
@@ -822,7 +822,7 @@ export default function HeroSection({
                                                 <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
                                                     {idx + 1}
                                                 </span>
-                                                <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                                                <span className="text-sm text-gray-300 light:text-gray-600 group-hover:text-white light:group-hover:text-black transition-colors">
                                                     {keyword}
                                                 </span>
                                             </div>
