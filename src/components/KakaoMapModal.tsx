@@ -580,7 +580,7 @@ export default function KakaoMapModal({
                         )}
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-black via-white/80 dark:via-black/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
+                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
                         {visibleVenues.length > 0 && (
                             <div
                                 id="venue-scroll-container"

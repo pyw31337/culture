@@ -23,7 +23,7 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                 onSelectDay(day);
             }}
             className={clsx(
-                "min-h-[60px] sm:min-h-[80px] bg-white dark:bg-black p-1 sm:p-2 flex flex-col gap-0.5 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer relative border-r border-b border-gray-200 dark:border-gray-800 overflow-hidden",
+                "min-h-[60px] sm:min-h-[80px] bg-white dark:bg-gray-900 p-1 sm:p-2 flex flex-col gap-0.5 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer relative border-r border-b border-gray-200 dark:border-gray-800 overflow-hidden",
                 !isCurrentMonth && "opacity-40 bg-gray-50 dark:bg-gray-950"
             )}
         >

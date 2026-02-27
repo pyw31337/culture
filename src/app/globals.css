@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @custom-variant light (html:not(.dark) &);
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
 

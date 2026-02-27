@@ -83,6 +83,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
 
+    // Randomization Seed for consistent shuffle per category visit
+    const [shuffleSeed, setShuffleSeed] = useState<number>(Date.now());
+
     const [searchText, setSearchText] = useState('');
     const [searchLocation, setSearchLocation] = useState<{ lat: number, lng: number, name: string } | null>(null);
     const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
@@ -314,10 +317,18 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
         }
 
-        // Default Sort
+        // Shuffle all categories except 'movie'
+        if (selectedGenre !== 'movie') {
+            return filtered
+                .map(value => ({ value, sort: Math.sin(shuffleSeed + value.id.length) * 10000 }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+        }
+
+        // Default Sort (for movie)
         return sortPerformances(filtered, selectedGenre);
 
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius, searchMode]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
 
     // --- Search Results (Dynamic based on Mode) ---
     const searchResults = useMemo(() => {
@@ -720,6 +731,10 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
     const handleViewModeChange = (mode: string) => setViewMode(mode);
     const handleGenreSelect = (g: string) => {
         setSelectedGenre(g);
+        // Regenerate seed for shuffle unless it's movie
+        if (g !== 'movie') {
+            setShuffleSeed(Date.now());
+        }
         if (viewMode === 'likes-perf') setViewMode('grid');
 
         if (g === 'all') {

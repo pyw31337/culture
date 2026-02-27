@@ -147,7 +147,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     return (
         <Portal>
             <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="bg-white dark:bg-black w-full h-full shadow-2xl flex flex-col border-0">
+                <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                     {/* Header */}
                     <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden">
                         <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">
@@ -201,7 +201,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
                     {/* Daily View (Tighter Spacing) */}
                     {calendarView === 'daily' && (
-                        <div className="flex-grow overflow-y-auto p-2 sm:p-4 space-y-1.5 bg-white dark:bg-black">
+                        <div className="flex-grow overflow-y-auto p-2 sm:p-4 space-y-1.5 bg-white dark:bg-gray-900">
                             {(() => {
                                 const dayEvents = getPerformancesForDay(currentMonth);
                                 if (dayEvents.length === 0) return (
@@ -231,7 +231,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
                     {/* Weekly View (Vertical Row Layout - Redensified) */}
                     {calendarView === 'weekly' && (
-                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-black/90">
+                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-gray-900">
                             {eachDayOfInterval({
                                 start: startOfWeek(currentMonth, { weekStartsOn: 0 }),
                                 end: endOfWeek(currentMonth, { weekStartsOn: 0 })
@@ -264,7 +264,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                         </div>
 
                                         {/* Performance List Viewport (Tighter Gap) */}
-                                        <div className="flex-grow p-1.5 sm:p-3 overflow-x-auto bg-white dark:bg-black/20">
+                                        <div className="flex-grow p-1.5 sm:p-3 overflow-x-auto bg-white dark:bg-gray-900">
                                             <div className="flex flex-col gap-0.5 min-w-max sm:min-w-0">
                                                 {dayEvents.length > 0 ? (
                                                     dayEvents.slice(0, 50).map((perf, i) => (
