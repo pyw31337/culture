@@ -48,13 +48,13 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                 {dayEvents.slice(0, 5).map((perf, i) => (
                     <div
                         key={`${perf.id}-${i}`}
-                        className={clsx(
-                            "text-[10px] px-1.5 py-[1px] rounded truncate block hover:bg-gray-100 dark:hover:bg-gray-800 transition relative z-10 font-bold",
-                            (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
-                        )}
+                        className="flex items-center gap-1.5 px-1 py-[2px] rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition relative z-10 w-full"
                         title={perf.title}
                     >
-                        {perf.title}
+                        <span className={clsx("w-1.5 h-1.5 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                        <span className="text-[11px] font-bold text-gray-900 dark:text-white truncate">
+                            {perf.title}
+                        </span>
                     </div>
                 ))}
                 {dayEvents.length > 5 && (

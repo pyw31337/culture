@@ -274,12 +274,11 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             className={clsx(
-                                                                "group flex items-center gap-1.5 text-[11px] sm:text-sm px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition font-bold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none",
-                                                                (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
+                                                                "group flex items-center gap-1.5 text-[11px] sm:text-sm px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none text-gray-900 dark:text-white font-bold"
                                                             )}
                                                             title={perf.title}
                                                         >
-                                                            <span className={clsx("w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                                                            <span className={clsx("w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
                                                             <span className="truncate">{perf.title}</span>
                                                             {perf.venue && (
                                                                 <span className="text-[9px] sm:text-[11px] text-gray-400 font-medium ml-auto hidden sm:block shrink-0">{perf.venue}</span>

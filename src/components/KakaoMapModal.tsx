@@ -501,7 +501,7 @@ export default function KakaoMapModal({
                         </div>
                     )}
 
-                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800 dark:filter dark:grayscale dark:invert-[0.9] dark:hue-rotate-180" />
+                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
                     <div className="absolute inset-0 pointer-events-none z-[110]">
                         {selectedVenue && selectedVenueData && popupPosition && (
