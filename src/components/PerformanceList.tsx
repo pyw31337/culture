@@ -1159,9 +1159,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 ) : viewMode === 'likes-perf' ? (
                     <>
                         {/* 좋아요한 컨텐츠 Section */}
-                        <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6">
+                        <h3 className="text-xl sm:text-2xl font-black text-black dark:text-white flex items-center gap-3 mb-6">
                             <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
-                            좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
+                            좋아요한 컨텐츠 <span className="text-pink-600 dark:text-pink-400 text-lg sm:text-xl">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
                         </h3>
                         {allPerformances.filter(p => likedIds.includes(p.id)).length > 0 ? (
                             <PerformanceGrid
@@ -1188,19 +1188,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 searchText={searchText}
                             />
                         ) : (
-                            <div className="text-center py-12 text-gray-500">
-                                <Heart className="w-12 h-12 mx-auto mb-4 text-gray-600" />
-                                <p className="text-lg font-semibold">좋아요한 컨텐츠가 없습니다</p>
-                                <p className="text-sm mt-1">마음에 드는 공연/전시를 좋아요 해보세요!</p>
+                            <div className="text-center py-12 text-gray-800 dark:text-gray-400">
+                                <Heart className="w-12 h-12 mx-auto mb-4 text-gray-400 dark:text-gray-600" />
+                                <p className="text-lg font-semibold text-black dark:text-white">좋아요한 컨텐츠가 없습니다</p>
+                                <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">마음에 드는 공연/전시를 좋아요 해보세요!</p>
                             </div>
                         )}
 
                         {/* 좋아요한 공연장 Section */}
                         <div className="mb-10 mt-8">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3">
+                                <h3 className="text-xl sm:text-2xl font-black text-black dark:text-white flex items-center gap-3">
                                     <MapPin className="text-pink-400 w-6 h-6" />
-                                    좋아요한 공연장 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
+                                    좋아요한 공연장 <span className="text-pink-600 dark:text-pink-400 text-lg sm:text-xl">({favoriteVenues.length})</span>
                                 </h3>
                                 <button
                                     onClick={() => setShowFavoriteListModal(true)}
@@ -1260,7 +1260,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     })}
                                 </div>
                             ) : (
-                                <div className="text-center py-4 text-gray-500 text-sm">
+                                <div className="text-center py-4 text-sm text-gray-800 dark:text-gray-400">
                                     좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
                                 </div>
                             )}
