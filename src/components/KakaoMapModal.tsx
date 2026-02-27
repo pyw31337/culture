@@ -375,28 +375,39 @@ export default function KakaoMapModal({
                 }
             }
         } else if (!centerLocation && allVenuesList.current.length > 0) {
-            // FIX: If no center location is explicitly set (e.g. from keyword search over all items),
-            // Bound the map to include all matched venues in the search result
-            const bounds = new window.kakao.maps.LatLngBounds();
-            let hasValidCoords = false;
-            
-            allVenuesList.current.forEach(v => {
-                if (v.lat && v.lng) {
-                    bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
-                    hasValidCoords = true;
-                }
-            });
-            
-            if (hasValidCoords) {
-                setTimeout(() => {
-                    // Only bound if there's more than 1 venue, or if it's 1 it might zoom in too far.
-                    if (allVenuesList.current.length === 1) {
-                        map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
-                        map.setLevel(4);
-                    } else {
-                        map.setBounds(bounds, 100, 50, 150, 50);
+            const sigKey = `all_${allVenuesList.current.length}_${selectedGenre}`;
+            if (lastBoundedLocationRef.current !== sigKey) {
+                lastBoundedLocationRef.current = sigKey;
+                
+                // Bound the map to include all matched venues in the search result
+                const bounds = new window.kakao.maps.LatLngBounds();
+                let hasValidCoords = false;
+                
+                allVenuesList.current.forEach(v => {
+                    if (v.lat && v.lng) {
+                        bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
+                        hasValidCoords = true;
                     }
-                }, 100);
+                });
+                
+                if (hasValidCoords) {
+                    setTimeout(() => {
+                        // Only bound if there's more than 1 venue, or if it's 1 it might zoom in too far.
+                        if (allVenuesList.current.length === 1) {
+                            map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
+                            map.setLevel(4);
+                        } else {
+                            map.setBounds(bounds, 100, 50, 150, 50);
+                            
+                            // Restrict zoom out to Level 7 (approx 1km scale) to prevent zooming out to the whole country.
+                            setTimeout(() => {
+                                if (map.getLevel() > 7) {
+                                    map.setLevel(7);
+                                }
+                            }, 50);
+                        }
+                    }, 100);
+                }
             }
         }
 
