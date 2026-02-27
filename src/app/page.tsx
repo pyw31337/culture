@@ -41,7 +41,7 @@ export default async function Home() {
     const lastUpdated = `${year}.${month}.${day}.(${weekday}) ${hour}:${minute} `;
 
     return (
-        <main className="min-h-screen bg-gray-900 light:bg-white pb-20">
+        <main className="min-h-screen bg-black light:bg-white pb-20">
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
                 <PerformanceList initialPerformances={performances} lastUpdated={lastUpdated} />
             </Suspense>

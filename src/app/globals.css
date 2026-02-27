@@ -294,37 +294,87 @@ body {
     animation: slide-up 0.3s ease-out forwards;
   }
 
-  /* Frosted Glass Effect */
-  .frosted-glass-overlay {
+  /* 🎨 Tutorial-accurate Frosted Glass Effect */
+  /* Base Layer with Color Gradients */
+  .glass-base {
     position: fixed;
-    inset: 0;
+    top: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 120vh;
+    transform: rotate(-15deg);
+    background-image: linear-gradient(
+      to bottom,
+      var(--glass-color-1) 0%,
+      var(--glass-color-2) 48%,
+      var(--glass-color-1) 68%,
+      var(--glass-color-3) 100%
+    );
+    mix-blend-mode: hard-light;
     pointer-events: none;
-    z-index: 1; /* Above circular gradients (z-0), below content (z-10/40) */
-    backdrop-filter: blur(40px);
-    background-image: repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.02) 0%,
-      rgba(255, 255, 255, 0) 5%,
-      rgba(255, 255, 255, 0.02) 10%
-    );
-    background-size: 60px 60px;
-    mask-image: radial-gradient(circle at 85% 15%, black 0%, transparent 70%);
-    -webkit-mask-image: radial-gradient(circle at 85% 15%, black 0%, transparent 70%);
+    z-index: 0;
+    opacity: 0.8;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dark .frosted-glass-overlay {
+  /* Glass Texture Layer */
+  .glass-layer {
+    position: fixed;
+    inset: -20%;
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(0, 0, 0, 0.25) 49%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    background-size: 40px;
     mix-blend-mode: color-dodge;
-    opacity: 0.4;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    pointer-events: none;
+    z-index: 1;
+    transform: rotate(10deg) scale(1.5);
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
   }
 
-  .light .frosted-glass-overlay {
+  /* Dark mode specific optimizations */
+  .dark .glass-base {
+    opacity: 0.7;
+  }
+  
+  .dark .glass-layer {
+    mix-blend-mode: color-dodge;
+    opacity: 0.5;
+  }
+
+  /* Light mode specific optimizations */
+  .light .glass-base {
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+  }
+  
+  .light .glass-layer {
     mix-blend-mode: overlay;
-    opacity: 0.15;
+    opacity: 0.2;
     background-image: repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.03) 0%,
-      rgba(0, 0, 0, 0) 5%,
-      rgba(0, 0, 0, 0.03) 10%
+      to right,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(255, 255, 255, 0.1) 49%,
+      rgba(0, 0, 0, 0.02) 100%
     );
+  }
+
+  /* Theme Tokens */
+  .theme-purple {
+    --glass-color-1: #b59cf8;
+    --glass-color-2: #f5f2ff;
+    --glass-color-3: #8273a9;
+  }
+
+  .theme-green {
+    --glass-color-1: #6ee7b7;
+    --glass-color-2: #ecfdf5;
+    --glass-color-3: #10b981;
   }
 }
