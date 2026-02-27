@@ -120,16 +120,7 @@ async function scrapeTimeTicket() {
         'Accept-Language': 'ko-KR,ko;q=0.9',
     });
 
-    // Block only fonts and stylesheets to speed up, ALLOW IMAGES to prevent onerror
-    await page.setRequestInterception(true);
-    page.on('request', (req) => {
-        if (['font', 'stylesheet'].includes(req.resourceType())) {
-            req.abort();
-        } else {
-            req.continue();
-        }
-    });
-
+    // Simplified loading for stability
     const allItems: Performance[] = [];
     const seenTitles = new Set<string>();
     const existingDataMap = loadExistingData();
@@ -160,14 +151,16 @@ async function scrapeTimeTicket() {
                 try {
                     await page.waitForSelector('a[href^="/product/"]', { timeout: 10000 });
                 } catch (e) {
-                    // console.log(`  No items found or timeout for region ${code} category ${cat.id}`);
+                    const htmlSnippet = await page.evaluate(() => document.body.innerHTML.substring(0, 1000));
+                    console.log(`  No items found or timeout for region ${code} category ${cat.id}. URL: ${url}`);
+                    // console.log(`  Snippet: ${htmlSnippet}`);
                     continue;
                 }
 
-                const listItems = await page.evaluate((currentRegion, currentCatId, currentDefaultGenre) => {
-                    const results: any[] = [];
+                const listItems: any[] = await page.evaluate(`((currentRegion, currentCatId, currentDefaultGenre) => {
+                    const results = [];
                     // Use a more robust selector based on href pattern
-                    const items = document.querySelectorAll('a[href^="/product/"]');
+                    const items = document.querySelectorAll('a[href*="/product/"]');
 
                     items.forEach((item) => {
                         const linkAttribute = item.getAttribute('href');
@@ -185,7 +178,7 @@ async function scrapeTimeTicket() {
                         // Fallback to background image if extracted
                         if (!image && thumbDiv) {
                             const style = thumbDiv.getAttribute('style');
-                            const match = style?.match(/url\(['"]?(.*?)['"]?\)/);
+                            const match = style?.match(/url\\(['"]?(.*?)['"]?\\)/);
                             if (match) image = match[1];
                             if (image && !image.startsWith('http')) {
                                 image = 'https://timeticket.co.kr' + image;
@@ -195,9 +188,9 @@ async function scrapeTimeTicket() {
                         const titleEl = item.querySelector('.ticket_info .title');
                         let title = titleEl ? titleEl.textContent?.trim() || '' : '';
                         // Robust cleaning: remove leading/trailing whitespace and specific pattern
-                        title = title.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+                        title = title.replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '');
                         // Remove space before specific full-width bracket tag if it exists internally or normally
-                        title = title.replace(/\s+(?=［만원의행복］)/g, '');
+                        title = title.replace(/\\s+(?=［만원의행복］)/g, '');
 
                         const categoryEl = item.querySelector('.ticket_info .category');
                         const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
@@ -230,7 +223,7 @@ async function scrapeTimeTicket() {
                         }
                     });
                     return results;
-                }, region, cat.id, cat.defaultGenre);
+                })("${region}", ${cat.id}, "${cat.defaultGenre}")`);
 
 
                 // If we get here, either no state or hash mismatch. proceed with full collection.
@@ -351,76 +344,46 @@ async function scrapeTimeTicket() {
             // We'll give it a moment to render any JS driven content
             await new Promise(r => setTimeout(r, 500)); // Minimal wait for stability
 
-            const detailData = await page.evaluate(() => {
-                // Selectors provided by user
-                // Date: body > div:nth-child(5) > div > div:nth-child(2) > div:nth-child(6) > div > div.openrun > p:nth-child(1)
-                // Time: .run_info
-                // Age: :nth-child(3)
-                // Discount: .sale_p
-                // Origin: span.origin_price
-                // Sale: span.sale_price
-
-                // Note: The nth-child selectors might be brittle if layout changes slightly, but we follow user request.
-                // We will try robust classes first if available matching the intent.
-
+            const detailData: any = await page.evaluate(`(() => {
                 const openRunDiv = document.querySelector('.openrun');
                 let date = '';
                 let runningTime = '';
                 let ageLimit = '';
 
                 if (openRunDiv) {
-                    // The user specified nth-childs relative to .openrun P tags
-                    // p:1 -> Date (Period)
-                    // p.run_info -> Time
-                    // p:3 -> Age
-
                     const pTags = openRunDiv.querySelectorAll('p');
-
-                    // Iterate through p tags to identify content by keywords
                     pTags.forEach(p => {
                         const text = p.textContent?.trim() || '';
                         if (!text) return;
-
-                        // Date usually contains ~ or numbers with dots
-                        if (text.match(/\d{4}\.\d{2}\.\d{2}/) && !date) {
+                        if (text.match(/\\d{4}\\.\\d{2}\\.\\d{2}/) && !date) {
                             date = text;
                         }
-
-                        // Running time usually contains '분'
                         if (text.includes('분') && !runningTime) {
                             runningTime = text;
                         }
-
-                        // Age rating usually contains '세' or '관람' or '가'
-                        if ((text.includes('세') || text.includes('관람') || text.includes('전체')) && !text.includes('분') && !text.match(/\d{4}\./) && !ageLimit) {
+                        if ((text.includes('세') || text.includes('관람') || text.includes('전체')) && !text.includes('분') && !text.match(/\\d{4}\\./) && !ageLimit) {
                             ageLimit = text;
                         }
                     });
-
-                    // Fallback: Specific class check if available
                     const runInfoP = openRunDiv.querySelector('.run_info');
                     if (runInfoP && !runningTime) runningTime = runInfoP.textContent?.trim() || '';
                 }
 
-                // Fallback: Check radius boxes for explicit labels if still missing
                 if (!ageLimit || !runningTime) {
                     const radiusBoxes = document.querySelectorAll('.viewpage_text.radius_box');
                     radiusBoxes.forEach(box => {
                         const text = (box.textContent || '').trim();
-
                         if (!ageLimit && text.includes('이용등급')) {
-                            const match = text.match(/이용등급\s*[:]?\s*(.*?)(\n|$)/);
+                            const match = text.match(/이용등급\\s*[:]?\\s*(.*?)(\\n|$)/);
                             if (match) ageLimit = match[1].trim();
                         }
-
                         if (!runningTime && text.includes('이용시간')) {
-                            const match = text.match(/이용시간\s*[:]?\s*(.*?)(\n|$)/);
+                            const match = text.match(/이용시간\\s*[:]?\\s*(.*?)(\\n|$)/);
                             if (match) runningTime = match[1].trim();
                         }
                     });
                 }
 
-                // Prices
                 const originEl = document.querySelector('.price_info .origin_price');
                 const saleEl = document.querySelector('.price_info .sale_price');
                 const discountEl = document.querySelector('.sale_info .sale_p');
@@ -429,72 +392,44 @@ async function scrapeTimeTicket() {
                 let salePrice = saleEl ? saleEl.textContent?.trim() : '';
                 let discount = discountEl ? discountEl.textContent?.trim() : '';
 
-                // Text Boxes for Extra Info & Address
-                // #ajaxcontentarea > div > div:nth-child(3) > div.viewpage_text.radius_box -> Info (Adult Price?)
-                // #ajaxcontentarea > div > div:nth-child(7) > div.viewpage_text.radius_box -> Address
-
-                // Helper to find box by content if structure varies, or use strict index if stable.
-                // The user gave strict indices.
-
                 let address = '';
-
-                // We'll search all radius boxes to be safe, or specific if layout matches
                 const radiusBoxes = document.querySelectorAll('.viewpage_text.radius_box');
-
-                // Try to find Adult Price in the first text box (usually info)
                 if (radiusBoxes.length > 0) {
                     const infoText = radiusBoxes[0].textContent || '';
                     if (!salePrice) {
-                        // Try to find price in text if not found above
-                        // "성인 ... 000원"
-                        const match = infoText.match(/성인\s*[:]?\s*([\d,]+)원/);
+                        const match = infoText.match(/성인\\s*[:]?\\s*([\\d,]+)원/);
                         if (match) salePrice = match[1] + '원';
                     }
                 }
-
-                // Address - User said 7th div (which might be the 2nd radius box visually?)
-                // Let's look for "주소" in any radius box or specifically the 2nd one found.
-                // The provided selector was complex: #ajaxcontentarea > div > div:nth-child(7) ...
-                // Let's iterate all boxes to find "주소"
                 radiusBoxes.forEach(box => {
-                    const text = (box as HTMLElement).innerText;
+                    const text = box.innerText;
                     if (text.includes('주소')) {
                         const parts = text.split('주소');
                         if (parts[1]) {
-                            const candidate = parts[1].split('\n')[0].replace(/[:]/g, '').trim();
+                            const candidate = parts[1].split('\\n')[0].replace(/[:]/g, '').trim();
                             if (candidate) address = candidate;
                         }
                     }
                 });
 
-                // Fallback for venue/address if still empty
-                let venue = '대학로'; // Default
-                if (address) {
-                    // Try to extract venue name from address or nearby text?
-                    // Often venue name is not explicitly in the address box but defined elsewhere.
-                    // We'll trust the list scraping for Venue Name usually, but can look for "장소" here too.
-                    radiusBoxes.forEach(box => {
-                        if ((box as HTMLElement).innerText.includes('장소')) {
-                            const v = (box as HTMLElement).innerText.split('장소')[1].split('\n')[0].replace(/[:]/g, '').trim();
-                            if (v) venue = v;
-                        }
-                    });
-                } else {
-                    // Check common structure for address
-                    const mapDiv = document.querySelector('#map');
-                    // sometimes address is near map?
-                }
+                let venue = '대학로';
+                radiusBoxes.forEach(box => {
+                    if (box.innerText.includes('장소')) {
+                        const v = box.innerText.split('장소')[1].split('\\n')[0].replace(/[:]/g, '').trim();
+                        if (v) venue = v;
+                    }
+                });
 
                 return {
                     runningTime,
-                    ageRating: ageLimit, // Map to ageRating for consistency
+                    ageRating: ageLimit,
                     date: date || 'OPEN RUN',
                     venue,
                     originalPrice,
                     salePrice,
                     address,
                 };
-            });
+            })()`);
 
             // HOT DEAL VALIDATION:
             // User requirement: "Hot deal is not a hot deal if there is no discount rate."

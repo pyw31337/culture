@@ -174,8 +174,14 @@ function parseRegion(address: string): string {
 async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> {
     try {
         // Updated Selectors for New Layout
-        return await page.evaluate(() => {
-            const items: ListItem[] = [];
+        return await page.evaluate(`(() => {
+            const slugify = (text) => {
+                return text
+                    .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+                    .replace(/_+/g, '_')
+                    .replace(/^_|_$/g, '');
+            };
+            const items = [];
             const lis = document.querySelectorAll('#fstvlList > li');
 
             lis.forEach((el) => {
@@ -192,7 +198,7 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 const title = titleEl?.textContent?.trim() || '';
 
                 const imgEl = el.querySelector('.other_festival_img img');
-                let thumbnailImage = (imgEl as HTMLImageElement)?.src || '';
+                let thumbnailImage = imgEl?.src || '';
                 // Upgrade image quality by using original instead of 300_ thumbnail
                 if (thumbnailImage.includes('/300_')) {
                     thumbnailImage = thumbnailImage.replace('/300_', '/');
@@ -204,12 +210,12 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 const locEl = el.querySelector('.loc');
                 const venue = locEl?.textContent?.trim() || '';
 
-                const festId = `fest_${slugify(title)}`;
+                const festId = \`fest_\${slugify(title)}\`;
 
                 items.push({ id: festId, title, thumbnailImage, date, venue, link: href });
             });
             return items;
-        });
+        })()`);
     } catch (e) {
         console.error(`Page ${pageNum} scrape error:`, e);
         return [];

@@ -23,19 +23,18 @@ function slugify(text: string): string {
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
 // --- Shared Metadata Extraction Logic (From scrape-ott.ts) ---
-// This function runs INSIDE the browser context
-const extractMetadata = () => {
-    const res: any = {};
-    // Unified Metadata Extraction (Header + Basic Info + Pattern Matching)
+// This function is converted to a string to bypass tsx instrumentation
+const extractMetadataStr = `() => {
+    const res = {};
     const metadataSources = [
-        ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), // Headers
-        ...Array.from(document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt')), // Headers (new)
-        ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd, .intro_box .intro_desc')) // Details
+        ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), 
+        ...Array.from(document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt')), 
+        ...Array.from(document.querySelectorAll('.info_group dd, .detail_info dd, .cm_content_area .info_group dd, .intro_box .intro_desc')) 
     ];
 
     const patterns = {
-        age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*이상|\d{1,2}세이상|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
-        runtime: /(\d{1,3}분)/,
+        age: /(전체\\s*관람가|전체\\s*시청가|\\d{1,2}세\\s*이상|\\d{1,2}세이상|\\d{1,2}세\\s*(?:이상)?\\s*(?:관람가|시청가)?|청소년\\s*관람불가|청불|미성년자\\s*관람불가)/,
+        runtime: /(\\d{1,3}분)/,
         country: /(한국|대한민국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
         genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
     };
@@ -46,7 +45,6 @@ const extractMetadata = () => {
         const text = el.textContent?.trim() || '';
         if (!text) return;
 
-        // 1. Explicit Parsing (DT/DD)
         const dt = el.previousElementSibling?.tagName === 'DT' ? el.previousElementSibling : null;
         const label = dt?.textContent?.trim() || '';
 
@@ -56,16 +54,14 @@ const extractMetadata = () => {
         if (label === '장르' || label === '개요') realGenre = text;
         if (label === '원제') res.originalTitle = text;
 
-        // 2. Pattern Matching
-        if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)![0];
-        if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
-        if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
-        if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
+        if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)[0];
+        if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)[0];
+        if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)[0];
+        if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\\d/)) {
             if (patterns.genre.test(text)) res.subGenre = text;
         }
     });
 
-    // Refine Genre
     if (realGenre && !res.subGenre) {
         if (realGenre.includes('·')) {
             const parts = realGenre.split('·');
@@ -78,7 +74,6 @@ const extractMetadata = () => {
         }
     }
 
-    // Release Date (오픈/개봉)
     const infoGroups = document.querySelectorAll('.info_group');
     infoGroups.forEach(g => {
         const dt = g.querySelector('dt');
@@ -87,14 +82,13 @@ const extractMetadata = () => {
             const label = dt.textContent?.trim() || '';
             if (label === '오픈' || label === '개봉') {
                 const raw = dd.textContent?.trim() || '';
-                const match = raw.match(/(\d{4})\.(\d{2})\.(\d{2})/);
-                if (match) res.releaseDate = `${match[1]}-${match[2]}-${match[3]}`;
+                const match = raw.match(/(\\d{4})\\.(\\d{2})\\.(\\d{2})/);
+                if (match) res.releaseDate = \`\${match[1]}-\${match[2]}-\${match[3]}\`;
             }
         }
     });
 
-    // Cast Extraction
-    const cast: string[] = [];
+    const cast = [];
     const allContentAreas = Array.from(document.querySelectorAll('.cm_content_area, .api_subject_bx'));
     const castContainer = allContentAreas.find(area => {
         const title = area.querySelector('h2, h3, .cm_title')?.textContent?.trim();
@@ -114,13 +108,9 @@ const extractMetadata = () => {
 
             if (name) {
                 if (name.includes(' 역')) name = name.split(' 역')[0];
-
-                // Director check
                 if (fullText.includes('감독') || fullText.includes('연출')) {
                     if (!res.director) res.director = name;
-                }
-                // Cast check - if it's in the cast container, assume it's cast unless it's director
-                else {
+                } else {
                     cast.push(name);
                 }
             }
@@ -129,7 +119,6 @@ const extractMetadata = () => {
 
     if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
 
-    // Poster
     const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
     if (img) {
         let src = img.getAttribute('src');
@@ -144,7 +133,7 @@ const extractMetadata = () => {
     }
 
     return res;
-};
+}`;
 
 // --- Scraper Class ---
 
@@ -253,9 +242,9 @@ async function scrapeMovies() {
             }, cliProgress.Presets.shades_classic);
             progressBar.start(30, 0, { movie: '대기 중' });
 
-            movies = await kobisPage.evaluate(() => {
+            const list = await kobisPage.evaluate(`(() => {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
-                const list: any[] = [];
+                const list = [];
                 rows.forEach((row, idx) => {
                     if (idx >= 30) return;
                     const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
@@ -269,7 +258,8 @@ async function scrapeMovies() {
                     }
                 });
                 return list;
-            });
+            })()`);
+            movies = list as any[];
 
             progressBar.update(movies.length, { movie: '완료' });
             progressBar.stop();
@@ -356,7 +346,7 @@ async function scrapeMovies() {
                 await sleep(500 + Math.random() * 500); // Throttling
 
                 // Initial Extraction
-                let detail = await page.evaluate(extractMetadata);
+                let detail: any = await page.evaluate(`(${extractMetadataStr})()`);
                 Object.assign(item, detail);
 
                 // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
@@ -373,7 +363,7 @@ async function scrapeMovies() {
                         });
                         if (clicked) {
                             await page.waitForTimeout(1000);
-                            const newDetail = await page.evaluate(extractMetadata);
+                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
                             if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
                             if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
                             if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
@@ -398,13 +388,13 @@ async function scrapeMovies() {
                         });
                         if (clicked) {
                             await page.waitForTimeout(1000);
-                            const newDetail = await page.evaluate(extractMetadata);
+                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
                             if (newDetail.director) item.director = newDetail.director;
                             if (newDetail.cast) item.cast = newDetail.cast;
 
                             // Try for poster again if missing
                             if (!item.poster) {
-                                const newDetail2 = await page.evaluate(extractMetadata);
+                                const newDetail2: any = await page.evaluate(`(\${extractMetadataStr})()`);
                                 if (newDetail2.poster) item.poster = newDetail2.poster;
                             }
                         }

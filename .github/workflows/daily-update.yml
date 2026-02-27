@@ -37,6 +37,7 @@ jobs:
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm ci
+          npx playwright install chromium --with-deps
 
       - name: Install System Dependencies (Puppeteer)
         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'

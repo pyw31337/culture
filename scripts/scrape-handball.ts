@@ -43,20 +43,20 @@ async function scrapeHandball() {
             console.log('Table not found or timed out');
         }
 
-        const performances: Performance[] = await page.evaluate(() => {
+        const performances: Performance[] = await page.evaluate(`(() => {
             const rows = Array.from(document.querySelectorAll('.record_table.pc_only table tbody tr'));
-            const results: any[] = [];
+            const results = [];
             let currentDate = '';
 
-            const slugify = (text: string): string => {
+            function slugify(text) {
                 return text
                     .replace(/[^a-zA-Z0-9가-힣]/g, '_')
                     .replace(/_+/g, '_')
                     .replace(/^_|_$/g, '');
-            };
+            }
 
             rows.forEach(tr => {
-                const cells = Array.from(tr.children) as HTMLElement[];
+                const cells = Array.from(tr.children);
                 if (cells.length === 0) return;
 
                 let dateStr = '';
@@ -66,38 +66,24 @@ async function scrapeHandball() {
 
                 // Check if this row initiates a new date (first cell has date pattern)
                 const firstCellText = cells[0].innerText.trim();
-                const dateMatch = firstCellText.match(/(\d{4})\.(\d{2})\.(\d{2})/);
+                const dateMatch = firstCellText.match(/(\\d{4})\\.(\\d{2})\\.(\\d{2})/);
 
-                let contentCell: HTMLElement | null = null;
+                let contentCell = null;
 
                 if (dateMatch) {
                     // New Date Row
-                    currentDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+                    currentDate = \`\${dateMatch[1]}-\${dateMatch[2]}-\${dateMatch[3]}\`;
                     dateStr = currentDate;
                     timeStr = cells[1]?.innerText.trim() || '00:00';
-                    contentCell = cells[3] as HTMLElement;
+                    contentCell = cells[3];
                     venueStr = cells[5]?.innerText.trim() || '';
-                    // Note: Index 5 based on diagnostic (Date, Time, Division, Content, Broadcaster, Venue, ...)
-                    // Diagnostic showed: 
-                    // 0: Date
-                    // 1: Time
-                    // 2: Division
-                    // 3: Content
-                    // 4: Broadcaster
-                    // 5: Venue
                 } else {
                     // Continuation Row (No date cell)
-                    if (!currentDate) return; // Should not happen if data is sorted
+                    if (!currentDate) return; 
                     dateStr = currentDate;
                     timeStr = cells[0]?.innerText.trim() || '00:00';
-                    contentCell = cells[2] as HTMLElement;
+                    contentCell = cells[2];
                     venueStr = cells[4]?.innerText.trim() || '';
-                    // Diagnostic showed:
-                    // 0: Time
-                    // 1: Division
-                    // 2: Content
-                    // 3: Broadcaster
-                    // 4: Venue
                 }
 
                 // Extract Teams and Logos from Content Cell
@@ -127,20 +113,20 @@ async function scrapeHandball() {
                     const homeEl = contentCell.querySelector('.team.home .name');
                     const awayEl = contentCell.querySelector('.team.away .name');
 
-                    if (homeEl) homeTeam = (homeEl as HTMLElement).innerText.trim();
-                    if (awayEl) awayTeam = (awayEl as HTMLElement).innerText.trim();
+                    if (homeEl) homeTeam = homeEl.innerText.trim();
+                    if (awayEl) awayTeam = awayEl.innerText.trim();
 
-                    homeTeamLogo = (HANDBALL_LOGOS as any)[homeTeam] || '';
-                    awayTeamLogo = (HANDBALL_LOGOS as any)[awayTeam] || '';
+                    homeTeamLogo = HANDBALL_LOGOS[homeTeam] || '';
+                    awayTeamLogo = HANDBALL_LOGOS[awayTeam] || '';
                 }
 
                 if (homeTeam && awayTeam) {
-                    const title = `${homeTeam} vs ${awayTeam}`;
+                    const title = \`\${homeTeam} vs \${awayTeam}\`;
                     const safeMatchup = slugify(title);
                     results.push({
-                        id: `handball_${dateStr.replace(/-/g, '')}_${safeMatchup}`,
+                        id: \`handball_\${dateStr.replace(/-/g, '')}_\${safeMatchup}\`,
                         title,
-                        date: `${dateStr} ${timeStr}`,
+                        date: \`\${dateStr} \${timeStr}\`,
                         venue: venueStr,
                         link: 'https://www.koreahandball.com/game/schedule_list.php',
                         genre: 'handball',
@@ -153,7 +139,7 @@ async function scrapeHandball() {
             });
 
             return results;
-        });
+        })()`);
 
         // Post-process to add region and image
         const finalData = performances.map(p => ({

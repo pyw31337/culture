@@ -449,7 +449,7 @@ export default function KakaoMapModal({
     return (
         <Portal>
             <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="relative w-full h-full max-w-[1700px] max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-gray-900 sm:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col">
+                <div className="relative w-full h-full max-w-[1700px] sm:max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-black sm:rounded-2xl overflow-hidden shadow-2xl border-0 sm:border border-gray-200 dark:border-gray-800 flex flex-col">
                     <button
                         onClick={onClose}
                         className="absolute top-4 right-4 z-[100] p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
@@ -548,7 +548,7 @@ export default function KakaoMapModal({
                         )}
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/90 dark:from-gray-900 via-white/80 dark:via-gray-900/90 to-transparent pt-12 pb-4 px-4">
+                    <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-black via-white/80 dark:via-black/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
                         {visibleVenues.length > 0 && (
                             <div
                                 id="venue-scroll-container"

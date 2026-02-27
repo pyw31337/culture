@@ -146,8 +146,8 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
     return (
         <Portal>
-            <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-                <div className="bg-white dark:bg-gray-900 w-full max-w-[1700px] h-[90vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-800">
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center sm:p-4 bg-black/80 backdrop-blur-sm">
+                <div className="bg-white dark:bg-black w-full max-w-[1700px] h-full sm:h-[90vh] sm:rounded-2xl shadow-2xl flex flex-col border-0 sm:border border-gray-200 dark:border-gray-800">
                     {/* Header */}
                     <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden">
                         <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">
@@ -201,7 +201,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
                     {/* Daily View */}
                     {calendarView === 'daily' && (
-                        <div className="flex-grow overflow-y-auto p-4 space-y-3">
+                        <div className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-black">
                             {(() => {
                                 const dayEvents = getPerformancesForDay(currentMonth);
                                 if (dayEvents.length === 0) return (
@@ -232,14 +232,14 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                     {/* Weekly View */}
                     {calendarView === 'weekly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950">
+                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
                                 {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map((day, idx) => (
                                     <div key={day.toISOString()} className={clsx("py-3 text-center text-xs font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
                                         {format(day, 'eee d일', { locale: ko })}
                                     </div>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-7 flex-grow overflow-y-auto bg-gray-200 dark:bg-gray-800 gap-[1px]">
+                            <div className="grid grid-cols-7 flex-grow overflow-y-auto bg-gray-200 dark:bg-gray-800 gap-[1px] border-b border-gray-200 dark:border-gray-800">
                                 {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map(day => {
                                     const dayEvents = getPerformancesForDay(day);
                                     const isToday = isSameDay(day, new Date());
@@ -300,12 +300,12 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
 
             {/* Day Detail Modal */}
             {selectedDate && (
-                <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
+                <div className="fixed inset-0 z-[10000] flex items-center justify-center sm:p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
                     <div
-                        className="bg-white dark:bg-gray-900 w-full max-w-md max-h-[80vh] rounded-2xl shadow-2xl flex flex-col border border-gray-200 dark:border-gray-800 overflow-hidden"
+                        className="bg-white dark:bg-gray-950 w-full max-w-md h-full sm:h-auto sm:max-h-[80vh] sm:rounded-2xl shadow-2xl flex flex-col border-0 sm:border border-gray-200 dark:border-gray-800 overflow-hidden"
                         onClick={e => e.stopPropagation()}
                     >
-                        <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
+                        <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-900">
                             <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
                                 {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
                             </h3>
