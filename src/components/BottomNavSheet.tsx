@@ -422,7 +422,7 @@ export default function BottomNavSheet({
 
                             {/* Search Results List (Inserted) */}
                             {isSearchDropdownOpen && (
-                                <div className="w-full flex flex-col gap-1 max-h-[300px] overflow-y-auto custom-scrollbar my-2 p-1 bg-black/40 light:bg-gray-50 border border-white/10 light:border-black/5 rounded-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+                                <div className="w-full flex flex-col gap-1 max-h-[300px] overflow-y-auto custom-scrollbar my-2 p-1 bg-gray-50 dark:bg-black/40 border border-black/5 dark:border-white/10 rounded-2xl animate-in fade-in slide-in-from-top-2 duration-200">
                                     {searchResults.length > 0 && searchText.trim().length > 0 ? (
                                         searchResults.map((result, idx) => (
                                             <button
@@ -434,24 +434,24 @@ export default function BottomNavSheet({
                                                 }}
                                                 className={clsx(
                                                     "w-full text-left px-3 py-2.5 rounded-xl transition-colors flex items-start gap-3 group shrink-0",
-                                                    "hover:bg-white/5 light:hover:bg-gray-100",
-                                                    searchMode === 'location' ? "hover:bg-emerald-500/10 light:hover:bg-emerald-50" : "hover:bg-purple-500/10 light:hover:bg-purple-50"
+                                                    "hover:bg-gray-100 dark:hover:bg-white/5",
+                                                    searchMode === 'location' ? "hover:bg-emerald-50 dark:hover:bg-emerald-500/10" : "hover:bg-purple-50 dark:hover:bg-purple-500/10"
                                                 )}
                                             >
                                                 <div className={clsx(
                                                     "p-2 rounded-lg mt-0.5 shrink-0",
                                                     searchMode === 'location'
-                                                        ? "bg-emerald-500/20 text-emerald-400 light:bg-emerald-100 light:text-emerald-600"
-                                                        : "bg-purple-500/20 text-purple-400 light:bg-purple-100 light:text-purple-600"
+                                                        ? "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400"
+                                                        : "bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-400"
                                                 )}>
                                                     {searchMode === 'location' ? <MapPin size={16} /> : <Search size={16} />}
                                                 </div>
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center gap-2">
-                                                        <span className="text-sm font-bold text-gray-200 light:text-gray-900 truncate">
+                                                        <span className="text-sm font-bold text-gray-900 dark:text-gray-200 truncate">
                                                             {result.name}
                                                         </span>
-                                                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 light:bg-gray-200 text-gray-400 light:text-gray-600 whitespace-nowrap">
+                                                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-400 whitespace-nowrap">
                                                             {result.category || result.type}
                                                         </span>
                                                     </div>

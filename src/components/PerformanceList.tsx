@@ -340,7 +340,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         } else {
             // Keyword Mode (Existing Logic)
             // Filter distinct items matching text
-            const lowerText = searchText.toLowerCase();
+            const lowerText = searchText.toLowerCase().replace(/\s+/g, ''); // Fix: ignore whitespace
             const isChoseong = /^[ㄱ-ㅎ\s]+$/.test(searchText);
 
             // De-duplicate by title
@@ -348,11 +348,16 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             return allPerformances
                 .filter(p => {
                     if (uniqueTitles.has(p.title)) return false;
+                    
+                    const titleNoSpace = p.title.toLowerCase().replace(/\s+/g, '');
+                    const venueNoSpace = p.venue.toLowerCase().replace(/\s+/g, '');
+                    
                     const match = isChoseong
                         ? isChoseongMatch(p.title, searchText)
-                        : (p.title.toLowerCase().includes(lowerText) ||
-                            p.venue.includes(searchText) ||
-                            (p.cast && Array.isArray(p.cast) && p.cast.some((c: any) => typeof c === 'string' ? c.includes(searchText) : c.name.includes(searchText))));
+                        : (titleNoSpace.includes(lowerText) ||
+                            venueNoSpace.includes(lowerText) ||
+                            (p.cast && Array.isArray(p.cast) && p.cast.some((c: any) => typeof c === 'string' ? c.replace(/\s+/g, '').includes(lowerText) : c.name.replace(/\s+/g, '').includes(lowerText))));
+                    
                     if (match) uniqueTitles.add(p.title);
                     return match;
                 })

@@ -90,6 +90,8 @@ export function getAllPerformances() {
 
     const interpark = safeArray<any>(interparkData).map((p: any) => ({
         ...p,
+        title: p.title?.trim() || '',
+        venue: p.venue?.trim() || '',
         // Map Korean region to English key if valid, or default to 'etc' if unknown but not empty
         region: REGION_MAP[p.region] || (p.region ? 'etc' : 'unknown')
     }));
