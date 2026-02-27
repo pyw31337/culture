@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
+import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
+
+const venues = venueData as Record<string, any>;
 
 interface RecommendedSectionProps {
     recommendedItems: any[];
@@ -244,23 +247,32 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     </div>
 
                                     {/* Bottom Action Bar (Permanent) */}
-                                    <div className="absolute inset-x-0 bottom-0 z-20 p-3 h-14 flex items-center justify-between pointer-events-none">
-                                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-0" />
+                                    <div className="absolute inset-x-0 bottom-0 z-20 p-3 flex items-center gap-3 pointer-events-none">
+                                        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0" />
 
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 onShare?.(perf.id, e);
                                             }}
-                                            className="relative z-10 p-2 rounded-lg bg-black/40 hover:bg-white/20 text-white/90 border border-white/10 backdrop-blur-md pointer-events-auto transition-all"
+                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur-md pointer-events-auto transition-all shrink-0 border border-white/10"
                                             title="공유하기"
                                         >
-                                            <Share2 size={16} />
+                                            <ChevronRight size={20} />
                                         </button>
 
-                                        <div className="relative z-10 text-right">
-                                            <span className="text-white font-black text-xs sm:text-sm drop-shadow-md line-clamp-1 max-w-[120px]">
+                                        <div className="relative z-10 flex flex-col justify-center min-w-0 h-10 overflow-hidden">
+                                            <span className="text-white font-black text-sm sm:text-base leading-tight truncate drop-shadow-md">
                                                 {cleanTitle(perf.title)}
+                                            </span>
+                                            <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">
+                                                {(() => {
+                                                    const addr = venues[perf.venue]?.address || '';
+                                                    if (!addr) return perf.venue;
+                                                    const parts = addr.split(' ');
+                                                    // Filter out numbers and specific theater detail rooms
+                                                    return parts.slice(0, 3).join(' ');
+                                                })()}
                                             </span>
                                         </div>
                                     </div>
