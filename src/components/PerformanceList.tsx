@@ -760,19 +760,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // --- Render ---
     return (
-        <div className={clsx(
-            "min-h-screen transition-colors duration-700",
-            "bg-white dark:bg-black text-black dark:text-white",
-            searchMode === 'location' ? "theme-green" : "theme-purple"
-        )}>
-            {/* 🌌 High-End Frosted Glass Backgrounds */}
+        <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
+            {/* 🌌 Backgrounds */}
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-            
-            {/* Base Layer: Dynamic Gradient */}
-            <div className="glass-base"></div>
-            
-            {/* Glass Texture Layer: Blur + Repeating Texture */}
-            <div className="glass-layer"></div>
+            <div className={clsx(
+                "fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow transition-colors duration-700",
+                searchMode === 'location' ? "bg-emerald-500" : "bg-[#7c3aed]"
+            )}></div>
+            <div className={clsx(
+                "fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000 transition-colors duration-700",
+                searchMode === 'location' ? "bg-teal-400" : "bg-[#db2777]"
+            )}></div>
 
             {/* 1. Header (Restored) */}
             <header className="relative z-40 bg-transparent backdrop-blur-none border-b border-transparent light:border-transparent">
@@ -887,7 +885,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                             value={keywordInput}
                             onChange={(e) => setKeywordInput(e.target.value)}
                             placeholder="키워드 추가 (예: 아이유)"
-                            className="flex-1 bg-black/80 light:bg-gray-100 border border-white/10 light:border-black/10 rounded-lg px-3 py-2 text-sm text-white light:text-black focus:outline-none focus:border-purple-500/50 transition-colors"
+                            className="flex-1 bg-gray-900/80 light:bg-gray-100 border border-white/10 light:border-black/10 rounded-lg px-3 py-2 text-sm text-white light:text-black focus:outline-none focus:border-purple-500/50 transition-colors"
                         />
                         <button
                             type="submit"
