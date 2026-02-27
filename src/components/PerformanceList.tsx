@@ -6,6 +6,7 @@ import { Performance } from '@/types';
 import { Share2, Link2, Check, Search, MapPin, Calendar, Menu, X, Filter, ChevronDown, List, LayoutGrid, LayoutList, Heart, Flame, Star, Bell, RotateCw, RotateCcw, Map as MapIcon, ChevronUp, Plane, CalendarDays, Navigation, ChevronRight, Tag, Home, Loader2, Moon, Sun, Trash2 } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 import BuildingStadium from './BuildingStadium';
+import MagicalMeshBackground from './ui/MagicalMeshBackground';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -760,17 +761,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // --- Render ---
     return (
-        <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
-            {/* 🌌 Backgrounds */}
-            <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
-            <div className={clsx(
-                "fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow transition-colors duration-700",
-                searchMode === 'location' ? "bg-emerald-500" : "bg-[#7c3aed]"
-            )}></div>
-            <div className={clsx(
-                "fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000 transition-colors duration-700",
-                searchMode === 'location' ? "bg-teal-400" : "bg-[#db2777]"
-            )}></div>
+        <div className="min-h-screen bg-transparent text-white light:text-black">
+            {/* 🌌 High-End Magical Mesh Background */}
+            <MagicalMeshBackground searchMode={searchMode} />
 
             {/* 1. Header (Restored) */}
             <header className="relative z-40 bg-transparent backdrop-blur-none border-b border-transparent light:border-transparent">
