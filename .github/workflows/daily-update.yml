@@ -5,9 +5,6 @@ on:
     - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Main daily run
     - cron: '0 10 * * *' # 19:00 KST (10:00 UTC) - Retry if previous run failed
   workflow_dispatch:
-  push:
-    branches:
-      - main # Manual trigger
 
 permissions:
   contents: write # Needed to push changes
@@ -26,20 +23,13 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Setup Chrome
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: stable
-
       - name: Install dependencies
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm ci
 
       - name: Install Playwright and System Dependencies
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
+        if: env.SKIP_EXECUTION != 'true'
         run: |
           npx playwright install chromium --with-deps
           sudo apt-get update
@@ -71,9 +61,7 @@ jobs:
           fi
 
       - name: Run Scrapers
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && env.SKIP_EXECUTION != 'true'
-        env:
-          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        if: env.SKIP_EXECUTION != 'true'
         timeout-minutes: 240 # Total max for all scrapers
         run: |
           npx tsx scripts/scrape-interpark.ts || true
@@ -100,8 +88,16 @@ jobs:
           npx tsx scripts/build-venues.ts || true
           npx tsx scripts/verify-links.ts || true
 
+      - name: Validate Data Integrity (Pre-Commit Check)
+        if: env.SKIP_EXECUTION != 'true'
+        run: npx tsx scripts/validate-data-integrity.ts
+
+      - name: Prune Stale Data (Strict Retention)
+        if: env.SKIP_EXECUTION != 'true'
+        run: npx tsx scripts/prune-data.ts
+
       - name: Commit and Push changes
-        if: github.event_name == 'push' || env.SKIP_EXECUTION != 'true'
+        if: env.SKIP_EXECUTION != 'true'
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
@@ -111,25 +107,11 @@ jobs:
           # Only commit if there are changes
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update daily data" && git push)
 
-      - name: Build Website
-        if: github.event_name == 'push' || env.SKIP_EXECUTION != 'true'
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' || env.SKIP_EXECUTION != 'true'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          force_orphan: true
-
-      - name: Prune Stale Data (Strict Retention)
-        if: always()
-        run: npx tsx scripts/prune-data.ts
-
-      - name: Validate Data Integrity (Post-Deployment Alert)
-        if: always() # Run even if deployment fails, or succeeds. Alerts on 0 data.
-        run: npx tsx scripts/validate-data-integrity.ts
+  trigger-deploy:
+    needs: update-data
+    if: always() && needs.update-data.result == 'success'
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
 
 
 
