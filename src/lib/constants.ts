@@ -95,15 +95,15 @@ export const VALID_GENRE_SLUGS = [
 // Futures League Team Logos (emblemF versions for minor league / development teams)
 // Futures League Team Logos (Using high-quality local SVGs where available)
 export const FUTURES_TEAM_LOGOS: Record<string, string> = {
-    "한화": "/culture/images/logos/kbo/hanwha.svg",
-    "LG": "/culture/images/logos/kbo/lg.svg",
-    "SSG": "/culture/images/logos/kbo/ssg.svg",
-    "두산": "/culture/images/logos/kbo/doosan.svg",
-    "고양": "/culture/images/logos/kbo/kiwoom.svg", // Using Kiwoom logo for Goyang Heroes
-    "상무": "/culture/images/logos/kbl/sangmu.svg", // Sharing Sangmu Phoenix logo from KBL
-    "KT": "/culture/images/logos/kbo/kt.svg",
-    "NC": "/culture/images/logos/kbo/nc.svg",
-    "롯데": "/culture/images/logos/kbo/lotte.svg",
-    "삼성": "/culture/images/logos/kbo/samsung.svg",
-    "KIA": "/culture/images/logos/kbo/kia.svg"
+    "한화": "/images/logos/kbo/hanwha.svg",
+    "LG": "/images/logos/kbo/lg.svg",
+    "SSG": "/images/logos/kbo/ssg.svg",
+    "두산": "/images/logos/kbo/doosan.svg",
+    "고양": "/images/logos/kbo/kiwoom.svg", // Using Kiwoom logo for Goyang Heroes
+    "상무": "/images/logos/kbl/sangmu.svg", // Sharing Sangmu Phoenix logo from KBL
+    "KT": "/images/logos/kbo/kt.svg",
+    "NC": "/images/logos/kbo/nc.svg",
+    "롯데": "/images/logos/kbo/lotte.svg",
+    "삼성": "/images/logos/kbo/samsung.svg",
+    "KIA": "/images/logos/kbo/kia.svg"
 };

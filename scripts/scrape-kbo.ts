@@ -28,7 +28,7 @@ interface Performance {
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbo.json');
-const THUMBNAIL_PATH = '/culture/images/kbo-thumbnail.png'; // Path in public
+const THUMBNAIL_PATH = '/images/kbo-thumbnail.png'; // Path in public
 
 // Venue Mapping
 const VENUE_MAP: Record<string, string> = {
@@ -38,7 +38,7 @@ const VENUE_MAP: Record<string, string> = {
     '고척': '고척스카이돔',
     '광주': '광주기아챔피언스필드',
     '대구': '대구삼성라이온즈파크',
-    '대전': '한화생명이글스파크', // Or new stadium if opened in 2026? Stick to standard map.
+    '대전': '한화생명이글스파크',
     '사직': '부산사직종합운동장사직야구장',
     '창원': '창원NC파크',
     '포항': '포항야구장',

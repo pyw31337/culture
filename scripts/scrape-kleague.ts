@@ -108,7 +108,7 @@ async function scrapeKLeague() {
                         allMatches.push({
                             id,
                             title,
-                            image: '/culture/images/posters/kleague_2026_default.webp',
+                            image: '/images/soccer_poster.png',
                             date: `${dateStr} ${timeStr}`,
                             venue: stadium,
                             link: 'https://www.kleague.com/schedule.do',

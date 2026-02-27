@@ -10,34 +10,47 @@ function slugify(text: string): string {
 }
 
 const KBL_URL = 'https://www.kbl.or.kr/match/schedule';
-const KBL_POSTER = '/culture/images/kbl_poster.png';
+const KBL_POSTER = '/images/kbl_poster.png';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
 
 async function scrapeKbl() {
     const KBL_LOGOS: Record<string, string> = {
-        "서울 SK": "/culture/images/logos/kbl/sk_official.svg",
-        "서울SK": "/culture/images/logos/kbl/sk_official.svg",
-        "SK": "/culture/images/logos/kbl/sk_official.svg",
-        "원주 DB": "/culture/images/logos/kbl/db_official.svg",
-        "DB": "/culture/images/logos/kbl/db_official.svg",
-        "울산 현대모비스": "/culture/images/logos/kbl/mobis_official.svg",
-        "현대모비스": "/culture/images/logos/kbl/mobis_official.svg",
-        "서울 삼성": "/culture/images/logos/kbl/samsung_official.svg",
-        "삼성": "/culture/images/logos/kbl/samsung_official.svg",
-        "고양 소노": "/culture/images/logos/kbl/sono_official.svg",
-        "소노": "/culture/images/logos/kbl/sono_official.svg",
-        "대구 한국가스공사": "/culture/images/logos/kbl/kogas_official.svg",
-        "한국가스공사": "/culture/images/logos/kbl/kogas_official.svg",
-        "안양 정관장": "/culture/images/logos/kbl/kgc_official.svg",
-        "정관장": "/culture/images/logos/kbl/kgc_official.svg",
-        "창원 LG": "/culture/images/logos/kbl/lg_official.svg",
-        "창원LG": "/culture/images/logos/kbl/lg_official.svg",
-        "LG": "/culture/images/logos/kbl/lg_official.svg",
-        "수원 KT": "/culture/images/logos/kbl/kt_official.svg",
-        "KT": "/culture/images/logos/kbl/kt_official.svg",
-        "부산 KCC": "/culture/images/logos/kbl/kcc_official.svg",
-        "KCC": "/culture/images/logos/kbl/kcc_official.svg",
-        "상무": "/culture/images/logos/kbl/sangmu.svg"
+        "서울 SK": "/images/logos/kbl/sk_official.svg",
+        "서울SK": "/images/logos/kbl/sk_official.svg",
+        "SK": "/images/logos/kbl/sk_official.svg",
+        "원주 DB": "/images/logos/kbl/db_official.svg",
+        "DB": "/images/logos/kbl/db_official.svg",
+        "울산 현대모비스": "/images/logos/kbl/mobis_official.svg",
+        "현대모비스": "/images/logos/kbl/mobis_official.svg",
+        "서울 삼성": "/images/logos/kbl/samsung_official.svg",
+        "삼성": "/images/logos/kbl/samsung_official.svg",
+        "고양 소노": "/images/logos/kbl/sono_official.svg",
+        "소노": "/images/logos/kbl/sono_official.svg",
+        "대구 한국가스공사": "/images/logos/kbl/kogas_official.svg",
+        "한국가스공사": "/images/logos/kbl/kogas_official.svg",
+        "안양 정관장": "/images/logos/kbl/kgc_official.svg",
+        "정관장": "/images/logos/kbl/kgc_official.svg",
+        "창원 LG": "/images/logos/kbl/lg_official.svg",
+        "창원LG": "/images/logos/kbl/lg_official.svg",
+        "LG": "/images/logos/kbl/lg_official.svg",
+        "수원 KT": "/images/logos/kbl/kt_official.svg",
+        "KT": "/images/logos/kbl/kt_official.svg",
+        "부산 KCC": "/images/logos/kbl/kcc_official.svg",
+        "KCC": "/images/logos/kbl/kcc_official.svg",
+        "상무": "/images/logos/kbl/sangmu.svg"
+    };
+
+    const VENUE_MAP: Record<string, string> = {
+        "잠실학": "잠실학생체육관",
+        "잠실실": "잠실실내체육관",
+        "수원": "수원KT소닉붐아레나",
+        "대구": "대구실내체육관",
+        "창원": "창원체육관",
+        "부산": "부산사직실내체육관",
+        "울산": "울산동천체육관",
+        "원주": "원주종합체육관",
+        "안양": "안양실내체육관",
+        "고양": "고양소노아레나"
     };
 
     console.log(`Starting KBL Scraper (UI Interaction)...`);
@@ -111,7 +124,7 @@ async function scrapeKbl() {
                 title,
                 image: KBL_POSTER,
                 date: `${dateStr} ${timeStr}`,
-                venue: match.stadiumname,
+                venue: VENUE_MAP[match.stadiumname] || match.stadiumname,
                 link: KBL_URL,
                 region: classifyRegion(match.stadiumname),
                 genre: 'basketball',

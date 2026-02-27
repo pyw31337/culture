@@ -74,7 +74,9 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
 export function cleanTitle(title: string): string {
     if (!title) return '';
     // Regex matches one or more groups of brackets at the start of the string, optionally followed by space
-    return title.replace(/^(\[[^\]]+\]\s*)+/, '').trim();
+    const cleaned = title.replace(/^(\[[^\]]+\]\s*)+/, '').trim();
+    // If the entire title was just brackets (e.g. "[특가]"), return the original title instead of an empty string
+    return cleaned === '' ? title : cleaned;
 }
 
 export function getLowResUrl(url: string): string | null {

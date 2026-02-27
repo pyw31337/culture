@@ -2,7 +2,7 @@
   {
     "id": "kovo_20251018_배구_서울Kixx_vs_알토스",
     "title": "[배구] 서울Kixx vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-18 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -10,13 +10,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251019_배구_VIXTORM_vs_우리WON",
     "title": "[배구] VIXTORM vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-19 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -24,13 +24,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251020_배구_블루팡스_vs_읏맨",
     "title": "[배구] 블루팡스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-20 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -38,13 +38,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251020_배구_PEPPERS_vs_하이패스",
     "title": "[배구] PEPPERS vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-20 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -52,13 +52,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251021_배구_스카이워커스_vs_스타즈",
     "title": "[배구] 스카이워커스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-21 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -66,13 +66,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251021_배구_핑크스파이더스_vs_힐스테이트",
     "title": "[배구] 핑크스파이더스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-21 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -80,13 +80,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251022_배구_점보스_vs_VIXTORM",
     "title": "[배구] 점보스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-22 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -94,13 +94,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251022_배구_레드스파크스_vs_서울Kixx",
     "title": "[배구] 레드스파크스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-22 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -108,13 +108,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251023_배구_우리WON_vs_읏맨",
     "title": "[배구] 우리WON vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-23 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -122,13 +122,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251023_배구_알토스_vs_PEPPERS",
     "title": "[배구] 알토스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-23 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -136,13 +136,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251024_배구_블루팡스_vs_스카이워커스",
     "title": "[배구] 블루팡스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-24 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -150,13 +150,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251024_배구_하이패스_vs_핑크스파이더스",
     "title": "[배구] 하이패스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-24 16:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -164,13 +164,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251025_배구_스타즈_vs_점보스",
     "title": "[배구] 스타즈 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-25 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -178,13 +178,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251025_배구_힐스테이트_vs_레드스파크스",
     "title": "[배구] 힐스테이트 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-25 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -192,13 +192,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251026_배구_우리WON_vs_블루팡스",
     "title": "[배구] 우리WON vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-26 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -206,13 +206,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251026_배구_알토스_vs_하이패스",
     "title": "[배구] 알토스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-26 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -220,13 +220,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251028_배구_VIXTORM_vs_스카이워커스",
     "title": "[배구] VIXTORM vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-28 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -234,13 +234,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251028_배구_서울Kixx_vs_핑크스파이더스",
     "title": "[배구] 서울Kixx vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-28 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -248,13 +248,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251029_배구_스타즈_vs_읏맨",
     "title": "[배구] 스타즈 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-29 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -262,13 +262,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251029_배구_PEPPERS_vs_힐스테이트",
     "title": "[배구] PEPPERS vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-29 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -276,13 +276,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251030_배구_점보스_vs_우리WON",
     "title": "[배구] 점보스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-30 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -290,13 +290,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251030_배구_레드스파크스_vs_알토스",
     "title": "[배구] 레드스파크스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-30 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -304,13 +304,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251031_배구_VIXTORM_vs_블루팡스",
     "title": "[배구] VIXTORM vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-31 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -318,13 +318,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251031_배구_서울Kixx_vs_하이패스",
     "title": "[배구] 서울Kixx vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-10-31 16:10",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -332,13 +332,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251101_배구_스카이워커스_vs_읏맨",
     "title": "[배구] 스카이워커스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-01 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -346,13 +346,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251101_배구_핑크스파이더스_vs_PEPPERS",
     "title": "[배구] 핑크스파이더스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-01 16:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -360,13 +360,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251102_배구_스타즈_vs_우리WON",
     "title": "[배구] 스타즈 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-02 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -374,13 +374,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251102_배구_힐스테이트_vs_알토스",
     "title": "[배구] 힐스테이트 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-02 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -388,13 +388,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251104_배구_블루팡스_vs_점보스",
     "title": "[배구] 블루팡스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-04 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -402,13 +402,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251104_배구_하이패스_vs_레드스파크스",
     "title": "[배구] 하이패스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-04 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -416,13 +416,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251105_배구_VIXTORM_vs_읏맨",
     "title": "[배구] VIXTORM vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-05 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -430,13 +430,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251105_배구_PEPPERS_vs_서울Kixx",
     "title": "[배구] PEPPERS vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-05 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -444,13 +444,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251106_배구_스카이워커스_vs_우리WON",
     "title": "[배구] 스카이워커스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-06 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -458,13 +458,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251106_배구_알토스_vs_핑크스파이더스",
     "title": "[배구] 알토스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-06 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -472,13 +472,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251107_배구_블루팡스_vs_스타즈",
     "title": "[배구] 블루팡스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-07 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -486,13 +486,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251107_배구_하이패스_vs_힐스테이트",
     "title": "[배구] 하이패스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-07 16:10",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -500,13 +500,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251108_배구_읏맨_vs_점보스",
     "title": "[배구] 읏맨 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-08 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -514,13 +514,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251108_배구_레드스파크스_vs_PEPPERS",
     "title": "[배구] 레드스파크스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-08 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -528,13 +528,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251109_배구_스타즈_vs_VIXTORM",
     "title": "[배구] 스타즈 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-09 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -542,13 +542,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251109_배구_힐스테이트_vs_서울Kixx",
     "title": "[배구] 힐스테이트 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-09 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -556,13 +556,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251111_배구_점보스_vs_블루팡스",
     "title": "[배구] 점보스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-11 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -570,13 +570,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251111_배구_레드스파크스_vs_하이패스",
     "title": "[배구] 레드스파크스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-11 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -584,13 +584,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251112_배구_읏맨_vs_스카이워커스",
     "title": "[배구] 읏맨 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-12 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -598,13 +598,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251112_배구_PEPPERS_vs_핑크스파이더스",
     "title": "[배구] PEPPERS vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-12 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -612,13 +612,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251113_배구_우리WON_vs_VIXTORM",
     "title": "[배구] 우리WON vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-13 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -626,13 +626,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251113_배구_알토스_vs_서울Kixx",
     "title": "[배구] 알토스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-13 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -640,13 +640,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251114_배구_블루팡스_vs_스타즈",
     "title": "[배구] 블루팡스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-14 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -654,13 +654,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251114_배구_하이패스_vs_힐스테이트",
     "title": "[배구] 하이패스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-14 16:10",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -668,13 +668,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251115_배구_스카이워커스_vs_점보스",
     "title": "[배구] 스카이워커스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-15 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -682,13 +682,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251115_배구_핑크스파이더스_vs_레드스파크스",
     "title": "[배구] 핑크스파이더스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-15 16:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -696,13 +696,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251116_배구_읏맨_vs_스타즈",
     "title": "[배구] 읏맨 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-16 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -710,13 +710,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251116_배구_PEPPERS_vs_힐스테이트",
     "title": "[배구] PEPPERS vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-16 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -724,13 +724,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251118_배구_우리WON_vs_블루팡스",
     "title": "[배구] 우리WON vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-18 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -738,13 +738,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251118_배구_알토스_vs_하이패스",
     "title": "[배구] 알토스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-18 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -752,13 +752,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251119_배구_스카이워커스_vs_VIXTORM",
     "title": "[배구] 스카이워커스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-19 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -766,13 +766,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251119_배구_핑크스파이더스_vs_서울Kixx",
     "title": "[배구] 핑크스파이더스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-19 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -780,13 +780,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251120_배구_점보스_vs_읏맨",
     "title": "[배구] 점보스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-20 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -794,13 +794,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251120_배구_레드스파크스_vs_PEPPERS",
     "title": "[배구] 레드스파크스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-20 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -808,13 +808,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251121_배구_스타즈_vs_우리WON",
     "title": "[배구] 스타즈 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-21 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -822,13 +822,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251121_배구_알토스_vs_힐스테이트",
     "title": "[배구] 알토스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-21 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -836,13 +836,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251122_배구_블루팡스_vs_VIXTORM",
     "title": "[배구] 블루팡스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-22 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -850,13 +850,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251122_배구_하이패스_vs_서울Kixx",
     "title": "[배구] 하이패스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-22 16:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -864,13 +864,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251123_배구_점보스_vs_스타즈",
     "title": "[배구] 점보스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-23 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -878,13 +878,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251123_배구_레드스파크스_vs_힐스테이트",
     "title": "[배구] 레드스파크스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-23 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -892,13 +892,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251125_배구_우리WON_vs_스카이워커스",
     "title": "[배구] 우리WON vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-25 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -906,13 +906,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251125_배구_알토스_vs_핑크스파이더스",
     "title": "[배구] 알토스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-25 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -920,13 +920,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251126_배구_읏맨_vs_블루팡스",
     "title": "[배구] 읏맨 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-26 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -934,13 +934,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251126_배구_하이패스_vs_PEPPERS",
     "title": "[배구] 하이패스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-26 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -948,13 +948,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251127_배구_VIXTORM_vs_점보스",
     "title": "[배구] VIXTORM vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-27 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -962,13 +962,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251127_배구_서울Kixx_vs_레드스파크스",
     "title": "[배구] 서울Kixx vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-27 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -976,13 +976,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251128_배구_스타즈_vs_스카이워커스",
     "title": "[배구] 스타즈 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-28 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -990,13 +990,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251128_배구_힐스테이트_vs_핑크스파이더스",
     "title": "[배구] 힐스테이트 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-28 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1004,13 +1004,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251129_배구_읏맨_vs_우리WON",
     "title": "[배구] 읏맨 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-29 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1018,13 +1018,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251129_배구_PEPPERS_vs_알토스",
     "title": "[배구] PEPPERS vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-29 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1032,13 +1032,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251130_배구_스타즈_vs_VIXTORM",
     "title": "[배구] 스타즈 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-30 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1046,13 +1046,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251130_배구_힐스테이트_vs_서울Kixx",
     "title": "[배구] 힐스테이트 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-11-30 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1060,13 +1060,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251202_배구_스카이워커스_vs_블루팡스",
     "title": "[배구] 스카이워커스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-02 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1074,13 +1074,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251202_배구_핑크스파이더스_vs_하이패스",
     "title": "[배구] 핑크스파이더스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-02 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1088,13 +1088,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251203_배구_우리WON_vs_점보스",
     "title": "[배구] 우리WON vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-03 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1102,13 +1102,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251203_배구_알토스_vs_레드스파크스",
     "title": "[배구] 알토스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-03 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1116,13 +1116,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251204_배구_VIXTORM_vs_읏맨",
     "title": "[배구] VIXTORM vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-04 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1130,13 +1130,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251204_배구_서울Kixx_vs_PEPPERS",
     "title": "[배구] 서울Kixx vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-04 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1144,13 +1144,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251205_배구_스카이워커스_vs_스타즈",
     "title": "[배구] 스카이워커스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-05 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1158,13 +1158,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251205_배구_핑크스파이더스_vs_힐스테이트",
     "title": "[배구] 핑크스파이더스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-05 16:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1172,13 +1172,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251206_배구_점보스_vs_블루팡스",
     "title": "[배구] 점보스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-06 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1186,13 +1186,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251206_배구_레드스파크스_vs_하이패스",
     "title": "[배구] 레드스파크스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-06 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1200,13 +1200,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251207_배구_읏맨_vs_스타즈",
     "title": "[배구] 읏맨 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-07 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1214,13 +1214,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251207_배구_힐스테이트_vs_PEPPERS",
     "title": "[배구] 힐스테이트 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-07 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1228,13 +1228,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251209_배구_VIXTORM_vs_우리WON",
     "title": "[배구] VIXTORM vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-09 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1242,13 +1242,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251209_배구_서울Kixx_vs_알토스",
     "title": "[배구] 서울Kixx vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-09 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1256,13 +1256,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251210_배구_블루팡스_vs_스카이워커스",
     "title": "[배구] 블루팡스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-10 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1270,13 +1270,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251210_배구_하이패스_vs_핑크스파이더스",
     "title": "[배구] 하이패스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-10 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1284,13 +1284,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251211_배구_읏맨_vs_점보스",
     "title": "[배구] 읏맨 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-11 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1298,13 +1298,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251211_배구_PEPPERS_vs_레드스파크스",
     "title": "[배구] PEPPERS vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-11 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1312,13 +1312,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251212_배구_VIXTORM_vs_스타즈",
     "title": "[배구] VIXTORM vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-12 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1326,13 +1326,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251212_배구_서울Kixx_vs_힐스테이트",
     "title": "[배구] 서울Kixx vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-12 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1340,13 +1340,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251213_배구_블루팡스_vs_우리WON",
     "title": "[배구] 블루팡스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-13 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1354,13 +1354,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251213_배구_하이패스_vs_알토스",
     "title": "[배구] 하이패스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-13 16:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1368,13 +1368,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251214_배구_점보스_vs_스카이워커스",
     "title": "[배구] 점보스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-14 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1382,13 +1382,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251214_배구_레드스파크스_vs_핑크스파이더스",
     "title": "[배구] 레드스파크스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-14 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1396,13 +1396,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251216_배구_읏맨_vs_우리WON",
     "title": "[배구] 읏맨 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-16 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1410,13 +1410,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251216_배구_PEPPERS_vs_알토스",
     "title": "[배구] PEPPERS vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-16 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1424,13 +1424,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251217_배구_스타즈_vs_블루팡스",
     "title": "[배구] 스타즈 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-17 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1438,13 +1438,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251217_배구_힐스테이트_vs_하이패스",
     "title": "[배구] 힐스테이트 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-17 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1452,13 +1452,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251218_배구_점보스_vs_VIXTORM",
     "title": "[배구] 점보스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-18 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1466,13 +1466,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251218_배구_레드스파크스_vs_서울Kixx",
     "title": "[배구] 레드스파크스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-18 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1480,13 +1480,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251219_배구_스카이워커스_vs_읏맨",
     "title": "[배구] 스카이워커스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-19 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1494,13 +1494,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251219_배구_핑크스파이더스_vs_PEPPERS",
     "title": "[배구] 핑크스파이더스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-19 14:02",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1508,13 +1508,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251220_배구_우리WON_vs_스타즈",
     "title": "[배구] 우리WON vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-20 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1522,13 +1522,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251220_배구_알토스_vs_힐스테이트",
     "title": "[배구] 알토스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-20 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1536,13 +1536,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251221_배구_VIXTORM_vs_블루팡스",
     "title": "[배구] VIXTORM vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-21 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1550,13 +1550,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251221_배구_서울Kixx_vs_하이패스",
     "title": "[배구] 서울Kixx vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-21 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1564,13 +1564,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20251223_배구_스카이워커스_vs_우리WON",
     "title": "[배구] 스카이워커스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-23 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1578,13 +1578,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20251223_배구_핑크스파이더스_vs_알토스",
     "title": "[배구] 핑크스파이더스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-23 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1592,13 +1592,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20251224_배구_스타즈_vs_점보스",
     "title": "[배구] 스타즈 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-24 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1606,13 +1606,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251224_배구_힐스테이트_vs_레드스파크스",
     "title": "[배구] 힐스테이트 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-24 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1620,13 +1620,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251225_배구_블루팡스_vs_읏맨",
     "title": "[배구] 블루팡스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-25 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1634,13 +1634,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20251225_배구_하이패스_vs_PEPPERS",
     "title": "[배구] 하이패스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-25 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1648,13 +1648,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20251226_배구_VIXTORM_vs_스카이워커스",
     "title": "[배구] VIXTORM vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-26 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1662,13 +1662,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20251226_배구_서울Kixx_vs_핑크스파이더스",
     "title": "[배구] 서울Kixx vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-26 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1676,13 +1676,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20251227_배구_우리WON_vs_점보스",
     "title": "[배구] 우리WON vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-27 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1690,13 +1690,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20251227_배구_알토스_vs_레드스파크스",
     "title": "[배구] 알토스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-27 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1704,13 +1704,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20251228_배구_읏맨_vs_VIXTORM",
     "title": "[배구] 읏맨 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-28 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1718,13 +1718,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20251228_배구_PEPPERS_vs_서울Kixx",
     "title": "[배구] PEPPERS vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-28 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1732,13 +1732,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20251230_배구_스카이워커스_vs_스타즈",
     "title": "[배구] 스카이워커스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-30 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1746,13 +1746,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20251230_배구_핑크스파이더스_vs_힐스테이트",
     "title": "[배구] 핑크스파이더스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-30 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1760,13 +1760,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20251231_배구_점보스_vs_블루팡스",
     "title": "[배구] 점보스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-31 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1774,13 +1774,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20251231_배구_레드스파크스_vs_하이패스",
     "title": "[배구] 레드스파크스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2025-12-31 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1788,13 +1788,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260101_배구_읏맨_vs_우리WON",
     "title": "[배구] 읏맨 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-01 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1802,13 +1802,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260101_배구_PEPPERS_vs_알토스",
     "title": "[배구] PEPPERS vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-01 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1816,13 +1816,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260102_배구_스타즈_vs_VIXTORM",
     "title": "[배구] 스타즈 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-02 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1830,13 +1830,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260102_배구_힐스테이트_vs_서울Kixx",
     "title": "[배구] 힐스테이트 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-02 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1844,13 +1844,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260103_배구_점보스_vs_스카이워커스",
     "title": "[배구] 점보스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-03 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1858,13 +1858,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260103_배구_레드스파크스_vs_핑크스파이더스",
     "title": "[배구] 레드스파크스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-03 16:10",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1872,13 +1872,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260104_배구_VIXTORM_vs_읏맨",
     "title": "[배구] VIXTORM vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-04 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1886,13 +1886,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260104_배구_서울Kixx_vs_PEPPERS",
     "title": "[배구] 서울Kixx vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-04 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1900,13 +1900,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260106_배구_블루팡스_vs_스타즈",
     "title": "[배구] 블루팡스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-06 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1914,13 +1914,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260106_배구_하이패스_vs_힐스테이트",
     "title": "[배구] 하이패스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-06 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1928,13 +1928,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260107_배구_우리WON_vs_점보스",
     "title": "[배구] 우리WON vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-07 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1942,13 +1942,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260107_배구_알토스_vs_레드스파크스",
     "title": "[배구] 알토스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-07 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1956,13 +1956,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260108_배구_읏맨_vs_스카이워커스",
     "title": "[배구] 읏맨 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-08 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1970,13 +1970,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260108_배구_PEPPERS_vs_핑크스파이더스",
     "title": "[배구] PEPPERS vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-08 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1984,13 +1984,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260109_배구_블루팡스_vs_VIXTORM",
     "title": "[배구] 블루팡스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-09 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -1998,13 +1998,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260109_배구_하이패스_vs_서울Kixx",
     "title": "[배구] 하이패스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-09 16:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2012,13 +2012,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260110_배구_우리WON_vs_스타즈",
     "title": "[배구] 우리WON vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-10 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2026,13 +2026,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260110_배구_알토스_vs_힐스테이트",
     "title": "[배구] 알토스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-10 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2040,13 +2040,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260111_배구_점보스_vs_읏맨",
     "title": "[배구] 점보스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-11 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2054,13 +2054,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260111_배구_레드스파크스_vs_PEPPERS",
     "title": "[배구] 레드스파크스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-11 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2068,13 +2068,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260113_배구_스카이워커스_vs_블루팡스",
     "title": "[배구] 스카이워커스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-13 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2082,13 +2082,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260113_배구_핑크스파이더스_vs_하이패스",
     "title": "[배구] 핑크스파이더스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-13 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2096,13 +2096,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260114_배구_VIXTORM_vs_우리WON",
     "title": "[배구] VIXTORM vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-14 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2110,13 +2110,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260114_배구_서울Kixx_vs_알토스",
     "title": "[배구] 서울Kixx vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-14 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2124,13 +2124,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260115_배구_스타즈_vs_점보스",
     "title": "[배구] 스타즈 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-15 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2138,13 +2138,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260115_배구_힐스테이트_vs_레드스파크스",
     "title": "[배구] 힐스테이트 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-15 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2152,13 +2152,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260116_배구_읏맨_vs_블루팡스",
     "title": "[배구] 읏맨 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-16 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2166,13 +2166,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260116_배구_PEPPERS_vs_하이패스",
     "title": "[배구] PEPPERS vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-16 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2180,13 +2180,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260117_배구_우리WON_vs_스카이워커스",
     "title": "[배구] 우리WON vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-17 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2194,13 +2194,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260117_배구_알토스_vs_핑크스파이더스",
     "title": "[배구] 알토스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-17 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2208,13 +2208,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260118_배구_VIXTORM_vs_점보스",
     "title": "[배구] VIXTORM vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-18 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2222,13 +2222,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260118_배구_서울Kixx_vs_레드스파크스",
     "title": "[배구] 서울Kixx vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-18 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2236,13 +2236,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260120_배구_스타즈_vs_읏맨",
     "title": "[배구] 스타즈 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-20 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2250,13 +2250,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260120_배구_힐스테이트_vs_PEPPERS",
     "title": "[배구] 힐스테이트 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-20 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2264,13 +2264,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260121_배구_블루팡스_vs_우리WON",
     "title": "[배구] 블루팡스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-21 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2278,13 +2278,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260121_배구_하이패스_vs_알토스",
     "title": "[배구] 하이패스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-21 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2292,13 +2292,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260122_배구_스카이워커스_vs_VIXTORM",
     "title": "[배구] 스카이워커스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2306,13 +2306,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260122_배구_핑크스파이더스_vs_서울Kixx",
     "title": "[배구] 핑크스파이더스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-22 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2320,13 +2320,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260123_배구_VIXTORM_vs_스카이워커스",
     "title": "[배구] VIXTORM vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-23 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2334,13 +2334,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260123_배구_서울Kixx_vs_핑크스파이더스",
     "title": "[배구] 서울Kixx vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-23 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2348,13 +2348,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260129_배구_우리WON_vs_블루팡스",
     "title": "[배구] 우리WON vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-29 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2362,13 +2362,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260129_배구_알토스_vs_하이패스",
     "title": "[배구] 알토스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-29 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2376,13 +2376,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260130_배구_점보스_vs_스타즈",
     "title": "[배구] 점보스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-30 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2390,13 +2390,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260130_배구_레드스파크스_vs_힐스테이트",
     "title": "[배구] 레드스파크스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-30 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2404,13 +2404,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260131_배구_스카이워커스_vs_읏맨",
     "title": "[배구] 스카이워커스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-31 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2418,13 +2418,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260131_배구_핑크스파이더스_vs_PEPPERS",
     "title": "[배구] 핑크스파이더스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-01-31 16:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2432,13 +2432,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260201_배구_우리WON_vs_VIXTORM",
     "title": "[배구] 우리WON vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-01 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2446,13 +2446,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260201_배구_알토스_vs_서울Kixx",
     "title": "[배구] 알토스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-01 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2460,13 +2460,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260202_배구_블루팡스_vs_점보스",
     "title": "[배구] 블루팡스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-02 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2474,13 +2474,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260202_배구_하이패스_vs_레드스파크스",
     "title": "[배구] 하이패스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-02 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2488,13 +2488,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260203_배구_읏맨_vs_스타즈",
     "title": "[배구] 읏맨 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-03 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2502,13 +2502,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260203_배구_PEPPERS_vs_힐스테이트",
     "title": "[배구] PEPPERS vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-03 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2516,13 +2516,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260204_배구_우리WON_vs_스카이워커스",
     "title": "[배구] 우리WON vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-04 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2530,13 +2530,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260204_배구_핑크스파이더스_vs_알토스",
     "title": "[배구] 핑크스파이더스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-04 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2544,13 +2544,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260206_배구_점보스_vs_VIXTORM",
     "title": "[배구] 점보스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-06 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2558,13 +2558,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260206_배구_레드스파크스_vs_서울Kixx",
     "title": "[배구] 레드스파크스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-06 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2572,13 +2572,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260207_배구_읏맨_vs_블루팡스",
     "title": "[배구] 읏맨 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-07 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2586,13 +2586,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260207_배구_PEPPERS_vs_하이패스",
     "title": "[배구] PEPPERS vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-07 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2600,13 +2600,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260208_배구_스타즈_vs_스카이워커스",
     "title": "[배구] 스타즈 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-08 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2614,13 +2614,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260208_배구_힐스테이트_vs_핑크스파이더스",
     "title": "[배구] 힐스테이트 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-08 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2628,13 +2628,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260209_배구_점보스_vs_우리WON",
     "title": "[배구] 점보스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-09 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2642,13 +2642,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260209_배구_레드스파크스_vs_알토스",
     "title": "[배구] 레드스파크스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-09 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2656,13 +2656,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260210_배구_읏맨_vs_VIXTORM",
     "title": "[배구] 읏맨 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-10 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2670,13 +2670,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260210_배구_서울Kixx_vs_PEPPERS",
     "title": "[배구] 서울Kixx vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-10 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2684,13 +2684,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260211_배구_스타즈_vs_블루팡스",
     "title": "[배구] 스타즈 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-11 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2698,13 +2698,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260211_배구_힐스테이트_vs_하이패스",
     "title": "[배구] 힐스테이트 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-11 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2712,13 +2712,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260213_배구_스카이워커스_vs_점보스",
     "title": "[배구] 스카이워커스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-13 14:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2726,13 +2726,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260213_배구_핑크스파이더스_vs_레드스파크스",
     "title": "[배구] 핑크스파이더스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-13 16:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2740,13 +2740,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260214_배구_우리WON_vs_읏맨",
     "title": "[배구] 우리WON vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-14 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2754,13 +2754,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260214_배구_알토스_vs_PEPPERS",
     "title": "[배구] 알토스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-14 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2768,13 +2768,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260215_배구_VIXTORM_vs_스타즈",
     "title": "[배구] VIXTORM vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-15 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2782,13 +2782,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260215_배구_서울Kixx_vs_힐스테이트",
     "title": "[배구] 서울Kixx vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-15 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2796,13 +2796,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260216_배구_블루팡스_vs_스카이워커스",
     "title": "[배구] 블루팡스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-16 14:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2810,13 +2810,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260216_배구_하이패스_vs_핑크스파이더스",
     "title": "[배구] 하이패스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-16 16:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2824,13 +2824,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260217_배구_점보스_vs_읏맨",
     "title": "[배구] 점보스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-17 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2838,13 +2838,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260217_배구_PEPPERS_vs_레드스파크스",
     "title": "[배구] PEPPERS vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-17 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2852,13 +2852,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260218_배구_블루팡스_vs_VIXTORM",
     "title": "[배구] 블루팡스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-18 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2866,13 +2866,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260218_배구_하이패스_vs_서울Kixx",
     "title": "[배구] 하이패스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-18 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2880,13 +2880,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260220_배구_스타즈_vs_우리WON",
     "title": "[배구] 스타즈 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-20 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2894,13 +2894,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260220_배구_힐스테이트_vs_알토스",
     "title": "[배구] 힐스테이트 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-20 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2908,13 +2908,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260221_배구_점보스_vs_스카이워커스",
     "title": "[배구] 점보스 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-21 14:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2922,13 +2922,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260221_배구_레드스파크스_vs_핑크스파이더스",
     "title": "[배구] 레드스파크스 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-21 16:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2936,13 +2936,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260222_배구_스타즈_vs_블루팡스",
     "title": "[배구] 스타즈 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-22 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2950,13 +2950,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260222_배구_힐스테이트_vs_하이패스",
     "title": "[배구] 힐스테이트 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-22 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2964,13 +2964,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260224_배구_우리WON_vs_읏맨",
     "title": "[배구] 우리WON vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-24 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2978,13 +2978,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260224_배구_알토스_vs_PEPPERS",
     "title": "[배구] 알토스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-24 19:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -2992,13 +2992,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260225_배구_스카이워커스_vs_VIXTORM",
     "title": "[배구] 스카이워커스 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-25 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3006,13 +3006,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260225_배구_핑크스파이더스_vs_서울Kixx",
     "title": "[배구] 핑크스파이더스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-25 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3020,13 +3020,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260226_배구_블루팡스_vs_점보스",
     "title": "[배구] 블루팡스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-26 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3034,13 +3034,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260226_배구_하이패스_vs_레드스파크스",
     "title": "[배구] 하이패스 vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-26 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3048,13 +3048,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260227_배구_우리WON_vs_스타즈",
     "title": "[배구] 우리WON vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-27 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3062,13 +3062,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260227_배구_힐스테이트_vs_알토스",
     "title": "[배구] 힐스테이트 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-27 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3076,13 +3076,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260228_배구_읏맨_vs_스카이워커스",
     "title": "[배구] 읏맨 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-28 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3090,13 +3090,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260228_배구_PEPPERS_vs_핑크스파이더스",
     "title": "[배구] PEPPERS vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-02-28 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3104,13 +3104,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260301_배구_VIXTORM_vs_점보스",
     "title": "[배구] VIXTORM vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-01 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3118,13 +3118,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260301_배구_서울Kixx_vs_레드스파크스",
     "title": "[배구] 서울Kixx vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-01 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3132,13 +3132,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260302_배구_블루팡스_vs_읏맨",
     "title": "[배구] 블루팡스 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-02 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3146,13 +3146,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260302_배구_하이패스_vs_PEPPERS",
     "title": "[배구] 하이패스 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-02 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3160,13 +3160,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260304_배구_스타즈_vs_스카이워커스",
     "title": "[배구] 스타즈 vs 스카이워커스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-04 19:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3174,13 +3174,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/skywalkers.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/skywalkers.svg"
   },
   {
     "id": "kovo_20260304_배구_힐스테이트_vs_핑크스파이더스",
     "title": "[배구] 힐스테이트 vs 핑크스파이더스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-04 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3188,13 +3188,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/pinkspiders.svg"
   },
   {
     "id": "kovo_20260305_배구_점보스_vs_우리WON",
     "title": "[배구] 점보스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-05 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3202,13 +3202,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260305_배구_레드스파크스_vs_알토스",
     "title": "[배구] 레드스파크스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-05 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3216,13 +3216,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260306_배구_VIXTORM_vs_블루팡스",
     "title": "[배구] VIXTORM vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-06 14:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3230,13 +3230,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260306_배구_서울Kixx_vs_하이패스",
     "title": "[배구] 서울Kixx vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-06 16:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3244,13 +3244,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260307_배구_스타즈_vs_읏맨",
     "title": "[배구] 스타즈 vs 읏맨",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-07 14:00",
     "venue": "경민대학교 기념관(체육관)",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3258,13 +3258,13 @@
     "genre": "volleyball",
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
-    "homeTeamLogo": "/culture/images/logos/kovo/stars.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/okman.svg"
+    "homeTeamLogo": "/images/logos/kovo/stars.svg",
+    "awayTeamLogo": "/images/logos/kovo/okman.svg"
   },
   {
     "id": "kovo_20260307_배구_힐스테이트_vs_PEPPERS",
     "title": "[배구] 힐스테이트 vs PEPPERS",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-07 16:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3272,13 +3272,13 @@
     "genre": "volleyball",
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
-    "homeTeamLogo": "/culture/images/logos/kovo/hillstate.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/aipeppers.svg"
+    "homeTeamLogo": "/images/logos/kovo/hillstate.svg",
+    "awayTeamLogo": "/images/logos/kovo/aipeppers.svg"
   },
   {
     "id": "kovo_20260308_배구_스카이워커스_vs_우리WON",
     "title": "[배구] 스카이워커스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-08 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3286,13 +3286,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260308_배구_핑크스파이더스_vs_알토스",
     "title": "[배구] 핑크스파이더스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-08 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3300,13 +3300,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260310_배구_읏맨_vs_VIXTORM",
     "title": "[배구] 읏맨 vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-10 19:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3314,13 +3314,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260310_배구_PEPPERS_vs_서울Kixx",
     "title": "[배구] PEPPERS vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-10 19:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3328,13 +3328,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260311_배구_점보스_vs_스타즈",
     "title": "[배구] 점보스 vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-11 19:00",
     "venue": "인천계양체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3342,13 +3342,13 @@
     "genre": "volleyball",
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/jumbos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/jumbos.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260311_배구_레드스파크스_vs_힐스테이트",
     "title": "[배구] 레드스파크스 vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-11 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3356,13 +3356,13 @@
     "genre": "volleyball",
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/redsparks.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/redsparks.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260312_배구_스카이워커스_vs_블루팡스",
     "title": "[배구] 스카이워커스 vs 블루팡스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-12 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3370,13 +3370,13 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/bluefangs.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/bluefangs.svg"
   },
   {
     "id": "kovo_20260312_배구_핑크스파이더스_vs_하이패스",
     "title": "[배구] 핑크스파이더스 vs 하이패스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-12 19:00",
     "venue": "인천삼산월드체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3384,13 +3384,13 @@
     "genre": "volleyball",
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
-    "homeTeamLogo": "/culture/images/logos/kovo/pinkspiders.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hipass.svg"
+    "homeTeamLogo": "/images/logos/kovo/pinkspiders.svg",
+    "awayTeamLogo": "/images/logos/kovo/hipass.svg"
   },
   {
     "id": "kovo_20260313_배구_우리WON_vs_VIXTORM",
     "title": "[배구] 우리WON vs VIXTORM",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-13 14:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3398,13 +3398,13 @@
     "genre": "volleyball",
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
-    "homeTeamLogo": "/culture/images/logos/kovo/wooriwon.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/vixtorm.svg"
+    "homeTeamLogo": "/images/logos/kovo/wooriwon.svg",
+    "awayTeamLogo": "/images/logos/kovo/vixtorm.svg"
   },
   {
     "id": "kovo_20260313_배구_알토스_vs_서울Kixx",
     "title": "[배구] 알토스 vs 서울Kixx",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-13 16:00",
     "venue": "화성종합실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3412,13 +3412,13 @@
     "genre": "volleyball",
     "homeTeam": "알토스",
     "awayTeam": "서울Kixx",
-    "homeTeamLogo": "/culture/images/logos/kovo/altos.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/kixx.svg"
+    "homeTeamLogo": "/images/logos/kovo/altos.svg",
+    "awayTeamLogo": "/images/logos/kovo/kixx.svg"
   },
   {
     "id": "kovo_20260314_배구_읏맨_vs_점보스",
     "title": "[배구] 읏맨 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-14 14:00",
     "venue": "부산강서체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3426,13 +3426,13 @@
     "genre": "volleyball",
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/okman.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/okman.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   },
   {
     "id": "kovo_20260314_배구_PEPPERS_vs_레드스파크스",
     "title": "[배구] PEPPERS vs 레드스파크스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-14 16:00",
     "venue": "광주페퍼스타디움",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3440,13 +3440,13 @@
     "genre": "volleyball",
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
-    "homeTeamLogo": "/culture/images/logos/kovo/aipeppers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/redsparks.svg"
+    "homeTeamLogo": "/images/logos/kovo/aipeppers.svg",
+    "awayTeamLogo": "/images/logos/kovo/redsparks.svg"
   },
   {
     "id": "kovo_20260315_배구_블루팡스_vs_우리WON",
     "title": "[배구] 블루팡스 vs 우리WON",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-15 19:00",
     "venue": "대전충무체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3454,13 +3454,13 @@
     "genre": "volleyball",
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
-    "homeTeamLogo": "/culture/images/logos/kovo/bluefangs.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/wooriwon.svg"
+    "homeTeamLogo": "/images/logos/kovo/bluefangs.svg",
+    "awayTeamLogo": "/images/logos/kovo/wooriwon.svg"
   },
   {
     "id": "kovo_20260315_배구_하이패스_vs_알토스",
     "title": "[배구] 하이패스 vs 알토스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-15 19:00",
     "venue": "김천실내체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3468,13 +3468,13 @@
     "genre": "volleyball",
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
-    "homeTeamLogo": "/culture/images/logos/kovo/hipass.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/altos.svg"
+    "homeTeamLogo": "/images/logos/kovo/hipass.svg",
+    "awayTeamLogo": "/images/logos/kovo/altos.svg"
   },
   {
     "id": "kovo_20260317_배구_VIXTORM_vs_스타즈",
     "title": "[배구] VIXTORM vs 스타즈",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-17 19:00",
     "venue": "수원체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3482,13 +3482,13 @@
     "genre": "volleyball",
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
-    "homeTeamLogo": "/culture/images/logos/kovo/vixtorm.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/stars.svg"
+    "homeTeamLogo": "/images/logos/kovo/vixtorm.svg",
+    "awayTeamLogo": "/images/logos/kovo/stars.svg"
   },
   {
     "id": "kovo_20260317_배구_서울Kixx_vs_힐스테이트",
     "title": "[배구] 서울Kixx vs 힐스테이트",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-17 19:00",
     "venue": "장충체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3496,13 +3496,13 @@
     "genre": "volleyball",
     "homeTeam": "서울Kixx",
     "awayTeam": "힐스테이트",
-    "homeTeamLogo": "/culture/images/logos/kovo/kixx.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/hillstate.svg"
+    "homeTeamLogo": "/images/logos/kovo/kixx.svg",
+    "awayTeamLogo": "/images/logos/kovo/hillstate.svg"
   },
   {
     "id": "kovo_20260318_배구_스카이워커스_vs_점보스",
     "title": "[배구] 스카이워커스 vs 점보스",
-    "image": "/culture/images/volleyball_poster.png",
+    "image": "/images/volleyball_poster.png",
     "date": "2026-03-18 19:00",
     "venue": "천안유관순체육관",
     "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
@@ -3510,7 +3510,7 @@
     "genre": "volleyball",
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
-    "homeTeamLogo": "/culture/images/logos/kovo/skywalkers.svg",
-    "awayTeamLogo": "/culture/images/logos/kovo/jumbos.svg"
+    "homeTeamLogo": "/images/logos/kovo/skywalkers.svg",
+    "awayTeamLogo": "/images/logos/kovo/jumbos.svg"
   }
 ]

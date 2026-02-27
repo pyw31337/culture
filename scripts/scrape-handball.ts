@@ -19,7 +19,7 @@ export interface Performance {
 
 const TARGET_URL = 'https://www.koreahandball.com/game/schedule_list.php';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/handball.json');
-const HANDBALL_POSTER = '/culture/images/handball_poster.png'; // Placeholder or generic
+const HANDBALL_POSTER = '/images/handball_poster.png'; // Placeholder or generic
 
 async function scrapeHandball() {
     console.log(`Starting Korea Handball Scraper...`);
@@ -88,20 +88,30 @@ async function scrapeHandball() {
 
                 // Extract Teams and Logos from Content Cell
                 const HANDBALL_LOGOS = {
-                    "두산": "/culture/images/logos/handball/doosan_official.png",
-                    "SK호크스": "/culture/images/logos/handball/sk_hawks_official.png",
-                    "하남시청": "/culture/images/logos/handball/hanam_official.png",
-                    "상무 피닉스": "/culture/images/logos/handball/sangmu_official.png",
-                    "충남도청": "/culture/images/logos/handball/chungnam_official.png",
-                    "인천도시공사": "/culture/images/logos/handball/incheon_official.png",
-                    "SK슈가글라이더즈": "/culture/images/logos/handball/sk_sugar_official.png",
-                    "광주도시공사": "/culture/images/logos/handball/gwangju_official.png",
-                    "서울시청": "/culture/images/logos/handball/seoul_official.png",
-                    "인천광역시청": "/culture/images/logos/handball/incheon_city_official.png",
-                    "부산시설공단": "/culture/images/logos/handball/busan_official.png",
-                    "경남개발공사": "/culture/images/logos/handball/gyeongnam_official.png",
-                    "삼척시청": "/culture/images/logos/handball/samcheok_official.png",
-                    "대구광역시청": "/culture/images/logos/handball/daegu_official.png"
+                    "두산": "/images/logos/handball/doosan_official.png",
+                    "SK호크스": "/images/logos/handball/sk_hawks_official.png",
+                    "하남시청": "/images/logos/handball/hanam_official.png",
+                    "상무 피닉스": "/images/logos/handball/sangmu_official.png",
+                    "인천도시공사": "/images/logos/handball/incheon_official.png",
+                    "충남도청": "/images/logos/handball/chungnam_official.png",
+                    "상무": "/images/logos/handball/sangmu_official.png",
+                    "대구광역시청": "/images/logos/handball/daegu_official.png",
+                    "경남개발공사": "/images/logos/handball/gyeongnam_official.png",
+                    "삼척시청": "/images/logos/handball/samcheok_official.png",
+                    "서울시청": "/images/logos/handball/seoul_official.png",
+                    "광주도시공사": "/images/logos/handball/gwangju_official.png",
+                    "부산시설공단": "/images/logos/handball/busan_official.png",
+                    "인천광역시청": "/images/logos/handball/incheon_women_official.png"
+                };
+
+                const VENUE_MAP = {
+                    "SK핸드볼경기장": "올림픽공원SK핸드볼경기장",
+                    "기장체육관": "부산기장체육관",
+                    "남동체육관": "인천남동체육관",
+                    "광명체육관": "광명시민체육관",
+                    "수원체육관": "수원실내체육관",
+                    "빛고을체육관": "광주빛고을체육관",
+                    "청주대석우문화체육관": "청주대학교석우문화체육관"
                 };
 
                 let homeTeam = '';
@@ -127,7 +137,7 @@ async function scrapeHandball() {
                         id: \`handball_\${dateStr.replace(/-/g, '')}_\${safeMatchup}\`,
                         title,
                         date: \`\${dateStr} \${timeStr}\`,
-                        venue: venueStr,
+                        venue: (typeof VENUE_MAP !== 'undefined' && VENUE_MAP[venueStr]) ? VENUE_MAP[venueStr] : venueStr,
                         link: 'https://www.koreahandball.com/game/schedule_list.php',
                         genre: 'handball',
                         homeTeam,

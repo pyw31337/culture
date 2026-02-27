@@ -27,7 +27,7 @@ export interface Performance {
 
 const KOVO_SCHEDULE_URL = 'https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kovo.json');
-const VOLLEYBALL_POSTER = '/culture/images/volleyball_poster.png';
+const VOLLEYBALL_POSTER = '/images/volleyball_poster.png';
 
 async function scrapeKovo() {
     console.log(`Starting KOVO Scraper (Targeted Selectors)...`);
@@ -88,17 +88,32 @@ async function scrapeKovo() {
                     };
 
                     const TEAMS = Object.keys(KOVO_LOGOS);
-                    let timeElements = Array.from(document.querySelectorAll('span.css-hwx9jd'));
-
-                    if (timeElements.length === 0) {
-                        timeElements = Array.from(document.querySelectorAll('span')).filter(s => /^\d{2}:\d{2}$/.test((s as HTMLElement).innerText.trim()));
-                    }
+                    let timeElements = Array.from(document.querySelectorAll('span')).filter(s => /^\d{2}:\d{2}$/.test(s.innerText.trim()));
 
                     const results: any[] = [];
+                    const VENUE_MAP: Record<string, string> = {
+                        "장충체육관": "서울장충체육관",
+                        "수원실내": "수원실내체육관",
+                        "수원실내체육관": "수원실내체육관",
+                        "계양체육관": "인천계양체육관",
+                        "인천계양": "인천계양체육관",
+                        "안산상록": "안산상록수체육관",
+                        "안산상록수체육관": "안산상록수체육관",
+                        "천안유관순": "천안유관순체육관",
+                        "의정부체육관": "의정부실내체육관",
+                        "충무체육관": "대전충무체육관",
+                        "삼산월드체육관": "인천삼산월드체육관",
+                        "유관순체육관": "천안유관순체육관",
+                        "화성종합경기타운": "화성종합경기타운실내체육관",
+                        "페퍼스타디움": "광주페퍼스타디움",
+                        "김천실내": "김천실내체육관"
+                    };
+
                     timeElements.forEach(timeEl => {
                         try {
                             const time = (timeEl as HTMLElement).innerText.trim();
-                            let row = timeEl.closest('.MuiBox-root') || timeEl.parentElement;
+                            // Look for the closest container that likely holds team names and venue
+                            let row = timeEl.closest('.MuiGrid-container') || timeEl.closest('.MuiBox-root') || timeEl.parentElement;
                             if (!row) return;
 
                             const text = (row as HTMLElement).innerText;
@@ -114,27 +129,44 @@ async function scrapeKovo() {
                             const awayLogo = (KOVO_LOGOS as any)[away] || '';
 
                             let currentDate = '';
-                            let dateCandidate = row.previousElementSibling;
+                            let dateCandidate = row.parentElement; // Try parent first
                             let steps = 0;
-                            while (dateCandidate && steps < 10) {
-                                if (/^\d{4}\.\d{2}\.\d{2}$/.test((dateCandidate as HTMLElement).innerText.trim())) {
-                                    currentDate = (dateCandidate as HTMLElement).innerText.trim();
+                            
+                            // Greedily look for date pattern YYYY.MM.DD in ancestors/previous siblings
+                            let currentSearch = row as HTMLElement;
+                            while (currentSearch && steps < 50) {
+                                const searchTxt = currentSearch.innerText || '';
+                                const match = searchTxt.match(/\b\d{4}\.\d{2}\.\d{2}\b/);
+                                if (match) {
+                                    currentDate = match[0];
                                     break;
                                 }
-                                dateCandidate = dateCandidate.previousElementSibling;
+                                if (currentSearch.previousElementSibling) {
+                                    currentSearch = currentSearch.previousElementSibling as HTMLElement;
+                                } else {
+                                    currentSearch = currentSearch.parentElement as HTMLElement;
+                                }
                                 steps++;
                             }
 
                             if (!currentDate) return;
 
                             let venue = '정보없음';
-                            const venueEl = row.querySelector('.css-1og2kxg');
-                            if (venueEl) {
-                                venue = (venueEl as HTMLElement).innerText.trim();
-                            } else {
+                            // Look for venue text in the row
+                            const venueCandidates = Object.keys(VENUE_MAP);
+                            for (const cand of venueCandidates) {
+                                if (text.includes(cand)) {
+                                    venue = cand;
+                                    break;
+                                }
+                            }
+
+                            if (venue === '정보없음') {
                                 const venueMatch = text.match(/[가-힣\s]*(체육관|스타디움|경기장)/);
                                 if (venueMatch) venue = venueMatch[0].trim();
                             }
+
+                            venue = VENUE_MAP[venue] || venue;
 
                             results.push({
                                 date: currentDate.replace(/\./g, '-'),
