@@ -350,10 +350,26 @@ body {
 }
 
 .v {
-  box-shadow: 0 0 35vw 25vw white;
+  box-shadow: 0 0 45vw 65vw #fff;
   width: 0;
   height: 100vh;
   bottom: 0;
   left: 0;
   position: absolute;
+}
+
+/* Dark mode support for rainbow background */
+.dark body {
+  background-color: #0a0a0a !important;
+}
+
+.dark .v {
+  box-shadow: 0 0 45vw 65vw #000;
+}
+.dark .h {
+  box-shadow: 0 0 50vh 40vh #0a0a0a;
+}
+
+.dark .rainbow:nth-child(n) {
+  box-shadow: -130px 0 80px 40px #0a0a0a, -50px 0 50px 25px rgba(94, 234, 212, 0.2), 0 0 50px 25px rgba(232, 121, 249, 0.2), 50px 0 50px 25px rgba(96, 165, 250, 0.2), 130px 0 80px 40px #0a0a0a;
 }
