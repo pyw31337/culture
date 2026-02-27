@@ -72,7 +72,12 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
     }
 }
 
+// Global cache to prevent Next.js from parsing massive JSON files 12,000 times during static build
+let cachedPerformances: any[] | null = null;
+
 export function getAllPerformances() {
+    if (cachedPerformances) return cachedPerformances;
+
     // 1. Safe Arrays
     const REGION_MAP: Record<string, string> = {
         '서울': 'seoul', '경기': 'gyeonggi', '인천': 'incheon',
@@ -254,5 +259,6 @@ export function getAllPerformances() {
     // 4. Deduplication & Stable ID Logic (Unified via Utility)
     const stablePerformances = processAndMergePerformances(filtered);
 
-    return safePerformanceList(stablePerformances);
+    cachedPerformances = safePerformanceList(stablePerformances);
+    return cachedPerformances;
 }
