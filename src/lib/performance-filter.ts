@@ -53,19 +53,24 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 1. Search Filter (Highest Priority)
     if (search && search.trim()) {
-        const searchText = search.trim();
+        const searchText = search.replace(/\s+/g, ''); // ignore all spaces
         const lowerSearch = searchText.toLowerCase().normalize('NFC');
+        const isChoseongMode = /^[ㄱ-ㅎ]+$/.test(searchText);
 
         filtered = filtered.filter(p => {
-            // A. Title Match (Choseong supported)
-            if (isChoseongMatch(p.title, searchText)) return true;
+            const titleNoSpace = p.title.replace(/\s+/g, '');
+            const venueNoSpace = p.venue.replace(/\s+/g, '');
+            const castStr = p.cast ? (Array.isArray(p.cast) ? p.cast.join('') : p.cast) : '';
+            const castNoSpace = castStr.replace(/\s+/g, '');
 
-            // B. Cast Match (Choseong supported)
-            const castStr = p.cast ? (Array.isArray(p.cast) ? p.cast.join(' ') : p.cast) : '';
-            if (isChoseongMatch(castStr, searchText)) return true;
+            // A. Title Match
+            if (isChoseongMode ? isChoseongMatch(titleNoSpace, searchText) : titleNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+
+            // B. Cast Match
+            if (isChoseongMode ? isChoseongMatch(castNoSpace, searchText) : castNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
 
             // C. Venue Match
-            if (p.venue.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+            if (venueNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
 
             return false;
         });
