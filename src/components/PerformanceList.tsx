@@ -761,8 +761,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
     // --- Render ---
     return (
-        <div className="min-h-screen bg-transparent text-white light:text-black">
-            {/* 🌌 High-End Magical Mesh Background */}
+        <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
+            {/* 🌌 High-End Layered Background */}
+            <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
+            
+            {/* Primary Static Blobs (Restored) */}
+            <div className={clsx(
+                "fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow transition-colors duration-700",
+                searchMode === 'location' ? "bg-emerald-500" : "bg-[#7c3aed]"
+            )}></div>
+            <div className={clsx(
+                "fixed top-[10%] right-[-15%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] blur-[120px] rounded-full pointer-events-none z-0 opacity-50 light:opacity-20 mix-blend-screen light:mix-blend-multiply animate-pulse-slow delay-1000 transition-colors duration-700",
+                searchMode === 'location' ? "bg-teal-400" : "bg-[#db2777]"
+            )}></div>
+
+            {/* Dynamic Mesh Layer (Focused Top-Right Overlay) */}
             <MagicalMeshBackground searchMode={searchMode} />
 
             {/* 1. Header (Restored) */}

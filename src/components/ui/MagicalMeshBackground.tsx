@@ -14,23 +14,23 @@ export default function MagicalMeshBackground({ searchMode = 'keyword' }: Magica
     const palettes = {
         keyword: {
             dark: ['#7c3aed', '#db2777', '#4338ca', '#9333ea', '#6d28d9'],
-            light: ['#ddd6fe', '#fce7f3', '#e0e7ff', '#f5f3ff', '#ede9fe']
+            light: ['#c4b5fd', '#f9a8d4', '#a5b4fc', '#d8b4fe', '#c084fc'] // Stronger colors for visibility
         },
         location: {
             dark: ['#10b981', '#06b6d4', '#0f766e', '#0891b2', '#14b8a6'],
-            light: ['#d1fae5', '#cfeff4', '#ccfbf1', '#ecfdf5', '#f0fdfa']
+            light: ['#6ee7b7', '#67e8f9', '#5eead4', '#22d3ee', '#2dd4bf'] // Stronger colors for visibility
         }
     };
 
     const currentColors = palettes[searchMode];
 
-    // Generate random animation patterns for 5 blobs
+    // Generate random animation patterns for 5 blobs - focused on top-right
     const blobs = useMemo(() => [
-        { id: 1, size: 'w-[60vw] h-[60vw]', delay: 0, duration: 25 },
-        { id: 2, size: 'w-[50vw] h-[50vw]', delay: 5, duration: 30 },
-        { id: 3, size: 'w-[55vw] h-[55vw]', delay: 2, duration: 28 },
-        { id: 4, size: 'w-[45vw] h-[45vw]', delay: 8, duration: 35 },
-        { id: 5, size: 'w-[65vw] h-[65vw]', delay: 4, duration: 32 },
+        { id: 1, size: 'w-[40vw] h-[40vw]', delay: 0, duration: 20 },
+        { id: 2, size: 'w-[35vw] h-[35vw]', delay: 5, duration: 25 },
+        { id: 3, size: 'w-[30vw] h-[30vw]', delay: 2, duration: 22 },
+        { id: 4, size: 'w-[38vw] h-[38vw]', delay: 8, duration: 28 },
+        { id: 5, size: 'w-[42vw] h-[42vw]', delay: 4, duration: 26 },
     ], []);
 
     const [isDark, setIsDark] = React.useState(true);
@@ -46,9 +46,9 @@ export default function MagicalMeshBackground({ searchMode = 'keyword' }: Magica
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-gray-950 light:bg-gray-50 transition-colors duration-1000">
-            {/* Mesh Container */}
-            <div className="absolute inset-[-10%] filter blur-[100px] sm:blur-[140px] opacity-70 dark:opacity-80 light:opacity-40 mix-blend-screen light:mix-blend-multiply transition-opacity duration-1000">
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-transparent">
+            {/* Mesh Container - Focused Top-Right */}
+            <div className="absolute top-[-20%] right-[-20%] w-[120%] h-[120%] filter blur-[80px] sm:blur-[120px] opacity-60 dark:opacity-70 light:opacity-50 mix-blend-screen light:mix-blend-multiply transition-opacity duration-1000">
                 {blobs.map((blob, i) => (
                     <motion.div
                         key={blob.id}
@@ -57,31 +57,31 @@ export default function MagicalMeshBackground({ searchMode = 'keyword' }: Magica
                             blob.size
                         )}
                         initial={{
-                            x: `${i * 20}%`,
-                            y: `${(i % 3) * 30}%`,
+                            x: `${60 + (i * 5)}%`,
+                            y: `${(i % 3) * 10}%`,
                             scale: 1,
-                            opacity: 0.8
+                            opacity: 0.6
                         }}
                         animate={{
-                            background: `radial-gradient(circle, ${isDark ? currentColors.dark[i] : currentColors.light[i]} 0%, transparent 70%)`,
+                            background: `radial-gradient(circle, ${isDark ? currentColors.dark[i] : currentColors.light[i]} 0%, transparent 80%)`,
                             x: [
-                                `${(i * 15)}%`,
-                                `${(i * 15 + 40) % 100}%`,
-                                `${(i * 15 - 30 + 100) % 100}%`,
-                                `${(i * 15)}%`
+                                `${70 + (i * 2)}%`,
+                                `${85 + (i * 2)}%`,
+                                `${65 + (i * 2)}%`,
+                                `${70 + (i * 2)}%`
                             ],
                             y: [
-                                `${((i % 4) * 20)}%`,
-                                `${((i % 4) * 20 + 50) % 100}%`,
-                                `${((i % 4) * 20 - 40 + 100) % 100}%`,
-                                `${((i % 4) * 20)}%`
+                                `${5 + (i * 5)}%`,
+                                `${20 + (i * 5)}%`,
+                                `${-5 + (i * 5)}%`,
+                                `${5 + (i * 5)}%`
                             ],
-                            scale: [1, 1.3, 0.85, 1.2, 1],
-                            rotate: [0, 120, 240, 360],
-                            opacity: [0.7, 0.9, 0.75, 0.85, 0.7]
+                            scale: [1, 1.2, 0.9, 1.1, 1],
+                            rotate: [0, 90, 180, 270, 360],
+                            opacity: [0.5, 0.8, 0.6, 0.7, 0.5]
                         }}
                         transition={{
-                            background: { duration: 1, ease: "easeInOut" },
+                            background: { duration: 1.5, ease: "easeInOut" },
                             duration: blob.duration,
                             repeat: Infinity,
                             delay: blob.delay,
@@ -91,16 +91,8 @@ export default function MagicalMeshBackground({ searchMode = 'keyword' }: Magica
                 ))}
             </div>
 
-            {/* Noise Texture Overlay */}
-            <div 
-                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none mix-blend-overlay"
-                style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-                }}
-            />
-
             {/* Subtle Gradient Veil */}
-            <div className="absolute inset-0 bg-gray-900/10 light:bg-white/5 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-transparent backdrop-blur-[1px]" />
         </div>
     );
 }
