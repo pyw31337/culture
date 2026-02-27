@@ -207,7 +207,7 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
 }
 
 async function scrapeDetails(browser: any, items: Performance[], existingEnriched: Map<string, Performance>) {
-    const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure'];
+    const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure', 'exhibition'];
     const candidates = items.filter(i => targetGenres.includes(i.genre));
     const others = items.filter(i => !targetGenres.includes(i.genre));
 
