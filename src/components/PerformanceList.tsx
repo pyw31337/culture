@@ -763,6 +763,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
         <div className="min-h-screen bg-gray-900 light:bg-white text-white light:text-black">
             {/* 🌌 Backgrounds */}
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
+            <div className="frosted-glass-overlay"></div>
             <div className={clsx(
                 "fixed top-[-10%] right-[-5%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] blur-[100px] rounded-full pointer-events-none z-0 opacity-60 light:opacity-25 mix-blend-screen light:mix-blend-multiply animate-pulse-slow transition-colors duration-700",
                 searchMode === 'location' ? "bg-emerald-500" : "bg-[#7c3aed]"
