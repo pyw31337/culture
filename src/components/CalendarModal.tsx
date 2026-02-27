@@ -229,40 +229,79 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                         </div>
                     )}
 
-                    {/* Weekly View */}
+                    {/* Weekly View (Vertical Row Layout) */}
                     {calendarView === 'weekly' && (
-                        <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
-                                {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map((day, idx) => (
-                                    <div key={day.toISOString()} className={clsx("py-3 text-center text-xs font-extrabold", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-600 dark:text-gray-400")}>
-                                        {format(day, 'eee d일', { locale: ko })}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="grid grid-cols-7 flex-grow overflow-y-auto bg-gray-200 dark:bg-gray-800 gap-[1px] border-b border-gray-200 dark:border-gray-800">
-                                {eachDayOfInterval({ start: startOfWeek(currentMonth), end: endOfWeek(currentMonth) }).map(day => {
-                                    const dayEvents = getPerformancesForDay(day);
-                                    const isToday = isSameDay(day, new Date());
-                                    return (
-                                        <div key={day.toISOString()} className="bg-white dark:bg-gray-900 p-2 flex flex-col gap-1 overflow-y-auto">
-                                            <span className={clsx("text-xs font-extrabold mb-1", isToday ? "text-blue-600 dark:text-blue-400" : "text-gray-500")}>
+                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-black">
+                            {eachDayOfInterval({
+                                start: startOfWeek(currentMonth, { weekStartsOn: 0 }),
+                                end: endOfWeek(currentMonth, { weekStartsOn: 0 })
+                            }).map((day, idx) => {
+                                const dayEvents = getPerformancesForDay(day);
+                                const isToday = isSameDay(day, new Date());
+
+                                return (
+                                    <div key={day.toISOString()} className="flex border-b border-gray-200 dark:border-gray-800 min-h-[120px] sm:min-h-[140px] last:border-b-0">
+                                        {/* Day Info Sidebar */}
+                                        <div className={clsx(
+                                            "w-20 sm:w-28 flex flex-col items-center justify-center border-r border-gray-200 dark:border-gray-800 shrink-0 select-none",
+                                            isToday ? "bg-blue-50/50 dark:bg-blue-900/20" : "bg-gray-50/50 dark:bg-gray-900/30"
+                                        )}>
+                                            <span className={clsx(
+                                                "text-sm sm:text-base font-black truncate w-full text-center px-1",
+                                                idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-700 dark:text-gray-300"
+                                            )}>
+                                                {format(day, 'eee', { locale: ko })}
+                                            </span>
+                                            <span className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white mt-1">
+                                                {format(day, 'd')}
+                                            </span>
+                                            <span className={clsx(
+                                                "text-[10px] sm:text-xs font-bold mt-2 px-2 py-0.5 rounded-full",
+                                                dayEvents.length > 0 ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300" : "text-gray-400"
+                                            )}>
                                                 {dayEvents.length}건
                                             </span>
-                                            {dayEvents.slice(0, 30).map((perf, i) => (
-                                                <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                                    className={clsx(
-                                                        "text-[10px] sm:text-xs px-2 py-1 rounded truncate block hover:bg-gray-100 dark:hover:bg-gray-800 transition shrink-0 font-bold",
-                                                        (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
-                                                    )}
-                                                    title={perf.title}
-                                                >{perf.title}</a>
-                                            ))}
-                                            {dayEvents.length > 30 && <span className="text-[10px] text-gray-500 pl-1 font-bold shrink-0">+{dayEvents.length - 30}</span>}
                                         </div>
-                                    );
-                                })}
-                            </div>
-                        </>
+
+                                        {/* Performance List Viewport */}
+                                        <div className="flex-grow p-2 sm:p-4 overflow-x-auto bg-white dark:bg-black/40">
+                                            <div className="flex flex-col gap-1.5 min-w-max sm:min-w-0">
+                                                {dayEvents.length > 0 ? (
+                                                    dayEvents.slice(0, 50).map((perf, i) => (
+                                                        <a
+                                                            key={`${perf.id}-${i}`}
+                                                            href={perf.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className={clsx(
+                                                                "group flex items-center gap-2 text-xs sm:text-sm px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition font-bold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none",
+                                                                (GENRE_STYLES as any)[perf.genre]?.twText || 'text-gray-600 dark:text-gray-300'
+                                                            )}
+                                                            title={perf.title}
+                                                        >
+                                                            <span className={clsx("w-1.5 h-1.5 rounded-full shrink-0 group-hover:scale-125 transition", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                                                            <span className="truncate">{perf.title}</span>
+                                                            {perf.venue && (
+                                                                <span className="text-[10px] sm:text-xs text-gray-400 font-medium ml-auto hidden sm:block shrink-0">{perf.venue}</span>
+                                                            )}
+                                                        </a>
+                                                    ))
+                                                ) : (
+                                                    <div className="h-full flex items-center justify-center text-gray-400 text-xs sm:text-sm font-medium italic opacity-60 py-4">
+                                                        일정이 없습니다
+                                                    </div>
+                                                )}
+                                                {dayEvents.length > 50 && (
+                                                    <div className="text-xs text-gray-500 font-bold pl-3 py-1">
+                                                        외 {dayEvents.length - 50}건 더보기
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     )}
 
                     {/* Monthly View */}

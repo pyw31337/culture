@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Film } from 'lucide-react';
+import { X, Heart, RotateCw, Film, Plus, Minus } from 'lucide-react';
 import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -445,17 +445,49 @@ export default function KakaoMapModal({
             }
         }
     };
+    const handleZoomIn = () => {
+        if (mapInstance) {
+            mapInstance.setLevel(mapInstance.getLevel() - 1, { animate: true });
+        }
+    };
+
+    const handleZoomOut = () => {
+        if (mapInstance) {
+            mapInstance.setLevel(mapInstance.getLevel() + 1, { animate: true });
+        }
+    };
 
     return (
         <Portal>
             <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
                 <div className="relative w-full h-full max-w-[1700px] sm:max-h-[90vh] m-0 sm:m-4 bg-white dark:bg-black sm:rounded-2xl overflow-hidden shadow-2xl border-0 sm:border border-gray-200 dark:border-gray-800 flex flex-col">
-                    <button
-                        onClick={onClose}
-                        className="absolute top-4 right-4 z-[100] p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
-                    >
-                        <X className="w-6 h-6" />
-                    </button>
+                    {/* Controls */}
+                    <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
+                        <button
+                            onClick={onClose}
+                            className="p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
+                            title="닫기"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+
+                        <div className="flex flex-col bg-white/80 dark:bg-black/50 rounded-full shadow-md overflow-hidden">
+                            <button
+                                onClick={handleZoomIn}
+                                className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition border-b border-gray-200 dark:border-gray-800"
+                                title="확대"
+                            >
+                                <Plus className="w-5 h-5" />
+                            </button>
+                            <button
+                                onClick={handleZoomOut}
+                                className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition"
+                                title="축소"
+                            >
+                                <Minus className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
 
                     {showSearchHereBtn && isMapReady && (
                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[100]">
