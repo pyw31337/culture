@@ -88,6 +88,7 @@ export default function ImageWithFallback({
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 quality={75}
+                referrerPolicy="no-referrer"
                 style={{ zIndex: 1, ...props.style }}
             />
         </>
