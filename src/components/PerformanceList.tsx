@@ -1410,6 +1410,8 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                     <CalendarModal
                         performances={filteredPerformances}
                         onClose={() => setViewMode('grid')}
+                        selectedGenre={selectedGenre}
+                        onGenreSelect={handleGenreSelect}
                     />
                 )
             }

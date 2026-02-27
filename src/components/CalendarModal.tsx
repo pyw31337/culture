@@ -14,11 +14,13 @@ import CalendarDayCell from './CalendarDayCell';
 interface CalendarModalProps {
     performances: Performance[];
     onClose: () => void;
+    selectedGenre?: string;
+    onGenreSelect?: (genre: string) => void;
 }
 
 type CalendarView = 'daily' | 'weekly' | 'monthly';
 
-export default function CalendarModal({ performances, onClose }: CalendarModalProps) {
+export default function CalendarModal({ performances, onClose, selectedGenre = 'all', onGenreSelect }: CalendarModalProps) {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [calendarView, setCalendarView] = useState<CalendarView>('monthly');
 
@@ -86,7 +88,7 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
     };
 
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-    const [selectedPopupGenre, setSelectedPopupGenre] = useState('all');
+    const [selectedPopupGenre, setSelectedPopupGenre] = useState(selectedGenre);
 
     const [visibleCount, setVisibleCount] = useState(20);
 
@@ -198,6 +200,45 @@ export default function CalendarModal({ performances, onClose }: CalendarModalPr
                             </button>
                         </div>
                     </div>
+
+                    {/* Category Nav Header (Sync with PerformanceList) */}
+                    {onGenreSelect && (
+                        <div className="w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab"
+                            onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
+                            <div className="flex gap-2 w-max">
+                                <button
+                                    onClick={() => { onGenreSelect('all'); setSelectedPopupGenre('all'); }}
+                                    className={clsx(
+                                        "px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-200 border",
+                                        selectedGenre === 'all'
+                                            ? "bg-gray-900 border-gray-900 text-white dark:bg-white dark:border-white dark:text-gray-900 shadow-sm"
+                                            : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+                                    )}
+                                >
+                                    전체
+                                </button>
+                                {GENRES.filter(g => g.id !== 'movie').map((genre) => {
+                                    const isSelected = selectedGenre === genre.id;
+                                    const style = (GENRE_STYLES as any)[genre.id] || { text: 'text-gray-600', border: 'border-gray-200' };
+
+                                    return (
+                                        <button
+                                            key={genre.id}
+                                            onClick={() => { onGenreSelect(genre.id); setSelectedPopupGenre(genre.id); }}
+                                            className={clsx(
+                                                "px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
+                                                isSelected
+                                                    ? `${style.bg} ${style.border} text-white dark:text-black`
+                                                    : `bg-white ${style.border} ${style.text} hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800`
+                                            )}
+                                        >
+                                            {genre.label}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    )}
 
                     {/* Daily View (Tighter Spacing) */}
                     {calendarView === 'daily' && (
