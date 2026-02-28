@@ -95,16 +95,68 @@ export const VALID_GENRE_SLUGS = [
 // Futures League Team Logos (emblemF versions for minor league / development teams)
 // Futures League Team Logos (Using high-quality local SVGs where available)
 export const FUTURES_TEAM_LOGOS: Record<string, string> = {
+    // KBO
     "한화": "/images/logos/kbo/hanwha.svg",
     "LG": "/images/logos/kbo/lg.svg",
     "SSG": "/images/logos/kbo/ssg.svg",
     "두산": "/images/logos/kbo/doosan.svg",
-    "고양": "/images/logos/kbo/kiwoom.svg", // Using Kiwoom logo for Goyang Heroes
+    "고양": "/images/logos/kbo/kiwoom.svg",
     "키움": "/images/logos/kbo/kiwoom.svg",
-    "상무": "/images/logos/kbl/sangmu.svg", // Sharing Sangmu Phoenix logo from KBL
+    "상무": "/images/logos/kbl/sangmu.svg",
     "KT": "/images/logos/kbo/kt.svg",
     "NC": "/images/logos/kbo/nc.svg",
     "롯데": "/images/logos/kbo/lotte.svg",
     "삼성": "/images/logos/kbo/samsung.svg",
-    "KIA": "/images/logos/kbo/kia.svg"
+    "KIA": "/images/logos/kbo/kia.svg",
+
+    // K-League
+    "울산": "/images/logos/kleague/울산.svg",
+    "전북": "/images/logos/kleague/전북.svg",
+    "포항": "/images/logos/kleague/포항.png",
+    "광주": "/images/logos/kleague/광주.png",
+    "대구": "/images/logos/kleague/대구.png",
+    "인천": "/images/logos/kleague/인천.png",
+    "서울": "/images/logos/kleague/서울.png",
+    "대전": "/images/logos/kleague/대전.png",
+    "제주": "/images/logos/kleague/제주.svg",
+    "강원": "/images/logos/kleague/강원.png",
+    "수원": "/images/logos/kleague/수원.png",
+    "수원FC": "/images/logos/kleague/수원FC.png",
+
+    // KBL
+    "DB": "/images/logos/kbl/db.svg",
+    "KCC": "/images/logos/kbl/kcc.svg",
+    "SK": "/images/logos/kbl/sk.svg",
+    "KGC": "/images/logos/kbl/kgc.svg", // Anyang Jung Kwan Jang
+    "정관장": "/images/logos/kbl/kgc.svg",
+    "현대모비스": "/images/logos/kbl/mobis.svg",
+    "한국가스공사": "/images/logos/kbl/kogas.svg",
+    "소노": "/images/logos/kbl/sono.svg",
+
+    // V-League (KOVO)
+    "대한항공": "/images/logos/kovo/jumbos.svg",
+    "점보스": "/images/logos/kovo/jumbos.svg",
+    "현대캐피탈": "/images/logos/kovo/skywalkers.svg",
+    "스카이워커스": "/images/logos/kovo/skywalkers.svg",
+    "한국전력": "/images/logos/kovo/vixtorm.svg",
+    "VIXTORM": "/images/logos/kovo/vixtorm.svg",
+    "OK금융그룹": "/images/logos/kovo/okman.svg",
+    "읏맨": "/images/logos/kovo/okman.svg",
+    "우리카드": "/images/logos/kovo/wooriwon.svg",
+    "우리원": "/images/logos/kovo/wooriwon.svg",
+    "KB손해보험": "/images/logos/kovo/stars.svg",
+    "삼성화재": "/images/logos/kovo/bluefangs.svg",
+    "블루팡스": "/images/logos/kovo/bluefangs.svg",
+    "현대건설": "/images/logos/kovo/hillstate.svg",
+    "흥국생명": "/images/logos/kovo/pinkspiders.svg",
+    "핑크스파이더스": "/images/logos/kovo/pinkspiders.svg",
+    "정관장(배구)": "/images/logos/kovo/redsparks.svg",
+    "레드스파크스": "/images/logos/kovo/redsparks.svg",
+    "GS칼텍스": "/images/logos/kovo/kixx.svg",
+    "서울Kixx": "/images/logos/kovo/kixx.svg",
+    "IBK기업은행": "/images/logos/kovo/altos.svg",
+    "한국도로공사": "/images/logos/kovo/hipass.svg",
+    "페퍼저축은행": "/images/logos/kovo/aipeppers.svg",
+    "PEPPERS": "/images/logos/kovo/aipeppers.svg",
+    "AI페퍼스": "/images/logos/kovo/aipeppers.svg"
 };

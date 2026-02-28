@@ -73,8 +73,23 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
 // Clean up title by removing leading bracketed text e.g. "[키즈][서대문] Title" -> "Title"
 export function cleanTitle(title: string): string {
     if (!title) return '';
-    // Regex matches one or more groups of brackets at the start of the string, optionally followed by space
-    const cleaned = title.replace(/^(\[[^\]]+\]\s*)+/, '').trim();
+
+    let cleaned = title;
+
+    // 1. Remove noise prefixes in brackets [] at the start
+    // Matches patterns like [티켓오픈], [단독], [성남], [앵콜], [얼리버드]...
+    cleaned = cleaned.replace(/^(\[[^\]]*\]\s*)+/, '');
+
+    // 2. Remove noise patterns in parentheses () at the start
+    cleaned = cleaned.replace(/^(\([^)]*\)\s*)+/, '');
+
+    // 3. Remove known noise suffixes or internal tags
+    // e.g. "Title [서울]" or "Title (공연)"
+    cleaned = cleaned.replace(/\s*\[(?:서울|경기|인천|강원|충북|충남|전북|전남|경북|경남|제주|부산|대구|광주|대전|울산|세종|서울공연)\]$/g, '');
+
+    // 4. Clean up any lingering multiple spaces
+    cleaned = cleaned.trim().replace(/\s+/g, ' ');
+
     // If the entire title was just brackets (e.g. "[특가]"), return the original title instead of an empty string
     return cleaned === '' ? title : cleaned;
 }

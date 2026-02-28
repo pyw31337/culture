@@ -75,6 +75,10 @@ export default function PerformanceGrid({
                     <div
                         key={`${perf.id}-${perf.region}`}
                         className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
+                        style={{
+                            contentVisibility: 'auto',
+                            containIntrinsicSize: layoutMode === 'grid' ? '0 450px' : '0 150px'
+                        }}
                     >
                         {layoutMode === 'grid' ? (
                             <PerformanceCard

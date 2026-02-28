@@ -113,11 +113,15 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let homeLogo = raw.homeTeamLogo;
     let awayLogo = raw.awayTeamLogo;
     if (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(genre)) {
-        if (raw.homeTeam && FUTURES_TEAM_LOGOS[raw.homeTeam]) {
-            homeLogo = FUTURES_TEAM_LOGOS[raw.homeTeam];
+        const normalizeTeam = (name: string | undefined): string => (name || '').replace(/\(홈\)|\(원정\)|\(상무\)/g, '').trim();
+        const hTeam = normalizeTeam(raw.homeTeam);
+        const aTeam = normalizeTeam(raw.awayTeam);
+
+        if (hTeam && FUTURES_TEAM_LOGOS[hTeam]) {
+            homeLogo = FUTURES_TEAM_LOGOS[hTeam];
         }
-        if (raw.awayTeam && FUTURES_TEAM_LOGOS[raw.awayTeam]) {
-            awayLogo = FUTURES_TEAM_LOGOS[raw.awayTeam];
+        if (aTeam && FUTURES_TEAM_LOGOS[aTeam]) {
+            awayLogo = FUTURES_TEAM_LOGOS[aTeam];
         }
     }
 

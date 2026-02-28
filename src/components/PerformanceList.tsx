@@ -160,6 +160,41 @@ export default function PerformanceList({
 
     const activeLocation = searchLocation || userLocation;
 
+    // --- Effects (Lifecycle & Logic) ---
+
+    // 1. Infinite Scroll Observer
+    useEffect(() => {
+        if (!observerTarget.current) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && hasMore) {
+                    loadMore();
+                }
+            },
+            { threshold: 0.1, rootMargin: '100px' }
+        );
+
+        observer.observe(observerTarget.current);
+        return () => observer.disconnect();
+    }, [hasMore, loadMore]);
+
+    // 2. Deep Link Support (Shared Content Modal)
+    useEffect(() => {
+        if (deepLinkHandled.current || !allPerformances.length) return;
+
+        const path = window.location.pathname;
+        const match = path.match(/\/p\/([^/]+)\/?$/);
+        if (match && match[1]) {
+            const id = match[1];
+            const perf = allPerformances.find(p => p.id === id);
+            if (perf) {
+                setSharedPerf(perf);
+                deepLinkHandled.current = true;
+            }
+        }
+    }, [allPerformances]);
+
     return (
         <div className="min-h-screen bg-transparent text-white light:text-black">
             <RainbowBackground />
