@@ -100,6 +100,7 @@ export const FUTURES_TEAM_LOGOS: Record<string, string> = {
     "SSG": "/images/logos/kbo/ssg.svg",
     "두산": "/images/logos/kbo/doosan.svg",
     "고양": "/images/logos/kbo/kiwoom.svg", // Using Kiwoom logo for Goyang Heroes
+    "키움": "/images/logos/kbo/kiwoom.svg",
     "상무": "/images/logos/kbl/sangmu.svg", // Sharing Sangmu Phoenix logo from KBL
     "KT": "/images/logos/kbo/kt.svg",
     "NC": "/images/logos/kbo/nc.svg",

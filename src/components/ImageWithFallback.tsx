@@ -89,7 +89,7 @@ export default function ImageWithFallback({
                 )}
                 quality={75}
                 referrerPolicy="no-referrer"
-                style={{ zIndex: 1, ...props.style }}
+                style={{ ...props.style }}
             />
         </>
     );

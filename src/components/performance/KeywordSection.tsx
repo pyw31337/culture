@@ -192,14 +192,15 @@ export default function KeywordSection({ keywordItems, onLocationClick, onToggle
                                         className="object-cover pointer-events-none"
                                         sizes="(max-width: 768px) 200px, 260px"
                                         draggable={false}
+                                        style={{ zIndex: 2 }}
                                     />
 
                                     {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90 z-5" />
 
                                     {/* VS Badge for Sports */}
                                     {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-20 pointer-events-none">
+                                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
                                             {/* Background Decorative Icon */}
                                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]">
                                                 {React.isValidElement(getGenreIcon(perf.genre, 120)) ?
@@ -214,7 +215,7 @@ export default function KeywordSection({ keywordItems, onLocationClick, onToggle
                                     )}
 
                                     {/* Info Overlay (Detail View) */}
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-20">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -225,7 +226,7 @@ export default function KeywordSection({ keywordItems, onLocationClick, onToggle
                                     </div>
 
                                     {/* Bottom Action Bar (Permanent) */}
-                                    <div className="absolute inset-x-0 bottom-0 z-20 p-3 flex items-center gap-3 pointer-events-none">
+                                    <div className="absolute inset-x-0 bottom-0 z-30 p-3 flex items-center gap-3 pointer-events-none">
                                         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0" />
 
                                         <button

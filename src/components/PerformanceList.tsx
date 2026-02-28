@@ -1042,7 +1042,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* Keyword Content Section */}
             {
                 (viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && keywordItems.length > 0 && (
-                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14">
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 relative z-10">
                         <KeywordSection
                             keywordItems={keywordItems}
                             onDetail={handleDetailOpen}
@@ -1058,7 +1058,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             {/* Recommendation Section (Restored) */}
             {
                 (viewMode === 'grid' || viewMode === 'list') && searchText === '' && !searchLocation && selectedGenre === 'all' && (
-                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14">
+                    <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 relative z-10">
                         <RecommendedSection
                             recommendedItems={recommendedItems}
                             onDetail={handleDetailOpen}
@@ -1072,7 +1072,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
 
             {/* 3. Main Content (Grid/List) */}
-            <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh]">
+            <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-6 min-h-[50vh] relative z-10">
                 {/* Results Info Header */}
                 <div className={`flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2`}>
                     <div className="w-full sm:w-auto">
@@ -1159,9 +1159,9 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                 ) : viewMode === 'likes-perf' ? (
                     <>
                         {/* 좋아요한 컨텐츠 Section */}
-                        <h3 className="text-xl sm:text-2xl font-black text-black dark:text-white flex items-center gap-3 mb-6">
-                            <Heart className="text-pink-500 w-6 h-6 fill-pink-500" />
-                            좋아요한 컨텐츠 <span className="text-pink-600 dark:text-pink-400 text-lg sm:text-xl">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
+                        <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6">
+                            <Heart className="text-pink-400 light:text-pink-500 w-6 h-6 fill-pink-500 light:fill-pink-500" />
+                            좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({allPerformances.filter(p => likedIds.includes(p.id)).length})</span>
                         </h3>
                         {allPerformances.filter(p => likedIds.includes(p.id)).length > 0 ? (
                             <PerformanceGrid
@@ -1188,19 +1188,19 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 searchText={searchText}
                             />
                         ) : (
-                            <div className="text-center py-12 text-gray-800 dark:text-gray-400">
-                                <Heart className="w-12 h-12 mx-auto mb-4 text-gray-400 dark:text-gray-600" />
-                                <p className="text-lg font-semibold text-black dark:text-white">좋아요한 컨텐츠가 없습니다</p>
-                                <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">마음에 드는 공연/전시를 좋아요 해보세요!</p>
+                            <div className="text-center py-12 text-gray-400 light:text-gray-800">
+                                <Heart className="w-12 h-12 mx-auto mb-4 text-gray-600 light:text-gray-400" />
+                                <p className="text-lg font-semibold text-white light:text-black">좋아요한 컨텐츠가 없습니다</p>
+                                <p className="text-sm mt-1 text-gray-500 light:text-gray-600">마음에 드는 공연/전시를 좋아요 해보세요!</p>
                             </div>
                         )}
 
                         {/* 좋아요한 공연장 Section */}
                         <div className="mb-10 mt-8">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl sm:text-2xl font-black text-black dark:text-white flex items-center gap-3">
-                                    <MapPin className="text-pink-400 w-6 h-6" />
-                                    좋아요한 공연장 <span className="text-pink-600 dark:text-pink-400 text-lg sm:text-xl">({favoriteVenues.length})</span>
+                                <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3">
+                                    <MapPin className="text-pink-400 light:text-pink-500 w-6 h-6" />
+                                    좋아요한 공연장 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
                                 </h3>
                                 <button
                                     onClick={() => setShowFavoriteListModal(true)}
@@ -1210,14 +1210,15 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                 </button>
                             </div>
                             {favoriteVenues.length > 0 ? (
-                                <div className="space-y-6">
+                                <div className="space-y-6 text-white light:text-black">
                                     {favoriteVenues.map((venueName) => {
                                         const venuePerfs = allPerformances.filter(p => p.venue === venueName);
                                         return (
                                             <div key={venueName}>
                                                 <button
                                                     onClick={() => {
-                                                        setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                                                        const venueData = venues[venueName];
+                                                        setSearchLocation({ lat: venueData?.lat || 0, lng: venueData?.lng || 0, name: venueName });
                                                         setIsMapOpen(true);
                                                     }}
                                                     className="flex items-center gap-2 mb-2 text-pink-300 light:text-pink-600 hover:text-pink-200 transition-colors"
@@ -1235,14 +1236,17 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                                                 className="cursor-pointer group/venue"
                                                             >
                                                                 <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-800 light:bg-gray-200 relative">
-                                                                    <img
-                                                                        src={getOptimizedUrl(perf.image || perf.posterUrl || '', 200)}
+                                                                    <ImageWithFallback
+                                                                        src={perf.image || perf.posterUrl || ''}
                                                                         alt={perf.title}
+                                                                        fill
                                                                         className="w-full h-full object-cover group-hover/venue:scale-105 transition-transform duration-300"
+                                                                        sizes="(max-width: 640px) 150px, 200px"
                                                                         loading="lazy"
+                                                                        style={{ zIndex: 2 }}
                                                                     />
                                                                     {/* Hover Overlay */}
-                                                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                                                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center z-20">
                                                                         <h4 className="text-white font-bold text-xs sm:text-sm mb-2 line-clamp-2">{perf.title}</h4>
                                                                         <div className="px-3 py-1.5 bg-white text-black font-extrabold text-[10px] sm:text-xs rounded-full shadow-xl">
                                                                             자세히 보기
@@ -1260,7 +1264,7 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
                                     })}
                                 </div>
                             ) : (
-                                <div className="text-center py-4 text-sm text-gray-800 dark:text-gray-400">
+                                <div className="text-center py-4 text-sm text-gray-500 light:text-black font-medium">
                                     좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
                                 </div>
                             )}
@@ -1327,19 +1331,21 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
             }
 
             {/* Favorite Venues Edit Modal */}
-            {showFavoriteListModal && (
-                <FavoriteVenuesModal
-                    isOpen={showFavoriteListModal}
-                    onClose={() => setShowFavoriteListModal(false)}
-                    favoriteVenues={favoriteVenues}
-                    onRemove={handleRemoveFavoriteVenue}
-                    onVenueClick={(venueName) => {
-                        setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
-                        setShowFavoriteListModal(false);
-                        setIsMapOpen(true);
-                    }}
-                />
-            )}
+            {
+                showFavoriteListModal && (
+                    <FavoriteVenuesModal
+                        isOpen={showFavoriteListModal}
+                        onClose={() => setShowFavoriteListModal(false)}
+                        favoriteVenues={favoriteVenues}
+                        onRemove={handleRemoveFavoriteVenue}
+                        onVenueClick={(venueName) => {
+                            setSearchLocation({ lat: venues[venueName]?.lat || 0, lng: venues[venueName]?.lng || 0, name: venueName });
+                            setShowFavoriteListModal(false);
+                            setIsMapOpen(true);
+                        }}
+                    />
+                )
+            }
 
             <BottomNavSheet
                 activeMenu={activeBottomMenu}
@@ -1415,12 +1421,14 @@ export default function PerformanceList({ initialPerformances, lastUpdated, init
 
 
             {/* Shared Deep Link Modal */}
-            {sharedPerf && (
-                <SharedDetailModal
-                    performance={sharedPerf}
-                    onClose={() => setSharedPerf(null)}
-                />
-            )}
+            {
+                sharedPerf && (
+                    <SharedDetailModal
+                        performance={sharedPerf}
+                        onClose={() => setSharedPerf(null)}
+                    />
+                )
+            }
 
         </div >
     );

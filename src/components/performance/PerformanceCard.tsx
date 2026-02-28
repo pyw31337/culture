@@ -262,9 +262,27 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                             loading="lazy"
                                             referrerPolicy="no-referrer"
+                                            style={{ zIndex: 2 }}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-5" />
                                     </div>
+
+                                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                            <img
+                                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
+                                                alt={perf.homeTeam}
+                                                className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                            />
+                                            <div className="text-white/90 font-black text-[10px] italic bg-black/40 px-1.5 py-0.5 rounded-full backdrop-blur-[1px] border border-white/10">VS</div>
+                                            <img
+                                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
+                                                alt={perf.awayTeam}
+                                                className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                            />
+                                        </div>
+                                    )}
+
                                     <div
                                         className={clsx(
                                             "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
@@ -439,11 +457,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     loading="lazy"
                                     referrerPolicy="no-referrer"
+                                    style={{ zIndex: 2 }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl z-5" />
 
                                 {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-20 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
                                         {/* Background Decorative Icon */}
                                         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] text-white pointer-events-none z-[-1]">
                                             {React.isValidElement(getGenreIcon(perf.genre, 180)) ?
@@ -478,7 +497,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 <div
                                     className={clsx(
-                                        "absolute inset-x-0 bottom-0 z-[70] flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
+                                        "absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
                                         enableActions
                                             ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0")
                                             : "translate-y-0"
