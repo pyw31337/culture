@@ -206,30 +206,18 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         <div className="w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab"
                             onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                             <div className="flex gap-2 w-max">
-                                <button
-                                    onClick={() => { onGenreSelect('all'); setSelectedPopupGenre('all'); }}
-                                    className={clsx(
-                                        "px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-200 border",
-                                        selectedGenre === 'all'
-                                            ? "bg-gray-900 border-gray-900 text-white dark:bg-white dark:border-white dark:text-gray-900 shadow-sm"
-                                            : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
-                                    )}
-                                >
-                                    전체
-                                </button>
                                 {GENRES.filter(g => g.id !== 'movie').map((genre) => {
                                     const isSelected = selectedGenre === genre.id;
-                                    const style = (GENRE_STYLES as any)[genre.id] || { text: 'text-gray-600', border: 'border-gray-200' };
 
                                     return (
                                         <button
                                             key={genre.id}
                                             onClick={() => { onGenreSelect(genre.id); setSelectedPopupGenre(genre.id); }}
                                             className={clsx(
-                                                "px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
+                                                "px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
                                                 isSelected
-                                                    ? `${style.bg} ${style.border} text-white dark:text-black`
-                                                    : `bg-white ${style.border} ${style.text} hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800`
+                                                    ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
+                                                    : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800"
                                             )}
                                         >
                                             {genre.label}
@@ -240,32 +228,52 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         </div>
                     )}
 
-                    {/* Daily View (Tighter Spacing) */}
+                    {/* Daily View (Synchronized with Monthly Day Detail) */}
                     {calendarView === 'daily' && (
-                        <div className="flex-grow overflow-y-auto p-2 sm:p-4 space-y-1.5 bg-white dark:bg-gray-900">
+                        <div
+                            ref={listRef}
+                            onScroll={onListScroll}
+                            className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar"
+                        >
                             {(() => {
-                                const dayEvents = getPerformancesForDay(currentMonth);
-                                if (dayEvents.length === 0) return (
+                                const rawEvents = getPerformancesForDay(currentMonth);
+                                const filteredEvents = selectedPopupGenre === 'all'
+                                    ? rawEvents
+                                    : rawEvents.filter(p => p.genre === selectedPopupGenre);
+
+                                const displayedDailyEvents = filteredEvents.slice(0, visibleCount);
+
+                                if (filteredEvents.length === 0) return (
                                     <p className="text-center text-gray-500 py-16 text-lg">일정이 없습니다</p>
                                 );
-                                return dayEvents.map((perf, i) => (
-                                    <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                        className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
-                                    >
-                                        {perf.image && (
-                                            <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-14 h-[72px] object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
-                                        )}
-                                        <div className="min-w-0 flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className={clsx("px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
-                                                    {GENRES.find(g => g.id === perf.genre)?.label}
-                                                </span>
-                                                <span className="text-[10px] text-gray-500">{perf.venue}</span>
+                                return (
+                                    <>
+                                        {displayedDailyEvents.map((perf, i) => (
+                                            <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
+                                                className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
+                                            >
+                                                {perf.image && (
+                                                    <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
+                                                )}
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="flex items-center gap-2 mb-1">
+                                                        <span className={clsx("px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
+                                                            {GENRES.find(g => g.id === perf.genre)?.label}
+                                                        </span>
+                                                        <span className="text-[10px] text-gray-500">{perf.venue}</span>
+                                                    </div>
+                                                    <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                                </div>
+                                            </a>
+                                        ))}
+
+                                        {displayedDailyEvents.length < filteredEvents.length && (
+                                            <div className="py-2 text-center text-xs text-gray-500">
+                                                데이터를 더 불러오는 중...
                                             </div>
-                                            <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
-                                        </div>
-                                    </a>
-                                ));
+                                        )}
+                                    </>
+                                );
                             })()}
                         </div>
                     )}
@@ -402,20 +410,18 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                             onMouseUp={onMouseUp}
                             onMouseMove={onMouseMove}
                         >
-                            <div className="flex gap-2 w-max pointer-events-none">
-                                {GENRES.map(g => (
+                            <div className="flex gap-2 w-max">
+                                {GENRES.filter(g => g.id !== 'movie').map(g => (
                                     <button
                                         key={g.id}
                                         onClick={(e) => {
-                                            if (isDragging) e.preventDefault();
                                             setSelectedPopupGenre(g.id);
                                         }}
-                                        style={{ pointerEvents: 'auto' }}
                                         className={clsx(
-                                            "whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border select-none",
+                                            "whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 border shadow-sm select-none",
                                             selectedPopupGenre === g.id
-                                                ? "bg-gray-900 dark:bg-white text-white dark:text-black border-gray-900 dark:border-white"
-                                                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:text-gray-900 dark:hover:text-gray-200"
+                                                ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
+                                                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-100 dark:hover:border-gray-700"
                                         )}
                                     >
                                         {g.label}
@@ -427,7 +433,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         <div
                             ref={listRef}
                             onScroll={onListScroll}
-                            className="p-4 overflow-y-auto space-y-3 custom-scrollbar"
+                            className="p-4 overflow-y-auto space-y-3 custom-scrollbar flex-grow"
                         >
                             {displayedEvents.length === 0 ? (
                                 <p className="text-center text-gray-500 py-8">
