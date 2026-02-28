@@ -1,13 +1,13 @@
-
-import React, { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react'; // Verified: Naver Link Enforced
+import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
-import { Heart, Star, MapPin, Calendar, Share2, Check, Flame, Tag, Plane, Search } from 'lucide-react';
-import BuildingStadium from '../BuildingStadium';
+import { Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
-import ImageWithFallback from '../ImageWithFallback';
-import { getGenreIcon } from '../GenreIcons';
+import { GENRE_STYLES } from '@/lib/constants';
+import { CardImage } from './atomic/CardImage';
+import { SportsOverlay } from './atomic/SportsOverlay';
+import { GenreBadge } from './atomic/GenreBadge';
+import { CardInfo } from './atomic/CardInfo';
+import { CardActions } from './atomic/CardActions';
 
 interface PerformanceCardProps {
     perf: any;
@@ -27,738 +27,145 @@ interface PerformanceCardProps {
     searchText?: string;
 }
 
-// Helper for Highlighting
-const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string }) => {
-    if (!keyword || !text) return <>{text}</>;
-    // Escape special regex chars if needed, but for simple keywords:
-    const regex = new RegExp(`(${keyword})`, 'gi');
-    const parts = text.split(regex);
-    return (
-        <>
-            {parts.map((part, i) =>
-                regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
-            )}
-        </>
-    );
-});
-
-HighlightText.displayName = 'HighlightText';
-
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
-    const [isCopied, setIsCopied] = useState(false);
-    const [showActions, setShowActions] = useState(false); // For Mobile Touch
-
+function PerformanceCard({
+    perf,
+    distLabel,
+    venueInfo,
+    onLocationClick,
+    variant = 'default',
+    isLiked = false,
+    onToggleLike,
+    showRibbon = false,
+    ribbonText = '추천 컨텐츠',
+    enableActions = false,
+    isGradient = false,
+    onShare,
+    onDetail,
+    searchMode = 'keyword',
+    searchText
+}: PerformanceCardProps) {
+    const [showActions, setShowActions] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
-    const dDay = useMemo(() => {
-        if (perf.genre !== 'movie' || !perf.date) return null;
-        try {
-            const cleanDate = perf.date.replace(/\./g, '-').split('~')[0].trim();
-            const target = new Date(cleanDate);
-            const now = new Date();
-            target.setHours(0, 0, 0, 0);
-            now.setHours(0, 0, 0, 0);
-            const diffTime = target.getTime() - now.getTime();
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            if (diffDays === 0) return 'D-Day';
-            if (diffDays > 0) return `D-${diffDays}`;
-            if (diffDays < 0) {
-                if (diffDays < -100) return null;
-                return `D+${Math.abs(diffDays)}`;
-            }
-            return null;
-        } catch (e) {
-            return null;
-        }
-    }, [perf.date, perf.genre]);
+    const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
-    const handleMouseEnter = useCallback(() => {
-        if (!cardRef.current) return;
-        cardRef.current.style.transition = 'none';
-    }, []);
-
+    // 3D Hover Effects
     const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;
-
-        cardRef.current.style.transition = 'none';
-
         const rect = cardRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
-        const rotateY = ((x - centerX) / centerX) * 10;
-
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
         cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-
-        glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
     }, []);
 
     const handleMouseLeave = useCallback(() => {
         if (!cardRef.current || !glareRef.current) return;
-
-        cardRef.current.style.transition = 'transform 0.3s ease-out';
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
     }, []);
 
-    const handleCardClick = (e: React.MouseEvent) => {
-        if (onDetail) {
-            onDetail();
-        } else if (!showActions) {
-            setShowActions(true);
-        } else {
-            setShowActions(false);
-        }
-    }
-
-    useEffect(() => {
-        if (!showActions) return;
-        const handleGlobalClick = (e: any) => {
-            if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
-                setShowActions(false);
-            }
-        };
-        document.addEventListener('touchstart', handleGlobalClick);
-        return () => document.removeEventListener('touchstart', handleGlobalClick);
-    }, [showActions]);
-
-    const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
-
-    const hasOtherDetails = useMemo(() => !!(
-        (perf.originalTitle && perf.originalTitle !== perf.title) ||
-        perf.productionCountry ||
-        perf.productionYear ||
-        perf.subGenre ||
-        perf.runningTime ||
-        (perf.ageRating && !['movie'].includes(perf.genre)) ||
-        perf.director ||
-        ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
-        (perf.platforms && perf.platforms.length > 0)
-    ), [perf.originalTitle, perf.title, perf.productionCountry, perf.productionYear, perf.subGenre, perf.runningTime, perf.ageRating, perf.genre, perf.director, perf.castWithLinks, perf.cast, perf.platforms]);
-
     return (
         <div
-            className="sm:perspective-1000 group h-full relative hover:z-[2000]"
-            onMouseEnter={handleMouseEnter}
+            className="group h-full relative perspective-1000"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={() => onDetail?.()}
         >
             <div
                 ref={cardRef}
-                className={
-                    clsx(
-                        "relative transition-transform ease-out sm:transform-style-3d shadow-xl light:shadow-none group-hover:shadow-[5px_30px_50px_-12px_rgba(0,0,0,1)] light:group-hover:shadow-none h-full rounded-[15px] will-change-transform",
-                        variant === 'default'
-                            ? (searchMode === 'location'
-                                ? "gold-shimmer-wrapper aspect-[3/4] border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
-                                : "gold-shimmer-wrapper aspect-[3/4]")
-                            : "",
-                        variant === 'emerald'
-                            ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
-                            : variant === 'pink'
-                                ? "border border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
-                                : variant === 'yellow'
-                                    ? "border border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                                    : "border-0"
-                    )
-                }
-                style={{ transformStyle: 'preserve-3d' }}
-                onClick={handleCardClick}
+                className={clsx(
+                    "relative transition-transform duration-200 ease-out transform-style-3d shadow-xl rounded-[20px] overflow-hidden h-full isolate",
+                    isInterestVariant ? "border-2" : "border border-white/10",
+                    variant === 'emerald' ? "border-emerald-500/50" :
+                        variant === 'pink' ? "border-pink-500/50" :
+                            variant === 'yellow' ? "border-yellow-500/50" : ""
+                )}
             >
+                {/* Glare Effect */}
                 <div
                     ref={glareRef}
-                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200 rounded-xl"
-                    style={{
-                        background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 60%)',
-                        mixBlendMode: 'overlay',
-                    }}
+                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-300"
+                    style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)' }}
                 />
 
-                {variant === 'default' && (
-                    <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
-                )}
-
-                <div className={clsx(
-                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
-                    isGradient
-                        ? (searchMode === 'location'
-                            ? "bg-gradient-to-br from-[#064e3b] to-[#0f172a]" // Emerald to Dark
-                            : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
-                        : "bg-gray-900"
-                )}
-                    style={{ transform: 'translateZ(0)' }}
+                {/* Like Button - Always on Top */}
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onToggleLike?.(e);
+                    }}
+                    className="absolute top-3 right-3 p-2 rounded-full hover:bg-black/20 transition-all z-[var(--z-card-overlay)]"
+                    style={{ transform: 'translateZ(30px)' }}
                 >
+                    <Heart className={clsx("w-6 h-6 transition-all", isLiked ? "text-pink-500 fill-pink-500 scale-110" : "text-white/40 hover:text-pink-400")} />
+                </button>
 
-                    {
-                        showRibbon && (
-                            <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
-                                <div className={clsx(
-                                    "absolute top-0 left-0 text-white text-[10px] font-extrabold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20",
-                                    searchMode === 'location' ? "bg-emerald-500" : "bg-[#a78bfa]"
-                                )}>
-                                    {ribbonText}
-                                </div>
-                            </div>
-                        )
-                    }
-
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            if (onToggleLike) onToggleLike(e);
-                        }}
-                        className="absolute top-3 right-3 z-[100] p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
-                        style={{ transform: 'translateZ(50px)' }}
-                    >
-                        <Heart
-                            className={clsx(
-                                "w-6 h-6 transition-all duration-300",
-                                isLiked
-                                    ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                                    : "text-gray-400 fill-black/20 hover:text-pink-400 hover:scale-110"
-                            )}
+                {/* Card Content Pipeline */}
+                <div className="flex flex-col h-full bg-[var(--card)]">
+                    <div className="relative aspect-[3/4] overflow-hidden">
+                        <CardImage
+                            src={perf.image || perf.poster}
+                            alt={perf.title}
+                            fallbackGenre={perf.genre}
                         />
-                    </button>
 
-                    {
-                        variant !== 'yellow' && variant !== 'pink' && (
-                            <div className={clsx(
-                                "absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-[length:200%_auto] pointer-events-none",
-                                searchMode === 'location'
-                                    ? "bg-linear-to-tr from-[#34d399] via-[#059669] to-[#34d399]"
-                                    : "bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc]"
-                            )} />
-                        )
-                    }
+                        {/* Sports / Metadata Overlay */}
+                        <SportsOverlay
+                            genre={perf.genre}
+                            homeTeam={perf.homeTeam}
+                            homeTeamLogo={perf.homeTeamLogo}
+                            awayTeam={perf.awayTeam}
+                            awayTeamLogo={perf.awayTeamLogo}
+                            size={isInterestVariant ? 'sm' : 'md'}
+                        />
 
-                    <div
-                        ref={glareRef}
-                        className={clsx(
-                            "hidden sm:block absolute inset-0 w-[200%] h-[200%] opacity-0 pointer-events-none z-50 mix-blend-color-dodge transition-opacity duration-300",
-                            searchMode === 'location'
-                                ? "bg-linear-to-tr from-transparent via-white/10 via-emerald-400/20 via-teal-400/20 via-white/10 to-transparent"
-                                : "bg-linear-to-tr from-transparent via-white/10 via-[#a78bfa]/20 via-[#f472b6]/20 via-white/10 to-transparent"
-                        )}
-                        style={{ left: '-25%', top: '-25%' }}
-                    />
-
-                    {
-                        isInterestVariant ? (
-                            <>
-                                <div className="relative aspect-[3/4] overflow-hidden shrink-0">
-                                    <div className="absolute inset-0 z-0">
-                                        <ImageWithFallback
-                                            src={perf.image || perf.poster}
-                                            backupSrc={perf.backupPoster}
-                                            optimizationWidth={1000}
-                                            alt={perf.title}
-                                            fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer"
-                                            style={{ zIndex: 2 }}
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-5" />
-                                    </div>
-
-                                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
-                                            <img
-                                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
-                                                alt={perf.homeTeam}
-                                                className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
-                                            />
-                                            <div className="text-white/90 font-black text-[10px] italic bg-black/40 px-1.5 py-0.5 rounded-full backdrop-blur-[1px] border border-white/10">VS</div>
-                                            <img
-                                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
-                                                alt={perf.awayTeam}
-                                                className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
-                                            />
-                                        </div>
-                                    )}
-
-                                    <div
-                                        className={clsx(
-                                            "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
-                                            variant === 'yellow'
-                                                ? "bg-black/80 text-yellow-500 border-yellow-500/30"
-                                                : variant === 'pink'
-                                                    ? "bg-black/80 text-pink-500 border-pink-500/30"
-                                                    : "bg-black/80 text-emerald-500 border-emerald-500/30"
-                                        )}
-                                        style={{ transform: 'translateZ(20px)' }}
-                                    >
-                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
-                                        {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
-                                    </div>
-
-                                    {enableActions && (
-                                        <div className={clsx(
-                                            "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between transition-transform duration-300 ease-out",
-                                            "translate-y-[100%] group-hover:translate-y-0"
-                                        )}>
-                                            <button
-                                                onClick={async (e) => {
-                                                    e.stopPropagation();
-                                                    if (onShare) {
-                                                        const usedClipboard = await onShare();
-                                                        if (usedClipboard) {
-                                                            setIsCopied(true);
-                                                            setTimeout(() => setIsCopied(false), 2000);
-                                                        }
-                                                    }
-                                                }}
-                                                className="w-[20%] bg-black/40 hover:bg-black/90 hover:text-white text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] relative group/share"
-                                                aria-label="공유하기"
-                                            >
-                                                <Share2 className="w-5 h-5" />
-                                                <AnimatePresence>
-                                                    {isCopied && (
-                                                        <motion.div
-                                                            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
-                                                        >
-                                                            <span className="text-emerald-400">✓</span> 복사됨!
-                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </button>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if ((perf.genre === 'movie') && perf.link) {
-                                                        window.open(perf.link, '_blank', 'noopener,noreferrer');
-                                                    } else if (onDetail) {
-                                                        onDetail();
-                                                    }
-                                                }}
-                                                className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
-                                            >
-                                                자세히 보기
-                                                <Search className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <div className={clsx(
-                                    "relative flex-1 sm:transform-style-3d overflow-hidden p-4 flex flex-col min-h-0",
-                                    variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500"
-                                )} style={{ transform: 'translateZ(10px)' }}>
-
-                                    <button
-                                        className="block group/link relative z-[100] text-left w-full"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            if ((perf.genre === 'movie') && perf.link) {
-                                                window.open(perf.link, '_blank', 'noopener,noreferrer');
-                                            } else if (onDetail) {
-                                                onDetail();
-                                            }
-                                        }}
-                                    >
-                                        <h3 className="font-extrabold text-lg text-black light:text-black mb-1 line-clamp-2 group-hover:opacity-80 transition-opacity">
-                                            <HighlightText text={cleanTitle(perf.title)} keyword={searchText} />
-                                        </h3>
-                                    </button>
-
-                                    {perf.genre === 'movie' ? (
-                                        <div className="text-gray-800 text-sm flex items-center gap-1 mb-2 w-max cursor-default">
-                                            {perf.gradeIcon ? (
-                                                <img src={perf.gradeIcon} alt="Grade" className="h-[20px] w-auto object-contain" />
-                                            ) : (
-                                                <>
-                                                    <span className="text-cyan-600 font-extrabold text-xs border border-cyan-600/30 px-1 rounded">등급</span>
-                                                    {perf.grade || perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue}
-                                                </>
-                                            )}
-                                        </div>
-                                    ) : perf.genre === 'travel' ? (
-                                        <div className="text-gray-800 text-xs flex flex-col gap-0.5 mb-2 w-max cursor-default">
-                                            <div className="flex items-center gap-1 font-extrabold text-sky-700">
-                                                <Plane className="w-3 h-3" />
-                                                {perf.venue.split('|')[0]?.trim()}
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                if (venueInfo?.lat) onLocationClick({ lat: venueInfo.lat, lng: venueInfo.lng, name: perf.venue });
-                                            }}
-                                            className="text-gray-800 text-sm flex items-center gap-1 mb-2 hover:text-black hover:font-extrabold cursor-pointer w-max"
-                                        >
-                                            <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
-                                            <span className="truncate"><HighlightText text={perf.venue} keyword={searchText} /></span>
-                                        </button>
-                                    )}
-                                    <div className="mt-auto mb-2 w-full">
-                                        {(perf.price || perf.discount) && (
-                                            <div className="flex justify-between items-end w-full border-t border-black/10 pt-2">
-                                                <div className="flex flex-col justify-end leading-none">
-                                                    {perf.discount && <span className="text-red-600 font-black text-lg">{perf.discount}</span>}
-                                                </div>
-                                                <div className="flex flex-col items-end leading-none">
-                                                    {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-black/40 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
-                                                    <div className="flex items-baseline gap-1.5">
-                                                        {perf.price && (() => {
-                                                            const extracted = extractFirstPrice(perf.price);
-                                                            if (!extracted) return <span className="text-black font-black text-lg tracking-tighter text-right">{perf.price}</span>;
-                                                            return (
-                                                                <div className="text-black leading-none text-right">
-                                                                    {extracted.price === '무료' ? (
-                                                                        <span className="text-lg font-black">무료</span>
-                                                                    ) : (
-                                                                        <>
-                                                                            {extracted.label && <span className="text-[10px] text-black/60 mr-1">{extracted.label}</span>}
-                                                                            <span className="text-xl font-black tracking-tight">{extracted.price}</span>
-                                                                            <span className="text-xs font-extrabold ml-0.5">원</span>
-                                                                        </>
-                                                                    )}
-                                                                </div>
-                                                            );
-                                                        })()}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="flex justify-between items-center border-t border-black/10 pt-2 text-black">
-                                        <span className="text-white text-xs font-extrabold bg-black px-2 py-1 rounded whitespace-nowrap">
-                                            {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
-                                        </span>
-                                        {dDay && (
-                                            <span className="text-white text-[10px] font-extrabold bg-transparent border border-white/30 px-2 rounded-full whitespace-nowrap flex items-center justify-center h-[20px]">
-                                                {dDay}
-                                            </span>
-                                        )}
-                                        <span className="text-[13px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
-                                    </div>
-                                </div>
-                            </>
-                        ) : (
-                            <div className="relative h-full w-full">
-                                <ImageWithFallback
-                                    src={perf.image || perf.poster}
-                                    backupSrc={perf.backupPoster}
-                                    optimizationWidth={1000}
-                                    alt={perf.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer"
-                                    style={{ zIndex: 2 }}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-xl z-5" />
-
-                                {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
-                                        {/* Background Decorative Icon */}
-                                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] text-white pointer-events-none z-[-1]">
-                                            {React.isValidElement(getGenreIcon(perf.genre, 180)) ?
-                                                React.cloneElement(getGenreIcon(perf.genre, 180) as React.ReactElement<React.SVGProps<SVGSVGElement>>, { strokeWidth: 1 }) :
-                                                null}
-                                        </div>
-
-                                        <img
-                                            src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
-                                            alt={perf.homeTeam}
-                                            className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-                                        />
-                                        <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-[1px] shadow-lg border border-white/10">VS</div>
-                                        <img
-                                            src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
-                                            alt={perf.awayTeam}
-                                            className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-                                        />
-                                    </div>
-                                )}
-
-                                {distLabel ? (
-                                    <div
-                                        className="absolute top-2 left-2 z-40 bg-emerald-600/90 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-xs font-extrabold shadow-lg flex items-center gap-1 backdrop-blur-sm"
-                                        style={{ transform: 'translateZ(20px)' }}
-                                    >
-                                        <MapPin className="w-3 h-3 text-white" />
-                                        {distLabel}
-                                    </div>
-                                ) : null}
-
-
-                                <div
-                                    className={clsx(
-                                        "absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
-                                        enableActions
-                                            ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0")
-                                            : "translate-y-0"
-                                    )}
-                                    style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}
-                                >
-                                    <div className="relative z-20 w-full">
-                                        <div className="absolute inset-0 -top-24 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none" />
-
-                                        <div className="relative z-10 p-4 pb-4">
-                                            <div className="flex flex-wrap gap-2 mb-1.5 items-center">
-                                                <span className={clsx(
-                                                    "px-3 py-1 rounded-full text-xs font-extrabold backdrop-blur-md border shadow-sm transition-all text-white",
-                                                    GENRE_STYLES[perf.genre]?.twBg ? `${GENRE_STYLES[perf.genre].twBg} border-white/20` : (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
-                                                )}>
-                                                    {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
-                                                </span>
-
-                                                {dDay && (
-                                                    <span className="px-2 rounded-full text-[10px] font-extrabold backdrop-blur-md border border-white/30 text-white bg-transparent flex items-center justify-center h-[24px]">
-                                                        {dDay}
-                                                    </span>
-                                                )}
-
-                                                {perf.date && (
-                                                    <span className="text-xs text-gray-300 flex items-center gap-1 font-semibold">
-                                                        {perf.genre !== 'movie' && <Calendar className="w-3.5 h-3.5" />}
-                                                        {(() => {
-                                                            let dateStr = formatUnifiedDate(perf.date);
-                                                            if (dateStr.startsWith('~')) {
-                                                                return dateStr;
-                                                            }
-                                                            return dateStr;
-                                                        })()}
-                                                    </span>
-                                                )}
-                                            </div>
-
-                                            <div className="block relative z-[100]" onClick={e => e.stopPropagation()}>
-                                                <h3 className="text-lg md:text-xl font-[800] tracking-tighter text-white light:text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg transition-colors">
-                                                    <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
-                                                </h3>
-                                            </div>
-
-                                            {(perf.genre === 'movie' || perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.ageRating) && (
-                                                <div className="flex items-center gap-1.5 mt-1 text-gray-300 text-xs font-semibold">
-                                                    {perf.genre === 'movie' ? (
-                                                        <div className="text-gray-400 text-xs flex items-center gap-1 truncate h-[20px]">
-                                                            {perf.gradeIcon ? (
-                                                                <img src={perf.gradeIcon} alt="Grade" className="h-full w-auto object-contain" />
-                                                            ) : (
-                                                                <>
-                                                                    <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
-                                                                    {perf.grade || (perf.venue || 'Online').split('|').find((s: string) => s.includes('관람'))?.trim() || perf.venue || 'Online'}
-                                                                </>
-                                                            )}
-                                                        </div>
-                                                    ) : perf.genre === 'travel' ? (
-                                                        <div className="text-gray-400 text-xs flex flex-col gap-0.5 truncate h-auto">
-                                                            <div className="flex items-center gap-1 font-extrabold text-sky-400">
-                                                                <Plane className="w-3.5 h-3.5" />
-                                                                {perf.venue.split('|')[0]?.trim()}
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <button onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            if (onLocationClick) {
-                                                                onLocationClick({ lat: venueInfo?.lat || 0, lng: venueInfo?.lng || 0, name: perf.venue || 'Online' });
-                                                            }
-                                                        }} className={clsx("flex items-center gap-1 hover:underline truncate relative z-[100] cursor-pointer max-w-full", searchMode === 'location' ? "hover:text-emerald-400" : "hover:text-[#a78bfa]")}>
-                                                            <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
-                                                            <span className="truncate"><HighlightText text={perf.venue || 'Online'} keyword={searchText} /></span>
-                                                        </button>
-                                                    )}
-                                                </div>
-                                            )}
-
-                                            {(perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre || perf.runningTime || perf.price || perf.ageRating || (perf.platforms && perf.platforms.length > 0)) && (
-                                                <div className={clsx("mt-2 text-xs text-gray-400 space-y-0.5 font-semibold", hasOtherDetails ? "pt-1 border-t border-white/10" : "pt-0")}>
-                                                    {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
-                                                        <div className="flex flex-col gap-0.5 text-gray-500 text-xs">
-                                                            {perf.subGenre && (
-                                                                <div>
-                                                                    <span className="text-gray-500 mr-1">장르:</span>
-                                                                    <span className="text-gray-400">{perf.subGenre}</span>
-                                                                </div>
-                                                            )}
-                                                            {perf.productionCountry && (
-                                                                <div>
-                                                                    <span className="text-gray-500 mr-1">제작국가:</span>
-                                                                    <span>{perf.productionCountry}</span>
-                                                                </div>
-                                                            )}
-                                                            {perf.productionYear && (
-                                                                <div>
-                                                                    <span className="text-gray-500 mr-1">제작년도:</span>
-                                                                    <span>{perf.productionYear}</span>
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    )}
-
-                                                    {perf.runningTime && (
-                                                        <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
-                                                            <div>
-                                                                <span className="text-gray-500 mr-1">플레이타임:</span>
-                                                                <span>{perf.runningTime}</span>
-                                                            </div>
-                                                        </div>
-                                                    )}
-
-                                                    {perf.ageRating && !['movie'].includes(perf.genre) && (
-                                                        <div className="flex flex-col gap-0.5 text-xs text-gray-400 mt-0.5">
-                                                            <div>
-                                                                <span className="text-gray-500 mr-1">관람연령:</span>
-                                                                <span>{perf.ageRating}</span>
-                                                            </div>
-                                                        </div>
-                                                    )}
-
-                                                    {(perf.director) && (
-                                                        <div className="flex items-start gap-1">
-                                                            <span className="text-gray-500 min-w-[24px]">감독</span>
-                                                            <span className="text-gray-300 line-clamp-1">
-                                                                {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
-                                                                    <span key={i}>
-                                                                        <a
-                                                                            href={`https://search.naver.com/search.naver?query=${encodeURIComponent(d.trim())}`}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            className="hover:text-white hover:underline decoration-white/30"
-                                                                            onClick={(e) => e.stopPropagation()}
-                                                                        >
-                                                                            {d.trim()}
-                                                                        </a>
-                                                                        {i < arr.length - 1 && ', '}
-                                                                    </span>
-                                                                ))}
-                                                            </span>
-                                                        </div>
-                                                    )}
-
-                                                    {((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) && (
-                                                        <div className="flex items-start gap-1">
-                                                            <span className="text-gray-500 min-w-[24px]">출연</span>
-                                                            <span className="text-gray-300 line-clamp-2 leading-tight">
-                                                                {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
-                                                                    const isObj = typeof c === 'object' && c !== null;
-                                                                    const name = isObj ? c.name : c;
-                                                                    const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name.replace('더보기', '').trim())}`;
-
-                                                                    return (
-                                                                        <span key={i}>
-                                                                            <a
-                                                                                href={url}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
-                                                                                className="hover:text-white hover:underline decoration-white/30"
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                            >
-                                                                                {name.trim()}
-                                                                            </a>
-                                                                            {i < arr.length - 1 && ', '}
-                                                                        </span>
-                                                                    );
-                                                                })}
-                                                            </span>
-                                                        </div>
-                                                    )}
-
-                                                    {(perf.price || perf.discount) && (
-                                                        <div className={clsx("flex justify-between items-end mt-2 w-full pt-2", (hasOtherDetails || perf.genre === 'travel') ? "border-t border-white/10" : "")}>
-                                                            <div className="flex flex-col justify-end leading-none">
-                                                                {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
-                                                            </div>
-                                                            <div className="flex flex-col items-end leading-none">
-                                                                {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
-                                                                <div className="flex items-baseline gap-1.5">
-                                                                    {perf.price && (() => {
-                                                                        const extracted = extractFirstPrice(perf.price);
-                                                                        if (!extracted) return <span className="text-white font-black text-lg tracking-tighter text-right">{perf.price}</span>;
-                                                                        return (
-                                                                            <div className="text-white drop-shadow-md leading-none text-right">
-                                                                                {extracted.price === '무료' ? (
-                                                                                    <span className="text-lg font-black">무료</span>
-                                                                                ) : (
-                                                                                    <>
-                                                                                        {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                                                        <span className="text-xl font-black tracking-tight">{extracted.price}</span>
-                                                                                        <span className="text-xs font-bold ml-0.5">원</span>
-                                                                                    </>
-                                                                                )}
-                                                                            </div>
-                                                                        );
-                                                                    })()}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    )}
-
-
-                                                </div>
-                                            )}
-
-                                        </div>
-                                    </div>
-
-                                    {enableActions && (
-                                        <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between">
-                                            <button
-                                                onClick={async (e) => {
-                                                    e.stopPropagation();
-                                                    if (onShare) {
-                                                        const usedClipboard = await onShare();
-                                                        if (usedClipboard) {
-                                                            setIsCopied(true);
-                                                            setTimeout(() => setIsCopied(false), 2000);
-                                                        }
-                                                    }
-                                                }}
-                                                className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-all font-extrabold shadow-lg h-[50px] relative group/share"
-                                                aria-label="공유하기"
-                                            >
-                                                <Share2 className="w-5 h-5" />
-                                                <AnimatePresence>
-                                                    {isCopied && (
-                                                        <motion.div
-                                                            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                                            className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg whitespace-nowrap border border-white/20 z-[200] shadow-xl flex items-center gap-1"
-                                                        >
-                                                            <span className="text-emerald-400">✓</span> 복사됨!
-                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 border-r border-b border-white/20 rotate-45 transform" />
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </button>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (onDetail) onDetail();
-                                                }}
-                                                className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
-                                            >
-                                                자세히 보기
-                                                <Search className="w-4 h-4" />
-                                            </button>
-                                        </div>
-                                    )}
-                                </div>
+                        {/* Ribbon / Badges */}
+                        {showRibbon && (
+                            <div className="absolute top-0 left-0 z-[var(--z-card-overlay)] bg-accent text-white text-[10px] font-black px-3 py-1 rounded-br-lg shadow-lg">
+                                {ribbonText}
                             </div>
-                        )
-                    }
-                </div >
-            </div >
-        </div >
+                        )}
+                    </div>
+
+                    {/* Bottom Info Section */}
+                    <div className={clsx(
+                        "p-4 flex flex-col gap-3 flex-1 justify-between",
+                        isInterestVariant ? (variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500") : "bg-[var(--card)]"
+                    )}>
+                        <div className="flex flex-col gap-2">
+                            <GenreBadge genre={perf.genre} rank={perf.rank} />
+                            <CardInfo
+                                title={perf.title}
+                                venue={perf.venue}
+                                date={perf.date}
+                                searchText={searchText}
+                                isDark={!isInterestVariant}
+                                onLocationClick={() => onLocationClick?.({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue })}
+                                distLabel={distLabel}
+                            />
+                        </div>
+
+                        {/* Actions Layer */}
+                        <AnimatePresence>
+                            {(enableActions || showActions) && (
+                                <CardActions
+                                    onShare={onShare}
+                                    onDetail={onDetail}
+                                    isPrimary={!isInterestVariant}
+                                />
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
-
-PerformanceCard.displayName = 'PerformanceCard';
 
 export default memo(PerformanceCard);

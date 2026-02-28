@@ -1,14 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { clsx } from 'clsx';
-import { Performance } from '@/types';
-import { X, Heart, RotateCw, Film, Plus, Minus } from 'lucide-react';
-import BuildingStadium from './BuildingStadium';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
-
+import { clsx } from 'clsx';
+import { Performance } from '@/types';
+import { X, Heart, RotateCw, Film, Plus, Minus } from 'lucide-react';
 import Portal from './ui/Portal';
 
 interface Cinema {
@@ -61,6 +59,9 @@ export default function KakaoMapModal({
     const [visibleVenues, setVisibleVenues] = useState<any[]>([]);
     const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
     const [isMapReady, setIsMapReady] = useState(false);
+    const markersRef = useRef<any[]>([]);
+    const mapOverlaysRef = useRef<any[]>([]);
+    const lastRenderedVenuesKey = useRef<string>("");
 
     // Group performances by venue - Pre-calculation
     const allVenueGroups = useRef<Record<string, any>>({});
@@ -195,7 +196,19 @@ export default function KakaoMapModal({
                 mapRef.current!.innerHTML = '';
                 const map = new window.kakao.maps.Map(mapRef.current, options);
 
-                // Attach custom properties for state tracking
+                // --- 1. Cleanup Stale Objects before and during Re-init ---
+                mapOverlaysRef.current.forEach(o => o.setMap(null));
+                mapOverlaysRef.current = [];
+
+                if (markersRef.current.length > 0) {
+                    markersRef.current.forEach(m => {
+                        m.setMap(null);
+                        window.kakao.maps.event.removeListener(m, 'click');
+                    });
+                    markersRef.current = [];
+                }
+
+                // --- 2. Initialize State trackers ---
                 (map as any)._customOverlays = [];
                 (map as any)._clusterer = null;
 
@@ -220,12 +233,14 @@ export default function KakaoMapModal({
                             <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
                         </div>
                     </div>`;
-                    new window.kakao.maps.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+                    const overlay = new window.kakao.maps.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+                    mapOverlaysRef.current.push(overlay);
                 } else if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(pos => {
                         const loc = new window.kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                         const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
-                        new window.kakao.maps.CustomOverlay({ map, position: loc, content });
+                        const overlay = new window.kakao.maps.CustomOverlay({ map, position: loc, content });
+                        mapOverlaysRef.current.push(overlay);
                     });
                 }
 
@@ -253,22 +268,32 @@ export default function KakaoMapModal({
 
         const map = mapInstance;
 
-        // --- Cleanup Existing ---
+        // --- 0. Memoization Check ---
+        // Avoid flickering and heavy re-clustering if the visible venues haven't changed.
+        const currentVenuesKey = allVenuesList.current.map(v => `${v.venueName}_${v.performances.length}`).sort().join('|');
+        if (currentVenuesKey === lastRenderedVenuesKey.current) return;
+        lastRenderedVenuesKey.current = currentVenuesKey;
+
+        // --- 1. Aggressive Cleanup ---
         if (map._clusterer) {
             map._clusterer.clear();
         }
-        if (map._markers) {
-            map._markers.forEach((m: any) => m.setMap(null));
-        }
 
-        // --- New Markers & Clusterer ---
+        // Remove existing markers from map and clear reference
+        markersRef.current.forEach((m: any) => {
+            m.setMap(null);
+            window.kakao.maps.event.removeListener(m, 'click');
+        });
+        markersRef.current = [];
+
+        // --- 2. Initialize or Reuse Clusterer ---
         let clusterer = map._clusterer;
         if (!clusterer && window.kakao.maps.MarkerClusterer) {
             try {
                 clusterer = new window.kakao.maps.MarkerClusterer({
                     map: map,
                     averageCenter: true,
-                    minLevel: 7,
+                    minLevel: 7, // Clustering starts from Level 7 and above
                     disableClickZoom: false,
                     styles: [{
                         width: '50px', height: '50px',
@@ -277,13 +302,14 @@ export default function KakaoMapModal({
                         color: 'white',
                         textAlign: 'center', lineHeight: '50px',
                         fontWeight: 'bold',
-                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-                        border: '2px solid rgba(255,255,255,0.8)'
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+                        border: '3px solid rgba(255,255,255,0.9)',
+                        fontSize: '14px'
                     }]
                 });
                 map._clusterer = clusterer;
             } catch (e) {
-                console.warn("Clusterer error", e);
+                console.warn("Clusterer initialization error:", e);
             }
         }
 
@@ -348,7 +374,8 @@ export default function KakaoMapModal({
         if (clusterer) {
             clusterer.addMarkers(markers);
         }
-        (map as any)._markers = markers;
+        markersRef.current = markers;
+        (map as any)._markers = markers; // For backwards compatibility if any
 
         // --- Auto-adjust bounds to ensure at least 1 closest venue is visible ---
         if (centerLocation && allVenuesList.current.length > 0) {

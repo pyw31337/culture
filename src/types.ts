@@ -1,3 +1,5 @@
+export type Genre = string;
+
 export type Performance = {
     id: string;
     title: string;
