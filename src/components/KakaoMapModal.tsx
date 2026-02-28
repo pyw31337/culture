@@ -257,8 +257,8 @@ export default function KakaoMapModal({
         if (map._clusterer) {
             map._clusterer.clear();
         }
-        if (map._customOverlays) {
-            map._customOverlays.forEach((ov: any) => ov.setMap(null));
+        if (map._markers) {
+            map._markers.forEach((m: any) => m.setMap(null));
         }
 
         // --- New Markers & Clusterer ---
@@ -288,7 +288,6 @@ export default function KakaoMapModal({
         }
 
         const markers: any[] = [];
-        const newOverlays: any[] = [];
 
         allVenuesList.current.forEach(venue => {
             if (!venue.lat || !venue.lng) return;
@@ -298,27 +297,38 @@ export default function KakaoMapModal({
             const primaryGenre = perfs[0]?.genre;
             const isCinema = venue.type === 'cinema';
             const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
+            const text = isCinema ? (perfs.length > 0 ? perfs.length.toString() : '📽️') : perfs.length.toString();
 
-            const content = document.createElement('div');
-            content.style.cssText = `background-color: ${color}; width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 11px; z-index: 10; transition: transform 0.2s;`;
+            // Create SVG Marker Icon for better performance
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="16" fill="${color}" stroke="white" stroke-width="2" />
+                <text x="18" y="19" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="12" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+            </svg>`;
+            const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
 
-            if (isCinema) {
-                content.innerText = perfs.length > 0 ? perfs.length.toString() : '📽️';
-            } else {
-                content.innerText = perfs.length.toString();
-            }
+            const markerImage = new window.kakao.maps.MarkerImage(
+                iconUrl,
+                new window.kakao.maps.Size(36, 36),
+                { offset: new window.kakao.maps.Point(18, 18) }
+            );
 
-            content.onclick = () => {
+            const marker = new window.kakao.maps.Marker({
+                position,
+                image: markerImage,
+                zIndex: 10
+            });
+
+            // Click Handler
+            window.kakao.maps.event.addListener(marker, 'click', () => {
                 setSelectedVenue(venue.venueName);
-                if (map) {
-                    const moveLatLon = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-                    if (map.getLevel() > 4) {
-                        map.setLevel(4);
-                        setTimeout(() => map.panTo(moveLatLon), 10);
-                    } else {
-                        map.panTo(moveLatLon);
-                    }
+                const moveLatLon = new window.kakao.maps.LatLng(venue.lat, venue.lng);
+                if (map.getLevel() > 4) {
+                    map.setLevel(4);
+                    setTimeout(() => map.panTo(moveLatLon), 10);
+                } else {
+                    map.panTo(moveLatLon);
                 }
+
                 setTimeout(() => {
                     const scrollContainer = document.getElementById('venue-scroll-container');
                     if (scrollContainer) {
@@ -330,35 +340,15 @@ export default function KakaoMapModal({
                         }
                     }
                 }, 100);
-            };
-
-            const customOverlay = new window.kakao.maps.CustomOverlay({
-                position: position,
-                content: content,
-                yAnchor: 0.5
             });
 
-            if (map.getLevel() <= 6) {
-                customOverlay.setMap(map);
-            }
-
-            const marker = new window.kakao.maps.Marker({
-                position,
-                image: new window.kakao.maps.MarkerImage(
-                    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-                    new window.kakao.maps.Size(1, 1)
-                ),
-                opacity: 0
-            });
-
-            newOverlays.push(customOverlay);
             markers.push(marker);
         });
 
         if (clusterer) {
             clusterer.addMarkers(markers);
         }
-        map._customOverlays = newOverlays;
+        (map as any)._markers = markers;
 
         // --- Auto-adjust bounds to ensure at least 1 closest venue is visible ---
         if (centerLocation && allVenuesList.current.length > 0) {
@@ -393,18 +383,18 @@ export default function KakaoMapModal({
             const sigKey = `all_${allVenuesList.current.length}_${selectedGenre}_${searchText}`;
             if (lastBoundedLocationRef.current !== sigKey) {
                 lastBoundedLocationRef.current = sigKey;
-                
+
                 // Bound the map to include all matched venues in the search result
                 const bounds = new window.kakao.maps.LatLngBounds();
                 let hasValidCoords = false;
-                
+
                 allVenuesList.current.forEach(v => {
                     if (v.lat && v.lng) {
                         bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
                         hasValidCoords = true;
                     }
                 });
-                
+
                 if (hasValidCoords) {
                     setTimeout(() => {
                         // Only bound if there's more than 1 venue, or if it's 1 it might zoom in too far.
@@ -415,7 +405,7 @@ export default function KakaoMapModal({
                             setSelectedVenue(allVenuesList.current[0].venueName);
                         } else {
                             map.setBounds(bounds, 100, 50, 150, 50);
-                            
+
                             // Restrict zoom out between Level 5 (250m) and Level 7 (1km)
                             setTimeout(() => {
                                 const currentLevel = map.getLevel();
@@ -431,17 +421,8 @@ export default function KakaoMapModal({
             }
         }
 
-        const manageVisibility = () => {
-            const currentLevel = map.getLevel();
-            const showOverlays = currentLevel <= 6;
-            newOverlays.forEach(ov => ov.setMap(showOverlays ? map : null));
-        };
-
-        window.kakao.maps.event.addListener(map, 'zoom_changed', manageVisibility);
-
-        return () => {
-            window.kakao.maps.event.removeListener(map, 'zoom_changed', manageVisibility);
-        };
+        // Synchronization is now handled natively by MarkerClusterer
+        return () => { };
     }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]); // Re-run when data changes
 
     // Popup Position Logic
