@@ -63,7 +63,8 @@ export default function RainbowBackground() {
             <div className="h-fog" />
             <div className="v-fog" />
 
-            <style jsx>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .rainbow-layer {
                     height: 100vh;
                     width: 0;
@@ -107,18 +108,18 @@ export default function RainbowBackground() {
                     z-index: 1;
                 }
 
-                :global(.dark) .rainbow-layer,
-                :global(.dark) .h-fog,
-                :global(.dark) .v-fog {
+                .dark .rainbow-layer,
+                .dark .h-fog,
+                .dark .v-fog {
                     --bg-blur: #0a0a0a;
                 }
 
-                :global(html:not(.dark)) .rainbow-layer,
-                :global(html:not(.dark)) .h-fog,
-                :global(html:not(.dark)) .v-fog {
+                html:not(.dark) .rainbow-layer,
+                html:not(.dark) .h-fog,
+                html:not(.dark) .v-fog {
                     --bg-blur: white;
                 }
-            `}</style>
+            `}} />
         </div>
     );
 }

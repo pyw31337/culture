@@ -77,7 +77,7 @@ export default function PerformanceGrid({
                         className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
                         style={{
                             contentVisibility: 'auto',
-                            containIntrinsicSize: layoutMode === 'grid' ? '0 450px' : '0 150px'
+                            containIntrinsicSize: layoutMode === 'grid' ? 'auto 450px' : 'auto 150px'
                         }}
                     >
                         {layoutMode === 'grid' ? (

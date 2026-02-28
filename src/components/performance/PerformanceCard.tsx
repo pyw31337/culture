@@ -139,8 +139,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 }
                 style={{
                     transformStyle: 'preserve-3d',
-                    contentVisibility: 'auto',
-                    containIntrinsicSize: '0 450px'
                 }}
                 onClick={() => onDetail?.()}
             >
@@ -323,7 +321,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             </div>
                         </>
                     ) : (
-                        <div className="relative h-full w-full">
+                        <div className="relative aspect-[3/4] w-full overflow-hidden">
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
                                 backupSrc={perf.backupPoster}

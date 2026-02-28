@@ -154,6 +154,24 @@ body {
   }
 }
 
+@keyframes neon-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-neon-flow {
+  animation: neon-flow 3s linear infinite;
+}
+
 @keyframes scale-in {
   0% {
     opacity: 0;
