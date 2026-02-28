@@ -144,7 +144,11 @@ export default function PerformanceList({
         setSelectedGenre(g);
         if (g !== 'movie') setShuffleSeed(Date.now());
         if (viewMode === 'likes-perf') setViewMode('grid');
-        router.push(g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`);
+
+        // Prevent navigation if we are in calendar mode (prevents modal closing)
+        if (viewMode !== 'calendar') {
+            router.push(g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`);
+        }
     };
 
     const handleLikePerfClick = () => {

@@ -228,15 +228,70 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         </div>
                     )}
 
-                    {/* Daily View (Synchronized with Monthly Day Detail) */}
-                    {calendarView === 'daily' && (
+                    {/* Performance Day List (Unified Component) */}
+                    {(calendarView === 'daily' || selectedDate) && (
                         <div
                             ref={listRef}
                             onScroll={onListScroll}
-                            className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar"
+                            className={clsx(
+                                "flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar relative",
+                                selectedDate && "z-[10001]"
+                            )}
                         >
+                            {/* Header for Monthly Detail View inside the same container or as a standalone overlay */}
+                            {selectedDate && (
+                                <div className="sticky top-0 z-20 -mx-4 -mt-4 mb-4 p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50/95 dark:bg-gray-900/95 backdrop-blur-sm">
+                                    <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
+                                        {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
+                                    </h3>
+                                    <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* Genre Tabs (Unified for Daily & Monthly Detail) */}
+                            <div
+                                ref={scrollRef}
+                                className="sticky top-0 z-10 -mx-4 -mt-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-4 py-3 mb-4 overflow-x-auto scrollbar-hide shrink-0 cursor-grab"
+                                onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove}
+                            >
+                                <div className="flex gap-2 w-max">
+                                    {GENRES.filter(g => g.id !== 'movie').map((genre) => {
+                                        const isSelected = selectedPopupGenre === genre.id;
+                                        const activeDay = selectedDate || currentMonth;
+                                        const dayEvents = getPerformancesForDay(activeDay);
+                                        const count = genre.id === 'all'
+                                            ? dayEvents.length
+                                            : dayEvents.filter(p => p.genre === genre.id).length;
+
+                                        const isEmpty = count === 0;
+
+                                        return (
+                                            <button
+                                                key={genre.id}
+                                                onClick={() => {
+                                                    setSelectedPopupGenre(genre.id);
+                                                }}
+                                                disabled={isEmpty && genre.id !== 'all'}
+                                                className={clsx(
+                                                    "px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
+                                                    isSelected
+                                                        ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white opacity-100"
+                                                        : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800",
+                                                    isEmpty && genre.id !== 'all' && "opacity-30 grayscale cursor-not-allowed"
+                                                )}
+                                            >
+                                                {genre.label} {count > 0 && <span className="ml-1 opacity-60 text-[10px]">{count}</span>}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
                             {(() => {
-                                const rawEvents = getPerformancesForDay(currentMonth);
+                                const activeDay = selectedDate || currentMonth;
+                                const rawEvents = getPerformancesForDay(activeDay);
                                 const filteredEvents = selectedPopupGenre === 'all'
                                     ? rawEvents
                                     : rawEvents.filter(p => p.genre === selectedPopupGenre);
@@ -244,10 +299,15 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                 const displayedDailyEvents = filteredEvents.slice(0, visibleCount);
 
                                 if (filteredEvents.length === 0) return (
-                                    <p className="text-center text-gray-500 py-16 text-lg">일정이 없습니다</p>
+                                    <div className="flex flex-col items-center justify-center py-20 opacity-40">
+                                        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                                            <X className="w-8 h-8 text-gray-400" />
+                                        </div>
+                                        <p className="text-center text-gray-500 text-lg font-bold">일정이 없습니다</p>
+                                    </div>
                                 );
                                 return (
-                                    <>
+                                    <div className="space-y-3">
                                         {displayedDailyEvents.map((perf, i) => (
                                             <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
                                                 className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
@@ -260,7 +320,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                         <span className={clsx("px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
                                                             {GENRES.find(g => g.id === perf.genre)?.label}
                                                         </span>
-                                                        <span className="text-[10px] text-gray-500">{perf.venue}</span>
+                                                        <span className="text-[10px] text-gray-500 truncate">{perf.venue}</span>
                                                     </div>
                                                     <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
                                                 </div>
@@ -268,18 +328,18 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                         ))}
 
                                         {displayedDailyEvents.length < filteredEvents.length && (
-                                            <div className="py-2 text-center text-xs text-gray-500">
+                                            <div className="py-6 text-center text-xs text-gray-500 font-bold animate-pulse">
                                                 데이터를 더 불러오는 중...
                                             </div>
                                         )}
-                                    </>
+                                    </div>
                                 );
                             })()}
                         </div>
                     )}
 
                     {/* Weekly View (Vertical Row Layout - Redensified) */}
-                    {calendarView === 'weekly' && (
+                    {calendarView === 'weekly' && !selectedDate && (
                         <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-gray-900">
                             {eachDayOfInterval({
                                 start: startOfWeek(currentMonth, { weekStartsOn: 0 }),
@@ -385,101 +445,8 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                 </div>
             </div>
 
-            {/* Day Detail Modal (Always Full-screen) */}
-            {selectedDate && (
-                <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => setSelectedDate(null)}>
-                    <div
-                        className="bg-white dark:bg-gray-950 w-full h-full shadow-2xl flex flex-col border-0 overflow-hidden"
-                        onClick={e => e.stopPropagation()}
-                    >
-                        <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-900">
-                            <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
-                                {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
-                            </h3>
-                            <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                                <X className="w-5 h-5" />
-                            </button>
-                        </div>
-
-                        {/* Genre Tabs - Draggable */}
-                        <div
-                            ref={scrollRef}
-                            className={`w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                            onMouseDown={onMouseDown}
-                            onMouseLeave={onMouseLeave}
-                            onMouseUp={onMouseUp}
-                            onMouseMove={onMouseMove}
-                        >
-                            <div className="flex gap-2 w-max">
-                                {GENRES.filter(g => g.id !== 'movie').map(g => (
-                                    <button
-                                        key={g.id}
-                                        onClick={(e) => {
-                                            setSelectedPopupGenre(g.id);
-                                        }}
-                                        className={clsx(
-                                            "whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 border shadow-sm select-none",
-                                            selectedPopupGenre === g.id
-                                                ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
-                                                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-100 dark:hover:border-gray-700"
-                                        )}
-                                    >
-                                        {g.label}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div
-                            ref={listRef}
-                            onScroll={onListScroll}
-                            className="p-4 overflow-y-auto space-y-3 custom-scrollbar flex-grow"
-                        >
-                            {displayedEvents.length === 0 ? (
-                                <p className="text-center text-gray-500 py-8">
-                                    {selectedPopupGenre === 'all' ? '일정이 없습니다.' : '해당 장르의 일정이 없습니다.'}
-                                </p>
-                            ) : (
-                                <>
-                                    {displayedEvents.map((perf, i) => (
-                                        <a
-                                            key={`${perf.id}-${i}`}
-                                            href={perf.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
-                                        >
-                                            {perf.image && (
-                                                <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
-                                            )}
-                                            <div className="min-w-0 flex-1">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <span className={clsx(
-                                                        "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
-                                                        (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600'
-                                                    )}>
-                                                        {GENRES.find(g => g.id === perf.genre)?.label}
-                                                    </span>
-                                                    <span className="text-[10px] text-gray-500">{perf.venue}</span>
-                                                </div>
-                                                <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
-                                                    {perf.title}
-                                                </h4>
-                                            </div>
-                                        </a>
-                                    ))}
-                                    {/* Loading Indicator for Infinite Scroll */}
-                                    {displayedEvents.length < filteredDateEvents.length && (
-                                        <div className="py-2 text-center text-xs text-gray-500">
-                                            Loading more...
-                                        </div>
-                                    )}
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            )}
-        </Portal>
+        </div>
+            </div >
+        </Portal >
     );
 }
