@@ -48,7 +48,7 @@ export const LikedSections = ({
     return (
         <>
             {/* 좋아요한 컨텐츠 Section */}
-            <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6">
+            <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6 pl-[1.6%]">
                 <Heart className="text-pink-400 light:text-pink-500 w-6 h-6 fill-pink-500 light:fill-pink-500" />
                 좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({likedPerformances.length})</span>
             </h3>
@@ -83,7 +83,7 @@ export const LikedSections = ({
 
             {/* 좋아요한 공연장 Section */}
             <div className="mb-10 mt-8">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-4 pl-[1.6%]">
                     <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3">
                         <MapPin className="text-pink-400 light:text-pink-500 w-6 h-6" />
                         좋아요한 공연장 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
