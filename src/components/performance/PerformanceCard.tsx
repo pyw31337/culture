@@ -217,9 +217,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading="lazy"
                                         referrerPolicy="no-referrer"
-                                        style={{ zIndex: 2 }}
+                                        style={{ zIndex: 0 }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-5" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-[1]" />
                                 </div>
 
                                 {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
@@ -332,9 +332,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading="lazy"
                                 referrerPolicy="no-referrer"
-                                style={{ zIndex: 2 }}
+                                style={{ zIndex: 0 }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-5" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 
                             {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                                 <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>

@@ -10,7 +10,7 @@ import { getOptimizedUrl, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 // Genre-specific fallback images
 const _BP = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const GENRE_FALLBACKS: Record<string, string> = {
-    soccer: `${_BP}/images/fallbacks/soccer.jpg`,
+    soccer: `${_BP}/images/soccer_poster.png`,
     baseball: `${_BP}/images/fallbacks/baseball.jpg`,
     basketball: `${_BP}/images/fallbacks/basketball.jpg`,
     volleyball: `${_BP}/images/fallbacks/volleyball.jpg`,

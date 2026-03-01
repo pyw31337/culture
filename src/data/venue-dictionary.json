@@ -30667,7 +30667,7 @@
     "lng": 127.1511
   },
   "대구iM뱅크PARK": {
-    "name": "대구iM뱅크PARK",
+    "name": "DGB대구은행파크",
     "refined_name": "대구iM뱅크PARK",
     "district": "기타",
     "lat": 35.8813,
@@ -30812,5 +30812,12 @@
     "district": "기타",
     "lat": 37.6444,
     "lng": 126.6389
+  },
+  "DGB대구은행파크": {
+    "name": "DGB대구은행파크",
+    "refined_name": "대구iM뱅크PARK",
+    "district": "기타",
+    "lat": 35.8813,
+    "lng": 128.5883
   }
 }

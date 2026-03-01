@@ -117,7 +117,7 @@ export default function RainbowBackground() {
                 }
 
                 .rb-fog-v {
-                    box-shadow: 0 0 65vw 15vw var(--rb-bg);
+                    box-shadow: 0 0 25vw 15vw var(--rb-bg);
                     width: 0;
                     height: 100vh;
                     bottom: 0;
