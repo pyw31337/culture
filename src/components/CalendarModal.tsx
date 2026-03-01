@@ -174,16 +174,10 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
         }
     };
 
-    // Lock body scroll when modal is open
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        return () => { document.body.style.overflow = ''; };
-    }, []);
-
     return (
         <Portal>
-            <div className="fixed inset-0 z-[9999] bg-black" style={{ height: '100dvh' }}>
-                <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0 overflow-hidden">
+            <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+                <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                     {/* Header */}
                     <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 z-10">
                         <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">

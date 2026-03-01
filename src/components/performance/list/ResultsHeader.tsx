@@ -31,7 +31,7 @@ export const ResultsHeader = ({
     if (viewMode === 'likes-perf') return null;
 
     return (
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2 pl-[1.6%]">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 mt-8 gap-2">
             <div className="w-full sm:w-auto">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">

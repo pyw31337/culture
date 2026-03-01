@@ -262,51 +262,53 @@ export default function PerformanceList({
 
             {/* 3. Main Content */}
             <main className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 py-8 relative z-10">
-                <ResultsHeader
-                    viewMode={viewMode} activeLocation={activeLocation} searchLocation={searchLocation} searchText={searchText}
-                    searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={filteredPerformances.length} radius={radius}
-                    onResetFilters={() => { setSearchLocation(null); setSearchText(''); }} onRadiusChange={setRadius}
-                />
-
-                {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
-                    <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={setIsMapOpen} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
-                ) : viewMode === 'likes-perf' ? (
-                    <LikedSections
-                        viewMode={viewMode} allPerformances={allPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
-                        venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
-                        onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }} setIsMapOpen={setIsMapOpen}
-                        copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
-                        setShowFavoriteListModal={setShowFavoriteListModal} layoutMode={layoutMode}
+                <div className="px-[1.6%]">
+                    <ResultsHeader
+                        viewMode={viewMode} activeLocation={activeLocation} searchLocation={searchLocation} searchText={searchText}
+                        searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={filteredPerformances.length} radius={radius}
+                        onResetFilters={() => { setSearchLocation(null); setSearchText(''); }} onRadiusChange={setRadius}
                     />
-                ) : (
-                    <PerformanceGrid
-                        items={displayPerformances}
-                        hasMore={hasMore}
-                        observerRef={observerTarget}
-                        layoutMode={layoutMode}
-                        selectedVenue={selectedVenue}
-                        activeLocation={activeLocation}
-                        venues={venues}
-                        likedIds={likedIds}
-                        onToggleLike={toggleLike}
-                        handleDetailOpen={handleDetailOpen}
-                        setSearchLocation={setSearchLocation}
-                        onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }}
-                        setIsMapOpen={setIsMapOpen}
-                        copyItemShareUrl={copyItemShareUrl}
-                        selectedGenre={selectedGenre}
-                        viewMode={viewMode}
-                        searchMode={searchMode}
-                        searchText={searchText}
-                    />
-                )}
 
-                {!isDataFullyLoaded && (
-                    <div className="flex justify-center py-12">
-                        <Loader2 className="animate-spin text-purple-500" />
-                        <span className="ml-3 text-gray-400">데이터를 불러오는 중...</span>
-                    </div>
-                )}
+                    {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
+                        <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={setIsMapOpen} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
+                    ) : viewMode === 'likes-perf' ? (
+                        <LikedSections
+                            viewMode={viewMode} allPerformances={allPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
+                            venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
+                            onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }} setIsMapOpen={setIsMapOpen}
+                            copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
+                            setShowFavoriteListModal={setShowFavoriteListModal} layoutMode={layoutMode}
+                        />
+                    ) : (
+                        <PerformanceGrid
+                            items={displayPerformances}
+                            hasMore={hasMore}
+                            observerRef={observerTarget}
+                            layoutMode={layoutMode}
+                            selectedVenue={selectedVenue}
+                            activeLocation={activeLocation}
+                            venues={venues}
+                            likedIds={likedIds}
+                            onToggleLike={toggleLike}
+                            handleDetailOpen={handleDetailOpen}
+                            setSearchLocation={setSearchLocation}
+                            onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }}
+                            setIsMapOpen={setIsMapOpen}
+                            copyItemShareUrl={copyItemShareUrl}
+                            selectedGenre={selectedGenre}
+                            viewMode={viewMode}
+                            searchMode={searchMode}
+                            searchText={searchText}
+                        />
+                    )}
+
+                    {!isDataFullyLoaded && (
+                        <div className="flex justify-center py-12">
+                            <Loader2 className="animate-spin text-purple-500" />
+                            <span className="ml-3 text-gray-400">데이터를 불러오는 중...</span>
+                        </div>
+                    )}
+                </div>
             </main>
 
             {/* 4. Navigation & Modals */}
