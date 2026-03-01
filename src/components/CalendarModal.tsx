@@ -23,6 +23,7 @@ type CalendarView = 'daily' | 'weekly' | 'monthly';
 export default function CalendarModal({ performances, onClose, selectedGenre = 'all', onGenreSelect }: CalendarModalProps) {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [calendarView, setCalendarView] = useState<CalendarView>('monthly');
+    const [localGenre, setLocalGenre] = useState(selectedGenre);
 
     const startDate = startOfWeek(startOfMonth(currentMonth));
     const endDate = endOfWeek(endOfMonth(currentMonth));
@@ -41,33 +42,36 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
             if (dateStr.includes('~')) {
                 const [startRaw, endRaw] = dateStr.split('~').map(s => s.trim());
                 if (startRaw && endRaw) {
-                    const start = new Date(startRaw.replace(/\./g, '-'));
-                    const end = new Date(endRaw.replace(/\./g, '-'));
+                    const startRawCleanup = startRaw.replace(/\./g, '-');
+                    const endRawCleanup = endRaw.replace(/\./g, '-');
 
-                    if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
-                        try {
-                            // OPTIMIZATION 1: Cap extreme date ranges
-                            // Cap limits how many days we loop to prevent huge object allocations
-                            let maxEnd = end;
-                            const MAX_DAYS = 60; // Max span displayed on the map to prevent clutter and memory spikes
-                            const diffTime = Math.abs(end.getTime() - start.getTime());
-                            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    // Simple validation to avoid extreme loops
+                    if (startRawCleanup.startsWith('202') && endRawCleanup.startsWith('202')) {
+                        const start = new Date(startRawCleanup);
+                        const end = new Date(endRawCleanup);
 
-                            if (perf.genre === 'movie') {
-                                // For OTT or Movies, only map to their start/release date.
-                                maxEnd = start;
-                            } else if (diffDays > MAX_DAYS) {
-                                maxEnd = new Date(start.getTime() + (MAX_DAYS * 24 * 60 * 60 * 1000));
-                            }
+                        if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+                            try {
+                                let maxEnd = end;
+                                const MAX_DAYS = 90;
+                                const diffTime = Math.abs(end.getTime() - start.getTime());
+                                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-                            const interval = eachDayOfInterval({ start, end: maxEnd });
+                                if (perf.genre === 'movie') {
+                                    maxEnd = start;
+                                } else if (diffDays > MAX_DAYS) {
+                                    maxEnd = new Date(start.getTime() + (MAX_DAYS * 24 * 60 * 60 * 1000));
+                                }
 
-                            interval.forEach(day => {
-                                const dayStr = format(day, 'yyyy-MM-dd');
-                                if (!map.has(dayStr)) map.set(dayStr, []);
-                                map.get(dayStr)!.push(perf);
-                            });
-                        } catch (e) { }
+                                const interval = eachDayOfInterval({ start, end: maxEnd });
+
+                                interval.forEach(day => {
+                                    const dayStr = format(day, 'yyyy-MM-dd');
+                                    if (!map.has(dayStr)) map.set(dayStr, []);
+                                    map.get(dayStr)!.push(perf);
+                                });
+                            } catch (e) { }
+                        }
                     }
                 }
             } else {
@@ -87,39 +91,60 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
         return performancesByDate.get(dayStr) || [];
     };
 
-    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-    const [selectedPopupGenre, setSelectedPopupGenre] = useState(selectedGenre);
+    // Calculate Counts for the focused view context
+    const currentViewEvents = useMemo(() => {
+        if (calendarView === 'daily') {
+            return getPerformancesForDay(currentMonth);
+        } else if (calendarView === 'weekly') {
+            const start = startOfWeek(currentMonth, { weekStartsOn: 0 });
+            const end = endOfWeek(currentMonth, { weekStartsOn: 0 });
+            const result: Performance[] = [];
+            const seen = new Set<string>();
+            eachDayOfInterval({ start, end }).forEach(day => {
+                getPerformancesForDay(day).forEach(p => {
+                    if (!seen.has(p.id)) {
+                        seen.add(p.id);
+                        result.push(p);
+                    }
+                });
+            });
+            return result;
+        } else {
+            // monthly
+            const start = startOfMonth(currentMonth);
+            const end = endOfMonth(currentMonth);
+            const result: Performance[] = [];
+            const seen = new Set<string>();
+            eachDayOfInterval({ start, end }).forEach(day => {
+                getPerformancesForDay(day).forEach(p => {
+                    if (!seen.has(p.id)) {
+                        seen.add(p.id);
+                        result.push(p);
+                    }
+                });
+            });
+            return result;
+        }
+    }, [calendarView, currentMonth, performancesByDate]);
 
     const [visibleCount, setVisibleCount] = useState(20);
-
-    const selectedDateEvents = useMemo(() => {
-        return selectedDate ? getPerformancesForDay(selectedDate) : [];
-    }, [selectedDate, performancesByDate]);
-
-    const filteredDateEvents = useMemo(() => {
-        return selectedPopupGenre === 'all'
-            ? selectedDateEvents
-            : selectedDateEvents.filter(p => p.genre === selectedPopupGenre);
-    }, [selectedDateEvents, selectedPopupGenre]);
-
-    const displayedEvents = filteredDateEvents.slice(0, visibleCount);
 
     // Reset pagination when selection changes
     useEffect(() => {
         setVisibleCount(20);
-    }, [selectedDate, selectedPopupGenre]);
+    }, [currentMonth, localGenre, calendarView]);
 
     // Drag to scroll logic
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const scrollLeftRef = useRef(0);
 
     const onMouseDown = (e: React.MouseEvent) => {
         if (!scrollRef.current) return;
         setIsDragging(true);
         setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
     };
 
     const onMouseLeave = () => setIsDragging(false);
@@ -130,7 +155,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
     };
 
     // Scroll Handler for List
@@ -139,7 +164,10 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
         if (listRef.current) {
             const { scrollTop, scrollHeight, clientHeight } = listRef.current;
             if (scrollTop + clientHeight >= scrollHeight - 50) {
-                if (visibleCount < filteredDateEvents.length) {
+                const totalFiltered = localGenre === 'all'
+                    ? currentViewEvents.length
+                    : currentViewEvents.filter(p => p.genre === localGenre).length;
+                if (visibleCount < totalFiltered) {
                     setVisibleCount(prev => prev + 20);
                 }
             }
@@ -151,7 +179,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
             <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
                 <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                     {/* Header */}
-                    <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden">
+                    <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 z-10">
                         <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">
                             <button onClick={() => {
                                 if (calendarView === 'monthly') handlePrevMonth();
@@ -201,135 +229,89 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         </div>
                     </div>
 
-                    {/* Category Nav Header (Sync with PerformanceList) */}
-                    {onGenreSelect && (
-                        <div className="w-full px-4 py-3 bg-gray-100/50 dark:bg-black/50 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab"
-                            onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
-                            <div className="flex gap-2 w-max">
-                                {GENRES.filter(g => g.id !== 'movie').map((genre) => {
-                                    const isSelected = selectedGenre === genre.id;
+                    {/* Category Nav Header (Unified Source of Truth) */}
+                    <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
+                        onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
+                        <div className="flex gap-2 w-max">
+                            {GENRES.filter(g => g.id !== 'movie').map((genre) => {
+                                const isSelected = localGenre === genre.id;
+                                const count = genre.id === 'all'
+                                    ? currentViewEvents.length
+                                    : currentViewEvents.filter(p => p.genre === genre.id).length;
+                                const isEmpty = count === 0;
 
-                                    return (
-                                        <button
-                                            key={genre.id}
-                                            onClick={() => { onGenreSelect(genre.id); setSelectedPopupGenre(genre.id); }}
-                                            className={clsx(
-                                                "px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
-                                                isSelected
-                                                    ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
-                                                    : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800"
-                                            )}
-                                        >
-                                            {genre.label}
-                                        </button>
-                                    );
-                                })}
-                            </div>
+                                return (
+                                    <button
+                                        key={genre.id}
+                                        disabled={isEmpty && genre.id !== 'all'}
+                                        onClick={() => {
+                                            setLocalGenre(genre.id);
+                                            onGenreSelect?.(genre.id);
+                                        }}
+                                        className={clsx(
+                                            "px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border shadow-sm flex items-center gap-1.5",
+                                            isSelected
+                                                ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white shadow-lg scale-105"
+                                                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800",
+                                            isEmpty && genre.id !== 'all' ? "opacity-30 grayscale cursor-not-allowed" : "opacity-100"
+                                        )}
+                                    >
+                                        {genre.label}
+                                        {count > 0 && <span className={clsx("text-[10px] font-black opacity-60", isSelected ? "text-blue-400" : "text-gray-500")}>{count}</span>}
+                                    </button>
+                                );
+                            })}
                         </div>
-                    )}
+                    </div>
 
-                    {/* Performance Day List (Unified Component) */}
-                    {(calendarView === 'daily' || selectedDate) && (
+                    {/* Unified Day View Pane */}
+                    {calendarView === 'daily' && (
                         <div
                             ref={listRef}
                             onScroll={onListScroll}
-                            className={clsx(
-                                "flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar relative",
-                                selectedDate && "z-[10001]"
-                            )}
+                            className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar"
                         >
-                            {/* Header for Monthly Detail View inside the same container or as a standalone overlay */}
-                            {selectedDate && (
-                                <div className="sticky top-0 z-20 -mx-4 -mt-4 mb-4 p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-gray-50/95 dark:bg-gray-900/95 backdrop-blur-sm">
-                                    <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">
-                                        {format(selectedDate, 'yyyy년 M월 d일 (eee)', { locale: ko })}
-                                    </h3>
-                                    <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                                        <X className="w-5 h-5" />
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Genre Tabs (Unified for Daily & Monthly Detail) */}
-                            <div
-                                ref={scrollRef}
-                                className="sticky top-0 z-10 -mx-4 -mt-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-4 py-3 mb-4 overflow-x-auto scrollbar-hide shrink-0 cursor-grab"
-                                onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove}
-                            >
-                                <div className="flex gap-2 w-max">
-                                    {GENRES.filter(g => g.id !== 'movie').map((genre) => {
-                                        const isSelected = selectedPopupGenre === genre.id;
-                                        const activeDay = selectedDate || currentMonth;
-                                        const dayEvents = getPerformancesForDay(activeDay);
-                                        const count = genre.id === 'all'
-                                            ? dayEvents.length
-                                            : dayEvents.filter(p => p.genre === genre.id).length;
-
-                                        const isEmpty = count === 0;
-
-                                        return (
-                                            <button
-                                                key={genre.id}
-                                                onClick={() => {
-                                                    setSelectedPopupGenre(genre.id);
-                                                }}
-                                                disabled={isEmpty && genre.id !== 'all'}
-                                                className={clsx(
-                                                    "px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 border shadow-sm",
-                                                    isSelected
-                                                        ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white opacity-100"
-                                                        : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800",
-                                                    isEmpty && genre.id !== 'all' && "opacity-30 grayscale cursor-not-allowed"
-                                                )}
-                                            >
-                                                {genre.label} {count > 0 && <span className="ml-1 opacity-60 text-[10px]">{count}</span>}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-
                             {(() => {
-                                const activeDay = selectedDate || currentMonth;
-                                const rawEvents = getPerformancesForDay(activeDay);
-                                const filteredEvents = selectedPopupGenre === 'all'
-                                    ? rawEvents
-                                    : rawEvents.filter(p => p.genre === selectedPopupGenre);
+                                const filteredEvents = localGenre === 'all'
+                                    ? currentViewEvents
+                                    : currentViewEvents.filter(p => p.genre === localGenre);
 
                                 const displayedDailyEvents = filteredEvents.slice(0, visibleCount);
 
                                 if (filteredEvents.length === 0) return (
-                                    <div className="flex flex-col items-center justify-center py-20 opacity-40">
-                                        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                                            <X className="w-8 h-8 text-gray-400" />
+                                    <div className="flex flex-col items-center justify-center h-full py-20 opacity-40">
+                                        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-400">
+                                            <X size={32} />
                                         </div>
-                                        <p className="text-center text-gray-500 text-lg font-bold">일정이 없습니다</p>
+                                        <p className="text-gray-500 text-lg font-bold">일정이 없습니다</p>
                                     </div>
                                 );
                                 return (
-                                    <div className="space-y-3">
+                                    <div className="space-y-3 max-w-4xl mx-auto w-full">
                                         {displayedDailyEvents.map((perf, i) => (
                                             <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
-                                                className="flex gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-200 dark:border-gray-700 transition group shadow-sm"
+                                                className="flex gap-4 p-4 bg-white dark:bg-gray-800/50 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-100 dark:border-gray-800 transition-all group shadow-sm hover:shadow-md active:scale-[0.98]"
                                             >
                                                 {perf.image && (
-                                                    <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-12 h-16 object-cover rounded bg-gray-100 dark:bg-gray-700 shrink-0" referrerPolicy="no-referrer" />
+                                                    <div className="relative w-14 h-20 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                                                        <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-full h-full object-cover rounded-lg bg-gray-100 dark:bg-gray-700" referrerPolicy="no-referrer" />
+                                                    </div>
                                                 )}
-                                                <div className="min-w-0 flex-1">
-                                                    <div className="flex items-center gap-2 mb-1">
-                                                        <span className={clsx("px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
+                                                <div className="min-w-0 flex-1 flex flex-col justify-center">
+                                                    <div className="flex items-center gap-2 mb-1.5">
+                                                        <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
                                                             {GENRES.find(g => g.id === perf.genre)?.label}
                                                         </span>
-                                                        <span className="text-[10px] text-gray-500 truncate">{perf.venue}</span>
+                                                        <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
                                                     </div>
-                                                    <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                                    <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
                                                 </div>
                                             </a>
                                         ))}
 
                                         {displayedDailyEvents.length < filteredEvents.length && (
-                                            <div className="py-6 text-center text-xs text-gray-500 font-bold animate-pulse">
-                                                데이터를 더 불러오는 중...
+                                            <div className="py-8 text-center text-xs text-gray-500 font-black animate-pulse uppercase tracking-widest">
+                                                Loading More Data...
                                             </div>
                                         )}
                                     </div>
@@ -338,72 +320,69 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         </div>
                     )}
 
-                    {/* Weekly View (Vertical Row Layout - Redensified) */}
-                    {calendarView === 'weekly' && !selectedDate && (
-                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-gray-900">
+                    {/* Weekly View */}
+                    {calendarView === 'weekly' && (
+                        <div className="flex-grow overflow-y-auto flex flex-col bg-gray-50 dark:bg-gray-950">
                             {eachDayOfInterval({
                                 start: startOfWeek(currentMonth, { weekStartsOn: 0 }),
                                 end: endOfWeek(currentMonth, { weekStartsOn: 0 })
                             }).map((day, idx) => {
                                 const dayEvents = getPerformancesForDay(day);
                                 const isToday = isSameDay(day, new Date());
+                                const isSelectedDay = isSameDay(day, currentMonth);
 
                                 return (
-                                    <div key={day.toISOString()} className="flex border-b border-gray-200 dark:border-gray-800 min-h-[80px] sm:min-h-[100px] last:border-b-0">
-                                        {/* Day Info Sidebar (More compact) */}
+                                    <div
+                                        key={day.toISOString()}
+                                        className={clsx(
+                                            "flex border-b border-gray-200 dark:border-gray-900 min-h-[100px] last:border-b-0 cursor-pointer transition-colors active:bg-blue-50/20",
+                                            isSelectedDay && "bg-blue-50/10 dark:bg-blue-900/5 ring-2 ring-inset ring-blue-500/20"
+                                        )}
+                                        onClick={() => {
+                                            setCurrentMonth(day);
+                                            setCalendarView('daily');
+                                        }}
+                                    >
                                         <div className={clsx(
-                                            "w-16 sm:w-24 flex flex-col items-center justify-center border-r border-gray-200 dark:border-gray-800 shrink-0 select-none",
-                                            isToday ? "bg-blue-50/50 dark:bg-blue-900/20" : "bg-gray-50/50 dark:bg-gray-900/30"
+                                            "w-20 sm:w-32 flex flex-col items-center justify-center border-r border-gray-200 dark:border-gray-900 shrink-0 select-none",
+                                            isToday ? "bg-blue-50/50 dark:bg-blue-900/10" : "bg-gray-50/30 dark:bg-gray-950/20"
                                         )}>
                                             <span className={clsx(
-                                                "text-[10px] sm:text-xs font-black truncate w-full text-center px-1 uppercase",
+                                                "text-[10px] sm:text-xs font-black uppercase tracking-tighter",
                                                 idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400"
                                             )}>
                                                 {format(day, 'eee', { locale: ko })}
                                             </span>
-                                            <span className="text-lg sm:text-2xl font-black text-gray-900 dark:text-white leading-none mt-0.5">
+                                            <span className="text-xl sm:text-3xl font-black text-gray-900 dark:text-white leading-none mt-1">
                                                 {format(day, 'd')}
                                             </span>
                                             <span className={clsx(
-                                                "text-[9px] sm:text-[10px] font-bold mt-1 px-1.5 py-0.5 rounded-full border",
-                                                dayEvents.length > 0 ? "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 border-blue-200 dark:border-blue-800" : "text-gray-400 border-transparent"
+                                                "text-[10px] font-black mt-2 px-2 py-0.5 rounded-full border shadow-sm",
+                                                dayEvents.length > 0 ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-200 dark:border-gray-700" : "text-gray-400 border-transparent opacity-40 text-[9px]"
                                             )}>
-                                                {dayEvents.length}건
+                                                {dayEvents.length}
                                             </span>
                                         </div>
 
-                                        {/* Performance List Viewport (Tighter Gap) */}
-                                        <div className="flex-grow p-1.5 sm:p-3 overflow-x-auto bg-white dark:bg-gray-900">
-                                            <div className="flex flex-col gap-0.5 min-w-max sm:min-w-0">
-                                                {dayEvents.length > 0 ? (
-                                                    dayEvents.slice(0, 50).map((perf, i) => (
-                                                        <a
-                                                            key={`${perf.id}-${i}`}
-                                                            href={perf.link}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className={clsx(
-                                                                "group flex items-center gap-1.5 text-[11px] sm:text-sm px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-transparent hover:border-gray-200 dark:hover:border-gray-700 max-w-[500px] sm:max-w-none text-gray-900 dark:text-white font-bold"
-                                                            )}
-                                                            title={perf.title}
-                                                        >
-                                                            <span className={clsx("w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
-                                                            <span className="truncate">{perf.title}</span>
-                                                            {perf.venue && (
-                                                                <span className="text-[9px] sm:text-[11px] text-gray-400 font-medium ml-auto hidden sm:block shrink-0">{perf.venue}</span>
-                                                            )}
-                                                        </a>
-                                                    ))
-                                                ) : (
-                                                    <div className="h-full flex items-center justify-center text-gray-400 text-[10px] sm:text-xs font-medium italic opacity-60 py-2">
-                                                        일정이 없습니다
+                                        <div className="flex-grow p-4 overflow-hidden relative group">
+                                            <div className="flex flex-col gap-1.5 overflow-hidden">
+                                                {dayEvents.slice(0, 10).map((perf, i) => (
+                                                    <div key={`${perf.id}-${i}`} className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-300">
+                                                        <span className={clsx("w-2 h-2 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                                                        <span className="truncate">{perf.title}</span>
                                                     </div>
+                                                ))}
+                                                {dayEvents.length > 10 && (
+                                                    <div className="text-[10px] text-gray-500 font-bold italic pl-4">외 {dayEvents.length - 10}건 더보기...</div>
                                                 )}
-                                                {dayEvents.length > 50 && (
-                                                    <div className="text-[10px] text-gray-500 font-bold pl-2 py-0.5">
-                                                        외 {dayEvents.length - 50}건 더보기
-                                                    </div>
+                                                {dayEvents.length === 0 && (
+                                                    <div className="h-full flex items-center justify-center text-gray-300 dark:text-gray-700 font-black italic uppercase tracking-widest text-[10px]">No Events</div>
                                                 )}
+                                            </div>
+                                            <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0">
+                                                <div className="bg-blue-600 text-white p-2 rounded-full shadow-lg">
+                                                    <ChevronRight size={16} strokeWidth={4} />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -412,18 +391,18 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                         </div>
                     )}
 
-                    {/* Monthly View (Reduced font size and padding) */}
+                    {/* Monthly View */}
                     {calendarView === 'monthly' && (
                         <>
-                            <div className="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950 shrink-0">
+                            <div className="grid grid-cols-7 border-b border-gray-100 dark:border-gray-900 bg-gray-50 dark:bg-gray-950/50 shrink-0">
                                 {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
-                                    <div key={day} className={clsx("py-2 text-center text-[10px] sm:text-xs font-black", idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400")}>
+                                    <div key={day} className={clsx("py-3 text-center text-xs font-black uppercase tracking-widest", idx === 0 ? "text-red-500/80" : idx === 6 ? "text-blue-500/80" : "text-gray-400 dark:text-gray-500")}>
                                         {day}
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="grid grid-cols-7 flex-grow overflow-y-auto auto-rows-fr bg-gray-200 dark:bg-gray-800 gap-[1px]">
+                            <div className="grid grid-cols-7 flex-grow overflow-y-auto auto-rows-fr bg-gray-100 dark:bg-gray-900/50 gap-[1px]">
                                 {dayList.map((day) => {
                                     const dayEvents = getPerformancesForDay(day);
                                     return (
@@ -433,8 +412,8 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                             currentMonth={currentMonth}
                                             dayEvents={dayEvents}
                                             onSelectDay={(d) => {
-                                                setSelectedDate(d);
-                                                setSelectedPopupGenre('all');
+                                                setCurrentMonth(d);
+                                                setCalendarView('daily');
                                             }}
                                         />
                                     );
