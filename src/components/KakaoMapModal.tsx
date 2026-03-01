@@ -6,7 +6,7 @@ import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Film, Plus, Minus } from 'lucide-react';
+import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-react';
 import Portal from './ui/Portal';
 
 interface Cinema {
@@ -597,6 +597,19 @@ export default function KakaoMapModal({
                                             <X size={16} />
                                         </button>
                                     </div>
+
+                                    {/* 공연 더보기 버튼 */}
+                                    {selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange && (
+                                        <button
+                                            onClick={() => {
+                                                onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
+                                            }}
+                                            className="flex items-center justify-center gap-1.5 w-full py-2 bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 text-[11px] font-bold transition-colors border-b border-emerald-100 dark:border-emerald-800"
+                                        >
+                                            <ExternalLink size={12} />
+                                            공연 더보기 · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                        </button>
+                                    )}
 
                                     {selectedVenueData.type === 'cinema' && (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
