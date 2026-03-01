@@ -3,9 +3,15 @@
 import React, { useMemo } from 'react';
 
 /**
- * Stunning Pure CSS Rainbow Background replication.
- * Dynamically generated via React to preserve SCSS randomization logic while maintaining 
- * perfect blending with the application's theme.
+ * Rainbow Background — faithful adaptation of: 
+ * https://codepen.io/sylvaingarnot/pen/OJqoXaR
+ * 
+ * 25 individually animated color rays sweep across the screen. 
+ * Each ray is a zero-width div with a multi-layered box-shadow (purple/blue/green).
+ * Fog layers at the bottom and left edge blend the stripes softly into the background.
+ * 
+ * Light mode: white fog blending (like the original).
+ * Dark mode: dark fog blending with slightly boosted color opacity.
  */
 export default function RainbowBackground() {
     const layers = useMemo(() => {
@@ -18,9 +24,8 @@ export default function RainbowBackground() {
         return Array.from({ length: COUNT }).map((_, i) => {
             const index = i + 1;
             const r = Math.floor(Math.random() * 6) + 1;
-            let colors: string[] = [];
+            let colors: string[];
 
-            // Replicating SCSS @if $r == ... logic
             if (r === 1) colors = [PURPLE, BLUE, GREEN];
             else if (r === 2) colors = [PURPLE, GREEN, BLUE];
             else if (r === 3) colors = [GREEN, PURPLE, BLUE];
@@ -28,44 +33,47 @@ export default function RainbowBackground() {
             else if (r === 5) colors = [BLUE, GREEN, PURPLE];
             else colors = [BLUE, PURPLE, GREEN];
 
-            // In Dark Mode, we use a dimmer version or just maintain the white borders as transparent/background
-            // Note: The 'white' in box-shadow will be overridden by CSS variables for theme blending
             const duration = ANIMATION_TIME - (ANIMATION_TIME / COUNT / 2) * index;
             const delay = -(index / COUNT) * ANIMATION_TIME;
 
-            return {
-                id: index,
-                colors,
-                duration,
-                delay
-            };
+            return { id: index, colors, duration, delay };
         });
     }, []);
 
     return (
-        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-white dark:bg-[#0a0a0a]">
-            {/* Rainbow Layers */}
+        <div className="rainbow-bg-wrapper">
             {layers.map((layer) => (
                 <div
                     key={layer.id}
-                    className="rainbow-layer"
+                    className="rb-ray"
                     style={{
-                        '--c1': layer.colors[0],
-                        '--c2': layer.colors[1],
-                        '--c3': layer.colors[2],
-                        '--duration': `${layer.duration}s`,
-                        '--delay': `${layer.delay}s`,
+                        '--rb-c1': layer.colors[0],
+                        '--rb-c2': layer.colors[1],
+                        '--rb-c3': layer.colors[2],
+                        '--rb-dur': `${layer.duration}s`,
+                        '--rb-del': `${layer.delay}s`,
                     } as React.CSSProperties}
                 />
             ))}
-
-            {/* Fog/Atmosphere Layers */}
-            <div className="h-fog" />
-            <div className="v-fog" />
+            <div className="rb-fog-h" />
+            <div className="rb-fog-v" />
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .rainbow-layer {
+                .rainbow-bg-wrapper {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 0;
+                    overflow: hidden;
+                    pointer-events: none;
+                    background: white;
+                }
+
+                .dark .rainbow-bg-wrapper {
+                    background: #0a0a0a;
+                }
+
+                .rb-ray {
                     height: 100vh;
                     width: 0;
                     top: 0;
@@ -73,23 +81,33 @@ export default function RainbowBackground() {
                     position: absolute;
                     transform: rotate(10deg);
                     transform-origin: top right;
-                    box-shadow: 
-                        -130px 0 80px 40px var(--bg-blur), 
-                        -50px 0 50px 25px var(--c1),
-                        0 0 50px 25px var(--c2), 
-                        50px 0 50px 25px var(--c3),
-                        130px 0 80px 40px var(--bg-blur);
-                    animation: slide var(--duration) linear infinite;
-                    animation-delay: var(--delay);
+                    box-shadow:
+                        -130px 0 80px 40px var(--rb-bg),
+                        -50px 0 50px 25px var(--rb-c1),
+                        0 0 50px 25px var(--rb-c2),
+                        50px 0 50px 25px var(--rb-c3),
+                        130px 0 80px 40px var(--rb-bg);
+                    animation: rb-slide var(--rb-dur) linear infinite;
+                    animation-delay: var(--rb-del);
                 }
 
-                @keyframes slide {
+                /* Light mode: white blending — exactly like the original */
+                .rb-ray { --rb-bg: white; }
+                .rb-fog-h { --rb-bg: white; }
+                .rb-fog-v { --rb-bg: white; }
+
+                /* Dark mode: dark blending, softer fog */
+                .dark .rb-ray { --rb-bg: #0a0a0a; }
+                .dark .rb-fog-h { --rb-bg: #0a0a0a; }
+                .dark .rb-fog-v { --rb-bg: #0a0a0a; }
+
+                @keyframes rb-slide {
                     from { right: -25vw; }
                     to { right: 125vw; }
                 }
 
-                .h-fog {
-                    box-shadow: 0 0 50vh 40vh var(--bg-blur);
+                .rb-fog-h {
+                    box-shadow: 0 0 50vh 30vh var(--rb-bg);
                     width: 100vw;
                     height: 0;
                     bottom: 0;
@@ -98,26 +116,14 @@ export default function RainbowBackground() {
                     z-index: 1;
                 }
 
-                .v-fog {
-                    box-shadow: 0 0 35vw 25vw var(--bg-blur);
+                .rb-fog-v {
+                    box-shadow: 0 0 25vw 15vw var(--rb-bg);
                     width: 0;
                     height: 100vh;
                     bottom: 0;
                     left: 0;
                     position: absolute;
                     z-index: 1;
-                }
-
-                .dark .rainbow-layer,
-                .dark .h-fog,
-                .dark .v-fog {
-                    --bg-blur: #0a0a0a;
-                }
-
-                html:not(.dark) .rainbow-layer,
-                html:not(.dark) .h-fog,
-                html:not(.dark) .v-fog {
-                    --bg-blur: white;
                 }
             `}} />
         </div>
