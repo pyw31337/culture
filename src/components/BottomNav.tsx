@@ -74,7 +74,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
             isActive: currentViewMode === 'likes-perf',
             badgeCount: likeCount + venueCount
         },
-        { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick('category') },
+        { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick(activeMenu === 'category' ? null : 'category') },
     ];
 
     // Right side items with badge counts
@@ -170,7 +170,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 <div className="absolute left-1/2 -translate-x-1/2 -top-6 z-10">
                     {/* Outer gradient border wrapper - rotating conic gradient */}
                     <button
-                        onClick={() => onMenuClick('location')}
+                        onClick={() => onMenuClick(activeMenu === 'location' ? null : 'location')}
                         className={clsx(
                             "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
                             searchMode === 'location'
