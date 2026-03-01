@@ -455,7 +455,7 @@ export default function KakaoMapModal({
         if (centerLocation && allVenuesList.current.length > 0) {
             // Case A: Explicit center location from search/venue click
             hasBoundedOnce.current = true;
-            const closest = allVenuesList.current[0]; // Already sorted by distance
+            const closest = allVenuesList.current[0];
             if (closest && closest.lat && closest.lng) {
                 const bounds = new window.kakao.maps.LatLngBounds();
                 bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
@@ -465,8 +465,8 @@ export default function KakaoMapModal({
                     map.setBounds(bounds, 150, 50, 50, 50);
                 }, 100);
             }
-        } else if (!centerLocation && searchText.trim().length > 0 && allVenuesList.current.length > 0) {
-            // Case B: Keyword search with actual text → bound to show matched venues
+        } else if (allVenuesList.current.length > 0) {
+            // Case B/C: Keyword search OR General Category View
             hasBoundedOnce.current = true;
             const bounds = new window.kakao.maps.LatLngBounds();
             let hasValidCoords = false;
@@ -485,14 +485,16 @@ export default function KakaoMapModal({
                         map.setLevel(4);
                         setSelectedVenue(allVenuesList.current[0].venueName);
                     } else {
-                        map.setBounds(bounds, 100, 50, 150, 50);
+                        // Apply bounds with padding
+                        map.setBounds(bounds, 120, 50, 150, 50);
 
+                        // Clamp level to reasonable range
                         setTimeout(() => {
                             const currentLevel = map.getLevel();
                             if (currentLevel > 7) {
                                 map.setLevel(7);
-                            } else if (currentLevel < 5) {
-                                map.setLevel(5);
+                            } else if (currentLevel < 3) {
+                                map.setLevel(3);
                             }
                         }, 50);
                     }

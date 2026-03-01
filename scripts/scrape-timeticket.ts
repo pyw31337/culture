@@ -159,55 +159,36 @@ async function scrapeTimeTicket() {
 
                 const listItems: any[] = (await page.evaluate(`((currentRegion, currentCatId, currentDefaultGenre) => {
                     const results = [];
-                    // Use a more robust selector based on href pattern
-                    const items = document.querySelectorAll('a[href*="/product/"]');
+                    // Using updated selectors found in audit
+                    const items = document.querySelectorAll('a.list_content');
 
                     items.forEach((item) => {
                         const linkAttribute = item.getAttribute('href');
                         const link = linkAttribute ? (linkAttribute.startsWith('http') ? linkAttribute : 'https://timeticket.co.kr' + linkAttribute) : '';
 
-                        const imgEl = item.querySelector('.thumb img');
-                        const thumbDiv = item.querySelector('.thumb');
-
-                        // Standard src extraction is sufficient now that we don't block images
+                        const imgEl = item.querySelector('img.tt-thumb');
                         let image = imgEl ? (imgEl.getAttribute('src') || imgEl.getAttribute('data-src') || '') : '';
                         if (image && !image.startsWith('http')) {
                             image = 'https://timeticket.co.kr' + image;
                         }
 
-                        // Fallback to background image if extracted
-                        if (!image && thumbDiv) {
-                            const style = thumbDiv.getAttribute('style');
-                            const match = style?.match(/url\\(['"]?(.*?)['"]?\\)/);
-                            if (match) image = match[1];
-                            if (image && !image.startsWith('http')) {
-                                image = 'https://timeticket.co.kr' + image;
-                            }
-                        }
-
-                        const titleEl = item.querySelector('.ticket_info .title');
+                        const titleEl = item.querySelector('.title');
                         let title = titleEl ? titleEl.textContent?.trim() || '' : '';
-                        // Robust cleaning: remove leading/trailing whitespace and specific pattern
                         title = title.replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '');
-                        // Remove space before specific full-width bracket tag if it exists internally or normally
-                        title = title.replace(/\\s+(?=［만원의행복］)/g, '');
 
-                        const categoryEl = item.querySelector('.ticket_info .category');
+                        const categoryEl = item.querySelector('.category');
                         const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
 
                         let genre = currentDefaultGenre;
-
-                        // Refine 'play' genre into 'musical' or 'concert' if keywords found
                         if (currentCatId === 2096) {
                             if (categoryText.includes('뮤지컬')) genre = 'musical';
                             else if (categoryText.includes('콘서트')) genre = 'concert';
                         }
-                        // 'activity' and 'exhibition' rely on defaultGenre unless specific keywords exist (none defined currently)
 
                         const discountEl = item.querySelector('.sale_percent');
                         const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
 
-                        const priceEl = item.querySelector('.baro_price');
+                        const priceEl = item.querySelector('.price');
                         const price = priceEl ? priceEl.textContent?.trim() || '' : '';
 
                         if (link && title) {

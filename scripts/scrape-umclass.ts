@@ -137,7 +137,6 @@ async function scrapeUmClass() {
             }
 
             const pageItems = await page.evaluate(() => {
-                // Generic selector for class items
                 const anchors = document.querySelectorAll('a[href*="/classInfo/"]');
                 const results: any[] = [];
 
@@ -145,25 +144,14 @@ async function scrapeUmClass() {
                     const link = (anchor as HTMLAnchorElement).href;
                     if (!link.includes('/classInfo/')) return;
 
-                    // Title extraction
-                    const titleElem = anchor.querySelector('.class-subject') ||
-                        anchor.querySelector('.list-subject') ||
-                        anchor.querySelector('[class*="subject"]') ||
-                        anchor.querySelector('[class*="title"]');
-
+                    // Updated selectors from audit
+                    const titleElem = anchor.querySelector('.class-lis-itm-name');
                     let title = titleElem ? titleElem.textContent?.trim() : '';
-
-                    if (!title) {
-                        const text = anchor.textContent?.trim() || '';
-                        const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 5);
-                        title = lines[0] || '';
-                    }
-
                     if (!title) return;
 
-                    // Image extraction
+                    // Image extraction from div.class-lis-img background-image
                     let image = '';
-                    const imgDiv = anchor.querySelector('[class*="img"]');
+                    const imgDiv = anchor.querySelector('.class-lis-img');
                     if (imgDiv) {
                         const style = window.getComputedStyle(imgDiv);
                         const bgImage = style.backgroundImage;
@@ -171,16 +159,23 @@ async function scrapeUmClass() {
                             image = bgImage.slice(4, -1).replace(/"/g, '');
                         }
                     }
-                    if (!image) {
-                        const imgTag = anchor.querySelector('img');
-                        if (imgTag) image = imgTag.src;
-                    }
 
-                    // Price extraction
-                    const priceElem = anchor.querySelector('[class*="price"]');
-                    const discountElem = anchor.querySelector('[class*="discount"]');
-                    const price = priceElem ? priceElem.textContent?.trim() || '' : '';
-                    const discount = discountElem ? discountElem.textContent?.trim() || '' : '';
+                    // Price/Discount extraction from .class-lis-mony-txt
+                    // Usually contains both discount % and price
+                    const priceElem = anchor.querySelector('.class-lis-mony-txt');
+                    let price = '';
+                    let discount = '';
+
+                    if (priceElem) {
+                        const text = priceElem.textContent || '';
+                        // Extract % for discount
+                        const discMatch = text.match(/(\d+)%/);
+                        if (discMatch) discount = discMatch[1] + '%';
+
+                        // Extract "원" for price
+                        const priceMatch = text.match(/([\d,]+)원/);
+                        if (priceMatch) price = priceMatch[1] + '원';
+                    }
 
                     results.push({
                         title,
@@ -289,13 +284,37 @@ async function scrapeUmClass() {
                         function getTxt(sel: string) {
                             return document.querySelector(sel)?.textContent?.trim() || '';
                         }
-                        const duration = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(1) > span:nth-child(2)');
-                        const people = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(2) > span:nth-child(2)');
-                        const totalCount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div.voucher-main-img-area-1 > div.voucher-semi-info-area > div:nth-child(3) > span:nth-child(2)');
-                        const discount = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(1)');
-                        const originPrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(2)');
-                        const salePrice = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(3) > div.pc-payment-btn-area > div > span:nth-child(3)');
-                        const useTime = getTxt('#um_contents > div.landing-content > div.voucher-contents > div:nth-child(6) > div:nth-child(1) > div:nth-child(9) > span');
+
+                        // Use class-based selectors instead of deep nth-child paths
+                        const semiInfoDivs = document.querySelectorAll('.voucher-semi-info-area > div');
+                        const duration = semiInfoDivs[0]?.querySelector('span:nth-child(2)')?.textContent?.trim() || '';
+                        const people = semiInfoDivs[1]?.querySelector('span:nth-child(2)')?.textContent?.trim() || '';
+                        const totalCount = semiInfoDivs[2]?.querySelector('span:nth-child(2)')?.textContent?.trim() || '';
+
+                        // Price info - use class-based selectors
+                        const paymentArea = document.querySelector('.pc-payment-btn-area');
+                        const priceSpans = paymentArea ? paymentArea.querySelectorAll('span') : [];
+                        const discount = priceSpans[0]?.textContent?.trim() || '';
+                        const originPrice = priceSpans[1]?.textContent?.trim() || '';
+                        const salePrice = priceSpans[2]?.textContent?.trim() || '';
+
+                        // Use time info - try multiple selectors
+                        let useTime = '';
+                        const infoSections = document.querySelectorAll('.voucher-contents > div');
+                        for (const section of infoSections) {
+                            const text = section.textContent || '';
+                            if (text.includes('이용시간') || text.includes('소요시간')) {
+                                const spans = section.querySelectorAll('span');
+                                for (const span of spans) {
+                                    const t = span.textContent?.trim() || '';
+                                    if (t.includes('분') || t.includes('시간')) {
+                                        useTime = t;
+                                        break;
+                                    }
+                                }
+                                if (useTime) break;
+                            }
+                        }
 
                         // Heuristic address finding for UmClass
                         const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div'));
