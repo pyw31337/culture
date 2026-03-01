@@ -208,7 +208,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                 <motion.div
                                     className={clsx(
                                         "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-shadow -ml-6",
-                                        !isDragging && "hover:shadow-purple-500/30"
+                                        !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     whileHover={!isDragging ? { scale: 1.05, zIndex: 30 } : {}}
                                     onPointerDown={handlePointerDown}
