@@ -77,7 +77,7 @@ export default function RainbowBackground() {
                     height: 100vh;
                     width: 0;
                     top: 0;
-                    right: -25vw;
+                    right: -65vw;
                     position: absolute;
                     transform: rotate(10deg);
                     transform-origin: top right;
@@ -102,7 +102,7 @@ export default function RainbowBackground() {
                 .dark .rb-fog-v { --rb-bg: #0a0a0a; }
 
                 @keyframes rb-slide {
-                    from { right: -25vw; }
+                    from { right: -65vw; }
                     to { right: 125vw; }
                 }
 
