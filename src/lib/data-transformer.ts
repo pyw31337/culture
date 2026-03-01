@@ -110,7 +110,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         image = GENRE_FALLBACKS[genre] || GENRE_FALLBACKS.default;
     }
 
-    // 5. Sports Logos
+    // 5. Sports Logos — RESPECT data-supplied logos; only fallback to FUTURES_TEAM_LOGOS
     let homeLogo = raw.homeTeamLogo;
     let awayLogo = raw.awayTeamLogo;
     if (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(genre)) {
@@ -118,13 +118,27 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         const hTeam = normalizeTeam(raw.homeTeam);
         const aTeam = normalizeTeam(raw.awayTeam);
 
-        if (hTeam && FUTURES_TEAM_LOGOS[hTeam]) {
+        // Only override logos when data doesn't provide them
+        if (!homeLogo && hTeam && FUTURES_TEAM_LOGOS[hTeam]) {
             homeLogo = FUTURES_TEAM_LOGOS[hTeam];
         }
-        if (aTeam && FUTURES_TEAM_LOGOS[aTeam]) {
+        if (!awayLogo && aTeam && FUTURES_TEAM_LOGOS[aTeam]) {
             awayLogo = FUTURES_TEAM_LOGOS[aTeam];
         }
     }
+
+    // 6. Add BASE_PATH prefix to local image/logo paths missing it
+    const addBP = (p: string | undefined): string | undefined => {
+        if (!p) return p;
+        // Skip external URLs, already-prefixed paths, or data URIs
+        if (p.startsWith('http') || p.startsWith('data:') || p.startsWith(_BP + '/')) return p;
+        // Local paths starting with /
+        if (p.startsWith('/')) return `${_BP}${p}`;
+        return p;
+    };
+    image = addBP(image) || image;
+    homeLogo = addBP(homeLogo);
+    awayLogo = addBP(awayLogo);
 
     return {
         ...raw,
