@@ -10,6 +10,10 @@ import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl } from '@/lib/utils';
 import Portal from './ui/Portal';
 import CalendarDayCell from './CalendarDayCell';
+import venueData from '@/data/venues.json';
+import { MapPin } from 'lucide-react';
+
+const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
 
 interface CalendarModalProps {
     performances: Performance[];
@@ -305,7 +309,31 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                         <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
                                                     </div>
                                                     <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                                    {/* Mobile: location below title */}
+                                                    {(() => {
+                                                        const v = venues[perf.venue];
+                                                        const addr = v?.address || '';
+                                                        const parts = addr.split(/\s+/);
+                                                        const loc = parts.length >= 2 ? `${parts[0]} ${parts[1]}` : parts[0] || '';
+                                                        return loc ? (
+                                                            <span className="sm:hidden flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold mt-1">
+                                                                <MapPin size={9} className="shrink-0" />{loc}
+                                                            </span>
+                                                        ) : null;
+                                                    })()}
                                                 </div>
+                                                {/* Desktop: location on right side */}
+                                                {(() => {
+                                                    const v = venues[perf.venue];
+                                                    const addr = v?.address || '';
+                                                    const parts = addr.split(/\s+/);
+                                                    const loc = parts.length >= 2 ? `${parts[0]} ${parts[1]}` : parts[0] || '';
+                                                    return loc ? (
+                                                        <div className="hidden sm:flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold shrink-0 self-center">
+                                                            <MapPin size={10} className="shrink-0" />{loc}
+                                                        </div>
+                                                    ) : null;
+                                                })()}
                                             </a>
                                         ))}
 
