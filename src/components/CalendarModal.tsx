@@ -444,9 +444,6 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                     )}
                 </div>
             </div>
-
-        </div>
-            </div >
-        </Portal >
+        </Portal>
     );
 }
