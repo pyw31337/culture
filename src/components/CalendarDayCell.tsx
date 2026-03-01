@@ -46,16 +46,20 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
             {/* PC/Desktop View: List (Max 5 to fill space) */}
             <div className="hidden sm:flex flex-col gap-[1px] overflow-hidden flex-1">
                 {dayEvents.slice(0, 5).map((perf, i) => (
-                    <div
+                    <a
                         key={`${perf.id}-${i}`}
-                        className="flex items-center gap-1.5 px-1 py-[2px] rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition relative z-10 w-full"
+                        href={perf.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 px-1 py-[2px] rounded hover:bg-blue-50 dark:hover:bg-gray-700 transition relative z-10 w-full"
                         title={perf.title}
                     >
                         <span className={clsx("w-1.5 h-1.5 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
                         <span className="text-[11px] font-bold text-gray-900 dark:text-white truncate">
                             {perf.title}
                         </span>
-                    </div>
+                    </a>
                 ))}
                 {dayEvents.length > 5 && (
                     <div className="text-[10px] text-gray-500 dark:text-gray-400 text-left pl-1 cursor-default relative z-10 font-bold mt-auto">

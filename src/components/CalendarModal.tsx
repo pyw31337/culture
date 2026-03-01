@@ -367,10 +367,17 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                         <div className="flex-grow p-4 overflow-hidden relative group">
                                             <div className="flex flex-col gap-1.5 overflow-hidden">
                                                 {dayEvents.slice(0, 10).map((perf, i) => (
-                                                    <div key={`${perf.id}-${i}`} className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-300">
+                                                    <a
+                                                        key={`${perf.id}-${i}`}
+                                                        href={perf.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                                    >
                                                         <span className={clsx("w-2 h-2 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
                                                         <span className="truncate">{perf.title}</span>
-                                                    </div>
+                                                    </a>
                                                 ))}
                                                 {dayEvents.length > 10 && (
                                                     <div className="text-[10px] text-gray-500 font-bold italic pl-4">외 {dayEvents.length - 10}건 더보기...</div>
