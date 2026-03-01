@@ -8,18 +8,19 @@ import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { getOptimizedUrl, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 
 // Genre-specific fallback images
+const _BP = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const GENRE_FALLBACKS: Record<string, string> = {
-    soccer: '/images/fallbacks/soccer.jpg',
-    baseball: '/images/fallbacks/baseball.jpg',
-    basketball: '/images/fallbacks/basketball.jpg',
-    volleyball: '/images/fallbacks/volleyball.jpg',
-    handball: '/images/fallbacks/handball.jpg',
-    museum: '/images/fallbacks/museum.jpg',
-    exhibition: '/images/fallbacks/exhibition.jpg',
-    classic_tradition: '/images/fallbacks/classic.jpg',
-    activity: '/images/fallbacks/activity.jpg',
-    movie: '/images/kbo-thumbnail.png',
-    default: '/images/placeholder.png'
+    soccer: `${_BP}/images/fallbacks/soccer.jpg`,
+    baseball: `${_BP}/images/fallbacks/baseball.jpg`,
+    basketball: `${_BP}/images/fallbacks/basketball.jpg`,
+    volleyball: `${_BP}/images/fallbacks/volleyball.jpg`,
+    handball: `${_BP}/images/fallbacks/handball.jpg`,
+    museum: `${_BP}/images/fallbacks/museum.jpg`,
+    exhibition: `${_BP}/images/fallbacks/exhibition.jpg`,
+    classic_tradition: `${_BP}/images/fallbacks/classic.jpg`,
+    activity: `${_BP}/images/fallbacks/activity.jpg`,
+    movie: `${_BP}/images/kbo-thumbnail.png`,
+    default: `${_BP}/images/placeholder.png`
 };
 
 const REGION_MAP: Record<string, string> = {
