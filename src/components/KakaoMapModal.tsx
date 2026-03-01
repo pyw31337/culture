@@ -598,20 +598,8 @@ export default function KakaoMapModal({
                                         </button>
                                     </div>
 
-                                    {/* 공연 더보기 버튼 */}
-                                    {selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange && (
-                                        <button
-                                            onClick={() => {
-                                                onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
-                                            }}
-                                            className="flex items-center justify-center gap-1.5 w-full py-2 bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 text-[11px] font-bold transition-colors border-b border-emerald-100 dark:border-emerald-800"
-                                        >
-                                            <ExternalLink size={12} />
-                                            공연 더보기 · {selectedVenueData.performances?.length || 0}개 컨텐츠
-                                        </button>
-                                    )}
-
-                                    {selectedVenueData.type === 'cinema' && (
+                                    {/* Action Button: cinema → 실시간 상영시간표, non-cinema → 공연 더보기 */}
+                                    {selectedVenueData.type === 'cinema' ? (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
                                             <a
                                                 href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
@@ -623,7 +611,19 @@ export default function KakaoMapModal({
                                                 실시간 상영시간표 확인하기
                                             </a>
                                         </div>
-                                    )}
+                                    ) : selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange ? (
+                                        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
+                                            <button
+                                                onClick={() => {
+                                                    onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
+                                                }}
+                                                className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
+                                            >
+                                                <ExternalLink size={12} />
+                                                공연 더보기 · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                            </button>
+                                        </div>
+                                    ) : null}
 
                                     <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
                                         onScroll={handlePerfScroll}
