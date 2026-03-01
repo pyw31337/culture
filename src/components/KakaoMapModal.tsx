@@ -397,6 +397,11 @@ export default function KakaoMapModal({
                 }, 100);
             });
 
+            // Store venue data on marker for later reference
+            (marker as any)._venueName = venue.venueName;
+            (marker as any)._color = color;
+            (marker as any)._text = text;
+
             markers.push(marker);
         });
 
@@ -405,13 +410,50 @@ export default function KakaoMapModal({
         }
         markersRef.current = markers;
 
-        // --- 4. Auto-bounding (ONLY on first marker render, and ONLY when there's an explicit trigger) ---
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
+
+    // 2b. Highlight selected marker with red border
+    useEffect(() => {
+        if (!mapInstance) return;
+
+        markersRef.current.forEach((marker: any) => {
+            const isSelected = marker._venueName === selectedVenue;
+            const color = marker._color || '#10b981';
+            const text = marker._text || '';
+            const size = isSelected ? 44 : 36;
+            const r = isSelected ? 20 : 16;
+            const center = size / 2;
+            const strokeColor = isSelected ? '#ef4444' : 'white';
+            const strokeWidth = isSelected ? 3 : 2;
+            const fontSize = isSelected ? 14 : 12;
+
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+                <circle cx="${center}" cy="${center}" r="${r}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />
+                <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${fontSize}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+            </svg>`;
+            const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+
+            const markerImage = new window.kakao.maps.MarkerImage(
+                iconUrl,
+                new window.kakao.maps.Size(size, size),
+                { offset: new window.kakao.maps.Point(center, center) }
+            );
+            marker.setImage(markerImage);
+            marker.setZIndex(isSelected ? 100 : 10);
+        });
+    }, [selectedVenue, mapInstance]);
+
+    // 2c. Auto-bounding (separate effect, only runs once)
+    useEffect(() => {
+        if (!mapInstance || !isMapReady) return;
         // Once we've bounded, never auto-bound again. The user controls the map from here.
         if (hasBoundedOnce.current) return;
 
+        const map = mapInstance;
+
         if (centerLocation && allVenuesList.current.length > 0) {
             // Case A: Explicit center location from search/venue click
-            // Bound to show center + closest venue
             hasBoundedOnce.current = true;
             const closest = allVenuesList.current[0]; // Already sorted by distance
             if (closest && closest.lat && closest.lng) {
@@ -457,10 +499,9 @@ export default function KakaoMapModal({
                 }, 100);
             }
         }
-        // Case C: No center, no search → do nothing. Map stays at initial position (user location or Seoul Station).
-
-        return () => { };
-    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]); // Re-run when data changes
+        // Case C: No center, no search → do nothing. Map stays at initial position.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
 
     // Popup Position Logic
     const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);
