@@ -66,7 +66,6 @@ export default function KakaoMapModal({
     // Group performances by venue - Pre-calculation
     const allVenueGroups = useRef<Record<string, any>>({});
     const allVenuesList = useRef<any[]>([]);
-    const lastBoundedLocationRef = useRef<string | null>(null);
 
     // Drag to scroll logic (Horizontal List)
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -291,6 +290,9 @@ export default function KakaoMapModal({
         };
     }, [centerLocation, handleSearchHereInternal]);
 
+    // Tracks whether auto-bounding has already been applied for this map session
+    const hasBoundedOnce = useRef(false);
+
     // 2. Re-render Markers when Data changes
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
@@ -298,17 +300,15 @@ export default function KakaoMapModal({
         const map = mapInstance;
 
         // --- 0. Memoization Check ---
-        // Avoid flickering and heavy re-clustering if the visible venues haven't changed.
         const currentVenuesKey = allVenuesList.current.map(v => `${v.venueName}_${v.performances.length}`).sort().join('|');
         if (currentVenuesKey === lastRenderedVenuesKey.current) return;
         lastRenderedVenuesKey.current = currentVenuesKey;
 
-        // --- 1. Aggressive Cleanup ---
+        // --- 1. Cleanup existing markers ---
         if (map._clusterer) {
             map._clusterer.clear();
         }
 
-        // Remove existing markers from map and clear reference
         markersRef.current.forEach((m: any) => {
             m.setMap(null);
             window.kakao.maps.event.removeListener(m, 'click');
@@ -322,7 +322,7 @@ export default function KakaoMapModal({
                 clusterer = new window.kakao.maps.MarkerClusterer({
                     map: map,
                     averageCenter: true,
-                    minLevel: 7, // Clustering starts from Level 7 and above
+                    minLevel: 7,
                     disableClickZoom: false,
                     styles: [{
                         width: '50px', height: '50px',
@@ -342,6 +342,7 @@ export default function KakaoMapModal({
             }
         }
 
+        // --- 3. Create Markers (ONLY markers, no map position changes) ---
         const markers: any[] = [];
 
         allVenuesList.current.forEach(venue => {
@@ -354,7 +355,6 @@ export default function KakaoMapModal({
             const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
             const text = isCinema ? (perfs.length > 0 ? perfs.length.toString() : '📽️') : perfs.length.toString();
 
-            // Create SVG Marker Icon for better performance
             const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
                 <circle cx="18" cy="18" r="16" fill="${color}" stroke="white" stroke-width="2" />
                 <text x="18" y="19" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="12" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
@@ -404,80 +404,61 @@ export default function KakaoMapModal({
             clusterer.addMarkers(markers);
         }
         markersRef.current = markers;
-        (map as any)._markers = markers; // For backwards compatibility if any
 
-        // --- Auto-adjust bounds to ensure at least 1 closest venue is visible ---
+        // --- 4. Auto-bounding (ONLY on first marker render, and ONLY when there's an explicit trigger) ---
+        // Once we've bounded, never auto-bound again. The user controls the map from here.
+        if (hasBoundedOnce.current) return;
+
         if (centerLocation && allVenuesList.current.length > 0) {
-            const locKey = `${centerLocation.lat},${centerLocation.lng}`;
-            if (lastBoundedLocationRef.current !== locKey) {
-                lastBoundedLocationRef.current = locKey;
-                const closest = allVenuesList.current[0]; // Already sorted by distance in Data Init useEffect
-                if (closest && closest.lat && closest.lng) {
-                    const bounds = new window.kakao.maps.LatLngBounds();
-                    bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
-                    bounds.extend(new window.kakao.maps.LatLng(closest.lat, closest.lng));
-
-                    // Use setTimeout to allow the map to render before bounding
-                    setTimeout(() => {
-                        // Apply padding to ensure markers aren't perfectly on the visual edge
-                        map.setBounds(bounds, 150, 50, 50, 50);
-                    }, 100);
-                }
-            }
-        } else if (!centerLocation && allVenuesList.current.length > 0) {
-            // Only auto-bound if we are in an active search state (Keyword with text OR Location mode)
-            const isActiveSearch = (searchMode === 'keyword' && searchText.trim().length > 0) || (searchMode === 'location');
-
-            if (!isActiveSearch) {
-                // If not active search, still mark signature to avoid repeated checks, 
-                // but don't perform the setBounds.
-                const idleSig = `idle_${allVenuesList.current.length}_${selectedGenre}`;
-                lastBoundedLocationRef.current = idleSig;
-                return;
-            }
-
-            const sigKey = `all_${allVenuesList.current.length}_${selectedGenre}_${searchText}`;
-            if (lastBoundedLocationRef.current !== sigKey) {
-                lastBoundedLocationRef.current = sigKey;
-
-                // Bound the map to include all matched venues in the search result
+            // Case A: Explicit center location from search/venue click
+            // Bound to show center + closest venue
+            hasBoundedOnce.current = true;
+            const closest = allVenuesList.current[0]; // Already sorted by distance
+            if (closest && closest.lat && closest.lng) {
                 const bounds = new window.kakao.maps.LatLngBounds();
-                let hasValidCoords = false;
+                bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
+                bounds.extend(new window.kakao.maps.LatLng(closest.lat, closest.lng));
 
-                allVenuesList.current.forEach(v => {
-                    if (v.lat && v.lng) {
-                        bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
-                        hasValidCoords = true;
-                    }
-                });
+                setTimeout(() => {
+                    map.setBounds(bounds, 150, 50, 50, 50);
+                }, 100);
+            }
+        } else if (!centerLocation && searchText.trim().length > 0 && allVenuesList.current.length > 0) {
+            // Case B: Keyword search with actual text → bound to show matched venues
+            hasBoundedOnce.current = true;
+            const bounds = new window.kakao.maps.LatLngBounds();
+            let hasValidCoords = false;
 
-                if (hasValidCoords) {
-                    setTimeout(() => {
-                        // Only bound if there's more than 1 venue, or if it's 1 it might zoom in too far.
-                        if (allVenuesList.current.length === 1) {
-                            map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
-                            map.setLevel(4);
-                            // Auto open popup for this single venue
-                            setSelectedVenue(allVenuesList.current[0].venueName);
-                        } else {
-                            map.setBounds(bounds, 100, 50, 150, 50);
-
-                            // Restrict zoom out between Level 5 (250m) and Level 7 (1km)
-                            setTimeout(() => {
-                                const currentLevel = map.getLevel();
-                                if (currentLevel > 7) {
-                                    map.setLevel(7);
-                                } else if (currentLevel < 5) {
-                                    map.setLevel(5);
-                                }
-                            }, 50);
-                        }
-                    }, 100);
+            allVenuesList.current.forEach(v => {
+                if (v.lat && v.lng) {
+                    bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
+                    hasValidCoords = true;
                 }
+            });
+
+            if (hasValidCoords) {
+                setTimeout(() => {
+                    if (allVenuesList.current.length === 1) {
+                        map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
+                        map.setLevel(4);
+                        setSelectedVenue(allVenuesList.current[0].venueName);
+                    } else {
+                        map.setBounds(bounds, 100, 50, 150, 50);
+
+                        setTimeout(() => {
+                            const currentLevel = map.getLevel();
+                            if (currentLevel > 7) {
+                                map.setLevel(7);
+                            } else if (currentLevel < 5) {
+                                map.setLevel(5);
+                            }
+                        }, 50);
+                    }
+                }, 100);
             }
         }
+        // Case C: No center, no search → do nothing. Map stays at initial position (user location or Seoul Station).
 
-        // Synchronization is now handled natively by MarkerClusterer
         return () => { };
     }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]); // Re-run when data changes
 
