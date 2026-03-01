@@ -175,28 +175,27 @@ export default function KakaoMapModal({
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance);
 
+    // Seoul Station fallback coordinates
+    const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
+
     // 1. Initialize Map Instance
     useEffect(() => {
         let checkInterval: any;
+        let cancelled = false;
 
-        const initializeMap = () => {
-            if (!window.kakao || !window.kakao.maps) return;
+        const createMap = (center: { lat: number; lng: number }, level: number, userCenter: boolean) => {
+            if (cancelled || !mapRef.current) return;
 
             window.kakao.maps.load(() => {
-                if (!mapRef.current) return;
+                if (cancelled || !mapRef.current) return;
 
-                const defaultCenter = new window.kakao.maps.LatLng(37.554648, 126.972559);
-                const options = {
-                    center: centerLocation
-                        ? new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng)
-                        : defaultCenter,
-                    level: centerLocation ? 2 : 5 // Default to Level 5 (approx 250m) for initial Seoul Station view
-                };
+                const mapCenter = new window.kakao.maps.LatLng(center.lat, center.lng);
+                const options = { center: mapCenter, level };
 
                 mapRef.current!.innerHTML = '';
                 const map = new window.kakao.maps.Map(mapRef.current, options);
 
-                // --- 1. Cleanup Stale Objects before and during Re-init ---
+                // --- 1. Cleanup Stale Objects ---
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
 
@@ -222,8 +221,9 @@ export default function KakaoMapModal({
                 window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
                 window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
 
-                // Center / User Location Marker
+                // Center Marker
                 if (centerLocation) {
+                    // Red marker for explicit search location
                     const loc = new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng);
                     const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
                         <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400">
@@ -235,13 +235,11 @@ export default function KakaoMapModal({
                     </div>`;
                     const overlay = new window.kakao.maps.CustomOverlay({ map, position: loc, content, zIndex: 100 });
                     mapOverlaysRef.current.push(overlay);
-                } else if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(pos => {
-                        const loc = new window.kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                        const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
-                        const overlay = new window.kakao.maps.CustomOverlay({ map, position: loc, content });
-                        mapOverlaysRef.current.push(overlay);
-                    });
+                } else if (userCenter) {
+                    // Blue dot for user's actual location
+                    const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
+                    const overlay = new window.kakao.maps.CustomOverlay({ map, position: mapCenter, content, zIndex: 100 });
+                    mapOverlaysRef.current.push(overlay);
                 }
 
                 setIsMapReady(true);
@@ -253,13 +251,44 @@ export default function KakaoMapModal({
             });
         };
 
+        const initializeMap = () => {
+            if (!window.kakao || !window.kakao.maps) return;
+
+            // Priority 1: Explicit center location (from search or venue click)
+            if (centerLocation) {
+                createMap({ lat: centerLocation.lat, lng: centerLocation.lng }, 2, false);
+                return;
+            }
+
+            // Priority 2: Try user's current geolocation
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        // Success: center on user's current position
+                        createMap({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 5, true);
+                    },
+                    () => {
+                        // Denied or error: fall back to Seoul Station
+                        createMap(SEOUL_STATION, 5, false);
+                    },
+                    { timeout: 3000, maximumAge: 60000 }
+                );
+            } else {
+                // No geolocation API: fall back to Seoul Station
+                createMap(SEOUL_STATION, 5, false);
+            }
+        };
+
         checkInterval = setInterval(() => {
             if (window.kakao && window.kakao.maps) {
                 clearInterval(checkInterval);
                 initializeMap();
             }
         }, 100);
-        return () => clearInterval(checkInterval);
+        return () => {
+            cancelled = true;
+            clearInterval(checkInterval);
+        };
     }, [centerLocation, handleSearchHereInternal]);
 
     // 2. Re-render Markers when Data changes
