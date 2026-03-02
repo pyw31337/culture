@@ -164,13 +164,13 @@ export function sortPerformances(performances: Performance[], genre: string, key
     // 1. Sort copies of array
     let sorted = [...performances];
 
-    // Sports: Strict Date ASC Sort (Nearest First)
+    // Sports: Strict Date DESC Sort (Newest First)
     const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
     if (genre && sportsGenres.includes(genre)) {
         return sorted.sort((a, b) => {
             const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
             const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
-            return dateA.localeCompare(dateB);
+            return dateB.localeCompare(dateA);
         });
     }
 

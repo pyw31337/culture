@@ -91,7 +91,8 @@ export function usePerformanceFilters({
             }
         }
 
-        if (selectedGenre !== 'movie') {
+        const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
+        if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre)) {
             return filtered
                 .map(value => ({ value, sort: Math.sin(shuffleSeed + value.id.length) * 10000 }))
                 .sort((a, b) => a.sort - b.sort)
