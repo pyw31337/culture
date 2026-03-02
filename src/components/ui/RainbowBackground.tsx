@@ -42,19 +42,21 @@ export default function RainbowBackground() {
 
     return (
         <div className="rainbow-bg-wrapper">
-            {layers.map((layer) => (
-                <div
-                    key={layer.id}
-                    className="rb-ray"
-                    style={{
-                        '--rb-c1': layer.colors[0],
-                        '--rb-c2': layer.colors[1],
-                        '--rb-c3': layer.colors[2],
-                        '--rb-dur': `${layer.duration}s`,
-                        '--rb-del': `${layer.delay}s`,
-                    } as React.CSSProperties}
-                />
-            ))}
+            <div className="rb-rays-container">
+                {layers.map((layer) => (
+                    <div
+                        key={layer.id}
+                        className="rb-ray"
+                        style={{
+                            '--rb-c1': layer.colors[0],
+                            '--rb-c2': layer.colors[1],
+                            '--rb-c3': layer.colors[2],
+                            '--rb-dur': `${layer.duration}s`,
+                            '--rb-del': `${layer.delay}s`,
+                        } as React.CSSProperties}
+                    />
+                ))}
+            </div>
             <div className="rb-fog-h" />
             <div className="rb-fog-v" />
 
@@ -71,6 +73,13 @@ export default function RainbowBackground() {
 
                 .dark .rainbow-bg-wrapper {
                     background: #0a0a0a;
+                }
+
+                .rb-rays-container {
+                    position: absolute;
+                    inset: 0;
+                    mask-image: linear-gradient(to right, transparent 0%, transparent 50%, black 72%, black 100%);
+                    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 50%, black 72%, black 100%);
                 }
 
                 .rb-ray {
