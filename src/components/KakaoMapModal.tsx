@@ -110,15 +110,16 @@ export default function KakaoMapModal({
                 // If specific genre (not 'all'), only include if matches
                 if (!isAllMode && perf.genre !== selectedGenre) return;
 
-                const displayVenueName = venues[perf.venue]?.refined_name || venues[perf.venue]?.name || perf.venue;
+                const displayVenueName = perf.venue; // Now normalized in transformer
 
                 if (!groups[displayVenueName]) {
+                    const venueMeta = venues[perf.venue];
                     groups[displayVenueName] = {
-                        ...venues[perf.venue],
+                        ...venueMeta,
                         venueName: displayVenueName,
                         performances: [],
-                        lat: venues[perf.venue]?.lat || 0,
-                        lng: venues[perf.venue]?.lng || 0,
+                        lat: venueMeta?.lat || 0,
+                        lng: venueMeta?.lng || 0,
                         type: 'performance'
                     };
                 }
@@ -259,21 +260,29 @@ export default function KakaoMapModal({
                 return;
             }
 
-            // Priority 2: Try user's current geolocation
+            // Priority 2: Category Smart Centering (Centering on the first content's venue)
+            const isAllMode = selectedGenre === 'all' || !selectedGenre;
+            if (!isAllMode && allVenuesList.current.length > 0) {
+                const firstVenue = allVenuesList.current[0];
+                if (firstVenue.lat && firstVenue.lng) {
+                    createMap({ lat: firstVenue.lat, lng: firstVenue.lng }, 5, false);
+                    setSelectedVenue(firstVenue.venueName);
+                    return;
+                }
+            }
+
+            // Priority 3: Try user's current geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (pos) => {
-                        // Success: center on user's current position
                         createMap({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 5, true);
                     },
                     () => {
-                        // Denied or error: fall back to Seoul Station
                         createMap(SEOUL_STATION, 5, false);
                     },
                     { timeout: 3000, maximumAge: 60000 }
                 );
             } else {
-                // No geolocation API: fall back to Seoul Station
                 createMap(SEOUL_STATION, 5, false);
             }
         };
