@@ -204,11 +204,15 @@ export default function KakaoMapModal({
             window.kakao.maps.load(() => {
                 if (cancelled || !mapRef.current) return;
 
-                const mapCenter = new window.kakao.maps.LatLng(center.lat, center.lng);
+                const k = window.kakao.maps;
+                if (typeof k.LatLng !== 'function' || typeof k.Map !== 'function') return;
+
+                const mapCenter = new k.LatLng(center.lat, center.lng);
                 const options = { center: mapCenter, level };
 
-                mapRef.current!.innerHTML = '';
-                const map = new window.kakao.maps.Map(mapRef.current, options);
+                if (!mapRef.current) return;
+                mapRef.current.innerHTML = '';
+                const map = new k.Map(mapRef.current, options);
 
                 // --- 1. Cleanup Stale Objects ---
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
@@ -239,8 +243,9 @@ export default function KakaoMapModal({
                 // Center Marker
                 if (centerLocation) {
                     // Red marker for explicit search location
-                    const loc = new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng);
-                    const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
+                    if (typeof k.LatLng === 'function' && typeof k.CustomOverlay === 'function') {
+                        const loc = new k.LatLng(centerLocation.lat, centerLocation.lng);
+                        const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
                         <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400">
                             ${centerLocation.name || '검색 위치'}
                         </div>
@@ -248,18 +253,36 @@ export default function KakaoMapModal({
                             <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
                         </div>
                     </div>`;
-                    const overlay = new window.kakao.maps.CustomOverlay({ map, position: loc, content, zIndex: 100 });
-                    mapOverlaysRef.current.push(overlay);
+                        const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+                        mapOverlaysRef.current.push(overlay);
+                    }
                 } else if (userCenter) {
                     // Blue dot for user's actual location
-                    const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
-                    const overlay = new window.kakao.maps.CustomOverlay({ map, position: mapCenter, content, zIndex: 100 });
-                    mapOverlaysRef.current.push(overlay);
+                    if (typeof k.CustomOverlay === 'function') {
+                        const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
+                        const overlay = new k.CustomOverlay({ map, position: mapCenter, content, zIndex: 100 });
+                        mapOverlaysRef.current.push(overlay);
+                    }
                 }
 
-                setIsMapReady(true);
+                // Ensure ALL required constructors exist before declaring map ready
+                const isAllConstructorsAvailable =
+                    typeof k.LatLng === 'function' &&
+                    typeof k.LatLngBounds === 'function' &&
+                    typeof k.Marker === 'function' &&
+                    typeof k.MarkerImage === 'function' &&
+                    typeof k.Size === 'function' &&
+                    typeof k.Point === 'function' &&
+                    typeof k.CustomOverlay === 'function';
 
-                // Initial Bounds Check - Remove delay for instant list population
+                if (isAllConstructorsAvailable) {
+                    setIsMapReady(true);
+                } else {
+                    console.warn("Kakao SDK loaded but some constructors are missing. Retrying...");
+                    // This will be retried by the next interval if map initialization fails
+                }
+
+                // Initial Bounds Check
                 handleSearchHereInternal(map);
             });
         };
@@ -396,13 +419,17 @@ export default function KakaoMapModal({
                 </svg>`;
                 const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
 
-                const markerImage = new window.kakao.maps.MarkerImage(
+                const k = window.kakao.maps;
+                if (typeof k.MarkerImage !== 'function' || typeof k.Size !== 'function' || typeof k.Point !== 'function') continue;
+
+                const markerImage = new k.MarkerImage(
                     iconUrl,
-                    new window.kakao.maps.Size(36, 36),
-                    { offset: new window.kakao.maps.Point(18, 18) }
+                    new k.Size(36, 36),
+                    new k.Point(18, 18)
                 );
 
-                const marker = new window.kakao.maps.Marker({
+                if (typeof k.Marker !== 'function') continue;
+                const marker = new k.Marker({
                     position,
                     image: markerImage,
                     zIndex: 10
@@ -478,10 +505,13 @@ export default function KakaoMapModal({
             </svg>`;
             const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
 
-            const markerImage = new window.kakao.maps.MarkerImage(
+            const k = window.kakao.maps;
+            if (typeof k.MarkerImage !== 'function' || typeof k.Size !== 'function' || typeof k.Point !== 'function') return;
+
+            const markerImage = new k.MarkerImage(
                 iconUrl,
-                new window.kakao.maps.Size(size, size),
-                { offset: new window.kakao.maps.Point(center, center) }
+                new k.Size(size, size),
+                new k.Point(center, center)
             );
             marker.setImage(markerImage);
             marker.setZIndex(isSelected ? 100 : 10);
@@ -500,13 +530,16 @@ export default function KakaoMapModal({
         const map = mapInstance;
         const isAllMode = selectedGenre === 'all' || !selectedGenre;
 
+        const k = window.kakao.maps;
+        if (typeof k.LatLngBounds !== 'function' || typeof k.LatLng !== 'function') return;
+
         if (centerLocation && allVenuesList.current.length > 0) {
             // Case A: Explicit center location from search/venue click
             const closest = allVenuesList.current[0];
             if (closest && closest.lat && closest.lng) {
-                const bounds = new window.kakao.maps.LatLngBounds();
-                bounds.extend(new window.kakao.maps.LatLng(centerLocation.lat, centerLocation.lng));
-                bounds.extend(new window.kakao.maps.LatLng(closest.lat, closest.lng));
+                const bounds = new k.LatLngBounds();
+                bounds.extend(new k.LatLng(centerLocation.lat, centerLocation.lng));
+                bounds.extend(new k.LatLng(closest.lat, closest.lng));
 
                 setTimeout(() => {
                     map.setBounds(bounds, 150, 50, 50, 50);
@@ -518,19 +551,19 @@ export default function KakaoMapModal({
             if (!isAllMode) {
                 const firstVenue = allVenuesList.current[0];
                 if (firstVenue.lat && firstVenue.lng) {
-                    const center = new window.kakao.maps.LatLng(firstVenue.lat, firstVenue.lng);
+                    const center = new k.LatLng(firstVenue.lat, firstVenue.lng);
                     map.setCenter(center);
                     map.setLevel(5); // Appropriate zoom for city/venue level
                     setSelectedVenue(firstVenue.venueName);
                 }
             } else {
                 // Case C: General "All" View OR Keyword Search with multiple results
-                const bounds = new window.kakao.maps.LatLngBounds();
+                const bounds = new k.LatLngBounds();
                 let hasValidCoords = false;
 
                 allVenuesList.current.forEach(v => {
                     if (v.lat && v.lng) {
-                        bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
+                        bounds.extend(new k.LatLng(v.lat, v.lng));
                         hasValidCoords = true;
                     }
                 });
@@ -538,7 +571,7 @@ export default function KakaoMapModal({
                 if (hasValidCoords) {
                     setTimeout(() => {
                         if (allVenuesList.current.length === 1) {
-                            map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
+                            map.setCenter(new k.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
                             map.setLevel(4);
                             setSelectedVenue(allVenuesList.current[0].venueName);
                         } else {
@@ -811,12 +844,15 @@ export default function KakaoMapModal({
                                                 const newSelected = v.venueName === selectedVenue ? null : v.venueName;
                                                 setSelectedVenue(newSelected);
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
-                                                    const moveLatLon = new window.kakao.maps.LatLng(v.lat, v.lng);
-                                                    if (mapInstance.getLevel() > 4) {
-                                                        mapInstance.setLevel(4);
-                                                        setTimeout(() => mapInstance.panTo(moveLatLon), 10);
-                                                    } else {
-                                                        mapInstance.panTo(moveLatLon);
+                                                    const k = window.kakao.maps;
+                                                    if (typeof k.LatLng === 'function') {
+                                                        const moveLatLon = new k.LatLng(v.lat, v.lng);
+                                                        if (mapInstance.getLevel() > 4) {
+                                                            mapInstance.setLevel(4);
+                                                            setTimeout(() => mapInstance.panTo(moveLatLon), 10);
+                                                        } else {
+                                                            mapInstance.panTo(moveLatLon);
+                                                        }
                                                     }
                                                 }
                                             }}
