@@ -311,15 +311,15 @@ export default function KakaoMapModal({
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (pos) => {
-                        createMap({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 5, true);
+                        createMap({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 7, true);
                     },
                     () => {
-                        createMap(SEOUL_STATION, 5, false);
+                        createMap(SEOUL_STATION, 8, false);
                     },
-                    { timeout: 3000, maximumAge: 60000 }
+                    { timeout: 5000, maximumAge: 60000 }
                 );
             } else {
-                createMap(SEOUL_STATION, 5, false);
+                createMap(SEOUL_STATION, 8, false);
             }
         };
 
@@ -558,6 +558,9 @@ export default function KakaoMapModal({
                 }
             } else {
                 // Case C: General "All" View OR Keyword Search with multiple results
+                // CRITICAL RULE: In 'All' mode with NO search text, do NOT auto-bound to the entire country (Goryeong-gun).
+                // Only auto-bound if there is an active search query.
+                if (isAllMode && !searchText) return;
                 const bounds = new k.LatLngBounds();
                 let hasValidCoords = false;
 
