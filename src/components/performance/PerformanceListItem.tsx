@@ -26,17 +26,24 @@ interface PerformanceListItemProps {
 const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string }) => {
     if (!keyword || !text || !keyword.trim()) return <>{text}</>;
 
-    const cleanKeyword = keyword.trim();
-    const regex = new RegExp(`(${cleanKeyword})`, 'gi');
-    const parts = text.split(regex);
+    try {
+        const cleanKeyword = keyword.trim();
+        // Escape special regex characters to prevent crash on keywords like "(", "[", etc.
+        const escapedKeyword = cleanKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(${escapedKeyword})`, 'gi');
+        const parts = text.split(regex);
 
-    return (
-        <>
-            {parts.map((part, i) =>
-                regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
-            )}
-        </>
-    );
+        return (
+            <>
+                {parts.map((part, i) =>
+                    regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
+                )}
+            </>
+        );
+    } catch (e) {
+        console.warn("HighlightText regex error:", e);
+        return <>{text}</>;
+    }
 });
 
 HighlightText.displayName = 'HighlightText';
