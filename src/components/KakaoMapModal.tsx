@@ -124,9 +124,7 @@ export default function KakaoMapModal({
                         lat: venueMeta?.lat || 0,
                         lng: venueMeta?.lng || 0,
                         type: 'performance',
-                        kakaoLatLng: (hasCoords && typeof window !== 'undefined' && window.kakao?.maps)
-                            ? new window.kakao.maps.LatLng(venueMeta.lat, venueMeta.lng)
-                            : null
+                        kakaoLatLng: null
                     };
                     groupsMap.set(vName, group);
                 }
@@ -147,9 +145,7 @@ export default function KakaoMapModal({
                         brand: cinema.brand,
                         type: 'cinema',
                         performances: performances.slice(0, 10),
-                        kakaoLatLng: (typeof window !== 'undefined' && window.kakao?.maps)
-                            ? new window.kakao.maps.LatLng(cinema.lat, cinema.lng)
-                            : null
+                        kakaoLatLng: null
                     });
                 }
             }
@@ -181,8 +177,11 @@ export default function KakaoMapModal({
         if (!map) return;
         const bounds = map.getBounds();
         const visible = allVenuesList.current.filter(v => {
-            const latlng = v.kakaoLatLng || new window.kakao.maps.LatLng(v.lat, v.lng);
-            return bounds.contain(latlng);
+            if (!v.kakaoLatLng && window.kakao?.maps?.LatLng) {
+                v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
+            }
+            if (!v.kakaoLatLng) return false;
+            return bounds.contain(v.kakaoLatLng);
         });
         // Limit visible list to top 100 to prevent DOM overhead
         setVisibleVenues(visible.slice(0, 100));
@@ -380,7 +379,7 @@ export default function KakaoMapModal({
 
             for (let i = index; i < end; i++) {
                 const venue = venuesToProcess[i];
-                if (!venue.kakaoLatLng) {
+                if (!venue.kakaoLatLng && window.kakao?.maps?.LatLng) {
                     venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng);
                 }
 
@@ -578,6 +577,7 @@ export default function KakaoMapModal({
             return;
         }
 
+        if (!window.kakao?.maps?.LatLng) return;
         const pos = new window.kakao.maps.LatLng(venueValue.lat, venueValue.lng);
         const projection = mapInstance.getProjection();
         const point = projection.containerPointFromCoords(pos);
