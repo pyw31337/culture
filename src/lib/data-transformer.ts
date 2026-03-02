@@ -23,6 +23,72 @@ const GENRE_FALLBACKS: Record<string, string> = {
     default: `${_BP}/images/placeholder.png`
 };
 
+const OFFICIAL_SPORTS_VENUES: Record<string, string | Record<string, string>> = {
+    // Baseball (KBO)
+    '잠실': '잠실종합운동장 잠실야구장',
+    '마산': '마산야구장',
+    '마산야구장': '마산야구장',
+    '문학': '인천SSG 랜더스필드',
+    'SSG랜더스필드': '인천SSG 랜더스필드',
+    '수원': {
+        'baseball': '수원KT위즈파크',
+        'volleyball': '수원실내체육관'
+    },
+    '고척': '고척스카이돔',
+    '고척돔': '고척스카이돔',
+    '광주': '광주-기아 챔피언스 필드',
+    '기아챔피언스필드': '광주-기아 챔피언스 필드',
+    '대구': '대구 삼성 라이온즈 파크',
+    '라이온즈파크': '대구 삼성 라이온즈 파크',
+    '대전': '한화생명 이글스 파크',
+    '이글스파크': '한화생명 이글스 파크',
+    '사직': '부산사직종합운동장 사직야구장',
+    '창원': '창원NC파크',
+    'NC파크': '창원NC파크',
+    '포항': '포항야구장',
+    '울산': '울산문수야구장',
+    '청주': '청주야구장',
+    '이천': {
+        'LG': '이천LG챔피언스파크',
+        '두산': '이천베어스파크',
+        'default': '이천LG챔피언스파크'
+    },
+    '이천LG챔피언스파크': '이천LG챔피언스파크',
+    '이천베어스파크': '이천베어스파크',
+    '상동': '상동야구장',
+    '함평': '함평기아챌린저스필드',
+    '경산': '삼성라이온즈볼파크',
+    '강화': 'SSG퓨처스필드',
+    '서산': '한화이글스서산구장',
+
+    // Volleyball (KOVO)
+    '장충': '장충체육관',
+    '천안': '천안유관순체육관',
+    '안산': '안산상록수체육관',
+    '인천': {
+        'volleyball': '인천계양체육관',
+        'baseball': '인천SSG 랜더스필드',
+        'soccer': '인천축구전용경기장'
+    },
+    '의정부': '의정부실내체육관',
+    '구미': '구미박정희체육관',
+    '김천': '김천실내체육관',
+
+    // Basketball (KBL)
+    '잠실학생': '잠실학생체육관',
+    '잠실실내': '잠실실내체육관',
+    '원주': '원주종합체육관',
+    '안양': '안양실내체육관',
+    '전주': '전주실내체육관',
+    '군산': '군산월명체육관',
+    '창원체육관': '창원체육관',
+
+    // Soccer (K-League)
+    '빅버드': '수원월드컵경기장',
+    '스틸야드': '포항스틸야드',
+    '퍼플아레나': '대전월드컵경기장'
+};
+
 const REGION_MAP: Record<string, string> = {
     '서울': 'seoul', '경기': 'gyeonggi', '인천': 'incheon',
     '부산': 'busan', '대구': 'daegu', '광주': 'gwangju',
@@ -56,17 +122,58 @@ export interface RawPerformance {
 }
 
 /**
+ * Normalizes sports venue names to official long-form names.
+ */
+function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string): string {
+    if (!rawVenue) return '';
+
+    // 1. Initial cleanup (corrupted map UI strings from some scrapers)
+    let name = rawVenue.split('←Move left')[0] // Catch mocha/umclass garbage
+        .split('Map data ©')[0]
+        .split('Keyboard shortcuts')[0]
+        .trim();
+
+    // 2. Remove common informal suffixes and parentheses
+    name = name.replace(/ (구장|경기장|체육관)$/, '');
+    name = name.replace(/\(두산\)|\(LG\)/g, '').trim();
+
+    // 3. Exact matching in official map
+    const entry = OFFICIAL_SPORTS_VENUES[name] ||
+        OFFICIAL_SPORTS_VENUES[name.replace(/야구장$/, '')] ||
+        OFFICIAL_SPORTS_VENUES[name.replace(/잠실야구장$/, '잠실')];
+
+    if (!entry) return name; // Return cleaned name at least
+
+    if (typeof entry === 'string') return entry;
+
+    // Team-aware mapping (e.g., Icheon)
+    if (homeTeam) {
+        const teamMatch = Object.keys(entry).find(key => homeTeam.toLowerCase().includes(key.toLowerCase()));
+        if (teamMatch) return entry[teamMatch];
+    }
+
+    // Genre-aware mapping (e.g., Incheon)
+    if (genre && entry[genre]) {
+        return entry[genre];
+    }
+
+    return entry.default || (typeof entry === 'object' ? Object.values(entry)[0] : name);
+}
+
+/**
  * Normalizes any raw performance object into a strict Performance interface.
  */
 export function transformPerformance(raw: RawPerformance, source?: string): Performance {
     // 1. Source-specific field normalization
     let title = raw.title || '';
-    let venue = raw.venue || raw.place || '';
+    let rawVenue = raw.venue || raw.place || '';
     let image = raw.image || raw.poster || raw.posterUrl || '';
     let price = raw.price || raw.cost || '';
     let date = raw.date || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
+    let venue = normalizeVenueName(rawVenue, raw.homeTeam, genre);
+    if (!venue) venue = rawVenue;
 
     // Specific Source Overrides
     if (source === 'seoul') {

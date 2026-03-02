@@ -16,13 +16,13 @@ interface PerformanceCardProps {
     onLocationClick: (loc: any) => void;
     variant?: 'default' | 'yellow' | 'pink' | 'emerald';
     isLiked?: boolean;
-    onToggleLike?: (e: React.MouseEvent) => void;
+    onToggleLike?: (id: string, e: React.MouseEvent) => void;
     showRibbon?: boolean;
     ribbonText?: string;
     enableActions?: boolean;
     isGradient?: boolean;
-    onShare?: () => Promise<boolean>;
-    onDetail?: () => void;
+    onShare?: (id: string) => Promise<boolean>;
+    onDetail?: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
 }
@@ -140,7 +140,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 style={{
                     transformStyle: 'preserve-3d',
                 }}
-                onClick={() => onDetail?.()}
+                onClick={() => onDetail?.(perf)}
             >
                 {/* Glare component */}
                 <div
@@ -181,7 +181,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
-                            if (onToggleLike) onToggleLike(e);
+                            if (onToggleLike) onToggleLike(perf.id, e);
                         }}
                         className="absolute top-3 right-3 z-[100] p-2 rounded-full hover:bg-black/20 transition-colors group/heart"
                         style={{ transform: 'translateZ(50px)' }}
@@ -262,7 +262,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             onClick={async (e) => {
                                                 e.stopPropagation();
                                                 if (onShare) {
-                                                    const usedClipboard = await onShare();
+                                                    const usedClipboard = await onShare(perf.id);
                                                     if (usedClipboard) {
                                                         setIsCopied(true);
                                                         setTimeout(() => setIsCopied(false), 2000);
@@ -279,7 +279,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                onDetail?.();
+                                                onDetail?.(perf);
                                             }}
                                             className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
@@ -415,7 +415,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             onClick={async (e) => {
                                                 e.stopPropagation();
                                                 if (onShare) {
-                                                    const usedClipboard = await onShare();
+                                                    const usedClipboard = await onShare(perf.id);
                                                     if (usedClipboard) {
                                                         setIsCopied(true);
                                                         setTimeout(() => setIsCopied(false), 2000);
@@ -428,7 +428,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {isCopied && <div className="absolute -top-10 bg-black text-xs px-2 py-1 rounded">복사됨</div>}
                                         </button>
                                         <button
-                                            onClick={(e) => { e.stopPropagation(); onDetail?.(); }}
+                                            onClick={(e) => { e.stopPropagation(); onDetail?.(perf); }}
                                             className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
                                             자세히 보기

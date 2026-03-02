@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import venueData from '@/data/venue-dictionary.json';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 
@@ -37,18 +36,6 @@ const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 const SharedDetailModal = dynamic(() => import('./SharedDetailModal'), { ssr: false });
 
-interface Venue {
-    name?: string;
-    refined_name?: string;
-    address?: string;
-    district?: string;
-    lat?: number | null;
-    lng?: number | null;
-    mapped_region_id?: string;
-}
-
-const venues = venueData as Record<string, Venue>;
-
 interface PerformanceListProps {
     initialPerformances: Performance[];
     lastUpdated: string;
@@ -73,7 +60,7 @@ export default function PerformanceList({
         toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword
     } = useUserPreferences();
 
-    const { allPerformances, cinemas, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
+    const { allPerformances, setAllPerformances, cinemas, venues, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
 
     const {
         searchText, setSearchText, searchMode, setSearchMode, searchLocation, setSearchLocation,
@@ -87,7 +74,7 @@ export default function PerformanceList({
         setShuffleSeed, districts, availableVenues, filteredPerformances, displayPerformances,
         hasMore, loadMore
     } = usePerformanceFilters({
-        allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius
+        allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues
     });
 
     const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances, initialPerformances });
@@ -109,6 +96,8 @@ export default function PerformanceList({
     const deepLinkHandled = useRef(false);
 
     // --- Derived State ---
+    const activeLocation = searchLocation || userLocation;
+
     const keywordItems = useMemo(() => {
         if (!savedKeywords.length || !allPerformances.length) return [];
         return allPerformances.filter(p =>
@@ -124,23 +113,24 @@ export default function PerformanceList({
     }, [allPerformances]);
 
     // --- Handlers ---
-    const handleDetailOpen = (perf: Performance) => window.open(perf.link, '_blank');
-    const copyItemShareUrl = async (id: string) => {
+    const handleDetailOpen = useCallback((perf: Performance) => window.open(perf.link, '_blank'), []);
+
+    const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
         await navigator.clipboard.writeText(url);
         alert('링크가 복사되었습니다.');
         return true;
-    };
+    }, []);
 
-    const handleSearchChange = (text: string) => {
+    const handleSearchChange = useCallback((text: string) => {
         setSearchText(text);
         if (text.trim().length > 0) {
             setSelectedGenre('all');
             setSelectedRegion('all');
         }
-    };
+    }, [setSearchText, setSelectedGenre, setSelectedRegion]);
 
-    const handleGenreSelect = (g: string) => {
+    const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
         if (g !== 'movie') setShuffleSeed(Date.now());
         if (viewMode === 'likes-perf') setViewMode('grid');
@@ -149,9 +139,9 @@ export default function PerformanceList({
         if (viewMode !== 'calendar') {
             router.push(g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`);
         }
-    };
+    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router]);
 
-    const handleLikePerfClick = () => {
+    const handleLikePerfClick = useCallback(() => {
         if (viewMode === 'likes-perf') {
             setViewMode('grid');
             setTimeout(() => window.scrollTo({ top: savedScrollPosition, behavior: 'auto' }), 10);
@@ -160,9 +150,7 @@ export default function PerformanceList({
             setViewMode('likes-perf');
             setTimeout(() => window.scrollTo({ top: 0, behavior: 'auto' }), 10);
         }
-    };
-
-    const activeLocation = searchLocation || userLocation;
+    }, [viewMode, setViewMode, savedScrollPosition, setSavedScrollPosition]);
 
     // --- Effects (Lifecycle & Logic) ---
 

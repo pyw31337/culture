@@ -2,9 +2,6 @@ import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Performance } from '@/types';
 import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
-import venueData from '@/data/venue-dictionary.json';
-
-const venues = venueData as Record<string, any>;
 
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];
@@ -14,6 +11,7 @@ interface UsePerformanceFiltersProps {
     searchLocation: any;
     userLocation: any;
     radius: number;
+    venues: Record<string, any>;
 }
 
 export function usePerformanceFilters({
@@ -23,7 +21,8 @@ export function usePerformanceFilters({
     searchText,
     searchLocation,
     userLocation,
-    radius
+    radius,
+    venues
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
     const [selectedRegion, setSelectedRegion] = useState<string>('all');
@@ -31,6 +30,15 @@ export function usePerformanceFilters({
     const [selectedVenue, setSelectedVenue] = useState<string>('all');
     const [shuffleSeed, setShuffleSeed] = useState<number>(Date.now());
     const [visibleCount, setVisibleCount] = useState(24);
+    const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
+
+    // Debounce search text to avoid heavy filtering on every keystroke
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedSearchText(searchText);
+        }, 150);
+        return () => clearTimeout(timer);
+    }, [searchText]);
 
     useEffect(() => {
         setSelectedGenre(initialGenre);
@@ -62,7 +70,7 @@ export function usePerformanceFilters({
             region: selectedRegion,
             district: selectedDistrict,
             venue: selectedVenue,
-            search: searchMode === 'keyword' ? searchText : '',
+            search: searchMode === 'keyword' ? debouncedSearchText : '',
             lat: searchLocation?.lat || userLocation?.lat,
             lng: searchLocation?.lng || userLocation?.lng,
             radius: radius,
@@ -91,7 +99,7 @@ export function usePerformanceFilters({
         }
 
         return sortPerformances(filtered, selectedGenre);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
 
     // Pagination
     const displayPerformances = useMemo(() => {
@@ -102,7 +110,7 @@ export function usePerformanceFilters({
 
     useEffect(() => {
         setVisibleCount(24);
-    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, searchText, searchLocation]);
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation]);
 
     const loadMore = useCallback(() => {
         setVisibleCount(prev => prev + 24);

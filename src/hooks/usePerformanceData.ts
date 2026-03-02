@@ -8,6 +8,7 @@ interface UsePerformanceDataProps {
 export function usePerformanceData({ initialPerformances }: UsePerformanceDataProps) {
     const [allPerformances, setAllPerformances] = useState<Performance[]>(initialPerformances);
     const [cinemas, setCinemas] = useState<any[]>([]);
+    const [venues, setVenues] = useState<Record<string, any>>({});
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(false);
 
     useEffect(() => {
@@ -19,7 +20,8 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
                 const results = await Promise.allSettled([
                     fetch(`${basePath}/data/performances.json?v=${ts}`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/movies.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/cinemas.json?v=${ts}`).then(r => r.ok ? r.json() : [])
+                    fetch(`${basePath}/data/cinemas.json?v=${ts}`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/venues.json?v=${ts}`).then(r => r.ok ? r.json() : {})
                 ]);
 
                 const mergedData: Performance[] = [];
@@ -29,6 +31,8 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
                         if (Array.isArray(res.value)) {
                             if (index === 2) {
                                 setCinemas(res.value);
+                            } else if (index === 3) {
+                                setVenues(res.value);
                             } else {
                                 mergedData.push(...res.value);
                             }
@@ -61,6 +65,7 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
         allPerformances,
         setAllPerformances,
         cinemas,
+        venues,
         isDataFullyLoaded
     };
 }

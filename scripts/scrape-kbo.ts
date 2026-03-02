@@ -45,7 +45,8 @@ const VENUE_MAP: Record<string, string> = {
     '울산': '울산문수야구장',
     '청주': '청주야구장',
     // Futures/Exhibition might have others
-    '이천': '이천LG챔피언스파크', // Or Doosan
+    '이천': '이천',
+    '마산': '마산',
     '상동': '상동야구장',
     '함평': '함평기아챌린저스필드',
     '경산': '삼성라이온즈볼파크',

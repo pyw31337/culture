@@ -14,10 +14,10 @@ interface PerformanceListItemProps {
     venueInfo: any;
     onLocationClick: (loc: any) => void;
     isLiked?: boolean;
-    onToggleLike?: (e: React.MouseEvent) => void;
+    onToggleLike?: (id: string, e: React.MouseEvent) => void;
     variant?: 'default' | 'yellow' | 'pink' | 'emerald';
-    onShare?: () => Promise<boolean>;
-    onDetail?: () => void;
+    onShare?: (id: string) => Promise<boolean>;
+    onDetail?: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
 }
@@ -95,7 +95,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     const handleShareClick = useCallback(async (e: React.MouseEvent) => {
         e.stopPropagation();
         if (onShare) {
-            const usedClipboard = await onShare();
+            const usedClipboard = await onShare(perf.id);
             if (usedClipboard) {
                 setIsCopied(true);
                 setTimeout(() => setIsCopied(false), 2000);
@@ -110,8 +110,8 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
     const handleDetailClick = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
-        if (onDetail) onDetail();
-    }, [onDetail]);
+        if (onDetail) onDetail(perf);
+    }, [onDetail, perf]);
 
     return (
         <div
@@ -187,7 +187,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     )}
 
                     <button
-                        onClick={onToggleLike}
+                        onClick={(e) => onToggleLike && onToggleLike(perf.id, e)}
                         className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
                     >
                         <Heart

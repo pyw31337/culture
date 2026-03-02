@@ -58,18 +58,20 @@ export default function PerformanceGrid({
                     : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
             )}
         >
-            {items.map((perf, index) => {
+            {items.map((perf) => {
                 // Venue Info
                 const venueInfo = venues[perf.venue];
-
-                const dist = activeLocation && venueInfo?.lat && venueInfo?.lng
-                    ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
-                    : null;
-                const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
                 // Nearby Check
                 // If selectedVenue is active, and this perf's venue DOES NOT match, it's a recommendation.
                 const isNearby = selectedVenue !== 'all' && perf.venue !== selectedVenue;
+
+                // Distance calculation is still needed here for display, but let's ensure it's not thrashing.
+                // We'll pass the derived labels down to memoized children.
+                const dist = activeLocation && venueInfo?.lat && venueInfo?.lng
+                    ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
+                    : null;
+                const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
 
                 return (
                     <div
@@ -87,17 +89,21 @@ export default function PerformanceGrid({
                                 venueInfo={venueInfo}
                                 onLocationClick={(loc) => {
                                     setSearchLocation(loc);
-                                    setIsMapOpen(true);
+                                    if (onVenuePreview) {
+                                        onVenuePreview(loc);
+                                    } else {
+                                        setIsMapOpen(true);
+                                    }
                                 }}
                                 isLiked={likedIds.includes(perf.id)}
-                                onToggleLike={(e) => onToggleLike(perf.id, e)}
+                                onToggleLike={onToggleLike}
                                 // Show ribbon for Nearby items
                                 showRibbon={isNearby}
                                 ribbonText="Nearby"
                                 isGradient={isNearby || (selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue')}
                                 enableActions={true}
-                                onShare={() => copyItemShareUrl(perf.id)}
-                                onDetail={() => handleDetailOpen(perf)}
+                                onShare={copyItemShareUrl}
+                                onDetail={handleDetailOpen}
                                 searchMode={searchMode}
                                 searchText={searchText}
                             />
@@ -108,12 +114,16 @@ export default function PerformanceGrid({
                                 venueInfo={venueInfo}
                                 onLocationClick={(loc) => {
                                     setSearchLocation(loc);
-                                    setIsMapOpen(true);
+                                    if (onVenuePreview) {
+                                        onVenuePreview(loc);
+                                    } else {
+                                        setIsMapOpen(true);
+                                    }
                                 }}
                                 isLiked={likedIds.includes(perf.id)}
-                                onToggleLike={(e) => onToggleLike(perf.id, e)}
-                                onShare={() => copyItemShareUrl(perf.id)}
-                                onDetail={() => handleDetailOpen(perf)}
+                                onToggleLike={onToggleLike}
+                                onShare={copyItemShareUrl}
+                                onDetail={handleDetailOpen}
                                 searchMode={searchMode}
                                 searchText={searchText}
                             />

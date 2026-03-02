@@ -139,6 +139,15 @@ async function generate() {
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformances(activePerformances, 'all');
 
+        // [New: Data Pruning for payload optimization]
+        const pruned = sorted.map((p: any) => {
+            const { posterUrl, description, ...rest } = p;
+            // Also prune empty arrays/objects to save bytes
+            if (Array.isArray(rest.cast) && rest.cast.length === 0) delete rest.cast;
+            if (Array.isArray(rest.platforms) && rest.platforms.length === 0) delete rest.platforms;
+            return rest;
+        });
+
         const outputPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
 
         // Ensure directory exists
@@ -147,8 +156,8 @@ async function generate() {
             fs.mkdirSync(dir, { recursive: true });
         }
 
-        fs.writeFileSync(outputPath, JSON.stringify(sorted));
-        console.log(`Successfully generated ${sorted.length} items to ${outputPath}`);
+        fs.writeFileSync(outputPath, JSON.stringify(pruned));
+        console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
 
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');
@@ -159,8 +168,29 @@ async function generate() {
             const destPath = path.join(dir, filename);
 
             if (fs.existsSync(srcPath)) {
-                fs.copyFileSync(srcPath, destPath);
-                console.log(`Synced ${filename} to ${destPath}`);
+                if (filename === 'venues.json') {
+                    // Smart Pruning for venues.json
+                    const venues = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
+                    const usedVenueNames = new Set(pruned.map(p => p.venue));
+                    const prunedVenues: Record<string, any> = {};
+
+                    Object.entries(venues).forEach(([key, v]: [string, any]) => {
+                        if (usedVenueNames.has(key)) {
+                            const { name, ...rest } = v;
+                            // Only keep name if it differs from the key
+                            if (name && name !== key) {
+                                rest.name = name;
+                            }
+                            prunedVenues[key] = rest;
+                        }
+                    });
+
+                    fs.writeFileSync(destPath, JSON.stringify(prunedVenues));
+                    console.log(`Optimized venues.json to ${destPath} (Kept ${Object.keys(prunedVenues).length}/${Object.keys(venues).length} used venues)`);
+                } else {
+                    fs.copyFileSync(srcPath, destPath);
+                    console.log(`Synced ${filename} to ${destPath}`);
+                }
             } else {
                 console.warn(`Warning: ${filename} not found in src/data, skipping sync.`);
             }
