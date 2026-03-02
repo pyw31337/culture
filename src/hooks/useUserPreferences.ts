@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { safeStorage } from '@/lib/safeStorage';
 
 export function useUserPreferences() {
@@ -38,7 +38,7 @@ export function useUserPreferences() {
         if (isStorageLoaded) safeStorage.set('culture_keywords', savedKeywords);
     }, [savedKeywords, isStorageLoaded]);
 
-    const toggleTheme = () => {
+    const toggleTheme = useCallback(() => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
         if (newTheme === 'light') {
@@ -47,25 +47,28 @@ export function useUserPreferences() {
             document.documentElement.classList.add('dark');
         }
         safeStorage.set('theme', newTheme);
-    };
+    }, [theme]);
 
-    const toggleLike = (id: string) => {
+    const toggleLike = useCallback((id: string) => {
         setLikedIds(prev => prev.includes(id) ? prev.filter(lid => lid !== id) : [...prev, id]);
-    };
+    }, []);
 
-    const toggleFavoriteVenue = (venueName: string) => {
+    const toggleFavoriteVenue = useCallback((venueName: string) => {
         setFavoriteVenues(prev => prev.includes(venueName) ? prev.filter(v => v !== venueName) : [...prev, venueName]);
-    };
+    }, []);
 
-    const addKeyword = (keyword: string) => {
-        if (!savedKeywords.includes(keyword)) {
-            setSavedKeywords(prev => [...prev, keyword]);
-        }
-    };
+    const addKeyword = useCallback((keyword: string) => {
+        setSavedKeywords(prev => {
+            if (!prev.includes(keyword)) {
+                return [...prev, keyword];
+            }
+            return prev;
+        });
+    }, []);
 
-    const removeKeyword = (keyword: string) => {
+    const removeKeyword = useCallback((keyword: string) => {
         setSavedKeywords(prev => prev.filter(k => k !== keyword));
-    };
+    }, []);
 
     return {
         likedIds,

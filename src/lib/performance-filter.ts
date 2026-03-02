@@ -53,24 +53,25 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 1. Search Filter (Highest Priority)
     if (search && search.trim()) {
-        const searchText = search.replace(/\s+/g, ''); // ignore all spaces
-        const lowerSearch = searchText.toLowerCase().normalize('NFC');
-        const isChoseongMode = /^[ㄱ-ㅎ]+$/.test(searchText);
+        const targetSearch = search.replace(/\s+/g, '').toLowerCase().normalize('NFC');
+        const isChoseongMode = /^[ㄱ-ㅎ]+$/.test(targetSearch);
 
         filtered = filtered.filter(p => {
-            const titleNoSpace = p.title.replace(/\s+/g, '');
-            const venueNoSpace = p.venue.replace(/\s+/g, '');
-            const castStr = p.cast ? (Array.isArray(p.cast) ? p.cast.join('') : p.cast) : '';
-            const castNoSpace = castStr.replace(/\s+/g, '');
+            const titleNoSpace = p.title.replace(/\s+/g, '').toLowerCase().normalize('NFC');
+            const venueNoSpace = p.venue.replace(/\s+/g, '').toLowerCase().normalize('NFC');
 
             // A. Title Match
-            if (isChoseongMode ? isChoseongMatch(titleNoSpace, searchText) : titleNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+            if (isChoseongMode ? isChoseongMatch(titleNoSpace, targetSearch) : titleNoSpace.includes(targetSearch)) return true;
 
             // B. Cast Match
-            if (isChoseongMode ? isChoseongMatch(castNoSpace, searchText) : castNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+            if (p.cast) {
+                const castStr = Array.isArray(p.cast) ? p.cast.join('') : p.cast;
+                const castNoSpace = castStr.replace(/\s+/g, '').toLowerCase().normalize('NFC');
+                if (isChoseongMode ? isChoseongMatch(castNoSpace, targetSearch) : castNoSpace.includes(targetSearch)) return true;
+            }
 
             // C. Venue Match
-            if (venueNoSpace.toLowerCase().normalize('NFC').includes(lowerSearch)) return true;
+            if (venueNoSpace.includes(targetSearch)) return true;
 
             return false;
         });

@@ -8,6 +8,7 @@ import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-react';
 import Portal from './ui/Portal';
+import { SPORTS_GENRES } from '@/lib/constants';
 
 interface Cinema {
     name: string;
@@ -96,68 +97,82 @@ export default function KakaoMapModal({
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
-    // Initialize Data
+    // Initialize Data (Grouping & Initial Sorting)
     useEffect(() => {
         const isMovieMode = selectedGenre === 'movie';
         const isAllMode = selectedGenre === 'all' || !selectedGenre;
 
-        const groups: Record<string, any> = {};
+        // Use Map for faster lookups
+        const groupsMap = new Map<string, any>();
 
-        // 1. Process Performances (Non-movie venues, or All)
-        // Skip this section entirely if we are STRICTLY in movie mode
+        // 1. Process Performances
         if (!isMovieMode || isAllMode) {
-            performances.forEach((perf) => {
-                // If specific genre (not 'all'), only include if matches
-                if (!isAllMode && perf.genre !== selectedGenre) return;
+            for (let i = 0; i < performances.length; i++) {
+                const perf = performances[i];
+                if (!isAllMode && perf.genre !== selectedGenre) continue;
 
-                const displayVenueName = perf.venue; // Now normalized in transformer
+                const vName = perf.venue;
+                let group = groupsMap.get(vName);
 
-                if (!groups[displayVenueName]) {
-                    const venueMeta = venues[perf.venue];
-                    groups[displayVenueName] = {
+                if (!group) {
+                    const venueMeta = venues[vName];
+                    const hasCoords = venueMeta?.lat && venueMeta?.lng;
+                    group = {
                         ...venueMeta,
-                        venueName: displayVenueName,
+                        venueName: vName,
                         performances: [],
                         lat: venueMeta?.lat || 0,
                         lng: venueMeta?.lng || 0,
-                        type: 'performance'
+                        type: 'performance',
+                        kakaoLatLng: (hasCoords && typeof window !== 'undefined' && window.kakao?.maps)
+                            ? new window.kakao.maps.LatLng(venueMeta.lat, venueMeta.lng)
+                            : null
                     };
+                    groupsMap.set(vName, group);
                 }
-                groups[displayVenueName].performances.push(perf);
-            });
+                group.performances.push(perf);
+            }
         }
 
-        // 2. Process Cinemas (Movie venues, or All)
+        // 2. Process Cinemas
         if (isMovieMode || isAllMode) {
-            cinemas.forEach(cinema => {
-                if (!groups[cinema.name]) {
-                    groups[cinema.name] = {
+            for (let i = 0; i < cinemas.length; i++) {
+                const cinema = cinemas[i];
+                if (!groupsMap.has(cinema.name)) {
+                    groupsMap.set(cinema.name, {
                         venueName: cinema.name,
                         address: cinema.address,
                         lat: cinema.lat,
                         lng: cinema.lng,
                         brand: cinema.brand,
                         type: 'cinema',
-                        // Parent component already filters performances to relevant ones
-                        performances: performances.slice(0, 10)
-                    };
+                        performances: performances.slice(0, 10),
+                        kakaoLatLng: (typeof window !== 'undefined' && window.kakao?.maps)
+                            ? new window.kakao.maps.LatLng(cinema.lat, cinema.lng)
+                            : null
+                    });
                 }
-            });
+            }
         }
 
+        const groups = Object.fromEntries(groupsMap);
         allVenueGroups.current = groups;
-        const list = Object.values(groups).filter(v => v.lat && v.lng);
 
-        // Sort by distance if center exists
-        if (centerLocation) {
+        let list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
+
+        // Sort by distance if center exists AND is valid
+        if (centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng)) {
+            const cLat = centerLocation.lat;
+            const cLng = centerLocation.lng;
             list.sort((a, b) => {
                 if (a.venueName === centerLocation.name) return -1;
                 if (b.venueName === centerLocation.name) return 1;
-                const distA = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, a.lat, a.lng);
-                const distB = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, b.lat, b.lng);
+                const distA = getDistanceFromLatLonInKm(cLat, cLng, a.lat, a.lng);
+                const distB = getDistanceFromLatLonInKm(cLat, cLng, b.lat, b.lng);
                 return distA - distB;
             });
         }
+
         allVenuesList.current = list;
         setVisibleVenues(list.slice(0, 20));
     }, [performances, cinemas, centerLocation, selectedGenre]);
@@ -166,10 +181,11 @@ export default function KakaoMapModal({
         if (!map) return;
         const bounds = map.getBounds();
         const visible = allVenuesList.current.filter(v => {
-            const latlng = new window.kakao.maps.LatLng(v.lat, v.lng);
+            const latlng = v.kakaoLatLng || new window.kakao.maps.LatLng(v.lat, v.lng);
             return bounds.contain(latlng);
         });
-        setVisibleVenues(visible);
+        // Limit visible list to top 100 to prevent DOM overhead
+        setVisibleVenues(visible.slice(0, 100));
         setShowSearchHereBtn(false);
     }, []);
 
@@ -349,74 +365,96 @@ export default function KakaoMapModal({
             }
         }
 
-        // --- 3. Create Markers (ONLY markers, no map position changes) ---
-        const markers: any[] = [];
+        // --- 3. Create Markers in Chunks (Avoid blocking main thread) ---
+        const venuesToProcess = allVenuesList.current.filter(v => v.lat && v.lng);
+        const chunkSize = 100;
+        let index = 0;
+        let animationFrameId: number;
 
-        allVenuesList.current.forEach(venue => {
-            if (!venue.lat || !venue.lng) return;
+        const processChunk = () => {
+            if (index >= venuesToProcess.length) return;
+            if (!mapInstance || !isMapReady) return;
 
-            const position = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-            const perfs = venue.performances;
-            const primaryGenre = perfs[0]?.genre;
-            const isCinema = venue.type === 'cinema';
-            const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
-            const text = isCinema ? (perfs.length > 0 ? perfs.length.toString() : '📽️') : perfs.length.toString();
+            const markers: any[] = [];
+            const end = Math.min(index + chunkSize, venuesToProcess.length);
 
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                <circle cx="18" cy="18" r="16" fill="${color}" stroke="white" stroke-width="2" />
-                <text x="18" y="19" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="12" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
-            </svg>`;
-            const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
-
-            const markerImage = new window.kakao.maps.MarkerImage(
-                iconUrl,
-                new window.kakao.maps.Size(36, 36),
-                { offset: new window.kakao.maps.Point(18, 18) }
-            );
-
-            const marker = new window.kakao.maps.Marker({
-                position,
-                image: markerImage,
-                zIndex: 10
-            });
-
-            // Click Handler
-            window.kakao.maps.event.addListener(marker, 'click', () => {
-                setSelectedVenue(venue.venueName);
-                const moveLatLon = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-                if (map.getLevel() > 4) {
-                    map.setLevel(4);
-                    setTimeout(() => map.panTo(moveLatLon), 10);
-                } else {
-                    map.panTo(moveLatLon);
+            for (let i = index; i < end; i++) {
+                const venue = venuesToProcess[i];
+                if (!venue.kakaoLatLng) {
+                    venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng);
                 }
 
-                setTimeout(() => {
-                    const scrollContainer = document.getElementById('venue-scroll-container');
-                    if (scrollContainer) {
-                        const idx = allVenuesList.current.findIndex(v => v.venueName === venue.venueName);
-                        if (idx !== -1 && scrollContainer.children[idx]) {
-                            const card = scrollContainer.children[idx] as HTMLElement;
-                            const scrollLeft = card.offsetLeft - (scrollContainer.clientWidth / 2) + (card.clientWidth / 2);
-                            scrollContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-                        }
+                const position = venue.kakaoLatLng;
+                const perfs = venue.performances;
+                const primaryGenre = perfs[0]?.genre;
+                const isCinema = venue.type === 'cinema';
+                const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
+                const text = isCinema ? (perfs.length > 0 ? perfs.length.toString() : '📽️') : perfs.length.toString();
+
+                const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                    <circle cx="18" cy="18" r="16" fill="${color}" stroke="white" stroke-width="2" />
+                    <text x="18" y="19" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="12" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+                </svg>`;
+                const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+
+                const markerImage = new window.kakao.maps.MarkerImage(
+                    iconUrl,
+                    new window.kakao.maps.Size(36, 36),
+                    { offset: new window.kakao.maps.Point(18, 18) }
+                );
+
+                const marker = new window.kakao.maps.Marker({
+                    position,
+                    image: markerImage,
+                    zIndex: 10
+                });
+
+                window.kakao.maps.event.addListener(marker, 'click', () => {
+                    setSelectedVenue(venue.venueName);
+                    const moveLatLon = venue.kakaoLatLng;
+                    if (mapInstance.getLevel() > 4) {
+                        mapInstance.setLevel(4);
+                        setTimeout(() => mapInstance.panTo(moveLatLon), 10);
+                    } else {
+                        mapInstance.panTo(moveLatLon);
                     }
-                }, 100);
-            });
 
-            // Store venue data on marker for later reference
-            (marker as any)._venueName = venue.venueName;
-            (marker as any)._color = color;
-            (marker as any)._text = text;
+                    setTimeout(() => {
+                        const scrollContainer = document.getElementById('venue-scroll-container');
+                        if (scrollContainer) {
+                            const idx = allVenuesList.current.findIndex(v => v.venueName === venue.venueName);
+                            if (idx !== -1 && scrollContainer.children[idx]) {
+                                const card = scrollContainer.children[idx] as HTMLElement;
+                                const scrollLeft = card.offsetLeft - (scrollContainer.clientWidth / 2) + (card.clientWidth / 2);
+                                scrollContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                            }
+                        }
+                    }, 100);
+                });
 
-            markers.push(marker);
-        });
+                (marker as any)._venueName = venue.venueName;
+                (marker as any)._color = color;
+                (marker as any)._text = text;
 
-        if (clusterer) {
-            clusterer.addMarkers(markers);
-        }
-        markersRef.current = markers;
+                markers.push(marker);
+                markersRef.current.push(marker);
+            }
 
+            if (clusterer) {
+                clusterer.addMarkers(markers);
+            }
+
+            index = end;
+            if (index < venuesToProcess.length) {
+                animationFrameId = requestAnimationFrame(processChunk);
+            }
+        };
+
+        processChunk();
+
+        return () => {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
 
@@ -566,18 +604,18 @@ export default function KakaoMapModal({
         };
     }, [mapInstance, updatePopupPosition]);
 
-    const [perfVisibleCount, setPerfVisibleCount] = useState(10);
+    const [perfVisibleCount, setPerfVisibleCount] = useState(30);
     const selectedVenueData = selectedVenue ? allVenueGroups.current[selectedVenue] : null;
 
     useEffect(() => {
-        if (selectedVenue) setPerfVisibleCount(10);
+        if (selectedVenue) setPerfVisibleCount(30);
     }, [selectedVenue]);
 
     const handlePerfScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-        if (scrollTop + clientHeight >= scrollHeight - 20) {
+        if (scrollTop + clientHeight >= scrollHeight - 50) { // More aggressive trigger
             if (selectedVenueData && perfVisibleCount < selectedVenueData.performances.length) {
-                setPerfVisibleCount(prev => prev + 10);
+                setPerfVisibleCount(prev => prev + 20); // Larger increment
             }
         }
     };
@@ -683,7 +721,7 @@ export default function KakaoMapModal({
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
                                             >
                                                 <ExternalLink size={12} />
-                                                공연 더보기 · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
                                             </button>
                                         </div>
                                     ) : null}
@@ -746,8 +784,11 @@ export default function KakaoMapModal({
                                     const isSelected = selectedVenue === v.venueName;
 
                                     let distanceLabel = '';
-                                    if (centerLocation) {
-                                        const dist = getDistanceFromLatLonInKm(centerLocation.lat, centerLocation.lng, v.lat, v.lng);
+                                    const hasCenter = centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng);
+                                    const hasVenueCoords = v.lat && v.lng && !isNaN(v.lat) && !isNaN(v.lng);
+
+                                    if (hasCenter && hasVenueCoords) {
+                                        const dist = getDistanceFromLatLonInKm(centerLocation!.lat, centerLocation!.lng, v.lat, v.lng);
                                         distanceLabel = `${dist.toFixed(1)}km`;
                                     }
 

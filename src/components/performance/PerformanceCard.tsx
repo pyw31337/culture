@@ -29,9 +29,12 @@ interface PerformanceCardProps {
 
 // Helper for Highlighting
 const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string }) => {
-    if (!keyword || !text) return <>{text}</>;
-    const regex = new RegExp(`(${keyword})`, 'gi');
+    if (!keyword || !text || !keyword.trim()) return <>{text}</>;
+
+    const cleanKeyword = keyword.trim();
+    const regex = new RegExp(`(${cleanKeyword})`, 'gi');
     const parts = text.split(regex);
+
     return (
         <>
             {parts.map((part, i) =>

@@ -137,7 +137,8 @@ export default function PerformanceList({
 
         // Prevent navigation if we are in calendar mode (prevents modal closing)
         if (viewMode !== 'calendar') {
-            router.push(g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`);
+            const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+            router.push(g === 'all' ? `${basePath}/` : `${basePath}/${g === 'play' ? 'theater' : g}`);
         }
     }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router]);
 
