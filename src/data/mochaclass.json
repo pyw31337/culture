@@ -4464,24 +4464,6 @@
     "lastEnriched": "2026-02-26T15:17:32.153Z"
   },
   {
-    "id": "class_잠실_방이동_프랑스_직수입_조향_클래스_향수_디퓨져_만들기",
-    "title": "[잠실 방이동]프랑스 직수입 조향 클래스 향수 디퓨져 만들기",
-    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2Ftq9Yf8TLPIw1tdbF_656fe4ab1cba810a75b36e33_400x400?alt=media",
-    "date": "OPEN RUN",
-    "venue": "모카클래스",
-    "link": "https://mochaclass.com/class/68247e3fa5889f542349fcc7",
-    "region": "seoul",
-    "genre": "class",
-    "price": "35,000원",
-    "originalPrice": "35,000원",
-    "discount": "",
-    "runningTime": "예약페이지 참조",
-    "ageLimit": "전체",
-    "casting": "",
-    "address": "서울",
-    "lastEnriched": "2026-02-26T15:17:32.237Z"
-  },
-  {
     "id": "class_원목_트레이_클래스_초보자도_가능",
     "title": "원목 트레이 클래스(초보자도 가능)",
     "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FBfyx8dCPxxewoAnu_62a6be8918c7797454e3f17e_400x400?alt=media",
@@ -21292,6 +21274,24 @@
     "casting": "",
     "address": "서울",
     "lastEnriched": "2026-03-01T15:03:19.060Z"
+  },
+  {
+    "id": "class_잠실_방이동_프랑스_직수입_조향_클래스_향수_디퓨져_만들기",
+    "title": "[잠실 방이동]프랑스 직수입 조향 클래스 향수 디퓨져 만들기",
+    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2Ftq9Yf8TLPIw1tdbF_656fe4ab1cba810a75b36e33_400x400?alt=media",
+    "date": "OPEN RUN",
+    "venue": "모카클래스",
+    "link": "https://mochaclass.com/class/68247e3fa5889f542349fcc7",
+    "region": "seoul",
+    "genre": "class",
+    "price": "35,000원",
+    "originalPrice": "35,000원",
+    "discount": "",
+    "runningTime": "예약페이지 참조",
+    "ageLimit": "전체",
+    "casting": "",
+    "address": "서울",
+    "lastEnriched": "2026-02-26T15:17:32.237Z"
   },
   {
     "id": "class_플로우_요가_좋아한다면_이건_꼭_인사이드플로우_원데이클래스",
