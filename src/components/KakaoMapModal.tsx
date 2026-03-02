@@ -244,10 +244,8 @@ export default function KakaoMapModal({
 
                 setIsMapReady(true);
 
-                // Initial Bounds Check
-                setTimeout(() => {
-                    handleSearchHereInternal(map);
-                }, 500);
+                // Initial Bounds Check - Remove delay for instant list population
+                handleSearchHereInternal(map);
             });
         };
 
@@ -297,10 +295,10 @@ export default function KakaoMapModal({
             cancelled = true;
             clearInterval(checkInterval);
         };
-    }, [centerLocation, handleSearchHereInternal]);
+    }, [centerLocation, handleSearchHereInternal, selectedGenre, performances]); // Added performances and genre to dependencies
 
-    // Tracks whether auto-bounding has already been applied for this map session
-    const hasBoundedOnce = useRef(false);
+    // Tracks whether auto-bounding has already been applied for this session/genre
+    const hasBoundedOnce = useRef<string | null>(null);
 
     // 2. Re-render Markers when Data changes
     useEffect(() => {
@@ -453,17 +451,20 @@ export default function KakaoMapModal({
         });
     }, [selectedVenue, mapInstance]);
 
-    // 2c. Auto-bounding (separate effect, only runs once)
+    // 2c. Auto-bounding (separate effect, only runs once per genre change)
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
-        // Once we've bounded, never auto-bound again. The user controls the map from here.
-        if (hasBoundedOnce.current) return;
+
+        // Only run once per genre/search session
+        const currentContext = centerLocation ? `search_${centerLocation.name}` : `genre_${selectedGenre}`;
+        if (hasBoundedOnce.current === currentContext) return;
+        hasBoundedOnce.current = currentContext;
 
         const map = mapInstance;
+        const isAllMode = selectedGenre === 'all' || !selectedGenre;
 
         if (centerLocation && allVenuesList.current.length > 0) {
             // Case A: Explicit center location from search/venue click
-            hasBoundedOnce.current = true;
             const closest = allVenuesList.current[0];
             if (closest && closest.lat && closest.lng) {
                 const bounds = new window.kakao.maps.LatLngBounds();
@@ -475,42 +476,52 @@ export default function KakaoMapModal({
                 }, 100);
             }
         } else if (allVenuesList.current.length > 0) {
-            // Case B/C: Keyword search OR General Category View
-            hasBoundedOnce.current = true;
-            const bounds = new window.kakao.maps.LatLngBounds();
-            let hasValidCoords = false;
-
-            allVenuesList.current.forEach(v => {
-                if (v.lat && v.lng) {
-                    bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
-                    hasValidCoords = true;
+            // Case B: Category View (Non-All) - Use Smart Centering (panTo) instead of setBounds
+            // to avoid jumping to Chu-pung-ryeong (country-wide bounds)
+            if (!isAllMode) {
+                const firstVenue = allVenuesList.current[0];
+                if (firstVenue.lat && firstVenue.lng) {
+                    const center = new window.kakao.maps.LatLng(firstVenue.lat, firstVenue.lng);
+                    map.setCenter(center);
+                    map.setLevel(5); // Appropriate zoom for city/venue level
+                    setSelectedVenue(firstVenue.venueName);
                 }
-            });
+            } else {
+                // Case C: General "All" View OR Keyword Search with multiple results
+                const bounds = new window.kakao.maps.LatLngBounds();
+                let hasValidCoords = false;
 
-            if (hasValidCoords) {
-                setTimeout(() => {
-                    if (allVenuesList.current.length === 1) {
-                        map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
-                        map.setLevel(4);
-                        setSelectedVenue(allVenuesList.current[0].venueName);
-                    } else {
-                        // Apply bounds with padding
-                        map.setBounds(bounds, 120, 50, 150, 50);
-
-                        // Clamp level to reasonable range
-                        setTimeout(() => {
-                            const currentLevel = map.getLevel();
-                            if (currentLevel > 7) {
-                                map.setLevel(7);
-                            } else if (currentLevel < 3) {
-                                map.setLevel(3);
-                            }
-                        }, 50);
+                allVenuesList.current.forEach(v => {
+                    if (v.lat && v.lng) {
+                        bounds.extend(new window.kakao.maps.LatLng(v.lat, v.lng));
+                        hasValidCoords = true;
                     }
-                }, 100);
+                });
+
+                if (hasValidCoords) {
+                    setTimeout(() => {
+                        if (allVenuesList.current.length === 1) {
+                            map.setCenter(new window.kakao.maps.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
+                            map.setLevel(4);
+                            setSelectedVenue(allVenuesList.current[0].venueName);
+                        } else {
+                            // Apply bounds with padding
+                            map.setBounds(bounds, 120, 50, 150, 50);
+
+                            // Clamp level to reasonable range
+                            setTimeout(() => {
+                                const currentLevel = map.getLevel();
+                                if (currentLevel > 7) {
+                                    map.setLevel(7);
+                                } else if (currentLevel < 3) {
+                                    map.setLevel(3);
+                                }
+                            }, 50);
+                        }
+                    }, 100);
+                }
             }
         }
-        // Case C: No center, no search → do nothing. Map stays at initial position.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
 
