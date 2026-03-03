@@ -373,7 +373,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 "absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
                                 enableActions ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0") : "translate-y-0"
                             )}>
-                                <div className="relative z-20 w-full p-4 pb-4">
+                                <div className="relative z-30 w-full p-4 pb-4">
                                     <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                         <span className={clsx(
                                             "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
@@ -426,7 +426,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {enableActions && (
-                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-12 before:h-12 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
+                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
                                         <button
                                             onClick={async (e) => {
                                                 e.stopPropagation();
