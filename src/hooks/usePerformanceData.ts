@@ -28,14 +28,12 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
 
                 results.forEach((res, index) => {
                     if (res.status === 'fulfilled') {
-                        if (Array.isArray(res.value)) {
-                            if (index === 2) {
-                                setCinemas(res.value);
-                            } else if (index === 3) {
-                                setVenues(res.value);
-                            } else {
-                                mergedData.push(...res.value);
-                            }
+                        if (index === 2) {
+                            setCinemas(res.value);
+                        } else if (index === 3) {
+                            setVenues(res.value);
+                        } else if (Array.isArray(res.value)) {
+                            mergedData.push(...res.value);
                         }
                     } else {
                         console.error(`Failed to load data source index ${index}`, res.reason);

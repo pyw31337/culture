@@ -110,10 +110,12 @@ export default function KakaoMapModal({
                 if (!isAllMode && perf.genre !== selectedGenre) continue;
 
                 const vName = perf.venue;
-                let group = groupsMap.get(vName);
+                // [DATA FIX] Filter out items mapped to remote/generic coordinates like Tour Passes on Ulleungdo
+                const venueMeta = venues[vName];
+                if (vName.includes('투어패스') && venueMeta?.lat > 37.4 && venueMeta?.lng > 130.8) continue;
 
+                let group = groupsMap.get(vName);
                 if (!group) {
-                    const venueMeta = venues[vName];
                     group = {
                         ...venueMeta,
                         venueName: vName,
@@ -141,7 +143,7 @@ export default function KakaoMapModal({
                         lng: cinema.lng,
                         brand: cinema.brand,
                         type: 'cinema',
-                        performances: performances.slice(0, 10),
+                        performances: [], // [BUG FIX] Don't assign random performances to cinemas
                         kakaoLatLng: null
                     });
                 }
@@ -164,7 +166,7 @@ export default function KakaoMapModal({
         }
 
         return { groups: Object.fromEntries(groupsMap), list };
-    }, [performances, cinemas, centerLocation, selectedGenre]);
+    }, [performances, cinemas, centerLocation, selectedGenre, venues]);
 
     // Update refs immediately after memoization
     useEffect(() => {
@@ -315,7 +317,7 @@ export default function KakaoMapModal({
             const isSelected = venue.venueName === selectedVenue;
             const primaryGenre = venue.performances[0]?.genre || selectedGenre || 'all';
             const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
-            const color = venue.type === 'cinema' ? '#4f46e5' : style.color;
+            const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
 
             const size = isSelected ? 44 : 36;
