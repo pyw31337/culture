@@ -133,7 +133,7 @@ export function getLowResUrl(url: string): string | null {
     return `https://wsrv.nl/?url=${encodedUrl}&w=20&blur=5&q=20&output=webp`;
 }
 
-// Unified Date Formatter: YYYY.MM.DD (E) HH:mm
+// Unified Date Formatter: YYYY.MM.DD (E) HH:mm or YYYY.MM.DD (E) for ranges
 export function formatUnifiedDate(dateStr: string): string {
     if (!dateStr) return '';
     try {
@@ -142,40 +142,62 @@ export function formatUnifiedDate(dateStr: string): string {
         cleanStr = cleanStr.replace(/\[(?:얼리버드|유효기간[:\s～~]*[^\\]]*|[^\]]*)\]/g, '');
         // 2. Remove orphan brackets
         cleanStr = cleanStr.replace(/[\[\]]/g, '');
-        // 3. Normalize dashes to dots
+        // 3. Normalize dashes to dots (but keep time-like colons)
         cleanStr = cleanStr.replace(/-/g, '.').replace(/\.+$/, '').trim();
-        // 4. Handle ranges like "~2026.03.02" or multiple dates
-        const parts = cleanStr.split('~').map(s => s.trim()).filter(Boolean);
-        if (parts.length >= 1) {
-            cleanStr = parts[parts.length - 1]; // take the last date mostly
+
+        // 4. Handle ranges
+        if (cleanStr.includes('~')) {
+            const parts = cleanStr.split('~').map(s => s.trim()).filter(Boolean);
+            if (parts.length > 1) {
+                const formattedParts = parts.map(p => formatSingleDateInternal(p));
+                return formattedParts.join(' ~ ');
+            } else if (parts.length === 1 && cleanStr.startsWith('~')) {
+                return `~ ${formatSingleDateInternal(parts[0])}`;
+            }
         }
 
-        // Replace back dots with dashes to parse safely with native Date or date-fns if standard
-        let parseStr = cleanStr.replace(/\./g, '-');
-        // Handle "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DD HH:mm"
-        let parsedDate = new Date(parseStr);
+        return formatSingleDateInternal(cleanStr);
+    } catch {
+        return dateStr;
+    }
+}
 
-        if (!isValid(parsedDate)) {
-            // Try strict parsing
+/**
+ * Internal helper to format a single date string (used for ranges too)
+ */
+function formatSingleDateInternal(str: string): string {
+    if (!str) return '';
+
+    // Normalize dots to dashes for parsing
+    let parseStr = str.replace(/\./g, '-');
+
+    // Handle "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DD HH:mm"
+    let parsedDate = new Date(parseStr);
+
+    if (!isValid(parsedDate)) {
+        // Try strict parsing
+        try {
             parsedDate = parse(parseStr, 'yyyy-MM-dd HH:mm:ss', new Date());
             if (!isValid(parsedDate)) {
                 parsedDate = parse(parseStr, 'yyyy-MM-dd HH:mm', new Date());
             }
-        }
-
-        if (isValid(parsedDate)) {
-            // Check if original string had time
-            if (parseStr.includes(':')) {
-                return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
-            } else {
-                // For now, prompt asks for system-wide format '2026.03.12 (목) 13:00'
-                // However, if there's no time, we might just default to 00:00 or skip time. 
-                // Let's assume if they want it globally, if time is 00:00 we omit it, unless specified.
-                // The prompt: Date format should be united as `2026.03.12 (목) 13:00`.
-                return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
+            if (!isValid(parsedDate)) {
+                parsedDate = parse(parseStr, 'yyyy-MM-dd', new Date());
             }
+        } catch (e) {
+            return str;
         }
-    } catch { }
+    }
 
-    return dateStr;
+    if (isValid(parsedDate)) {
+        const hasTime = str.includes(':');
+        if (hasTime) {
+            return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
+        } else {
+            // No time in original string -> omit HH:mm
+            return format(parsedDate, 'yyyy.MM.dd (E)', { locale: ko });
+        }
+    }
+
+    return str;
 }
