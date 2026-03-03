@@ -183,8 +183,8 @@ export default function KakaoMapModal({
             if (!v.kakaoLatLng) return false;
             return bounds.contain(v.kakaoLatLng);
         });
-        // Limit visible list to top 100 to prevent DOM overhead
-        setVisibleVenues(visible.slice(0, 100));
+        // Limit visible list to prevent DOM overhead
+        setVisibleVenues(visible.slice(0, 200));
         setShowSearchHereBtn(false);
     }, []);
 
@@ -292,7 +292,7 @@ export default function KakaoMapModal({
 
             // Priority 1: Explicit center location (from search or venue click)
             if (centerLocation) {
-                createMap({ lat: centerLocation.lat, lng: centerLocation.lng }, 2, false);
+                createMap({ lat: centerLocation.lat, lng: centerLocation.lng }, 5, false);
                 return;
             }
 

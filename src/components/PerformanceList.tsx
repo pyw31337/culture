@@ -304,7 +304,26 @@ export default function PerformanceList({
 
             <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={setSelectedVenue} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => { setSearchText(res.name); }} />
 
-            {isMapOpen && <KakaoMapModal performances={filteredPerformances} cinemas={selectedGenre === 'movie' ? cinemas : []} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText} centerLocation={focusVenue || searchLocation} favoriteVenues={favoriteVenues} onToggleFavorite={toggleFavoriteVenue} onClose={() => { setIsMapOpen(false); setFocusVenue(null); }} onVenueLocationChange={(name, lat, lng) => { setSearchLocation({ name, lat, lng }); setIsMapOpen(false); }} />}
+            {isMapOpen && (
+                <KakaoMapModal
+                    performances={(isCategoryPage && !searchText) ? allPerformances : filteredPerformances}
+                    cinemas={selectedGenre === 'movie' ? cinemas : []}
+                    selectedGenre={selectedGenre}
+                    searchMode={searchMode}
+                    searchText={searchText}
+                    centerLocation={focusVenue || searchLocation}
+                    favoriteVenues={favoriteVenues}
+                    onToggleFavorite={toggleFavoriteVenue}
+                    onClose={() => {
+                        setIsMapOpen(false);
+                        setFocusVenue(null);
+                    }}
+                    onVenueLocationChange={(name, lat, lng) => {
+                        setSearchLocation({ name, lat, lng });
+                        setIsMapOpen(false);
+                    }}
+                />
+            )}
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setFocusVenue({ lat: venues[name]?.lat || 0, lng: venues[name]?.lng || 0, name }); setIsMapOpen(true); }} />}
             {viewMode === 'calendar' && <CalendarModal performances={allPerformances} onClose={() => setViewMode('grid')} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
