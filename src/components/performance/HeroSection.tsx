@@ -430,7 +430,8 @@ export default function HeroSection({
 
     return (
         <div className={clsx(
-            "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-center gap-8 overflow-hidden",
+            "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-center gap-8",
+            (!(isDropdownOpen && activeSearchSource === 'hero')) && "overflow-hidden",
             (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
             <div className="text-left flex-1 min-w-0 z-10">
@@ -717,13 +718,13 @@ export default function HeroSection({
                                                 }`}
                                         >
                                             <div className="flex items-center gap-3 min-w-0">
-                                                <div className="bg-black/50 p-2.5 rounded-full shrink-0 border border-white/10">
+                                                <div className="bg-black/50 light:bg-gray-100 p-2.5 rounded-full shrink-0 border border-white/10 light:border-gray-200">
                                                     {result.type === 'location' ? (
-                                                        <MapPin className="w-4 h-4 text-emerald-400" />
+                                                        <MapPin className="w-4 h-4 text-emerald-400 light:text-emerald-600" />
                                                     ) : result.type === 'video' ? (
-                                                        <Star className="w-4 h-4 text-yellow-500" />
+                                                        <Star className="w-4 h-4 text-yellow-500 light:text-yellow-600" />
                                                     ) : (
-                                                        <Search className="w-4 h-4 text-[#a78bfa]" />
+                                                        <Search className="w-4 h-4 text-[#a78bfa] light:text-purple-600" />
                                                     )}
                                                 </div>
                                                 <div className="text-white light:text-black text-base font-extrabold truncate">
@@ -757,7 +758,7 @@ export default function HeroSection({
                             )
                         ) : (
                             /* Case 2: No Search Text -> Show Recent/Popular Keywords */
-                            <div className="p-4 bg-[#1a0b2e]/95 backdrop-blur-3xl">
+                            <div className="p-4 bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl">
                                 {/* Recent Keywords */}
                                 <div className="mb-6">
                                     <div className="flex items-center justify-between mb-3 px-1">
@@ -778,7 +779,7 @@ export default function HeroSection({
                                     </div>
 
                                     {recentKeywords.length === 0 ? (
-                                        <div className="text-center py-4 text-gray-600 light:text-gray-600 text-sm bg-white/5 rounded-xl border border-white/5">
+                                        <div className="text-center py-4 text-gray-600 light:text-gray-500 text-sm bg-white/5 light:bg-gray-50 rounded-xl border border-white/5 light:border-gray-100">
                                             최근 검색 내역이 없습니다.
                                         </div>
                                     ) : (
@@ -786,16 +787,16 @@ export default function HeroSection({
                                             {recentKeywords.map((keyword, idx) => (
                                                 <div
                                                     key={idx}
-                                                    className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full cursor-pointer transition-all"
+                                                    className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 light:bg-gray-100 hover:bg-white/10 light:hover:bg-gray-200 border border-white/10 light:border-gray-200 rounded-full cursor-pointer transition-all"
                                                     onClick={() => onKeywordSelect(keyword)}
                                                 >
-                                                    <span className="text-sm text-gray-300 light:text-gray-600 group-hover:text-white light:group-hover:text-black transition-colors">{keyword}</span>
+                                                    <span className="text-sm text-gray-300 light:text-gray-700 group-hover:text-white light:group-hover:text-black transition-colors">{keyword}</span>
                                                     <button
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             onRemoveRecent(keyword);
                                                         }}
-                                                        className="text-gray-500 hover:text-red-400 p-0.5 rounded-full hover:bg-white/10 transition-colors"
+                                                        className="text-gray-500 light:text-gray-400 hover:text-red-400 light:hover:text-red-500 p-0.5 rounded-full hover:bg-white/10 light:hover:bg-white transition-colors"
                                                     >
                                                         <X className="w-3 h-3" />
                                                     </button>
@@ -819,12 +820,12 @@ export default function HeroSection({
                                             <div
                                                 key={idx}
                                                 onClick={() => onKeywordSelect(keyword)}
-                                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors"
+                                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 light:hover:bg-gray-50 cursor-pointer group transition-colors"
                                             >
-                                                <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa]' : 'text-gray-500'}`}>
+                                                <span className={`text-sm font-extrabold w-4 text-center ${idx < 3 ? 'text-[#a78bfa] light:text-purple-600' : 'text-gray-500'}`}>
                                                     {idx + 1}
                                                 </span>
-                                                <span className="text-sm text-gray-300 light:text-gray-600 group-hover:text-white light:group-hover:text-black transition-colors">
+                                                <span className="text-sm text-gray-300 light:text-gray-700 group-hover:text-white light:group-hover:text-black transition-colors">
                                                     {keyword}
                                                 </span>
                                             </div>
