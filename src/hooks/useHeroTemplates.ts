@@ -17,40 +17,42 @@ export function useHeroTemplates({ allPerformances, initialPerformances, searchM
     const templatePoolRef = useRef<HeroTemplate[]>([]);
 
     const selectNextTemplate = useCallback(() => {
-        const pool = templatePoolRef.current.length > 0 ? templatePoolRef.current : HERO_TEMPLATES.general;
-        let selectedTemplate: HeroTemplate = HERO_TEMPLATES.general[0];
-        let attempts = 0;
-        const maxAttempts = 20;
+        setHeroText(currentHeroText => {
+            const pool = templatePoolRef.current.length > 0 ? templatePoolRef.current : HERO_TEMPLATES.general;
+            let selectedTemplate: HeroTemplate = HERO_TEMPLATES.general[0];
+            let attempts = 0;
+            const maxAttempts = 20;
 
-        while (pool.length > 0 && attempts < maxAttempts) {
-            const idx = Math.floor(Math.random() * pool.length);
-            const candidate = pool[idx];
-            attempts++;
+            while (pool.length > 0 && attempts < maxAttempts) {
+                const idx = Math.floor(Math.random() * pool.length);
+                const candidate = pool[idx];
+                attempts++;
 
-            if (candidate.line1 === heroText.line1) continue;
+                if (candidate.line1 === currentHeroText.line1) continue;
 
-            if (candidate.keywords && candidate.keywords.length > 0) {
-                const source = allPerformances.length > 0 ? allPerformances : initialPerformances;
-                const hasMatch = source.some(p =>
-                    candidate.keywords!.some(k =>
-                        (p.title || '').includes(k) ||
-                        (p.genre || '').includes(k) ||
-                        (p.venue || '').includes(k) ||
-                        (venues[p.venue || '']?.district?.includes(k))
-                    )
-                );
-                if (!hasMatch) continue;
+                if (candidate.keywords && candidate.keywords.length > 0) {
+                    const source = allPerformances.length > 0 ? allPerformances : initialPerformances;
+                    const hasMatch = source.some(p =>
+                        candidate.keywords!.some(k =>
+                            (p.title || '').includes(k) ||
+                            (p.genre || '').includes(k) ||
+                            (p.venue || '').includes(k) ||
+                            (venues[p.venue || '']?.district?.includes(k))
+                        )
+                    );
+                    if (!hasMatch) continue;
+                }
+                selectedTemplate = candidate;
+                break;
             }
-            selectedTemplate = candidate;
-            break;
-        }
 
-        if (selectedTemplate === heroText || attempts >= maxAttempts) {
-            const backups = HERO_TEMPLATES.general.filter(t => t.line1 !== heroText.line1);
-            selectedTemplate = backups[Math.floor(Math.random() * backups.length)] || HERO_TEMPLATES.general[0];
-        }
-        setHeroText(selectedTemplate);
-    }, [heroText, allPerformances, initialPerformances]);
+            if (selectedTemplate.line1 === currentHeroText.line1 || attempts >= maxAttempts) {
+                const backups = HERO_TEMPLATES.general.filter(t => t.line1 !== currentHeroText.line1);
+                selectedTemplate = backups[Math.floor(Math.random() * backups.length)] || HERO_TEMPLATES.general[0];
+            }
+            return selectedTemplate;
+        });
+    }, [allPerformances, initialPerformances]);
 
     useEffect(() => {
         const updateHeroTextPool = async () => {
