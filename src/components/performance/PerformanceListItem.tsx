@@ -130,7 +130,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            onClick={onDetail}
         >
             <div
                 ref={cardRef}

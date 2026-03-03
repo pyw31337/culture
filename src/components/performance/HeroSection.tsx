@@ -459,26 +459,6 @@ export default function HeroSection({
                     />
                 </div>
 
-                {/* Mobile: Dynamic (Simplified Layout) */}
-                <h2 className="text-4xl font-light text-white light:text-black leading-[1.2] tracking-tighter block sm:hidden">
-                    {currentTemplate.line1}<br />
-                    {currentTemplate.boldPrefix && (
-                        <>
-                            <span className="font-black text-white light:text-black">{currentTemplate.boldPrefix}</span>
-                        </>
-                    )}
-                    {currentTemplate.line2Pre}
-                    <span className={clsx(
-                        "font-black text-transparent bg-clip-text animate-shine bg-[length:200%_auto] tracking-normal py-1",
-                        searchMode === 'location'
-                            ? "bg-gradient-to-r from-[#55df99] to-[#0090f5]"
-                            : "bg-gradient-to-r from-[#a78bfa] via-[#f472b6] to-[#a78bfa]"
-                    )}>
-                        {currentTemplate.highlight}
-                    </span><br />
-                    {currentTemplate.suffix}
-                </h2>
-
             </div>
 
             {/* Hero Search Bar */}
