@@ -433,11 +433,6 @@ export default function HeroSection({
             "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-center gap-8 overflow-hidden",
             (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
-            {selectedGenre === 'soccer' && (
-                <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/soccer_poster.png`} alt="" className="w-full h-full object-cover" />
-                </div>
-            )}
             <div className="text-left flex-1 min-w-0 z-10">
                 {selectedGenre !== 'movie' && (
                     <p className={clsx(
