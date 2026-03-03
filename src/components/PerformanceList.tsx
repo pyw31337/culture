@@ -77,7 +77,7 @@ export default function PerformanceList({
         allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues
     });
 
-    const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances, initialPerformances });
+    const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances, initialPerformances, searchMode });
 
     // --- View State ---
     const [viewMode, setViewMode] = useState<string>('grid');

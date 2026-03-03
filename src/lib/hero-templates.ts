@@ -76,12 +76,19 @@ export const HERO_TEMPLATES = {
         ]
     },
     time: {
-        friday: [
-            { line1: "설레는 금요일,", line2Pre: "한 주 동안 고생한 당신을 위한 ", highlight: "힐링 타임", suffix: "이 필요해요.", keywords: ["금요일", "불금", "힐링"] },
-            { line1: "주말의 시작 금요일,", line2Pre: "사랑하는 사람과 함께할 ", highlight: "로맨틱한 데이트", suffix: " 계획하셨나요?", keywords: ["주말", "데이트"] },
-            { line1: "불금엔 컨텐츠지!", line2Pre: "화끈하게 스트레스 날려버릴 ", highlight: "열정적인 무대", suffix: "를 즐겨보세요.", keywords: ["불금", "열정"] },
-            { line1: "여유로운 주말을 앞두고,", line2Pre: "미리 준비하는 ", highlight: "취향 저격 문화생활", suffix: " 리스트.", keywords: ["주말"] },
-            { line1: "칼퇴 준비 되셨나요?", line2Pre: "지금 바로 출발하면 ", highlight: "완벽한 불금", suffix: "을 보낼 수 있어요.", keywords: ["칼퇴", "불금"] }
+        morning: [
+            { line1: "상쾌한 아침,", line2Pre: "오늘 하루를 깨울 ", highlight: "활기찬 컨텐츠", suffix: "를 만나보세요.", keywords: ["에너지", "조신"] },
+            { line1: "굿모닝!", line2Pre: "커피 한 잔과 어울리는 ", highlight: "여유로운 전시", suffix: " 어떠신가요?", keywords: ["전시", "여유"] },
+            { line1: "오늘 하루도 화이팅!", line2Pre: "당신에게 힘이 될 ", highlight: "희망찬 무대", suffix: "가 기다립니다.", keywords: ["희망", "응원"] },
+            { line1: "오전의 여유,", line2Pre: "가벼운 산책처럼 ", highlight: "즐기기 좋은 공연", suffix: "을 추천해요.", keywords: ["산책", "가벼운"] },
+            { line1: "새로운 아침,", line2Pre: "당신의 감성을 깨워줄 ", highlight: "아름다운 선율", suffix: "을 들어보세요.", keywords: ["음악", "감성"] }
+        ],
+        afternoon: [
+            { line1: "나른한 오후,", line2Pre: "잠을 깨워줄 ", highlight: "짜릿한 액티비티", suffix: "는 어때요?", keywords: ["액티비티", "익사이팅"] },
+            { line1: "점심 맛있게 드셨나요?", line2Pre: "소화도 시킬 겸 ", highlight: "가벼운 문화 산책", suffix: " 어떠세요?", keywords: ["산책", "가벼운"] },
+            { line1: "오후 3시의 휴식,", line2Pre: "당신을 위한 ", highlight: "달콤한 공연", suffix: "이 준비되어 있습니다.", keywords: ["휴식", "달콤"] },
+            { line1: "지루한 오후를 다채롭게,", line2Pre: "눈이 즐거워지는 ", highlight: "화려한 전시", suffix: "를 만나보세요.", keywords: ["전시", "화려"] },
+            { line1: "햇살 좋은 오후,", line2Pre: "창가에서 책 읽듯 ", highlight: "차분한 연극", suffix: " 한 편 어떠세요?", keywords: ["연극", "차분"] }
         ],
         evening: [
             { line1: "오늘도 수고했어요,", line2Pre: "퇴근 후 지친 마음을 달래줄 ", highlight: "위로의 시간", suffix: "을 가져보세요.", keywords: ["퇴근", "위로"] },
@@ -89,6 +96,27 @@ export const HERO_TEMPLATES = {
             { line1: "하루를 마무리하며,", line2Pre: "나를 채워주는 ", highlight: "풍성한 문화 산책", suffix: " 어떠신가요?", keywords: ["저녁", "산책"] },
             { line1: "어둠이 내리면,", line2Pre: "도시의 밤보다 화려한 ", highlight: "무대의 빛", suffix: "을 만나보세요.", keywords: ["밤", "야경"] },
             { line1: "저녁이 있는 삶,", line2Pre: "당신의 저녁을 더욱 풍요롭게 만들 ", highlight: "특별한 선택", suffix: "입니다.", keywords: ["저녁", "워라밸"] }
+        ],
+        night: [
+            { line1: "고요한 밤,", line2Pre: "잠들기 전 감성을 채워줄 ", highlight: "잔잔한 클래식", suffix: " 어떠세요?", keywords: ["클래식", "잔잔"] },
+            { line1: "잠 못 이루는 밤,", line2Pre: "당신의 밤을 지켜줄 ", highlight: "몽환적인 무대", suffix: "가 기다립니다.", keywords: ["몽환", "밤"] },
+            { line1: "깊어가는 밤,", line2Pre: "와인 한 잔과 어울리는 ", highlight: "분위기 있는 공연", suffix: "을 추천해요.", keywords: ["분위기", "와인"] },
+            { line1: "밤공기가 좋네요,", line2Pre: "창밖 풍경보다 아름다운 ", highlight: "예술의 세계", suffix: "로 초대합니다.", keywords: ["야경", "예술"] },
+            { line1: "오늘 밤 주인공은,", line2Pre: "꿈속에서도 보고 싶은 ", highlight: "환상적인 컨텐츠", suffix: "입니다.", keywords: ["환상", "꿈"] }
+        ],
+        friday: [
+            { line1: "설레는 금요일,", line2Pre: "한 주 동안 고생한 당신을 위한 ", highlight: "힐링 타임", suffix: "이 필요해요.", keywords: ["금요일", "불금", "힐링"] },
+            { line1: "주말의 시작 금요일,", line2Pre: "사랑하는 사람과 함께할 ", highlight: "로맨틱한 데이트", suffix: " 계획하셨나요?", keywords: ["주말", "데이트"] },
+            { line1: "불금엔 컨텐츠지!", line2Pre: "화끈하게 스트레스 날려버릴 ", highlight: "열정적인 무대", suffix: "를 즐겨보세요.", keywords: ["불금", "열정"] },
+            { line1: "여유로운 주말을 앞두고,", line2Pre: "미리 준비하는 ", highlight: "취향 저격 문화생활", suffix: " 리스트.", keywords: ["주말"] },
+            { line1: "칼퇴 준비 되셨나요?", line2Pre: "지금 바로 출발하면 ", highlight: "완벽한 불금", suffix: "을 보낼 수 있어요.", keywords: ["칼퇴", "불금"] }
+        ],
+        weekend: [
+            { line1: "행복한 주말,", line2Pre: "늦잠 자고 일어나 즐기는 ", highlight: "여유로운 공연", suffix: " 한 편 어때요?", keywords: ["주말", "여유"] },
+            { line1: "주말 나들이 계획,", line2Pre: "가족들과 함께 가기 좋은 ", highlight: "인기 축제 현장", suffix: "을 소개해요.", keywords: ["주말", "축제"] },
+            { line1: "드디어 주말!", line2Pre: "주중에 미뤄왔던 ", highlight: "버킷리스트 컨텐츠", suffix: "를 실천할 시간.", keywords: ["주말", "버킷"] },
+            { line1: "토요일 밤의 열기,", line2Pre: "누구보다 뜨겁게 즐기는 ", highlight: "심야 페스티벌", suffix: "!", keywords: ["토요일", "심야"] },
+            { line1: "일요일 오후,", line2Pre: "다음 주를 준비하는 ", highlight: "차분한 힐링 전시", suffix: "로 마무리하세요.", keywords: ["일요일", "마무리"] }
         ]
     },
     season: {
@@ -284,11 +312,18 @@ export const HERO_TEMPLATES = {
 
 
     },
-    location: [
-        { line1: "오늘 {location}에서,", line2Pre: "특별한 ", highlight: "{genre} 한 편", suffix: " 어때요?", keywords: ["{location}"] },
-        { line1: "이번 주말, {location}에서", line2Pre: "당신을 기다리는 ", highlight: "{genre} 컨텐츠", suffix: "가 발견되었네요.", keywords: ["{location}"] },
-        { line1: "{location} 나들이 가신다면,", line2Pre: "함께 즐기기 좋은 ", highlight: "{genre}", suffix: " 추천드려요.", keywords: ["{location}"] },
-        { line1: "{location}의 밤을,", line2Pre: "아름답게 수놓을 ", highlight: "{genre}", suffix: " 어떠신가요?", keywords: ["{location}"] },
-        { line1: "{location} 핫플레이스!", line2Pre: "요즘 뜨고 있는 ", highlight: "{genre}", suffix: " 소식을 전해드립니다.", keywords: ["{location}"] }
+    location_mode: [
+        { line1: "내 주변엔 뭐가 있을까?", line2Pre: "지금 있는 곳에서 ", highlight: "가까운 컨텐츠", suffix: "를 찾아드릴게요.", keywords: [] },
+        { line1: "멀리 가기 귀찮을 때,", line2Pre: "집 근처에서 즐기는 ", highlight: "동네 문화생활", suffix: " 어떠세요?", keywords: [] },
+        { line1: "지도에서 쏙쏙!", line2Pre: "내 위치 기반으로 ", highlight: "핫플레이스 정보", suffix: "를 모아봤어요.", keywords: [] },
+        { line1: "지금 바로 갈 수 있는,", line2Pre: "내 근처 ", highlight: "실시간 공연 정보", suffix: "를 확인하세요.", keywords: [] },
+        { line1: "동네 맛집 옆에,", boldPrefix: "동네 전시장", line2Pre: " 숨겨진 무대를 ", highlight: "발견", suffix: "해보세요.", keywords: [] }
+    ],
+    search_mode: [
+        { line1: "찾고 싶은 게 있나요?", line2Pre: "원하는 ", highlight: "키워드", suffix: "로 딱 맞는 컨텐츠를 찾아줄게요.", keywords: [] },
+        { line1: "취향 저격 탐색,", line2Pre: "당신이 좋아할 만한 ", highlight: "테마별 추천", suffix: "이 준비되어 있어요.", keywords: [] },
+        { line1: "궁금한 건 못 참지!", line2Pre: "화제의 작품부터 ", highlight: "숨은 명작", suffix: "까지 모두 검색해보세요.", keywords: [] },
+        { line1: "이름만 대면 척척,", line2Pre: "관심 있는 ", highlight: "아티스트나 작품", suffix: "을 찾아보세요.", keywords: [] },
+        { line1: "오늘 뭐 볼까 고민될 때,", line2Pre: "트렌디한 ", highlight: "인기 검색어", suffix: "로 영감을 얻어보세요.", keywords: [] }
     ]
 };

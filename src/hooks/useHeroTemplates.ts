@@ -9,9 +9,10 @@ const venues = venueData as Record<string, any>;
 interface UseHeroTemplatesProps {
     allPerformances: Performance[];
     initialPerformances: Performance[];
+    searchMode?: 'keyword' | 'location';
 }
 
-export function useHeroTemplates({ allPerformances, initialPerformances }: UseHeroTemplatesProps) {
+export function useHeroTemplates({ allPerformances, initialPerformances, searchMode = 'keyword' }: UseHeroTemplatesProps) {
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
     const templatePoolRef = useRef<HeroTemplate[]>([]);
 
@@ -55,17 +56,33 @@ export function useHeroTemplates({ allPerformances, initialPerformances }: UseHe
         const updateHeroTextPool = async () => {
             const now = new Date();
             const month = now.getMonth() + 1;
-            let pool: typeof HERO_TEMPLATES.general = [...HERO_TEMPLATES.general];
+            const hour = now.getHours();
+            const day = now.getDay(); // 0: Sun, 1: Mon, ..., 6: Sat
+            let pool: HeroTemplate[] = [...HERO_TEMPLATES.general];
 
-            // Basic Seasons
-            let currentSeasonTemplates: typeof HERO_TEMPLATES.general = [];
+            // 1. Seasons
+            let currentSeasonTemplates: HeroTemplate[] = [];
             if (month >= 3 && month <= 5) currentSeasonTemplates = HERO_TEMPLATES.season.spring;
             else if (month >= 6 && month <= 8) currentSeasonTemplates = HERO_TEMPLATES.season.summer;
             else if (month >= 9 && month <= 11) currentSeasonTemplates = HERO_TEMPLATES.season.autumn;
             else currentSeasonTemplates = HERO_TEMPLATES.season.winter;
             pool.push(...currentSeasonTemplates);
 
-            // Keyword Context
+            // 2. Time of Day
+            if (hour >= 5 && hour < 12) pool.push(...HERO_TEMPLATES.time.morning);
+            else if (hour >= 12 && hour < 17) pool.push(...HERO_TEMPLATES.time.afternoon);
+            else if (hour >= 17 && hour < 22) pool.push(...HERO_TEMPLATES.time.evening);
+            else pool.push(...HERO_TEMPLATES.time.night);
+
+            // 3. Special Days
+            if (day === 5) pool.push(...HERO_TEMPLATES.time.friday);
+            if (day === 0 || day === 6) pool.push(...HERO_TEMPLATES.time.weekend);
+
+            // 4. Mode-based templates
+            if (searchMode === 'location') pool.push(...HERO_TEMPLATES.location_mode);
+            else pool.push(...HERO_TEMPLATES.search_mode);
+
+            // 5. Keyword Context (from storage)
             const sk = safeStorage.get<string[]>('culture_keywords', []);
             if (sk.length > 0) {
                 const keywordTemplates = HERO_TEMPLATES.keyword.map(t => {
@@ -84,7 +101,7 @@ export function useHeroTemplates({ allPerformances, initialPerformances }: UseHe
         };
 
         updateHeroTextPool();
-    }, [allPerformances, initialPerformances]);
+    }, [allPerformances, initialPerformances, searchMode, selectNextTemplate]);
 
     return {
         heroText,
