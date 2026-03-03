@@ -22,7 +22,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_왕과사는남자.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
     "rank": 1
   },
   {
@@ -44,28 +44,29 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_휴민트.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
     "rank": 2
   },
   {
-    "id": "movie_초속_5센티미터",
-    "title": "초속 5센티미터",
-    "date": "2026-02-25",
+    "id": "movie_호퍼스",
+    "title": "호퍼스",
+    "date": "2026-03-04",
     "region": "전국",
     "genre": "movie",
     "rank": 3,
-    "link": "https://search.naver.com/search.naver?query=%EC%B4%88%EC%86%8D%205%EC%84%BC%ED%8B%B0%EB%AF%B8%ED%84%B0%20%EC%98%81%ED%99%94",
-    "runningTime": "122분",
-    "productionCountry": "일본",
-    "subGenre": "드라마",
-    "director": "오쿠야마 요시유키",
+    "link": "https://search.naver.com/search.naver?query=%ED%98%B8%ED%8D%BC%EC%8A%A4%20%EC%98%81%ED%99%94",
+    "runningTime": "104분",
+    "productionCountry": "미국",
+    "subGenre": "애니메이션",
+    "director": "다니엘 총",
     "cast": [
-      "마츠무라 호쿠토",
-      "타카하타 미츠키"
+      "파이퍼 쿠르다",
+      "바비 모니한",
+      "존 햄"
     ],
-    "venue": "12세 관람가",
-    "image": "/images/posters/movies/movie_초속5센티미터.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_호퍼스.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_신의악단",
@@ -89,9 +90,29 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_신의악단.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
     "rank": 4,
     "productionCountry": "대한민국"
+  },
+  {
+    "id": "movie_초속_5센티미터",
+    "title": "초속 5센티미터",
+    "date": "2026-02-25",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 5,
+    "link": "https://search.naver.com/search.naver?query=%EC%B4%88%EC%86%8D%205%EC%84%BC%ED%8B%B0%EB%AF%B8%ED%84%B0%20%EC%98%81%ED%99%94",
+    "runningTime": "122분",
+    "productionCountry": "일본",
+    "subGenre": "드라마",
+    "director": "오쿠야마 요시유키",
+    "cast": [
+      "마츠무라 호쿠토",
+      "타카하타 미츠키"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_초속5센티미터.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_너자_2",
@@ -99,7 +120,7 @@
     "date": "2026-02-25",
     "region": "전국",
     "genre": "movie",
-    "rank": 5,
+    "rank": 6,
     "link": "https://search.naver.com/search.naver?query=%EB%84%88%EC%9E%90%202%20%EC%98%81%ED%99%94",
     "runningTime": "144분",
     "productionCountry": "중국",
@@ -117,7 +138,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_너자2.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_28년_후_뼈의_사원",
@@ -125,7 +146,7 @@
     "date": "2026-02-27",
     "region": "전국",
     "genre": "movie",
-    "rank": 6,
+    "rank": 7,
     "link": "https://search.naver.com/search.naver?query=28%EB%85%84%20%ED%9B%84%3A%20%EB%BC%88%EC%9D%98%20%EC%82%AC%EC%9B%90%20%EC%98%81%ED%99%94",
     "runningTime": "109분",
     "productionCountry": "미국",
@@ -141,29 +162,7 @@
     ],
     "venue": "청소년 관람불가",
     "image": "/images/posters/movies/movie_28년후뼈의사원.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_슬라이드_스트럼_뮤트",
-    "title": "슬라이드 스트럼 뮤트",
-    "date": "2026-02-26",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 7,
-    "link": "https://search.naver.com/search.naver?query=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%8A%A4%ED%8A%B8%EB%9F%BC%20%EB%AE%A4%ED%8A%B8%20%EC%98%81%ED%99%94",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
-    "runningTime": "60분",
-    "productionCountry": "대한민국",
-    "subGenre": "드라마",
-    "director": "박세영",
-    "cast": [
-      "우즈",
-      "저스틴 H. 민",
-      "정회린",
-      "박세영"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movies/movie_슬라이드스트럼뮤트.webp"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_햄넷",
@@ -189,7 +188,28 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_햄넷.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_넘버원",
+    "title": "넘버원",
+    "date": "2026-02-11",
+    "region": "전국",
+    "genre": "movie",
+    "productionCountry": "대한민국",
+    "rank": 9,
+    "link": "https://search.naver.com/search.naver?query=%EB%84%98%EB%B2%84%EC%9B%90%20%EC%98%81%ED%99%94",
+    "runningTime": "105분",
+    "subGenre": "드라마",
+    "director": "김태용",
+    "cast": [
+      "최우식",
+      "장혜진",
+      "공승연"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_넘버원.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_귀신_부르는_앱_영",
@@ -197,7 +217,7 @@
     "date": "2026-02-18",
     "region": "전국",
     "genre": "movie",
-    "rank": 9,
+    "rank": 10,
     "link": "https://search.naver.com/search.naver?query=%EA%B7%80%EC%8B%A0%20%EB%B6%80%EB%A5%B4%EB%8A%94%20%EC%95%B1%3A%20%EC%98%81%20%EC%98%81%ED%99%94",
     "runningTime": "87분",
     "subGenre": "공포",
@@ -210,29 +230,8 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_귀신부르는앱영.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
     "productionCountry": "대한민국"
-  },
-  {
-    "id": "movie_넘버원",
-    "title": "넘버원",
-    "date": "2026-02-11",
-    "region": "전국",
-    "genre": "movie",
-    "productionCountry": "대한민국",
-    "rank": 10,
-    "link": "https://search.naver.com/search.naver?query=%EB%84%98%EB%B2%84%EC%9B%90%20%EC%98%81%ED%99%94",
-    "runningTime": "105분",
-    "subGenre": "드라마",
-    "director": "김태용",
-    "cast": [
-      "최우식",
-      "장혜진",
-      "공승연"
-    ],
-    "venue": "12세 관람가",
-    "image": "/images/posters/movies/movie_넘버원.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
   },
   {
     "id": "movie_센티멘탈_밸류",
@@ -255,27 +254,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_센티멘탈밸류.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_아이엠스타_X프리파라_더_무비_만남의_기적",
-    "title": "아이엠스타!X프리파라 더 무비 -만남의 기적!-",
-    "date": "2026-02-04",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 12,
-    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EC%9D%B4%EC%97%A0%EC%8A%A4%ED%83%80!X%ED%94%84%EB%A6%AC%ED%8C%8C%EB%9D%BC%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%20-%EB%A7%8C%EB%82%A8%EC%9D%98%20%EA%B8%B0%EC%A0%81!-%20%EC%98%81%ED%99%94",
-    "runningTime": "76분",
-    "productionCountry": "일본",
-    "subGenre": "애니메이션",
-    "director": "오오카와 타카히로",
-    "cast": [
-      "정유정",
-      "김현지"
-    ],
-    "venue": "전체 관람가",
-    "image": "/images/posters/movies/movie_아이엠스타X프리파라더무비만남의기적.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_아기_티라노_디보_초식이지만_괜찮아",
@@ -283,7 +262,7 @@
     "date": "2026-02-25",
     "region": "전국",
     "genre": "movie",
-    "rank": 13,
+    "rank": 12,
     "link": "https://search.naver.com/search.naver?query=%EC%95%84%EA%B8%B0%20%ED%8B%B0%EB%9D%BC%EB%85%B8%20%EB%94%94%EB%B3%B4%3A%20%EC%B4%88%EC%8B%9D%EC%9D%B4%EC%A7%80%EB%A7%8C%20%EA%B4%9C%EC%B0%AE%EC%95%84!%20%EC%98%81%ED%99%94",
     "runningTime": "77분",
     "productionCountry": "중국",
@@ -291,41 +270,7 @@
     "director": "슈창",
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_아기티라노디보초식이지만괜찮아.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_엔하이픈_워크_더_라인_썸머_에디션_인_시네마",
-    "title": "엔하이픈 [워크 더 라인 썸머 에디션] 인 시네마",
-    "date": "2026-02-27",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 14,
-    "link": "https://search.naver.com/search.naver?query=%EC%97%94%ED%95%98%EC%9D%B4%ED%94%88%20%5B%EC%9B%8C%ED%81%AC%20%EB%8D%94%20%EB%9D%BC%EC%9D%B8%20%EC%8D%B8%EB%A8%B8%20%EC%97%90%EB%94%94%EC%85%98%5D%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%20%EC%98%81%ED%99%94",
-    "runningTime": "123분",
-    "productionCountry": "대한민국",
-    "subGenre": "공연실황대한민국123분",
-    "director": "박재석",
-    "cast": [
-      "엔하이픈"
-    ],
-    "venue": "전체 관람가",
-    "image": "/images/posters/movies/movie_엔하이픈워크더라인썸머에디션인시네마.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_점보",
-    "title": "점보",
-    "date": "2026-02-18",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 15,
-    "link": "https://search.naver.com/search.naver?query=%EC%A0%90%EB%B3%B4%20%EC%98%81%ED%99%94",
-    "runningTime": "102분",
-    "subGenre": "애니메이션",
-    "director": "라이언 아드리안디",
-    "venue": "전체 관람가",
-    "image": "/images/posters/movies/movie_점보.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_렌탈_패밀리_가족을_빌려드립니다",
@@ -333,7 +278,7 @@
     "date": "2026-02-25",
     "region": "전국",
     "genre": "movie",
-    "rank": 16,
+    "rank": 13,
     "link": "https://search.naver.com/search.naver?query=%EB%A0%8C%ED%83%88%20%ED%8C%A8%EB%B0%80%EB%A6%AC%3A%20%EA%B0%80%EC%A1%B1%EC%9D%84%20%EB%B9%8C%EB%A0%A4%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4%20%EC%98%81%ED%99%94",
     "runningTime": "110분",
     "productionCountry": "미국",
@@ -348,50 +293,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_렌탈패밀리가족을빌려드립니다.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_몬테크리스토_백작",
-    "title": "몬테크리스토 백작",
-    "date": "2026-02-13",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 17,
-    "link": "https://search.naver.com/search.naver?query=%EB%AA%AC%ED%85%8C%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%20%EB%B0%B1%EC%9E%91%20%EC%98%81%ED%99%94",
-    "runningTime": "178분",
-    "productionCountry": "프랑스",
-    "subGenre": "드라마",
-    "director": "매튜 델라포테",
-    "cast": [
-      "피에르 니네이",
-      "바스티앙 부이용",
-      "아나이스 드무스티에",
-      "아나마리아 바토로메이",
-      "로랑 라피트"
-    ],
-    "venue": "12세 관람가",
-    "image": "/images/posters/movies/movie_몬테크리스토백작.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
-  },
-  {
-    "id": "movie_만약에_우리",
-    "title": "만약에 우리",
-    "date": "2025-12-31",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%A7%8C%EC%95%BD%EC%97%90%20%EC%9A%B0%EB%A6%AC%20%EC%98%81%ED%99%94",
-    "runningTime": "115분",
-    "subGenre": "멜로",
-    "director": "김도영",
-    "cast": [
-      "구교환",
-      "문가영"
-    ],
-    "venue": "15세 관람가",
-    "image": "/images/posters/movies/movie_만약에우리.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z",
-    "rank": 18,
-    "productionCountry": "대한민국"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_바다_탐험대_옥토넛_어보브_앤_비욘드_육지생물_구조작전",
@@ -399,7 +301,7 @@
     "date": "2026-02-12",
     "region": "전국",
     "genre": "movie",
-    "rank": 19,
+    "rank": 14,
     "link": "https://search.naver.com/search.naver?query=%EB%B0%94%EB%8B%A4%20%ED%83%90%ED%97%98%EB%8C%80%20%EC%98%A5%ED%86%A0%EB%84%9B%20%EC%96%B4%EB%B3%B4%EB%B8%8C%20%EC%95%A4%20%EB%B9%84%EC%9A%98%EB%93%9C%20%3A%20%EC%9C%A1%EC%A7%80%EC%83%9D%EB%AC%BC%20%EA%B5%AC%EC%A1%B0%EC%9E%91%EC%A0%84%20%EC%98%81%ED%99%94",
     "runningTime": "59분",
     "productionCountry": "영국",
@@ -417,7 +319,90 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_바다탐험대옥토넛어보브앤비욘드육지생물구조작전.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_엔하이픈_워크_더_라인_썸머_에디션_인_시네마",
+    "title": "엔하이픈 [워크 더 라인 썸머 에디션] 인 시네마",
+    "date": "2026-02-27",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 15,
+    "link": "https://search.naver.com/search.naver?query=%EC%97%94%ED%95%98%EC%9D%B4%ED%94%88%20%5B%EC%9B%8C%ED%81%AC%20%EB%8D%94%20%EB%9D%BC%EC%9D%B8%20%EC%8D%B8%EB%A8%B8%20%EC%97%90%EB%94%94%EC%85%98%5D%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%20%EC%98%81%ED%99%94",
+    "runningTime": "123분",
+    "productionCountry": "대한민국",
+    "subGenre": "공연실황대한민국123분",
+    "director": "박재석",
+    "cast": [
+      "엔하이픈"
+    ],
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_엔하이픈워크더라인썸머에디션인시네마.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_몬테크리스토_백작",
+    "title": "몬테크리스토 백작",
+    "date": "2026-02-13",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 16,
+    "link": "https://search.naver.com/search.naver?query=%EB%AA%AC%ED%85%8C%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%20%EB%B0%B1%EC%9E%91%20%EC%98%81%ED%99%94",
+    "runningTime": "178분",
+    "productionCountry": "프랑스",
+    "subGenre": "드라마",
+    "director": "매튜 델라포테",
+    "cast": [
+      "피에르 니네이",
+      "바스티앙 부이용",
+      "아나이스 드무스티에",
+      "아나마리아 바토로메이",
+      "로랑 라피트"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_몬테크리스토백작.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_점보",
+    "title": "점보",
+    "date": "2026-02-18",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 17,
+    "link": "https://search.naver.com/search.naver?query=%EC%A0%90%EB%B3%B4%20%EC%98%81%ED%99%94",
+    "runningTime": "102분",
+    "subGenre": "애니메이션",
+    "director": "라이언 아드리안디",
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_점보.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_매드_댄스_오피스",
+    "title": "매드 댄스 오피스",
+    "date": "2026-03-04",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 18,
+    "link": "https://search.naver.com/search.naver?query=%EB%A7%A4%EB%93%9C%20%EB%8C%84%EC%8A%A4%20%EC%98%A4%ED%94%BC%EC%8A%A4%20%EC%98%81%ED%99%94",
+    "runningTime": "106분",
+    "productionCountry": "대한민국",
+    "subGenre": "드라마",
+    "director": "조현진",
+    "cast": [
+      "염혜란",
+      "최성은",
+      "우미화",
+      "박호산",
+      "백현진",
+      "권태원",
+      "아린",
+      "안동구"
+    ],
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_매드댄스오피스.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   },
   {
     "id": "movie_국보",
@@ -425,7 +410,7 @@
     "date": "2025-11-19",
     "region": "전국",
     "genre": "movie",
-    "rank": 20,
+    "rank": 19,
     "link": "https://search.naver.com/search.naver?query=%EA%B5%AD%EB%B3%B4%20%EC%98%81%ED%99%94",
     "runningTime": "175분",
     "productionCountry": "일본",
@@ -443,6 +428,232 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_국보.webp",
-    "lastCollected": "2026-03-01T14:39:44.928Z"
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_아이엠스타_X프리파라_더_무비_만남의_기적",
+    "title": "아이엠스타!X프리파라 더 무비 -만남의 기적!-",
+    "date": "2026-02-04",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 20,
+    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EC%9D%B4%EC%97%A0%EC%8A%A4%ED%83%80!X%ED%94%84%EB%A6%AC%ED%8C%8C%EB%9D%BC%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%20-%EB%A7%8C%EB%82%A8%EC%9D%98%20%EA%B8%B0%EC%A0%81!-%20%EC%98%81%ED%99%94",
+    "runningTime": "76분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션",
+    "director": "오오카와 타카히로",
+    "cast": [
+      "정유정",
+      "김현지"
+    ],
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_아이엠스타X프리파라더무비만남의기적.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_만약에_우리",
+    "title": "만약에 우리",
+    "date": "2025-12-31",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EB%A7%8C%EC%95%BD%EC%97%90%20%EC%9A%B0%EB%A6%AC%20%EC%98%81%ED%99%94",
+    "runningTime": "115분",
+    "subGenre": "멜로",
+    "director": "김도영",
+    "cast": [
+      "구교환",
+      "문가영"
+    ],
+    "venue": "15세 관람가",
+    "image": "/images/posters/movies/movie_만약에우리.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
+    "rank": 21,
+    "productionCountry": "대한민국"
+  },
+  {
+    "id": "movie_슬라이드_스트럼_뮤트",
+    "title": "슬라이드 스트럼 뮤트",
+    "date": "2026-02-26",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 22,
+    "link": "https://search.naver.com/search.naver?query=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%8A%A4%ED%8A%B8%EB%9F%BC%20%EB%AE%A4%ED%8A%B8%20%EC%98%81%ED%99%94",
+    "lastCollected": "2026-03-03T01:55:01.593Z",
+    "runningTime": "60분",
+    "productionCountry": "대한민국",
+    "subGenre": "드라마",
+    "director": "박세영",
+    "cast": [
+      "우즈",
+      "저스틴 H. 민",
+      "정회린",
+      "박세영"
+    ],
+    "venue": "15세 관람가",
+    "image": "/images/posters/movies/movie_슬라이드스트럼뮤트.webp"
+  },
+  {
+    "id": "movie_부흥",
+    "title": "부흥",
+    "date": "2026-01-01",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 23,
+    "link": "https://search.naver.com/search.naver?query=%EB%B6%80%ED%9D%A5%20%EC%98%81%ED%99%94",
+    "runningTime": "90분",
+    "productionCountry": "대한민국",
+    "subGenre": "다큐멘터리",
+    "director": "윤학렬",
+    "venue": "전체 관람가",
+    "image": "/images/posters/movies/movie_부흥.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_아바타_불과_재",
+    "title": "아바타: 불과 재",
+    "date": "2025-12-17",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 24,
+    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EB%B0%94%ED%83%80%3A%20%EB%B6%88%EA%B3%BC%20%EC%9E%AC%20%EC%98%81%ED%99%94",
+    "runningTime": "197분",
+    "productionCountry": "미국",
+    "subGenre": "SF",
+    "director": "제임스 카메론",
+    "cast": [
+      "샘 워싱턴",
+      "조 샐다나",
+      "시고니 위버",
+      "스티븐 랭",
+      "케이트 윈슬렛",
+      "우나 채플린",
+      "클리프 커티스",
+      "조엘 무어"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_아바타불과재.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_폭풍의_언덕",
+    "title": "폭풍의 언덕",
+    "date": "2026-02-11",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 25,
+    "link": "https://search.naver.com/search.naver?query=%ED%8F%AD%ED%92%8D%EC%9D%98%20%EC%96%B8%EB%8D%95%20%EC%98%81%ED%99%94",
+    "runningTime": "136분",
+    "productionCountry": "미국",
+    "subGenre": "드라마",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_폭풍의언덕.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_시라트",
+    "title": "시라트",
+    "date": "2026-01-21",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 26,
+    "link": "https://search.naver.com/search.naver?query=%EC%8B%9C%EB%9D%BC%ED%8A%B8%20%EC%98%81%ED%99%94",
+    "runningTime": "114분",
+    "productionCountry": "스페인",
+    "subGenre": "드라마",
+    "director": "올리버 라세",
+    "cast": [
+      "세르지 로페즈"
+    ],
+    "venue": "15세 관람가",
+    "image": "/images/posters/movies/movie_시라트.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_씨너스_죄인들",
+    "title": "씨너스: 죄인들",
+    "date": "2025-05-28",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 27,
+    "link": "https://search.naver.com/search.naver?query=%EC%94%A8%EB%84%88%EC%8A%A4%3A%20%EC%A3%84%EC%9D%B8%EB%93%A4%20%EC%98%81%ED%99%94",
+    "runningTime": "137분",
+    "productionCountry": "미국",
+    "subGenre": "액션",
+    "director": "라이언 쿠글러",
+    "cast": [
+      "마이클 B. 조던",
+      "헤일리 스테인펠드"
+    ],
+    "venue": "청소년 관람불가",
+    "image": "/images/posters/movies/movie_씨너스죄인들.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_2024_12_03_그날_조작된_내란_감춰진_진실",
+    "title": "2024.12.03 그날 조작된 내란, 감춰진 진실",
+    "date": "2026-02-04",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 28,
+    "link": "https://search.naver.com/search.naver?query=2024.12.03%20%EA%B7%B8%EB%82%A0%20%EC%A1%B0%EC%9E%91%EB%90%9C%20%EB%82%B4%EB%9E%80%2C%20%EA%B0%90%EC%B6%B0%EC%A7%84%20%EC%A7%84%EC%8B%A4%20%EC%98%81%ED%99%94",
+    "runningTime": "142분",
+    "productionCountry": "대한민국",
+    "subGenre": "다큐멘터리",
+    "director": "이영돈",
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_20241203그날조작된내란감춰진진실.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_너의_이름은",
+    "title": "너의 이름은.",
+    "date": "2017-01-04",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 29,
+    "link": "https://search.naver.com/search.naver?query=%EB%84%88%EC%9D%98%20%EC%9D%B4%EB%A6%84%EC%9D%80.%20%EC%98%81%ED%99%94",
+    "runningTime": "106분",
+    "productionCountry": "일본",
+    "subGenre": "애니메이션",
+    "director": "신카이 마코토",
+    "cast": [
+      "카미키 류노스케",
+      "카미시라이시 모네",
+      "나가사와 마사미",
+      "나리타 료",
+      "유우키 아오이",
+      "이치하라 에츠코",
+      "시마자키 노부나가",
+      "이시카와 카이토"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_너의이름은.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
+  },
+  {
+    "id": "movie_남과_여",
+    "title": "남과 여",
+    "date": "1979-10-03",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 30,
+    "link": "https://search.naver.com/search.naver?query=%EB%82%A8%EA%B3%BC%20%EC%97%AC%20%EC%98%81%ED%99%94",
+    "runningTime": "103분",
+    "productionCountry": "프랑스",
+    "subGenre": "드라마",
+    "director": "끌로드 를르슈",
+    "cast": [
+      "아누크 에메",
+      "장-루이 트린티냥",
+      "피에르 바로우",
+      "발레리 라그레인지",
+      "끌로드 를르슈",
+      "피에르 위터호에븐",
+      "비니서스 드 모라에스",
+      "프란시스 레이"
+    ],
+    "venue": "15세 관람가",
+    "image": "/images/posters/movies/movie_남과여.webp",
+    "lastCollected": "2026-03-03T01:55:01.593Z"
   }
 ]

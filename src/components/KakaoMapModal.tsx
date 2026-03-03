@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
@@ -97,12 +97,10 @@ export default function KakaoMapModal({
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
-    // Initialize Data (Grouping & Initial Sorting)
-    useEffect(() => {
+    // --- 1. Data Memoization (Crucial for Performance) ---
+    const processedData = useMemo(() => {
         const isMovieMode = selectedGenre === 'movie';
         const isAllMode = selectedGenre === 'all' || !selectedGenre;
-
-        // Use Map for faster lookups
         const groupsMap = new Map<string, any>();
 
         // 1. Process Performances
@@ -116,7 +114,6 @@ export default function KakaoMapModal({
 
                 if (!group) {
                     const venueMeta = venues[vName];
-                    const hasCoords = venueMeta?.lat && venueMeta?.lng;
                     group = {
                         ...venueMeta,
                         venueName: vName,
@@ -151,12 +148,9 @@ export default function KakaoMapModal({
             }
         }
 
-        const groups = Object.fromEntries(groupsMap);
-        allVenueGroups.current = groups;
+        const list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
 
-        let list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
-
-        // Sort by distance if center exists AND is valid
+        // Sort by distance if center exists
         if (centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng)) {
             const cLat = centerLocation.lat;
             const cLng = centerLocation.lng;
@@ -169,440 +163,221 @@ export default function KakaoMapModal({
             });
         }
 
-        allVenuesList.current = list;
-        setVisibleVenues(list.slice(0, 20));
+        return { groups: Object.fromEntries(groupsMap), list };
     }, [performances, cinemas, centerLocation, selectedGenre]);
 
+    // Update refs immediately after memoization
+    useEffect(() => {
+        allVenueGroups.current = processedData.groups;
+        allVenuesList.current = processedData.list;
+
+        // Show more venues initially for specific categories to ensure immediate list appearance
+        const initialCount = selectedGenre !== 'all' ? 200 : 20;
+        setVisibleVenues(processedData.list.slice(0, initialCount));
+    }, [processedData, selectedGenre]);
+
     const handleSearchHereInternal = useCallback((map: any) => {
-        if (!map) return;
+        if (!map || !window.kakao?.maps?.LatLng) return;
         const bounds = map.getBounds();
         const visible = allVenuesList.current.filter(v => {
-            if (!v.kakaoLatLng && window.kakao?.maps?.LatLng) {
-                v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
-            }
-            if (!v.kakaoLatLng) return false;
+            if (!v.kakaoLatLng) v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
             return bounds.contain(v.kakaoLatLng);
         });
-        // Limit visible list to prevent DOM overhead
         setVisibleVenues(visible.slice(0, 200));
         setShowSearchHereBtn(false);
     }, []);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance);
-
-    // Seoul Station fallback coordinates
     const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
 
-    // 1. Initialize Map Instance
+    // --- 2. Map Instance Initialization (Once per mount) ---
     useEffect(() => {
         let checkInterval: any;
         let cancelled = false;
 
-        const createMap = (center: { lat: number; lng: number }, level: number, userCenter: boolean) => {
-            if (cancelled || !mapRef.current) return;
+        const initializeMap = () => {
+            if (!window.kakao?.maps?.load || !mapRef.current || cancelled) return;
 
             window.kakao.maps.load(() => {
                 if (cancelled || !mapRef.current) return;
-
                 const k = window.kakao.maps;
-                if (typeof k.LatLng !== 'function' || typeof k.Map !== 'function') return;
+                if (!k.Map || !k.LatLng) return;
 
-                const mapCenter = new k.LatLng(center.lat, center.lng);
-                const options = { center: mapCenter, level };
+                // Determine initial center and level based on PRIORITY (no SDK calls yet)
+                let initialCenter = SEOUL_STATION;
+                let initialLevel = 8;
+                let isUserLocation = false;
 
-                if (!mapRef.current) return;
-                mapRef.current.innerHTML = '';
+                if (centerLocation) {
+                    initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
+                    initialLevel = 5;
+                } else if (selectedGenre !== 'all' && allVenuesList.current.length > 0) {
+                    const first = allVenuesList.current[0];
+                    initialCenter = { lat: first.lat, lng: first.lng };
+                    initialLevel = SPORTS_GENRES.includes(selectedGenre) ? 6 : 5;
+                }
+
+                const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };
                 const map = new k.Map(mapRef.current, options);
 
-                // --- 1. Cleanup Stale Objects ---
+                // Cleanup and Setup
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
-
-                if (markersRef.current.length > 0) {
-                    markersRef.current.forEach(m => {
-                        m.setMap(null);
-                        window.kakao.maps.event.removeListener(m, 'click');
-                    });
-                    markersRef.current = [];
-                }
-
-                // --- 2. Initialize State trackers ---
-                (map as any)._customOverlays = [];
-                (map as any)._clusterer = null;
-
                 setMapInstance(map);
 
-                // Force layout recalculation after mounting
-                setTimeout(() => {
-                    map.relayout();
-                    map.setCenter(mapCenter);
-                }, 200);
+                window.kakao.maps.event.addListener(map, 'dragend', () => setShowSearchHereBtn(true));
+                window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
 
-                // --- Global Event Listeners ---
-                const handleMapChange = () => {
-                    setShowSearchHereBtn(true);
-                };
-
-                window.kakao.maps.event.addListener(map, 'dragend', handleMapChange);
-                window.kakao.maps.event.addListener(map, 'zoom_changed', handleMapChange);
-
-                // Center Marker
-                if (centerLocation) {
-                    // Red marker for explicit search location
-                    if (typeof k.LatLng === 'function' && typeof k.CustomOverlay === 'function') {
-                        const loc = new k.LatLng(centerLocation.lat, centerLocation.lng);
-                        const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
-                        <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400">
-                            ${centerLocation.name || '검색 위치'}
-                        </div>
-                        <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
-                            <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
-                        </div>
-                    </div>`;
-                        const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
-                        mapOverlaysRef.current.push(overlay);
-                    }
-                } else if (userCenter) {
-                    // Blue dot for user's actual location
-                    if (typeof k.CustomOverlay === 'function') {
-                        const content = `<div style="width:16px;height:16px;background:#3b82f6;border:2px solid white;border-radius:50%;box-shadow:0 0 8px rgba(59,130,246,0.5);"></div>`;
-                        const overlay = new k.CustomOverlay({ map, position: mapCenter, content, zIndex: 100 });
-                        mapOverlaysRef.current.push(overlay);
-                    }
-                }
-
-                // Ensure ALL required constructors exist before declaring map ready
-                const isAllConstructorsAvailable =
-                    typeof k.LatLng === 'function' &&
-                    typeof k.LatLngBounds === 'function' &&
-                    typeof k.Marker === 'function' &&
-                    typeof k.MarkerImage === 'function' &&
-                    typeof k.Size === 'function' &&
-                    typeof k.Point === 'function' &&
-                    typeof k.CustomOverlay === 'function';
-
-                if (isAllConstructorsAvailable) {
-                    setIsMapReady(true);
-                } else {
-                    console.warn("Kakao SDK loaded but some constructors are missing. Retrying...");
-                    // This will be retried by the next interval if map initialization fails
-                }
-
-                // Initial Bounds Check
-                handleSearchHereInternal(map);
+                setIsMapReady(true);
+                setTimeout(() => { map.relayout(); }, 200);
             });
         };
 
-        const initializeMap = () => {
-            if (!window.kakao || !window.kakao.maps) return;
-
-            // Priority 1: Explicit center location (from search or venue click)
-            if (centerLocation) {
-                createMap({ lat: centerLocation.lat, lng: centerLocation.lng }, 5, false);
-                return;
-            }
-
-            // Priority 2: Category Smart Centering (Centering on the first content's venue)
-            const isAllMode = selectedGenre === 'all' || !selectedGenre;
-            if (!isAllMode && allVenuesList.current.length > 0) {
-                const firstVenue = allVenuesList.current[0];
-                if (firstVenue.lat && firstVenue.lng) {
-                    createMap({ lat: firstVenue.lat, lng: firstVenue.lng }, 5, false);
-                    setSelectedVenue(firstVenue.venueName);
-                    return;
-                }
-            }
-
-            // Priority 3: Try user's current geolocation
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (pos) => {
-                        createMap({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 7, true);
-                    },
-                    () => {
-                        createMap(SEOUL_STATION, 8, false);
-                    },
-                    { timeout: 5000, maximumAge: 60000 }
-                );
-            } else {
-                createMap(SEOUL_STATION, 8, false);
-            }
-        };
-
         checkInterval = setInterval(() => {
-            if (window.kakao && window.kakao.maps) {
+            if (window.kakao?.maps) {
                 clearInterval(checkInterval);
                 initializeMap();
             }
         }, 100);
-        return () => {
-            cancelled = true;
-            clearInterval(checkInterval);
-        };
-    }, [centerLocation, handleSearchHereInternal, selectedGenre, performances]); // Added performances and genre to dependencies
+
+        return () => { cancelled = true; clearInterval(checkInterval); };
+    }, []); // Empty dependency array = mount once
+
+    // --- 3. Reactive Map Updates (Center/Bounds) ---
+    useEffect(() => {
+        if (!mapInstance || !isMapReady) return;
+        const map = mapInstance;
+        const k = window.kakao.maps;
+
+        if (centerLocation) {
+            const loc = new k.LatLng(centerLocation.lat, centerLocation.lng);
+            map.panTo(loc);
+
+            // Add search marker
+            const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
+                <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
+                    ${centerLocation.name || '검색 위치'}
+                </div>
+                <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
+                    <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
+                </div>
+            </div>`;
+            const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+            mapOverlaysRef.current.push(overlay);
+        } else if (selectedGenre !== 'all' && allVenuesList.current.length > 0) {
+            const first = allVenuesList.current[0];
+            map.panTo(new k.LatLng(first.lat, first.lng));
+            map.setLevel(SPORTS_GENRES.includes(selectedGenre) ? 6 : 5);
+        }
+
+        handleSearchHereInternal(map);
+    }, [mapInstance, isMapReady, centerLocation, selectedGenre]); // Reactive updates only
+
 
     // Tracks whether auto-bounding has already been applied for this session/genre
     const hasBoundedOnce = useRef<string | null>(null);
 
     // 2. Re-render Markers when Data changes
+    const clustererRef = useRef<any>(null);
+
+    // --- 4. Marker & Clusterer Management (Consolidated) ---
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
+        const k = window.kakao.maps;
 
-        const map = mapInstance;
-
-        // --- 0. Memoization Check ---
-        const currentVenuesKey = allVenuesList.current.map(v => `${v.venueName}_${v.performances.length}`).sort().join('|');
-        if (currentVenuesKey === lastRenderedVenuesKey.current) return;
-        lastRenderedVenuesKey.current = currentVenuesKey;
-
-        // --- 1. Cleanup existing markers ---
-        if (map._clusterer) {
-            map._clusterer.clear();
+        // Cleanup existing clusterer and markers
+        if (clustererRef.current) {
+            clustererRef.current.clear();
         }
-
-        markersRef.current.forEach((m: any) => {
+        markersRef.current.forEach(m => {
             m.setMap(null);
             window.kakao.maps.event.removeListener(m, 'click');
         });
         markersRef.current = [];
 
-        // --- 2. Initialize or Reuse Clusterer ---
-        let clusterer = map._clusterer;
-        if (!clusterer && window.kakao.maps.MarkerClusterer) {
-            try {
-                clusterer = new window.kakao.maps.MarkerClusterer({
-                    map: map,
-                    averageCenter: true,
-                    minLevel: 7,
-                    disableClickZoom: false,
-                    styles: [{
-                        width: '50px', height: '50px',
-                        background: 'rgba(79, 70, 229, 0.9)',
-                        borderRadius: '50%',
-                        color: 'white',
-                        textAlign: 'center', lineHeight: '50px',
-                        fontWeight: 'bold',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
-                        border: '3px solid rgba(255,255,255,0.9)',
-                        fontSize: '14px'
-                    }]
-                });
-                map._clusterer = clusterer;
-            } catch (e) {
-                console.warn("Clusterer initialization error:", e);
-            }
-        }
+        const clusterer = new k.MarkerClusterer({
+            map: mapInstance,
+            averageCenter: true,
+            minLevel: 6,
+            disableClickZoom: false,
+            styles: [{
+                width: '40px', height: '40px', background: 'rgba(16, 185, 129, 0.9)',
+                borderRadius: '50%', color: '#fff', textAlign: 'center',
+                fontWeight: 'bold', lineHeight: '40px', fontSize: '14px', border: '3px solid white', boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+            }]
+        });
+        clustererRef.current = clusterer;
 
-        // --- 3. Create Markers in Chunks (Avoid blocking main thread) ---
-        const venuesToProcess = allVenuesList.current.filter(v => v.lat && v.lng);
-        const chunkSize = 100;
-        let index = 0;
-        let animationFrameId: number;
+        const venuesToProcess = allVenuesList.current;
+        const markers: any[] = [];
 
-        const processChunk = () => {
-            if (index >= venuesToProcess.length) return;
-            if (!mapInstance || !isMapReady) return;
+        venuesToProcess.forEach(venue => {
+            const isSelected = venue.venueName === selectedVenue;
+            const primaryGenre = venue.performances[0]?.genre || selectedGenre || 'all';
+            const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
+            const color = venue.type === 'cinema' ? '#4f46e5' : style.color;
+            const text = venue.performances.length.toString();
 
-            const markers: any[] = [];
-            const end = Math.min(index + chunkSize, venuesToProcess.length);
-
-            for (let i = index; i < end; i++) {
-                const venue = venuesToProcess[i];
-                if (!venue.kakaoLatLng && window.kakao?.maps?.LatLng) {
-                    venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng);
-                }
-
-                const position = venue.kakaoLatLng;
-                const perfs = venue.performances;
-                const primaryGenre = perfs[0]?.genre;
-                const isCinema = venue.type === 'cinema';
-                const color = isCinema ? '#4f46e5' : (GENRE_STYLES[primaryGenre]?.hex || '#10b981');
-                const text = isCinema ? (perfs.length > 0 ? perfs.length.toString() : '📽️') : perfs.length.toString();
-
-                const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                    <circle cx="18" cy="18" r="16" fill="${color}" stroke="white" stroke-width="2" />
-                    <text x="18" y="19" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="12" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
-                </svg>`;
-                const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
-
-                const k = window.kakao.maps;
-                if (typeof k.MarkerImage !== 'function' || typeof k.Size !== 'function' || typeof k.Point !== 'function') continue;
-
-                const markerImage = new k.MarkerImage(
-                    iconUrl,
-                    new k.Size(36, 36),
-                    new k.Point(18, 18)
-                );
-
-                if (typeof k.Marker !== 'function') continue;
-                const marker = new k.Marker({
-                    position,
-                    image: markerImage,
-                    zIndex: 10
-                });
-
-                window.kakao.maps.event.addListener(marker, 'click', () => {
-                    setSelectedVenue(venue.venueName);
-                    const moveLatLon = venue.kakaoLatLng;
-                    if (mapInstance.getLevel() > 4) {
-                        mapInstance.setLevel(4);
-                        setTimeout(() => mapInstance.panTo(moveLatLon), 10);
-                    } else {
-                        mapInstance.panTo(moveLatLon);
-                    }
-
-                    setTimeout(() => {
-                        const scrollContainer = document.getElementById('venue-scroll-container');
-                        if (scrollContainer) {
-                            const idx = allVenuesList.current.findIndex(v => v.venueName === venue.venueName);
-                            if (idx !== -1 && scrollContainer.children[idx]) {
-                                const card = scrollContainer.children[idx] as HTMLElement;
-                                const scrollLeft = card.offsetLeft - (scrollContainer.clientWidth / 2) + (card.clientWidth / 2);
-                                scrollContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-                            }
-                        }
-                    }, 100);
-                });
-
-                (marker as any)._venueName = venue.venueName;
-                (marker as any)._color = color;
-                (marker as any)._text = text;
-
-                markers.push(marker);
-                markersRef.current.push(marker);
-            }
-
-            if (clusterer) {
-                clusterer.addMarkers(markers);
-            }
-
-            index = end;
-            if (index < venuesToProcess.length) {
-                animationFrameId = requestAnimationFrame(processChunk);
-            }
-        };
-
-        processChunk();
-
-        return () => {
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
-
-    // 2b. Highlight selected marker with red border
-    useEffect(() => {
-        if (!mapInstance) return;
-
-        markersRef.current.forEach((marker: any) => {
-            const isSelected = marker._venueName === selectedVenue;
-            const color = marker._color || '#10b981';
-            const text = marker._text || '';
             const size = isSelected ? 44 : 36;
             const r = isSelected ? 20 : 16;
             const center = size / 2;
             const strokeColor = isSelected ? '#ef4444' : 'white';
             const strokeWidth = isSelected ? 3 : 2;
-            const fontSize = isSelected ? 14 : 12;
 
             const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
                 <circle cx="${center}" cy="${center}" r="${r}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />
-                <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${fontSize}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+                <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${isSelected ? 14 : 12}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
             </svg>`;
             const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
 
-            const k = window.kakao.maps;
-            if (typeof k.MarkerImage !== 'function' || typeof k.Size !== 'function' || typeof k.Point !== 'function') return;
+            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(center, center));
+            const marker = new k.Marker({
+                position: new k.LatLng(venue.lat, venue.lng),
+                image: markerImage,
+                zIndex: isSelected ? 100 : 10
+            });
 
-            const markerImage = new k.MarkerImage(
-                iconUrl,
-                new k.Size(size, size),
-                new k.Point(center, center)
-            );
-            marker.setImage(markerImage);
-            marker.setZIndex(isSelected ? 100 : 10);
+            k.event.addListener(marker, 'click', () => {
+                setSelectedVenue(venue.venueName);
+                mapInstance.panTo(new k.LatLng(venue.lat, venue.lng));
+            });
+
+            (marker as any)._venueName = venue.venueName;
+            markers.push(marker);
+            markersRef.current.push(marker);
         });
-    }, [selectedVenue, mapInstance]);
 
-    // 2c. Auto-bounding (separate effect, only runs once per genre change)
+        clusterer.addMarkers(markers);
+    }, [mapInstance, isMapReady, processedData, selectedVenue]);
+
+
+    // --- 5. Search Auto-bounding ---
     useEffect(() => {
-        if (!mapInstance || !isMapReady) return;
-
-        // Only run once per genre/search session
-        const currentContext = centerLocation ? `search_${centerLocation.name}` : `genre_${selectedGenre}`;
-        if (hasBoundedOnce.current === currentContext) return;
-        hasBoundedOnce.current = currentContext;
-
-        const map = mapInstance;
-        const isAllMode = selectedGenre === 'all' || !selectedGenre;
+        if (!mapInstance || !isMapReady || !searchText) return;
 
         const k = window.kakao.maps;
-        if (typeof k.LatLngBounds !== 'function' || typeof k.LatLng !== 'function') return;
+        const bounds = new k.LatLngBounds();
+        let hasValidCoords = false;
 
-        if (centerLocation && allVenuesList.current.length > 0) {
-            // Case A: Explicit center location from search/venue click
-            const closest = allVenuesList.current[0];
-            if (closest && closest.lat && closest.lng) {
-                const bounds = new k.LatLngBounds();
-                bounds.extend(new k.LatLng(centerLocation.lat, centerLocation.lng));
-                bounds.extend(new k.LatLng(closest.lat, closest.lng));
-
-                setTimeout(() => {
-                    map.setBounds(bounds, 150, 50, 50, 50);
-                }, 100);
+        allVenuesList.current.forEach(v => {
+            if (v.lat && v.lng) {
+                bounds.extend(new k.LatLng(v.lat, v.lng));
+                hasValidCoords = true;
             }
-        } else if (allVenuesList.current.length > 0) {
-            // Case B: Category View (Non-All) - Use Smart Centering (panTo) instead of setBounds
-            // to avoid jumping to Chu-pung-ryeong (country-wide bounds)
-            if (!isAllMode) {
-                const firstVenue = allVenuesList.current[0];
-                if (firstVenue.lat && firstVenue.lng) {
-                    const center = new k.LatLng(firstVenue.lat, firstVenue.lng);
-                    map.setCenter(center);
-                    map.setLevel(5); // Appropriate zoom for city/venue level
-                    setSelectedVenue(firstVenue.venueName);
+        });
+
+        if (hasValidCoords) {
+            setTimeout(() => {
+                if (allVenuesList.current.length === 1) {
+                    mapInstance.setCenter(new k.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
+                    mapInstance.setLevel(4);
+                } else {
+                    mapInstance.setBounds(bounds, 120, 50, 150, 50);
                 }
-            } else {
-                // Case C: General "All" View OR Keyword Search with multiple results
-                // CRITICAL RULE: In 'All' mode with NO search text, do NOT auto-bound to the entire country (Goryeong-gun).
-                // Only auto-bound if there is an active search query.
-                if (isAllMode && !searchText) return;
-                const bounds = new k.LatLngBounds();
-                let hasValidCoords = false;
-
-                allVenuesList.current.forEach(v => {
-                    if (v.lat && v.lng) {
-                        bounds.extend(new k.LatLng(v.lat, v.lng));
-                        hasValidCoords = true;
-                    }
-                });
-
-                if (hasValidCoords) {
-                    setTimeout(() => {
-                        if (allVenuesList.current.length === 1) {
-                            map.setCenter(new k.LatLng(allVenuesList.current[0].lat, allVenuesList.current[0].lng));
-                            map.setLevel(4);
-                            setSelectedVenue(allVenuesList.current[0].venueName);
-                        } else {
-                            // Apply bounds with padding
-                            map.setBounds(bounds, 120, 50, 150, 50);
-
-                            // Clamp level to reasonable range
-                            setTimeout(() => {
-                                const currentLevel = map.getLevel();
-                                if (currentLevel > 7) {
-                                    map.setLevel(7);
-                                } else if (currentLevel < 3) {
-                                    map.setLevel(3);
-                                }
-                            }, 50);
-                        }
-                    }, 100);
-                }
-            }
+            }, 100);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [mapInstance, isMapReady, performances, cinemas, selectedGenre, centerLocation]);
+    }, [mapInstance, isMapReady, searchText]);
+
 
     // Popup Position Logic
     const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);
