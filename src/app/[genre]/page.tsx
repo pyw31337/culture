@@ -48,8 +48,11 @@ export async function generateMetadata({ params }: PageProps) {
     let genreFilter: string | string[];
     let genreLabel: string = genre;
 
+    // Map slug to internal ID for label lookup
+    const internalGenre = SLUG_TO_GENRE[genre] || genre;
+
     // Find label
-    const matchedGenre = GENRES.find(g => g.id === genre);
+    const matchedGenre = GENRES.find(g => g.id === internalGenre);
     if (matchedGenre) genreLabel = matchedGenre.label;
 
     // Custom Label for Sports aggregate

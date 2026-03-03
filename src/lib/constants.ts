@@ -159,5 +159,15 @@ export const FUTURES_TEAM_LOGOS: Record<string, string> = {
     "한국도로공사": `${_BP}/images/logos/kovo/hipass.svg`,
     "페퍼저축은행": `${_BP}/images/logos/kovo/aipeppers.svg`,
     "PEPPERS": `${_BP}/images/logos/kovo/aipeppers.svg`,
-    "AI페퍼스": `${_BP}/images/logos/kovo/aipeppers.svg`
+    "AI페퍼스": `${_BP}/images/logos/kovo/aipeppers.svg`,
+
+    // Handball (H-League)
+    "인천광역시청": `${_BP}/images/logos/handball/인천광역시청.png`,
+    "SK슈가글라이더즈": `${_BP}/images/logos/handball/SK슈가글라이더즈.png`,
+    "삼척시청": `${_BP}/images/logos/handball/삼척시청.png`,
+    "광주도시공사": `${_BP}/images/logos/handball/광주도시공사.png`,
+    "부산시설공단": `${_BP}/images/logos/handball/부산시설공단.png`,
+    "경남개발공사": `${_BP}/images/logos/handball/경남개발공사.png`,
+    "대구광역시청": `${_BP}/images/logos/handball/대구광역시청.png`,
+    "서울시청": `${_BP}/images/logos/handball/서울시청.png`
 };
