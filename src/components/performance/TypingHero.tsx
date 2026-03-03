@@ -56,12 +56,21 @@ export const TypingHero = ({
             setDisplayedTemplate(template);
             setPhase('TYPE');
             setProgress(0);
+        } else if (phase === 'CYCLING') {
+            // Safety: If parent returns the same template but we are stuck in CYCLING, restart TYPE
+            setPhase('TYPE');
+            setProgress(0);
         }
-    }, [template, displayedTemplate]);
+    }, [template, displayedTemplate, phase]);
+
+    // Force start on mount if progress is 0
+    useEffect(() => {
+        if (progress === 0 && phase === 'CYCLING') {
+            setPhase('TYPE');
+        }
+    }, []);
 
     useEffect(() => {
-        if (phase === 'CYCLING') return; // Idle while waiting for parent
-
         let timeout: NodeJS.Timeout;
 
         if (phase === 'WAIT') {
@@ -83,26 +92,32 @@ export const TypingHero = ({
             timeout = setTimeout(() => {
                 setProgress(prev => {
                     const next = prev - 1;
-                    if (next < 0) {
+                    if (next <= 0) {
                         setPhase('CYCLING'); // Stop loop
                         onCycle(); // Request new template
                         return 0;
                     }
                     return next;
                 });
-            }, 50);
+            }, 30); // Faster delete for better feel
         } else if (phase === 'TYPE') {
             // Type forwards (Always finish typing even if scrolled, for better UX)
+            // If paused while typing, we can still finish to avoid "half-typed" look
             timeout = setTimeout(() => {
                 setProgress(prev => {
                     const next = prev + 1;
-                    if (next > totalLen) {
+                    if (next >= totalLen) {
                         setPhase('WAIT');
                         return totalLen;
                     }
                     return next;
                 });
-            }, 100);
+            }, 80); // Slightly faster type
+        } else if (phase === 'CYCLING') {
+            // Request cycle again if stuck
+            timeout = setTimeout(() => {
+                onCycle();
+            }, 1000);
         }
 
         return () => clearTimeout(timeout);

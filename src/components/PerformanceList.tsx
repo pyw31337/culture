@@ -5,6 +5,7 @@ import { Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
@@ -132,6 +133,17 @@ export default function PerformanceList({
         }
     }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue]);
 
+    const resetHome = useCallback(() => {
+        setSelectedGenre('all');
+        setSelectedRegion('all');
+        setSelectedDistrict('all');
+        setSelectedVenue('all');
+        setSearchLocation(null);
+        setSearchText('');
+        setViewMode('grid');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, setSearchLocation, setSearchText, setViewMode]);
+
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
         if (g !== 'movie') setShuffleSeed(Date.now());
@@ -197,14 +209,22 @@ export default function PerformanceList({
             {/* 1. Header & Alarm Panel */}
             <header className="relative z-40 bg-transparent border-b border-transparent light:border-transparent">
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
-                    <div className="flex items-center gap-3 cursor-pointer group" onClick={() => router.push('/')}>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-3 cursor-pointer group pointer-events-auto"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            resetHome();
+                            router.push('/');
+                        }}
+                    >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
                             <Image src="/culture/images/ticket_icon.png" alt="Icon" fill className="object-cover" priority />
                         </div>
                         <h1 className="text-[1.5rem] md:text-3xl font-black tracking-tight group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
                         </h1>
-                    </div>
+                    </Link>
 
                     <div className="flex items-center gap-1">
                         <button onClick={toggleTheme} className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black">
