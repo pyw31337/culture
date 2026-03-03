@@ -232,6 +232,12 @@ export default function KakaoMapModal({
 
                 setMapInstance(map);
 
+                // Force layout recalculation after mounting
+                setTimeout(() => {
+                    map.relayout();
+                    map.setCenter(mapCenter);
+                }, 200);
+
                 // --- Global Event Listeners ---
                 const handleMapChange = () => {
                     setShowSearchHereBtn(true);
