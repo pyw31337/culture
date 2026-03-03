@@ -272,7 +272,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         genre = 'classic_tradition';
     } else if (genre === 'theater') {
         genre = 'play';
-    } else if (genre === 'kids' || genre === 'festival' || genre === 'leisure' || genre === 'activity') {
+    } else if (genre === 'kids' || genre === 'leisure' || genre === 'activity' || genre === 'festival') {
         const t = (title + ' ' + venue).toLowerCase();
         if (t.includes('뮤지컬') || t.includes('티니핑') || t.includes('핑크퐁') || t.includes('오페라') || t.includes('싱어롱')) {
             genre = 'musical';
@@ -282,6 +282,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
             genre = 'classic_tradition';
         } else if (t.includes('도슨트') || t.includes('박물관') || t.includes('역사') || t.includes('서대문형무소') || t.includes('경복궁') || t.includes('미술관') || t.includes('기념관') || t.includes('에듀') || t.includes('투어')) {
             genre = 'museum';
+        } else if (genre === 'festival' || t.includes('축제') || t.includes('페스티벌') || t.includes('체험') || t.includes('행사')) {
+            genre = 'exhibition';
         } else {
             genre = 'activity';
         }

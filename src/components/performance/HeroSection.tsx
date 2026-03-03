@@ -698,7 +698,7 @@ export default function HeroSection({
 
                 {/* Search Results Dropdown (Attached to Hero Input) */}
                 {isDropdownOpen && activeSearchSource === 'hero' && (
-                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+                    <div className="absolute top-full left-0 right-0 mt-4 bg-[#1a1a1a]/95 light:bg-white/95 backdrop-blur-md border border-white/10 light:border-gray-200 rounded-2xl shadow-2xl z-[100] overflow-hidden max-h-80 overflow-y-auto animate-in fade-in zoom-in-95 duration-200 pb-4">
 
                         {/* Case 1: Search Text Exists -> Show Results */}
                         {searchText.trim() ? (
@@ -711,7 +711,9 @@ export default function HeroSection({
                                         <div
                                             key={`search-hero-${idx}`}
                                             onClick={() => handleSelectResult(result)}
-                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 last:border-0 transition-colors ${idx === highlightedIndex ? 'bg-white/10 dark:bg-white/20' : 'bg-[#1a1a1a] hover:bg-white/10'
+                                            className={`px-5 py-4 cursor-pointer flex items-center justify-between gap-4 border-b border-white/5 light:border-gray-100 last:border-0 transition-colors ${idx === highlightedIndex
+                                                ? 'bg-white/10 dark:bg-white/20 light:bg-purple-50'
+                                                : 'bg-[#1a1a1a] light:bg-white hover:bg-white/10 light:hover:bg-gray-50'
                                                 }`}
                                         >
                                             <div className="flex items-center gap-3 min-w-0">

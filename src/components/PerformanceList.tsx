@@ -127,8 +127,10 @@ export default function PerformanceList({
         if (text.trim().length > 0) {
             setSelectedGenre('all');
             setSelectedRegion('all');
+            setSelectedDistrict('all');
+            setSelectedVenue('all');
         }
-    }, [setSearchText, setSelectedGenre, setSelectedRegion]);
+    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue]);
 
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);

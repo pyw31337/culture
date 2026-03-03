@@ -210,7 +210,7 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
                 const locEl = el.querySelector('.loc');
                 const venue = locEl?.textContent?.trim() || '';
 
-                const festId = \`fest_\${slugify(title)}\`;
+                const festId = id;
 
                 items.push({ id: festId, title, thumbnailImage, date, venue, link: href });
             });

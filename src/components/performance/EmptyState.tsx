@@ -106,7 +106,6 @@ export default function EmptyState({
                 </>
             ) : (
                 <>
-        // General Empty State (Search/Filter)
                     <motion.div
                         variants={floatVariant}
                         animate="animate"
