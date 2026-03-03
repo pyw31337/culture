@@ -408,9 +408,15 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     if (!extracted) return <span className="text-lg font-black">{perf.price}</span>;
                                                     return (
                                                         <div className="leading-none text-right">
-                                                            {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                            <span className="text-xl font-black">{extracted.price}</span>
-                                                            <span className="text-xs font-bold ml-0.5">원</span>
+                                                            {extracted.price === '무료' ? (
+                                                                <span className="text-xl font-black">무료</span>
+                                                            ) : (
+                                                                <>
+                                                                    {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                                    <span className="text-xl font-black">{extracted.price}</span>
+                                                                    <span className="text-xs font-bold ml-0.5">원</span>
+                                                                </>
+                                                            )}
                                                         </div>
                                                     );
                                                 })()}
@@ -420,7 +426,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {enableActions && (
-                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between">
+                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-12 before:h-12 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
                                         <button
                                             onClick={async (e) => {
                                                 e.stopPropagation();
