@@ -62,6 +62,7 @@ export default function KakaoMapModal({
     const [isMapReady, setIsMapReady] = useState(false);
     const markersRef = useRef<any[]>([]);
     const mapOverlaysRef = useRef<any[]>([]);
+    const popupOverlayRef = useRef<any>(null);
     const lastRenderedVenuesKey = useRef<string>("");
 
     // Group performances by venue - Pre-calculation
@@ -283,17 +284,37 @@ export default function KakaoMapModal({
     const clustererRef = useRef<any>(null);
 
     // --- 4. Marker & Clusterer Management (Consolidated) ---
+    // Cache for marker icons to avoid redundant encoding
+    const iconCache = useRef<Record<string, string>>({});
+
+    const getMarkerIcon = useCallback((text: string, color: string, isSelected: boolean) => {
+        const size = isSelected ? 44 : 36;
+        const r = isSelected ? 20 : 16;
+        const key = `${text}-${color}-${isSelected}`;
+        if (iconCache.current[key]) return iconCache.current[key];
+
+        const center = size / 2;
+        const strokeColor = isSelected ? '#ef4444' : 'white';
+        const strokeWidth = isSelected ? 3 : 2;
+
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+            <circle cx="${center}" cy="${center}" r="${r}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />
+            <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${isSelected ? 14 : 12}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+        </svg>`;
+        const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+        iconCache.current[key] = iconUrl;
+        return iconUrl;
+    }, []);
+
+    // 1. Initial Marker Creation (Only when data/map changes)
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
         const k = window.kakao.maps;
 
-        // Cleanup existing clusterer and markers
-        if (clustererRef.current) {
-            clustererRef.current.clear();
-        }
+        if (clustererRef.current) clustererRef.current.clear();
         markersRef.current.forEach(m => {
             m.setMap(null);
-            window.kakao.maps.event.removeListener(m, 'click');
+            k.event.removeListener(m, 'click');
         });
         markersRef.current = [];
 
@@ -310,29 +331,18 @@ export default function KakaoMapModal({
         });
         clustererRef.current = clusterer;
 
-        const venuesToProcess = allVenuesList.current;
         const markers: any[] = [];
-
-        venuesToProcess.forEach(venue => {
-            const isSelected = venue.venueName === selectedVenue;
+        allVenuesList.current.forEach(venue => {
             const primaryGenre = venue.performances[0]?.genre || selectedGenre || 'all';
             const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
+            const isSelected = venue.venueName === selectedVenue;
 
+            const iconUrl = getMarkerIcon(text, color, isSelected);
             const size = isSelected ? 44 : 36;
-            const r = isSelected ? 20 : 16;
-            const center = size / 2;
-            const strokeColor = isSelected ? '#ef4444' : 'white';
-            const strokeWidth = isSelected ? 3 : 2;
+            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
 
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-                <circle cx="${center}" cy="${center}" r="${r}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />
-                <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${isSelected ? 14 : 12}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
-            </svg>`;
-            const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
-
-            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(center, center));
             const marker = new k.Marker({
                 position: new k.LatLng(venue.lat, venue.lng),
                 image: markerImage,
@@ -345,12 +355,34 @@ export default function KakaoMapModal({
             });
 
             (marker as any)._venueName = venue.venueName;
+            (marker as any)._color = color;
+            (marker as any)._text = text;
             markers.push(marker);
             markersRef.current.push(marker);
         });
 
         clusterer.addMarkers(markers);
-    }, [mapInstance, isMapReady, processedData, selectedVenue]);
+    }, [mapInstance, isMapReady, processedData]); // DOES NOT depend on selectedVenue
+
+    // 2. Selection Update (Efficiently update specific markers)
+    useEffect(() => {
+        if (!mapInstance || !isMapReady) return;
+        const k = window.kakao.maps;
+
+        markersRef.current.forEach(marker => {
+            const vName = marker._venueName;
+            const isSelected = vName === selectedVenue;
+            const wasSelected = marker.getZIndex() === 100;
+
+            if (isSelected || wasSelected) {
+                const iconUrl = getMarkerIcon(marker._text, marker._color, isSelected);
+                const size = isSelected ? 44 : 36;
+                const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
+                marker.setImage(markerImage);
+                marker.setZIndex(isSelected ? 100 : 10);
+            }
+        });
+    }, [selectedVenue]);
 
 
     // --- 5. Search Auto-bounding ---
@@ -381,47 +413,54 @@ export default function KakaoMapModal({
     }, [mapInstance, isMapReady, searchText]);
 
 
-    // Popup Position Logic
-    const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null);
+    // --- 6. Popup Management (Optimized via CustomOverlay) ---
+    useEffect(() => {
+        if (!mapInstance || !isMapReady) return;
+        const k = window.kakao.maps;
 
-    const updatePopupPosition = useCallback(() => {
-        if (!mapInstance || !selectedVenue) {
-            setPopupPosition(null);
-            return;
+        // Cleanup existing popup
+        if (popupOverlayRef.current) {
+            popupOverlayRef.current.setMap(null);
+            popupOverlayRef.current = null;
         }
+
+        if (!selectedVenue) return;
 
         const venueValue = allVenueGroups.current[selectedVenue];
-        if (!venueValue || !venueValue.lat || !venueValue.lng) {
-            setPopupPosition(null);
-            return;
-        }
+        if (!venueValue || !venueValue.lat || !venueValue.lng) return;
 
-        if (!window.kakao?.maps?.LatLng) return;
-        const pos = new window.kakao.maps.LatLng(venueValue.lat, venueValue.lng);
-        const projection = mapInstance.getProjection();
-        const point = projection.containerPointFromCoords(pos);
+        // Note: The content itself is still managed by React via a hidden div or we can construct it here.
+        // For best performance and interaction, we keep the UI in React but let CustomOverlay handle the coordinate sync.
+        // However, Kakao's CustomOverlay content needs to be a DOM element or HTML string.
+        // We'll use a placeholder div and use React Portal to render into it, OR we'll just use a native CustomOverlay with HTML.
+        // Given complexity, let's use a native CustomOverlay with an empty div that we then use as a 'ref' for a portal.
 
-        setPopupPosition({ x: point.x, y: point.y });
-    }, [mapInstance, selectedVenue]);
+        const container = document.createElement('div');
+        container.style.pointerEvents = 'auto';
 
-    // Attach map listeners for popup positioning
-    useEffect(() => {
-        if (!mapInstance) return;
+        const overlay = new k.CustomOverlay({
+            position: new k.LatLng(venueValue.lat, venueValue.lng),
+            content: container,
+            yAnchor: 1.0,
+            zIndex: 1000,
+            clickable: true
+        });
 
-        const syncPopup = () => updatePopupPosition();
+        overlay.setMap(mapInstance);
+        popupOverlayRef.current = overlay;
 
-        window.kakao.maps.event.addListener(mapInstance, 'drag', syncPopup);
-        window.kakao.maps.event.addListener(mapInstance, 'zoom_changed', syncPopup);
-        window.kakao.maps.event.addListener(mapInstance, 'bounds_changed', syncPopup);
-
-        syncPopup();
+        // This force-update ensures the React Portal renders into the container
+        setPopupContainerRef(container);
 
         return () => {
-            window.kakao.maps.event.removeListener(mapInstance, 'drag', syncPopup);
-            window.kakao.maps.event.removeListener(mapInstance, 'zoom_changed', syncPopup);
-            window.kakao.maps.event.removeListener(mapInstance, 'bounds_changed', syncPopup);
+            if (popupOverlayRef.current) {
+                popupOverlayRef.current.setMap(null);
+                popupOverlayRef.current = null;
+            }
         };
-    }, [mapInstance, updatePopupPosition]);
+    }, [mapInstance, isMapReady, selectedVenue]);
+
+    const [popupContainerRef, setPopupContainerRef] = useState<HTMLDivElement | null>(null);
 
     const [perfVisibleCount, setPerfVisibleCount] = useState(30);
     const selectedVenueData = selectedVenue ? allVenueGroups.current[selectedVenue] : null;
@@ -497,92 +536,92 @@ export default function KakaoMapModal({
                     <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
                     <div className="absolute inset-0 pointer-events-none z-[110]">
-                        {selectedVenue && selectedVenueData && popupPosition && (
-                            <div
-                                className="absolute pointer-events-auto flex flex-col items-center"
-                                style={{
-                                    left: popupPosition.x,
-                                    top: popupPosition.y,
-                                    transform: 'translate(-50%, -100%) translateY(-25px)',
-                                    filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))'
-                                }}
-                            >
-                                <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
-                                    <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
-                                        <div className="min-w-0 flex-1">
-                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
-                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
-                                        </div>
-                                        <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
-                                            <X size={16} />
-                                        </button>
-                                    </div>
-
-                                    {/* Action Button: cinema → 실시간 상영시간표, non-cinema → 공연 더보기 */}
-                                    {selectedVenueData.type === 'cinema' ? (
-                                        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
-                                            <a
-                                                href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
-                                            >
-                                                <RotateCw size={12} />
-                                                실시간 상영시간표 확인하기
-                                            </a>
-                                        </div>
-                                    ) : selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange ? (
-                                        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
-                                            <button
-                                                onClick={() => {
-                                                    onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
-                                                }}
-                                                className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
-                                            >
-                                                <ExternalLink size={12} />
-                                                {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                        {selectedVenue && selectedVenueData && popupContainerRef && (
+                            <Portal customContainer={popupContainerRef}>
+                                <div
+                                    className="flex flex-col items-center"
+                                    style={{
+                                        transform: 'translateY(-25px)',
+                                        filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))'
+                                    }}
+                                >
+                                    <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
+                                        <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
+                                            <div className="min-w-0 flex-1">
+                                                <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
+                                                <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
+                                            </div>
+                                            <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
+                                                <X size={16} />
                                             </button>
                                         </div>
-                                    ) : null}
 
-                                    <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
-                                        onScroll={handlePerfScroll}
-                                    >
-                                        {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
-                                            <a
-                                                key={p.id}
-                                                href={p.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex gap-2 bg-gray-50 dark:bg-gray-800/50 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 group"
-                                            >
-                                                {p.image ? (
-                                                    <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0" />
-                                                ) : (
-                                                    <div className="w-10 h-14 bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center shrink-0">
-                                                        <Heart size={10} className="text-gray-400 dark:text-gray-600" />
+                                        {/* Action Button: cinema → 실시간 상영시간표, non-cinema → 공연 더보기 */}
+                                        {selectedVenueData.type === 'cinema' ? (
+                                            <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
+                                                <a
+                                                    href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
+                                                >
+                                                    <RotateCw size={12} />
+                                                    실시간 상영시간표 확인하기
+                                                </a>
+                                            </div>
+                                        ) : selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange ? (
+                                            <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
+                                                <button
+                                                    onClick={() => {
+                                                        onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
+                                                    }}
+                                                    className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
+                                                >
+                                                    <ExternalLink size={12} />
+                                                    {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                </button>
+                                            </div>
+                                        ) : null}
+
+                                        <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2"
+                                            onScroll={handlePerfScroll}
+                                        >
+                                            {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
+                                                <a
+                                                    key={p.id}
+                                                    href={p.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex gap-2 bg-gray-50 dark:bg-gray-800/50 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 group"
+                                                >
+                                                    {p.image ? (
+                                                        <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0" />
+                                                    ) : (
+                                                        <div className="w-10 h-14 bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center shrink-0">
+                                                            <Heart size={10} className="text-gray-400 dark:text-gray-600" />
+                                                        </div>
+                                                    )}
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="flex items-center gap-1.5 mb-0.5">
+                                                            <span className={clsx(
+                                                                "px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none",
+                                                                (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
+                                                            )}>
+                                                                {GENRES.find(g => g.id === p.genre)?.label}
+                                                            </span>
+                                                            <span className="text-[9px] text-gray-500">{p.date}</span>
+                                                        </div>
+                                                        <h4 className="text-[12px] font-bold text-gray-900 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 line-clamp-2 leading-tight">
+                                                            {p.title}
+                                                        </h4>
                                                     </div>
-                                                )}
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="flex items-center gap-1.5 mb-0.5">
-                                                        <span className={clsx(
-                                                            "px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none",
-                                                            (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
-                                                        )}>
-                                                            {GENRES.find(g => g.id === p.genre)?.label}
-                                                        </span>
-                                                        <span className="text-[9px] text-gray-500">{p.date}</span>
-                                                    </div>
-                                                    <h4 className="text-[12px] font-bold text-gray-900 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 line-clamp-2 leading-tight">
-                                                        {p.title}
-                                                    </h4>
-                                                </div>
-                                            </a>
-                                        ))}
+                                                </a>
+                                            ))}
+                                        </div>
                                     </div>
+                                    <div className="w-4 h-4 bg-white dark:bg-gray-900 border-r border-b border-gray-200 dark:border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
                                 </div>
-                                <div className="w-4 h-4 bg-white dark:bg-gray-900 border-r border-b border-gray-200 dark:border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
-                            </div>
+                            </Portal>
                         )}
                     </div>
 

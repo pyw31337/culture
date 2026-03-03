@@ -3,9 +3,10 @@ import { createPortal } from 'react-dom';
 
 interface PortalProps {
     children: React.ReactNode;
+    customContainer?: HTMLElement | null;
 }
 
-export default function Portal({ children }: PortalProps) {
+export default function Portal({ children, customContainer }: PortalProps) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -17,5 +18,5 @@ export default function Portal({ children }: PortalProps) {
 
     if (typeof document === 'undefined') return null;
 
-    return createPortal(children, document.body);
+    return createPortal(children, customContainer || document.body);
 }

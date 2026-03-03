@@ -1,5 +1,4 @@
-
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { clsx } from 'clsx';
 import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
 import { TypingHero } from './TypingHero';
@@ -135,7 +134,7 @@ export default function HeroSection({
     }, [isDropdownOpen, activeSearchSource, setIsDropdownOpen]);
 
     // Logic for determining the current template to display
-    const currentTemplate = (() => {
+    const currentTemplate = useMemo(() => {
         const now = new Date();
         const minuteSeed = now.getMinutes();
         const hour = now.getHours();
@@ -273,7 +272,7 @@ export default function HeroSection({
         } else {
             return heroText;
         }
-    })();
+    }, [viewMode, selectedGenre, searchText, selectedRegion, selectedDistrict, selectedVenue, heroText]);
 
 
     // Close filter panel when clicking outside

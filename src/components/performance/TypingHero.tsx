@@ -34,23 +34,22 @@ export const TypingHero = ({
 
     // React to template updates from parent
     useEffect(() => {
-        // Only update if actually different content/reference
-
-        const isStructureSame =
-            template.line1 === displayedTemplate.line1 &&
-            template.line2Pre === displayedTemplate.line2Pre &&
-            template.suffix === displayedTemplate.suffix;
-
         const isContentDifferent =
             template.line1 !== displayedTemplate.line1 ||
-            template.highlight !== displayedTemplate.highlight;
+            template.boldPrefix !== displayedTemplate.boldPrefix ||
+            template.line2Pre !== displayedTemplate.line2Pre ||
+            template.highlight !== displayedTemplate.highlight ||
+            template.suffix !== displayedTemplate.suffix;
 
-        if (template !== displayedTemplate || isContentDifferent) {
-            // Smart Update: If only highlight changed (e.g. user typing in search), 
-            // update the content but DO NOT reset the typing phase.
-            // AND ensure we don't restart progress or phase.
-            if (isStructureSame && template.highlight !== displayedTemplate.highlight) {
-                setDisplayedTemplate(prev => ({ ...prev, highlight: template.highlight }));
+        if (isContentDifferent) {
+            const isStructureSame =
+                template.line1 === displayedTemplate.line1 &&
+                template.boldPrefix === displayedTemplate.boldPrefix &&
+                template.line2Pre === displayedTemplate.line2Pre &&
+                template.suffix === displayedTemplate.suffix;
+
+            if (isStructureSame) {
+                setDisplayedTemplate(template);
                 return;
             }
 
