@@ -673,7 +673,12 @@ export default function HeroSection({
                                     }
                                     if (!isDropdownOpen) setIsDropdownOpen(true);
                                 }}
-                                onKeyDown={handleKeyDown}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        setIsDropdownOpen(false);
+                                        handleKeyDown(e);
+                                    }
+                                }}
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[480px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
                                 placeholder={searchMode === 'location'
                                     ? "위치 검색"
