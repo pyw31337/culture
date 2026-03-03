@@ -92,13 +92,16 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
 
     const getPerformancesForDay = (day: Date) => {
         const dayStr = format(day, 'yyyy-MM-dd');
-        return performancesByDate.get(dayStr) || [];
+        const allEvents = performancesByDate.get(dayStr) || [];
+        if (localGenre === 'all') return allEvents;
+        return allEvents.filter(p => p.genre === localGenre);
     };
 
-    // Calculate Counts for the focused view context
-    const currentViewEvents = useMemo(() => {
+    // Calculate Counts for the focused view context (always using 'all' for consistent header counts)
+    const currentViewTotalEvents = useMemo(() => {
         if (calendarView === 'daily') {
-            return getPerformancesForDay(currentMonth);
+            const dayStr = format(currentMonth, 'yyyy-MM-dd');
+            return performancesByDate.get(dayStr) || [];
         } else if (calendarView === 'weekly') {
             const start = startOfWeek(currentMonth, { weekStartsOn: 0 });
             const end = endOfWeek(currentMonth, { weekStartsOn: 0 });
@@ -120,7 +123,8 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
             const result: Performance[] = [];
             const seen = new Set<string>();
             eachDayOfInterval({ start, end }).forEach(day => {
-                getPerformancesForDay(day).forEach(p => {
+                const dayStr = format(day, 'yyyy-MM-dd');
+                (performancesByDate.get(dayStr) || []).forEach(p => {
                     if (!seen.has(p.id)) {
                         seen.add(p.id);
                         result.push(p);
@@ -130,6 +134,12 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
             return result;
         }
     }, [calendarView, currentMonth, performancesByDate]);
+
+    // This is the actual filtered list for the current view
+    const currentViewEvents = useMemo(() => {
+        if (localGenre === 'all') return currentViewTotalEvents;
+        return currentViewTotalEvents.filter(p => p.genre === localGenre);
+    }, [currentViewTotalEvents, localGenre]);
 
     const [visibleCount, setVisibleCount] = useState(20);
 
@@ -240,8 +250,8 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                             {GENRES.filter(g => g.id !== 'movie').map((genre) => {
                                 const isSelected = localGenre === genre.id;
                                 const count = genre.id === 'all'
-                                    ? currentViewEvents.length
-                                    : currentViewEvents.filter(p => p.genre === genre.id).length;
+                                    ? currentViewTotalEvents.length
+                                    : currentViewTotalEvents.filter(p => p.genre === genre.id).length;
                                 const isEmpty = count === 0;
 
                                 return (

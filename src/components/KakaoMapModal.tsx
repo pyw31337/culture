@@ -112,7 +112,7 @@ export default function KakaoMapModal({
                 const vName = perf.venue;
                 // [DATA FIX] Filter out items mapped to remote/generic coordinates like Tour Passes on Ulleungdo
                 const venueMeta = venues[vName];
-                if (vName.includes('투어패스') && venueMeta?.lat > 37.4 && venueMeta?.lng > 130.8) continue;
+                if (vName.includes('투어패스') && venueMeta?.lat && venueMeta?.lng && venueMeta.lat > 37.4 && venueMeta.lng > 130.8) continue;
 
                 let group = groupsMap.get(vName);
                 if (!group) {
