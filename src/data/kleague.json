@@ -11,8 +11,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.02.28_1_울산_vs_강원",
@@ -26,8 +26,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.02.28_2_김해_vs_안산",
@@ -41,8 +41,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.02.28_1_김천_vs_포항",
@@ -56,8 +56,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.02.28_2_수원_vs_서울E",
@@ -71,8 +71,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.03.01_1_전북_vs_부천",
@@ -86,8 +86,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.03.01_2_용인_vs_천안",
@@ -101,8 +101,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.03.01_2_대구_vs_화성",
@@ -116,8 +116,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.03.01_2_충북청주_vs_수원FC",
@@ -131,8 +131,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.03.01_1_제주_vs_광주",
@@ -146,8 +146,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.03.01_2_경남_vs_전남",
@@ -161,8 +161,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.03.02_1_대전_vs_안양",
@@ -176,8 +176,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.03.02_2_충남아산_vs_파주",
@@ -191,8 +191,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.03.02_2_부산_vs_성남",
@@ -206,8 +206,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.03.07_1_포항_vs_강원",
@@ -251,8 +251,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.03.07_2_파주_vs_수원",
@@ -266,8 +266,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.03.07_1_광주_vs_인천",
@@ -281,8 +281,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.03.07_1_부천_vs_대전",
@@ -296,8 +296,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.03.07_2_대구_vs_전남",
@@ -311,8 +311,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.03.07_2_수원FC_vs_용인",
@@ -326,8 +326,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.03.08_1_김천_vs_전북",
@@ -341,8 +341,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.03.08_2_안산_vs_부산",
@@ -356,8 +356,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.03.08_2_성남_vs_충북청주",
@@ -371,8 +371,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.03.08_1_안양_vs_제주",
@@ -386,8 +386,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.03.08_2_천안_vs_김포",
@@ -401,8 +401,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.03.08_2_화성_vs_김해",
@@ -416,8 +416,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.03.14_1_광주_vs_전북",
@@ -431,8 +431,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.03.14_2_김해_vs_수원FC",
@@ -446,8 +446,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.03.14_2_서울E_vs_부산",
@@ -461,8 +461,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.03.14_2_수원_vs_전남",
@@ -476,8 +476,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.03.14_1_대전_vs_김천",
@@ -491,8 +491,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.03.14_2_용인_vs_김포",
@@ -506,8 +506,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.03.14_2_경남_vs_충북청주",
@@ -521,8 +521,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.03.15_1_부천_vs_울산",
@@ -536,8 +536,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.03.15_1_제주_vs_서울",
@@ -551,8 +551,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.03.15_2_충남아산_vs_대구",
@@ -566,8 +566,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.03.15_2_안산_vs_파주",
@@ -581,8 +581,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.03.15_1_강원_vs_안양",
@@ -596,8 +596,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.03.15_1_포항_vs_인천",
@@ -611,8 +611,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.03.15_2_화성_vs_천안",
@@ -626,8 +626,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.03.17_1_김천_vs_광주",
@@ -641,8 +641,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.03.18_1_부천_vs_강원",
@@ -656,8 +656,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.03.18_1_인천_vs_대전",
@@ -671,8 +671,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.03.18_1_제주_vs_울산",
@@ -686,8 +686,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.03.18_1_전북_vs_안양",
@@ -701,8 +701,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.03.18_1_포항_vs_서울",
@@ -716,8 +716,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.03.21_1_대전_vs_전북",
@@ -731,8 +731,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.03.21_2_성남_vs_충남아산",
@@ -746,8 +746,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.03.21_2_파주_vs_전남",
@@ -761,8 +761,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.03.21_2_김해_vs_수원",
@@ -776,8 +776,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.03.21_2_천안_vs_서울E",
@@ -791,8 +791,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.03.21_2_충북청주_vs_안산",
@@ -806,8 +806,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.03.22_1_서울_vs_광주",
@@ -821,8 +821,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.03.22_1_울산_vs_김천",
@@ -836,8 +836,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.03.22_2_화성_vs_용인",
@@ -851,8 +851,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.03.22_2_부산_vs_대구",
@@ -866,8 +866,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.03.22_1_안양_vs_인천",
@@ -881,8 +881,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.03.22_1_강원_vs_제주",
@@ -896,8 +896,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.03.22_1_포항_vs_부천",
@@ -911,8 +911,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.03.22_2_경남_vs_김포",
@@ -926,8 +926,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.03.28_2_용인_vs_수원",
@@ -941,8 +941,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.03.28_2_충남아산_vs_화성",
@@ -956,8 +956,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.03.28_1_포항_vs_강원",
@@ -971,8 +971,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.03.28_2_성남_vs_김포",
@@ -986,8 +986,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.03.28_2_천안_vs_전남",
@@ -1001,8 +1001,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.03.28_2_안산_vs_경남",
@@ -1016,8 +1016,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.03.29_2_충북청주_vs_부산",
@@ -1031,8 +1031,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.03.29_2_수원FC_vs_파주",
@@ -1046,8 +1046,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.03.29_2_대구_vs_서울E",
@@ -1061,8 +1061,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.04.04_1_제주_vs_부천",
@@ -1076,8 +1076,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.04.04_1_전북_vs_울산",
@@ -1091,8 +1091,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.04.04_2_용인_vs_전남",
@@ -1106,8 +1106,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.04.04_2_서울E_vs_수원FC",
@@ -1121,8 +1121,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.04.04_1_포항_vs_대전",
@@ -1136,8 +1136,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.04.04_1_강원_vs_광주",
@@ -1151,8 +1151,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.04.04_2_화성_vs_성남",
@@ -1166,8 +1166,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.04.04_2_경남_vs_부산",
@@ -1181,8 +1181,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.04.05_1_안양_vs_서울",
@@ -1196,8 +1196,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.04.05_2_대구_vs_김포",
@@ -1211,8 +1211,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.04.05_2_수원_vs_충북청주",
@@ -1226,8 +1226,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.04.05_1_인천_vs_김천",
@@ -1241,8 +1241,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.04.05_2_파주_vs_김해",
@@ -1256,8 +1256,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.04.05_2_안산_vs_충남아산",
@@ -1271,8 +1271,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.04.11_1_포항_vs_제주",
@@ -1286,8 +1286,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.04.11_1_서울_vs_전북",
@@ -1301,8 +1301,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.04.11_2_부산_vs_용인",
@@ -1316,8 +1316,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.04.11_2_수원FC_vs_대구",
@@ -1331,8 +1331,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.04.11_1_광주_vs_부천",
@@ -1346,8 +1346,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.04.11_1_인천_vs_울산",
@@ -1361,8 +1361,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.04.11_2_파주_vs_서울E",
@@ -1376,8 +1376,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.04.11_2_화성_vs_전남",
@@ -1391,8 +1391,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.04.12_1_대전_vs_강원",
@@ -1406,8 +1406,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.04.12_2_수원_vs_김포",
@@ -1421,8 +1421,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.04.12_2_천안_vs_충북청주",
@@ -1436,8 +1436,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.04.12_1_김천_vs_안양",
@@ -1451,8 +1451,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.04.12_2_성남_vs_안산",
@@ -1466,8 +1466,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.04.12_2_충남아산_vs_김해",
@@ -1481,8 +1481,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.04.18_1_강원_vs_전북",
@@ -1496,8 +1496,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.04.18_1_서울_vs_대전",
@@ -1511,8 +1511,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.04.18_2_부산_vs_수원FC",
@@ -1526,8 +1526,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.04.18_2_경남_vs_수원",
@@ -1541,8 +1541,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.04.18_1_제주_vs_김천",
@@ -1556,8 +1556,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.04.18_1_부천_vs_인천",
@@ -1571,8 +1571,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.04.18_2_대구_vs_천안",
@@ -1586,8 +1586,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.04.18_2_충북청주_vs_김해",
@@ -1601,8 +1601,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.04.19_1_울산_vs_광주",
@@ -1616,8 +1616,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.04.19_2_안산_vs_서울E",
@@ -1631,8 +1631,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.04.19_2_성남_vs_파주",
@@ -1646,8 +1646,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.04.19_1_포항_vs_안양",
@@ -1661,8 +1661,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.04.19_2_화성_vs_김포",
@@ -1676,8 +1676,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.04.19_2_충남아산_vs_전남",
@@ -1691,8 +1691,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.04.21_1_김천_vs_강원",
@@ -1706,8 +1706,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.04.21_1_서울_vs_부천",
@@ -1721,8 +1721,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.04.21_1_전북_vs_인천",
@@ -1736,8 +1736,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.04.22_1_대전_vs_제주",
@@ -1751,8 +1751,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.04.22_1_안양_vs_울산",
@@ -1766,8 +1766,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.04.22_1_포항_vs_광주",
@@ -1781,8 +1781,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.04.25_1_강원_vs_서울",
@@ -1796,8 +1796,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.04.25_2_수원_vs_부산",
@@ -1811,8 +1811,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.04.25_2_파주_vs_경남",
@@ -1826,8 +1826,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.04.25_1_인천_vs_제주",
@@ -1841,8 +1841,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.04.25_1_부천_vs_김천",
@@ -1856,8 +1856,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.04.25_2_천안_vs_성남",
@@ -1871,8 +1871,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.04.25_2_안산_vs_전남",
@@ -1886,8 +1886,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.04.26_1_전북_vs_포항",
@@ -1901,8 +1901,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.04.26_2_수원FC_vs_김포",
@@ -1916,8 +1916,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.04.26_2_서울E_vs_화성",
@@ -1931,8 +1931,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.04.26_1_광주_vs_안양",
@@ -1946,8 +1946,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.04.26_1_울산_vs_대전",
@@ -1961,8 +1961,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.04.26_2_충북청주_vs_충남아산",
@@ -1976,8 +1976,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.04.26_2_용인_vs_김해",
@@ -1991,8 +1991,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.05.02_1_서울_vs_김천",
@@ -2006,8 +2006,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.05.02_1_울산_vs_포항",
@@ -2021,8 +2021,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.05.02_1_인천_vs_강원",
@@ -2036,8 +2036,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.05.02_1_제주_vs_전북",
@@ -2051,8 +2051,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.05.02_1_안양_vs_부천",
@@ -2066,8 +2066,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.05.02_1_광주_vs_대전",
@@ -2081,8 +2081,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.05.03_2_대구_vs_경남",
@@ -2096,8 +2096,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.05.03_2_화성_vs_안산",
@@ -2111,8 +2111,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.05.03_2_서울E_vs_김포",
@@ -2126,8 +2126,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.05.03_2_천안_vs_충남아산",
@@ -2141,8 +2141,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.05.03_2_파주_vs_충북청주",
@@ -2156,8 +2156,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.05.03_2_김해_vs_부산",
@@ -2171,8 +2171,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.05.03_2_용인_vs_성남",
@@ -2186,8 +2186,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.05.03_2_수원FC_vs_수원",
@@ -2201,8 +2201,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.05.05_1_전북_vs_광주",
@@ -2216,8 +2216,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.05.05_1_부천_vs_제주",
@@ -2231,8 +2231,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.05.05_1_김천_vs_울산",
@@ -2246,8 +2246,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.05.05_1_대전_vs_인천",
@@ -2261,8 +2261,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.05.05_1_강원_vs_포항",
@@ -2276,8 +2276,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.05.05_1_서울_vs_안양",
@@ -2291,8 +2291,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.05.09_1_제주_vs_서울",
@@ -2306,8 +2306,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.05.09_2_충남아산_vs_서울E",
@@ -2321,8 +2321,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.05.09_2_화성_vs_수원FC",
@@ -2336,8 +2336,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.05.09_1_김천_vs_인천",
@@ -2351,8 +2351,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.05.09_1_광주_vs_강원",
@@ -2366,8 +2366,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.05.09_2_수원_vs_대구",
@@ -2381,8 +2381,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.05.09_2_충북청주_vs_김포",
@@ -2396,8 +2396,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.05.09_1_대전_vs_포항",
@@ -2411,8 +2411,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.05.10_1_울산_vs_부천",
@@ -2426,8 +2426,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.05.10_2_성남_vs_전남",
@@ -2441,8 +2441,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.05.10_1_안양_vs_전북",
@@ -2456,8 +2456,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.05.10_2_안산_vs_용인",
@@ -2471,8 +2471,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.05.10_2_부산_vs_천안",
@@ -2486,8 +2486,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.05.10_2_경남_vs_김해",
@@ -2501,8 +2501,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.05.12_1_강원_vs_대전",
@@ -2516,8 +2516,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.05.12_1_광주_vs_서울",
@@ -2531,8 +2531,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.05.12_1_인천_vs_포항",
@@ -2546,8 +2546,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.05.13_1_울산_vs_제주",
@@ -2561,8 +2561,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.05.13_1_안양_vs_김천",
@@ -2576,8 +2576,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.05.13_1_부천_vs_전북",
@@ -2591,8 +2591,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.05.16_1_대전_vs_서울",
@@ -2606,8 +2606,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.05.16_2_서울E_vs_용인",
@@ -2621,8 +2621,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.05.16_2_전남_vs_충북청주",
@@ -2636,8 +2636,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.05.16_1_인천_vs_광주",
@@ -2651,8 +2651,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.05.16_2_천안_vs_파주",
@@ -2666,8 +2666,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.05.16_2_안산_vs_김포",
@@ -2681,8 +2681,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.05.17_1_전북_vs_김천",
@@ -2696,8 +2696,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.05.17_1_제주_vs_안양",
@@ -2711,8 +2711,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.05.17_2_성남_vs_경남",
@@ -2726,8 +2726,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.05.17_2_김해_vs_대구",
@@ -2741,8 +2741,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.05.17_2_화성_vs_부산",
@@ -2756,8 +2756,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.05.17_1_강원_vs_울산",
@@ -2771,8 +2771,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.05.17_1_부천_vs_포항",
@@ -2786,8 +2786,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.05.17_2_수원FC_vs_충남아산",
@@ -2801,8 +2801,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.05.23_2_전남_vs_김해",
@@ -2816,8 +2816,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.05.23_2_경남_vs_수원FC",
@@ -2831,8 +2831,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.05.23_2_충북청주_vs_화성",
@@ -2846,8 +2846,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.05.24_2_용인_vs_충남아산",
@@ -2861,8 +2861,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.05.24_2_대구_vs_안산",
@@ -2876,8 +2876,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.05.24_2_서울E_vs_성남",
@@ -2891,8 +2891,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.05.25_2_수원_vs_천안",
@@ -2906,8 +2906,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.05.25_2_파주_vs_김포",
@@ -2921,8 +2921,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.05.30_2_부산_vs_파주",
@@ -2936,8 +2936,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.05.30_2_충남아산_vs_수원",
@@ -2951,8 +2951,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.05.30_2_용인_vs_대구",
@@ -2966,8 +2966,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.05.30_2_김해_vs_김포",
@@ -2981,8 +2981,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.05.30_2_수원FC_vs_성남",
@@ -2996,8 +2996,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.05.31_2_화성_vs_경남",
@@ -3011,8 +3011,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.05.31_2_전남_vs_서울E",
@@ -3026,8 +3026,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.05.31_2_안산_vs_천안",
@@ -3041,8 +3041,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.06.05_2_대구_vs_파주",
@@ -3056,8 +3056,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.06.05_2_부산_vs_충남아산",
@@ -3071,8 +3071,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.06.05_2_성남_vs_김해",
@@ -3086,8 +3086,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.06.06_2_경남_vs_용인",
@@ -3101,8 +3101,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.06.06_2_화성_vs_수원",
@@ -3116,8 +3116,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.06.07_2_천안_vs_수원FC",
@@ -3131,8 +3131,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.06.07_2_서울E_vs_충북청주",
@@ -3146,8 +3146,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.06.07_2_김포_vs_전남",
@@ -3161,8 +3161,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.07.04_1_전북_vs_강원",
@@ -3176,8 +3176,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.07.04_1_대전_vs_부천",
@@ -3191,8 +3191,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.07.04_1_안양_vs_포항",
@@ -3206,8 +3206,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.07.04_2_충북청주_vs_대구",
@@ -3221,8 +3221,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.07.04_2_안산_vs_수원FC",
@@ -3236,8 +3236,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.07.04_2_파주_vs_용인",
@@ -3251,8 +3251,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.07.04_2_수원_vs_성남",
@@ -3266,8 +3266,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.07.05_1_서울_vs_인천",
@@ -3281,8 +3281,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.07.05_1_김천_vs_제주",
@@ -3296,8 +3296,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.07.05_1_광주_vs_울산",
@@ -3311,8 +3311,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.07.05_2_김해_vs_서울E",
@@ -3326,8 +3326,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.07.05_2_김포_vs_충남아산",
@@ -3341,8 +3341,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.07.05_2_경남_vs_천안",
@@ -3356,8 +3356,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.07.05_2_전남_vs_부산",
@@ -3371,8 +3371,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.07.10_2_수원FC_vs_전남",
@@ -3386,8 +3386,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.07.10_2_천안_vs_김해",
@@ -3401,8 +3401,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.07.11_1_울산_vs_전북",
@@ -3416,8 +3416,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.07.11_1_김천_vs_부천",
@@ -3431,8 +3431,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.07.11_1_광주_vs_포항",
@@ -3446,8 +3446,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.07.11_2_안산_vs_수원",
@@ -3461,8 +3461,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.07.11_2_대구_vs_성남",
@@ -3476,8 +3476,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.07.11_2_화성_vs_파주",
@@ -3491,8 +3491,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.07.11_2_용인_vs_충북청주",
@@ -3506,8 +3506,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.07.12_1_제주_vs_대전",
@@ -3521,8 +3521,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.07.12_1_인천_vs_안양",
@@ -3536,8 +3536,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.07.12_1_서울_vs_강원",
@@ -3551,8 +3551,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.07.12_2_충남아산_vs_경남",
@@ -3566,8 +3566,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.07.12_2_부산_vs_김포",
@@ -3581,8 +3581,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.07.18_1_대전_vs_울산",
@@ -3596,8 +3596,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.07.18_1_강원_vs_김천",
@@ -3611,8 +3611,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.07.18_1_인천_vs_전북",
@@ -3626,8 +3626,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.07.18_1_제주_vs_포항",
@@ -3641,8 +3641,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.07.18_2_전남_vs_충남아산",
@@ -3656,8 +3656,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.07.18_2_김포_vs_대구",
@@ -3671,8 +3671,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.07.18_2_수원FC_vs_서울E",
@@ -3686,8 +3686,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.07.18_2_성남_vs_부산",
@@ -3701,8 +3701,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.07.19_1_안양_vs_광주",
@@ -3716,8 +3716,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.07.19_1_부천_vs_서울",
@@ -3731,8 +3731,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.07.19_2_경남_vs_안산",
@@ -3746,8 +3746,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.07.19_2_수원_vs_파주",
@@ -3761,8 +3761,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.07.19_2_충북청주_vs_천안",
@@ -3776,8 +3776,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.07.19_2_용인_vs_화성",
@@ -3791,8 +3791,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.07.21_1_제주_vs_강원",
@@ -3806,8 +3806,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.07.21_1_울산_vs_인천",
@@ -3821,8 +3821,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.07.21_1_전북_vs_대전",
@@ -3836,8 +3836,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.07.22_1_부천_vs_안양",
@@ -3851,8 +3851,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.07.22_1_광주_vs_김천",
@@ -3866,8 +3866,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.07.22_1_서울_vs_포항",
@@ -3881,8 +3881,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.07.24_2_서울E_vs_천안",
@@ -3896,8 +3896,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.07.24_2_김해_vs_충북청주",
@@ -3911,8 +3911,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.07.25_1_포항_vs_전북",
@@ -3926,8 +3926,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.07.25_1_김천_vs_대전",
@@ -3941,8 +3941,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.07.25_2_부산_vs_수원",
@@ -3956,8 +3956,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.07.25_2_대구_vs_수원FC",
@@ -3971,8 +3971,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.07.25_2_전남_vs_경남",
@@ -3986,8 +3986,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.07.25_2_화성_vs_충남아산",
@@ -4001,8 +4001,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.07.26_1_안양_vs_강원",
@@ -4016,8 +4016,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.07.26_1_광주_vs_제주",
@@ -4031,8 +4031,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.07.26_1_인천_vs_부천",
@@ -4046,8 +4046,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.07.26_1_서울_vs_울산",
@@ -4061,8 +4061,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.07.26_2_김포_vs_용인",
@@ -4076,8 +4076,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.07.26_2_파주_vs_안산",
@@ -4091,8 +4091,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.08.01_1_강원_vs_부천",
@@ -4106,8 +4106,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.08.01_1_전북_vs_서울",
@@ -4121,8 +4121,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.01_1_포항_vs_김천",
@@ -4136,8 +4136,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.08.01_2_충남아산_vs_성남",
@@ -4151,8 +4151,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.08.01_2_천안_vs_용인",
@@ -4166,8 +4166,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.08.01_2_충북청주_vs_수원",
@@ -4181,8 +4181,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.08.01_2_화성_vs_대구",
@@ -4196,8 +4196,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.08.02_1_울산_vs_안양",
@@ -4211,8 +4211,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.08.02_1_대전_vs_광주",
@@ -4226,8 +4226,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.08.02_1_제주_vs_인천",
@@ -4241,8 +4241,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.08.02_2_부산_vs_서울E",
@@ -4256,8 +4256,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.02_2_김포_vs_경남",
@@ -4271,8 +4271,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.08.02_2_전남_vs_파주",
@@ -4286,8 +4286,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.08.02_2_안산_vs_김해",
@@ -4301,8 +4301,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.08.07_2_충남아산_vs_안산",
@@ -4316,8 +4316,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.08.07_2_김포_vs_충북청주",
@@ -4331,8 +4331,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.08.07_2_경남_vs_대구",
@@ -4346,8 +4346,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.08.07_2_화성_vs_서울E",
@@ -4361,8 +4361,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.07_2_수원_vs_김해",
@@ -4376,8 +4376,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.08.07_2_용인_vs_부산",
@@ -4391,8 +4391,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.08.08_1_안양_vs_대전",
@@ -4406,8 +4406,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.08.08_1_부천_vs_광주",
@@ -4421,8 +4421,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.08.08_1_강원_vs_인천",
@@ -4436,8 +4436,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.08.08_1_김천_vs_서울",
@@ -4451,8 +4451,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.08_1_전북_vs_제주",
@@ -4466,8 +4466,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.08.08_1_포항_vs_울산",
@@ -4481,8 +4481,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.08.08_2_파주_vs_수원FC",
@@ -4496,8 +4496,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.08.08_2_성남_vs_천안",
@@ -4511,8 +4511,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.08.15_1_광주_vs_포항",
@@ -4526,8 +4526,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.08.15_1_제주_vs_안양",
@@ -4541,8 +4541,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.08.15_1_서울_vs_대전",
@@ -4556,8 +4556,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.08.15_2_충북청주_vs_전남",
@@ -4571,8 +4571,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.08.15_2_김해_vs_경남",
@@ -4586,8 +4586,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.08.15_2_수원_vs_수원FC",
@@ -4601,8 +4601,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.08.15_2_부산_vs_화성",
@@ -4616,8 +4616,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.08.16_1_인천_vs_김천",
@@ -4631,8 +4631,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.08.16_1_부천_vs_전북",
@@ -4646,8 +4646,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.08.16_1_울산_vs_강원",
@@ -4661,8 +4661,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.08.16_2_서울E_vs_안산",
@@ -4676,8 +4676,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.08.16_2_대구_vs_충남아산",
@@ -4691,8 +4691,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.08.16_2_김포_vs_천안",
@@ -4706,8 +4706,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.08.16_2_파주_vs_성남",
@@ -4721,8 +4721,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.08.22_1_안양_vs_서울",
@@ -4736,8 +4736,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.22_1_전북_vs_울산",
@@ -4751,8 +4751,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.08.22_1_포항_vs_부천",
@@ -4766,8 +4766,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.08.22_1_제주_vs_김천",
@@ -4781,8 +4781,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.08.22_2_대구_vs_부산",
@@ -4796,8 +4796,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.08.22_2_수원FC_vs_김해",
@@ -4811,8 +4811,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.08.22_2_천안_vs_수원",
@@ -4826,8 +4826,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.08.22_2_안산_vs_성남",
@@ -4841,8 +4841,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.08.23_1_대전_vs_강원",
@@ -4856,8 +4856,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.08.23_1_광주_vs_인천",
@@ -4871,8 +4871,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.08.23_2_전남_vs_화성",
@@ -4886,8 +4886,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.08.23_2_충남아산_vs_용인",
@@ -4901,8 +4901,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.08.23_2_충북청주_vs_경남",
@@ -4916,8 +4916,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.08.23_2_서울E_vs_파주",
@@ -4931,8 +4931,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.08.25_1_서울_vs_부천",
@@ -4946,8 +4946,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.08.25_1_김천_vs_전북",
@@ -4961,8 +4961,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.08.25_1_제주_vs_포항",
@@ -4976,8 +4976,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.08.26_1_안양_vs_인천",
@@ -4991,8 +4991,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.08.26_1_대전_vs_울산",
@@ -5006,8 +5006,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.08.26_1_강원_vs_광주",
@@ -5021,8 +5021,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.08.28_2_안산_vs_대구",
@@ -5036,8 +5036,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.08.28_2_전남_vs_천안",
@@ -5051,8 +5051,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.08.29_1_울산_vs_김천",
@@ -5066,8 +5066,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.08.29_1_부천_vs_안양",
@@ -5081,8 +5081,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.08.29_2_김포_vs_수원",
@@ -5096,8 +5096,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.08.29_2_경남_vs_파주",
@@ -5111,8 +5111,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.08.29_2_화성_vs_충북청주",
@@ -5126,8 +5126,8 @@
     "league": "K League 2",
     "homeTeam": "화성",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/화성.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.08.29_2_성남_vs_서울E",
@@ -5141,8 +5141,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.30_1_광주_vs_서울",
@@ -5156,8 +5156,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.08.30_1_인천_vs_전북",
@@ -5171,8 +5171,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.08.30_1_제주_vs_대전",
@@ -5186,8 +5186,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.08.30_1_포항_vs_강원",
@@ -5201,8 +5201,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.08.30_2_김해_vs_용인",
@@ -5216,8 +5216,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.08.30_2_수원FC_vs_부산",
@@ -5231,8 +5231,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.09.04_2_충북청주_vs_서울E",
@@ -5246,8 +5246,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.09.04_2_파주_vs_대구",
@@ -5261,8 +5261,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.09.05_1_부천_vs_대전",
@@ -5276,8 +5276,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.09.05_1_서울_vs_인천",
@@ -5291,8 +5291,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.09.05_1_전북_vs_포항",
@@ -5306,8 +5306,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.09.05_1_제주_vs_울산",
@@ -5321,8 +5321,8 @@
     "league": "K League 1",
     "homeTeam": "제주",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/제주.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.09.05_2_부산_vs_안산",
@@ -5336,8 +5336,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.09.05_2_천안_vs_화성",
@@ -5351,8 +5351,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.09.05_2_용인_vs_수원FC",
@@ -5366,8 +5366,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.09.05_2_김해_vs_전남",
@@ -5381,8 +5381,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.09.06_1_안양_vs_강원",
@@ -5396,8 +5396,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.09.06_1_김천_vs_광주",
@@ -5411,8 +5411,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.09.06_2_수원_vs_충남아산",
@@ -5426,8 +5426,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.09.06_2_김포_vs_성남",
@@ -5441,8 +5441,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.09.08_1_울산_vs_서울",
@@ -5456,8 +5456,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.09.08_1_인천_vs_부천",
@@ -5471,8 +5471,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.09.09_1_대전_vs_안양",
@@ -5486,8 +5486,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.09.09_1_강원_vs_전북",
@@ -5501,8 +5501,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.09.09_1_광주_vs_제주",
@@ -5516,8 +5516,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.09.09_1_포항_vs_김천",
@@ -5531,8 +5531,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.09.12_1_전북_vs_서울",
@@ -5546,8 +5546,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.09.12_1_울산_vs_인천",
@@ -5561,8 +5561,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.09.12_1_부천_vs_제주",
@@ -5576,8 +5576,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.09.12_2_대구_vs_용인",
@@ -5591,8 +5591,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.09.12_2_서울E_vs_수원",
@@ -5606,8 +5606,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.09.12_1_대전_vs_포항",
@@ -5621,8 +5621,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.09.12_2_안산_vs_화성",
@@ -5636,8 +5636,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.09.12_2_충남아산_vs_충북청주",
@@ -5651,8 +5651,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.09.13_1_김천_vs_강원",
@@ -5666,8 +5666,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.09.13_2_경남_vs_성남",
@@ -5681,8 +5681,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.09.13_2_전남_vs_김포",
@@ -5696,8 +5696,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.09.13_1_광주_vs_안양",
@@ -5711,8 +5711,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.09.13_2_부산_vs_김해",
@@ -5726,8 +5726,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.09.13_2_수원FC_vs_천안",
@@ -5741,8 +5741,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.09.19_1_부천_vs_김천",
@@ -5756,8 +5756,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.09.19_2_전남_vs_수원FC",
@@ -5771,8 +5771,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.09.19_2_충남아산_vs_천안",
@@ -5786,8 +5786,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.09.19_1_안양_vs_울산",
@@ -5801,8 +5801,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.09.19_2_서울E_vs_대구",
@@ -5816,8 +5816,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.09.19_2_김포_vs_부산",
@@ -5831,8 +5831,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.09.20_1_강원_vs_제주",
@@ -5846,8 +5846,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.09.20_1_전북_vs_광주",
@@ -5861,8 +5861,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.09.20_2_안산_vs_충북청주",
@@ -5876,8 +5876,8 @@
     "league": "K League 2",
     "homeTeam": "안산",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/안산.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.09.20_2_용인_vs_경남",
@@ -5891,8 +5891,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.09.20_1_인천_vs_대전",
@@ -5906,8 +5906,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.09.20_1_포항_vs_서울",
@@ -5921,8 +5921,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "서울",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.09.20_2_김해_vs_파주",
@@ -5936,8 +5936,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.09.20_2_성남_vs_화성",
@@ -5951,8 +5951,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.10.09_1_대전_vs_전북",
@@ -5966,8 +5966,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.10.09_2_수원FC_vs_화성",
@@ -5981,8 +5981,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.10.09_1_강원_vs_부천",
@@ -5996,8 +5996,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.10.09_1_인천_vs_포항",
@@ -6011,8 +6011,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.10.09_2_충북청주_vs_성남",
@@ -6026,8 +6026,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.10.09_2_김포_vs_서울E",
@@ -6041,8 +6041,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.10.10_1_서울_vs_제주",
@@ -6056,8 +6056,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.10.10_2_전남_vs_용인",
@@ -6071,8 +6071,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.10.10_2_파주_vs_부산",
@@ -6086,8 +6086,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.10.10_1_김천_vs_안양",
@@ -6101,8 +6101,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.10.10_2_천안_vs_경남",
@@ -6116,8 +6116,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.10.10_2_김해_vs_충남아산",
@@ -6131,8 +6131,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.10.11_1_광주_vs_울산",
@@ -6146,8 +6146,8 @@
     "league": "K League 1",
     "homeTeam": "광주",
     "awayTeam": "울산",
-    "homeTeamLogo": "/images/logos/kleague/광주.png",
-    "awayTeamLogo": "/images/logos/kleague/울산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png"
   },
   {
     "id": "kleague_2026.10.11_2_수원_vs_안산",
@@ -6161,8 +6161,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.10.17_1_서울_vs_김천",
@@ -6176,8 +6176,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "김천",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/김천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
   },
   {
     "id": "kleague_2026.10.17_2_대구_vs_충북청주",
@@ -6191,8 +6191,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.10.17_2_성남_vs_수원FC",
@@ -6206,8 +6206,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.10.17_1_울산_vs_부천",
@@ -6221,8 +6221,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "부천",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/부천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png"
   },
   {
     "id": "kleague_2026.10.17_2_용인_vs_안산",
@@ -6236,8 +6236,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.10.17_2_김포_vs_파주",
@@ -6251,8 +6251,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.10.17_2_경남_vs_충남아산",
@@ -6266,8 +6266,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.10.18_1_대전_vs_광주",
@@ -6281,8 +6281,8 @@
     "league": "K League 1",
     "homeTeam": "대전",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/대전.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.10.18_1_전북_vs_제주",
@@ -6296,8 +6296,8 @@
     "league": "K League 1",
     "homeTeam": "전북",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/전북.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.10.18_2_수원_vs_화성",
@@ -6311,8 +6311,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.10.18_2_서울E_vs_김해",
@@ -6326,8 +6326,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.10.18_1_강원_vs_인천",
@@ -6341,8 +6341,8 @@
     "league": "K League 1",
     "homeTeam": "강원",
     "awayTeam": "인천",
-    "homeTeamLogo": "/images/logos/kleague/강원.png",
-    "awayTeamLogo": "/images/logos/kleague/인천.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png"
   },
   {
     "id": "kleague_2026.10.18_1_포항_vs_안양",
@@ -6356,8 +6356,8 @@
     "league": "K League 1",
     "homeTeam": "포항",
     "awayTeam": "안양",
-    "homeTeamLogo": "/images/logos/kleague/포항.png",
-    "awayTeamLogo": "/images/logos/kleague/안양.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png"
   },
   {
     "id": "kleague_2026.10.18_2_부산_vs_전남",
@@ -6371,8 +6371,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.10.24_1_울산_vs_포항",
@@ -6386,8 +6386,8 @@
     "league": "K League 1",
     "homeTeam": "울산",
     "awayTeam": "포항",
-    "homeTeamLogo": "/images/logos/kleague/울산.png",
-    "awayTeamLogo": "/images/logos/kleague/포항.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png"
   },
   {
     "id": "kleague_2026.10.24_1_안양_vs_전북",
@@ -6401,8 +6401,8 @@
     "league": "K League 1",
     "homeTeam": "안양",
     "awayTeam": "전북",
-    "homeTeamLogo": "/images/logos/kleague/안양.png",
-    "awayTeamLogo": "/images/logos/kleague/전북.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png"
   },
   {
     "id": "kleague_2026.10.24_1_부천_vs_광주",
@@ -6416,8 +6416,8 @@
     "league": "K League 1",
     "homeTeam": "부천",
     "awayTeam": "광주",
-    "homeTeamLogo": "/images/logos/kleague/부천.png",
-    "awayTeamLogo": "/images/logos/kleague/광주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png"
   },
   {
     "id": "kleague_2026.10.24_1_김천_vs_대전",
@@ -6431,8 +6431,8 @@
     "league": "K League 1",
     "homeTeam": "김천",
     "awayTeam": "대전",
-    "homeTeamLogo": "/images/logos/kleague/김천.png",
-    "awayTeamLogo": "/images/logos/kleague/대전.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png"
   },
   {
     "id": "kleague_2026.10.24_1_인천_vs_제주",
@@ -6446,8 +6446,8 @@
     "league": "K League 1",
     "homeTeam": "인천",
     "awayTeam": "제주",
-    "homeTeamLogo": "/images/logos/kleague/인천.png",
-    "awayTeamLogo": "/images/logos/kleague/제주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png"
   },
   {
     "id": "kleague_2026.10.24_1_서울_vs_강원",
@@ -6461,8 +6461,8 @@
     "league": "K League 1",
     "homeTeam": "서울",
     "awayTeam": "강원",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/강원.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png"
   },
   {
     "id": "kleague_2026.10.24_2_전남_vs_대구",
@@ -6476,8 +6476,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.10.24_2_김포_vs_김해",
@@ -6491,8 +6491,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.10.25_2_성남_vs_수원",
@@ -6506,8 +6506,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.10.25_2_충남아산_vs_수원FC",
@@ -6521,8 +6521,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.10.25_2_부산_vs_경남",
@@ -6536,8 +6536,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.10.25_2_천안_vs_안산",
@@ -6551,8 +6551,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.10.25_2_충북청주_vs_용인",
@@ -6566,8 +6566,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.10.25_2_파주_vs_화성",
@@ -6581,8 +6581,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.10.31_2_경남_vs_화성",
@@ -6596,8 +6596,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.10.31_2_용인_vs_서울E",
@@ -6611,8 +6611,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.10.31_2_충남아산_vs_김포",
@@ -6626,8 +6626,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "김포",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/김포.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
     "id": "kleague_2026.10.31_2_대구_vs_수원",
@@ -6641,8 +6641,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.11.01_2_수원FC_vs_안산",
@@ -6656,8 +6656,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.11.01_2_전남_vs_성남",
@@ -6671,8 +6671,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.11.01_2_충북청주_vs_파주",
@@ -6686,8 +6686,8 @@
     "league": "K League 2",
     "homeTeam": "충북청주",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/충북청주.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.11.01_2_김해_vs_천안",
@@ -6701,8 +6701,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.11.07_2_성남_vs_대구",
@@ -6716,8 +6716,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.11.07_2_수원FC_vs_경남",
@@ -6731,8 +6731,8 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.11.07_2_김포_vs_안산",
@@ -6746,8 +6746,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.11.07_2_김해_vs_화성",
@@ -6761,8 +6761,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.11.07_2_서울E_vs_전남",
@@ -6776,8 +6776,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "전남",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/전남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png"
   },
   {
     "id": "kleague_2026.11.08_2_수원_vs_용인",
@@ -6791,8 +6791,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.11.08_2_천안_vs_부산",
@@ -6806,8 +6806,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.11.08_2_파주_vs_충남아산",
@@ -6821,8 +6821,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.11.21_2_수원_vs_경남",
@@ -6836,8 +6836,8 @@
     "league": "K League 2",
     "homeTeam": "수원",
     "awayTeam": "경남",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/경남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
   },
   {
     "id": "kleague_2026.11.21_2_부산_vs_충북청주",
@@ -6851,8 +6851,8 @@
     "league": "K League 2",
     "homeTeam": "부산",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/부산.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   },
   {
     "id": "kleague_2026.11.21_2_김포_vs_수원FC",
@@ -6866,8 +6866,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "수원FC",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.11.21_2_성남_vs_용인",
@@ -6881,8 +6881,8 @@
     "league": "K League 2",
     "homeTeam": "성남",
     "awayTeam": "용인",
-    "homeTeamLogo": "/images/logos/kleague/성남.png",
-    "awayTeamLogo": "/images/logos/kleague/용인.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png"
   },
   {
     "id": "kleague_2026.11.22_2_대구_vs_김해",
@@ -6896,8 +6896,8 @@
     "league": "K League 2",
     "homeTeam": "대구",
     "awayTeam": "김해",
-    "homeTeamLogo": "/images/logos/kleague/대구.png",
-    "awayTeamLogo": "/images/logos/kleague/김해.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png"
   },
   {
     "id": "kleague_2026.11.22_2_전남_vs_안산",
@@ -6911,8 +6911,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "안산",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/안산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png"
   },
   {
     "id": "kleague_2026.11.22_2_파주_vs_천안",
@@ -6926,8 +6926,8 @@
     "league": "K League 2",
     "homeTeam": "파주",
     "awayTeam": "천안",
-    "homeTeamLogo": "/images/logos/kleague/파주.png",
-    "awayTeamLogo": "/images/logos/kleague/천안.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png"
   },
   {
     "id": "kleague_2026.11.22_2_서울E_vs_충남아산",
@@ -6941,8 +6941,8 @@
     "league": "K League 2",
     "homeTeam": "서울E",
     "awayTeam": "충남아산",
-    "homeTeamLogo": "/images/logos/kleague/서울E.png",
-    "awayTeamLogo": "/images/logos/kleague/충남아산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.11.29_2_용인_vs_파주",
@@ -6956,8 +6956,8 @@
     "league": "K League 2",
     "homeTeam": "용인",
     "awayTeam": "파주",
-    "homeTeamLogo": "/images/logos/kleague/용인.png",
-    "awayTeamLogo": "/images/logos/kleague/파주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png"
   },
   {
     "id": "kleague_2026.11.29_2_충남아산_vs_부산",
@@ -6971,8 +6971,8 @@
     "league": "K League 2",
     "homeTeam": "충남아산",
     "awayTeam": "부산",
-    "homeTeamLogo": "/images/logos/kleague/충남아산.png",
-    "awayTeamLogo": "/images/logos/kleague/부산.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
     "id": "kleague_2026.11.29_2_천안_vs_대구",
@@ -6986,8 +6986,8 @@
     "league": "K League 2",
     "homeTeam": "천안",
     "awayTeam": "대구",
-    "homeTeamLogo": "/images/logos/kleague/천안.png",
-    "awayTeamLogo": "/images/logos/kleague/대구.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png"
   },
   {
     "id": "kleague_2026.11.29_2_김해_vs_성남",
@@ -7001,8 +7001,8 @@
     "league": "K League 2",
     "homeTeam": "김해",
     "awayTeam": "성남",
-    "homeTeamLogo": "/images/logos/kleague/김해.png",
-    "awayTeamLogo": "/images/logos/kleague/성남.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png"
   },
   {
     "id": "kleague_2026.11.29_2_김포_vs_화성",
@@ -7016,8 +7016,8 @@
     "league": "K League 2",
     "homeTeam": "김포",
     "awayTeam": "화성",
-    "homeTeamLogo": "/images/logos/kleague/김포.png",
-    "awayTeamLogo": "/images/logos/kleague/화성.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png"
   },
   {
     "id": "kleague_2026.11.29_2_경남_vs_서울E",
@@ -7031,8 +7031,8 @@
     "league": "K League 2",
     "homeTeam": "경남",
     "awayTeam": "서울E",
-    "homeTeamLogo": "/images/logos/kleague/경남.png",
-    "awayTeamLogo": "/images/logos/kleague/서울E.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png"
   },
   {
     "id": "kleague_2026.11.29_2_전남_vs_수원",
@@ -7046,8 +7046,8 @@
     "league": "K League 2",
     "homeTeam": "전남",
     "awayTeam": "수원",
-    "homeTeamLogo": "/images/logos/kleague/전남.png",
-    "awayTeamLogo": "/images/logos/kleague/수원FC.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.11.29_2_수원FC_vs_충북청주",
@@ -7061,7 +7061,7 @@
     "league": "K League 2",
     "homeTeam": "수원FC",
     "awayTeam": "충북청주",
-    "homeTeamLogo": "/images/logos/kleague/수원FC.png",
-    "awayTeamLogo": "/images/logos/kleague/충북청주.png"
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png"
   }
 ]
