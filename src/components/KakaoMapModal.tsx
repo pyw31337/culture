@@ -191,7 +191,7 @@ export default function KakaoMapModal({
         setVisibleVenues(processedData.list.slice(0, initialCount));
     }, [processedData, selectedGenre]);
 
-    const handleSearchHereInternal = useCallback((map: any) => {
+    const handleSearchHereInternal = useCallback((map: any, isUserClick = false) => {
         if (!map || !window.kakao?.maps?.LatLng) return;
         const bounds = map.getBounds();
         const center = map.getCenter();
@@ -217,13 +217,13 @@ export default function KakaoMapModal({
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         setShowSearchHereBtn(false);
 
-        // Notify parent grid to sync location search
-        if (onMapSearchHere && center) {
+        // Notify parent grid to sync location search ONLY when user explicitly clicked
+        if (isUserClick && onMapSearchHere && center) {
             onMapSearchHere(center.getLat(), center.getLng());
         }
     }, [selectedGenre, onMapSearchHere]);
 
-    const handleSearchHere = () => handleSearchHereInternal(mapInstance);
+    const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
 
     const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
 
