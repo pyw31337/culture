@@ -38,6 +38,7 @@ export interface KakaoMapModalProps {
     selectedGenre?: string;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
+    onMapSearchHere?: (lat: number, lng: number) => void;
 }
 
 export default function KakaoMapModal({
@@ -50,7 +51,8 @@ export default function KakaoMapModal({
     onVenueLocationChange,
     selectedGenre = 'all',
     searchMode = 'keyword',
-    searchText = ''
+    searchText = '',
+    onMapSearchHere
 }: KakaoMapModalProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
@@ -214,7 +216,12 @@ export default function KakaoMapModal({
         // For movies, we can show more in the list (e.g. 50 nearest), otherwise keep it bounded
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         setShowSearchHereBtn(false);
-    }, [selectedGenre]);
+
+        // Notify parent grid to sync location search
+        if (onMapSearchHere && center) {
+            onMapSearchHere(center.getLat(), center.getLng());
+        }
+    }, [selectedGenre, onMapSearchHere]);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance);
 

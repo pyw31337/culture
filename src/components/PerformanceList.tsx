@@ -348,6 +348,10 @@ export default function PerformanceList({
                         setSearchLocation({ name, lat, lng });
                         setIsMapOpen(false);
                     }}
+                    onMapSearchHere={(lat, lng) => {
+                        setSearchMode('location');
+                        setSearchLocation({ name: '지도 탐색 위치', lat, lng });
+                    }}
                 />
             )}
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setFocusVenue({ lat: venues[name]?.lat || 0, lng: venues[name]?.lng || 0, name }); setIsMapOpen(true); }} />}
