@@ -394,27 +394,29 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         {(perf.price || perf.discount) && (
                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
                                 <div className="flex flex-col justify-end">
-                                    {perf.discount && <span className="text-red-500 font-black text-lg">{perf.discount}</span>}
-                                    {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-600 text-xs line-through">{perf.originalPrice}</span>}
+                                    {perf.discount && <span className="text-red-500 font-black text-lg leading-none">{perf.discount}</span>}
                                 </div>
-                                <div className="flex items-baseline gap-1.5">
-                                    {perf.price && (() => {
-                                        const extracted = extractFirstPrice(perf.price);
-                                        if (!extracted) return <span className="text-white light:text-black font-black text-xl tracking-tighter">{perf.price}</span>;
-                                        return (
-                                            <div className="text-white light:text-black drop-shadow-md leading-none text-right">
-                                                {extracted.price === '무료' ? (
-                                                    <span className="text-lg font-black">무료</span>
-                                                ) : (
-                                                    <>
-                                                        {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                        <span className="text-lg font-black">{extracted.price}</span>
-                                                        <span className="text-xs font-normal ml-0.5">원</span>
-                                                    </>
-                                                )}
-                                            </div>
-                                        );
-                                    })()}
+                                <div className="flex flex-col items-end">
+                                    {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
+                                    <div className="flex items-baseline gap-1.5">
+                                        {perf.price && (() => {
+                                            const extracted = extractFirstPrice(perf.price);
+                                            if (!extracted) return <span className="text-white light:text-black font-black text-xl tracking-tighter">{perf.price}</span>;
+                                            return (
+                                                <div className="text-white light:text-black drop-shadow-md leading-none text-right">
+                                                    {extracted.price === '무료' ? (
+                                                        <span className="text-lg font-black">무료</span>
+                                                    ) : (
+                                                        <>
+                                                            {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                            <span className="text-lg font-black">{extracted.price}</span>
+                                                            <span className="text-xs font-normal ml-0.5">원</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            );
+                                        })()}
+                                    </div>
                                 </div>
                             </div>
                         )}
