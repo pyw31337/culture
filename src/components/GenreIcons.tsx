@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LayoutGrid } from 'lucide-react'; // Default icon
+import { LayoutGrid, Music } from 'lucide-react'; // Default icon
 import { clsx } from 'clsx'; // Ensure clsx is imported if not already
 
 export const CloverIcon = ({ className, size = 16, strokeWidth = 2 }: { className?: string; size?: number; strokeWidth?: number }) => (
@@ -174,7 +174,7 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'theater': return <DramaIcon size={size} />;
         case 'play': return <DramaIcon size={size} />; // 연극 in GENRES uses 'play'
         case 'concert': return <MicVocalIcon size={size} />;
-        case 'classic': return <PianoIcon size={size} />;
+        case 'classic': return <Music size={size} />;
         case 'exhibition': return <FanIcon size={size} />;
         case 'activity': return <TicketIcon size={size} />;
         case 'class': return <ClassIcon size={size} />;
