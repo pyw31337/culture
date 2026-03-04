@@ -466,9 +466,10 @@ async function scrapeMovies() {
             }
 
             // Update with NEW data
-            // STRICT POLICY: Only keep movies that are in finalMovies (current Top 30)
-            // This removes movies that are no longer in the KOBIS ranking.
+            // STRICT POLICY: Only keep movies that are currently in KOBIS Top 30 ranking
             const synchronizedMovies: any[] = [];
+
+            // finalMovies contains both cached (no enrichment needed) AND newly enriched movies
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
                 const merged = {
