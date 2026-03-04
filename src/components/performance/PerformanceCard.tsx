@@ -173,7 +173,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
                         : "bg-gray-900"
                 )}
-                    style={{ transform: 'translateZ(0)' }}
+                    style={{ transform: 'translateZ(0)', clipPath: 'inset(0 round 15px)' }}
                 >
 
                     {showRibbon && (

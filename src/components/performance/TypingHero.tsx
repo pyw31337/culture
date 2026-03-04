@@ -56,10 +56,6 @@ export const TypingHero = ({
             setDisplayedTemplate(template);
             setPhase('TYPE');
             setProgress(0);
-        } else if (phase === 'CYCLING') {
-            // Safety: If parent returns the same template but we are stuck in CYCLING, restart TYPE
-            setPhase('TYPE');
-            setProgress(0);
         }
     }, [template, displayedTemplate, phase]);
 

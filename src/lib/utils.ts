@@ -150,6 +150,30 @@ export function formatUnifiedDate(dateStr: string): string {
             const parts = cleanStr.split('~').map(s => s.trim()).filter(Boolean);
             if (parts.length > 1) {
                 const formattedParts = parts.map(p => formatSingleDateInternal(p));
+
+                if (formattedParts[0] === formattedParts[1]) {
+                    return formattedParts[0];
+                }
+
+                const dateMatch0 = formattedParts[0].match(/^(\d{4}\.\d{2}\.\d{2} \([가-힣]\))(?: (\d{2}:\d{2}))?$/);
+                const dateMatch1 = formattedParts[1].match(/^(\d{4}\.\d{2}\.\d{2} \([가-힣]\))(?: (\d{2}:\d{2}))?$/);
+
+                if (dateMatch0 && dateMatch1 && dateMatch0[1] === dateMatch1[1]) {
+                    const baseDate = dateMatch0[1];
+                    const time0 = dateMatch0[2];
+                    const time1 = dateMatch1[2];
+
+                    if (time0 && time1) {
+                        return `${baseDate} ${time0} ~ ${time1}`;
+                    } else if (time0) {
+                        return `${baseDate} ${time0}`;
+                    } else if (time1) {
+                        return `${baseDate} ${time1}`;
+                    } else {
+                        return baseDate;
+                    }
+                }
+
                 return formattedParts.join(' ~ ');
             } else if (parts.length === 1 && cleanStr.startsWith('~')) {
                 return `~ ${formatSingleDateInternal(parts[0])}`;
