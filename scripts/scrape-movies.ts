@@ -283,64 +283,128 @@ async function scrapeMovies() {
             await kobisPage.close();
         }
 
-        // 1.5 Scrape KOBIS Upcoming Schedules
+        // 1.5 Scrape KOBIS Upcoming Schedules (Full: All months × All pages)
         let upcomingMovies: any[] = [];
         try {
-            console.log(`Fetching KOBIS Upcoming Schedule directly...`);
-            const response = await axios.get('https://www.kobis.or.kr/kobis/business/mast/mvie/findOpenScheduleList.do', {
-                headers: { 'User-Agent': 'Mozilla/5.0' }
-            });
-
-            const html = response.data as string;
-
-            // Because we don't have cheerio loaded in this script natively in the import, 
-            // we will use playwright's evaluate just by setting the content.
+            console.log(`Scraping KOBIS Upcoming Schedule (Playwright interactive)...`);
             const upcomingPage = await kobisContext.newPage();
-            await upcomingPage.setContent(html);
+            await upcomingPage.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+            await upcomingPage.goto('https://www.kobis.or.kr/kobis/business/mast/mvie/findOpenScheduleList.do', { waitUntil: 'domcontentloaded', timeout: 30000 });
+            await sleep(2000);
 
-            upcomingMovies = await upcomingPage.evaluate(() => {
-                const results: any[] = [];
-                const currentYear = new Date().getFullYear().toString();
-                // Select all list items and table rows
-                const items = document.querySelectorAll('.item, li, tr');
+            const scheduleBar = new cliProgress.SingleBar({
+                format: 'KOBIS 개봉예정 | {bar} | {value}/{total} 월 | {month} | 수집: {count}',
+                hideCursor: true
+            }, cliProgress.Presets.shades_classic);
 
-                items.forEach((el) => {
-                    const text = el.textContent || '';
-                    if (text.includes(currentYear + '-')) {
-                        const spans = Array.from(el.querySelectorAll('span'));
-                        const dateSpan = spans.find(s => s.textContent?.includes(currentYear + '-'));
-                        const date = dateSpan?.textContent?.trim() || '';
+            const currentMonth = new Date().getMonth() + 1; // 1-indexed
+            const totalMonths = 12 - currentMonth + 1; // e.g., March(3) to Dec(12) = 10 months
+            scheduleBar.start(totalMonths, 0, { month: '시작', count: 0 });
 
-                        const titleEl = el.querySelector('.tit, .title, a');
-                        let title = titleEl?.getAttribute('title');
-                        if (!title) {
-                            title = el.querySelector('strong, .tit')?.textContent?.trim() || '';
-                        }
+            // Helper: extract movies from the current page view
+            const extractMovies = async (): Promise<any[]> => {
+                return upcomingPage.evaluate(() => {
+                    const results: any[] = [];
+                    // KOBIS uses .item class for each movie card
+                    const items = document.querySelectorAll('.item');
+                    items.forEach(el => {
+                        // Title is in strong.tit with title attribute
+                        const titleEl = el.querySelector('strong.tit');
+                        const title = titleEl?.getAttribute('title') || titleEl?.textContent?.trim() || '';
 
-                        if (date && title && !title.includes('2026') && title.length > 1) {
-                            // Avoid duplicates
-                            if (!results.find(m => m.title === title && m.dateRaw === date)) {
-                                results.push({
-                                    dateRaw: date,
-                                    title: title.replace('상세정보', '').trim()
-                                });
+                        // Date: look for a span containing YYYY-MM-DD pattern
+                        const allSpans = Array.from(el.querySelectorAll('span'));
+                        let dateRaw = '';
+                        for (const span of allSpans) {
+                            const txt = span.textContent?.trim() || '';
+                            if (/\d{4}-\d{2}-\d{2}/.test(txt)) {
+                                dateRaw = txt.trim();
+                                break;
                             }
                         }
-                    }
+
+                        if (title && dateRaw && title.length > 1) {
+                            results.push({ title: title.trim(), dateRaw });
+                        }
+                    });
+                    return results;
                 });
-                return results;
-            });
+            };
+
+            // Iterate through all months (current to December)
+            for (let monthIdx = 0; monthIdx < totalMonths; monthIdx++) {
+                // Get current month label
+                const monthLabel = await upcomingPage.evaluate(() => {
+                    const yearEl = document.querySelector('.year');
+                    const monthEl = document.querySelector('#currentMonth');
+                    return `${yearEl?.textContent?.trim() || ''} ${monthEl?.textContent?.trim() || ''}`;
+                }).catch(() => 'Unknown');
+
+                scheduleBar.update(monthIdx + 1, { month: monthLabel.substring(0, 15), count: upcomingMovies.length });
+
+                // Paginate through all pages in this month
+                let pageNum = 1;
+                let hasNextPage = true;
+                while (hasNextPage) {
+                    await sleep(1500);
+
+                    const pageMovies = await extractMovies();
+                    upcomingMovies.push(...pageMovies);
+
+                    // Check if there's a next page using goPage() onclick pattern
+                    hasNextPage = await upcomingPage.evaluate((currentPage) => {
+                        const nextPageNum = currentPage + 1;
+                        const pagingDiv = document.querySelector('.paging');
+                        if (!pagingDiv) return false;
+
+                        const pageLinks = pagingDiv.querySelectorAll('a');
+                        for (const link of Array.from(pageLinks)) {
+                            const onclick = link.getAttribute('onclick') || '';
+                            if (onclick.includes(`goPage('${nextPageNum}')`)) {
+                                link.click();
+                                return true;
+                            }
+                        }
+                        return false;
+                    }, pageNum).catch(() => false);
+
+                    pageNum++;
+                    if (pageNum > 30) break; // Safety limit
+                }
+
+                // Navigate to next month using #nextMonth button
+                if (monthIdx < totalMonths - 1) {
+                    const navigated = await upcomingPage.evaluate(() => {
+                        const nextBtn = document.querySelector('#nextMonth') as HTMLElement;
+                        if (nextBtn) {
+                            nextBtn.click();
+                            return true;
+                        }
+                        return false;
+                    }).catch(() => false);
+
+                    if (!navigated) break;
+                    await sleep(2500); // Wait for AJAX reload after month change
+                }
+            }
+
+            scheduleBar.stop();
             await upcomingPage.close();
 
-            console.log(`Found ${upcomingMovies.length} upcoming movies from primary HTML.`);
+            console.log(`Found ${upcomingMovies.length} total upcoming movie entries from KOBIS.`);
 
-            // Remove duplicates from upcoming (some might be listed recursively, or already in box office)
+            // Remove duplicates from upcoming (some might already be in box office)
             const boxOfficeTitles = new Set(movies.map(m => m.title));
             upcomingMovies = upcomingMovies.filter(um => !boxOfficeTitles.has(um.title));
 
-            // Deduplicate upcoming movies themselves
-            const uniqueUpcoming = new Map();
-            upcomingMovies.forEach(um => uniqueUpcoming.set(um.title, um));
+            // Deduplicate upcoming movies themselves (keep earliest date)
+            const uniqueUpcoming = new Map<string, any>();
+            upcomingMovies.forEach(um => {
+                const existing = uniqueUpcoming.get(um.title);
+                if (!existing || um.dateRaw < existing.dateRaw) {
+                    uniqueUpcoming.set(um.title, um);
+                }
+            });
             upcomingMovies = Array.from(uniqueUpcoming.values());
             console.log(`Unique upcoming movies to enrich: ${upcomingMovies.length}`);
 
