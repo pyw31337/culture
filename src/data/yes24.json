@@ -1,5 +1,15 @@
 [
   {
+    "id": "perf_g0nny_거니_연말_단독콘서트_Happily_Ever_After",
+    "title": "g0nny 거니 연말 단독콘서트 : Happily Ever After",
+    "image": "//tkfile.yes24.com/upload2/PerfBlog/202511/20251126/20251126-56283.jpg",
+    "date": "2025.12.20~2025.12.21",
+    "venue": "예스24 원더로크홀",
+    "link": "http://ticket.yes24.com/Perf/56283",
+    "region": "seoul",
+    "genre": "concert"
+  },
+  {
     "id": "perf_매미_MEMI_단독공연_MEMI_The_Ring",
     "title": "매미(MEMI) 단독공연 [MEMI : The Ring]",
     "image": "//tkfile.yes24.com/upload2/PerfBlog/202511/20251120/20251120-56187.jpg",
@@ -57,16 +67,6 @@
     "venue": "수원컨벤션센터 전시홀",
     "link": "http://ticket.yes24.com/Perf/55753",
     "region": "gyeonggi",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_2025_2026_이창섭_단독_콘서트_EndAnd_부산",
-    "title": "2025-2026 이창섭 단독 콘서트 〈EndAnd〉 - 부산",
-    "image": "//tkfile.yes24.com/upload2/PerfBlog/202510/20251023/20251023-55752.jpg",
-    "date": "2026.01.17~2026.01.18",
-    "venue": "벡스코 오디토리움",
-    "link": "http://ticket.yes24.com/Perf/55752",
-    "region": "unknown",
     "genre": "concert"
   }
 ]

@@ -28847,7 +28847,8 @@
     "address": "서울 중랑구 면목로 238",
     "lat": 37.5737134361492,
     "lng": 127.084914322445,
-    "name": "중랑구민회관 대공연장"
+    "name": "중랑구민회관 대공연장",
+    "district": "중랑구"
   },
   "베스티브루 피카디리 갤러리 카페": {
     "name": "베스티브루 피카디리 갤러리 카페",
@@ -39302,7 +39303,8 @@
     "address": "서울 서초구 신반포로 176",
     "lat": 37.505305732081965,
     "lng": 127.00432032924516,
-    "name": "서울특별시 서초구 잠원동 신반포로"
+    "name": "서울특별시 서초구 잠원동 신반포로",
+    "district": "서초구"
   },
   "대전광역시 유성구 온천1동 월드컵대로": {
     "name": "대전광역시 유성구 온천1동 월드컵대로",
@@ -39502,13 +39504,15 @@
     "address": "서울 마포구 월드컵로3길 27",
     "lat": 37.5502666970836,
     "lng": 126.911260130914,
-    "name": "서울특별시 마포구 합정동 387-1번지 5층"
+    "name": "서울특별시 마포구 합정동 387-1번지 5층",
+    "district": "마포구"
   },
   "서울특별시 용산구 한남동 111-4 2층": {
     "address": "서울 용산구 독서당로 25",
     "lat": 37.5307359486746,
     "lng": 127.007402941733,
-    "name": "서울특별시 용산구 한남동 111-4 2층"
+    "name": "서울특별시 용산구 한남동 111-4 2층",
+    "district": "용산구"
   },
   "서울특별시 서대문구 대현동 이화여대1길 42-1 2층 스테이라탄": {
     "address": "서울 서대문구 이화여대1길 42-1",
@@ -39609,7 +39613,8 @@
     "address": "서울 은평구 갈현로11길 46",
     "lat": 37.604963348798,
     "lng": 126.905471626875,
-    "name": "서울특별시 은평구 구산동 224"
+    "name": "서울특별시 은평구 구산동 224",
+    "district": "은평구"
   },
   "위치대한민국 경기도 평택시 신장동 목천로 42 루미그림카페": {
     "name": "위치대한민국 경기도 평택시 신장동 목천로 42 루미그림카페",
@@ -39627,7 +39632,8 @@
     "address": "서울 강북구 삼양로24길 10",
     "lat": 37.6165749996764,
     "lng": 127.022340574302,
-    "name": "서울특별시 강북구 미아동 삼양로24길 10 1층"
+    "name": "서울특별시 강북구 미아동 삼양로24길 10 1층",
+    "district": "강북구"
   },
   "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180": {
     "name": "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180",
@@ -40134,7 +40140,8 @@
     "address": "서울 관악구 인헌2길 9-3",
     "lat": 37.4750027413545,
     "lng": 126.966334035604,
-    "name": "서울특별시 관악구 봉천동 인헌2길 9-3 플러스홈 건물 402호"
+    "name": "서울특별시 관악구 봉천동 인헌2길 9-3 플러스홈 건물 402호",
+    "district": "관악구"
   },
   "서울특별시 영등포구 신길동 가마산로80가길 20-19": {
     "name": "서울특별시 영등포구 신길동 가마산로80가길 20-19",
@@ -40166,7 +40173,8 @@
     "address": "서울 마포구 백범로 199",
     "lat": 37.54349890542353,
     "lng": 126.95286516336245,
-    "name": "서울특별시 마포구 신공덕동 백범로 199 메트로디오빌"
+    "name": "서울특별시 마포구 신공덕동 백범로 199 메트로디오빌",
+    "district": "마포구"
   },
   "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개": {
     "name": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개",
@@ -40213,7 +40221,8 @@
     "address": "서울 영등포구 당산로 161-9",
     "lat": 37.5290836530694,
     "lng": 126.897257812406,
-    "name": "서울특별시 영등포구 당산동4가 당산로 161-9 1층"
+    "name": "서울특별시 영등포구 당산동4가 당산로 161-9 1층",
+    "district": "영등포구"
   },
   "위치대한민국 충청북도 청주시 상당구 율량동 807-7 커피미각": {
     "name": "위치대한민국 충청북도 청주시 상당구 율량동 807-7 커피미각",
@@ -53356,6 +53365,298 @@
   "하이커 스테이션": {
     "name": "하이커 스테이션",
     "address": "정보 없음",
+    "district": ""
+  },
+  "대학로 링크아트홀": {
+    "name": "대학로 링크아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "노들섬 라이브하우스": {
+    "name": "노들섬 라이브하우스",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "경복궁아트홀": {
+    "name": "경복궁아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "예스24스테이지 1관": {
+    "name": "예스24스테이지 1관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "JCC크리에이티브센터 스튜디오": {
+    "name": "JCC크리에이티브센터 스튜디오",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "고양아람누리 아람극장": {
+    "name": "고양아람누리 아람극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "옐레드 수지동천점": {
+    "name": "옐레드 수지동천점",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "구미문화예술회관 대공연장": {
+    "name": "구미문화예술회관 대공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "세이레아트센터": {
+    "name": "세이레아트센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "부산광역시 북구 만덕2동 만덕2로 21-1 2층 하늘미술공방": {
+    "name": "부산광역시 북구 만덕2동 만덕2로 21-1 2층 하늘미술공방",
+    "address": "부산광역시 북구 만덕2동 만덕2로 21-1 2층 하늘미술공방",
+    "district": ""
+  },
+  "위치대한민국 경기도 과천시 중앙동 관문로": {
+    "name": "위치대한민국 경기도 과천시 중앙동 관문로",
+    "address": "위치대한민국 경기도 과천시 중앙동 관문로",
+    "district": "과천시"
+  },
+  "서울특별시 성동구 성수2가3동 성수일로8길 39": {
+    "name": "서울특별시 성동구 성수2가3동 성수일로8길 39",
+    "address": "정보 없음",
+    "district": "성동구",
+    "lat": 37.5633,
+    "lng": 127.0371
+  },
+  "부산광역시 수영구 광안동 수영로618번길 19 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "부산광역시 수영구 광안동 수영로618번길 19 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "부산광역시 수영구 광안동 수영로618번길 19 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": ""
+  },
+  "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호": {
+    "name": "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호",
+    "address": "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호",
+    "district": ""
+  },
+  "서울특별시 방문 수업": {
+    "name": "서울특별시 방문 수업",
+    "address": "서울특별시 방문 수업",
+    "district": ""
+  },
+  "위치대한민국 서울특별시 중랑구 묵동 중랑역로 178 지하": {
+    "name": "위치대한민국 서울특별시 중랑구 묵동 중랑역로 178 지하",
+    "address": "정보 없음",
+    "district": "중랑구",
+    "lat": 37.6066,
+    "lng": 127.0924
+  },
+  "서울특별시 마포구 창전동 5-73 지하1층 3호": {
+    "name": "서울특별시 마포구 창전동 5-73 지하1층 3호",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "경기도 안성시 안성1동 18-2 (주)바오밥목공전문학원": {
+    "name": "경기도 안성시 안성1동 18-2 (주)바오밥목공전문학원",
+    "address": "경기도 안성시 안성1동 18-2 (주)바오밥목공전문학원",
+    "district": "안성시"
+  },
+  "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 503호공간 소개": {
+    "name": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 503호공간 소개",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "경기도 파주시 금촌2동 989-1 금촌프라자 7층": {
+    "name": "경기도 파주시 금촌2동 989-1 금촌프라자 7층",
+    "address": "경기도 파주시 금촌2동 989-1 금촌프라자 7층",
+    "district": "파주시"
+  },
+  "인천광역시 부평구 부평동 417-5 102호 나로공방": {
+    "name": "인천광역시 부평구 부평동 417-5 102호 나로공방",
+    "address": "정보 없음",
+    "district": "부평구",
+    "lat": 37.5074,
+    "lng": 126.7217
+  },
+  "부산광역시 기장군 정관읍 모전3길 48 1층": {
+    "name": "부산광역시 기장군 정관읍 모전3길 48 1층",
+    "address": "부산광역시 기장군 정관읍 모전3길 48 1층",
+    "district": ""
+  },
+  "경기도 수원시 장안구 조원동 896": {
+    "name": "경기도 수원시 장안구 조원동 896",
+    "address": "정보 없음",
+    "district": "수원시",
+    "lat": 37.2636,
+    "lng": 127.0286
+  },
+  "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": ""
+  },
+  "위치대한민국 서울특별시 광진구 구의1동 243-6 3층 안나도예공감공간 소개": {
+    "name": "위치대한민국 서울특별시 광진구 구의1동 243-6 3층 안나도예공감공간 소개",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "서울특별시 서초구 청두곶3길 12 1층 키키데이즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 서초구 청두곶3길 12 1층 키키데이즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "서울특별시 서초구 방배천로6길 32-10 1층 우측102호": {
+    "name": "서울특별시 서초구 방배천로6길 32-10 1층 우측102호",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": ""
+  },
+  "서울특별시 영등포구 당산동6가 314 요가라이프4층 401호": {
+    "name": "서울특별시 영등포구 당산동6가 314 요가라이프4층 401호",
+    "address": "정보 없음",
+    "district": "영등포구",
+    "lat": 37.5264,
+    "lng": 126.8962
+  },
+  "위치대한민국 경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호": {
+    "name": "위치대한민국 경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호",
+    "address": "위치대한민국 경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호",
+    "district": "화성시"
+  },
+  "위치대한민국 서울특별시 강남구 역삼2동 776-21  계유빌딩 b1공간 소개": {
+    "name": "위치대한민국 서울특별시 강남구 역삼2동 776-21  계유빌딩 b1공간 소개",
+    "address": "정보 없음",
+    "district": "강남구",
+    "lat": 37.5172,
+    "lng": 127.0473
+  },
+  "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호": {
+    "name": "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호",
+    "address": "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호",
+    "district": "서구"
+  },
+  "서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "서대문구",
+    "lat": 37.5791,
+    "lng": 126.9368
+  },
+  "부산광역시 남구 대연동 503-4 지하 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "부산광역시 남구 대연동 503-4 지하 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "부산광역시 남구 대연동 503-4 지하 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": ""
+  },
+  "서울특별시 서초구 양재1동 138-4 경인프라자2층 릴리스타←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 서초구 양재1동 138-4 경인프라자2층 릴리스타←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개": {
+    "name": "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개",
+    "address": "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개",
+    "district": ""
+  },
+  "서울특별시 용산구 원효로1가 26-26 303호": {
+    "name": "서울특별시 용산구 원효로1가 26-26 303호",
+    "address": "정보 없음",
+    "district": "용산구",
+    "lat": 37.5323,
+    "lng": 126.9906
+  },
+  "경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호 아루아 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호 아루아 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호 아루아 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": "화성시"
+  },
+  "서울특별시 강서구 마곡동 800-7 3층 305호    (이너매스마곡2) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 강서구 마곡동 800-7 3층 305호    (이너매스마곡2) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "강서구",
+    "lat": 37.5509,
+    "lng": 126.8497
+  },
+  "위치대한민국 경기도 양주시 고암동 606-6 103호 단단쿠킹스튜디오공간 소개": {
+    "name": "위치대한민국 경기도 양주시 고암동 606-6 103호 단단쿠킹스튜디오공간 소개",
+    "address": "위치대한민국 경기도 양주시 고암동 606-6 103호 단단쿠킹스튜디오공간 소개",
+    "district": "양주시"
+  },
+  "서울특별시 서초구 방배동 방배천로2안길 99 1층 화인당 꽃집←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 서초구 방배동 방배천로2안길 99 1층 화인당 꽃집←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "서울특별시 신논현역 인근 (예약 확정 후 상세 장소 안내 드려요)": {
+    "name": "서울특별시 신논현역 인근 (예약 확정 후 상세 장소 안내 드려요)",
+    "address": "서울특별시 신논현역 인근 (예약 확정 후 상세 장소 안내 드려요)",
+    "district": ""
+  },
+  "모카클래스 (서울특별시)": {
+    "name": "모카클래스 (서울특별시)",
+    "address": "서울특별시",
+    "district": ""
+  },
+  "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "district": ""
+  },
+  "서울특별시 성동구 성수동1가 685-20, 서울숲 (성동구 뚝섬로 273) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 성동구 성수동1가 685-20, 서울숲 (성동구 뚝섬로 273) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "성동구",
+    "lat": 37.5633,
+    "lng": 127.0371
+  },
+  "위치대한민국 서울특별시 서대문구 연세로 50-1": {
+    "name": "위치대한민국 서울특별시 서대문구 연세로 50-1",
+    "address": "정보 없음",
+    "district": "서대문구",
+    "lat": 37.5791,
+    "lng": 126.9368
+  },
+  "서울특별시 성동구 성수동2가 456-2 2층 라탄앤티크": {
+    "name": "서울특별시 성동구 성수동2가 456-2 2층 라탄앤티크",
+    "address": "정보 없음",
+    "district": "성동구",
+    "lat": 37.5633,
+    "lng": 127.0371
+  },
+  "서울특별시 마포구 월드컵북로4길 44 1층 홍턴살롱": {
+    "name": "서울특별시 마포구 월드컵북로4길 44 1층 홍턴살롱",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울특별시 마포구 공덕동 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "서울특별시 마포구 공덕동 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "부산광역시 연제구 연산동 988-3 (고분로 111, 1층) 맘스핸즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
+    "name": "부산광역시 연제구 연산동 988-3 (고분로 111, 1층) 맘스핸즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "address": "부산광역시 연제구 연산동 988-3 (고분로 111, 1층) 맘스핸즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": ""
   }
 }
