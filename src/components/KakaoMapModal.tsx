@@ -137,7 +137,8 @@ export default function KakaoMapModal({
         if (isMovieMode || isAllMode) {
             // For movie mode, all cinemas currently play the top KOBIS movies.
             // We pass the top 10 movies from the parsed performances to each cinema.
-            const topMovies = isMovieMode ? performances.slice(0, 10) : [];
+            const moviePerformances = isMovieMode ? performances.filter(p => p.genre === 'movie') : [];
+            const topMovies = isMovieMode ? moviePerformances.slice(0, 10) : [];
 
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i];
