@@ -312,13 +312,21 @@ async function scrapeMovies() {
                         const titleEl = el.querySelector('strong.tit');
                         const title = titleEl?.getAttribute('title') || titleEl?.textContent?.trim() || '';
 
-                        // Date: look for a span containing YYYY-MM-DD pattern
+                        // Date: look for a span containing YYYY-MM-DD or YYYY-MM pattern
                         const allSpans = Array.from(el.querySelectorAll('span'));
                         let dateRaw = '';
                         for (const span of allSpans) {
                             const txt = span.textContent?.trim() || '';
+                            // Full date: 2026-03-04
                             if (/\d{4}-\d{2}-\d{2}/.test(txt)) {
                                 dateRaw = txt.trim();
+                                break;
+                            }
+                            // Partial date: 2026-03 (no day confirmed) -> last day of month
+                            if (/^\d{4}-\d{2}$/.test(txt)) {
+                                const [year, month] = txt.split('-').map(Number);
+                                const lastDay = new Date(year, month, 0).getDate();
+                                dateRaw = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`;
                                 break;
                             }
                         }
@@ -410,6 +418,115 @@ async function scrapeMovies() {
 
         } catch (e) {
             console.error('KOBIS Upcoming Scraping Error:', e);
+        }
+
+        // 1.6 Supplementary: Naver Upcoming Movies
+        try {
+            console.log(`\nFetching supplementary upcoming movies from Naver...`);
+            const naverPage = await kobisContext.newPage();
+            await naverPage.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+
+            // Navigate to Naver movie upcoming list
+            await naverPage.goto('https://search.naver.com/search.naver?where=nexearch&query=%EA%B0%9C%EB%B4%89+%EC%98%88%EC%A0%95+%EC%98%81%ED%99%94', { waitUntil: 'domcontentloaded', timeout: 30000 });
+            await sleep(3000);
+
+            // Also try Naver Movie's dedicated upcoming page
+            const naverUpcoming: any[] = [];
+
+            // Try multiple Naver pages for upcoming movies
+            const naverUrls = [
+                'https://m.search.naver.com/search.naver?where=m&query=%EA%B0%9C%EB%B4%89+%EC%98%88%EC%A0%95+%EC%98%81%ED%99%94',
+                'https://search.naver.com/search.naver?where=nexearch&query=2026%EB%85%84+%EA%B0%9C%EB%B4%89+%EC%98%81%ED%99%94',
+                'https://search.naver.com/search.naver?where=nexearch&query=2026%EB%85%84+%EC%83%81%EB%B0%98%EA%B8%B0+%EA%B0%9C%EB%B4%89+%EC%98%81%ED%99%94',
+                'https://search.naver.com/search.naver?where=nexearch&query=2026%EB%85%84+%ED%95%98%EB%B0%98%EA%B8%B0+%EA%B0%9C%EB%B4%89+%EC%98%81%ED%99%94'
+            ];
+
+            for (const url of naverUrls) {
+                try {
+                    await naverPage.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    await sleep(2000);
+
+                    const pageMovies = await naverPage.evaluate(() => {
+                        const results: any[] = [];
+                        // Naver search results: movie cards with title and date
+                        const cards = document.querySelectorAll('.card_area, .movie_item, .list_type1 li, ._item, .sc_new .card');
+                        cards.forEach(card => {
+                            const titleEl = card.querySelector('.title, .api_txt_lines, a.tit, .info_title a, .sub_tit');
+                            const title = titleEl?.textContent?.trim() || '';
+
+                            const dateEl = card.querySelector('.sub_info .txt, .info_txt, .etc_info, .date, .txt_area .sub');
+                            const dateText = dateEl?.textContent?.trim() || card.textContent || '';
+
+                            // Extract date patterns: YYYY.MM.DD, YYYY.MM, YYYY-MM-DD, YYYY-MM
+                            const fullDate = dateText.match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
+                            const partialDate = dateText.match(/(\d{4})[.\-](\d{1,2})(?:\s|$|일|월|개봉)/);
+
+                            let dateRaw = '';
+                            if (fullDate) {
+                                dateRaw = `${fullDate[1]}-${fullDate[2].padStart(2, '0')}-${fullDate[3].padStart(2, '0')}`;
+                            } else if (partialDate) {
+                                const year = parseInt(partialDate[1]);
+                                const month = parseInt(partialDate[2]);
+                                const lastDay = new Date(year, month, 0).getDate();
+                                dateRaw = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`;
+                            }
+
+                            if (title && dateRaw && title.length > 1 && dateRaw.startsWith('2026')) {
+                                results.push({ title: title.trim(), dateRaw });
+                            }
+                        });
+
+                        // Also try the scroll list / area for movie names
+                        const scrollItems = document.querySelectorAll('.flick_bx .item, .cm_content_area .tit');
+                        scrollItems.forEach(item => {
+                            const title = item.querySelector('a, .tit')?.textContent?.trim() || item.textContent?.trim() || '';
+                            const parent = item.closest('.flick_bx, .cm_content_area');
+                            const dateText = parent?.textContent || '';
+                            const dateMatch = dateText.match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
+                            const partialMatch = dateText.match(/(\d{4})[.\-](\d{1,2})(?:\s|$)/);
+                            let dateRaw = '';
+                            if (dateMatch) {
+                                dateRaw = `${dateMatch[1]}-${dateMatch[2].padStart(2, '0')}-${dateMatch[3].padStart(2, '0')}`;
+                            } else if (partialMatch) {
+                                const y = parseInt(partialMatch[1]);
+                                const m = parseInt(partialMatch[2]);
+                                const ld = new Date(y, m, 0).getDate();
+                                dateRaw = `${y}-${String(m).padStart(2, '0')}-${String(ld).padStart(2, '0')}`;
+                            }
+                            if (title && dateRaw && title.length > 1 && dateRaw.startsWith('2026')) {
+                                results.push({ title, dateRaw });
+                            }
+                        });
+
+                        return results;
+                    });
+
+                    naverUpcoming.push(...pageMovies);
+                } catch (e) {
+                    // Continue with other URLs
+                }
+            }
+
+            await naverPage.close();
+            console.log(`Found ${naverUpcoming.length} movies from Naver searches.`);
+
+            // Merge with existing upcoming (only add new ones)
+            const existingTitles = new Set([
+                ...movies.map(m => m.title),
+                ...upcomingMovies.map(m => m.title)
+            ]);
+
+            let naverNewCount = 0;
+            for (const nm of naverUpcoming) {
+                if (!existingTitles.has(nm.title)) {
+                    upcomingMovies.push(nm);
+                    existingTitles.add(nm.title);
+                    naverNewCount++;
+                }
+            }
+            console.log(`Added ${naverNewCount} new movies from Naver (not in KOBIS).`);
+        } catch (e) {
+            console.error('Naver Upcoming Scraping Error:', e);
         }
 
         // Combine for enrichment
