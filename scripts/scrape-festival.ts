@@ -232,7 +232,8 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
         // Extract Image with Priority
         // 1. Poster Image (User specified selector)
         // 2. Background Cover Image
-        // 3. Fallback to List Thumbnail
+        // 3. Fallback to First Inner Article CDN Image
+        // 4. Fallback to List Thumbnail
         const detailImage = await page.evaluate(() => {
             // 1. Try Poster Selector
             // Selector: #mainTab > div > div > section.poster_detail > div > div.poster_detail_wrap > div > div.detail_img_box > a > img
@@ -254,6 +255,14 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
                     if (match && match[1]) {
                         return match[1];
                     }
+                }
+            }
+
+            // 3. Try to capture the first inner CDN image
+            const innerImages = Array.from(document.querySelectorAll('#mainTab img'));
+            for (const img of innerImages) {
+                if ((img as HTMLImageElement).src.includes('kfescdn.visitkorea.or.kr')) {
+                    return (img as HTMLImageElement).src;
                 }
             }
 
