@@ -14,28 +14,31 @@ interface Performance {
     [key: string]: any;
 }
 
+
 const SOURCES = [
-    { file: 'interpark.json', name: 'Interpark (Ticket)' },
-    { file: 'yes24.json', name: 'Yes24 (Ticket)' },
-    { file: 'timeticket.json', name: 'TimeTicket' },
-    { file: 'festivals.json', name: 'Festivals' },
-    { file: 'kovo.json', name: 'Volleyball (KOVO)' },
-    { file: 'kbl.json', name: 'Basketball (KBL)' },
-    { file: 'kbo.json', name: 'Baseball (KBO)' },
-    { file: 'handball.json', name: 'Handball' },
-    { file: 'soccer.json', name: 'Soccer' },
-    { file: 'ott.json', name: 'OTT (Kinolights/Naver)' },
-    { file: 'movies.json', name: 'Movies' },
-    { file: 'travel.json', name: 'Travel' },
-    { file: 'myrealtrip-kids.json', name: 'MyRealTrip (Kids)' },
-    { file: 'sssd-class.json', name: 'SSSD Class' },
-    { file: 'umclass.json', name: 'UmClass' },
-    { file: 'mochaclass.json', name: 'MochaClass' },
-    { file: 'seoul-culture.json', name: 'Seoul Culture' },
-    { file: 'mommom.json', name: 'Mommom (Kids)' },
-    { file: 'museum.json', name: 'Museum' },
-    { file: 'musical.json', name: 'Musical' },
+    { file: 'interpark.json', name: '인터파크 (공연/전시)' },
+    { file: 'yes24.json', name: '예스24' },
+    { file: 'timeticket.json', name: '타임티켓' },
+    { file: 'festivals.json', name: '축제 (VisitKorea)' },
+    { file: 'movies.json', name: '영화' },
+    { file: 'kovo.json', name: '배구 (KOVO)' },
+    { file: 'kbl.json', name: '농구 (KBL)' },
+    { file: 'kbo.json', name: '야구 (KBO)' },
+    { file: 'handball.json', name: '핸드볼' },
+    { file: 'kleague.json', name: '축구 (K리그)' },
+    { file: 'myrealtrip-kids.json', name: '마이리얼트립 (키즈)' },
+    { file: 'sssd-class.json', name: '솜씨당' },
+    { file: 'umclass.json', name: '엄클래스' },
+    { file: 'mochaclass.json', name: '모카클래스' },
+    { file: 'seoul-culture.json', name: '서울문화포털' },
+    { file: 'mommom.json', name: '맘맘 (장소)' },
+    { file: 'mommom-products.json', name: '맘맘 (상품)' },
+    { file: 'museum.json', name: '박물관' },
 ];
+
+const VENUE_PATH = path.join(DATA_DIR, 'venues.json');
+const venueData = JSON.parse(fs.readFileSync(VENUE_PATH, 'utf-8'));
+const venues = venueData as Record<string, { address: string; lat?: number; lng?: number }>;
 
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -44,7 +47,7 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
         let targetDate: Date | null = null;
         if (dateStr.includes('~')) {
             const parts = dateStr.split('~');
-            const endStr = parts[1].trim();
+            const endStr = parts[parts.length - 1].trim();
             const [y, m, d] = endStr.split('.').map(Number);
             targetDate = new Date(y, m - 1, d);
             targetDate.setHours(23, 59, 59, 999);
@@ -64,7 +67,7 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
             }
         }
 
-        if (!targetDate || isNaN(targetDate.getTime())) return true; // Default to true if parse fails to be safe (or false? Safe to true to not hide potential data)
+        if (!targetDate || isNaN(targetDate.getTime())) return true;
         return targetDate.getTime() >= today.getTime();
     } catch (e) {
         return true;
@@ -86,47 +89,34 @@ function processSource(source: { file: string, name: string }) {
     const stats = fs.statSync(filePath);
     const lastLog = stats.mtime.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
 
-    let data: Performance[] = [];
+    let data: any[] = [];
     try {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         if (fileContent.trim()) {
             data = JSON.parse(fileContent);
         }
-    } catch (e) {
-        // console.error(`Error parsing ${source.file}:`, e);
-    }
+    } catch (e) { }
 
     const total = Array.isArray(data) ? data.length : 0;
 
-    // Filter Logic
     const now = new Date();
-    const validRegions = ['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'];
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const exposed = Array.isArray(data) ? data.filter(p => {
         if (!p) return false;
-
-        // Always show specific genres
-        const alwaysShow = ['movie', 'travel', 'kids', 'class', 'ott', 'museum', 'leisure', 'hotdeal'];
-        if (alwaysShow.includes(p.genre)) return true;
-
+        if (p.genre === 'popup' || p.genre === 'travel') return false;
+        if (p.genre === 'movie') return true;
         if (!isPerformanceActive(p.date, now)) return false;
-
-        // Valid region check logic copied roughly
-        if (!p.region) return false; // Basic safety
-
-        // Sports Strict
-        if (['volleyball', 'basketball', 'baseball', 'handball'].includes(p.genre)) {
-            if (!validRegions.includes(p.region)) return false;
-        }
-
-        if (!validRegions.includes(p.region)) return false;
-
         if (p.venue === '예매하기') return false;
         if (/^\d{1,2}\.\d{1,2}/.test(p.venue)) return false;
 
-        if (BLOCKLIST.some(b => p.venue && p.venue.includes(b))) return false;
+        // Venue validation
+        const v = venues[p.venue];
+        if (!v || !v.address || v.address === '정보 없음' || !v.lat || !v.lng) {
+            return false;
+        }
 
+        if (BLOCKLIST.some(b => p.venue && p.venue.includes(b))) return false;
         return true;
     }).length : 0;
 
@@ -134,21 +124,24 @@ function processSource(source: { file: string, name: string }) {
         name: source.name,
         total,
         exposed,
-        lastLog: lastLog // Modification time
+        lastLog: lastLog
     };
 }
 
 async function main() {
-    console.log("| 수집처 | 수집된 데이터 (건) | 노출 데이터 (건) | 마지막 로그 (수정일) | 비고 |");
-    console.log("|---|---|---|---|---|");
+    console.log("| 수집처 | 수집 (건) | 노출 (건) | 마지막 로그 (KST) |");
+    console.log("|---|---|---|---|");
 
-    for (const source of SOURCES) {
-        const result = processSource(source);
-        // Special check for 'lastEnriched' in interpark if possible, but file mtime is good enough generic
-        // If total == 0, note it
-        const note = result.total === 0 ? '데이터 없음' : '';
-        console.log(`| ${result.name} | ${result.total.toLocaleString()} | ${result.exposed.toLocaleString()} | ${result.lastLog} | ${note} |`);
-    }
+    const results = SOURCES.map(s => processSource(s));
+
+    results.forEach(r => {
+        console.log(`| ${r.name} | ${r.total.toLocaleString()} | ${r.exposed.toLocaleString()} | ${r.lastLog} |`);
+    });
+
+    const totalRaw = results.reduce((acc, r) => acc + r.total, 0);
+    const totalExposed = results.reduce((acc, r) => acc + r.exposed, 0);
+    console.log(`| **합계** | **${totalRaw.toLocaleString()}** | **${totalExposed.toLocaleString()}** | - |`);
 }
 
 main();
+

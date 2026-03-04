@@ -163,9 +163,11 @@ async function scrapeMochaClass() {
                             .map((el: any) => el.textContent?.trim() || '')
                             .filter((t: string) => t.length > 0 && !t.includes('포인트') && !t.includes('적립'));
 
-                        const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t));
+                        const priceLike = allTexts.filter((t: string) => /[0-9,]+원/.test(t) || /[0-9]+%/.test(t));
                         const values = priceLike.map((t: string) => {
-                            return { text: t, val: parseInt(t.replace(/[^0-9]/g, '')) || 0 };
+                            // Clean up text like "25%120,000원" into just "120,000원"
+                            const cleanText = t.replace(/^[0-9]+%/, '');
+                            return { text: cleanText, val: parseInt(cleanText.replace(/[^0-9]/g, '')) || 0 };
                         }).filter((v: any) => v.val > 0);
 
                         if (values.length >= 2) {
@@ -252,33 +254,46 @@ async function scrapeMochaClass() {
     if (todo.length > 0) {
         const progressBar = new ProgressBar(todo.length);
         let processedCount = 0;
-        const CONCURRENCY = 5;
+        const CONCURRENCY = 10;
 
         for (let i = 0; i < todo.length; i += CONCURRENCY) {
             const chunk = todo.slice(i, i + CONCURRENCY);
             const promises = chunk.map(async (item) => {
                 const p = await browser.newPage();
                 try {
-                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
                     const detailData = await p.evaluate(() => {
-                        const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div'));
+                        const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root'));
                         let rawAddress = '';
 
-                        for (let i = 0; i < allNodes.length; i++) {
-                            if (allNodes[i].textContent?.trim() === '위치') {
-                                const container = allNodes[i].closest('div')?.parentElement;
-                                if (container) {
-                                    const text = container.textContent || '';
-                                    const match = text.match(/위치(.*?)찾아오는\s*길/);
-                                    if (match && match[1]) {
-                                        rawAddress = match[1].trim();
-                                        break;
-                                    } else {
-                                        const match2 = text.match(/위치(대한민국.*?(구|동|시|군|로|길)\b.*?)/);
-                                        if (match2) {
-                                            rawAddress = match2[1].trim();
+                        // High priority: Specific known address locations in Mochaclass DOM
+                        const addrElements = document.querySelectorAll('p.MuiTypography-body1');
+                        for (const el of Array.from(addrElements)) {
+                            const text = el.textContent?.trim() || '';
+                            if (text.includes('대한민국') && text.includes('위치')) {
+                                rawAddress = text.replace(/^.*?위치\s*/, '').trim();
+                                break;
+                            }
+                        }
+
+                        // Fallback: search text content for addresses
+                        if (!rawAddress) {
+                            for (let i = 0; i < allNodes.length; i++) {
+                                if (allNodes[i].textContent?.trim() === '위치') {
+                                    const container = allNodes[i].closest('div')?.parentElement;
+                                    if (container) {
+                                        const text = container.textContent || '';
+                                        const match = text.match(/위치(.*?)찾아오는\s*길/);
+                                        if (match && match[1]) {
+                                            rawAddress = match[1].trim();
                                             break;
+                                        } else {
+                                            const match2 = text.match(/위치\s*(대한민국.*?(구|동|시|군|로|길)\b.*?)/);
+                                            if (match2) {
+                                                rawAddress = match2[1].trim();
+                                                break;
+                                            }
                                         }
                                     }
                                 }
@@ -317,13 +332,13 @@ async function scrapeMochaClass() {
                     address = address.replace(/^대한민국\s*/, '').trim(); // Remove redundant '대한민국'
 
                     let district = '';
-                    const districtMatch = address.match(/(\w+[구])/);
+                    const districtMatch = address.match(/(\w+[구|[시군]])/);
                     if (districtMatch) {
                         district = districtMatch[1];
                     } else {
                         const parts = address.split(' ');
                         for (const part of parts) {
-                            if (part.endsWith('구')) {
+                            if (part.endsWith('구') || part.endsWith('시')) {
                                 district = part;
                                 break;
                             }
@@ -331,7 +346,20 @@ async function scrapeMochaClass() {
                     }
 
                     // Use accurate address as venue, fallback to Mochaclass (District)
-                    const venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
+                    let venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
+
+                    // If address has studio name, we can format it nicer
+                    // E.g. "대한민국 서울특별시 송파구 송파동 90-7 1층 개더링스튜디오"
+                    // Venue is the full string, address is also full string. Usually `fix-venue-coordinates` will handle it.
+
+                    // Calculate discount properly
+                    let discountCalc = '';
+                    const actualPrice = detailPrice || item.price;
+                    const pVal = parseInt(actualPrice.replace(/[^0-9]/g, '')) || 0;
+                    const opVal = parseInt(item.originalPrice.replace(/[^0-9]/g, '')) || 0;
+                    if (pVal > 0 && opVal > 0 && pVal < opVal) {
+                        discountCalc = Math.round((1 - pVal / opVal) * 100) + '%';
+                    }
 
                     // Stable ID
                     const id = `class_${slugify(item.title)}`;
@@ -347,14 +375,15 @@ async function scrapeMochaClass() {
                         genre: 'class',
                         price: detailPrice || item.price,
                         originalPrice: item.originalPrice,
-                        discount: '',
+                        discount: discountCalc,
                         runningTime: detailData.time || '예약페이지 참조',
                         ageLimit: '전체',
                         casting: '',
                         address: address,
                         lastEnriched: new Date().toISOString()
                     };
-                } catch (e) {
+                } catch (e: any) {
+                    console.error(`Error processing ${item.link}:`, e.message);
                     return null;
                 } finally {
                     await p.close();

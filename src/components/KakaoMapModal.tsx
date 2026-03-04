@@ -124,7 +124,8 @@ export default function KakaoMapModal({
                         lat: venueMeta?.lat || 0,
                         lng: venueMeta?.lng || 0,
                         type: 'performance',
-                        kakaoLatLng: null
+                        kakaoLatLng: null,
+                        firstAppearanceIndex: i // Record the exact index the user sees it in their feed
                     };
                     groupsMap.set(vName, group);
                 }
@@ -145,13 +146,17 @@ export default function KakaoMapModal({
                         brand: cinema.brand,
                         type: 'cinema',
                         performances: [], // [BUG FIX] Don't assign random performances to cinemas
-                        kakaoLatLng: null
+                        kakaoLatLng: null,
+                        firstAppearanceIndex: i
                     });
                 }
             }
         }
 
-        const list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
+        let list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
+
+        // Map sorting: Prioritize feed order unless a specific center location is forced
+        list.sort((a, b) => (a.firstAppearanceIndex ?? 99999) - (b.firstAppearanceIndex ?? 99999));
 
         // Sort by distance if center exists
         if (centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng)) {
@@ -214,7 +219,8 @@ export default function KakaoMapModal({
                 if (centerLocation) {
                     initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
                     initialLevel = 5;
-                } else if (selectedGenre !== 'all' && allVenuesList.current.length > 0) {
+                } else if (allVenuesList.current.length > 0) {
+                    // Always try to focus the top item of the sorted list
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
                     initialLevel = SPORTS_GENRES.includes(selectedGenre) ? 6 : 5;
@@ -267,7 +273,8 @@ export default function KakaoMapModal({
             </div>`;
             const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
             mapOverlaysRef.current.push(overlay);
-        } else if (selectedGenre !== 'all' && allVenuesList.current.length > 0) {
+        } else if (allVenuesList.current.length > 0) {
+            // Unconditionally pan to the first item from the list order whenever the map mounts
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
             map.setLevel(SPORTS_GENRES.includes(selectedGenre) ? 6 : 5);

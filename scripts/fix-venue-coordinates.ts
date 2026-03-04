@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-const VENUES_PATH = path.join(__dirname, '../src/data/venues.json');
-const CSV_PATH = path.join(__dirname, '../venue_coordinate_mismatches.csv');
+const VENUES_PATH = path.join(process.cwd(), 'src/data/venues.json');
+const CSV_PATH = path.join(process.cwd(), 'venue_coordinate_mismatches.csv');
 
 interface Venue {
     address: string;

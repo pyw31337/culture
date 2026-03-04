@@ -87,7 +87,19 @@ export function usePerformanceFilters({
                         : 99999;
                     return { ...p, _dist: dist };
                 });
-                return withDist.sort((a, b) => a._dist - b._dist);
+                return withDist.sort((a, b) => {
+                    const distDiff = a._dist - b._dist;
+                    if (distDiff !== 0) return distDiff; // Primary: Distance
+
+                    // Secondary: Date (Newest first)
+                    const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
+                    const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
+                    const dateCompare = dateB.localeCompare(dateA);
+                    if (dateCompare !== 0) return dateCompare;
+
+                    // Tertiary: Title (Alphabetical)
+                    return a.title.localeCompare(b.title);
+                });
             }
         }
 
