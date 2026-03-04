@@ -123,7 +123,7 @@ export default function EmptyState({
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (
                             selectedGenre !== 'all'
-                                ? `'${searchText}' 키워드의 컨텐츠가 ${GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre} 카테고리에서 발견되지 않았습니다.`
+                                ? <><span className="text-purple-400">'{searchText}'</span> 키워드의 컨텐츠가 <span className="text-emerald-400">{GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre}</span> 카테고리에서 발견되지 않았습니다.</>
                                 : '검색 결과가 없습니다 😢'
                         ) : (selectedGenre === 'baseball' || selectedGenre === 'soccer') ? (
                             '예정된 경기 일정이 없습니다 🏖️'

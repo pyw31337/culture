@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -63,11 +63,14 @@ export default function PerformanceList({
 
     const { allPerformances, setAllPerformances, cinemas, venues, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
 
+    const searchParams = useSearchParams();
+    const initialQuery = searchParams.get('q') || '';
+
     const {
         searchText, setSearchText, searchMode, setSearchMode, searchLocation, setSearchLocation,
         userLocation, setUserLocation, userAddress, radius, setRadius, isDropdownOpen, setIsDropdownOpen,
         highlightedIndex, setHighlightedIndex, searchResults
-    } = useSearchLogic({ allPerformances });
+    } = useSearchLogic({ allPerformances, initialSearchText: initialQuery });
 
     const {
         selectedGenre, setSelectedGenre, selectedRegion, setSelectedRegion,
@@ -130,8 +133,14 @@ export default function PerformanceList({
             setSelectedRegion('all');
             setSelectedDistrict('all');
             setSelectedVenue('all');
+        } else {
+            // If cleared manually, remove from URL
+            if (searchParams.has('q')) {
+                const path = window.location.pathname;
+                router.replace(path);
+            }
         }
-    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue]);
+    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, searchParams, router]);
 
     const resetHome = useCallback(() => {
         setSelectedGenre('all');
@@ -141,8 +150,12 @@ export default function PerformanceList({
         setSearchLocation(null);
         setSearchText('');
         setViewMode('grid');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, [setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, setSearchLocation, setSearchText, setViewMode]);
+        if (searchParams.has('q')) {
+            router.replace('/');
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, setSearchLocation, setSearchText, setViewMode, searchParams, router]);
 
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
@@ -151,9 +164,14 @@ export default function PerformanceList({
 
         // Prevent navigation if we are in calendar mode (prevents modal closing)
         if (viewMode !== 'calendar') {
-            router.push(g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`);
+            const path = g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`;
+            if (searchText) {
+                router.push(`${path}?q=${encodeURIComponent(searchText)}`);
+            } else {
+                router.push(path);
+            }
         }
-    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router]);
+    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router, searchText]);
 
     const handleLikePerfClick = useCallback(() => {
         if (viewMode === 'likes-perf') {

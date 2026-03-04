@@ -100,7 +100,8 @@ export default function HeroSection({
     onRemoveRecent,
     onClearRecent,
     searchMode,
-    onSearchModeChange
+    onSearchModeChange,
+    onSearchChange
 }: HeroSectionProps) {
     const heroRef = useRef<HTMLDivElement>(null);
     const searchContainerRef = useRef<HTMLDivElement>(null);
@@ -540,7 +541,7 @@ export default function HeroSection({
                             {searchText && (
                                 <button
                                     onClick={() => {
-                                        setSearchText('');
+                                        onSearchChange('');
                                         setIsDropdownOpen(false);
                                         setSearchLocation(null);
                                     }}

@@ -4,10 +4,11 @@ import { isChoseongMatch } from '@/lib/hangul';
 
 interface UseSearchLogicProps {
     allPerformances: Performance[];
+    initialSearchText?: string;
 }
 
-export function useSearchLogic({ allPerformances }: UseSearchLogicProps) {
-    const [searchText, setSearchText] = useState('');
+export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseSearchLogicProps) {
+    const [searchText, setSearchText] = useState(initialSearchText);
     const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
     const [searchLocation, setSearchLocation] = useState<{ lat: number, lng: number, name: string } | null>(null);
     const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
