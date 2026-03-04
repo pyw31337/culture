@@ -541,20 +541,21 @@ async function scrapeMovies() {
 
         for (const m of allMoviesToProcess) {
             const existing = existingMap.get(m.title);
-            if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
-                // Just skip if it has data. Upcoming movies don't have rank, 
-                // so we make sure we preserve the rank of existing box office.
+            const hasFallbackPoster = existing?.posterFallback === true;
+            if (existing && existing.venue && existing.image && existing.cast && existing.director && !hasFallbackPoster) {
+                // Skip if it has good data AND a real (non-fallback) poster.
                 if (m.rank) {
                     existing.rank = parseInt(m.rank);
                 } else if (!m.rank && existing.rank) {
-                    // This means an existing movie dropped out of box office into upcoming (unlikely) 
-                    // or we are just iterating upcoming. We should clear rank for upcoming.
                     delete existing.rank;
                 }
-                if (m.dateRaw) existing.dateRaw = m.dateRaw; // update date 
+                if (m.dateRaw) existing.dateRaw = m.dateRaw;
                 finalMovies.push(existing);
+            } else if (hasFallbackPoster) {
+                // Has fallback poster — re-enrich to check for official poster
+                console.log(`[Re-check] ${m.title} has fallback poster, will re-enrich.`);
+                moviesToEnrich.push(m);
             } else if (existing && m.rank) {
-                // Update rank for existing skipped ones that only needed rank updates
                 existing.rank = parseInt(m.rank);
                 finalMovies.push(existing);
             } else {
@@ -681,21 +682,38 @@ async function scrapeMovies() {
                     item.venue = '등급 미정';
                 }
 
-                // Image Processing
+                // Image Processing & Fallback Poster Detection
+                const FALLBACK_PATTERNS = [
+                    'no_img_people',
+                    'sstatic.naver.net/people/',
+                    'static.naver.net/people/',
+                    'no_img_movie',
+                    'placeholder',
+                    'default_image'
+                ];
+
                 if (item.poster) {
-                    // Use stable filename: movie_Title
+                    const isFallback = FALLBACK_PATTERNS.some(p => item.poster.includes(p));
+                    item.posterUrl = item.poster; // Preserve raw URL for future re-checks
+                    item.posterFallback = isFallback;
+
+                    if (isFallback) {
+                        console.log(`[Fallback Poster] ${item.title}: ${item.poster.substring(0, 80)}...`);
+                    }
+
                     const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
                     const stableFilename = `movie_${safeTitle}`;
                     const localPath = await processImage(item.poster, stableFilename, 'posters/movies');
                     if (localPath) item.image = localPath;
                 } else {
                     item.image = '';
+                    item.posterFallback = true; // No poster at all = fallback
                 }
 
-                // Cleanup internal fields
+                // Cleanup internal fields (keep posterUrl and posterFallback for re-check)
                 delete item.poster;
                 delete item.releaseDate;
-                delete item.originalTitle; // Optional: keep if needed, but OTT scraper deletes it often
+                delete item.originalTitle;
                 delete item.ageRating;     // Mapped to venue
 
                 finalMovies.push(item);
