@@ -207,14 +207,16 @@ export default function PerformanceList({
     useEffect(() => {
         if (deepLinkHandled.current || !allPerformances.length) return;
 
-        const path = window.location.pathname;
-        const match = path.match(/\/p\/([^/]+)\/?$/);
+        const hash = window.location.hash;
+        const match = hash.match(/^#p=(.+)$/);
         if (match && match[1]) {
-            const id = match[1];
+            const id = decodeURIComponent(match[1]);
             const perf = allPerformances.find(p => p.id === id);
             if (perf) {
                 setSharedPerf(perf);
                 deepLinkHandled.current = true;
+                // Clean the hash from the URL so it doesn't reopen on refresh
+                window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
         }
     }, [allPerformances]);
