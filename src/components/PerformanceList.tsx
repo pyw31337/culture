@@ -333,7 +333,11 @@ export default function PerformanceList({
                     selectedGenre={selectedGenre}
                     searchMode={searchMode}
                     searchText={searchText}
-                    centerLocation={focusVenue || searchLocation}
+                    centerLocation={
+                        focusVenue ||
+                        searchLocation ||
+                        (selectedGenre === 'movie' ? (userLocation ? { ...userLocation, name: '내 위치' } : { lat: 37.554648, lng: 126.972559, name: '서울역' }) : null)
+                    }
                     favoriteVenues={favoriteVenues}
                     onToggleFavorite={toggleFavoriteVenue}
                     onClose={() => {

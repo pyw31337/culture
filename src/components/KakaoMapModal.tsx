@@ -187,15 +187,32 @@ export default function KakaoMapModal({
     const handleSearchHereInternal = useCallback((map: any) => {
         if (!map || !window.kakao?.maps?.LatLng) return;
         const bounds = map.getBounds();
-        const visible = allVenuesList.current.filter(v => {
+        const center = map.getCenter();
+        const isMovieMode = selectedGenre === 'movie';
+
+        let visible = allVenuesList.current.filter(v => {
             if (!v.kakaoLatLng) v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
+            // Movie mode skips bounding box check to show all cinemas nationwide
+            if (isMovieMode) return true;
             return bounds.contain(v.kakaoLatLng);
         });
-        setVisibleVenues(visible.slice(0, 200));
+
+        // If Movie Mode, sort the entire list by distance from current map center
+        if (isMovieMode && center) {
+            visible.sort((a, b) => {
+                const distA = getDistanceFromLatLonInKm(center.getLat(), center.getLng(), a.lat, a.lng);
+                const distB = getDistanceFromLatLonInKm(center.getLat(), center.getLng(), b.lat, b.lng);
+                return distA - distB;
+            });
+        }
+
+        // For movies, we can show more in the list (e.g. 50 nearest), otherwise keep it bounded
+        setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         setShowSearchHereBtn(false);
-    }, []);
+    }, [selectedGenre]);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance);
+
     const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
 
     // --- 2. Map Instance Initialization (Once per mount) ---
@@ -218,7 +235,8 @@ export default function KakaoMapModal({
 
                 if (centerLocation) {
                     initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
-                    initialLevel = 5;
+                    // For movies, if searching by user location or seoul, zoom out slightly to see more cinemas
+                    initialLevel = selectedGenre === 'movie' ? 6 : 5;
                 } else if (allVenuesList.current.length > 0) {
                     // Always try to focus the top item of the sorted list
                     const first = allVenuesList.current[0];
@@ -257,6 +275,10 @@ export default function KakaoMapModal({
         if (!mapInstance || !isMapReady) return;
         const map = mapInstance;
         const k = window.kakao.maps;
+
+        // Clear existing overlays to prevent duplicates on update
+        mapOverlaysRef.current.forEach(o => o.setMap(null));
+        mapOverlaysRef.current = [];
 
         if (centerLocation) {
             const loc = new k.LatLng(centerLocation.lat, centerLocation.lng);
