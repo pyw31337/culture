@@ -135,6 +135,10 @@ export default function KakaoMapModal({
 
         // 2. Process Cinemas
         if (isMovieMode || isAllMode) {
+            // For movie mode, all cinemas currently play the top KOBIS movies.
+            // We pass the top 10 movies from the parsed performances to each cinema.
+            const topMovies = isMovieMode ? performances.slice(0, 10) : [];
+
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i];
                 if (!groupsMap.has(cinema.name)) {
@@ -145,7 +149,7 @@ export default function KakaoMapModal({
                         lng: cinema.lng,
                         brand: cinema.brand,
                         type: 'cinema',
-                        performances: [], // [BUG FIX] Don't assign random performances to cinemas
+                        performances: isMovieMode ? topMovies : [], // Show top movies in the cinema popup
                         kakaoLatLng: null,
                         firstAppearanceIndex: i
                     });
@@ -354,8 +358,8 @@ export default function KakaoMapModal({
             disableClickZoom: false,
             styles: [{
                 width: '40px', height: '40px', background: 'rgba(16, 185, 129, 0.9)',
-                borderRadius: '50%', color: '#fff', textAlign: 'center',
-                fontWeight: 'bold', lineHeight: '40px', fontSize: '14px', border: '3px solid white', boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                borderRadius: '12px', color: '#fff', textAlign: 'center',
+                fontWeight: 'bold', lineHeight: '34px', fontSize: '14px', border: '3px solid white', boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
             }]
         });
         clustererRef.current = clusterer;
