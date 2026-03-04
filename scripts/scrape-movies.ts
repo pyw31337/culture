@@ -246,7 +246,7 @@ async function scrapeMovies() {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
                 const list = [];
                 rows.forEach((row, idx) => {
-                    if (idx >= 30) return;
+                    if (idx >= 10) return; // ONLY TOP 10
                     const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
                     if (titleLink) {
                         const title = titleLink.textContent?.trim() || '';
@@ -283,6 +283,74 @@ async function scrapeMovies() {
             await kobisPage.close();
         }
 
+        // 1.5 Scrape KOBIS Upcoming Schedules
+        let upcomingMovies: any[] = [];
+        try {
+            console.log(`Fetching KOBIS Upcoming Schedule directly...`);
+            const response = await axios.get('https://www.kobis.or.kr/kobis/business/mast/mvie/findOpenScheduleList.do', {
+                headers: { 'User-Agent': 'Mozilla/5.0' }
+            });
+
+            const html = response.data as string;
+
+            // Because we don't have cheerio loaded in this script natively in the import, 
+            // we will use playwright's evaluate just by setting the content.
+            const upcomingPage = await kobisContext.newPage();
+            await upcomingPage.setContent(html);
+
+            upcomingMovies = await upcomingPage.evaluate(() => {
+                const results: any[] = [];
+                const currentYear = new Date().getFullYear().toString();
+                // Select all list items and table rows
+                const items = document.querySelectorAll('.item, li, tr');
+
+                items.forEach((el) => {
+                    const text = el.textContent || '';
+                    if (text.includes(currentYear + '-')) {
+                        const spans = Array.from(el.querySelectorAll('span'));
+                        const dateSpan = spans.find(s => s.textContent?.includes(currentYear + '-'));
+                        const date = dateSpan?.textContent?.trim() || '';
+
+                        const titleEl = el.querySelector('.tit, .title, a');
+                        let title = titleEl?.getAttribute('title');
+                        if (!title) {
+                            title = el.querySelector('strong, .tit')?.textContent?.trim() || '';
+                        }
+
+                        if (date && title && !title.includes('2026') && title.length > 1) {
+                            // Avoid duplicates
+                            if (!results.find(m => m.title === title && m.dateRaw === date)) {
+                                results.push({
+                                    dateRaw: date,
+                                    title: title.replace('상세정보', '').trim()
+                                });
+                            }
+                        }
+                    }
+                });
+                return results;
+            });
+            await upcomingPage.close();
+
+            console.log(`Found ${upcomingMovies.length} upcoming movies from primary HTML.`);
+
+            // Remove duplicates from upcoming (some might be listed recursively, or already in box office)
+            const boxOfficeTitles = new Set(movies.map(m => m.title));
+            upcomingMovies = upcomingMovies.filter(um => !boxOfficeTitles.has(um.title));
+
+            // Deduplicate upcoming movies themselves
+            const uniqueUpcoming = new Map();
+            upcomingMovies.forEach(um => uniqueUpcoming.set(um.title, um));
+            upcomingMovies = Array.from(uniqueUpcoming.values());
+            console.log(`Unique upcoming movies to enrich: ${upcomingMovies.length}`);
+
+        } catch (e) {
+            console.error('KOBIS Upcoming Scraping Error:', e);
+        }
+
+        // Combine for enrichment
+        const allMoviesToProcess = [...movies, ...upcomingMovies];
+
         // 2. Enrich with Naver (Sequential with context reuse)
         // Filter out movies that already have good data
         const moviesToEnrich: any[] = [];
@@ -290,13 +358,24 @@ async function scrapeMovies() {
         // Create Final List Order based on KOBIS rank, but populate with Existing data if available
         const finalMovies: any[] = [];
 
-        for (const m of movies) {
+        for (const m of allMoviesToProcess) {
             const existing = existingMap.get(m.title);
             if (existing && existing.ageRating && existing.poster && existing.cast && existing.director) {
-                // Reuse existing data but update volatile fields
-                existing.rank = m.rank ? parseInt(m.rank) : existing.rank;
+                // Just skip if it has data. Upcoming movies don't have rank, 
+                // so we make sure we preserve the rank of existing box office.
+                if (m.rank) {
+                    existing.rank = parseInt(m.rank);
+                } else if (!m.rank && existing.rank) {
+                    // This means an existing movie dropped out of box office into upcoming (unlikely) 
+                    // or we are just iterating upcoming. We should clear rank for upcoming.
+                    delete existing.rank;
+                }
+                if (m.dateRaw) existing.dateRaw = m.dateRaw; // update date 
                 finalMovies.push(existing);
-                // Maybe update date if KOBIS has a new release date? Usually assume existing is better/enriched.
+            } else if (existing && m.rank) {
+                // Update rank for existing skipped ones that only needed rank updates
+                existing.rank = parseInt(m.rank);
+                finalMovies.push(existing);
             } else {
                 // Needs enrichment
                 moviesToEnrich.push(m);
@@ -466,7 +545,7 @@ async function scrapeMovies() {
             }
 
             // Update with NEW data
-            // STRICT POLICY: Only keep movies that are currently in KOBIS Top 30 ranking
+            // STRICT POLICY: Only keep movies that are currently in KOBIS Top 10 ranking OR Upcoming
             const synchronizedMovies: any[] = [];
 
             // finalMovies contains both cached (no enrichment needed) AND newly enriched movies

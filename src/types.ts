@@ -32,4 +32,5 @@ export type Performance = {
     category?: string; // High-level category override
     poster?: string; // Original remote URL for OTT/Movies
     rank?: number;
+    dateRaw?: string; // Original parsed date used for sorting upcoming releases
 };

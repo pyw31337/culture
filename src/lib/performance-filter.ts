@@ -88,7 +88,23 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // Actually, PerformanceList applied this globally. Let's keep consistency.
     filtered = filtered.filter(p => {
         if (p.genre !== 'movie') return true;
-        return true;
+
+        // Movie specific filtering: Keep top 10 box office exactly OR future upcoming
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (p.rank && p.rank <= 10) return true; // Box office top 10
+
+        if (p.dateRaw || p.date) {
+            const dateStr = p.dateRaw || p.date || '';
+            const match = dateStr.match(/(\d{4})[.-](\d{2})[.-](\d{2})/);
+            if (match) {
+                const relDate = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00`);
+                if (relDate >= today) return true; // Upcoming
+            }
+        }
+
+        return false;
     });
 
     // 3. Region Filter
@@ -175,7 +191,7 @@ export function sortPerformances(performances: Performance[], genre: string, key
         });
     }
 
-    // Movie: Rank First, then Strict Date DESC Sort (Newest First)
+    // Movie: Rank First, then Strict Date ASC Sort (Upcoming First)
     if (genre === 'movie') {
         return sorted.sort((a, b) => {
             // Prioritize rank if available
@@ -183,9 +199,9 @@ export function sortPerformances(performances: Performance[], genre: string, key
             if (a.rank !== undefined) return -1;
             if (b.rank !== undefined) return 1;
 
-            const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
-            const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
-            return dateB.localeCompare(dateA);
+            const dateA = (a.dateRaw || a.date || '9999-12-31').replace(/[^\d.-]/g, '');
+            const dateB = (b.dateRaw || b.date || '9999-12-31').replace(/[^\d.-]/g, '');
+            return dateA.localeCompare(dateB);
         });
     }
 
