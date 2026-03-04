@@ -254,10 +254,21 @@ export default function PerformanceList({
                     setSelectedDistrict={setSelectedDistrict} setSelectedVenue={setSelectedVenue} setUserLocation={setUserLocation}
                     setSearchLocation={setSearchLocation} setRadius={setRadius} setSearchText={setSearchText} onSearchChange={handleSearchChange}
                     setActiveSearchSource={setActiveSearchSource} setIsDropdownOpen={setIsDropdownOpen} handleSearch={() => { }}
-                    handleSelectResult={(res: any) => { setSearchText(res.name); setIsDropdownOpen(false); }}
-                    handleKeyDown={() => { }} handleCurrentLocationClick={() => { setUserLocation(null); setSearchLocation(null); }}
+                    handleSelectResult={(res: any) => {
+                        setSearchText(res.name);
+                        setIsDropdownOpen(false);
+                        if (selectedGenre !== 'all') handleGenreSelect('all');
+                    }}
+                    handleKeyDown={(e: React.KeyboardEvent) => {
+                        if (e.key === 'Enter') {
+                            if (selectedGenre !== 'all') handleGenreSelect('all');
+                        }
+                    }} handleCurrentLocationClick={() => { setUserLocation(null); setSearchLocation(null); }}
                     availableVenues={availableVenues} districts={districts} recentKeywords={savedKeywords}
-                    onKeywordSelect={(k) => { setSearchText(k); }} onRemoveRecent={removeKeyword} onClearRecent={() => setSavedKeywords([])}
+                    onKeywordSelect={(k) => {
+                        setSearchText(k);
+                        if (selectedGenre !== 'all') handleGenreSelect('all');
+                    }} onRemoveRecent={removeKeyword} onClearRecent={() => setSavedKeywords([])}
                     searchMode={searchMode} onSearchModeChange={setSearchMode}
                 />
             </ErrorBoundary>

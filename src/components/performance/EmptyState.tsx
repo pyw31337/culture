@@ -122,7 +122,9 @@ export default function EmptyState({
 
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (
-                            '검색 결과가 없습니다 😢'
+                            selectedGenre !== 'all'
+                                ? `'${searchText}' 키워드의 컨텐츠가 ${GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre} 카테고리에서 발견되지 않았습니다.`
+                                : '검색 결과가 없습니다 😢'
                         ) : (selectedGenre === 'baseball' || selectedGenre === 'soccer') ? (
                             '예정된 경기 일정이 없습니다 🏖️'
                         ) : (
@@ -131,7 +133,9 @@ export default function EmptyState({
                     </h3>
                     <p className="text-gray-400 light:text-gray-500 mb-8 text-sm">
                         {searchText
-                            ? `'${searchText}'에 대한 검색 결과가 없습니다.`
+                            ? selectedGenre !== 'all'
+                                ? '전체 카테고리로 이동하거나 다른 검색어로 시도해보세요.'
+                                : `'${searchText}'에 대한 검색 결과가 없습니다.`
                             : '필터 조건을 변경하거나 다른 검색어로 시도해보세요.'}
                     </p>
 
