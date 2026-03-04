@@ -201,14 +201,14 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                 else setCurrentMonth(subDays(currentMonth, 1));
                             }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" /></button>
 
-                            <span className="hidden sm:inline">
+                            <span className="hidden sm:inline cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
                                 {calendarView === 'daily'
                                     ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
                                     : calendarView === 'weekly'
                                         ? `${format(startOfWeek(currentMonth), 'M/d')} ~ ${format(endOfWeek(currentMonth), 'M/d')}`
                                         : format(currentMonth, 'yyyy년 M월', { locale: ko })}
                             </span>
-                            <span className="sm:hidden text-base truncate">
+                            <span className="sm:hidden text-base truncate cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
                                 {calendarView === 'daily'
                                     ? format(currentMonth, 'yy.MM.dd', { locale: ko })
                                     : calendarView === 'weekly'
@@ -247,7 +247,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                     <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
                         onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                         <div className="flex gap-2 w-max">
-                            {GENRES.filter(g => g.id !== 'movie').map((genre) => {
+                            {GENRES.map((genre) => {
                                 const isSelected = localGenre === genre.id;
                                 const count = genre.id === 'all'
                                     ? currentViewTotalEvents.length
