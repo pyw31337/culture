@@ -328,7 +328,7 @@ export default function PerformanceList({
 
             {isMapOpen && (
                 <KakaoMapModal
-                    performances={(isCategoryPage && !searchText) ? allPerformances : filteredPerformances}
+                    performances={filteredPerformances} // ALWAYS pass filtered to ensure map markers match the grid feed exactly
                     cinemas={selectedGenre === 'movie' ? cinemas : []}
                     selectedGenre={selectedGenre}
                     searchMode={searchMode}

@@ -300,14 +300,21 @@ export default function KakaoMapModal({
             </div>`;
             const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
             mapOverlaysRef.current.push(overlay);
+
+            handleSearchHereInternal(map);
         } else if (allVenuesList.current.length > 0) {
             // Unconditionally pan to the first item from the list order whenever the map mounts
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
             map.setLevel(SPORTS_GENRES.includes(selectedGenre) ? 6 : 5);
-        }
 
-        handleSearchHereInternal(map);
+            // Auto-open the popup for the first venue
+            setSelectedVenue(first.venueName);
+
+            // We strictly DO NOT call handleSearchHereInternal(map) here.
+            // This preserves the full list of venues at the bottom (sorted by feed order)
+            // until the user explicitly pans and clicks "Search Here".
+        }
     }, [mapInstance, isMapReady, centerLocation, selectedGenre]); // Reactive updates only
 
 
