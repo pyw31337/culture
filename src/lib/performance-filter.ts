@@ -89,20 +89,12 @@ export function filterPerformances(performances: Performance[], options: FilterO
     filtered = filtered.filter(p => {
         if (p.genre !== 'movie') return true;
 
-        // Movie specific filtering: Keep top 10 box office exactly OR future upcoming
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
+        // Keep box office top 10 always
+        if (p.rank && p.rank <= 10) return true;
 
-        if (p.rank && p.rank <= 10) return true; // Box office top 10
-
-        if (p.dateRaw || p.date) {
-            const dateStr = p.dateRaw || p.date || '';
-            const match = dateStr.match(/(\d{4})[.-](\d{2})[.-](\d{2})/);
-            if (match) {
-                const relDate = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00`);
-                if (relDate >= today) return true; // Upcoming
-            }
-        }
+        // Keep all unranked movies (upcoming releases from KOBIS schedule)
+        // These are explicitly scraped as upcoming content, so always show them
+        if (!p.rank) return true;
 
         return false;
     });
