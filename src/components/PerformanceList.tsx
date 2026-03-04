@@ -348,9 +348,13 @@ export default function PerformanceList({
                         setSearchLocation({ name, lat, lng });
                         setIsMapOpen(false);
                     }}
-                    onMapSearchHere={(lat, lng) => {
+                    onMapSearchHere={(lat, lng, venueName) => {
                         setSearchMode('location');
-                        setSearchLocation({ name: '지도 탐색 위치', lat, lng });
+                        setSearchLocation({
+                            name: venueName ? `${venueName} 주변` : '지도 탐색 위치',
+                            lat,
+                            lng
+                        });
                     }}
                 />
             )}

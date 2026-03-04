@@ -38,7 +38,7 @@ export interface KakaoMapModalProps {
     selectedGenre?: string;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
-    onMapSearchHere?: (lat: number, lng: number) => void;
+    onMapSearchHere?: (lat: number, lng: number, venueName?: string) => void;
 }
 
 export default function KakaoMapModal({
@@ -219,9 +219,9 @@ export default function KakaoMapModal({
 
         // Notify parent grid to sync location search ONLY when user explicitly clicked
         if (isUserClick && onMapSearchHere && center) {
-            onMapSearchHere(center.getLat(), center.getLng());
+            onMapSearchHere(center.getLat(), center.getLng(), selectedVenue || undefined);
         }
-    }, [selectedGenre, onMapSearchHere]);
+    }, [selectedGenre, onMapSearchHere, selectedVenue]);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
 
