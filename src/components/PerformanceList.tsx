@@ -62,6 +62,10 @@ export default function PerformanceList({
 
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get('q') || '';
+    const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
+    const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
+    const urlLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
+    const urlVenue = searchParams.get('venue') || '';
 
     const {
         searchText, setSearchText, searchMode, setSearchMode, searchLocation, setSearchLocation,
@@ -98,6 +102,21 @@ export default function PerformanceList({
 
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
+
+    // Initialize from URL params (e.g., from map '공연 더보기' button)
+    const urlInitialized = useRef(false);
+    useEffect(() => {
+        if (urlInitialized.current) return;
+        if (urlMode === 'location' && urlLat && urlLng && urlVenue) {
+            urlInitialized.current = true;
+            setSearchMode('location');
+            setSearchLocation({ lat: urlLat, lng: urlLng, name: urlVenue });
+            setSearchText(urlVenue);
+            if (searchParams.get('genre')) {
+                setSelectedGenre(searchParams.get('genre')!);
+            }
+        }
+    }, [urlMode, urlLat, urlLng, urlVenue, setSearchMode, setSearchLocation, setSearchText, setSelectedGenre, searchParams]);
 
     const keywordItems = useMemo(() => {
         if (!savedKeywords.length || !allPerformances.length) return [];
