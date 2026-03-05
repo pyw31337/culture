@@ -466,8 +466,9 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 const k = window.kakao.maps;
                 const loc = new k.LatLng(latitude, longitude);
 
-                mapInstance.panTo(loc);
-                mapInstance.setLevel(4, { animate: true });
+                // Use setCenter + setLevel (no animation) to avoid panTo conflict
+                mapInstance.setCenter(loc);
+                mapInstance.setLevel(4);
 
                 // Remove previous my-location overlay
                 if (myLocationOverlayRef.current) { myLocationOverlayRef.current.setMap(null); }
@@ -517,6 +518,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             <Minus className="w-5 h-5" />
                         </button>
                     </div>
+                    {/* My Location Button - inverted colors */}
+                    <button onClick={handleMyLocation} disabled={isLocating}
+                        className={clsx("p-2.5 rounded-full shadow-md transition",
+                            isLocating
+                                ? "bg-blue-500 text-white animate-pulse"
+                                : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-black dark:hover:bg-gray-100"
+                        )} title="내 위치">
+                        <Locate className="w-5 h-5" />
+                    </button>
                 </div>
 
                 {showSearchHereBtn && isMapReady && (
@@ -529,19 +539,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     </div>
                 )}
 
-                {/* My Location Button */}
-                {isMapReady && (
-                    <div className="absolute top-4 left-4 z-[100]">
-                        <button onClick={handleMyLocation} disabled={isLocating}
-                            className={clsx("p-2.5 rounded-full shadow-md transition",
-                                isLocating
-                                    ? "bg-blue-500 text-white animate-pulse"
-                                    : "bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70"
-                            )} title="내 위치">
-                            <Locate className="w-5 h-5" />
-                        </button>
-                    </div>
-                )}
+
 
                 <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
