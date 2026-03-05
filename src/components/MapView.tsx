@@ -43,11 +43,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const selectedGenre = searchParams.get('genre') || 'all';
     const searchMode = (searchParams.get('mode') as 'keyword' | 'location') || 'keyword';
     const searchText = searchParams.get('q') || '';
-    const centerLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
-    const centerLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
+    const paramLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
+    const paramLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
     const centerName = searchParams.get('venue') || '';
 
-    const centerLocation = (centerLat && centerLng) ? { lat: centerLat, lng: centerLng, name: centerName } : null;
+    // For movie genre, default to Seoul Station if no explicit location provided
+    const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
+    const centerLat = paramLat || (selectedGenre === 'movie' ? SEOUL_STATION.lat : null);
+    const centerLng = paramLng || (selectedGenre === 'movie' ? SEOUL_STATION.lng : null);
+    const centerLocation = (centerLat && centerLng) ? { lat: centerLat, lng: centerLng, name: centerName || (selectedGenre === 'movie' && !paramLat ? '서울역' : '') } : null;
 
     // Load full data client-side
     const { allPerformances, cinemas: clientCinemas } = usePerformanceData({ initialPerformances });
@@ -197,7 +201,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
 
-    const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
+    // SEOUL_STATION is defined above at component level
 
     // --- Map Init ---
     useEffect(() => {
