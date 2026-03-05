@@ -445,7 +445,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         const overlay = new k.CustomOverlay({
             position: new k.LatLng(venueValue.lat, venueValue.lng),
-            content: container, yAnchor: 1.0, zIndex: 1000, clickable: true
+            content: container, yAnchor: 1.1, xAnchor: 0.5, zIndex: 1000, clickable: true
         });
 
         overlay.setMap(mapInstance);
@@ -571,7 +571,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 <div className="absolute inset-0 pointer-events-none z-[110]">
                     {selectedVenue && selectedVenueData && popupContainerRef && (
                         <Portal customContainer={popupContainerRef}>
-                            <div className="flex flex-col items-center" style={{ transform: 'translateY(-25px)', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }}>
+                            <div className="flex flex-col items-center" style={{ filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }}>
                                 <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
                                     <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
