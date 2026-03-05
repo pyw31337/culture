@@ -505,15 +505,45 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         if (match) price = match[1];
                     }
 
-                    // --- 4. Address Extraction (New) ---
+                    // --- 4. Address Extraction (Upgraded) ---
+                    // ONLY look within venue-specific info sections, NOT global page elements
                     let address = '';
                     try {
-                        // Look for address in any info item first
-                        const addressItem = Array.from(document.querySelectorAll('.infoItem, .infoDesc')).find(el => el.textContent?.includes('주소'));
-                        if (addressItem) {
-                            address = addressItem.textContent?.replace(/주소\s*[:\s]*/, '').trim() || '';
+                        // Strategy 1: Look for address ONLY within .infoPlace section
+                        const placeItem = document.querySelector('.infoItem.infoPlace, .infoPlace');
+                        if (placeItem) {
+                            const placeText = placeItem.textContent || '';
+                            const addrMatch = placeText.match(/주소\s*[:\s]*([^\n]+)/);
+                            if (addrMatch) {
+                                address = addrMatch[1].trim();
+                            }
                         }
-                    } catch (e) {}
+                        // Strategy 2: Look for address in structured info items with explicit '주소' label
+                        if (!address) {
+                            const infoItems = Array.from(document.querySelectorAll('.infoItem'));
+                            for (const item of infoItems) {
+                                const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
+                                if (label.includes('장소') || label.includes('공연장')) {
+                                    const desc = item.querySelector('.infoText, .infoDesc')?.textContent?.trim() || '';
+                                    if (desc.length > 3 && desc.length < 100) {
+                                        address = desc;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (e) { }
+
+                    // Validate address: reject garbage, known bad fallbacks, and too-long strings
+                    const KNOWN_BAD_ADDRS = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83'];
+                    if (address) {
+                        const isTooLong = address.length > 120;
+                        const isBadFallback = KNOWN_BAD_ADDRS.some(bad => address.includes(bad));
+                        const isNotAddress = !/시|군|구|읍|면|동|로|길/.test(address);
+                        if (isTooLong || isBadFallback || isNotAddress) {
+                            address = '';
+                        }
+                    }
 
                     return { runningTime, ageRating, price, originalPrice, discount, address };
                 });
@@ -523,23 +553,25 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
                     try {
-                        // Interpark detail pages often have a link next to the venue name labeled "(자세히)" or similar
-                        // Selector for the "Venue Info" toggle/button
                         const venueDetailBtn = await page.$('.infoItem.infoPlace .infoText a, .infoItem.infoPlace a[data-popup="info-place"]');
                         if (venueDetailBtn) {
                             await venueDetailBtn.click();
                             await page.waitForSelector('.layerPopup, .popupLayer, .popVenueInfo', { visible: true, timeout: 3000 });
-                            
+
                             address = await page.evaluate(() => {
                                 const popup = document.querySelector('.layerPopup, .popupLayer, .popVenueInfo') as HTMLElement;
                                 if (!popup) return '';
                                 const text = popup.innerText || '';
-                                // Look for "주소 :" pattern
                                 const match = text.match(/주소\s*:\s*(.*)/);
-                                return match ? match[1].split('\n')[0].trim() : '';
+                                if (!match) return '';
+                                const addr = match[1].split('\n')[0].trim();
+                                // Validate popup address too
+                                const BAD = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83'];
+                                if (addr.length > 120 || BAD.some(b => addr.includes(b))) return '';
+                                return addr;
                             });
                         }
-                    } catch (e) {}
+                    } catch (e) { }
                 }
 
                 // 3. Click Price Popup for Detailed Breakdown if basic info is insufficient
