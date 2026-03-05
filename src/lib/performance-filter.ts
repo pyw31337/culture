@@ -33,11 +33,16 @@ export function filterPerformances(performances: Performance[], options: FilterO
     let filtered = performances;
     const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
 
+    // 0. Genre Early Filter (Optimization for [genre] pages)
+    if (genre && genre !== 'all') {
+        filtered = filtered.filter(p => p.genre === genre);
+    }
+
     if (searchMode === 'location' && genre !== 'movie') {
         filtered = filtered.filter(p => p.genre !== 'movie');
     }
 
-    // 0. Base Filter: Strict Address Integrity
+    // 1. Base Filter: Strict Address Integrity
     // Exclude any physical event that doesn't have a record in venues.json or has an empty address.
     // Digital content (OTT/Movie) is exempt from physical address requirement.
     filtered = filtered.filter(p => {
@@ -51,7 +56,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
     });
 
 
-    // 1. Search Filter (Highest Priority)
+    // 2. Search Filter (Highest Priority)
     if (search && search.trim()) {
         const targetSearch = search.replace(/\s+/g, '').toLowerCase().normalize('NFC');
         const isChoseongMode = /^[ㄱ-ㅎ]+$/.test(targetSearch);
@@ -77,9 +82,6 @@ export function filterPerformances(performances: Performance[], options: FilterO
         });
     }
 
-    if (genre && genre !== 'all') {
-        filtered = filtered.filter(p => p.genre === genre);
-    }
 
     // [OTT/Movie Filter logic extracted from PerformanceList]
     // Filter out obscure foreign series for OTT/Movie unless country is major

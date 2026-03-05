@@ -305,7 +305,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251218_두산_vs_충남도청",
@@ -319,7 +319,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251218_인천도시공사_vs_하남시청",
@@ -333,7 +333,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251220_SK호크스_vs_두산",
@@ -347,7 +347,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251220_상무_피닉스_vs_하남시청",
@@ -361,7 +361,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251220_인천도시공사_vs_충남도청",
@@ -375,7 +375,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251225_SK호크스_vs_하남시청",
@@ -389,7 +389,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251225_상무_피닉스_vs_충남도청",
@@ -403,7 +403,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20251225_두산_vs_인천도시공사",
@@ -417,7 +417,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260110_SK슈가글라이더즈_vs_광주도시공사",
@@ -767,7 +767,7 @@
     "homeTeamLogo": "/images/logos/handball/hanam_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260205_인천도시공사_vs_상무_피닉스",
@@ -781,7 +781,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260206_SK호크스_vs_충남도청",
@@ -795,7 +795,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260206_경남개발공사_vs_광주도시공사",
@@ -809,7 +809,7 @@
     "homeTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260207_삼척시청_vs_서울시청",
@@ -823,7 +823,7 @@
     "homeTeamLogo": "/images/logos/handball/samcheok_official.png",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260207_SK슈가글라이더즈_vs_인천광역시청",
@@ -837,7 +837,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260207_대구광역시청_vs_부산시설공단",
@@ -851,7 +851,7 @@
     "homeTeamLogo": "/images/logos/handball/daegu_official.png",
     "awayTeamLogo": "/images/logos/handball/busan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260208_SK호크스_vs_인천도시공사",
@@ -865,7 +865,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260208_충남도청_vs_하남시청",
@@ -879,7 +879,7 @@
     "homeTeamLogo": "/images/logos/handball/chungnam_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260208_상무_피닉스_vs_두산",
@@ -893,7 +893,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260213_경남개발공사_vs_부산시설공단",
@@ -1201,7 +1201,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/busan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260227_경남개발공사_vs_삼척시청",
@@ -1215,7 +1215,7 @@
     "homeTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "awayTeamLogo": "/images/logos/handball/samcheok_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260228_인천광역시청_vs_광주도시공사",
@@ -1229,7 +1229,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260228_대구광역시청_vs_서울시청",
@@ -1243,7 +1243,7 @@
     "homeTeamLogo": "/images/logos/handball/daegu_official.png",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260228_두산_vs_하남시청",
@@ -1257,7 +1257,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260301_SK호크스_vs_충남도청",
@@ -1271,7 +1271,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260301_SK슈가글라이더즈_vs_경남개발공사",
@@ -1285,7 +1285,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260301_부산시설공단_vs_삼척시청",
@@ -1299,7 +1299,7 @@
     "homeTeamLogo": "/images/logos/handball/busan_official.png",
     "awayTeamLogo": "/images/logos/handball/samcheok_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260302_상무_피닉스_vs_인천도시공사",
@@ -1313,7 +1313,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260302_대구광역시청_vs_인천광역시청",
@@ -1327,7 +1327,7 @@
     "homeTeamLogo": "/images/logos/handball/daegu_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260302_서울시청_vs_광주도시공사",
@@ -1341,7 +1341,7 @@
     "homeTeamLogo": "/images/logos/handball/seoul_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260305_상무_피닉스_vs_두산",
@@ -1355,7 +1355,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260305_하남시청_vs_충남도청",
@@ -1369,7 +1369,7 @@
     "homeTeamLogo": "/images/logos/handball/hanam_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260306_SK호크스_vs_인천도시공사",
@@ -1383,7 +1383,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260306_인천광역시청_vs_삼척시청",
@@ -1397,7 +1397,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "awayTeamLogo": "/images/logos/handball/samcheok_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260307_경남개발공사_vs_대구광역시청",
@@ -1411,7 +1411,7 @@
     "homeTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "awayTeamLogo": "/images/logos/handball/daegu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260307_부산시설공단_vs_광주도시공사",
@@ -1425,7 +1425,7 @@
     "homeTeamLogo": "/images/logos/handball/busan_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260307_SK슈가글라이더즈_vs_서울시청",
@@ -1439,7 +1439,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260308_SK호크스_vs_상무_피닉스",
@@ -1453,7 +1453,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260308_두산_vs_충남도청",
@@ -1467,7 +1467,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/chungnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260308_인천도시공사_vs_하남시청",
@@ -1481,7 +1481,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "chungbuk"
   },
   {
     "id": "handball_20260313_두산_vs_SK호크스",
@@ -1747,7 +1747,7 @@
     "homeTeamLogo": "/images/logos/handball/sangmu_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260326_충남도청_vs_SK호크스",
@@ -1761,7 +1761,7 @@
     "homeTeamLogo": "/images/logos/handball/chungnam_official.png",
     "awayTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260327_하남시청_vs_두산",
@@ -1775,7 +1775,7 @@
     "homeTeamLogo": "/images/logos/handball/hanam_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260327_SK슈가글라이더즈_vs_대구광역시청",
@@ -1789,7 +1789,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/daegu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260328_인천광역시청_vs_부산시설공단",
@@ -1803,7 +1803,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "awayTeamLogo": "/images/logos/handball/busan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260328_서울시청_vs_경남개발공사",
@@ -1817,7 +1817,7 @@
     "homeTeamLogo": "/images/logos/handball/seoul_official.png",
     "awayTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260328_삼척시청_vs_광주도시공사",
@@ -1831,7 +1831,7 @@
     "homeTeamLogo": "/images/logos/handball/samcheok_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260329_두산_vs_상무_피닉스",
@@ -1845,7 +1845,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260329_인천도시공사_vs_SK호크스",
@@ -1859,7 +1859,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260329_충남도청_vs_하남시청",
@@ -1873,7 +1873,7 @@
     "homeTeamLogo": "/images/logos/handball/chungnam_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260402_삼척시청_vs_경남개발공사",
@@ -1887,7 +1887,7 @@
     "homeTeamLogo": "/images/logos/handball/samcheok_official.png",
     "awayTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260402_부산시설공단_vs_SK슈가글라이더즈",
@@ -1901,7 +1901,7 @@
     "homeTeamLogo": "/images/logos/handball/busan_official.png",
     "awayTeamLogo": "",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260403_인천광역시청_vs_광주도시공사",
@@ -1915,7 +1915,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "awayTeamLogo": "/images/logos/handball/gwangju_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260403_대구광역시청_vs_서울시청",
@@ -1929,7 +1929,7 @@
     "homeTeamLogo": "/images/logos/handball/daegu_official.png",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260403_충남도청_vs_두산",
@@ -1943,7 +1943,7 @@
     "homeTeamLogo": "/images/logos/handball/chungnam_official.png",
     "awayTeamLogo": "/images/logos/handball/doosan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260404_인천도시공사_vs_하남시청",
@@ -1957,7 +1957,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_official.png",
     "awayTeamLogo": "/images/logos/handball/hanam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260404_삼척시청_vs_부산시설공단",
@@ -1971,7 +1971,7 @@
     "homeTeamLogo": "/images/logos/handball/samcheok_official.png",
     "awayTeamLogo": "/images/logos/handball/busan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260404_경남개발공사_vs_SK슈가글라이더즈",
@@ -1985,7 +1985,7 @@
     "homeTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "awayTeamLogo": "",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260405_광주도시공사_vs_서울시청",
@@ -1999,7 +1999,7 @@
     "homeTeamLogo": "/images/logos/handball/gwangju_official.png",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260405_인천광역시청_vs_대구광역시청",
@@ -2013,7 +2013,7 @@
     "homeTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "awayTeamLogo": "/images/logos/handball/daegu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260405_SK호크스_vs_상무_피닉스",
@@ -2027,7 +2027,7 @@
     "homeTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260410_삼척시청_vs_인천광역시청",
@@ -2041,7 +2041,7 @@
     "homeTeamLogo": "/images/logos/handball/samcheok_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_women_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260410_SK슈가글라이더즈_vs_서울시청",
@@ -2055,7 +2055,7 @@
     "homeTeamLogo": "",
     "awayTeamLogo": "/images/logos/handball/seoul_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260411_하남시청_vs_상무_피닉스",
@@ -2069,7 +2069,7 @@
     "homeTeamLogo": "/images/logos/handball/hanam_official.png",
     "awayTeamLogo": "/images/logos/handball/sangmu_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260411_충남도청_vs_인천도시공사",
@@ -2083,7 +2083,7 @@
     "homeTeamLogo": "/images/logos/handball/chungnam_official.png",
     "awayTeamLogo": "/images/logos/handball/incheon_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260411_두산_vs_SK호크스",
@@ -2097,7 +2097,7 @@
     "homeTeamLogo": "/images/logos/handball/doosan_official.png",
     "awayTeamLogo": "/images/logos/handball/sk_hawks_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260412_대구광역시청_vs_경남개발공사",
@@ -2111,7 +2111,7 @@
     "homeTeamLogo": "/images/logos/handball/daegu_official.png",
     "awayTeamLogo": "/images/logos/handball/gyeongnam_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260412_광주도시공사_vs_부산시설공단",
@@ -2125,7 +2125,7 @@
     "homeTeamLogo": "/images/logos/handball/gwangju_official.png",
     "awayTeamLogo": "/images/logos/handball/busan_official.png",
     "image": "/images/handball_poster.png",
-    "region": "etc"
+    "region": "gangwon"
   },
   {
     "id": "handball_20260417_서울시청_vs_삼척시청",

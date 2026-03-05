@@ -3,7 +3,7 @@
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles } from 'lucide-react';
+import { X, ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film } from 'lucide-react';
 import Portal from './ui/Portal';
 import { useEffect, useState } from 'react';
 import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
@@ -140,7 +140,7 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="relative w-full max-w-md transform-style-3d"
+                        className="relative w-full max-w-md transform-style-3d z-[100]"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Back Face (Visible while spinning) */}
@@ -262,7 +262,7 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                                     {/* Info Grid */}
                                     <motion.div variants={itemVariants} className="grid grid-cols-1 gap-4">
                                         {[
-                                            { icon: MapPin, text: p.venue, color: 'text-emerald-400' },
+                                            { icon: p.genre === 'movie' ? Film : MapPin, text: p.venue, color: 'text-emerald-400' },
                                             { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-400' },
                                             { icon: Clock, text: p.runningTime, color: 'text-amber-400' },
                                             { icon: Tag, text: p.productionCountry, color: 'text-purple-400' }

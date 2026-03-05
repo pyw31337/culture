@@ -509,15 +509,39 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     // ONLY look within venue-specific info sections, NOT global page elements
                     let address = '';
                     try {
+                        // Strategy 0: JSON-LD (Most reliable structured data)
+                        const jsonLdScripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+                        for (const script of jsonLdScripts) {
+                            try {
+                                const data = JSON.parse(script.textContent || '{}');
+                                // Could be an array or single object
+                                const ds = Array.isArray(data) ? data : [data];
+                                for (const d of ds) {
+                                    if (d.location?.address?.streetAddress) {
+                                        address = d.location.address.streetAddress;
+                                        break;
+                                    }
+                                    if (d.address?.streetAddress) {
+                                        address = d.address.streetAddress;
+                                        break;
+                                    }
+                                }
+                            } catch (e) { }
+                            if (address) break;
+                        }
+
                         // Strategy 1: Look for address ONLY within .infoPlace section
-                        const placeItem = document.querySelector('.infoItem.infoPlace, .infoPlace');
-                        if (placeItem) {
-                            const placeText = placeItem.textContent || '';
-                            const addrMatch = placeText.match(/주소\s*[:\s]*([^\n]+)/);
-                            if (addrMatch) {
-                                address = addrMatch[1].trim();
+                        if (!address) {
+                            const placeItem = document.querySelector('.infoItem.infoPlace, .infoPlace');
+                            if (placeItem) {
+                                const placeText = placeItem.textContent || '';
+                                const addrMatch = placeText.match(/주소\s*[:\s]*([^\n]+)/);
+                                if (addrMatch) {
+                                    address = addrMatch[1].trim();
+                                }
                             }
                         }
+
                         // Strategy 2: Look for address in structured info items with explicit '주소' label
                         if (!address) {
                             const infoItems = Array.from(document.querySelectorAll('.infoItem'));
@@ -535,7 +559,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     } catch (e) { }
 
                     // Validate address: reject garbage, known bad fallbacks, and too-long strings
-                    const KNOWN_BAD_ADDRS = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83'];
+                    const KNOWN_BAD_ADDRS = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83', 'NOL 티켓 파트너'];
                     if (address) {
                         const isTooLong = address.length > 120;
                         const isBadFallback = KNOWN_BAD_ADDRS.some(bad => address.includes(bad));
@@ -553,20 +577,20 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
                     try {
-                        const venueDetailBtn = await page.$('.infoItem.infoPlace .infoText a, .infoItem.infoPlace a[data-popup="info-place"]');
+                        const venueDetailBtn = await page.$('.infoItem.infoPlace .infoText a, .infoItem.infoPlace a[data-popup="info-place"], a[data-popup="popup-info-place"]');
                         if (venueDetailBtn) {
                             await venueDetailBtn.click();
-                            await page.waitForSelector('.layerPopup, .popupLayer, .popVenueInfo', { visible: true, timeout: 3000 });
+                            await page.waitForSelector('.layerPopup, .popupLayer, .popVenueInfo, #popup-info-place', { visible: true, timeout: 3000 });
 
                             address = await page.evaluate(() => {
-                                const popup = document.querySelector('.layerPopup, .popupLayer, .popVenueInfo') as HTMLElement;
+                                const popup = document.querySelector('.layerPopup, .popupLayer, .popVenueInfo, #popup-info-place') as HTMLElement;
                                 if (!popup) return '';
                                 const text = popup.innerText || '';
-                                const match = text.match(/주소\s*:\s*(.*)/);
+                                const match = text.match(/주소\s*[:\s]*(.*)/);
                                 if (!match) return '';
                                 const addr = match[1].split('\n')[0].trim();
                                 // Validate popup address too
-                                const BAD = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83'];
+                                const BAD = ['용산구 후암로 97', '영등포구 문래로 180', '영등포구 당산로 83', 'NOL 티켓 파트너'];
                                 if (addr.length > 120 || BAD.some(b => addr.includes(b))) return '';
                                 return addr;
                             });

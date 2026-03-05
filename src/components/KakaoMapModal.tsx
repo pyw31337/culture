@@ -139,8 +139,8 @@ export default function KakaoMapModal({
         if (isMovieMode || isAllMode) {
             // For movie mode, all cinemas currently play the top KOBIS movies.
             // We pass the top 10 movies from the parsed performances to each cinema.
-            const moviePerformances = isMovieMode ? performances.filter(p => p.genre === 'movie') : [];
-            const topMovies = isMovieMode ? moviePerformances.slice(0, 10) : [];
+            const moviePerformances = performances.filter(p => p.genre === 'movie');
+            const topMovies = moviePerformances.slice(0, 10);
 
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i];
@@ -152,7 +152,7 @@ export default function KakaoMapModal({
                         lng: cinema.lng,
                         brand: cinema.brand,
                         type: 'cinema',
-                        performances: isMovieMode ? topMovies : [], // Show top movies in the cinema popup
+                        performances: topMovies, // Always show top movies in the cinema popup when visible
                         kakaoLatLng: null,
                         firstAppearanceIndex: i
                     });

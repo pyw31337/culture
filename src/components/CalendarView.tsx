@@ -209,6 +209,11 @@ export default function CalendarView({ performances: initialPerformances }: Cale
         }
     };
 
+    const handleSelectDay = useMemo(() => (d: Date) => {
+        setCurrentMonth(d);
+        setCalendarView('daily');
+    }, [router]); // Stable setter
+
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
@@ -473,10 +478,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                         day={day}
                                         currentMonth={currentMonth}
                                         dayEvents={dayEvents}
-                                        onSelectDay={(d) => {
-                                            setCurrentMonth(d);
-                                            setCalendarView('daily');
-                                        }}
+                                        onSelectDay={handleSelectDay}
                                     />
                                 );
                             })}

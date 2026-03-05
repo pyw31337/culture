@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
-import { Heart, Star, MapPin, Calendar, Share2, Search } from 'lucide-react';
+import { Heart, Star, MapPin, Calendar, Share2, Search, Film } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
@@ -389,7 +389,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </h2>
 
                                     <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
-                                        <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
+                                        {perf.genre === 'movie' ? (
+                                            <Film className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
+                                        ) : (
+                                            <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
+                                        )}
                                         <button onClick={(e) => { e.stopPropagation(); onLocationClick?.({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue }); }} className="truncate hover:underline">
                                             <HighlightText text={perf.venue || 'Online'} keyword={searchText} />
                                         </button>

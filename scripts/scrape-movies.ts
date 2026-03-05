@@ -135,6 +135,56 @@ const extractMetadataStr = `() => {
     return res;
 }`;
 
+const extractKobisDetailStr = `
+async (code) => {
+    // Trigger popup
+    if (window.mstView) {
+        window.mstView('movie', code);
+    } else {
+        return null;
+    }
+    
+    // Wait for popup content
+    const wait = (ms) => new Promise(r => setTimeout(r, ms));
+    let popup = document.querySelector('div#ui-id-1, .ui-dialog');
+    let attempts = 0;
+    while (!popup && attempts < 25) {
+        await wait(200);
+        popup = document.querySelector('div#ui-id-1, .ui-dialog');
+        attempts++;
+    }
+    
+    if (!popup) return null;
+    
+    const titleEn = popup.querySelector('.title_en')?.textContent?.trim() || '';
+    const director = popup.querySelector('dl dd a[onclick*="mstView(\\'people\\'"]')?.textContent?.trim() || '';
+    
+    // High-res poster cleaning
+    const imgEl = popup.querySelector('a.thumb img');
+    let poster = imgEl?.src || '';
+    if (poster.includes('thumb_x192/thn_')) {
+        poster = poster.replace('thumb_x192/thn_', '');
+    }
+    
+    // Cast logic: get first 8 names
+    const cast = [];
+    const castEls = popup.querySelectorAll('dl.staff dd');
+    castEls.forEach(el => {
+        const role = el.previousElementSibling?.textContent || '';
+        if (role.includes('배우') || role.includes('주연')) {
+            const names = el.textContent?.split(',').map(n => n.trim()).filter(Boolean) || [];
+            cast.push(...names);
+        }
+    });
+
+    // Close popup
+    const closeBtn = document.querySelector('.ui-dialog-titlebar-close');
+    if (closeBtn) closeBtn.click();
+    
+    return { titleEn, director, highResPoster: poster, cast: cast.slice(0, 8) };
+}
+`;
+
 // --- Scraper Class ---
 
 // --- Helper: Process Image (Removed - using shared utility) ---
@@ -306,23 +356,26 @@ async function scrapeMovies() {
                 return upcomingPage.evaluate(() => {
                     const results: any[] = [];
                     // KOBIS uses .item class for each movie card
-                    const items = document.querySelectorAll('.item');
+                    // Updated selector based on subagent findings: div.list_type01 ul li
+                    const items = document.querySelectorAll('div.list_type01 ul li, .item');
                     items.forEach(el => {
-                        // Title is in strong.tit with title attribute
                         const titleEl = el.querySelector('strong.tit');
                         const title = titleEl?.getAttribute('title') || titleEl?.textContent?.trim() || '';
 
-                        // Date: look for a span containing YYYY-MM-DD or YYYY-MM pattern
-                        const allSpans = Array.from(el.querySelectorAll('span'));
+                        // Extract movie code from onclick: mstView('movie','20250523')
+                        const linkEl = el.querySelector('a.thumb, strong.tit a');
+                        const onclick = linkEl?.getAttribute('onclick') || '';
+                        const codeMatch = onclick.match(/mstView\s*\(\s*['"]movie['"]\s*,\s*['"](\d+)['"]\s*\)/);
+                        const movieCode = codeMatch ? codeMatch[1] : '';
+
+                        const allSpans = Array.from(el.querySelectorAll('span, dd'));
                         let dateRaw = '';
                         for (const span of allSpans) {
                             const txt = span.textContent?.trim() || '';
-                            // Full date: 2026-03-04
                             if (/\d{4}-\d{2}-\d{2}/.test(txt)) {
-                                dateRaw = txt.trim();
+                                dateRaw = txt.match(/\d{4}-\d{2}-\d{2}/)![0];
                                 break;
                             }
-                            // Partial date: 2026-03 (no day confirmed) -> last day of month
                             if (/^\d{4}-\d{2}$/.test(txt)) {
                                 const [year, month] = txt.split('-').map(Number);
                                 const lastDay = new Date(year, month, 0).getDate();
@@ -331,17 +384,25 @@ async function scrapeMovies() {
                             }
                         }
 
-                        if (title && dateRaw && title.length > 1) {
-                            results.push({ title: title.trim(), dateRaw });
+                        const imgEl = el.querySelector('img');
+                        let kobisPoster = imgEl?.getAttribute('src') || '';
+                        if (kobisPoster && !kobisPoster.startsWith('http')) kobisPoster = 'https://www.kobis.or.kr' + kobisPoster;
+
+                        if (title && title.length > 1) {
+                            results.push({
+                                title: title.trim(),
+                                dateRaw,
+                                kobisPoster: kobisPoster,
+                                movieCode
+                            });
                         }
                     });
                     return results;
                 });
             };
 
-            // Iterate through all months (current to December)
+            // Iterate through all months (current to December 2026)
             for (let monthIdx = 0; monthIdx < totalMonths; monthIdx++) {
-                // Get current month label
                 const monthLabel = await upcomingPage.evaluate(() => {
                     const yearEl = document.querySelector('.year');
                     const monthEl = document.querySelector('#currentMonth');
@@ -350,16 +411,34 @@ async function scrapeMovies() {
 
                 scheduleBar.update(monthIdx + 1, { month: monthLabel.substring(0, 15), count: upcomingMovies.length });
 
-                // Paginate through all pages in this month
                 let pageNum = 1;
                 let hasNextPage = true;
                 while (hasNextPage) {
-                    await sleep(1500);
+                    await sleep(2000); // Wait for AJAX
 
                     const pageMovies = await extractMovies();
+
+                    // Detail Scraping: Open each movie's detail popup
+                    for (const m of pageMovies) {
+                        if (m.movieCode) {
+                            try {
+                                const detail: any = await upcomingPage.evaluate(`(${extractKobisDetailStr})("${m.movieCode}")`);
+
+                                if (detail) {
+                                    if (detail.highResPoster) m.kobisPoster = detail.highResPoster;
+                                    if (detail.director) m.director = detail.director;
+                                    if (detail.cast && detail.cast.length > 0) m.cast = detail.cast;
+                                    if (detail.titleEn) m.titleEn = detail.titleEn;
+                                }
+                            } catch (e) {
+                                console.warn(`Failed detail for ${m.title}: ${e}`);
+                            }
+                            await sleep(500);
+                        }
+                    }
+
                     upcomingMovies.push(...pageMovies);
 
-                    // Check if there's a next page using goPage() onclick pattern
                     hasNextPage = await upcomingPage.evaluate((currentPage) => {
                         const nextPageNum = currentPage + 1;
                         const pagingDiv = document.querySelector('.paging');
@@ -377,10 +456,9 @@ async function scrapeMovies() {
                     }, pageNum).catch(() => false);
 
                     pageNum++;
-                    if (pageNum > 30) break; // Safety limit
+                    if (pageNum > 30) break;
                 }
 
-                // Navigate to next month using #nextMonth button
                 if (monthIdx < totalMonths - 1) {
                     const navigated = await upcomingPage.evaluate(() => {
                         const nextBtn = document.querySelector('#nextMonth') as HTMLElement;
@@ -392,7 +470,7 @@ async function scrapeMovies() {
                     }).catch(() => false);
 
                     if (!navigated) break;
-                    await sleep(2500); // Wait for AJAX reload after month change
+                    await sleep(3000);
                 }
             }
 
@@ -540,10 +618,22 @@ async function scrapeMovies() {
         const finalMovies: any[] = [];
 
         for (const m of allMoviesToProcess) {
-            const existing = existingMap.get(m.title);
+            let existing = existingMap.get(m.title);
             const hasFallbackPoster = existing?.posterFallback === true;
-            if (existing && existing.venue && existing.image && existing.cast && existing.director && !hasFallbackPoster) {
-                // Skip if it has good data AND a real (non-fallback) poster.
+
+            // Year Mismatch detection
+            const existingYear = existing?.date?.match(/\d{4}/)?.[0];
+            const kobisYear = m.dateRaw?.match(/\d{4}/)?.[0];
+            const yearMismatch = existingYear && kobisYear && existingYear !== kobisYear;
+
+            if (yearMismatch && existing) {
+                console.log(`[Year Mismatch] ${m.title}: Clearing old data (${existingYear} -> ${kobisYear})`);
+                // Clear existing data to avoid mixing with new release
+                existing = { id: existing.id, title: existing.title };
+            }
+
+            if (existing && existing.venue && existing.image && existing.cast && existing.director && !hasFallbackPoster && !yearMismatch) {
+                // Skip if it has good data AND a real (non-fallback) poster AND years match.
                 if (m.rank) {
                     existing.rank = parseInt(m.rank);
                 } else if (!m.rank && existing.rank) {
@@ -590,7 +680,18 @@ async function scrapeMovies() {
             const existingForId = existingMap.get(m.title);
             const id = existingForId?.id || `movie_${slugify(m.title)}`;
 
-            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 영화`)}`;
+            // Include year and director/English title in search to avoid mismatches
+            let yearSearch = '';
+            if (m.dateRaw) {
+                const yearMatch = m.dateRaw.match(/\d{4}/);
+                if (yearMatch) yearSearch = ` ${yearMatch[0]}년`;
+            }
+
+            let extraSearch = '';
+            if (m.director) extraSearch += ` ${m.director}`;
+            else if (m.titleEn) extraSearch += ` ${m.titleEn}`;
+
+            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title}${yearSearch}${extraSearch} 영화`)}`;
 
             const item: any = {
                 id,
@@ -599,6 +700,8 @@ async function scrapeMovies() {
                 region: '전국', // Default
                 genre: 'movie',
                 rank: m.rank ? parseInt(m.rank) : undefined,
+                director: m.director || undefined,
+                cast: m.cast || undefined,
                 link: searchUrl // Add Link
             };
 
@@ -682,7 +785,7 @@ async function scrapeMovies() {
                     item.venue = '등급 미정';
                 }
 
-                // Image Processing & Fallback Poster Detection
+                // Poster Selection: Prioritize Naver, but fallback to KOBIS if Naver is fallback/missing
                 const FALLBACK_PATTERNS = [
                     'no_img_people',
                     'sstatic.naver.net/people/',
@@ -692,9 +795,19 @@ async function scrapeMovies() {
                     'default_image'
                 ];
 
-                if (item.poster) {
-                    const isFallback = FALLBACK_PATTERNS.some(p => item.poster.includes(p));
-                    item.posterUrl = item.poster; // Preserve raw URL for future re-checks
+                let selectedPoster = item.poster || '';
+                let isFallback = !selectedPoster || FALLBACK_PATTERNS.some(p => selectedPoster.includes(p));
+
+                if (isFallback && m.kobisPoster) {
+                    console.log(`[Poster Fallback] Using KOBIS poster for ${item.title}`);
+                    selectedPoster = m.kobisPoster;
+                    isFallback = false; // KOBIS poster is considered legitimate
+                }
+
+                if (selectedPoster) {
+                    item.posterUrl = selectedPoster;
+                    item.poster = selectedPoster; // For PerformanceCard src fallback
+                    item.backupPoster = selectedPoster; // For ImageWithFallback backupSrc
                     item.posterFallback = isFallback;
 
                     if (isFallback) {
@@ -750,7 +863,13 @@ async function scrapeMovies() {
             // finalMovies contains both cached (no enrichment needed) AND newly enriched movies
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
-                const merged = {
+
+                // Final safety: if year mismatch, don't merge old metadata
+                const existingYear = existing?.date?.match(/\d{4}/)?.[0];
+                const newYear = newMovie.date?.match(/\d{4}/)?.[0];
+                const yearMismatch = existingYear && newYear && existingYear !== newYear;
+
+                const merged = yearMismatch ? { ...newMovie, lastCollected: now } : {
                     ...existing,
                     ...newMovie,
                     lastCollected: now
