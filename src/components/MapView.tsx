@@ -226,7 +226,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         }
 
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
-        setShowSearchHereBtn(false);
+        // Keep the search button visible after search (user may want to search again)
     }, [selectedGenre]);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
@@ -707,6 +707,13 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     </button>
                                 );
                             })}
+                        </div>
+                    )}
+                    {visibleVenues.length === 0 && isMapReady && (
+                        <div className="flex items-center justify-center py-6 pointer-events-auto">
+                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur px-4 py-2 rounded-full shadow">
+                                주변 공연장이 없습니다.
+                            </span>
                         </div>
                     )}
                 </div>
