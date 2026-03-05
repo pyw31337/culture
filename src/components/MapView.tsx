@@ -47,16 +47,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const paramLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
     const centerName = searchParams.get('venue') || '';
 
-    // For movie genre, default to Seoul Station if no explicit location provided
+    // Default to Seoul Station for ALL genres when no explicit location provided
     const SEOUL_STATION = useMemo(() => ({ lat: 37.554648, lng: 126.972559 }), []);
-    const centerLat = paramLat || (selectedGenre === 'movie' ? SEOUL_STATION.lat : null);
-    const centerLng = paramLng || (selectedGenre === 'movie' ? SEOUL_STATION.lng : null);
+    const centerLat = paramLat || SEOUL_STATION.lat;
+    const centerLng = paramLng || SEOUL_STATION.lng;
     // Memoize centerLocation to prevent infinite re-render loop in map effects
     const centerLocation = useMemo(() => {
         if (!centerLat || !centerLng) return null;
-        const name = centerName || (selectedGenre === 'movie' && !paramLat ? '서울역' : '');
+        const name = centerName || (!paramLat ? '서울역' : '');
         return { lat: centerLat, lng: centerLng, name };
-    }, [centerLat, centerLng, centerName, selectedGenre, paramLat]);
+    }, [centerLat, centerLng, centerName, paramLat]);
 
     // Load full data client-side
     const { allPerformances, cinemas: clientCinemas } = usePerformanceData({ initialPerformances });
