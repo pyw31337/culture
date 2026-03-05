@@ -47,16 +47,41 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const paramLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
     const centerName = searchParams.get('venue') || '';
 
-    // Default to Seoul Station for ALL genres when no explicit location provided
+    // Default center: try user's GPS first, fall back to Seoul Station
     const SEOUL_STATION = useMemo(() => ({ lat: 37.554648, lng: 126.972559 }), []);
-    const centerLat = paramLat || SEOUL_STATION.lat;
-    const centerLng = paramLng || SEOUL_STATION.lng;
-    // Memoize centerLocation to prevent infinite re-render loop in map effects
+    const [geoCenter, setGeoCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
+    const geoAttempted = useRef(false);
+
+    // Request geolocation on mount (only if no explicit lat/lng in URL)
+    useEffect(() => {
+        if (geoAttempted.current || paramLat) return;
+        geoAttempted.current = true;
+
+        if (!navigator.geolocation) {
+            setGeoCenter({ ...SEOUL_STATION, name: '서울역' });
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                setGeoCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude, name: '내 위치' });
+            },
+            () => {
+                setGeoCenter({ ...SEOUL_STATION, name: '서울역' });
+            },
+            { enableHighAccuracy: false, timeout: 5000, maximumAge: 300000 }
+        );
+    }, [paramLat, SEOUL_STATION]);
+
+    // Resolve center: URL params > GPS > Seoul Station
     const centerLocation = useMemo(() => {
-        if (!centerLat || !centerLng) return null;
-        const name = centerName || (!paramLat ? '서울역' : '');
-        return { lat: centerLat, lng: centerLng, name };
-    }, [centerLat, centerLng, centerName, paramLat]);
+        if (paramLat && paramLng) {
+            return { lat: paramLat, lng: paramLng, name: centerName };
+        }
+        if (geoCenter) return geoCenter;
+        // Fallback while waiting for geo response
+        return { ...SEOUL_STATION, name: '서울역' };
+    }, [paramLat, paramLng, centerName, geoCenter, SEOUL_STATION]);
 
     // Load full data client-side
     const { allPerformances, cinemas: clientCinemas } = usePerformanceData({ initialPerformances });
