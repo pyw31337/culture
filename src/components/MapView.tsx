@@ -96,11 +96,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             genre: selectedGenre,
             search: searchMode === 'keyword' ? searchText : '',
             searchMode,
-            lat: centerLat || undefined,
-            lng: centerLng || undefined,
+            lat: centerLocation?.lat || undefined,
+            lng: centerLocation?.lng || undefined,
             radius: 10
         });
-    }, [allPerformances, selectedGenre, searchMode, searchText, centerLat, centerLng]);
+    }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation]);
 
     // === Map State ===
     const mapRef = useRef<HTMLDivElement>(null);
