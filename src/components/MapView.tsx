@@ -601,12 +601,13 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                             <button
                                                 onClick={() => {
                                                     const params = new URLSearchParams();
-                                                    if (selectedGenre && selectedGenre !== 'all') params.set('genre', selectedGenre);
                                                     params.set('mode', 'location');
                                                     params.set('lat', String(selectedVenueData.lat));
                                                     params.set('lng', String(selectedVenueData.lng));
                                                     params.set('venue', selectedVenue);
-                                                    router.push(`/?${params.toString()}`);
+
+                                                    const basePath = (selectedGenre && selectedGenre !== 'all') ? `/${selectedGenre}` : '/';
+                                                    router.push(`${basePath}?${params.toString()}`);
                                                 }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <ExternalLink size={12} />
