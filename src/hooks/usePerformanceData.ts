@@ -15,13 +15,12 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
         const loadAllData = async () => {
             try {
                 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-                const ts = new Date().getTime();
 
                 const results = await Promise.allSettled([
-                    fetch(`${basePath}/data/performances.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/movies.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/cinemas.json?v=${ts}`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/venues.json?v=${ts}`).then(r => r.ok ? r.json() : {})
+                    fetch(`${basePath}/data/performances.json`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/movies.json`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/cinemas.json`).then(r => r.ok ? r.json() : []),
+                    fetch(`${basePath}/data/venues.json`).then(r => r.ok ? r.json() : {})
                 ]);
 
                 const mergedData: Performance[] = [];

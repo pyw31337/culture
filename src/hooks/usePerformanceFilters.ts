@@ -50,7 +50,7 @@ export function usePerformanceFilters({
         const regionVenues = Object.values(venues).filter(v => v.mapped_region_id === selectedRegion);
         const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
         return Array.from(uniqueDistricts).sort();
-    }, [selectedRegion]);
+    }, [selectedRegion, venues]);
 
     const availableVenues = useMemo(() => {
         let relevantVenues = Object.keys(venues);

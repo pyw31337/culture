@@ -31,9 +31,7 @@ import { useSearchLogic } from '@/hooks/useSearchLogic';
 import { usePerformanceFilters } from '@/hooks/usePerformanceFilters';
 import { useHeroTemplates } from '@/hooks/useHeroTemplates';
 
-// Dynamic Modals for Code Splitting
-const KakaoMapModal = dynamic(() => import('./KakaoMapModal'), { ssr: false });
-const CalendarModal = dynamic(() => import('./CalendarModal'), { ssr: false });
+// Dynamic Modals for Code Splitting (Map & Calendar are now separate pages)
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 const SharedDetailModal = dynamic(() => import('./SharedDetailModal'), { ssr: false });
 
@@ -53,7 +51,6 @@ export default function PerformanceList({
     categoryLabel
 }: PerformanceListProps) {
     const router = useRouter();
-    const [focusVenue, setFocusVenue] = useState<{ lat: number, lng: number, name: string } | null>(null);
 
     // --- Custom Hooks (Modular Logic) ---
     const {
@@ -87,7 +84,7 @@ export default function PerformanceList({
     const [viewMode, setViewMode] = useState<string>('grid');
     const [savedScrollPosition, setSavedScrollPosition] = useState(0);
     const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
-    const [isMapOpen, setIsMapOpen] = useState(false);
+
     const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
     const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
     const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
@@ -160,16 +157,14 @@ export default function PerformanceList({
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
         if (g !== 'movie') setShuffleSeed(Date.now());
+        // Remove calendar-view guard since calendar is now a separate page
         if (viewMode === 'likes-perf') setViewMode('grid');
 
-        // Prevent navigation if we are in calendar mode (prevents modal closing)
-        if (viewMode !== 'calendar') {
-            const path = g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`;
-            if (searchText) {
-                router.push(`${path}?q=${encodeURIComponent(searchText)}`);
-            } else {
-                router.push(path);
-            }
+        const path = g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`;
+        if (searchText) {
+            router.push(`${path}?q=${encodeURIComponent(searchText)}`);
+        } else {
+            router.push(path);
         }
     }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router, searchText]);
 
@@ -311,12 +306,12 @@ export default function PerformanceList({
                     />
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
-                        <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={setIsMapOpen} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
+                        <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={() => router.push(`/map?genre=${selectedGenre}`)} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
                     ) : viewMode === 'likes-perf' ? (
                         <LikedSections
                             viewMode={viewMode} allPerformances={allPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
                             venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }} setIsMapOpen={setIsMapOpen}
+                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }} setIsMapOpen={() => router.push(`/map?genre=${selectedGenre}`)}
                             copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
                             setShowFavoriteListModal={setShowFavoriteListModal} layoutMode={layoutMode}
                         />
@@ -333,8 +328,8 @@ export default function PerformanceList({
                             onToggleLike={toggleLike}
                             handleDetailOpen={handleDetailOpen}
                             setSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { setFocusVenue(loc); setIsMapOpen(true); }}
-                            setIsMapOpen={setIsMapOpen}
+                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }}
+                            setIsMapOpen={() => router.push(`/map?genre=${selectedGenre}`)}
                             copyItemShareUrl={copyItemShareUrl}
                             selectedGenre={selectedGenre}
                             viewMode={viewMode}
@@ -353,44 +348,11 @@ export default function PerformanceList({
             </main>
 
             {/* 4. Navigation & Modals */}
-            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={() => { setIsMapOpen(true); }} onCalendarClick={() => setViewMode(viewMode === 'calendar' ? 'grid' : 'calendar')} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
+            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={() => { router.push(`/map?genre=${selectedGenre}`); }} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
             <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={setSelectedVenue} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => { setSearchText(res.name); }} />
 
-            {isMapOpen && (
-                <KakaoMapModal
-                    performances={filteredPerformances} // ALWAYS pass filtered to ensure map markers match the grid feed exactly
-                    cinemas={selectedGenre === 'movie' ? cinemas : []}
-                    selectedGenre={selectedGenre}
-                    searchMode={searchMode}
-                    searchText={searchText}
-                    centerLocation={
-                        focusVenue ||
-                        searchLocation ||
-                        (selectedGenre === 'movie' ? (userLocation ? { ...userLocation, name: '내 위치' } : { lat: 37.554648, lng: 126.972559, name: '서울역' }) : null)
-                    }
-                    favoriteVenues={favoriteVenues}
-                    onToggleFavorite={toggleFavoriteVenue}
-                    onClose={() => {
-                        setIsMapOpen(false);
-                        setFocusVenue(null);
-                    }}
-                    onVenueLocationChange={(name, lat, lng) => {
-                        setSearchLocation({ name, lat, lng });
-                        setIsMapOpen(false);
-                    }}
-                    onMapSearchHere={(lat, lng, venueName) => {
-                        setSearchMode('location');
-                        setSearchLocation({
-                            name: venueName ? `${venueName} 주변` : '지도 탐색 위치',
-                            lat,
-                            lng
-                        });
-                    }}
-                />
-            )}
-            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setFocusVenue({ lat: venues[name]?.lat || 0, lng: venues[name]?.lng || 0, name }); setIsMapOpen(true); }} />}
-            {viewMode === 'calendar' && <CalendarModal performances={allPerformances} onClose={() => setViewMode('grid')} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} />}
+            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
         </div>
     );
