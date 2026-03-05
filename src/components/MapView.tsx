@@ -170,8 +170,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         }
 
         if (isMovieMode || isAllMode) {
-            const moviePerformances = isMovieMode ? performances.filter(p => p.genre === 'movie') : [];
-            const topMovies = isMovieMode ? moviePerformances.slice(0, 10) : [];
+            const moviePerformances = performances.filter(p => p.genre === 'movie');
+            const topMovies = moviePerformances.slice(0, 10);
 
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i] as Cinema;
@@ -179,7 +179,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     groupsMap.set(cinema.name, {
                         venueName: cinema.name, address: cinema.address,
                         lat: cinema.lat, lng: cinema.lng, brand: (cinema as any).brand,
-                        type: 'cinema', performances: isMovieMode ? topMovies : [],
+                        type: 'cinema', performances: topMovies,
                         kakaoLatLng: null, firstAppearanceIndex: i
                     });
                 }
