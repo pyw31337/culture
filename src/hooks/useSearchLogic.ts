@@ -121,14 +121,7 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
         }
     }, [searchText, searchMode, allPerformances, kakaoSearchResults]);
 
-    // Dropdown auto-management
-    useEffect(() => {
-        if (searchMode === 'location' && searchLocation && searchText === searchLocation.name) return;
-        if (searchText.trim().length > 0) {
-            if (searchMode === 'keyword' && searchResults.length > 0) setIsDropdownOpen(true);
-            if (searchMode === 'location' && kakaoSearchResults.length > 0) setIsDropdownOpen(true);
-        }
-    }, [searchResults, searchText, searchMode, kakaoSearchResults, searchLocation]);
+    // Dropdown auto-management removed to prevent auto-opening on category change
 
     useEffect(() => {
         setHighlightedIndex(-1);
