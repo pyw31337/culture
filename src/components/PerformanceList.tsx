@@ -180,12 +180,20 @@ export default function PerformanceList({
         if (viewMode === 'likes-perf') setViewMode('grid');
 
         const path = g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`;
-        if (searchText) {
+        if (searchMode === 'location' && searchLocation) {
+            const params = new URLSearchParams();
+            if (searchText) params.set('q', searchText);
+            params.set('mode', 'location');
+            params.set('lat', String(searchLocation.lat));
+            params.set('lng', String(searchLocation.lng));
+            params.set('venue', searchLocation.name);
+            router.push(`${path}?${params.toString()}`);
+        } else if (searchText) {
             router.push(`${path}?q=${encodeURIComponent(searchText)}`);
         } else {
             router.push(path);
         }
-    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router, searchText]);
+    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router, searchText, searchMode, searchLocation]);
 
     const handleLikePerfClick = useCallback(() => {
         if (viewMode === 'likes-perf') {
