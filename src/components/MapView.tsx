@@ -6,7 +6,7 @@ import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Plus, Minus, ExternalLink } from 'lucide-react';
+import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
@@ -451,6 +451,53 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         else router.push('/');
     };
 
+    // My Location
+    const [isLocating, setIsLocating] = useState(false);
+    const myLocationOverlayRef = useRef<any>(null);
+
+    const handleMyLocation = useCallback(() => {
+        if (!mapInstance || !isMapReady) return;
+        if (!navigator.geolocation) { alert('이 브라우저에서는 위치 서비스를 지원하지 않습니다.'); return; }
+
+        setIsLocating(true);
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                const { latitude, longitude } = pos.coords;
+                const k = window.kakao.maps;
+                const loc = new k.LatLng(latitude, longitude);
+
+                mapInstance.panTo(loc);
+                mapInstance.setLevel(4, { animate: true });
+
+                // Remove previous my-location overlay
+                if (myLocationOverlayRef.current) { myLocationOverlayRef.current.setMap(null); }
+
+                const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-50%);">
+                    <div class="bg-blue-500 text-white px-2 py-0.5 rounded-lg text-[10px] font-extrabold shadow-md mb-1 whitespace-nowrap border border-blue-400 font-sans">내 위치</div>
+                    <div class="w-4 h-4 bg-blue-500 border-2 border-white rounded-full shadow-lg relative">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-50"></div>
+                    </div>
+                </div>`;
+                const overlay = new k.CustomOverlay({ map: mapInstance, position: loc, content, zIndex: 99 });
+                myLocationOverlayRef.current = overlay;
+                mapOverlaysRef.current.push(overlay);
+
+                // Sort venues by distance from my location
+                const sorted = [...allVenuesList.current].sort((a, b) =>
+                    getDistanceFromLatLonInKm(latitude, longitude, a.lat, a.lng) - getDistanceFromLatLonInKm(latitude, longitude, b.lat, b.lng)
+                );
+                setVisibleVenues(sorted.slice(0, selectedGenre === 'movie' ? 50 : 200));
+                setShowSearchHereBtn(false);
+                setIsLocating(false);
+            },
+            (err) => {
+                setIsLocating(false);
+                alert('위치를 가져올 수 없습니다. 위치 권한을 확인해주세요.');
+            },
+            { enableHighAccuracy: true, timeout: 10000 }
+        );
+    }, [mapInstance, isMapReady, selectedGenre]);
+
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
@@ -478,6 +525,20 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             className="px-4 py-2 bg-blue-600 text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm animate-fade-in-up">
                             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                             현 위치에서 검색
+                        </button>
+                    </div>
+                )}
+
+                {/* My Location Button */}
+                {isMapReady && (
+                    <div className="absolute top-4 left-4 z-[100]">
+                        <button onClick={handleMyLocation} disabled={isLocating}
+                            className={clsx("p-2.5 rounded-full shadow-md transition",
+                                isLocating
+                                    ? "bg-blue-500 text-white animate-pulse"
+                                    : "bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70"
+                            )} title="내 위치">
+                            <Locate className="w-5 h-5" />
                         </button>
                     </div>
                 )}
