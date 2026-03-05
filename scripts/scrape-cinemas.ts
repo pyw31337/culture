@@ -35,10 +35,22 @@ async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Ci
             if (data.documents) {
                 const mapped = data.documents
                     .filter((doc: any) => {
-                        // Exclude non-cinema facilities
+                        // 1. Exclude non-cinema facilities by keyword
                         const invalidKeywords = ['주차장', '화장실', '매표소', '매점', '본사', '고객센터', '오피스', '사무실', '물류', '엘리베이터', '타워'];
                         if (invalidKeywords.some(kw => doc.place_name.includes(kw))) return false;
                         if (doc.category_name && (doc.category_name.includes('주차장') || doc.category_name.includes('화장실'))) return false;
+
+                        // 2. Category-based filter: Kakao categories for cinemas typically include '영화관' or '문화시설'
+                        // Exclude obvious non-cinema categories
+                        const nonCinemaCategories = ['음식점', '카페', '편의점', '주유소', '통신', '은행', '미용', '세탁', '약국', '학원', '부동산', '숙박', '주차', '자동차', '골프', '노래', '치킨', '피자', '버거', '족발', '감자탕', '네일'];
+                        if (doc.category_name && nonCinemaCategories.some(cat => doc.category_name.includes(cat))) return false;
+
+                        // 3. Name-prefix filter: Real cinemas start with cinema brand names
+                        const name = doc.place_name || '';
+                        const cinemaPrefixes = ['CGV', 'cgv', '메가박스', 'MEGABOX', '롯데시네마', '롯데 시네마', 'LOTTE', '씨네', '시네마', '극장', '영화', '필름', '아트하우스', '인디스페이스', '에무시네마', '오오극장', '브로드웨이'];
+                        const startsWithCinema = cinemaPrefixes.some(prefix => name.toLowerCase().startsWith(prefix.toLowerCase()));
+                        if (!startsWithCinema) return false;
+
                         return true;
                     })
                     .map((doc: any) => ({
