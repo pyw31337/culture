@@ -442,10 +442,12 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         const container = document.createElement('div');
         container.style.pointerEvents = 'auto';
+        container.style.position = 'relative';
+        container.style.bottom = '22px';
 
         const overlay = new k.CustomOverlay({
             position: new k.LatLng(venueValue.lat, venueValue.lng),
-            content: container, yAnchor: 1.1, xAnchor: 0.5, zIndex: 1000, clickable: true
+            content: container, yAnchor: 1.0, xAnchor: 0.5, zIndex: 1000, clickable: true
         });
 
         overlay.setMap(mapInstance);
