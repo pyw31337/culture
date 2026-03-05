@@ -593,12 +593,20 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                         </div>
                                     ) : selectedVenueData.lat && selectedVenueData.lng ? (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
-                                            <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
-                                                target="_blank" rel="noopener noreferrer"
+                                            <button
+                                                onClick={() => {
+                                                    const params = new URLSearchParams();
+                                                    if (selectedGenre && selectedGenre !== 'all') params.set('genre', selectedGenre);
+                                                    params.set('mode', 'location');
+                                                    params.set('lat', String(selectedVenueData.lat));
+                                                    params.set('lng', String(selectedVenueData.lng));
+                                                    params.set('venue', selectedVenue);
+                                                    router.push(`/?${params.toString()}`);
+                                                }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <ExternalLink size={12} />
                                                 {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
-                                            </a>
+                                            </button>
                                         </div>
                                     ) : null}
 
