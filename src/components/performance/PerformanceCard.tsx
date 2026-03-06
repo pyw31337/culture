@@ -176,16 +176,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     style={{ transform: 'translateZ(0)', clipPath: 'inset(0 round 15px)' }}
                 >
 
-                    {showRibbon && (
-                        <div className="absolute top-0 left-0 z-[60] w-24 h-24 pointer-events-none overflow-hidden rounded-tl-xl">
-                            <div className={clsx(
-                                "absolute top-0 left-0 text-white text-[10px] font-extrabold py-1 w-32 text-center origin-top-left -rotate-45 translate-y-[18px] -translate-x-[26px] shadow-lg box-border border-b-2 border-white/20",
-                                searchMode === 'location' ? "bg-emerald-500" : "bg-[#a78bfa]"
-                            )}>
-                                {ribbonText}
-                            </div>
-                        </div>
-                    )}
 
                     <button
                         onClick={(e) => {
