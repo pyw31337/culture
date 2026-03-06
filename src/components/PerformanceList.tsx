@@ -341,7 +341,7 @@ export default function PerformanceList({
                     <ResultsHeader
                         viewMode={viewMode} activeLocation={activeLocation} searchLocation={searchLocation} searchText={searchText}
                         searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={filteredPerformances.length} radius={radius}
-                        onResetFilters={() => { setSearchLocation(null); setSearchText(''); }} onRadiusChange={setRadius}
+                        onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
                     />
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
