@@ -307,6 +307,9 @@ export default function PerformanceList({
                     setActiveSearchSource={setActiveSearchSource} setIsDropdownOpen={setIsDropdownOpen} handleSearch={() => { }}
                     handleSelectResult={(res: any) => {
                         setSearchText(res.name);
+                        if (searchMode === 'location' && res.lat && res.lng) {
+                            setSearchLocation({ lat: res.lat, lng: res.lng, name: res.name });
+                        }
                         setIsDropdownOpen(false);
                         if (selectedGenre !== 'all') handleGenreSelect('all');
                     }}
@@ -405,7 +408,12 @@ export default function PerformanceList({
                         setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10);
                     }
                 }
-            }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => { setSearchText(res.name); }} />
+            }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => {
+                setSearchText(res.name);
+                if (searchMode === 'location' && res.lat && res.lng) {
+                    setSearchLocation({ lat: res.lat, lng: res.lng, name: res.name });
+                }
+            }} />
 
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
