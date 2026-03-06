@@ -198,8 +198,25 @@ async (code) => {
     // High-res poster cleaning from thumbnail
     const imgEl = popup.querySelector('a.thumb img');
     let poster = imgEl?.src || '';
-    if (poster.includes('thumb_x192/thn_')) {
-        poster = poster.replace('thumb_x192/thn_', '');
+    
+    // [보안/강화] 만약 추출된 이미지가 인물(people) 경로이거나, 비정상적으로 작을 경우 혹은 포스터 느낌이 아닐 경우
+    // '포스터/스틸' 탭을 강제로 눌러서 극장용 포스터를 가져옵니다.
+    if (poster.includes('/people/') || poster.includes('/staff/') || !poster.includes('/movie/')) {
+        const tabs = Array.from(popup.querySelectorAll('.tab_type01 li a, .tab_menu li a'));
+        const posterTab = tabs.find(a => a.textContent.includes('포스터') || a.textContent.includes('스틸') || a.textContent.includes('갤러리'));
+        if (posterTab instanceof HTMLElement) {
+            posterTab.click();
+            await wait(800);
+            // 갤러리 내의 첫 번째 이미지를 포스터로 간주 (보통 첫 번째가 메인 포스트)
+            const galleryImg = popup.querySelector('.poster_list img, .gallery_list img, .thumb_list img');
+            if (galleryImg instanceof HTMLImageElement && galleryImg.src) {
+                poster = galleryImg.src;
+            }
+        }
+    }
+
+    if (poster.includes('thumb_x192')) {
+        poster = poster.replace('thumb_x192/', '').replace('thn_', '');
     }
     res.highResPoster = poster;
 
@@ -429,9 +446,16 @@ async function scrapeMovies() {
                         title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
 
                         // Extract movie code from onclick: mstView('movie','20250523')
+                        // [강화] 인물('people')이나 스태프가 아닌 'movie' 태그가 명시된 것만 수집하도록 엄격히 필터링
                         const linkEl = el.querySelector('a.thumb, strong.tit a');
                         const onclick = linkEl?.getAttribute('onclick') || '';
                         const codeMatch = onclick.match(/mstView\s*\(\s*['"]movie['"]\s*,\s*['"](\d+)['"]\s*\)/);
+
+                        // 만약 'movie'가 아니면 건너뜀 (인물 사진 수집 방지)
+                        if (!codeMatch && onclick.includes('people')) {
+                            return;
+                        }
+
                         const movieCode = codeMatch ? codeMatch[1] : '';
 
                         const allSpans = Array.from(el.querySelectorAll('span, dd'));
