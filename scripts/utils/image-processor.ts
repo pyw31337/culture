@@ -69,6 +69,7 @@ export async function processImage(url: string, filenameBase: string, subDir: st
         let referer = 'https://www.naver.com/';
         if (url.includes('namu.wiki') || url.includes('namu.mirror')) referer = 'https://namu.wiki/';
         if (url.includes('daum') || url.includes('kakao')) referer = 'https://daum.net/';
+        if (url.includes('kobis.or.kr')) referer = 'https://www.kobis.or.kr/';
 
         const response = await axios({
             url,
