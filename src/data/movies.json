@@ -1016,9 +1016,9 @@
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_투어스브이알콘서트러쉬로드.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_8631bb78179540538834f862fa6edf04.jpg"
   },
   {
@@ -1036,8 +1036,8 @@
     "lastCollected": "2026-03-06T01:38:19.942Z",
     "dateRaw": "2026-03-04",
     "posterFallback": false,
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg"
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg"
   },
   {
     "id": "movie_아르코",
@@ -1066,9 +1066,11 @@
     "genre": "movie",
     "link": "https://search.naver.com/search.naver?query=%EC%98%A4%EB%A7%8C%EA%B3%BC%20%ED%8E%B8%EA%B2%AC%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "image": "",
-    "posterFallback": true,
-    "lastCollected": "2026-03-06T01:38:19.942Z"
+    "image": "/images/posters/movies/movie_오만과편견.webp",
+    "posterFallback": false,
+    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/b407380977ea4452b093821831987026.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/b407380977ea4452b093821831987026.jpg"
   },
   {
     "id": "movie_그_사람_경허_선사",
