@@ -142,10 +142,15 @@ export default function BottomNavSheet({
         }
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            (e.target as HTMLInputElement).blur();
+
+            if (searchMode === 'location' && searchResults?.length > 0 && searchText.trim() !== '') {
+                onResultSelect(searchResults[0]);
+                onClose();
+                return;
+            }
 
             // Check for Choseong (Initial Consonants) or short Korean text
             // Regex for ONLY Choseong (Consonants) and spaces

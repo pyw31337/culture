@@ -527,8 +527,12 @@ export default function HeroSection({
                                 }}
                                 onKeyDown={(e) => {
                                     if (e.key === 'Enter') {
-                                        setIsDropdownOpen(false);
-                                        handleKeyDown(e);
+                                        if (searchMode === 'location' && searchResults?.length > 0 && searchText.trim() !== '') {
+                                            handleSelectResult(searchResults[0]);
+                                        } else {
+                                            setIsDropdownOpen(false);
+                                            handleKeyDown(e);
+                                        }
                                     }
                                 }}
                                 className="bg-transparent border-none text-white light:text-black text-lg font-extrabold px-5 py-3 w-full lg:w-[480px] focus:outline-none placeholder-gray-600 caret-white light:caret-black"
