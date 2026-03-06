@@ -1,0 +1,6698 @@
+[
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_가족뮤지컬_뽀로로와_신비한_여행_서울앵콜",
+    "title": "가족뮤지컬 〈뽀로로와 신비한 여행〉 - 서울앵콜",
+    "region": "서울",
+    "address": "서울 용산구 녹사평대로 150",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_소통왕_말자쑈_서울",
+    "title": "2026 소통왕 말자쑈! - 서울",
+    "region": "gangwon",
+    "address": "강원 원주시 흥업면 한라대길 28",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_팝페라테너_임형주_신춘독창회_Popera_Sensation",
+    "title": "2026 팝페라테너 임형주 신춘독창회 Popera Sensation!",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_SHIN_SEUNG_HUN_LIMITED_EDITION",
+    "title": "2026 SHIN SEUNG HUN LIMITED EDITION",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_론_브랜튼_솔로_피아노_콘서트",
+    "title": "론 브랜튼 솔로 피아노 콘서트",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_시인과_촌장_45주년_콘서트_서울",
+    "title": "시인과 촌장 45주년 콘서트 - 서울",
+    "region": "서울",
+    "address": "강원 원주시 흥업면 한라대길 28",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_GS아트센터_X_서울재즈페스티벌_인코그니토",
+    "title": "GS아트센터 X 서울재즈페스티벌 〈인코그니토〉",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_뚱뚱한_로미오를_사랑한_줄리엣_서울_대학로_공연",
+    "title": "뚱뚱한 로미오를 사랑한 줄리엣 - 서울 대학로 공연",
+    "region": "서울",
+    "address": "서울 종로구 창경궁로 253",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_충남_논산_4_25_토_4PM_봄바라기_앙상블_패치워크_2026_위클리_클래식_페스티벌",
+    "title": "［충남 논산］ 4/25(토) 4PM 봄바라기 앙상블 패치워크 - 2026 위클리 클래식 페스티벌",
+    "region": "서울",
+    "address": "서울 서초구 효령로 51길 26",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_충남_논산_6_27_토_4pm_Love_Just_Horn_호른으로_사랑을_듣다_2026_위클리_클래식_페스티벌",
+    "title": "［충남 논산］ 6/27(토) 4pm Love, Just Horn 호른으로 사랑을 듣다 | 2026 위클리 클래식 페스티벌",
+    "region": "seoul",
+    "address": "서울 서초구 효령로 51길 26",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_금호아트홀_상주음악가_바리톤_김태한_페르소나_II_관계",
+    "title": "2026 금호아트홀 상주음악가 바리톤 김태한, 페르소나 II. 관계",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_금호아트홀_상주음악가_바리톤_김태한_페르소나_III_사랑",
+    "title": "2026 금호아트홀 상주음악가 바리톤 김태한, 페르소나 III. 사랑",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_금호아트홀_상주음악가_바리톤_김태한_페르소나_IV_고독",
+    "title": "2026 금호아트홀 상주음악가 바리톤 김태한, 페르소나 IV. 고독",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_서울시향_체임버_클래식스_IV_체코",
+    "title": "2026 서울시향 체임버 클래식스 IV: 체코",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_경기필하모닉오케스트라_4_18",
+    "title": "2026 예술의전당 교향악축제 - 경기필하모닉오케스트라(4.18)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_공주시충남교향악단_4_21",
+    "title": "2026 예술의전당 교향악축제 - 공주시충남교향악단(4.21)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_광주시립교향악단_4_12",
+    "title": "2026 예술의전당 교향악축제 - 광주시립교향악단(4.12)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_대구시립교향악단_4_10",
+    "title": "2026 예술의전당 교향악축제 - 대구시립교향악단(4.10)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_대전시립교향악단_4_11",
+    "title": "2026 예술의전당 교향악축제 - 대전시립교향악단(4.11)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_부산시립교향악단_4_3",
+    "title": "2026 예술의전당 교향악축제 - 부산시립교향악단(4.3)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_울산시립교향악단_4_23",
+    "title": "2026 예술의전당 교향악축제 - 울산시립교향악단(4.23)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_인천시립교향악단_4_4",
+    "title": "2026 예술의전당 교향악축제 - 인천시립교향악단(4.4)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_예술의전당_교향악축제_제주특별자치도립_제주교향악단_4_14",
+    "title": "2026 예술의전당 교향악축제 - 제주특별자치도립 제주교향악단(4.14)",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_강남심포니오케스트라_콘서트_오페라_마술피리",
+    "title": "강남심포니오케스트라 콘서트 오페라 〈마술피리〉",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_강우성의_피아노_사색_11_사람의_사랑과_생애",
+    "title": "강우성의 피아노 사색 ［思索］ #11 ＇사람의 사랑과 생애＇",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_경기필_마스터피스_시리즈_림스키코르사코프_세헤라자데_서울",
+    "title": "경기필 마스터피스 시리즈 Ⅰ 〈림스키코르사코프 세헤라자데〉 - 서울",
+    "region": "seoul",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_경기필_마스터피스_시리즈_시벨리우스_교향곡_2번_서울",
+    "title": "경기필 마스터피스 시리즈 Ⅲ 〈시벨리우스 교향곡 2번〉 - 서울",
+    "region": "서울",
+    "address": "서울 서초구 남부순환로 2406",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_권소영_바이올린_독주회_시리즈_V",
+    "title": "권소영 바이올린 독주회 시리즈 V",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호_위너스_김강태_Piano",
+    "title": "금호 위너스: 김강태 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_2025_윤이상국제음악콩쿠르_박성용영재특별상_수상자_음악회_이재리_Cello",
+    "title": "금호아트홀 아름다운 목요일 - 2025 윤이상국제음악콩쿠르 박성용영재특별상 수상자 음악회 - 이재리 Cello",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_금호솔로이스츠_V_독일_위대한_시작",
+    "title": "금호아트홀 아름다운 목요일 - 금호솔로이스츠  ＜V. 독일, 위대한 시작＞",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_금호솔로이스츠_II_동유럽_사랑과_열정으로",
+    "title": "금호아트홀 아름다운 목요일 - 금호솔로이스츠 ＜II. 동유럽, 사랑과 열정으로＞",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_금호솔로이스츠_III_오스트리아_전통의_숨결",
+    "title": "금호아트홀 아름다운 목요일 - 금호솔로이스츠 ＜III. 오스트리아, 전통의 숨결＞",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_금호솔로이스츠_IV_러시아_영혼의_기록",
+    "title": "금호아트홀 아름다운 목요일 - 금호솔로이스츠 ＜IV. 러시아, 영혼의 기록＞",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_김다미_Violin",
+    "title": "금호아트홀 아름다운 목요일 - 김다미 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_김다솔_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 김다솔 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_김재영_Violin_문태국_Cello_박재홍_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 김재영 Violin 문태국 Cello 박재홍 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_노부스_콰르텟_String_Quartet",
+    "title": "금호아트홀 아름다운 목요일 - 노부스 콰르텟 String Quartet",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_로날트_브라우티함_Fortepiano",
+    "title": "금호아트홀 아름다운 목요일 - 로날트 브라우티함 Fortepiano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_루트비히_판_베토벤_X_김태형_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 루트비히 판 베토벤 X 김태형 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_모차르트_플러스_I_폴_루이스_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 모차르트 플러스 I - 폴 루이스 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_모차르트_플러스_II_폴_루이스_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 모차르트 플러스 II - 폴 루이스 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_스티븐_허프_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 스티븐 허프  Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_유다윤_정우찬_Violin_Cello_Duo",
+    "title": "금호아트홀 아름다운 목요일 - 유다윤 ＆ 정우찬 Violin Cello Duo",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_윤홍천_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 윤홍천 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_이한나_Viola_김다솔_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 이한나 Viola 김다솔 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_이해수_Viola",
+    "title": "금호아트홀 아름다운 목요일 - 이해수 Viola",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_조진주_Violin",
+    "title": "금호아트홀 아름다운 목요일 - 조진주 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_조진주_Violin_Solo",
+    "title": "금호아트홀 아름다운 목요일 - 조진주 Violin Solo",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_트리오_오원_Piano_Trio",
+    "title": "금호아트홀 아름다운 목요일 - 트리오 오원 Piano Trio",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_프란츠_슈베르트_X_문지영_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 프란츠 슈베르트 X 문지영 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_희석_엘리아스_아클리_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 희석 엘리아스 아클리 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_I_이현정_손지우_Violin",
+    "title": "금호아트홀 아름다운 목요일 - I. 이현정 ＆ 손지우 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_I_홍석영_박해림_김아인_Piano",
+    "title": "금호아트홀 아름다운 목요일 - I. 홍석영 ＆ 박해림 ＆ 김아인 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_II_남예서_이정우_Piano",
+    "title": "금호아트홀 아름다운 목요일 - II. 남예서 ＆ 이정우 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_II_윤해원_박원민_진영훈_Violin",
+    "title": "금호아트홀 아름다운 목요일 - II. 윤해원 ＆ 박원민 ＆ 진영훈 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_III_남예서_홍석영_박해림_Piano",
+    "title": "금호아트홀 아름다운 목요일 - III. 남예서 ＆ 홍석영 ＆ 박해림 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_III_윤해원_박원민_진영훈_Violin",
+    "title": "금호아트홀 아름다운 목요일 - III. 윤해원 ＆ 박원민 ＆ 진영훈 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_IV_이정우_김아인_Piano",
+    "title": "금호아트홀 아름다운 목요일 - IV. 이정우 ＆ 김아인 Piano",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호아트홀_아름다운_목요일_J_S_바흐_X_한수진_Violin",
+    "title": "금호아트홀 아름다운 목요일 - J.S.바흐 X 한수진 Violin",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_고예지_판소리_독창회",
+    "title": "금호영아티스트콘서트 - 고예지 판소리 독창회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_오은환_오보에_독주회",
+    "title": "금호영아티스트콘서트 - 오은환 오보에 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이해온_바이올린_독주회",
+    "title": "금호영아티스트콘서트 - 이해온 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_임태오_트럼펫_독주회",
+    "title": "금호영아티스트콘서트 - 임태오 트럼펫 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_김주안_트럼펫_독주회",
+    "title": "금호영재콘서트 - 김주안 트럼펫 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_남예린_피아노_독주회",
+    "title": "금호영재콘서트 - 남예린 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_유하람_피아노_독주회",
+    "title": "금호영재콘서트 - 유하람 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_이윤서_피아노_독주회",
+    "title": "금호영재콘서트 - 이윤서 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영체임버콘서트_브리오_퀸텟_연주회",
+    "title": "금호영체임버콘서트 - 브리오 퀸텟 연주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_김민영_피아노_독주회",
+    "title": "김민영 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_김양중_피아노_독주회",
+    "title": "김양중 피아노 독주회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_나다솜_피아노_독주회",
+    "title": "나다솜 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_나우피아노연구회_제4회_정기연주회",
+    "title": "나우피아노연구회 제4회 정기연주회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_나은아_바이올린_독주회",
+    "title": "나은아 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_류이치사카모토_트리뷰트_콘서트_서울공연",
+    "title": "류이치사카모토 트리뷰트 콘서트 서울공연",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_바이올리니스트_김혜란의_바이올린_이모션_9",
+    "title": "바이올리니스트 김혜란의 바이올린 이모션 9",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_바이올리니스트_성경주의_베토벤_바이올린_소나타_전곡_연주",
+    "title": "바이올리니스트 성경주의 베토벤 바이올린 소나타 전곡 연주 Ⅱ",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_박나혜_피아노_독주회",
+    "title": "박나혜 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_박용찬_귀국_피아노_독주회",
+    "title": "박용찬 귀국 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_브람스의_실내악",
+    "title": "브람스의 실내악",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_빈센트_드_브리스_피아노_독주회",
+    "title": "빈센트 드 브리스 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_서울YMCA_고양국제여성합창단_제22회_정기연주회",
+    "title": "서울YMCA 고양국제여성합창단 제22회 정기연주회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_세종_트리오_콘서트_클래식_고택_디토",
+    "title": "세종 트리오 콘서트 - 클래식 고택 디토",
+    "region": "seoul",
+    "address": "서울 종로구 필운대로 35-16",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_소프라노_박재은_독창회_괴테_묻다",
+    "title": "소프라노 박재은 독창회 ‘괴테 : 묻다’",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_소프라노_이정은_독창회",
+    "title": "소프라노 이정은 독창회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_소프라노_정아영_독창회",
+    "title": "소프라노 정아영 독창회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_양인모_X_김치앤칩스",
+    "title": "양인모 X 김치앤칩스",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_오민정_오보에_독주회",
+    "title": "오민정 오보에 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_윤기훈_귀국_피아노_독주회",
+    "title": "윤기훈 귀국 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_이종은_피아노_리사이틀",
+    "title": "이종은 피아노 리사이틀",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_이지영_바이올린_독주회",
+    "title": "이지영 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_이현지_바이올린_독주회",
+    "title": "이현지 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_임상희_피아노_독주회",
+    "title": "임상희 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_임지연_클라리넷_독주회",
+    "title": "임지연 클라리넷 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_전용훈_피아노_귀국_독주회",
+    "title": "전용훈 피아노 귀국 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_정은영_귀국_피아노_독주회",
+    "title": "정은영 귀국 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_제22회_소프라노_강경이_독창회",
+    "title": "제22회 소프라노 강경이 독창회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_제5회_국립암센터와_함께하는_이상희_프랜즈_콘서트",
+    "title": "제5회 국립암센터와 함께하는 이상희 ＆ 프랜즈 콘서트",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_최유나_귀국_플루트_독주회",
+    "title": "최유나 귀국 플루트 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_최지영_귀국_바이올린_독주회",
+    "title": "최지영 귀국 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_코리안챔버오케스트라_크론베르크_아카데미_시리즈_3",
+    "title": "코리안챔버오케스트라＆크론베르크 아카데미 시리즈 3",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_하슬라_in_서울_추일서정_김광균",
+    "title": "하슬라 in 서울 - 추일서정(秋日抒情) : 김광균",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_하임트리오_제6회_정기연주회",
+    "title": "하임트리오 제6회 정기연주회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_한국리스트협회_제53회_정기연주회",
+    "title": "한국리스트협회 제53회 정기연주회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_한국예술가곡연주회_200회_기념음악회",
+    "title": "한국예술가곡연주회 200회 기념음악회",
+    "venue": "영산아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_홍석원_카메라타_안티콰_서울의_모차르트",
+    "title": "홍석원 ＆ 카메라타 안티콰 서울의 모차르트",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_An_die_Musik_제17회_정기연주회_Absolutely_Romantic",
+    "title": "An die Musik 제17회 정기연주회 - ‘Absolutely Romantic’",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_GS아트센터_X_국립심포니오케스트라_피터와_늑대_어미_거위",
+    "title": "GS아트센터 X 국립심포니오케스트라 〈피터와 늑대 ＆ 어미 거위〉",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아트_플래닛_1_극장_소리_채집_오묘한_진리의_숲",
+    "title": "아트 플래닛 1:  극장 소리 채집 〈오묘한 진리의 숲〉",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아트_플래닛_2_나만의_마이크_만들기_워크숍",
+    "title": "아트 플래닛 2:  〈나만의 마이크 만들기〉 워크숍",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아트_플래닛_3_인공지능과_얼굴_드로잉_워크숍",
+    "title": "아트 플래닛 3: 〈인공지능과 얼굴〉 드로잉 워크숍",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아트_플래닛_4_국립현대무용단_넌댄스_댄스_워크숍",
+    "title": "아트 플래닛 4: 국립현대무용단 〈넌댄스 댄스〉 워크숍",
+    "venue": "GS아트센터",
+    "count": 12,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_상시_키자니아_서울_부산점_3월_이용권_유효기간_3_1_3_31",
+    "title": "［상시］ 키자니아 서울＆부산점 3월 이용권 (유효기간 : 3/1~3/31)",
+    "region": "seoul",
+    "address": "서울 송파구 올림픽로 240 롯데월드",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_블루마린_스쿠버_다이브",
+    "title": "［제주］ 블루마린 스쿠버 다이브",
+    "region": "gangwon",
+    "address": "강원 양양군 현남면 안남애길 43",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_더_매직_드로잉쇼_성남",
+    "title": "더 매직 드로잉쇼 - 성남",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_쇼뮤지컬_프린세스_캐치_티니핑_용인",
+    "title": "쇼뮤지컬 〈프린세스 캐치! 티니핑〉 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_데뷔_60주년_기념공연_2026_남진_전국투어_콘서트_용인",
+    "title": "［데뷔 60주년 기념공연］ 2026 남진 전국투어 콘서트 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_서울전자음악단_2026_살롱콘서트_휴_인천",
+    "title": "‘서울전자음악단’_2026 살롱콘서트 ‘휴’ - 인천",
+    "region": "incheon",
+    "address": "인천 남동구 예술로 149",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_THE_이재훈_전국투어콘서트_Come_on_용인",
+    "title": "2026 〈THE 이재훈 전국투어콘서트 - Come on〉 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_변진섭_전국투어_콘서트_변천사_시즌_2_5_시간여행_용인",
+    "title": "2026 변진섭 전국투어 콘서트 변천사 시즌 2.5 : 시간여행 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_조항조_전국투어_콘서트_생각_용인",
+    "title": "조항조 전국투어 콘서트 : 생각 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_YB_REMASTERED_3_0_Odyssey_용인",
+    "title": "YB REMASTERED 3.0 : Odyssey - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_버블J의_언빌리버블쇼_인천",
+    "title": "버블J의 언빌리버블쇼 - 인천",
+    "region": "seoul",
+    "address": "서울 중구 삼일대로 280",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_연극_노인의_꿈_용인",
+    "title": "연극 〈노인의 꿈〉 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_10월_쇼팽과_폴란드의_선율",
+    "title": "2026 성남아트센터 오후의 콘서트 - 10월 〈쇼팽과 폴란드의 선율〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_11월_수요재즈클럽",
+    "title": "2026 성남아트센터 오후의 콘서트 - 11월 〈수요재즈클럽〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_12월_Viva_Italia_오페라_갈라_콘서트",
+    "title": "2026 성남아트센터 오후의 콘서트 - 12월 〈Viva Italia! 오페라 갈라 콘서트〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_4월_스토리텔링_콘서트_조은아의_So_So_소담소담",
+    "title": "2026 성남아트센터 오후의 콘서트 - 4월 〈스토리텔링 콘서트 조은아의 So談So談(소담소담)〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_5월_센_강_위의_멜로디",
+    "title": "2026 성남아트센터 오후의 콘서트 - 5월 〈센 강 위의 멜로디〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_6월_속삭이는_파도_보사노바의_리듬",
+    "title": "2026 성남아트센터 오후의 콘서트 - 6월 〈속삭이는 파도, 보사노바의 리듬〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_성남아트센터_오후의_콘서트_9월_탱고_한낮의_열정",
+    "title": "2026 성남아트센터 오후의 콘서트 - 9월 〈탱고, 한낮의 열정〉",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_스타인웨이_위너콘서트_이판_우_리사이틀_용인",
+    "title": "2026 스타인웨이 위너콘서트 〈이판 우 리사이틀〉 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026년_토요키즈클래식_상반기_용인",
+    "title": "2026년 〈토요키즈클래식〉 (상반기) - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_낭만합창단_첫_번째_정기연주회_머나먼_길_성남",
+    "title": "낭만합창단 첫 번째 정기연주회 ＇머나먼 길＇ - 성남",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_디즈니_콘서트_인천",
+    "title": "디즈니 콘서트 - 인천",
+    "region": "인천",
+    "address": "인천 연수구 아트센터대로 222",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_베토벤_라흐마니노프_부천",
+    "title": "베토벤 ＆ 라흐마니노프 - 부천",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_베토벤_라흐마니노프_인천",
+    "title": "베토벤 ＆ 라흐마니노프 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립예술단_1234_콘서트_부천필하모닉오케스트라_봄_그리고_이야기_Spring_and_Stories",
+    "title": "부천시립예술단 1234 콘서트 Ⅰ- 부천필하모닉오케스트라 ‘봄, 그리고 이야기 Spring, and  Stories’",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립예술단_1234_콘서트_부천필하모닉오케스트라_가을_그리고_전설_Autumn_and_Legends",
+    "title": "부천시립예술단 1234 콘서트 Ⅲ - 부천필하모닉오케스트라 ‘가을, 그리고 전설 Autumn, and  Legends’",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립예술단_1234_콘서트_IV_부천시립합창단_오르간과_합창음악",
+    "title": "부천시립예술단 1234 콘서트 IV - 부천시립합창단 ＇오르간과 합창음악＇",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립예술단_1234_콘서트_부천시립합창단_악기와_합창음악",
+    "title": "부천시립예술단 1234 콘서트Ⅱ- 부천시립합창단 ＇악기와 합창음악＇",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_가족음악회_음악극_수궁가",
+    "title": "부천시립합창단 가족음악회 - 음악극 ＇수궁가＇",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_기획연주회_재즈와_캐롤",
+    "title": "부천시립합창단 기획연주회 - 재즈와 캐롤",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_기획연주회_YOU_사연",
+    "title": "부천시립합창단 기획연주회 - YOU 사연 Ⅱ",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_기획연주회_YOU사연",
+    "title": "부천시립합창단 기획연주회 - YOU사연Ⅰ",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_제178회_정기연주회_모차르트_c단조_미사",
+    "title": "부천시립합창단 제178회 정기연주회 - 모차르트, c단조 미사",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_제179회_정기연주회_광복_기념_평화를_노래하다",
+    "title": "부천시립합창단 제179회 정기연주회 - 광복 기념 ＇평화를 노래하다＇",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_제180회_정기연주회_헨델_메시아",
+    "title": "부천시립합창단 제180회 정기연주회 - 헨델, 메시아",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천시립합창단_해설음악회_세상의_모든_합창음악_영국",
+    "title": "부천시립합창단 해설음악회 - 세상의 모든 합창음악 ＇영국＇",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_가족음악회",
+    "title": "부천필하모닉오케스트라 가족음악회",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_어린이를_위한_음악놀이터",
+    "title": "부천필하모닉오케스트라 어린이를 위한 음악놀이터 Ⅱ",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제335회_정기연주회_Romeo_Juliet",
+    "title": "부천필하모닉오케스트라 제335회 정기연주회 - Romeo ＆ Juliet",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제336회_정기연주회_BOHEMIA",
+    "title": "부천필하모닉오케스트라 제336회 정기연주회 - BOHEMIA",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제337회_정기연주회_REQUIEM",
+    "title": "부천필하모닉오케스트라 제337회 정기연주회 - REQUIEM",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제338회_정기연주회_ENIGMA",
+    "title": "부천필하모닉오케스트라 제338회 정기연주회 -  ENIGMA",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제339회_정기연주회_The_Beginning",
+    "title": "부천필하모닉오케스트라 제339회 정기연주회 - The Beginning",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제340회_정기연주회_Distant_Worlds_먼_세계",
+    "title": "부천필하모닉오케스트라 제340회 정기연주회 - Distant Worlds 먼 세계",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제341회_정기연주회_A_Portrait_in_Contrast_대조_속의_초상",
+    "title": "부천필하모닉오케스트라 제341회 정기연주회 - A Portrait in Contrast 대조 속의 초상",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_제342회_정기연주회_베토벤_합창",
+    "title": "부천필하모닉오케스트라 제342회 정기연주회 - 베토벤, 합창",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_한불수교_140주년_기념_연주회",
+    "title": "부천필하모닉오케스트라 한불수교 140주년 기념 연주회",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_해설음악회_Classic_in_Mass_Media_Classic_on_Screen",
+    "title": "부천필하모닉오케스트라 해설음악회 Ⅲ - Classic in Mass Media : Classic on Screen",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_해설음악회_Classic_in_Mass_Media_Classic_in_Drama",
+    "title": "부천필하모닉오케스트라 해설음악회Ⅰ- Classic in Mass Media : Classic in Drama",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_부천필하모닉오케스트라_해설음악회_Classic_in_Mass_Media_Classic_on_Media",
+    "title": "부천필하모닉오케스트라 해설음악회Ⅱ- Classic in Mass Media : Classic on Media",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_스페니쉬_브라스_러_메탈스_인천",
+    "title": "스페니쉬 브라스 〈러 메탈스〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아띠엠앙상블_제4회_정기연주회_성남",
+    "title": "아띠엠앙상블 제4회 정기연주회 - 성남",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_용인시립합창단_제11회_정기연주회_용인",
+    "title": "용인시립합창단 제11회 정기연주회 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_이_무지치_베네치아니_내한_공연_용인",
+    "title": "이 무지치 베네치아니 내한 공연 - 용인",
+    "venue": "용인포은아트홀",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_기획연주회_과정음악회_인천",
+    "title": "인천시립교향악단 기획연주회 〈과정음악회 Ⅰ〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제441회_정기연주회_인천시향과_올해의_예술가_인천",
+    "title": "인천시립교향악단 제441회 정기연주회 〈인천시향과 올해의 예술가〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제442회_정기연주회_인천시향의_말러_인천",
+    "title": "인천시립교향악단 제442회 정기연주회 〈인천시향의 말러〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제443회_정기연주회_인천시향의_드보르자크_인천",
+    "title": "인천시립교향악단 제443회 정기연주회 〈인천시향의 드보르자크〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제444회_정기연주회_인천시향의_차이콥스키_인천",
+    "title": "인천시립교향악단 제444회 정기연주회 〈인천시향의 차이콥스키〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제445회_정기연주회_인천시향과_김대진_인천",
+    "title": "인천시립교향악단 제445회 정기연주회 〈인천시향과 김대진〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제446회_정기연주회_창단_60주년_기념음악회_인천",
+    "title": "인천시립교향악단 제446회 정기연주회 〈창단 60주년 기념음악회〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제447회_정기연주회_인천시향의_버르토크",
+    "title": "인천시립교향악단 제447회 정기연주회 〈인천시향의 버르토크〉",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제448회_정기연주회_인천시향의_브람스",
+    "title": "인천시립교향악단 제448회 정기연주회 〈인천시향의 브람스〉",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제449회_정기연주회_인천시향과_크리스토프_포펜",
+    "title": "인천시립교향악단 제449회 정기연주회 〈인천시향과 크리스토프 포펜〉",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_인천시립교향악단_제450회_정기연주회_인천시향의_말러_인천",
+    "title": "인천시립교향악단 제450회 정기연주회 〈인천시향의 말러〉 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_제네바_챔버_앙상블_인천",
+    "title": "제네바 챔버 앙상블 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_디즈니_콘서트_인천",
+    "title": "지브리 ＆ 디즈니 콘서트 - 인천",
+    "region": "인천",
+    "address": "인천 연수구 아트센터대로 222",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_지브리_디즈니_OST_콘서트_with_첼로댁_인천",
+    "title": "지브리 ＆ 디즈니 OST 콘서트 with 첼로댁 - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_콘서트_인천",
+    "title": "지브리 콘서트 - 인천",
+    "region": "인천",
+    "address": "인천 연수구 아트센터대로 222",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_지브리_디즈니_영화음악_오케스트라_콘서트_인천_앙코르",
+    "title": "지브리＆디즈니 영화음악 오케스트라 콘서트 - 인천 앙코르",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리와_사랑에_빠지다_지브리_영화음악_콘서트_2026_인천_앙코르",
+    "title": "지브리와 사랑에 빠지다 : 지브리 영화음악 콘서트 2026 - 인천 앙코르",
+    "region": "인천",
+    "address": "인천 연수구 아트센터대로 222",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_최수연_오보에_독주회_성남",
+    "title": "최수연 오보에 독주회 - 성남",
+    "venue": "성남 성남아트센터 앙상블시어터",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_콘서트_오페라_아이다_인천",
+    "title": "콘서트 오페라 ＂아이다＂ - 인천",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_히사이시_조_영화음악_콘서트_2026_인천_송도",
+    "title": "히사이시 조 영화음악 콘서트 2026_인천(송도)",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_ACIx인천시향_공동기획_조조_클래식",
+    "title": "ACIx인천시향 공동기획 〈조조早朝 클래식〉 Ⅰ",
+    "venue": "인천 아트센터인천 콘서트홀",
+    "count": 19,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_BAC_오르간_카메론_카펜터_오르간_리사이틀",
+    "title": "BAC 오르간 : 카메론 카펜터 오르간 리사이틀",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_BAC_클래식_WDR_쾰른_방송_오케스트라",
+    "title": "BAC 클래식 : WDR 쾰른 방송 오케스트라",
+    "venue": "경기 부천아트센터 콘서트홀",
+    "count": 29,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_경기_광주_곤지암리조트_살로몬스키스쿨_스키_보드강습_렌탈",
+    "title": "［경기 광주］ 곤지암리조트 살로몬스키스쿨 스키/보드강습, 렌탈",
+    "region": "gyeonggi",
+    "address": "경기 광주시 도척면 도척윗로 278",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_스크린룸_주말_오전_10회권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 스크린룸 주말/오전 10회권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_스크린룸_주말_오후_30회권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 스크린룸 주말/오후 30회권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_스크린룸_주중_오전_10회권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 스크린룸 주중/오전 10회권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_스크린룸_주중_오후_30회권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 스크린룸 주중/오후 30회권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_연습타석_10회_이용권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 연습타석 10회 이용권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_연습타석_1개월_회원권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 연습타석 1개월 회원권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_연습타석_1회_이용권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 연습타석 1회 이용권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_연습타석_3회_이용권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 연습타석 3회 이용권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_연습타석_5회_이용권",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) : 연습타석 5회 이용권",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_15분_레슨권_예약필수",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) ［15분 레슨권］ : 예약필수",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_고양_일산_SDR골프아카데미_주엽점_30분_레슨권_예약필수",
+    "title": "［고양/일산］ SDR골프아카데미(주엽점) ［30분 레슨권］ : 예약필수",
+    "venue": "SDR골프아카데미",
+    "count": 11,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_인천_서울_크로마_인도어_풀파티_MISTIQUE",
+    "title": "［인천,서울］ 크로마 인도어 풀파티 MISTIQUE",
+    "region": "incheon",
+    "address": "인천 중구 영종해안남로321번길 186",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대관령음악제_강원의_사계_봄_김준형_피아노_리사이틀_강릉",
+    "title": "대관령음악제 강원의 사계 〈봄〉 ＂김준형 피아노 리사이틀＂- 강릉",
+    "region": "강원",
+    "address": "강원특별자치도 강릉시 종합운동장길 84",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_강원_속초_더다이브_The_Dive_스쿠버_다이빙",
+    "title": "［강원 속초］ 더다이브(The Dive) 스쿠버 다이빙",
+    "region": "seoul",
+    "address": "서울 용산구 이태원로27가길 37 지하1층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_청주_세종_뮤지컬_베어만_마지막잎새",
+    "title": "［청주,세종］뮤지컬 베어만 : 마지막잎새",
+    "region": "chungbuk",
+    "address": "충북 청주시 상당구 단재로 28 A동 2층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_청주_세종_뮤지컬_빌의구둣방",
+    "title": "［청주,세종］뮤지컬 빌의구둣방",
+    "region": "chungbuk",
+    "address": "충북 청주시 상당구 단재로 28 A동 2층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_청주_세종_어린이가족뮤지컬_빨간모자야_조심해",
+    "title": "［청주,세종］어린이가족뮤지컬 “빨간모자야.조심해！”",
+    "region": "chungbuk",
+    "address": "충북 청주시 상당구 단재로 28 A동 2층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_가족_뮤지컬_알사탕_공주",
+    "title": "가족 뮤지컬 〈알사탕〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_뮤지컬_써니텐_대전",
+    "title": "뮤지컬 〈써니텐〉 - 대전",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_쇼뮤지컬_드림하이_공주",
+    "title": "쇼뮤지컬 〈드림하이〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_어린이_뮤지컬_알라딘과_요술램프_공주",
+    "title": "어린이 뮤지컬 〈알라딘과 요술램프〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_The_심수봉_SHOW_공주",
+    "title": "2026 The 심수봉 SHOW - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_라포엠과_함께하는_스페셜_콘서트_공주",
+    "title": "라포엠과 함께하는 스페셜 콘서트 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_렉처_콘서트III_라틴_클래식_음악_공주",
+    "title": "렉처 콘서트III 〈라틴 클래식 음악〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_렉처_콘서트IV_미국_음악의_탄생_공주",
+    "title": "렉처 콘서트IV 〈미국 음악의 탄생〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아토콘I_소리꾼_이자람_공주",
+    "title": "아토콘I 〈소리꾼 이자람〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아토콘II_뮤지컬배우_홍지민_공주",
+    "title": "아토콘II 〈뮤지컬배우 홍지민〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아토콘III_영화감독_배우_박중훈_공주",
+    "title": "아토콘III 〈영화감독＆배우 박중훈〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_아토콘IV_배우_강석우_공주",
+    "title": "아토콘IV 〈배우 강석우〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_주현미_효_콘서트_가요_백년을_노래하다_공주",
+    "title": "주현미 효 콘서트 〈가요 백년을 노래하다〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_최수호x유태평양x억스_빅3_콘서트_공주",
+    "title": "최수호x유태평양x억스 〈빅3 콘서트〉 -공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_화이트데이_콘서트_재즈_러브_공주",
+    "title": "화이트데이 콘서트 〈재즈＆러브〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_넌버벌_퍼포먼스_스냅_공주",
+    "title": "넌버벌 퍼포먼스 〈스냅〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_어린이_인형극_산초와_돈키호테_공주",
+    "title": "어린이 인형극 〈산초와 돈키호테〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_연극_키리에_대전",
+    "title": "연극 ［키리에］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_연극_나와_할아버지_공주",
+    "title": "연극 〈나와 할아버지〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_인형극_산초와_돈키호테_대전",
+    "title": "인형극 ［산초와 돈키호테］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_조혜련X김효진의_사랑해_엄마_공주",
+    "title": "조혜련X김효진의 〈사랑해 엄마〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_회원음악회_슈투트가르트_필하모닉_오케스트라_대전",
+    "title": "［회원음악회］ 슈투트가르트 필하모닉 오케스트라-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_바보음악회_대전",
+    "title": "2026 바보음악회 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_시그니처_대전_아벤트_시리즈_SYZYGY_대전",
+    "title": "2026 시그니처 대전_아벤트 시리즈 ［SYZYGY］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_아침을_여는_클래식_3월_소프라노_신주형_바리톤_최병혁_대전",
+    "title": "2026 아침을 여는 클래식 3월 ［소프라노 신주형 ＆ 바리톤 최병혁］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_아침을_여는_클래식_4월_벤투스_브라스_퀸텟_대전",
+    "title": "2026 아침을 여는 클래식 4월 ［벤투스 브라스 퀸텟］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_아침을_여는_클래식_5월_기타리스트_박지형_대전",
+    "title": "2026 아침을 여는 클래식 5월 ［기타리스트 박지형］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_아침을_여는_클래식_6월_바이올리니스트_최송하_대전",
+    "title": "2026 아침을 여는 클래식 6월 ［바이올리니스트 최송하］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_공주_안동_자매도시_교류음악회_환희의_송가_공주",
+    "title": "공주, 안동 자매도시 교류음악회 〈환희의 송가〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_국립오페라단_모차르트_오페라_마술피리_대전",
+    "title": "국립오페라단 모차르트 오페라 ［마술피리］-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_I_멘델스존_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 I 〈멘델스존〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_II_차이콥스키_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 II 〈차이콥스키〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_III_라흐마니노프_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 III 〈라흐마니노프〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_IV_엘가_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 IV 〈엘가〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_V_베토벤_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 V 〈베토벤〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금난새와_함께하는_마티네_콘서트_VI_베버_공주",
+    "title": "금난새와 함께하는 마티네 콘서트 VI 〈베버〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_김예지_플루트_독주회_RAVISSANT_매혹적인_대전",
+    "title": "김예지 플루트 독주회 〈RAVISSANT : 매혹적인〉 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_너의_이름은_필름_콘서트_2026_대전_OPEN",
+    "title": "너의 이름은. 필름 콘서트 - 2026 대전 OPEN",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_다니엘_린데만x천지윤_조이_콘서트_공주",
+    "title": "다니엘 린데만x천지윤 〈조이 콘서트〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_대니_구_데뷔_10주년_리사이틀_공주",
+    "title": "대니 구 데뷔 10주년 리사이틀 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_10_송년음악회_베토벤_교향곡_제9번_합창",
+    "title": "대전시립교향악단 마스터즈 시리즈 10 송년음악회 〈베토벤 교향곡 제9번 ‘합창’〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_3_바그너_교향곡_다장조",
+    "title": "대전시립교향악단 마스터즈 시리즈 3 〈바그너 교향곡 다장조〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_4_홀스트_행성",
+    "title": "대전시립교향악단 마스터즈 시리즈 4 〈홀스트 행성〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_5_슈만_교향곡_제2번",
+    "title": "대전시립교향악단 마스터즈 시리즈 5 〈슈만 교향곡 제2번〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_6_생상스_교향곡_제3번_오르간",
+    "title": "대전시립교향악단 마스터즈 시리즈 6 〈생상스 교향곡 제3번 ‘오르간’〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_7_말러_교향곡_제2번_부활",
+    "title": "대전시립교향악단 마스터즈 시리즈 7 〈말러 교향곡 제2번 ‘부활’〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_8_쇼스타코비치_교향곡_제7번_레닌그라드_대전",
+    "title": "대전시립교향악단 마스터즈 시리즈 8 〈쇼스타코비치 교향곡 제7번 ＇레닌그라드＇〉 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_마스터즈_시리즈_9_라흐마니노프_교향곡_제2번",
+    "title": "대전시립교향악단 마스터즈 시리즈 9 〈라흐마니노프 교향곡 제2번〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립교향악단_챔버_시리즈_1_플루트와_실내악",
+    "title": "대전시립교향악단 챔버 시리즈 1 〈플루트와 실내악〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립청소년합창단_기획연주회_거장과의_만남_시리즈_대전",
+    "title": "대전시립청소년합창단 기획연주회Ⅰ거장과의 만남 시리즈Ⅳ - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전시립합창단_어린이_음악회_콩쥐팥쥐_대전",
+    "title": "대전시립합창단 어린이 음악회 ＂콩쥐팥쥐＂ - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전아트콰이어_기획연주회1_시네마_보이스_대전",
+    "title": "대전아트콰이어 기획연주회1 〈시네마 보이스〉 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대전아트필하모닉오케스트라_제9회_정기연주회_비극과_서정_사이",
+    "title": "대전아트필하모닉오케스트라 제9회 정기연주회 〈비극과 서정 사이〉",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_명곡시리즈_백건우_브람스_공주",
+    "title": "명곡시리즈 Ⅰ 〈백건우＆브람스〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_명곡시리즈_리처드_용재_오닐_라흐마니노프_공주",
+    "title": "명곡시리즈 Ⅱ 〈리처드 용재 오닐＆라흐마니노프〉 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_박혜윤_피아노_독주회_대전",
+    "title": "박혜윤 피아노 독주회 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_베토벤_라흐마니노프_대전",
+    "title": "베토벤 ＆ 라흐마니노프 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_손열음_BBC_심포니_오케스트라_지휘_사카리_오라모_대전",
+    "title": "손열음 ＆ BBC 심포니 오케스트라 (지휘 사카리 오라모)-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_슈퍼히어로와_함께_하는_어린이날_영화음악_콘서트_대전",
+    "title": "슈퍼히어로와 함께 하는 어린이날 영화음악 콘서트 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_앙상블피아노소리_제12회_정기연주회_from_Bach_to_War_대전",
+    "title": "앙상블피아노소리 제12회 정기연주회 〈from Bach to War〉 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_어린이_오페라_아기돼지_삼형제_대전",
+    "title": "어린이 오페라 ［아기돼지 삼형제］ - 대전",
+    "region": "seoul",
+    "address": "서울 서초구 효령로 304",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_어린이오페라_꿀벌마야의_모험_대전",
+    "title": "어린이오페라 ［꿀벌마야의 모험］- 대전",
+    "region": "seoul",
+    "address": "서울 마포구 잔다리로 30",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_어린이오페라_빨간모자_대전",
+    "title": "어린이오페라 ［빨간모자］ - 대전",
+    "region": "seoul",
+    "address": "서울 마포구 잔다리로 30",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_어린이오페라_피노키오_대전",
+    "title": "어린이오페라 ［피노키오］- 대전",
+    "region": "seoul",
+    "address": "서울 마포구 잔다리로 30",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_오케스트라_사이엔티아_제13회_정기연주회_대전",
+    "title": "오케스트라 사이엔티아 제13회 정기연주회 - 대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_오페라_라_트라비아타_공주",
+    "title": "오페라 〈라 트라비아타〉 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_유키_구라모토_콘서트_공주",
+    "title": "유키 구라모토 콘서트 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_디즈니_영화음악_오케스트라_FESTA_대전_앙코르",
+    "title": "지브리＆디즈니 영화음악 오케스트라 FESTA - 대전 앙코르",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_지브리와_사랑에_빠지다_지브리_영화음악_콘서트_2026_공주",
+    "title": "지브리와 사랑에 빠지다 : 지브리 영화음악 콘서트 2026 - 공주",
+    "venue": "공주문예회관 대공연장",
+    "count": 18,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_키안_솔타니_박재홍_듀오_리사이틀_대전",
+    "title": "키안 솔타니 ＆ 박재홍 듀오 리사이틀-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_파개그니니_내한공연_공주",
+    "title": "파개그니니 내한공연 - 공주",
+    "venue": "공주문예회관",
+    "count": 15,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_한재민_루체른_심포니_대전",
+    "title": "한재민 ＆ 루체른 심포니-대전",
+    "region": "대전",
+    "address": "대전광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_쇼뮤지컬_프린세스_캐치_티니핑_대구",
+    "title": "쇼뮤지컬 〈프린세스 캐치! 티니핑〉 - 대구",
+    "region": "gyeongbuk",
+    "address": "경북 경산시 대학로 280",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대구_2026_빅3_행복한만남_강진_김용임_진성",
+    "title": "［대구］ 2026 빅3 “행복한만남” - 강진, 김용임, 진성",
+    "region": "gyeongbuk",
+    "address": "경북 경산시 대학로 280",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_ONLY_FOR_JAZZ_대구_3_27",
+    "title": "ONLY FOR JAZZ - 대구 (3/27)",
+    "region": "seoul",
+    "address": "서울 용산구 대사관로 35",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_레트로감성코믹연극_돌아와요_미자씨_대구",
+    "title": "! 레트로감성코믹연극 〈돌아와요 미자씨〉 - 대구 !",
+    "region": "gyeonggi",
+    "address": "경기 부천시 오정구 삼작로 53 부천아트벙커 B39",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_더_마스터즈_김다솔_피아노_리사이틀_대구",
+    "title": "더 마스터즈：김다솔 피아노 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_더_마스터즈_김민지_첼로_리사이틀_대구",
+    "title": "더 마스터즈：김민지 첼로 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_더_마스터즈_김영준_바이올린_리사이틀_대구",
+    "title": "더 마스터즈：김영준 바이올린 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_류이치사카모토_트리뷰트_콘서트_대구공연",
+    "title": "류이치사카모토 트리뷰트 콘서트 대구공연",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_명연주시리즈_양인모_잘츠부르크_모차르테움_오케스트라_대구",
+    "title": "명연주시리즈：양인모 ＆ 잘츠부르크 모차르테움 오케스트라 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_명연주시리즈_클라라_주미_강_김선욱_듀오_리사이틀_대구",
+    "title": "명연주시리즈：클라라 주미 강 ＆ 김선욱 듀오 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_스테이지_M_캔들데이_콘서트_대구",
+    "title": "스테이지 M 캔들데이 콘서트 - 대구",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_스테이지엠_크리스마스_영화_음악_캐롤_콘서트_대구",
+    "title": "스테이지엠 크리스마스 영화 음악 ＆ 캐롤 콘서트 - 대구",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_우리가_사랑한_한국_영화_OST_콘서트_2026_대구",
+    "title": "우리가 사랑한 한국 영화 OST 콘서트 2026 - 대구",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_하우스_콘서트_화요일_대구",
+    "title": "지브리 하우스 콘서트(화요일) - 대구",
+    "region": "gyeonggi",
+    "address": "경기 평택시 청원로 380-38",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_하우스_콘서트_당신이_듣고싶던_노래_대구",
+    "title": "지브리 하우스 콘서트: 당신이 듣고싶던 노래 - 대구",
+    "region": "gyeonggi",
+    "address": "경기 평택시 청원로 380-38",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리와_사랑에_빠지다_지브리_영화음악_콘서트_2026_대구",
+    "title": "지브리와 사랑에 빠지다 : 지브리 영화음악 콘서트 2026 - 대구",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_클래식_온_대구혼앙상블_AFTER_7_30_HORN_대구",
+    "title": "클래식 온：대구혼앙상블 - AFTER 7:30 HORN - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_클래식_온_소프라노_류진교_리사이틀_Song_of_my_life_대구",
+    "title": "클래식 온：소프라노 류진교 리사이틀 - Song of my life - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_클래식_온_이미연_피아노_리사이틀_대구",
+    "title": "클래식 온：이미연 피아노 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_클래식_온_작곡가_박창민_작품발표회_창작가곡과_아리아_그리고_시인과의_만남_대구",
+    "title": "클래식 온：작곡가 박창민 작품발표회 - 창작가곡과 아리아, 그리고 시인과의 만남 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_클래식_온_테너_하석배_리사이틀_대구",
+    "title": "클래식 온：테너 하석배 리사이틀 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_패밀리_재즈_콘서트_재즈로_듣는_지브리_디즈니_OST_대구",
+    "title": "패밀리 재즈 콘서트 : 재즈로 듣는 지브리 ＆ 디즈니 OST - 대구",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 34-1 지하2층 엠스테이지",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_노부스_콰르텟_대구",
+    "title": "DCH앙상블페스티벌：노부스 콰르텟 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_더_케이윈즈_대구",
+    "title": "DCH앙상블페스티벌：더 케이윈즈 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_스페니쉬_브라스_대구",
+    "title": "DCH앙상블페스티벌：스페니쉬 브라스 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_앙상블_쏘노_스트링_콰르텟_대구",
+    "title": "DCH앙상블페스티벌：앙상블 쏘노 스트링 콰르텟 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_앙상블_여수_대구",
+    "title": "DCH앙상블페스티벌：앙상블 여수 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_앙상블_이로_대구",
+    "title": "DCH앙상블페스티벌：앙상블 이로 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_에올리아_앙상블_대구",
+    "title": "DCH앙상블페스티벌：에올리아 앙상블 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_DCH앙상블페스티벌_카메라타_전남_대구",
+    "title": "DCH앙상블페스티벌：카메라타 전남 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_DCH앙상블페스티벌_카메라타_전남_대구",
+    "title": "DCH앙상블페스티벌：카메라타 전남 - 대구",
+    "region": "daegu",
+    "address": "대구 중구 태평로 141 대구콘서트하우스",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_MelON_디즈니_지브리_오케스트라_콘서트_대구",
+    "title": "MelON 디즈니＋ 지브리 오케스트라 콘서트 - 대구",
+    "venue": "대구콘서트하우스",
+    "count": 20,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_ONLY_FOR_YOU_대구_3_21",
+    "title": "ONLY FOR YOU - 대구 (3/21)",
+    "region": "seoul",
+    "address": "서울 용산구 대사관로 35",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대구_히어로플레이파크_상인점_소인권",
+    "title": "［대구］ 히어로플레이파크 상인점 소인권",
+    "region": "gyeonggi",
+    "address": "경기 화성시 동탄광역환승로 73 동탄역 반도유보라 아이비파크 8.0 상가 지하1층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_부산_뮤지컬_한글용사_아이야_새로운_이야기_달라도_친구야",
+    "title": "［부산］ 뮤지컬 한글용사 아이야 새로운 이야기 〈달라도 친구야!〉",
+    "region": "seoul",
+    "address": "서울 마포구 성암로 267",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_가족매직쇼_매직키즈마술쇼_울산",
+    "title": "2026 가족매직쇼 〈매직키즈마술쇼〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_가족매직쇼_판타스틱매직콘서트_울산",
+    "title": "2026 가족매직쇼 〈판타스틱매직콘서트〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_가족퍼포먼스쇼_아쿠아쇼_바닷속버블왕국_울산",
+    "title": "2026 가족퍼포먼스쇼 〈아쿠아쇼-바닷속버블왕국〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_라이브_가족뮤지컬_아기돼지삼형제_울산",
+    "title": "2026 라이브 가족뮤지컬 〈아기돼지삼형제〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_라이브_가족뮤지컬_잠자는_숲속의_공주_울산",
+    "title": "2026 라이브 가족뮤지컬 〈잠자는 숲속의 공주〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_라이브_가족뮤지컬_피터팬_울산",
+    "title": "2026 라이브 가족뮤지컬 〈피터팬〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_가족뮤지컬_정승제의_수학대모험_수포자의_비밀_부산",
+    "title": "가족뮤지컬 〈정승제의 수학대모험 : 수포자의 비밀〉 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_뮤지컬_멜로우TV_Run_it_up_팀나빠_부산",
+    "title": "뮤지컬 ‘멜로우TV 〈Run it up, 팀나빠〉’ - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_뮤지컬_인사이드_미_부산",
+    "title": "뮤지컬 〈인사이드 미〉 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_어린이뮤지컬_렛잇고_울산",
+    "title": "어린이뮤지컬 〈렛잇고〉 - 울산",
+    "region": "울산",
+    "address": "울산광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_오리지널_과학마술콘서트_시즌2_부산",
+    "title": "오리지널 과학마술콘서트 시즌2 (부산)",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_K_히어로_뮤지컬_똥볶이_할멈_정의의_맛_부산",
+    "title": "K-히어로 뮤지컬 〈똥볶이 할멈 : 정의의 맛〉 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_살롱_드_국악_추다혜차지스_부산",
+    "title": "살롱 드 국악 Ⅱ - 추다혜차지스 (부산)",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_살롱_드_국악_첼로가야금",
+    "title": "살롱 드 국악Ⅰ- 첼로가야금",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_워터밤_부산_2026",
+    "title": "워터밤 부산 2026",
+    "region": "gyeonggi",
+    "address": "경기 안산시 단원구 이삭6길 2",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_연극_친정엄마와2박3일_부산",
+    "title": "2026 연극 〈친정엄마와2박3일〉 - 부산",
+    "region": "seoul",
+    "address": "서울 마포구 성암로 267",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_연극_로미오와_줄리엣_The_Clown_부산",
+    "title": "연극 〈로미오와 줄리엣 The Clown〉 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_할딱배기와_히말라야_부산",
+    "title": "할딱배기와 히말라야 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_경기필하모닉오케스트라_with_김선욱",
+    "title": "2026 통영국제음악제 - 경기필하모닉오케스트라 with 김선욱",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_2026_통영국제음악제_경기필하모닉오케스트라_with_김선욱",
+    "title": "2026 통영국제음악제 - 경기필하모닉오케스트라 with 김선욱",
+    "region": "gyeongnam",
+    "address": "경남 통영시 큰발개1길 38",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_김유빈_플루트_리사이틀",
+    "title": "2026 통영국제음악제 - 김유빈 플루트 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_루카스_아르투르_유센_듀오_리사이틀",
+    "title": "2026 통영국제음악제 - 루카스 ＆ 아르투르 유센 듀오 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_메조_소프라노_플뢰르_바론_리사이틀",
+    "title": "2026 통영국제음악제 - 메조 소프라노 플뢰르 바론 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_모딜리아니_콰르텟",
+    "title": "2026 통영국제음악제 - 모딜리아니 콰르텟 Ⅰ",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_박수예_바이올린_리사이틀",
+    "title": "2026 통영국제음악제 - 박수예 바이올린 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_베르비에_페스티벌_체임버_오케스트라_with_니콜라스_알트슈태트_김유빈",
+    "title": "2026 통영국제음악제 - 베르비에 페스티벌 체임버 오케스트라 with 니콜라스 알트슈태트 ＆ 김유빈",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_아우구스틴_하델리히_바이올린_리사이틀",
+    "title": "2026 통영국제음악제 - 아우구스틴 하델리히 바이올린 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_앙상블_모데른",
+    "title": "2026 통영국제음악제 - 앙상블 모데른 Ⅰ",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_왕기석의_수궁가",
+    "title": "2026 통영국제음악제 - 왕기석의 수궁가",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_일_자르디노_아르모니코_with_안나_프로하스카",
+    "title": "2026 통영국제음악제 - 일 자르디노 아르모니코 with 안나 프로하스카",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_일_자르디노_아르모니코_with_야쿠프_유제프_오를린스키",
+    "title": "2026 통영국제음악제 - 일 자르디노 아르모니코 with 야쿠프 유제프 오를린스키",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_재즈_콘서트_미하엘_볼니_에밀_파리지앵",
+    "title": "2026 통영국제음악제 - 재즈 콘서트: 미하엘 볼니 ＆ 에밀 파리지앵",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_조성진_피아노_리사이틀",
+    "title": "2026 통영국제음악제 - 조성진 피아노 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_카운터테너_야쿠프_유제프_오를린스키_리사이틀",
+    "title": "2026 통영국제음악제 - 카운터테너 야쿠프 유제프 오를린스키 리사이틀",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_통영페스티벌오케스트라",
+    "title": "2026 통영국제음악제 - 통영페스티벌오케스트라 Ⅰ",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_2026_통영국제음악제_하델리히와_친구들",
+    "title": "2026 통영국제음악제 - 하델리히와 친구들",
+    "venue": "통영국제음악당 콘서트홀",
+    "count": 17,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_꾸러기음악회_봄이오는소리_부산",
+    "title": "꾸러기음악회-봄이오는소리 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_너의_이름은_필름_콘서트_2026_부산_OPEN",
+    "title": "너의 이름은. - 필름 콘서트 2026 부산 OPEN",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_백건우_피아노_리사이틀_부산",
+    "title": "백건우 피아노 리사이틀 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_블링블링_캐치_티니핑_심포니_부산",
+    "title": "블링블링 캐치! 티니핑 심포니 - 부산",
+    "venue": "부산시민회관",
+    "count": 13,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_부산_영화체험박물관_씨네뮤지엄",
+    "title": "［부산］ 영화체험박물관＆씨네뮤지엄",
+    "region": "gyeonggi",
+    "address": "경기 양주시 장흥면 권율로 183",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_강원_랜드마크_패키지_이용권",
+    "title": "［강원］ 랜드마크 패키지 이용권",
+    "region": "gyeonggi",
+    "address": "경기 부천시 원미구 계남로 273-1",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_경북_청도_랜드마크_패키지_이용권",
+    "title": "［경북 청도］ 랜드마크 패키지 이용권",
+    "region": "daegu",
+    "address": "대구 달서구 송현동4길 51",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_대구_랜드마크_패키지_이용권",
+    "title": "［대구］ 랜드마크 패키지 이용권",
+    "region": "gyeonggi",
+    "address": "경기 부천시 원미구 계남로 273-1",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_부산_광안리_레이저_서바이벌_레이저태그스포츠",
+    "title": "［부산/광안리］ 레이저 서바이벌 레이저태그스포츠",
+    "region": "seoul",
+    "address": "서울 강남구 영동대로 325 STOWER 지하 3층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_부산_남포동_쿵스_롤러스케이트장",
+    "title": "［부산］ 남포동 쿵스 롤러스케이트장",
+    "region": "chungbuk",
+    "address": "충북 청주시 상당구 성안로 19-2 6층 쿵스 롤러스케이트장",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_부산_세라젬웰파크_부산기장점_할인_이용권_3_1",
+    "title": "［부산］ 세라젬웰파크 부산기장점 할인 이용권(3/1~)",
+    "region": "seoul",
+    "address": "서울 동대문구 고산자로32길 78",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_울산_성남_아이존팝_보물찾기_이용권",
+    "title": "［울산］ 성남 아이존팝＆보물찾기 이용권",
+    "region": "seoul",
+    "address": "서울 서초구 마방로6길 3",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_가족뮤지컬_넘버블록스_광주앵콜",
+    "title": "가족뮤지컬 〈넘버블록스〉 - 광주앵콜",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_뮤지컬_킹키부츠_광주",
+    "title": "뮤지컬 〈킹키부츠〉 - 광주",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_이은결_META_광주",
+    "title": "이은결 〈META〉 - 광주",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_정동하_x_알리_SONG_THE_BATTLE_OF_LEGENDS_광주",
+    "title": "정동하 x 알리 〈 SONG : THE BATTLE OF LEGENDS 〉-광주",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_베토벤_라흐마니노프_광주",
+    "title": "베토벤 ＆ 라흐마니노프 - 광주",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_지브리_디즈니_영화음악_오케스트라_콘서트_광주_OPEN",
+    "title": "지브리＆디즈니 영화음악 오케스트라 콘서트 - 광주 OPEN",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_히사이시_조_영화음악_콘서트_2026_광주",
+    "title": "히사이시 조 영화음악 콘서트 2026_광주",
+    "region": "광주",
+    "address": "광주광역시",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_더_케이쇼_The_K_show_족욕_체험_증정",
+    "title": "［제주］ 더 케이쇼 (The K-show ) ♥족욕 체험 증정♥",
+    "region": "seoul",
+    "address": "서울 영등포구 영중로 15 타임스퀘어 1층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_아라리오뮤지엄_동문모텔_통합권",
+    "title": "［제주］아라리오뮤지엄 동문모텔Ⅰ＆ Ⅱ 통합권",
+    "region": "seoul",
+    "address": "서울 종로구 율곡로 83",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_그림카페_1만원_이용권",
+    "title": "［제주］ 그림카페 1만원 이용권",
+    "region": "seoul",
+    "address": "서울 마포구 와우산로 29-18",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_다이나믹메이즈_이용권_족욕_체험_증정",
+    "title": "［제주］ 다이나믹메이즈 이용권♥족욕 체험 증정♥",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 12",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_다이나믹메이즈_입장권",
+    "title": "［제주］ 다이나믹메이즈 입장권",
+    "region": "seoul",
+    "address": "서울 종로구 인사동길 12",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_레일바이크",
+    "title": "［제주］ 레일바이크",
+    "region": "gyeonggi",
+    "address": "경기 의왕시 왕송못동로 221",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_머맨스쿠버",
+    "title": "［제주］ 머맨스쿠버",
+    "region": "seoul",
+    "address": "서울 강남구 논현로26길 30-8",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_불빛정원_인생사진관_이용권",
+    "title": "［제주］ 불빛정원＆인생사진관 이용권",
+    "region": "seoul",
+    "address": "서울 노원구 화랑로 608",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_비체올린_테마파크",
+    "title": "［제주］ 비체올린 테마파크",
+    "region": "seoul",
+    "address": "서울 영등포구 영등포로 272",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_서핑도_체험권",
+    "title": "［제주］ 서핑도 체험권",
+    "region": "seoul",
+    "address": "서울 영등포구 여의서로 160",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_스파엔아로마테라피",
+    "title": "［제주］ 스파엔아로마테라피",
+    "region": "incheon",
+    "address": "인천 부평구 광장로4번길 8 3층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_액트몬_중문",
+    "title": "［제주］ 액트몬 중문",
+    "region": "gyeonggi",
+    "address": "경기 용인시 기흥구 신고매로 59 리빙파워센터 B3층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_제주이야기_행원점",
+    "title": "［제주］ 제주이야기 행원점",
+    "region": "gyeonggi",
+    "address": "경기 성남시 분당구 대왕판교로606번길 10 타워 1동 132호~138호",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_히어로플레이파크_제주점_입장권",
+    "title": "［제주］ 히어로플레이파크 제주점 입장권",
+    "region": "gyeonggi",
+    "address": "경기 화성시 동탄광역환승로 73 동탄역 반도유보라 아이비파크 8.0 상가 지하1층",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주_에코랜드_테마파크",
+    "title": "제주 에코랜드 테마파크",
+    "region": "gyeonggi",
+    "address": "경기 남양주시 별내면 청학로8번길 39",
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "perf_제주투어패스_버스투어_BUS투어_일일여행_패키지_관광",
+    "title": "제주투어패스 버스투어 BUS투어 일일여행 패키지 관광",
+    "region": "gyeonggi",
+    "address": "경기 부천시 원미구 계남로 273-1",
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_권유성_피아노_독주회",
+    "title": "금호영아티스트콘서트 - 권유성 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_김가은_바이올린_독주회",
+    "title": "금호영아티스트콘서트 - 김가은 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_안정빈_첼로_독주회",
+    "title": "금호영아티스트콘서트 - 안정빈 첼로 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_원예빈_호른_독주회",
+    "title": "금호영아티스트콘서트 - 원예빈 호른 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이상욱_트럼펫_독주회",
+    "title": "금호영아티스트콘서트 - 이상욱 트럼펫 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이소민_첼로_독주회",
+    "title": "금호영아티스트콘서트 - 이소민 첼로 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이승엽_색소폰_독주회",
+    "title": "금호영아티스트콘서트 - 이승엽 색소폰 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이예진_더블베이스_독주회",
+    "title": "금호영아티스트콘서트 - 이예진 더블베이스 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_이우진_트럼펫_독주회",
+    "title": "금호영아티스트콘서트 - 이우진 트럼펫 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영아티스트콘서트_홍성란_바이올린_독주회",
+    "title": "금호영아티스트콘서트 - 홍성란 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_김다함_오보에_독주회",
+    "title": "금호영재콘서트 - 김다함 오보에 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_김민하_바이올린_독주회",
+    "title": "금호영재콘서트 - 김민하 바이올린 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_김시언_첼로_독주회",
+    "title": "금호영재콘서트 - 김시언 첼로 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_김형완_플루트_독주회",
+    "title": "금호영재콘서트 - 김형완 플루트 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "perf_금호영재콘서트_유아림_피아노_독주회",
+    "title": "금호영재콘서트 - 유아림 피아노 독주회",
+    "venue": "금호아트홀 연세",
+    "count": 86,
+    "file": "interpark.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_샾로맨티시스트_타로카드_원데이_기초부터_실전까지_서울일정",
+    "title": "[샾로맨티시스트]타로카드 원데이 기초부터 실전까지(서울일정)",
+    "region": "gyeonggi",
+    "address": "<샾로맨티시스트 타로아카데미 & 상담센터>타로카드원데이클래스 대한민국1위 타 플랫폼사이트 1위스마트스토어 1위타로카드 대표 마스터 타로컨설턴트 Ace",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_샾로맨티시스트_타로카드_원데이_기초부터_실전까지_부산출장",
+    "title": "[샾로맨티시스트]타로카드 원데이 기초부터 실전까지 (부산출장)",
+    "region": "gyeonggi",
+    "address": "<샾로맨티시스트 타로아카데미 & 상담센터>타로카드원데이클래스 대한민국1위 타 플랫폼사이트 1위스마트스토어 1위타로카드 대표 마스터 타로컨설턴트 Ace",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_서프홀릭_부산_해운대구_송정_서핑입문교육_Lv_1_서핑교육_2시간_자유서핑_무제한",
+    "title": "[서프홀릭 부산 해운대구 송정] 서핑입문교육 (Lv.1) – 서핑교육 2시간 + 자유서핑 무제한",
+    "region": "busan",
+    "address": "부산광역시 해운대구 송정해변로 50 2층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_라탄_공예_원형_가방_만들기_클래스",
+    "title": "라탄 공예 - 원형 가방 만들기 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연4동 대연파크푸르지오",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_정규클래스_요가_몸아트트레이닝",
+    "title": "(정규클래스) 요가/몸아트트레이닝",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 금정구 장전동 금정로 79 3층 몸아트 스튜디오",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_마크라메_네트백_만들기_클래스",
+    "title": "마크라메 네트백 만들기 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연4동 대연파크푸르지오",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_라탄_공예_거울_만들기_클래스",
+    "title": "라탄 공예 - 거울 만들기 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연4동 대연파크푸르지오",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_별자리_마크라메_팔찌_만들기_클래스",
+    "title": "별자리 마크라메 팔찌 만들기 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연4동 대연파크푸르지오",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_케이크_캔들_만들기_원데이_클래스_쉐비캔들_shabby_candle",
+    "title": "케이크 캔들 만들기 원데이 클래스 - 쉐비캔들 (shabby_candle)",
+    "region": "gyeonggi",
+    "address": "부산광역시 동래구 명륜로 140",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_앙금플라워_떡케이크_원데이클래스_꽃비채케이크",
+    "title": "앙금플라워 떡케이크 원데이클래스 - 꽃비채케이크",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 강서구 명지동 20호, 명지국제7로 133",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_왁스타블렛_디퓨저_원데이클래스_쉐비캔들_shabby_candle",
+    "title": "왁스타블렛 & 디퓨저 원데이클래스 - 쉐비캔들 (shabby_candle)",
+    "region": "gyeonggi",
+    "address": "부산광역시 동래구 명륜로 140",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_추석맞이_월병만들기_강아지_수제간식_원데이클래스",
+    "title": "추석맞이 월병만들기 - 강아지 수제간식 원데이클래스",
+    "region": "gyeonggi",
+    "address": "부산광역시 부산진구 중앙대로 821",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_쫀득쫀득한_마카롱_원데이_클래스",
+    "title": "쫀득쫀득한 마카롱 원데이 클래스",
+    "region": "gyeonggi",
+    "address": "부산광역시 부산진구 전포대로210번길 36 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_바람꽃집_꽃수업",
+    "title": "바람꽃집 꽃수업",
+    "region": "gyeonggi",
+    "address": "부산광역시 동래구 온천천로 13-1 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_전포_큐브캔들_티라이트캔들_SET_만들기",
+    "title": "부산 전포 큐브캔들 + 티라이트캔들(SET) 만들기",
+    "region": "gyeonggi",
+    "address": "부산광역시 부산진구 서전로58번길 33 2층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산사상대표_마카롱_맛집_마카롱공방_Oneday_class",
+    "title": "부산사상대표 마카롱 맛집 마카롱공방 Oneday class",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사상구 괘법동 558-14",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_라탄_거울_만들기",
+    "title": "라탄 거울 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218 2층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_식물_바구니",
+    "title": "식물 바구니",
+    "region": "gyeonggi",
+    "address": "부산광역시 사상구 새벽로 218 101호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_채반_만들기",
+    "title": "채반 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218 2층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_풀꽃_수채화로_표현하기",
+    "title": "풀꽃, 수채화로 표현하기",
+    "region": "gyeonggi",
+    "address": "부산광역시 북구 상리로18번가길 7 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_소꿉체험_소꿉당",
+    "title": "소꿉체험 (소꿉당)",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사상구 학장동 149-16 1층 소꿉당",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_허브캔들_부케캔들_원데이클래스",
+    "title": "허브캔들 부케캔들 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 부평구 부평2동 경인로 899",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_젤캔들홀더_원데이클래스",
+    "title": "젤캔들홀더 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 부평구 부평2동 경인로 899",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_하타요가_아로마테라피",
+    "title": "하타요가, 아로마테라피",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상남도 진주시 칠암동 동진로 2",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_지친_나를_위로하는_컬러테라피_수채화_오일파스텔_펜",
+    "title": "지친 나를 위로하는 컬러테라피, 수채화/오일파스텔/펜",
+    "region": "gyeonggi",
+    "address": "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_수제도장_원데이클래스",
+    "title": "수제도장 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연동 58-6 2층 카페위드공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_추석용돈봉투_원데이클래스",
+    "title": "추석용돈봉투 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 수영구 민락동 광남로 271 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_당신에게_쉼_이란_무엇입니까",
+    "title": "당신에게 '쉼' 이란 무엇입니까?",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 금정구 장전동 521-68",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_터프팅_체험_클래스",
+    "title": "[부산] 터프팅 체험 클래스",
+    "region": "gyeonggi",
+    "address": "부산광역시 수영구 광안동 수영로618번길 19 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의향수만들기",
+    "title": "나만의향수만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 대구광역시 남구 대명10동 대명복개로 39 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_제주감성무드등만들기_원데이클래스",
+    "title": "제주감성무드등만들기 원데이클래스",
+    "region": "gyeonggi",
+    "address": "제주바다하늘다이브센터스킨스쿠버주소보기제주특별자치도 제주시 도두3길 20 제주바다하늘 다이브센터좋아요16공유",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_천연_비누_까메오_비누_만들기_선물포장",
+    "title": "천연 비누_까메오 비누 만들기(선물포장)",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_이니셜_은_팔찌만들기_순은_99_9_의_순도높은_은재료로_전통방식",
+    "title": "이니셜 은 팔찌만들기 순은(99.9)의 순도높은 은재료로  전통방식",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 수영구 망미2동 망미번영로 61",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_내가_만드는_댕댕이산책용품",
+    "title": "내가 만드는 댕댕이산책용품",
+    "region": "gyeonggi",
+    "address": "부산광역시 수영구 광안동 광서로 30 2F 더넛츠컴퍼니X스튜디오G1",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_광주아르헨티나탱고_원데이클래스",
+    "title": "광주아르헨티나탱고 원데이클래스",
+    "region": "gyeonggi",
+    "address": "광주광역시 북구 임동 중흥로 77 4층 광주리베르탱고",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_좋은_재료로_직접_만드는_디저트_제주베이킹클래스",
+    "title": "좋은 재료로 직접 만드는 디저트 #제주베이킹클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주도 제주시 오라일동",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_마크라메_네트백_만들기_핸드메이드_가방_만들기",
+    "title": "마크라메 네트백 만들기_핸드메이드 가방 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_바리스타",
+    "title": "바리스타",
+    "region": "gyeonggi",
+    "address": "위치대한민국 충청북도 청주시 상당구 율량동 807-7 커피미각",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_서프홀릭_5회차_기초_마스터_과정",
+    "title": "서프홀릭 [5회차 기초 마스터 과정]",
+    "region": "gyeonggi",
+    "address": "부산광역시 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_오브제_캔들_원데이_클래스",
+    "title": "오브제 캔들 원데이 클래스",
+    "region": "gyeonggi",
+    "address": "경남테크노파크기업주소보기경상남도 창원시 마산회원구 내서읍 중리공단로 65좋아요공유",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_경산_대구_곰돌이_스모어쿠키",
+    "title": "경산/대구 곰돌이 스모어쿠키",
+    "region": "gyeongbuk",
+    "address": "경북 경산시 진량읍 공단로 501-3",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_컬러라탄_티코스터_set_엮기",
+    "title": "컬러라탄 티코스터 set 엮기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 수영구 남천동 광안해변로 122 비치B상가 4층 402호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_찾아가는_출강_라탄_원데이클래스",
+    "title": "찾아가는 출강 라탄 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 서구 청라커낼로 163 488동 503호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_키즈클래스_컵케이크_비누만들기",
+    "title": "키즈클래스-컵케이크 비누만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_누구나_쉽게_만드는_MP비누만들기체험",
+    "title": "누구나 쉽게 만드는 MP비누만들기체험",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가 타라공방공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_두피케어_천연샴푸바_만들기_7살_성인클래스",
+    "title": "두피케어 천연샴푸바 만들기 7살~성인클래스",
+    "region": "gyeonggi",
+    "address": "제주특별자치도 제주시 비월남길 7",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_탄산처럼_퍼지는_배쓰밤_목욕_입욕제만들기",
+    "title": "탄산처럼 퍼지는 배쓰밤 목욕 입욕제만들기",
+    "region": "gyeonggi",
+    "address": "제주특별자치도 제주시 비월남길 7",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_조물딱_점토처럼만지는거품입욕제_버블바_만들기",
+    "title": "조물딱 점토처럼만지는거품입욕제 버블바 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_시들지_않는_프리저브드플라워_유리돔",
+    "title": "시들지 않는 프리저브드플라워 유리돔",
+    "region": "gyeonggi",
+    "address": "부산광역시 수영구 남천1동 69-45 4층 금꽃바다",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_양모펠트로_반려견키링_만들기",
+    "title": "양모펠트로 반려견키링 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 대구광역시 수성구 지산2동 1272-4",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_터프팅_원데이_체험클래스",
+    "title": "터프팅 원데이 체험클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주도 제주시 이도2동 1180-12 3층, 아일랜드터프팅공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_원데이_거울_클래스",
+    "title": "원데이 거울 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주도 제주시 이도2동 1180-12 3층, 아일랜드터프팅공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_댕댕이_영양듬뿍_타르트_만들기",
+    "title": "댕댕이 영양듬뿍 타르트 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 구미시 인의동 여헌로 63-1 1층,오유에프",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_멍크로플_만들기",
+    "title": "멍크로플 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 구미시 인의동 여헌로 63-1 1층,오유에프",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_카페에서_판매하는_선물같은_샌드위치만들기",
+    "title": "카페에서 판매하는 선물같은 샌드위치만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 금정구 서동 302-1917 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_손으로_꽃을_피워내는_시간",
+    "title": "손으로 꽃을 피워내는 시간",
+    "region": "gyeonggi",
+    "address": "부산광역시 수영구 망미동 과정로42번길 46 1층 오드화",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_수제오란다_만들기",
+    "title": "수제오란다 만들기",
+    "region": "gyeonggi",
+    "address": "부산광역시 강서구 명지동 1157-1 명지국제5로110  상가 포아르과자점",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_감성_취미_미술_파인트_클래스",
+    "title": "감성 취미 미술 파인트 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 구미시 원평동 470-2 경북 구미시 산책길 31 2층공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_지구를_지켜줄께_텀블러백만들기",
+    "title": "지구를 지켜줄께_[텀블러백만들기]",
+    "region": "gyeonggi",
+    "address": "위치대한민국 광주광역시 북구 연제동 568-9 849",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_실험은_내가대장_과학공방_울탐이",
+    "title": "실험은 내가대장 과학공방 울탐이",
+    "region": "gyeonggi",
+    "address": "위치대한민국 울산광역시 중구 중앙동 중앙시장길 8 진흥상가 208호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_기쁨_가득_터프팅_원데이_정규_클래스",
+    "title": "기쁨,가득 터프팅 [원데이 / 정규 클래스]",
+    "region": "gyeonggi",
+    "address": "위치대한민국 전라북도 전주시 완산구 동문길 72-1 1층 기쁨,가득",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_할로윈_키즈베이킹",
+    "title": "할로윈 키즈베이킹",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 강서구 명지동 1157-1 금강펜테리움 센트럴파크3차 상가119호 포아르과자점공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_쉽고_재미있는_미싱_원데이클래스",
+    "title": "쉽고 재미있는 미싱 원데이클래스",
+    "region": "gyeonggi",
+    "address": "대구크레인중장비주소보기경상북도 경산시 장산로 319좋아요공유",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_원하는삶을_공유하는_시간",
+    "title": "원하는삶을 공유하는 시간",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 금정구 장전3동 420-25 벅구네 3층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_바스버블슬라임_안전한_입욕제만들기",
+    "title": "바스버블슬라임 안전한 입욕제만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주특별자치도 제주시 연동 495-3 행복이가득한집 지하상가 타라공방",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_버블배쓰밤_입욕제_만들기_거품_부드러운_배쓰밤",
+    "title": "버블배쓰밤 입욕제 만들기 (거품+부드러운 배쓰밤)",
+    "region": "gyeonggi",
+    "address": "제주특별자치도 제주시 연동 1483",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_커플테마_아크릴페인팅_클래스",
+    "title": "커플테마 아크릴페인팅 클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나이프_페인팅_클래스",
+    "title": "나이프 페인팅 클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_꼭_배우고_싶은_프랑스자수_빅_파우치",
+    "title": "꼭 배우고 싶은 프랑스자수-빅 파우치",
+    "region": "gyeonggi",
+    "address": "대구광역시 동구 신천동 557-1 신천자이 107동 602호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_순천_1_1_기초영어회화_집밥처럼_내것으로_소화하기",
+    "title": "[순천] 1:1 기초영어회화: 집밥처럼 내것으로 소화하기!",
+    "region": "gyeonggi",
+    "address": "위치대한민국 전라남도 순천시 해룡면 신대리 2052-3 303호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_투박하고_빈티지한_머그컵_고블렛_만들기",
+    "title": "투박하고 빈티지한 머그컵/고블렛 만들기",
+    "region": "gyeonggi",
+    "address": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_우리_아이와_함께하는_참여형_경제_클래스",
+    "title": "우리 아이와 함께하는 참여형 경제 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 부산진구 부전2동 241-17 서면 하이스퀘어 세미나실",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_쥬아트_원데이클래스",
+    "title": "쥬아트 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연5동 290-11 2층 쥬아트미술학원공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_쥬아트_정규클래스",
+    "title": "쥬아트 정규클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 남구 대연5동 290-11 2층 쥬아트미술학원공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_창원_키링만들기",
+    "title": "[창원]키링만들기",
+    "region": "gyeonggi",
+    "address": "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_크리스마스페인팅클래스",
+    "title": "크리스마스페인팅클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_명작모작_페인팅_원데이클래스",
+    "title": "명작모작 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_팝아트_페인팅_클래스",
+    "title": "팝아트 페인팅 클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_하늘풍경_페인팅_클래스",
+    "title": "하늘풍경 페인팅 클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_재물운이_들어오는_페인팅_원데이클래스",
+    "title": "재물운이 들어오는 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_캐릭터_페인팅_원데이클래스",
+    "title": "캐릭터 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_연필드로잉_원데이클래스",
+    "title": "연필드로잉 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_오일파스텔_원데이클래스",
+    "title": "오일파스텔 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_아이패드_드로잉_원데이_클래스",
+    "title": "아이패드 드로잉 원데이 클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_보태니컬아트_원데이클래스",
+    "title": "보태니컬아트 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_미니캔버스_페인팅_원데이클래스",
+    "title": "미니캔버스 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_백드롭_페인팅_원데이클래스",
+    "title": "백드롭 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_추상화_페인팅_원데이클래스",
+    "title": "추상화 페인팅 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_에코백_만들기_원데이클래스",
+    "title": "에코백 만들기 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_플루이드아트_for_KIDS_원데이클래스",
+    "title": "플루이드아트 for KIDS 원데이클래스",
+    "venue": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
+    "count": 17,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_라탄_커피클레이_업싸이클공예_플라워수업",
+    "title": "라탄/커피클레이(업싸이클공예)/플라워수업",
+    "region": "gyeonggi",
+    "address": "부산광역시 강서구 신호동 신호산단2로49번길 9 101호해피트리토탈공방",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_젠탱글_크리스마스_오너먼트_만들기",
+    "title": "젠탱글 크리스마스 오너먼트 만들기",
+    "region": "gyeonggi",
+    "address": "부산광역시 부산진구 전포2동 2-1 드리미탱글",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_지구를_생각하는_착한공예_원데이클래스",
+    "title": "지구를 생각하는 착한공예 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상남도 통영시 정량동 (자세한 주소는 문의 주세요!)",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의_작은정원_테라리움_원데이_클래스",
+    "title": "나만의 작은정원 테라리움 원데이 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 대전광역시 중구 중촌동 10-3 중촌시영아파트 상가동 202호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_마크라메_걱정인형_만들기",
+    "title": "마크라메 걱정인형 만들기",
+    "region": "gyeonggi",
+    "address": "제주특별자치도 제주시 애월읍 하가로1길 13",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_마크라메_파인애플_화분_만들기",
+    "title": "마크라메 파인애플 화분 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주도 제주시 애월읍 하가리 978 봄의손메",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_반려동물_아로마테라피_원데이클래스",
+    "title": "반려동물 아로마테라피 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 부평구 십정2동 514-8 푸르미르",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_아이싱쿠키_원데이클래스",
+    "title": "아이싱쿠키 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_곰돌이마들렌_베이킹_클래스",
+    "title": "곰돌이마들렌 베이킹 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 인천광역시 서구 청라동 143 한신더휴커낼웨이 상가 B동 1층 105",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_그림_그리며_감성_충전_해보세요_그림_원데이클래스",
+    "title": "그림 그리며 감성 충전 해보세요/그림 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 부산진구 전포2동 666-6 405호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_경산_베이킹_취미반_비건포함",
+    "title": "경산 베이킹 취미반 (비건포함)",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_경산_대구_강아지_수제간식_취미반",
+    "title": "경산/대구 강아지 수제간식 취미반",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_강아지_노오븐_수제간식_취미반",
+    "title": "강아지 노오븐 수제간식 취미반",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 신상리 1221-1 1층 다니옹",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_원목_도마_원데이클래스",
+    "title": "원목 도마 원데이클래스",
+    "region": "gyeonggi",
+    "address": "부산광역시 남구 대연동 503-4 지하 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_오일파스텔_액자_만들기_원데이_클래스",
+    "title": "[오일파스텔]액자 만들기_원데이 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사하구 감천동 감내2로 138-1  감천문화마을, 독락의탑 1층 아뜰리에공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_스튜디오_리어스_천연비누_원데이_정규_클래스",
+    "title": "스튜디오 리어스 천연비누 원데이/정규 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 기장군 정관읍 모전3길 32-8 1층 스튜디오 리어스공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의_장난감_베어브릭_페인팅_클래스",
+    "title": "나만의 장난감 베어브릭 페인팅 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 강서구 명지동 3246 명지오션시티 삼정그린코아 114동 2층 108호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_가죽_카드지갑_만들기_클래스",
+    "title": "가죽 카드지갑 만들기 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 강서구 명지동 3246 B10호 명지오션시티삼정그린코아 114동 2층 108호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_까눌레_디저트_캔들_만들기_선물포장",
+    "title": "[부산] 까눌레 디저트 캔들 만들기 & 선물포장",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_해운대_바다를_내손_안에_모먼트캔들_만들기",
+    "title": "[부산] 해운대 바다를 내손 안에 모먼트캔들 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_미니칼림바_만들기_특수원목",
+    "title": "미니칼림바 만들기(특수원목)",
+    "region": "gyeonggi",
+    "address": "부산광역시 중구 대청동3가 대청로78 3층 플레이아트센터←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_백드롭페인팅_나이프화_원데이_클래스",
+    "title": "백드롭페인팅 나이프화 원데이 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 북구 화명동 금곡대로 270 대림상가 310-1호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_피크닉_준비_강아지_파스타_바질파스타_로제파스타",
+    "title": "피크닉 준비 강아지 파스타 (바질파스타, 로제파스타)",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_펫푸드_자격증_반려동물_푸드지도사",
+    "title": "펫푸드 자격증 / 반려동물 푸드지도사",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_펫푸드자격증_반려동물_베이커리지도사",
+    "title": "펫푸드자격증 / 반려동물 베이커리지도사",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부자가_되는_공간정리법",
+    "title": "부자가 되는 공간정리법",
+    "region": "gyeonggi",
+    "address": "위치대한민국 고양시 화정2동 화정 (신청시 개별 안내 예정)",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_광안리_가드닝_페인팅_나만의_식물_팟_만들기",
+    "title": "(광안리) 가드닝 & 페인팅 나만의 식물 팟 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 수영구 광안동 174-9 4 층 3층공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의_특별한_아이템_레진아트_원데이_클래스",
+    "title": "나만의 특별한 아이템 레진아트 원데이 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 충청남도 천안시 동남구 원거리11길 17 1층 101호공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_라탄_원데이클래스",
+    "title": "라탄 원데이클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 제주도 서귀포시 성산읍 신산리 1085-4 102호 별빛작업실공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_생화케이크1호",
+    "title": "생화케이크1호",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 연제구 연산동 337-29 바라던케이크. 1층공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_쉽게_만드는_백드로페인팅_나이프페인팅_클래스",
+    "title": "쉽게 만드는 백드로페인팅.나이프페인팅 클래스💕",
+    "region": "gyeonggi",
+    "address": "대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_안티버그클래스",
+    "title": "안티버그클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 대전광역시 동구 삼성동 278-34 대한민국 대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실공간 소개",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_향기가득_달달한_캔들_원데이_클래스_큐브캔들_초콜릿_왁스타블렛_마카롱캔들",
+    "title": "향기가득 달달한 캔들 원데이 클래스(큐브캔들, 초콜릿 왁스타블렛, 마카롱캔들)",
+    "region": "gyeonggi",
+    "address": "8Q9HM6QG+53 대구 달서구 이곡동로 32",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_실크스크린_정규수업",
+    "title": "실크스크린 정규수업",
+    "region": "gyeonggi",
+    "address": "부산광역시 사상구 주례동 167-13 공공북스 페이지2, 냉정역 3번출구에서 200m",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_제주바다_레진_파도그리기",
+    "title": "제주바다  레진 파도그리기~",
+    "region": "gyeonggi",
+    "address": "제주특별자치도 제주시 도두3길 28",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의_은반지_은팔찌_목걸이_만들기",
+    "title": "나만의 은반지/은팔찌/목걸이 만들기",
+    "region": "gyeonggi",
+    "address": "위치대한민국 경상남도 양산시 중부동 양주2길 26 1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_감정코칭_플라워_레슨",
+    "title": "감정코칭 플라워 레슨",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 해운대구 좌동 대천로 187 , 장소 미정 (예약 후 안내 예정)",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_Suhwa_healing_flower_class",
+    "title": "Suhwa healing flower class",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 사하구 낙동대로 549 1층 수화",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_나만의_명품_그릇_만들기",
+    "title": "나만의 명품 그릇 만들기",
+    "region": "gyeonggi",
+    "address": "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_일상에_지쳐_잠시_떠나고_싶은_당신에게_아트스테이",
+    "title": "일상에 지쳐 잠시 떠나고 싶은 당신에게, 아트스테이",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 중구 영주로 68 3층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_출강_향수만들기_원데이클래스_소모임_10인이상_시그널센트_출장서비스",
+    "title": "[강남/출강] 향수만들기 원데이클래스 소모임 (10인이상) 시그널센트 출장서비스",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_요가_주말_오전_나를_위한_힐링요가",
+    "title": "[ 부산 / 요가 ] 🌱주말 오전 나를 위한  힐링요가🌱",
+    "region": "gyeonggi",
+    "address": "부산광역시 동래구 사직동 사직북로47번길 20-4 부산 동래구 석사북로 41-1 지하1층",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_부산_방문수업_자세교정_및_통증관리를_위한_소도구_필라테스_클래스",
+    "title": "(부산) 방문수업-자세교정 및 통증관리를 위한 소도구 필라테스 클래스",
+    "region": "gyeonggi",
+    "address": "위치대한민국 부산광역시 기장군 일광면 삼성리 795",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_지구를_생각하는_양말목공예_원데이클래스",
+    "title": "지구를 생각하는 양말목공예 원데이클래스",
+    "region": "gyeonggi",
+    "address": "부산광역시 연제구 연산동 988-3 (고분로 111, 1층) 맘스핸즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_커플링_왁스_카빙_원데이_클래스",
+    "title": "커플링 왁스 카빙 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_분위기를_바꾸는_예쁜_미니_스탠드_조명_만들기",
+    "title": "분위기를 바꾸는 예쁜 미니 스탠드 조명 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_NIOES_인디언_주얼리_반지_만들기",
+    "title": "NIOES 인디언 주얼리 반지 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_NIOES_큐빅_세팅_반지_만들기",
+    "title": "NIOES 큐빅 세팅 반지 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_NIOES_왁스카빙_반지_만들기",
+    "title": "NIOES 왁스카빙 반지 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_동탄_오산_평택_써지컬스틸_팔찌만들기_원데이클래스",
+    "title": "[수원/동탄/오산/평택] 써지컬스틸 팔찌만들기 원데이클래스",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_직접_만드는_앙금플라워떡케이크_원데이_클래스",
+    "title": "직접 만드는 앙금플라워떡케이크 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_동탄_오산_평택_나만의_레진헤어핀_머리핀_만들기_원데이클래스",
+    "title": "[수원/동탄/오산/평택] 나만의 레진헤어핀, 머리핀 만들기 원데이클래스",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_앙금플라워떡케이크_파이핑_원데이_클래스",
+    "title": "앙금플라워떡케이크 파이핑 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_사랑하는_내_반려동물을_닮은_양모펠트_원데이클래스",
+    "title": "사랑하는 내 반려동물을 닮은 양모펠트 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_영어도_배우고_춤도_배우는_스윙댄스_클래스",
+    "title": "[강남]영어도 배우고 춤도 배우는 스윙댄스 클래스",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_오일_아로마테라피_감정_치유_원데이클래스",
+    "title": "오일 아로마테라피 감정 치유 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_천연향수_조향사_자격증_수업",
+    "title": "천연향수 조향사 자격증 수업",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_친환경_전문강사_자격증반_제로웨이스트_수제종이_업사이클_탄소_중립_실천_보태니컬",
+    "title": "친환경 전문강사 자격증반 (제로웨이스트, 수제종이, 업사이클, 탄소 중립 실천, 보태니컬)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_디퓨저_홀더_원데이_클래스",
+    "title": "디퓨저 홀더 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수채화_캔들_원데이클래스",
+    "title": "수채화 캔들 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_3_1그룹필라테스_1회_체험",
+    "title": "3:1그룹필라테스 1회 체험",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_천연향수_만들기_원데이클래스",
+    "title": "천연향수 만들기 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_고급스러운_고소함_가득_호두파이_베이킹_원데이_클래스",
+    "title": "고급스러운 고소함 가득 호두파이 베이킹 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강원_춘천_원목_도마_만들기",
+    "title": "[강원/춘천]원목 도마 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_강원_춘천_원목_도마_만들기",
+    "title": "[강원/춘천]원목 도마 만들기",
+    "region": "seoul",
+    "address": "서울특별시",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_주말을_여는_빈야사_요가원데이class",
+    "title": "주말을 여는 빈야사 요가원데이class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_왁스타블렛_디퓨져_원데이클래스_나만의_방향제_만들기",
+    "title": "왁스타블렛 + 디퓨져 원데이클래스 나만의 방향제 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_강남_순은_99_9_은점토로_세상에_단_하나뿐인_반지_만들기",
+    "title": "[서울/강남] 순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_취향과_이야기를_담은_블렌딩티_만들기",
+    "title": "나만의 취향과 이야기를 담은 블렌딩티 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_힙치로_MZ_탱고_댄스_동호회_학원_tango_살사_스윙댄스_스포츠_댄스_스포츠_학원",
+    "title": "힙치로 MZ 탱고 댄스 동호회 학원 _ tango 살사 스윙댄스 스포츠 댄스 스포츠 학원",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_위린이를_위한_온더락_위스키_클래스",
+    "title": "위린이를 위한 온더락 위스키 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_특별한_날을_특별하게_기억하는_스냅사진",
+    "title": "특별한 날을 특별하게 기억하는 스냅사진",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_필라테스와_헌대무용의_콜라보_필라탄츠",
+    "title": "필라테스와 헌대무용의 콜라보, 필라탄츠",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_아로마_소이_타르트_만들기_아로마테라피",
+    "title": "아로마 소이 타르트 만들기 아로마테라피",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_경기_안산_고급진_프랑스직수입_원액_향수_제작",
+    "title": "[경기 안산] 고급진 프랑스직수입 원액 향수 제작",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_경기_안산_고급진_프랑스직수입_원액_향수_제작",
+    "title": "[경기 안산] 고급진 프랑스직수입 원액 향수 제작",
+    "region": "seoul",
+    "address": "서울특별시",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_1_1_키즈_성인_크리스마스_리스_만들기",
+    "title": "[1+1 키즈/성인] 크리스마스 리스 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성인_키즈_크리스마스_오브제_만들기",
+    "title": "[성인/키즈] 크리스마스 오브제 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성인_크리스마스_테라리움_만들기",
+    "title": "[성인] 크리스마스 테라리움 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성인_키즈_크리스마스_콘트리_만들기",
+    "title": "[성인/키즈] 크리스마스 콘트리 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_키즈_크리스마스_테라리움_만들기",
+    "title": "[키즈] 크리스마스 테라리움 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_노래녹음_미디_작사_작곡_노래_랩",
+    "title": "노래녹음,미디,작사,작곡,노래,랩",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성수_나만의_크리스마스_트리_만들기",
+    "title": "[성수] 나만의 크리스마스 트리 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_2인_함께_크리스마스_커플케이크_만들기",
+    "title": "2인 함께 크리스마스 커플케이크 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_하루만에_완성하는_게임_개발_원데이_클래스",
+    "title": "하루만에 완성하는 게임 개발 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_기초_탄탄_이제_나도_댄싱머신",
+    "title": "기초 탄탄 이제 나도 댄싱머신!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_크리스마스_향수_핸드크림만들기_원데이클래스_우디향수만들기_특집",
+    "title": "[강남] 크리스마스 향수+핸드크림만들기 원데이클래스 (우디향수만들기 특집)",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_전통산수화_배우기_동양화_드로잉_원데이_클래스",
+    "title": "\b전통산수화 배우기:  동양화 드로잉 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_크리스마스_카드만들기",
+    "title": "크리스마스 카드만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_Wish_Violin_위시바이올린",
+    "title": "Wish Violin 위시바이올린",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_모루인형_클래스",
+    "title": "모루인형 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_근접전투술_크라브마가_자기방어_클래스",
+    "title": "근접전투술 크라브마가 자기방어 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_베어브릭_페인팅_원데이클래스",
+    "title": "베어브릭 페인팅 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_신년에_활력을_주는_천연향수_알러지프리향수_만들기_원데이클래스",
+    "title": "[강남]신년에 활력을 주는 천연향수&알러지프리향수 만들기 원데이클래스",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_테이스팅_클래스_알고마시면_더_좋은_위스키의_모든것",
+    "title": "[테이스팅 클래스] 알고마시면 더 좋은 위스키의 모든것",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_취향대로_그려보는_아크릴화_원데이클래스_오늘은_그림_도전해봐요",
+    "title": "취향대로 그려보는 아크릴화 원데이클래스 ! 오늘은 그림 도전해봐요",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_은팔찌_원데이클래스",
+    "title": "은팔찌 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_글씨에_감성을_더하다_캘리그라피_클래스",
+    "title": "글씨에 감성을 더하다 캘리그라피 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_My쿠션_만들기",
+    "title": "My쿠션 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_TSOM_오프라인_민화클래스",
+    "title": "TSOM 오프라인 민화클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_발렌타인특집_향수만들기_달달한_초코렛_구어망드_구르망_향료구비_초콜릿_증정",
+    "title": "[강남] 발렌타인특집 향수만들기! 달달한 초코렛 구어망드 구르망 향료구비(초콜릿 증정)",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_작은우주_테라리움_원데이클래스",
+    "title": "나만의 작은우주 테라리움 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_반짝반짝_글라스아트_방패시계_만들기",
+    "title": "[홍대/신촌/이대] 반짝반짝 글라스아트 방패시계 만들기",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_귀여움가득_글라스아트_곰돌이_둥둥_리스_클래스",
+    "title": "[홍대/신촌/이대] 귀여움가득 글라스아트 곰돌이 둥둥 리스 클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_힙팟_Hip_Pot_나만의_화분_만들기",
+    "title": "힙팟(Hip Pot) 나만의 화분 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_귀염뽀짝_나만의_모루인형_만들기",
+    "title": "귀염뽀짝 나만의 모루인형 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성수동_플라워_미니_센터피스_성수동_플라워_클래스",
+    "title": "[성수동] 플라워 미니 센터피스, 성수동 플라워 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_나에게_어울리는_컬러향수만들기_원데이클래스_시그널센트_조향수업",
+    "title": "[강남] 나에게 어울리는 컬러향수만들기 원데이클래스 시그널센트 조향수업",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_발렌타인데이_쵸코렛만들기",
+    "title": "발렌타인데이 쵸코렛만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_열_번째_블렌딘_위스키와_스타트업에_관심_있는_사람들의_모임",
+    "title": "[열 번째 블렌딘] 위스키와 스타트업에 관심 있는 사람들의 모임",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_천안_초보도_완전_쉽게_미리캔버스_디자인",
+    "title": "[천안] 초보도 완전 쉽게! 미리캔버스 디자인",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_몸과_마음이_이완되는_맞춤형_요가클래스",
+    "title": "[강남] 몸과 마음이 이완되는 맞춤형 요가클래스",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나전칠기체험_자개공예_헤어핀_원데이클래스",
+    "title": "[나전칠기체험]자개공예 헤어핀 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나전칠기_자개소반_트레이_원데이클래스",
+    "title": "[나전칠기]자개소반 트레이 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나전칠기_자개_미니보석함_반지_원데이클래스",
+    "title": "[나전칠기]자개 미니보석함+반지 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_갤러리에서_만드는_나만의_향",
+    "title": "갤러리에서 만드는 나만의 향",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나무_뚱냥이_만들기_고양이_영등포구",
+    "title": "나무 뚱냥이 만들기  고양이 영등포구",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_탱고_tango_원데이_체험클래스",
+    "title": "탱고 tango 원데이 체험클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_루프탑지니_바베큐_와인파티",
+    "title": "루프탑지니 바베큐 와인파티",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_크로키_그리고_싶다",
+    "title": "크로키 그리고 싶다",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_터프팅_워크숍",
+    "title": "터프팅 워크숍",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울강북_라탄티코스터_라탄다용도꽂이_라탄트레이_만들기_라탄공방_출강가능",
+    "title": "[서울강북] 라탄티코스터 라탄다용도꽂이 라탄트레이 만들기 라탄공방 출강가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울강북_라탄도어벨_강북구공방_서울라탄공방_출강가능",
+    "title": "[서울강북] 라탄도어벨 강북구공방 서울라탄공방 출강가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울강북_라탄화병_라탄트레이_라탄채반_선택1_만들기_라탄공방",
+    "title": "[서울강북] 라탄화병 라탄트레이 라탄채반 (선택1)만들기 라탄공방",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_친환경_클레이로_만드는_나만의_웜아트_소품",
+    "title": "친환경 클레이로 만드는 나만의 웜아트 소품",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_무료_괄사_홈케어_마사지_클래스",
+    "title": "무료 괄사 홈케어 마사지 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_내가_원하는_디자인으로_제작하는_나만의_반려식물_테라리움_원데이클래스",
+    "title": "[홍대] 내가 원하는 디자인으로 제작하는 나만의 반려식물, 테라리움 원데이클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_한양도성_인왕산_알쓸산잡_야간하이킹",
+    "title": "#한양도성#인왕산#알쓸산잡 야간하이킹",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_전문_숲해설가와_함께하는_숲도슨트",
+    "title": "[서울] 전문 숲해설가와 함께하는 숲도슨트",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_가드닝클래스_나의_실내_정원을_위한_첫_걸음",
+    "title": "[가드닝클래스] 나의 실내 정원을 위한 첫 걸음",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_나만의_감성을_담아_꽃가득_화병_꽃꽂이_원데이클래스",
+    "title": "[홍대] 나만의 감성을 담아 꽃가득 화병 꽃꽂이 원데이클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서초구_와인_원데이클래스_와인_표현법을_배우며_나의_와인취향을_알아봐요",
+    "title": "[서초구]와인 원데이클래스, 와인 표현법을 배우며 나의 와인취향을 알아봐요",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_원예심리_허브_플라워_클래스",
+    "title": "[원예심리] 허브&플라워 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_파주_한방_라이프스타일_문화공간",
+    "title": "[파주]한방 라이프스타일 문화공간",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울강북_카네이션_도어벨_마크라메_서울공방_출강가능",
+    "title": "[서울강북] 카네이션 도어벨 마크라메 서울공방 출강가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울강북_카네이션_월행잉_마크라메_서울공방_출강가능",
+    "title": "[서울강북] 카네이션 월행잉 마크라메 서울공방 출강가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_새벽정원_플라워볼_원데이클래스",
+    "title": "새벽정원 플라워볼 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_새벽정원_꽃바구니_원데이클래스",
+    "title": "새벽정원 꽃바구니 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_새벽정원_화병꽂이_원데이클래스",
+    "title": "새벽정원 화병꽂이 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_새벽정원_토피어리_원데이클래스",
+    "title": "새벽정원 토피어리 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_카네이션_캔들_만들기",
+    "title": "카네이션 캔들 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_테라조비누_입욕제_베쓰밤_만들기_클래스",
+    "title": "테라조비누&입욕제(베쓰밤) 만들기 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_개성_넘치는_나만의_오일파스텔_초상화_드로잉_페인팅_그림_원데이클래스",
+    "title": "개성 넘치는 나만의 오일파스텔 초상화 드로잉 페인팅 그림 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_우드카빙_숟가락_깎기",
+    "title": "우드카빙 - 숟가락 깎기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_강서_도자기를_만들어_봅시다_물레_손작업_가능",
+    "title": "[서울 강서] 도자기를 만들어 봅시다(물레/손작업 가능)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만이_가질수있는_수제화_만들기",
+    "title": "나만이 가질수있는 수제화 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_마크라메_카네이션_월행잉_클래스",
+    "title": "마크라메 카네이션 월행잉 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_명품_향수_따라잡기_향수만들기_원데이클래스_조향클래스_단체클래스_데이트",
+    "title": "[강남] 명품 향수 따라잡기! 향수만들기 원데이클래스 조향클래스 단체클래스 데이트",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_여름에_어울리는_시트러스_워터리_향수만들기_클래스_향수소모임_시원한향수",
+    "title": "[강남] 여름에 어울리는 시트러스/ 워터리 향수만들기 클래스 향수소모임 시원한향수",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울역_가정의달_자개_카네이션_만들기",
+    "title": "[서울역] 가정의달/ 자개 카네이션 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_오구오구_편백_에그트레이_만들기",
+    "title": "오구오구 편백 에그트레이 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_다육화분_받침대_만들기",
+    "title": "다육화분 받침대 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_시그니처_오가닉_천연향수_원데이클래스",
+    "title": "시그니처 오가닉 천연향수 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_시들지_않는_꽃_하바리움_클래스",
+    "title": "시들지 않는 꽃_하바리움 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_취향을_담은_나만의_신발_가방_의류_커스텀_해보기_업사이클링_공예",
+    "title": "취향을 담은 나만의 신발,가방,의류 커스텀 해보기 / 업사이클링 공예",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_13_번째_블렌딘_가정의달_특집_온가족_최애_위스키_선발대회",
+    "title": "[13 번째 블렌딘] 가정의달 특집! 온가족 최애 위스키 선발대회",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_딱딱한쿠키는가라_촉촉한브라우니쿠키_원데이클래스_오픈",
+    "title": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_가죽공예_양면_카드지갑_만들기",
+    "title": "[가죽공예] 양면 카드지갑 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_보존화로_장식한_동양_벽장식만들기",
+    "title": "보존화로 장식한 동양 벽장식만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_반짝반짝_썬캐쳐_만들기",
+    "title": "반짝반짝 썬캐쳐 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_필라테스_원데이클래스_무료강습_선착순_모집중",
+    "title": "[필라테스] 원데이클래스 무료강습 선착순 모집중",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_보자기_아트_하루수업",
+    "title": "보자기 아트 하루수업",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_압화_캔들홀더_티라이트캔들_클래스",
+    "title": "압화 캔들홀더+티라이트캔들 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_15_번째_블렌딘_여행지_인싸되는_위스키_활용_이야기",
+    "title": "[15 번째 블렌딘] 여행지 인싸되는 위스키 활용 이야기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_슈가_플라워_리스_케익_원데이_클래스",
+    "title": "슈가 플라워 리스 케익 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나무_경첩_상자_One_Day_Class",
+    "title": "'나무 경첩' 상자 One-Day Class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_전국출강_원주_베어브릭_페인팅_클래스",
+    "title": "[전국출강/원주] 베어브릭 페인팅 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_건강한베이킹",
+    "title": "건강한베이킹",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_K아트_전통을탐하고_창의적으로_재현하는_민화",
+    "title": "K아트-전통을탐하고 창의적으로 재현하는 민화",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_K_아트_민화_정규반_지도자자격증반",
+    "title": "K-아트,민화 정규반/지도자자격증반",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_제스모나이트_친환경_소품_만들기",
+    "title": "제스모나이트 친환경 소품 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_귀염뽀짝_글라스아트_토끼_도어벨_클래스",
+    "title": "[홍대/신촌/이대] 귀염뽀짝 글라스아트 토끼 도어벨 클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_고급스러운_나만의_글라스아트_보석함_만들기",
+    "title": "[홍대/신촌/이대] 고급스러운 나만의 글라스아트 보석함 만들기",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_코바늘_뜨개_곰돌이_키링_만들기",
+    "title": "코바늘 뜨개 곰돌이 키링 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_보석_방향제와_타블렛_원데이_클래스",
+    "title": "보석 방향제와 타블렛 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강서_살면서_노래_한번은_잘_해봐야죠",
+    "title": "[강서]살면서 노래 한번은 잘 해봐야죠?",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_목조각_예술로_힐링_교실",
+    "title": "목조각 예술로 힐링 교실",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_클레이크림플라워_도어벨리스만들기",
+    "title": "클레이크림플라워 도어벨리스만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_행잉가랜더_만들기_with_클레이크림플라워",
+    "title": "행잉가랜더 만들기(with 클레이크림플라워)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_감성_공간에서_나만의_힐링_향수_만들기",
+    "title": "감성 공간에서 나만의 힐링 향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_mbti_퍼스널_향수_만들기",
+    "title": "mbti 퍼스널 향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_deet_z_SPECIAL_WORKSHOP",
+    "title": "deet'z SPECIAL WORKSHOP",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_dee_tz_4weeks_regular_class_기초반",
+    "title": "dee'tz 4weeks regular class (기초반)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_차근차근_배우는_아이패드드로잉",
+    "title": "차근차근 배우는 🍀아이패드드로잉🍀",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_초보자도_쉽게_배우는_순수미술_클래스",
+    "title": "초보자도 쉽게 배우는 순수미술 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_TCI_기질_및_성격_검사",
+    "title": "TCI 기질 및 성격 검사",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_심리검사로_보는_연애패턴_이해_클래스",
+    "title": "심리검사로 보는 연애패턴 이해 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_청둥오리_콜라주_아트북_만들기",
+    "title": "청둥오리 콜라주 아트북 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_곰손도_완전_가능_귀여운_모루인형_만들기",
+    "title": "곰손도 완전 가능!! 귀여운 모루인형 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_대치_논알콜_워터베이스향수",
+    "title": "[강남/대치] 논알콜 워터베이스향수",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_향수_기억을_한_병_안에_담아주는_나만의_향수_만들기",
+    "title": "[향수]기억을 한 병 안에 담아주는 나만의 향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_감성_넘치는_옛_건물을_힙하게_그려보는_원데이_어반_스케치_클래스",
+    "title": "감성 넘치는 옛 건물을 힙하게 그려보는 원데이 어반 스케치 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_심신의_조화를_이루는_심리미술_내면의_세계를_탐험하다",
+    "title": "심신의 조화를 이루는 심리미술,  내면의 세계를 탐험하다",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_탁구선수가_알려주는_잘_치는법_왕초보부터_고수까지_쪽집게_과외",
+    "title": "탁구선수가 알려주는 잘 치는법! 왕초보부터 고수까지 쪽집게 과외",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_제스모나이트_원데이클래스",
+    "title": "제스모나이트 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_마포_작가님과_함께하는_아크릴화클래스",
+    "title": "(서울/마포) 작가님과 함께하는 아크릴화클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_지금부터_크리스마스_기다리는_사람",
+    "title": "지금부터 크리스마스 기다리는 사람?",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_전통주를_취미로_내손내빚_막걸리양조",
+    "title": "전통주를 취미로😎내손내빚 막걸리양조",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_공기정화식물_모스와_화산석을_이용한_스톤디퓨저만들기",
+    "title": "공기정화식물 모스와 화산석을 이용한 스톤디퓨저만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나전옻칠_수저_원데이클래스",
+    "title": "나전옻칠 수저 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_전국_쉽고_재미있는_위스키_원데이_클래스_수료증_발급",
+    "title": "[서울,전국] 쉽고 재미있는 위스키 원데이 클래스(수료증 발급)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_심리아로마_차크라_비누만들기",
+    "title": "[심리아로마] 차크라 비누만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_크리스마스_다육이_테라리움",
+    "title": "[홍대] 크리스마스 다육이 테라리움",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_K_pop_릴스_완전정복_목각도_무조건_최애_안무_마스터_가능",
+    "title": "🎧K-pop 릴스 완전정복, 목각도 무조건 최애 안무 마스터 가능💙",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_위스키클래스_칵테일클래스",
+    "title": "위스키클래스&칵테일클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_타로_아틀리에_타로_리딩_후_나만의_타로_운세를_다꾸로_기록해보세요",
+    "title": "🔮 「타로 아틀리에」 타로 리딩 후 나만의 타로 운세를 다꾸로 기록해보세요!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_반려동물_수제간식만들기",
+    "title": "반려동물 수제간식만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_크리스마스_생화트리",
+    "title": "[홍대]크리스마스 생화트리",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_앙금플라워_쿠키",
+    "title": "앙금플라워 쿠키",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_쫀득달콤_수제_떡_원데이_클래스",
+    "title": "쫀득달콤 수제 떡 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_크리스마스_홈데코_펀치니들_리스만들기_원데이_클래스",
+    "title": "크리스마스 홈데코 펀치니들 리스만들기 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_퍼스컬컬러_골격진단_이미지메이킹_원데이클래스",
+    "title": "퍼스컬컬러+골격진단 이미지메이킹 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_유명_브랜드_향수_만들기_30ml_당일_즉시_사용_오드퍼퓸보다_4배_진한_향수",
+    "title": "유명 브랜드 향수 만들기(30ml) 당일 즉시 사용.오드퍼퓸보다 4배 진한 향수.",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_PET_FLOWER_반려견과_함께하는_플라워_클래스",
+    "title": "PET & FLOWER 반려견과 함께하는 플라워 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_20_번째_블렌딘_흥미로운_비즈니스_토크_재미있고_달콤한_위스키_시음",
+    "title": "[20 번째 블렌딘] 흥미로운 비즈니스 토크 & 재미있고 달콤한 위스키 시음",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_단하나뿐인_나만의_시그니처_향수_만들기",
+    "title": "단하나뿐인 나만의 시그니처 향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_영화같은_목공방_도마_만들기_oneday_class",
+    "title": "영화같은 목공방 도마 만들기 oneday class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_크리스마스이미지_와인잔에_프린팅하기_실크스크린기법",
+    "title": "크리스마스이미지 와인잔에 프린팅하기(실크스크린기법)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_오로라_디퓨저_향수_클래스",
+    "title": "오로라 디퓨저 / 향수 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_플라워_취미반_클래스",
+    "title": "플라워 취미반 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_도심에서_떠나는_나만의_밤하늘_여행_Nineteen_Class",
+    "title": "서울 도심에서 떠나는 나만의 밤하늘 여행, Nineteen Class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_가족_연인이_좋아할만한_크리스마스_리스만들기",
+    "title": "가족 연인이 좋아할만한 크리스마스 리스만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_제스모나이트_캔들_레진아트_2가지를_한번에_배울수_있다",
+    "title": "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_근막경선_빈야사요가_원데이클래스",
+    "title": "홍대 근막경선 빈야사요가 원데이클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_감정을_해소하는_글쓰기_아트테라피_파도에_흘려보낸_마음",
+    "title": "감정을 해소하는 글쓰기 아트테라피:파도에 흘려보낸 마음",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_조향_향수_만들기_클래스",
+    "title": "나만의 조향 향수 만들기 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_강아지_수제간식_원데이_클래스",
+    "title": "[수원] 강아지 수제간식 원데이 클래스",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남1_1_크리스마스_향수_핸드크림만들기_원데이클래스_우디향수만들기_특집",
+    "title": "[강남1+1] 크리스마스 향수+핸드크림만들기 원데이클래스 (우디향수만들기 특집)",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_드라이플라워로_만드는_나만의_디퓨져_무드등",
+    "title": "드라이플라워로 만드는 나만의 디퓨져 무드등",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_의류패턴제작과_수선_26회",
+    "title": "의류패턴제작과 수선 (26회)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_광교_샤쉐_향주머니_만들기_클래스",
+    "title": "[수원/광교] 샤쉐(향주머니) 만들기 클래스",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_새해_맞이_제스모나이트_액막이_도어벨_만들기",
+    "title": "새해 맞이 제스모나이트 액막이 도어벨 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_좋아하는_원두_취향_찾고_나만의_드립백_10개_만들기_원데이",
+    "title": "좋아하는 원두 취향 찾고 나만의 드립백 10개 만들기(원데이)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_웃음_만발_모두가_만족하는_플레이모빌_럭키_키링_만들기",
+    "title": "웃음 만발, 모두가 만족하는 플레이모빌 럭키 키링 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_감성가득_플라워_디퓨저_원데이클래스",
+    "title": "감성가득 플라워 디퓨저 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_매주_토요일_태권도_1일_클래스",
+    "title": "매주 토요일 태권도 1일 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_감성과_예쁨_가득_글라스아트_거울_만들기_원데이_클래스",
+    "title": "[홍대/신촌/이대] 감성과 예쁨 가득, 글라스아트 거울 만들기 원데이 클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_시한드로잉모임",
+    "title": "시한드로잉모임",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_화과자만들기7pcs_리뷰시2pcs증정_화과자로_만드는_한입_예술",
+    "title": "화과자만들기7pcs+(리뷰시2pcs증정) 화과자로 만드는 한입 예술",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_화과자만들기_체험_5pcs만들기_리뷰시1pcs증정_눈으로_즐기고_입으로_즐기는_화과자",
+    "title": "화과자만들기 체험(5pcs만들기+리뷰시1pcs증정) 눈으로 즐기고 입으로 즐기는 화과자",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_레코딩_원데이_클래스_내가_부르는_노래",
+    "title": "레코딩 원데이 클래스 \"내가 부르는 노래\"",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_요가_체험",
+    "title": "요가 체험",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_무료각인_나만의_카드_명함지갑_만들기_원데이클래스",
+    "title": "[무료각인] 나만의 카드/명함지갑 만들기 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_역삼_전통적인_한국문양_단청그리기_원데이클래스_세라듀_CERADU",
+    "title": "[강남/역삼] 전통적인 한국문양 단청그리기 원데이클래스 세라듀 CERADU",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_역삼_그림컵클래스_당일수령가능한_머그컵만들기체험",
+    "title": "[강남/역삼] 그림컵클래스 당일수령가능한 머그컵만들기체험",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_25번째_블렌딘_인사이트_비즈니스_토크_품격_있는_위스키_시음",
+    "title": "[25번째 블렌딘] 인사이트 비즈니스 토크 & 품격 있는 위스키 시음",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_Brains_Lab_비즈니스_정부지원_사이드잡_연구실",
+    "title": "Brains Lab : 비즈니스, 정부지원, 사이드잡 연구실",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_Blendin_White_Business_Lab_AI_기반_비즈니스_연구_그룹",
+    "title": "Blendin White Business Lab : AI 기반 비즈니스 연구 그룹",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_서울_관광_한국_전통_도자기_달_항아리_만들기_원데이_클래스",
+    "title": "[강남] 서울 관광 한국 전통 도자기 달 항아리 만들기 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_소망컬러_소잉클래스",
+    "title": "소망컬러 소잉클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_용인_나만의_향수_만들기_조향_원데이클래스",
+    "title": "[수원/용인] 나만의 향수 만들기 조향 원데이클래스",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_향수_만들기_MBTI향수_만들기",
+    "title": "나만의 향수 만들기 MBTI향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_청주_1_1클래스_나의_매력을_발견하는_퍼스널컬러_클래스",
+    "title": "[청주/1:1클래스] 나의 매력을 발견하는 퍼스널컬러 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_전통주요가_시음회",
+    "title": "전통주요가&시음회",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_활용만쩜_감성소품_라탄_티코스터_원데이클래스_2set",
+    "title": "☆활용만쩜! 감성소품☆ 라탄 티코스터 원데이클래스(2set)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_귀염뽀짝_라탄_곰돌이_바구니_성인_키즈_모두_가능",
+    "title": "★귀염뽀짝! 라탄 곰돌이 바구니★ 성인/키즈 모두 가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_소망컬러_소잉클래스_단체클래스",
+    "title": "소망컬러 소잉클래스(단체클래스)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_독서가_쉽고_즐거운_속독수업_락독체험_수업에_초대합니다",
+    "title": "독서가 쉽고 즐거운 속독수업 락독체험 수업에 초대합니다!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_공사장컨셉_다육이테라리움",
+    "title": "[홍대]공사장컨셉 다육이테라리움",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_뜨개_몰라도_만드는_폭닥폭닥_핸드니팅_얀_방석_나만의_보들보들_방석",
+    "title": "뜨개 몰라도 만드는 폭닥폭닥 핸드니팅 얀 방석! 나만의 보들보들 방석",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_내_몸에도_건강하고_환경에도_이로운_제로웨이스트_올인원_샴푸바_만들기",
+    "title": "내 몸에도 건강하고, 환경에도 이로운 제로웨이스트 올인원 샴푸바 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_내_취향에_딱_맞는_향기로_만드는_천연_핸드크림_원데이클래스",
+    "title": "내 취향에 딱 맞는 향기로 만드는 천연 핸드크림 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_비누에_봄을_담아요_플라워솝_압화비누_만들기",
+    "title": "비누에 봄을 담아요, 플라워솝 압화비누 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_캔버스_드로잉_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 캔버스 드로잉🎨 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_백드롭_페인팅_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 백드롭 페인팅🎨 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_화분_만들기_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 화분 만들기🪴 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_베어브릭_페인팅_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 베어브릭 페인팅🐻 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_버니브릭_페인팅_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 버니브릭 페인팅🐰 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_수원_행궁동_모루인형_키링_만들기_기업_단체_출강_문의_환영",
+    "title": "[수원] 행궁동 모루인형 키링 만들기🧸 기업/단체/출강 문의 환영🙆🏻‍♂🙆",
+    "venue": "모카클래스 수원",
+    "count": 11,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_남녀노소_몸치_운동신경제로_누구나_가능한_격투기_원데이클래스",
+    "title": "남녀노소/몸치/운동신경제로 누구나 가능한 격투기 원데이클래스❤️‍🔥",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_말차_다도_원데이_차도구와_사용법을_배워봐요",
+    "title": "[말차 다도 원데이] 차도구와 사용법을 배워봐요!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_명상_다도_마음을_디톡스_해주는_차_명상_시간",
+    "title": "[명상 다도] 마음을 디톡스 해주는 차 명상 시간",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_차도구와_오차즈케_내가_우린_차로_오차즈케_만들기",
+    "title": "[차도구와 오차즈케] 내가 우린 차로 오차즈케 만들기!",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_티칵테일_일상에서_차를_즐기는_여러가지_방법",
+    "title": "[티칵테일] 일상에서 차를 즐기는 여러가지 방법",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_향기로운_나만의_캔들클래스",
+    "title": "향기로운 나만의 캔들클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_향기테라피_커스텀_키링_만들기",
+    "title": "향기테라피 커스텀 키링 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_오가닉으로_건강한_샴푸바_올인원바_만들기",
+    "title": "오가닉으로 건강한 샴푸바 올인원바 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_펀치니들_미니_꽃_액자",
+    "title": "펀치니들 미니 꽃 액자",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_몽실몽실_발매트_만들기",
+    "title": "몽실몽실 발매트 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_도자기_만들기_컬러칩_플레이트",
+    "title": "나만의 도자기 만들기- 컬러칩 플레이트",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_퍼스널_이미지_향수_클래스",
+    "title": "퍼스널 이미지 향수 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울대입구역_원데이_보컬_음원_축가_성우_이색_이벤트_녹음",
+    "title": "[서울대입구역] 원데이 보컬 (음원, 축가, 성우, 이색 이벤트) 녹음",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울대입구역_원데이_디제잉_DJ_클래스",
+    "title": "[서울대입구역] 원데이 디제잉 DJ 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울대입구역_원데이_미디_작곡_클래스",
+    "title": "[서울대입구역] 원데이 미디 작곡 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_단체_출강_담금주공방_유유히_홍대_합정_담금주_원데이_클래스",
+    "title": "[홍대/단체/출강] 담금주공방 유유히 홍대(합정) 담금주 원데이 클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_성수_단체_출강_담금주공방_유유히_성수_담금주_원데이_클래스",
+    "title": "[성수/단체/출강] 담금주공방 유유히 성수 담금주 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_사인_할_때마다_자신감_UP_나만의_특별한_사인_제작_클래스_누적_3만명",
+    "title": "사인 할 때마다 자신감 UP! 나만의 특별한 사인 제작 클래스(누적 3만명+)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_내가_만들어_착용하는_은_silver_이니셜_반지_만들기_원데이클래스",
+    "title": "내가 만들어 착용하는 은(silver)이니셜 반지 만들기 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_폭닥폭닥_토마토_발매트_만들기_클래스",
+    "title": "폭닥폭닥 토마토 발매트 만들기 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_세상에_하나뿐인_은목걸이만들기_이니셜_하트_돌고래꼬리_등",
+    "title": "세상에 하나뿐인 은목걸이만들기(이니셜,하트,돌고래꼬리 등)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_세상에_하나뿐인_은팔찌_만들기_원데이클래스",
+    "title": "세상에 하나뿐인 은팔찌 만들기 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_실용성_가득_라탄_손잡이_바구니_만들기",
+    "title": "[홍대/신촌/이대] 실용성 가득 라탄 손잡이 바구니 만들기",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_아바바_커피농장_체험_교육_커피_드립백_클래스",
+    "title": "[아바바 커피농장 체험/교육] 커피 드립백 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_아바바_커피농장_체험_교육_향기_따라_흐르는_물줄기_브루잉_핸드드립_클래스",
+    "title": "[아바바 커피농장 체험/교육] 향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_아바바_커피농장_체험_교육_향기를_굽는_시간_로스팅_체험_클래스",
+    "title": "[아바바 커피농장 체험/교육] 향기를 굽는 시간 로스팅 체험 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_원데이쿠킹_내가_만드는_요리_한식_양식_일식_동남아_퓨전요리",
+    "title": "[원데이쿠킹] 내가 만드는 요리 한식, 양식, 일식, 동남아 퓨전요리",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_스승의_날_어버이날_부모님_선물_교수님_은사님_선물_화과자_만들기",
+    "title": "스승의 날 어버이날 부모님 선물 교수님 은사님 선물 화과자 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_주식회사_센트온_와인잔_비용_2가지_요리_만들기_쿠킹_클래스_3월_21일",
+    "title": "[주식회사 센트온 - 와인잔 비용] 2가지 요리 만들기 쿠킹 클래스 (3월 21일)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_행운가득_라탄_식물_리스_만들기",
+    "title": "[홍대/신촌/이대] 행운가득 라탄 식물 리스 만들기",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_실용성과_감성_갑_글라스아트_두루마리_휴지케이스_클래스",
+    "title": "[홍대/신촌/이대] 실용성과 감성 갑! 글라스아트 두루마리 휴지케이스 클래스",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_홍대_신촌_이대_자꾸자꾸_보고_싶은_라탄_탁상시계_만들기",
+    "title": "[홍대/신촌/이대] 자꾸자꾸 보고 싶은 라탄 탁상시계 만들기",
+    "venue": "모카클래스 홍대",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_모루플라워_클래스",
+    "title": "모루플라워 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_MY_PET_인형만들기",
+    "title": "MY PET 인형만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남역_기업_단체_맞춤형스페셜티_커피_핸드드립_클래스",
+    "title": "강남역 기업, 단체 맞춤형스페셜티 커피 핸드드립 클래스",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_여행의_기억_선물이_되는_시간_작은선물만들기_원데이클래스_재봉틀",
+    "title": "<여행의 기억, 선물이 되는 시간>  작은선물만들기 원데이클래스 _재봉틀",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_달콤하게_퐁당_코코아밤_만들기",
+    "title": "[강남] 달콤하게, 퐁당! 코코아밤 만들기",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_특별한_조향_체험_나만의_향수_만들기",
+    "title": "특별한 조향 체험 나만의 향수 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나만의_향수_만들기_20ml_간단_클래스",
+    "title": "나만의 향수 만들기 20ml 간단 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_인도에서_온_전문가들에게_배워보는_특별한_웰니스_경험_on_남이섬",
+    "title": "인도에서 온 전문가들에게 배워보는 특별한 웰니스 경험!(on 남이섬)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_건강_강의와_요리를_한_번에_1_1_원데이_정규_클래스",
+    "title": "건강 강의와 요리를 한 번에 1+1 원데이/정규 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_유명_브랜드향수_만들기_30ml_오드퍼퓸보다_4배_진한_향수_당일_사용가능",
+    "title": "유명 브랜드향수 만들기 (30ml)/ 오드퍼퓸보다 4배 진한 향수/ 당일 사용가능",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_천안_감각적인_시그니처_향수_제작_뤼미에르_퍼퓸_A_Class",
+    "title": "[천안] 감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_돌고래_오브제가_들어간_감성_유리병_만들기_하바리움_원데이클래스",
+    "title": "돌고래 오브제가 들어간 감성 유리병 만들기 하바리움 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_프리저브드_디퓨저_만들기",
+    "title": "프리저브드 디퓨저 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_나전칠기_자개풍경_원데이클래스",
+    "title": "[나전칠기]자개풍경 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_천안_감각적인_니치향수_제작_뤼미에르_퍼퓸_B_Class",
+    "title": "[천안] 감각적인 니치향수 제작, 뤼미에르 퍼퓸 B Class",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_내_성격은_어떤_캐릭터일까_심리로_그리는_나의_캐릭터_워크숍",
+    "title": "\"내 성격은 어떤 캐릭터일까?\"심리로 그리는 나의 캐릭터 워크숍",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_와인_미술_I_Love_Me_콜라주로_완성하는_자화상",
+    "title": "와인&미술)I Love Me(콜라주로 완성하는 자화상)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_도자기캐릭터_그릇_만들기",
+    "title": "도자기캐릭터 그릇 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_스트레스_풀리는_터프팅_공예_원데이_클래스",
+    "title": "스트레스 풀리는 터프팅 공예 원데이 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_플로우_요가_좋아한다면_이건_꼭_인사이드플로우_원데이클래스",
+    "title": "플로우 요가 좋아한다면, 이건 꼭! – 인사이드플로우 원데이클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_서울_강남_체질에_맞는_블렌딩티_원데이_클래스_티하우스_절기",
+    "title": "[서울 강남] 체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_실내_클라이밍_일일체험_클래스",
+    "title": "실내 클라이밍 일일체험 클래스",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_꼼지락",
+    "title": "꼼지락:)",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_자개공예_멸종_위기종_키링_만들기",
+    "title": "자개공예 멸종 위기종 키링 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_강남_그림과_점토로_만나는_감정_치유_원데이_프로그램",
+    "title": "[강남] 그림과 점토로 만나는 감정 치유 원데이 프로그램",
+    "venue": "모카클래스 강남",
+    "count": 16,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_우리_모두_잘될고래_글라스아트_도어벨",
+    "title": "우리 모두 \"잘될고래 \"글라스아트 도어벨",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_복잡한_마음을_치유해줄_반려식물_감성라탄소품_행잉바스켓_만들기",
+    "title": "복잡한 마음을 치유해줄 반려식물 감성라탄소품 행잉바스켓 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_원데이_베이킹_클래스_직장인_문화체험",
+    "title": "원데이 베이킹 클래스 직장인 문화체험",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "SUSPICIOUS_VENUE_DENSITY",
+    "id": "class_경기_용인_나전칠기_자개공예_악세사리소품_만들기",
+    "title": "[경기/용인] 나전칠기, 자개공예 악세사리소품 만들기",
+    "venue": "모카클래스",
+    "count": 242,
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_경기_용인_나전칠기_자개공예_악세사리소품_만들기",
+    "title": "[경기/용인] 나전칠기, 자개공예 악세사리소품 만들기",
+    "region": "seoul",
+    "address": "서울특별시",
+    "file": "mochaclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_섬유_향수_룸스프레이_만들기",
+    "title": "[대구/핫플/동성로] 조향사와 함께 섬유 향수/룸스프레이 만들기",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_영등포_녹음하면서_배우자_쉽고_편하게_배우는_보컬레슨",
+    "title": "[영등포] 녹음하면서 배우자! 쉽고 편하게 배우는 보컬레슨!",
+    "region": "seoul",
+    "address": "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양)",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_나만의_고체향수_만들기_클래스_15g",
+    "title": "[대구/핫플/동성로] 조향사와 함께 나만의 고체향수 만들기 클래스 15g",
+    "region": "seoul",
+    "address": "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양)",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_디퓨저_만들기_클래스_이색_데이트",
+    "title": "[대구/핫플/동성로] 조향사와 함께 디퓨저 만들기 클래스 이색 데이트",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_건대_댄스_무용배우기_프라이빗_1_1_그룹레슨_단체레슨",
+    "title": "건대-댄스/무용배우기 (프라이빗 1:1 / 그룹레슨 / 단체레슨)",
+    "region": "seoul",
+    "address": "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양)",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_나만의캔들_만들기_클래스_160g",
+    "title": "[대구/핫플/동성로] 조향사와 함께 나만의캔들 만들기 클래스 160g",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_나만의_왁스타블렛_만들기_클래스",
+    "title": "[대구/핫플/동성로] 조향사와 함께 나만의 왁스타블렛 만들기 클래스",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_석고방향제_만들기_이색_클래스",
+    "title": "[대구/핫플/동성로] 조향사와 함께 석고방향제 만들기 이색 클래스",
+    "region": "seoul",
+    "address": "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양)",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_나만의_디퓨저_만들기_클래스200ml",
+    "title": "[대구/핫플/동성로] 조향사와 함께 나만의 디퓨저 만들기 클래스200ml",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_대구_핫플_동성로_조향사와_함께_나만의캔들_만들기_클래스_200g",
+    "title": "[대구/핫플/동성로] 조향사와 함께 나만의캔들 만들기 클래스 200g",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_중구_대구원데이_대구_핫플_동성로_조향사와_함께_나만의_왁스타블렛_만들기_클래스_0_37_50_000원",
+    "title": "중구 / 대구원데이[대구/핫플/동성로] 조향사와 함께 나만의 왁스타블렛 만들기 클래스(0)37%50,000원",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_중구_대구원데이_대구_핫플_동성로_조향사와_함께_석고방향제_만들기_이색_클래스_1_37_50_000원",
+    "title": "중구 / 대구원데이[대구/핫플/동성로] 조향사와 함께 석고방향제 만들기 이색 클래스(1)37%50,000원",
+    "region": "seoul",
+    "address": "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양)",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_중구_대구원데이_대구_핫플_동성로_조향사와_함께_나만의_디퓨저_만들기_클래스200ml_1_45_55_000원",
+    "title": "중구 / 대구원데이[대구/핫플/동성로] 조향사와 함께 나만의 디퓨저 만들기 클래스200ml(1)45%55,000원",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "class_중구_대구원데이_대구_핫플_동성로_조향사와_함께_나만의캔들_만들기_클래스_200g_0_30_42_000원",
+    "title": "중구 / 대구원데이[대구/핫플/동성로] 조향사와 함께 나만의캔들 만들기 클래스 200g(0)30%42,000원",
+    "region": "seoul",
+    "address": "대구 중구 봉산문화길 95",
+    "file": "umclass.json"
+  },
+  {
+    "type": "REGION_ADDRESS_MISMATCH",
+    "id": "travel_세부퍼시픽_타고_인천_출발_최고의_동선_베버리_프라데라_2색_108홀_라운드_골프여행",
+    "title": "세부퍼시픽 타고 인천 출발 최고의 동선 베버리 & 프라데라 2색 108홀 라운드 골프여행",
+    "region": "seoul",
+    "address": "서울 마포구 삼개로 20 근신빌딩 별관 201호",
+    "file": "travel.json"
+  }
+]

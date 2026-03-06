@@ -148,9 +148,17 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
                 if (lowerName.includes('musical')) genre = 'musical';
                 else if (lowerName.includes('concert')) genre = 'concert';
                 else if (lowerName.includes('play')) genre = 'play';
-                else if (lowerName.includes('classic')) genre = 'classic';
+                else if (lowerName.includes('classic') || lowerName.includes('opera') || lowerName.includes('dance') || lowerName.includes('ballet') || lowerName.includes('traditional')) genre = 'classic';
                 else if (lowerName.includes('exhibit')) genre = 'exhibition';
                 else if (lowerName.includes('theme') || lowerName.includes('kid')) genre = 'leisure';
+            }
+
+            // Fallback for remaining 'etc' - if it contains 'museum', 'exhibit', 'gallery' etc.
+            if (genre === 'etc') {
+                const title = $obj.find('.obj_tit').text().toLowerCase();
+                if (title.includes('전시') || title.includes('박물관') || title.includes('미술관')) {
+                    genre = 'exhibition';
+                }
             }
 
             $obj.find('.content').each((i, el) => {
@@ -208,7 +216,7 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
 }
 
 async function scrapeDetails(browser: any, items: Performance[], existingEnriched: Map<string, Performance>) {
-    const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure', 'exhibition'];
+    const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure', 'exhibition', 'etc'];
     const candidates = items.filter(i => targetGenres.includes(i.genre));
     const others = items.filter(i => !targetGenres.includes(i.genre));
 
@@ -436,6 +444,27 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                                 if (match) price = match[1];
                             }
                         }
+                    }
+
+                    // Strategy C: Traverse .infoItem for labels like "가격" or "금액" (observed on 26001972)
+                    if (!price) {
+                        const items = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem'));
+                        items.forEach(item => {
+                            const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
+                            const textSource = item.querySelector('.infoText, .infoDesc') || item;
+                            const text = textSource.textContent?.trim() || '';
+
+                            if (label.includes('가격') || label.includes('판매가') || label.includes('티켓가격')) {
+                                // Try finding a price pattern in the item text
+                                const match = text.match(/([0-9,]+원)/);
+                                if (match) {
+                                    price = match[1];
+                                } else if (text && text.includes('원')) {
+                                    // Fallback to full text if it contains '원' but regex failed for some reason
+                                    price = text.split('\n')[0].trim();
+                                }
+                            }
+                        });
                     }
 
                     // Strategy B: Old Structure text parsing
