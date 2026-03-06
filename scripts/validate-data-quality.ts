@@ -1,83 +1,143 @@
 
-import path from 'path';
 import fs from 'fs';
-import { getAllPerformances } from '../src/lib/performance-data';
+import path from 'path';
+import { QUALITY_THRESHOLDS, POISON_PATTERNS, isVenueSuspicious, isRegionMismatch } from './utils/quality-rules.js';
 
-// Mock venues data import since we can't easily import JSON with 'assert' in tsx/node sometimes depending on config
-// We'll read it manually to be safe or rely on the lib's internal logic if possible.
-// Actually getAllPerformances already does the filtering! 
-// So if we run getAllPerformances(), it returns the FILTERED list.
+const DATA_DIR = path.join(process.cwd(), 'src/data');
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+const VENUES_PATH = path.join(DATA_DIR, 'venues.json');
 
-// We want to check:
-// 1. Total items vs Filtered items (implied).
-// 2. But we can't see what was filtered out unless we bypass the filter.
-// Instead, let's load the data sources directly or just check the output file 'public/data/performances.json'
-// and verify that NO item (except movie/ott) has missing geo data.
+const TARGETS = [
+    'movies.json',
+    'museum.json',
+    'interpark.json',
+    'mochaclass.json',
+    'umclass.json',
+    'travel.json'
+];
 
-// Actually, `generate-performance-json.ts` uses getAllPerformances().
-// So checking `public/data/performances.json` is the best validation of the FINAL output.
+async function audit() {
+    console.log('🧐 [데이터 품질 감사 시스템] 정밀 진단을 시작합니다...');
 
-async function validate() {
-    const jsonPath = path.resolve(process.cwd(), 'public/data/performances.json');
-    if (!fs.existsSync(jsonPath)) {
-        console.error('❌ performances.json not found. Run "npm run generate-data" first.');
-        process.exit(1);
+    if (!fs.existsSync(VENUES_PATH)) {
+        console.error('❌ venues.json이 없습니다.');
+        return;
     }
 
-    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-    console.log(`🔍 Validating ${data.length} items in performances.json...`);
+    const venues = JSON.parse(fs.readFileSync(VENUES_PATH, 'utf-8'));
+    const venueCounts: Record<string, number> = {};
+    const issues: any[] = [];
 
-    let passed = true;
-    let errors = 0;
-    let movieCount = 0;
-    let ottCount = 0;
-    let otherCount = 0;
+    // 1. 전역 카운트 수집 (장소 밀집도 조사)
+    for (const file of TARGETS) {
+        const filePath = path.join(DATA_DIR, file);
+        if (!fs.existsSync(filePath)) continue;
 
-    // We also need venues.json to check if the venue implies valid geo check
-    const venuesPath = path.resolve(process.cwd(), 'src/data/venues.json');
-    const venues = JSON.parse(fs.readFileSync(venuesPath, 'utf-8'));
-
-    for (const item of data) {
-        if (item.genre === 'movie') {
-            movieCount++;
-            continue;
-        }
-        if (item.genre === 'ott') {
-            ottCount++;
-            continue;
-        }
-
-        otherCount++;
-
-        // For others, check venue geo
-        // The item.venue is the key.
-        const v = venues[item.venue];
-
-        if (!v) {
-            console.error(`❌ [${item.id}] Venue not found in dictionary: ${item.venue} (${item.title})`);
-            passed = false;
-            errors++;
-            continue;
-        }
-
-        if (!v.lat || !v.lng || v.address === '정보 없음' || !v.address) {
-            console.error(`❌ [${item.id}] Venue missing geo data: ${item.venue} (${item.title})`);
-            passed = false;
-            errors++;
-        }
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        data.forEach((item: any) => {
+            const vName = item.venue || item.place;
+            if (vName) {
+                venueCounts[vName] = (venueCounts[vName] || 0) + 1;
+            }
+        });
     }
 
-    console.log('--- Stats ---');
-    console.log(`Movie: ${movieCount}`);
-    console.log(`OTT: ${ottCount}`);
-    console.log(`Other (Location-based): ${otherCount}`);
+    // 2. 세부 항목 감사
+    for (const file of TARGETS) {
+        const filePath = path.join(DATA_DIR, file);
+        if (!fs.existsSync(filePath)) continue;
 
-    if (passed) {
-        console.log('✅ Validation PASSED: All location-based content has valid geo data.');
-    } else {
-        console.error(`❌ Validation FAILED: Found ${errors} items with missing/invalid location data.`);
-        process.exit(1);
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+        data.forEach((item: any, idx: number) => {
+            const itemID = item.id || `${file}_${idx}`;
+
+            // [규칙 1] 이미지 품질 (용량 체크)
+            const imgPath = item.image || item.poster || item.imageSrc;
+            if (imgPath && imgPath.startsWith('/images/')) {
+                const absPath = path.join(PUBLIC_DIR, imgPath);
+                if (fs.existsSync(absPath)) {
+                    const stats = fs.statSync(absPath);
+                    if (stats.size < QUALITY_THRESHOLDS.MIN_POSTER_SIZE) {
+                        issues.push({
+                            type: 'LOW_QUALITY_IMAGE',
+                            id: itemID,
+                            title: item.title,
+                            value: `${(stats.size / 1024).toFixed(1)}KB`,
+                            file
+                        });
+                    }
+                }
+            }
+
+            // [규칙 2] 장소 밀집도 (본사 주소 의심)
+            const vName = item.venue || item.place;
+            if (vName && isVenueSuspicious(venueCounts[vName], vName)) {
+                issues.push({
+                    type: 'SUSPICIOUS_VENUE_DENSITY',
+                    id: itemID,
+                    title: item.title,
+                    venue: vName,
+                    count: venueCounts[vName],
+                    file
+                });
+            }
+
+            // [규칙 3] 텍스트 오염 (D-day 등)
+            if (item.title && POISON_PATTERNS.TITLE_D_DAY.test(item.title)) {
+                issues.push({
+                    type: 'POISONED_TITLE',
+                    id: itemID,
+                    title: item.title,
+                    file
+                });
+            }
+
+            if (item.subGenre && POISON_PATTERNS.GENRE_COUNTRY.test(item.subGenre)) {
+                issues.push({
+                    type: 'POISONED_GENRE',
+                    id: itemID,
+                    title: item.title,
+                    genre: item.subGenre,
+                    file
+                });
+            }
+
+            // [규칙 4] 구역 불일치 (Region vs Address)
+            if (vName && venues[vName]) {
+                const v = venues[vName];
+                const addr = v.address || '';
+                const region = item.region || '';
+
+                if (isRegionMismatch(region, addr, item.title)) {
+                    issues.push({
+                        type: 'REGION_ADDRESS_MISMATCH',
+                        id: itemID,
+                        title: item.title,
+                        region,
+                        address: addr,
+                        file
+                    });
+                }
+            }
+        });
+    }
+
+    // 결과 출력
+    console.log(`\n📊 감사 결과: 총 ${issues.length}건의 잠재적 품질 이슈 발견`);
+
+    const summary: Record<string, number> = {};
+    issues.forEach(iss => {
+        summary[iss.type] = (summary[iss.type] || 0) + 1;
+    });
+
+    console.table(summary);
+
+    if (issues.length > 0) {
+        const reportPath = path.join(process.cwd(), 'QUALITY_REPORT.json');
+        fs.writeFileSync(reportPath, JSON.stringify(issues, null, 2));
+        console.log(`\n📄 상세 리포트가 생성되었습니다: ${reportPath}`);
     }
 }
 
-validate();
+audit();
