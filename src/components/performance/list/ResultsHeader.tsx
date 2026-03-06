@@ -39,7 +39,7 @@ export const ResultsHeader = ({
                             <>
                                 <MapPin className="text-emerald-500 w-5 h-5" />
                                 <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : '내 위치'}</span>
-                                <span className="text-base sm:text-xl shrink-0">주변 ({filteredCount})</span>
+                                <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
                                 <button
                                     onClick={onResetFilters}
                                     className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 group/reload"
@@ -57,7 +57,7 @@ export const ResultsHeader = ({
                                 )}
                                 <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
                                 <span className="text-base sm:text-xl shrink-0">
-                                    {searchMode === 'location' ? '위치 검색 컨텐츠' : '키워드 검색 컨텐츠'} ({filteredCount})
+                                    {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
                                 </span>
                             </>
                         ) : (
