@@ -809,7 +809,7 @@
     "genre": "movie",
     "link": "https://search.naver.com/search.naver?query=%EC%82%B4%EB%AA%A9%EC%A7%80%20%EC%98%81%ED%99%94",
     "productionCountry": "대한민국",
-    "subGenre": "공포대한민국",
+    "subGenre": "공포",
     "director": "이상민",
     "cast": [
       "김혜윤",
@@ -823,7 +823,10 @@
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_살목지.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "dateRaw": "2026-04-08"
+    "dateRaw": "2026-04-08",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/0cead0eb683341f5810aecbaa2d0dded.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/0cead0eb683341f5810aecbaa2d0dded.jpg",
+    "posterFallback": false
   },
   {
     "id": "movie_주희에게",
@@ -1298,14 +1301,20 @@
     "runningTime": "95분",
     "productionCountry": "프랑스",
     "subGenre": "액션",
-    "director": "미키 타카히로",
+    "director": "올리비에 슈나이더",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_오펀스복수자들.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/a906a46ddab64f5cb483d2a1ce91c2b1.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_a906a46ddab64f5cb483d2a1ce91c2b1.jpg"
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/a906a46ddab64f5cb483d2a1ce91c2b1.jpg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_a906a46ddab64f5cb483d2a1ce91c2b1.jpg",
+    "cast": [
+      "알반 레누아르",
+      "달리 벤살라",
+      "소냐 파이디",
+      "쉬잔 클레망"
+    ]
   },
   {
     "id": "movie_위_리브_인_타임",
@@ -1315,13 +1324,18 @@
     "genre": "movie",
     "link": "https://search.naver.com/search.naver?query=%EC%9C%84%20%EB%A6%AC%EB%B8%8C%20%EC%9D%B8%20%ED%83%80%EC%9E%84%202026%EB%85%84%20%EB%AF%B8%ED%82%A4%20%ED%83%80%EC%B9%B4%ED%9E%88%EB%A1%9C%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/bdc04192f99b46f099bb63a9df276525.jpg",
     "posterFallback": false,
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/bdc04192f99b46f099bb63a9df276525.jpg",
     "image": "/images/posters/movies/movie_위리브인타임.webp",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "미키 타카히로"
+    "director": "존 크로울리",
+    "cast": [
+      "플로렌스 퓨",
+      "앤드류 가필드"
+    ],
+    "subGenre": "로맨스"
   },
   {
     "id": "movie_킬_빌_더_홀_블러디_어페어",
@@ -1431,14 +1445,17 @@
     "runningTime": "111분",
     "productionCountry": "이탈리아",
     "subGenre": "드라마",
-    "director": "크리스 프랫",
+    "director": "다미아노 미키엘레토",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_비발디와나.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_6922a25171014690918d92ca491f9f2d.jpg"
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_6922a25171014690918d92ca491f9f2d.jpg",
+    "cast": [
+      "미셸 리온디노"
+    ]
   },
   {
     "id": "movie_소녀심판",

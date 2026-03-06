@@ -62,8 +62,14 @@ const extractMetadataStr = `() => {
         if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)[0];
         if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)[0];
         if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)[0];
-        if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\\d/)) {
-            if (patterns.genre.test(text)) res.subGenre = text;
+        
+        // Improved genre extraction: avoid matching country names or numbers as genres
+        if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
+            const genreMatch = text.match(patterns.genre);
+            if (genreMatch) {
+                // If it's a concatenated string like '공포대한민국', just take the '공포' part
+                res.subGenre = genreMatch[0];
+            }
         }
     });
 
@@ -149,13 +155,13 @@ async (code) => {
         return null;
     }
     
-    // Wait for popup content
+    // Wait for popup content (Robust selector: look for visible ui-dialog)
     const wait = (ms) => new Promise(r => setTimeout(r, ms));
-    let popup = document.querySelector('div#ui-id-1, .ui-dialog');
+    let popup = document.querySelector('.ui-dialog:not([style*="display: none"])');
     let attempts = 0;
     while (!popup && attempts < 25) {
         await wait(200);
-        popup = document.querySelector('div#ui-id-1, .ui-dialog');
+        popup = document.querySelector('.ui-dialog:not([style*="display: none"])');
         attempts++;
     }
     
@@ -164,7 +170,30 @@ async (code) => {
     const res = { titleEn: '', director: '', highResPoster: '', cast: [] };
     
     res.titleEn = popup.querySelector('.title_en')?.textContent?.trim() || '';
+    if (!res.titleEn) {
+        // Fallback: search for English title in the header area (text nodes)
+        const header = popup.querySelector('.hd_mvie, .title_area');
+        if (header) {
+            res.titleEn = Array.from(header.childNodes)
+                .filter(node => node.nodeType === 3)
+                .map(node => node.textContent.trim())
+                .filter(txt => /^[a-zA-Z0-9\s:,\-'.!?]+$/.test(txt))
+                .join(' ').trim();
+        }
+    }
+    
     res.director = popup.querySelector('dl dd a[onclick*="mstView(\\'people\\'"]')?.textContent?.trim() || '';
+    if (!res.director) {
+        // Fallback: generic dl dd for director
+        const staffDls = Array.from(popup.querySelectorAll('dl.staff_info, dl'));
+        for (const dl of staffDls) {
+            const dt = dl.querySelector('dt');
+            if (dt && (dt.textContent.includes('감독') || dt.textContent.includes('연출'))) {
+                res.director = dl.querySelector('dd')?.textContent?.trim() || '';
+                break;
+            }
+        }
+    }
     
     // High-res poster cleaning from thumbnail
     const imgEl = popup.querySelector('a.thumb img');
