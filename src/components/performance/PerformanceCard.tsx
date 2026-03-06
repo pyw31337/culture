@@ -61,15 +61,22 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const glareRef = useRef<HTMLDivElement>(null);
 
     const dDay = useMemo(() => {
-        if (perf.genre !== 'movie' || !perf.date) return null;
+        if (perf.genre !== 'movie' || (!perf.date && !perf.dateRaw)) return null;
         try {
-            const cleanDate = perf.date.replace(/\./g, '-').split('~')[0].trim();
-            const target = new Date(cleanDate);
+            const dateStr = perf.dateRaw || perf.date;
+            // Extract core date part: "2026.04.01(수)" -> "2026-04-01"
+            const normalized = dateStr.split('~')[0].replace(/\./g, '-').replace(/[^\d-]/g, '').replace(/-+$/, '');
+
+            const target = new Date(normalized);
+            if (isNaN(target.getTime())) return null;
+
             const now = new Date();
             target.setHours(0, 0, 0, 0);
             now.setHours(0, 0, 0, 0);
+
             const diffTime = target.getTime() - now.getTime();
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
             if (diffDays === 0) return 'D-Day';
             if (diffDays > 0) return `D-${diffDays}`;
             if (diffDays < 0) {
@@ -80,7 +87,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         } catch (e) {
             return null;
         }
-    }, [perf.date, perf.genre]);
+    }, [perf.date, perf.dateRaw, perf.genre]);
 
     const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (!cardRef.current || !glareRef.current) return;

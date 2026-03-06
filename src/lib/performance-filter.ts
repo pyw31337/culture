@@ -193,8 +193,9 @@ export function sortPerformances(performances: Performance[], genre: string, key
             if (a.rank !== undefined) return -1;
             if (b.rank !== undefined) return 1;
 
-            const dateA = (a.dateRaw || a.date || '9999-12-31').replace(/[^\d.-]/g, '');
-            const dateB = (b.dateRaw || b.date || '9999-12-31').replace(/[^\d.-]/g, '');
+            // Normalize formats: "2026.03.04." vs "2026-12-31" -> "20260304" vs "20261231"
+            const dateA = (a.dateRaw || a.date || '99991231').replace(/\D/g, '').padEnd(8, '0');
+            const dateB = (b.dateRaw || b.date || '99991231').replace(/\D/g, '').padEnd(8, '0');
             return dateA.localeCompare(dateB);
         });
     }
