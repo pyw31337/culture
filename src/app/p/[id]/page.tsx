@@ -18,8 +18,9 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id } = await params;
+    const decodedId = decodeURIComponent(id);
     const performances = await getAllPerformances();
-    const p = performances.find((perf) => perf.id === id);
+    const p = performances.find((perf) => perf.id === decodedId);
 
     if (!p) {
         return {
@@ -65,10 +66,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function PerformanceSharePage({ params }: PageProps) {
     const { id } = await params;
+    const decodedId = decodeURIComponent(id);
     const performances = await getAllPerformances();
-    const p = performances.find((perf) => perf.id === id);
+    const p = performances.find((perf) => perf.id === decodedId);
 
-    if (!p) return <ShareRedirect id={id} />;
+    if (!p) return <ShareRedirect id={decodedId} />;
 
     const productionHost = 'https://pyw31337.github.io';
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '/culture';
