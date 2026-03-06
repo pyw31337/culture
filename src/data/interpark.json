@@ -40329,14 +40329,16 @@
     "date": "2025.05.16 ~ 2030.12.31",
     "venue": "OK 레저 ATV",
     "link": "https://tickets.interpark.com/goods/Y5000741",
-    "region": "seoul",
+    "region": "jeju",
     "genre": "leisure",
     "runningTime": "",
     "ageRating": "전체관람가",
     "price": "25,500원",
     "originalPrice": "30,000원",
     "discount": "15%",
-    "lastEnriched": "2026-02-24T00:13:21.379Z"
+    "lastEnriched": "2026-02-24T00:13:21.379Z",
+    "address": "제주특별자치도 서귀포시 표선면 번영로 2595",
+    "district": "서귀포시"
   },
   {
     "id": "perf_제주_The_K_SHOW",
