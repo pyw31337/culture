@@ -162,7 +162,8 @@
     "posterFallback": false,
     "lastCollected": "2026-03-06T01:38:19.942Z",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg"
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "image": "/images/posters/movies/movie_신의악단.webp"
   },
   {
     "id": "movie_우리는_매일매일",
@@ -1025,10 +1026,12 @@
     "productionCountry": "미국",
     "subGenre": "드라마",
     "venue": "등급 미정",
-    "image": "",
+    "image": "/images/posters/movies/movie_굿윌헌팅.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
     "dateRaw": "2026-03-04",
-    "posterFallback": true
+    "posterFallback": false,
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg"
   },
   {
     "id": "movie_아르코",
