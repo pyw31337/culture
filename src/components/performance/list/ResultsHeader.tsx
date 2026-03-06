@@ -35,7 +35,7 @@ export const ResultsHeader = ({
             <div className="w-full sm:w-auto">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
-                        {activeLocation ? (
+                        {(searchMode === 'location' && activeLocation) ? (
                             <>
                                 <MapPin className="text-emerald-500 w-5 h-5" />
                                 <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : '내 위치'}</span>
@@ -70,7 +70,7 @@ export const ResultsHeader = ({
                             </>
                         )}
                     </h2>
-                    {activeLocation && (
+                    {(searchMode === 'location' && activeLocation) && (
                         <div className="flex items-center gap-2 ml-auto">
                             <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
                                 <div className="relative flex items-center pl-1">
