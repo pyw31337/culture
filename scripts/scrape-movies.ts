@@ -175,17 +175,24 @@ async (code) => {
     const posterTab = tabs.find(a => a.textContent?.includes('포스터') || a.textContent?.includes('스틸컷'));
     if (posterTab) {
         posterTab.click();
-        await wait(500);
+        await wait(600);
         
-        // Find the main poster link if any
+        // Find the main poster link if any - Look for the BIGGEST one or explicit poster link
         const posterLinks = Array.from(popup.querySelectorAll('a[href*="/common/mast/movie/"]'));
+        
+        // Prioritize links that don't have 'thumb' or 'thn_' in them
+        let bestHref = '';
         for (const link of posterLinks) {
             const href = link.href;
             if (href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
-                res.highResPoster = href;
-                break;
+                if (!href.includes('thumb_') && !href.includes('thn_')) {
+                    bestHref = href;
+                    break;
+                }
+                if (!bestHref) bestHref = href;
             }
         }
+        if (bestHref) res.highResPoster = bestHref;
     }
     
     // Cast logic: get first 8 names
@@ -711,8 +718,12 @@ async function scrapeMovies() {
             }
 
             let extraSearch = '';
-            if (m.director) extraSearch += ` ${m.director}`;
-            else if (m.titleEn) extraSearch += ` ${m.titleEn}`;
+            // Only add director if it looks like a Korean name for Korean movies to avoid mismatches
+            if (m.director && (m.title.match(/[가-힣]/) && m.director.match(/[가-힣]/))) {
+                extraSearch += ` ${m.director}`;
+            } else if (m.titleEn && m.titleEn.length > 2) {
+                extraSearch += ` ${m.titleEn}`;
+            }
 
             const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title}${yearSearch}${extraSearch} 영화`)}`;
 
@@ -818,11 +829,27 @@ async function scrapeMovies() {
                     'default_image'
                 ];
 
+                const TARGET_POSTERS: Record<string, string> = {
+                    "김~치!": "https://www.kobis.or.kr/common/mast/movie/2026/03/08cf3dbe09c349c29e5d38ac6c805501.jpg",
+                    "열여덟 청춘": "https://www.kobis.or.kr/common/mast/movie/2026/03/215a8ae8859341fc9c01de40e6ba7f61.jpg",
+                    "장수탕 선녀님": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
+                    "내 이름은": "https://www.kobis.or.kr/common/mast/movie/2026/01/68ed6cf505d24ee68f4d4f0a44ee0457.jpg",
+                    "굿윌 헌팅": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
+                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg"
+                };
+
                 let selectedPoster = '';
                 let isFallback = true;
 
+                // 0. Priority: User-provided explicit high-res targets
+                const targetKey = Object.keys(TARGET_POSTERS).find(k => item.title.includes(k) || k.includes(item.title));
+                if (targetKey) {
+                    selectedPoster = TARGET_POSTERS[targetKey];
+                    isFallback = false;
+                    console.log(`[Target Poster] Using user-provided poster for ${item.title}`);
+                }
                 // 1. Legitimate KOBIS high-res (explicitly mentioned by user)
-                if (m.kobisPoster && m.kobisPoster.includes('/common/mast/movie/')) {
+                else if (m.kobisPoster && m.kobisPoster.includes('/common/mast/movie/')) {
                     selectedPoster = m.kobisPoster;
                     isFallback = false;
                     console.log(`[High-Res KOBIS] Using official poster for ${item.title}`);
@@ -899,21 +926,34 @@ async function scrapeMovies() {
             // STRICT POLICY: Only keep movies that are currently in KOBIS Top 10 ranking OR Upcoming
             const synchronizedMovies: any[] = [];
 
-            // finalMovies contains both cached (no enrichment needed) AND newly enriched movies
+            // NEW RETENTION POLICY: 
+            // 1. Keep all newly scraped movies.
+            // 2. Keep existing movies if their release date is in the future (today or later).
+            const todayStr = new Date().toISOString().split('T')[0].replace(/-/g, '.');
+
+            const processedTitles = new Set();
+
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
-
-                // Final safety: if year mismatch, don't merge old metadata
-                const existingYear = existing?.date?.match(/\d{4}/)?.[0];
-                const newYear = newMovie.date?.match(/\d{4}/)?.[0];
-                const yearMismatch = existingYear && newYear && existingYear !== newYear;
-
-                const merged = yearMismatch ? { ...newMovie, lastCollected: now } : {
+                const merged = {
                     ...existing,
                     ...newMovie,
                     lastCollected: now
                 };
                 synchronizedMovies.push(merged);
+                processedTitles.add(newMovie.title);
+            }
+
+            // Retention: Keep existing future movies
+            for (const [title, existing] of movieMap.entries()) {
+                if (processedTitles.has(title)) continue;
+
+                // If it's a future movie, keep it even if not in current scrape
+                const releaseDate = existing.date || '';
+                if (releaseDate >= todayStr) {
+                    console.log(`[Retaining Future Movie] ${title} (${releaseDate})`);
+                    synchronizedMovies.push(existing);
+                }
             }
 
             const allMovies = synchronizedMovies;
