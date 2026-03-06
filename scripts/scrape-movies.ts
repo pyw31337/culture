@@ -165,6 +165,10 @@ async (code) => {
         attempts++;
     }
     
+    // [강화] 만약 팝업은 떴는데 이전 영화 정보가 남아있을 수 있으므로 
+    // 현재 코드값과 팝업 내의 코드가 일치하는지 확인하거나 잠시 더 대기
+    await wait(300);
+
     if (!popup) return null;
 
     const res = { titleEn: '', director: '', highResPoster: '', cast: [] };
@@ -222,20 +226,21 @@ async (code) => {
 
     // Advanced Extraction: Look for official high-res poster link in tabs
     // KOBIS often has a "Poster/Still" tab
-    const tabs = Array.from(popup.querySelectorAll('.item_tab ul li a'));
+    const tabs = Array.from(popup.querySelectorAll('.item_tab ul li a, .tab_type01 li a'));
     const posterTab = tabs.find(a => a.textContent?.includes('포스터') || a.textContent?.includes('스틸컷'));
     if (posterTab) {
         posterTab.click();
-        await wait(600);
+        await wait(1000); // 갤러리 로딩 대기
         
-        // Find the main poster link if any - Look for the BIGGEST one or explicit poster link
-        const posterLinks = Array.from(popup.querySelectorAll('a[href*="/common/mast/movie/"]'));
+        // [강화] 현재 팝업 내의 갤러리 리스트에서만 링크를 추출
+        const posterLinks = Array.from(popup.querySelectorAll('.poster_list a[href*="/common/mast/movie/"], .gallery_list a[href*="/common/mast/movie/"]'));
         
-        // Prioritize links that don't have 'thumb' or 'thn_' in them
         let bestHref = '';
         for (const link of posterLinks) {
-            const href = link.href;
+            const href = (link as HTMLAnchorElement).href;
             if (href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
+                // 특정 영화 코드 폴더 내에 있는지 확인하고 싶으나 KOBIS URL 구조상 날짜 기반임.
+                // 대신 'thumb'나 'thn_'이 없는 원본 우선
                 if (!href.includes('thumb_') && !href.includes('thn_')) {
                     bestHref = href;
                     break;
@@ -244,6 +249,12 @@ async (code) => {
             }
         }
         if (bestHref) res.highResPoster = bestHref;
+    }
+
+    // [강화] 추출된 포스터가 여전히 비어있거나 KOBIS 기본 No Image면 빈 값으로 리턴하여 
+    // 이전 루프의 데이터가 섞이지 않도록 보장
+    if (res.highResPoster.includes('noimg_') || !res.highResPoster.startsWith('http')) {
+        res.highResPoster = '';
     }
     
     // Cast logic: get first 8 names
