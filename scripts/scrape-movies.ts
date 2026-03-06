@@ -14,9 +14,14 @@ const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');
 
 function slugify(text: string): string {
     return text
+        .replace(/ D-\d+/g, '') // Strip D-day suffix early
         .replace(/[^a-zA-Z0-9가-힣]/g, '_')
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
+}
+
+function cleanTitle(title: string): string {
+    return title.replace(/\s+D-\d+$/g, '').trim();
 }
 
 // --- Helper: Sleep ---
@@ -326,10 +331,11 @@ async function scrapeMovies() {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
                 const list = [];
                 rows.forEach((row, idx) => {
-                    if (idx >= 10) return; // ONLY TOP 10
+                    if (idx >= 30) return; // Top 30 for Box Office
                     const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
                     if (titleLink) {
-                        const title = titleLink.textContent?.trim() || '';
+                        let title = titleLink.textContent?.trim() || '';
+                        title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
                         const dateRaw = row.querySelector('td:nth-child(3)')?.textContent?.trim();
                         const rank = row.querySelector('td:nth-child(1)')?.textContent?.trim();
                         if (title) {
@@ -390,7 +396,8 @@ async function scrapeMovies() {
                     const items = document.querySelectorAll('div.list_type01 ul li, .item');
                     items.forEach(el => {
                         const titleEl = el.querySelector('strong.tit');
-                        const title = titleEl?.getAttribute('title') || titleEl?.textContent?.trim() || '';
+                        let title = titleEl?.getAttribute('title') || titleEl?.textContent?.trim() || '';
+                        title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
 
                         // Extract movie code from onclick: mstView('movie','20250523')
                         const linkEl = el.querySelector('a.thumb, strong.tit a');
@@ -560,7 +567,8 @@ async function scrapeMovies() {
                         const cards = document.querySelectorAll('.card_area, .movie_item, .list_type1 li, ._item, .sc_new .card');
                         cards.forEach(card => {
                             const titleEl = card.querySelector('.title, .api_txt_lines, a.tit, .info_title a, .sub_tit');
-                            const title = titleEl?.textContent?.trim() || '';
+                            let title = titleEl?.textContent?.trim() || '';
+                            title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
 
                             const dateEl = card.querySelector('.sub_info .txt, .info_txt, .etc_info, .date, .txt_area .sub');
                             const dateText = dateEl?.textContent?.trim() || card.textContent || '';
@@ -587,7 +595,8 @@ async function scrapeMovies() {
                         // Also try the scroll list / area for movie names
                         const scrollItems = document.querySelectorAll('.flick_bx .item, .cm_content_area .tit');
                         scrollItems.forEach(item => {
-                            const title = item.querySelector('a, .tit')?.textContent?.trim() || item.textContent?.trim() || '';
+                            let title = item.querySelector('a, .tit')?.textContent?.trim() || item.textContent?.trim() || '';
+                            title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
                             const parent = item.closest('.flick_bx, .cm_content_area');
                             const dateText = parent?.textContent || '';
                             const dateMatch = dateText.match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
@@ -725,7 +734,17 @@ async function scrapeMovies() {
                 extraSearch += ` ${m.titleEn}`;
             }
 
-            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title}${yearSearch}${extraSearch} 영화`)}`;
+            // Optimization for extremely long titles (like Gundam)
+            let queryTitle = m.title;
+            if (queryTitle.length > 25) {
+                // Truncate to first meaningful part if it has - or : or (
+                const cutIdx = queryTitle.search(/[-:(]/);
+                if (cutIdx > 10) {
+                    queryTitle = queryTitle.substring(0, cutIdx).trim();
+                }
+            }
+
+            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${queryTitle}${yearSearch}${extraSearch} 영화`)}`;
 
             const item: any = {
                 id,

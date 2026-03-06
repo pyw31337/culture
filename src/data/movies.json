@@ -796,7 +796,10 @@
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_특별편집판기동전사건담철혈의오펀스우르드헌트작은도전자의궤적.webp",
     "lastCollected": "2026-03-06T01:38:19.942Z",
-    "dateRaw": "2026-04-04"
+    "dateRaw": "2026-04-04",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/c35c6349b3964026aa84032b4e0de281.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/c35c6349b3964026aa84032b4e0de281.jpg",
+    "posterFallback": false
   },
   {
     "id": "movie_살목지",
@@ -1053,24 +1056,12 @@
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_105771cca46f4064a4be49148e7c1184.jpg"
   },
   {
-    "id": "movie_아르코_D_5",
-    "title": "아르코 D-5",
+    "id": "movie_오만과_편견",
+    "title": "오만과 편견",
     "date": "2026.03.11.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EB%A5%B4%EC%BD%94%20D-5%202026%EB%85%84%20%EC%98%81%ED%99%94",
-    "venue": "등급 미정",
-    "image": "",
-    "posterFallback": true,
-    "lastCollected": "2026-03-06T01:38:19.942Z"
-  },
-  {
-    "id": "movie_오만과_편견_D_5",
-    "title": "오만과 편견 D-5",
-    "date": "2026.03.11.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%98%A4%EB%A7%8C%EA%B3%BC%20%ED%8E%B8%EA%B2%AC%20D-5%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EC%98%A4%EB%A7%8C%EA%B3%BC%20%ED%8E%B8%EA%B2%AC%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
     "image": "",
     "posterFallback": true,
