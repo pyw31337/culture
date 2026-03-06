@@ -155,15 +155,37 @@ async (code) => {
     }
     
     if (!popup) return null;
+
+    const res = { titleEn: '', director: '', highResPoster: '', cast: [] };
     
-    const titleEn = popup.querySelector('.title_en')?.textContent?.trim() || '';
-    const director = popup.querySelector('dl dd a[onclick*="mstView(\\'people\\'"]')?.textContent?.trim() || '';
+    res.titleEn = popup.querySelector('.title_en')?.textContent?.trim() || '';
+    res.director = popup.querySelector('dl dd a[onclick*="mstView(\\'people\\'"]')?.textContent?.trim() || '';
     
-    // High-res poster cleaning
+    // High-res poster cleaning from thumbnail
     const imgEl = popup.querySelector('a.thumb img');
     let poster = imgEl?.src || '';
     if (poster.includes('thumb_x192/thn_')) {
         poster = poster.replace('thumb_x192/thn_', '');
+    }
+    res.highResPoster = poster;
+
+    // Advanced Extraction: Look for official high-res poster link in tabs
+    // KOBIS often has a "Poster/Still" tab
+    const tabs = Array.from(popup.querySelectorAll('.item_tab ul li a'));
+    const posterTab = tabs.find(a => a.textContent?.includes('포스터') || a.textContent?.includes('스틸컷'));
+    if (posterTab) {
+        posterTab.click();
+        await wait(500);
+        
+        // Find the main poster link if any
+        const posterLinks = Array.from(popup.querySelectorAll('a[href*="/common/mast/movie/"]'));
+        for (const link of posterLinks) {
+            const href = link.href;
+            if (href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
+                res.highResPoster = href;
+                break;
+            }
+        }
     }
     
     // Cast logic: get first 8 names
@@ -176,12 +198,13 @@ async (code) => {
             cast.push(...names);
         }
     });
+    res.cast = cast.slice(0, 8);
 
     // Close popup
     const closeBtn = document.querySelector('.ui-dialog-titlebar-close');
     if (closeBtn) closeBtn.click();
     
-    return { titleEn, director, highResPoster: poster, cast: cast.slice(0, 8) };
+    return res;
 }
 `;
 
@@ -785,7 +808,7 @@ async function scrapeMovies() {
                     item.venue = '등급 미정';
                 }
 
-                // Poster Selection: Prioritize Naver, but fallback to KOBIS if Naver is fallback/missing
+                // Poster Selection: Prioritize high-res KOBIS, then Naver, then fallbacks
                 const FALLBACK_PATTERNS = [
                     'no_img_people',
                     'sstatic.naver.net/people/',
@@ -795,19 +818,35 @@ async function scrapeMovies() {
                     'default_image'
                 ];
 
-                let selectedPoster = item.poster || '';
-                let isFallback = !selectedPoster || FALLBACK_PATTERNS.some(p => selectedPoster.includes(p));
+                let selectedPoster = '';
+                let isFallback = true;
 
-                if (isFallback && m.kobisPoster) {
-                    console.log(`[Poster Fallback] Using KOBIS poster for ${item.title}`);
+                // 1. Legitimate KOBIS high-res (explicitly mentioned by user)
+                if (m.kobisPoster && m.kobisPoster.includes('/common/mast/movie/')) {
                     selectedPoster = m.kobisPoster;
-                    isFallback = false; // KOBIS poster is considered legitimate
+                    isFallback = false;
+                    console.log(`[High-Res KOBIS] Using official poster for ${item.title}`);
+                }
+                // 2. Naver Poster (if not fallback)
+                else if (item.poster && !FALLBACK_PATTERNS.some(p => item.poster.includes(p))) {
+                    selectedPoster = item.poster;
+                    isFallback = false;
+                }
+                // 3. KOBIS Thumbnail cleaned
+                else if (m.kobisPoster) {
+                    selectedPoster = m.kobisPoster;
+                    isFallback = false;
+                }
+                // 4. Naver Fallback
+                else if (item.poster) {
+                    selectedPoster = item.poster;
+                    isFallback = true;
                 }
 
                 if (selectedPoster) {
                     item.posterUrl = selectedPoster;
-                    item.poster = selectedPoster; // For PerformanceCard src fallback
-                    item.backupPoster = selectedPoster; // For ImageWithFallback backupSrc
+                    item.poster = selectedPoster;
+                    item.backupPoster = selectedPoster;
                     item.posterFallback = isFallback;
 
                     if (isFallback) {
@@ -879,11 +918,27 @@ async function scrapeMovies() {
 
             const allMovies = synchronizedMovies;
 
-            // Sort: Ranked items first, then by lastCollected descending
+            // Sort: Ranked items (1-10) first, then by date descending
             allMovies.sort((a, b) => {
-                if (a.rank && b.rank) return parseInt(a.rank) - parseInt(b.rank);
-                if (a.rank) return -1;
-                if (b.rank) return 1;
+                const rankA = a.rank ? parseInt(a.rank) : 999;
+                const rankB = b.rank ? parseInt(b.rank) : 999;
+
+                // Both are top ranked (1-10)
+                if (rankA <= 10 && rankB <= 10) return rankA - rankB;
+                // Only A is top ranked
+                if (rankA <= 10) return -1;
+                // Only B is top ranked
+                if (rankB <= 10) return 1;
+
+                // Neither are top ranked: Sort by Release Date (date) descending
+                // date format is "YYYY.MM.DD."
+                const dateA = a.date || '0000.00.00.';
+                const dateB = b.date || '0000.00.00.';
+
+                if (dateA !== dateB) {
+                    return dateB.localeCompare(dateA);
+                }
+
                 return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
             });
 
