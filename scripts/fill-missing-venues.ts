@@ -8,16 +8,10 @@ const venueData = JSON.parse(fs.readFileSync(venuePath, 'utf-8'));
 // 1. Hardcoded Landmarks (For Top Missing)
 // Coordinates sourced from standard maps
 const LANDMARKS: Record<string, { lat: number, lng: number, address?: string }> = {
-    "롯데월드 민속박물관": { lat: 37.5113, lng: 127.0982, address: "서울 송파구 올림픽로 240" },
-    "서울공예박물관": { lat: 37.5772, lng: 126.9836, address: "서울 종로구 율곡로3길 4" },
-    "국립고궁박물관": { lat: 37.5764, lng: 126.9749, address: "서울 종로구 효자로 12" },
-    "독립기념관": { lat: 36.7836, lng: 127.2234, address: "충남 천안시 동남구 목천읍 독립기념관로 1" },
-    "국립해양박물관": { lat: 35.0787, lng: 129.0805, address: "부산 영도구 해양로301번길 45" },
-    "국립중앙과학관": { lat: 36.3773, lng: 127.3826, address: "대전 유성구 대덕대로 481" },
-    "국립세계문자박물관": { lat: 37.3915, lng: 126.6375, address: "인천 연수구 센트럴로 217" },
-    "복천박물관": { lat: 35.2078, lng: 129.0911, address: "부산 동래구 복천로 63" },
-    "수원시립만석전시관": { lat: 37.3005, lng: 126.9959, address: "경기 수원시 장안구 송정로 19" },
-    "경남문화예술회관": { lat: 35.1843, lng: 128.0934, address: "경남 진주시 강남로 215" }
+    "부천아트센터": { lat: 37.5020, lng: 126.7648, address: "경기 부천시 원미구 길주로 210" },
+    "하남문화예술회관": { lat: 37.5451, lng: 127.2025, address: "경기 하남시 대청로 77" },
+    "아트센터인천": { lat: 37.3916, lng: 126.6267, address: "인천 연수구 아트센터대로 222" },
+    "BOK아트센터": { lat: 36.4831, lng: 127.2882, address: "세종 한누리대로 2192" }
 };
 
 interface Venue {
@@ -73,7 +67,7 @@ Object.entries(venueData).forEach(([key, value]) => {
         // Partial match for famous museums (if safe)
         else {
             for (const [mark, info] of Object.entries(LANDMARKS)) {
-                if (key.includes(mark) && key.length < mark.length + 5) {
+                if (key.includes(mark)) {
                     v.lat = info.lat;
                     v.lng = info.lng;
                     if (!v.address) v.address = info.address || "";

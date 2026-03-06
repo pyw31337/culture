@@ -47729,24 +47729,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "서울",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "서울중구투어패스": {
     "name": "서울중구투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "서울",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "주식회사 리얼샷 익선점": {
     "name": "주식회사 리얼샷 익선점",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "서울",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기 평택남부문화예술회관 대공연장": {
     "name": "경기 평택남부문화예술회관 대공연장",
@@ -47817,8 +47817,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기 평택서부문화예술회관 대공연장": {
     "name": "경기 평택서부문화예술회관 대공연장",
@@ -47833,8 +47833,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기 과천시민회관 대극장": {
     "name": "경기 과천시민회관 대극장",
@@ -47886,27 +47886,27 @@
   },
   "경기 하남문화예술회관 대극장(검단홀)": {
     "name": "경기 하남문화예술회관 대극장(검단홀)",
-    "address": "정보 없음",
+    "address": "경기 하남시 대청로 77",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 37.5451,
+    "lng": 127.2025
   },
   "화성 화성예술의전당 동탄아트홀": {
     "name": "화성 화성예술의전당 동탄아트홀",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기 하남문화예술회관 소극장(아랑홀)": {
     "name": "경기 하남문화예술회관 소극장(아랑홀)",
-    "address": "정보 없음",
+    "address": "경기 하남시 대청로 77",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 37.5451,
+    "lng": 127.2025
   },
   "성남 성남아트센터 앙상블시어터": {
     "name": "성남 성남아트센터 앙상블시어터",
@@ -47985,24 +47985,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천 아트센터인천 다목적홀": {
     "name": "인천 아트센터인천 다목적홀",
-    "address": "정보 없음",
+    "address": "인천 연수구 아트센터대로 222",
     "district": "",
     "mapped_region_id": "인천",
-    "lat": null,
-    "lng": null
+    "lat": 37.3916,
+    "lng": 126.6267
   },
   "경기 부천아트센터 소공연장": {
     "name": "경기 부천아트센터 소공연장",
-    "address": "정보 없음",
+    "address": "경기 부천시 원미구 길주로 210",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 37.502,
+    "lng": 126.7648
   },
   "경기 양주문화예술회관 소공연장": {
     "name": "경기 양주문화예술회관 소공연장",
@@ -48017,8 +48017,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "성남 성남아트센터 콘서트홀": {
     "name": "성남 성남아트센터 콘서트홀",
@@ -48033,24 +48033,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "해당공연 공연장 - 용인": {
     "name": "해당공연 공연장 - 용인",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기 평택아트센터 대공연장": {
     "name": "경기 평택아트센터 대공연장",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천 엘림아트센터": {
     "name": "인천 엘림아트센터",
@@ -48062,11 +48062,11 @@
   },
   "경기 부천아트센터 콘서트홀": {
     "name": "경기 부천아트센터 콘서트홀",
-    "address": "정보 없음",
+    "address": "경기 부천시 원미구 길주로 210",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 37.502,
+    "lng": 126.7648
   },
   "인천 아트센터인천 콘서트홀": {
     "name": "인천 아트센터인천 콘서트홀",
@@ -48145,24 +48145,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "화성투어패스": {
     "name": "화성투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "강원 속초문화예술회관 대공연장": {
     "name": "강원 속초문화예술회관 대공연장",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "강원",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "강원 삼척문화예술회관 대공연장": {
     "name": "강원 삼척문화예술회관 대공연장",
@@ -48217,8 +48217,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "충북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "충북 영동복합문화예술회관": {
     "name": "충북 영동복합문화예술회관",
@@ -48249,24 +48249,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "충북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "단양투어패스": {
     "name": "단양투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "충북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "충남 BOK아트센터": {
     "name": "충남 BOK아트센터",
-    "address": "정보 없음",
+    "address": "세종 한누리대로 2192",
     "district": "",
     "mapped_region_id": "충남",
-    "lat": null,
-    "lng": null
+    "lat": 36.4831,
+    "lng": 127.2882
   },
   "충남 충청남도 문화예술회관": {
     "name": "충남 충청남도 문화예술회관",
@@ -48281,8 +48281,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "충남",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "충남 천안예술의전당 대공연장": {
     "name": "충남 천안예술의전당 대공연장",
@@ -48385,32 +48385,32 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경북투어패스 운영사업단": {
     "name": "경북투어패스 운영사업단",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "문경투어패스": {
     "name": "문경투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "안동투어패스": {
     "name": "안동투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "주식회사 어디든가게": {
     "name": "주식회사 어디든가게",
@@ -48449,8 +48449,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경남",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경남 함양군문화예술회관 대공연장": {
     "name": "경남 함양군문화예술회관 대공연장",
@@ -48481,8 +48481,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경남",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경남 사천시문화예술회관 대공연장": {
     "name": "경남 사천시문화예술회관 대공연장",
@@ -48497,32 +48497,32 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "부산",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산시티투어버스": {
     "name": "부산시티투어버스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "부산",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산투어패스": {
     "name": "부산투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "부산",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "통영투어패스": {
     "name": "통영투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경남",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "전북 익산 솜리문화예술회관 중공연장": {
     "name": "전북 익산 솜리문화예술회관 중공연장",
@@ -48553,8 +48553,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "전북 군산예술의전당 소공연장": {
     "name": "전북 군산예술의전당 소공연장",
@@ -48569,16 +48569,16 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "전주한옥마을 한복길 한복대여": {
     "name": "전주한옥마을 한복길 한복대여",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전북",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "전남 광양시문화예술회관 대공연장": {
     "name": "전남 광양시문화예술회관 대공연장",
@@ -48609,24 +48609,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "제주",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "우도투어패스": {
     "name": "우도투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "제주",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "제주투어패스": {
     "name": "제주투어패스",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "제주",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "수원 수원종합운동장실내체육관": {
     "name": "수원 수원종합운동장실내체육관",
@@ -48697,16 +48697,16 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "광주 광주시문화예술의전당 맹사성홀": {
     "name": "광주 광주시문화예술의전당 맹사성홀",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "경기",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구실내체육관": {
     "name": "대구실내체육관",
@@ -48785,40 +48785,40 @@
     "address": "위치대한민국 부산광역시 남구 대연4동 대연파크푸르지오",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 금정구 장전동 금정로 79 3층 몸아트 스튜디오": {
     "name": "위치대한민국 부산광역시 금정구 장전동 금정로 79 3층 몸아트 스튜디오",
     "address": "위치대한민국 부산광역시 금정구 장전동 금정로 79 3층 몸아트 스튜디오",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 동래구 명륜동 명륜로 140": {
     "name": "위치대한민국 부산광역시 동래구 명륜동 명륜로 140",
     "address": "위치대한민국 부산광역시 동래구 명륜동 명륜로 140",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 강서구 명지동 20호, 명지국제7로 133": {
     "name": "위치대한민국 부산광역시 강서구 명지동 20호, 명지국제7로 133",
     "address": "위치대한민국 부산광역시 강서구 명지동 20호, 명지국제7로 133",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 부산진구 범전동 중앙대로 821": {
     "name": "위치대한민국 부산광역시 부산진구 범전동 중앙대로 821",
     "address": "위치대한민국 부산광역시 부산진구 범전동 중앙대로 821",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 북구 만덕동 만덕3로": {
     "name": "부산광역시 북구 만덕동 만덕3로",
@@ -48833,32 +48833,32 @@
     "address": "위치대한민국 부산광역시 부산진구 전포동 334-44 2층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 동래구 명륜동 온천천로 13": {
     "name": "위치대한민국 부산광역시 동래구 명륜동 온천천로 13",
     "address": "위치대한민국 부산광역시 동래구 명륜동 온천천로 13",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 부산진구 전포동 306-18": {
     "name": "위치대한민국 부산광역시 부산진구 전포동 306-18",
     "address": "위치대한민국 부산광역시 부산진구 전포동 306-18",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 사상구 괘법동 558-14": {
     "name": "위치대한민국 부산광역시 사상구 괘법동 558-14",
     "address": "위치대한민국 부산광역시 사상구 괘법동 558-14",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 북구 만덕2동 만덕2로 21-1 2층 하늘미술공방": {
     "name": "부산광역시 북구 만덕2동 만덕2로 21-1 2층 하늘미술공방",
@@ -48881,24 +48881,24 @@
     "address": "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 양천구 신월동 신월로 261 3층": {
     "name": "위치대한민국 서울특별시 양천구 신월동 신월로 261 3층",
     "address": "위치대한민국 서울특별시 양천구 신월동 신월로 261 3층",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 용인시 기흥구 중동 842 쥬네브스타월드 제가동 1층 176호": {
     "name": "위치대한민국 경기도 용인시 기흥구 중동 842 쥬네브스타월드 제가동 1층 176호",
     "address": "위치대한민국 경기도 용인시 기흥구 중동 842 쥬네브스타월드 제가동 1층 176호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 중구 동인동": {
     "name": "대구광역시 중구 동인동",
@@ -48913,8 +48913,8 @@
     "address": "위치대한민국 서울특별시 성북구 보문동 161-10 3층 아루온공방",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포동 동천로": {
     "name": "부산광역시 부산진구 전포동 동천로",
@@ -48929,40 +48929,40 @@
     "address": "위치대한민국 경기도 과천시 중앙동 관문로",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 사상구 괘법동 새벽로 218 2층": {
     "name": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218 2층",
     "address": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218 2층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 사상구 괘법동 새벽로 218": {
     "name": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218",
     "address": "위치대한민국 부산광역시 사상구 괘법동 새벽로 218",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 북구 만덕동 841-2 1층 그림공간공간 소개": {
     "name": "위치대한민국 부산광역시 북구 만덕동 841-2 1층 그림공간공간 소개",
     "address": "위치대한민국 부산광역시 북구 만덕동 841-2 1층 그림공간공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 광진구 구의동 32-43": {
     "name": "위치대한민국 서울특별시 광진구 구의동 32-43",
     "address": "위치대한민국 서울특별시 광진구 구의동 32-43",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 남양주시 다산동 다산중앙로": {
     "name": "경기도 남양주시 다산동 다산중앙로",
@@ -48985,16 +48985,16 @@
     "address": "위치대한민국 부산광역시 사상구 학장동 149-16 1층 소꿉당",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 양천구 목동중앙남로 21-32 상가1층공간 소개": {
     "name": "위치대한민국 서울특별시 양천구 목동중앙남로 21-32 상가1층공간 소개",
     "address": "위치대한민국 서울특별시 양천구 목동중앙남로 21-32 상가1층공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 서구 연희동 청라에메랄드로": {
     "name": "인천광역시 서구 연희동 청라에메랄드로",
@@ -49009,24 +49009,24 @@
     "address": "위치대한민국 서울특별시 강남구 논현동 논현역",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 인천광역시 부평구 부평2동 경인로 899": {
     "name": "위치대한민국 인천광역시 부평구 부평2동 경인로 899",
     "address": "위치대한민국 인천광역시 부평구 부평2동 경인로 899",
     "district": "인천광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼동 616-7 1층": {
     "name": "위치대한민국 서울특별시 강남구 역삼동 616-7 1층",
     "address": "위치대한민국 서울특별시 강남구 역삼동 616-7 1층",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포대로": {
     "name": "부산광역시 부산진구 전포대로",
@@ -49049,32 +49049,32 @@
     "address": "위치대한민국 서울특별시 마포구 합정동 387-1번지 5층",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 영등포구 영등포동 7가 29-1 지하상가동 B24호 비바로라": {
     "name": "위치대한민국 서울특별시 영등포구 영등포동 7가 29-1 지하상가동 B24호 비바로라",
     "address": "위치대한민국 서울특별시 영등포구 영등포동 7가 29-1 지하상가동 B24호 비바로라",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상남도 진주시 칠암동 동진로 2": {
     "name": "위치대한민국 경상남도 진주시 칠암동 동진로 2",
     "address": "위치대한민국 경상남도 진주시 칠암동 동진로 2",
     "district": "경상남도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 은평구 구산동 224": {
     "name": "위치대한민국 서울특별시 은평구 구산동 224",
     "address": "위치대한민국 서울특별시 은평구 구산동 224",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 명지동 3331-5": {
     "name": "부산광역시 강서구 명지동 3331-5",
@@ -49089,16 +49089,16 @@
     "address": "위치대한민국 서울특별시 서초구 방배동 782-24 1층 103호 달쉬캔들공방",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 수원시 영통구 이의동": {
     "name": "위치대한민국 경기도 수원시 영통구 이의동",
     "address": "위치대한민국 경기도 수원시 영통구 이의동",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 고양시 일산서구 송포동 송포로 35": {
     "name": "경기도 고양시 일산서구 송포동 송포로 35",
@@ -49113,16 +49113,16 @@
     "address": "위치대한민국 경기도 평택시 신장동 목천로 42 루미그림카페",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180": {
     "name": "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180",
     "address": "위치대한민국 세종시 다정동 가온마을8단지 다정북로 180",
     "district": "세종시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "울산광역시 울주군 범서읍 굴화2길 15": {
     "name": "울산광역시 울주군 범서읍 굴화2길 15",
@@ -49145,8 +49145,8 @@
     "address": "위치대한민국 경기도 용인시 기흥구 영덕동 흥덕2로 78",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 성남시 수정구 복정동 복정로": {
     "name": "경기도 성남시 수정구 복정동 복정로",
@@ -49161,8 +49161,8 @@
     "address": "위치대한민국 부산광역시 남구 대연동 58-6 2층 카페위드공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광주시 초월읍 경충대로 1081-20 상가 2층 2호": {
     "name": "경기도 광주시 초월읍 경충대로 1081-20 상가 2층 2호",
@@ -49185,16 +49185,16 @@
     "address": "위치대한민국 부산광역시 수영구 민락동 광남로 271 1층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 금정구 장전동 521-68": {
     "name": "위치대한민국 부산광역시 금정구 장전동 521-68",
     "address": "위치대한민국 부산광역시 금정구 장전동 521-68",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 김포시 구래동 솔터로22 메트로타워 예미지상가 216호": {
     "name": "경기도 김포시 구래동 솔터로22 메트로타워 예미지상가 216호",
@@ -49209,32 +49209,32 @@
     "address": "부산광역시 수영구 광안동 수영로618번길 19 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "수영구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 대구광역시 남구 대명10동 대명복개로 39 1층": {
     "name": "위치대한민국 대구광역시 남구 대명10동 대명복개로 39 1층",
     "address": "위치대한민국 대구광역시 남구 대명10동 대명복개로 39 1층",
     "district": "대구광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개": {
     "name": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개",
     "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오1차 젬마하우스공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 용산구 장문로": {
     "name": "위치대한민국 서울특별시 용산구 장문로",
     "address": "위치대한민국 서울특별시 용산구 장문로",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호": {
     "name": "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호",
@@ -49249,8 +49249,8 @@
     "address": "위치대한민국 부산광역시 수영구 망미2동 망미번영로 61",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 수영구 수영로": {
     "name": "부산광역시 수영구 수영로",
@@ -49273,24 +49273,24 @@
     "address": "경기도 화성시 동탄1동 동탄대로 551-16  동탄역푸르지오시티 b동 상가 327호",
     "district": "화성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강서구 마곡동 마곡서1로 146, 마곡엠밸리 201-1203호": {
     "name": "위치대한민국 서울특별시 강서구 마곡동 마곡서1로 146, 마곡엠밸리 201-1203호",
     "address": "위치대한민국 서울특별시 강서구 마곡동 마곡서1로 146, 마곡엠밸리 201-1203호",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강동구 성내동 447-10, 401호 류다이브": {
     "name": "위치대한민국 서울특별시 강동구 성내동 447-10, 401호 류다이브",
     "address": "위치대한민국 서울특별시 강동구 성내동 447-10, 401호 류다이브",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "광주광역시 북구 반룡로 20-2, 2층": {
     "name": "광주광역시 북구 반룡로 20-2, 2층",
@@ -49313,16 +49313,16 @@
     "address": "위치대한민국 서울특별시 은평구 갈현동 448-30 1층 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "서울특별시 강동구 고덕동 동남로81길 54, 예그리나도예공방 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "서울특별시 강동구 고덕동 동남로81길 54, 예그리나도예공방 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "서울특별시 강동구 고덕동 동남로81길 54, 예그리나도예공방 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "강동구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 팔달구 정조로801번길 13 행궁주택 1층 (먹을터 맞은편)": {
     "name": "경기도 수원시 팔달구 정조로801번길 13 행궁주택 1층 (먹을터 맞은편)",
@@ -49337,8 +49337,8 @@
     "address": "부산광역시 수영구 광안동 광서로 30 2F 더넛츠컴퍼니X스튜디오G1",
     "district": "수영구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 우동 해운대해변로 85 경동아파트": {
     "name": "부산광역시 해운대구 우동 해운대해변로 85 경동아파트",
@@ -49353,8 +49353,8 @@
     "address": "위치대한민국 경기도 용인시 기흥구 보정동 1261-4",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 천성동 천성로": {
     "name": "부산광역시 강서구 천성동 천성로",
@@ -49449,8 +49449,8 @@
     "address": "위치대한민국 서울특별시 중랑구 묵동 중랑역로 178 지하",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 명지국제2로": {
     "name": "부산광역시 강서구 명지국제2로",
@@ -49545,8 +49545,8 @@
     "address": "위치대한민국 서울특별시 관악구 봉천동 인헌2길 9-3 플러스홈 건물 402호",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 남구 대명동 현충로 40": {
     "name": "대구광역시 남구 대명동 현충로 40",
@@ -49561,16 +49561,16 @@
     "address": "광주광역시 북구 임동 중흥로 77 4층 광주리베르탱고",
     "district": "북구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 제주도 제주시 오라일동": {
     "name": "위치대한민국 제주도 제주시 오라일동",
     "address": "위치대한민국 제주도 제주시 오라일동",
     "district": "제주도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 팔달구 인계동 1038-18 4층 청년공방": {
     "name": "경기도 수원시 팔달구 인계동 1038-18 4층 청년공방",
@@ -49585,16 +49585,16 @@
     "address": "경기도 성남시 중원구 은행동 1025-1 210호 아뜰리에 앙즈",
     "district": "성남시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개": {
     "name": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개",
     "address": "위치대한민국 부산광역시 해운대구 중2동 1485-9 삼안스튜디오 1차 젬마하우스공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 사상구 가야대로 403 1층": {
     "name": "부산광역시 사상구 가야대로 403 1층",
@@ -49625,16 +49625,16 @@
     "address": "위치대한민국 충청북도 청주시 상당구 율량동 807-7 커피미각",
     "district": "충청북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭": {
     "name": "부산광역시 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭",
     "address": "부산광역시 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭",
     "district": "해운대구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 좌동 1479-1 웅진시네아트 7층 701-3호": {
     "name": "부산광역시 해운대구 좌동 1479-1 웅진시네아트 7층 701-3호",
@@ -49729,8 +49729,8 @@
     "address": "위치대한민국 부산광역시 수영구 남천동 광안해변로 122 비치B상가 4층 402호",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 안성시 가사동 28-5 (주)바오밥목공전문학원": {
     "name": "경기도 안성시 가사동 28-5 (주)바오밥목공전문학원",
@@ -49745,8 +49745,8 @@
     "address": "위치대한민국 인천광역시 서구 청라커낼로 163 488동 503호",
     "district": "인천광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 성남시 분당구 금곡동 157 금산잼월드 지하 1층 104호 샤이닝룸": {
     "name": "경기도 성남시 분당구 금곡동 157 금산잼월드 지하 1층 104호 샤이닝룸",
@@ -49761,16 +49761,16 @@
     "address": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가공간 소개",
     "district": "제주특별자치도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가 타라공방공간 소개": {
     "name": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가 타라공방공간 소개",
     "address": "위치대한민국 제주특별자치도 제주시 연동 443 행복이가득한집 지하상가 타라공방공간 소개",
     "district": "제주특별자치도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "제주특별자치도 제주시 연동 443 행복이가득한집 지하상가": {
     "name": "제주특별자치도 제주시 연동 443 행복이가득한집 지하상가",
@@ -49801,16 +49801,16 @@
     "address": "경기도 안성시 안성1동 18-2 (주)바오밥목공전문학원←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "안성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 김포시 양촌읍 구래리 525-4 경기도 김포시 솔터로22 예미지 상가 232호": {
     "name": "경기도 김포시 양촌읍 구래리 525-4 경기도 김포시 솔터로22 예미지 상가 232호",
     "address": "경기도 김포시 양촌읍 구래리 525-4 경기도 김포시 솔터로22 예미지 상가 232호",
     "district": "김포시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 사상구 주례동 167-13 2층": {
     "name": "부산광역시 사상구 주례동 167-13 2층",
@@ -49825,32 +49825,32 @@
     "address": "부산광역시 수영구 남천1동 69-45 4층 금꽃바다",
     "district": "수영구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 대구광역시 수성구 지산2동 1272-4": {
     "name": "위치대한민국 대구광역시 수성구 지산2동 1272-4",
     "address": "위치대한민국 대구광역시 수성구 지산2동 1272-4",
     "district": "대구광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강서구 방화동 금낭화로 공간 소개": {
     "name": "위치대한민국 서울특별시 강서구 방화동 금낭화로 공간 소개",
     "address": "위치대한민국 서울특별시 강서구 방화동 금낭화로 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 화성시 동탄면 산척리 546 1층 건물 내부": {
     "name": "경기도 화성시 동탄면 산척리 546 1층 건물 내부",
     "address": "경기도 화성시 동탄면 산척리 546 1층 건물 내부",
     "district": "화성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "광주광역시 광산구 산월로41번길 30 꽃사로움": {
     "name": "광주광역시 광산구 산월로41번길 30 꽃사로움",
@@ -49865,56 +49865,56 @@
     "address": "위치대한민국 제주도 제주시 이도2동 1180-12 3층, 아일랜드터프팅공간 소개",
     "district": "제주도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상북도 구미시 인의동 여헌로 63-1 1층,오유에프": {
     "name": "위치대한민국 경상북도 구미시 인의동 여헌로 63-1 1층,오유에프",
     "address": "위치대한민국 경상북도 구미시 인의동 여헌로 63-1 1층,오유에프",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 광주시 송정동 90-6 1층 sororong공간 소개": {
     "name": "위치대한민국 경기도 광주시 송정동 90-6 1층 sororong공간 소개",
     "address": "위치대한민국 경기도 광주시 송정동 90-6 1층 sororong공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 금정구 서동 302-1917 1층": {
     "name": "위치대한민국 부산광역시 금정구 서동 302-1917 1층",
     "address": "위치대한민국 부산광역시 금정구 서동 302-1917 1층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 고양시 일산서구 탄중로 106 비동 106,107,108호": {
     "name": "경기도 고양시 일산서구 탄중로 106 비동 106,107,108호",
     "address": "경기도 고양시 일산서구 탄중로 106 비동 106,107,108호",
     "district": "고양시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 수영구 망미동 과정로42번길 46 1층 오드화": {
     "name": "부산광역시 수영구 망미동 과정로42번길 46 1층 오드화",
     "address": "부산광역시 수영구 망미동 과정로42번길 46 1층 오드화",
     "district": "수영구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 명지동 1157-1 명지국제5로110  상가 포아르과자점": {
     "name": "부산광역시 강서구 명지동 1157-1 명지국제5로110  상가 포아르과자점",
     "address": "부산광역시 강서구 명지동 1157-1 명지국제5로110  상가 포아르과자점",
     "district": "강서구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 성남시 중원구 성남대로1147번길 15-11 1층": {
     "name": "경기도 성남시 중원구 성남대로1147번길 15-11 1층",
@@ -49929,16 +49929,16 @@
     "address": "위치대한민국 서울특별시 서초구 양재1동 138-4 경인프라자 2층 릴리스타공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상북도 구미시 원평동 470-2 경북 구미시 산책길 31 2층공간 소개": {
     "name": "위치대한민국 경상북도 구미시 원평동 470-2 경북 구미시 산책길 31 2층공간 소개",
     "address": "위치대한민국 경상북도 구미시 원평동 470-2 경북 구미시 산책길 31 2층공간 소개",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 고양시 일산서구 대화동 2032 B1 소리피움": {
     "name": "경기도 고양시 일산서구 대화동 2032 B1 소리피움",
@@ -49953,8 +49953,8 @@
     "address": "위치대한민국 경기도 용인시 기흥구 강남대입구",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 김포시 구래동 솔터로 22 메트로타워예미지 상가동 263호 휴먼앤펫": {
     "name": "경기도 김포시 구래동 솔터로 22 메트로타워예미지 상가동 263호 휴먼앤펫",
@@ -49977,16 +49977,16 @@
     "address": "위치대한민국 서울특별시 광진구 구의2동 66-36 구의자이르네 상가동 210호 비누작업실드로",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 고양시 덕양구 도내동 1051-3 도래울안길 33-1 1층 빛나는오늘 공방공간 소개": {
     "name": "위치대한민국 경기도 고양시 덕양구 도내동 1051-3 도래울안길 33-1 1층 빛나는오늘 공방공간 소개",
     "address": "위치대한민국 경기도 고양시 덕양구 도내동 1051-3 도래울안길 33-1 1층 빛나는오늘 공방공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "울산광역시 동구 전하2동 691-6 1F 해도방 도예카페": {
     "name": "울산광역시 동구 전하2동 691-6 1F 해도방 도예카페",
@@ -50025,8 +50025,8 @@
     "address": "위치대한민국 경기도 화성시 수노을중앙로 293 근린생활시설 4동 405호, 올렌티아공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 구리시 수택3동 이문안로 138 5층": {
     "name": "경기도 구리시 수택3동 이문안로 138 5층",
@@ -50049,16 +50049,16 @@
     "address": "위치대한민국 광주광역시 북구 연제동 568-9 849",
     "district": "광주광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 울산광역시 중구 중앙동 중앙시장길 8 진흥상가 208호공간 소개": {
     "name": "위치대한민국 울산광역시 중구 중앙동 중앙시장길 8 진흥상가 208호공간 소개",
     "address": "위치대한민국 울산광역시 중구 중앙동 중앙시장길 8 진흥상가 208호공간 소개",
     "district": "울산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 기장군 정관읍  모전1길 70-1 플람라탄": {
     "name": "부산광역시 기장군 정관읍  모전1길 70-1 플람라탄",
@@ -50121,24 +50121,24 @@
     "address": "위치대한민국 전라북도 전주시 완산구 동문길 72-1 1층 기쁨,가득",
     "district": "전라북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 마포구 동교동 198-24 502호 풍뎅이의숲": {
     "name": "위치대한민국 서울특별시 마포구 동교동 198-24 502호 풍뎅이의숲",
     "address": "위치대한민국 서울특별시 마포구 동교동 198-24 502호 풍뎅이의숲",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 강서구 명지동 1157-1 금강펜테리움 센트럴파크3차 상가119호 포아르과자점공간 소개": {
     "name": "위치대한민국 부산광역시 강서구 명지동 1157-1 금강펜테리움 센트럴파크3차 상가119호 포아르과자점공간 소개",
     "address": "위치대한민국 부산광역시 강서구 명지동 1157-1 금강펜테리움 센트럴파크3차 상가119호 포아르과자점공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 달성군 다사읍 대실역남로": {
     "name": "대구광역시 달성군 다사읍 대실역남로",
@@ -50153,16 +50153,16 @@
     "address": "위치대한민국 부산광역시 금정구 장전3동 420-25 벅구네 3층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 제주특별자치도 제주시 연동 495-3 행복이가득한집 지하상가 타라공방": {
     "name": "위치대한민국 제주특별자치도 제주시 연동 495-3 행복이가득한집 지하상가 타라공방",
     "address": "위치대한민국 제주특별자치도 제주시 연동 495-3 행복이가득한집 지하상가 타라공방",
     "district": "제주특별자치도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "제주특별자치도 제주시 연동 1483 행복이가득한집 지하상가 타라공방": {
     "name": "제주특별자치도 제주시 연동 1483 행복이가득한집 지하상가 타라공방",
@@ -50177,56 +50177,56 @@
     "address": "위치대한민국 서울특별시 서초구 우면동 66-1 대화프라자 105호 솝데이공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 우면동 산21-3 대화프라자 105호 솝데이공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 우면동 산21-3 대화프라자 105호 솝데이공간 소개",
     "address": "위치대한민국 서울특별시 서초구 우면동 산21-3 대화프라자 105호 솝데이공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 부천시 중동 1141-3 5층 529호 The 보자기": {
     "name": "위치대한민국 경기도 부천시 중동 1141-3 5층 529호 The 보자기",
     "address": "위치대한민국 경기도 부천시 중동 1141-3 5층 529호 The 보자기",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 5층 드로잉스튜디오(503호)공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 5층 드로잉스튜디오(503호)공간 소개",
     "address": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 5층 드로잉스튜디오(503호)공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 503호공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 503호공간 소개",
     "address": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초지웰타워 503호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
     "address": "위치대한민국 서울특별시 서초구 서초동 1678-4 서초 지웰타워 503호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 마포구 서교동 양화로 133 서교타워 703호 공간 소개": {
     "name": "위치대한민국 서울특별시 마포구 서교동 양화로 133 서교타워 703호 공간 소개",
     "address": "위치대한민국 서울특별시 마포구 서교동 양화로 133 서교타워 703호 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 장안구 영화동 427-15 1층": {
     "name": "경기도 수원시 장안구 영화동 427-15 1층",
@@ -50241,8 +50241,8 @@
     "address": "위치대한민국 서울특별시 마포구 서교동 양화로 133 서교타워 703호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 김포시 마산동 김포한강8로 194번길 8-19 102호 멍스까까": {
     "name": "경기도 김포시 마산동 김포한강8로 194번길 8-19 102호 멍스까까",
@@ -50257,8 +50257,8 @@
     "address": "경기도 김포시 마산동 김포한강8로 194번길 8-19 102호 멍스까까←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "김포시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 파주시 금촌2동 989-1 금촌프라자 7층": {
     "name": "경기도 파주시 금촌2동 989-1 금촌프라자 7층",
@@ -50289,8 +50289,8 @@
     "address": "위치대한민국 경기도 광주시 오포읍 신현리 570-1 해오름타운 103동 102호 피터아트글래스공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 남동구 구월3동 1392-8 102호": {
     "name": "인천광역시 남동구 구월3동 1392-8 102호",
@@ -50329,16 +50329,16 @@
     "address": "대구광역시 동구 신천동 557-1 신천자이 107동 602호",
     "district": "동구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 전라남도 순천시 해룡면 신대리 2052-3 303호공간 소개": {
     "name": "위치대한민국 전라남도 순천시 해룡면 신대리 2052-3 303호공간 소개",
     "address": "위치대한민국 전라남도 순천시 해룡면 신대리 2052-3 303호공간 소개",
     "district": "전라남도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 장안구 조원1동 751 북수원홈플러스 5층 몽베이커리": {
     "name": "경기도 수원시 장안구 조원1동 751 북수원홈플러스 5층 몽베이커리",
@@ -50361,8 +50361,8 @@
     "address": "위치대한민국 경기도 수원시 장안구 조원동 896 북수원홈플러스 5층 몽스파공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광주시 오포읍 오포로": {
     "name": "경기도 광주시 오포읍 오포로",
@@ -50385,8 +50385,8 @@
     "address": "위치대한민국 경기도 수원시 장안구 조원동 송원로 101 북수원홈플러스 5층 몽스파공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 장안구 조원동 896": {
     "name": "경기도 수원시 장안구 조원동 896",
@@ -50401,48 +50401,48 @@
     "address": "위치대한민국 서울특별시 상수역 걸어서 5분 거리",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 화성시 동탄면 영천리 505 메가비즈B동 3층 310호": {
     "name": "위치대한민국 경기도 화성시 동탄면 영천리 505 메가비즈B동 3층 310호",
     "address": "위치대한민국 경기도 화성시 동탄면 영천리 505 메가비즈B동 3층 310호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "남구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 수원시 권선구 금곡동 159-6 딜라이트2. 212호": {
     "name": "위치대한민국 경기도 수원시 권선구 금곡동 159-6 딜라이트2. 212호",
     "address": "위치대한민국 경기도 수원시 권선구 금곡동 159-6 딜라이트2. 212호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 부산진구 부전2동 241-17 서면 하이스퀘어 세미나실": {
     "name": "위치대한민국 부산광역시 부산진구 부전2동 241-17 서면 하이스퀘어 세미나실",
     "address": "위치대한민국 부산광역시 부산진구 부전2동 241-17 서면 하이스퀘어 세미나실",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 우면동 66-1 105호 솝데이공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 우면동 66-1 105호 솝데이공간 소개",
     "address": "위치대한민국 서울특별시 서초구 우면동 66-1 105호 솝데이공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 용인시 수지구 신봉동 764-1 라무통": {
     "name": "경기도 용인시 수지구 신봉동 764-1 라무통",
@@ -50465,32 +50465,32 @@
     "address": "위치대한민국 서울특별시 광진구 구의1동 243-6 3층 안나도예공감공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 방배2동 437-27 1층 방배도시도부동산": {
     "name": "위치대한민국 서울특별시 서초구 방배2동 437-27 1층 방배도시도부동산",
     "address": "위치대한민국 서울특별시 서초구 방배2동 437-27 1층 방배도시도부동산",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 남구 대연5동 290-11 2층 쥬아트미술학원공간 소개": {
     "name": "위치대한민국 부산광역시 남구 대연5동 290-11 2층 쥬아트미술학원공간 소개",
     "address": "위치대한민국 부산광역시 남구 대연5동 290-11 2층 쥬아트미술학원공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "서울특별시 서초구 청두곶3길 12 1층 키키데이즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "서울특별시 서초구 청두곶3길 12 1층 키키데이즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "서울특별시 서초구 청두곶3길 12 1층 키키데이즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "서초구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 수영구 민락동 광안로": {
     "name": "부산광역시 수영구 민락동 광안로",
@@ -50505,24 +50505,24 @@
     "address": "위치대한민국 서울특별시 서초구 우면동 66-1 105호 솝데이",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "경상남도 창원시 의창구 북면 감계로 297 휴먼빌아파트 상가 2층 Y-ART←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "창원시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 광진구 군자동 면목로 12 2층": {
     "name": "위치대한민국 서울특별시 광진구 군자동 면목로 12 2층",
     "address": "위치대한민국 서울특별시 광진구 군자동 면목로 12 2층",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 중1동 1088-68 미작스튜디오": {
     "name": "부산광역시 해운대구 중1동 1088-68 미작스튜디오",
@@ -50537,16 +50537,16 @@
     "address": "위치대한민국 서울특별시 강동구 길동 384-4 길동, 한빛아파트 지하2층(B2)공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 안산시 단원구 고잔동 742 2층 voyage공간 소개": {
     "name": "위치대한민국 경기도 안산시 단원구 고잔동 742 2층 voyage공간 소개",
     "address": "위치대한민국 경기도 안산시 단원구 고잔동 742 2층 voyage공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포대로199번길 27 3층 프랑꼬아트랩": {
     "name": "부산광역시 부산진구 전포대로199번길 27 3층 프랑꼬아트랩",
@@ -50577,24 +50577,24 @@
     "address": "위치대한민국 서울특별시 강북구 수유동 수유역",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 용산구 청암동 78-3 공간 소개": {
     "name": "위치대한민국 서울특별시 용산구 청암동 78-3 공간 소개",
     "address": "위치대한민국 서울특별시 용산구 청암동 78-3 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 서초동 1678-4  서초 지웰타워 503호공간 소개": {
     "name": "위치대한민국 서울특별시 서초구 서초동 1678-4  서초 지웰타워 503호공간 소개",
     "address": "위치대한민국 서울특별시 서초구 서초동 1678-4  서초 지웰타워 503호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 시흥시 정왕동 정왕대로": {
     "name": "경기도 시흥시 정왕동 정왕대로",
@@ -50609,48 +50609,48 @@
     "address": "위치대한민국 경기도 화성시 동탄기흥로 590 동탄센트럴에이스타워 B동 313호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 영등포구 당산로 235 당일빌딩 4층 요가라이프공간 소개": {
     "name": "위치대한민국 서울특별시 영등포구 당산로 235 당일빌딩 4층 요가라이프공간 소개",
     "address": "위치대한민국 서울특별시 영등포구 당산로 235 당일빌딩 4층 요가라이프공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 도봉구 쌍문동 103-150 우이천로 근처": {
     "name": "위치대한민국 서울특별시 도봉구 쌍문동 103-150 우이천로 근처",
     "address": "위치대한민국 서울특별시 도봉구 쌍문동 103-150 우이천로 근처",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 송파구 잠실2동 10 종합운동장 제2수영장 스킨스쿠버풀장": {
     "name": "위치대한민국 서울특별시 송파구 잠실2동 10 종합운동장 제2수영장 스킨스쿠버풀장",
     "address": "위치대한민국 서울특별시 송파구 잠실2동 10 종합운동장 제2수영장 스킨스쿠버풀장",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 남양주시 호평동 두산알프하임정문 상가B동 228호": {
     "name": "경기도 남양주시 호평동 두산알프하임정문 상가B동 228호",
     "address": "경기도 남양주시 호평동 두산알프하임정문 상가B동 228호",
     "district": "남양주시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 신호동 신호산단2로49번길 9 101호해피트리토탈공방": {
     "name": "부산광역시 강서구 신호동 신호산단2로49번길 9 101호해피트리토탈공방",
     "address": "부산광역시 강서구 신호동 신호산단2로49번길 9 101호해피트리토탈공방",
     "district": "강서구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 명지동 3388-1 1층": {
     "name": "부산광역시 강서구 명지동 3388-1 1층",
@@ -50665,8 +50665,8 @@
     "address": "위치대한민국 서울특별시 마포구 마포대로 196 1333호",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 연수구 청학동 472 1층 102호 리니아뜰리에": {
     "name": "인천광역시 연수구 청학동 472 1층 102호 리니아뜰리에",
@@ -50697,16 +50697,16 @@
     "address": "위치대한민국 경기도 시흥시 신천동 851-1 금강프라임빌 B동 203호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포2동 2-1 드리미탱글": {
     "name": "부산광역시 부산진구 전포2동 2-1 드리미탱글",
     "address": "부산광역시 부산진구 전포2동 2-1 드리미탱글",
     "district": "부산진구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 성남시 수정구 성남대로": {
     "name": "경기도 성남시 수정구 성남대로",
@@ -50721,24 +50721,24 @@
     "address": "위치대한민국 경상남도 통영시 정량동 (자세한 주소는 문의 주세요!)",
     "district": "경상남도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강동구 성내동 543-5 2층 코스노이공간 소개": {
     "name": "위치대한민국 서울특별시 강동구 성내동 543-5 2층 코스노이공간 소개",
     "address": "위치대한민국 서울특별시 강동구 성내동 543-5 2층 코스노이공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 대전광역시 중구 중촌동 10-3 중촌시영아파트 상가동 202호": {
     "name": "위치대한민국 대전광역시 중구 중촌동 10-3 중촌시영아파트 상가동 202호",
     "address": "위치대한민국 대전광역시 중구 중촌동 10-3 중촌시영아파트 상가동 202호",
     "district": "대전광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 화성시 영천동 동탄대로 636-14 c동 1층 111호": {
     "name": "경기도 화성시 영천동 동탄대로 636-14 c동 1층 111호",
@@ -50761,8 +50761,8 @@
     "address": "위치대한민국 경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "제주특별자치도 제주시 애월읍 하가리 978 봄의손메": {
     "name": "제주특별자치도 제주시 애월읍 하가리 978 봄의손메",
@@ -50777,80 +50777,80 @@
     "address": "위치대한민국 제주도 제주시 애월읍 하가리 978 봄의손메",
     "district": "제주도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 인천광역시 부평구 십정2동 514-8 푸르미르": {
     "name": "위치대한민국 인천광역시 부평구 십정2동 514-8 푸르미르",
     "address": "위치대한민국 인천광역시 부평구 십정2동 514-8 푸르미르",
     "district": "인천광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼2동 776-21 계유빌딩 b1공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 역삼2동 776-21 계유빌딩 b1공간 소개",
     "address": "위치대한민국 서울특별시 강남구 역삼2동 776-21 계유빌딩 b1공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 도곡동 545-19 B1 미식테이블공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 도곡동 545-19 B1 미식테이블공간 소개",
     "address": "위치대한민국 서울특별시 강남구 도곡동 545-19 B1 미식테이블공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼2동 776-21  계유빌딩 b1공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 역삼2동 776-21  계유빌딩 b1공간 소개",
     "address": "위치대한민국 서울특별시 강남구 역삼2동 776-21  계유빌딩 b1공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호": {
     "name": "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호",
     "address": "위치대한민국 인천광역시 서구 청라동 157-21 한신더휴커낼웨이 상가 B동 1층 105호",
     "district": "인천광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 인천광역시 서구 청라동 143 한신더휴커낼웨이 상가 B동 1층 105": {
     "name": "위치대한민국 인천광역시 서구 청라동 143 한신더휴커낼웨이 상가 B동 1층 105",
     "address": "위치대한민국 인천광역시 서구 청라동 143 한신더휴커낼웨이 상가 B동 1층 105",
     "district": "인천광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 마포구 신수동 신수로 28 2층 현대액티브 힐링센터공간 소개": {
     "name": "위치대한민국 서울특별시 마포구 신수동 신수로 28 2층 현대액티브 힐링센터공간 소개",
     "address": "위치대한민국 서울특별시 마포구 신수동 신수로 28 2층 현대액티브 힐링센터공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서대문구 연희동 148-8 B1공간 소개": {
     "name": "위치대한민국 서울특별시 서대문구 연희동 148-8 B1공간 소개",
     "address": "위치대한민국 서울특별시 서대문구 연희동 148-8 B1공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 구리시 갈매동 경춘북로 252 에비뉴상가  C동 254호 멍캔두잇": {
     "name": "위치대한민국 경기도 구리시 갈매동 경춘북로 252 에비뉴상가  C동 254호 멍캔두잇",
     "address": "위치대한민국 경기도 구리시 갈매동 경춘북로 252 에비뉴상가  C동 254호 멍캔두잇",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 고양시 덕양구 행신동 996 카페 위델 세미나실 예정": {
     "name": "경기도 고양시 덕양구 행신동 996 카페 위델 세미나실 예정",
@@ -50873,8 +50873,8 @@
     "address": "위치대한민국 부산광역시 부산진구 전포2동 666-6 405호공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 서구 서대신동": {
     "name": "부산광역시 서구 서대신동",
@@ -50897,16 +50897,16 @@
     "address": "위치대한민국 서울특별시 용산구 후암동 175-9 용암빌딩 204호",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울 강서구 마곡동 마곡중앙2로 35  이너매스마곡2 4층 415호공간 소개": {
     "name": "위치대한민국 서울 강서구 마곡동 마곡중앙2로 35  이너매스마곡2 4층 415호공간 소개",
     "address": "위치대한민국 서울 강서구 마곡동 마곡중앙2로 35  이너매스마곡2 4층 415호공간 소개",
     "district": "서울",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "울산광역시 남구 달동 1332-63 1층 코너ㅡ주차가능": {
     "name": "울산광역시 남구 달동 1332-63 1층 코너ㅡ주차가능",
@@ -50921,16 +50921,16 @@
     "address": "위치대한민국 서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호공간 소개",
     "district": "서울",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "서울 서대문구 대현동 신촌역로 22-5 박스퀘어 2층 52호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "서대문구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 금정구 장전동 389-40 1층 데이즈율": {
     "name": "부산광역시 금정구 장전동 389-40 1층 데이즈율",
@@ -50961,8 +50961,8 @@
     "address": "경기도 안산시 상록구 성포동 587-2 2층 28스킨드롭",
     "district": "안산시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 안산시 단원구 고잔동 안산천서로 23 2층 28스킨드롭": {
     "name": "경기도 안산시 단원구 고잔동 안산천서로 23 2층 28스킨드롭",
@@ -50977,40 +50977,40 @@
     "address": "위치대한민국 서울특별시 영등포구 당산로 161-9 1층 꽃보라공방공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기 수원시 영통구 원천동 광교호수공원로 277  중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호공간 소개": {
     "name": "위치대한민국 경기 수원시 영통구 원천동 광교호수공원로 277  중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호공간 소개",
     "address": "위치대한민국 경기 수원시 영통구 원천동 광교호수공원로 277  중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호공간 소개",
     "district": "경기",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹": {
     "name": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹",
     "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광명시 일직동 194-1 광명시 신기로 15, S플라자 502호": {
     "name": "경기도 광명시 일직동 194-1 광명시 신기로 15, S플라자 502호",
     "address": "경기도 광명시 일직동 194-1 광명시 신기로 15, S플라자 502호",
     "district": "광명시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 수원시 권선구 호매실동 821-2 1층 슬아트공간 소개": {
     "name": "위치대한민국 경기도 수원시 권선구 호매실동 821-2 1층 슬아트공간 소개",
     "address": "위치대한민국 경기도 수원시 권선구 호매실동 821-2 1층 슬아트공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광주시 오포읍 능평로 194-14 1층 도아공방": {
     "name": "경기도 광주시 오포읍 능평로 194-14 1층 도아공방",
@@ -51025,8 +51025,8 @@
     "address": "위치대한민국 경기도 광명시 하안동 범안로 1056 골든힐빌딩 2층 204공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "울산광역시 울주군 삼남면 가천리 304-2 1층": {
     "name": "울산광역시 울주군 삼남면 가천리 304-2 1층",
@@ -51057,8 +51057,8 @@
     "address": "위치대한민국 경상북도 경산시 진량읍 신상리 1221-1 1층 다니옹",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 수영구 망미": {
     "name": "부산광역시 수영구 망미",
@@ -51073,8 +51073,8 @@
     "address": "부산광역시 남구 대연동 503-4 지하 1층 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "남구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 부천시 소사본동 159-2 1층 메르헨 유리공방": {
     "name": "경기도 부천시 소사본동 159-2 1층 메르헨 유리공방",
@@ -51089,8 +51089,8 @@
     "address": "위치대한민국 서울특별시 서대문구 대현동 34-69 1층 4호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 동평로183번길 104 은소리공방": {
     "name": "부산광역시 부산진구 동평로183번길 104 은소리공방",
@@ -51105,8 +51105,8 @@
     "address": "위치대한민국 서울특별시 서대문구 대현동 이화여대길 52-11 1층 4호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호": {
     "name": "대구광역시 남구 대명동 1623-60 대명메트로아파트 상가 203호",
@@ -51137,24 +51137,24 @@
     "address": "위치대한민국 서울특별시 종로구 돈의동 109 4층 401호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 사하구 감천동 감내2로 138-1  감천문화마을, 독락의탑 1층 아뜰리에공간 소개": {
     "name": "위치대한민국 부산광역시 사하구 감천동 감내2로 138-1  감천문화마을, 독락의탑 1층 아뜰리에공간 소개",
     "address": "위치대한민국 부산광역시 사하구 감천동 감내2로 138-1  감천문화마을, 독락의탑 1층 아뜰리에공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 기장군 정관읍 모전3길 32-8 1층 스튜디오 리어스공간 소개": {
     "name": "위치대한민국 부산광역시 기장군 정관읍 모전3길 32-8 1층 스튜디오 리어스공간 소개",
     "address": "위치대한민국 부산광역시 기장군 정관읍 모전3길 32-8 1층 스튜디오 리어스공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 사하구 신평동 하신번영로": {
     "name": "부산광역시 사하구 신평동 하신번영로",
@@ -51169,32 +51169,32 @@
     "address": "위치대한민국 부산광역시 강서구 명지동 3246 명지오션시티 삼정그린코아 114동 2층 108호공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 강서구 명지동 3246 B10호 명지오션시티삼정그린코아 114동 2층 108호공간 소개": {
     "name": "위치대한민국 부산광역시 강서구 명지동 3246 B10호 명지오션시티삼정그린코아 114동 2층 108호공간 소개",
     "address": "위치대한민국 부산광역시 강서구 명지동 3246 B10호 명지오션시티삼정그린코아 114동 2층 108호공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 중구 수표동 청계천로 100 패스트파이브 을지로점": {
     "name": "위치대한민국 서울특별시 중구 수표동 청계천로 100 패스트파이브 을지로점",
     "address": "위치대한민국 서울특별시 중구 수표동 청계천로 100 패스트파이브 을지로점",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 오산시 오산동 867-3 오산대동다숲 상가2층 뚜비즈": {
     "name": "경기도 오산시 오산동 867-3 오산대동다숲 상가2층 뚜비즈",
     "address": "경기도 오산시 오산동 867-3 오산대동다숲 상가2층 뚜비즈",
     "district": "오산시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 오산시 경기대로 261-1 오산대동다숲 상가 2층 뚜비즈": {
     "name": "경기도 오산시 경기대로 261-1 오산대동다숲 상가 2층 뚜비즈",
@@ -51273,8 +51273,8 @@
     "address": "부산광역시 중구 대청동3가 대청로78 3층 플레이아트센터←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "중구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포동 198-3번지 1층 방구석유리쟁이": {
     "name": "부산광역시 부산진구 전포동 198-3번지 1층 방구석유리쟁이",
@@ -51289,16 +51289,16 @@
     "address": "위치대한민국 부산광역시 북구 화명동 금곡대로 270 대림상가 310-1호공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 화성시 동탄면 영천리 252 B동 2037호": {
     "name": "경기도 화성시 동탄면 영천리 252 B동 2037호",
     "address": "경기도 화성시 동탄면 영천리 252 B동 2037호",
     "district": "화성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 중1동 1199-5 415호": {
     "name": "부산광역시 해운대구 중1동 1199-5 415호",
@@ -51321,32 +51321,32 @@
     "address": "서울특별시 서초구 양재1동 138-4 경인프라자2층 릴리스타←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "서초구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서초구 서초2동 1319-2": {
     "name": "위치대한민국 서울특별시 서초구 서초2동 1319-2",
     "address": "위치대한민국 서울특별시 서초구 서초2동 1319-2",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개": {
     "name": "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개",
     "address": "위치대한민국 경상북도 경산시 진량읍 해든길 11 1층 다니옹공간 소개",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹공간 소개": {
     "name": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹공간 소개",
     "address": "위치대한민국 경상북도 경산시 진량읍 공단로 501-3 1층 다니옹공간 소개",
     "district": "경상북도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 화성시 반송동 노작로": {
     "name": "경기도 화성시 반송동 노작로",
@@ -51377,8 +51377,8 @@
     "address": "위치대한민국 고양시 화정2동 화정 (신청시 개별 안내 예정)",
     "district": "고양시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 부평구 청천동 48-429 인천시 부평구 세월천로16": {
     "name": "인천광역시 부평구 청천동 48-429 인천시 부평구 세월천로16",
@@ -51401,8 +51401,8 @@
     "address": "위치대한민국 서울특별시 양천구 신정동 891-5 2F공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 강서구 명지동 3578-5 카페 오후의 숲": {
     "name": "부산광역시 강서구 명지동 3578-5 카페 오후의 숲",
@@ -51433,8 +51433,8 @@
     "address": "경기도 수원시 권선구 서둔동 103-25 생생 1990 213호 헤리티제이",
     "district": "수원시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 부천시 중동 1168 디아뜨1차 A동 7층": {
     "name": "경기도 부천시 중동 1168 디아뜨1차 A동 7층",
@@ -51449,16 +51449,16 @@
     "address": "위치대한민국 서울특별시 송파구 문정동 중대로 24 호순이상가 103호",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 수영구 광안동 174-9 4 층 3층공간 소개": {
     "name": "위치대한민국 부산광역시 수영구 광안동 174-9 4 층 3층공간 소개",
     "address": "위치대한민국 부산광역시 수영구 광안동 174-9 4 층 3층공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 동구 범일동 범일로90번길 17 2509호": {
     "name": "부산광역시 동구 범일동 범일로90번길 17 2509호",
@@ -51473,16 +51473,16 @@
     "address": "위치대한민국 충청남도 천안시 동남구 원거리11길 17 1층 101호공간 소개",
     "district": "충청남도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 도곡동 417-7 성민빌딩 5층": {
     "name": "위치대한민국 서울특별시 강남구 도곡동 417-7 성민빌딩 5층",
     "address": "위치대한민국 서울특별시 강남구 도곡동 417-7 성민빌딩 5층",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 부천시 중동 1168 A동 7층": {
     "name": "경기도 부천시 중동 1168 A동 7층",
@@ -51497,8 +51497,8 @@
     "address": "경기도 화성시 영천동 동탄기흥로 590 동탄센트럴에이스타워 B동 313호 아루아 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "화성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포동 664-7번지 1층 부산진구 부산광역시 KR B사동 205호": {
     "name": "부산광역시 부산진구 전포동 664-7번지 1층 부산진구 부산광역시 KR B사동 205호",
@@ -51513,16 +51513,16 @@
     "address": "위치대한민국 서울특별시 용산구 후암동 175-9 용암빌딩 204호공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 의정부시 의정부동 358-3 1층 캔들 은가비공간 소개": {
     "name": "위치대한민국 경기도 의정부시 의정부동 358-3 1층 캔들 은가비공간 소개",
     "address": "위치대한민국 경기도 의정부시 의정부동 358-3 1층 캔들 은가비공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 부천시 중동 석천로 141 A동 7층": {
     "name": "경기도 부천시 중동 석천로 141 A동 7층",
@@ -51569,8 +51569,8 @@
     "address": "위치대한민국 제주도 서귀포시 성산읍 신산리 1085-4 102호 별빛작업실공간 소개",
     "district": "제주도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 안양시 동안구 관양동 1733-1 1층": {
     "name": "경기도 안양시 동안구 관양동 1733-1 1층",
@@ -51601,8 +51601,8 @@
     "address": "위치대한민국 서울특별시 광진구 군자동 면목로 12",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 서구 오류동 정서진1로 41  경인아라뱃길여객터미널 105호": {
     "name": "인천광역시 서구 오류동 정서진1로 41  경인아라뱃길여객터미널 105호",
@@ -51617,8 +51617,8 @@
     "address": "서울특별시 강서구 마곡동 800-7 3층 305호    (이너매스마곡2) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "강서구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 용인시 처인구 금령로": {
     "name": "경기도 용인시 처인구 금령로",
@@ -51641,8 +51641,8 @@
     "address": "위치대한민국 서울특별시 강남구 논현역 강남 인근 클래스공간, 예약 후 안내 드립니다 :)",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 달서구 이곡동 1308-1 서한 2차 상가 111동, 2층 카페70도씨 이곡점": {
     "name": "대구광역시 달서구 이곡동 1308-1 서한 2차 상가 111동, 2층 카페70도씨 이곡점",
@@ -51657,8 +51657,8 @@
     "address": "위치대한민국 부산광역시 연제구 연산동 337-29 바라던케이크. 1층공간 소개",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 안양시 동안구 부림로 121 동아프라자 B123호 실공방 터프팅": {
     "name": "경기도 안양시 동안구 부림로 121 동아프라자 B123호 실공방 터프팅",
@@ -51689,8 +51689,8 @@
     "address": "위치대한민국 서울특별시 마포구 동교동 홍대입구역 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 북구 구포동 896-27 1층": {
     "name": "부산광역시 북구 구포동 896-27 1층",
@@ -51721,16 +51721,16 @@
     "address": "위치대한민국 경기도 양주시 고암동 606-6 103호 단단쿠킹스튜디오공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 양주시 고암동 606-6 103호공간 소개": {
     "name": "위치대한민국 경기도 양주시 고암동 606-6 103호공간 소개",
     "address": "위치대한민국 경기도 양주시 고암동 606-6 103호공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포동 207-86 지하 1층": {
     "name": "부산광역시 부산진구 전포동 207-86 지하 1층",
@@ -51761,8 +51761,8 @@
     "address": "서울특별시 서초구 방배동 방배천로2안길 99 1층 화인당 꽃집←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "서초구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 부전동 521-1번지 1층": {
     "name": "부산광역시 부산진구 부전동 521-1번지 1층",
@@ -51777,8 +51777,8 @@
     "address": "위치대한민국 서울특별시 동작구 사당동 708-403 2층공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 연제구 연산동 1049-2 1층": {
     "name": "부산광역시 연제구 연산동 1049-2 1층",
@@ -51801,8 +51801,8 @@
     "address": "경기도 가평군 설악면 창의리 421-1 경기 가평군 설악면 한서로124번길 16-14 2층",
     "district": "가평군",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 의정부시 의정부동 358-3 1층 캔들 은가비": {
     "name": "경기도 의정부시 의정부동 358-3 1층 캔들 은가비",
@@ -51817,24 +51817,24 @@
     "address": "대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실",
     "district": "동구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 대전광역시 동구 삼성동 278-34 대한민국 대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실공간 소개": {
     "name": "위치대한민국 대전광역시 동구 삼성동 278-34 대한민국 대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실공간 소개",
     "address": "위치대한민국 대전광역시 동구 삼성동 278-34 대한민국 대전광역시 동구 삼성동 278-34 대전 동구 선화로 183-3 1층 레네의작업실공간 소개",
     "district": "대전광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 마포구 합정동 3473번지 공간 소개": {
     "name": "위치대한민국 서울특별시 마포구 합정동 3473번지 공간 소개",
     "address": "위치대한민국 서울특별시 마포구 합정동 3473번지 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 영통구 광교호수공원로 277(원천동, 광교중흥에스클래스) B2층 35호": {
     "name": "경기도 수원시 영통구 광교호수공원로 277(원천동, 광교중흥에스클래스) B2층 35호",
@@ -51857,8 +51857,8 @@
     "address": "위치대한민국 경기도 이천시 갈산동 225-7번지 공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "인천광역시 미추홀구 주안동 구월로": {
     "name": "인천광역시 미추홀구 주안동 구월로",
@@ -51921,8 +51921,8 @@
     "address": "부산광역시 사상구 주례동 167-13 공공북스 페이지2, 냉정역 3번출구에서 200m",
     "district": "사상구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "제주특별자치도 제주시 도두일동 1809-1 아트공간길": {
     "name": "제주특별자치도 제주시 도두일동 1809-1 아트공간길",
@@ -51945,24 +51945,24 @@
     "address": "위치대한민국 서울특별시 강남구 역삼동 776-21 B1공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 마포구 도화2안길 14 1층 청사진공간 소개": {
     "name": "위치대한민국 서울특별시 마포구 도화2안길 14 1층 청사진공간 소개",
     "address": "위치대한민국 서울특별시 마포구 도화2안길 14 1층 청사진공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경상남도 양산시 중부동 양주2길 26 1층": {
     "name": "위치대한민국 경상남도 양산시 중부동 양주2길 26 1층",
     "address": "위치대한민국 경상남도 양산시 중부동 양주2길 26 1층",
     "district": "경상남도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "울산광역시 남구 무거동 대학로 46": {
     "name": "울산광역시 남구 무거동 대학로 46",
@@ -51977,8 +51977,8 @@
     "address": "위치대한민국 서울특별시 송파구 석촌동 229-5 301호 공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 권선구 서둔동 103-25 생생1990 213호": {
     "name": "경기도 수원시 권선구 서둔동 103-25 생생1990 213호",
@@ -52001,32 +52001,32 @@
     "address": "위치대한민국 부산광역시 해운대구 좌동 대천로 187 , 장소 미정 (예약 후 안내 예정)",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 송파구 잠실동 10-3 종합운동장 제2수영장 스킨스쿠버풀장": {
     "name": "위치대한민국 서울특별시 송파구 잠실동 10-3 종합운동장 제2수영장 스킨스쿠버풀장",
     "address": "위치대한민국 서울특별시 송파구 잠실동 10-3 종합운동장 제2수영장 스킨스쿠버풀장",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 사하구 낙동대로 549 1층 수화": {
     "name": "위치대한민국 부산광역시 사하구 낙동대로 549 1층 수화",
     "address": "위치대한민국 부산광역시 사하구 낙동대로 549 1층 수화",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "부산광역시 해운대구 구남로 8-1 라뮤에뜨상가 401호←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "해운대구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "대구광역시 동구 신암동 705-7 3층": {
     "name": "대구광역시 동구 신암동 705-7 3층",
@@ -52041,8 +52041,8 @@
     "address": "위치대한민국 경기도 양평군 양서면 목왕로 13-1 2F공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광주시 경안동 경안로": {
     "name": "경기도 광주시 경안동 경안로",
@@ -52065,16 +52065,16 @@
     "address": "위치대한민국 서울특별시 양천구 신정동 1290-6",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 중구 영주로 68 3층": {
     "name": "위치대한민국 부산광역시 중구 영주로 68 3층",
     "address": "위치대한민국 부산광역시 중구 영주로 68 3층",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 광주시 경안동 경안로41번길 6 102동 1층 상가 1층 d120호": {
     "name": "경기도 광주시 경안동 경안로41번길 6 102동 1층 상가 1층 d120호",
@@ -52113,16 +52113,16 @@
     "address": "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 강남 트레바리 아지트공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 평택시 비전동 비전6길 33-1 102호, 파이토블라썸 향수&캔들 공방공간 소개": {
     "name": "위치대한민국 경기도 평택시 비전동 비전6길 33-1 102호, 파이토블라썸 향수&캔들 공방공간 소개",
     "address": "위치대한민국 경기도 평택시 비전동 비전6길 33-1 102호, 파이토블라썸 향수&캔들 공방공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 수원시 팔달구 인계동 1038-18  4층 청년공방 본점": {
     "name": "경기도 수원시 팔달구 인계동 1038-18  4층 청년공방 본점",
@@ -52145,40 +52145,40 @@
     "address": "경기도 김포시 구래동 531 인원모아주실 경우 타 지역에서 수업가능",
     "district": "김포시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 화성시 영천동 636-19 금강펜테리움ix타워 B동 20층 2037호": {
     "name": "경기도 화성시 영천동 636-19 금강펜테리움ix타워 B동 20층 2037호",
     "address": "경기도 화성시 영천동 636-19 금강펜테리움ix타워 B동 20층 2037호",
     "district": "화성시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "서울특별시 성동구 성수동1가 685-20, 서울숲 (성동구 뚝섬로 273) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error": {
     "name": "서울특별시 성동구 성수동1가 685-20, 서울숲 (성동구 뚝섬로 273) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "address": "서울특별시 성동구 성수동1가 685-20, 서울숲 (성동구 뚝섬로 273) ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "성동구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 서대문구 연세로 50-1": {
     "name": "위치대한민국 서울특별시 서대문구 연세로 50-1",
     "address": "위치대한민국 서울특별시 서대문구 연세로 50-1",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 고양시 덕양구 도내동 1051-4 도래울안길 33-1 1층 빛나는오늘공간 소개": {
     "name": "위치대한민국 경기도 고양시 덕양구 도내동 1051-4 도래울안길 33-1 1층 빛나는오늘공간 소개",
     "address": "위치대한민국 경기도 고양시 덕양구 도내동 1051-4 도래울안길 33-1 1층 빛나는오늘공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 남구 대연동 1135-26 2층 (참벗부동산)": {
     "name": "부산광역시 남구 대연동 1135-26 2층 (참벗부동산)",
@@ -52193,16 +52193,16 @@
     "address": "위치대한민국 서울특별시 마포구 백범로 35 마포비즈플라자 401-10호 (한국 유리드믹스 연구센터)공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 경기도 수원시 영통구 광교호수공원로 277 중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호": {
     "name": "위치대한민국 경기도 수원시 영통구 광교호수공원로 277 중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호",
     "address": "위치대한민국 경기도 수원시 영통구 광교호수공원로 277 중흥에스클래스 어뮤즈스퀘어 상가 B2층 39호",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 성남시 분당구 금곡동 161 513호(금곡동, 천사의도시 1오피스텔)": {
     "name": "경기도 성남시 분당구 금곡동 161 513호(금곡동, 천사의도시 1오피스텔)",
@@ -52217,16 +52217,16 @@
     "address": "부산광역시 동래구 사직동 사직북로47번길 20-4 부산 동래구 석사북로 41-1 지하1층",
     "district": "동래구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 부산광역시 기장군 일광면 삼성리 795": {
     "name": "위치대한민국 부산광역시 기장군 일광면 삼성리 795",
     "address": "위치대한민국 부산광역시 기장군 일광면 삼성리 795",
     "district": "부산광역시",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "부산광역시 부산진구 전포동 664-8 A 마동 3층 광월드": {
     "name": "부산광역시 부산진구 전포동 664-8 A 마동 3층 광월드",
@@ -52249,16 +52249,16 @@
     "address": "서울특별시 마포구 공덕동 ←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "마포구",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰공간 소개",
     "address": "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 포천시 소흘읍 송우로 75 1층 106호 어모릭스공방": {
     "name": "경기도 포천시 소흘읍 송우로 75 1층 106호 어모릭스공방",
@@ -52273,32 +52273,32 @@
     "address": "위치대한민국 경기도 고양시 일산동구 장항동 741번지 로데오존 2층 조금 취했어공간 소개",
     "district": "경기도",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 용산구 이태원 (예약 시 상세 주소 안내)공간 소개": {
     "name": "위치대한민국 서울특별시 용산구 이태원 (예약 시 상세 주소 안내)공간 소개",
     "address": "위치대한민국 서울특별시 용산구 이태원 (예약 시 상세 주소 안내)공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼동 616-7 1층 프랑꼬아트랩공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 역삼동 616-7 1층 프랑꼬아트랩공간 소개",
     "address": "위치대한민국 서울특별시 강남구 역삼동 616-7 1층 프랑꼬아트랩공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰트공간 소개": {
     "name": "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰트공간 소개",
     "address": "위치대한민국 서울특별시 강남구 역삼동 819-6 2층 밍글몰트공간 소개",
     "district": "서울특별시",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "광주광역시 서구 경열로65번길 7-1 상가202": {
     "name": "광주광역시 서구 경열로65번길 7-1 상가202",
@@ -52321,8 +52321,8 @@
     "address": "부산광역시 연제구 연산동 988-3 (고분로 111, 1층) 맘스핸즈←Move left→Move right↑Move up↓Move down+Zoom in-Zoom outHomeJump left by 75%EndJump right by 75%Page UpJump up by 75%Page DownJump down by 75%MapTerrainSatelliteLabelsKeyboard shortcutsMap DataMap data ©2026 TMap MobilityMap data ©2026 TMap Mobility100 m Click to toggle between metric and imperial unitsTermsReport a map error",
     "district": "연제구",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "경기도 하남시 미사강변서로 16": {
     "name": "경기도 하남시 미사강변서로 16",
@@ -52473,24 +52473,24 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "seoul",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "팅커위시": {
     "name": "팅커위시",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "[군위] 삼국유사테마파크 입장권": {
     "name": "[군위] 삼국유사테마파크 입장권",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "루프캣미": {
     "name": "루프캣미",
@@ -52537,8 +52537,8 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "한화리조트 대천 파로스": {
     "name": "한화리조트 대천 파로스",
@@ -52553,32 +52553,32 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "busan",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "[잔망루피가 맞이하는]마티에 오시리아 한화(룸온리/키캉스/뽀로로/부산호텔)": {
     "name": "[잔망루피가 맞이하는]마티에 오시리아 한화(룸온리/키캉스/뽀로로/부산호텔)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "busan",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "한복남 한국민속촌점 한복 대여 이용권(~3월)": {
     "name": "한복남 한국민속촌점 한복 대여 이용권(~3월)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "[특가] 한복남 한국민속촌점 한복 대여 이용권(~3월)": {
     "name": "[특가] 한복남 한국민속촌점 한복 대여 이용권(~3월)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "태종대 오션플라잉": {
     "name": "태종대 오션플라잉",
@@ -52601,112 +52601,112 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "[거제] 소노캄 오션어드벤처 로우시즌(동계) 입장권 (26/01/01~26/03/02)": {
     "name": "[거제] 소노캄 오션어드벤처 로우시즌(동계) 입장권 (26/01/01~26/03/02)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "코리아보드게임즈 패밀리 파크": {
     "name": "코리아보드게임즈 패밀리 파크",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "gyeonggi",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "휘닉스평창 제트스키 렌탈샵 스키 보드 고글 프리미엄 장비 의류": {
     "name": "휘닉스평창 제트스키 렌탈샵 스키 보드 고글 프리미엄 장비 의류",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "etc",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "12세 관람가": {
     "name": "12세 관람가",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "전체 관람가": {
     "name": "전체 관람가",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "15세 관람가": {
     "name": "15세 관람가",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "청소년 관람불가": {
     "name": "청소년 관람불가",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "등급 미정": {
     "name": "등급 미정",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "7세 이상": {
     "name": "7세 이상",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "전국",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "★오전과 오후 만나는 장소가 다르니 반드시 안내사항을 확인하시기 바랍니다.★\n\n오전(09~12시):석굴암(일주문 옆 세계유산 표지석)\n오후(13~16시):불국사 정문(세계유산 표지석)": {
     "name": "★오전과 오후 만나는 장소가 다르니 반드시 안내사항을 확인하시기 바랍니다.★\n\n오전(09~12시):석굴암(일주문 옆 세계유산 표지석)\n오후(13~16시):불국사 정문(세계유산 표지석)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "만천명월예술인家": {
     "name": "만천명월예술인家",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "아트스페이스 보안1942(통의동 보안여관)": {
     "name": "아트스페이스 보안1942(통의동 보안여관)",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "관천로 문화플랫폼 S1472": {
     "name": "관천로 문화플랫폼 S1472",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "도봉문화원": {
     "name": "도봉문화원",
@@ -52777,48 +52777,48 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "상세페이지 참조": {
     "name": "상세페이지 참조",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/17572": {
     "name": "https://www.sssd.co.kr/m/class/detail/17572",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/6317": {
     "name": "https://www.sssd.co.kr/m/class/detail/6317",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/35780": {
     "name": "https://www.sssd.co.kr/m/class/detail/35780",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/10559": {
     "name": "https://www.sssd.co.kr/m/class/detail/10559",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "정보 없음": {
     "name": "정보 없음",
@@ -52833,120 +52833,120 @@
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/49520": {
     "name": "https://www.sssd.co.kr/m/class/detail/49520",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/51299": {
     "name": "https://www.sssd.co.kr/m/class/detail/51299",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/53855": {
     "name": "https://www.sssd.co.kr/m/class/detail/53855",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/23945": {
     "name": "https://www.sssd.co.kr/m/class/detail/23945",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "https://www.sssd.co.kr/m/class/detail/27467": {
     "name": "https://www.sssd.co.kr/m/class/detail/27467",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "온라인투어 | 3박 4일": {
     "name": "온라인투어 | 3박 4일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "온라인투어 | 4박 6일": {
     "name": "온라인투어 | 4박 6일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "온라인투어 | 3박 5일": {
     "name": "온라인투어 | 3박 5일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "모두투어 | 4박 6일": {
     "name": "모두투어 | 4박 6일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "온라인투어 | 2박 3일": {
     "name": "온라인투어 | 2박 3일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "모두투어 | 3박 5일": {
     "name": "모두투어 | 3박 5일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "NOL 인터파크투어 | 3박 5일": {
     "name": "NOL 인터파크투어 | 3박 5일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "교원투어 여행이지 | 3박 5일": {
     "name": "교원투어 여행이지 | 3박 5일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "모두투어 | 2박 3일": {
     "name": "모두투어 | 2박 3일",
     "address": "정보 없음",
     "district": "",
     "mapped_region_id": "overseas",
-    "lat": null,
-    "lng": null
+    "lat": 0,
+    "lng": 0
   },
   "빅베어복싱클럽": {
     "name": "빅베어복싱클럽",
@@ -52963,5 +52963,152 @@
     "mapped_region_id": "gyeonggi",
     "lat": 37.28581989116,
     "lng": 127.05951347602394
+  },
+  "모카클래스 - <mark>동평로</mark>405번길": {
+    "name": "모카클래스 - <mark>동평로</mark>405번길",
+    "address": "부산광역시 부산진구 양정동",
+    "lat": 35.1787239,
+    "lng": 129.0731998,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 모델라인": {
+    "name": "모카클래스 - 모델라인",
+    "address": "부산광역시 부산진구 전포동 산3",
+    "lat": 35.1501762,
+    "lng": 129.0630113,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 챈플라워": {
+    "name": "모카클래스 - 챈플라워",
+    "address": "부산광역시 부산진구 가야대로 689-2 1층 챈플라워",
+    "lat": 35.1570145,
+    "lng": 129.0469941,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 송정 조개홀릭": {
+    "name": "모카클래스 - 송정 조개홀릭",
+    "address": "부산광역시 해운대구 송정해변로 50 2층",
+    "lat": 35.1799384,
+    "lng": 129.2005502,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 쉐비캔들": {
+    "name": "모카클래스 - 쉐비캔들",
+    "address": "부산광역시 동래구 명륜로 140",
+    "lat": 35.2064228,
+    "lng": 129.0827615,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 삼한골든뷰센트럴파크아파트": {
+    "name": "모카클래스 - 삼한골든뷰센트럴파크아파트",
+    "address": "부산광역시 부산진구 중앙대로 821",
+    "lat": 35.1650289,
+    "lng": 129.0632957,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - <mark>만덕3로</mark>51번길": {
+    "name": "모카클래스 - <mark>만덕3로</mark>51번길",
+    "address": "부산광역시 북구 만덕동",
+    "lat": 35.2114536,
+    "lng": 129.0308249,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 토다공원": {
+    "name": "모카클래스 - 토다공원",
+    "address": "부산광역시 부산진구 전포대로210번길 36 1층",
+    "lat": 35.1553704,
+    "lng": 129.0674761,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 자수여왕": {
+    "name": "모카클래스 - 자수여왕",
+    "address": "부산광역시 동래구 온천천로 13-1 1층",
+    "lat": 35.2168775,
+    "lng": 129.0844037,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 인사불성": {
+    "name": "모카클래스 - 인사불성",
+    "address": "부산광역시 부산진구 서전로58번길 33 2층",
+    "lat": 35.1562241,
+    "lng": 129.0662189,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - <mark>신반포로</mark>23길": {
+    "name": "모카클래스 - <mark>신반포로</mark>23길",
+    "address": "서울특별시 서초구 잠원동",
+    "lat": 37.5078723,
+    "lng": 127.0035541,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 석불사": {
+    "name": "모카클래스 - 석불사",
+    "address": "부산광역시 북구 만덕고개길 143-79",
+    "lat": 35.221099,
+    "lng": 129.0492013,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - <mark>월드컵대로</mark>275번길": {
+    "name": "모카클래스 - <mark>월드컵대로</mark>275번길",
+    "address": "대전광역시 유성구 구암동",
+    "lat": 36.3505149,
+    "lng": 127.3315765,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 코끼리방울": {
+    "name": "모카클래스 - 코끼리방울",
+    "address": "경기도 용인시 기흥구 동백중앙로 225-6 3층 302호",
+    "lat": 37.2744221,
+    "lng": 127.1500882,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - <mark>동천로</mark>": {
+    "name": "모카클래스 - <mark>동천로</mark>",
+    "address": "부산광역시 부산진구 전포동",
+    "lat": 35.1556641,
+    "lng": 129.0623548,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - <mark>관문로</mark>": {
+    "name": "모카클래스 - <mark>관문로</mark>",
+    "address": "경기도 과천시 중앙동",
+    "lat": 37.4294391,
+    "lng": 126.9893931,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 곱테랑 부산사상본점": {
+    "name": "모카클래스 - 곱테랑 부산사상본점",
+    "address": "부산광역시 사상구 새벽로 218 101호",
+    "lat": 35.160531,
+    "lng": 128.9842883,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 슈가펫": {
+    "name": "모카클래스 - 슈가펫",
+    "address": "부산광역시 북구 상리로18번가길 7 1층",
+    "lat": 35.208091,
+    "lng": 129.0362265,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 카피솔루션": {
+    "name": "모카클래스 - 카피솔루션",
+    "address": "서울특별시 광진구 자양로52길 28 1층",
+    "lat": 37.5524478,
+    "lng": 127.094571,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 설맥 <mark>다산중앙로</mark>점": {
+    "name": "모카클래스 - 설맥 <mark>다산중앙로</mark>점",
+    "address": "경기도 남양주시 다산중앙로123번길 22-56 1층 설맥 다산중앙로점",
+    "lat": 37.6249807,
+    "lng": 127.1510732,
+    "mapped_region_id": "auto-mochaclass"
+  },
+  "모카클래스 - 플루미에르": {
+    "name": "모카클래스 - 플루미에르",
+    "address": "부산광역시 부산진구 서전로37번길 26 b동 1층 155호",
+    "lat": 35.1588735,
+    "lng": 129.0642308,
+    "mapped_region_id": "auto-mochaclass"
   }
 }

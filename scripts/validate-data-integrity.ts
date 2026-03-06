@@ -67,6 +67,11 @@ async function validate() {
                 const venueName = item.venue || item.place;
                 // 좌표 검사 (문화/공연 카테고리는 위치가 필수)
                 if (target.name !== '영화' && venueName) {
+                    // 해외 여행(overseas)은 좌표 검출에서 제외
+                    if (target.file === 'travel.json' && item.region === 'overseas') {
+                        return;
+                    }
+
                     const v = venues[venueName];
                     if (!v || !v.lat || !v.lng || v.address === '정보 없음') {
                         missingGeoCount++;
