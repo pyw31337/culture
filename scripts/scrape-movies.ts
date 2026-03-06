@@ -976,7 +976,7 @@ async function scrapeMovies() {
                 const dateB = b.date || '0000.00.00.';
 
                 if (dateA !== dateB) {
-                    return dateB.localeCompare(dateA);
+                    return dateA.localeCompare(dateB);
                 }
 
                 return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
