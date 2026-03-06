@@ -107,6 +107,23 @@ jobs:
           # Only commit if there are changes
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update daily data" && git push)
 
+      - name: Log Error to Tracker
+        if: failure()
+        run: |
+          echo "### 🚨 CI Action Runtime Failure" >> ERROR_TRACKER.md
+          echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ERROR_TRACKER.md
+          echo "- **GitHub Run ID**: [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ERROR_TRACKER.md
+          echo "- **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above." >> ERROR_TRACKER.md
+          echo "" >> ERROR_TRACKER.md
+
+      - name: Commit Error Tracker
+        if: failure()
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add ERROR_TRACKER.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: Log CI failure to ERROR_TRACKER [skip ci]" && git push)
+
   trigger-deploy:
     needs: update-data
     if: always() && needs.update-data.result == 'success'
