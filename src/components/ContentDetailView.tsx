@@ -140,7 +140,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-lg font-black leading-[1.2] tracking-tighter drop-shadow-sm line-clamp-2 overflow-hidden">
+                                    <h2 className="text-lg font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>
                                 </div>
