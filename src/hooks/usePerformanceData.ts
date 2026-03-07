@@ -18,7 +18,6 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
 
                 const results = await Promise.allSettled([
                     fetch(`${basePath}/data/performances.json`).then(r => r.ok ? r.json() : []),
-                    fetch(`${basePath}/data/movies.json`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/cinemas.json`).then(r => r.ok ? r.json() : []),
                     fetch(`${basePath}/data/venues.json`).then(r => r.ok ? r.json() : {})
                 ]);
@@ -27,9 +26,9 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
 
                 results.forEach((res, index) => {
                     if (res.status === 'fulfilled') {
-                        if (index === 2) {
+                        if (index === 1) {
                             setCinemas(res.value);
-                        } else if (index === 3) {
+                        } else if (index === 2) {
                             setVenues(res.value);
                         } else if (Array.isArray(res.value)) {
                             mergedData.push(...res.value);

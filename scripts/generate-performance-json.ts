@@ -72,13 +72,9 @@ async function generate() {
         let dateCount = 0;
 
         const activePerformances = performances.filter(p => {
-            // 0. EXCLUDE Movies and OTT from this specific JSON 
-            // because they are loaded separately in the frontend (movies.json, ott.json)
+            // 0. EXCLUDE OTT from this specific JSON 
+            // because they are loaded separately in the frontend (ott.json)
             // to avoid duplicates.
-            if (p.genre === 'movie') {
-                movieCount++;
-                return false;
-            }
             if (p.genre === 'ott') {
                 ottCount++;
                 return false;

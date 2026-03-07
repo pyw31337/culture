@@ -128,7 +128,7 @@ export function getAllPerformances() {
         }
 
         // Date Check (Enforced for everything else)
-        if (!isPerformanceActive(p.date, now)) return false;
+        if (p.genre !== 'movie' && !isPerformanceActive(p.date, now)) return false;
 
 
 
