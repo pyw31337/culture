@@ -97,12 +97,19 @@ export default async function PerformanceSharePage({ params }: PageProps) {
     if (!p) return <ShareRedirect id={decodedId} />;
 
     return (
-        <main className="relative min-h-screen py-8 px-4 sm:py-12 sm:px-6 flex flex-col items-center justify-center overflow-x-hidden selection:bg-emerald-500/30">
+        <main className="relative min-h-screen py-4 px-4 sm:py-8 sm:px-6 flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500">
             {/* Premium Animated Background */}
             <RainbowBackground />
+            
+            {/* 3D Floating Squares Effect */}
+            <div className="bg-squares opacity-30 sm:opacity-50">
+                {[...Array(10)].map((_, i) => (
+                    <div key={i} className="bg-square" />
+                ))}
+            </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-2xl">
+            <div className="relative z-10 w-full max-w-4xl">
                 <ContentDetailView performance={p} mode="standalone" />
             </div>
 

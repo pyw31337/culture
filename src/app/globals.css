@@ -397,8 +397,45 @@ body {
   width: 1em;
   height: 1em;
   transform: translateY(100%);
-  background: var(--square-bg, rgba(255, 255, 255, 0.1));
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
+}
+
+/* Inverted Share Theme - Special override for standalone page */
+.inverted-share-theme {
+  background-color: #030303 !important;
+}
+
+.dark .inverted-share-theme {
+  background-color: #ffffff !important;
+}
+
+.inverted-share-theme .rainbow-bg-wrapper {
+  background: #030303 !important;
+}
+
+.dark .inverted-share-theme .rainbow-bg-wrapper {
+  background: #ffffff !important;
+}
+
+.inverted-share-theme .rb-ray,
+.inverted-share-theme .rb-fog-h,
+.inverted-share-theme .rb-fog-v {
+  --rb-bg: #030303 !important;
+}
+
+.dark .inverted-share-theme .rb-ray,
+.dark .inverted-share-theme .rb-fog-h,
+.dark .inverted-share-theme .rb-fog-v {
+  --rb-bg: #ffffff !important;
+}
+
+.inverted-share-theme .bg-square {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark .inverted-share-theme .bg-square {
+  background: rgba(0, 0, 0, 0.08) !important;
 }
 
 .bg-square:nth-child(2) {

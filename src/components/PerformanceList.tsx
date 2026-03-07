@@ -133,12 +133,13 @@ export default function PerformanceList({
     }, [allPerformances]);
 
     // --- Handlers ---
-    const handleDetailOpen = useCallback((perf: Performance) => window.open(perf.link, '_blank'), []);
+    const handleDetailOpen = useCallback((perf: Performance) => {
+        router.push(`/p/${perf.id}/`);
+    }, [router]);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
         await navigator.clipboard.writeText(url);
-        alert('링크가 복사되었습니다.');
         return true;
     }, []);
 
