@@ -12,6 +12,7 @@ import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
 import classData from '@/data/sssd-class.json';
+import cinemaData from '@/data/cinemas.json';
 
 
 import handballData from '@/data/handball.json';
@@ -28,6 +29,7 @@ import museumData from '@/data/museum.json';
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string; lat?: number | null; lng?: number | null }>;
+const cinemas = cinemaData as { name: string; address: string; lat: number; lng: number }[];
 
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr) return false;
@@ -116,7 +118,14 @@ export function getAllPerformances() {
         if (p.genre === 'popup' || p.genre === 'travel') return false;
 
         // Always show specific genres (Bypass Date & Region)
-        if (p.genre === 'movie') return true;
+        if (p.genre === 'movie') {
+            const cinema = cinemas.find(c => c.name === p.venue);
+            if (cinema && cinema.lat && cinema.lng) {
+                p.lat = cinema.lat;
+                p.lng = cinema.lng;
+                p.address = cinema.address;
+            }
+        }
 
         // Date Check (Enforced for everything else)
         if (!isPerformanceActive(p.date, now)) return false;
@@ -149,6 +158,10 @@ export function getAllPerformances() {
             if (!v || !v.address || v.address === '정보 없음' || !v.lat || !v.lng) {
                 return false;
             }
+            // Attach venue data for interactive links
+            p.lat = v.lat as number;
+            p.lng = v.lng as number;
+            p.address = v.address;
         }
 
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;

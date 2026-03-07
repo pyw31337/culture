@@ -103,12 +103,14 @@ export default function PerformanceList({
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
 
-    // Initialize from URL params (e.g., from map '공연 더보기' button)
-    const urlInitialized = useRef(false);
+    // Initialize from URL params (e.g., from map '공연 더보기' button or venue links)
+    const lastUrlKey = useRef<string>('');
     useEffect(() => {
-        if (urlInitialized.current) return;
+        const currentKey = `${urlMode}-${urlLat}-${urlLng}-${urlVenue}`;
+        if (lastUrlKey.current === currentKey) return;
+        
         if (urlMode === 'location' && urlLat && urlLng && urlVenue) {
-            urlInitialized.current = true;
+            lastUrlKey.current = currentKey;
             setSearchMode('location');
             setSearchLocation({ lat: urlLat, lng: urlLng, name: urlVenue });
             setSearchText(urlVenue);

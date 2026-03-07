@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -15,6 +16,7 @@ interface ContentDetailViewProps {
 }
 
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
+    const router = useRouter();
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
 
@@ -23,7 +25,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
     const hasDiscount = p.discount && p.originalPrice;
     const hasCast = p.cast && p.cast.length > 0;
-    const castNames = hasCast ? p.cast!.map(c => typeof c === 'string' ? c : c.name) : [];
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
@@ -31,6 +32,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const handleShare = async () => {
         const url = `${window.location.origin}${window.location.pathname}${mode === 'modal' ? `#p=${p.id}` : ''}`;
         await navigator.clipboard.writeText(url);
+    };
+
+    const handleVenueClick = (e: React.MouseEvent) => {
+        if (p.lat && p.lng) {
+            e.preventDefault();
+            const mapUrl = `/?mode=location&lat=${p.lat}&lng=${p.lng}&venue=${encodeURIComponent(p.venue)}`;
+            if (onClose) onClose();
+            router.push(mapUrl);
+        }
     };
 
     const containerVariants = {
@@ -87,18 +97,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                             
-                            {/* Genre badge */}
-                            <div className="absolute top-4 left-4 flex gap-2 z-20">
-                                <motion.span
-                                    initial={{ x: -20, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: 0.3 }}
-                                    className={`px-3 py-1 rounded-full text-[9px] font-black text-white ${genreStyle.twBg} shadow-xl tracking-[0.1em] uppercase border border-white/20`}
-                                >
-                                    {genreLabel}
-                                </motion.span>
-                            </div>
-
                             {/* Sports VS Overlay */}
                             {isSports && hasTeams && (
                                 <div className="absolute inset-x-0 bottom-6 flex items-center justify-center pointer-events-none px-6">
@@ -132,26 +130,54 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                         : "p-6 sm:p-8 pt-4 sm:pt-6 space-y-4 sm:space-y-8"}>
                         
                         <div className="space-y-4">
-                            <motion.div variants={itemVariants}>
-                                <h2 className="text-xl font-black leading-[1.2] tracking-tighter mb-1 drop-shadow-sm">
-                                    {p.title}
-                                </h2>
+                            <motion.div variants={itemVariants} className="space-y-3">
+                                {/* Genre badge moved next to title */}
+                                <div className="flex items-center gap-2">
+                                    <motion.span
+                                        initial={{ scale: 0.8, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        className={`px-2.5 py-0.5 rounded-md text-[8px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
+                                    >
+                                        {genreLabel}
+                                    </motion.span>
+                                    <h2 className="text-xl font-black leading-[1.2] tracking-tighter drop-shadow-sm truncate">
+                                        {p.title}
+                                    </h2>
+                                </div>
+                                
                                 {p.originalTitle && (
-                                    <p className="text-[10px] text-gray-400 font-medium italic opacity-70 tracking-wide">{p.originalTitle}</p>
+                                    <p className="text-[10px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-8px]">{p.originalTitle}</p>
                                 )}
                             </motion.div>
 
                             {/* Info List - 1 Column Narrow Style */}
                             <motion.div variants={itemVariants} className="space-y-2.5">
                                 {[
-                                    { icon: p.genre === 'movie' ? Film : MapPin, text: p.venue, color: 'text-emerald-500', label: '장소' },
+                                    { 
+                                        icon: p.genre === 'movie' ? Film : MapPin, 
+                                        text: p.venue, 
+                                        color: 'text-emerald-500', 
+                                        label: '장소',
+                                        isLink: !!(p.lat && p.lng),
+                                        onClick: handleVenueClick
+                                    },
                                     { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-500', label: '날짜' },
                                     { icon: Clock, text: p.runningTime, color: 'text-purple-500', label: '시간' },
                                     { icon: Ticket, text: p.price, color: 'text-amber-500', label: '가격' }
                                 ].filter(item => item.text).map((item, idx) => (
                                     <div key={idx} className="flex items-center gap-3 py-0.5 border-b border-gray-50 dark:border-white/5 last:border-0">
                                         <item.icon className={`w-3.5 h-3.5 ${item.color} shrink-0 opacity-80`} />
-                                        <p className="text-[11px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                        {item.isLink ? (
+                                            <button 
+                                                onClick={item.onClick}
+                                                className="text-[11px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1"
+                                            >
+                                                <span>{item.text}</span>
+                                                <ExternalLink className="w-2.5 h-2.5 opacity-50" />
+                                            </button>
+                                        ) : (
+                                            <p className="text-[11px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                        )}
                                     </div>
                                 ))}
                             </motion.div>
@@ -166,11 +192,27 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             {/* Cast */}
                             {hasCast && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-1.5 pt-1">
-                                    {castNames.slice(0, 5).map((name, idx) => (
-                                        <span key={idx} className="px-2 py-0.5 rounded-md bg-gray-50 dark:bg-white/5 text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5">
-                                            {name}
-                                        </span>
-                                    ))}
+                                    {p.cast!.slice(0, 5).map((c, idx) => {
+                                        const name = typeof c === 'string' ? c : c.name;
+                                        const url = typeof c === 'string' ? undefined : (c as any).url;
+                                        const castClasses = "px-2 py-0.5 rounded-md bg-gray-50 dark:bg-white/5 text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
+                                        
+                                        return url ? (
+                                            <a 
+                                                key={idx} 
+                                                href={url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10 text-emerald-500`}
+                                            >
+                                                {name}
+                                            </a>
+                                        ) : (
+                                            <span key={idx} className={castClasses}>
+                                                {name}
+                                            </span>
+                                        );
+                                    })}
                                 </motion.div>
                             )}
                         </div>
