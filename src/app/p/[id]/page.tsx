@@ -56,10 +56,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const posterUrl = p.image || p.poster || p.backupPoster || '';
     
     // Ensure absolute URL construction is robust
-    const cleanPosterPath = posterUrl.startsWith('/') ? posterUrl : `/${posterUrl}`;
+    // If it already has the basePath (like /culture), don't add it again.
+    let cleanPosterPath = posterUrl;
+    if (!posterUrl.startsWith('http') && !posterUrl.startsWith('data:')) {
+        if (!posterUrl.startsWith(basePath) && !posterUrl.startsWith('/')) {
+            cleanPosterPath = `/${posterUrl}`;
+        }
+    }
+
     const absolutePosterUrl = posterUrl.startsWith('http')
         ? posterUrl
-        : `${productionHost}${basePath}${cleanPosterPath}`;
+        : posterUrl.startsWith(basePath)
+            ? `${productionHost}${posterUrl}`
+            : `${productionHost}${basePath}${cleanPosterPath}`;
 
     return {
         title: `${p.title} - Culture Flow`,
