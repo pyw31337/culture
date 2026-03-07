@@ -255,7 +255,18 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             </motion.div>
 
                             {mode === 'standalone' && (
-                                <Link href="/" className="block">
+                                <button 
+                                    onClick={() => {
+                                        // If there's meaningful history, go back to preserve exact scroll/order
+                                        // Otherwise, go home.
+                                        if (typeof window !== 'undefined' && window.history.length > 2) {
+                                            router.back();
+                                        } else {
+                                            router.push('/');
+                                        }
+                                    }}
+                                    className="w-full block"
+                                >
                                     <motion.div
                                         whileHover={{ y: -1 }}
                                         className="w-full py-2 text-gray-400 dark:text-gray-500 font-bold text-[10px] text-center tracking-widest uppercase flex items-center justify-center gap-2"
@@ -263,7 +274,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         <Sparkles className="w-3 h-3 opacity-50" />
                                         <span>컬처플로우 바로가기</span>
                                     </motion.div>
-                                </Link>
+                                </button>
                             )}
                         </div>
                     </div>

@@ -25,12 +25,61 @@ export function usePerformanceFilters({
     venues
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
-    const [selectedRegion, setSelectedRegion] = useState<string>('all');
-    const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
-    const [selectedVenue, setSelectedVenue] = useState<string>('all');
-    const [shuffleSeed, setShuffleSeed] = useState<number>(Date.now());
-    const [visibleCount, setVisibleCount] = useState(24);
+    
+    // Lazy State Initializers for Persistence
+    const [selectedRegion, setSelectedRegion] = useState<string>(() => {
+        if (typeof window === 'undefined') return 'all';
+        try {
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            return (saved ? JSON.parse(saved).region || 'all' : 'all') as string;
+        } catch { return 'all'; }
+    });
+    const [selectedDistrict, setSelectedDistrict] = useState<string>(() => {
+        if (typeof window === 'undefined') return 'all';
+        try {
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            return (saved ? JSON.parse(saved).district || 'all' : 'all') as string;
+        } catch { return 'all'; }
+    });
+    const [selectedVenue, setSelectedVenue] = useState<string>(() => {
+        if (typeof window === 'undefined') return 'all';
+        try {
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            return (saved ? JSON.parse(saved).venue || 'all' : 'all') as string;
+        } catch { return 'all'; }
+    });
+    const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
+        if (typeof window === 'undefined') return Date.now();
+        try {
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            return (saved ? JSON.parse(saved).seed || Date.now() : Date.now()) as number;
+        } catch { return Date.now(); }
+    });
+    const [visibleCount, setVisibleCount] = useState<number>(() => {
+        if (typeof window === 'undefined') return 24;
+        try {
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            return (saved ? JSON.parse(saved).visibleCount || 24 : 24) as number;
+        } catch { return 24; }
+    });
+
     const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
+    const isInitialized = useRef(false);
+
+    // Persistence: Always keep sessionStorage synced with current state
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const state = {
+            region: selectedRegion,
+            district: selectedDistrict,
+            venue: selectedVenue,
+            seed: shuffleSeed,
+            visibleCount: visibleCount
+        };
+        sessionStorage.setItem(`cf_state_${selectedGenre}`, JSON.stringify(state));
+        isInitialized.current = true;
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, shuffleSeed, visibleCount]);
 
     // Debounce search text to avoid heavy filtering on every keystroke
     useEffect(() => {
@@ -122,7 +171,15 @@ export function usePerformanceFilters({
     const hasMore = visibleCount < filteredPerformances.length;
 
     useEffect(() => {
-        setVisibleCount(24);
+        // Reset count only if GENRE or MAJOR parameters change in a way that implies a NEW search entry, 
+        // but restored state will take precedence in the first mount.
+        // Actually, if we are initialized, we don't want to force reset to 24 if we just came back.
+        // However, if the user manually changes something, we DO want reset.
+        if (isInitialized.current) {
+            // We should distinguish between "mounting" and "explicitly changing filters"
+            // For now, let's reset to 24 if major filters change AFTER mount
+            setVisibleCount(24);
+        }
     }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation]);
 
     const loadMore = useCallback(() => {
