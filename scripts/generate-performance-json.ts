@@ -116,6 +116,9 @@ async function generate() {
 
                 // Set end date to end of day
                 endDate.setHours(23, 59, 59, 999);
+                // Bypass date check for movies
+                if (p.genre === 'movie') return true;
+
                 const isActive = endDate >= today;
                 if (!isActive) dateCount++;
                 return isActive;

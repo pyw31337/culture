@@ -185,13 +185,14 @@ export function sortPerformances(performances: Performance[], genre: string, key
         });
     }
 
-    // Movie: Rank First, then Strict Date ASC Sort (Upcoming First)
+    // Movie: Top 10 Rank First, then Strict Date ASC Sort (Upcoming First)
     if (genre === 'movie') {
         return sorted.sort((a, b) => {
-            // Prioritize rank if available
-            if (a.rank !== undefined && b.rank !== undefined) return a.rank - b.rank;
-            if (a.rank !== undefined) return -1;
-            if (b.rank !== undefined) return 1;
+            // Prioritize Top 10 ranks if available
+            const rankA = (a.rank !== undefined && a.rank > 0 && a.rank <= 10) ? a.rank : Infinity;
+            const rankB = (b.rank !== undefined && b.rank > 0 && b.rank <= 10) ? b.rank : Infinity;
+
+            if (rankA !== rankB) return rankA - rankB;
 
             // Normalize formats: "2026.03.04." vs "2026-12-31" -> "20260304" vs "20261231"
             const dateA = (a.dateRaw || a.date || '99991231').replace(/\D/g, '').padEnd(8, '0');

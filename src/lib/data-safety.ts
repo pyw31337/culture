@@ -68,6 +68,15 @@ export function safePerformance(data: any): Performance | null {
         awayTeamLogo: typeof data.awayTeamLogo === 'string' ? data.awayTeamLogo : undefined,
         posterUrl: typeof data.posterUrl === 'string' ? data.posterUrl : undefined,
         category: typeof data.category === 'string' ? data.category : undefined,
+
+        // Ranking & Enhanced Date
+        rank: typeof data.rank === 'number' ? data.rank : undefined,
+        dateRaw: typeof data.dateRaw === 'string' ? data.dateRaw : undefined,
+
+        // Location
+        lat: typeof data.lat === 'number' ? data.lat : undefined,
+        lng: typeof data.lng === 'number' ? data.lng : undefined,
+        address: typeof data.address === 'string' ? data.address : undefined,
     };
 }
 
