@@ -72,7 +72,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             images: [
                 {
                     url: absolutePosterUrl,
-                    secureUrl: absolutePosterUrl,
                     width: 800,
                     height: 1100,
                     alt: p.title,
@@ -84,7 +83,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             title: `${p.title} - Culture Flow`,
             description: `${p.date} | ${p.venue} | 전국 통합 문화 검색 Culture Flow`,
-            images: [absolutePosterUrl],
+            images: absolutePosterUrl,
         },
     };
 }

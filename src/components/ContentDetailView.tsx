@@ -31,7 +31,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const handleShare = async () => {
         const url = `${window.location.origin}${window.location.pathname}${mode === 'modal' ? `#p=${p.id}` : ''}`;
         await navigator.clipboard.writeText(url);
-        alert('링크가 복사되었습니다.');
     };
 
     const hex = genreStyle.hex;
