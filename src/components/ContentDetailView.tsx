@@ -131,7 +131,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                         
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">
-                                {/* Genre badge moved next to title */}
+                                {/* Genre badge next to title */}
                                 <div className="flex items-center gap-2">
                                     <motion.span
                                         initial={{ scale: 0.8, opacity: 0 }}
@@ -140,7 +140,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-xl font-black leading-[1.2] tracking-tighter drop-shadow-sm truncate">
+                                    <h2 className="text-lg font-black leading-[1.2] tracking-tighter drop-shadow-sm truncate">
                                         {p.title}
                                     </h2>
                                 </div>
@@ -219,37 +219,36 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                         {/* Actions Block */}
                         <div className="space-y-4 pt-2">
-                            <motion.div variants={itemVariants} className="flex flex-col gap-2">
+                            <motion.div variants={itemVariants} className="flex items-center gap-2">
+                                <motion.button
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={handleShare}
+                                    className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 text-gray-900 dark:text-white border border-black/5 dark:border-white/10 flex items-center justify-center transition-all shrink-0"
+                                >
+                                    <Share2 className="w-5 h-5" />
+                                </motion.button>
+                                
                                 <motion.a
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    whileHover={{ scale: 1.01 }}
+                                    whileTap={{ scale: 0.99 }}
                                     href={p.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl text-white font-black text-sm ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
+                                    className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl text-white font-black text-sm ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
                                 >
                                     <ExternalLink className="w-4 h-4" />
                                     <span>예매하기 이동</span>
                                 </motion.a>
-
-                                <motion.button
-                                    whileTap={{ scale: 0.95 }}
-                                    onClick={handleShare}
-                                    className="w-full py-3 rounded-2xl bg-gray-50 dark:bg-white/5 text-gray-900 dark:text-white font-bold border border-black/5 dark:border-white/10 flex items-center justify-center gap-2 transition-all"
-                                >
-                                    <Share2 className="w-4 h-4" />
-                                    <span>카드 공유</span>
-                                </motion.button>
                             </motion.div>
 
                             {mode === 'standalone' && (
-                                <Link href="/">
+                                <Link href="/" className="block">
                                     <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        className="w-full py-2.5 rounded-xl bg-emerald-500/5 text-emerald-600/70 dark:text-emerald-400/70 font-black text-[9px] text-center border border-emerald-500/10 tracking-widest uppercase flex items-center justify-center gap-2"
+                                        whileHover={{ y: -1 }}
+                                        className="w-full py-2 text-gray-400 dark:text-gray-500 font-bold text-[10px] text-center tracking-widest uppercase flex items-center justify-center gap-2"
                                     >
-                                        <Sparkles className="w-3 h-3" />
-                                        <span>Culture Flow Explore</span>
+                                        <Sparkles className="w-3 h-3 opacity-50" />
+                                        <span>컬처플로우 바로가기</span>
                                     </motion.div>
                                 </Link>
                             )}
