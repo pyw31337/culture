@@ -123,7 +123,8 @@ export default function CalendarView({ performances: initialPerformances }: Cale
             const result: Performance[] = [];
             const seen = new Set<string>();
             eachDayOfInterval({ start, end }).forEach(day => {
-                getPerformancesForDay(day).forEach(p => {
+                const dayStr = format(day, 'yyyy-MM-dd');
+                (performancesByDate.get(dayStr) || []).forEach(p => {
                     if (!seen.has(p.id)) {
                         seen.add(p.id);
                         result.push(p);
