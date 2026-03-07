@@ -181,7 +181,7 @@ async (code) => {
             res.titleEn = Array.from(header.childNodes)
                 .filter(node => node.nodeType === 3)
                 .map(node => node.textContent.trim())
-                .filter(txt => /^[a-zA-Z0-9\s:,\-'.!?]+$/.test(txt))
+                .filter(txt => /^[a-zA-Z0-9\\s:,.'.!?\\-]+$/.test(txt))
                 .join(' ').trim();
         }
     }
@@ -762,6 +762,7 @@ async function scrapeMovies() {
         const context = await browser.newContext({
             userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
         });
+        await context.addInitScript(() => { (window as any).__name = (f: any, n: string) => f; });
 
         const enrichBar = new cliProgress.SingleBar({
             format: '네이버 정보 보강 | {bar} | {percentage}% | 남은 시간: {eta}s | {value}/{total} | {movie}',

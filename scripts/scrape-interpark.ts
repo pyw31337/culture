@@ -266,7 +266,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     }
 
     // Concurrency: Reduced to 5 to prevent timeouts on CI
-    const CONCURRENCY = 5;
+    const CONCURRENCY = 2;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
 
@@ -285,6 +285,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
+                await page.evaluateOnNewDocument(() => { (window as any).__name = (f: any) => f; });
 
                 // Extract original GoodsCode from link
                 const goodsIdMatch = item.link.match(/\/goods\/([A-Za-z0-9]+)/);
@@ -748,6 +749,7 @@ const runScraper = async () => {
     // 2. Enrich Details
     const browser = await puppeteer.launch({
         headless: true,
+        protocolTimeout: 60000,
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
     });
 

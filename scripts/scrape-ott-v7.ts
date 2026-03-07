@@ -197,6 +197,7 @@ async function fetchJWDetail(page: any, url: string) {
 
     // 1. List Scraping
     const context = await browser.newContext();
+    await context.addInitScript(() => { (window as any).__name = (f: any, n: string) => f; });
     const page = await context.newPage();
 
     // URL Update: Netflix(nfx), Disney+(dnp), Wavve(wav) ONLY

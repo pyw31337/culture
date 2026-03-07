@@ -111,6 +111,7 @@ async function scrapeMomMom() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.evaluateOnNewDocument(() => { (window as any).__name = (f: any) => f; });
 
     try {
         await page.goto(TARGET_URL, { waitUntil: ['domcontentloaded', 'networkidle2'], timeout: 60000 });
@@ -269,6 +270,7 @@ async function scrapeMomMom() {
                 }
 
                 const detailPage = await browser.newPage();
+                await detailPage.evaluateOnNewDocument(() => { (window as any).__name = (f: any) => f; });
                 try {
                     // Block images on detail to speed up
                     await detailPage.setRequestInterception(true);
