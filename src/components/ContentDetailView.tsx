@@ -163,6 +163,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     },
                                     { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-500', label: '날짜' },
                                     { icon: Clock, text: p.runningTime, color: 'text-purple-500', label: '시간' },
+                                    { 
+                                        icon: Users, 
+                                        text: p.director, 
+                                        color: 'text-indigo-500', 
+                                        label: '감독',
+                                        isLink: p.genre === 'movie',
+                                        onClick: () => window.open(`https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`, '_blank')
+                                    },
                                     { icon: Ticket, text: p.price, color: 'text-amber-500', label: '가격' }
                                 ].filter(item => item.text).map((item, idx) => (
                                     <div key={idx} className="flex items-center gap-3 py-0.5 border-b border-gray-50 dark:border-white/5 last:border-0">
@@ -189,12 +197,17 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.p>
                             )}
 
-                            {/* Cast */}
                             {hasCast && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-1.5 pt-1">
-                                    {p.cast!.slice(0, 5).map((c, idx) => {
+                                    {p.cast!.slice(0, 7).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
-                                        const url = typeof c === 'string' ? undefined : (c as any).url;
+                                        let url = typeof c === 'string' ? undefined : (c as any).url;
+                                        
+                                        // Auto-generate Naver search link for movies if missing URL
+                                        if (!url && p.genre === 'movie') {
+                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
+                                        }
+
                                         const castClasses = "px-2 py-0.5 rounded-md bg-gray-50 dark:bg-white/5 text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
                                         
                                         return url ? (
