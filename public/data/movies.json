@@ -22,7 +22,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_왕과사는남자.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "rank": 1,
     "dateRaw": "2026-02-04"
   },
@@ -44,7 +44,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_호퍼스.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "rank": 2,
     "dateRaw": "2026-03-04"
   },
@@ -67,9 +67,24 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_휴민트.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "rank": 3,
     "dateRaw": "2026-02-11"
+  },
+  {
+    "id": "movie_신의악단",
+    "title": "신의악단",
+    "date": "2025.12.31.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 4,
+    "link": "https://search.naver.com/search.naver?query=%EC%8B%A0%EC%9D%98%EC%95%85%EB%8B%A8%202025%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "posterFallback": false,
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "image": "/images/posters/movies/movie_신의악단.webp"
   },
   {
     "id": "movie_매드_댄스_오피스",
@@ -94,32 +109,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_매드댄스오피스.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "rank": 4,
-    "dateRaw": "2026-03-04"
-  },
-  {
-    "id": "movie_브라이드",
-    "title": "브라이드!",
-    "date": "2026-03-04",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%B8%8C%EB%9D%BC%EC%9D%B4%EB%93%9C!%20%EC%98%81%ED%99%94",
-    "runningTime": "126분",
-    "productionCountry": "미국",
-    "subGenre": "액션",
-    "director": "매기 질렌할",
-    "cast": [
-      "제시 버클리",
-      "크리스찬 베일",
-      "피터 사스가드",
-      "아네트 베닝",
-      "제이크 질렌할",
-      "페넬로페 크루즈"
-    ],
-    "venue": "청소년 관람불가",
-    "image": "/images/posters/movies/movie_브라이드.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "rank": 5,
     "dateRaw": "2026-03-04"
   },
@@ -147,46 +137,8 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_너자2.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-02-25"
-  },
-  {
-    "id": "movie_신의악단",
-    "title": "신의악단",
-    "date": "2025.12.31.",
-    "region": "전국",
-    "genre": "movie",
-    "rank": 7,
-    "link": "https://search.naver.com/search.naver?query=%EC%8B%A0%EC%9D%98%EC%95%85%EB%8B%A8%202025%EB%85%84%20%EC%98%81%ED%99%94",
-    "venue": "등급 미정",
-    "posterFallback": false,
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "image": "/images/posters/movies/movie_신의악단.webp"
-  },
-  {
-    "id": "movie_우리는_매일매일",
-    "title": "우리는 매일매일",
-    "date": "2026-03-04",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EB%A7%A4%EC%9D%BC%EB%A7%A4%EC%9D%BC%20%EC%98%81%ED%99%94",
-    "runningTime": "100분",
-    "productionCountry": "대한민국",
-    "subGenre": "멜로",
-    "director": "김민재",
-    "cast": [
-      "김새론",
-      "이채민",
-      "류의현",
-      "유주"
-    ],
-    "venue": "12세 관람가",
-    "image": "/images/posters/movies/movie_우리는매일매일.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "rank": 8,
-    "dateRaw": "2026-03-04"
   },
   {
     "id": "movie_햄넷",
@@ -194,7 +146,7 @@
     "date": "2026-02-25",
     "region": "전국",
     "genre": "movie",
-    "rank": 9,
+    "rank": 7,
     "link": "https://search.naver.com/search.naver?query=%ED%96%84%EB%84%B7%20%EC%98%81%ED%99%94",
     "runningTime": "126분",
     "productionCountry": "미국",
@@ -212,29 +164,91 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_햄넷.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-02-25"
   },
   {
-    "id": "movie_다이_마이_러브",
-    "title": "다이 마이 러브",
+    "id": "movie_초속_5센티미터",
+    "title": "초속 5센티미터",
+    "date": "2026.02.25.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 8,
+    "link": "https://search.naver.com/search.naver?query=%EC%B4%88%EC%86%8D%205%EC%84%BC%ED%8B%B0%EB%AF%B8%ED%84%B0%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_굿_윌_헌팅",
+    "title": "굿 윌 헌팅",
+    "date": "2026.03.04.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EA%B5%BF%20%EC%9C%8C%20%ED%97%8C%ED%8C%85%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "runningTime": "126분",
+    "productionCountry": "미국",
+    "subGenre": "드라마",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_굿윌헌팅.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "dateRaw": "2026-03-04",
+    "posterFallback": false,
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg",
+    "rank": 9
+  },
+  {
+    "id": "movie_브라이드",
+    "title": "브라이드!",
     "date": "2026-03-04",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%8B%A4%EC%9D%B4%20%EB%A7%88%EC%9D%B4%20%EB%9F%AC%EB%B8%8C%20%EC%98%81%ED%99%94",
-    "runningTime": "118분",
+    "link": "https://search.naver.com/search.naver?query=%EB%B8%8C%EB%9D%BC%EC%9D%B4%EB%93%9C!%20%EC%98%81%ED%99%94",
+    "runningTime": "126분",
     "productionCountry": "미국",
-    "subGenre": "드라마",
-    "director": "린 램지",
+    "subGenre": "액션",
+    "director": "매기 질렌할",
     "cast": [
-      "제니퍼 로렌스",
-      "로버트 패틴슨"
+      "제시 버클리",
+      "크리스찬 베일",
+      "피터 사스가드",
+      "아네트 베닝",
+      "제이크 질렌할",
+      "페넬로페 크루즈"
     ],
     "venue": "청소년 관람불가",
-    "image": "/images/posters/movies/movie_다이마이러브.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "image": "/images/posters/movies/movie_브라이드.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "rank": 10,
     "dateRaw": "2026-03-04"
+  },
+  {
+    "id": "movie_파리_텍사스",
+    "title": "파리, 텍사스",
+    "date": "1987.08.29.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 28,
+    "link": "https://search.naver.com/search.naver?query=%ED%8C%8C%EB%A6%AC%2C%20%ED%85%8D%EC%82%AC%EC%8A%A4%201987%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_신_에반게리온_극장판",
+    "title": "신 에반게리온 극장판",
+    "date": "2022.10.05.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 13,
+    "link": "https://search.naver.com/search.naver?query=%EC%8B%A0%20%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8%20%EA%B7%B9%EC%9E%A5%ED%8C%90%202022%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
   },
   {
     "id": "movie_우리에게는_아직_내일이_있다",
@@ -256,8 +270,9 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_우리에게는아직내일이있다.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "dateRaw": "2026-03-04"
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "dateRaw": "2026-03-04",
+    "rank": 11
   },
   {
     "id": "movie_좀비_랜드_사가_유메긴가_파라다이스",
@@ -281,7 +296,52 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_좀비랜드사가유메긴가파라다이스.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "dateRaw": "2026-03-04",
+    "rank": 15
+  },
+  {
+    "id": "movie_우리는_매일매일",
+    "title": "우리는 매일매일",
+    "date": "2026-03-04",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EB%A7%A4%EC%9D%BC%EB%A7%A4%EC%9D%BC%20%EC%98%81%ED%99%94",
+    "runningTime": "100분",
+    "productionCountry": "대한민국",
+    "subGenre": "멜로",
+    "director": "김민재",
+    "cast": [
+      "김새론",
+      "이채민",
+      "류의현",
+      "유주"
+    ],
+    "venue": "12세 관람가",
+    "image": "/images/posters/movies/movie_우리는매일매일.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "rank": 16,
+    "dateRaw": "2026-03-04"
+  },
+  {
+    "id": "movie_다이_마이_러브",
+    "title": "다이 마이 러브",
+    "date": "2026-03-04",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EB%8B%A4%EC%9D%B4%20%EB%A7%88%EC%9D%B4%20%EB%9F%AC%EB%B8%8C%20%EC%98%81%ED%99%94",
+    "runningTime": "118분",
+    "productionCountry": "미국",
+    "subGenre": "드라마",
+    "director": "린 램지",
+    "cast": [
+      "제니퍼 로렌스",
+      "로버트 패틴슨"
+    ],
+    "venue": "청소년 관람불가",
+    "image": "/images/posters/movies/movie_다이마이러브.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "rank": 17,
     "dateRaw": "2026-03-04"
   },
   {
@@ -300,7 +360,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_페루지노영원한르네상스.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-04"
   },
   {
@@ -321,7 +381,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_허리업투모로우.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-05"
   },
   {
@@ -340,7 +400,7 @@
     ],
     "venue": "청소년 관람불가",
     "image": "/images/posters/movies/movie_머즐2늑대의도시.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-11"
   },
   {
@@ -365,7 +425,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_삼악도.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-11"
   },
   {
@@ -386,7 +446,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_오발렌타인.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-11"
   },
   {
@@ -410,7 +470,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_콜드미트.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-11"
   },
   {
@@ -434,7 +494,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_스페셜즈.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-13"
   },
   {
@@ -453,7 +513,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_우주수호대하하하행성의대모험.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-31"
   },
   {
@@ -478,7 +538,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_극장의시간들.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -498,7 +558,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_녹나무의파수꾼.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -520,7 +580,7 @@
     ],
     "venue": "청소년 관람불가",
     "image": "/images/posters/movies/movie_드림스.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -546,7 +606,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_메소드연기.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -569,7 +629,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_폭탄.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -589,7 +649,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_프로젝트헤일메리.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-18"
   },
   {
@@ -615,8 +675,9 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_연지구디오리지널4K.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "dateRaw": "2026-03-25"
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "dateRaw": "2026-03-25",
+    "rank": 22
   },
   {
     "id": "movie_프로텍터",
@@ -637,7 +698,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_프로텍터.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-25"
   },
   {
@@ -663,7 +724,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_명탐정코난세기말의마술사.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-27"
   },
   {
@@ -683,7 +744,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_네가마지막으로남긴노래.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-01"
   },
   {
@@ -703,7 +764,7 @@
     ],
     "venue": "전체 관람가",
     "image": "/images/posters/movies/movie_류이치사카모토다이어리.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-01"
   },
   {
@@ -722,7 +783,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_술타나의꿈.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-01"
   },
   {
@@ -745,7 +806,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_끝장수사.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-02"
   },
   {
@@ -771,7 +832,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_모래그릇.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-02"
   },
   {
@@ -795,7 +856,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_특별편집판기동전사건담철혈의오펀스우르드헌트작은도전자의궤적.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-04",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/06334ab488824987b3bd82f2d38727b1.jpg",
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/06334ab488824987b3bd82f2d38727b1.jpg",
@@ -822,7 +883,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_살목지.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-08",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/0cead0eb683341f5810aecbaa2d0dded.jpg",
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/0cead0eb683341f5810aecbaa2d0dded.jpg",
@@ -850,7 +911,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_주희에게.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-15"
   },
   {
@@ -872,7 +933,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_슈퍼마리오갤럭시.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-29"
   },
   {
@@ -895,7 +956,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_디스클로저데이.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-06-10"
   },
   {
@@ -920,7 +981,7 @@
     "runningTime": "100분",
     "venue": "7세 이상",
     "image": "/images/posters/movies/movie_오디세이.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-07-15"
   },
   {
@@ -938,8 +999,191 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_미니언즈몬스터즈.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-08-06"
+  },
+  {
+    "id": "movie_부흥",
+    "title": "부흥",
+    "date": "2026.01.01.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 25,
+    "link": "https://search.naver.com/search.naver?query=%EB%B6%80%ED%9D%A5%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_아이엠스타_X프리파라_더_무비_만남의_기적",
+    "title": "아이엠스타!X프리파라 더 무비 -만남의 기적!-",
+    "date": "2026.02.04.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 21,
+    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EC%9D%B4%EC%97%A0%EC%8A%A4%ED%83%80!X%ED%94%84%EB%A6%AC%ED%8C%8C%EB%9D%BC%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_넘버원",
+    "title": "넘버원",
+    "date": "2026.02.11.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 24,
+    "link": "https://search.naver.com/search.naver?query=%EB%84%98%EB%B2%84%EC%9B%90%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_몬테크리스토_백작",
+    "title": "몬테크리스토 백작",
+    "date": "2026.02.13.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 30,
+    "link": "https://search.naver.com/search.naver?query=%EB%AA%AC%ED%85%8C%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%86%A0%20%EB%B0%B1%EC%9E%91%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_센티멘탈_밸류",
+    "title": "센티멘탈 밸류",
+    "date": "2026.02.18.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 12,
+    "link": "https://search.naver.com/search.naver?query=%EC%84%BC%ED%8B%B0%EB%A9%98%ED%83%88%20%EB%B0%B8%EB%A5%98%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_귀신_부르는_앱_영",
+    "title": "귀신 부르는 앱: 영",
+    "date": "2026.02.18.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 20,
+    "link": "https://search.naver.com/search.naver?query=%EA%B7%80%EC%8B%A0%20%EB%B6%80%EB%A5%B4%EB%8A%94%20%EC%95%B1%3A%20%EC%98%81%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_아기_티라노_디보_초식이지만_괜찮아",
+    "title": "아기 티라노 디보: 초식이지만 괜찮아!",
+    "date": "2026.02.25.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 19,
+    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EA%B8%B0%20%ED%8B%B0%EB%9D%BC%EB%85%B8%20%EB%94%94%EB%B3%B4%3A%20%EC%B4%88%EC%8B%9D%EC%9D%B4%EC%A7%80%EB%A7%8C%20%EA%B4%9C%EC%B0%AE%EC%95%84!%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_렌탈_패밀리_가족을_빌려드립니다",
+    "title": "렌탈 패밀리: 가족을 빌려드립니다",
+    "date": "2026.02.25.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 27,
+    "link": "https://search.naver.com/search.naver?query=%EB%A0%8C%ED%83%88%20%ED%8C%A8%EB%B0%80%EB%A6%AC%3A%20%EA%B0%80%EC%A1%B1%EC%9D%84%20%EB%B9%8C%EB%A0%A4%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_슬라이드_스트럼_뮤트",
+    "title": "슬라이드 스트럼 뮤트",
+    "date": "2026.02.26.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 26,
+    "link": "https://search.naver.com/search.naver?query=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%20%EC%8A%A4%ED%8A%B8%EB%9F%BC%20%EB%AE%A4%ED%8A%B8%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_28년_후_뼈의_사원",
+    "title": "28년 후: 뼈의 사원",
+    "date": "2026.02.27.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 14,
+    "link": "https://search.naver.com/search.naver?query=28%EB%85%84%20%ED%9B%84%3A%20%EB%BC%88%EC%9D%98%20%EC%82%AC%EC%9B%90%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_엔하이픈_워크_더_라인_썸머_에디션_인_시네마",
+    "title": "엔하이픈 [워크 더 라인 썸머 에디션] 인 시네마",
+    "date": "2026.02.27.",
+    "region": "전국",
+    "genre": "movie",
+    "rank": 23,
+    "link": "https://search.naver.com/search.naver?query=%EC%97%94%ED%95%98%EC%9D%B4%ED%94%88%20%5B%EC%9B%8C%ED%81%AC%20%EB%8D%94%20%EB%9D%BC%EC%9D%B8%20%EC%8D%B8%EB%A8%B8%20%EC%97%90%EB%94%94%EC%85%98%5D%20%EC%9D%B8%20%EC%8B%9C%EB%84%A4%EB%A7%88%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "image": "",
+    "posterFallback": true,
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
+    "id": "movie_투어스_브이알_콘서트_러쉬로드",
+    "title": "투어스 브이알 콘서트 : 러쉬로드",
+    "date": "2026.03.04.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%ED%88%AC%EC%96%B4%EC%8A%A4%20%EB%B8%8C%EC%9D%B4%EC%95%8C%20%EC%BD%98%EC%84%9C%ED%8A%B8%20%3A%20%EB%9F%AC%EC%89%AC%EB%A1%9C%EB%93%9C%202026%EB%85%84%20%EC%9E%A5%EC%99%84%EB%B3%B5%20%EC%98%81%ED%99%94",
+    "runningTime": "58분",
+    "productionCountry": "대한민국",
+    "subGenre": "공연실황대한민국58분",
+    "director": "장완복",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_투어스브이알콘서트러쉬로드.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
+    "posterFallback": false,
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_8631bb78179540538834f862fa6edf04.jpg",
+    "rank": 18
+  },
+  {
+    "id": "movie_차임",
+    "title": "차임",
+    "date": "2026.03.04.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EC%B0%A8%EC%9E%84%202026%EB%85%84%20%EC%9E%A5%EC%99%84%EB%B3%B5%20%EC%98%81%ED%99%94",
+    "runningTime": "80분",
+    "productionCountry": "일본",
+    "subGenre": "스릴러",
+    "director": "장완복",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_차임.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "posterFallback": false,
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_181c2a680d7d46f1bdc3a811e40721a7.jpg",
+    "rank": 29
   },
   {
     "id": "movie_결혼해줄래",
@@ -958,7 +1202,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_결혼해줄래.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/12/thumb_x192/thn_6010b558ac5645409458861bd46dedb3.jpeg",
     "posterFallback": false,
     "dateRaw": "2026-03-04",
@@ -971,73 +1215,16 @@
     "date": "2026.03.04.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%85%B8%20%EC%96%B4%EB%8D%94%20%EB%9E%9C%EB%93%9C%202026%EB%85%84%20%EC%9E%A5%EC%99%84%EB%B3%B5%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EB%85%B8%20%EC%96%B4%EB%8D%94%20%EB%9E%9C%EB%93%9C%202026%EB%85%84%20%EC%98%81%ED%99%94",
     "runningTime": "92분",
     "subGenre": "다큐멘터리",
-    "director": "장완복",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_노어더랜드.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/c35c6349b3964026aa84032b4e0de281.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/c35c6349b3964026aa84032b4e0de281.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_c35c6349b3964026aa84032b4e0de281.jpg"
-  },
-  {
-    "id": "movie_차임",
-    "title": "차임",
-    "date": "2026.03.04.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%B0%A8%EC%9E%84%202026%EB%85%84%20%EC%9E%A5%EC%99%84%EB%B3%B5%20%EC%98%81%ED%99%94",
-    "runningTime": "80분",
-    "productionCountry": "일본",
-    "subGenre": "스릴러",
-    "director": "장완복",
-    "venue": "등급 미정",
-    "image": "/images/posters/movies/movie_차임.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
-    "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/12/6010b558ac5645409458861bd46dedb3.jpeg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_181c2a680d7d46f1bdc3a811e40721a7.jpg"
-  },
-  {
-    "id": "movie_투어스_브이알_콘서트_러쉬로드",
-    "title": "투어스 브이알 콘서트 : 러쉬로드",
-    "date": "2026.03.04.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%88%AC%EC%96%B4%EC%8A%A4%20%EB%B8%8C%EC%9D%B4%EC%95%8C%20%EC%BD%98%EC%84%9C%ED%8A%B8%20%3A%20%EB%9F%AC%EC%89%AC%EB%A1%9C%EB%93%9C%202026%EB%85%84%20%EC%9E%A5%EC%99%84%EB%B3%B5%20%EC%98%81%ED%99%94",
-    "runningTime": "58분",
-    "productionCountry": "대한민국",
-    "subGenre": "공연실황대한민국58분",
-    "director": "장완복",
-    "venue": "등급 미정",
-    "image": "/images/posters/movies/movie_투어스브이알콘서트러쉬로드.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
-    "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_8631bb78179540538834f862fa6edf04.jpg"
-  },
-  {
-    "id": "movie_굿_윌_헌팅",
-    "title": "굿 윌 헌팅",
-    "date": "2026.03.04.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B5%BF%20%EC%9C%8C%20%ED%97%8C%ED%8C%85%202026%EB%85%84%20%EC%98%81%ED%99%94",
-    "runningTime": "126분",
-    "productionCountry": "미국",
-    "subGenre": "드라마",
-    "venue": "등급 미정",
-    "image": "/images/posters/movies/movie_굿윌헌팅.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "dateRaw": "2026-03-04",
-    "posterFallback": false,
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/f2977ff43efa4a959db8ff50ccf893a4.jpg"
   },
   {
     "id": "movie_아르코",
@@ -1045,17 +1232,17 @@
     "date": "2026.03.11.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EB%A5%B4%EC%BD%94%202026%EB%85%84%20%ED%8A%B8%EB%A0%88%EC%9D%B4%20%EC%97%90%EB%93%9C%EC%9B%8C%EB%93%9C%20%EC%8A%90%EC%B8%A0%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EC%95%84%EB%A5%B4%EC%BD%94%202026%EB%85%84%20%EC%9A%B0%EA%B3%A0%20%EB%B9%84%EC%97%94%EB%B2%A0%EB%88%84%20%EC%98%81%ED%99%94",
     "runningTime": "88분",
     "productionCountry": "프랑스",
     "subGenre": "애니메이션",
-    "director": "트레이 에드워드 슐츠",
+    "director": "우고 비엔베누",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_아르코.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/c1e14c158b3143a28b1d99a744727bbe.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/c1e14c158b3143a28b1d99a744727bbe.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_105771cca46f4064a4be49148e7c1184.jpg"
   },
   {
@@ -1073,20 +1260,35 @@
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/b407380977ea4452b093821831987026.jpg"
   },
   {
+    "id": "movie_하이재킹_메이데이",
+    "title": "하이재킹: 메이데이",
+    "date": "2026.03.18.",
+    "region": "전국",
+    "genre": "movie",
+    "director": "함 트란",
+    "link": "https://search.naver.com/search.naver?query=%ED%95%98%EC%9D%B4%EC%9E%AC%ED%82%B9%3A%20%EB%A9%94%EC%9D%B4%EB%8D%B0%EC%9D%B4%202026%EB%85%84%20%ED%95%A8%20%ED%8A%B8%EB%9E%80%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "posterFallback": false,
+    "image": "/images/posters/movies/movie_하이재킹메이데이.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
     "id": "movie_그_사람_경허_선사",
     "title": "그 사람 경허(鏡虛) 선사",
     "date": "2026.03.19.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B7%B8%20%EC%82%AC%EB%9E%8C%20%EA%B2%BD%ED%97%88(%E9%8F%A1%E8%99%9B)%20%EC%84%A0%EC%82%AC%202026%EB%85%84%20%ED%95%84%20%EB%A1%9C%EB%93%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EA%B7%B8%20%EC%82%AC%EB%9E%8C%20%EA%B2%BD%ED%97%88(%E9%8F%A1%E8%99%9B)%20%EC%84%A0%EC%82%AC%202026%EB%85%84%20%EC%9C%A4%EC%9A%A9%EC%A7%84%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_그사람경허선사.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/17da2411a0c14361bbb890e96e15a45c.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/17da2411a0c14361bbb890e96e15a45c.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_17da2411a0c14361bbb890e96e15a45c.jpg",
-    "director": "필 로드"
+    "director": "윤용진"
   },
   {
     "id": "movie_김_치",
@@ -1094,13 +1296,13 @@
     "date": "2026.03.25.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B9%80~%EC%B9%98!%202026%EB%85%84%20%ED%95%84%20%EB%A1%9C%EB%93%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EA%B9%80~%EC%B9%98!%202026%EB%85%84%20%EB%B0%95%EC%B2%A0%ED%98%84%20%EC%98%81%ED%99%94",
     "runningTime": "108분",
     "productionCountry": "대한민국",
     "subGenre": "가족",
-    "director": "필 로드",
+    "director": "박철현",
     "venue": "등급 미정",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-25",
     "posterFallback": false,
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/08cf3dbe09c349c29e5d38ac6c805501.jpg",
@@ -1108,18 +1310,32 @@
     "image": "/images/posters/movies/movie_김치.webp"
   },
   {
+    "id": "movie_사랑_우유_그리고_치즈",
+    "title": "사랑, 우유, 그리고 치즈",
+    "date": "2026.03.25.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EC%82%AC%EB%9E%91%2C%20%EC%9A%B0%EC%9C%A0%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%B9%98%EC%A6%88%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/2032483acde64ae5b5d4196afc3ffeca.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/2032483acde64ae5b5d4196afc3ffeca.jpg",
+    "posterFallback": false,
+    "image": "/images/posters/movies/movie_사랑우유그리고치즈.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
     "id": "movie_열여덟_청춘",
     "title": "열여덟 청춘",
     "date": "2026.03.25.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%97%B4%EC%97%AC%EB%8D%9F%20%EC%B2%AD%EC%B6%98%202026%EB%85%84%20%ED%95%84%20%EB%A1%9C%EB%93%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EC%97%B4%EC%97%AC%EB%8D%9F%20%EC%B2%AD%EC%B6%98%202026%EB%85%84%20%EC%96%B4%EC%9D%BC%EC%84%A0%20%EC%98%81%ED%99%94",
     "runningTime": "101분",
     "productionCountry": "대한민국",
     "subGenre": "드라마",
-    "director": "필 로드",
+    "director": "어일선",
     "venue": "등급 미정",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-25",
     "posterFallback": false,
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/215a8ae8859341fc9c01de40e6ba7f61.jpg",
@@ -1127,20 +1343,34 @@
     "image": "/images/posters/movies/movie_열여덟청춘.webp"
   },
   {
+    "id": "movie_왜_더_카르텔",
+    "title": "왜(歪): 더 카르텔",
+    "date": "2026.03.25.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EC%99%9C(%E6%AD%AA)%3A%20%EB%8D%94%20%EC%B9%B4%EB%A5%B4%ED%85%94%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/ad5aa1de56054d34a53228fd39753493.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/ad5aa1de56054d34a53228fd39753493.jpg",
+    "posterFallback": false,
+    "image": "/images/posters/movies/movie_왜더카르텔.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z"
+  },
+  {
     "id": "movie_리플렉션_인_데드_다이아몬드",
     "title": "리플렉션 인 데드 다이아몬드",
     "date": "2026.03.26.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98%20%EC%9D%B8%20%EB%8D%B0%EB%93%9C%20%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C%202026%EB%85%84%20%ED%95%84%20%EB%A1%9C%EB%93%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98%20%EC%9D%B8%20%EB%8D%B0%EB%93%9C%20%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C%202026%EB%85%84%20%ED%97%AC%EB%A0%8C%20%EC%B9%B4%ED%85%8C%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "posterFallback": false,
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "image": "/images/posters/movies/movie_리플렉션인데드다이아몬드.webp",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "필 로드"
+    "director": "헬렌 카테"
   },
   {
     "id": "movie_파이_굽는_엄마",
@@ -1148,18 +1378,32 @@
     "date": "2026.03.26.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%8C%8C%EC%9D%B4%20%EA%B5%BD%EB%8A%94%20%EC%97%84%EB%A7%88%202026%EB%85%84%20%ED%95%84%20%EB%A1%9C%EB%93%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%ED%8C%8C%EC%9D%B4%20%EA%B5%BD%EB%8A%94%20%EC%97%84%EB%A7%88%202026%EB%85%84%20%EC%9D%B4%EC%A2%85%EC%9D%80%20%EC%98%81%ED%99%94",
     "runningTime": "75분",
     "productionCountry": "대한민국",
     "subGenre": "다큐멘터리",
-    "director": "필 로드",
+    "director": "이종은",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_파이굽는엄마.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/e193be1739c64f5287c599879346428c.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/abec419f79a244e4a87e7f422d500c16.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/e193be1739c64f5287c599879346428c.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_e193be1739c64f5287c599879346428c.jpg"
+  },
+  {
+    "id": "movie_펫_트레인",
+    "title": "펫 트레인",
+    "date": "2026.03.28.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%ED%8E%AB%20%ED%8A%B8%EB%A0%88%EC%9D%B8%202026%EB%85%84%20%EC%98%81%ED%99%94",
+    "venue": "등급 미정",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/95a5ff3f27be4a9cb0d5baaa5c291572.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/95a5ff3f27be4a9cb0d5baaa5c291572.jpg",
+    "posterFallback": false,
+    "image": "/images/posters/movies/movie_펫트레인.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z"
   },
   {
     "id": "movie_펫츠_온_어_트레인",
@@ -1194,7 +1438,7 @@
     ],
     "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_내곁에온걸환영해.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-31"
   },
   {
@@ -1214,7 +1458,7 @@
     ],
     "venue": "청소년 관람불가",
     "image": "/images/posters/movies/movie_더치스복수의화신.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-31"
   },
   {
@@ -1232,7 +1476,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_빌리아일리시히트미하드앤드소프트더투어.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-31"
   },
   {
@@ -1252,7 +1496,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_심패티포데블.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-03-31"
   },
   {
@@ -1267,7 +1511,7 @@
     "director": "조윤수",
     "runningTime": "60분",
     "venue": "등급 미정",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
     "posterFallback": false,
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
@@ -1280,17 +1524,17 @@
     "date": "2026.04.01.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%91%90%20%EA%B2%80%EC%82%AC%202026%EB%85%84%20%EB%AF%B8%ED%82%A4%20%ED%83%80%EC%B9%B4%ED%9E%88%EB%A1%9C%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EB%91%90%20%EA%B2%80%EC%82%AC%202026%EB%85%84%20%EC%84%B8%EB%A5%B4%EA%B2%8C%EC%9D%B4%20%EB%A1%9C%EC%A6%88%EB%8B%88%EC%B0%A8%20%EC%98%81%ED%99%94",
     "runningTime": "118분",
     "productionCountry": "프랑스",
     "subGenre": "범죄",
-    "director": "미키 타카히로",
+    "director": "세르게이 로즈니차",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_두검사.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/1d4a37cbafa745c69e1ce4a90e1ee453.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/8438ad2ff02a4897b0539750590afcfa.jpg",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/1d4a37cbafa745c69e1ce4a90e1ee453.jpg",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_f4a33bf8be074d37a9ab6ee66f8cfe2a.jpg"
   },
   {
@@ -1306,7 +1550,7 @@
     "director": "올리비에 슈나이더",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_오펀스복수자들.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/a906a46ddab64f5cb483d2a1ce91c2b1.jpg",
     "posterFallback": false,
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/a906a46ddab64f5cb483d2a1ce91c2b1.jpg",
@@ -1316,7 +1560,8 @@
       "달리 벤살라",
       "소냐 파이디",
       "쉬잔 클레망"
-    ]
+    ],
+    "dateRaw": "2026-04-08"
   },
   {
     "id": "movie_위_리브_인_타임",
@@ -1328,7 +1573,7 @@
     "venue": "등급 미정",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/bdc04192f99b46f099bb63a9df276525.jpg",
     "posterFallback": false,
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/bdc04192f99b46f099bb63a9df276525.jpg",
     "image": "/images/posters/movies/movie_위리브인타임.webp",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
@@ -1337,7 +1582,27 @@
       "플로렌스 퓨",
       "앤드류 가필드"
     ],
-    "subGenre": "로맨스"
+    "subGenre": "로맨스",
+    "dateRaw": "2026-04-08"
+  },
+  {
+    "id": "movie_침묵의_친구",
+    "title": "침묵의 친구",
+    "date": "2026.04.15.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EC%B9%A8%EB%AC%B5%EC%9D%98%20%EC%B9%9C%EA%B5%AC%202026%EB%85%84%20%EC%96%91%EC%A1%B0%EC%9C%84%20%EC%98%81%ED%99%94",
+    "runningTime": "147분",
+    "productionCountry": "독일",
+    "subGenre": "드라마",
+    "director": "양조위",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_침묵의친구.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/265c24ca1f22456ca7a68bfbc33ac67d.jpg",
+    "posterFallback": false,
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/265c24ca1f22456ca7a68bfbc33ac67d.jpg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_265c24ca1f22456ca7a68bfbc33ac67d.jpg"
   },
   {
     "id": "movie_킬_빌_더_홀_블러디_어페어",
@@ -1356,8 +1621,31 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_킬빌더홀블러디어페어.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-01"
+  },
+  {
+    "id": "movie_비발디와_나",
+    "title": "비발디와 나",
+    "date": "2026.04.30.",
+    "region": "전국",
+    "genre": "movie",
+    "link": "https://search.naver.com/search.naver?query=%EB%B9%84%EB%B0%9C%EB%94%94%EC%99%80%20%EB%82%98%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "runningTime": "111분",
+    "productionCountry": "이탈리아",
+    "subGenre": "드라마",
+    "director": "다미아노 미키엘레토",
+    "venue": "등급 미정",
+    "image": "/images/posters/movies/movie_비발디와나.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
+    "posterFallback": false,
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
+    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_6922a25171014690918d92ca491f9f2d.jpg",
+    "cast": [
+      "미셸 리온디노"
+    ],
+    "dateRaw": "2026-04-30"
   },
   {
     "id": "movie_쉬_캠_투_미",
@@ -1379,7 +1667,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_쉬캠투미.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-30"
   },
   {
@@ -1400,7 +1688,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_악마는프라다를입는다2.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-30"
   },
   {
@@ -1409,12 +1697,12 @@
     "date": "2026.04.30.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%82%B4%20%EC%9D%B4%EB%A6%84%EC%9D%80%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EB%82%B4%20%EC%9D%B4%EB%A6%84%EC%9D%80%202026%EB%85%84%20%EC%A0%95%EC%A7%80%EC%98%81%20%EC%98%81%ED%99%94",
     "productionCountry": "대한민국",
     "subGenre": "드라마",
-    "director": "크리스 프랫",
+    "director": "정지영",
     "venue": "등급 미정",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-04-30",
     "posterFallback": false,
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/01/68ed6cf505d24ee68f4d4f0a44ee0457.jpg",
@@ -1427,37 +1715,15 @@
     "date": "2026.04.30.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%A5%98%EC%9D%B4%EC%B9%98%20%EC%82%AC%EC%B9%B4%EB%AA%A8%ED%86%A0%3A%20%EB%8F%84%EC%BF%84%20%EB%A9%9C%EB%A1%9C%EB%94%94%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EB%A5%98%EC%9D%B4%EC%B9%98%20%EC%82%AC%EC%B9%B4%EB%AA%A8%ED%86%A0%3A%20%EB%8F%84%EC%BF%84%20%EB%A9%9C%EB%A1%9C%EB%94%94%202026%EB%85%84%20%EC%97%98%EB%A6%AC%EC%9E%90%EB%B2%A0%EC%8A%A4%20%EB%A0%88%EB%82%98%EB%93%9C%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_류이치사카모토도쿄멜로디.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "크리스 프랫"
-  },
-  {
-    "id": "movie_비발디와_나",
-    "title": "비발디와 나",
-    "date": "2026.04.30.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EB%B9%84%EB%B0%9C%EB%94%94%EC%99%80%20%EB%82%98%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
-    "runningTime": "111분",
-    "productionCountry": "이탈리아",
-    "subGenre": "드라마",
-    "director": "다미아노 미키엘레토",
-    "venue": "등급 미정",
-    "image": "/images/posters/movies/movie_비발디와나.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
-    "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/0951b7da92344a89b27115bd49c2bc16.jpg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_6922a25171014690918d92ca491f9f2d.jpg",
-    "cast": [
-      "미셸 리온디노"
-    ]
+    "director": "엘리자베스 레나드"
   },
   {
     "id": "movie_소녀심판",
@@ -1465,34 +1731,15 @@
     "date": "2026.04.30.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%86%8C%EB%85%80%EC%8B%AC%ED%8C%90%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EC%86%8C%EB%85%80%EC%8B%AC%ED%8C%90%202026%EB%85%84%20%EB%A5%98%EA%B4%91%ED%98%84%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "image": "",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "",
-    "posterFallback": true,
-    "backupPoster": "",
-    "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "크리스 프랫"
-  },
-  {
-    "id": "movie_침묵의_친구",
-    "title": "침묵의 친구",
-    "date": "2026.04.30.",
-    "region": "전국",
-    "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%B9%A8%EB%AC%B5%EC%9D%98%20%EC%B9%9C%EA%B5%AC%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
-    "runningTime": "147분",
-    "productionCountry": "독일",
-    "subGenre": "드라마",
-    "director": "크리스 프랫",
-    "venue": "등급 미정",
-    "image": "/images/posters/movies/movie_침묵의친구.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "image": "/images/posters/movies/movie_소녀심판.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_265c24ca1f22456ca7a68bfbc33ac67d.jpg"
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
+    "director": "류광현"
   },
   {
     "id": "movie_크라임_101",
@@ -1500,15 +1747,15 @@
     "date": "2026.04.30.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%81%AC%EB%9D%BC%EC%9E%84%20101%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%ED%81%AC%EB%9D%BC%EC%9E%84%20101%202026%EB%85%84%20%EB%B0%94%ED%8A%B8%20%EB%A0%88%EC%9D%B4%ED%8A%BC%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "posterUrl": "",
-    "posterFallback": true,
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "backupPoster": "",
-    "image": "",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "posterFallback": false,
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "image": "/images/posters/movies/movie_크라임101.webp",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "크리스 프랫"
+    "director": "바트 레이튼"
   },
   {
     "id": "movie_힌드의_목소리",
@@ -1516,15 +1763,14 @@
     "date": "2026.04.30.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%ED%9E%8C%EB%93%9C%EC%9D%98%20%EB%AA%A9%EC%86%8C%EB%A6%AC%202026%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%94%84%EB%9E%AB%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%ED%9E%8C%EB%93%9C%EC%9D%98%20%EB%AA%A9%EC%86%8C%EB%A6%AC%202026%EB%85%84%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_힌드의목소리.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "posterFallback": false,
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-    "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "크리스 프랫"
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png"
   },
   {
     "id": "movie_마이클",
@@ -1546,7 +1792,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_마이클.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-05-13",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/thumb_x192/thn_6ac1eec0c1d340fc96c3260d7890d0be.jpg",
     "posterFallback": false,
@@ -1559,15 +1805,15 @@
     "date": "2026.05.18.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EC%A1%B8%EC%97%85%EC%95%A8%EB%B2%94%3A%20%EC%84%A0%EC%83%9D%EB%8B%98%EC%9D%84%20%EA%B8%B0%EB%8B%A4%EB%A0%B8%EB%8B%A4%202026%EB%85%84%20%EC%95%88%ED%86%A4%20%ED%9B%84%EC%BF%A0%EC%95%84%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EC%A1%B8%EC%97%85%EC%95%A8%EB%B2%94%3A%20%EC%84%A0%EC%83%9D%EB%8B%98%EC%9D%84%20%EA%B8%B0%EB%8B%A4%EB%A0%B8%EB%8B%A4%202026%EB%85%84%20%EA%B9%80%EC%A2%85%EA%B4%80%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "image": "",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "posterUrl": "",
-    "posterFallback": true,
-    "backupPoster": "",
+    "image": "/images/posters/movies/movie_졸업앨범선생님을기다렸다.webp",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "posterUrl": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
+    "posterFallback": false,
+    "backupPoster": "https://www.kobis.or.kr/kobis/web/comm/images/noimage289.jpg",
     "poster": "https://www.kobis.or.kr/kobis/web/comm/images/cont/noimg_180x260.png",
-    "director": "안톤 후쿠아"
+    "director": "김종관"
   },
   {
     "id": "movie_1026_새로운_세상을_위한",
@@ -1589,7 +1835,7 @@
     ],
     "venue": "15세 관람가",
     "image": "/images/posters/movies/movie_1026새로운세상을위한.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-05-31"
   },
   {
@@ -1611,7 +1857,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_가족여행.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-05-31"
   },
   {
@@ -1632,7 +1878,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_만달로리안과그로구.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-05-31"
   },
   {
@@ -1641,15 +1887,15 @@
     "date": "2026.05.31.",
     "region": "전국",
     "genre": "movie",
-    "link": "https://search.naver.com/search.naver?query=%EA%B5%B0%EC%B2%B4%202026%EB%85%84%20%EC%95%88%ED%86%A4%20%ED%9B%84%EC%BF%A0%EC%95%84%20%EC%98%81%ED%99%94",
+    "link": "https://search.naver.com/search.naver?query=%EA%B5%B0%EC%B2%B4%202026%EB%85%84%20%EC%97%B0%EC%83%81%ED%98%B8%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/6ac1eec0c1d340fc96c3260d7890d0be.jpg",
+    "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/03/93b66be4a3d043c187bd1a0b73728024.jpg",
     "posterFallback": false,
-    "lastCollected": "2026-03-06T01:38:19.942Z",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/6ac1eec0c1d340fc96c3260d7890d0be.jpg",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/03/93b66be4a3d043c187bd1a0b73728024.jpg",
     "image": "/images/posters/movies/movie_군체.webp",
     "poster": "https://www.kobis.or.kr/common/mast/movie/2026/03/thumb_x192/thn_93b66be4a3d043c187bd1a0b73728024.jpg",
-    "director": "안톤 후쿠아"
+    "director": "연상호"
   },
   {
     "id": "movie_슈퍼걸",
@@ -1668,7 +1914,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_슈퍼걸.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-06-30"
   },
   {
@@ -1689,7 +1935,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_토이스토리5.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-06-30"
   },
   {
@@ -1709,7 +1955,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_모아나.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-07-31",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2024/11/b0a0a5ae940443049c18e22e4787b08b.jpg",
     "posterFallback": false,
@@ -1738,7 +1984,7 @@
     ],
     "venue": "등급 미정",
     "image": "/images/posters/movies/movie_어벤져스둠스데이.webp",
-    "lastCollected": "2026-03-06T01:38:19.942Z",
+    "lastCollected": "2026-03-09T10:42:29.445Z",
     "dateRaw": "2026-12-31"
   }
 ]
