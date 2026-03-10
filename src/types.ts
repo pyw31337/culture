@@ -36,4 +36,5 @@ export type Performance = {
     lat?: number;
     lng?: number;
     address?: string;
+    district?: string;
 };

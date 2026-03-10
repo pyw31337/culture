@@ -23,6 +23,7 @@
     "clsx": "^2.1.1",
     "csv-stringify": "^6.6.0",
     "date-fns": "^4.1.0",
+    "fast-xml-parser": "^5.4.2",
     "framer-motion": "^12.23.26",
     "iconv-lite": "^0.7.0",
     "lucide-react": "^0.556.0",

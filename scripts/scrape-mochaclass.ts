@@ -229,7 +229,7 @@ async function scrapeMochaClass() {
             const last = new Date(ex.lastEnriched);
             const now = new Date();
             const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
-            return diffDays < 7;
+            return false; // Force re-enrichment for all items to fix addresses
         } catch (e) { return false; }
     };
 
@@ -264,51 +264,47 @@ async function scrapeMochaClass() {
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
                     const detailData = await p.evaluate(() => {
-                        const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root'));
+                        const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root, li'));
                         let rawAddress = '';
 
                         // High priority: Specific known address locations in Mochaclass DOM
-                        const addrElements = document.querySelectorAll('p.MuiTypography-body1');
+                        const addrElements = document.querySelectorAll('p.MuiTypography-body1, .MuiBox-root p, .css-1vscdpm p');
                         for (const el of Array.from(addrElements)) {
                             const text = el.textContent?.trim() || '';
-                            if (text.includes('대한민국') && text.includes('위치')) {
+                            if (text.includes('대한민국') && (text.includes('위치') || text.includes('서울') || text.includes('경기') || text.includes('부산'))) {
                                 rawAddress = text.replace(/^.*?위치\s*/, '').trim();
                                 break;
                             }
                         }
 
-                        // Fallback: search text content for addresses
+                        // Fallback 1: search text content for labels
                         if (!rawAddress) {
-                            for (let i = 0; i < allNodes.length; i++) {
-                                if (allNodes[i].textContent?.trim() === '위치') {
-                                    const container = allNodes[i].closest('div')?.parentElement;
-                                    if (container) {
-                                        const text = container.textContent || '';
-                                        const match = text.match(/위치(.*?)찾아오는\s*길/);
-                                        if (match && match[1]) {
-                                            rawAddress = match[1].trim();
-                                            break;
-                                        } else {
-                                            const match2 = text.match(/위치\s*(대한민국.*?(구|동|시|군|로|길)\b.*?)/);
-                                            if (match2) {
-                                                rawAddress = match2[1].trim();
+                            const labels = ['위치', '장소', '스튜디오', '공방'];
+                            for (const label of labels) {
+                                for (let i = 0; i < allNodes.length; i++) {
+                                    if (allNodes[i].textContent?.trim() === label) {
+                                        const container = allNodes[i].closest('div')?.parentElement;
+                                        if (container) {
+                                            const text = container.textContent || '';
+                                            // Look for Korea address pattern
+                                            const match = text.match(/(대한민국\s+)?([가-힣]+(도|시|구|군|동|로|길)\s*)+[\d-]+\s*.*?(?=(찾아오는|지도|$))/);
+                                            if (match) {
+                                                rawAddress = match[0].trim();
                                                 break;
                                             }
                                         }
                                     }
                                 }
+                                if (rawAddress) break;
                             }
                         }
 
+                        // Fallback 2: regex search entire body if short enough
                         if (!rawAddress) {
-                            for (const node of allNodes) {
-                                const text = node.textContent?.trim() || '';
-                                if ((text.includes('대한민국') || text.includes('서울') || text.includes('경기') || text.includes('로 ') || text.includes('길 ')) && text.length > 10 && text.length < 100 && !text.includes('모카클래스')) {
-                                    if (text.match(/([가-힣]+(도|시|구|군|동|로|길)\s*)+/)) {
-                                        rawAddress = text;
-                                        if (text.includes('대한민국')) break;
-                                    }
-                                }
+                            const bodyText = document.body.innerText;
+                            const match = bodyText.match(/(?:위치|주소)\s*(?::)?\s*(대한민국\s+)?(([가-힣]+(?:시|도|구|군|동|읍|면|로|길))\s+)+[\d-]+\s*[^\n,.<>]{0,50}/);
+                            if (match) {
+                                rawAddress = match[0].replace(/^(위치|주소)\s*(:)?\s*/, '').trim();
                             }
                         }
 

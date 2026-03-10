@@ -42,7 +42,7 @@ export default function GlobalError({
                         </button>
 
                         <a
-                            href="/culture/"
+                            href="/"
                             className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-white font-extrabold rounded-2xl hover:bg-gray-700 transition-colors border border-white/10"
                         >
                             <Home size={20} />

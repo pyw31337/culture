@@ -75,15 +75,33 @@ async function scrapeKopis() {
         }
     }
 
-    const today = new Date();
-    const stdate = '20260101'; // Catch all current
-    const eddate = '20261231';
+    // Optimized Date Logic: Rolling Window
+    const threeMonthsAgo = new Date();
+    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+    const futureLimit = new Date();
+    futureLimit.setMonth(futureLimit.getMonth() + 3);
 
-    let allItems: KopisPerformance[] = [];
+    const fmtDate = (d: Date) => d.toISOString().split('T')[0].replace(/-/g, '');
+    const stdate = fmtDate(threeMonthsAgo); 
+    const eddate = fmtDate(futureLimit);
+
+    // Load existing items for incremental skip
+    let existingItems: KopisPerformance[] = [];
+    if (fs.existsSync(OUTPUT_FILE)) {
+        try {
+            existingItems = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+        } catch (e) {}
+    }
+    const existingIds = new Set(existingItems.map(it => it.id));
+
+    let allItems: KopisPerformance[] = existingItems;
     const uniqueVenueIds = new Set<string>();
 
     const fetchList = async (endpoint: string, isFestival = false) => {
-        const states = isFestival ? ['01', '02', '03', '04'] : ['01', '02']; // Upcoming and Running
+        // Optimization: For performances, we only care about Running (02) and Upcoming (01).
+        // Festivals can include 01-04 as they are seasonal.
+        const states = isFestival ? ['01', '02', '03', '04'] : ['02', '01']; 
+        
         for (const state of states) {
             let page = 1;
             let hasMore = true;
@@ -91,8 +109,8 @@ async function scrapeKopis() {
                 console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} State ${state} Page ${page}...`);
                 const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
                     service: API_KEY,
-                    stdate: '20200101', // Very wide to catch open runs
-                    eddate: '20261231', // Future end
+                    stdate, 
+                    eddate: state === '01' ? fmtDate(new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000)) : eddate,
                     cpage: page,
                     rows: 100,
                     prfstate: state
@@ -105,6 +123,14 @@ async function scrapeKopis() {
             const list = Array.isArray(dbs) ? dbs : [dbs];
             for (const item of list) {
                 const mt20id = item.mt20id;
+                const fullId = `kopis_${mt20id}`;
+
+                // Incremental Skip: Only fetch details if new
+                if (existingIds.has(fullId)) {
+                    process.stdout.write(`s`);
+                    continue;
+                }
+
                 // Fetch Detail
                 try {
                     process.stdout.write(`.`);

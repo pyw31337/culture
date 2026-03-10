@@ -11,7 +11,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251019_GS칼텍스_서울KIXX_vs_알토스",
@@ -25,7 +29,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251020_VIXTORM_vs_우리WON",
@@ -39,7 +46,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251021_블루팡스_vs_읏맨",
@@ -53,7 +64,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251021_PEPPERS_vs_하이패스",
@@ -67,7 +82,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251022_스카이워커스_vs_스타즈",
@@ -81,7 +100,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251022_핑크스파이더스_vs_힐스테이트",
@@ -95,7 +118,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251023_점보스_vs_VIXTORM",
@@ -109,7 +136,11 @@
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251023_레드스파크스_vs_GS칼텍스_서울KIXX",
@@ -123,7 +154,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251024_우리WON_vs_읏맨",
@@ -137,7 +172,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251024_알토스_vs_PEPPERS",
@@ -151,7 +189,11 @@
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251025_하이패스_vs_핑크스파이더스",
@@ -165,7 +207,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251025_블루팡스_vs_스카이워커스",
@@ -179,7 +225,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251026_스타즈_vs_점보스",
@@ -193,7 +243,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251026_힐스테이트_vs_레드스파크스",
@@ -207,7 +261,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251028_우리WON_vs_블루팡스",
@@ -221,7 +279,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251028_알토스_vs_하이패스",
@@ -235,7 +296,11 @@
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251029_VIXTORM_vs_스카이워커스",
@@ -249,7 +314,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251029_GS칼텍스_서울KIXX_vs_핑크스파이더스",
@@ -263,7 +332,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251030_스타즈_vs_읏맨",
@@ -277,7 +349,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251030_PEPPERS_vs_힐스테이트",
@@ -291,7 +367,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251031_점보스_vs_우리WON",
@@ -305,7 +385,11 @@
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251031_레드스파크스_vs_알토스",
@@ -319,7 +403,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251101_VIXTORM_vs_블루팡스",
@@ -333,7 +421,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251101_GS칼텍스_서울KIXX_vs_하이패스",
@@ -347,7 +439,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251102_스카이워커스_vs_읏맨",
@@ -361,7 +456,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251102_핑크스파이더스_vs_PEPPERS",
@@ -375,7 +474,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251104_스타즈_vs_우리WON",
@@ -389,7 +492,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251104_힐스테이트_vs_알토스",
@@ -403,7 +510,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251105_블루팡스_vs_점보스",
@@ -417,7 +528,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251105_하이패스_vs_레드스파크스",
@@ -431,7 +546,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251106_PEPPERS_vs_GS칼텍스_서울KIXX",
@@ -445,7 +564,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251106_VIXTORM_vs_읏맨",
@@ -459,7 +582,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251107_스카이워커스_vs_우리WON",
@@ -473,7 +600,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251107_알토스_vs_핑크스파이더스",
@@ -487,7 +618,11 @@
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251108_블루팡스_vs_스타즈",
@@ -501,7 +636,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251108_하이패스_vs_힐스테이트",
@@ -515,7 +654,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251109_읏맨_vs_점보스",
@@ -529,7 +672,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251109_레드스파크스_vs_PEPPERS",
@@ -543,7 +690,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251111_스타즈_vs_VIXTORM",
@@ -557,7 +708,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251111_힐스테이트_vs_GS칼텍스_서울KIXX",
@@ -571,7 +726,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260319_스카이워커스_vs_점보스",
@@ -585,7 +744,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251112_레드스파크스_vs_하이패스",
@@ -599,7 +762,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251112_점보스_vs_블루팡스",
@@ -613,7 +780,11 @@
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251113_PEPPERS_vs_핑크스파이더스",
@@ -627,7 +798,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251113_읏맨_vs_스카이워커스",
@@ -641,7 +816,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251114_우리WON_vs_VIXTORM",
@@ -655,7 +834,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251114_알토스_vs_GS칼텍스_서울KIXX",
@@ -669,7 +851,11 @@
     "homeTeam": "알토스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251115_블루팡스_vs_스타즈",
@@ -683,7 +869,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251115_하이패스_vs_힐스테이트",
@@ -697,7 +887,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251116_스카이워커스_vs_점보스",
@@ -711,7 +905,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251116_핑크스파이더스_vs_레드스파크스",
@@ -725,7 +923,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251118_PEPPERS_vs_힐스테이트",
@@ -739,7 +941,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251118_읏맨_vs_스타즈",
@@ -753,7 +959,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251119_우리WON_vs_블루팡스",
@@ -767,7 +977,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251119_알토스_vs_하이패스",
@@ -781,7 +994,11 @@
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251120_스카이워커스_vs_VIXTORM",
@@ -795,7 +1012,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251120_핑크스파이더스_vs_GS칼텍스_서울KIXX",
@@ -809,7 +1030,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251121_점보스_vs_읏맨",
@@ -823,7 +1048,11 @@
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251121_레드스파크스_vs_PEPPERS",
@@ -837,7 +1066,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251122_스타즈_vs_우리WON",
@@ -851,7 +1084,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251122_알토스_vs_힐스테이트",
@@ -865,7 +1102,11 @@
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251123_하이패스_vs_GS칼텍스_서울KIXX",
@@ -879,7 +1120,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251123_블루팡스_vs_VIXTORM",
@@ -893,7 +1138,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251125_점보스_vs_스타즈",
@@ -907,7 +1156,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251125_레드스파크스_vs_힐스테이트",
@@ -921,7 +1174,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251126_우리WON_vs_스카이워커스",
@@ -935,7 +1192,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251126_알토스_vs_핑크스파이더스",
@@ -949,7 +1209,11 @@
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251127_읏맨_vs_블루팡스",
@@ -963,7 +1227,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251127_하이패스_vs_PEPPERS",
@@ -977,7 +1245,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251128_VIXTORM_vs_점보스",
@@ -991,7 +1263,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251128_GS칼텍스_서울KIXX_vs_레드스파크스",
@@ -1005,7 +1281,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251129_힐스테이트_vs_핑크스파이더스",
@@ -1019,7 +1298,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251129_스타즈_vs_스카이워커스",
@@ -1033,7 +1316,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251130_읏맨_vs_우리WON",
@@ -1047,7 +1334,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251130_PEPPERS_vs_알토스",
@@ -1061,7 +1352,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251202_스타즈_vs_VIXTORM",
@@ -1075,7 +1370,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251202_힐스테이트_vs_GS칼텍스_서울KIXX",
@@ -1089,7 +1388,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251203_스카이워커스_vs_블루팡스",
@@ -1103,7 +1406,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251203_핑크스파이더스_vs_하이패스",
@@ -1117,7 +1424,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251204_우리WON_vs_점보스",
@@ -1131,7 +1442,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251204_알토스_vs_레드스파크스",
@@ -1145,7 +1459,11 @@
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251205_VIXTORM_vs_읏맨",
@@ -1159,7 +1477,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251205_GS칼텍스_서울KIXX_vs_PEPPERS",
@@ -1173,7 +1495,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251206_핑크스파이더스_vs_힐스테이트",
@@ -1187,7 +1512,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251206_스카이워커스_vs_스타즈",
@@ -1201,7 +1530,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251207_레드스파크스_vs_하이패스",
@@ -1215,7 +1548,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251207_점보스_vs_블루팡스",
@@ -1229,7 +1566,11 @@
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251209_읏맨_vs_스타즈",
@@ -1243,7 +1584,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251209_힐스테이트_vs_PEPPERS",
@@ -1257,7 +1602,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251210_VIXTORM_vs_우리WON",
@@ -1271,7 +1620,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251210_GS칼텍스_서울KIXX_vs_알토스",
@@ -1285,7 +1638,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251211_블루팡스_vs_스카이워커스",
@@ -1299,7 +1655,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251211_하이패스_vs_핑크스파이더스",
@@ -1313,7 +1673,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251212_PEPPERS_vs_레드스파크스",
@@ -1327,7 +1691,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251212_읏맨_vs_점보스",
@@ -1341,7 +1709,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251213_VIXTORM_vs_스타즈",
@@ -1355,7 +1727,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251213_GS칼텍스_서울KIXX_vs_힐스테이트",
@@ -1369,7 +1745,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251214_블루팡스_vs_우리WON",
@@ -1383,7 +1762,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251214_하이패스_vs_알토스",
@@ -1397,7 +1780,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251216_점보스_vs_스카이워커스",
@@ -1411,7 +1798,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251216_레드스파크스_vs_핑크스파이더스",
@@ -1425,7 +1816,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251217_읏맨_vs_우리WON",
@@ -1439,7 +1834,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251217_PEPPERS_vs_알토스",
@@ -1453,7 +1852,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251218_힐스테이트_vs_하이패스",
@@ -1467,7 +1870,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251218_스타즈_vs_블루팡스",
@@ -1481,7 +1888,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251219_점보스_vs_VIXTORM",
@@ -1495,7 +1906,11 @@
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20251219_레드스파크스_vs_GS칼텍스_서울KIXX",
@@ -1509,7 +1924,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251220_스카이워커스_vs_읏맨",
@@ -1523,7 +1942,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251220_핑크스파이더스_vs_PEPPERS",
@@ -1537,7 +1960,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251221_우리WON_vs_스타즈",
@@ -1551,7 +1978,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251221_알토스_vs_힐스테이트",
@@ -1565,7 +1995,11 @@
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251223_VIXTORM_vs_블루팡스",
@@ -1579,7 +2013,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251223_GS칼텍스_서울KIXX_vs_하이패스",
@@ -1593,7 +2031,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251224_핑크스파이더스_vs_알토스",
@@ -1607,7 +2048,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251224_스카이워커스_vs_우리WON",
@@ -1621,7 +2066,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20251225_스타즈_vs_점보스",
@@ -1635,7 +2084,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20251225_힐스테이트_vs_레드스파크스",
@@ -1649,7 +2102,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251226_블루팡스_vs_읏맨",
@@ -1663,7 +2120,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20251226_하이패스_vs_PEPPERS",
@@ -1677,7 +2138,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20251227_VIXTORM_vs_스카이워커스",
@@ -1691,7 +2156,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20251227_GS칼텍스_서울KIXX_vs_핑크스파이더스",
@@ -1705,7 +2174,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251228_우리WON_vs_점보스",
@@ -1719,7 +2191,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20251228_알토스_vs_레드스파크스",
@@ -1733,7 +2208,11 @@
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20251230_읏맨_vs_VIXTORM",
@@ -1747,7 +2226,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20251230_PEPPERS_vs_GS칼텍스_서울KIXX",
@@ -1761,7 +2244,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20251231_핑크스파이더스_vs_힐스테이트",
@@ -1775,7 +2262,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20251231_스카이워커스_vs_스타즈",
@@ -1789,7 +2280,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260101_레드스파크스_vs_하이패스",
@@ -1803,7 +2298,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260101_점보스_vs_블루팡스",
@@ -1817,7 +2316,11 @@
     "homeTeam": "점보스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260102_읏맨_vs_우리WON",
@@ -1831,7 +2334,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260102_PEPPERS_vs_알토스",
@@ -1845,7 +2352,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260103_스타즈_vs_VIXTORM",
@@ -1859,7 +2370,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260103_힐스테이트_vs_GS칼텍스_서울KIXX",
@@ -1873,7 +2388,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260104_점보스_vs_스카이워커스",
@@ -1887,7 +2406,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260104_레드스파크스_vs_핑크스파이더스",
@@ -1901,7 +2424,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260106_GS칼텍스_서울KIXX_vs_PEPPERS",
@@ -1915,7 +2442,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260106_VIXTORM_vs_읏맨",
@@ -1929,7 +2459,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260107_블루팡스_vs_스타즈",
@@ -1943,7 +2477,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260107_하이패스_vs_힐스테이트",
@@ -1957,7 +2495,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260108_우리WON_vs_점보스",
@@ -1971,7 +2513,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260108_알토스_vs_레드스파크스",
@@ -1985,7 +2530,11 @@
     "homeTeam": "알토스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260109_읏맨_vs_스카이워커스",
@@ -1999,7 +2548,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260109_PEPPERS_vs_핑크스파이더스",
@@ -2013,7 +2566,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260110_블루팡스_vs_VIXTORM",
@@ -2027,7 +2584,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260110_하이패스_vs_GS칼텍스_서울KIXX",
@@ -2041,7 +2602,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260111_알토스_vs_힐스테이트",
@@ -2055,7 +2620,11 @@
     "homeTeam": "알토스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260111_우리WON_vs_스타즈",
@@ -2069,7 +2638,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260113_점보스_vs_읏맨",
@@ -2083,7 +2655,11 @@
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260113_레드스파크스_vs_PEPPERS",
@@ -2097,7 +2673,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260114_스카이워커스_vs_블루팡스",
@@ -2111,7 +2691,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260114_핑크스파이더스_vs_하이패스",
@@ -2125,7 +2709,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260115_VIXTORM_vs_우리WON",
@@ -2139,7 +2727,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260115_GS칼텍스_서울KIXX_vs_알토스",
@@ -2153,7 +2745,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260116_스타즈_vs_점보스",
@@ -2167,7 +2762,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260116_힐스테이트_vs_레드스파크스",
@@ -2181,7 +2780,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260117_PEPPERS_vs_하이패스",
@@ -2195,7 +2798,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260117_읏맨_vs_블루팡스",
@@ -2209,7 +2816,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260118_우리WON_vs_스카이워커스",
@@ -2223,7 +2834,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260118_알토스_vs_핑크스파이더스",
@@ -2237,7 +2851,11 @@
     "homeTeam": "알토스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260120_VIXTORM_vs_점보스",
@@ -2251,7 +2869,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260120_GS칼텍스_서울KIXX_vs_레드스파크스",
@@ -2265,7 +2887,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260121_스타즈_vs_읏맨",
@@ -2279,7 +2904,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260121_힐스테이트_vs_PEPPERS",
@@ -2293,7 +2922,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260122_블루팡스_vs_우리WON",
@@ -2307,7 +2940,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260122_하이패스_vs_알토스",
@@ -2321,7 +2958,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260123_스카이워커스_vs_VIXTORM",
@@ -2335,7 +2976,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260123_핑크스파이더스_vs_GS칼텍스_서울KIXX",
@@ -2349,7 +2994,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260129_GS칼텍스_서울KIXX_vs_핑크스파이더스",
@@ -2363,7 +3012,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260129_VIXTORM_vs_스카이워커스",
@@ -2377,7 +3029,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260130_알토스_vs_하이패스",
@@ -2391,7 +3047,11 @@
     "homeTeam": "알토스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260130_우리WON_vs_블루팡스",
@@ -2405,7 +3065,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260131_점보스_vs_스타즈",
@@ -2419,7 +3082,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260131_레드스파크스_vs_힐스테이트",
@@ -2433,7 +3100,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260201_스카이워커스_vs_읏맨",
@@ -2447,7 +3118,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260201_핑크스파이더스_vs_PEPPERS",
@@ -2461,7 +3136,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260202_우리WON_vs_VIXTORM",
@@ -2475,7 +3154,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260202_알토스_vs_GS칼텍스_서울KIXX",
@@ -2489,7 +3171,11 @@
     "homeTeam": "알토스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260203_하이패스_vs_레드스파크스",
@@ -2503,7 +3189,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260203_블루팡스_vs_점보스",
@@ -2517,7 +3207,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260204_읏맨_vs_스타즈",
@@ -2531,7 +3225,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260204_PEPPERS_vs_힐스테이트",
@@ -2545,7 +3243,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260206_우리WON_vs_스카이워커스",
@@ -2559,7 +3261,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260206_핑크스파이더스_vs_알토스",
@@ -2573,7 +3278,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260207_점보스_vs_VIXTORM",
@@ -2587,7 +3296,11 @@
     "homeTeam": "점보스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260207_레드스파크스_vs_GS칼텍스_서울KIXX",
@@ -2601,7 +3314,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260208_읏맨_vs_블루팡스",
@@ -2615,7 +3332,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260208_PEPPERS_vs_하이패스",
@@ -2629,7 +3350,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260209_힐스테이트_vs_핑크스파이더스",
@@ -2643,7 +3368,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260209_스타즈_vs_스카이워커스",
@@ -2657,7 +3386,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260210_점보스_vs_우리WON",
@@ -2671,7 +3404,11 @@
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260210_레드스파크스_vs_알토스",
@@ -2685,7 +3422,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260211_읏맨_vs_VIXTORM",
@@ -2699,7 +3440,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260211_GS칼텍스_서울KIXX_vs_PEPPERS",
@@ -2713,7 +3458,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260213_스타즈_vs_블루팡스",
@@ -2727,7 +3475,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260213_힐스테이트_vs_하이패스",
@@ -2741,7 +3493,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260214_스카이워커스_vs_점보스",
@@ -2755,7 +3511,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260214_핑크스파이더스_vs_레드스파크스",
@@ -2769,7 +3529,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260215_알토스_vs_PEPPERS",
@@ -2783,7 +3547,11 @@
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260215_우리WON_vs_읏맨",
@@ -2797,7 +3565,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260216_VIXTORM_vs_스타즈",
@@ -2811,7 +3582,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260216_GS칼텍스_서울KIXX_vs_힐스테이트",
@@ -2825,7 +3600,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260217_블루팡스_vs_스카이워커스",
@@ -2839,7 +3617,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260217_하이패스_vs_핑크스파이더스",
@@ -2853,7 +3635,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260218_점보스_vs_읏맨",
@@ -2867,7 +3653,11 @@
     "homeTeam": "점보스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260218_PEPPERS_vs_레드스파크스",
@@ -2881,7 +3671,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260220_블루팡스_vs_VIXTORM",
@@ -2895,7 +3689,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260220_하이패스_vs_GS칼텍스_서울KIXX",
@@ -2909,7 +3707,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260221_스타즈_vs_우리WON",
@@ -2923,7 +3725,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260221_힐스테이트_vs_알토스",
@@ -2937,7 +3743,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260222_레드스파크스_vs_핑크스파이더스",
@@ -2951,7 +3761,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260222_점보스_vs_스카이워커스",
@@ -2965,7 +3779,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260224_힐스테이트_vs_하이패스",
@@ -2979,7 +3797,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260224_스타즈_vs_블루팡스",
@@ -2993,7 +3815,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260225_우리WON_vs_읏맨",
@@ -3007,7 +3833,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260225_알토스_vs_PEPPERS",
@@ -3021,7 +3850,11 @@
     "homeTeam": "알토스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260226_스카이워커스_vs_VIXTORM",
@@ -3035,7 +3868,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260226_핑크스파이더스_vs_GS칼텍스_서울KIXX",
@@ -3049,7 +3886,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260227_블루팡스_vs_점보스",
@@ -3063,7 +3904,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260227_하이패스_vs_레드스파크스",
@@ -3077,7 +3922,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260228_힐스테이트_vs_알토스",
@@ -3091,7 +3940,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260228_우리WON_vs_스타즈",
@@ -3105,7 +3958,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260301_읏맨_vs_스카이워커스",
@@ -3119,7 +3975,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260301_PEPPERS_vs_핑크스파이더스",
@@ -3133,7 +3993,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260302_VIXTORM_vs_점보스",
@@ -3147,7 +4011,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260302_GS칼텍스_서울KIXX_vs_레드스파크스",
@@ -3161,7 +4029,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260304_블루팡스_vs_읏맨",
@@ -3175,7 +4046,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260304_하이패스_vs_PEPPERS",
@@ -3189,7 +4064,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260305_스타즈_vs_스카이워커스",
@@ -3203,7 +4082,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "스카이워커스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260305_힐스테이트_vs_핑크스파이더스",
@@ -3217,7 +4100,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "핑크스파이더스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260306_레드스파크스_vs_알토스",
@@ -3231,7 +4118,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260306_점보스_vs_우리WON",
@@ -3245,7 +4136,11 @@
     "homeTeam": "점보스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260307_VIXTORM_vs_블루팡스",
@@ -3259,7 +4154,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260307_GS칼텍스_서울KIXX_vs_하이패스",
@@ -3273,7 +4172,10 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260308_스타즈_vs_읏맨",
@@ -3287,7 +4189,11 @@
     "homeTeam": "스타즈",
     "awayTeam": "읏맨",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
+    "lat": 37.7456011,
+    "lng": 127.0243588,
+    "address": "경기 의정부시 서부로 545",
+    "district": "의정부시"
   },
   {
     "id": "kovo_20260308_힐스테이트_vs_PEPPERS",
@@ -3301,7 +4207,11 @@
     "homeTeam": "힐스테이트",
     "awayTeam": "PEPPERS",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260310_스카이워커스_vs_우리WON",
@@ -3315,7 +4225,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260310_핑크스파이더스_vs_알토스",
@@ -3329,7 +4243,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260311_읏맨_vs_VIXTORM",
@@ -3343,7 +4261,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260311_PEPPERS_vs_GS칼텍스_서울KIXX",
@@ -3357,7 +4279,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260312_레드스파크스_vs_힐스테이트",
@@ -3371,7 +4297,11 @@
     "homeTeam": "레드스파크스",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260312_점보스_vs_스타즈",
@@ -3385,7 +4315,11 @@
     "homeTeam": "점보스",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.5323629,
+    "lng": 126.7495117,
+    "address": "인천 계양구 봉오대로 855",
+    "district": "계양구"
   },
   {
     "id": "kovo_20260313_스카이워커스_vs_블루팡스",
@@ -3399,7 +4333,11 @@
     "homeTeam": "스카이워커스",
     "awayTeam": "블루팡스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+    "lat": 36.8209818,
+    "lng": 127.1141552,
+    "address": "충남 천안시 서북구 번영로 208",
+    "district": "천안시"
   },
   {
     "id": "kovo_20260313_핑크스파이더스_vs_하이패스",
@@ -3413,7 +4351,11 @@
     "homeTeam": "핑크스파이더스",
     "awayTeam": "하이패스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+    "lat": 37.5077049,
+    "lng": 126.7378965,
+    "address": "인천 부평구 체육관로 60 삼산월드체육관",
+    "district": "부평구"
   },
   {
     "id": "kovo_20260314_우리WON_vs_VIXTORM",
@@ -3427,7 +4369,10 @@
     "homeTeam": "우리WON",
     "awayTeam": "VIXTORM",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   },
   {
     "id": "kovo_20260314_알토스_vs_GS칼텍스_서울KIXX",
@@ -3441,7 +4386,11 @@
     "homeTeam": "알토스",
     "awayTeam": "GS칼텍스 서울KIXX",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+    "lat": 37.1383041,
+    "lng": 126.922587,
+    "address": "경기 화성시 향남읍 향남로 470",
+    "district": "화성시"
   },
   {
     "id": "kovo_20260315_읏맨_vs_점보스",
@@ -3455,7 +4404,11 @@
     "homeTeam": "읏맨",
     "awayTeam": "점보스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
+    "lat": 35.2177397278187,
+    "lng": 128.994582354583,
+    "address": "부산 강서구 대저1동 1-1",
+    "district": "강서구"
   },
   {
     "id": "kovo_20260315_PEPPERS_vs_레드스파크스",
@@ -3469,7 +4422,11 @@
     "homeTeam": "PEPPERS",
     "awayTeam": "레드스파크스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/aipeppers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
+    "lat": 35.1353987,
+    "lng": 126.8789663,
+    "address": "광주 서구 금화로 278",
+    "district": "서구"
   },
   {
     "id": "kovo_20260317_블루팡스_vs_우리WON",
@@ -3483,7 +4440,11 @@
     "homeTeam": "블루팡스",
     "awayTeam": "우리WON",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
+    "lat": 36.317915,
+    "lng": 127.4304473,
+    "address": "대전 중구 대종로 373",
+    "district": "중구"
   },
   {
     "id": "kovo_20260317_하이패스_vs_알토스",
@@ -3497,7 +4458,11 @@
     "homeTeam": "하이패스",
     "awayTeam": "알토스",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
+    "lat": 36.1430049,
+    "lng": 128.0868657,
+    "address": "경북 김천시 운동장길 1 김천종합운동장",
+    "district": "김천시"
   },
   {
     "id": "kovo_20260318_VIXTORM_vs_스타즈",
@@ -3511,7 +4476,11 @@
     "homeTeam": "VIXTORM",
     "awayTeam": "스타즈",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
+    "lat": 37.2983797,
+    "lng": 127.0090851,
+    "address": "경기 수원시 장안구 경수대로 893",
+    "district": "수원시"
   },
   {
     "id": "kovo_20260318_GS칼텍스_서울KIXX_vs_힐스테이트",
@@ -3525,6 +4494,9 @@
     "homeTeam": "GS칼텍스 서울KIXX",
     "awayTeam": "힐스테이트",
     "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg"
+    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+    "lat": 37.558178171371,
+    "lng": 127.006808757736,
+    "address": "서울 중구 동호로 241"
   }
 ]

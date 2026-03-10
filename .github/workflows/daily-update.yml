@@ -63,6 +63,8 @@ jobs:
       - name: Run Scrapers
         if: env.SKIP_EXECUTION != 'true'
         timeout-minutes: 240 # Total max for all scrapers
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
         run: |
           npx tsx scripts/scrape-interpark.ts || true
           npx tsx scripts/scrape-kovo.ts || true

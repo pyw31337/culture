@@ -207,7 +207,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 {[
                                     { 
                                         icon: p.genre === 'movie' ? Film : MapPin, 
-                                        text: p.venue, 
+                                        text: p.district ? `${p.venue} (${p.district})` : p.venue, 
                                         color: 'text-emerald-500', 
                                         label: '장소',
                                         isLink: !!(p.lat && p.lng),

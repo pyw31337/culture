@@ -43,7 +43,7 @@ export default function Error({
                 </button>
 
                 <a
-                    href="/culture/"
+                    href="/"
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 text-white font-extrabold rounded-xl hover:bg-gray-700 transition-colors border border-white/10"
                 >
                     <Home size={18} />

@@ -8,14 +8,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울랜드",
-    "address": "",
+    "address": "경기도 과천시 광명로 181 (막계동)",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "51,515원",
     "price": "17,000원",
     "rate": 67,
     "platform": "mommom",
-    "discountRate": "67%"
+    "discountRate": "67%",
+    "lat": 37.4347742,
+    "lng": 127.01673249999999,
+    "district": "과천시"
   },
   {
     "id": "mommom_activity_안산자이언트제트시아테마파크점26430",
@@ -26,14 +29,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "자이언트 제트",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕1로 276 6층 자이언트제트",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "10,000원",
     "price": "7,000원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 37.3067205825062,
+    "lng": 126.840326129846,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_전국도심형실내키즈테마파크챔피언1250블랙벨트3",
@@ -44,14 +50,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "챔피언",
-    "address": "",
+    "address": "경기 수원시 영통구 덕영대로 1566",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "20,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2451294218834,
+    "lng": 127.061899042807,
+    "district": "수원시"
   },
   {
     "id": "mommom_activity_대전대전엑스포아쿠아리움",
@@ -62,14 +71,17 @@
     "genre": "activity",
     "region": "daejeon",
     "venue": "대전 엑스포 아쿠아리움",
-    "address": "",
+    "address": "대전 유성구 엑스포로 1 대전 신세계 Art&Science 지하 1층",
     "latitude": 36.3504,
     "longitude": 127.3845,
     "originalPrice": "32,000원",
     "price": "22,400원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 36.3751186,
+    "lng": 127.3806058,
+    "district": "유성구"
   },
   {
     "id": "mommom_activity_경기플레이월드용인점이용권",
@@ -80,14 +92,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "10,000원",
     "price": "6,500원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_전국아틀란티스키즈카페4개지점이용권",
@@ -98,14 +113,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "아틀란티스",
-    "address": "",
+    "address": "인천 연수구 컨벤시아대로230번길 42",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,782원",
     "price": "24,000원",
     "rate": 31,
     "platform": "mommom",
-    "discountRate": "31%"
+    "discountRate": "31%",
+    "lat": 37.3880843285678,
+    "lng": 126.634912528694,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_부천플레이아쿠아리움대소공통이용권구매후60일",
@@ -116,14 +134,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "부천 플레이 아쿠아리움",
-    "address": "",
+    "address": "경기 부천시 원미구 조마루로 2",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "29,999원",
     "price": "16,500원",
     "rate": 45,
     "platform": "mommom",
-    "discountRate": "45%"
+    "discountRate": "45%",
+    "lat": 37.4994278588911,
+    "lng": 126.744079457256,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_아산스파비스워터파크입장권2638",
@@ -134,14 +155,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "아산 스파비스",
-    "address": "",
+    "address": "충남 아산시 음봉면 아산온천로157번길 67",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "55,555원",
     "price": "20,000원",
     "rate": 64,
     "platform": "mommom",
-    "discountRate": "64%"
+    "discountRate": "64%",
+    "lat": 36.855301280385,
+    "lng": 126.978244127306,
+    "district": "아산시"
   },
   {
     "id": "mommom_activity_경기주렁주렁실내동물원동탄점",
@@ -152,14 +176,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "주렁주렁 실내동물원",
-    "address": "",
+    "address": "서울 영등포구 영중로 15",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "29,012원",
     "price": "23,500원",
     "rate": 19,
     "platform": "mommom",
-    "discountRate": "19%"
+    "discountRate": "19%",
+    "lat": 37.51711057944,
+    "lng": 126.90299334402,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_서울씨라이프코엑스아쿠아리움",
@@ -170,14 +197,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "코엑스 아쿠아리움",
-    "address": "",
+    "address": "서울 강남구 영동대로 513",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "28,117원",
     "price": "23,900원",
     "rate": 15,
     "platform": "mommom",
-    "discountRate": "15%"
+    "discountRate": "15%",
+    "lat": 37.513409385014874,
+    "lng": 127.05848344600409,
+    "district": "강남구"
   },
   {
     "id": "mommom_activity_아쿠아필드이용권하남고양안성중택126329",
@@ -188,14 +218,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "아쿠아필드",
-    "address": "",
+    "address": "경기 고양시 덕양구 고양대로 1955",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "25,890원",
     "price": "18,900원",
     "rate": 27,
     "platform": "mommom",
-    "discountRate": "27%"
+    "discountRate": "27%",
+    "lat": 37.647922250654574,
+    "lng": 126.89671586537472,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_경기시흥공룡월드키즈카페그랜드오픈특가",
@@ -206,14 +239,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "시흥 공룡월드",
-    "address": "",
+    "address": "경기 시흥시 은계호수로 49",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "22,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4458355693248,
+    "lng": 126.802045044272,
+    "district": "시흥시"
   },
   {
     "id": "mommom_activity_인천공룡월드인천점이용권",
@@ -224,14 +260,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "22,111원",
     "price": "19,900원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_해운대클럽디오아시스반기시즌권통합권온천사우나권3",
@@ -242,14 +281,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "클럽디 오아시스",
-    "address": "",
+    "address": "부산 해운대구 달맞이길 30 엘시티",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "697,674원",
     "price": "600,000원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 35.1613327099223,
+    "lng": 129.168013841974,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_경기가평남이섬입장권260331",
@@ -260,14 +302,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "남이섬",
-    "address": "",
+    "address": "경기 가평군 가평읍 북한강변로 1024",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "13,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.8039619138259,
+    "lng": 127.525366933316,
+    "district": "가평군"
   },
   {
     "id": "mommom_activity_광교아쿠아플라넷입장권31331",
@@ -278,14 +323,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "30,126원",
     "price": "23,800원",
     "rate": 21,
     "platform": "mommom",
-    "discountRate": "21%"
+    "discountRate": "21%",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_부산씨라이프부산아쿠아리움PKG이용권",
@@ -296,14 +344,16 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산 아쿠아리움",
-    "address": "",
+    "address": "부산광역시",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "32,031원",
     "price": "20,500원",
     "rate": 36,
     "platform": "mommom",
-    "discountRate": "36%"
+    "discountRate": "36%",
+    "lat": 35.1593434,
+    "lng": 129.1609912
   },
   {
     "id": "mommom_activity_과천매직플로우원더파크서울대공원점",
@@ -314,14 +364,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "과천 원더파크",
-    "address": "",
+    "address": "경기 과천시 대공원광장로 80",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "18,000원",
     "price": "17,100원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.4338614378624,
+    "lng": 127.011148953053,
+    "district": "과천시"
   },
   {
     "id": "mommom_activity_경주경주월드",
@@ -332,14 +385,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "경주월드",
-    "address": "",
+    "address": "경북 경주시 보문로 544",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "39,242원",
     "price": "25,900원",
     "rate": 34,
     "platform": "mommom",
-    "discountRate": "34%"
+    "discountRate": "34%",
+    "lat": 35.8363451,
+    "lng": 129.2821431,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_서울주렁주렁실내동물원영등포점",
@@ -350,14 +406,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "주렁주렁 실내동물원",
-    "address": "",
+    "address": "서울 영등포구 영중로 15",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "29,012원",
     "price": "23,500원",
     "rate": 19,
     "platform": "mommom",
-    "discountRate": "19%"
+    "discountRate": "19%",
+    "lat": 37.51711057944,
+    "lng": 126.90299334402,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_경기주렁주렁실내동물원하남점",
@@ -368,14 +427,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "주렁주렁 실내동물원",
-    "address": "",
+    "address": "서울 영등포구 영중로 15",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "29,012원",
     "price": "23,500원",
     "rate": 19,
     "platform": "mommom",
-    "discountRate": "19%"
+    "discountRate": "19%",
+    "lat": 37.51711057944,
+    "lng": 126.90299334402,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_대구플레이월드대구점이용권",
@@ -386,14 +448,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "6,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_경기안성팜랜드입장권",
@@ -404,14 +469,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "안성팜랜드",
-    "address": "",
+    "address": "경기 안성시 공도읍 대신두길 28",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "15,079원",
     "price": "9,500원",
     "rate": 37,
     "platform": "mommom",
-    "discountRate": "37%"
+    "discountRate": "37%",
+    "lat": 36.9920882944177,
+    "lng": 127.194405718721,
+    "district": "안성시"
   },
   {
     "id": "mommom_activity_해운대클럽디오아시스통합권스파이용권33430",
@@ -422,14 +490,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "클럽디 오아시스",
-    "address": "",
+    "address": "부산 해운대구 달맞이길 30 엘시티",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "32,727원",
     "price": "18,000원",
     "rate": 45,
     "platform": "mommom",
-    "discountRate": "45%"
+    "discountRate": "45%",
+    "lat": 35.1613327099223,
+    "lng": 129.168013841974,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_동탄아이와가볼만한곳동탄공룡월드키즈카페그랜드오픈",
@@ -440,14 +511,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "동탄 공룡월드",
-    "address": "",
+    "address": "경기 화성시 동탄순환대로27길 30",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "13,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.20815937351829,
+    "lng": 127.10435689579484,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_인천와일드벅스곤충탐험대",
@@ -458,14 +532,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "와일드벅스 곤충탐험대",
-    "address": "",
+    "address": "인천 중구 월미로 222 , 뽀로로앤타요 빌딩 1층",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "9,000원",
     "price": "8,100원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.4763321,
+    "lng": 126.6026526,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_경기과천서울대공원리프트패키지",
@@ -476,14 +553,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울대공원",
-    "address": "",
+    "address": "경기 과천시 대공원광장로 102",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "7,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4364522885613,
+    "lng": 127.01389757579,
+    "district": "과천시"
   },
   {
     "id": "mommom_activity_경기공룡월드용인점이용권",
@@ -494,14 +574,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "22,083원",
     "price": "15,900원",
     "rate": 28,
     "platform": "mommom",
-    "discountRate": "28%"
+    "discountRate": "28%",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_키자니아서울부산점3월이용권유효기간31331",
@@ -512,14 +595,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "키자니아",
-    "address": "",
+    "address": "서울 송파구 올림픽로 240 키자니아 서울",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "16,000원",
     "price": "12,000원",
     "rate": 25,
     "platform": "mommom",
-    "discountRate": "25%"
+    "discountRate": "25%",
+    "lat": 37.5113096112036,
+    "lng": 127.098141751177,
+    "district": "송파구"
   },
   {
     "id": "mommom_activity_부산아쿠아리움",
@@ -530,14 +616,16 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산 아쿠아리움",
-    "address": "",
+    "address": "부산광역시",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "30,882원",
     "price": "21,000원",
     "rate": 32,
     "platform": "mommom",
-    "discountRate": "32%"
+    "discountRate": "32%",
+    "lat": 35.1593434,
+    "lng": 129.1609912
   },
   {
     "id": "mommom_activity_경기플레이월드부천점이용권",
@@ -548,14 +636,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "10,000원",
     "price": "6,500원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_인천드림탁터인천점이용권",
@@ -566,14 +657,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "드림닥터",
-    "address": "",
+    "address": "경기 수원시 권선구 수인로 291",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "8,000원",
     "price": "7,200원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.28262969555354,
+    "lng": 126.97014584886763,
+    "district": "수원시"
   },
   {
     "id": "mommom_activity_용인에버랜드종일이용권260331날짜미지정",
@@ -584,14 +678,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "에버랜드",
-    "address": "",
+    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "52,000원",
     "price": "39,000원",
     "rate": 25,
     "platform": "mommom",
-    "discountRate": "25%"
+    "discountRate": "25%",
+    "lat": 37.2938764,
+    "lng": 127.2048444,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_아산아산스파비스대소공통종일이용권",
@@ -602,14 +699,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "아산 스파비스",
-    "address": "",
+    "address": "충남 아산시 음봉면 아산온천로157번길 67",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "50,000원",
     "price": "20,000원",
     "rate": 60,
     "platform": "mommom",
-    "discountRate": "60%"
+    "discountRate": "60%",
+    "lat": 36.855301280385,
+    "lng": 126.978244127306,
+    "district": "아산시"
   },
   {
     "id": "mommom_activity_고양원더빌리지매직플로우원더빌리지331",
@@ -620,14 +720,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "원더빌리지 고양",
-    "address": "",
+    "address": "경기 고양시 덕양구 고양대로 1955",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "12,048원",
     "price": "10,000원",
     "rate": 17,
     "platform": "mommom",
-    "discountRate": "17%"
+    "discountRate": "17%",
+    "lat": 37.6467485214476,
+    "lng": 126.892955542332,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_경주한화리조트담톤",
@@ -638,14 +741,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 경주",
-    "address": "",
+    "address": "경북 경주시 보문로 182-27",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "324,150원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.86079941373859,
+    "lng": 129.27022553524105,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_전국히어로플레이파크이용권",
@@ -656,14 +762,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "히어로플레이파크",
-    "address": "",
+    "address": "경북 경주시 강변로 200",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "7,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.84180354743923,
+    "lng": 129.20199851100875,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_청라쥬라리움청라점입장권",
@@ -674,14 +783,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "쥬라리움청라점",
-    "address": "",
+    "address": "인천 서구 청라커낼로288번길 26",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "",
     "price": "13,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.53396307544635,
+    "lng": 126.64745357931358,
+    "district": "서구"
   },
   {
     "id": "mommom_activity_전국도심형실내키즈테마파크챔피언플레이타임19개점",
@@ -692,14 +804,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "챔피언",
-    "address": "",
+    "address": "경기 수원시 영통구 덕영대로 1566",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2451294218834,
+    "lng": 127.061899042807,
+    "district": "수원시"
   },
   {
     "id": "mommom_activity_부산벡스코상상체험키즈월드",
@@ -710,14 +825,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "벡스코 상상체험 키즈월드",
-    "address": "",
+    "address": "부산 해운대구 APEC로 30",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "15,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1657825586672,
+    "lng": 129.135026643506,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_울산자수정동굴입장보트PKG",
@@ -728,14 +846,17 @@
     "genre": "activity",
     "region": "ulsan",
     "venue": "자수정동굴나라",
-    "address": "",
+    "address": "울산 울주군 상북면 자수정로 212",
     "latitude": 35.5384,
     "longitude": 129.3114,
     "originalPrice": "",
     "price": "10,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.5454830512387,
+    "lng": 129.093973480049,
+    "district": "울주군"
   },
   {
     "id": "mommom_activity_대전대전아쿠아리움대소공통이용권구매후60일",
@@ -746,14 +867,17 @@
     "genre": "activity",
     "region": "daejeon",
     "venue": "대전아쿠아리움",
-    "address": "",
+    "address": "대전광역시",
     "latitude": 36.3504,
     "longitude": 127.3845,
     "originalPrice": "26,923원",
     "price": "17,500원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 36.3100835,
+    "lng": 127.4210676,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_세종공룡월드세종점이용권",
@@ -764,14 +888,17 @@
     "genre": "activity",
     "region": "sejong",
     "venue": "공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 36.48,
     "longitude": 127.289,
     "originalPrice": "18,068원",
     "price": "15,900원",
     "rate": 12,
     "platform": "mommom",
-    "discountRate": "12%"
+    "discountRate": "12%",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_부산부산영화체험박물관씨네뮤지엄",
@@ -782,14 +909,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산영화체험박물관",
-    "address": "",
+    "address": "부산광역시 중구 대청로126번길 12 (동광동3가)",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "20,000원",
     "price": "10,000원",
     "rate": 50,
     "platform": "mommom",
-    "discountRate": "50%"
+    "discountRate": "50%",
+    "lat": 35.1016923,
+    "lng": 129.033592,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_거제벨버디어한화리조트",
@@ -800,14 +930,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 거제 벨버디어",
-    "address": "",
+    "address": "경남 거제시 장목면 거제북로 2501-40",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "276,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.00791120571364,
+    "lng": 128.7117807193145
   },
   {
     "id": "mommom_activity_덕산스플라스리솜워터파크38",
@@ -818,14 +950,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "28,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_제주오레브핫스프링스파260202260331",
@@ -836,14 +971,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "오레브 핫 스프링&스파",
-    "address": "",
+    "address": "제주 서귀포시 태평로 152",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "100,000원",
     "price": "25,000원",
     "rate": 75,
     "platform": "mommom",
-    "discountRate": "75%"
+    "discountRate": "75%",
+    "lat": 33.243019495681,
+    "lng": 126.537171873718,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_동탄쥬라리움동탄점입장권",
@@ -854,14 +992,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "쥬라리움동탄점",
-    "address": "",
+    "address": "경기 화성시 동탄구 동탄기흥로257번가길 31",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "13,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.18058659368624,
+    "lng": 127.09200374349197,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_춘천레고랜드1일이용권",
@@ -872,14 +1013,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "레고랜드코리아 테마파크",
-    "address": "",
+    "address": "강원 춘천시 하중도길 128",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "40,000원",
     "price": "32,000원",
     "rate": 20,
     "platform": "mommom",
-    "discountRate": "20%"
+    "discountRate": "20%",
+    "lat": 37.88418911470203,
+    "lng": 127.69920240590257,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_2526평창휘닉스파크스키리프트눈썰매이용권",
@@ -890,14 +1034,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "휘닉스파크",
-    "address": "",
+    "address": "강원 평창군 봉평면 태기로 174",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,883원",
     "price": "15,000원",
     "rate": 57,
     "platform": "mommom",
-    "discountRate": "57%"
+    "discountRate": "57%",
+    "lat": 37.58134611756336,
+    "lng": 128.32740908253098,
+    "district": "평창군"
   },
   {
     "id": "mommom_activity_경기용인공룡월드공룡쇼마술풍선쇼이용권",
@@ -908,14 +1055,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "용인 공룡월드",
-    "address": "",
+    "address": "경기 용인시 처인구 중부대로 1294",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "20,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2354736413106,
+    "lng": 127.1883047486991,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_세종공룡월드이용권",
@@ -926,14 +1076,16 @@
     "genre": "activity",
     "region": "sejong",
     "venue": "세종 공룡월드",
-    "address": "",
+    "address": "세종특별자치시 국세청로 32",
     "latitude": 36.48,
     "longitude": 127.289,
     "originalPrice": "",
     "price": "18,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.4864160731643,
+    "lng": 127.261966610559
   },
   {
     "id": "mommom_activity_가평쁘띠프랑스이탈리아마을15주년특별할인입장권",
@@ -944,14 +1096,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "가평 쁘띠프랑스&이탈리아마을",
-    "address": "",
+    "address": "경기 가평군 청평면 호반로 1063",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "12,025원",
     "price": "9,500원",
     "rate": 21,
     "platform": "mommom",
-    "discountRate": "21%"
+    "discountRate": "21%",
+    "lat": 37.7150277522095,
+    "lng": 127.490720315781,
+    "district": "가평군"
   },
   {
     "id": "mommom_activity_하남쥬라리움하남점입장권",
@@ -962,14 +1117,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "쥬라리움하남점",
-    "address": "",
+    "address": "경기 하남시 미사대로 410 오벨리스크 1층, 2층",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "13,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5669148058169,
+    "lng": 127.196654716027,
+    "district": "하남시"
   },
   {
     "id": "mommom_activity_세종쥬라리움세종점입장권",
@@ -980,14 +1138,17 @@
     "genre": "activity",
     "region": "sejong",
     "venue": "쥬라리움세종점",
-    "address": "",
+    "address": "세종 한누리대로 2275",
     "latitude": 36.48,
     "longitude": 127.289,
     "originalPrice": "",
     "price": "13,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.47155588565013,
+    "lng": 127.27638591019256,
+    "district": "한누리대로"
   },
   {
     "id": "mommom_activity_강릉아르떼뮤지엄",
@@ -998,14 +1159,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "아르떼뮤지엄 강릉",
-    "address": "",
+    "address": "강원 강릉시 난설헌로 131",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.791698395443404,
+    "lng": 128.90753392583056,
+    "district": "강릉시"
   },
   {
     "id": "mommom_activity_충남롯데리조트부여아쿠아가든11331",
@@ -1016,14 +1180,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "롯데리조트",
-    "address": "",
+    "address": "강원 속초시 대포항길 186",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "36,119원",
     "price": "24,200원",
     "rate": 33,
     "platform": "mommom",
-    "discountRate": "33%"
+    "discountRate": "33%",
+    "lat": 38.180717297287785,
+    "lng": 128.61320159917025,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_경주월드자유이용권",
@@ -1034,14 +1201,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "경주월드",
-    "address": "",
+    "address": "경북 경주시 보문로 544",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "38,750원",
     "price": "27,900원",
     "rate": 28,
     "platform": "mommom",
-    "discountRate": "28%"
+    "discountRate": "28%",
+    "lat": 35.8363451,
+    "lng": 129.2821431,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_잭슨나인스세종점유효기간31331",
@@ -1052,14 +1222,17 @@
     "genre": "activity",
     "region": "sejong",
     "venue": "잭슨나인스",
-    "address": "",
+    "address": "강원 춘천시 중앙로 193",
     "latitude": 36.48,
     "longitude": 127.289,
     "originalPrice": "12,526원",
     "price": "11,900원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.8737532152498,
+    "lng": 127.714130268235,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_금천쥬라리움금천점입장권",
@@ -1070,14 +1243,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "쥬라리움금천점",
-    "address": "",
+    "address": "서울 금천구 두산로 71",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "13,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4706575260821,
+    "lng": 126.895763111781,
+    "district": "금천구"
   },
   {
     "id": "mommom_activity_경기하남세라젬웰파크위례점실내키즈카페",
@@ -1088,14 +1264,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "세라젬 웰파크",
-    "address": "",
+    "address": "서울 동대문구 고산자로32길 78",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "7,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.57724645144151,
+    "lng": 127.04290973137874,
+    "district": "동대문구"
   },
   {
     "id": "mommom_activity_경기안성팜랜드입장권승마패키지",
@@ -1106,14 +1285,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "안성팜랜드",
-    "address": "",
+    "address": "경기 안성시 공도읍 대신두길 28",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "15,079원",
     "price": "9,500원",
     "rate": 37,
     "platform": "mommom",
-    "discountRate": "37%"
+    "discountRate": "37%",
+    "lat": 36.9920882944177,
+    "lng": 127.194405718721,
+    "district": "안성시"
   },
   {
     "id": "mommom_activity_대구아쿠아밸리블루라운지카페",
@@ -1124,14 +1306,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "아쿠아밸리",
-    "address": "",
+    "address": "서울 금천구 디지털로 178",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4764396758109,
+    "lng": 126.887331423733
   },
   {
     "id": "mommom_activity_경기샌드라이빙하남점이용권",
@@ -1142,14 +1326,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "샌드라이빙 하남점",
-    "address": "",
+    "address": "경기 하남시 미사강변중앙로 223 , 111호, 112호",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "12,947원",
     "price": "12,300원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.5666066447679,
+    "lng": 127.188379598294,
+    "district": "하남시"
   },
   {
     "id": "mommom_activity_부천플레이아쿠아리움",
@@ -1160,14 +1347,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "부천 아쿠아리움",
-    "address": "",
+    "address": "경기 부천시 원미구 조마루로 2",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "29,999원",
     "price": "16,500원",
     "rate": 45,
     "platform": "mommom",
-    "discountRate": "45%"
+    "discountRate": "45%",
+    "lat": 37.50000290717922,
+    "lng": 126.74413381315334,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_충청공룡월드아산퍼스트빌리지이용권",
@@ -1178,14 +1368,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "19,888원",
     "price": "17,900원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_대전오월드자유이용권31",
@@ -1196,14 +1389,17 @@
     "genre": "activity",
     "region": "daejeon",
     "venue": "대전 오월드",
-    "address": "",
+    "address": "대전광역시",
     "latitude": 36.3504,
     "longitude": 127.3845,
     "originalPrice": "",
     "price": "22,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.2888608,
+    "lng": 127.3979539,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_용인코끼리방울키즈카페동백",
@@ -1214,14 +1410,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "코끼리방울 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 동백중앙로 225-6",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "21,978원",
     "price": "20,000원",
     "rate": 9,
     "platform": "mommom",
-    "discountRate": "9%"
+    "discountRate": "9%",
+    "lat": 37.274009869253064,
+    "lng": 127.15017148131079,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_제주카페패스3일프리미엄",
@@ -1232,14 +1431,16 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "카페패스",
-    "address": "",
+    "address": "인천 연수구 청량로79번길 9",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "14,900원",
     "price": "13,410원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.4151323877704,
+    "lng": 126.657649173809
   },
   {
     "id": "mommom_activity_양산하나딸기수확체험실내대기실화장실완비",
@@ -1268,14 +1469,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "썬밸리 워터파크",
-    "address": "",
+    "address": "경기 여주시 강변유원지길 45",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "28,214원",
     "price": "15,800원",
     "rate": 44,
     "platform": "mommom",
-    "discountRate": "44%"
+    "discountRate": "44%",
+    "lat": 37.2936976290817,
+    "lng": 127.66150983326
   },
   {
     "id": "mommom_activity_서울타이거릴리3개지점이용권",
@@ -1286,14 +1489,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "타이거릴리",
-    "address": "",
+    "address": "서울 송파구 충민로 66",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.477222811994466,
+    "lng": 127.12419573227785,
+    "district": "송파구"
   },
   {
     "id": "mommom_activity_경기레노부르크뮤지엄빛을찾았나미디어아트전시전시테",
@@ -1304,14 +1510,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "레노부르크뮤지엄",
-    "address": "",
+    "address": "경기 부천시 오정구 신흥로511번길 180",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5312160331066,
+    "lng": 126.768455877745,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_부산해운대블루라인파크이용권",
@@ -1322,14 +1531,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "블루라인파크",
-    "address": "",
+    "address": "부산 해운대구 달맞이길62번길 13",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "7,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.15815259880406,
+    "lng": 129.17281473802996,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_경기레노부르크뮤지엄GLEAME빛나미디어아트일반",
@@ -1340,14 +1552,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "레노부르크뮤지엄",
-    "address": "",
+    "address": "경기 부천시 오정구 신흥로511번길 180",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "5,700원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5312160331066,
+    "lng": 126.768455877745,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_리솜리조트스플라스리솜패키지객실1박조식2인",
@@ -1358,14 +1573,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "181,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_경기과천그라운드플래닛",
@@ -1376,14 +1594,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "그라운드 플래닛",
-    "address": "",
+    "address": "경기 과천시 막계동 산 118-3",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "10,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4304493981194,
+    "lng": 127.009917815375,
+    "district": "과천시"
   },
   {
     "id": "mommom_activity_경주365일힐링파크엑스포대공원이용권",
@@ -1394,14 +1615,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "엑스포대공원",
-    "address": "",
+    "address": "경북 경주시 경감로 614",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "9,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.8331769,
+    "lng": 129.2892438,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_설악한화리조트쏘라노본관워터피아",
@@ -1412,14 +1636,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 설악쏘라노",
-    "address": "",
+    "address": "강원특별자치도 속초시 미시령로2983번길 111",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "267,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 38.21062422501503,
+    "lng": 128.5286095997693
   },
   {
     "id": "mommom_activity_천안볼베어파크천안점키즈카페힐스테이트",
@@ -1430,14 +1656,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "볼베어파크",
-    "address": "",
+    "address": "경기 부천시 원미구 조마루로 2",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4999706745475,
+    "lng": 126.744227787242,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_리솜리조트레스트리리솜객실1박조식2인or워터파크",
@@ -1448,14 +1677,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "330,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_티니핑과꿈나라여행용인베잔송룸온리한화리조트에버랜",
@@ -1466,14 +1698,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 용인 베잔송",
-    "address": "",
+    "address": "경기 용인시 처인구 남사읍 봉무로153번길 79",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "178,200원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.13166127996878,
+    "lng": 127.1441266032572
   },
   {
     "id": "mommom_activity_5성엔포드호텔어반오아시스수영장티켓특가",
@@ -1484,14 +1718,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "엔포드 호텔",
-    "address": "",
+    "address": "충북 청주시 청원구 충청대로 114 엔포드호텔",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "21,917원",
     "price": "16,000원",
     "rate": 27,
     "platform": "mommom",
-    "discountRate": "27%"
+    "discountRate": "27%",
+    "lat": 36.6665607991807,
+    "lng": 127.49449525302,
+    "district": "청주시"
   },
   {
     "id": "mommom_activity_대구엑스코상상체험키즈월드",
@@ -1502,14 +1739,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "엑스코상상체험키즈월드",
-    "address": "",
+    "address": "대구 북구 엑스코로 10",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "15,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.9065561832461,
+    "lng": 128.613384767468,
+    "district": "북구"
   },
   {
     "id": "mommom_activity_리솜리조트포레스트리솜패키지객실1박조식2인or워",
@@ -1520,14 +1760,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "450,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_일산자연에스파사우나및찜질방우리가족힐링공간",
@@ -1538,14 +1781,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "자연에스파",
-    "address": "",
+    "address": "경기 고양시 일산서구 탄현로 144",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "7,100원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.70643326668876,
+    "lng": 126.76651338348915,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_경북주렁주렁실내동물원경주점",
@@ -1556,14 +1802,17 @@
     "genre": "activity",
     "region": "gyeongbuk",
     "venue": "주렁주렁 실내동물원",
-    "address": "",
+    "address": "서울 영등포구 영중로 15",
     "latitude": 36.5753,
     "longitude": 128.5053,
     "originalPrice": "18,987원",
     "price": "15,000원",
     "rate": 21,
     "platform": "mommom",
-    "discountRate": "21%"
+    "discountRate": "21%",
+    "lat": 37.51711057944,
+    "lng": 126.90299334402,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_서울반포세빛섬레인보우브릿지요트투어",
@@ -1592,14 +1841,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "인천 공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "",
     "price": "20,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_서울크루즈하이서울크루즈여의도터미널출발",
@@ -1610,14 +1862,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "17,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_경기동두천체험형숲테마파크놀자숲이용권실내외초대형",
@@ -1628,14 +1883,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "놀자숲",
-    "address": "",
+    "address": "경기 동두천시 탑동가산로 1",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "16,000원",
     "price": "11,200원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 37.88557744724691,
+    "lng": 127.13721914079397,
+    "district": "동두천시"
   },
   {
     "id": "mommom_activity_울산캐니언파크입장권",
@@ -1646,14 +1904,17 @@
     "genre": "activity",
     "region": "ulsan",
     "venue": "캐니언파크",
-    "address": "",
+    "address": "울산 중구 만남의거리 15",
     "latitude": 35.5384,
     "longitude": 129.3114,
     "originalPrice": "",
     "price": "10,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.5543080776953,
+    "lng": 129.320791850142,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_양평양떼목장",
@@ -1664,14 +1925,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "양평 양떼목장",
-    "address": "",
+    "address": "경기 양평군 용문면 은고갯길 112",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "5,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.51545522357331,
+    "lng": 127.6287598630799,
+    "district": "양평군"
   },
   {
     "id": "mommom_activity_부산해운대센텀스파랜드26331",
@@ -1682,14 +1946,16 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산센텀스파랜드",
-    "address": "",
+    "address": "부산광역시",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "26,027원",
     "price": "19,000원",
     "rate": 27,
     "platform": "mommom",
-    "discountRate": "27%"
+    "discountRate": "27%",
+    "lat": 35.1688179,
+    "lng": 129.1295233
   },
   {
     "id": "mommom_activity_삼척쏠비치오션플레이로우시즌종일권26030326",
@@ -1700,14 +1966,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "쏠비치 삼척 오션플레이",
-    "address": "",
+    "address": "강원 삼척시 수로부인길 453",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,782원",
     "price": "24,000원",
     "rate": 31,
     "platform": "mommom",
-    "discountRate": "31%"
+    "discountRate": "31%",
+    "lat": 37.4713301561644,
+    "lng": 129.164342059181,
+    "district": "삼척시"
   },
   {
     "id": "mommom_activity_일산아쿠아플라넷입장권31331",
@@ -1718,14 +1987,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "6,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_멤버쉽경주한화뽀로로아쿠아빌리지3월상시이용권유효",
@@ -1736,14 +2008,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 경주",
-    "address": "",
+    "address": "경북 경주시 보문로 182-27",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "49,722원",
     "price": "17,900원",
     "rate": 64,
     "platform": "mommom",
-    "discountRate": "64%"
+    "discountRate": "64%",
+    "lat": 35.86079941373859,
+    "lng": 129.27022553524105,
+    "district": "경주시"
   },
   {
     "id": "mommom_activity_얼리버드팅커위시요정수업어린이체험권38",
@@ -1772,14 +2047,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "에버랜드",
-    "address": "",
+    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "17,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2938764,
+    "lng": 127.2048444,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_인천월미짱랜드이용권",
@@ -1790,14 +2068,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "캐니언파크",
-    "address": "",
+    "address": "울산 중구 만남의거리 15",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "",
     "price": "21,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.5543080776953,
+    "lng": 129.320791850142,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_군위삼국유사테마파크입장권",
@@ -1826,14 +2107,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "서해랑케이블카",
-    "address": "",
+    "address": "경기 화성시 만세구 서신면 전곡항로 1-10",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "17,977원",
     "price": "16,000원",
     "rate": 11,
     "platform": "mommom",
-    "discountRate": "11%"
+    "discountRate": "11%",
+    "lat": 37.1839143918378,
+    "lng": 126.65008944635663,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_서울크루즈디너불꽃크루즈여의도터미널출발",
@@ -1844,14 +2128,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "90,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_잭슨나인스대구점유효기간2601010331",
@@ -1862,14 +2149,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "잭슨나인스",
-    "address": "",
+    "address": "강원 춘천시 중앙로 193",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "7,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.8737532152498,
+    "lng": 127.714130268235,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_경기일산원마운트펀웨이브이용권",
@@ -1880,14 +2170,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "펀웨이브",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 300",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "30,000원",
     "price": "15,000원",
     "rate": 50,
     "platform": "mommom",
-    "discountRate": "50%"
+    "discountRate": "50%",
+    "lat": 37.6645540979457,
+    "lng": 126.75452646873,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_경기디거앤레이스김포라베니체점이용권",
@@ -1898,14 +2191,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "디거앤레이스 김포라베니체점",
-    "address": "",
+    "address": "경기 김포시 태장로 802 , 1층 108호",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "6,481원",
     "price": "3,500원",
     "rate": 46,
     "platform": "mommom",
-    "discountRate": "46%"
+    "discountRate": "46%",
+    "lat": 37.6382247254005,
+    "lng": 126.677918912134,
+    "district": "김포시"
   },
   {
     "id": "mommom_activity_파주쥬라리움파주점입장권",
@@ -1916,14 +2212,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "쥬라리움파주점",
-    "address": "",
+    "address": "경기 파주시 탄현면 새오리로 69 프로방스 주차타워 2층",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "12,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.7904014324402,
+    "lng": 126.68506630475,
+    "district": "파주시"
   },
   {
     "id": "mommom_activity_제주제주최남단체험감귤농장",
@@ -1934,14 +2233,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "제주 최남단 체험감귤농장",
-    "address": "",
+    "address": "제주 서귀포시 남원읍 남위남성로 164",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "6,969원",
     "price": "6,900원",
     "rate": 1,
     "platform": "mommom",
-    "discountRate": "1%"
+    "discountRate": "1%",
+    "lat": 33.2899178,
+    "lng": 126.6937521,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_서울루프캣미실내고양이카페명동점",
@@ -1952,14 +2254,16 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "루프캣미",
-    "address": "",
+    "address": "서울 마포구 양화로 140",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "13,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5551019080658,
+    "lng": 126.922123513945
   },
   {
     "id": "mommom_activity_N서울타워전망대입장권261231",
@@ -1970,14 +2274,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "23,000원",
     "price": "18,400원",
     "rate": 20,
     "platform": "mommom",
-    "discountRate": "20%"
+    "discountRate": "20%",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_경기플레이월드다산점키즈카페이용권",
@@ -1988,14 +2295,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_아일랜드캐슬워터파크로우시즌이용권37430",
@@ -2006,14 +2316,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "아일랜드캐슬",
-    "address": "",
+    "address": "경기 이천시 마장면 지산로 216",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "16,071원",
     "price": "9,000원",
     "rate": 44,
     "platform": "mommom",
-    "discountRate": "44%"
+    "discountRate": "44%",
+    "lat": 37.2154044642033,
+    "lng": 127.352797360793,
+    "district": "이천시"
   },
   {
     "id": "mommom_activity_파라다이스시티씨메르아쿠아스파찜질스파49430",
@@ -2024,14 +2337,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "씨메르",
-    "address": "",
+    "address": "인천 중구 영종해안남로321번길 186",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "30,000원",
     "price": "27,000원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.4357947739742,
+    "lng": 126.456686871178,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_대구네이처파크설레는봄이용권34",
@@ -2042,14 +2358,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "네이처파크",
-    "address": "",
+    "address": "대구 달성군 가창면 가창로 891",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "8,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.788117,
+    "lng": 128.635313,
+    "district": "달성군"
   },
   {
     "id": "mommom_activity_제천해브나인웰니스스파260303260329",
@@ -2060,14 +2379,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "60,566원",
     "price": "32,100원",
     "rate": 47,
     "platform": "mommom",
-    "discountRate": "47%"
+    "discountRate": "47%",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_서울크루즈한강갑문크루즈아라김포여객터미널출발",
@@ -2078,14 +2400,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "17,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_서울크루즈한강갑문크루즈with런치아라김포여객터",
@@ -2096,14 +2421,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "29,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_강원삼악산케이블카X알파카월드PKG",
@@ -2114,14 +2442,16 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "알파카월드",
-    "address": "",
+    "address": "강원특별자치도 홍천군 화촌면 덕밭재길 146-155",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "22,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.82764964418618,
+    "lng": 127.88373612378321
   },
   {
     "id": "mommom_activity_아산퍼스트빌리지공룡월드",
@@ -2132,14 +2462,16 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "아산 공룡월드",
-    "address": "",
+    "address": "충남 아산시 둔포면 해위안길 127",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "",
     "price": "18,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.8966305770261,
+    "lng": 127.02694542259849
   },
   {
     "id": "mommom_activity_태안2026태안세계튤립꽃박람회",
@@ -2150,14 +2482,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "태안 세계튤립꽃박람회",
-    "address": "",
+    "address": "충남 태안군 남면 마검포길 200",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "13,953원",
     "price": "12,000원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 36.6151424576437,
+    "lng": 126.29987976708372
   },
   {
     "id": "mommom_activity_서울클림트와리치오디의기적마이아트뮤지엄",
@@ -2168,14 +2502,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "마이아트뮤지엄",
-    "address": "",
+    "address": "서울 강남구 테헤란로 518",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "16,000원",
     "price": "15,200원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.507587841577454,
+    "lng": 127.06057692858644,
+    "district": "강남구"
   },
   {
     "id": "mommom_activity_파주홍삼스파참숯가마사우나",
@@ -2186,14 +2523,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "홍삼스파 참숯가마사우나",
-    "address": "",
+    "address": "경기 파주시 탄현면 장릉로 5",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "7,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.773847552083,
+    "lng": 126.71728661451803,
+    "district": "파주시"
   },
   {
     "id": "mommom_activity_충청샌드라이빙천안아산점이용권",
@@ -2204,14 +2544,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "샌드라이빙 천안아산점",
-    "address": "",
+    "address": "충남 아산시 탕정면 한들물빛도시로 70",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "11,046원",
     "price": "9,500원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 36.78558874990923,
+    "lng": 127.08623588111176,
+    "district": "아산시"
   },
   {
     "id": "mommom_activity_서울마이아트뮤지엄원그로브점헤일리티프먼일상을그리",
@@ -2222,14 +2565,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "마이아트뮤지엄 원그로브점",
-    "address": "",
+    "address": "서울 강서구 공항대로 165",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "12,000원",
     "price": "11,400원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.5612857889565,
+    "lng": 126.82428132653702,
+    "district": "강서구"
   },
   {
     "id": "mommom_activity_용인실내스카이다이빙플라이스테이션",
@@ -2240,14 +2586,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "용인 플라이스테이션",
-    "address": "",
+    "address": "경기 용인시 처인구 포곡읍 성산로 521",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "65,679원",
     "price": "53,200원",
     "rate": 19,
     "platform": "mommom",
-    "discountRate": "19%"
+    "discountRate": "19%",
+    "lat": 37.28088992407525,
+    "lng": 127.19920791547494,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_플레이월드미사점키즈카페이용권",
@@ -2258,14 +2607,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_강원정선로미지안가든동절기이용권",
@@ -2276,14 +2628,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "로미지안가든",
-    "address": "",
+    "address": "강원 정선군 북평면 어도원길 12",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "10,000원",
     "price": "9,000원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.442693547509236,
+    "lng": 128.64123724182596,
+    "district": "정선군"
   },
   {
     "id": "mommom_activity_파주월롱딸기체험",
@@ -2294,14 +2649,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "월롱딸기체험",
-    "address": "",
+    "address": "경기 파주시 월롱면 도감로 247",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "8,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.79211852951303,
+    "lng": 126.81169361319016,
+    "district": "파주시"
   },
   {
     "id": "mommom_activity_김포영일딸기체험",
@@ -2312,14 +2670,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "영일딸기체험",
-    "address": "",
+    "address": "경북 포항시 북구 흥해읍 약성리 88",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "8,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.1194545895108,
+    "lng": 129.343201193819,
+    "district": "포항시"
   },
   {
     "id": "mommom_activity_부산엑스더스카이전망대입장권",
@@ -2330,14 +2691,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산 엑스더스카이",
-    "address": "",
+    "address": "부산 해운대구 달맞이길 30",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "20,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1599502,
+    "lng": 129.1697687,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_서울강남실탄사격장송파파크하비오본점이용권",
@@ -2348,14 +2712,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "강남실탄사격장",
-    "address": "",
+    "address": "서울 송파구 송파대로 111",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "29,896원",
     "price": "29,000원",
     "rate": 3,
     "platform": "mommom",
-    "discountRate": "3%"
+    "discountRate": "3%",
+    "lat": 37.48017036159939,
+    "lng": 127.12386256210817,
+    "district": "송파구"
   },
   {
     "id": "mommom_activity_강원홍천소노팰리체승마체험",
@@ -2366,14 +2733,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "소노펠리체 비발디파크",
-    "address": "",
+    "address": "강원 홍천군 서면 한치골길 262",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "34,883원",
     "price": "30,000원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 37.6519359986504,
+    "lng": 127.682345472546,
+    "district": "홍천군"
   },
   {
     "id": "mommom_activity_인천키위키즈랜드주중이용권",
@@ -2384,14 +2754,16 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "키위 키즈랜드",
-    "address": "",
+    "address": "부산 기장군 장안읍 정관로 1142",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "5,000원",
     "price": "3,000원",
     "rate": 40,
     "platform": "mommom",
-    "discountRate": "40%"
+    "discountRate": "40%",
+    "lat": 35.32114992691703,
+    "lng": 129.2355065867129
   },
   {
     "id": "mommom_activity_경기김포덕포진교육박물관이용권",
@@ -2402,14 +2774,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "덕포진교육박물관",
-    "address": "",
+    "address": "경기 김포시 대곶면 덕포진로103번길 90",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "1,506원",
     "price": "1,100원",
     "rate": 27,
     "platform": "mommom",
-    "discountRate": "27%"
+    "discountRate": "27%",
+    "lat": 37.6506535189675,
+    "lng": 126.538722286949,
+    "district": "김포시"
   },
   {
     "id": "mommom_activity_한정수량소피텔앰배서더서울연말룸온리특가",
@@ -2420,14 +2795,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "소피텔 앰배서더 서울",
-    "address": "",
+    "address": "서울 송파구 잠실로 209",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "660,000원",
     "price": "297,000원",
     "rate": 55,
     "platform": "mommom",
-    "discountRate": "55%"
+    "discountRate": "55%",
+    "lat": 37.51378610891105,
+    "lng": 127.106165424275,
+    "district": "송파구"
   },
   {
     "id": "mommom_activity_서울루프캣미실내고양이카페홍대점",
@@ -2438,14 +2816,16 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "루프캣미",
-    "address": "",
+    "address": "서울 마포구 양화로 140",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "13,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5551019080658,
+    "lng": 126.922123513945
   },
   {
     "id": "mommom_activity_제주스누피가든",
@@ -2456,14 +2836,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "제주 스누피가든",
-    "address": "",
+    "address": "제주 제주시",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "13,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.4441267,
+    "lng": 126.7783154,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_금호리조트제주아쿠아나워터파크",
@@ -2474,14 +2857,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "금호리조트 제주 아쿠아나",
-    "address": "",
+    "address": "제주 서귀포시 남원읍 태위로 522-12",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "34,905원",
     "price": "18,500원",
     "rate": 47,
     "platform": "mommom",
-    "discountRate": "47%"
+    "discountRate": "47%",
+    "lat": 33.2726450601888,
+    "lng": 126.701432605686,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_강원평창대관령삼양라운드힐",
@@ -2492,14 +2878,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "대관령 삼양라운드힐",
-    "address": "",
+    "address": "강원 평창군 대관령면 꽃밭양지길 708-9",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "10,000원",
     "price": "9,000원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.7242868085377,
+    "lng": 128.719733895659,
+    "district": "평창군"
   },
   {
     "id": "mommom_activity_금호리조트화순아쿠아나워터파크",
@@ -2510,14 +2899,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "금호리조트 화순 아쿠아나",
-    "address": "",
+    "address": "전남 화순군 백아면 옥리길 14-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,910원",
     "price": "19,550원",
     "rate": 44,
     "platform": "mommom",
-    "discountRate": "44%"
+    "discountRate": "44%",
+    "lat": 35.16242626105882,
+    "lng": 127.0837692453772,
+    "district": "화순군"
   },
   {
     "id": "mommom_activity_강원하이원리조트워터월드비수기이용권260430",
@@ -2528,14 +2920,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "하이원리조트",
-    "address": "",
+    "address": "강원 정선군 고한읍 하이원길 424",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "19,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2072213760495,
+    "lng": 128.836835354268,
+    "district": "정선군"
   },
   {
     "id": "mommom_activity_인천와일드벅스곤충탐험대",
@@ -2546,14 +2941,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "와일드벅스 곤충탐험대",
-    "address": "",
+    "address": "인천 중구 월미로 222 , 뽀로로앤타요 빌딩 1층",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "8,953원",
     "price": "7,700원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 37.4763321,
+    "lng": 126.6026526,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_서울은평볼베어파크은평점키즈카페롯데몰바운스",
@@ -2564,14 +2962,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "볼베어파크",
-    "address": "",
+    "address": "경기 부천시 원미구 조마루로 2",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "8,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4999706745475,
+    "lng": 126.744227787242,
+    "district": "부천시"
   },
   {
     "id": "mommom_activity_옐레드수지동천점애견유치원애견호텔이용권",
@@ -2582,14 +2983,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "40,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_리솜리조트아일랜드리솜패키지객실1박스파2인",
@@ -2600,14 +3004,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "374,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_특가플레이월드미사점주중종일권430",
@@ -2618,14 +3025,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_남산N서울타워프로포즈이벤트",
@@ -2636,14 +3046,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "620,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_남산N서울타워전망대두루미분식이용권",
@@ -2654,14 +3067,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "35,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_남산N서울타워전망대엔그릴PKG",
@@ -2672,14 +3088,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "125,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_남산N서울타워전망대한쿡레스토랑PKG",
@@ -2690,14 +3109,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "61,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_남산N서울타워전망대더플레이스다이닝패키지",
@@ -2708,14 +3130,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "174,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_남산N서울타워전망대이용권",
@@ -2726,14 +3151,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "N서울타워",
-    "address": "",
+    "address": "서울 용산구 남산공원길 105",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "19,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.55127,
+    "lng": 126.9882805,
+    "district": "용산구"
   },
   {
     "id": "mommom_activity_대구이월드연간회원권3월",
@@ -2744,14 +3172,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "160,919원",
     "price": "140,000원",
     "rate": 13,
     "platform": "mommom",
-    "discountRate": "13%"
+    "discountRate": "13%",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_얼리버드특가롯데리조트부여아쿠아가든321430",
@@ -2762,14 +3192,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "롯데리조트",
-    "address": "",
+    "address": "강원 속초시 대포항길 186",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "46,000원",
     "price": "23,000원",
     "rate": 50,
     "platform": "mommom",
-    "discountRate": "50%"
+    "discountRate": "50%",
+    "lat": 38.180717297287785,
+    "lng": 128.61320159917025,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_3342아쿠아플라넷여수여수예술랜드PKG",
@@ -2780,14 +3213,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "35,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_충남소노벨천안오션어드벤처종일권03140424",
@@ -2798,14 +3234,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "소노벨 천안",
-    "address": "",
+    "address": "충남 천안시 동남구 성남면 소노로 1",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "39,705원",
     "price": "27,000원",
     "rate": 32,
     "platform": "mommom",
-    "discountRate": "32%"
+    "discountRate": "32%",
+    "lat": 36.7573026238463,
+    "lng": 127.224131473084,
+    "district": "천안시"
   },
   {
     "id": "mommom_activity_고성소노델피노인피니티풀종일권2603032606",
@@ -2816,14 +3255,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "소노 델피노 인피니티풀",
-    "address": "",
+    "address": "강원 고성군 토성면 미시령옛길 1153",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "39,705원",
     "price": "27,000원",
     "rate": 32,
     "platform": "mommom",
-    "discountRate": "32%"
+    "discountRate": "32%",
+    "lat": 38.2131162786595,
+    "lng": 128.493440366843,
+    "district": "고성군"
   },
   {
     "id": "mommom_activity_3342아쿠아플라넷여수해상케이블카PKG",
@@ -2834,14 +3276,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "39,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_고성소노델피노오션플레이종일권동계시즌260424",
@@ -2852,14 +3297,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "소노 델피노 오션플레이",
-    "address": "",
+    "address": "강원 고성군 토성면 미시령옛길 1153",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,782원",
     "price": "24,000원",
     "rate": 31,
     "platform": "mommom",
-    "discountRate": "31%"
+    "discountRate": "31%",
+    "lat": 38.2131162786595,
+    "lng": 128.493440366843,
+    "district": "고성군"
   },
   {
     "id": "mommom_activity_3342아쿠아플라넷여수라마다짚트랙PKG",
@@ -2870,14 +3318,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "47,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_거제소노캄오션어드벤처로우시즌입장권2603122",
@@ -2906,14 +3357,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "10,000원",
     "price": "9,000원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_아쿠아플라넷여수입장권42",
@@ -2924,14 +3377,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "38,055원",
     "price": "27,400원",
     "rate": 28,
     "platform": "mommom",
-    "discountRate": "28%"
+    "discountRate": "28%",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_동물간식체험대구이월드자유권간식3종",
@@ -2942,14 +3398,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "64,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_경기화성하피랜드온천찜질방",
@@ -2960,14 +3418,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "하피랜드",
-    "address": "",
+    "address": "경기 화성시 팔탄면 시청로 888",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "2,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.1685723255116,
+    "lng": 126.888527589073,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_로우시즌오션월드종일권33424",
@@ -2978,14 +3439,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "홍천 비발디파크",
-    "address": "",
+    "address": "강원 홍천군 서면 한치골길 262",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "50,000원",
     "price": "34,000원",
     "rate": 32,
     "platform": "mommom",
-    "discountRate": "32%"
+    "discountRate": "32%",
+    "lat": 37.6521031526954,
+    "lng": 127.687106349987,
+    "district": "홍천군"
   },
   {
     "id": "mommom_activity_대구이월드83타워전망대PKG3월",
@@ -2996,14 +3460,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "15,000원",
     "price": "12,000원",
     "rate": 20,
     "platform": "mommom",
-    "discountRate": "20%"
+    "discountRate": "20%",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_경남마산로봇랜드종일권채나교복PKG331",
@@ -3014,14 +3480,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "마산 로봇랜드",
-    "address": "",
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "50,000원",
     "price": "32,500원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "district": "창원시"
   },
   {
     "id": "mommom_activity_경남마산로봇랜드종일오후이용권331",
@@ -3032,14 +3501,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "마산 로봇랜드",
-    "address": "",
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "22,857원",
     "price": "16,000원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "district": "창원시"
   },
   {
     "id": "mommom_activity_마산로봇랜드종일권공룡월드PKG331",
@@ -3050,14 +3522,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "마산 로봇랜드",
-    "address": "",
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "47,800원",
     "price": "23,900원",
     "rate": 50,
     "platform": "mommom",
-    "discountRate": "50%"
+    "discountRate": "50%",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "district": "창원시"
   },
   {
     "id": "mommom_activity_경남마산로봇랜드종일권로봇스쿨레이싱카PKG331",
@@ -3068,14 +3543,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "마산 로봇랜드",
-    "address": "",
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "39,846원",
     "price": "25,900원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "district": "창원시"
   },
   {
     "id": "mommom_activity_경남마산로봇랜드커플패밀리권2346인권331",
@@ -3086,14 +3564,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "마산 로봇랜드",
-    "address": "",
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "75,862원",
     "price": "44,000원",
     "rate": 42,
     "platform": "mommom",
-    "discountRate": "42%"
+    "discountRate": "42%",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "district": "창원시"
   },
   {
     "id": "mommom_activity_서울크루즈음악불꽃크루즈여의도터미널출발",
@@ -3104,14 +3585,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "39,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_잭슨나인스양산점유효기간31331",
@@ -3122,14 +3606,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "잭슨나인스",
-    "address": "",
+    "address": "강원 춘천시 중앙로 193",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "11,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.8737532152498,
+    "lng": 127.714130268235,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_대구이월드자유이용권식음PKG3월",
@@ -3140,14 +3627,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "56,290원",
     "price": "34,900원",
     "rate": 38,
     "platform": "mommom",
-    "discountRate": "38%"
+    "discountRate": "38%",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_잭슨나인스창원점이용권유효기간31331",
@@ -3158,14 +3647,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "잭슨나인스",
-    "address": "",
+    "address": "강원 춘천시 중앙로 193",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "12,526원",
     "price": "11,900원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.8737532152498,
+    "lng": 127.714130268235,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_잭슨나인스일산점유효기간31331",
@@ -3176,14 +3668,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "잭슨나인스",
-    "address": "",
+    "address": "강원 춘천시 중앙로 193",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "12,526원",
     "price": "11,900원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.8737532152498,
+    "lng": 127.714130268235,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_3월동탄네이처스케이프플러스평일한정봄나들이패키지",
@@ -3194,14 +3689,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "네이처스케이프 플러스",
-    "address": "",
+    "address": "경기 화성시 동탄대로5길 21",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "58,904원",
     "price": "43,000원",
     "rate": 27,
     "platform": "mommom",
-    "discountRate": "27%"
+    "discountRate": "27%",
+    "lat": 37.1670794028254,
+    "lng": 127.105425175463,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_경기라스트윈터특가2526곤지암리조트리프트권렌탈",
@@ -3212,14 +3710,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "곤지암리조트",
-    "address": "",
+    "address": "경기 광주시 도척면 도척윗로 278",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "87,500원",
     "price": "35,000원",
     "rate": 60,
     "platform": "mommom",
-    "discountRate": "60%"
+    "discountRate": "60%",
+    "lat": 37.3372,
+    "lng": 127.2954,
+    "district": "광주시"
   },
   {
     "id": "mommom_activity_대구이월드자유이용권3월",
@@ -3230,14 +3731,16 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "대구 이월드",
-    "address": "",
+    "address": "대구",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "34,761원",
     "price": "21,900원",
     "rate": 37,
     "platform": "mommom",
-    "discountRate": "37%"
+    "discountRate": "37%",
+    "lat": 35.8530292,
+    "lng": 128.5657599
   },
   {
     "id": "mommom_activity_파라다이스시티원더박스자유이용권321430",
@@ -3248,14 +3751,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "파라다이스시티",
-    "address": "",
+    "address": "인천광역시 중구 영종해안남로321번길 186 (운서동)",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "23,000원",
     "price": "19,550원",
     "rate": 15,
     "platform": "mommom",
-    "discountRate": "15%"
+    "discountRate": "15%",
+    "lat": 37.4335451,
+    "lng": 126.45920019999994,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_파라다이스시티씨메르아쿠아스파찜질스파3147",
@@ -3266,14 +3772,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "씨메르",
-    "address": "",
+    "address": "인천 중구 영종해안남로321번길 186",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "30,000원",
     "price": "27,000원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 37.4357947739742,
+    "lng": 126.456686871178,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_뽀로로와함께풍덩대천파로스한화리조트룸온리키캉스오",
@@ -3284,14 +3793,16 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 대천 파로스",
-    "address": "",
+    "address": "충남 보령시 해수욕장3길 11-10",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "264,600원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.3050494257015,
+    "lng": 126.520038225685
   },
   {
     "id": "mommom_activity_부산세라젬웰파크부산기장점할인이용권31",
@@ -3302,14 +3813,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "세라젬웰파크",
-    "address": "",
+    "address": "서울 동대문구 고산자로32길 78",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "4,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.57724645144151,
+    "lng": 127.04290973137874,
+    "district": "동대문구"
   },
   {
     "id": "mommom_activity_3월동탄네이처스케이프플러스입장권",
@@ -3320,14 +3834,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "네이처스케이프 플러스",
-    "address": "",
+    "address": "경기 화성시 동탄대로5길 21",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "24,470원",
     "price": "20,800원",
     "rate": 15,
     "platform": "mommom",
-    "discountRate": "15%"
+    "discountRate": "15%",
+    "lat": 37.1670794028254,
+    "lng": 127.105425175463,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_멤버쉽한화리조트설악워터피아Silver시즌입장권",
@@ -3338,14 +3855,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "한화리조트 설악워터피아",
-    "address": "",
+    "address": "강원 속초시 미시령로2983번길 111",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "81,818원",
     "price": "45,000원",
     "rate": 45,
     "platform": "mommom",
-    "discountRate": "45%"
+    "discountRate": "45%",
+    "lat": 38.2101595305386,
+    "lng": 128.527388761735,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_아쿠아플라넷제주입장권늦은오후권2603월",
@@ -3356,14 +3876,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "한화 아쿠아플라넷",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 282",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "27,700원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6637875549962,
+    "lng": 126.755485560508,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_부산해운대부산요트투어요트홀릭",
@@ -3392,14 +3915,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "퓨처그라운드",
-    "address": "",
+    "address": "경기 성남시 분당구 판교로289번길 20",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "10,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.4046198157928,
+    "lng": 127.105813551101,
+    "district": "성남시"
   },
   {
     "id": "mommom_activity_용인에버랜드QPASS판다세컨하우스",
@@ -3410,14 +3936,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "에버랜드",
-    "address": "",
+    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "17,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2938764,
+    "lng": 127.2048444,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_춘천레고랜드당일이용권",
@@ -3428,14 +3957,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "레고랜드코리아 테마파크",
-    "address": "",
+    "address": "강원 춘천시 하중도길 128",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "40,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.88418911470203,
+    "lng": 127.69920240590257,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_서울크루즈아라뱃길크루즈with런치아라김포여객터",
@@ -3446,14 +3978,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "29,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_서울크루즈아라뱃길크루즈아라김포여객터미널출발",
@@ -3464,14 +3999,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "서울크루즈",
-    "address": "",
+    "address": "서울특별시",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "",
     "price": "17,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5296714,
+    "lng": 126.9337487,
+    "district": "영등포구"
   },
   {
     "id": "mommom_activity_가평쁘띠프랑스이탈리아마을연간회원권",
@@ -3482,14 +4020,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "가평 쁘띠프랑스&이탈리아마을",
-    "address": "",
+    "address": "경기 가평군 청평면 호반로 1063",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "48,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.7150277522095,
+    "lng": 127.490720315781,
+    "district": "가평군"
   },
   {
     "id": "mommom_activity_리솜리조트아일랜드리솜패키지객실1박조식2인",
@@ -3500,14 +4041,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "374,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_서울헤일리티프먼일상을그리다마이아트뮤지엄원그로브",
@@ -3518,14 +4062,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "마이아트뮤지엄 원그로브점",
-    "address": "",
+    "address": "서울 강서구 공항대로 165",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "12,000원",
     "price": "11,400원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.5612857889565,
+    "lng": 126.82428132653702,
+    "district": "강서구"
   },
   {
     "id": "mommom_activity_해운대클럽디오아시스나이트포차스파PKG430",
@@ -3536,14 +4083,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "클럽디 오아시스",
-    "address": "",
+    "address": "부산 해운대구 달맞이길 30 엘시티",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "43,750원",
     "price": "28,000원",
     "rate": 36,
     "platform": "mommom",
-    "discountRate": "36%"
+    "discountRate": "36%",
+    "lat": 35.1613327099223,
+    "lng": 129.168013841974,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_잔망루피가맞이하는마티에오시리아한화룸온리키캉스뽀",
@@ -3572,14 +4122,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "썬웨이 워터파크",
-    "address": "",
+    "address": "전남 화순군 도곡면 온천1길 45",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "6,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.0291237,
+    "lng": 126.902796,
+    "district": "화순군"
   },
   {
     "id": "mommom_activity_웨이브제주호텔앤리조트조식패키지객실1박조식2인",
@@ -3590,14 +4143,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "웨이브 제주",
-    "address": "",
+    "address": "제주 제주시 한림읍 한림로 77",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "93,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.3814010249698,
+    "lng": 126.218029702404,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_광주아쿠아시티스파워터파크이용권",
@@ -3608,14 +4164,16 @@
     "genre": "activity",
     "region": "gwangju",
     "venue": "광주 아쿠아시티",
-    "address": "",
+    "address": "광주광역시",
     "latitude": 35.1595,
     "longitude": 126.8526,
     "originalPrice": "",
     "price": "20,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1871336,
+    "lng": 126.8893552
   },
   {
     "id": "mommom_activity_전남딜라이트담양담양의아름다움을담은미디어아트",
@@ -3626,14 +4184,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "딜라이트 담양",
-    "address": "",
+    "address": "전남 담양군 월산면 화방송정길 21-14 딜라이트 담양",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "9,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.3369845,
+    "lng": 126.9552906,
+    "district": "담양군"
   },
   {
     "id": "mommom_activity_강원레고랜드X삼악산케이블카PKG날짜지정형",
@@ -3644,14 +4205,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "레고랜드",
-    "address": "",
+    "address": "강원 춘천시 하중도길 128 레고랜드 코리아 리조트",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "30,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.8822424628078,
+    "lng": 127.696392391009,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_옐레드마곡점애견유치원애견호텔이용권",
@@ -3662,14 +4226,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "40,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_옐레드서초교대역점애견유치원애견호텔이용권",
@@ -3680,14 +4247,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "45,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_옐레드노원상계점애견유치원애견호텔이용권",
@@ -3698,14 +4268,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "40,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_옐레드대구신월성점애견유치원애견호텔이용권",
@@ -3716,14 +4289,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "35,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_옐레드하남미사점애견유치원애견호텔이용권",
@@ -3734,14 +4310,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "옐레드",
-    "address": "",
+    "address": "경기 안산시 단원구 광덕대로 137",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "45,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.30879036008514,
+    "lng": 126.8289213697503,
+    "district": "안산시"
   },
   {
     "id": "mommom_activity_경북포항요트투어요트데이요트투어퍼블릭프라이빗커플",
@@ -3770,14 +4349,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "춘천 삼악산 호수 케이블카",
-    "address": "",
+    "address": "강원 춘천시 스포츠타운길 245",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "24,000원",
     "price": "16,800원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 37.86433423002352,
+    "lng": 127.69129278762853,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_경남하동하동케이블카탑승권",
@@ -3788,14 +4370,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "하동 케이블카",
-    "address": "",
+    "address": "경남 하동군 금남면 경충로 461-7 하동 케이블카",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "14,942원",
     "price": "13,000원",
     "rate": 13,
     "platform": "mommom",
-    "discountRate": "13%"
+    "discountRate": "13%",
+    "lat": 34.9812709,
+    "lng": 127.8957651,
+    "district": "하동군"
   },
   {
     "id": "mommom_activity_평창2026모나용평이나트뮤지엄전시관전시입장권2",
@@ -3806,14 +4391,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "모나 용평",
-    "address": "",
+    "address": "강원 평창군 대관령면 올림픽로 715",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "11,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.6509448898618,
+    "lng": 128.705556644413,
+    "district": "평창군"
   },
   {
     "id": "mommom_activity_하리보해피월드인제주HARIBOHappyWorl",
@@ -3824,14 +4412,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "하리보월드",
-    "address": "",
+    "address": "제주 제주시 아연로 444-1",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "13,000원",
     "price": "11,700원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 33.4738819882122,
+    "lng": 126.52877032952901,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_전남앨리스마이원더랜드전시장입장권1138",
@@ -3842,14 +4433,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "디오션리조트",
-    "address": "",
+    "address": "전남 여수시 소호로 295",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "15,000원",
     "price": "12,000원",
     "rate": 20,
     "platform": "mommom",
-    "discountRate": "20%"
+    "discountRate": "20%",
+    "lat": 34.73186975455543,
+    "lng": 127.6442167403837,
+    "district": "여수시"
   },
   {
     "id": "mommom_activity_서울마이아트뮤지엄삼성점클림트와리치오디의기적26",
@@ -3860,14 +4454,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "마이아트뮤지엄 삼성점",
-    "address": "",
+    "address": "서울 강남구 테헤란로 518",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "16,000원",
     "price": "15,200원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.507587841577454,
+    "lng": 127.06057692858644,
+    "district": "강남구"
   },
   {
     "id": "mommom_activity_부산키위키즈랜드",
@@ -3878,14 +4475,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "키위키즈랜드",
-    "address": "",
+    "address": "부산 기장군 장안읍 정관로 1142 힐탑프리미엄아울렛 B1",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "4,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.3210652,
+    "lng": 129.2355242,
+    "district": "기장군"
   },
   {
     "id": "mommom_activity_안면도오아식스리솜선셋스파1220329",
@@ -3896,14 +4496,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "리솜리조트",
-    "address": "",
+    "address": "충남 예산군 덕산면 온천단지3로 45-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "36,100원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.693944162414795,
+    "lng": 126.65638442590313,
+    "district": "예산군"
   },
   {
     "id": "mommom_activity_강원정선2526하이원리조트스노우월드눈썰매장이용",
@@ -3914,14 +4517,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "하이원리조트",
-    "address": "",
+    "address": "강원 정선군 고한읍 하이원길 424",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "9,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2072213760495,
+    "lng": 128.836835354268,
+    "district": "정선군"
   },
   {
     "id": "mommom_activity_경기플레이월드파주점키즈카페이용권",
@@ -3932,14 +4538,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "플레이월드 키즈카페",
-    "address": "",
+    "address": "경기 용인시 기흥구 중부대로 184",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.26916150983227,
+    "lng": 127.09068970853251,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_경기용인테일45반려견운동장이용권",
@@ -3950,14 +4559,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "테일45",
-    "address": "",
+    "address": "경기 용인시 기흥구 고매로43번길 47",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "15,000원",
     "price": "6,000원",
     "rate": 60,
     "platform": "mommom",
-    "discountRate": "60%"
+    "discountRate": "60%",
+    "lat": 37.235501727535336,
+    "lng": 127.11684943219004,
+    "district": "용인시"
   },
   {
     "id": "mommom_activity_엘리시안강촌12월상시",
@@ -3968,14 +4580,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "엘리시안 강촌",
-    "address": "",
+    "address": "강원 춘천시 남산면 북한강변길 688",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "25,000원",
     "price": "12,500원",
     "rate": 50,
     "platform": "mommom",
-    "discountRate": "50%"
+    "discountRate": "50%",
+    "lat": 37.8300557977982,
+    "lng": 127.57878172946,
+    "district": "춘천시"
   },
   {
     "id": "mommom_activity_강원정선2526하이원리조트리프트권1128폐장일",
@@ -3986,14 +4601,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "하이원리조트",
-    "address": "",
+    "address": "강원 정선군 고한읍 하이원길 424",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "32,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2072213760495,
+    "lng": 128.836835354268,
+    "district": "정선군"
   },
   {
     "id": "mommom_activity_강원속초요트보트클럽이용권",
@@ -4004,14 +4622,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "속초파워보트클럽",
-    "address": "",
+    "address": "강원 속초시 장사항해안길 46",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "20,000원",
     "price": "15,000원",
     "rate": 25,
     "platform": "mommom",
-    "discountRate": "25%"
+    "discountRate": "25%",
+    "lat": 38.225741249988744,
+    "lng": 128.5886083718243,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_전국찜카제주렌트카국내해외항공투어택시5할인이용권",
@@ -4022,14 +4643,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "찜카",
-    "address": "",
+    "address": "제주 제주시 첨단로 330",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "30,000원",
     "price": "28,500원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 33.442338427732864,
+    "lng": 126.57145091528794,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_일산삼방가딸기랜드체험",
@@ -4040,14 +4664,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "삼방가딸기랜드",
-    "address": "",
+    "address": "경기 고양시 일산서구 덕이동 1070-18",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "8,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.69853710758503,
+    "lng": 126.73495896550777,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_경기화성한진요트영국재즈요트이용권",
@@ -4058,14 +4685,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "한진요트",
-    "address": "",
+    "address": "경기 화성시 만세구 서신면 제부리 6-16",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "69,565원",
     "price": "32,000원",
     "rate": 54,
     "platform": "mommom",
-    "discountRate": "54%"
+    "discountRate": "54%",
+    "lat": 37.1750422091988,
+    "lng": 126.627194290653,
+    "district": "화성시"
   },
   {
     "id": "mommom_activity_인천글라이더스왕산요트투어이용권",
@@ -4076,14 +4706,17 @@
     "genre": "activity",
     "region": "incheon",
     "venue": "글라이더스왕산",
-    "address": "",
+    "address": "인천 중구 왕산로35번길 8",
     "latitude": 37.4563,
     "longitude": 126.7052,
     "originalPrice": "21,052원",
     "price": "20,000원",
     "rate": 5,
     "platform": "mommom",
-    "discountRate": "5%"
+    "discountRate": "5%",
+    "lat": 37.4611708946664,
+    "lng": 126.367458634462,
+    "district": "중구"
   },
   {
     "id": "mommom_activity_강원속초장사항마리나세일요트이용권",
@@ -4094,14 +4727,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "장사항마리나",
-    "address": "",
+    "address": "강원 속초시 장사항해안길 42",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "25,000원",
     "price": "19,000원",
     "rate": 24,
     "platform": "mommom",
-    "discountRate": "24%"
+    "discountRate": "24%",
+    "lat": 38.22537037599292,
+    "lng": 128.58878872257998,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_전남공룡월드비봉공룡공원이용권",
@@ -4112,14 +4748,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "공룡월드",
-    "address": "",
+    "address": "인천 연수구 첨단대로 104",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "3,400원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.366015460097124,
+    "lng": 126.65588902345503,
+    "district": "연수구"
   },
   {
     "id": "mommom_activity_서울호텔크레센도428레스토랑이용권",
@@ -4130,14 +4769,17 @@
     "genre": "activity",
     "region": "seoul",
     "venue": "크레센도서울",
-    "address": "",
+    "address": "서울 강남구 봉은사로 428",
     "latitude": 37.5665,
     "longitude": 126.978,
     "originalPrice": "88,000원",
     "price": "74,800원",
     "rate": 15,
     "platform": "mommom",
-    "discountRate": "15%"
+    "discountRate": "15%",
+    "lat": 37.510854802345044,
+    "lng": 127.04689261367498,
+    "district": "강남구"
   },
   {
     "id": "mommom_activity_부산뮤지엄원다시낭만의시대전시",
@@ -4148,14 +4790,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "뮤지엄원",
-    "address": "",
+    "address": "부산 해운대구 센텀서로 20 뮤지엄 원",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "13,043원",
     "price": "9,000원",
     "rate": 31,
     "platform": "mommom",
-    "discountRate": "31%"
+    "discountRate": "31%",
+    "lat": 35.1713724,
+    "lng": 129.1290332,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_센텀뮤지엄원미디어아트다시낭만의시대",
@@ -4166,14 +4811,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "뮤지엄원",
-    "address": "",
+    "address": "부산 해운대구 센텀서로 20 뮤지엄 원",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "",
     "price": "10,400원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1713724,
+    "lng": 129.1290332,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_경기디거앤레이스고양일산점이용권",
@@ -4184,14 +4832,17 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "디거앤레이스 고양일산점",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 300 , 1층 1248호",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "17,105원",
     "price": "13,000원",
     "rate": 24,
     "platform": "mommom",
-    "discountRate": "24%"
+    "discountRate": "24%",
+    "lat": 37.662843,
+    "lng": 126.753766,
+    "district": "고양시"
   },
   {
     "id": "mommom_activity_전남나주우주드림이용권",
@@ -4202,14 +4853,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "중흥골드스파리조트",
-    "address": "",
+    "address": "전남 나주시 다도면 나주호로 558-314",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "12,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 34.94833585709091,
+    "lng": 126.87147702739756,
+    "district": "나주시"
   },
   {
     "id": "mommom_activity_대구팔공산케이블카왕복이용권",
@@ -4220,14 +4874,17 @@
     "genre": "activity",
     "region": "daegu",
     "venue": "팔공산케이블카",
-    "address": "",
+    "address": "대구 동구 팔공산로185길 51",
     "latitude": 35.8714,
     "longitude": 128.6014,
     "originalPrice": "",
     "price": "7,200원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.9908860869511,
+    "lng": 128.6948337640703,
+    "district": "동구"
   },
   {
     "id": "mommom_activity_여수아르떼뮤지엄",
@@ -4238,14 +4895,17 @@
     "genre": "activity",
     "region": "jeonnam",
     "venue": "아르떼뮤지엄 여수",
-    "address": "",
+    "address": "전남 여수시 박람회길 1",
     "latitude": 34.8161,
     "longitude": 126.4629,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 34.7506593031808,
+    "lng": 127.74580243096096,
+    "district": "여수시"
   },
   {
     "id": "mommom_activity_경상남해양떼목장이용권",
@@ -4256,14 +4916,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "남해양떼목장",
-    "address": "",
+    "address": "경남 남해군 설천면 설천로775번길 364",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "4,000원",
     "price": "3,600원",
     "rate": 10,
     "platform": "mommom",
-    "discountRate": "10%"
+    "discountRate": "10%",
+    "lat": 34.9360461767834,
+    "lng": 127.88961943347,
+    "district": "남해군"
   },
   {
     "id": "mommom_activity_한복남한국민속촌점한복대여이용권3월",
@@ -4310,14 +4973,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "아르떼뮤지엄 부산",
-    "address": "",
+    "address": "부산 영도구 해양로247번길 29",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "12,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.0865369,
+    "lng": 129.0758503,
+    "district": "영도구"
   },
   {
     "id": "mommom_activity_부산태종대오션플라잉이용권",
@@ -4328,14 +4994,16 @@
     "genre": "activity",
     "region": "busan",
     "venue": "태종대 오션플라잉",
-    "address": "",
+    "address": "부산 영도구 태종로836번길 55",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "30,000원",
     "price": "19,500원",
     "rate": 35,
     "platform": "mommom",
-    "discountRate": "35%"
+    "discountRate": "35%",
+    "lat": 35.0608209397388,
+    "lng": 129.078530506049
   },
   {
     "id": "mommom_activity_부산연제구닥터메포츠사우나헬스이용권",
@@ -4346,14 +5014,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "닥터메포츠",
-    "address": "",
+    "address": "부산 연제구 거제시장로 42",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "6,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1831290886728,
+    "lng": 129.070877665573,
+    "district": "연제구"
   },
   {
     "id": "mommom_activity_충청아산레일바이크이용권",
@@ -4364,14 +5035,17 @@
     "genre": "activity",
     "region": "chungnam",
     "venue": "아산레일바이크",
-    "address": "",
+    "address": "충남 아산시 도고면 아산만로 199-7",
     "latitude": 36.6588,
     "longitude": 126.6728,
     "originalPrice": "25,000원",
     "price": "19,000원",
     "rate": 24,
     "platform": "mommom",
-    "discountRate": "24%"
+    "discountRate": "24%",
+    "lat": 36.76097435471885,
+    "lng": 126.86729912912867,
+    "district": "아산시"
   },
   {
     "id": "mommom_activity_경기일산원마운트로라비트이용권",
@@ -4382,14 +5056,16 @@
     "genre": "activity",
     "region": "gyeonggi",
     "venue": "원마운트",
-    "address": "",
+    "address": "경기 고양시 일산서구 한류월드로 300",
     "latitude": 37.4138,
     "longitude": 127.5183,
     "originalPrice": "",
     "price": "17,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.664554097950486,
+    "lng": 126.75452646872884
   },
   {
     "id": "mommom_activity_강원피노디아뮤지엄입장권",
@@ -4400,14 +5076,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "피노디아 뮤지엄",
-    "address": "",
+    "address": "강원 속초시 엑스포로 75",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "9,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 38.19105043845461,
+    "lng": 128.58203552944474,
+    "district": "속초시"
   },
   {
     "id": "mommom_activity_해저와인과함께하는우도잠수함",
@@ -4418,14 +5097,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "우도잠수함",
-    "address": "",
+    "address": "제주 서귀포시 성산읍 성산등용로 112-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "34,883원",
     "price": "30,000원",
     "rate": 14,
     "platform": "mommom",
-    "discountRate": "14%"
+    "discountRate": "14%",
+    "lat": 33.4719649,
+    "lng": 126.9329901,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_해저와인과함께하는우도잠수함우도도항선",
@@ -4436,14 +5118,17 @@
     "genre": "activity",
     "region": "etc",
     "venue": "우도잠수함",
-    "address": "",
+    "address": "제주 서귀포시 성산읍 성산등용로 112-7",
     "latitude": 0,
     "longitude": 0,
     "originalPrice": "47,142원",
     "price": "33,000원",
     "rate": 30,
     "platform": "mommom",
-    "discountRate": "30%"
+    "discountRate": "30%",
+    "lat": 33.4719649,
+    "lng": 126.9329901,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_제주레이저아레나엑스올인원",
@@ -4454,14 +5139,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "레이저아레나엑스",
-    "address": "",
+    "address": "제주 서귀포시 소보리당로164번길 62",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "17,850원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2636754640579,
+    "lng": 126.385571023556,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_제주레이저아레나엑스리얼리티서바이벌",
@@ -4472,14 +5160,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "레이저아레나엑스",
-    "address": "",
+    "address": "제주 서귀포시 소보리당로164번길 62",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "11,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2636754640579,
+    "lng": 126.385571023556,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_제주레이저아레나엑스유니버스서바이벌",
@@ -4490,14 +5181,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "레이저아레나엑스",
-    "address": "",
+    "address": "제주 서귀포시 소보리당로164번길 62",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "7,400원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2636754640579,
+    "lng": 126.385571023556,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_강원하이원리조트부대시설이용권운탄고도케이블카수영",
@@ -4508,14 +5202,17 @@
     "genre": "activity",
     "region": "gangwon",
     "venue": "하이원리조트",
-    "address": "",
+    "address": "강원 정선군 고한읍 하이원길 424",
     "latitude": 37.8228,
     "longitude": 128.1555,
     "originalPrice": "",
     "price": "9,800원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.2072213760495,
+    "lng": 128.836835354268,
+    "district": "정선군"
   },
   {
     "id": "mommom_activity_부산해운대부산요트투어요트가이폭죽폴라로이드광안리",
@@ -4526,14 +5223,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "요트가이",
-    "address": "",
+    "address": "부산 해운대구 우동 1393",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "4,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1594379439298,
+    "lng": 129.14112595177303,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_광양섬진강별빛스카이짚와이어",
@@ -4562,14 +5262,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "서귀포잠수함",
-    "address": "",
+    "address": "제주 서귀포시 남성중로 40",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "39,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2391371,
+    "lng": 126.5586263,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_경남거제통영요트투어카나리아147",
@@ -4580,14 +5283,17 @@
     "genre": "activity",
     "region": "gyeongnam",
     "venue": "카나리아147",
-    "address": "",
+    "address": "경남 거제시 사등면 덕호해안길 147-1 카나리아풀빌라펜션 맞은 편 선착장",
     "latitude": 35.4606,
     "longitude": 128.2132,
     "originalPrice": "",
     "price": "18,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 34.8729838,
+    "lng": 128.4727789,
+    "district": "거제시"
   },
   {
     "id": "mommom_activity_부산해운대부산요트투어카카오요트",
@@ -4598,14 +5304,17 @@
     "genre": "activity",
     "region": "busan",
     "venue": "카카오요트",
-    "address": "",
+    "address": "부산 해운대구 해운대해변로 84",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "",
     "price": "7,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 35.1597990198856,
+    "lng": 129.141957303023,
+    "district": "해운대구"
   },
   {
     "id": "mommom_activity_부산해운대부산요트투어고고요트광안리더베이101",
@@ -4616,14 +5325,16 @@
     "genre": "activity",
     "region": "busan",
     "venue": "부산 고고요트",
-    "address": "",
+    "address": "부산광역시",
     "latitude": 35.1796,
     "longitude": 129.0756,
     "originalPrice": "50,000원",
     "price": "5,000원",
     "rate": 90,
     "platform": "mommom",
-    "discountRate": "90%"
+    "discountRate": "90%",
+    "lat": 35.1598019,
+    "lng": 129.1419576
   },
   {
     "id": "mommom_activity_충북충주실내키즈테마파크잭슨파이브충주점",
@@ -4634,14 +5345,17 @@
     "genre": "activity",
     "region": "chungbuk",
     "venue": "잭슨파이브",
-    "address": "",
+    "address": "충북 충주시 호암토성2로 7",
     "latitude": 36.6357,
     "longitude": 127.4912,
     "originalPrice": "",
     "price": "5,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 36.9558009728747,
+    "lng": 127.935010159363,
+    "district": "충주시"
   },
   {
     "id": "mommom_activity_제주아이올레인포레스트",
@@ -4652,14 +5366,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "아이올레인포레스트",
-    "address": "",
+    "address": "제주 제주시 구좌읍 덕행로 359 아이올레인포레스트",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "4,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.5183545,
+    "lng": 126.7877598,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주무지개요트",
@@ -4670,14 +5387,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "제주 무지개요트",
-    "address": "",
+    "address": "제주 제주시 도두항길 28-12우편번호63112지도길찾기공유인근 업종검색음식점카페new쇼핑숙박병원의료은행주유소마트슈퍼편의점생활편의명소체육시설영화공연관공서제주특별자치도 제주시 도두항길 28-12 업체정보예약제주요트투어요트주소보기제주특별자치도 제주시 도두항길 28-12좋아요공유가격네이버페이지도길찾기전화예약",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "25,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.508336,
+    "lng": 126.46627,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주선녀와나무꾼",
@@ -4688,14 +5408,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "제주 선녀와나무꾼",
-    "address": "",
+    "address": "제주 제주시",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "9,900원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.4796076,
+    "lng": 126.7026773,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주서프라이즈테마파크",
@@ -4706,14 +5429,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "서프라이즈테마파크",
-    "address": "",
+    "address": "제주 제주시 조천읍 남조로 2243",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "8,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.465165352523385,
+    "lng": 126.65959538355135,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주메이즈랜드소인",
@@ -4724,14 +5450,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "메이즈랜드",
-    "address": "",
+    "address": "제주 제주시 구좌읍 비자림로 2134-47 메이즈랜드",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "13,043원",
     "price": "12,000원",
     "rate": 8,
     "platform": "mommom",
-    "discountRate": "8%"
+    "discountRate": "8%",
+    "lat": 33.4879942,
+    "lng": 126.801012,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주메이즈랜드청소년",
@@ -4742,14 +5471,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "메이즈랜드",
-    "address": "",
+    "address": "제주 제주시 구좌읍 비자림로 2134-47 메이즈랜드",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "13,978원",
     "price": "13,000원",
     "rate": 7,
     "platform": "mommom",
-    "discountRate": "7%"
+    "discountRate": "7%",
+    "lat": 33.4879942,
+    "lng": 126.801012,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주메이즈랜드성인",
@@ -4760,14 +5492,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "메이즈랜드",
-    "address": "",
+    "address": "제주 제주시 구좌읍 비자림로 2134-47 메이즈랜드",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "15,957원",
     "price": "15,000원",
     "rate": 6,
     "platform": "mommom",
-    "discountRate": "6%"
+    "discountRate": "6%",
+    "lat": 33.4879942,
+    "lng": 126.801012,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주레포츠랜드",
@@ -4778,14 +5513,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "레포츠랜드",
-    "address": "",
+    "address": "제주 제주시 조천읍 와흘상서2길 47",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "11,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.48206819907232,
+    "lng": 126.6387551242765,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주도치돌알파카목장",
@@ -4796,14 +5534,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "도치돌알파카목장",
-    "address": "",
+    "address": "제주 제주시 애월읍 도치돌길 303 도치돌목장",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "15,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.4097232,
+    "lng": 126.3667613,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주김녕요트투어소인",
@@ -4814,14 +5555,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "김녕요트투어",
-    "address": "",
+    "address": "제주 제주시 구좌읍 구좌해안로 229-16",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "35,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.558266660165216,
+    "lng": 126.73721297543793,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주김녕요트투어대인",
@@ -4832,14 +5576,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "김녕요트투어",
-    "address": "",
+    "address": "제주 제주시 구좌읍 구좌해안로 229-16",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "48,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.558266660165216,
+    "lng": 126.73721297543793,
+    "district": "제주시"
   },
   {
     "id": "mommom_activity_제주그림카페",
@@ -4850,14 +5597,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "그림카페",
-    "address": "",
+    "address": "서울 마포구 와우산로 29-18",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "8,500원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 37.5473957,
+    "lng": 126.9219395,
+    "district": "마포구"
   },
   {
     "id": "mommom_activity_제주그랑블루요트럭셔리투어",
@@ -4868,14 +5618,17 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "그랑블루요트",
-    "address": "",
+    "address": "제주 서귀포시 대포로 172-7 그랑블루요트",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "28,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2382505,
+    "lng": 126.4395475,
+    "district": "서귀포시"
   },
   {
     "id": "mommom_activity_제주그랑블루요트선셋투어",
@@ -4886,13 +5639,16 @@
     "genre": "activity",
     "region": "jeju",
     "venue": "그랑블루요트",
-    "address": "",
+    "address": "제주 서귀포시 대포로 172-7 그랑블루요트",
     "latitude": 33.4996,
     "longitude": 126.5312,
     "originalPrice": "",
     "price": "28,000원",
     "rate": 0,
     "platform": "mommom",
-    "discountRate": ""
+    "discountRate": "",
+    "lat": 33.2382505,
+    "lng": 126.4395475,
+    "district": "서귀포시"
   }
 ]
