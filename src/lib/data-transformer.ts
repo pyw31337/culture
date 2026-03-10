@@ -206,32 +206,52 @@ export interface RawPerformance {
 function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string): string {
     if (!rawVenue) return '';
 
-    // 1. Initial cleanup (corrupted map UI strings from some scrapers)
-    let name = rawVenue.split('←Move left')[0] // Catch mocha/umclass garbage
+    // 1. Initial cleanup
+    let name = rawVenue.split('←Move left')[0]
         .split('Map data ©')[0]
         .split('Keyboard shortcuts')[0]
         .trim();
 
-    // 2. Remove common informal suffixes and parentheses
+    // 2. KOPIS Specific Normalization (e.g., "예술의전당 [서울] (콘서트홀)")
+    // Remove regional tags: [서울], [부산] etc.
+    name = name.replace(/\s*\[[가-힣]+\]/g, '').trim();
+
+    // Handle Hall designations in parentheses
+    // Pattern: "Venue Name (Hall Name)" -> "Venue Name Hall Name" or just "Venue Name" if it's a dupe
+    const hallMatch = name.match(/^(.*?)\s*\((.*?)\)$/);
+    if (hallMatch) {
+        const venueBase = hallMatch[1].trim();
+        const hallPart = hallMatch[2].trim();
+        
+        // If hallPart starts with venueBase, it's redundant (e.g., "세종문화회관 (세종체임버홀)")
+        if (hallPart.startsWith(venueBase)) {
+            name = hallPart;
+        } else if (venueBase.includes(hallPart)) {
+            name = venueBase;
+        } else {
+            // Combine naturally (e.g. "예술의전당 (콘서트홀)" -> "예술의전당 콘서트홀")
+            name = `${venueBase} ${hallPart}`;
+        }
+    }
+
+    // 3. Remove common informal suffixes and parentheses
     name = name.replace(/ (구장|경기장|체육관)$/, '');
     name = name.replace(/\(두산\)|\(LG\)/g, '').trim();
 
-    // 3. Exact matching in official map
+    // 4. Exact matching in official map
     const entry = OFFICIAL_SPORTS_VENUES[name] ||
         OFFICIAL_SPORTS_VENUES[name.replace(/야구장$/, '')] ||
         OFFICIAL_SPORTS_VENUES[name.replace(/잠실야구장$/, '잠실')];
 
-    if (!entry) return name; // Return cleaned name at least
+    if (!entry) return name; 
 
     if (typeof entry === 'string') return entry;
 
-    // Team-aware mapping (e.g., Icheon)
     if (homeTeam) {
         const teamMatch = Object.keys(entry).find(key => homeTeam.toLowerCase().includes(key.toLowerCase()));
         if (teamMatch) return entry[teamMatch];
     }
 
-    // Genre-aware mapping (e.g., Incheon)
     if (genre && entry[genre]) {
         return entry[genre];
     }
