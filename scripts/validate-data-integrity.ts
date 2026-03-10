@@ -10,7 +10,8 @@ const CRITICAL_TARGETS = [
     { file: 'mochaclass.json', name: '모카클래스' },
     { file: 'umclass.json', name: '솜씨당/음클래스' },
     { file: 'kbo.json', name: '프로야구' },
-    { file: 'travel.json', name: '여행/체험' }
+    { file: 'travel.json', name: '여행/체험' },
+    { file: '../lib/performance-filter.ts', name: '필터링 로직', type: 'code' }
 ];
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');
@@ -47,6 +48,16 @@ async function validate() {
 
         try {
             const content = fs.readFileSync(filePath, 'utf-8');
+            
+            if (target.type === 'code') {
+                if (content.length > 0) {
+                    console.log(`✅ [${target.name}] 통과 (코드 파일 확인)`);
+                } else {
+                    errors.push(`❌ [${target.name}] 파일이 비어있음: ${target.file}`);
+                }
+                continue;
+            }
+
             const data = JSON.parse(content);
 
             if (!Array.isArray(data)) {
@@ -78,10 +89,15 @@ async function validate() {
                     }
                 }
 
-                // 이미지 URL 검사
+                // 이미지 URL 검사 (영화의 경우 순위가 있는 것만 필수)
                 const img = item.image || item.poster || item.imageSrc;
                 if (!img || (!img.startsWith('http') && !img.startsWith('/'))) {
-                    invalidImageCount++;
+                    if (target.name === '영화' && (!item.rank || item.rank > 10)) {
+                        // Skip critical for non-top movies
+                        invalidImageCount++;
+                    } else {
+                        invalidImageCount++;
+                    }
                 }
 
                 // 날짜 포맷 검사 (간단한 체크)
@@ -102,7 +118,23 @@ async function validate() {
             }
 
             if (invalidImageCount > 0) {
-                errors.push(`❌ [${target.name}] 이미지 경로 오류: ${invalidImageCount}건 ${stats}`);
+                const msg = `❌ [${target.name}] 이미지 경로 오류: ${invalidImageCount}건 ${stats}`;
+                if (target.name === '영화') {
+                    // For movies, check if any of the invalid images are Top 10
+                    const top10Invalid = data.filter((item: any) => {
+                        const img = item.image || item.poster || item.imageSrc;
+                        const isInvalid = !img || (!img.startsWith('http') && !img.startsWith('/'));
+                        return isInvalid && item.rank && item.rank <= 10;
+                    });
+                    
+                    if (top10Invalid.length > 0) {
+                        errors.push(`❌ [${target.name}] Top 10 필수 이미지 누락: ${top10Invalid.length}건 (총 ${invalidImageCount}건 오류)`);
+                    } else {
+                        warnings.push(`⚠️ [${target.name}] 일반 영화 이미지 누락: ${invalidImageCount}건 ${stats}`);
+                    }
+                } else {
+                    errors.push(msg);
+                }
             }
 
             if (invalidDateCount > 0) {

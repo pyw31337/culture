@@ -11,6 +11,7 @@ import cliProgress from 'cli-progress';
 const KOBIS_URL = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyBoxOfficeList.do';
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');
+const CHECKPOINT_FILE = path.join(DATA_DIR, 'movies.checkpoint.json');
 
 function slugify(text: string): string {
     return text
@@ -29,8 +30,8 @@ const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
 // --- Shared Metadata Extraction Logic (From scrape-ott.ts) ---
 // This function is converted to a string to bypass tsx instrumentation
-const extractMetadataStr = `() => {
-    const res = {};
+function extractMetadata(): any {
+    const res: any = {};
     const metadataSources = [
         ...Array.from(document.querySelectorAll('.title_area .sub_title > span, .cm_top_wrap .sub_title > span')), 
         ...Array.from(document.querySelectorAll('.title_area .sub_title .txt, .title_area .sub_text .txt, .cm_top_wrap .sub_text .txt')), 
@@ -38,8 +39,8 @@ const extractMetadataStr = `() => {
     ];
 
     const patterns = {
-        age: /(전체\\s*관람가|전체\\s*시청가|\\d{1,2}세\\s*이상|\\d{1,2}세이상|\\d{1,2}세\\s*(?:이상)?\\s*(?:관람가|시청가)?|청소년\\s*관람불가|청불|미성년자\\s*관람불가)/,
-        runtime: /(\\d{1,3}분)/,
+        age: /(전체\s*관람가|전체\s*시청가|\d{1,2}세\s*이상|\d{1,2}세이상|\d{1,2}세\s*(?:이상)?\s*(?:관람가|시청가)?|청소년\s*관람불가|청불|미성년자\s*관람불가)/,
+        runtime: /(\d{1,3}분)/,
         country: /(한국|대한민국|미국|일본|중국|영국|프랑스|독일|캐나다|스페인|이탈리아|홍콩|대만|태국)/,
         genre: /(드라마|액션|스릴러|로맨스|판타지|SF|코미디|애니메이션|범죄|모험|미스터리|가족|공포|다큐멘터리|전쟁|역사|음악|서부|느와르|멜로|애정)/
     };
@@ -59,9 +60,9 @@ const extractMetadataStr = `() => {
         if (label === '장르' || label === '개요') realGenre = text;
         if (label === '원제') res.originalTitle = text;
 
-        if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)[0];
-        if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)[0];
-        if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)[0];
+        if (!res.ageRating && text.match(patterns.age)) res.ageRating = text.match(patterns.age)![0];
+        if (!res.runningTime && text.match(patterns.runtime)) res.runningTime = text.match(patterns.runtime)![0];
+        if (!res.productionCountry && text.match(patterns.country)) res.productionCountry = text.match(patterns.country)![0];
         
         // Improved genre extraction: avoid matching country names or numbers as genres
         if (!res.subGenre && text.match(patterns.genre) && !text.includes('관람') && !text.match(/\d/)) {
@@ -93,13 +94,13 @@ const extractMetadataStr = `() => {
             const label = dt.textContent?.trim() || '';
             if (label === '오픈' || label === '개봉') {
                 const raw = dd.textContent?.trim() || '';
-                const match = raw.match(/(\\d{4})\\.(\\d{2})\\.(\\d{2})/);
-                if (match) res.releaseDate = \`\${match[1]}-\${match[2]}-\${match[3]}\`;
+                const match = raw.match(/(\d{4})\.(\d{2})\.(\d{2})/);
+                if (match) res.releaseDate = `${match[1]}-${match[2]}-${match[3]}`;
             }
         }
     });
 
-    const cast = [];
+    const cast: string[] = [];
     const allContentAreas = Array.from(document.querySelectorAll('.cm_content_area, .api_subject_bx'));
     const castContainer = allContentAreas.find(area => {
         const title = area.querySelector('h2, h3, .cm_title')?.textContent?.trim();
@@ -130,21 +131,29 @@ const extractMetadataStr = `() => {
 
     if (cast.length > 0) res.cast = [...new Set(cast)].slice(0, 8);
 
-    const img = document.querySelector('.detail_info a.thumb img') || document.querySelector('.cm_content_area .thumb img') || document.querySelector('.api_subject_bx .thumb img');
+    const img = 
+        document.querySelector('.detail_info a.thumb img') || 
+        document.querySelector('.cm_content_area .thumb img') || 
+        document.querySelector('.api_subject_bx .thumb img') ||
+        document.querySelector('.cm_info_box .poster img') ||
+        document.querySelector('.cm_content_area .poster img') ||
+        document.querySelector('.title_area .thumb img') ||
+        document.querySelector('img[alt*="포스터"]');
     if (img) {
         let src = img.getAttribute('src');
         if (src && src.includes('search.pstatic.net') && src.includes('src=')) {
             try {
                 const urlObj = new URL(src, 'https://search.naver.com');
                 const realSrc = urlObj.searchParams.get('src');
-                if (realSrc) src = decodeURIComponent(realSrc);
+                if (realSrc) src = decodeURIComponent(realSrc!);
             } catch (e) { }
         }
         res.poster = src;
     }
 
     return res;
-}`;
+}
+
 
 const extractKobisDetailStr = `
 async (code) => {
@@ -237,7 +246,7 @@ async (code) => {
         
         let bestHref = '';
         for (const link of posterLinks) {
-            const href = (link as HTMLAnchorElement).href;
+            const href = link.href;
             if (href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
                 // 특정 영화 코드 폴더 내에 있는지 확인하고 싶으나 KOBIS URL 구조상 날짜 기반임.
                 // 대신 'thumb'나 'thn_'이 없는 원본 우선
@@ -338,7 +347,7 @@ async function scrapeMovies() {
         if (fs.existsSync(OUTPUT_FILE)) {
             try {
                 const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-                loaded.forEach((m: any) => existingMap.set(m.title, m));
+                loaded.forEach((m: any) => existingMap.set(m.title.normalize('NFC'), m));
                 console.log(`Loaded ${loaded.length} existing movies.`);
             } catch (e) {
                 console.error('Failed to load existing movies:', e);
@@ -384,24 +393,25 @@ async function scrapeMovies() {
             }, cliProgress.Presets.shades_classic);
             progressBar.start(30, 0, { movie: '대기 중' });
 
-            const list = await kobisPage.evaluate(`(() => {
+            const list = await kobisPage.evaluate(() => {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
-                const list = [];
+                const list: any[] = [];
                 rows.forEach((row, idx) => {
                     if (idx >= 30) return; // Top 30 for Box Office
-                    const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
+                    const titleLink = row.querySelector('td.tal > span.ellip.per90 > a') as HTMLElement;
                     if (titleLink) {
                         let title = titleLink.textContent?.trim() || '';
                         title = title.replace(/\s+D-\d+$/g, '').trim(); // Clean D-day suffix
                         const dateRaw = row.querySelector('td:nth-child(3)')?.textContent?.trim();
-                        const rank = row.querySelector('td:nth-child(1)')?.textContent?.trim();
+                        const rankTd = row.querySelector('td:nth-child(1)');
+                        let rank = (rankTd?.getAttribute('title')?.trim() || rankTd?.textContent?.trim() || '').split('\n')[0].trim().replace(/[^0-9]/g, '');
                         if (title) {
-                            list.push({ title, dateRaw, rank });
+                            list.push({ title: title.normalize('NFC'), dateRaw, rank });
                         }
                     }
                 });
                 return list;
-            })()`);
+            });
             movies = list as any[];
 
             progressBar.update(movies.length, { movie: '완료' });
@@ -711,7 +721,18 @@ async function scrapeMovies() {
         }
 
         // Combine for enrichment
-        const allMoviesToProcess = [...movies, ...upcomingMovies];
+        const allMoviesToProcessRaw = [...movies, ...upcomingMovies];
+        
+        // [강화] 중복 제거: 박스오피스(순위 있음)와 개봉예정작이 겹칠 경우 박스오피스 데이터를 우선함
+        const movieMap = new Map<string, any>();
+        allMoviesToProcessRaw.forEach(m => {
+            const normalizedTitle = m.title.normalize('NFC');
+            const existing = movieMap.get(normalizedTitle);
+            if (!existing || (!existing.rank && m.rank)) {
+                movieMap.set(normalizedTitle, m);
+            }
+        });
+        const allMoviesToProcess = Array.from(movieMap.values());
 
         // 2. Enrich with Naver (Sequential with context reuse)
         // Filter out movies that already have good data
@@ -721,7 +742,8 @@ async function scrapeMovies() {
         const finalMovies: any[] = [];
 
         for (const m of allMoviesToProcess) {
-            let existing = existingMap.get(m.title);
+            const title = m.title.normalize('NFC');
+            let existing = existingMap.get(title);
             const hasFallbackPoster = existing?.posterFallback === true;
 
             // Year Mismatch detection
@@ -749,8 +771,8 @@ async function scrapeMovies() {
                 console.log(`[Re-check] ${m.title} has fallback poster, will re-enrich.`);
                 moviesToEnrich.push(m);
             } else if (existing && m.rank) {
-                existing.rank = parseInt(m.rank);
-                finalMovies.push(existing);
+                const updated = { ...existing, rank: parseInt(m.rank) };
+                finalMovies.push(updated);
             } else {
                 // Needs enrichment
                 moviesToEnrich.push(m);
@@ -759,10 +781,34 @@ async function scrapeMovies() {
 
         console.log(`Skipped ${finalMovies.length} movies (Already have data). Enriching ${moviesToEnrich.length}...`);
 
-        const context = await browser.newContext({
+        // --- CHECKPOINT RESUME LOGIC ---
+        let checkpointData: any[] = [];
+        if (fs.existsSync(CHECKPOINT_FILE)) {
+            try {
+                const stats = fs.statSync(CHECKPOINT_FILE);
+                const isRecent = (Date.now() - stats.mtimeMs) < 12 * 60 * 60 * 1000; // 12 hours
+                if (isRecent) {
+                    checkpointData = JSON.parse(fs.readFileSync(CHECKPOINT_FILE, 'utf-8'));
+                    const checkpointTitles = new Set(checkpointData.map(m => m.title));
+                    const originalCount = moviesToEnrich.length;
+                    moviesToEnrich = moviesToEnrich.filter(m => !checkpointTitles.has(m.title));
+                    console.log(`[Resume] Loaded ${checkpointData.length} movies from checkpoint. Remaining: ${moviesToEnrich.length}/${originalCount}`);
+                    
+                    // Add checkpointed data to finalMovies
+                    finalMovies.push(...checkpointData);
+                } else {
+                    console.log(`[Resume] Checkpoint file is too old, ignoring.`);
+                    fs.unlinkSync(CHECKPOINT_FILE);
+                }
+            } catch (e) {
+                console.error('Failed to load checkpoint:', e);
+            }
+        }
+
+        let currentContext = await browser.newContext({
             userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
         });
-        await context.addInitScript(() => { (window as any).__name = (f: any, n: string) => f; });
+        await currentContext.addInitScript(() => { (window as any).__name = (f: any, n: string) => f; });
 
         const enrichBar = new cliProgress.SingleBar({
             format: '네이버 정보 보강 | {bar} | {percentage}% | 남은 시간: {eta}s | {value}/{total} | {movie}',
@@ -770,65 +816,77 @@ async function scrapeMovies() {
         }, cliProgress.Presets.shades_classic);
         enrichBar.start(moviesToEnrich.length, 0, { movie: '시작' });
 
-        for (const m of moviesToEnrich) {
+        let currentPage = await currentContext.newPage();
+        let moviesProcessedInPage = 0;
+        let moviesProcessedSinceContextRotation = 0;
+
+        for (let i = 0; i < moviesToEnrich.length; i++) {
+            const m = moviesToEnrich[i];
+            
+            // Resource Management: Rotate Page every 10 movies
+            if (moviesProcessedInPage >= 10) {
+                await currentPage.close();
+                currentPage = await currentContext.newPage();
+                moviesProcessedInPage = 0;
+                console.log(`[Resource] Rotated page to clear memory.`);
+            }
+
+            // Resource Management: Rotate Context every 50 movies
+            if (moviesProcessedSinceContextRotation >= 50) {
+                await currentPage.close();
+                await currentContext.close();
+                currentContext = await browser.newContext({
+                    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+                });
+                await currentContext.addInitScript(() => { (window as any).__name = (f: any, n: string) => f; });
+                currentPage = await currentContext.newPage();
+                moviesProcessedSinceContextRotation = 0;
+                console.log(`[Resource] Rotated browser context for stability.`);
+            }
+
+            const page = currentPage;
             enrichBar.update({ movie: m.title.substring(0, 15) });
-            const page = await context.newPage();
-            await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-
-            // Base Item
-            let date = m.dateRaw || '';
-            if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
-
-            // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
-            // Reuse existing ID if available to avoid breaking already-shared links
-            const existingForId = existingMap.get(m.title);
-            const id = existingForId?.id || `movie_${slugify(m.title)}`;
-
-            // Include year and director/English title in search to avoid mismatches
-            let yearSearch = '';
-            if (m.dateRaw) {
-                const yearMatch = m.dateRaw.match(/\d{4}/);
-                if (yearMatch) yearSearch = ` ${yearMatch[0]}년`;
-            }
-
-            let extraSearch = '';
-            // Only add director if it looks like a Korean name for Korean movies to avoid mismatches
-            if (m.director && (m.title.match(/[가-힣]/) && m.director.match(/[가-힣]/))) {
-                extraSearch += ` ${m.director}`;
-            } else if (m.titleEn && m.titleEn.length > 2) {
-                extraSearch += ` ${m.titleEn}`;
-            }
-
-            // Optimization for extremely long titles (like Gundam)
-            let queryTitle = m.title;
-            if (queryTitle.length > 25) {
-                // Truncate to first meaningful part if it has - or : or (
-                const cutIdx = queryTitle.search(/[-:(]/);
-                if (cutIdx > 10) {
-                    queryTitle = queryTitle.substring(0, cutIdx).trim();
-                }
-            }
-
-            const searchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${queryTitle}${yearSearch}${extraSearch} 영화`)}`;
-
-            const item: any = {
-                id,
-                title: m.title,
-                date: date, // Will update with precise date if found
-                region: '전국', // Default
-                genre: 'movie',
-                rank: m.rank ? parseInt(m.rank) : undefined,
-                director: m.director || undefined,
-                cast: m.cast || undefined,
-                link: searchUrl // Add Link
-            };
-
+            
             try {
-                await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
-                await sleep(500 + Math.random() * 500); // Throttling
+                await page.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+
+                // Base Item
+                let date = m.dateRaw || '';
+                if (date.match(/^\d{4}-\d{2}-\d{2}$/)) date = date.replace(/-/g, '.') + '.';
+
+                // Stable ID: use title-only slug (no date) so shared URLs survive re-scrapes
+                // Reuse existing ID if available to avoid breaking already-shared links
+                const existingForId = existingMap.get(m.title);
+                const id = existingForId?.id || `movie_${slugify(m.title)}`;
+
+                // Include year and director/English title in search to avoid mismatches
+                let yearSearch = '';
+                if (m.dateRaw) {
+                    const yearMatch = m.dateRaw.match(/\d{4}/);
+                    if (yearMatch) yearSearch = ` ${yearMatch[0]}년`;
+                }
+
+                let extraSearch = '';
+                // Only add director if it looks like a Korean name for Korean movies to avoid mismatches
+                if (m.director && (m.title.match(/[가-힣]/) && m.director.match(/[가-힣]/))) {
+                    extraSearch += ` ${m.director}`;
+                } else if (m.titleEn && m.titleEn.length > 2) {
+                    extraSearch += ` ${m.titleEn}`;
+                }
+
+                const query = `${m.title}${yearSearch}${extraSearch}`;
+                await page.goto(`https://search.naver.com/search.naver?where=nexearch&query=${encodeURIComponent(query + ' 영화')}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                await sleep(2000);
+
+                const item: any = {
+                    id,
+                    title: m.title.normalize('NFC'),
+                    rank: m.rank ? parseInt(m.rank) : undefined,
+                    date: m.dateRaw ? m.dateRaw.replace(/-/g, '.') + '.' : ''
+                };
 
                 // Initial Extraction
-                let detail: any = await page.evaluate(`(${extractMetadataStr})()`);
+                let detail: any = await page.evaluate(extractMetadata);
                 Object.assign(item, detail);
 
                 // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
@@ -844,8 +902,8 @@ async function scrapeMovies() {
                             return false;
                         });
                         if (clicked) {
-                            await page.waitForTimeout(1000);
-                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
+                            await sleep(1000);
+                            const newDetail: any = await page.evaluate(extractMetadata);
                             if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
                             if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
                             if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
@@ -869,14 +927,14 @@ async function scrapeMovies() {
                             return false;
                         });
                         if (clicked) {
-                            await page.waitForTimeout(1000);
-                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
+                            await sleep(1000);
+                            const newDetail: any = await page.evaluate(extractMetadata);
                             if (newDetail.director) item.director = newDetail.director;
                             if (newDetail.cast) item.cast = newDetail.cast;
 
                             // Try for poster again if missing
                             if (!item.poster) {
-                                const newDetail2: any = await page.evaluate(`(\${extractMetadataStr})()`);
+                                const newDetail2: any = await page.evaluate(extractMetadata);
                                 if (newDetail2.poster) item.poster = newDetail2.poster;
                             }
                         }
@@ -919,7 +977,13 @@ async function scrapeMovies() {
                     "장수탕 선녀님": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
                     "내 이름은": "https://www.kobis.or.kr/common/mast/movie/2026/01/68ed6cf505d24ee68f4d4f0a44ee0457.jpg",
                     "굿윌 헌팅": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
-                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg"
+                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+                    "왕과 사는 남자": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg",
+                    "휴민트": "https://www.kobis.or.kr/common/mast/movie/2026/02/d2ed41a25d874f51881a78014403baec.jpg",
+                    "햄넷": "https://www.kobis.or.kr/common/mast/movie/2026/01/7bd2ffdf49e34d58ae3db3f5d102757b.jpg",
+                    "브라이드!": "https://www.kobis.or.kr/common/mast/movie/2026/02/fb83203551b647c8962343da8532859a.jpg",
+                    "투어스 브이알 콘서트 : 러쉬로드": "https://www.kobis.or.kr/common/mast/movie/2026/02/8631bb78179540538834f862fa6edf04.jpg",
+                    "센티멘탈 밸류": "https://www.kobis.or.kr/common/mast/movie/2026/02/2ba9a837f91645baa5e39b22484fdc6e.jpg"
                 };
 
                 let selectedPoster = '';
@@ -980,17 +1044,29 @@ async function scrapeMovies() {
                 delete item.ageRating;     // Mapped to venue
 
                 finalMovies.push(item);
-                await sleep(300);
+                checkpointData.push(item);
+                moviesProcessedInPage++;
+                moviesProcessedSinceContextRotation++;
+
+                // Checkpoint Save Every 5 movies
+                if (checkpointData.length % 5 === 0) {
+                    fs.writeFileSync(CHECKPOINT_FILE, JSON.stringify(checkpointData, null, 2));
+                }
+
+                await sleep(500); // Slightly more delay
 
             } catch (e) {
                 console.error(`Error processing ${m.title}:`, e);
-                finalMovies.push(item); // Push basic info even if failed
             } finally {
-                await page.close();
                 enrichBar.increment();
             }
         }
         enrichBar.stop();
+
+        // Cleanup Page and Context
+        await currentPage.close();
+        await currentContext.close();
+
 
         await browser.close();
 
@@ -1075,6 +1151,9 @@ async function scrapeMovies() {
 
             // Perform Cleanup
             cleanupOldMovieImages(allMovies);
+
+            // Clear Checkpoint after successful full run
+            if (fs.existsSync(CHECKPOINT_FILE)) fs.unlinkSync(CHECKPOINT_FILE);
 
             // Copy to public/data for frontend access
             const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');

@@ -70,7 +70,7 @@ export function safePerformance(data: any): Performance | null {
         category: typeof data.category === 'string' ? data.category : undefined,
 
         // Ranking & Enhanced Date
-        rank: typeof data.rank === 'number' ? data.rank : undefined,
+        rank: (typeof data.rank === 'number') ? data.rank : (typeof data.rank === 'string' && !isNaN(parseInt(data.rank)) ? parseInt(data.rank) : undefined),
         dateRaw: typeof data.dateRaw === 'string' ? data.dateRaw : undefined,
 
         // Location
