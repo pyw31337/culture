@@ -263,15 +263,37 @@ async function scrapeMochaClass() {
                 try {
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-                    const detailData = await p.evaluate(() => {
+                    const detailData = await p.evaluate(async () => {
                         const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root, li'));
+                        
+                        // Extract summary location from header (e.g. "부산 · 금정구")
+                        let headerSummary = '';
+                        const summaryElements = document.querySelectorAll('p.MuiTypography-body2');
+                        for (const el of Array.from(summaryElements)) {
+                            const text = el.textContent?.trim() || '';
+                            if (text.includes('·')) {
+                                headerSummary = text;
+                                break;
+                            }
+                        }
+
+                        // Try to click '위치' (Location) tab to load detailed data
+                        const tabs = Array.from(document.querySelectorAll('button, div, span'));
+                        const locationTab = tabs.find(t => t.textContent?.trim() === '위치');
+                        if (locationTab) {
+                            (locationTab as HTMLElement).click();
+                            // Pause briefly for DOM update (evaluate can't easily wait with true sleep, but we can try a tight loop or just hope)
+                        }
+
                         let rawAddress = '';
 
+                        // Wait a tiny bit for the click to process if possible
                         // High priority: Specific known address locations in Mochaclass DOM
-                        const addrElements = document.querySelectorAll('p.MuiTypography-body1, .MuiBox-root p, .css-1vscdpm p');
+                        const addrElements = document.querySelectorAll('p.MuiTypography-body1, .MuiBox-root p, .css-1vscdpm p, .css-1u8m1s p');
                         for (const el of Array.from(addrElements)) {
                             const text = el.textContent?.trim() || '';
-                            if (text.includes('대한민국') && (text.includes('위치') || text.includes('서울') || text.includes('경기') || text.includes('부산'))) {
+                            // Address usually starts with '대한민국' or contains '시/도'
+                            if (text.includes('대한민국') || /^[가-힣]+[시|도]/.test(text)) {
                                 rawAddress = text.replace(/^.*?위치\s*/, '').trim();
                                 break;
                             }
@@ -286,8 +308,7 @@ async function scrapeMochaClass() {
                                         const container = allNodes[i].closest('div')?.parentElement;
                                         if (container) {
                                             const text = container.textContent || '';
-                                            // Look for Korea address pattern
-                                            const match = text.match(/(대한민국\s+)?([가-힣]+(도|시|구|군|동|로|길)\s*)+[\d-]+\s*.*?(?=(찾아오는|지도|$))/);
+                                            const match = text.match(/(대한민국\s+)?([가-힣]+[시|도|구|군|동|로|길]\s*)+[\d-]+\s*.*?(?=(찾아오는|지도|$))/);
                                             if (match) {
                                                 rawAddress = match[0].trim();
                                                 break;
@@ -299,13 +320,9 @@ async function scrapeMochaClass() {
                             }
                         }
 
-                        // Fallback 2: regex search entire body if short enough
-                        if (!rawAddress) {
-                            const bodyText = document.body.innerText;
-                            const match = bodyText.match(/(?:위치|주소)\s*(?::)?\s*(대한민국\s+)?(([가-힣]+(?:시|도|구|군|동|읍|면|로|길))\s+)+[\d-]+\s*[^\n,.<>]{0,50}/);
-                            if (match) {
-                                rawAddress = match[0].replace(/^(위치|주소)\s*(:)?\s*/, '').trim();
-                            }
+                        // Fallback 2: header summary
+                        if (!rawAddress && headerSummary) {
+                            rawAddress = headerSummary.split('·').map(s => s.trim()).join(' ');
                         }
 
                         const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
@@ -357,8 +374,19 @@ async function scrapeMochaClass() {
                         }
                     }
 
+                    // Try to extract facility name from address (last part after street address)
+                    let facilityName = '';
+                    const facilityMatch = address.match(/(?:로|길)\s+\d+(?:-\d+)?\s+(?:.*?,?\s*)?([가-힣\w\s&]+)$/);
+                    if (facilityMatch) {
+                        facilityName = facilityMatch[1].trim();
+                        // Clean up if it's just floor info
+                        if (/^\d+층$/.test(facilityName) || /^[A-Z]\d+층$/.test(facilityName)) facilityName = '';
+                    }
+
                     // Use accurate address as venue, fallback to Tag or District
-                    let venue = (address && address.length > 5) ? address : (titleTag || (district ? `모카클래스 (${district})` : '모카클래스'));
+                    let venue = (facilityName && facilityName.length > 1 && !facilityName.includes('대한민국')) ? facilityName : 
+                                ((address && address.length > 10) ? address : 
+                                (titleTag || (district ? `모카클래스 (${district})` : '모카클래스')));
 
                     // If address has studio name, we can format it nicer
                     // E.g. "대한민국 서울특별시 송파구 송파동 90-7 1층 개더링스튜디오"
