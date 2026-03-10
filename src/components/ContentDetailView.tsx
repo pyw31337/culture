@@ -135,14 +135,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             </motion.button>
 
                             {/* Play Button Overlay */}
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute inset-0 flex items-center justify-center z-10">
                                 <motion.a
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
-                                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + ' 예고편')}`}
+                                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shadow-2xl"
+                                    className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shadow-2xl transition-all hover:bg-black/70"
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <Play className="w-8 h-8 fill-current translate-x-0.5" />
