@@ -214,6 +214,11 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     onPointerDown={handlePointerDown}
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
                                 >
+                                    {/* Category Badge */}
+                                    <div className="absolute top-3 left-3 z-30 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold pointer-events-none">
+                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    </div>
+
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
