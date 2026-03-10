@@ -736,7 +736,7 @@ async function scrapeMovies() {
 
         // 2. Enrich with Naver (Sequential with context reuse)
         // Filter out movies that already have good data
-        const moviesToEnrich: any[] = [];
+        let moviesToEnrich: any[] = [];
 
         // Create Final List Order based on KOBIS rank, but populate with Existing data if available
         const finalMovies: any[] = [];
