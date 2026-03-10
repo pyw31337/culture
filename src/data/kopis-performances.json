@@ -5,12 +5,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286560_260309_130138.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "꿈의숲아트센터 (콘서트홀)",
+    "venueId": "FC000567",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286560",
     "genre": "서양음악(클래식)",
     "price": "전석무료",
     "time": "화요일(19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286497",
@@ -18,12 +20,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286497_260306_173930.gif",
     "date": "2026.03.07 ~ 2026.03.31",
     "venue": "틴틴홀 (틴틴홀)",
+    "venueId": "FC000806",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286497",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(14:00,17:00,20:00), 토요일 ~ 일요일(13:00,15:10,17:30,19:40), HOL(13:00,15:10,17:30,19:40)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286389",
@@ -31,12 +35,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286389_260305_133835.gif",
     "date": "2026.03.05 ~ 2026.03.29",
     "venue": "후암스테이지 (후암스테이지 (구. 마라카 3관, 오씨어터))",
+    "venueId": "FC002777",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286389",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "월요일(19:30), 수요일 ~ 금요일(19:30), 토요일(14:30,17:30), 일요일(15:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286371",
@@ -44,12 +50,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286371_260305_124515.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "국립국악원 (풍류사랑방)",
+    "venueId": "FC000009",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286371",
     "genre": "한국음악(국악)",
     "price": "전석 30,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286332",
@@ -57,12 +65,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286332_260305_101734.png",
     "date": "2026.03.07 ~ 2026.04.26",
     "venue": "창원과학체험관 (다목적강당)",
+    "venueId": "FC002179",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286332",
     "genre": "뮤지컬",
     "price": "전석 35,000원",
     "time": "토요일 ~ 일요일(11:00,14:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286192",
@@ -70,12 +80,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286192_260303_173726.jpg",
     "date": "2026.03.01 ~ 2026.03.31",
     "venue": "롯데마트 [월드컵] (행복을 주는 가족극장)",
+    "venueId": "FC003589",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286192",
     "genre": "뮤지컬",
     "price": "전석 18,000원",
     "time": "토요일 ~ 일요일(12:00,14:00,16:00), HOL(12:00,14:00,16:00)",
     "region": "광주광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286096",
@@ -83,12 +95,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286096_260303_133123.jpg",
     "date": "2026.03.10 ~ 2026.03.15",
     "venue": "창작플랫폼 경험과 상상 (창작플랫폼 경험과 상상)",
+    "venueId": "FC001631",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286096",
     "genre": "연극",
     "price": "전석 35,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286074",
@@ -96,12 +110,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286074_260303_124959.jpg",
     "date": "2026.03.05 ~ 2026.04.05",
     "venue": "레미어린이극장 [금천] (레미어린이극장 [금천] )",
+    "venueId": "FC001565",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286074",
     "genre": "뮤지컬",
     "price": "전석 17,000원",
     "time": "토요일 ~ 일요일(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286051",
@@ -109,12 +125,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286051_260303_110615.png",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "세티 라이브홀 (SETI LIVE HALL) (세티 라이브홀 (SETI LIVE HALL) )",
+    "venueId": "FC004237",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286051",
     "genre": "대중음악",
     "price": "전석 25,000원",
     "time": "화요일(18:50)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF286002",
@@ -122,12 +140,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286002_260227_144519.jpg",
     "date": "2026.03.07 ~ 2026.04.11",
     "venue": "레미어린이극장 [울산진장] (레미어린이극장 [울산진장])",
+    "venueId": "FC001666",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286002",
     "genre": "연극",
     "price": "전석 21,000원, 사전예약 18,000원",
     "time": "토요일 ~ 일요일(11:30,14:00)",
     "region": "울산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285993",
@@ -135,12 +155,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285993_260227_142329.jpg",
     "date": "2026.03.07 ~ 2026.10.31",
     "venue": "부여국악의전당 (부여국악의전당)",
+    "venueId": "FC000428",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285993",
     "genre": "한국음악(국악)",
     "price": "전석 2,000원",
     "time": "토요일(14:00)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285963",
@@ -148,12 +170,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285963_260227_130303.png",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "장성문화예술회관 (대공연장)",
+    "venueId": "FC000053",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285963",
     "genre": "대중음악",
     "price": "전석 6,000원",
     "time": "화요일(19:00)",
     "region": "전라남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285945",
@@ -161,12 +185,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285945_260227_105426.gif",
     "date": "2026.03.07 ~ 2026.03.15",
     "venue": "열린극장 (열린극장)",
+    "venueId": "FC000516",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285945",
     "genre": "뮤지컬",
     "price": "전석 15,000원",
     "time": "토요일 ~ 일요일(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285932",
@@ -174,12 +200,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285932_260227_102431.jpg",
     "date": "2026.02.21 ~ 2026.03.29",
     "venue": "대구마술극장 (블루마술극장) (대구마술극장 (블루마술극장))",
+    "venueId": "FC002452",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285932",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "금요일(17:00), 토요일 ~ 일요일(14:00,17:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285885",
@@ -187,12 +215,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285885_260226_132456.jpg",
     "date": "2026.03.09 ~ 2026.03.15",
     "venue": "링크더스페이스(LINK THE SPACE) (1관)",
+    "venueId": "FC004779",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285885",
     "genre": "뮤지컬",
     "price": "R석 77,000원, S석 66,000원",
     "time": "월요일(19:30), 수요일(16:00), 금요일(19:30), 토요일(15:00), 일요일(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285835",
@@ -200,12 +230,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285835_260226_105614.jpeg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "을숙도문화회관 (소공연장)",
+    "venueId": "FC000178",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285835",
     "genre": "서양음악(클래식)",
     "price": "전석 10,000원",
     "time": "화요일(19:30)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285830",
@@ -213,12 +245,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285830_260226_104344.jpg",
     "date": "2026.02.28 ~ 2026.03.29",
     "venue": "해바라기소극장 [부산] (해바라기소극장 [부산] )",
+    "venueId": "FC001920",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285830",
     "genre": "뮤지컬",
     "price": "전석 35,000원",
     "time": "토요일 ~ 일요일(11:00), HOL(11:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285824",
@@ -226,12 +260,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285824_260226_102724.gif",
     "date": "2026.03.06 ~ 2026.03.28",
     "venue": "나비아트홀 (나비아트홀)",
+    "venueId": "FC001420",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285824",
     "genre": "서양음악(클래식)",
     "price": "전석 30,000원",
     "time": "수요일 ~ 금요일(19:30), 토요일(14:00,17:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285816",
@@ -239,12 +275,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285816_260225_174504.jpg",
     "date": "2026.03.01 ~ 2026.04.26",
     "venue": "사랑새아트홀 (사랑새아트홀)",
+    "venueId": "FC003932",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285816",
     "genre": "연극",
     "price": "전석 45,000원",
     "time": "화요일(19:00), 목요일 ~ 금요일(19:00), 토요일(15:00,18:00), 일요일(16:00), HOL(15:30)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285695",
@@ -252,12 +290,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285695_260224_132046.jpg",
     "date": "2026.03.06 ~ 2026.03.29",
     "venue": "대백프라자 (레오문화홀)",
+    "venueId": "FC000293",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285695",
     "genre": "연극",
     "price": "전석 10,000원",
     "time": "화요일 ~ 금요일(11:00,14:00), 토요일 ~ 일요일(11:30,13:30,15:30)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285694",
@@ -265,12 +305,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285694_260224_131148.gif",
     "date": "2026.03.07 ~ 2026.03.31",
     "venue": "아라아트홀 (아라아트홀)",
+    "venueId": "FC003839",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285694",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(19:30), 수요일 ~ 금요일(19:30), 토요일(15:30,17:30,19:30), 일요일(15:30,17:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285586",
@@ -278,12 +320,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285586_260223_144128.gif",
     "date": "2026.02.27 ~ 2026.03.28",
     "venue": "백제문화전당  (고마홀 )",
+    "venueId": "FC004789",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285586",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "금요일(16:00), 금요일 ~ 토요일(14:00)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285513",
@@ -291,12 +335,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285513_260223_111753.jpeg",
     "date": "2026.03.02 ~ 2026.03.14",
     "venue": "아띠홀 (아띠홀)",
+    "venueId": "FC001927",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285513",
     "genre": "뮤지컬",
     "price": "전석 22,900원",
     "time": "토요일(13:00,15:00), HOL(13:00,15:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285495",
@@ -304,12 +350,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285495_260223_104419.gif",
     "date": "2026.03.10 ~ 2026.04.19",
     "venue": "드림시어터 [대학로] (소극장)",
+    "venueId": "FC001218",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285495",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285432",
@@ -317,12 +365,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285432_260220_105656.png",
     "date": "2026.02.22 ~ 2026.03.22",
     "venue": "명륜아트홀 (명륜아트홀)",
+    "venueId": "FC003682",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285432",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "일요일(11:30,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285424",
@@ -330,12 +380,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285424_260220_104331.png",
     "date": "2026.03.09 ~ 2026.03.11",
     "venue": "연세대학교 백주년기념관 (콘서트홀)",
+    "venueId": "FC001793",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285424",
     "genre": "뮤지컬",
     "price": "전석 18,000원",
     "time": "월요일 ~ 수요일(19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285422",
@@ -343,12 +395,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285422_260220_103701.jpg",
     "date": "2026.03.07 ~ 2026.03.29",
     "venue": "상상나라극장 (상상나라극장)",
+    "venueId": "FC001462",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285422",
     "genre": "뮤지컬",
     "price": "전석 30,000원",
     "time": "토요일 ~ 일요일(11:00,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285411",
@@ -356,12 +410,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285411_260220_101406.png",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "횡성문화예술회관 (대공연장)",
+    "venueId": "FC001195",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285411",
     "genre": "한국음악(국악)",
     "price": "전석무료",
     "time": "화요일(19:30)",
     "region": "강원특별자치도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285406",
@@ -369,12 +425,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285406_260220_100149.gif",
     "date": "2026.03.04 ~ 2026.03.15",
     "venue": "극장 동국 (극장 동국)",
+    "venueId": "FC001226",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285406",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "월요일 ~ 금요일(19:30), 토요일 ~ 일요일(16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285396",
@@ -382,12 +440,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285396_260219_170033.gif",
     "date": "2026.03.07 ~ 2026.03.15",
     "venue": "동숭무대소극장 (동숭무대소극장)",
+    "venueId": "FC001203",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285396",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "월요일 ~ 목요일(20:00), 금요일(16:00,20:00), 토요일(16:00,20:00), 일요일(15:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285383",
@@ -395,12 +455,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285383_260219_161923.jpg",
     "date": "2026.03.07 ~ 2026.03.28",
     "venue": "어댑터씨어터 1관 (구.어댑터플레이스) (어댑터씨어터 1관)",
+    "venueId": "FC002763",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285383",
     "genre": "뮤지컬",
     "price": "전석 35,000원",
     "time": "금요일(19:30), 토요일(17:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285368",
@@ -408,12 +470,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285368_260219_154044.jpg",
     "date": "2026.03.07 ~ 2026.04.05",
     "venue": "롯데마트 어린이소극장 [구미] (어린이소극장)",
+    "venueId": "FC001561",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285368",
     "genre": "뮤지컬",
     "price": "전석 22,000원",
     "time": "토요일 ~ 일요일(12:00,14:00)",
     "region": "경상북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285361",
@@ -421,12 +485,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285361_260219_151520.gif",
     "date": "2026.02.14 ~ 2026.03.29",
     "venue": "송도 건원테크노큐브 (마술극장 (B1) )",
+    "venueId": "FC003987",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285361",
     "genre": "서커스/마술",
     "price": "전석 40,000원",
     "time": "토요일 ~ 일요일(14:00), HOL(14:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285347",
@@ -434,12 +500,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285347_260219_142926.gif",
     "date": "2026.02.24 ~ 2026.04.26",
     "venue": "Converse Stage Arena 여명 (Converse Stage Arena 여명)",
+    "venueId": "FC004676",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285347",
     "genre": "뮤지컬",
     "price": "VIP석 110,000원, R석 90,000원, 나비석 70,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(14:00,19:00), 일요일(14:00), HOL(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285303",
@@ -447,12 +515,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285303_260219_124427.png",
     "date": "2026.03.04 ~ 2026.03.15",
     "venue": "보광극장 (보광극장)",
+    "venueId": "FC002625",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285303",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "수요일 ~ 금요일(19:30), 토요일(15:00,19:00), 일요일(17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285294",
@@ -460,12 +530,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285294_260219_121200.jpeg",
     "date": "2026.03.08 ~ 2026.03.15",
     "venue": "아띠홀 (아띠홀)",
+    "venueId": "FC001927",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285294",
     "genre": "연극",
     "price": "전석 22,900원",
     "time": "일요일(13:00,15:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285278",
@@ -473,12 +545,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285278_260219_111649.jpg",
     "date": "2026.03.10 ~ 2026.05.31",
     "venue": "대학로 자유극장 (자유문화발전소) (대학로 자유극장 (자유문화발전소) )",
+    "venueId": "FC000785",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285278",
     "genre": "뮤지컬",
     "price": "R석 66,000원, S석 55,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285241",
@@ -486,12 +560,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285241_260219_095003.gif",
     "date": "2026.03.04 ~ 2026.03.15",
     "venue": "R&J씨어터(구. 연진아트홀) (R&J씨어터(구. 연진아트홀))",
+    "venueId": "FC001142",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285241",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일 ~ 일요일(15:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285240",
@@ -499,12 +575,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285240_260213_164203.gif",
     "date": "2026.03.06 ~ 2026.03.15",
     "venue": "아루또소극장 (구. 소담소극장, 구. 코메디컬센터) (아루또소극장 (구. 소담소극장, 구. 코메디컬센터) )",
+    "venueId": "FC001379",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285240",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(19:30), 토요일 ~ 일요일(16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285104",
@@ -512,12 +590,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285104_260212_142311.png",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "세종문화회관 (세종체임버홀)",
+    "venueId": "FC000020",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285104",
     "genre": "서양음악(클래식)",
     "price": "R석 50,000원, S석 30,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF285004",
@@ -525,12 +605,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285004_260212_102151.gif",
     "date": "2026.03.05 ~ 2026.03.15",
     "venue": "소극장 혜화당 (구. 까망소극장) (소극장 혜화당 (구. 까망소극장) )",
+    "venueId": "FC001085",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285004",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "월요일 ~ 금요일(20:40), 토요일(14:00,15:40,17:30,19:10), 일요일(15:00,16:40)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284990",
@@ -538,12 +620,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284990_260211_163925.jpg",
     "date": "2026.02.25 ~ 2026.04.15",
     "venue": "CJ아지트 광흥창 (CJ아지트 광흥창)",
+    "venueId": "FC000082",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284990",
     "genre": "대중음악",
     "price": "전석 20,000원",
     "time": "수요일(20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284963",
@@ -551,12 +635,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284963_260211_143510.jpg",
     "date": "2026.02.15 ~ 2026.03.15",
     "venue": "허리우드극장 (구. 모두의극장) (쇼태권 전용관(5층))",
+    "venueId": "FC002631",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284963",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "화요일 ~ 금요일(19:00), 토요일 ~ 일요일(15:00), HOL(19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284922",
@@ -564,12 +650,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284922_260211_130459.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "신영체임버홀 (신영체임버홀)",
+    "venueId": "FC001868",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284922",
     "genre": "서양음악(클래식)",
     "price": "전석 40,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284920",
@@ -577,12 +665,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284920_260211_125924.png",
     "date": "2026.02.12 ~ 2026.08.13",
     "venue": "애월뮤직팩토리 (애월뮤직팩토리)",
+    "venueId": "FC004757",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284920",
     "genre": "서양음악(클래식)",
     "price": "전석 40,000원",
     "time": "목요일(18:00)",
     "region": "제주특별자치도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284902",
@@ -590,12 +680,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284902_260211_110831.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "달서아트센터 (구. 웃는얼굴아트센터) (청룡홀)",
+    "venueId": "FC000183",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284902",
     "genre": "서양음악(클래식)",
     "price": "전석 50,000원",
     "time": "화요일(19:30)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284884",
@@ -603,12 +695,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284884_260211_101704.gif",
     "date": "2026.03.05 ~ 2026.03.15",
     "venue": "스튜디오 블루 (스튜디오 블루)",
+    "venueId": "FC002989",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284884",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "월요일 ~ 화요일(20:00), 수요일(17:00,20:00), 목요일(20:00), 금요일(17:00,20:00), 토요일 ~ 일요일(14:00,17:00,20:00), HOL(14:00,17:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284880",
@@ -616,12 +710,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284880_260211_100356.png",
     "date": "2026.02.28 ~ 2026.12.19",
     "venue": "몰입공유연습실 (몰입공유연습실)",
+    "venueId": "FC004675",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284880",
     "genre": "서양음악(클래식)",
     "price": "전석 20,000원",
     "time": "토요일(13:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284832",
@@ -629,12 +725,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284832_260210_110036.png",
     "date": "2026.03.07 ~ 2026.03.28",
     "venue": "잡월드 나래울극장 (잡월드 나래울극장)",
+    "venueId": "FC000155",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284832",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "수요일 ~ 금요일(15:00), 토요일(11:00,14:00,16:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284771",
@@ -642,12 +740,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284771_260209_142635.jpg",
     "date": "2026.03.04 ~ 2026.05.31",
     "venue": "링크아트센터드림 (드림 4관)",
+    "venueId": "FC001528",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284771",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284749",
@@ -655,12 +755,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284749_260209_134122.png",
     "date": "2026.03.06 ~ 2026.03.29",
     "venue": "레미어린이극장 [광주수완] (레미어린이극장 [광주수완])",
+    "venueId": "FC001678",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284749",
     "genre": "뮤지컬",
     "price": "전석 30,000원",
     "time": "토요일 ~ 일요일(12:00,14:00,16:00)",
     "region": "광주광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284706",
@@ -668,12 +770,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284706_260209_114401.jpg",
     "date": "2026.01.04 ~ 2026.05.08",
     "venue": "공간춤 (공간춤)",
+    "venueId": "FC003628",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284706",
     "genre": "무용(서양/한국무용)",
     "price": "전석 30,000원",
     "time": "화요일 ~ 수요일(19:30), 금요일(19:30), 토요일 ~ 일요일(15:30), HOL(15:30)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284684",
@@ -681,12 +785,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284684_260209_105101.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "예술의전당 [서울] (리사이틀홀)",
+    "venueId": "FC000001",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284684",
     "genre": "서양음악(클래식)",
     "price": "전석 20,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284646",
@@ -694,12 +800,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284646_260206_140646.jpg",
     "date": "2026.03.06 ~ 2026.04.05",
     "venue": "아신극장 (1관 (3층) )",
+    "venueId": "FC001134",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284646",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284640",
@@ -707,12 +815,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284640_260206_133830.gif",
     "date": "2026.03.07 ~ 2026.03.15",
     "venue": "드림씨어터 [부산] (드림씨어터 [부산] )",
+    "venueId": "FC002162",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284640",
     "genre": "연극",
     "price": "VIP석 160,000원, 포커스석 140,000원, R석 120,000원, S석 90,000원, A석 60,000원",
     "time": "화요일 ~ 목요일(19:30), 금요일(14:30,19:30), 토요일 ~ 일요일(14:00,19:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284621",
@@ -720,12 +830,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284621_260206_125925.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "서울주문화센터 (공연장)",
+    "venueId": "FC002626",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284621",
     "genre": "서양음악(클래식)",
     "price": "전석 10,000원",
     "time": "화요일(19:30)",
     "region": "울산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284620",
@@ -733,12 +845,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284620_260206_125925.jpg",
     "date": "2026.03.07 ~ 2026.03.15",
     "venue": "대학로예술극장 (소극장)",
+    "venueId": "FC002633",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284620",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일(19:30), 수요일 ~ 목요일(15:00,19:30), 금요일(19:30), 토요일(15:00,19:30), 일요일(15:00,19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284602",
@@ -746,12 +860,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284602_260206_112339.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "강북문화예술회관 (강북소나무홀 (구.대공연장) )",
+    "venueId": "FC000032",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284602",
     "genre": "서양음악(클래식)",
     "price": "전석 30,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284599",
@@ -759,12 +875,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284599_260206_111504.png",
     "date": "2026.02.14 ~ 2026.03.29",
     "venue": "상상플레이스 여순광점(여수 웅천 트리마제벨마레 2305호) (상상플레이스 여순광점)",
+    "venueId": "FC003658",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284599",
     "genre": "뮤지컬",
     "price": "전석 15,000원",
     "time": "토요일 ~ 일요일(14:00), HOL(14:00)",
     "region": "전라남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284597",
@@ -772,12 +890,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284597_260206_110951.gif",
     "date": "2026.03.07 ~ 2026.03.29",
     "venue": "SH아트홀 (SH아트홀)",
+    "venueId": "FC001384",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284597",
     "genre": "뮤지컬",
     "price": "R석 70,000원, R석 50,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284564",
@@ -785,12 +905,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284564_260205_145938.png",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "대전예술의전당 (앙상블홀)",
+    "venueId": "FC000076",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284564",
     "genre": "서양음악(클래식)",
     "price": "전석 20,000원",
     "time": "화요일(11:00)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284530",
@@ -798,12 +920,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284530_260205_131924.gif",
     "date": "2026.03.01 ~ 2026.06.01",
     "venue": "대학로 스타릿홀 (공연장)",
+    "venueId": "FC004589",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284530",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 화요일(19:30), 일요일(19:30), HOL(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284487",
@@ -811,12 +935,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284487_260205_105328.gif",
     "date": "2026.03.05 ~ 2026.03.15",
     "venue": "제이원 씨어터 (구. 서완소극장, 구. 씨어터고리) (제이원 씨어터 (구. 서완소극장, 구. 씨어터고리) )",
+    "venueId": "FC001201",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284487",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284457",
@@ -824,12 +950,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284457_260204_143911.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "금호아트홀 연세 (금호아트홀 연세)",
+    "venueId": "FC001556",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284457",
     "genre": "서양음악(클래식)",
     "price": "전석 30,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284438",
@@ -837,12 +965,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284438_260204_131648.png",
     "date": "2026.03.07 ~ 2026.03.28",
     "venue": "도고아트홀(구.아산 코미디홀) (도고아트홀(구.아산 코미디홀))",
+    "venueId": "FC002108",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284438",
     "genre": "뮤지컬",
     "price": "전석 30,000원",
     "time": "토요일(13:30,15:30)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284414",
@@ -850,12 +980,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284414_260204_110740.gif",
     "date": "2026.03.10 ~ 2026.05.25",
     "venue": "플러스씨어터(구. 컬처스페이스 엔유 구. 쁘티첼 씨어터) (플러스씨어터(구. 컬처스페이스 엔유 구. 쁘티첼 씨어터))",
+    "venueId": "FC001459",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284414",
     "genre": "뮤지컬",
     "price": "R석 70,000원, S석 50,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284406",
@@ -863,12 +995,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284406_260204_105047.png",
     "date": "2026.03.07 ~ 2026.03.29",
     "venue": "NC소극장 [안산고잔] (NC소극장 [안산고잔] )",
+    "venueId": "FC002055",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284406",
     "genre": "뮤지컬",
     "price": "전석 30,000원",
     "time": "토요일 ~ 일요일(12:00,14:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284403",
@@ -876,12 +1010,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284403_260204_104735.gif",
     "date": "2026.02.24 ~ 2026.03.22",
     "venue": "티오엠씨어터(구. 문화공간필링) (2관)",
+    "venueId": "FC000382",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284403",
     "genre": "연극",
     "price": "전석 66,000원",
     "time": "화요일 ~ 수요일(20:00), 목요일(16:00,20:00), 금요일(20:00), 토요일(15:00,19:00), 일요일(13:00,17:00), HOL(13:00,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284386",
@@ -889,12 +1025,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284386_260204_100834.jpg",
     "date": "2026.02.27 ~ 2026.03.15",
     "venue": "아트벙커 (아트벙커)",
+    "venueId": "FC001828",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284386",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "금요일(20:00), 토요일(15:00,18:00), 일요일(14:00,17:00), HOL(14:00,17:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284302",
@@ -902,12 +1040,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284302_260203_101426.jpg",
     "date": "2026.03.01 ~ 2026.04.05",
     "venue": "소나무예술극장 (공연장)",
+    "venueId": "FC001130",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284302",
     "genre": "뮤지컬",
     "price": "전석 17,000원",
     "time": "토요일 ~ 일요일(13:00), HOL(13:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284267",
@@ -915,12 +1055,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284267_260202_141053.png",
     "date": "2026.02.21 ~ 2026.04.05",
     "venue": "상상플레이스 전주이룸 (상상플레이스 전주이룸 )",
+    "venueId": "FC004769",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284267",
     "genre": "뮤지컬",
     "price": "전석 15,000원",
     "time": "토요일(11:00), 일요일(11:00,14:00)",
     "region": "전북특별자치도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284256",
@@ -928,12 +1070,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284256_260202_134730.jpg",
     "date": "2026.02.27 ~ 2026.03.29",
     "venue": "소극장 고도 (소극장 고도)",
+    "venueId": "FC000623",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284256",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(16:00), HOL(16:00)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284226",
@@ -941,12 +1085,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284226_260202_122150.png",
     "date": "2026.02.25 ~ 2026.12.23",
     "venue": "국립아시아문화전당 (극장2)",
+    "venueId": "FC001270",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284226",
     "genre": "복합",
     "price": "패키지 330,000원",
     "time": "수요일(11:00,19:30)",
     "region": "광주광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284207",
@@ -954,12 +1100,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284207_260202_105315.gif",
     "date": "2026.02.27 ~ 2026.03.15",
     "venue": "국립극장 (하늘극장)",
+    "venueId": "FC000003",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284207",
     "genre": "연극",
     "price": "전석 55,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284198",
@@ -967,12 +1115,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284198_260202_103415.gif",
     "date": "2026.03.10 ~ 2026.05.31",
     "venue": "티오엠씨어터(구. 문화공간필링) (1관)",
+    "venueId": "FC000382",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284198",
     "genre": "연극",
     "price": "R석 66,000원, S석 55,000원, A석 44,000원",
     "time": "화요일(19:30), 수요일(15:30,19:30), 목요일(19:30), 금요일(15:30,19:30), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284168",
@@ -980,12 +1130,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284168_260130_142126.gif",
     "date": "2026.02.28 ~ 2026.03.15",
     "venue": "노원어린이극장 (구.노원어울림극장) (노원어린이극장 (구.노원어울림극장) )",
+    "venueId": "FC001791",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284168",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "토요일 ~ 일요일(11:00,14:00), HOL(11:00,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284151",
@@ -993,12 +1145,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284151_260130_132945.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "울산중구문화의전당 (함월홀 (2층) )",
+    "venueId": "FC001328",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284151",
     "genre": "서양음악(클래식)",
     "price": "전석 10,000원",
     "time": "화요일(19:30)",
     "region": "울산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284083",
@@ -1006,12 +1160,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284083_260129_121020.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "예술의전당 [서울] (콘서트홀)",
+    "venueId": "FC000001",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284083",
     "genre": "서양음악(클래식)",
     "price": "R석 110,000원, S석 88,000원, A석 66,000원, B석 44,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF284007",
@@ -1019,12 +1175,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284007_260128_131244.png",
     "date": "2026.03.08 ~ 2026.04.26",
     "venue": "세종문화회관 (세종S씨어터)",
+    "venueId": "FC000020",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284007",
     "genre": "연극",
     "price": "R석 66,000원, S석 55,000원",
     "time": "화요일(19:30), 수요일(15:00,19:30), 목요일 ~ 금요일(19:30), 토요일(15:00,19:00), 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283932",
@@ -1032,12 +1190,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283932_260127_130423.gif",
     "date": "2026.03.06 ~ 2026.03.11",
     "venue": "나인진홀 (구.청년극장) (나인진홀 1관)",
+    "venueId": "FC001121",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283932",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "월요일 ~ 수요일(20:10), 금요일(20:10), 토요일 ~ 일요일(20:10)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283930",
@@ -1045,12 +1205,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283930_260127_125929.gif",
     "date": "2026.03.05 ~ 2026.05.31",
     "venue": "NOL 서경스퀘어(구. 서경대학교 공연예술센터) (스콘2관)",
+    "venueId": "FC001877",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283930",
     "genre": "뮤지컬",
     "price": "R석 66,000원, S석 55,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일 ~ 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283885",
@@ -1058,12 +1220,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283885_260127_101253.gif",
     "date": "2026.03.06 ~ 2026.04.26",
     "venue": "아트플러스씨어터 (2관)",
+    "venueId": "FC000298",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283885",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(14:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283835",
@@ -1071,12 +1235,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283835_260126_124830.jpg",
     "date": "2026.01.08 ~ 2026.04.05",
     "venue": "선돌극장 (선돌극장)",
+    "venueId": "FC000362",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283835",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(16:00), 일요일(15:00), HOL(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283834",
@@ -1084,12 +1250,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283834_260126_124443.gif",
     "date": "2026.01.12 ~ 2026.12.28",
     "venue": "성균소극장 (성균소극장)",
+    "venueId": "FC001262",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283834",
     "genre": "무용(서양/한국무용)",
     "price": "전석 50,000원",
     "time": "월요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283826",
@@ -1097,12 +1265,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283826_260224_161407.gif",
     "date": "2026.03.06 ~ 2026.04.19",
     "venue": "여우별아트홀 (여우별아트홀)",
+    "venueId": "FC001393",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283826",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(14:00,17:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283800",
@@ -1110,12 +1280,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283800_260126_102820.gif",
     "date": "2026.01.24 ~ 2026.04.25",
     "venue": "가온아트홀 [부산] (1관)",
+    "venueId": "FC000838",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283800",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "토요일(11:00,13:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283755",
@@ -1123,12 +1295,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283755_260123_124311.gif",
     "date": "2026.02.14 ~ 2026.04.12",
     "venue": "굿씨어터 (굿씨어터)",
+    "venueId": "FC001240",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283755",
     "genre": "연극",
     "price": "VIP석 77,000원, R석 66,000원, S석 55,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일 ~ 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283726",
@@ -1136,12 +1310,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283726_260123_105845.png",
     "date": "2026.02.18 ~ 2026.03.29",
     "venue": "도고아트홀(구.아산 코미디홀) (도고아트홀(구.아산 코미디홀))",
+    "venueId": "FC002108",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283726",
     "genre": "서커스/마술",
     "price": "전석 3,000원",
     "time": "일요일(13:30,15:30), HOL(13:30,15:30)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283613",
@@ -1149,12 +1325,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283613_260121_150110.png",
     "date": "2026.02.10 ~ 2026.04.26",
     "venue": "예그린씨어터 (예그린씨어터)",
+    "venueId": "FC001212",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283613",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일 ~ 수요일(20:00), 목요일(16:00,20:00), 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283606",
@@ -1162,12 +1340,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283606_260121_135023.png",
     "date": "2026.02.07 ~ 2026.03.28",
     "venue": "도고아트홀(구.아산 코미디홀) (도고아트홀(구.아산 코미디홀))",
+    "venueId": "FC002108",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283606",
     "genre": "뮤지컬",
     "price": "전석 3,000원",
     "time": "토요일(13:30,15:30)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283521",
@@ -1175,12 +1355,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283521_260203_174236.png",
     "date": "2026.02.10 ~ 2026.03.22",
     "venue": "한성아트홀(구. 인켈아트홀) (1관)",
+    "venueId": "FC000152",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283521",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 화요일(19:30), 수요일(16:30,19:30), 목요일(19:30), 금요일(16:30,19:30), 토요일 ~ 일요일(13:00,16:00,19:00), HOL(13:00,16:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283516",
@@ -1188,12 +1370,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283516_260120_110457.gif",
     "date": "2026.02.13 ~ 2026.03.14",
     "venue": "문화예술전용극장CT (문화예술전용극장CT)",
+    "venueId": "FC000292",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283516",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00,18:00), HOL(15:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283510",
@@ -1201,12 +1385,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283510_260120_105121.gif",
     "date": "2026.02.20 ~ 2026.03.29",
     "venue": "기분좋은극장 [상무지구] (기분좋은극장 [상무지구] )",
+    "venueId": "FC001234",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283510",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,17:00), HOL(14:00,17:00)",
     "region": "광주광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283487",
@@ -1214,12 +1400,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283487_260120_100059.jpg",
     "date": "2026.02.21 ~ 2026.12.19",
     "venue": "김포아트홀 (김포아트홀)",
+    "venueId": "FC001618",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283487",
     "genre": "복합",
     "price": "전석 100,000원",
     "time": "토요일(11:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283485",
@@ -1227,12 +1415,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283485_260120_095134.gif",
     "date": "2026.03.06 ~ 2026.04.12",
     "venue": "소명아트홀 (구.메가폴리스아트홀) (소명아트홀 (구.메가폴리스아트홀) )",
+    "venueId": "FC001106",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283485",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "금요일(19:30), 토요일(14:00,16:30), 일요일(15:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283474",
@@ -1240,12 +1430,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283474_260119_150934.jpg",
     "date": "2026.02.19 ~ 2026.03.12",
     "venue": "우리소극장 [의정부] (우리소극장 [의정부])",
+    "venueId": "FC002061",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283474",
     "genre": "뮤지컬",
     "price": "전석 20,000원",
     "time": "토요일 ~ 일요일(12:00,14:00), HOL(12:00,14:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283458",
@@ -1253,12 +1445,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283458_260119_141819.gif",
     "date": "2026.03.03 ~ 2026.05.24",
     "venue": "두산아트센터 (연강홀)",
+    "venueId": "FC000402",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283458",
     "genre": "연극",
     "price": "R석 80,000원, S석 60,000원",
     "time": "화요일(19:30), 수요일(15:00,19:30), 목요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,18:30), HOL(14:00,18:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283451",
@@ -1266,12 +1460,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283451_260306_110559.gif",
     "date": "2026.03.07 ~ 2026.05.31",
     "venue": "NOL 서경스퀘어(구. 서경대학교 공연예술센터) (스콘1관)",
+    "venueId": "FC001877",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283451",
     "genre": "연극",
     "price": "VIP석 77,000원, R석 66,000원, S석 55,000원",
     "time": "수요일(16:00), 목요일(19:30), 금요일(16:00,19:30), 토요일 ~ 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283333",
@@ -1279,12 +1475,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283333_260116_133254.gif",
     "date": "2026.02.28 ~ 2026.06.27",
     "venue": "용인포은아트홀 (용인포은아트홀)",
+    "venueId": "FC000057",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283333",
     "genre": "서양음악(클래식)",
     "price": "1층석 20,000원, 2층석 15,000원",
     "time": "토요일(15:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283288",
@@ -1292,12 +1490,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283288_260116_102916.png",
     "date": "2026.02.14 ~ 2026.03.14",
     "venue": "entry55 [성수] (entry55 [성수] )",
+    "venueId": "FC004076",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283288",
     "genre": "대중음악",
     "price": "전석 22,000원",
     "time": "토요일(17:30,20:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283280",
@@ -1305,12 +1505,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283280_260115_144537.jpg",
     "date": "2026.02.20 ~ 2026.03.29",
     "venue": "세종문화회관 (세종대극장)",
+    "venueId": "FC000020",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283280",
     "genre": "뮤지컬",
     "price": "VIP석 170,000원, R석 150,000원, S석 120,000원, A석 90,000원, B석 70,000원",
     "time": "화요일(19:30), 수요일(14:30,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,19:00), 일요일(13:00,18:00), HOL(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283268",
@@ -1318,12 +1520,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283268_260130_142846.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "예술의전당 [서울] (IBK챔버홀)",
+    "venueId": "FC000001",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283268",
     "genre": "서양음악(클래식)",
     "price": "R석 50,000원, S석 30,000원",
     "time": "화요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283242",
@@ -1331,12 +1535,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283242_260115_113815.gif",
     "date": "2026.02.25 ~ 2026.03.22",
     "venue": "용인어린이상상의숲 (공연놀이터)",
+    "venueId": "FC002081",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283242",
     "genre": "한국음악(국악)",
     "price": "전석 15,000원",
     "time": "수요일 ~ 금요일(11:00,14:00), 토요일 ~ 일요일(10:30,13:00,15:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283226",
@@ -1344,12 +1550,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283226_260115_105754.jpg",
     "date": "2026.02.21 ~ 2026.04.26",
     "venue": "송도 건원테크노큐브 (송도 건원테크노큐브)",
+    "venueId": "FC003987",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283226",
     "genre": "뮤지컬",
     "price": "전석 19,900원",
     "time": "목요일 ~ 금요일(10:40), 토요일 ~ 일요일(11:00,13:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283207",
@@ -1357,12 +1565,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283207_260115_101035.png",
     "date": "2025.02.14 ~ 2026.03.14",
     "venue": "entry55 [사당] (entry55 [사당] )",
+    "venueId": "FC003161",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283207",
     "genre": "대중음악",
     "price": "전석 22,000원",
     "time": "토요일(17:30,20:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283170",
@@ -1370,12 +1580,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283170_260114_130435.gif",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "대구콘서트하우스 (챔버홀 (소공연장) )",
+    "venueId": "FC001193",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283170",
     "genre": "서양음악(클래식)",
     "price": "전석 10,000원",
     "time": "화요일(19:30)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283152",
@@ -1383,12 +1595,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283152_260114_112633.gif",
     "date": "2026.02.28 ~ 2026.05.17",
     "venue": "충무아트센터 (중극장 블랙)",
+    "venueId": "FC000014",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283152",
     "genre": "뮤지컬",
     "price": "R석 75,000원, S석 65,000원",
     "time": "화요일 ~ 수요일(20:00), 목요일(16:00,20:00), 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283147",
@@ -1396,12 +1610,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283147_260114_111503.jpg",
     "date": "2026.02.01 ~ 2026.04.26",
     "venue": "인천어린이과학관 (강당)",
+    "venueId": "FC000023",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283147",
     "genre": "서커스/마술",
     "price": "전석 25,000원",
     "time": "일요일(14:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283137",
@@ -1409,12 +1625,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283137_260202_174919.png",
     "date": "2026.02.25 ~ 2026.11.25",
     "venue": "국립국악원 (우면당)",
+    "venueId": "FC000009",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283137",
     "genre": "한국음악(국악)",
     "price": "A석 30,000원, B석 20,000원",
     "time": "수요일(11:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283134",
@@ -1422,12 +1640,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283134_260114_104850.png",
     "date": "2026.03.07 ~ 2026.04.06",
     "venue": "로라뮤직-바인홀 (로라뮤직-바인홀)",
+    "venueId": "FC002803",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283134",
     "genre": "대중음악",
     "price": "DAY 1 125,000원, DAY 2 88,000원",
     "time": "월요일(19:30), 토요일(19:30)",
     "region": "전북특별자치도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283125",
@@ -1435,12 +1655,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283125_260114_102848.jpg",
     "date": "2026.02.20 ~ 2026.03.29",
     "venue": "KBS 수원아트홀 (KBS 수원아트홀)",
+    "venueId": "FC000926",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283125",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "금요일(19:00), 토요일 ~ 일요일(15:30), HOL(15:30)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF283071",
@@ -1448,12 +1670,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283071_260113_125651.jpg",
     "date": "2026.01.25 ~ 2026.04.26",
     "venue": "아르디ys아트홀 (아르디ys아트홀)",
+    "venueId": "FC002973",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283071",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "일요일(11:00,13:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282994",
@@ -1461,12 +1685,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282994_260112_142805.jpg",
     "date": "2026.02.07 ~ 2026.12.27",
     "venue": "루시드아트홀 (루시드아트홀)",
+    "venueId": "FC003416",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282994",
     "genre": "서커스/마술",
     "price": "전석 35,000원",
     "time": "토요일 ~ 일요일(14:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282969",
@@ -1474,12 +1700,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282969_260112_133604.gif",
     "date": "2026.02.06 ~ 2026.04.26",
     "venue": "아트하우스 (아트하우스)",
+    "venueId": "FC003224",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282969",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,17:00), 일요일(14:00), HOL(14:00,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282953",
@@ -1487,12 +1715,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282953_260112_125658.gif",
     "date": "2026.02.07 ~ 2026.03.15",
     "venue": "예술의전당 [서울] (자유소극장)",
+    "venueId": "FC000001",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282953",
     "genre": "연극",
     "price": "R석 60,000원, S석 50,000원, A석 30,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(14:00,18:30), 일요일(14:00), HOL(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282935",
@@ -1500,12 +1730,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282935_260112_120129.gif",
     "date": "2026.02.11 ~ 2026.04.05",
     "venue": "KBS 수원아트홀 (KBS 수원아트홀)",
+    "venueId": "FC000926",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282935",
     "genre": "서커스/마술",
     "price": "전석 35,000원",
     "time": "수요일 ~ 금요일(10:00,11:10), 토요일 ~ 일요일(11:00,13:00), HOL(11:00,13:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282794",
@@ -1513,12 +1745,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282794_260108_131943.jpg",
     "date": "2026.02.28 ~ 2026.03.21",
     "venue": "김포한강괜찮은홀 (김포한강괜찮은홀)",
+    "venueId": "FC002017",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282794",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "토요일(12:00,14:00), HOL(12:00,14:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282760",
@@ -1526,12 +1760,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282760_260108_102644.gif",
     "date": "2026.02.20 ~ 2026.03.31",
     "venue": "코델아트홀 (코델아트홀)",
+    "venueId": "FC001414",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282760",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 수요일(14:30), 금요일(14:30,17:00), 토요일(13:30,15:30,17:30), 일요일(14:30,17:00), HOL(14:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282739",
@@ -1539,12 +1775,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282739_260107_134811.jpg",
     "date": "2026.03.10 ~ 2026.03.10",
     "venue": "성산아트홀 (소극장)",
+    "venueId": "FC000885",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282739",
     "genre": "대중음악",
     "price": "전석 20,000원",
     "time": "화요일(11:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282621",
@@ -1552,12 +1790,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282621_260106_150921.jpeg",
     "date": "2026.01.31 ~ 2026.03.14",
     "venue": "광야아트센터 (광야아트센터)",
+    "venueId": "FC002226",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282621",
     "genre": "뮤지컬",
     "price": "토요일, 공휴일 50,000원, 평일 40,000원",
     "time": "월요일(19:30), 토요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282569",
@@ -1565,12 +1805,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282569_260105_113504.jpg",
     "date": "2026.03.04 ~ 2026.03.29",
     "venue": "한국방송회관 코바코홀 (구. 브로드홀) (한국방송회관 코바코홀 (구. 브로드홀))",
+    "venueId": "FC001107",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282569",
     "genre": "서커스/마술",
     "price": "전석 50,000원",
     "time": "토요일(11:00,13:00,15:00), 일요일(11:00,14:00), HOL(11:00,13:00,15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282357",
@@ -1578,12 +1820,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282357_251230_102727.gif",
     "date": "2026.02.25 ~ 2026.12.30",
     "venue": "삼청각 (일화당)",
+    "venueId": "FC000817",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282357",
     "genre": "한국음악(국악)",
     "price": "전석 80,000원",
     "time": "수요일(18:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282307",
@@ -1591,12 +1835,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282307_251229_130001.jpg",
     "date": "2026.01.27 ~ 2026.03.29",
     "venue": "링크아트센터드림 (드림 3관)",
+    "venueId": "FC001528",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282307",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282265",
@@ -1604,12 +1850,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282265_251229_102231.gif",
     "date": "2026.01.27 ~ 2026.12.24",
     "venue": "소셜베뉴 라움 (체임버홀)",
+    "venueId": "FC001705",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282265",
     "genre": "복합",
     "price": "연간회원권 1,000,000원",
     "time": "화요일(11:30), 목요일(11:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282240",
@@ -1617,12 +1865,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282240_251226_131433.jpeg",
     "date": "2026.01.04 ~ 2026.06.07",
     "venue": "자양스테이션(파리뮤직포럼) (자양스테이션(파리뮤직포럼))",
+    "venueId": "FC002382",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282240",
     "genre": "서양음악(클래식)",
     "price": "전석 20,000원",
     "time": "일요일(17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282176",
@@ -1630,12 +1880,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282176_251224_145437.jpg",
     "date": "2023.07.06 ~ 2026.03.31",
     "venue": "월드아트 서커스 [당진] (월드아트 서커스 [당진])",
+    "venueId": "FC004744",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282176",
     "genre": "서커스/마술",
     "price": "전석 20,000원",
     "time": "월요일 ~ 금요일(15:00), 토요일 ~ 일요일(15:00), HOL(15:00)",
     "region": "충청남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF282031",
@@ -1643,12 +1895,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282031_260113_150927.jpg",
     "date": "2025.03.07 ~ 2026.03.29",
     "venue": "오감클래식 (오감클래식)",
+    "venueId": "FC004619",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282031",
     "genre": "서양음악(클래식)",
     "price": "전석 30,000원",
     "time": "일요일(15:00,16:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281900",
@@ -1656,12 +1910,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281900_251219_134945.gif",
     "date": "2026.01.13 ~ 2026.03.31",
     "venue": "샤봉디씨어터 (샤봉디씨어터)",
+    "venueId": "FC004738",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281900",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "화요일 ~ 금요일(18:00), 토요일 ~ 일요일(16:10)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281865",
@@ -1669,12 +1925,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281865_251219_105527.gif",
     "date": "2026.01.08 ~ 2026.03.22",
     "venue": "BNK부산은행 조은극장 (1관)",
+    "venueId": "FC001246",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281865",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00,17:30), HOL(15:00,17:30)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281822",
@@ -1682,12 +1940,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281822_251222_110249.gif",
     "date": "2026.03.05 ~ 2026.11.05",
     "venue": "롯데콘서트홀 (롯데콘서트홀)",
+    "venueId": "FC001513",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281822",
     "genre": "서양음악(클래식)",
     "price": "R석 45,000원, S석 30,000원, 마티네석 10,000원, 시야방해R 31,500원, 시야방해S 21,000원",
     "time": "목요일(11:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281820",
@@ -1695,12 +1955,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281820_251218_131758.gif",
     "date": "2026.01.27 ~ 2026.04.26",
     "venue": "링크아트센터드림 (드림 2관)",
+    "venueId": "FC001528",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281820",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281796",
@@ -1708,12 +1970,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281796_251218_111152.gif",
     "date": "2026.01.21 ~ 2026.03.29",
     "venue": "링크아트센터드림 (드림 1관)",
+    "venueId": "FC001528",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281796",
     "genre": "뮤지컬",
     "price": "R석 70,000원, S석 60,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281769",
@@ -1721,12 +1985,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281769_251217_135219.gif",
     "date": "2026.02.25 ~ 2026.12.16",
     "venue": "롯데콘서트홀 (롯데콘서트홀)",
+    "venueId": "FC001513",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281769",
     "genre": "서양음악(클래식)",
     "price": "전석 25,000원, 시야방해석 17,500원",
     "time": "수요일(11:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281743",
@@ -1734,12 +2000,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281743_251217_114409.jpg",
     "date": "2026.01.08 ~ 2026.03.29",
     "venue": "JS아트홀 (구. 고스트씨어터 구.다소니씨어터) (JS아트홀 (구. 고스트씨어터 구.다소니씨어터) )",
+    "venueId": "FC001859",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281743",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281721",
@@ -1747,12 +2015,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281721_251217_104810.jpg",
     "date": "2026.03.07 ~ 2026.03.29",
     "venue": "뉴코아소극장 [부천] (뉴코아소극장 [부천])",
+    "venueId": "FC002478",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281721",
     "genre": "뮤지컬",
     "price": "전석 18,000원",
     "time": "토요일 ~ 일요일(12:00,14:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281676",
@@ -1760,12 +2030,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281676_251216_131615.gif",
     "date": "2026.01.30 ~ 2026.04.26",
     "venue": "NOL 씨어터 대학로 (구. 대학로뮤지컬센터) (우리카드홀 )",
+    "venueId": "FC001213",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281676",
     "genre": "뮤지컬",
     "price": "VIP석 130,000원, R석 110,000원, S석 80,000원, A석 60,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,18:30), HOL(14:00,18:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281481",
@@ -1773,12 +2045,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281481_251226_165238.png",
     "date": "2026.01.03 ~ 2026.12.26",
     "venue": "국립국악원 (우면당)",
+    "venueId": "FC000009",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281481",
     "genre": "한국음악(국악)",
     "price": "A석 30,000원, B석 20,000원",
     "time": "토요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF281317",
@@ -1786,12 +2060,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281317_260310_123930.gif",
     "date": "2026.02.13 ~ 2026.05.03",
     "venue": "NOL 씨어터 대학로 (구. 대학로뮤지컬센터) (우리투자증권홀(구.중극장))",
+    "venueId": "FC001213",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF281317",
     "genre": "연극",
     "price": "R석 77,000원, S석 66,000원",
     "time": "화요일(19:30), 수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,18:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280640",
@@ -1799,12 +2075,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280640_251202_102618.jpg",
     "date": "2025.01.04 ~ 2026.03.28",
     "venue": "오감클래식 (오감클래식)",
+    "venueId": "FC004619",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280640",
     "genre": "서양음악(클래식)",
     "price": "전석 35,000원",
     "time": "수요일(16:30,18:00), 토요일(10:00,11:30), HOL(15:00,16:30,18:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280583",
@@ -1812,12 +2090,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280583_251201_140524.jpg",
     "date": "2026.01.09 ~ 2026.03.22",
     "venue": "LG아트센터 서울 (U+ 스테이지)",
+    "venueId": "FC003045",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280583",
     "genre": "연극",
     "price": "R석 77,000원, S석 55,000원",
     "time": "화요일(19:30), 수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280535",
@@ -1825,12 +2105,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280535_251201_113902.gif",
     "date": "2025.12.24 ~ 2026.04.26",
     "venue": "디아나아트홀 (디아나아트홀)",
+    "venueId": "FC004496",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280535",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "토요일 ~ 일요일(17:00), HOL(17:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280534",
@@ -1838,12 +2120,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280534_251224_124547.gif",
     "date": "2026.01.09 ~ 2026.04.05",
     "venue": "BNK부산은행 조은극장 (2관)",
+    "venueId": "FC001246",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280534",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:00), 토요일 ~ 일요일(14:30,17:00), HOL(14:30,17:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280368",
@@ -1851,12 +2135,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280368_251127_134026.gif",
     "date": "2025.11.07 ~ 2026.03.30",
     "venue": "아트포레스트 아트홀 (2관)",
+    "venueId": "FC001603",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280368",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 화요일(16:00), 목요일 ~ 금요일(16:00), 토요일(11:30,14:00,16:30), 일요일(11:30,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF280025",
@@ -1864,12 +2150,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF280025_251124_153049.gif",
     "date": "2025.12.03 ~ 2026.04.05",
     "venue": "큐씨어터(구. 수상한흥신소전용관) (큐씨어터(구. 수상한흥신소전용관))",
+    "venueId": "FC001539",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF280025",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일(19:30), 수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일(15:00,18:30), 일요일(14:00,17:30), HOL(14:00,17:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279855",
@@ -1877,12 +2165,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279855_251121_152534.jpg",
     "date": "2025.12.13 ~ 2026.03.15",
     "venue": "아트벙커 (아트벙커)",
+    "venueId": "FC001828",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279855",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "수요일 ~ 금요일(20:00), 토요일(16:00,17:00,19:00), 일요일(15:00,18:00), HOL(15:00,18:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279790",
@@ -1890,12 +2180,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279790_251121_124401.gif",
     "date": "2025.12.27 ~ 2026.03.15",
     "venue": "유니플렉스 (1관(대극장))",
+    "venueId": "FC001233",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279790",
     "genre": "뮤지컬",
     "price": "R석 88,000원, S석 66,000원, A석 55,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일 ~ 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279784",
@@ -1903,12 +2195,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279784_251121_123239.gif",
     "date": "2025.12.23 ~ 2026.03.15",
     "venue": "예스24 스테이지(구. DCF대명문화공장) (1관)",
+    "venueId": "FC001236",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279784",
     "genre": "뮤지컬",
     "price": "R석 77,000원, S석 55,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279586",
@@ -1916,12 +2210,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279586_251119_132009.jpg",
     "date": "2025.12.23 ~ 2026.03.22",
     "venue": "예스24아트원(구.대학로아트원씨어터) (2관)",
+    "venueId": "FC000833",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279586",
     "genre": "뮤지컬",
     "price": "R석 66,000원, S석 44,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279089",
@@ -1929,12 +2225,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279089_251114_133409.jpg",
     "date": "2026.01.01 ~ 2026.03.29",
     "venue": "경복궁아트홀 (경복궁아트홀)",
+    "venueId": "FC000194",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279089",
     "genre": "뮤지컬",
     "price": "전석 30,000원",
     "time": "토요일 ~ 일요일(14:00), HOL(14:00), 월요일 ~ 목요일(11:00), 금요일(11:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279087",
@@ -1942,12 +2240,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279087_251114_132805.png",
     "date": "2025.12.18 ~ 2026.03.31",
     "venue": "맥거핀 서교 (맥거핀 서교)",
+    "venueId": "FC002815",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279087",
     "genre": "연극",
     "price": "주말(휴일) 관람권 29,000원, 평일 관람권 25,000원",
     "time": "화요일(20:00), 수요일(17:00,20:00), 목요일(20:00), 금요일(20:00), 토요일(15:00,18:00), 일요일(17:00,18:00), HOL(15:00,17:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF279014",
@@ -1955,12 +2255,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF279014_251113_143041.png",
     "date": "2025.01.11 ~ 2026.06.28",
     "venue": "온쉼표 (온쉼표)",
+    "venueId": "FC004127",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF279014",
     "genre": "서양음악(클래식)",
     "price": "전석 35,000원",
     "time": "토요일 ~ 일요일(10:00,11:20)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF278904",
@@ -1968,12 +2270,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF278904_251112_140527.gif",
     "date": "2026.01.24 ~ 2026.03.15",
     "venue": "광림아트센터 (BBCH홀)",
+    "venueId": "FC001370",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF278904",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, R석 60,000원, S석 50,000원",
     "time": "수요일 ~ 금요일(16:00), 토요일(11:00,14:00), 일요일(14:00,16:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF278506",
@@ -1981,12 +2285,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF278506_251107_142417.jpg",
     "date": "2025.12.13 ~ 2026.03.15",
     "venue": "예스24아트원(구.대학로아트원씨어터) (1관)",
+    "venueId": "FC000833",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF278506",
     "genre": "뮤지컬",
     "price": "R석 77,000원, S석 55,000원",
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00), HOL(14:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF278472",
@@ -1994,12 +2300,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF278472_251107_125207.jpg",
     "date": "2025.01.11 ~ 2026.03.29",
     "venue": "카디션(CARDICIAN) (카디션(2F))",
+    "venueId": "FC004668",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF278472",
     "genre": "서커스/마술",
     "price": "전석 80,000원",
     "time": "수요일(20:00), 금요일(20:00), 토요일(14:00,17:00), 일요일(14:00,17:00), HOL(14:00,17:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF277907",
@@ -2007,12 +2315,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277907_251224_112446.jpg",
     "date": "2025.11.12 ~ 2026.03.29",
     "venue": "봄날아트홀 (구. 아리랑소극장) (1관 (지하1층) )",
+    "venueId": "FC000453",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF277907",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "월요일(19:30), 수요일 ~ 금요일(19:30), 토요일(14:00,17:00), 일요일(14:00), HOL(14:00,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF277594",
@@ -2020,12 +2330,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277594_251029_101132.gif",
     "date": "2026.01.07 ~ 2026.03.22",
     "venue": "예술의전당 [서울] (오페라극장)",
+    "venueId": "FC000001",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF277594",
     "genre": "뮤지컬",
     "price": "R석 190,000원, S석 160,000원, A석 130,000원, B석 90,000원",
     "time": "화요일(19:30), 수요일(14:30,19:30), 목요일(19:30), 금요일(14:30,19:30), 토요일(14:00,19:00), 일요일(14:00,19:00), HOL(14:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF277256",
@@ -2033,12 +2345,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277256_251024_140623.gif",
     "date": "2025.11.14 ~ 2026.03.15",
     "venue": "뮤지컬식당 스마일떡볶이 (공연장)",
+    "venueId": "FC004643",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF277256",
     "genre": "뮤지컬",
     "price": "전석 20,000원",
     "time": "HOL(12:00,16:00,19:00), 화요일 ~ 목요일(12:00,19:00), 금요일(12:00,12:30,19:00), 토요일(12:00,12:30,13:00,15:30,18:30,19:00), 일요일(12:00,12:30,13:00,15:30,19:00)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF277044",
@@ -2046,12 +2360,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277044_251022_144514.jpg",
     "date": "2025.11.01 ~ 2026.03.29",
     "venue": "에이치씨어터 (익스트림씨어터 2관)",
+    "venueId": "FC001804",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF277044",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "목요일 ~ 금요일(19:30), 토요일 ~ 일요일(19:30), HOL(21:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF277037",
@@ -2059,12 +2375,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277037_251022_141641.gif",
     "date": "2025.11.21 ~ 2026.04.12",
     "venue": "NOL 씨어터 합정(구, 신한카드 SOL페이 스퀘어) (ABL생명홀)",
+    "venueId": "FC000847",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF277037",
     "genre": "연극",
     "price": "애벌레석 66,000원, 신한카드 특별석 66,000원",
     "time": "수요일(15:00), 금요일(14:00,15:00), 토요일(14:00,16:30), 일요일(16:30), HOL(14:00,16:30), 화요일(14:00), 수요일(14:00,15:00), 목요일(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF276681",
@@ -2072,12 +2390,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF276681_251201_134130.png",
     "date": "2025.11.09 ~ 2026.04.04",
     "venue": "세우아트센터 (2관)",
+    "venueId": "FC000794",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF276681",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일(19:30), 수요일(15:00,17:00), 목요일(19:30), 일요일(17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF276569",
@@ -2085,12 +2405,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF276569_251017_154949.gif",
     "date": "2025.12.17 ~ 2026.03.29",
     "venue": "샤롯데씨어터 (샤롯데씨어터)",
+    "venueId": "FC000012",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF276569",
     "genre": "뮤지컬",
     "price": "VIP석 170,000원, OP석 170,000원, R석 140,000원, S석 110,000원, A석 80,000원",
     "time": "화요일(19:30), 수요일(14:30,19:30), 목요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,19:00), HOL(14:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF276168",
@@ -2098,12 +2420,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF276168_251015_112545.jpg",
     "date": "2025.12.16 ~ 2026.03.22",
     "venue": "LG아트센터 서울 (LG SIGNATURE 홀)",
+    "venueId": "FC003045",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF276168",
     "genre": "뮤지컬",
     "price": "OP석  180,000원, VIP석 180,000원, R석 150,000원, S석 120,000원, A석 90,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,19:00), HOL(14:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF276055",
@@ -2111,12 +2435,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF276055_251014_105639.jpg",
     "date": "2025.04.25 ~ 2026.04.30",
     "venue": "스타스테이지 (스타스테이지)",
+    "venueId": "FC003274",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF276055",
     "genre": "뮤지컬",
     "price": "VIP석 88,000원, R석 77,000원",
     "time": "수요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(15:00), HOL(15:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF275888",
@@ -2124,12 +2450,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF275888_251013_120442.gif",
     "date": "2025.10.24 ~ 2026.08.23",
     "venue": "아신극장 (2관 (2층) )",
+    "venueId": "FC001134",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF275888",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), HOL(14:00,17:00,20:00), 토요일(15:30,16:00,19:30,20:00), 일요일(14:00,15:00,18:00,18:10)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF275192",
@@ -2137,12 +2465,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF275192_250929_113859.jpeg",
     "date": "2025.04.05 ~ 2026.03.28",
     "venue": "브릴란트 아트 스튜디오 [서울 서초] (브릴란트 아트 스튜디오 (B1) )",
+    "venueId": "FC004290",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF275192",
     "genre": "서양음악(클래식)",
     "price": "전석 40,000원",
     "time": "토요일(10:00,11:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF275048",
@@ -2150,12 +2480,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF275048_250926_114734.gif",
     "date": "2025.11.01 ~ 2026.03.29",
     "venue": "대학로 스타릿홀 (공연장)",
+    "venueId": "FC004589",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF275048",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(19:30), 수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,17:00), 일요일(13:00,15:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF274761",
@@ -2163,12 +2495,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF274761_251010_130338.jpg",
     "date": "2025.09.18 ~ 2026.03.31",
     "venue": "이머시브스튜디오 홍대점 (이머시브스튜디오 홍대점)",
+    "venueId": "FC004585",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF274761",
     "genre": "연극",
     "price": "전석 88,000원",
     "time": "월요일 ~ 금요일(10:00,11:50,13:40,15:30,18:30,20:20,22:10), 토요일 ~ 일요일(10:00,11:50,13:40,15:30,17:40,19:30,21:20)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF274555",
@@ -2176,12 +2510,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF274555_251223_161622.gif",
     "date": "2025.09.14 ~ 2026.04.25",
     "venue": "스테이지엠 (STAGE M) (구.프란츠홀) (스테이지 엠 (STAGE M) )",
+    "venueId": "FC002936",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF274555",
     "genre": "대중음악",
     "price": "전석 33,000원",
     "time": "일요일(17:30), 토요일(15:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF274407",
@@ -2189,12 +2525,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF274407_250918_124113.gif",
     "date": "2025.10.24 ~ 2026.04.12",
     "venue": "NOL 씨어터 합정(구, 신한카드 SOL페이 스퀘어) (ABL생명홀)",
+    "venueId": "FC000847",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF274407",
     "genre": "연극",
     "price": "전석 66,000원",
     "time": "금요일(15:00), 토요일 ~ 일요일(11:00,14:00,16:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF274143",
@@ -2202,12 +2540,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF274143_251128_134208.gif",
     "date": "2025.12.06 ~ 2026.12.19",
     "venue": "스테이지엠 (STAGE M) (구.프란츠홀) (스테이지 엠 (STAGE M) )",
+    "venueId": "FC002936",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF274143",
     "genre": "서양음악(클래식)",
     "price": "전석 35,000원",
     "time": "토요일(14:30,17:00,18:00), 일요일(14:30,17:00), 수요일(18:00,20:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF273451",
@@ -2215,12 +2555,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF273451_250905_125019.gif",
     "date": "2025.10.03 ~ 2026.04.30",
     "venue": "유니플렉스 (2관(중극장))",
+    "venueId": "FC001233",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF273451",
     "genre": "뮤지컬",
     "price": "R석 77,000원, S석 55,000원",
     "time": "수요일(15:00,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,15:00,18:30), 일요일(14:00,15:00,18:30), HOL(14:00,15:00,18:30,19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF273019",
@@ -2228,12 +2570,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF273019_250901_104904.gif",
     "date": "2025.10.14 ~ 2026.05.10",
     "venue": "디큐브링크아트센터 (디큐브씨어터)",
+    "venueId": "FC000011",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF273019",
     "genre": "뮤지컬",
     "price": "VIP석 170,000원, R석 140,000원, S석 110,000원, A석 80,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,19:00), HOL(14:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF273014",
@@ -2241,12 +2585,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF273014_250901_103706.gif",
     "date": "2025.08.28 ~ 2026.03.29",
     "venue": "스폿라이트 (스폿라이트)",
+    "venueId": "FC004537",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF273014",
     "genre": "뮤지컬",
     "price": "전석 20,000원",
     "time": "화요일(18:00,20:30), 수요일 ~ 목요일(18:00,19:30,20:30), 금요일(18:00,18:30,20:30,21:00), 토요일(14:00,14:30,16:30,17:00,19:00,19:30), 일요일(14:00,14:30,16:30,17:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF272938",
@@ -2254,12 +2600,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF272938_260106_112253.jpg",
     "date": "2025.01.15 ~ 2026.03.31",
     "venue": "더 서울라이티움 (갤러리아포레) (G층 전용관)",
+    "venueId": "FC002012",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF272938",
     "genre": "뮤지컬",
     "price": "Special석  110,000원, Alive석  99,000원, Choice석  77,000원",
     "time": "월요일 ~ 금요일(20:00), 토요일 ~ 일요일(19:30), HOL(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF272478",
@@ -2267,12 +2615,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF272478_250825_125630.gif",
     "date": "2025.10.03 ~ 2026.03.28",
     "venue": "명륜아트홀 (명륜아트홀)",
+    "venueId": "FC003682",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF272478",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "토요일(11:30), HOL(11:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF271914",
@@ -2280,12 +2630,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF271914_260209_153431.gif",
     "date": "2025.09.02 ~ 2026.04.19",
     "venue": "한성아트홀(구. 인켈아트홀) (2관)",
+    "venueId": "FC000152",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF271914",
     "genre": "연극",
     "price": "VIP석 129,000원, R석 99,000원, S석 69,000원",
     "time": "화요일 ~ 금요일(19:00), 토요일(15:00,18:00), 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF271774",
@@ -2293,12 +2645,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF271774_250814_155032.gif",
     "date": "2025.09.13 ~ 2026.03.29",
     "venue": "디아나아트홀 (디아나아트홀)",
+    "venueId": "FC004496",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF271774",
     "genre": "뮤지컬",
     "price": "전석 44,000원",
     "time": "토요일 ~ 일요일(14:00), HOL(14:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF270496",
@@ -2306,12 +2660,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF270496_250728_153156.jpg",
     "date": "2025.01.04 ~ 2026.03.31",
     "venue": "나인진홀 (구.청년극장) (나인진홀 2관)",
+    "venueId": "FC001121",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF270496",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "토요일(14:00,16:00,18:00), 일요일(14:00,16:00), 월요일(14:00,15:00,16:00,17:00), 화요일(14:00,16:00), 수요일(12:00,14:00,16:00,18:00), 목요일(14:00,16:00), 금요일(14:00,16:00), HOL(12:00,14:00,16:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF270484",
@@ -2319,12 +2675,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF270484_251127_101354.gif",
     "date": "2025.08.01 ~ 2026.03.29",
     "venue": "성수 소극장(일루미 스튜디오) (성수 소극장(일루미 스튜디오))",
+    "venueId": "FC002589",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF270484",
     "genre": "연극",
     "price": "전석 30,000원",
     "time": "수요일 ~ 금요일(19:30), 토요일(14:00,16:30,19:00), 일요일(14:00,17:00), HOL(14:00,16:30,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF267104",
@@ -2332,12 +2690,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF267104_260204_101123.gif",
     "date": "2025.07.24 ~ 2026.03.29",
     "venue": "매키탄 호텔 (공연장)",
+    "venueId": "FC004391",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF267104",
     "genre": "뮤지컬",
     "price": "Guest (1st entry)  200,000원, Guest (2nd entry)   190,000원, Guest (3rd entry)  180,000원, Guest (4th entry)  170,000원, Guest (5th entry)  160,000원, Ruby’s Guest  240,000원, Maximilian’s Circle  360,000원",
     "time": "수요일 ~ 금요일(19:00), 토요일(14:00,19:00), 일요일(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF266985",
@@ -2345,12 +2705,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF266985_251013_141958.jpg",
     "date": "2025.06.13 ~ 2026.12.31",
     "venue": "지지대악 (공연장)",
+    "venueId": "FC004389",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF266985",
     "genre": "한국음악(국악)",
     "price": "전석 65,000원",
     "time": "월요일 ~ 금요일(11:00,13:00,14:00,15:00,16:00), 토요일 ~ 일요일(11:00,14:00,16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF265713",
@@ -2358,12 +2720,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF265713_260205_130952.gif",
     "date": "2025.06.06 ~ 2026.06.29",
     "venue": "지즐소극장 (지즐소극장)",
+    "venueId": "FC001156",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF265713",
     "genre": "연극",
     "price": "전석 35,000원",
     "time": "월요일(19:30), 수요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00), HOL(15:00,19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF265271",
@@ -2371,12 +2735,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF265271_250519_160940.gif",
     "date": "2025.03.01 ~ 2026.03.30",
     "venue": "홍대 씨어터 윤 (홍대 씨어터 윤)",
+    "venueId": "FC004364",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF265271",
     "genre": "연극",
     "price": "전석 35,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00), HOL(15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF263047",
@@ -2384,12 +2750,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF263047_250508_134732.jpg",
     "date": "2025.05.28 ~ 2026.03.25",
     "venue": "엠팟홀 (구. 삼익아트홀) (엠팟홀 (구. 삼익아트홀) )",
+    "venueId": "FC000842",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF263047",
     "genre": "서양음악(클래식)",
     "price": "전석 30,000원",
     "time": "수요일(19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF263000",
@@ -2397,12 +2765,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF263000_250811_154517.gif",
     "date": "2025.05.09 ~ 2026.03.31",
     "venue": "런던스테이지 [대전 중구] (런던스테이지(2F))",
+    "venueId": "FC004785",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF263000",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00,18:00), HOL(15:00,18:00)",
     "region": "대전광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF260200",
@@ -2410,12 +2780,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF260200_250304_161053.gif",
     "date": "2025.03.29 ~ 2026.04.05",
     "venue": "더 서울라이티움 (갤러리아포레) (G층 전용관)",
+    "venueId": "FC002012",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF260200",
     "genre": "뮤지컬",
     "price": "동동이석 66,000원",
     "time": "토요일 ~ 일요일(11:00,13:30,15:30), 화요일(11:00), 수요일(11:00,13:30), 목요일(11:00), 금요일(11:00,13:30), HOL(11:00,13:30,15:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF259907",
@@ -2423,12 +2795,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF259907_250227_110032.jpg",
     "date": "2025.03.01 ~ 2026.03.29",
     "venue": "달밤엔씨어터 (달밤엔씨어터)",
+    "venueId": "FC001884",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF259907",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "금요일(13:00), HOL(13:00,15:00), 토요일(11:00), 일요일(13:00), 수요일(13:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF259779",
@@ -2436,12 +2810,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF259779_260223_160526.gif",
     "date": "2025.01.01 ~ 2026.03.31",
     "venue": "JTN 아트홀(구. 대학로예술마당) (1관)",
+    "venueId": "FC000139",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF259779",
     "genre": "뮤지컬",
     "price": "전석 66,000원",
     "time": "화요일 ~ 금요일(19:30), 토요일(14:00,16:30), 일요일(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF259143",
@@ -2449,12 +2825,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF259143_250818_131854.jpg",
     "date": "2025.01.01 ~ 2026.03.31",
     "venue": "사천세계아트서커스 (사천세계문화컨텐츠) (사천세계아트서커스 (사천세계문화컨텐츠) )",
+    "venueId": "FC003460",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF259143",
     "genre": "서커스/마술",
     "price": "전석 25,000원",
     "time": "월요일 ~ 금요일(11:00,14:00,16:00), 토요일 ~ 일요일(11:00,14:00,16:00), HOL(11:00,14:00,16:00)",
     "region": "경상남도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF257643",
@@ -2462,12 +2840,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF257643_250121_133328.gif",
     "date": "2025.02.15 ~ 2026.03.31",
     "venue": "한국항공대학교 (투데이아트홀)",
+    "venueId": "FC004244",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF257643",
     "genre": "뮤지컬",
     "price": "전석 20,000원",
     "time": "화요일 ~ 금요일(11:00), 토요일(12:00,14:00), HOL(12:00,14:00), 일요일(12:00,13:00,14:00,15:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF256370",
@@ -2475,12 +2855,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF256370_250108_161156.gif",
     "date": "2025.01.17 ~ 2026.12.27",
     "venue": "스테이지엠 (STAGE M) (구.프란츠홀) (스테이지 엠 (STAGE M) )",
+    "venueId": "FC002936",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF256370",
     "genre": "서양음악(클래식)",
     "price": "R석 45,000원, S석 35,000원",
     "time": "금요일(19:30), 토요일(19:30), 일요일(15:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF255313",
@@ -2488,12 +2870,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF255313_241205_143818.gif",
     "date": "2025.01.10 ~ 2026.04.30",
     "venue": "상명아트홀 (1관)",
+    "venueId": "FC000763",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF255313",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "목요일(16:30,19:30), 토요일(13:00,14:30,16:00,17:30,19:00), 일요일(11:00,14:00,15:30,17:00), 화요일(15:00,16:30,18:00,19:30), 수요일(13:30,15:00,16:30,18:00,19:30), 금요일(15:00,16:30,17:00,19:30,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF254868",
@@ -2501,12 +2885,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF254868_241129_111046.gif",
     "date": "2024.12.14 ~ 2026.04.11",
     "venue": "스케치홀 (구.소극장 선물 1관) (스케치홀 (구.소극장 선물 1관) )",
+    "venueId": "FC003462",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF254868",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "수요일(11:00,13:00), 금요일(13:00,15:00), 토요일(11:00,13:00,15:00), HOL(11:00,13:00,15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF254737",
@@ -2514,12 +2900,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF254737_250915_150123.jpg",
     "date": "2025.01.05 ~ 2026.05.02",
     "venue": "스테이지엠 (STAGE M) (구.프란츠홀) (스테이지 엠 (STAGE M) )",
+    "venueId": "FC002936",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF254737",
     "genre": "서양음악(클래식)",
     "price": "전석 33,000원",
     "time": "토요일(14:00,15:00), 일요일(14:00,14:30,15:00,18:00)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF254549",
@@ -2527,12 +2915,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF254549_250121_095017.gif",
     "date": "2024.12.01 ~ 2026.04.26",
     "venue": "명륜아트홀 (명륜아트홀)",
+    "venueId": "FC003682",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF254549",
     "genre": "서커스/마술",
     "price": "전석 25,000원",
     "time": "일요일(11:30,13:30,14:00), HOL(11:30,14:00), 토요일(13:30), 수요일(11:30,14:00,16:30), 금요일(11:30,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF251017",
@@ -2540,12 +2930,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF251017_250113_123329.gif",
     "date": "2024.11.08 ~ 2026.03.31",
     "venue": "TOUCH FIVE 전용관 (TOUCH FIVE 전용관)",
+    "venueId": "FC004129",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF251017",
     "genre": "뮤지컬",
     "price": "VVIP석 129,000원, VIP석 110,000원, R석 99,000원, S석 77,000원, 스탠딩석 55,000원, SPECIAL ROOM 800,000원",
     "time": "화요일 ~ 금요일(20:00), 토요일(17:00,20:00), 일요일(17:00), HOL(17:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF249563",
@@ -2553,12 +2945,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF249563_240923_155210.jpg",
     "date": "2024.10.05 ~ 2026.07.19",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF249563",
     "genre": "뮤지컬",
     "price": "전석 55,000원",
     "time": "화요일(17:00), 토요일 ~ 일요일(14:00), HOL(14:00,17:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF249529",
@@ -2566,12 +2960,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF249529_250213_110549.gif",
     "date": "2024.10.09 ~ 2026.03.30",
     "venue": "우리소극장 [대학로] (우리소극장 [대학로] )",
+    "venueId": "FC002820",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF249529",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(17:00), 수요일 ~ 금요일(17:00), 토요일(13:00,15:00,17:00,19:00), 일요일(14:00,15:00,16:00,17:00,18:00), HOL(12:00,14:00,15:00,16:00,17:00,18:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF249186",
@@ -2579,12 +2975,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF249186_240919_112541.jpg",
     "date": "2024.10.01 ~ 2026.03.29",
     "venue": "달밤엔씨어터 (달밤엔씨어터)",
+    "venueId": "FC001884",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF249186",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "토요일 ~ 일요일(12:00,13:00), HOL(13:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF248820",
@@ -2592,12 +2990,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF248820_241223_114124.jpg",
     "date": "2024.11.09 ~ 2026.05.24",
     "venue": "스테이지엠 (STAGE M) (구.프란츠홀) (스테이지 엠 (STAGE M) )",
+    "venueId": "FC002936",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF248820",
     "genre": "서양음악(클래식)",
     "price": "전석 33,000원",
     "time": "토요일(19:00), 일요일(17:30)",
     "region": "대구광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF247938",
@@ -2605,12 +3005,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF247938_240829_104022.gif",
     "date": "2024.10.01 ~ 2026.03.31",
     "venue": "명보아트홀 (가온홀 (B3F) )",
+    "venueId": "FC000883",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF247938",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, R석 60,000원, S석 50,000원",
     "time": "월요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00,17:00), HOL(14:00,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF247055",
@@ -2618,12 +3020,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF247055_240816_092251.jpg",
     "date": "2024.08.30 ~ 2026.03.28",
     "venue": "더더더 (더더더)",
+    "venueId": "FC003918",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF247055",
     "genre": "연극",
     "price": "전석 35,000원",
     "time": "목요일 ~ 금요일(20:00), 토요일 ~ 일요일(18:00,19:00), HOL(18:00,19:00), 화요일 ~ 수요일(20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF246573",
@@ -2631,12 +3035,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF246573_241205_111748.jpeg",
     "date": "2024.08.15 ~ 2026.03.29",
     "venue": "엠스테이지 (구.인사아트홀) (1관)",
+    "venueId": "FC001535",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF246573",
     "genre": "뮤지컬",
     "price": "전석 60,000원",
     "time": "월요일 ~ 금요일(19:00), 토요일(14:00,17:30), 일요일(14:00), HOL(14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF244959",
@@ -2644,12 +3050,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF244959_260116_170208.gif",
     "date": "2024.07.14 ~ 2026.03.29",
     "venue": "라온씨어터 (라온씨어터)",
+    "venueId": "FC004018",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF244959",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "토요일 ~ 일요일(11:20,12:50), HOL(11:20,13:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF243650",
@@ -2657,12 +3065,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF243650_240624_151725.jpg",
     "date": "2024.07.20 ~ 2026.04.26",
     "venue": "매직앤조이 [광교] (매직앤조이 (10F) )",
+    "venueId": "FC003990",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF243650",
     "genre": "서커스/마술",
     "price": "전석 28,000원",
     "time": "화요일(13:00,15:00), 수요일(14:00,16:00), 목요일(13:00,15:00), 금요일(14:00,16:00), 토요일 ~ 일요일(10:30,11:00,13:00,14:00,15:00,16:00), HOL(10:30,11:00,13:00,14:00,15:00,16:00,18:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF242666",
@@ -2670,12 +3080,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF242666_240805_155829.jpg",
     "date": "2024.06.05 ~ 2026.03.29",
     "venue": "NH아트홀 (NH아트홀)",
+    "venueId": "FC000576",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF242666",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, R석 50,000원",
     "time": "월요일 ~ 금요일(17:00), 토요일 ~ 일요일(17:00), HOL(17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF241439",
@@ -2683,12 +3095,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF241439_240531_105054.jpg",
     "date": "2024.06.01 ~ 2026.03.29",
     "venue": "세우아트센터 (2관)",
+    "venueId": "FC000794",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF241439",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "목요일 ~ 금요일(17:00,19:30), HOL(14:30,17:00,19:30), 월요일(17:00,19:30), 화요일(14:30,17:00,19:30), 수요일(17:00), 토요일(14:00,14:30,16:15,17:00,18:30,19:30), 일요일(13:00,13:30,14:00,14:30,15:15,16:15,17:00,17:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF241378",
@@ -2696,12 +3110,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF241378_260303_124525.gif",
     "date": "2016.04.05 ~ 2026.03.31",
     "venue": "콘텐츠박스(구. 르메이에르 씨어터) (콘텐츠박스(구. 르메이에르 씨어터))",
+    "venueId": "FC000841",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF241378",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 금요일(14:00,17:00,20:00), 토요일(13:00,16:00,19:00), 일요일(13:00,15:00,16:00,18:00,19:00), HOL(13:00,16:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF239645",
@@ -2709,12 +3125,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF239645_240422_124740.gif",
     "date": "2024.04.22 ~ 2026.03.31",
     "venue": "댕로홀 (댕로홀)",
+    "venueId": "FC001099",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF239645",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(14:30,16:00,18:10), 화요일 ~ 수요일(16:20), 토요일(13:30,13:40,14:30,15:00,16:00,16:30,17:10,17:20,17:30), 일요일(13:30,13:40,14:30,15:00,16:00,16:30,17:10,17:20,17:30), HOL(13:30,13:40,14:30,15:00,16:00,16:30,17:10,17:20,17:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF239635",
@@ -2722,12 +3140,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF239635_240422_115326.gif",
     "date": "2024.04.22 ~ 2026.03.31",
     "venue": "바탕골소극장 (바탕골소극장)",
+    "venueId": "FC001174",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF239635",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 목요일(15:00,17:00,17:30), 금요일(17:00,17:15,19:30), 토요일(12:50,13:00,15:00,15:30,17:15,18:00,19:30), 일요일(13:30,14:00,16:00,16:30), 수요일(17:00,19:30), 일요일(14:00,16:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF239377",
@@ -2735,12 +3155,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF239377_251126_085938.gif",
     "date": "2024.04.27 ~ 2026.03.31",
     "venue": "서연아트홀 (구. 인아소극장) (서연아트홀 (구. 인아소극장) )",
+    "venueId": "FC001223",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF239377",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 금요일(16:00), 토요일(14:30,16:50,19:10), 일요일(15:30,18:00), HOL(13:30,15:30,17:30,19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF238631",
@@ -2748,12 +3170,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF238631_250609_134228.gif",
     "date": "2024.03.22 ~ 2026.09.27",
     "venue": "초록씨어터 (초록씨어터)",
+    "venueId": "FC002854",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF238631",
     "genre": "연극",
     "price": "전석 45,000원",
     "time": "목요일 ~ 금요일(11:00,13:30,16:00,17:00), 토요일(11:00,13:00,15:00,17:00), 일요일(11:00,13:00,15:00), HOL(11:00,13:00,13:30,15:00,15:30,16:00,17:00,19:00), 수요일(11:00,13:00,13:30,15:00,16:00), 월요일 ~ 화요일(11:00,13:30,16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF237479",
@@ -2761,12 +3185,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF237479_240315_133619.jpg",
     "date": "2024.03.25 ~ 2026.05.31",
     "venue": "경향아트힐 (1관)",
+    "venueId": "FC000198",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF237479",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, R석 50,000원",
     "time": "월요일 ~ 금요일(14:00,17:00,20:00), 토요일 ~ 일요일(14:00,17:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF236674",
@@ -2774,12 +3200,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF236674_250602_133202.gif",
     "date": "2024.03.16 ~ 2026.04.30",
     "venue": "대학로 무하아트센터 (대학로 무하아트센터)",
+    "venueId": "FC003868",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF236674",
     "genre": "뮤지컬",
     "price": "전석 55,000원",
     "time": "월요일 ~ 화요일(19:30), 수요일(16:00,19:30), 목요일 ~ 금요일(19:30), 토요일(14:00,16:20), 일요일(14:00,16:20), HOL(14:00,16:20,18:40)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF236460",
@@ -2787,12 +3215,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF236460_240304_103714.jpg",
     "date": "2024.04.01 ~ 2026.04.30",
     "venue": "제주난타극장 (제주난타극장)",
+    "venueId": "FC001617",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF236460",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, S석 60,000원, A석 50,000원",
     "time": "월요일(16:30,20:00), 화요일(16:30), 수요일(13:30,16:30,20:00), 목요일(16:30), 금요일(13:30,16:30,20:00), 토요일 ~ 일요일(16:30)",
     "region": "제주특별자치도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF236414",
@@ -2800,12 +3230,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF236414_251230_113457.gif",
     "date": "2024.04.01 ~ 2026.03.29",
     "venue": "올웨이즈 씨어터(구.아티스탄홀) (올웨이즈 씨어터(구.아티스탄홀))",
+    "venueId": "FC000372",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF236414",
     "genre": "연극",
     "price": "올웨이즈석 60,000원, 파라솔석 60,000원",
     "time": "수요일 ~ 금요일(19:30), 토요일(14:00,17:00), 일요일(14:00), HOL(13:40,14:00,16:30,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF236349",
@@ -2813,12 +3245,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF236349_251016_133538.gif",
     "date": "2024.04.01 ~ 2026.06.28",
     "venue": "홍대난타극장(구. 뮤직쇼웨딩 전용관) (홍대난타극장(구. 뮤직쇼웨딩 전용관))",
+    "venueId": "FC000090",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF236349",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, S석 60,000원, A석 50,000원",
     "time": "월요일 ~ 금요일(17:00), 토요일(14:00,17:00), 일요일(14:00), HOL(14:00,17:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF235885",
@@ -2826,12 +3260,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF235885_251126_090821.gif",
     "date": "2024.03.15 ~ 2026.03.31",
     "venue": "제나아트홀 (구. 룸씨어터) (제나아트홀 (구. 룸씨어터) )",
+    "venueId": "FC003171",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF235885",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 목요일(14:30,16:40), 금요일(14:30,16:40,19:00), 토요일(13:30,15:40,17:50,20:00), 일요일(14:30,16:40,19:00), HOL(11:20,13:30,15:40,17:50,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF235879",
@@ -2839,12 +3275,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF235879_240221_105721.gif",
     "date": "2024.03.23 ~ 2026.03.29",
     "venue": "서연아트홀 (구. 인아소극장) (서연아트홀 (구. 인아소극장) )",
+    "venueId": "FC001223",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF235879",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "토요일 ~ 일요일(11:20,12:50), HOL(11:20,12:50)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF235543",
@@ -2852,12 +3290,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF235543_251014_140238.gif",
     "date": "2021.12.02 ~ 2026.06.30",
     "venue": "명동난타극장 (명동난타극장)",
+    "venueId": "FC000580",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF235543",
     "genre": "뮤지컬",
     "price": "VIP석 70,000원, S석 60,000원, A석 50,000원",
     "time": "월요일 ~ 금요일(17:00,20:00), 토요일(14:00,17:00,20:00), 일요일(14:00,17:00), HOL(14:00,17:00,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF235344",
@@ -2865,12 +3305,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF235344_250915_085637.jpg",
     "date": "2024.02.24 ~ 2026.03.31",
     "venue": "JTN 아트홀(구. 대학로예술마당) (3관)",
+    "venueId": "FC000139",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF235344",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(14:30), 화요일 ~ 목요일(14:30,17:00), 일요일(14:30,17:00), HOL(14:30,17:00), 토요일(12:00,13:30,14:30,16:00,17:00,18:30,19:10)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF234123",
@@ -2878,12 +3320,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF234123_240125_112011.gif",
     "date": "2024.02.03 ~ 2026.03.30",
     "venue": "마루아트홀 (마루아트홀)",
+    "venueId": "FC001815",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF234123",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "월요일(16:00,17:00,18:00), 화요일(13:00,15:00,16:00,17:00,18:00,19:00,21:00), 토요일(14:00,16:00,18:00,20:00), 일요일(14:00,16:00,18:00,20:00), HOL(14:00,15:00,16:00,17:00,18:00), 수요일 ~ 금요일(16:00,17:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF233263",
@@ -2891,12 +3335,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF233263_240102_124103.jpg",
     "date": "2024.01.03 ~ 2026.03.29",
     "venue": "JTN 아트홀(구. 대학로예술마당) (2관)",
+    "venueId": "FC000139",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF233263",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "수요일 ~ 금요일(19:00,19:30), 토요일(14:00,15:00,17:00,18:00), 일요일(12:00,15:00), HOL(15:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF231664",
@@ -2904,12 +3350,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF231664_231204_113257.png",
     "date": "2023.12.02 ~ 2026.04.26",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF231664",
     "genre": "뮤지컬",
     "price": "전석 55,000원",
     "time": "토요일 ~ 일요일(14:00,15:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF231437",
@@ -2917,12 +3365,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF231437_241120_111048.jpg",
     "date": "2023.12.09 ~ 2026.03.29",
     "venue": "미리내 마술극단 [송도] (미리내 마술극단 [송도])",
+    "venueId": "FC003662",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF231437",
     "genre": "서커스/마술",
     "price": "전석 23,000원",
     "time": "수요일(14:00), 금요일(14:00), 토요일 ~ 일요일(11:00,13:00,14:00,16:00,18:00), HOL(11:00,13:00,14:00,16:00,18:00)",
     "region": "인천광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF229985",
@@ -2930,12 +3380,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF229985_240819_152304.jpg",
     "date": "2023.12.09 ~ 2026.08.29",
     "venue": "명륜아트홀 (명륜아트홀)",
+    "venueId": "FC003682",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF229985",
     "genre": "뮤지컬",
     "price": "전석 60,000원",
     "time": "월요일 ~ 화요일(19:30), 목요일(19:00,19:30), 일요일(17:00), HOL(12:00,13:00,15:00,16:00,17:00,18:00), 토요일(13:00,15:00,16:00,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF220426",
@@ -2943,12 +3395,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF220426_250602_122516.gif",
     "date": "2023.07.01 ~ 2026.03.31",
     "venue": "지인시어터(구. 알과핵소극장) (지인시어터(구. 알과핵소극장))",
+    "venueId": "FC000416",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF220426",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(13:00,14:00,15:10,16:30,17:30,19:30), 화요일 ~ 금요일(13:00,14:00,15:10,16:30,17:00,17:30,19:30), 일요일(13:30,14:00,15:50,16:20,18:00,18:40), HOL(13:00,13:30,14:00,15:10,15:50,16:30,18:00,19:00,19:30), 토요일(12:00,13:00,14:10,15:10,16:30,17:30,19:00,19:40), 월요일 ~ 금요일(14:00,17:00,19:30), 토요일(12:00,14:10,16:30,19:00), 일요일(13:30,15:50,18:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF216967",
@@ -2956,12 +3410,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF216967_240524_113729.png",
     "date": "2023.04.22 ~ 2026.04.26",
     "venue": "부천소극장 (부천소극장)",
+    "venueId": "FC003399",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF216967",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "토요일 ~ 일요일(11:00,13:00,15:00), HOL(11:00,13:00,15:00)",
     "region": "경기도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF203142",
@@ -2969,12 +3425,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF203142_250611_160045.gif",
     "date": "2022.12.03 ~ 2026.06.28",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF203142",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "토요일 ~ 일요일(14:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF199614",
@@ -2982,12 +3440,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF199614_221007_140615.png",
     "date": "2022.10.07 ~ 2026.05.31",
     "venue": "entry55 [사당] (entry55 [사당] )",
+    "venueId": "FC003161",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF199614",
     "genre": "대중음악",
     "price": "전석 15,000원",
     "time": "수요일 ~ 금요일(18:30,21:00), 토요일(17:30,18:30,20:00,21:00), HOL(17:00,17:30,18:30,19:30,20:00,21:00), 화요일(18:30,21:00), 일요일(17:00,17:30,18:30,19:30,20:00,21:00), 월요일(17:30,18:30,20:00,21:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF189888",
@@ -2995,12 +3455,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF189888_220421_115934.png",
     "date": "2022.04.23 ~ 2026.06.07",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF189888",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "토요일 ~ 일요일(14:00), HOL(14:00), 월요일 ~ 목요일(14:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF186819",
@@ -3008,12 +3470,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF186819_260210_103032.gif",
     "date": "2022.03.05 ~ 2026.03.31",
     "venue": "아트포레스트 아트홀 (1관)",
+    "venueId": "FC001603",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF186819",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "금요일(17:00,20:00), 토요일(15:00,18:00), 일요일(14:00,17:00), HOL(14:00,17:00), 월요일(14:00,17:00), 화요일(19:30,20:00), 수요일(15:00,19:30,20:00), 목요일(20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF186310",
@@ -3021,12 +3485,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF186310_220203_105210.gif",
     "date": "2022.01.26 ~ 2026.03.31",
     "venue": "아스가르드 씨어터 (구. 낙산씨어터) (아스가르드 씨어터 (구. 낙산씨어터) )",
+    "venueId": "FC002932",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF186310",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(13:30,15:00,15:40,17:30,17:50,20:00), HOL(13:30,14:30,15:40,16:40,17:50,18:50,20:00), 토요일 ~ 일요일(13:30,14:30,15:40,16:40,17:50,20:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF185428",
@@ -3034,12 +3500,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF185428_250416_111227.gif",
     "date": "2014.09.11 ~ 2026.03.31",
     "venue": "정극장 (구. M시어터, 구.하모니아트홀) (정극장 (구. M시어터, 구.하모니아트홀) )",
+    "venueId": "FC001172",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF185428",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(15:00,17:00,19:30), 토요일(12:00,14:00,16:00,18:00,20:00), 일요일(13:00,15:00,17:00,19:00), HOL(13:00,15:00,17:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF178134",
@@ -3047,12 +3515,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF178134_210809_125033.PNG",
     "date": "2021.08.21 ~ 2026.03.28",
     "venue": "달밤엔씨어터 (달밤엔씨어터)",
+    "venueId": "FC001884",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF178134",
     "genre": "뮤지컬",
     "price": "전석 40,000원",
     "time": "목요일 ~ 금요일(15:00), 토요일 ~ 일요일(11:00,12:00,13:00,14:00,15:00), HOL(11:00,12:00,14:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF173180",
@@ -3060,12 +3530,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF173180_260211_145540.gif",
     "date": "2021.05.01 ~ 2026.03.29",
     "venue": "컬쳐씨어터(구. 휴먼시어터) (컬쳐씨어터(구. 휴먼시어터))",
+    "venueId": "FC001207",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF173180",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일(14:30,17:00), 화요일(13:30,14:30,15:40,17:00,17:50,20:00), 금요일(14:30,17:00,19:30), 토요일(11:30,11:50,13:30,13:40,14:00,15:40,15:50,16:10,17:50,18:00,18:20,20:00,20:10,20:30), 일요일(11:30,11:50,13:40,14:00,15:50,16:10,18:00,18:20,20:30), 수요일(14:30,17:00,19:30), 목요일(14:30,17:00), HOL(11:50,13:30,14:00,15:40,16:10,17:50,18:20,20:00,20:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF172547",
@@ -3073,12 +3545,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF172547_210318_100837.PNG",
     "date": "2021.03.20 ~ 2026.03.22",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF172547",
     "genre": "뮤지컬",
     "price": "전석 55,000원",
     "time": "토요일 ~ 일요일(14:00,15:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF172538",
@@ -3086,12 +3560,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF172538_210318_095642.jpg",
     "date": "2021.03.19 ~ 2026.03.31",
     "venue": "라온아트홀 (라온아트홀)",
+    "venueId": "FC002760",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF172538",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일(13:00,15:00,15:10,17:20,19:30), 토요일(11:50,14:00,16:10,18:20,20:30), 일요일(13:00,15:10,17:20,19:30), HOL(13:00,15:10,17:20,19:30), 화요일(15:00,17:20,19:30), 수요일(15:00,17:20,19:30), 목요일(15:00,17:20,19:30), 금요일(15:00,17:20,19:30), HOL(13:00,15:10,17:20,19:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF170941",
@@ -3099,12 +3575,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF170941_210106_102633.gif",
     "date": "2021.01.14 ~ 2026.03.31",
     "venue": "해피씨어터 (해피씨어터)",
+    "venueId": "FC001303",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF170941",
     "genre": "연극",
     "price": "전석 60,000원",
     "time": "월요일 ~ 금요일(15:00,18:00), 토요일 ~ 일요일(13:00,15:00,17:00,19:00), HOL(13:00,15:00,17:00,19:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF161298",
@@ -3112,12 +3590,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF161298_251014_110146.jpg",
     "date": "2020.02.28 ~ 2026.03.31",
     "venue": "댕로홀 (댕로홀)",
+    "venueId": "FC001099",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF161298",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(13:00,14:30,16:10,16:30,17:40,18:00,18:10,19:20,20:00,21:00), 토요일(13:00,14:00,17:10,17:20,17:40,18:10,19:00,19:10,19:20,20:00,20:40,20:45,21:00), 일요일(13:00,14:30,16:20,17:10,17:30,17:40,17:50,18:10,19:00,19:15,19:20,19:30,20:00,21:00), HOL(13:00,14:30,16:00,17:00,17:30,17:40,17:50,19:00,19:15,19:20,21:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF152141",
@@ -3125,12 +3605,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF152141_190724_140737.jpg",
     "date": "2019.07.20 ~ 2026.04.05",
     "venue": "북극곰소극장(구.아뮤스소극장) (북극곰소극장(구.아뮤스소극장))",
+    "venueId": "FC001814",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF152141",
     "genre": "연극",
     "price": "전석 35,000원, 돗자리석 25,000원",
     "time": "HOL(11:00,13:00,15:00), 화요일 ~ 목요일(13:00), 금요일(13:00,17:00), 토요일 ~ 일요일(11:00,13:00,14:00,15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF151901",
@@ -3138,12 +3620,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF151901_241219_103733.gif",
     "date": "2019.01.27 ~ 2026.04.26",
     "venue": "맛있는 극장 (맛있는 극장)",
+    "venueId": "FC001105",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF151901",
     "genre": "서커스/마술",
     "price": "전석 30,000원",
     "time": "수요일 ~ 금요일(11:00,13:00,15:00), 토요일 ~ 일요일(11:00,13:00,15:00), HOL(11:00,13:00,15:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF150471",
@@ -3151,12 +3635,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF150471_200629_135159.gif",
     "date": "2018.01.26 ~ 2026.04.06",
     "venue": "소극장 쇠내골 (소극장 쇠내골)",
+    "venueId": "FC001688",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF150471",
     "genre": "뮤지컬",
     "price": "전석 50,000원",
     "time": "월요일 ~ 금요일(14:00), 토요일 ~ 일요일(14:00), HOL(14:00)",
     "region": "충청북도",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF147207",
@@ -3164,12 +3650,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF147207_190318_105324.jpg",
     "date": "2019.03.15 ~ 2026.03.29",
     "venue": "해바라기소극장 [부산] (해바라기소극장 [부산] )",
+    "venueId": "FC001920",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF147207",
     "genre": "연극",
     "price": "전석 40,000원",
     "time": "수요일 ~ 금요일(19:30), HOL(14:30,15:30,17:00,18:00), 토요일(15:30,18:00), 일요일(14:30,15:30,17:00,18:00)",
     "region": "부산광역시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF175093",
@@ -3177,12 +3665,14 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF175093_241218_105921.jpg",
     "date": "2016.10.02 ~ 2026.03.31",
     "venue": "JTN 아트홀(구. 대학로예술마당) (4관)",
+    "venueId": "FC000139",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF175093",
     "genre": "연극",
     "price": "전석 50,000원",
     "time": "화요일(17:00), 수요일(14:00), 목요일 ~ 금요일(17:00), 토요일 ~ 일요일(15:00,17:30)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
   },
   {
     "id": "kopis_PF138268",
@@ -3190,11 +3680,118 @@
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF138268_260119_135011.jpg",
     "date": "2017.07.01 ~ 2026.03.29",
     "venue": "파랑씨어터 (구. 도향아트홀, 구. 뮤디스홀) (파랑씨어터 (구. 도향아트홀, 구. 뮤디스홀) )",
+    "venueId": "FC000749",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF138268",
     "genre": "연극",
     "price": "전석 45,000원",
     "time": "금요일(11:00,13:30,16:00), 토요일(11:00,13:00,15:00,17:00), 일요일(11:00,13:00,13:30,15:00,16:00), HOL(11:00,13:00,13:30,15:30,16:00)",
     "region": "서울특별시",
-    "source": "kopis"
+    "source": "kopis",
+    "isFestival": false
+  },
+  {
+    "id": "kopis_PF285885",
+    "title": "링스페, 모 베러 (More, Better) 콘서트",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285885_260226_132456.jpg",
+    "date": "2026.03.09 ~ 2026.03.15",
+    "venue": "링크더스페이스(LINK THE SPACE) (1관)",
+    "venueId": "FC004779",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285885",
+    "genre": "뮤지컬",
+    "price": "R석 77,000원, S석 66,000원",
+    "time": "월요일(19:30), 수요일(16:00), 금요일(19:30), 토요일(15:00), 일요일(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF285495",
+    "title": "창작단막극축제: 뿔난이들",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285495_260223_104419.gif",
+    "date": "2026.03.10 ~ 2026.04.19",
+    "venue": "드림시어터 [대학로] (소극장)",
+    "venueId": "FC001218",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285495",
+    "genre": "연극",
+    "price": "전석 30,000원",
+    "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF285406",
+    "title": "제12회 무죽페스티벌, 내가 너다",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285406_260220_100149.gif",
+    "date": "2026.03.04 ~ 2026.03.15",
+    "venue": "극장 동국 (극장 동국)",
+    "venueId": "FC001226",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285406",
+    "genre": "연극",
+    "price": "전석 30,000원",
+    "time": "월요일 ~ 금요일(19:30), 토요일 ~ 일요일(16:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF285004",
+    "title": "제2회 자생 프로젝트, 하자!!",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285004_260212_102151.gif",
+    "date": "2026.03.05 ~ 2026.03.15",
+    "venue": "소극장 혜화당 (구. 까망소극장) (소극장 혜화당 (구. 까망소극장) )",
+    "venueId": "FC001085",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285004",
+    "genre": "연극",
+    "price": "전석 30,000원",
+    "time": "월요일 ~ 금요일(20:40), 토요일(14:00,15:40,17:30,19:10), 일요일(15:00,16:40)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF284151",
+    "title": "중구문화의전당 실내악페스티벌: 진달래꽃 필 무렵, 조희창과 친구들: 봄을 여는 피아노 5중주",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284151_260130_132945.jpg",
+    "date": "2026.03.10 ~ 2026.03.10",
+    "venue": "울산중구문화의전당 (함월홀 (2층) )",
+    "venueId": "FC001328",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284151",
+    "genre": "서양음악(클래식)",
+    "price": "전석 10,000원",
+    "time": "화요일(19:30)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF283932",
+    "title": "제2회 심야연극제, T와 F의 로맨스",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283932_260127_130423.gif",
+    "date": "2026.03.06 ~ 2026.03.11",
+    "venue": "나인진홀 (구.청년극장) (나인진홀 1관)",
+    "venueId": "FC001121",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283932",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "월요일 ~ 수요일(20:10), 금요일(20:10), 토요일 ~ 일요일(20:10)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true
+  },
+  {
+    "id": "kopis_PF283134",
+    "title": "전북국제재즈페스타 시즌1 [전주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283134_260114_104850.png",
+    "date": "2026.03.07 ~ 2026.04.06",
+    "venue": "로라뮤직-바인홀 (로라뮤직-바인홀)",
+    "venueId": "FC002803",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283134",
+    "genre": "대중음악",
+    "price": "DAY 1 125,000원, DAY 2 88,000원",
+    "time": "월요일(19:30), 토요일(19:30)",
+    "region": "전북특별자치도",
+    "source": "kopis",
+    "isFestival": true
   }
 ]

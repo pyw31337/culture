@@ -7,8 +7,9 @@ import path from 'path';
 const API_KEY = 'ba7dc8feda8a4e66a90e43fcdb03c35a';
 const BASE_URL = 'http://www.kopis.or.kr/openApi/restful';
 const DATA_DIR = path.join(process.cwd(), 'src/data');
+const VENUE_FILE = path.join(DATA_DIR, 'venues.json');
 const OUTPUT_FILE = path.join(DATA_DIR, 'kopis-performances.json');
-const RATE_LIMIT_DELAY = 100; // ms between requests
+const RATE_LIMIT_DELAY = 150; // ms between requests
 
 const parser = new XMLParser();
 
@@ -17,155 +18,182 @@ interface KopisPerformance {
     id: string;
     title: string;
     image: string;
-    date: string; // "YYYY.MM.DD ~ YYYY.MM.DD"
+    date: string;
     venue: string;
+    venueId?: string;
     link: string;
     genre: string;
     price: string;
     time?: string;
     region?: string;
+    lat?: number;
+    lng?: number;
+    address?: string;
     source: 'kopis';
+    isFestival?: boolean;
+}
+
+interface VenueInfo {
+    name: string;
+    address: string;
+    lat: number;
+    lng: number;
+    district?: string;
+    mapped_region_id?: string;
 }
 
 // --- Utils ---
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-function slugify(text: string): string {
-    return text
-        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
-        .replace(/_+/g, '_')
-        .replace(/^_|_$/g, '');
-}
-
 async function fetchWithRetry(url: string, params: any, retries = 3): Promise<any> {
     for (let i = 0; i < retries; i++) {
         try {
-            const response = await axios.get(url, { params, timeout: 10000 });
+            const response = await axios.get(url, { params, timeout: 15000 });
             return response.data;
         } catch (e: any) {
             if (i === retries - 1) throw e;
-            console.warn(`Retrying ${url} (${i + 1}/${retries})...`);
-            await delay(1000 * (i + 1));
+            console.warn(`\nRetrying ${url} (${i + 1}/${retries})... Error: ${e.message}`);
+            await delay(2000 * (i + 1));
         }
     }
 }
 
 // --- Main Logic ---
 async function scrapeKopis() {
-    console.log("🚀 Starting KOPIS 'Currently Running' Scraper...");
+    console.log("🚀 Starting Elaborate KOPIS Scraper (Performances & Festivals)...");
     
     if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-    let existingData: KopisPerformance[] = [];
-    if (fs.existsSync(OUTPUT_FILE)) {
+    // Load existing venues for coordinate lookup
+    let venues: Record<string, VenueInfo> = {};
+    if (fs.existsSync(VENUE_FILE)) {
         try {
-            existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
-            console.log(`Loaded ${existingData.length} existing items.`);
+            venues = JSON.parse(fs.readFileSync(VENUE_FILE, 'utf-8'));
+            console.log(`Loaded ${Object.keys(venues).length} venues for coordinate lookup.`);
         } catch (e) {
-            console.warn('Could not parse existing data, starting fresh.');
+            console.warn('Could not parse venues.json, starting fresh for venues.');
         }
     }
 
     const today = new Date();
-    const stdate = today.toISOString().split('T')[0].replace(/-/g, '');
-    const eddate = new Date(today.getFullYear(), today.getMonth() + 3, today.getDate())
-        .toISOString().split('T')[0].replace(/-/g, '');
-
-    console.log(`Searching from ${stdate} to ${eddate}...`);
+    const stdate = '20260101'; // Catch all current
+    const eddate = '20261231';
 
     let allItems: KopisPerformance[] = [];
-    let page = 1;
-    let hasMore = true;
+    const uniqueVenueIds = new Set<string>();
 
-    // 1. Fetch List
-    while (hasMore) {
-        console.log(`Fetching List Page ${page}...`);
-        const xmlData = await fetchWithRetry(`${BASE_URL}/pblprfr`, {
-            service: API_KEY,
-            stdate: '20260101', // Wide range to catch all current
-            eddate: '20261231',
-            cpage: page,
-            rows: 100,
-            prfstate: '02' // Currently Running
-        });
+    const fetchList = async (endpoint: string, isFestival = false) => {
+        let page = 1;
+        let hasMore = true;
+        while (hasMore) {
+            console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} List Page ${page}...`);
+            const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
+                service: API_KEY,
+                stdate,
+                eddate,
+                cpage: page,
+                rows: 100,
+                prfstate: '02'
+            });
 
-        const jsonObj = parser.parse(xmlData);
-        const dbs = jsonObj.dbs?.db;
+            const jsonObj = parser.parse(xmlData);
+            const dbs = jsonObj.dbs?.db;
+            if (!dbs) break;
 
-        if (!dbs) {
-            hasMore = false;
-            break;
-        }
+            const list = Array.isArray(dbs) ? dbs : [dbs];
+            for (const item of list) {
+                const mt20id = item.mt20id;
+                // Fetch Detail
+                try {
+                    process.stdout.write(`.`);
+                    await delay(RATE_LIMIT_DELAY);
+                    const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${mt20id}`, { service: API_KEY });
+                    const detailObj = parser.parse(detailXml);
+                    const db = detailObj.dbs?.db;
 
-        const list = Array.isArray(dbs) ? dbs : [dbs];
-        
-        for (const item of list) {
-            const mt20id = item.mt20id;
-            
-            // Optimization: Skip detail fetch if it exists and is recent (Basic check for now)
-            const existing = existingData.find(e => e.id === `kopis_${mt20id}`);
-            
-            if (existing) {
-                allItems.push(existing);
-                continue;
-            }
-
-            // 2. Fetch Detail
-            try {
-                process.stdout.write(`.`);
-                await delay(RATE_LIMIT_DELAY);
-                const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${mt20id}`, {
-                    service: API_KEY
-                });
-                
-                const detailObj = parser.parse(detailXml);
-                const db = detailObj.dbs?.db;
-
-                if (db) {
-                    allItems.push({
-                        id: `kopis_${mt20id}`,
-                        title: db.prfnm,
-                        image: db.poster,
-                        date: `${db.prfpdfrom} ~ ${db.prfpdto}`,
-                        venue: db.fcltynm,
-                        link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
-                        genre: db.genrenm,
-                        price: db.pcseguidance || '정보없음',
-                        time: db.dtguidance,
-                        region: db.area,
-                        source: 'kopis'
-                    });
+                    if (db) {
+                        const perf: KopisPerformance = {
+                            id: `kopis_${mt20id}`,
+                            title: db.prfnm,
+                            image: db.poster,
+                            date: `${db.prfpdfrom} ~ ${db.prfpdto}`,
+                            venue: db.fcltynm,
+                            venueId: db.mt10id,
+                            link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
+                            genre: db.genrenm,
+                            price: db.pcseguidance || '정보없음',
+                            time: db.dtguidance,
+                            region: db.area,
+                            source: 'kopis',
+                            isFestival
+                        };
+                        allItems.push(perf);
+                        if (db.mt10id) uniqueVenueIds.add(db.mt10id);
+                    }
+                } catch (e: any) {
+                    process.stdout.write(`X`);
                 }
-            } catch (e: any) {
-                console.error(`\nFailed to fetch detail for ${mt20id}:`, e.message);
-                // Push minimal data if detail fails
-                allItems.push({
-                    id: `kopis_${mt20id}`,
-                    title: item.prfnm,
-                    image: item.poster,
-                    date: `${item.prfpdfrom} ~ ${item.prfpdto}`,
-                    venue: item.fcltynm,
-                    link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
-                    genre: item.genrenm,
-                    price: '정보없음',
-                    source: 'kopis'
-                });
             }
+            console.log(`\nPage ${page} done. Total: ${allItems.length}`);
+            if (list.length < 100 || page > 50) hasMore = false;
+            else page++;
+            
+            // Iterative save
+            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allItems, null, 2));
+        }
+    };
+
+    // 1. Collect Performances & Festivals
+    await fetchList('pblprfr', false);
+    await fetchList('prffest', true);
+
+    // 2. Enrich with Venue Details (Coordinates)
+    console.log(`\n🔍 Enriching ${uniqueVenueIds.size} unique venues with coordinates...`);
+    let venueUpdateCount = 0;
+    for (const vid of uniqueVenueIds) {
+        // Find venue name from allItems to check cache
+        const sample = allItems.find(it => it.venueId === vid);
+        if (sample && venues[sample.venue]) {
+            // Already have coordinates, skip
+            continue;
         }
 
-        console.log(`\nPage ${page} processed. Total: ${allItems.length}`);
-        
-        // Save intermediate results
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allItems, null, 2));
+        try {
+            process.stdout.write(`v`);
+            await delay(RATE_LIMIT_DELAY);
+            const vXml = await fetchWithRetry(`${BASE_URL}/prfplc/${vid}`, { service: API_KEY });
+            const vObj = parser.parse(vXml);
+            const vdb = vObj.dbs?.db;
 
-        if (list.length < 100 || page > 30) { // Limit to 3000 items for safety in first run
-            hasMore = false;
-        } else {
-            page++;
+            if (vdb && vdb.la && vdb.lo) {
+                venues[vdb.fcltynm] = {
+                    name: vdb.fcltynm,
+                    address: vdb.adres || '',
+                    lat: parseFloat(vdb.la),
+                    lng: parseFloat(vdb.lo),
+                    district: (vdb.adres || '').split(' ')[1] // Simple district extraction
+                };
+                venueUpdateCount++;
+            }
+        } catch (e) {
+            process.stdout.write(`e`);
         }
     }
 
-    console.log(`✅ Scrape Complete! Saved ${allItems.length} items to ${OUTPUT_FILE}`);
+    // 3. Apply coordinates to all items and Save
+    console.log(`\n✅ Updated ${venueUpdateCount} new venues in cache.`);
+    const enrichedItems = allItems.map(item => {
+        const v = venues[item.venue];
+        if (v) {
+            return { ...item, lat: v.lat, lng: v.lng, address: v.address };
+        }
+        return item;
+    });
+
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
+    fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
+    
+    console.log(`\n🎉 Final result: ${enrichedItems.length} items saved to ${OUTPUT_FILE}`);
 }
 
 scrapeKopis().catch(err => {
