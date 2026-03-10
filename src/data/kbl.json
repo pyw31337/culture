@@ -1,39 +1,17 @@
 [
   {
-    "id": "kbl_20260305_고양_소노_vs_안양_정관장",
-    "title": "고양 소노 vs 안양 정관장",
+    "id": "kbl_20260311_창원_LG_vs_고양_소노",
+    "title": "창원 LG vs 고양 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026-03-05 19:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
-  },
-  {
-    "id": "kbl_20260305_원주_DB_vs_부산_KCC",
-    "title": "원주 DB vs 부산 KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-03-05 19:00",
-    "venue": "원주DB프로미아레나",
+    "date": "2026-03-11 19:00",
+    "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
-    "homeTeam": "원주 DB",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "homeTeam": "창원 LG",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260302_현대모비스_vs_한국가스공사",
@@ -47,11 +25,7 @@
     "homeTeam": "현대모비스",
     "awayTeam": "한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260302_소노_vs_SK",
@@ -65,11 +39,7 @@
     "homeTeam": "소노",
     "awayTeam": "SK",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260303_정관장_vs_한국가스공사",
@@ -83,11 +53,7 @@
     "homeTeam": "정관장",
     "awayTeam": "한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260303_DB_vs_LG",
@@ -101,11 +67,7 @@
     "homeTeam": "DB",
     "awayTeam": "LG",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260304_삼성_vs_SK",
@@ -119,11 +81,7 @@
     "homeTeam": "삼성",
     "awayTeam": "SK",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260304_LG_vs_현대모비스",
@@ -137,11 +95,35 @@
     "homeTeam": "LG",
     "awayTeam": "현대모비스",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+  },
+  {
+    "id": "kbl_20260305_고양_소노_vs_안양_정관장",
+    "title": "고양 소노 vs 안양 정관장",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-05 19:00",
+    "venue": "고양소노아레나",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "gyeonggi",
+    "genre": "basketball",
+    "homeTeam": "고양 소노",
+    "awayTeam": "안양 정관장",
+    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+  },
+  {
+    "id": "kbl_20260305_원주_DB_vs_부산_KCC",
+    "title": "원주 DB vs 부산 KCC",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-05 19:00",
+    "venue": "원주DB프로미아레나",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "원주 DB",
+    "awayTeam": "부산 KCC",
+    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260306_창원_LG_vs_울산_현대모비스",
@@ -155,11 +137,7 @@
     "homeTeam": "창원 LG",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260306_수원_KT_vs_서울_SK",
@@ -173,11 +151,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260307_원주_DB_vs_고양_소노",
@@ -191,11 +165,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260307_서울_삼성_vs_부산_KCC",
@@ -209,11 +179,7 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260307_안양_정관장_vs_대구_한국가스공사",
@@ -227,11 +193,7 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260308_창원_LG_vs_서울_SK",
@@ -245,11 +207,7 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260308_울산_현대모비스_vs_수원_KT",
@@ -263,11 +221,7 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산 북구 고래로 54",
-    "district": "북구"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260308_원주_DB_vs_대구_한국가스공사",
@@ -281,11 +235,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260309_서울_삼성_vs_안양_정관장",
@@ -299,11 +249,7 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260310_KT_vs_DB",
@@ -317,11 +263,7 @@
     "homeTeam": "KT",
     "awayTeam": "DB",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260310_한국가스공사_vs_상무",
@@ -335,11 +277,7 @@
     "homeTeam": "한국가스공사",
     "awayTeam": "상무",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20260310_부산_KCC_vs_울산_현대모비스",
@@ -353,28 +291,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
-  },
-  {
-    "id": "kbl_20260311_창원_LG_vs_고양_소노",
-    "title": "창원 LG vs 고양 소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-03-11 19:00",
-    "venue": "창원체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "창원 LG",
-    "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260312_서울_SK_vs_원주_DB",
@@ -388,11 +305,7 @@
     "homeTeam": "서울 SK",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260313_창원_LG_vs_서울_삼성",
@@ -406,11 +319,7 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260314_수원_KT_vs_서울_SK",
@@ -424,11 +333,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260314_부산_KCC_vs_안양_정관장",
@@ -442,10 +347,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260314_대구_한국가스공사_vs_울산_현대모비스",
@@ -459,10 +361,7 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260315_원주_DB_vs_창원_LG",
@@ -476,11 +375,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260315_고양_소노_vs_서울_삼성",
@@ -494,11 +389,7 @@
     "homeTeam": "고양 소노",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260315_울산_현대모비스_vs_부산_KCC",
@@ -512,11 +403,7 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산 북구 고래로 54",
-    "district": "북구"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260316_대구_한국가스공사_vs_안양_정관장",
@@ -530,10 +417,7 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260318_수원_KT_vs_원주_DB",
@@ -547,11 +431,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260319_고양_소노_vs_부산_KCC",
@@ -565,11 +445,7 @@
     "homeTeam": "고양 소노",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260320_수원_KT_vs_대구_한국가스공사",
@@ -583,11 +459,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260321_고양_소노_vs_울산_현대모비스",
@@ -601,11 +473,7 @@
     "homeTeam": "고양 소노",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260321_부산_KCC_vs_서울_삼성",
@@ -619,10 +487,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260322_안양_정관장_vs_수원_KT",
@@ -636,11 +501,7 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260322_원주_DB_vs_대구_한국가스공사",
@@ -654,11 +515,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260323_서울_삼성_vs_울산_현대모비스",
@@ -672,11 +529,7 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260324_원주_DB_vs_안양_정관장",
@@ -690,11 +543,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260325_서울_SK_vs_고양_소노",
@@ -708,11 +557,7 @@
     "homeTeam": "서울 SK",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260326_대구_한국가스공사_vs_창원_LG",
@@ -726,10 +571,7 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260327_부산_KCC_vs_수원_KT",
@@ -743,10 +585,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260328_울산_현대모비스_vs_서울_SK",
@@ -760,11 +599,7 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산 북구 고래로 54",
-    "district": "북구"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260328_고양_소노_vs_원주_DB",
@@ -778,11 +613,7 @@
     "homeTeam": "고양 소노",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260328_서울_삼성_vs_안양_정관장",
@@ -796,11 +627,7 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260329_창원_LG_vs_서울_SK",
@@ -814,11 +641,7 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260329_대구_한국가스공사_vs_부산_KCC",
@@ -832,10 +655,7 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260329_서울_삼성_vs_수원_KT",
@@ -849,11 +669,7 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260330_울산_현대모비스_vs_원주_DB",
@@ -867,11 +683,7 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산 북구 고래로 54",
-    "district": "북구"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260331_안양_정관장_vs_창원_LG",
@@ -885,11 +697,7 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260401_부산_KCC_vs_서울_SK",
@@ -903,10 +711,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260402_대구_한국가스공사_vs_고양_소노",
@@ -920,10 +725,7 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260403_수원_KT_vs_창원_LG",
@@ -937,11 +739,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260404_안양_정관장_vs_울산_현대모비스",
@@ -955,11 +753,7 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260404_원주_DB_vs_서울_삼성",
@@ -973,11 +767,7 @@
     "homeTeam": "원주 DB",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원 원주시 서원대로 281",
-    "district": "원주시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260404_서울_SK_vs_대구_한국가스공사",
@@ -991,11 +781,7 @@
     "homeTeam": "서울 SK",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260405_창원_LG_vs_부산_KCC",
@@ -1009,11 +795,7 @@
     "homeTeam": "창원 LG",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경남 창원시 성산구 원이대로 450",
-    "district": "창원시"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260405_고양_소노_vs_안양_정관장",
@@ -1027,11 +809,7 @@
     "homeTeam": "고양 소노",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260405_수원_KT_vs_울산_현대모비스",
@@ -1045,11 +823,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260406_서울_SK_vs_서울_삼성",
@@ -1063,11 +837,7 @@
     "homeTeam": "서울 SK",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260408_울산_현대모비스_vs_창원_LG",
@@ -1081,11 +851,7 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산 북구 고래로 54",
-    "district": "북구"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260408_수원_KT_vs_고양_소노",
@@ -1099,11 +865,7 @@
     "homeTeam": "수원 KT",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260408_안양_정관장_vs_서울_SK",
@@ -1117,11 +879,7 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260408_부산_KCC_vs_원주_DB",
@@ -1135,10 +893,7 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260408_서울_삼성_vs_대구_한국가스공사",
@@ -1152,10 +907,6 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   }
 ]
