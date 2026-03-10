@@ -106,7 +106,7 @@ export default async function PerformanceSharePage({ params }: PageProps) {
     if (!p) return <ShareRedirect id={decodedId} />;
 
     return (
-        <main className="relative min-h-screen py-4 px-4 sm:py-8 sm:px-6 flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500">
+        <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500">
             {/* Premium Animated Background */}
             <RainbowBackground />
             
@@ -118,9 +118,7 @@ export default async function PerformanceSharePage({ params }: PageProps) {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-4xl">
-                <ContentDetailView performance={p} mode="standalone" />
-            </div>
+            <ContentDetailView performance={p} mode="standalone" />
 
             {/* SEO Structured Data */}
             <script

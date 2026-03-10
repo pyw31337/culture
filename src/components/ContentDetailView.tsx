@@ -89,20 +89,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         : "relative w-full h-full bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 holo-effect";
 
     return (
-        <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className={containerClasses}
+        <div 
+            className={mode === 'standalone' ? "relative z-10 min-h-screen w-full flex items-center justify-center p-4 cursor-pointer" : "relative"}
             onClick={handleBackgroundClick}
         >
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+                className={containerClasses}
+            >
             <div className={`overflow-y-auto overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] md:max-h-none'} scrollbar-hide`}>
                 <div className={mode === 'standalone' ? "flex flex-col" : ""}>
                     {/* Hero / Poster Section */}
                     {imgSrc && (
                         <div className={mode === 'standalone' 
-                            ? "relative w-full aspect-[3/4] shrink-0 group cursor-default" 
-                            : "relative h-60 sm:h-[450px] w-full group cursor-default"}>
+                            ? "relative w-full aspect-[3/4] shrink-0 group cursor-default overflow-hidden" 
+                            : "relative h-60 sm:h-[450px] w-full group cursor-default overflow-hidden"}>
                             <motion.img
                                 initial={{ scale: 1.05 }}
                                 animate={{ scale: 1 }}
@@ -189,7 +192,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-2xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
+                                    <h2 className="text-xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>
                                 </div>
@@ -312,6 +315,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                     </div>
                 </div>
             </div>
-        </motion.div>
+            </motion.div>
+        </div>
     );
 }
+
+ContentDetailView.displayName = 'ContentDetailView';

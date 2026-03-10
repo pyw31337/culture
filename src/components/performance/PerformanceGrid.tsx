@@ -57,6 +57,7 @@ export default function PerformanceGrid({
                     ? "grid grid-cols-1 min-[310px]:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-6"
                     : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
             )}
+            style={{ contentVisibility: 'visible' }}
         >
             {items.map((perf) => {
                 // Venue Info
@@ -78,7 +79,7 @@ export default function PerformanceGrid({
                         key={`${perf.id}-${perf.region}`}
                         className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
                         style={{
-                            contentVisibility: 'auto',
+                            contentVisibility: 'visible',
                             containIntrinsicSize: layoutMode === 'grid' ? 'auto 450px' : 'auto 150px'
                         }}
                     >
