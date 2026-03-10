@@ -262,6 +262,13 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         date = raw.time ? `${raw.date} (${raw.time})` : (raw.date || '');
     } else if (source === 'movie') {
         genre = 'movie';
+    } else if (source === 'kopis' && raw.genre) {
+        // KOPIS specific normalization if needed
+        if (raw.genre === '뮤지컬') genre = 'musical';
+        else if (raw.genre === '연극') genre = 'play';
+        else if (raw.genre.includes('클래식') || raw.genre.includes('오케스트라')) genre = 'classic_tradition';
+        else if (raw.genre.includes('전시') || raw.genre.includes('미술')) genre = 'exhibition';
+        else if (raw.genre.includes('축제')) genre = 'festival';
     }
 
     // 2. Genre Refinement Logic

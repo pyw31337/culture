@@ -72,6 +72,7 @@ jobs:
           npx tsx scripts/scrape-kbo.ts || true
           npx tsx scripts/scrape-kleague.ts || true
           npx tsx scripts/scrape-yes24-exclusive.ts || true
+          npx tsx scripts/scrape-kopis.ts || true
           npx tsx scripts/scrape-timeticket.ts || true
           npx tsx scripts/scrape-movies.ts || true
           npx tsx scripts/scrape-cinemas.ts || true
