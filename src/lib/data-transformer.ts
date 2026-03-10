@@ -260,6 +260,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         image = raw.poster || '';
         price = raw.cost || '';
         date = raw.time ? `${raw.date} (${raw.time})` : (raw.date || '');
+    } else if (source === 'movie') {
+        genre = 'movie';
     }
 
     // 2. Genre Refinement Logic
