@@ -83,18 +83,20 @@ async function scrapeKopis() {
     const uniqueVenueIds = new Set<string>();
 
     const fetchList = async (endpoint: string, isFestival = false) => {
-        let page = 1;
-        let hasMore = true;
-        while (hasMore) {
-            console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} List Page ${page}...`);
-            const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
-                service: API_KEY,
-                stdate,
-                eddate,
-                cpage: page,
-                rows: 100,
-                prfstate: '02'
-            });
+        const states = isFestival ? ['01', '02', '03', '04'] : ['01', '02']; // Upcoming and Running
+        for (const state of states) {
+            let page = 1;
+            let hasMore = true;
+            while (hasMore) {
+                console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} State ${state} Page ${page}...`);
+                const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
+                    service: API_KEY,
+                    stdate: '20200101', // Very wide to catch open runs
+                    eddate: '20261231', // Future end
+                    cpage: page,
+                    rows: 100,
+                    prfstate: state
+                });
 
             const jsonObj = parser.parse(xmlData);
             const dbs = jsonObj.dbs?.db;
@@ -140,7 +142,8 @@ async function scrapeKopis() {
             
             // Iterative save
             fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allItems, null, 2));
-        }
+            } // Added missing closing brace for while loop
+        } // Added missing closing brace for for loop
     };
 
     // 1. Collect Performances & Festivals
