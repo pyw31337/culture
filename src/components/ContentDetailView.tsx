@@ -2,8 +2,8 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film } from 'lucide-react';
-import { useState } from 'react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -17,6 +17,7 @@ interface ContentDetailViewProps {
 
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
+    const containerRef = useRef<HTMLDivElement>(null);
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
 
@@ -29,9 +30,31 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
 
-    const handleShare = async () => {
+    const handleShare = async (e?: React.MouseEvent) => {
+        if (e) e.stopPropagation();
         const url = `${window.location.origin}${window.location.pathname}${mode === 'modal' ? `#p=${p.id}` : ''}`;
         await navigator.clipboard.writeText(url);
+    };
+
+    const handleClose = (e?: React.MouseEvent) => {
+        if (e) e.stopPropagation();
+        if (onClose) {
+            onClose();
+        } else {
+            // If there's meaningful history, go back
+            if (typeof window !== 'undefined' && window.history.length > 2) {
+                router.back();
+            } else {
+                router.push('/');
+            }
+        }
+    };
+
+    const handleBackgroundClick = (e: React.MouseEvent) => {
+        // Only close if clicking the actual container and not its children
+        if (e.target === e.currentTarget) {
+            handleClose(e);
+        }
     };
 
     const handleVenueClick = (e: React.MouseEvent) => {
@@ -71,16 +94,17 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
             initial="hidden"
             animate="visible"
             className={containerClasses}
+            onClick={handleBackgroundClick}
         >
             <div className={`overflow-y-auto overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] md:max-h-none'} scrollbar-hide`}>
                 <div className={mode === 'standalone' ? "flex flex-col" : ""}>
                     {/* Hero / Poster Section */}
                     {imgSrc && (
                         <div className={mode === 'standalone' 
-                            ? "relative w-full aspect-[3/4] shrink-0 group" 
-                            : "relative h-60 sm:h-[450px] w-full group"}>
+                            ? "relative w-full aspect-[3/4] shrink-0 group cursor-default" 
+                            : "relative h-60 sm:h-[450px] w-full group cursor-default"}>
                             <motion.img
-                                initial={{ scale: 1.15 }}
+                                initial={{ scale: 1.05 }}
                                 animate={{ scale: 1 }}
                                 transition={{ duration: 1.2, ease: "easeOut" }}
                                 src={imgSrc}
@@ -95,8 +119,33 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
                                 }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                             
+                            {/* Close Button UI */}
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={handleClose}
+                                className="absolute top-4 right-4 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-20 hover:bg-black/60 transition-colors"
+                            >
+                                <X className="w-6 h-6" />
+                            </motion.button>
+
+                            {/* Play Button Overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <motion.a
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + ' 예고편')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shadow-2xl"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Play className="w-8 h-8 fill-current translate-x-0.5" />
+                                </motion.a>
+                            </div>
+
                             {/* Sports VS Overlay */}
                             {isSports && hasTeams && (
                                 <div className="absolute inset-x-0 bottom-6 flex items-center justify-center pointer-events-none px-6">
@@ -107,16 +156,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             transition={{ delay: 0.5, type: 'spring' }}
                                             src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
                                             alt={p.homeTeam}
-                                            className="w-1/3 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
+                                            className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
-                                        <div className="text-white text-base font-black italic bg-black/40 px-3 py-0.5 rounded-full backdrop-blur-md border border-white/10 shadow-lg">VS</div>
+                                        <div className="text-white text-xl font-black italic bg-black/40 px-4 py-1 rounded-full backdrop-blur-md border border-white/10 shadow-lg">VS</div>
                                         <motion.img
                                             initial={{ x: 30, opacity: 0, rotate: 10 }}
                                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                                             transition={{ delay: 0.5, type: 'spring' }}
                                             src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
                                             alt={p.awayTeam}
-                                            className="w-1/3 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
+                                            className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
                                     </div>
                                 </div>
@@ -136,17 +185,17 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     <motion.span
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
-                                        className={`px-2.5 py-0.5 rounded-md text-[8px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
+                                        className={`px-3 py-1 rounded-md text-[12px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-lg font-black leading-[1.2] tracking-tighter drop-shadow-sm">
+                                    <h2 className="text-3xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>
                                 </div>
                                 
                                 {p.originalTitle && (
-                                    <p className="text-[10px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-8px]">{p.originalTitle}</p>
+                                    <p className="text-[15px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{p.originalTitle}</p>
                                 )}
                             </motion.div>
 
@@ -173,32 +222,32 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     },
                                     { icon: Ticket, text: p.price, color: 'text-amber-500', label: '가격' }
                                 ].filter(item => item.text).map((item, idx) => (
-                                    <div key={idx} className="flex items-center gap-3 py-0.5 border-b border-gray-50 dark:border-white/5 last:border-0">
-                                        <item.icon className={`w-3.5 h-3.5 ${item.color} shrink-0 opacity-80`} />
+                                    <div key={idx} className="flex items-center gap-4 py-1.5 border-b border-gray-50 dark:border-white/5 last:border-0">
+                                        <item.icon className={`w-5 h-5 ${item.color} shrink-0 opacity-80`} />
                                         {item.isLink ? (
                                             <button 
                                                 onClick={item.onClick}
-                                                className="text-[11px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1"
+                                                className="text-[16.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
                                             >
                                                 <span>{item.text}</span>
-                                                <ExternalLink className="w-2.5 h-2.5 opacity-50" />
+                                                <ExternalLink className="w-3.5 h-3.5 opacity-50" />
                                             </button>
                                         ) : (
-                                            <p className="text-[11px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                            <p className="text-[16.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
                                         )}
                                     </div>
                                 ))}
                             </motion.div>
 
                             {/* Description */}
-                            {p.description && mode === 'standalone' && (
-                                <motion.p variants={itemVariants} className="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-2 pt-1">
+                             {p.description && mode === 'standalone' && (
+                                <motion.p variants={itemVariants} className="text-[16.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     "{p.description}"
                                 </motion.p>
                             )}
 
-                            {hasCast && mode === 'standalone' && (
-                                <motion.div variants={itemVariants} className="flex flex-wrap gap-1.5 pt-1">
+                             {hasCast && mode === 'standalone' && (
+                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
                                     {p.cast!.slice(0, 7).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
                                         let url = typeof c === 'string' ? undefined : (c as any).url;
@@ -208,7 +257,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
                                         }
 
-                                        const castClasses = "px-2 py-0.5 rounded-md bg-gray-50 dark:bg-white/5 text-[9px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
+                                        const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[14px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
                                         
                                         return url ? (
                                             <a 
@@ -217,6 +266,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
                                                 className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10 text-emerald-500`}
+                                                onClick={(e) => e.stopPropagation()}
                                             >
                                                 {name}
                                             </a>
@@ -241,41 +291,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     <Share2 className="w-5 h-5" />
                                 </motion.button>
                                 
-                                <motion.a
+                                 <motion.a
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.99 }}
-                                    href={p.link}
+                                    href={p.genre === 'movie' 
+                                        ? `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`
+                                        : p.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl text-white font-black text-sm ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
+                                    className={`flex-1 flex items-center justify-center gap-3 py-5 rounded-2xl text-white font-black text-lg ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
+                                    onClick={(e) => e.stopPropagation()}
                                 >
-                                    <ExternalLink className="w-4 h-4" />
+                                    <ExternalLink className="w-5 h-5" />
                                     <span>예매하기 이동</span>
                                 </motion.a>
                             </motion.div>
 
-                            {mode === 'standalone' && (
-                                <button 
-                                    onClick={() => {
-                                        // If there's meaningful history, go back to preserve exact scroll/order
-                                        // Otherwise, go home.
-                                        if (typeof window !== 'undefined' && window.history.length > 2) {
-                                            router.back();
-                                        } else {
-                                            router.push('/');
-                                        }
-                                    }}
-                                    className="w-full block"
-                                >
-                                    <motion.div
-                                        whileHover={{ y: -1 }}
-                                        className="w-full py-2 text-gray-400 dark:text-gray-500 font-bold text-[10px] text-center tracking-widest uppercase flex items-center justify-center gap-2"
-                                    >
-                                        <Sparkles className="w-3 h-3 opacity-50" />
-                                        <span>컬처플로우 바로가기</span>
-                                    </motion.div>
-                                </button>
-                            )}
+                             {/* Removed: 컬처플로우 바로가기 버튼 */}
                         </div>
                     </div>
                 </div>
