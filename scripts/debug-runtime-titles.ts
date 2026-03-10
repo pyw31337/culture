@@ -7,7 +7,6 @@ import interparkData from '../src/data/interpark.json';
 import kovoData from '../src/data/kovo.json';
 import kblData from '../src/data/kbl.json';
 import kboData from '../src/data/kbo.json';
-import travelData from '../src/data/travel.json';
 import festivalsData from '../src/data/festivals.json';
 import yes24Data from '../src/data/yes24.json';
 import timeticketData from '../src/data/timeticket.json';
@@ -66,7 +65,6 @@ const allPerformances = [
     ...safeArray(handballData),
 
     ...safeArray(moviesData),
-    ...safeArray(travelData),
     ...safeArray(kidsData),
     ...safeArray(classData),
     ...safeArray(umclassData),

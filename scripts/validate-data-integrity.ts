@@ -10,7 +10,6 @@ const CRITICAL_TARGETS = [
     { file: 'mochaclass.json', name: '모카클래스' },
     { file: 'umclass.json', name: '솜씨당/음클래스' },
     { file: 'kbo.json', name: '프로야구' },
-    { file: 'travel.json', name: '여행/체험' },
     { file: '../lib/performance-filter.ts', name: '필터링 로직', type: 'code' }
 ];
 
