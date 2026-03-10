@@ -246120,7 +246120,11 @@
     "time": "수요일(19:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4786094,
+    "lng": 127.01130690000002,
+    "address": "서울특별시 서초구 남부순환로 2364 (서초동) 국립국악원",
+    "district": "서초구"
   },
   {
     "id": "kopis_PF286112",
@@ -246135,7 +246139,11 @@
     "time": "수요일(19:30)",
     "region": "경기도",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4027309,
+    "lng": 127.13124349999998,
+    "address": "경기도 성남시 분당구 성남대로 808 (야탑동)",
+    "district": "성남시"
   },
   {
     "id": "kopis_PF286044",
@@ -246150,7 +246158,11 @@
     "time": "일요일(16:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.5524309,
+    "lng": 126.9188172,
+    "address": "서울특별시 마포구 잔다리로 46 (서교동)",
+    "district": "마포구"
   },
   {
     "id": "kopis_PF285980",
@@ -246165,7 +246177,11 @@
     "time": "화요일(20:00), 수요일(16:00,20:00), 목요일 ~ 금요일(20:00), 토요일(15:00,19:00), 일요일(14:00,18:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.5820171,
+    "lng": 127.00353629999995,
+    "address": "서울특별시 종로구 동숭길 123 (동숭동)",
+    "district": "종로구"
   },
   {
     "id": "kopis_PF285931",
@@ -246180,7 +246196,11 @@
     "time": "화요일 ~ 금요일(19:30), 토요일(14:00,19:00), 일요일(14:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4793614002782,
+    "lng": 127.013806705374,
+    "address": "서울 서초구 남부순환로 2406",
+    "district": "서초구"
   },
   {
     "id": "kopis_PF285712",
@@ -246195,7 +246215,11 @@
     "time": "토요일(19:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.5161339,
+    "lng": 126.8906595,
+    "address": "서울특별시 영등포구 도림로 475 (문래동4가)",
+    "district": "영등포구"
   },
   {
     "id": "kopis_PF285652",
@@ -246210,7 +246234,11 @@
     "time": "월요일(19:30)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.5725254,
+    "lng": 126.97564290000003,
+    "address": "서울특별시 종로구 세종대로 175 (세종로)",
+    "district": "종로구"
   },
   {
     "id": "kopis_PF285480",
@@ -246225,7 +246253,11 @@
     "time": "수요일(19:30)",
     "region": "부산광역시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 35.1693728,
+    "lng": 129.0542532,
+    "address": "부산광역시 부산진구 동평로 250 (연지동)",
+    "district": "부산진구"
   },
   {
     "id": "kopis_PF285473",
@@ -246240,7 +246272,11 @@
     "time": "수요일(19:30)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4988598,
+    "lng": 126.9905166,
+    "address": "서울특별시 서초구 사평대로 55 (반포동)",
+    "district": "서초구"
   },
   {
     "id": "kopis_PF285319",
@@ -246255,7 +246291,11 @@
     "time": "금요일(19:30), 토요일(17:00)",
     "region": "인천광역시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4477666,
+    "lng": 126.70008329999996,
+    "address": "인천광역시 남동구 예술로 149 (구월동)",
+    "district": "남동구"
   },
   {
     "id": "kopis_PF285084",
@@ -246270,7 +246310,11 @@
     "time": "수요일(19:30)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4793614002782,
+    "lng": 127.013806705374,
+    "address": "서울 서초구 남부순환로 2406",
+    "district": "서초구"
   },
   {
     "id": "kopis_PF284204",
@@ -246285,7 +246329,11 @@
     "time": "토요일(16:00)",
     "region": "인천광역시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.4819229,
+    "lng": 126.7049151,
+    "address": "인천광역시 부평구 아트센터로 166 (십정동)",
+    "district": "부평구"
   },
   {
     "id": "kopis_PF284191",
@@ -246300,6 +246348,10 @@
     "time": "토요일(16:00)",
     "region": "서울특별시",
     "source": "kopis",
-    "isFestival": false
+    "isFestival": false,
+    "lat": 37.5478713,
+    "lng": 127.0500545,
+    "address": "서울특별시 성동구 상원6나길 24(성수동1가, 청호 서울숲 뜨레피움 오피스텔)",
+    "district": "성동구"
   }
 ]

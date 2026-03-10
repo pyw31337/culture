@@ -324,25 +324,41 @@ async function scrapeMochaClass() {
                         if (match) detailPrice = match[0];
                     }
 
+                    // Extract tag from title (e.g. [제주], [강남])
+                    const tagMatch = item.title.match(/\[([^\]]+)\]/);
+                    const titleTag = tagMatch ? tagMatch[1] : '';
+
                     let address = detailData.rawAddress || '서울';
-                    address = address.replace(/^대한민국\s*/, '').trim(); // Remove redundant '대한민국'
+                    address = address.replace(/^대한민국\s*/, '').trim();
 
                     let district = '';
-                    const districtMatch = address.match(/(\w+[구|[시군]])/);
+                    // Try to extract district from address or title tag
+                    const districtMatch = address.match(/([가-힣]+[구|시|군])/);
                     if (districtMatch) {
                         district = districtMatch[1];
-                    } else {
-                        const parts = address.split(' ');
-                        for (const part of parts) {
-                            if (part.endsWith('구') || part.endsWith('시')) {
-                                district = part;
+                    } else if (titleTag) {
+                        const tagDistrictMatch = titleTag.match(/([가-힣]+[구|시|군])/);
+                        if (tagDistrictMatch) district = tagDistrictMatch[1];
+                    }
+
+                    // Map region based on address or title tag
+                    const regionKeywords: Record<string, string> = {
+                        '서울': 'seoul', '강남': 'seoul', '홍대': 'seoul', '경기': 'gyeonggi', '인천': 'gyeonggi',
+                        '부산': 'busan', '서면': 'busan', '제주': 'jeju', '광주': 'gwangju', '대구': 'daegu', '대전': 'daejeon'
+                    };
+                    
+                    let mappedRegion = address.includes('서울') ? 'seoul' : (address.includes('경기') ? 'gyeonggi' : '');
+                    if (!mappedRegion && titleTag) {
+                        for (const [k, v] of Object.entries(regionKeywords)) {
+                            if (titleTag.includes(k)) {
+                                mappedRegion = v;
                                 break;
                             }
                         }
                     }
 
-                    // Use accurate address as venue, fallback to Mochaclass (District)
-                    let venue = address && address.length > 5 ? address : (district ? `모카클래스 (${district})` : '모카클래스');
+                    // Use accurate address as venue, fallback to Tag or District
+                    let venue = (address && address.length > 5) ? address : (titleTag || (district ? `모카클래스 (${district})` : '모카클래스'));
 
                     // If address has studio name, we can format it nicer
                     // E.g. "대한민국 서울특별시 송파구 송파동 90-7 1층 개더링스튜디오"
