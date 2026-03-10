@@ -182,20 +182,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             <motion.div variants={itemVariants} className="space-y-3">
                                 {/* Genre badge next to title */}
                                 <div className="flex items-center gap-2">
-                                    <motion.span
+                                     <motion.span
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
-                                        className={`px-3 py-1 rounded-md text-[12px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
+                                        className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-3xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
+                                    <h2 className="text-2xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>
                                 </div>
                                 
-                                {p.originalTitle && (
-                                    <p className="text-[15px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{p.originalTitle}</p>
+                                 {p.originalTitle && (
+                                    <p className="text-[12px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{p.originalTitle}</p>
                                 )}
                             </motion.div>
 
@@ -222,26 +222,26 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     },
                                     { icon: Ticket, text: p.price, color: 'text-amber-500', label: '가격' }
                                 ].filter(item => item.text).map((item, idx) => (
-                                    <div key={idx} className="flex items-center gap-4 py-1.5 border-b border-gray-50 dark:border-white/5 last:border-0">
-                                        <item.icon className={`w-5 h-5 ${item.color} shrink-0 opacity-80`} />
+                                     <div key={idx} className="flex items-center gap-4 py-1 border-b border-gray-50 dark:border-white/5 last:border-0">
+                                        <item.icon className={`w-4 h-4 ${item.color} shrink-0 opacity-80`} />
                                         {item.isLink ? (
                                             <button 
                                                 onClick={item.onClick}
-                                                className="text-[16.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
+                                                className="text-[13.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
                                             >
                                                 <span>{item.text}</span>
-                                                <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                                                <ExternalLink className="w-3 h-3 opacity-50" />
                                             </button>
                                         ) : (
-                                            <p className="text-[16.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                            <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
                                         )}
                                     </div>
                                 ))}
                             </motion.div>
 
                             {/* Description */}
-                             {p.description && mode === 'standalone' && (
-                                <motion.p variants={itemVariants} className="text-[16.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
+                              {p.description && mode === 'standalone' && (
+                                <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     "{p.description}"
                                 </motion.p>
                             )}
@@ -257,7 +257,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
                                         }
 
-                                        const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[14px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
+                                         const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
                                         
                                         return url ? (
                                             <a 
@@ -298,8 +298,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         ? `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`
                                         : p.link}
                                     target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`flex-1 flex items-center justify-center gap-3 py-5 rounded-2xl text-white font-black text-lg ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
+                                     rel="noopener noreferrer"
+                                    className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-2xl text-white font-black text-base ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <ExternalLink className="w-5 h-5" />
