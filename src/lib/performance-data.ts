@@ -26,6 +26,7 @@ import mommomData from '@/data/mommom.json';
 import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
+import yes24ExclusiveData from '@/data/yes24-exclusive.json';
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string; lat?: number | null; lng?: number | null }>;
@@ -101,6 +102,7 @@ export function getAllPerformances() {
         { data: mommomData },
         { data: mommomProductData },
         { data: museumData },
+        { data: yes24ExclusiveData, source: 'yes24_exclusive' },
     ];
 
     const allPerformances = allSources.flatMap(({ data, source }) =>

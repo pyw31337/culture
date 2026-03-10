@@ -215,8 +215,15 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
                                 >
                                     {/* Category Badge */}
-                                    <div className="absolute top-3 left-3 z-30 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold pointer-events-none">
-                                        {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                    <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
+                                        <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                        </div>
+                                        {perf.category === '독점공연' && (
+                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
+                                                단독
+                                            </div>
+                                        )}
                                     </div>
 
                                     <ImageWithFallback
