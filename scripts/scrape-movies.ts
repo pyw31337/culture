@@ -237,8 +237,8 @@ async (code) => {
         
         let bestHref = '';
         for (const link of posterLinks) {
-            const href = link.href;
-            if (href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
+            const href = (link instanceof HTMLAnchorElement) ? link.href : '';
+            if (href && href.match(/\\d{4}\\/\\d{2}\\/[a-f0-9]{32,}\\.(jpg|png|webp|jpeg)/i)) {
                 // 특정 영화 코드 폴더 내에 있는지 확인하고 싶으나 KOBIS URL 구조상 날짜 기반임.
                 // 대신 'thumb'나 'thn_'이 없는 원본 우선
                 if (!href.includes('thumb_') && !href.includes('thn_')) {
@@ -562,8 +562,8 @@ async function scrapeMovies() {
 
                 if (monthIdx < totalMonths - 1) {
                     const navigated = await upcomingPage.evaluate(() => {
-                        const nextBtn = document.querySelector('#nextMonth');
-                        if (nextBtn instanceof HTMLElement) {
+                        const nextBtn = document.querySelector('#nextMonth') as HTMLElement;
+                        if (nextBtn) {
                             nextBtn.click();
                             return true;
                         }
@@ -840,7 +840,7 @@ async function scrapeMovies() {
                                 const txt = el.textContent?.trim();
                                 return txt === '기본정보' || txt === '정보';
                             });
-                            if (t) { (t instanceof HTMLElement) && t.click(); return true; }
+                            if (t) { (t as HTMLElement).click(); return true; }
                             return false;
                         });
                         if (clicked) {
@@ -865,7 +865,7 @@ async function scrapeMovies() {
                                 const txt = el.textContent?.trim() || '';
                                 return txt.includes('출연') || txt.includes('등장인물');
                             });
-                            if (t) { (t instanceof HTMLElement) && t.click(); return true; }
+                            if (t) { (t as HTMLElement).click(); return true; }
                             return false;
                         });
                         if (clicked) {
@@ -876,7 +876,7 @@ async function scrapeMovies() {
 
                             // Try for poster again if missing
                             if (!item.poster) {
-                                const newDetail2: any = await page.evaluate(`(${extractMetadataStr})()`);
+                                const newDetail2: any = await page.evaluate(`(\${extractMetadataStr})()`);
                                 if (newDetail2.poster) item.poster = newDetail2.poster;
                             }
                         }
