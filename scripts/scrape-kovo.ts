@@ -127,6 +127,14 @@ async function scrapeKovo() {
             const home = item.homeTeam;
             const away = item.awayTeam;
             const fullVenue = item.venue;
+            
+            // New fields for links
+            const gnum = item.gnum;
+            const hcode = item.hcode;
+            const acode = item.acode;
+            const gender = item.gender;
+            const season = item.seasonCode || '022';
+            const round = item.round;
 
             // Simple team name matching from logos record
             const homeKey = Object.keys(KOVO_LOGOS).find(k => home.includes(k)) || home;
@@ -139,6 +147,13 @@ async function scrapeKovo() {
             progressBar.increment({ status: `${homeKey} vs ${awayKey}` });
 
             const venue = VENUE_MAP[fullVenue] || fullVenue;
+
+            // Build links
+            // versusLink: 전력비교
+            const versusLink = `https://kovo.co.kr/games/v-leagues/versus?season=${season}&gender=${gender}&league=201&round=${round}&homeTeam=${hcode}&awayTeam=${acode}`;
+            
+            // highlightsLink: 상세결과 (includes highlights/match points)
+            const highlightsLink = `https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=${gnum}&season=${season}&league=201&gender=${gender}`;
 
             return {
                 id,
@@ -153,6 +168,8 @@ async function scrapeKovo() {
                 awayTeam: awayKey,
                 homeTeamLogo: item.homeLogo || KOVO_LOGOS[homeKey] || '',
                 awayTeamLogo: item.awayLogo || KOVO_LOGOS[awayKey] || '',
+                versusLink,
+                highlightsLink
             };
         });
 

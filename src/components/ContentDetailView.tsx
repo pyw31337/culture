@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -334,6 +334,42 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     <span>예매하기 이동</span>
                                 </motion.a>
                             </motion.div>
+
+                            {/* Volleyball Specific Links: 관전포인트 & 전력비교 */}
+                            {p.genre === 'volleyball' && (p.versusLink || p.highlightsLink) && (
+                                <motion.div variants={itemVariants} className="flex flex-col gap-2">
+                                    <div className="flex items-center gap-2">
+                                        {p.versusLink && (
+                                            <motion.a
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.98 }}
+                                                href={p.versusLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold text-sm transition-all hover:bg-purple-500/20 dark:hover:bg-purple-500/30"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <BarChart3 className="w-4 h-4" />
+                                                <span>전력비교</span>
+                                            </motion.a>
+                                        )}
+                                        {p.highlightsLink && (
+                                            <motion.a
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.98 }}
+                                                href={p.highlightsLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-500/10 dark:bg-sky-500/20 text-sky-600 dark:text-sky-400 border border-sky-500/20 font-bold text-sm transition-all hover:bg-sky-500/20 dark:hover:bg-sky-500/30"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <Presentation className="w-4 h-4" />
+                                                <span>관전포인트/상세결과</span>
+                                            </motion.a>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            )}
 
                              {/* Removed: 컬처플로우 바로가기 버튼 */}
                         </div>
