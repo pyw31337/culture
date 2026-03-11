@@ -10,8 +10,8 @@ interface Venue {
     name?: string;
     address: string;
     district?: string;
-    lat?: number;
-    lng?: number;
+    lat?: number | null;
+    lng?: number | null;
     mapped_region_id?: string;
 }
 

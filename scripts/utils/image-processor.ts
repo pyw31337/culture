@@ -66,7 +66,7 @@ export async function processImage(url: string, filenameBase: string, subDir: st
 
         console.log(`[Image] Downloading: ${url} -> ${relativePath}`);
 
-        let referer = 'https://www.naver.com/';
+        let referer = 'https://search.naver.com/';
         if (url.includes('namu.wiki') || url.includes('namu.mirror')) referer = 'https://namu.wiki/';
         if (url.includes('daum') || url.includes('kakao')) referer = 'https://daum.net/';
         if (url.includes('kobis.or.kr')) referer = 'https://www.kobis.or.kr/';
@@ -77,29 +77,30 @@ export async function processImage(url: string, filenameBase: string, subDir: st
             responseType: 'arraybuffer',
             headers: {
                 'Referer': referer,
-                // Use a more modern/generic UA
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
                 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
             },
             timeout: 15000
         });
 
+        console.log(`[Image] Downloaded ${url} (${response.data.byteLength} bytes)`);
+
         await sharp(response.data)
             .resize({ width: 600, withoutEnlargement: true }) // Reasonable max width for posters
             .webp({ quality: 80 })
             .toFile(absolutePath);
+            
+        console.log(`[Image] Saved ${relativePath}`);
 
         return relativePath;
 
     } catch (error: any) {
         // Handle specific HTTP errors
         const statusCode = error?.response?.status;
+        console.error(`[Image] Failed to process ${url}: ${statusCode} - ${error instanceof Error ? error.message : String(error)}`);
         if (statusCode === 404) {
-            console.warn(`[Image] 404 Not Found: ${url} - using empty fallback`);
             return ''; // Return empty to use frontend placeholder
         }
-        console.error(`[Image] Failed to process ${url}:`, error instanceof Error ? error.message : String(error));
-        // Return empty string instead of broken URL for better UX
         return '';
     }
 }

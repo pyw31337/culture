@@ -721,6 +721,10 @@ async function scrapeMovies() {
         const finalMovies: any[] = [];
 
         for (const m of allMoviesToProcess) {
+            // DEBUG: Only process Top 10 Box Office
+            if (m.rank && parseInt(m.rank) > 10) continue;
+            if (!m.rank) continue; // Skip upcoming for debug
+
             let existing = existingMap.get(m.title);
             const hasFallbackPoster = existing?.posterFallback === true;
 
@@ -748,11 +752,8 @@ async function scrapeMovies() {
                 // Has fallback poster — re-enrich to check for official poster
                 console.log(`[Re-check] ${m.title} has fallback poster, will re-enrich.`);
                 moviesToEnrich.push(m);
-            } else if (existing && m.rank) {
-                existing.rank = parseInt(m.rank);
-                finalMovies.push(existing);
             } else {
-                // Needs enrichment
+                // Needs enrichment (either new, has fallback poster, or missing metadata)
                 moviesToEnrich.push(m);
             }
         }
