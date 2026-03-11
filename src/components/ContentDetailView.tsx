@@ -99,19 +99,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 variants={containerVariants}
                 className={containerClasses}
             >
-            <div className={`overflow-y-auto overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
-                <div className={mode === 'standalone' ? "flex flex-col" : "flex flex-col lg:flex-row lg:h-[90vh]"}>
-                    {/* Close Button UI - Moved to top level for better visibility in horizontal mode */}
-                    {mode === 'modal' && (
-                        <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={handleClose}
-                            className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors"
-                        >
-                            <X className="w-6 h-6" />
-                        </motion.button>
-                    )}
+                {/* Close Button UI - Moved to container level to stay fixed */}
+                {mode === 'modal' && (
+                    <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handleClose}
+                        className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl"
+                    >
+                        <X className="w-6 h-6" />
+                    </motion.button>
+                )}
+
+                <div className={`overflow-y-auto lg:overflow-hidden overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
+                    <div className={mode === 'standalone' ? "flex flex-col" : "flex flex-col lg:flex-row lg:h-[85vh] lg:min-h-[600px]"}>
                     {/* Hero / Poster Section */}
                     {imgSrc && (
                         <div className={mode === 'standalone' 
