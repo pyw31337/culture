@@ -88,8 +88,8 @@
     "link": "https://search.naver.com/search.naver?query=F1%20%EB%8D%94%20%EB%AC%B4%EB%B9%84%202025%EB%85%84%20%EC%98%81%ED%99%94",
     "productionCountry": "한국",
     "venue": "등급 미정",
-    "image": "",
-    "posterFallback": true,
+    "image": "/images/posters/movies/movie_F1_더_무비.webp",
+    "posterFallback": false,
     "lastCollected": "2026-03-11T22:03:46.036Z"
   },
   {
@@ -128,8 +128,8 @@
     "rank": 6,
     "link": "https://search.naver.com/search.naver?query=%EC%98%A4%EB%A7%8C%EA%B3%BC%20%ED%8E%B8%EA%B2%AC%202006%EB%85%84%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "image": "",
-    "posterFallback": true,
+    "image": "/images/posters/movies/movie_오만과_편견.webp",
+    "posterFallback": false,
     "lastCollected": "2026-03-11T22:03:46.036Z"
   },
   {
@@ -139,8 +139,8 @@
     "venue": "등급 미정",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
     "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
-    "posterFallback": true,
-    "image": "",
+    "posterFallback": false,
+    "image": "/images/posters/movies/movie_아르코.webp",
     "lastCollected": "2026-03-11T22:03:46.036Z",
     "region": "전국",
     "genre": "movie",
@@ -187,8 +187,8 @@
     "rank": 9,
     "link": "https://search.naver.com/search.naver?query=%EB%84%88%EC%9E%90%202%202026%EB%85%84%20%EC%98%81%ED%99%94",
     "venue": "등급 미정",
-    "image": "",
-    "posterFallback": true,
+    "image": "/images/posters/movies/movie_너자_2.webp",
+    "posterFallback": false,
     "lastCollected": "2026-03-11T22:03:46.036Z",
     "ageRating": "12세 이상 관람가",
     "productionCountry": "중국",

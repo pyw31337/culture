@@ -86,7 +86,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
-        : "relative w-full h-full bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 holo-effect";
+        : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 holo-effect";
 
     return (
         <div 
@@ -99,13 +99,24 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 variants={containerVariants}
                 className={containerClasses}
             >
-            <div className={`overflow-y-auto overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] md:max-h-none'} scrollbar-hide`}>
-                <div className={mode === 'standalone' ? "flex flex-col" : ""}>
+            <div className={`overflow-y-auto overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
+                <div className={mode === 'standalone' ? "flex flex-col" : "flex flex-col lg:flex-row lg:h-[90vh]"}>
+                    {/* Close Button UI - Moved to top level for better visibility in horizontal mode */}
+                    {mode === 'modal' && (
+                        <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={handleClose}
+                            className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors"
+                        >
+                            <X className="w-6 h-6" />
+                        </motion.button>
+                    )}
                     {/* Hero / Poster Section */}
                     {imgSrc && (
                         <div className={mode === 'standalone' 
                             ? "relative w-full aspect-[3/4] shrink-0 group cursor-default overflow-hidden" 
-                            : "relative h-60 sm:h-[450px] w-full group cursor-default overflow-hidden"}>
+                            : "relative h-60 sm:h-[450px] lg:h-full lg:w-[42%] w-full group cursor-default overflow-hidden shrink-0"}>
                             <motion.img
                                 initial={{ scale: 1.05 }}
                                 animate={{ scale: 1 }}
@@ -124,15 +135,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                             
-                            {/* Close Button UI */}
-                            <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={handleClose}
-                                className="absolute top-4 right-4 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-20 hover:bg-black/60 transition-colors"
-                            >
-                                <X className="w-6 h-6" />
-                            </motion.button>
 
                             {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -179,7 +181,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                     {/* Main Content Area */}
                     <div className={mode === 'standalone' 
                         ? "p-6 pt-5 space-y-5 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
-                        : "p-6 sm:p-8 pt-4 sm:pt-6 space-y-4 sm:space-y-8"}>
+                        : "p-6 sm:p-8 lg:p-12 lg:pt-14 pt-4 sm:pt-6 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full scrollbar-hide"}>
                         
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">
