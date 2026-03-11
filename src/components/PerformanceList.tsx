@@ -273,7 +273,7 @@ export default function PerformanceList({
                         }}
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
-                            <Image src="/culture/images/ticket_icon.png" alt="Icon" fill className="object-cover" priority />
+                            <Image src="/images/ticket_icon.png" alt="Icon" fill className="object-cover" priority />
                         </div>
                         <h1 className="text-[1.5rem] md:text-3xl font-black tracking-tight group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow

@@ -37,6 +37,8 @@ export type Performance = {
     dateRaw?: string; // Original parsed date used for sorting upcoming releases
     lat?: number;
     lng?: number;
+    latitude?: number | string;
+    longitude?: number | string;
     address?: string;
     district?: string;
     source?: string;

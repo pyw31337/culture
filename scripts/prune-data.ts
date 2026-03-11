@@ -34,13 +34,12 @@ function pruneData() {
             const initialCount = data.length;
 
             const validData = data.filter(item => {
-                // 1. Check End Date (if exists) -> Immediate Removal if passed
-                if (item.endDate) {
+                // 1. Check End Date (if exists) -> Removal ONLY if BOTH start and end exist and end is past
+                if (item.startDate && item.endDate) {
                     const end = new Date(item.endDate);
                     // Add 1 day buffer
                     end.setDate(end.getDate() + 1);
                     if (end < now) {
-                        // console.log(`[Expired] ${item.title} (Ended: ${item.endDate})`);
                         return false;
                     }
                 }

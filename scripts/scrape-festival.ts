@@ -440,15 +440,19 @@ async function scrapeFestivals() {
         };
 
         const isItemExpired = (dateStr: string): boolean => {
-            if (!dateStr) return false; // validation needed?
+            if (!dateStr || !dateStr.includes('~')) return false; 
             try {
-                // Format: "2024.01.01" or "2024.01.01 ~ 2024.01.31"
+                // Format: "2024.01.01 ~ 2024.01.31"
                 const parts = dateStr.split('~');
-                const endDateStr = parts[parts.length - 1].trim(); // Get the last part (end date)
+                if (parts.length < 2) return false;
+                
+                const endDateStr = parts[1].trim(); 
                 // Convert YYYY.MM.DD to YYYY-MM-DD
                 const cleanDate = endDateStr.replace(/\./g, '-');
                 // Set time to end of day to be inclusive
                 const endDate = new Date(cleanDate);
+                if (isNaN(endDate.getTime())) return false;
+
                 endDate.setHours(23, 59, 59, 999);
 
                 const now = new Date();

@@ -4,6 +4,8 @@ import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface EmptyStateProps {
     viewMode: string;
@@ -30,6 +32,7 @@ export default function EmptyState({
     setSearchMode,
     searchText
 }: EmptyStateProps) {
+    const router = useRouter();
 
     // Floating Animation Variant
     const floatVariant = {
@@ -56,9 +59,9 @@ export default function EmptyState({
     );
 
     const handleRedirect = (genre: string) => {
-        // Simple redirect via window location (or we could expose setGenre prop)
-        // Since PerformanceList manages genre via URL usually, we can just link to it
-        window.location.href = `/${genre}`;
+        // Simple redirect via router push
+        // Next.js automatically handles basePath
+        router.push(`/${genre}`);
     };
 
     return (
@@ -78,9 +81,9 @@ export default function EmptyState({
                         마음에 드는 컨텐츠나 전시를 발견하면 하트를 눌러보세요.<br />
                         나만의 문화 리스트가 만들어집니다! 💝
                     </p>
-                    <a href="/" className="px-8 py-3 rounded-xl bg-pink-500 text-white font-extrabold hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-500/30">
+                    <Link href="/" className="px-8 py-3 rounded-xl bg-pink-500 text-white font-extrabold hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-500/30">
                         공연 둘러보기
-                    </a>
+                    </Link>
                 </>
             ) : viewMode === 'likes-venue' ? (
                 <>

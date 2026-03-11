@@ -77,6 +77,7 @@ export function safePerformance(data: any): Performance | null {
         lat: typeof data.lat === 'number' ? data.lat : undefined,
         lng: typeof data.lng === 'number' ? data.lng : undefined,
         address: typeof data.address === 'string' ? data.address : undefined,
+        source: typeof data.source === 'string' ? data.source : undefined,
     };
 }
 

@@ -113,7 +113,7 @@ export default function EmptyState({
                     <div className="flex flex-wrap justify-center gap-2">
                         {(suggestions.length > 0 ? suggestions : defaultSuggestions.map(s => ({
                             label: s.label,
-                            onClick: () => window.location.href = `/culture/${s.genre}`
+                            onClick: () => window.location.href = `./${s.genre}`
                         }))).map((suggestion, idx) => (
                             <button
                                 key={idx}
